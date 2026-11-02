@@ -18,6 +18,8 @@ kleiner und schneller machen.
 Eine statische Kopie mit Sitemap, Robots-Regeln, absoluten Canonical-Links und einer kleinen Seite für jede alte
 Adresse, die Besucher und Suchmaschinen weiterschickt.
 
+![Schritt 7 des Assistenten: die Extras (robots.txt, Sitemap, Weiterleitungsseiten, README, LICENSE) und die Lizenz der Inhalte](../bilder/statisches-veroeffentlichen/extras-light.webp)
+
 ## Die Dateien, die Suchmaschinen lesen
 
 Im Assistenten, Schritt 7, **Extras**:

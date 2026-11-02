@@ -13,6 +13,8 @@ type: help
 
 Each language of the site as its own static copy, with language links that lead visitors to the right place.
 
+![The report of a build: the search index with its languages](../images/static-publishing/report-light.webp)
+
 ## One target per siteaccess
 
 A target publishes one front siteaccess, so it follows that siteaccess's languages and address scheme. A site with

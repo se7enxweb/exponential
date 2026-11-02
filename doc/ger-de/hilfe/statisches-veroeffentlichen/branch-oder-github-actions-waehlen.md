@@ -17,6 +17,8 @@ Arten aus; die Einstellung `Delivery` des Ziels wählt, welche.
 GitHub Pages so eingestellt, dass es Ihr Ziel auf die gewählte Art ausliefert, und die Einstellungen des Ziels passend
 dazu.
 
+![Schritt 4 des Assistenten mit GitHub Actions: nach „Auf GitHub einrichten“ die Warnung, dass der Branch nicht der Standard-Branch des Repositorys ist](../bilder/statisches-veroeffentlichen/github-actions-light.webp)
+
 ## Aus dem Branch (der Standard)
 
 GitHub Pages liefert die Dateien des Branches so aus, wie sie gepusht werden.

@@ -16,6 +16,8 @@ Beides läuft im Cronjob-Teil `staticpublish`, den Ihre Installation alle paar M
 
 Eine statische Kopie, die den Inhalten der Site folgt, ohne dass jemand **Veröffentlichen** drückt.
 
+![Schritt 8 des Assistenten: die Auslöser, der Zeitplan, der Webhook und die Benachrichtigungen](../bilder/statisches-veroeffentlichen/triggers-light.webp)
+
 ## Den Cronjob-Teil ausführen
 
 Nehmen Sie `staticpublish` in einen Cronjob-Teil auf, den der Server oft ausführt, oder führen Sie ihn allein aus:

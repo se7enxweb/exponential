@@ -16,6 +16,8 @@ A target can publish itself: after editors publish content, or at fixed times. B
 
 A static copy that follows the content of the site without anyone pressing **Publish**.
 
+![Step 8 of the wizard: the triggers, the schedule, the webhook and the notifications](../images/static-publishing/triggers-light.webp)
+
 ## Run the cronjob part
 
 Add `staticpublish` to a cronjob part the server runs often, or run it on its own:

@@ -19,6 +19,8 @@ gefunden hat.
 Eine statische Kopie, deren Suche ohne Server funktioniert, deren Kontaktformulare Ihre Live-Site erreichen (oder
 sagen, wohin man stattdessen geht), und einen Bericht, welche Seiten welche dieser Teile hatten.
 
+![Der Bericht eines Builds in der Vorschau: was statisch nicht funktioniert und was dafür getan wurde](../bilder/statisches-veroeffentlichen/report-light.webp)
+
 ## Was mit jedem Teil geschieht
 
 | Teil der Site | Auf der statischen Kopie | Im Assistenten, Schritt 7 |

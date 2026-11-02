@@ -17,6 +17,8 @@ engines read, keeps every old address working and can make the files smaller and
 A static copy with a sitemap, robots rules, absolute canonical links and a small page for every old address that
 sends visitors and search engines on.
 
+![Step 7 of the wizard: the extras (robots.txt, sitemap, redirect pages, README, LICENSE) and the license of the content](../images/static-publishing/extras-light.webp)
+
 ## The files search engines read
 
 In the wizard, step 7, **Extras**:

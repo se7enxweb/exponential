@@ -16,6 +16,8 @@ target's setting **Delivery** chooses which.
 
 GitHub Pages set to serve your target the way you chose, and the target's settings matching it.
 
+![Step 4 of the wizard with GitHub Actions: after "Set up on GitHub", the warning that the branch is not the repository's default branch](../images/static-publishing/github-actions-light.webp)
+
 ## From the branch (the default)
 
 GitHub Pages serves the files of the branch as they are pushed.

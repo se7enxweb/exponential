@@ -16,6 +16,8 @@ size of the build against them, and **every push** of a GitHub Pages target is c
 
 A build that fits GitHub Pages, and a site that keeps to its terms.
 
+![The preview: the size of the build against the limits of GitHub Pages](../images/static-publishing/limits-light.webp)
+
 ## The limits
 
 | | Limit | What static publishing does |

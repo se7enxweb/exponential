@@ -19,6 +19,8 @@ bleibt unter **Setup > Geheimnisse** und gelangt über die Umgebung des einen gi
 Ein Ziel, das zu GitHub pushen kann und, mit einem Token oder einer GitHub App, die GitHub-Schritte des Assistenten
 nutzen kann.
 
+![Schritt 3 des Assistenten: ein Token aus Setup > Secrets, ein Deploy-Key, eine GitHub App oder nichts](../bilder/statisches-veroeffentlichen/credential-light.webp)
+
 ## Welchen Weg Sie wählen
 
 | | Token | Deploy-Key | GitHub App |

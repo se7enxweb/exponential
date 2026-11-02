@@ -18,6 +18,8 @@ A target signs in to its repository with a **credential**. The target only store
 
 A target that can push to GitHub, and, with a token or a GitHub App, use the GitHub steps of the wizard.
 
+![Step 3 of the wizard: a token from Setup > Secrets, a deploy key, a GitHub App or none](../images/static-publishing/credential-light.webp)
+
 ## Which one to choose
 
 | | Token | Deploy key | GitHub App |

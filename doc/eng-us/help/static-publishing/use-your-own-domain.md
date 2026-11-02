@@ -17,6 +17,10 @@ A GitHub Pages site lives at `https://<owner>.github.io/<repository>/`. With you
 
 Your site at your own domain, over HTTPS.
 
+![Step 6 of the wizard: the custom domain and the DNS check](../images/static-publishing/domain-light.webp)
+
+![The box "On GitHub" in the history: the repository, GitHub Pages with the domain and HTTPS, the last Pages build](../images/static-publishing/on-github-light.webp)
+
 ## 1. Set the domain on the target
 
 In the wizard, step 6, **Custom domain**: `www.example.com`. The build writes it to the file `CNAME`, which GitHub

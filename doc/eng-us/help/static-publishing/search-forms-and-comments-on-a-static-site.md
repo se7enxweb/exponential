@@ -18,6 +18,8 @@ that does nothing. The **report** of each build lists what it found.
 A static copy whose search works without a server, whose contact forms reach your live site (or say where to go
 instead), and a report that tells you which pages had which of these parts.
 
+![The report of a build in the preview: what does not work statically and what was done about it](../images/static-publishing/report-light.webp)
+
 ## What happens to each part
 
 | Part of the site | On the static copy | Set in the wizard, step 7 |

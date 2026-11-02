@@ -16,6 +16,8 @@ Vorschau zeigt die Größe des Builds im Vergleich dazu, und **jeder Push** eine
 
 Einen Build, der zu GitHub Pages passt, und eine Website, die sich an dessen Bedingungen hält.
 
+![Die Vorschau: die Größe des Builds gegenüber den Grenzen von GitHub Pages](../bilder/statisches-veroeffentlichen/limits-light.webp)
+
 ## Die Grenzen
 
 | | Grenze | Was das statische Veröffentlichen tut |

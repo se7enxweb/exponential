@@ -13,6 +13,8 @@ type: help
 
 Jede Sprache der Site als eigene statische Kopie, mit Sprachlinks, die Besucher an die richtige Stelle führen.
 
+![Der Bericht eines Builds: der Suchindex mit seinen Sprachen](../bilder/statisches-veroeffentlichen/report-light.webp)
+
 ## Ein Ziel je Siteaccess
 
 Ein Ziel veröffentlicht einen Front-Siteaccess und folgt damit dessen Sprachen und Adressschema. Eine Site mit den

@@ -17,6 +17,8 @@ kann Ihnen sagen, wie es lief, per E-Mail und per Webhook.
 Eine E-Mail, wenn eine Veröffentlichung fehlschlägt (und auf Wunsch, wenn eine gelingt), und einen Post an eine
 Adresse Ihrer Wahl nach jeder Veröffentlichung und Rücknahme.
 
+![Schritt 8 des Assistenten: der Webhook und wann benachrichtigt wird](../bilder/statisches-veroeffentlichen/triggers-light.webp)
+
 ## E-Mail
 
 Im Assistenten, Schritt 8, **Benachrichtigen**:

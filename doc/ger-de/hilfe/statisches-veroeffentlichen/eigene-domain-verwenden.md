@@ -17,6 +17,10 @@ stattdessen unter `https://www.example.com/` ausgeliefert, mit einem kostenlosen
 
 Ihre Website unter Ihrer eigenen Domain, über HTTPS.
 
+![Schritt 6 des Assistenten: die eigene Domain und die DNS-Prüfung](../bilder/statisches-veroeffentlichen/domain-light.webp)
+
+![Der Kasten „Auf GitHub“ im Verlauf: das Repository, GitHub Pages mit der Domain und HTTPS, der letzte Pages-Build](../bilder/statisches-veroeffentlichen/on-github-light.webp)
+
 ## 1. Die Domain beim Ziel setzen
 
 Im Assistenten, Schritt 6, **Eigene Domain**: `www.example.com`. Der Build schreibt sie in die Datei `CNAME`, die

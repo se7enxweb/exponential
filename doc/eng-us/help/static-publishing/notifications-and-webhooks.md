@@ -17,6 +17,8 @@ went, by e-mail and by a webhook.
 An e-mail when a publish fails (and, if you like, when one succeeds), and a post to an address of your choice after
 every publish and rollback.
 
+![Step 8 of the wizard: the webhook and when to notify](../images/static-publishing/triggers-light.webp)
+
 ## E-mail
 
 In the wizard, step 8, **Notify**:
