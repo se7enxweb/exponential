@@ -22,7 +22,7 @@ The site published to the target's repository, as a commit with the tag `static/
 Open the target's **Build** page (Setup > Static publishing > **Build**) and press **Build**. The build runs in the
 background as you, so you can close the page; it goes on and the page finds it again.
 
-![A build going on: the bar, the pages written and the progress](../images/static-publishing/build-light.webp)
+![The Build page: Build now, the last build with its log, and its report with what does not work statically](../images/static-publishing/build-light.webp)
 
 While it runs the page shows the pages written so far and every line of the progress. When it has ended the page
 reloads and shows the **report**: pages, files, size, links rewritten, pages refused, files that could not be

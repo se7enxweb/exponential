@@ -26,7 +26,7 @@ Repository dort liegt) und seine **letzte Veröffentlichung** mit dem Zustand de
 fehlgeschlagen, nichts geändert oder nicht gepusht; der Zeitpunkt öffnet die Seite des Laufs. Den Zustand des Builds
 von GitHub Pages zeigt die Seite **Verlauf**, die GitHub danach fragt.
 
-![Setup > Statisches Veröffentlichen: ein Ziel mit seiner letzten Veröffentlichung, seinen veralteten Seiten und den Schaltflächen Build, Vorschau, Verlauf und Einstellungen](../bilder/statisches-veroeffentlichen/dashboard-light.webp)
+![Setup > Statisches Veröffentlichen: zwei Ziele mit ihren Siteaccesses, Version, Commit, letzter Veröffentlichung, veralteten Seiten und den Schaltflächen Build, Vorschau, Verlauf und Einstellungen](../bilder/statisches-veroeffentlichen/dashboard-light.webp)
 
 ## Inhalt
 

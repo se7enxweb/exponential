@@ -23,7 +23,7 @@ Die Site, im Repository des Ziels veröffentlicht, als Commit mit dem Tag `stati
 **Build**. Der Build läuft im Hintergrund unter Ihrem Benutzer, Sie können die Seite also schließen; er läuft weiter,
 und die Seite findet ihn wieder.
 
-![Ein laufender Build: der Balken, die geschriebenen Seiten und der Fortschritt](../bilder/statisches-veroeffentlichen/build-light.webp)
+![Die Seite Build: Jetzt bauen, der letzte Build mit seinem Protokoll und sein Bericht mit dem, was statisch nicht funktioniert](../bilder/statisches-veroeffentlichen/build-light.webp)
 
 Während er läuft, zeigt die Seite die bisher geschriebenen Seiten und jede Zeile des Fortschritts. Wenn er beendet ist,
 lädt die Seite neu und zeigt den **Bericht**: Seiten, Dateien, Größe, umgeschriebene Links, abgelehnte Seiten, Dateien,

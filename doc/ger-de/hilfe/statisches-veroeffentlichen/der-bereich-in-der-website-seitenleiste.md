@@ -21,7 +21,7 @@ Eine Seite, die Sie gerade geändert haben, in ihrer statischen Kopie veröffent
 mindestens ein Ziel haben. Ohne diese Richtlinie oder auf einem Kernel ohne statisches Veröffentlichen gibt es keinen
 Reiter.
 
-![Der Bereich Statisches Veröffentlichen der Website-Seitenleiste: das Ziel, seine letzte Veröffentlichung, die dort veraltete Seite, ihre öffentliche Adresse und Veröffentlichen](../bilder/statisches-veroeffentlichen/sidebar-panel-light.webp)
+![Der Bereich Statisches Veröffentlichen der Website-Seitenleiste: jedes Ziel mit seiner letzten Veröffentlichung, ob die Seite dort veraltet ist, ihrer öffentlichen Adresse und Veröffentlichen](../bilder/statisches-veroeffentlichen/sidebar-panel-light.webp)
 
 ## Was der Bereich zeigt
 
