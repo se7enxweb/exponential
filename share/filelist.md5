@@ -2295,7 +2295,7 @@ ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 2740d834e1c8ecb2a05b6ce65ea4ca3d  design/standard/javascript/exp_passkey.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
 b8c91691f6f4c2a012fac6884a2523b7  design/standard/javascript/expdebugbar-head.js
-948f9f23b0a95cb0d2a81fb8e65b7c8a  design/standard/javascript/expdebugbar.js
+715c69ebceecf7c0e5110118d261db06  design/standard/javascript/expdebugbar.js
 c9d4a91276689383a1be79bb68937c1d  design/standard/javascript/ezasynchronouspublishing.js
 c1f77f113c9e98c8d69676a294815077  design/standard/javascript/ezmedia_silverlight.js
 142a80e6cb7f65c46da1433c340db74d  design/standard/javascript/ezmultioption/ezmultioption.js
@@ -2321,7 +2321,7 @@ bca28d129e420ebe0e8a332a15c24fd4  design/standard/stylesheets/core.css
 c46ad217a065dc148fedf226794fda26  design/standard/stylesheets/exp_bookmarks.css
 e893b624988aeccab0abef6a46d6e0fa  design/standard/stylesheets/exp_password_page.css
 471f94c530839b08bada7a19bffeb1b2  design/standard/stylesheets/expdebugbar-toolbar.css
-348084493f9632ec4020e8ff19e84873  design/standard/stylesheets/expdebugbar.css
+cf3e50962b30ca50540d574f8d495f39  design/standard/stylesheets/expdebugbar.css
 6be40b2658f59872433cc8104f2deebd  design/standard/stylesheets/ezmedia_silverlight.css
 c815977883ff0447b636e3b2206828a4  design/standard/stylesheets/loginpagelayout.css
 3d104d2130898dcab66b2586407bb602  design/standard/stylesheets/mailpreferences.css
@@ -23896,10 +23896,10 @@ f8f9e20684840145d6fed82d211d7d4e  kernel/classes/datatypes/ezxmltext/handlers/ou
 0255f4ea38ff794c28182b4320a50ee3  kernel/classes/debugbar/expdebugbarlog.php
 65e55936aafbeefca1835ecb7fa8f827  kernel/classes/debugbar/expdebugbarpanelinterface.php
 e65e5cf2758771560e63ed95a0b41c9b  kernel/classes/debugbar/expdebugbarregistry.php
-8e7a15af054fef39e3bea4da52122c7d  kernel/classes/debugbar/expdebugbarserverfunctions.php
+61c44cb0880f836b3ee0fface853fcb1  kernel/classes/debugbar/expdebugbarserverfunctions.php
 da343c61d8fc793d750c8ef727afe8ba  kernel/classes/debugbar/expdebugbarsettings.php
 bd109a993ddd142e8f2017620dbdb4df  kernel/classes/debugbar/expdebugbarsummary.php
-1fc13d58dc44c75e04479f097478685d  kernel/classes/debugbar/expdebugbaruser.php
+fbae3ca668401cab79e3defa7d991357  kernel/classes/debugbar/expdebugbaruser.php
 717cd5319155a524b29de28659444487  kernel/classes/debugbar/exprenderstats.php
 a59e7722d7d542f3fd37517175faf889  kernel/classes/expadminpagination.php
 b98d6d508d9e1ad1f595ec2d5a4622cb  kernel/classes/expanonymouspublicpolicies.php
@@ -26091,7 +26091,7 @@ fecb5bd298387ea48398d60640158ab3  lib/eztemplate/classes/eztemplatetypeoperator.
 0bf7054981a58617d93a74c829b2663d  lib/eztemplate/classes/eztemplateunitoperator.php
 b5a1eb2005674c257dff73cc772b37fa  lib/eztemplate/classes/eztemplatevariableelement.php
 dbb08bb0e7dd7f3871eccab2fe96c691  lib/eztemplate/classes/eztemplatewhilefunction.php
-a87eadf6209d692fd4d3671716c7df5f  lib/ezutils/classes/expdebugbarreport.php
+3a9e718ad628875e52e395c2280a48db  lib/ezutils/classes/expdebugbarreport.php
 85ec8b5baf7762c9e1788c1806fd1955  lib/ezutils/classes/expinfo.php
 6b10748123dbb1ee64e43d89ca7962a4  lib/ezutils/classes/ezcachehelper.php
 ec0113527fb59183b48344a81e9e5e62  lib/ezutils/classes/ezcli.php
@@ -27604,7 +27604,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-f25da5566f3ef373bf901088d146ab2c  tests/test-map.json
+47fc117c666ae19d239299d4fbd4dc27  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -28059,6 +28059,7 @@ e7046a7b2fa81a816312f355e49bc12f  tests/tests/kernel/classes/debugbar/expDebugBa
 c2015e9a7c16465a385e07c0b2d5f198  tests/tests/kernel/classes/debugbar/expDebugBarQueryCacheTest.php
 913d53b83bc4e3183a697a34ce72292c  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
 3a346f5a7b9d4a168c7e1aa1b488f325  tests/tests/kernel/classes/debugbar/expDebugBarSummaryPhpVersionTest.php
+48f12af997ead18e774dc052ef0e7d7a  tests/tests/kernel/classes/debugbar/expDebugBarUserPoliciesTest.php
 4644b2eb686813cdedd5dbd8552534cc  tests/tests/kernel/classes/debugbar/expDebugBarUserTest.php
 0b2683814861305e830fb4cd770b688d  tests/tests/kernel/classes/debugbar/expDebugBarWaveTogetherTest.php
 767723d71b9b739f92932f0ef3356b24  tests/tests/kernel/classes/debugbar/expRenderStatsCacheBlockTest.php
