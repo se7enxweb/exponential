@@ -2,7 +2,7 @@
 /**
  * File containing the expContentJobModeration class.
  *
- * The content job 'moderation': an action of Setup > Recent content (moderation/recent, expModerationAction) on more
+ * The content job 'moderation': an action of Dashboard > Recent content (moderation/recent, expModerationAction) on more
  * objects than [ModerationSettings] JobThreshold, in the background. Each batch runs the action on the next BatchSize
  * objects as the requesting user, with the same per-object code as an action in the request (the kernel's own
  * operations, each object's own policy), and adds their outcome (done, refused, failed, why) to the report, which

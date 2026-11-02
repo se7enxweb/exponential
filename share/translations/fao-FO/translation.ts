@@ -14677,6 +14677,14 @@ Ivasamt: Pakkarnir verða ikki avinnlagdir.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Vegleiðingar, leiting og hvussu tú boðar frá eini villu.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nýtt innihald</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nýggjasta innihaldið, tað sum er hildið aftur til eftirmeting, og gerðir á einum vali.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Oyðublaðið kundi ikki lesast.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Yvirlitsborð</translation>
     </message>
 </context>
 <context>

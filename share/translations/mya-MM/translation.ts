@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>လမ်းညွှန်များ၊ ရှာဖွေမှုနှင့် အမှားတစ်ခုကို မည်သို့ တင်ပြရမည်။</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>မကြာသေးမီ အကြောင်းအရာ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>အသစ်ဆုံး အကြောင်းအရာ၊ ပြန်လည်သုံးသပ်ရန် ထိန်းထားသည်များနှင့် ရွေးချယ်မှုအပေါ် လုပ်ဆောင်ချက်များ။</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>ဖောင်ကို ဖတ်၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ဒက်ရှ်ဘုတ်</translation>
     </message>
 </context>
 <context>

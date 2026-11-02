@@ -14675,6 +14675,14 @@ Qaphela: Amapakethe akazi kukhutshwa.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Izikhokelo, ukukhangela kunye nendlela yokuxela impazamo.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Umxholo wakutshanje</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Umxholo omtsha, oko kubanjelwe uphononongo, nezenzo kwizinto ezikhethiweyo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81278,6 +81286,10 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>The form could not be read.</source>
         <translation>Ifomu ayikwazanga ukufundwa.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Ideshibhodi</translation>
     </message>
 </context>
 <context>

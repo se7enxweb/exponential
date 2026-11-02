@@ -15396,6 +15396,14 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Veiledninger, søk og hvordan du rapporterer en feil.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nytt innhold</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Det nyeste innholdet, det som holdes tilbake for gjennomgang, og handlinger på et utvalg.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -82538,6 +82546,10 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Skjemaet kunne ikke leses.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Oversikt</translation>
     </message>
 </context>
 <context>

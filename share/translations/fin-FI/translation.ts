@@ -14616,6 +14616,14 @@ Huomautus: pakettien asennusta ei poisteta.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Oppaat, haku ja ohjeet virheen ilmoittamiseen.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Uusin sisältö</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Uusin sisältö, tarkistettavaksi pidätetty sisältö ja toiminnot valinnalle.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81310,6 +81318,10 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Lomaketta ei voitu lukea.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Koontinäyttö</translation>
     </message>
 </context>
 <context>

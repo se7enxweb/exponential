@@ -14616,6 +14616,14 @@ Nota: els paquets no es desinstal·laran.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guies, cerca i com informar d&apos;un error.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contingut recent</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>El contingut més nou, el que està retingut per a revisió i accions sobre una selecció.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81310,6 +81318,10 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>The form could not be read.</source>
         <translation>No s&apos;ha pogut llegir el formulari.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tauler</translation>
     </message>
 </context>
 <context>

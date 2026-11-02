@@ -14675,6 +14675,14 @@ Isaziso: Amaphakheji ngeke akhishwe.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Imihlahlandlela, ukusesha nokuthi nibika kanjani iphutha.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Okuqukethwe kwakamuva</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Okuqukethwe okusha, okubanjelwe ukubuyekezwa, nezenzo kokukhethiwe.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81278,6 +81286,10 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
     <message>
         <source>The form could not be read.</source>
         <translation>Ifomu alikwazanga ukufundwa.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Ideshibhodi</translation>
     </message>
 </context>
 <context>

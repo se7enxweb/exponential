@@ -14677,6 +14677,14 @@ Nota: los paquetes nun se desinstalarán.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guíes, gueta y cómo informar d'un error.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Conteníu recién</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>El conteníu más nuevu, lo que ta retenío pa revisión y aiciones sobre una esbilla.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Nun se pudo lleer el formulariu.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Panel</translation>
     </message>
 </context>
 <context>

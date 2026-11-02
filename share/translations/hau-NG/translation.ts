@@ -14675,6 +14675,14 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Jagorori, nema da yadda ake bayar da rahoton kuskure.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Abubuwan baya-bayan nan</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Sababbin abubuwa, abin da aka riƙe don dubawa, da ayyuka kan abubuwan da aka zaɓa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81278,6 +81286,10 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Ba a iya karanta fom ɗin ba.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Allon sarrafawa</translation>
     </message>
 </context>
 <context>

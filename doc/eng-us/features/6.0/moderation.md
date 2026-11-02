@@ -3,7 +3,7 @@
 Read this page if visitors submit content to your site (comments, reviews, forum posts, forms that create objects), if
 editors need one place to see what changed lately, or if you set up roles for moderators.
 
-**Setup > Recent content** (`moderation/recent`, in the group *Content model*) lists the most recently created and
+**Dashboard > Recent content** (`moderation/recent`, the second link of the Dashboard menu, after *Dashboard*) lists the most recently created and
 modified objects of the whole installation, newest first, and lets a moderator act on a selection of them.
 
 ## The list

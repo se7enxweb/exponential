@@ -14677,6 +14677,14 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ɗaɓɓitaaji, yiylugo e no anndintee juumre.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Loowdi kesi</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Loowdi kesi ndi, ko daraa ngam ƴeewndaagol, e golle e ko suɓaa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Fiise ndee waawaa janngeede.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tableau de bord</translation>
     </message>
 </context>
 <context>

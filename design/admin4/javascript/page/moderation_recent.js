@@ -1,5 +1,5 @@
 /*
- * moderation/recent (Setup > Recent content): "Select all on this page", the number of selected items, and only the
+ * moderation/recent (Dashboard > Recent content): "Select all on this page", the number of selected items, and only the
  * fields the chosen action needs (the reason for a hold or a release, the section, the state). Without it every field
  * is shown and every box is ticked by hand; the form works the same. A file of its own, so the page runs under a
  * Content Security Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md); the same file

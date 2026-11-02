@@ -3,13 +3,13 @@ title: "Recent content"
 audience: editor, admin
 category: content
 order: 40
-summary: Setup > Recent content - the newest content of the whole site, newest first, with what is held for review, drafts waiting for a date and who submitted what from where; filters, page sizes up to 1000 and actions on a selection (release, hold, hide, reveal, trash, delete, section, state).
+summary: Dashboard > Recent content - the newest content of the whole site, newest first, with what is held for review, drafts waiting for a date and who submitted what from where; filters, page sizes up to 1000 and actions on a selection (release, hold, hide, reveal, trash, delete, section, state).
 keywords: recent content, moderation, moderate, held for review, review hold, auto-hold, comments, submissions, spam, release, hold, hide, reveal, trash, delete, bulk, mass action, selection, moderation/read, moderation/act, moderation/personaldata, IP address, browser, dashboard block
 type: help
 ---
 # Recent content
 
-**Setup > Recent content** (in the group *Content model*) shows the newest content of the whole site, newest first:
+**Dashboard > Recent content** (the second link of the Dashboard menu, after *Dashboard*) shows the newest content of the whole site, newest first:
 what visitors submitted, what is **held for review**, drafts that were never published and versions waiting for an
 approval or a date. Moderators release or remove a whole selection at once there.
 

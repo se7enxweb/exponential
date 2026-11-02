@@ -15099,6 +15099,14 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Poradniki, wyszukiwanie i sposób zgłaszania błędów.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nowe treści</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Najnowsze treści, to, co jest wstrzymane do sprawdzenia, oraz akcje na zaznaczonych pozycjach.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -82492,6 +82500,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Nie udało się odczytać formularza.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Pulpit</translation>
     </message>
 </context>
 <context>

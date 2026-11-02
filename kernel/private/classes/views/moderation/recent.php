@@ -1,12 +1,12 @@
 <?php
 /**
- * The moderation/recent view (Setup > Recent content): the most recently created or modified objects, a page at a
+ * The moderation/recent view (Dashboard > Recent content): the most recently created or modified objects, a page at a
  * time (expModerationList), with the filters, the sorting, the page sizes (remembered per user, the preference
  * admin_moderation_limit) and, with moderation/act, the selection and the actions (posted to moderation/action). The
  * address and the browser of a submission are read from the audit index for users with moderation/personaldata only.
  *
- * The filter form is sent with GET (Filter=1 and the fields); the view answers with a redirect to the same filters as
- * view parameters, so every page of a filter has one address (bookmarks, the pager, the sort links). Policy
+ * The filter form is sent with GET (Filter=1 and the fields) and the page shows its filters; the pager and the sort links
+ * carry the filters as view parameters, so every further page of a filter has one address. Policy
  * moderation/read.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -28,22 +28,26 @@ class Recent extends \Exponential\Runnable\ModuleView
         $Module = $Params['Module'];
         $settings = \expModerationList::settings();
 
-        // the filter form (GET): answered with the filters as view parameters
+        // the filter form (GET): its fields are the filters of this page, which starts again at the first page. Not
+        // answered with a redirect: a module redirect carries the request's query over (Filter=1 included), so the
+        // redirected address asked for the same redirect again, endlessly. The pager and the sort links of the page
+        // are built from the filters as view parameters, so they still have one address per filter.
         if ( isset( $_GET['Filter'] ) )
         {
             $in = array();
             foreach ( array( 'from', 'to', 'date', 'class', 'status', 'hidden', 'held', 'section', 'siteaccess', 'sort', 'order' ) as $key )
                 $in[$key] = isset( $_GET[$key] ) && is_string( $_GET[$key] ) ? $_GET[$key] : '';
             $in['creator'] = isset( $_GET['creator'] ) && is_string( $_GET['creator'] ) ? (string)\expModerationAdmin::creatorID( $_GET['creator'] ) : '';
-            $f = \expModerationList::filters( $in, $settings['sizes'], $settings['default'] );
-            return $Module->redirectTo( '/moderation/recent' . \expModerationList::viewParameters( $f ) );
+            $in['offset'] = '';
         }
-
-        $in = array();
-        foreach ( array( 'from' => 'From', 'to' => 'To', 'date' => 'Date', 'class' => 'Class', 'status' => 'Status', 'hidden' => 'Hidden',
-                         'held' => 'Held', 'section' => 'Section', 'siteaccess' => 'Siteaccess', 'creator' => 'Creator', 'sort' => 'Sort',
-                         'order' => 'Order', 'offset' => 'Offset' ) as $key => $param )
-            $in[$key] = isset( $Params[$param] ) && is_scalar( $Params[$param] ) ? rawurldecode( (string)$Params[$param] ) : '';
+        else
+        {
+            $in = array();
+            foreach ( array( 'from' => 'From', 'to' => 'To', 'date' => 'Date', 'class' => 'Class', 'status' => 'Status', 'hidden' => 'Hidden',
+                             'held' => 'Held', 'section' => 'Section', 'siteaccess' => 'Siteaccess', 'creator' => 'Creator', 'sort' => 'Sort',
+                             'order' => 'Order', 'offset' => 'Offset' ) as $key => $param )
+                $in[$key] = isset( $Params[$param] ) && is_scalar( $Params[$param] ) ? rawurldecode( (string)$Params[$param] ) : '';
+        }
         $sizeChoice = (int)\eZPreferences::value( \expModerationList::PREFERENCE );
         $in['limit'] = (string)\expModerationList::chosenSize( $settings['sizes'], $sizeChoice );
         $f = \expModerationList::filters( $in, $settings['sizes'], $settings['default'] );
@@ -113,7 +117,7 @@ class Recent extends \Exponential\Runnable\ModuleView
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:moderation/recent.tpl' );
-        $Result['path'] = array( array( 'url' => 'setup/menu', 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Setup' ) ),
+        $Result['path'] = array( array( 'url' => 'content/dashboard', 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Dashboard' ) ),
                                  array( 'url' => false, 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Recent content' ) ) );
         return $Result;
     }

@@ -14616,6 +14616,14 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Gwidi, tfittxija u kif tirrapporta żball.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Kontenut riċenti</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>L-aktar kontenut ġdid, dak li qed jinżamm għar-reviżjoni, u azzjonijiet fuq għażla.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81310,6 +81318,10 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Il-formola ma setgħetx tinqara.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Pannell</translation>
     </message>
 </context>
 <context>

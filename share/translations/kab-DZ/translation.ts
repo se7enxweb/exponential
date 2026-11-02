@@ -14677,6 +14677,14 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Imniren, anadi d wamek ara tselɣuḍ tuccḍa.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Agbur amaynut</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Agbur amaynut, ayen yettwaṭṭfen i weselken, d tigawin ɣef tefrant.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>The form could not be read.</source>
         <translation>Tiferkit ur tettwaɣra ara.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tafelwit n tadbelt</translation>
     </message>
 </context>
 <context>

@@ -14677,6 +14677,14 @@ Makyerɛ: Wɔrenyi boa no afi mu a wɔde ahyɛ mu.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Akwankyerɛ, nhwehwɛmu ne sɛdeɛ wɔbɛbɔ mfomsoɔ ho amanneɛ.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nsɛm a ɛyɛ foforɔ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nsɛm foforɔ, deɛ wɔakura ama nhwehwɛmu, ne adeyɛ wɔ nneɛma a wɔapaw so.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Wɔantumi ankenkan form no.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Adwumayɛbea</translation>
     </message>
 </context>
 <context>

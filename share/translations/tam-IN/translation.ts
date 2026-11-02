@@ -14675,6 +14675,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>வழிகாட்டிகள், தேடல் மற்றும் பிழையை அறிவிப்பது எப்படி.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>சமீபத்திய உள்ளடக்கம்</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>புதிய உள்ளடக்கம், மதிப்பாய்வுக்காக நிறுத்திவைக்கப்பட்டவை, ஒரு தேர்வின் மீதான செயல்கள்.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81278,6 +81286,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>படிவத்தைப் படிக்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>டாஷ்போர்டு</translation>
     </message>
 </context>
 <context>

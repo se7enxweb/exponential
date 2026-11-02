@@ -14677,6 +14677,14 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Hướng dẫn, tìm kiếm và cách báo lỗi.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nội dung mới</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nội dung mới nhất, những gì đang bị giữ lại để duyệt, và các hành động trên các mục được chọn.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>The form could not be read.</source>
         <translation>Không đọc được biểu mẫu.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Bảng điều khiển</translation>
     </message>
 </context>
 <context>

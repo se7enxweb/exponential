@@ -14616,6 +14616,14 @@ Märkus: pakette ei desinstallita.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Juhendid, otsing ja kuidas tõrkest teatada.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Uus sisu</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Uusim sisu, ülevaatuseks kinni peetud sisu ja toimingud valikuga.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81310,6 +81318,10 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Vormi ei saanud lugeda.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Armatuurlaud</translation>
     </message>
 </context>
 <context>

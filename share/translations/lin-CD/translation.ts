@@ -14677,6 +14677,14 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ba-guide, boluki mpe ndenge ya koyebisa libunga.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Makambo ya sika</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Makambo ya sika koleka, oyo esimbami mpo na botaleli, mpe misala na oyo eponami.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Formulaire ekokaki kotángama te.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tableau de bord</translation>
     </message>
 </context>
 <context>

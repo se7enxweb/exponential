@@ -14675,6 +14675,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>ಮಾರ್ಗದರ್ಶಿಗಳು, ಹುಡುಕಾಟ ಮತ್ತು ದೋಷವನ್ನು ವರದಿ ಮಾಡುವ ವಿಧಾನ.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ಇತ್ತೀಚಿನ ವಿಷಯ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ಅತ್ಯಂತ ಹೊಸ ವಿಷಯ, ಪರಿಶೀಲನೆಗಾಗಿ ತಡೆಹಿಡಿಯಲಾದದ್ದು, ಮತ್ತು ಆಯ್ಕೆಯ ಮೇಲಿನ ಕ್ರಿಯೆಗಳು.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81278,6 +81286,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>ಫಾರ್ಮ್ ಅನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ಡ್ಯಾಶ್‌ಬೋರ್ಡ್</translation>
     </message>
 </context>
 <context>

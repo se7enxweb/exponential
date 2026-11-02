@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup > Recent content on a database server: MySQL/MariaDB and PostgreSQL in the database job
+ * Dashboard > Recent content on a database server: MySQL/MariaDB and PostgreSQL in the database job
  * (tests/runtests.php --dsn ... --db-per-test), or a throwaway MySQL database of ezpThrowawayDatabase, with the kernel
  * schema and the clean data (expModerationEngineChecks, ME-1 to ME-6). Skipped without one.
  *

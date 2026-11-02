@@ -2,14 +2,14 @@
 title: menu.ini [Leftmenu_my]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [Leftmenu_my] in menu.ini: Name, Links, LinkNames, PolicyList_dashboard, PolicyList_collaboration, PolicyList_my_pending, PolicyList_my_drafts, PolicyList_my_bookmarks ..."
-keywords: Einstellung, menu.ini, Leftmenu_my, INI, setting, Name, Links, LinkNames, PolicyList_dashboard, PolicyList_collaboration, PolicyList_my_pending, PolicyList_my_drafts, PolicyList_my_bookmarks, PolicyList_my_notifications, PolicyList_help_center, PolicyList_audit, PolicyList_change_password, LinkIcons, LinkDescriptions, TrailLinks
+summary: "Die Einstellungen von [Leftmenu_my] in menu.ini: Name, Links, LinkNames, PolicyList_dashboard, PolicyList_recent_content, PolicyList_collaboration, PolicyList_my_pending, PolicyList_my_drafts ..."
+keywords: Einstellung, menu.ini, Leftmenu_my, INI, setting, Name, Links, LinkNames, PolicyList_dashboard, PolicyList_recent_content, PolicyList_collaboration, PolicyList_my_pending, PolicyList_my_drafts, PolicyList_my_bookmarks, PolicyList_my_notifications, PolicyList_help_center, PolicyList_audit, PolicyList_change_password, LinkIcons, LinkDescriptions, TrailLinks
 type: generated
 generated: exp:help:examples
 ---
 # menu.ini [Leftmenu_my]
 
-Der Block `[Leftmenu_my]` von `settings/menu.ini`, mit 15 Einstellung(en).
+Der Block `[Leftmenu_my]` von `settings/menu.ini`, mit 16 Einstellung(en).
 
 > Name=Media Menu  
 > Links\[\]  
@@ -35,13 +35,15 @@ Name=dashboard
 
 ## Links
 
-> Die eigene Arbeit des Benutzers, direkt nach Zusammenarbeit  
-> Die E-Mail-Einstellungen: welche optionalen E-Mails der Benutzer erhält, Einwilligungsverlauf, Datendownload  
-> Das Hilfecenter (exphelp/dashboard), die Startseite der Hilfe: Anleitungen, Suche, wie man einen Fehler meldet  
-> Die Audit-Konsole, nur mit audit/read (doc/eng-us/bc/6.0/audit.md, "Placement"); der letzte Link des Kernels, sodass die Links,  
-> die Erweiterungen anhängen, danach folgen  
+> Recent content (module moderation): the newest content of the site, held submissions, actions on a selection;  
+> the second link, right after the dashboard. LinkNames is translated in design/admin/parts/my/menu  
+> The user's own work, right after Collaboration  
+> The e-mail preferences: which optional e-mail the user gets, consent history, data download  
+> The Help center (exphelp/dashboard), the start page of the help: guides, search, how to report an error  
+> The audit console, only with audit/read (doc/eng-us/bc/6.0/audit.md, "Placement"); the last kernel link, so the links  
+> extensions append follow it  
 
-Standard: ein Hash mit 11: `dashboard=content/dashboard`, `collaboration=collaboration/view/summary`, `my_pending=content/pendinglist`, `my_drafts=content/draft`, `my_bookmarks=content/bookmark`, `my_mail=mailpreferences/settings`, `my_notifications=notification/settings`, `help_center=exphelp/dashboard`, `audit=audit/console`, `change_password=user/password`, `edit_profile=user/edit/(action)/edit`.
+Standard: ein Hash mit 12: `dashboard=content/dashboard`, `recent_content=moderation/recent`, `collaboration=collaboration/view/summary`, `my_pending=content/pendinglist`, `my_drafts=content/draft`, `my_bookmarks=content/bookmark`, `my_mail=mailpreferences/settings`, `my_notifications=notification/settings`, `help_center=exphelp/dashboard`, `audit=audit/console`, `change_password=user/password`, `edit_profile=user/edit/(action)/edit`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -50,6 +52,7 @@ Standard: ein Hash mit 11: `dashboard=content/dashboard`, `collaboration=collabo
 # ein leeres "Links[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 Links[]
 Links[dashboard]=content/dashboard
+Links[recent_content]=moderation/recent
 Links[collaboration]=collaboration/view/summary
 Links[my_pending]=content/pendinglist
 Links[my_drafts]=content/draft
@@ -65,7 +68,7 @@ Links[edit_profile]=user/edit/(action)/edit
 
 ## LinkNames
 
-Standard: ein Hash mit 1: `audit=Audit trail`.
+Standard: ein Hash mit 2: `recent_content=Recent content`, `audit=Audit trail`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -73,6 +76,7 @@ Standard: ein Hash mit 1: `audit=Audit trail`.
 [Leftmenu_my]
 # ein leeres "LinkNames[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 LinkNames[]
+LinkNames[recent_content]=Recent content
 LinkNames[audit]=Audit trail
 */ ?>
 ```
@@ -88,6 +92,20 @@ Standard: eine Liste mit 1: `content/dashboard`.
 # ein leeres "PolicyList_dashboard[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 PolicyList_dashboard[]
 PolicyList_dashboard[]=content/dashboard
+*/ ?>
+```
+
+## PolicyList_recent_content
+
+Standard: eine Liste mit 1: `moderation/read`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/menu.ini.append.php
+[Leftmenu_my]
+# ein leeres "PolicyList_recent_content[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+PolicyList_recent_content[]
+PolicyList_recent_content[]=moderation/read
 */ ?>
 ```
 
@@ -213,7 +231,7 @@ PolicyList_change_password[]=user/password
 > dieses Menü seinen Gruppen hinzu), einschließlich der Links, die die Erweiterung expai hier anhängt; übersetzt in  
 > design/admin/parts/my/menu  
 
-Standard: ein Hash mit 15: `my_notifications=bell`, `my_mail=envelope`, `change_password=key`, `edit_profile=person-circle`, `help_center=question-circle`, `dashboard=speedometer2`, `collaboration=inbox`, `my_pending=hourglass-split`, `my_drafts=pencil-square`, `my_bookmarks=bookmark`, `expai=stars`, `expai_vector=magic` ....
+Standard: ein Hash mit 16: `my_notifications=bell`, `my_mail=envelope`, `change_password=key`, `edit_profile=person-circle`, `help_center=question-circle`, `dashboard=speedometer2`, `recent_content=check2-square`, `collaboration=inbox`, `my_pending=hourglass-split`, `my_drafts=pencil-square`, `my_bookmarks=bookmark`, `expai=stars` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -227,6 +245,7 @@ LinkIcons[change_password]=key
 LinkIcons[edit_profile]=person-circle
 LinkIcons[help_center]=question-circle
 LinkIcons[dashboard]=speedometer2
+LinkIcons[recent_content]=check2-square
 LinkIcons[collaboration]=inbox
 LinkIcons[my_pending]=hourglass-split
 LinkIcons[my_drafts]=pencil-square
@@ -241,7 +260,7 @@ LinkIcons[expai_help]=info-circle
 
 ## LinkDescriptions
 
-Standard: ein Hash mit 15: `my_notifications=The content you follow and how you are told.`, `my_mail=Which optional e-mail you get; your consents.`, `change_password=Set a new password for your account.`, `edit_profile=Your name, e-mail address and other details.`, `help_center=Guides, search and how to report an error.`, `dashboard=Your start page: your work, your tasks and what changed.`, `collaboration=Items that wait for your approval, and yours that wait for others.`, `my_pending=Your items that wait to be published.`, `my_drafts=The drafts you started and have not published yet.`, `my_bookmarks=The content you marked to find it again.`, `expai=The start page of Exponential Intelligence: its tools and their use.`, `expai_vector=Threads that change content with AI, under your control.` ....
+Standard: ein Hash mit 16: `my_notifications=The content you follow and how you are told.`, `my_mail=Which optional e-mail you get; your consents.`, `change_password=Set a new password for your account.`, `edit_profile=Your name, e-mail address and other details.`, `help_center=Guides, search and how to report an error.`, `dashboard=Your start page: your work, your tasks and what changed.`, `recent_content=The newest content, what is held for review, and actions on a selection.`, `collaboration=Items that wait for your approval, and yours that wait for others.`, `my_pending=Your items that wait to be published.`, `my_drafts=The drafts you started and have not published yet.`, `my_bookmarks=The content you marked to find it again.`, `expai=The start page of Exponential Intelligence: its tools and their use.` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -255,6 +274,7 @@ LinkDescriptions[change_password]=Set a new password for your account.
 LinkDescriptions[edit_profile]=Your name, e-mail address and other details.
 LinkDescriptions[help_center]=Guides, search and how to report an error.
 LinkDescriptions[dashboard]=Your start page: your work, your tasks and what changed.
+LinkDescriptions[recent_content]=The newest content, what is held for review, and actions on a selection.
 LinkDescriptions[collaboration]=Items that wait for your approval, and yours that wait for others.
 LinkDescriptions[my_pending]=Your items that wait to be published.
 LinkDescriptions[my_drafts]=The drafts you started and have not published yet.

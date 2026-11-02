@@ -15119,6 +15119,14 @@ Obs: Paketen avinstalleras inte.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guider, sökning och hur du rapporterar ett fel.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nytt innehåll</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Det nyaste innehållet, det som hålls kvar för granskning, och åtgärder för ett urval.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -82583,6 +82591,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Formuläret kunde inte läsas.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Instrumentpanel</translation>
     </message>
 </context>
 <context>

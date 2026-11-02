@@ -49,7 +49,10 @@ Die linke Spalte ändert sich mit dem Reiter:
   Der **Papierkorb** steht unten im Baum.
 - Unter dem Baum öffnet der **Inhaltsfinder** ein Objekt über seine Nummer (ID), seinen Pfad oder seine Adresse auf der
   Site: Geben Sie sie ein und klicken Sie auf **Finden**.
-- Auf dem Dashboard listet sie Ihre eigenen Seiten auf: **Meine Warteliste**, **Meine Entwürfe**, **Meine Lesezeichen**,
+- Auf dem Dashboard listet sie Ihre eigenen Seiten auf: **Neue Inhalte** (als zweite, nach **Dashboard**, für
+  Moderatoren: die neuesten Inhalte der ganzen Site, was zur Prüfung zurückgehalten ist, wer es eingereicht hat, und
+  Aktionen auf einer Auswahl; [Neue Inhalte](neue-inhalte.md)), **Meine Warteliste**, **Meine Entwürfe**,
+  **Meine Lesezeichen**,
   **Meine E-Mail-Einstellungen**, **Meine Benachrichtigungseinstellungen**, **Passwort ändern**, **Profil bearbeiten**
   und mehr.
 - Unter **Setup** listet sie die Seiten der Einrichtung in Gruppen auf, jede nur für Rollen, die sie öffnen dürfen.
@@ -61,9 +64,7 @@ Die linke Spalte ändert sich mit dem Reiter:
   Veröffentlichen** eine statische Kopie einer Site auf GitHub Pages oder einem anderen Host für Repositorys: ein Ziel,
   mit einem Assistenten angelegt, ein Build im Hintergrund, die Änderungen vor **Veröffentlichen** geprüft und jede
   Veröffentlichung aufbewahrt, um zu ihr zurückzukehren
-  ([Statisches Veröffentlichen](statisches-veroeffentlichen/README.md)). Eine weitere ist **Neue Inhalte** in der
-  Gruppe **Inhaltsmodell**: die neuesten Inhalte der ganzen Site, was zur Prüfung zurückgehalten ist, wer es
-  eingereicht hat, und Aktionen auf einer Auswahl ([Neue Inhalte](neue-inhalte.md)).
+  ([Statisches Veröffentlichen](statisches-veroeffentlichen/README.md)).
 
 ![Das Menü eines Objekts im Baum](bilder/context-menu.webp)
 
