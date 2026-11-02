@@ -208,6 +208,11 @@ textarea.exp-debug-copy-area { position: fixed; top: 0; left: -9999px; width: 1p
 /* the User tab: the anonymous visitors' cache profile, the same as the user's or not */
 #debug .exp-debug-badge[data-level="ok"] { color: var(--xd-ok); }
 #debug .exp-debug-badge[data-level="warn"] { color: var(--xd-warn); }
+/* the User tab's policies: the search and the role on one line, a policy for every module or function stands out */
+#debug .exp-debug-policies-tools { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+#debug .exp-debug-policies-search { min-width: 16em; flex: 1 1 16em; }
+#debug .exp-debug-policy-all { color: var(--xd-warn); font-weight: bold; }
+#debug .exp-debug-user-policies-section > summary { cursor: pointer; font-weight: bold; margin: 12px 0 6px; }
 
 /* --- settings */
 #debug .exp-debug-presets { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 6px 0 10px; }

@@ -237,6 +237,7 @@ and turns the level up **below** its values, see
 | `iptest` | `address`, `list` (JSON array) | setup/setup |
 | `log[::<limit>]` | GET | setup/setup |
 | `summary` | GET | debug output for the request (the report itself; a visitor gets no IP list entry in it) |
+| `policies` | GET [`role`, `q`, `offset`] | setup/setup: the policies of the current user's roles, a page of 200 rows (see [User](#user-roles-and-cache-profile)) |
 | `panelheight` | POST `height` (pixels, `0` for the default) | a logged-in user (never an anonymous visitor) with debug output for the request: stores the user preference `expdebugbar_panel_height` (see [The panel's height](#the-panels-height)) |
 
 Every POST must carry the form token (`ezxform_token`, or the header `X-CSRF-Token`); the `settings` answer has
@@ -288,6 +289,7 @@ php vendor/bin/phpunit tests/tests/kernel/classes/debugbar/
 | `expDebugBarIPListTest` | addresses and CIDR of both families, IPv4-mapped clients, entries with labels and expiries, writing entries, the match, the warnings, the suggestions. Needs no kernel |
 | `expDebugBarSettingsTest` | the registry and discovery, the values in effect against `expIniLocator::where()`, writes of every type and op with the log and undo, dry runs, refusals, a siteaccess scope, presets as a group, the lock-out and open checks, eZDebug's IP check and its fallback, the summary, the server functions (registration, answers, POST, token and policy, what a visitor without policy sees) |
 | `RadSurveyDebugBarTest` | the two registries, the total, the bar's figures, the new problem kinds |
+| `expDebugBarPoliciesTest` | the policies of the User tab: rows and limitation values as one sorted list, the selection by role and by search (module/function, role name, class name, limitation, stored value), a row with readable values, the section only for those allowed, with the address for the role links, the script's words. No database |
 | `expDebugBarUserTest` | the User tab: the user's parts of the view cache key and each ignore tweak, the preferences key against the code it replaced, the preferences of every view mode (one name with two defaults), the fingerprint, the profile from a view's key (parts a listener left out or changed, pr_user), anonymous visitors, the chip, the tab escaped, the copy text. No database |
 
 `expDebugBarSettingsTest` starts the kernel once on the admin siteaccess with the installation's own database, as
@@ -604,7 +606,20 @@ The Rendering tab stays `setup/setup` only. The data comes from `expDebugBarUser
 (`kernel/classes/debugbar/expdebugbaruser.php`); it reads the role assignments with one query and the preferences
 with `eZPreferences::values()`, only when the bar is rendered for such a user.
 
-Tests: `expDebugBarUserTest` (no database).
+**Policies.** For `setup/setup` the tab ends with a folded section *Policies*: the policies of the user's roles,
+loaded only when it is opened (`expdebugbar::policies`), so a user with hundreds of roles costs the page nothing. The
+first answer lists the roles with their number of policies (the assignments as the tooltip of each) and the first
+page; a role, a search and *Load more* ask again, 200 rows at a time. A row is the module and function (`*` marked),
+the limitations with readable values (classes, sections, siteaccesses and nodes by name, with the id) and the role.
+The search looks in module/function (`content/read`), role names, limitation types, values as stored and the names of
+classes, sections and siteaccesses; other limitations (`Owner`, `Group`, `StateGroup_*` ...) show their stored values.
+The role ids here and in the Roles table link to `role/view/<id>` in the current siteaccess (in an administration
+siteaccess the role's page; elsewhere only where the module `role` is reachable). The policies and their limitations of
+all roles come with two queries, the names of classes, sections and siteaccesses once, the names of the nodes of a
+page with one more (`expDebugBarPolicies`, `kernel/classes/debugbar/expdebugbarpolicies.php`); only the latest answer
+fills the table when the search changes while one is on its way.
+
+Tests: `expDebugBarUserTest` and `expDebugBarPoliciesTest` (no database).
 
 ### Panels of extensions
 

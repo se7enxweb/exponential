@@ -307,6 +307,73 @@
   const reloadNote = () => el('p', { class: 'exp-debug-hint', role: 'status' }, t('Reload the page to see the effect.') + ' ',
     el('button', { type: 'button', class: 'exp-debug-button', onclick: () => window.location.reload() }, t('Reload now')));
 
+  /* ---------------------------------------------------------------- User tab: the policies, loaded when opened */
+  // expdebugbar::policies answers a page of rows for a role, a search or all; the roles with their counts come with the
+  // first answer. Built here, so a user with hundreds of roles costs the page nothing until the section is opened.
+  root.querySelectorAll('[data-exp-debug-policies]').forEach((details) => {
+    const body = details.querySelector('.exp-debug-policies-body');
+    if (!body) return;
+    let loaded = false;
+    let seq = 0;
+    // the address of role/view; eZURI drops its trailing slash, the id follows after one
+    const roleBase = details.getAttribute('data-role-url') || '';
+    const roleUrl = roleBase ? roleBase.replace(/\/?$/, '/') : '';
+    let state = { role: '', q: '', offset: 0 };
+    let roles = [];
+    let timer = null;
+    const search = el('input', { type: 'search', class: 'exp-debug-policies-search', placeholder: t('module/function, role, limitation'), 'aria-label': t('Search the policies') });
+    const roleSelect = el('select', { class: 'exp-debug-policies-role', 'aria-label': t('Role') });
+    const status = el('div', { class: 'exp-debug-hint', role: 'status', 'aria-live': 'polite', tabindex: '-1' });
+    const table = el('table', { class: 'exp-debug-facts exp-debug-user-policies' });
+    const more = el('button', { type: 'button', class: 'exp-debug-button', hidden: true }, t('Load more'));
+    const header = () => el('tr', {}, el('th', {}, t('Module/function')), el('th', {}, t('Limitations')), el('th', {}, t('Role')));
+    const rowOf = (r) => {
+      const name = r.module + '/' + r.function;
+      const limits = (r.limitations || []).map((l) => el('div', {}, el('strong', {}, l.identifier + ': '), (l.values || []).join(', ')));
+      return el('tr', {},
+        el('td', {}, el('code', { class: r.module === '*' || r.function === '*' ? 'exp-debug-policy-all' : null }, name)),
+        el('td', {}, limits.length ? limits : el('em', {}, t('none'))),
+        el('td', {}, r.role + ' (', roleUrl ? el('a', { href: roleUrl + r.role_id }, String(r.role_id)) : String(r.role_id), ')'));
+    };
+    // an answer to an older request (typed on, another role) is dropped: only the latest one fills the table
+    const load = (append) => {
+      const mine = ++seq;
+      status.textContent = t('Loading...');
+      if (!append) more.hidden = true;
+      call('policies', { role: state.role || null, q: state.q || null, offset: append ? state.offset : null }, false).then((answer) => {
+        if (mine !== seq) return;
+        if (!answer || !Array.isArray(answer.rows)) throw new Error(t('No answer'));
+        if (answer.roles && !roles.length) {
+          roles = answer.roles;
+          roleSelect.replaceChildren(el('option', { value: '' }, t('All roles (%count policies)', { '%count': answer.total })),
+            ...roles.map((r) => el('option', { value: String(r.id), title: (r.assignments || []).map((a) => (a.from || t('the user')) + (a.limit ? ', ' + a.limit : '')).join('; ') },
+              r.name + ' (' + r.id + '): ' + r.count)));
+        }
+        if (!append) table.replaceChildren(header());
+        answer.rows.forEach((r) => table.append(rowOf(r)));
+        const shown = table.rows.length - 1;
+        status.textContent = answer.matched === 0 ? t('No policy matches.') : t('%shown of %matched policies', { '%shown': shown, '%matched': answer.matched });
+        more.hidden = shown >= answer.matched;
+        state.offset = shown;
+        // the button that was clicked may be gone: keep the keyboard in the section
+        if (append && more.hidden) status.focus();
+      }).catch((err) => { if (mine === seq) failure(status, err, () => load(append)); });
+    };
+    const reload = () => { state.offset = 0; load(false); };
+    search.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => { state.q = search.value.trim(); reload(); }, 300);
+    });
+    roleSelect.addEventListener('change', () => { state.role = roleSelect.value; reload(); });
+    more.addEventListener('click', () => load(true));
+    details.addEventListener('toggle', () => {
+      if (!details.open || loaded) return;
+      loaded = true;
+      body.replaceChildren(el('p', { class: 'exp-debug-policies-tools' }, search, ' ', roleSelect), status, table, more);
+      reload();
+    });
+  });
+
   /* ---------------------------------------------------------------- IP helpers (client side validation) */
   const parseV4 = (s) => {
     const m = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.exec(s);

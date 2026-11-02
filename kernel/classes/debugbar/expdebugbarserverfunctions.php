@@ -432,6 +432,27 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
     }
 
     /**
+     * expdebugbar::policies: the policies of the current user's roles for the User tab, a page at a time
+     * (expDebugBarPolicies::PAGE rows): GET role (one of the user's role ids), q (a search, at most 100 characters),
+     * offset. The first call (no role, no q) also lists the roles with their number of policies. setup/setup only, as
+     * the tab.
+     *
+     * @return array expDebugBarPolicies::forUser()
+     */
+    public static function policies( $args )
+    {
+        self::requireSetup();
+        $role = self::param( 'role' );
+        $query = self::param( 'q', '' );
+        $offset = self::param( 'offset', 0 );
+        $query = is_string( $query ) ? ( function_exists( 'mb_substr' ) ? mb_substr( $query, 0, 100, 'UTF-8' ) : substr( $query, 0, 100 ) ) : '';
+        return expDebugBarPolicies::forUser( eZUser::currentUser(),
+                                             $role !== null && ctype_digit( (string)$role ) ? (int)$role : null,
+                                             $query,
+                                             ctype_digit( (string)$offset ) ? (int)$offset : 0 );
+    }
+
+    /**
      * expdebugbar::summary
      */
     public static function summary( $args )
