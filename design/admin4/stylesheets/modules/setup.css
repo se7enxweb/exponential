@@ -1486,3 +1486,13 @@ label.a4-package-option-label {
   .a4-setup-publish-runs td.a4-num { text-align: start; }
   .a4-setup-publish-runs td[data-label]::before { content: attr(data-label); flex: 0 0 7.5em; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); }
 }
+
+/* staticpublish/target, step 1: the siteaccesses to publish fit the field in every language. The headers wrap at
+   their spaces (IM STAMM), a siteaccess's address breaks anywhere, its folder never; the two choice columns stay narrow */
+.a4-setup-sa-table th { white-space: normal; overflow-wrap: normal; vertical-align: bottom; }
+.a4-setup-sa-table th:first-child,
+.a4-setup-sa-table td:first-child,
+.a4-setup-sa-table th:last-child,
+.a4-setup-sa-table td:last-child { width: 1%; text-align: center; }
+.a4-setup-sa-table td label .a4-meta { display: block; overflow-wrap: anywhere; }
+.a4-setup-sa-table td .a4-code { white-space: nowrap; }
