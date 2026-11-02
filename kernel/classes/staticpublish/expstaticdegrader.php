@@ -276,8 +276,8 @@ class expStaticDegrader
         $pair = $name . '="' . htmlspecialchars( (string)$value, ENT_QUOTES, 'UTF-8' ) . '"';
         $pattern = '#(\s)' . preg_quote( $name, '#' ) . '\s*=\s*(?:"[^"]*"|\'[^\']*\'|[^\s"\'>]+)#i';
         if ( preg_match( $pattern, (string)$tag ) )
-            return (string)preg_replace_callback( $pattern, function ( $m ) use ( $pair ) { return $m[1] . $pair; }, (string)$tag, 1 );
-        return (string)preg_replace( '#\s*(/?)>$#', ' ' . $pair . '$1>', (string)$tag, 1 );
+            return expStaticPostProcessor::checked( preg_replace_callback( $pattern, function ( $m ) use ( $pair ) { return $m[1] . $pair; }, (string)$tag, 1 ), 'degrader' );
+        return expStaticPostProcessor::checked( preg_replace( '#\s*(/?)>$#', ' ' . $pair . '$1>', (string)$tag, 1 ), 'degrader' );
     }
 
     /** @return string|null the value of a field (input) of a form by its name */

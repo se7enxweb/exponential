@@ -83405,4 +83405,19 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <translation>El so testu queda. Les imáxenes, los formularios y los enllaces a otros sitios enxamás se quiten.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La espublización estática de %target falló en %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La espublización estática de %target fízose bien en %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site unvió esti corréu porque lo pide'l destín d'espublización estática %target.</translation>
+    </message>
+</context>
 </TS>

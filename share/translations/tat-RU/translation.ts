@@ -83405,4 +83405,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Аларның тексты кала. Рәсемнәр, формалар һәм башка сайтларга сылтамалар беркайчан да бетерелми.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site сайтында %target статик бастыруы уңышсыз булды</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site сайтында %target статик бастыруы уңышлы булды</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Бу хатны %site җибәрде, чөнки статик бастыру максаты %target моны сорый.</translation>
+    </message>
+</context>
 </TS>

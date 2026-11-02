@@ -83435,4 +83435,19 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>Jų tekstas lieka. Paveikslėliai, formos ir nuorodos į kitas svetaines niekada nešalinami.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statinis %target publikavimas svetainėje %site nepavyko</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statinis %target publikavimas svetainėje %site pavyko</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Šį laišką išsiuntė %site, nes to prašo statinio publikavimo tikslas %target.</translation>
+    </message>
+</context>
 </TS>

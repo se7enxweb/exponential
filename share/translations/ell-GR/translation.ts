@@ -83435,4 +83435,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Το κείμενό τους παραμένει. Εικόνες, φόρμες και σύνδεσμοι προς άλλους ιστότοπους δεν αφαιρούνται ποτέ.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Η στατική δημοσίευση του %target απέτυχε στο %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Η στατική δημοσίευση του %target ολοκληρώθηκε με επιτυχία στο %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Αυτό το μήνυμα στάλθηκε από το %site επειδή το ζητά ο στόχος στατικής δημοσίευσης %target.</translation>
+    </message>
+</context>
 </TS>

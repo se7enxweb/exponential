@@ -10,14 +10,14 @@
  *  ML-03 layout_block: layout, zone and name, a definition to create, position, parameter names
  *  ML-04 layout_rule: targets of the resolver's types (a node by any identifier), which: all, something to update
  *  ML-05 http: http(s) URLs without a user, body or json, no body on GET, headers on one line, secrets by name, expect
- *  ML-06 mail: addresses, one line of subject, a transport name
+ *  ML-06 mail: addresses, one line of subject, a transport name, a known mail category
  *  ML-07 command: only exp:* of the allowlist, never exp:migration:* or exp:upgrade*, groups with *, arguments
  *  ML-08 plans name what would happen and that a dry run sends and runs nothing
  *  ML-09 http sends the headers, the bearer and the signature from secrets, a JSON body, and keeps the answer; an
  *        answer it does not expect fails the step, and the URL it shows has no query
  *  ML-10 command hands the command and its arguments to the process as a list, adds nothing a shell would read, and
  *        fails on an exit code it does not expect; a command off the list never runs
- *  ML-11 mail goes through the file transport into a folder of the test
+ *  ML-11 mail goes through the file transport into a folder of the test, with its mail category (admin by default)
  *  ML-12 the caches: layout steps content and template-block; http, mail and command none
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -214,6 +214,9 @@ class expMigrationLayoutHttpMailCommandStepsTest extends PHPUnit\Framework\TestC
         foreach ( array( 'to[0]: an e-mail address', 'bcc[0]: an e-mail address', 'subject: one line', 'from: an e-mail address', 'transport: the name of a transport' ) as $expected )
             $this->assertStringContainsString( $expected, $errors );
         $this->assertStringContainsString( 'to: at least one address', self::errors( "- type: mail\n  to: []\n  subject: a\n  body: b\n" ) );
+        $this->assertStringContainsString( 'category: a mail category of mailpreferences.ini',
+                                           self::errors( "- type: mail\n  to: [ a@example.com ]\n  subject: a\n  body: b\n  category: no_such_category\n" ) );
+        $this->assertSame( '', self::errors( "- type: mail\n  to: [ a@example.com ]\n  subject: a\n  body: b\n  category: system\n" ) );
     }
 
     /** ML-07 */
@@ -396,6 +399,7 @@ class expMigrationLayoutHttpMailCommandStepsTest extends PHPUnit\Framework\TestC
         $this->assertStringContainsString( 'WP10e news', $text );
         $this->assertStringContainsString( 'The news section has a new class.', $text );
         $this->assertStringContainsString( 'editors@example.com', $text );
+        $this->assertMatchesRegularExpression( '/^X-Exp-Mail-Category: admin\r?$/mi', $text, 'filed by the mail gate as a notice to administrators' );
     }
 
     /** ML-12 */

@@ -83405,4 +83405,19 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>Lor tèxte demòra. Los imatges, los formularis e los ligams cap a d'autres sites son pas jamai levats.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La publicacion estatica de %target a fracassat sus %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La publicacion estatica de %target a capitat sus %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Aqueste corrièl es estat mandat per %site perque la cibla de publicacion estatica %target lo demanda.</translation>
+    </message>
+</context>
 </TS>

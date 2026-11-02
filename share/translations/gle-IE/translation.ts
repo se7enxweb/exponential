@@ -83435,4 +83435,19 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Fanann a dtéacs. Ní bhaintear íomhánna, foirmeacha ná naisc chuig suíomhanna eile choíche.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Theip ar fhoilsiú statach %target ar %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>D'éirigh le foilsiú statach %target ar %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Sheol %site an ríomhphost seo mar go n-iarrann an sprioc foilsithe statach %target é.</translation>
+    </message>
+</context>
 </TS>

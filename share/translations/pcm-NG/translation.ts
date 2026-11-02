@@ -83413,4 +83413,19 @@ You go need change di class of di node wit di swap functionality.</translation>
         <translation>Dia text go remain. Picture, form and link wey dey go oda site, we no dey ever comot dem.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Static publishing of %target no work for %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Static publishing of %target work well for %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site send dis mail because di static publishing target %target ask for am.</translation>
+    </message>
+</context>
 </TS>

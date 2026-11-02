@@ -83403,4 +83403,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ସେଗୁଡ଼ିକର ପାଠ୍ୟ ରହିଥାଏ। ଚିତ୍ର, ଫର୍ମ ଓ ଅନ୍ୟ ସାଇଟର ଲିଙ୍କ କେବେ ହଟାଯାଏ ନାହିଁ।</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site ରେ %target ର ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ବିଫଳ ହେଲା</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site ରେ %target ର ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ସଫଳ ହେଲା</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ଲକ୍ଷ୍ୟ %target ଏହା ଚାହୁଁଥିବାରୁ %site ଏହି ମେଲ୍ ପଠାଇଛି।</translation>
+    </message>
+</context>
 </TS>

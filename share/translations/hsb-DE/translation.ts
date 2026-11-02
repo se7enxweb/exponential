@@ -83405,4 +83405,19 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <translation>Jich tekst wostanje. Wobrazy, formulary a wotkazy na druhe sydła so ženje njewotstronjeja.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statiske wozjewjenje %target na %site njeje so poradźiło</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statiske wozjewjenje %target na %site je so poradźiło</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tutu e-mejlku je %site pósłał, dokelž cil statiskeho wozjewjenja %target wo nju prosy.</translation>
+    </message>
+</context>
 </TS>

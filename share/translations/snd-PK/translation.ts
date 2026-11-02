@@ -83405,4 +83405,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>انهن جو متن رهي ٿو. تصويرون، فارم ۽ ٻين سائيٽن جا لنڪ ڪڏهن به نه هٽايا ويندا آهن.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site تي %target جي جامد اشاعت ناڪام ٿي</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site تي %target جي جامد اشاعت ڪامياب ٿي</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>هي ميل %site موڪلي آهي ڇاڪاڻ ته جامد اشاعت جو هدف %target ان جي گهر ڪري ٿو.</translation>
+    </message>
+</context>
 </TS>

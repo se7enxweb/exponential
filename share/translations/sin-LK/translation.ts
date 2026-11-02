@@ -83405,4 +83405,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ඒවායේ පාඨය ඉතිරි වේ. රූප, පෝරම සහ වෙනත් අඩවිවලට යන සබැඳි කිසිදා ඉවත් නොකෙරේ.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site හි %target හි ස්ථිතික ප්‍රකාශනය අසාර්ථක විය</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site හි %target හි ස්ථිතික ප්‍රකාශනය සාර්ථක විය</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ස්ථිතික ප්‍රකාශන ඉලක්කය %target එය ඉල්ලන නිසා %site මෙම තැපෑල යැවීය.</translation>
+    </message>
+</context>
 </TS>

@@ -83405,4 +83405,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>련결글은 남습니다. 화상, 서식, 다른 싸이트로 가는 련결은 삭제되지 않습니다.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site에서 %target의 정적게시가 실패하였습니다</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site에서 %target의 정적게시가 성공하였습니다</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>정적게시 대상 %target이 요구하므로 %site에서 이 편지를 보냈습니다.</translation>
+    </message>
+</context>
 </TS>

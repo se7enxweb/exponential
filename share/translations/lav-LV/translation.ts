@@ -83435,4 +83435,19 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <translation>To teksts paliek. Attēli, veidlapas un saites uz citām vietnēm nekad netiek noņemtas.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Mērķa %target statiskā publicēšana vietnē %site neizdevās</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Mērķa %target statiskā publicēšana vietnē %site izdevās</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Šo vēstuli nosūtīja %site, jo statiskās publicēšanas mērķis %target to pieprasa.</translation>
+    </message>
+</context>
 </TS>

@@ -83435,4 +83435,19 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <translation>Niiden teksti säilyy. Kuvia, lomakkeita ja linkkejä muille sivustoille ei koskaan poisteta.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Kohteen %target staattinen julkaisu epäonnistui sivustolla %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Kohteen %target staattinen julkaisu onnistui sivustolla %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tämän viestin lähetti %site, koska staattisen julkaisun kohde %target pyytää sitä.</translation>
+    </message>
+</context>
 </TS>

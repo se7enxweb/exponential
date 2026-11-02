@@ -565,7 +565,7 @@ class expStaticLinkRewriter
         $rewriter = $this;
         $publicUrl = $this->publicUrl;
         $liveUrl = $this->liveUrl;
-        return (string)preg_replace_callback( '#([?&;][^=&;\#]*=)(https?(?:%3A|:)(?:%2F|/){2}[^&;\#]*)#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile, $publicUrl, $liveUrl )
+        return expStaticPostProcessor::checked( preg_replace_callback( '#([?&;][^=&;\#]*=)(https?(?:%3A|:)(?:%2F|/){2}[^&;\#]*)#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile, $publicUrl, $liveUrl )
         {
             $inner = urldecode( $m[2] );
             $c = $rewriter->classify( $inner, $documentPath );
@@ -576,7 +576,7 @@ class expStaticLinkRewriter
             if ( !preg_match( '#^https?://#i', $new ) || $new === $inner )
                 return $m[0];
             return $m[1] . rawurlencode( $new );
-        }, $url );
+        }, $url ), 'rewriteEmbedded' );
     }
 
     /** The address on the live site, or the address unchanged when no live site is known. */
@@ -664,19 +664,19 @@ class expStaticLinkRewriter
     public function rewriteCss( $css, $documentPath, $fromFile )
     {
         $rewriter = $this;
-        $css = preg_replace_callback( '#url\(\s*(["\']?)([^"\')]*)\1\s*\)#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
+        $css = expStaticPostProcessor::checked( preg_replace_callback( '#url\(\s*(["\']?)([^"\')]*)\1\s*\)#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
         {
             $value = trim( $m[2] );
             if ( $value === '' || stripos( $value, 'data:' ) === 0 )
                 return $m[0];
             $new = $rewriter->rewriteUrl( $value, $documentPath, $fromFile );
             return $new === $value ? $m[0] : 'url(' . $m[1] . $new . $m[1] . ')';
-        }, (string)$css );
-        return (string)preg_replace_callback( '#(@import\s+)(["\'])([^"\']+)\2#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
+        }, (string)$css ), 'rewriteCss' );
+        return expStaticPostProcessor::checked( preg_replace_callback( '#(@import\s+)(["\'])([^"\']+)\2#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
         {
             $new = $rewriter->rewriteUrl( $m[3], $documentPath, $fromFile );
             return $m[1] . $m[2] . $new . $m[2];
-        }, (string)$css );
+        }, (string)$css ), 'rewriteCss' );
     }
 
     /**
@@ -752,7 +752,7 @@ class expStaticLinkRewriter
     private function rewriteJsonLd( $json, $documentPath, $fromFile )
     {
         $rewriter = $this;
-        return (string)preg_replace_callback( '#"(https?:(?:\\\\?/){2}[^"\s<>]+)"#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
+        return expStaticPostProcessor::checked( preg_replace_callback( '#"(https?:(?:\\\\?/){2}[^"\s<>]+)"#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
         {
             $escaped = strpos( $m[1], '\\/' ) !== false;
             $url = str_replace( '\\/', '/', $m[1] );
@@ -760,17 +760,17 @@ class expStaticLinkRewriter
             if ( $new === $url )
                 return $m[0];
             return '"' . ( $escaped ? str_replace( '/', '\\/', $new ) : $new ) . '"';
-        }, (string)$json );
+        }, (string)$json ), 'rewriteJsonLd' );
     }
 
     /** The tags of a piece of markup with no script, style or comment in it. */
     private function rewriteTags( $markup, $documentPath, $fromFile )
     {
         $rewriter = $this;
-        return (string)preg_replace_callback( '#<(/?)([a-zA-Z][a-zA-Z0-9:-]*)(\s[^>]*?)?(/?)>#s', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
+        return expStaticPostProcessor::checked( preg_replace_callback( '#<(/?)([a-zA-Z][a-zA-Z0-9:-]*)(\s[^>]*?)?(/?)>#s', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
         {
             return $rewriter->rewriteTag( $m, $documentPath, $fromFile );
-        }, $markup );
+        }, $markup ), 'rewriteTags' );
     }
 
     /**

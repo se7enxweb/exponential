@@ -83403,4 +83403,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>متن آن‌ها باقی می‌ماند. تصویرها، فرم‌ها و پیوندها به سایت‌های دیگر هرگز حذف نمی‌شوند.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>انتشار ایستای %target در %site ناموفق بود</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>انتشار ایستای %target در %site موفق بود</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>این ایمیل را %site فرستاده است، چون مقصد انتشار ایستای %target آن را درخواست می‌کند.</translation>
+    </message>
+</context>
 </TS>

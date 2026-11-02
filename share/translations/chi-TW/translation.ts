@@ -83403,4 +83403,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>連結文字保留。圖片、表單和指向其他網站的連結絕不移除。</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%target 在 %site 上的靜態發布失敗</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%target 在 %site 上的靜態發布成功</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>此郵件由 %site 寄出，因為靜態發布目標 %target 要求寄送。</translation>
+    </message>
+</context>
 </TS>

@@ -83405,4 +83405,19 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <translation>Barreeffamni isaanii ni hafa. Suuraaleen, unkaaleen fi hidhoonni marsariitii biraatti geessan gonkumaa hin haqaman.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Maxxansi dhaabbataa %target %site irratti hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Maxxansi dhaabbataa %target %site irratti milkaa'eera</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ergaan kun %site irraa ergame sababni isaas galmi maxxansa dhaabbataa %target waan gaafatuuf.</translation>
+    </message>
+</context>
 </TS>

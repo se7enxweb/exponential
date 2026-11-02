@@ -84708,4 +84708,19 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Deras text står kvar. Bilder, formulär och länkar till andra webbplatser tas aldrig bort.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisk publicering av %target misslyckades på %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisk publicering av %target lyckades på %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Det här mejlet skickades av %site eftersom målet för statisk publicering %target ber om det.</translation>
+    </message>
+</context>
 </TS>

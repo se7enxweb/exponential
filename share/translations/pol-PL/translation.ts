@@ -84617,4 +84617,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Ich tekst pozostaje. Obrazy, formularze i linki do innych witryn nigdy nie są usuwane.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statyczna publikacja %target w %site nie powiodła się</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statyczna publikacja %target w %site powiodła się</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tę wiadomość wysłał %site, ponieważ prosi o nią cel publikacji statycznej %target.</translation>
+    </message>
+</context>
 </TS>

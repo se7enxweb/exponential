@@ -83405,4 +83405,19 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <translation>Fanaidh an teacsa aca. Cha tèid dealbhan, foirmean is ceanglaichean gu làraichean eile a thoirt air falbh idir.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Dh'fhàillig foillseachadh stadach %target air %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Shoirbhich foillseachadh stadach %target air %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Chaidh am post-d seo a chur le %site a chionn 's gu bheil an targaid foillseachaidh stadaich %target ga iarraidh.</translation>
+    </message>
+</context>
 </TS>
