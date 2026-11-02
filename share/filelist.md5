@@ -427,7 +427,7 @@ b85be7774f406553186dbc720d2914a9  design/admin/override/templates/embed_image.tp
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-b062611c56e0869e5fa102ed768b1600  design/admin/stylesheets/components.css
+d2af496167257b5af74cdc5f8ce0bb31  design/admin/stylesheets/components.css
 74c4546c22cf2c24230dfa64314f4740  design/admin/stylesheets/content.css
 57a6c6137002ae3eeaf1e05958ecb19a  design/admin/stylesheets/core.css
 e4286f3980c415c880cdb413793a0eea  design/admin/stylesheets/ezinfo.css
@@ -1228,7 +1228,7 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 7fa5263575d70e112afa865433af87c9  design/admin4/stylesheets/admin4.css
 60043ca1b3b05084022afe6127dc974f  design/admin4/stylesheets/base.css
-b062611c56e0869e5fa102ed768b1600  design/admin4/stylesheets/components.css
+d2af496167257b5af74cdc5f8ce0bb31  design/admin4/stylesheets/components.css
 005d3f98e2671b2f9ea348032aaae860  design/admin4/stylesheets/core.css
 79bfd7f0041431e3d99f1f446678dbc0  design/admin4/stylesheets/editor_content.css
 e26094514c3dac416b5fb6be0a9d9e21  design/admin4/stylesheets/ezinfo.css
@@ -3451,7 +3451,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-c77b3f445ed83280178f4ffd69cdab5e  doc/changelogs/6.0/6.0.15.md
+64fd21d9cb167c0507526ecabece909d  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -27772,7 +27772,7 @@ a32fa43c595684b473e151bfc9b9c4d6  tests/tests/design/AdminLanguageStatesTest.php
 956519f9852214a1669801d1f034832c  tests/tests/design/AdminLeftColumnFontTest.php
 1ec9364a4cf79ef35263f4b8aeeeddf3  tests/tests/design/AdminLeftMenuGroupsTest.php
 0c8668e57e44493f51bd9bbe18bd7e0c  tests/tests/design/AdminLegacyControlsTest.php
-f18920d945220d68df6ce28e3930b40d  tests/tests/design/AdminListRowsTest.php
+b834d5022efb348245eeada601da2b5d  tests/tests/design/AdminListRowsTest.php
 20bcb545bc9e0806923db66e69d34793  tests/tests/design/AdminLogoTest.php
 de10f10be406b6da49c1d3ab75eb17d5  tests/tests/design/AdminMegaMenuTest.php
 e6f9de3c023ee28a720eb066181b2e3b  tests/tests/design/AdminMenuPolicyListTest.php

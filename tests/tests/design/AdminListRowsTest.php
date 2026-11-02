@@ -93,6 +93,25 @@ class AdminListRowsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '.a4-page .a4-section > p.a4-empty {', $block, 'only the one-line empty state of a section is slim' );
     }
 
+    public function testOnlyFourFactsTakeEqualColumns()
+    {
+        $block = self::block();
+        // four facts line up in equal columns; from five they stay running text (the columns broke words)
+        $this->assertStringContainsString( '> .a4-facts:has(> div:nth-child(4)):not(:has(> div:nth-child(5))) {', $block );
+        $this->assertStringNotContainsString( '> .a4-facts:has(> div:nth-child(4)) {', $block );
+    }
+
+    public function testAnAddressTakesTheWholeFirstLineOfItsRow()
+    {
+        $block = preg_replace( '/\s+/', ' ', self::block() );
+        $this->assertStringContainsString( '.a4-page #url-list > li.a4-card > .a4-card-head > .a4-card-title { grid-column: 1 / -1; grid-row: 1; }', $block );
+        $this->assertStringContainsString( '.a4-page #url-list > li.a4-card > .a4-facts { grid-column: 1 / 3; grid-row: 2; }', $block );
+        foreach ( array( 'admin', 'admin4' ) as $design )
+        {
+            $this->assertStringContainsString( '<ul class="a4-cards" id="url-list">', AdminFiles::read( self::root() . '/design/' . $design . '/templates/url/list.tpl' ), $design );
+        }
+    }
+
     public function testTouchKeepsFullSizeButtons()
     {
         $block = self::block();

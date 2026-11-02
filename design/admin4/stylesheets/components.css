@@ -2143,6 +2143,14 @@ a.a4-current-user-name { color: var(--a4-ink); font-weight: normal; text-decorat
 .a4-page ul.a4-cards:not(.a4-card-body, [aria-labelledby="account-actions-title"] *) .a4-card-title > .a4-badges { flex-wrap: wrap; }
 /* a long address (url/list) breaks inside the name instead of dropping below the checkbox */
 .a4-page ul.a4-cards:not(.a4-card-body, [aria-labelledby="account-actions-title"] *) .a4-card-title > h3.a4-url-addr { flex: 1 1 10em; min-width: 0; overflow-wrap: anywhere; }
+/* url/list: an address is the row's name and often long; from 701px it takes the whole first line of the row (with
+   its badges at the end), the facts and the buttons go to the second line, the buttons at its end. In the name column
+   alone a long address broke into three or four lines beside an empty half of the row. */
+@media (min-width: 701px) {
+  .a4-page #url-list > li.a4-card > .a4-card-head > .a4-card-title { grid-column: 1 / -1; grid-row: 1; }
+  .a4-page #url-list > li.a4-card > .a4-card-head > .a4-actions { grid-column: 3; grid-row: 2; justify-self: end; }
+  .a4-page #url-list > li.a4-card > .a4-facts { grid-column: 1 / 3; grid-row: 2; }
+}
 
 /* From 701px fixed columns as in a table: name | buttons | facts. The card head dissolves (display: contents) so
    the name and the buttons get columns of their own; the rows are subgrids of the list, so the buttons and facts of
@@ -2199,16 +2207,19 @@ a.a4-current-user-name { color: var(--a4-ink); font-weight: normal; text-decorat
 .a4-page ul.a4-cards:not(.a4-card-body, [aria-labelledby="account-actions-title"] *) > li.a4-card > :is(.a4-facts, .a4-card-body > .a4-facts) dd > .a4-meta { display: inline; margin-inline-start: var(--a4-space-1); }
 
 /* More than three facts (section/list) take their own line below the name, in equal columns instead of running
-   text, so "Objects", "Roles" and so on line up across the rows. */
+   text, so "Objects", "Roles" and so on line up across the rows. Only up to four: from five (rss/list: address,
+   sources, items, last written, modified; content/translations; package/list) the columns of a content column's width
+   broke the names, dates and sentences inside the word, four or five lines a row. They stay running text on that
+   line, wrapping between the facts. */
 @media (min-width: 701px) {
-  .a4-page ul.a4-cards:not(.a4-card-body, [aria-labelledby="account-actions-title"] *) > li.a4-card > .a4-facts:has(> div:nth-child(4)) {
+  .a4-page ul.a4-cards:not(.a4-card-body, [aria-labelledby="account-actions-title"] *) > li.a4-card > .a4-facts:has(> div:nth-child(4)):not(:has(> div:nth-child(5))) {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: minmax(0, 2fr);   /* the first fact (the navigation part of a section) is usually the longest */
     grid-auto-columns: minmax(0, 1fr);
     column-gap: var(--a4-space-4);
   }
-  .a4-page ul.a4-cards:not(.a4-card-body, [aria-labelledby="account-actions-title"] *) > li.a4-card > .a4-facts:has(> div:nth-child(4)) dd { min-width: 0; overflow-wrap: anywhere; }
+  .a4-page ul.a4-cards:not(.a4-card-body, [aria-labelledby="account-actions-title"] *) > li.a4-card > .a4-facts:has(> div:nth-child(4)):not(:has(> div:nth-child(5))) dd { min-width: 0; overflow-wrap: anywhere; }
 }
 
 /* class/grouplist as a table: one row per group with fixed columns, as the former table of admin: select | name |
