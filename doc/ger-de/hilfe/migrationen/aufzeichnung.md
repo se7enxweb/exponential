@@ -50,9 +50,12 @@ Wählen Sie eine Aufzeichnung in der Liste (oder **Zeigen** im Balken). Die Seit
 
 - **Die Migration, die sie ergäbe:** ein Schritt je geänderter Sache, in der Reihenfolge der ersten Änderung. Eine
   Sache, die angelegt und geändert wurde, ist ein Schritt, der sie mit ihren letzten Werten anlegt; eine Sache, die
-  angelegt und wieder entfernt wurde, fällt weg. Hat die Installation die YAML-Schritttypen, die die Migration
-  braucht, noch nicht, nennt ein Hinweis sie, und der Konsolenbefehl
-  `./console exp:migration:generate --from-recording=<id>` listet dasselbe.
+  angelegt und wieder entfernt wurde, fällt weg. **Migration erzeugen** schreibt sie als `<zeit>_<name>.yml` in das
+  Migrationsverzeichnis der Site (der Name aus dem Feld oder die Bezeichnung der Aufzeichnung); die Meldung nennt die
+  Datei. Änderungen, die kein Schritt wiederholen kann (das Vertauschen zweier Orte, ein Workflow-Auslöser, eine
+  geheime Einstellung), stehen oben in der Datei, um sie von Hand zu machen. Ist eine Erweiterung, die einen
+  Schritttyp der Migration mitbringt, nicht aktiv, nennt ein Hinweis statt des Knopfs die Schritttypen. Die Konsole
+  macht dasselbe: `./console exp:migration:generate --from-recording=<id> --apply`.
 - **Was sie erfasst hat:** jede Änderung in ihrer Reihenfolge: die Zeit, die Änderung (das Audit-Ereignis), der
   Schritt, für den sie steht, und worum es geht, über Remote-ID oder Bezeichner, nie über eine Zahl, die sich
   zwischen Installationen unterscheidet.
@@ -67,7 +70,9 @@ Die Seite listet die ersten 1000 Änderungen; `./console exp:migration:record:sh
   hält nur fest, dass ein Benutzer angelegt oder geändert wurde, seine Gruppen und ob er aktiv ist.
   „Absichtlich weggelassen“ nennt, was weggelassen wurde.
 - Der Wert einer Einstellung, deren Name sagt, dass sie ein Geheimnis ist.
-- Wer eine Änderung gemacht hat, in der Migration: eine erzeugte Migration nennt niemanden.
+- Wer eine Änderung gemacht hat, in der Migration: eine erzeugte Migration nennt niemanden. Einen Benutzer, den sie
+  anlegt, nennt sie über Geheimnisse (Setup > Geheimnisse) für Login, E-Mail-Adresse und Passwort, die auf jeder
+  Installation vor dem Lauf angelegt werden.
 - Lesen, Suchen, Anmelden und Caches leeren: sie ändern nichts.
 - Die Änderungen eines Migrationslaufs: sie sind schon eine Migration.
 

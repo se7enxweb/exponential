@@ -27,6 +27,7 @@ Ein Schritt einer YAML-Migration mit `type: user`. Die Klasse `expMigrationStepU
 | `password` | `string` | create, update, ensure |  | das Passwort, gehasht, wie eZUser es hasht (ensure: nur für einen neuen Benutzer); nehmen Sie einen Platzhalter, nie das Passwort in der Datei |
 | `password_hash` | `string` | create, update, ensure |  | ein Passwort-Hash, der so gespeichert wird, wie er ist (statt password:) |
 | `password_hash_type` | `string` | create, update, ensure |  | der Typ von password_hash: (md5_password, md5_user, md5_site, plaintext, password_hash ...) |
+| `secrets` | `map` | create, update, ensure |  | login, email oder password => der Name eines Geheimnisses (Setup > Geheimnisse oder env:<Variable>), aus dem der Wert gelesen wird, wenn der Schritt läuft, statt login:, email: oder password: |
 | `enabled` | `bool` | create, update, ensure |  | ob sich das Konto anmelden kann (Standard für einen neuen Benutzer: true) |
 | `groups` | `list` | create, update, ensure |  | die Knoten der Benutzergruppen, in denen der Benutzer ist (die erste ist sein Hauptort); update und ensure fügen ihn denen hinzu, in denen er nicht ist |
 | `remove_groups` | `list` | update |  | die Knoten der Benutzergruppen, die der Benutzer verlässt (nicht die Hauptgruppe) |

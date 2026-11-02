@@ -78,11 +78,12 @@ those of `exp:upgrade` (0, 1 failed, 2 usage, 3 database unreachable, 4 internal
   ([Migrations: SQL and settings](../../guides/migrations-sql-and-settings.md)).
 - A migration run applies the kernel's upgrade steps of the stages `database` and `scripts` only; the stages `code`,
   `libraries` and `finish` stay with `exp:upgrade` (they are listed as `deferred`).
-- Setup > Migrations shows, runs and rolls back migrations, and records changes (the policy `migration/edit`);
-  writing and generating migrations and the settings of the migrations repository are done in files and on the
-  console.
-- A recording is kept, but a migration is generated from it only once the YAML step types it uses exist:
-  `exp:migration:generate --from-recording` lists them until then and writes nothing.
+- Setup > Migrations shows, runs and rolls back migrations, records changes and generates a migration of a recording
+  (the policy `migration/edit`); writing migrations, the other generators and the settings of the migrations
+  repository are done in files and on the console.
+- A migration generated from a recording or from what is there leaves out what no step type repeats (a swap of two
+  locations, workflow triggers, settings of extensions, secret settings) and names it at the top of the file;
+  generating from a diff and the converter of the reference bundle's YAML are not there yet.
 - A run started in the administration needs `proc_open` and a PHP command line binary
   (`migration.ini [AdminSettings] PhpCliPath`); without them the page says so and the console runs it.
 - Commits, tags and pushes need git_manager; without it a run says so and commits nothing.

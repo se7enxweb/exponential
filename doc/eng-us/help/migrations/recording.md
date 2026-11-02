@@ -44,9 +44,12 @@ both.
 Choose a recording in the list (or **Show** in the bar). The page has three parts:
 
 - **The migration it would make:** one step per thing changed, in the order they were first changed. A thing created
-  and changed is one step that creates it with its last values; a thing created and removed again is left out. When
-  the installation does not have the YAML step types the migration needs yet, a note names them, and the console
-  command `./console exp:migration:generate --from-recording=<id>` lists the same.
+  and changed is one step that creates it with its last values; a thing created and removed again is left out.
+  **Generate migration** writes it to the site's migrations directory as `<time>_<name>.yml` (the name field, or the
+  recording's label); the message names the file. Changes no step can repeat (a swap of two locations, a workflow
+  trigger, a secret setting) are named at the top of the file, to be made by hand. When an extension that gives a step
+  type the migration needs is not active, a note names the step types instead of the button. The console does the
+  same: `./console exp:migration:generate --from-recording=<id> --apply`.
 - **What it captured:** every change in the order it was made: the time, the change (the audit event), the step it
   stands for and what it is about, by remote id or identifier, never by a number that differs between installations.
 - **Discard:** removes the recording and what it captured. What was changed stays changed. Tick
@@ -60,7 +63,8 @@ The page lists the first 1000 changes; `./console exp:migration:record:show <id>
   that a user was created or changed, its groups and whether it is enabled. "Left out on purpose" names what was
   left out.
 - The value of a setting whose name says it is a secret.
-- Who made a change, in the migration: a generated migration names nobody.
+- Who made a change, in the migration: a generated migration names nobody. A user it creates is named by secrets
+  (Setup > Secrets) for the login, the e-mail address and the password, set on each installation before the run.
 - Reading, searching, signing in and clearing caches: they change nothing.
 - The changes a migration run makes: they are a migration already.
 
