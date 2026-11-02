@@ -31,7 +31,7 @@ StartPage=help/trainers/trainers-start-here.md
 
 ## InfoPages
 
-Default: a list of 6: `help/trainers/developers/module-09-the-console-and-persistent-objects/migrations.md`, `help/migrations/README.md`, `guides/migrations-tutorial.md`, `help/migrations/migrations-versus-migrating-a-site.md`, `help/migrations/recipes/README.md`, `help/migrations/faq.md`.
+Default: a list of 8: `help/trainers/developers/module-09-the-console-and-persistent-objects/migrations.md`, `help/migrations/README.md`, `guides/migrations-tutorial.md`, `help/migrations/migrations-versus-migrating-a-site.md`, `help/migrations/recipes/README.md`, `help/migrations/faq.md`, `help/trainers/teach-web-publishing-with-static-sites.md`, `help/static-publishing/make-a-free-website-in-15-minutes.md`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -45,6 +45,8 @@ InfoPages[]=guides/migrations-tutorial.md
 InfoPages[]=help/migrations/migrations-versus-migrating-a-site.md
 InfoPages[]=help/migrations/recipes/README.md
 InfoPages[]=help/migrations/faq.md
+InfoPages[]=help/trainers/teach-web-publishing-with-static-sites.md
+InfoPages[]=help/static-publishing/make-a-free-website-in-15-minutes.md
 */ ?>
 ```
 

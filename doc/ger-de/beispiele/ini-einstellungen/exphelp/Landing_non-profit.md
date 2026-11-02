@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_non-profit]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [Landing_non-profit] in exphelp.ini: StartPage, Related"
-keywords: Einstellung, exphelp.ini, Landing_non-profit, INI, setting, StartPage, Related
+summary: "Die Einstellungen von [Landing_non-profit] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: Einstellung, exphelp.ini, Landing_non-profit, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_non-profit]
 
-Der Block `[Landing_non-profit]` von `settings/exphelp.ini`, mit 2 Einstellung(en).
+Der Block `[Landing_non-profit]` von `settings/exphelp.ini`, mit 3 Einstellung(en).
 
 Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -26,6 +26,21 @@ Standard: `help/non-profits/non-profits-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_non-profit]
 StartPage=help/non-profits/non-profits-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Standard: eine Liste mit 2: `help/non-profits/a-free-website-for-your-nonprofit.md`, `help/static-publishing/make-a-free-website-in-15-minutes.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_non-profit]
+# ein leeres "InfoPages[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+InfoPages[]
+InfoPages[]=help/non-profits/a-free-website-for-your-nonprofit.md
+InfoPages[]=help/static-publishing/make-a-free-website-in-15-minutes.md
 */ ?>
 ```
 

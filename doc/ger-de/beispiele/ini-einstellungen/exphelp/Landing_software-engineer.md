@@ -31,7 +31,7 @@ StartPage=help/software-engineers/software-engineers-start-here.md
 
 ## InfoPages
 
-Standard: eine Liste mit 6: `help/software-engineers/migrations-for-software-engineers.md`, `help/migrations/README.md`, `help/software-engineers/schema-changes-and-migrations.md`, `help/migrations/recipes/testing-migrations.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/recipes/reviewing-a-migration.md`.
+Standard: eine Liste mit 8: `help/software-engineers/migrations-for-software-engineers.md`, `help/migrations/README.md`, `help/software-engineers/schema-changes-and-migrations.md`, `help/migrations/recipes/testing-migrations.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/recipes/reviewing-a-migration.md`, `help/php-developers/static-publishing-from-the-command-line-and-ci.md`, `guides/static-publishing-ci-and-github-actions.md`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -45,6 +45,8 @@ InfoPages[]=help/software-engineers/schema-changes-and-migrations.md
 InfoPages[]=help/migrations/recipes/testing-migrations.md
 InfoPages[]=help/migrations/recipes/deploying-with-migrations.md
 InfoPages[]=help/migrations/recipes/reviewing-a-migration.md
+InfoPages[]=help/php-developers/static-publishing-from-the-command-line-and-ci.md
+InfoPages[]=guides/static-publishing-ci-and-github-actions.md
 */ ?>
 ```
 

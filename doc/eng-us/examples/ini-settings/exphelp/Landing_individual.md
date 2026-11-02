@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_individual]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_individual] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_individual, INI, setting, StartPage, Related
+summary: "The settings of [Landing_individual] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_individual, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_individual]
 
-The block `[Landing_individual]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_individual]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,21 @@ Default: `help/individuals/individuals-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_individual]
 StartPage=help/individuals/individuals-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 2: `help/individuals/your-personal-site-for-free.md`, `help/static-publishing/make-a-free-website-in-15-minutes.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_individual]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/individuals/your-personal-site-for-free.md
+InfoPages[]=help/static-publishing/make-a-free-website-in-15-minutes.md
 */ ?>
 ```
 

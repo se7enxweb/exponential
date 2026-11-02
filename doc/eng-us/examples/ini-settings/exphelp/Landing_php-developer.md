@@ -31,7 +31,7 @@ StartPage=help/php-developers/php-developers-start-here.md
 
 ## InfoPages
 
-Default: a list of 6: `help/php-developers/writing-migrations-in-php.md`, `help/migrations/README.md`, `guides/migrations-tutorial.md`, `guides/migrations-php.md`, `help/migrations/recipes/add-a-database-table.md`, `help/migrations/recipes/create-or-change-a-content-class.md`.
+Default: a list of 8: `help/php-developers/writing-migrations-in-php.md`, `help/migrations/README.md`, `guides/migrations-tutorial.md`, `guides/migrations-php.md`, `help/migrations/recipes/add-a-database-table.md`, `help/migrations/recipes/create-or-change-a-content-class.md`, `help/php-developers/static-publishing-from-the-command-line-and-ci.md`, `guides/static-publishing-ci-and-github-actions.md`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -45,6 +45,8 @@ InfoPages[]=guides/migrations-tutorial.md
 InfoPages[]=guides/migrations-php.md
 InfoPages[]=help/migrations/recipes/add-a-database-table.md
 InfoPages[]=help/migrations/recipes/create-or-change-a-content-class.md
+InfoPages[]=help/php-developers/static-publishing-from-the-command-line-and-ci.md
+InfoPages[]=guides/static-publishing-ci-and-github-actions.md
 */ ?>
 ```
 

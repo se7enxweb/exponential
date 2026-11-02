@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_advocate]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_advocate] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_advocate, INI, setting, StartPage, Related
+summary: "The settings of [Landing_advocate] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_advocate, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_advocate]
 
-The block `[Landing_advocate]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_advocate]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,21 @@ Default: `help/advocates/advocates-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_advocate]
 StartPage=help/advocates/advocates-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 2: `help/press/talking-about-free-static-sites-with-exponential.md`, `help/whats-new-in-6-0-15-static-publishing.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_advocate]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/press/talking-about-free-static-sites-with-exponential.md
+InfoPages[]=help/whats-new-in-6-0-15-static-publishing.md
 */ ?>
 ```
 
