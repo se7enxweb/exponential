@@ -441,6 +441,9 @@ class expStaticGitHub
         $out['repo'] = array( 'exists' => true, 'private' => !empty( $r['repo']['private'] ),
                               'visibility' => isset( $r['repo']['visibility'] ) ? (string)$r['repo']['visibility'] : ( !empty( $r['repo']['private'] ) ? 'private' : 'public' ),
                               'html_url' => (string)$r['repo']['html_url'], 'default_branch' => (string)$r['repo']['default_branch'] );
+        $branchWarning = self::environmentBranchWarning( $target, $out['repo']['default_branch'], "$owner/$repo" );
+        if ( $branchWarning !== '' )
+            $out['warnings'][] = $branchWarning;
         $p = $this->pages( $owner, $repo );
         if ( $p['pages'] !== null )
         {
@@ -461,6 +464,27 @@ class expStaticGitHub
         if ( $out['repo']['private'] )
             $out['warnings'][] = 'the repository is private: GitHub Pages serves a private repository only on a paid plan (GitHub Pro, Team or Enterprise)';
         return $out;
+    }
+
+    /**
+     * With Delivery=actions the workflow deploys from the target's branch, but the environment github-pages that
+     * GitHub makes for Pages lets only the repository's default branch deploy until another branch is added to it:
+     * the deployment would be refused. Pure.
+     *
+     * @param expStaticTarget $target
+     * @param string $defaultBranch the repository's default_branch ('' when unknown: no warning)
+     * @param string $repository owner/repo, for the text
+     * @return string the warning, '' when there is none
+     */
+    public static function environmentBranchWarning( expStaticTarget $target, $defaultBranch, $repository = '' )
+    {
+        $branch = (string)$target->setting( 'Branch' );
+        $defaultBranch = (string)$defaultBranch;
+        if ( $target->setting( 'Delivery' ) !== 'actions' || $defaultBranch === '' || $branch === '' || $branch === $defaultBranch )
+            return '';
+        return 'Delivery=actions deploys from the branch ' . $branch . ', but the environment github-pages of ' . ( $repository !== '' ? $repository : 'the repository' )
+             . ' lets only the default branch ' . $defaultBranch . ' deploy: add ' . $branch . ' in Settings > Environments > github-pages > Deployment branches,'
+             . ' or publish to ' . $defaultBranch;
     }
 
     /**
@@ -517,6 +541,9 @@ class expStaticGitHub
             $step( 'repository', 'unchanged', "$owner/$repo exists (" . ( !empty( $r['repo']['private'] ) ? 'private' : 'public' ) . ')' );
             if ( !empty( $r['repo']['private'] ) )
                 $out['warnings'][] = 'the repository is private: GitHub Pages serves a private repository only on a paid plan';
+            $branchWarning = self::environmentBranchWarning( $target, isset( $r['repo']['default_branch'] ) ? (string)$r['repo']['default_branch'] : '', "$owner/$repo" );
+            if ( $branchWarning !== '' )
+                $out['warnings'][] = $branchWarning;
         }
         else if ( $r['status'] === 404 && $options['create'] )
         {

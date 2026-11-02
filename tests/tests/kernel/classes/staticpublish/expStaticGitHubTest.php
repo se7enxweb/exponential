@@ -21,6 +21,8 @@
  *  GH-09 the OAuth device flow: code, pending, slow down, token
  *  GH-10 the DNS check: an apex with GitHub's four A records, missing and foreign records with their fixes, a
  *        subdomain's CNAME to <owner>.github.io, a CNAME to the repository's address
+ *  GH-12 Delivery=actions from a branch that is not the repository's default one: status and setup warn that the
+ *        environment github-pages lets only the default branch deploy
  *  GH-11 the opt-in integration test against a real GitHub repository: only with EXP_STATIC_GITHUB_TEST_TOKEN and
  *        EXP_STATIC_GITHUB_TEST_REPO (owner/repo) set; skipped otherwise
  *
@@ -197,6 +199,27 @@ class expStaticGitHubTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'none', $this->client()->buildStatus( 'octo-org', 'other', 'branch' )['status'] );
         $this->assertSame( 'queued', expStaticGitHub::runState( 'queued', '' ) );
         $this->assertSame( 'built', expStaticGitHub::runState( 'completed', 'success' ) );
+    }
+
+    /** GH-12 */
+    public function testActionsFromAnotherBranchThanTheDefaultWarns()
+    {
+        $this->answers['GET /repos/octo-org/demo-site'] = array( array( 200, array( 'private' => false, 'html_url' => 'https://github.com/octo-org/demo-site', 'default_branch' => 'main' ) ) );
+        $this->answers['GET /repos/octo-org/demo-site/pages'] = array( array( 200, array( 'build_type' => 'workflow', 'cname' => '' ) ) );
+        $this->answers['GET /repos/octo-org/demo-site/actions/workflows/static-publish-pages.yml/runs?per_page=1'] = array( array( 200, array( 'workflow_runs' => array() ) ) );
+        $this->answers['PUT /repos/octo-org/demo-site/pages'] = array( array( 204, null ) );
+
+        $actions = self::target( array( 'Delivery' => 'actions', 'Branch' => 'gh-pages' ) );
+        $warnings = implode( "\n", $this->client()->status( $actions )['warnings'] );
+        $this->assertStringContainsString( 'Delivery=actions deploys from the branch gh-pages', $warnings );
+        $this->assertStringContainsString( 'only the default branch main', $warnings );
+        $this->assertStringContainsString( 'Settings > Environments > github-pages', $warnings );
+        $this->assertStringContainsString( 'deploys from the branch gh-pages', implode( "\n", $this->client()->setup( $actions )['warnings'] ), 'the wizard\'s "Set up on GitHub" says it too' );
+
+        $onDefault = self::target( array( 'Delivery' => 'actions', 'Branch' => 'main' ) );
+        $this->assertStringNotContainsString( 'github-pages of', implode( "\n", $this->client()->status( $onDefault )['warnings'] ), 'the default branch may deploy' );
+        $this->assertSame( '', expStaticGitHub::environmentBranchWarning( self::target( array( 'Delivery' => 'branch', 'Branch' => 'gh-pages' ) ), 'main' ), 'a branch delivery has no environment' );
+        $this->assertSame( '', expStaticGitHub::environmentBranchWarning( $actions, '' ), 'no default branch known, no warning' );
     }
 
     /** GH-05 */

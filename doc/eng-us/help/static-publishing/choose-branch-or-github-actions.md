@@ -38,6 +38,8 @@ builds nothing) and deploys them with GitHub's own `deploy-pages` action.
 - A token needs the **Workflows: Read and write** permission to push the workflow file.
 - GitHub's environment `github-pages` allows deployments from the default branch only, unless you add others in
   **Settings > Environments**. Use the repository's default branch (often `main`), or add yours there.
+- `./console exp:static:github status <target>`, the "On GitHub" box and **Set up on GitHub** in the wizard warn when
+  the target's branch is not the repository's default branch.
 - In the wizard: step 4, **GitHub Actions**. Setting: `Delivery=actions`.
 
 Take this when the repository should also hold other workflows, when you want GitHub's deployment history, or when an

@@ -41,6 +41,8 @@ GitHub Pages wird von einem Workflow des Repositorys bereitgestellt. Der Build s
 - GitHubs Umgebung `github-pages` erlaubt Bereitstellungen nur aus dem Standard-Branch, sofern Sie unter
   **Settings > Environments** keine weiteren hinzufügen. Verwenden Sie den Standard-Branch des Repositorys (oft
   `main`), oder fügen Sie Ihren dort hinzu.
+- `./console exp:static:github status <ziel>`, der Kasten „Auf GitHub“ und **Auf GitHub einrichten** im Assistenten
+  warnen, wenn der Branch des Ziels nicht der Standard-Branch des Repositorys ist.
 - Im Assistenten: Schritt 4, **GitHub Actions**. Einstellung: `Delivery=actions`.
 
 Nehmen Sie diesen Weg, wenn das Repository auch andere Workflows enthalten soll, wenn Sie den Bereitstellungsverlauf
