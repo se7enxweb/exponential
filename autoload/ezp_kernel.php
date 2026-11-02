@@ -1264,6 +1264,8 @@ return array(
       'expDebugBarIPList'                                            => 'kernel/classes/debugbar/expdebugbariplist.php',
       'expDebugBarLog'                                               => 'kernel/classes/debugbar/expdebugbarlog.php',
       'expDebugBarPanelInterface'                                    => 'kernel/classes/debugbar/expdebugbarpanelinterface.php',
+      'expDebugBarPolicies'                                          => 'kernel/classes/debugbar/expdebugbarpolicies.php',
+      'expDebugBarPolicyNames'                                       => 'kernel/classes/debugbar/expdebugbarpolicies.php',
       'expDebugBarRegistry'                                          => 'kernel/classes/debugbar/expdebugbarregistry.php',
       'expDebugBarReport'                                            => 'lib/ezutils/classes/expdebugbarreport.php',
       'expDebugBarServerFunctions'                                   => 'kernel/classes/debugbar/expdebugbarserverfunctions.php',

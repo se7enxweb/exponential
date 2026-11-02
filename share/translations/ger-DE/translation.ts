@@ -71740,6 +71740,27 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>All functions</source>
         <translation>Alle Funktionen</translation>
+        <translation>Policies</translation>
+    </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Wird beim Aufklappen geladen.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>Modul/Funktion, Rolle, Einschränkung</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Policies durchsuchen</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Weitere laden</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/Funktion</translation>
     </message>
     <message>
         <source>Limitations</source>
@@ -71760,6 +71781,20 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown von %matching Richtlinien (%total insgesamt)</translation>
+        <source>All roles (%count policies)</source>
+        <translation>Alle Rollen (%count Policies)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Keine Policy passt.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown von %matched Policies</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Keine Antwort</translation>
     </message>
 </context>
 <context>

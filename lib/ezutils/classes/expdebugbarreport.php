@@ -193,11 +193,10 @@ class expDebugBarReport
             '%count rows match', 'Clear filter',
             'All', 'Errors', 'Warnings', 'Notices', 'Debug', 'Timing points', 'Strict',
             'Show messages', 'Copied 1 message', 'Copied %count messages','No messages to copy.', 'Could not copy the messages.', 'Sort by time', 'Sort by order', 'Slowest first',
-            // the User tab's copy button
+            // the User tab's copy button and its policies
             'Copied', 'Could not copy.',
-            // the User tab's role policies
-            'Module', 'Function', 'All modules', 'All functions', 'Role', 'Limitations', 'Show more',
-            'These roles have no policies.', 'No policy matches the filter.', '%shown of %matching policies (%total in all)',
+            'module/function, role, limitation', 'Search the policies', 'Role', 'Load more', 'Module/function', 'Limitations',
+            'none', 'All roles (%count policies)', 'No policy matches.', '%shown of %matched policies', 'No answer', 'the user',
             'Loading...', 'Could not load: %error', 'Retry',
             'Sign in with a user who may change settings (setup/setup) to change them here.', 'Sign in with setup access to change debug settings', 'Sign in with cache access to manage caches',
             'The settings service is not available yet. The classic controls below still work.',
@@ -536,7 +535,7 @@ class expDebugBarReport
         if ( $userProfile !== null )
         {
             self::panelStart( 'user', $tabs, $metrics );
-            echo self::userHtml( $userProfile );
+            echo self::userHtml( $userProfile, $userInfo['can_setup'] );
             self::panelEnd();
         }
 
@@ -1571,9 +1570,10 @@ class expDebugBarReport
      * role assignments with where each comes from.
      *
      * @param array $u expDebugBarUser::data()
+     * @param bool $policies whether the section of the policies is offered (setup/setup: they are loaded on demand)
      * @return string HTML
      */
-    public static function userHtml( array $u )
+    public static function userHtml( array $u, $policies = false )
     {
         $yes = function ( $value ) { return self::h( $value ? 'yes' : 'no' ); };
         $html = '<table class="exp-debug-facts exp-debug-user">';
@@ -1657,10 +1657,16 @@ class expDebugBarReport
                 $limit = $a['limit_identifier'] === '' ? '<em>' . self::h( 'none' ) . '</em>' : self::renderingValue( $a['limit_identifier'] . ' ' . $a['limit_value'] );
                 $from = $a['direct'] ? self::h( 'the user' )
                                      : self::h( 'group %name (object %id)', array( '%name' => $a['from_name'], '%id' => $a['from_id'] ) );
-                $html .= '<tr><td>' . (int)$a['role_id'] . '</td><td>' . self::renderingValue( $a['role'] ) . '</td><td>' . $limit . '</td><td>' . $from . '</td></tr>';
+                $html .= '<tr><td><a href="' . self::a( self::url( 'role/view/' . (int)$a['role_id'] ) ) . '">' . (int)$a['role_id'] . '</a></td><td>'
+                       . self::renderingValue( $a['role'] ) . '</td><td>' . $limit . '</td><td>' . $from . '</td></tr>';
             }
             $html .= '</table>';
-            $html .= self::userPoliciesHtml( $u['assignments'] );
+        }
+        // the policies of the roles: loaded when opened (expdebugbar::policies), a page at a time, searchable
+        if ( $policies )
+        {
+            $html .= '<details class="exp-debug-user-policies-section" data-exp-debug-policies data-role-url="' . self::a( self::url( 'role/view/' ) ) . '"><summary>' . self::h( 'Policies' ) . '</summary>'
+                   . '<div class="exp-debug-policies-body"><p class="exp-debug-hint">' . self::h( 'Loaded when opened.' ) . '</p></div></details>';
         }
         return $html;
     }

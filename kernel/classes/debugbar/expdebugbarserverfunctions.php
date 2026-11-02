@@ -435,30 +435,33 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
     }
 
     /**
+     * expdebugbar::policies: the policies of the current user's roles for the User tab, a page at a time
+     * (expDebugBarPolicies::PAGE rows): GET role (one of the user's role ids), q (a search, at most 100 characters),
+     * offset. The first call (no role, no q) also lists the roles with their number of policies. setup/setup only, as
+     * the tab.
+     *
+     * @return array expDebugBarPolicies::forUser()
+     */
+    public static function policies( $args )
+    {
+        self::requireSetup();
+        $role = self::param( 'role' );
+        $query = self::param( 'q', '' );
+        $offset = self::param( 'offset', 0 );
+        $query = is_string( $query ) ? ( function_exists( 'mb_substr' ) ? mb_substr( $query, 0, 100, 'UTF-8' ) : substr( $query, 0, 100 ) ) : '';
+        return expDebugBarPolicies::forUser( eZUser::currentUser(),
+                                             $role !== null && ctype_digit( (string)$role ) ? (int)$role : null,
+                                             $query,
+                                             ctype_digit( (string)$offset ) ? (int)$offset : 0 );
+    }
+
+    /**
      * expdebugbar::summary
      */
     public static function summary( $args )
     {
         self::requireRead();
         return expDebugBarSummary::collect();
-    }
-
-    /**
-     * expdebugbar::policies[::<module>[::<function>[::<offset>]]]: a page of the policies of the current user's roles
-     * (expDebugBarUser::policies()), for the User tab, which asks only when its Policies section is opened. The filter
-     * is in the path, as view parameters: "-" (or nothing) for every module or function. For whoever sees the User tab
-     * (expDebugBarUser::mayView()): a user with setup/setup, or an anonymous visitor who gets the debug output.
-     *
-     * @return array see expDebugBarUser::policyPage()
-     */
-    public static function policies( $args )
-    {
-        self::requireUserTab();
-        $args = array_values( (array)$args );
-        $module = self::policyFilterArg( $args, 0 );
-        $function = self::policyFilterArg( $args, 1 );
-        $offset = isset( $args[2] ) && ctype_digit( (string)$args[2] ) ? (int)$args[2] : 0;
-        return expDebugBarUser::policies( eZUser::currentUser(), $module, $function, $offset );
     }
 
     /** @throws InvalidArgumentException unless the current request may see the User tab (expDebugBarUser::mayView()) */
