@@ -15097,6 +15097,14 @@ Nóta: Ní dhíshuiteálfar na pacáistí.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>An t-ábhar is nuaí, an méid atá coinnithe le haghaidh athbhreithnithe, agus gníomhartha ar rogha.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Foilsigh cóip statach de shuíomh ar GitHub Pages nó ar aon óstach git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Foilsiú statach</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22096,6 +22104,18 @@ Nóta: Ní dhíshuiteálfar na pacáistí.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Freagraí ar iarratais stóráilte an API GraphQL, agus aicmí ábhair a scéimre.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Foilsigh cóip statach ar GitHub Pages nó ar aon óstach git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Foilsiú statach</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Freastalaíonn an taisce statach leathanaigh ón bhfreastalaí seo. Chun cóip statach de shuíomh a fhoilsiú áit éigin eile, ar GitHub Pages nó ar aon óstach git, úsáid foilsiú statach.</translation>
     </message>
 </context>
 <context>
@@ -76153,6 +76173,14 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Athruithe ar an tsuiteáil a choinnítear mar chomhaid: a stádas, na rití, rith agus cealú.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Foilsigh cóip statach de shuíomh ar GitHub Pages nó ar aon óstach git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Foilsiú statach</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80592,6 +80620,222 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>The run could not be started.</source>
         <translation>Níorbh fhéidir an rith a thosú.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Athruithe a thaifeadadh</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Fad is atá taifeadadh ar siúl, coinnítear a n-athraíonn tú sa riarachán nó i mbarra taoibh an tsuímh mar chéimeanna d'imirce: ábhar, ranganna, róil agus polasaithe, rannáin, úsáideoirí agus grúpaí, ailiasanna URL, socruithe. Stop é nuair atá tú réidh, féach ar a bhfuair sé agus gin imirce uaidh.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Níorbh fhéidir na taifeadtaí a léamh: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Níl táblaí na dtaifeadtaí ann fós: rith an t-uasghrádú ar dtús (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Tá taifeadadh múchta in migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>M'athruithe</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ní thaifeadann sé ach a n-athraíonn tusa, cibé áit a n-athraíonn tú é, go dtí go stopann tú é.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Taifeadadh</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ó %time, %count athrú go dtí seo.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Lipéad (roghnach)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Taispeáin a bhfuair sé</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Stop an taifeadadh</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Tosaigh ag taifeadadh m'athruithe</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fuinneog don suíomh ar fad</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Taifeadann sé gach athrú de chuid gach úsáideora agus an chonsóil go dtí go ndúntar é. Nuair a osclaítear é, iarrtar ort a dhearbhú gur tusa atá ann.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Oscailte</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Dún an fhuinneog</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Oscail an fhuinneog don suíomh ar fad</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Taifeadtaí</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ní thaifeadtar riamh cuntas úsáideora (ainm logála isteach, ríomhphost, pasfhocal) ná réimsí na gcuntas úsáideora.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Athruithe</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>An suíomh ar fad</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Athruithe de chuid %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Stoptha</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Níl aon taifeadadh ann fós.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Taifeadadh %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Gach taifeadadh</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>An imirce a thiocfadh as</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Na hathruithe cnuasaithe i gcéim amháin in aghaidh gach ruda a athraíodh: an rud a dhéanfadh imirce a ghinfí ón taifeadadh seo.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Is féidir imirce a ghiniúint uaidh nuair a bheidh na cineálacha céimeanna YAML %types ag an suiteáil seo.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Fágtha amach d'aon ghnó: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Níor taifeadadh aon rud.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>An rud a fuair sé</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count athrú, san ord inar rinneadh iad.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Athrú</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Céim</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Baineann le</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count eile: liostaíonn ./console exp:migration:record:show iad go léir.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Caith uait</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Baineann sé an taifeadadh agus a bhfuair sé. Fanann athraithe an rud a athraíodh.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Caith uait an taifeadadh seo, cinnte</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ag taifeadadh…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Tá d'athruithe á dtaifeadadh le haghaidh imirce.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Tá gach athrú ar an suíomh seo á thaifeadadh le haghaidh imirce (fuinneog don suíomh ar fad).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Thosaigh an taifeadadh don suíomh ar fad: taifeadtar gach athrú de chuid gach úsáideora go dtí go stopann tú é.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Thosaigh an taifeadadh: taifeadtar d'athruithe go dtí go stopann tú é.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Stopadh an taifeadadh. Fanann a bhfuair sé go dtí go gcaitheann tú uait é.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Baineadh an taifeadadh agus a imeachtaí.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Níl aon taifeadadh %id ann.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Cuir tic ar dtús le "Caith uait an taifeadadh seo, cinnte".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Ní féidir ach leis an úsáideoir a thaifead taifeadadh seisiúin a stopadh.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Roghnaigh an taifeadadh atá le stopadh.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Tá taifeadadh den chineál seo ar siúl cheana.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Níorbh fhéidir an taifeadadh a athrú: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81255,6 +81499,1540 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>Released.</source>
         <translation>Scaoilte.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Gach sprioc</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Foilseachán deireanach</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Foilsigh cóip statach saor in aisce de do shuíomh ar GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Leathanaigh as dáta</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Foilsiú statach</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Tá foilsiú statach múchta.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Sprioc</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Níorbh fhéidir na spriocanna a léamh: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>tá jab ar siúl</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>tógáil le seiceáil</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>folaigh é seo</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>cruthaigh sprioc</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>riamh</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>léigh an teagaisc</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added curtha leis, %changed athraithe, %removed bainte</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes as %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Níl %count eile liostaithe.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages leathanach scríofa</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>Tá %path %size, níos mó ná mar a cheadaíonn an t-óstach do chomhad.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % den teorainn</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds soic.</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>Is é %tag an foilseachán atá ag an suíomh anois.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: jab %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/stórlann/ do shuíomh tionscadail GitHub; folamh d&apos;fhearann saincheaptha nó do shuíomh úsáideora.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. An suíomh</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. An t-óstach</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Síniú isteach sa stórlann</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. An stórlann</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Naisc agus bunchosán</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Do fhearann féin</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. A bhfuil sa tógáil</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Cathain a fhoilsítear é</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Athbhreithnigh agus sábháil</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Bíonn suíomh tionscadail GitHub faoi /&lt;repository&gt;/; oibríonn naisc choibhneasta ansin agus in aon áit eile.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Faigheann tógáil gach leathanach de %site mar a fheiceann cuairteoir nach bhfuil sínithe isteach é, athscríobhann sí na naisc, cóipeálann sí na comhaid agus scríobhann sí an toradh chuig fillteán na sprice. Ní fhoilsítear aon rud go dtí go seiceálann tú an tógáil agus go mbrúnn tú Foilsigh.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Slonn cron, mar shampla 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Coinnítear eochair imscartha mar an rún %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Ligeann eochair imscartha don suiteáil seo brú thar SSH chuig stórlann amháin, agus chuig sin amháin. Fanann a leath phríobháideach i Socrú &gt; Rúin; ní thaispeántar ach an leath phoiblí.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Eochair imscartha a cruthaíodh don sprioc seo</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Síníonn eochair imscartha isteach thar SSH: athraigh an seoladh git go dtí an seoladh SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Tá jab ar siúl, tosaithe ag %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Tá jab den sprioc seo fós ar siúl (%detail). Fan go gcríochnóidh sé.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Tá jab den sprioc seo fós ar siúl. Fan go gcríochnóidh sé.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Scríobhfar nasc ón leathanach /news/ chuig an leathanach /about-us/team mar</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Cruthaíodh eochair imscartha nua. Cuir a leath phoiblí leis an stórlann anois.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Ní fhoilsítear riamh leathanach a bhfuil aschur dífhabhtaithe, comhartha foirme nó aitheantas seisiúin fós ann tar éis an bhainte.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Is do shaineolaithe an cealú: cuir tic le “Tá a fhios agam cad a athraíonn sé seo” agus clóscríobh ainm na clibe arís.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Féadann suíomh a bheith suas le %site, comhad amháin suas le %file, le timpeall 100 GB de thrácht sa mhí. Ar phlean saor in aisce caithfidh an stórlann a bheith poiblí. Níl GitHub Pages ceaptha do shiopaí ná d&apos;idirbhearta tráchtála eile.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Is éard is sprioc ann suíomh amháin a fhoilsítear chuig stórlann git amháin. Ní thógtar ná ní fhoilsítear aon rud anseo: scríobhann Sábháil na socruithe chuig settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Is éard is sprioc ann suíomh amháin a fhoilsítear in áit amháin, mar shampla do shuíomh poiblí ar GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Comhartha ó Socrú &gt; Rúin</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Foilsíonn sreabhadh oibre den stórlann é.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Cuir an eochair phoiblí seo leis an stórlann le rochtain scríofa. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, cuir tic le Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Curtha leis</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Óstach git eile</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Tá próiseas eile ag obair ar an sprioc seo: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Siar</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Bunchosán</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Roimhe</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Faoi bhunchosán</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Craobh</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Naisc bhriste</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Naisc bhriste sa tógáil</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Tógáil</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Tógáil %id ag %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Tógáil %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Tóg anois</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Tógáil le seiceáil</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ag</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>De láimh, anseo</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cealaigh</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Athraigh</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Athraithe</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Athruithe</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Seiceáil ar dtús é</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Seiceáil na socruithe seo</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Seiceáil cad a athraíonn an tógáil, féach uirthi, ansin foilsigh í nó caith uait í.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Roghnaigh an foilseachán le dul ar ais chuige.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Tiocfaidh sé le heisiúint níos déanaí.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Tiomnú</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Tiomnuithe</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Tiomnaíonn sé an tógáil, cuireann clib uirthi agus brúnn chuig %remote í. Ní dhéantar brú éigeantach riamh; is féidir leat dul ar ais chuig aon fhoilseachán níos déanaí.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>I gcomparáid leis an bhfillteán roimhe: %added curtha leis, %changed athraithe, %removed bainte, %unchanged gan athrú.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>I gcomparáid leis an bhfoilseachán deireanach.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Dintiúr</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Fearann saincheaptha</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Baintear amach i gcónaí aschur dífhabhtaithe, comharthaí foirme, aitheantais seisiúin agus nonces.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Eochair imscartha</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Eochair imscartha de %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Caith uait</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Caith uait an tógáil</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Fearann</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Folamh: seoladh an tsuímh. Seoladh inmheánach den suíomh céanna murach sin.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Críochnaithe</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Tosaíonn gach nasc leis an mbunchosán.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Is tiomnú le clib static/%id/&lt;n&gt; é gach foilseachán. Nuair a théann tú ar ais déantar tiomnú nua le comhaid foilseacháin níos luaithe: fanann an stair, ní bhogtar aon chlib agus ní chuirtear aon rud i bhfeidhm go héigeantach.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Breiseáin</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Faigh na leathanaigh ó</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Comhad</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Comhaid</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Comhaid ar iarraidh</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Comhaid de</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Comhaid nárbh fhéidir a bhailiú</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Méarlorg</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Fillteán</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Do sheoladh SSH. Cruthaítear an eochair tar éis sábhála; cuireann tú a leath phoiblí leis an stórlann.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Do sheoladh https://. GitHub: comhartha mionsonraithe le léamh agus scríobh ar Contents na stórlainne.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Do shaineolaithe. Athraíonn an suíomh poiblí a luaithe a bhíonn an brú críochnaithe.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Foirmeacha</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Óstáil saor in aisce ó stórlann GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Ón gcraobh</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Seoladh git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>Ceadaíonn GitHub Pages suíomh de %site agus comhad de %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Teorainneacha GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>Foilsíonn GitHub Pages na comhaid mar atá siad (riachtanach do chomhaid a thosaíonn le _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>Freastalaíonn GitHub an chraobh mar a bhrúitear í. An réamhshocrú.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, do fhreastalaí féin: aon stórlann git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Téigh ar ais chuig foilseachán níos luaithe</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Cabhair</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Cabhair leis an draoi</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Folaigh iad</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Stair</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Stair %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Óstach</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Conas a fhaigheann GitHub Pages an tógáil</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Sheiceáil mé na hathruithe</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Tá a fhios agam cad a athraíonn sé seo</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Aitheantas</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Tá sé múchta: ní féidir aon rud a thógáil go dtí go mbeidh sé ar siúl.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Ritheann sé sa chúlra mar %user; is féidir leat an leathanach seo a dhúnadh.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Jab %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Coinnithe mar an rún %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Cineál</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Foilseachán deireanach</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Fág na leathanaigh seo amach</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Fág na rannáin seo amach</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Naisc</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Naisc athscríofa</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Suíomh beo</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Féach ar an tógáil</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Litreacha cás íochtair, digití, _ agus -, mar shampla github-public. Ainmníonn sé an fillteán agus na clibeanna (static/&lt;id&gt;/&lt;n&gt;) agus ní féidir é a athrú níos déanaí.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Cruthaigh eochair nua</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Cruthaigh sprioc</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Cruthaigh an eochair</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Cruthaigh an stórlann ar an óstach ar dtús; is leor ceann folamh.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Léiriú</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Teachtaireacht</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Formhór na leathanach</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ainm</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Ainm an chomhartha i Socrú &gt; Rúin</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Sprioc nua</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Ar aghaidh</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Níl</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Gan tiomnú fós.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Níor cruthaíodh eochair: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Níor aimsíodh aon chlár líne ordaithe php. Socraigh migration.ini [AdminSettings] PhpCliPath chuig a chosán iomlán.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Gan clib fós.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Gan sprioc fós.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ceann ar bith</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Níl sé sa tógáil.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Níor foilsíodh aon rud fós.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Níor foilsíodh aon rud fós: tá gach comhad nua.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Cuir in iúl</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>De réir sceidil</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Ar an gconsól</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Ar an bhfreastalaí: freastalaíonn ./console exp:static:serve %id é ar an mbealach céanna.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Cosán amháin in aghaidh na líne, meaitseálann * aon chuid: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Ní stóráiltear ach ainm leis an sprioc; fanann an comhartha nó an eochair féin i Socrú &gt; Rúin agus ní thaispeántar riamh i loga é.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>An méid a ainmníonn na leathanaigh amháin</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Le comhartha amháin. Léann env:NAME athróg timpeallachta den fhreastalaí ina ionad.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Oscail an réamhamharc</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Osclaíonn sé an tógáil mar a fhreastalóidh an t-óstach í, ó fhillteán na sprice. Oibríonn an nasc duit ar feadh uair an chloig.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Roghnach. Folamh: an méid a foilsíodh.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Roghnach. Le fearann freastalaítear an suíomh ag a fhréamh.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Aschur</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Leathanaigh</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Leathanaigh na sprice</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Leathanaigh diúltaithe</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Iarphróiseáil</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Réamhamharc</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Réamhamharc agus foilsiú</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Réamhamharc agus foilsiú %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Réamhamharc ar an tógáil</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Dul chun cinn</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Seoladh poiblí</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Eochair phoiblí</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Foilsigh</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Foilsigh cóip statach de shuíomh ar GitHub Pages nó ar aon óstach git: tóg é, seiceáil na hathruithe, foilsigh, agus téigh ar ais chuig foilseachán níos luaithe nuair is gá.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Foilseachán le dul ar ais chuige</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Foilseacháin</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Brú</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Léigh an teagaisc</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Taifead</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Diúltaithe</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Coibhneasta</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Athlódáil</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Bainte</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Ionadaigh an eochair: stopann an seancheann ag obair</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Tuairisc</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Tuairisc na tógála</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Stórlann</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Athbhreithniú</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Seiceálann an t-athbhreithniú gach socrú agus taispeánann sé na línte a scríobhfar. Níl aon rud sábháilte fós.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Cealaigh</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Cealú</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Sábháil</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Sceideal</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Leathanach cuardaigh</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Aitheantais rannán, scartha le camóga.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Seol chuig an suíomh beo iad</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Socrú</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Socruithe</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Socruithe %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Socrú</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Socrú &gt; Rúin</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Taispeántar i liostaí é, mar shampla “Suíomh poiblí ar GitHub Pages”.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Tiocfaidh síniú isteach le GitHub App leis an gcomhtháthú GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Suíomh</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Suíomh le foilsiú</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Méid</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Méid agus teorainneacha</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Méid na tógála</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Leathanaigh as dáta</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Tosaithe</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Tosaithe ag %user ag %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staid</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Foilsiú statach</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Tá foilsiú statach múchta</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Tá foilsiú statach múchta.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Tá foilsiú statach múchta. Cuir ar siúl é i Socrú &gt; Foilsiú statach ar dtús.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Tá foilsiú statach ar siúl.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Céim %step as %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Céimeanna</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Glanadh</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Múch</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Cuir ar siúl</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Cuir foilsiú statach ar siúl</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Clib</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Clibeanna</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Sprioc</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Is féidir spriocanna a chruthú agus a athrú, ach ní thógtar ná ní fhoilsítear aon rud go dtí go mbeidh sé ar siúl.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Insíonn sé d&apos;innill chuardaigh cad atá le léamh.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Níorbh fhéidir an tógáil a chaitheamh uait: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Tá an tógáil mar an gcéanna leis an bhfoilseachán deireanach: níl aon rud le foilsiú.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Caitheadh an tógáil uait: tá an foilseachán deireanach san fhillteán arís.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Oireann na réamhshocruithe d&apos;fhormhór na suíomhanna.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Tá tógáil nach bhfuil foilsithe fós san fhillteán; cuirfidh tógáil nua ina háit í.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Ní féidir scríobh i bhfillteán na jabanna: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Níorbh fhéidir an jab a ullmhú: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Níorbh fhéidir an jab a thosú.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Tá an jab críochnaithe. A thuairisc á lódáil.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Teastaíonn úsáideoir atá sínithe isteach ón jab.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Tosaíodh an jab ach níor thuairiscigh sé aitheantas a phróisis. Seiceáil %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>An eochair</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>An comhad is mó: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Na línte a scríobhfar</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Liosta na leathanach d&apos;innill chuardaigh; teastaíonn an seoladh poiblí.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Faightear na leathanaigh mar a fheiceann cuairteoir nach bhfuil sínithe isteach iad. Ní thairgtear riamh rochtain suímh riaracháin ná eagarthóireachta.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Níorbh fhéidir an dul chun cinn a leanúint. Athlódáil an leathanach le feiceáil conas atá ag éirí leis an jab.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Leath phoiblí na heochrach:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Fréamh na craoibhe</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Níl stór na rún socraithe fós (cruthaíonn ./console exp:upgrade --apply a tábla), mar sin ní féidir aon eochair a choinneáil.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Síníonn an freastalaí isteach leis féin (lena eochair SSH féin nó lena chúntóir dintiúr), nó tá an stórlann ar an bhfreastalaí seo.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Níorbh fhéidir an socrú a scríobh: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Tá na socruithe bailí. Scríobhfar na línte seo:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Ní féidir an comhad socruithe a léamh: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Téann an suíomh ar ais chuig comhaid an fhoilseacháin sin; caithfear tógáil nach bhfuil foilsithe fós a fhoilsiú nó a chaitheamh uait ar dtús.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Leathanach an tsuímh féin do sheoltaí nach bhfuil ann.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Níorbh fhéidir an sprioc a shábháil: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Ní shíníonn an sprioc isteach leis an eochair seo fós: roghnaigh “Eochair imscartha a cruthaíodh don sprioc seo” ina socruithe.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Níorbh fhéidir na spriocanna a léamh: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Níl aon tógáil le seiceáil fós.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Níl aon rochtain suímh tosaigh ag an suiteáil seo. Ní fhoilsítear riamh rochtain suímh riaracháin ná eagarthóireachta.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Leanann an leathanach seo an jab de réir mar a théann sé ar aghaidh; leanann sé ar aghaidh sa chúlra nuair a dhúntar an leathanach.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Níl eochair imscartha ag an sprioc seo fós.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Níor tógadh an sprioc seo anseo fós.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Tá ceann ag an sprioc seo.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Caitheann sé an tógáil seo uait: tá an foilseachán deireanach san fhillteán arís. Ní athraíonn an suíomh beo.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Cuir tic le “Sheiceáil mé na hathruithe” ar dtús.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Am</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Truicir</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Clóscríobh ainm na clibe arís</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Gan athrú</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Crúca gréasáin</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Cad</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Cad a athraíonn</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Cad é gach comhad; scríobhtar i gcónaí é.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Cad a rinne an jab agus a thaifead. Leanann jab a tosaíodh anseo ar aghaidh sa chúlra nuair a dhúntar an leathanach seo.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Cad a phriontáil an jab mar earráidí</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>An méid a ainmníonn na leathanaigh, agus gach íomhá d&apos;ábhar foilsithe</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Cathain</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Nuair a theipeann ar fhoilseachán</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Nuair a éiríonn le foilseachán</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Nuair a fhoilsítear ábhar</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Cá dtéann naisc chuig an méid nach bhfuil sa chóip (an cuardach, an logáil isteach).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Cá as a bhfreastalaítear an chóip statach.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Cén suíomh a fhoilsítear, agus cad is ainm don sprioc.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Oibríonn sé faoi aon chosán. An réamhshocrú.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Scríobhtar é aon uair a shocraítear fearann saincheaptha.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Tá</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Is féidir leat i gcónaí tógáil agus foilsiú de láimh anseo agus ar an gconsól.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>ainm amháin; fanann an luach i Socrú &gt; Rúin</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>faoi %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>críochnaithe gan tuairisc</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>breise</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>theip air</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>comhad</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, nó main leis an bhfillteán docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>óstach git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (le comhartha) nó git@github.com:owner/repo.git (le heochair imscartha); ná cuir pasfhocal ná comhartha ann riamh.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, don léarscáil suímh agus do na naisc chanónacha.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>íomhá</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>riamh</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>níl</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>gan chianstór</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>dada: fanann tiomnuithe san fhillteán</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>dada: níor athraigh aon rud</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>gan brú</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>níor athraigh aon rud</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>leathanach</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>d&apos;éirigh leis</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>Tá proc_open díchumasaithe, mar sin ní féidir jab a thosú anseo. Úsáid ./console exp:static:build ar an bhfreastalaí.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>foilseachán</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>foilsithe</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>brú ar feitheamh</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>brúite</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>diúltaithe</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>coibhneasta</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>cealú</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>cealaithe</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ar siúl</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>an fillteán amháin</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: scríobhtar chuig an gcomhad CNAME é. Dírigh DNS an fhearainn ar an óstach mar a mhíníonn sé; d&apos;fhéadfadh tamall a thógáil sula dtosaíonn HTTPS.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>tá, níl sé foilsithe fós</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Feidhmchlár GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Foilsíonn sreabhadh oibre den stórlann é. Scríobhann an tógáil comhad an tsreafa oibre; fág an fillteán folamh.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Tar éis sprioc a shábháil le stórlann GitHub agus comhartha nó GitHub App, is féidir leis an gcéim seo an stórlann a chruthú agus GitHub Pages a chur ar siúl. Murach sin, cruthaigh an stórlann ar GitHub ar dtús; is leor ceann folamh.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Craobh nó GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Seiceáil an DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Cruthaigh an stórlann mura bhfuil sí ann</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Cruthaigh an stórlann ar GitHub agus cuir GitHub Pages ar siúl ina socruithe (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Cruthaíonn sé an stórlann %repo nuair atá sí ar iarraidh (má iarrtar), cuireann sé GitHub Pages ar siúl ón gcraobh nó ó GitHub Actions mar a sábháladh, agus socraíonn sé an fearann saincheaptha agus HTTPS. Úsáideann sé na socruithe sábháilte: sábháil na hathruithe ar dtús.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Sonraí ar GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Cuir isteach an fearann saincheaptha ar dtús.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Seiceáiltear gach push i gcoinne na dteorainneacha seo ar dtús.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Do sheoladh https:// ar GitHub. Síníonn an App a socraíodh don suiteáil seo isteach; teastaíonn aitheantas na suiteála uaidh.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>Ní fhreastalaíonn GitHub Pages ar stórlann phríobháideach ach ar phlean íoctha.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: teastaíonn taifead CNAME chuig &lt;owner&gt;.github.io ó fhofhearann (www.example.com); teastaíonn na taifid A %ips ó fhearann apex (example.com).</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Aitheantas suiteála an GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>An tógáil Pages is déanaí</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Teorainneacha agus téarmaí</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Riachtanach do GitHub Pages ar phlean saor in aisce.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Ar GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Le GitHub App amháin: an uimhir ag deireadh sheoladh shuiteáil an App ar GitHub. Socraítear an App féin in staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Príobháideach</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Poiblí</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Sábháil an sprioc le stórlann GitHub agus comhartha nó GitHub App ar dtús.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Socraigh na taifid seo ag soláthraí an fhearainn:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Socraigh ar GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Níl DNS %domain dírithe ar GitHub Pages fós.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Tá DNS %domain dírithe ar GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Níl an comhtháthú GitHub ar fáil anseo: %problem. Oibríonn foilsiú chuig an gcraobh mar sin féin; cuir GitHub Pages ar siúl i socruithe na stórlainne.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Níl na céimeanna GitHub ar fáil don sprioc seo: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Taispeántar staid GitHub Pages nuair is comhartha nó GitHub App an dintiúr.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Úsáid do fhearann féin</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Cé acu le roghnú: comhartha, eochair imscartha nó GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Le stórlann GitHub agus comhartha nó GitHub App, is féidir leis an draoi an stórlann a chruthú, GitHub Pages a chur ar siúl agus an fearann a shocrú duit (céim 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>á thógáil</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>tógtha</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>ó GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ón gcraobh %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>dada fós</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>gan aimsiú</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>múchta</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>príobháideach</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>poiblí</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>i scuaine</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>anaithnid</translation>
     </message>
 </context>
 </TS>

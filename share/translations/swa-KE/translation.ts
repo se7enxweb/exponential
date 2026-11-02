@@ -15156,6 +15156,14 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Maudhui mapya kabisa, yale yaliyozuiliwa kwa ukaguzi, na vitendo kwa uteuzi.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Chapisha nakala tuli ya tovuti kwenye GitHub Pages au mwenyeji wowote wa git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Uchapishaji tuli</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22155,6 +22163,18 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Majibu ya hoja zilizohifadhiwa za GraphQL API, na madarasa ya maudhui ya skima yake.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Chapisha nakala tuli kwenye GitHub Pages au mwenyeji wowote wa git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Uchapishaji tuli</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Akiba tuli inahudumia kurasa kutoka seva hii. Ili kuchapisha nakala tuli ya tovuti mahali pengine, kwenye GitHub Pages au mwenyeji wowote wa git, tumia uchapishaji tuli.</translation>
     </message>
 </context>
 <context>
@@ -76212,6 +76232,14 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Mabadiliko ya usakinishaji yaliyohifadhiwa kama faili: hali yake, utekelezaji, tekeleza na rudisha nyuma.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Chapisha nakala tuli ya tovuti kwenye GitHub Pages au mwenyeji wowote wa git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Uchapishaji tuli</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80560,6 +80588,222 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>The run could not be started.</source>
         <translation>Utekelezaji haukuweza kuanzishwa.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Kurekodi mabadiliko</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Wakati rekodi inaendelea, unachobadilisha katika usimamizi au katika upau wa pembeni wa tovuti huhifadhiwa kama hatua za uhamishaji: maudhui, madarasa, majukumu na sera, sehemu, watumiaji na vikundi, majina mbadala ya URL, mipangilio. Isimamishe ukimaliza, angalia ilichonasa, na utengeneze uhamishaji kutoka kwake.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Rekodi hazikuweza kusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Majedwali ya rekodi bado hayapo: endesha kwanza usasishaji (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Kurekodi kumezimwa katika migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mabadiliko yangu</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Hurekodi tu unachobadilisha, popote unapokibadilisha, hadi uisimamishe.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Rekodi</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>tangu %time, mabadiliko %count hadi sasa.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Lebo (si lazima)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Onyesha ilichonasa</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Simamisha kurekodi</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Anza kurekodi mabadiliko yangu</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Dirisha la tovuti nzima</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Hurekodi kila badiliko la kila mtumiaji na la koni hadi lifungwe. Unapolifungua, unaombwa kuthibitisha kuwa ni wewe.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Wazi</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Funga dirisha</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Fungua dirisha la tovuti nzima</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Rekodi zote</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Akaunti ya mtumiaji (jina la kuingia, barua pepe, nenosiri) na sehemu za akaunti za watumiaji hazirekodiwi kamwe.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Mabadiliko</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tovuti nzima</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Mabadiliko ya %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Imesimamishwa</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Bado hakuna rekodi.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Rekodi %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Rekodi zote zilizopo</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Uhamishaji ambao ingetengeneza</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Mabadiliko yaliyounganishwa kuwa hatua moja kwa kila kitu kilichobadilishwa: kile ambacho uhamishaji uliotengenezwa kutoka rekodi hii ungefanya.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Uhamishaji unaweza kutengenezwa kutoka kwake mara usakinishaji huu utakapokuwa na aina za hatua za YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Imeachwa kwa makusudi: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Hakuna kilichorekodiwa.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ilichonasa</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Mabadiliko %count, kwa mpangilio yalivyofanywa.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Badiliko</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Hatua</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Kuhusu</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count zaidi: ./console exp:migration:record:show huorodhesha zote.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Tupa</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Huondoa rekodi na ilichonasa. Kilichobadilishwa hubaki kimebadilishwa.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ndiyo, tupa rekodi hii</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Inarekodi…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Mabadiliko yako yanarekodiwa kwa ajili ya uhamishaji.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Kila badiliko kwenye tovuti hii linarekodiwa kwa ajili ya uhamishaji (dirisha la tovuti nzima).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Rekodi ya tovuti nzima imeanza: kila badiliko la kila mtumiaji linarekodiwa hadi uisimamishe.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Kurekodi kumeanza: mabadiliko yako yanarekodiwa hadi uisimamishe.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Kurekodi kumesimamishwa. Ilichonasa hubaki hadi uitupe.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Rekodi na matukio yake yameondolewa.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Hakuna rekodi %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Weka alama kwanza kwenye "Ndiyo, tupa rekodi hii".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Ni mtumiaji aliyerekodi pekee anayeweza kusimamisha rekodi ya kipindi.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Chagua rekodi ya kusimamisha.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Rekodi ya aina hii tayari inaendelea.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Rekodi haikuweza kubadilishwa: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81223,6 +81467,1540 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>Released.</source>
         <translation>Kimeachiliwa.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Malengo yote</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Chapisho la mwisho</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Chapisha nakala tuli ya bure ya tovuti yako kwenye GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Kurasa zilizopitwa na wakati</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Uchapishaji tuli</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Uchapishaji tuli umezimwa.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Lengo</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Malengo hayakuweza kusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>kazi inaendelea</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>muundo wa kukaguliwa</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ficha hii</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>unda lengo</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>kamwe</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>soma mafunzo</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added zimeongezwa, %changed zimebadilishwa, %removed zimeondolewa</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes kati ya %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count zaidi hazijaorodheshwa.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Kurasa %pages zimeandikwa</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ina %size, zaidi ya mwenyeji anavyoruhusu kwa faili moja.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % ya kikomo</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>sekunde %seconds</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ni chapisho ambalo tovuti inalo sasa.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: kazi %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/hazina/ kwa tovuti ya mradi wa GitHub; tupu kwa kikoa maalum au tovuti ya mtumiaji.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Tovuti</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Mwenyeji</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Kuingia kwenye hazina</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Hazina</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Viungo na njia ya msingi</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Kikoa chako mwenyewe</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Muundo una nini</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Linapochapishwa</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Mapitio na kuhifadhi</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Tovuti ya mradi wa GitHub iko chini ya /&lt;repository&gt;/; viungo vya jamaa vinafanya kazi huko na kwingineko popote.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Muundo huleta kila ukurasa wa %site kama anavyouona mgeni ambaye hajaingia, huandika upya viungo, hunakili faili na huandika matokeo kwenye folda ya lengo. Hakuna kinachochapishwa hadi ukague muundo na ubonyeze Chapisha.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Usemi wa cron, kwa mfano 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Ufunguo wa kusambaza umehifadhiwa kama siri %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Ufunguo wa kusambaza unaruhusu usakinishaji huu kutuma kwenye hazina moja kupitia SSH na si mahali pengine popote. Nusu yake ya faragha inabaki katika Usanidi &gt; Siri; nusu ya umma pekee ndiyo inayoonyeshwa.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Ufunguo wa kusambaza ulioundwa kwa lengo hili</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Ufunguo wa kusambaza huingia kupitia SSH: badilisha anwani ya git iwe ile ya SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Kazi inaendelea, imeanzishwa na %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Kazi ya lengo hili bado inaendelea (%detail). Subiri iishe.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Kazi ya lengo hili bado inaendelea. Subiri iishe.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Kiungo kutoka ukurasa /news/ kwenda ukurasa /about-us/team kitaandikwa kama</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Ufunguo mpya wa kusambaza umeundwa. Ongeza nusu yake ya umma kwenye hazina sasa.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Ukurasa ambao bado una matokeo ya utatuzi, tokeni ya fomu au kitambulisho cha kipindi baada ya kusafishwa hauchapishwi kamwe.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Urudishaji nyuma ni kwa wataalamu: weka alama kwenye &quot;Ninajua hii inabadilisha nini&quot; na uandike tena jina la lebo.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Tovuti inaweza kuwa hadi %site, faili moja hadi %file, na trafiki ya takriban 100 GB kwa mwezi. Kwenye mpango wa bure hazina lazima iwe ya umma. GitHub Pages haikusudiwi kwa maduka au miamala mingine ya kibiashara.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Lengo ni tovuti moja iliyochapishwa kwenye hazina moja ya git. Hapa hakuna kinachoundwa wala kuchapishwa: Hifadhi inaandika mipangilio kwenye settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Lengo ni tovuti moja iliyochapishwa mahali pamoja, kwa mfano tovuti yako ya umma kwenye GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Tokeni kutoka Usanidi &gt; Siri</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Mtiririko wa kazi (workflow) wa hazina unaichapisha.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Ongeza ufunguo huu wa umma kwenye hazina ukiwa na ruhusa ya kuandika. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, weka alama kwenye Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Zilizoongezwa</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Mwenyeji mwingine wa git</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Mchakato mwingine unafanya kazi kwenye lengo hili: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Nyuma</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Njia ya msingi</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Kabla</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Chini ya njia ya msingi</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Tawi</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Viungo vilivyovunjika</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Viungo vilivyovunjika kwenye muundo</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Muundo</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Muundo %id na %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Muundo %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Unda sasa</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Muundo wa kukaguliwa</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Kwa mkono, hapa</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ghairi</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Badilisha</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Zilizobadilishwa</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Mabadiliko</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Ikague kwanza</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Kagua mipangilio hii</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Kagua muundo unabadilisha nini, uutazame, kisha uuchapishe au uutupe.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Chagua chapisho la kurudi kwake.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Inakuja na toleo la baadaye.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Hifadhi (commit)</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Uhifadhi (commits)</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Huhifadhi (commit) muundo, huuwekea lebo na kuutuma kwa %remote. Kutuma hakulazimishwi kamwe; unaweza kurudi kwa chapisho lolote baadaye.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Ikilinganishwa na folda ilivyokuwa: %added zimeongezwa, %changed zimebadilishwa, %removed zimeondolewa, %unchanged hazijabadilika.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Ikilinganishwa na chapisho la mwisho.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kitambulisho cha kuingia</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Kikoa maalum</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Matokeo ya utatuzi, tokeni za fomu, vitambulisho vya vipindi na nonce huondolewa kila wakati.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Ufunguo wa kusambaza</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Ufunguo wa kusambaza wa %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Tupa</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Tupa muundo</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Kikoa</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Tupu: anwani ya tovuti. Vinginevyo, anwani ya ndani ya tovuti hiyo hiyo.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Imeisha</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Kila kiungo kinaanza na njia ya msingi.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Kila chapisho ni uhifadhi (commit) wenye lebo static/%id/&lt;n&gt;. Kurudi nyuma huunda uhifadhi mpya wenye faili za chapisho la awali: historia inabaki, hakuna lebo inayohamishwa na hakuna kinacholazimishwa.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Ziada</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Leta kurasa kutoka</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faili</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Faili zote</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Faili zinakosekana</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Faili za</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Faili ambazo hazikuweza kukusanywa</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Alama ya kidole</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Folda</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Kwa anwani ya SSH. Ufunguo huundwa baada ya kuhifadhi; wewe unaongeza nusu yake ya umma kwenye hazina.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Kwa anwani ya https://. GitHub: tokeni ya kina (fine-grained) yenye Contents ya kusoma na kuandika kwenye hazina.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Kwa wataalamu. Tovuti ya umma hubadilika mara tu kutuma kunapokamilika.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Fomu</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Upangishaji bure kutoka hazina ya GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Kutoka tawi</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Anwani ya git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages inaruhusu tovuti ya %site na faili ya %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Vikomo vya GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages huchapisha faili jinsi zilivyo (inahitajika kwa faili zinazoanza na _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub huhudumia tawi jinsi lilivyotumwa. Chaguo-msingi.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, seva yako mwenyewe: hazina yoyote ya git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Rudi kwa chapisho la awali</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Msaada</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Msaada kuhusu mchawi</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Zifiche</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historia</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Historia ya %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Mwenyeji</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Jinsi GitHub Pages inavyopokea muundo</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Nimekagua mabadiliko</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Ninajua hii inabadilisha nini</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Kitambulisho</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Imezimwa: hakuna kinachoweza kuundwa hadi iwashwe.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Inaendeshwa chinichini kama %user; unaweza kufunga ukurasa huu.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Kazi %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Imehifadhiwa kama siri %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Aina</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Chapisho la mwisho</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Acha kurasa hizi nje</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Acha sehemu hizi nje</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Viungo</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Viungo vilivyoandikwa upya</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Tovuti hai</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Tazama muundo</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Herufi ndogo, tarakimu, _ na -, kwa mfano github-public. Inapatia jina folda na lebo (static/&lt;id&gt;/&lt;n&gt;) na haiwezi kubadilishwa baadaye.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Unda ufunguo mpya</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Unda lengo</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Unda ufunguo</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Unda hazina kwa mwenyeji kwanza; tupu ni sawa.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Orodha ya faili</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Ujumbe</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Kurasa nyingi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Jina</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Jina la tokeni katika Usanidi &gt; Siri</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Lengo jipya</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Ifuatayo</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hapana</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Bado hakuna uhifadhi.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Hakuna ufunguo ulioundwa: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Hakuna programu ya mstari wa amri ya php iliyopatikana. Weka migration.ini [AdminSettings] PhpCliPath kwa njia yake kamili.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Bado hakuna lebo.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Bado hakuna lengo.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Hakuna</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Haiko kwenye muundo.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Bado hakuna kilichochapishwa.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Bado hakuna kilichochapishwa: kila faili ni mpya.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Arifu</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Kwa ratiba</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Kwenye konsoli</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Kwenye seva: ./console exp:static:serve %id inauhudumia kwa njia ile ile.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Njia moja kwa kila mstari, * inalingana na sehemu yoyote: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Jina pekee ndilo huhifadhiwa pamoja na lengo; tokeni au ufunguo wenyewe unabaki katika Usanidi &gt; Siri na hauonekani kamwe kwenye kumbukumbu.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Kile tu kurasa zinachotaja</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Kwa tokeni tu. env:NAME badala yake inasoma kigezo cha mazingira cha seva.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Fungua uhakiki</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Hufungua muundo jinsi mwenyeji atakavyouhudumia, kutoka folda ya lengo. Kiungo kinakufanyia kazi kwa saa moja.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Hiari. Tupu: kilichochapishwa.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Hiari. Ukiwa na kikoa, tovuti huhudumiwa kwenye mzizi wake.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Matokeo</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Kurasa</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Kurasa za lengo</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Kurasa zilizokataliwa</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Uchakataji wa baadaye</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Hakiki</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Hakiki na chapisha</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Hakiki na chapisha %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Hakiki muundo</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Maendeleo</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Anwani ya umma</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Ufunguo wa umma</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Chapisha</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Chapisha nakala tuli ya tovuti kwenye GitHub Pages au mwenyeji wowote wa git: iunde, kagua mabadiliko, chapisha, na urudi kwa chapisho la awali unapohitaji.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Chapisho la kurudi kwake</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Machapisho</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Kutuma</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Soma mafunzo</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Kumbukumbu</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Imekataliwa</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Viungo vya kuhusiana</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Pakia upya</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Zilizoondolewa</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Badilisha ufunguo: wa zamani unaacha kufanya kazi</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Ripoti</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Ripoti ya muundo</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Hazina</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Mapitio</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Mapitio hukagua kila mpangilio na huonyesha mistari itakayoandikwa. Bado hakuna kilichohifadhiwa.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Tendua</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Urudishaji nyuma</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Hifadhi</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Ratiba</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Ukurasa wa utafutaji</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Vitambulisho vya sehemu, vikitenganishwa kwa koma.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Vipeleke kwenye tovuti hai</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Mpangilio</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Mipangilio</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Mipangilio ya %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Usanidi</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Usanidi &gt; Siri</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Huonyeshwa katika orodha, kwa mfano &quot;Tovuti ya umma kwenye GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Kuingia kwa GitHub App kunakuja na muunganisho wa GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Tovuti</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Tovuti ya kuchapisha</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ukubwa</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Ukubwa na vikomo</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Ukubwa wa muundo</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Kurasa zilizopitwa na wakati</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Imeanza</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Imeanzishwa na %user saa %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Hali</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Uchapishaji tuli</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Uchapishaji tuli umezimwa</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Uchapishaji tuli umezimwa.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Uchapishaji tuli umezimwa. Uwashe kwanza katika Usanidi &gt; Uchapishaji tuli.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Uchapishaji tuli umewashwa.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Hatua %step kati ya %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Hatua</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Usafishaji</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Zima</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Washa</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Washa uchapishaji tuli</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Lebo</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Lebo zote</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Lengo</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Malengo yanaweza kuundwa na kubadilishwa, lakini hakuna kinachoundwa wala kuchapishwa hadi uchapishaji uwashwe.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Huambia injini za utafutaji nini cha kusoma.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Muundo haukuweza kutupwa: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Muundo ni sawa na chapisho la mwisho: hakuna cha kuchapisha.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Muundo umetupwa: folda ina chapisho la mwisho tena.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Chaguo-msingi zinafaa tovuti nyingi.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Folda ina muundo ambao bado haujachapishwa; muundo mpya unaubadilisha.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Folda ya kazi haiwezi kuandikiwa: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Kazi haikuweza kuandaliwa: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Kazi haikuweza kuanzishwa.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Kazi imeisha. Inapakia ripoti yake.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Kazi inahitaji mtumiaji aliyeingia.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Kazi ilianzishwa lakini haikuripoti kitambulisho cha mchakato wake. Kagua %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Ufunguo</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Faili kubwa zaidi: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Mistari itakayoandikwa</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Orodha ya kurasa kwa injini za utafutaji; inahitaji anwani ya umma.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Kurasa huletwa kama anavyoziona mgeni ambaye hajaingia. Ufikiaji wa usimamizi na uhariri hautolewi kamwe.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Maendeleo hayakuweza kufuatiliwa. Pakia upya ukurasa ili uone jinsi kazi inavyoendelea.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Nusu ya umma ya ufunguo:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Mzizi wa tawi</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Hifadhi ya siri bado haijasanidiwa (./console exp:upgrade --apply huunda jedwali lake), kwa hivyo hakuna ufunguo unaoweza kuhifadhiwa.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Seva huingia yenyewe (kwa ufunguo wake wa SSH au msaidizi wa vitambulisho), au hazina iko kwenye seva hii.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Mpangilio haukuweza kuandikwa: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Mipangilio ni halali. Mistari hii itaandikwa:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Faili ya mipangilio haiwezi kusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Tovuti inarudi kwenye faili za chapisho hilo; muundo ambao bado haujachapishwa lazima uchapishwe au utupwe kwanza.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Ukurasa wa tovuti yenyewe kwa anwani ambazo hazipo.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Lengo halikuweza kuhifadhiwa: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Lengo bado haliingii kwa ufunguo huu: chagua &quot;Ufunguo wa kusambaza ulioundwa kwa lengo hili&quot; katika mipangilio yake.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Malengo hayakuweza kusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Bado hakuna muundo wa kukagua.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Usakinishaji huu hauna ufikiaji wa tovuti ya umma. Ufikiaji wa usimamizi na uhariri hauchapishwi kamwe.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Ukurasa huu unafuatilia kazi inapoendelea; inaendelea chinichini ukurasa ukifungwa.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Lengo hili bado halina ufunguo wa kusambaza.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Lengo hili bado halijaundwa hapa.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Lengo hili linao.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Hutupa muundo huu: folda ina chapisho la mwisho tena. Tovuti hai haibadiliki.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Weka alama kwanza kwenye &quot;Nimekagua mabadiliko&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Muda</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Vichochezi</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Andika tena jina la lebo</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Hazijabadilika</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Mwito wa wavuti (webhook)</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Nini</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Kinachobadilika</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Kila faili ni nini; huandikwa kila wakati.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Kazi ilifanya nini na kumbukumbu yake. Kazi iliyoanzishwa hapa inaendelea chinichini ukurasa huu ukifungwa.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Kile kazi ilichoandika kama makosa</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Kile kurasa zinachotaja, na kila picha ya maudhui yaliyochapishwa</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Lini</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Chapisho linaposhindikana</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Chapisho linapofaulu</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Maudhui yanapochapishwa</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Mahali viungo vya kile ambacho nakala haina vinapoelekea (utafutaji, kuingia).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Mahali nakala tuli inapohudumiwa kutoka.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Tovuti ipi inachapishwa, na lengo linaitwaje.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Hufanya kazi chini ya njia yoyote. Chaguo-msingi.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Huandikwa kila kikoa maalum kinapowekwa.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ndiyo</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Unaweza kila wakati kuunda na kuchapisha kwa mkono hapa na kwenye konsoli.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>jina tu; thamani inabaki katika Usanidi &gt; Siri</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>chini ya %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>imeisha bila ripoti</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ziada</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>imeshindikana</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>faili</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, au main na folda docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>mwenyeji wa git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (kwa tokeni) au git@github.com:owner/repo.git (kwa ufunguo wa kusambaza); kamwe nenosiri au tokeni ndani yake.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, kwa ramani ya tovuti na viungo rasmi.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>picha</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>kamwe</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hapana</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>hakuna hazina ya mbali</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>hakuna: uhifadhi unabaki kwenye folda</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>hakuna: hakuna kilichobadilika</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>haijatumwa</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>hakuna kilichobadilika</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>ukurasa</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>imefaulu</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open imezimwa, kwa hivyo kazi haiwezi kuanzishwa hapa. Tumia ./console exp:static:build kwenye seva.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>chapisho</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>imechapishwa</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>kutuma kunasubiri</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>imetumwa</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>imekataliwa</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>viungo vya kuhusiana</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>urudishaji nyuma</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>imerudishwa nyuma</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>inaendelea</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>folda pekee</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: huandikwa kwenye faili CNAME. Elekeza DNS ya kikoa kwa mwenyeji kama anavyoeleza; HTTPS inaweza kuchukua muda kuanza.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ndiyo, bado haijachapishwa</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App moja</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Mtiririko wa kazi (workflow) wa hazina unaichapisha. Muundo huandika faili ya mtiririko wa kazi; acha folda tupu.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Baada ya kuhifadhi lengo lenye hazina ya GitHub na tokeni au GitHub App, hatua hii inaweza kuunda hazina na kuwasha GitHub Pages. Vinginevyo unda hazina kwenye GitHub kwanza; tupu ni sawa.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Tawi au GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Kagua DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Unda hazina ikiwa haipo</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Unda hazina kwenye GitHub na uwashe GitHub Pages katika mipangilio yake (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Huunda hazina %repo ikiwa haipo (ukiomba), huwasha GitHub Pages kutoka tawi au kutoka GitHub Actions kama ilivyohifadhiwa, na huweka kikoa maalum na HTTPS. Hutumia mipangilio iliyohifadhiwa: hifadhi mabadiliko kwanza.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Maelezo kwenye GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Weka kikoa maalum kwanza.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Kila push hukaguliwa kwanza dhidi ya vikomo hivi.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Kwa anwani ya https:// kwenye GitHub. App iliyowekwa kwa usakinishaji huu ndiyo huingia; inahitaji id ya usakinishaji.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages hutoa hazina ya faragha kwenye mpango wa kulipia tu.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: kikoa kidogo (www.example.com) kinahitaji rekodi ya CNAME kwenda &lt;owner&gt;.github.io; kikoa kikuu (example.com) rekodi za A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id ya usakinishaji wa GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Muundo wa mwisho wa Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Vikomo na masharti</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Inahitajika kwa GitHub Pages kwenye mpango wa bure.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Kwenye GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Kwa GitHub App tu: nambari iliyo mwishoni mwa anwani ya usakinishaji wa App kwenye GitHub. App yenyewe huwekwa katika staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Faragha</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Umma</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Hifadhi lengo lenye hazina ya GitHub na tokeni au GitHub App kwanza.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Weka rekodi hizi kwa mtoa huduma wa kikoa:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Sanidi kwenye GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS ya %domain bado haielekezi kwa GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS ya %domain inaelekeza kwa GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Muunganisho wa GitHub haupatikani hapa: %problem. Kuchapisha kwenye tawi bado kunafanya kazi; washa GitHub Pages katika mipangilio ya hazina.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Hatua za GitHub hazipatikani kwa lengo hili: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Hali ya GitHub Pages huonyeshwa kitambulisho cha kuingia kikiwa tokeni au GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Tumia kikoa chako mwenyewe</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Uchague nini: tokeni, ufunguo wa kusambaza au GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Ukiwa na hazina ya GitHub na tokeni au GitHub App, mchawi anaweza kuunda hazina, kuwasha GitHub Pages na kuweka kikoa kwa ajili yako (hatua ya 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>inaundwa</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>imeundwa</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>kutoka GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>kutoka tawi %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>bado hakuna</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>haikupatikana</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>imezimwa</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>faragha</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>umma</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>kwenye foleni</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>haijulikani</translation>
     </message>
 </context>
 </TS>

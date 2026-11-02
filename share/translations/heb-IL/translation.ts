@@ -15099,6 +15099,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>התוכן החדש ביותר, מה שמוחזק לבדיקה, ופעולות על בחירה.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>פרסום עותק סטטי של אתר ב-GitHub Pages או בכל מארח git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>פרסום סטטי</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22098,6 +22106,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>תשובות השאילתות השמורות של ה־API של GraphQL, ומחלקות התוכן של הסכמה שלו.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>פרסום עותק סטטי ב-GitHub Pages או בכל מארח git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>פרסום סטטי</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>המטמון הסטטי מגיש דפים מהשרת הזה. כדי לפרסם עותק סטטי של אתר במקום אחר, ב-GitHub Pages או בכל מארח git, יש להשתמש בפרסום הסטטי.</translation>
     </message>
 </context>
 <context>
@@ -74486,6 +74506,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>שינויים בהתקנה שנשמרים כקבצים: מצבם, הריצות, הרצה והחזרה לאחור.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>פרסום עותק סטטי של אתר ב-GitHub Pages או בכל מארח git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>פרסום סטטי</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -80594,6 +80622,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>לא ניתן היה להפעיל את הריצה.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>הקלטת שינויים</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>בזמן שהקלטה פועלת, מה שאתם משנים בממשק הניהול או בסרגל הצד של האתר נשמר כצעדים של הגירה: תוכן, מחלקות, תפקידים ומדיניות, מקטעים, משתמשים וקבוצות, כינויי URL, הגדרות. עצרו אותה כשסיימתם, בדקו מה היא לכדה וצרו ממנה הגירה.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>לא ניתן לקרוא את ההקלטות: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>טבלאות ההקלטות עדיין לא קיימות: הריצו קודם את השדרוג (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>ההקלטה כבויה ב־migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>השינויים שלי</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>מקליטה רק את מה שאתם משנים, בכל מקום שבו תשנו, עד שתעצרו אותה.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>הקלטה</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>מאז %time, עד כה %count שינויים.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>תווית (רשות)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>הצגת מה שהיא לכדה</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>עצירת ההקלטה</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>התחלת הקלטת השינויים שלי</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>חלון לכל האתר</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>מקליט כל שינוי של כל משתמש ושל המסוף עד שהוא נסגר. בפתיחתו תתבקשו לאמת שזה אתם.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>פתוח</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>סגירת החלון</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>פתיחת החלון לכל האתר</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>הקלטות</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>חשבון של משתמש (שם כניסה, דוא״ל, סיסמה) והשדות של חשבונות משתמשים אינם מוקלטים לעולם.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>שינויים</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>כל האתר</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>השינויים של %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>נעצרה</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>עדיין אין הקלטות.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>הקלטה %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>כל ההקלטות</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ההגירה שתיווצר ממנה</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>השינויים מקובצים לצעד אחד לכל דבר ששונה: מה שהגירה שנוצרה מהקלטה זו הייתה עושה.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ניתן יהיה ליצור ממנה הגירה כשלהתקנה הזו יהיו סוגי הצעדים של YAML ‏%types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>הושמט בכוונה: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>לא הוקלט דבר.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>מה שהיא לכדה</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count שינויים, לפי הסדר שבו נעשו.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>שינוי</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>צעד</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>נוגע ל</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>עוד %count: ‏./console exp:migration:record:show מציג את כולם.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>השלכה</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>מסירה את ההקלטה ואת מה שהיא לכדה. מה ששונה נשאר משונה.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>כן, להשליך את ההקלטה הזו</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>מקליט…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>השינויים שלכם מוקלטים עבור הגירה.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>כל שינוי באתר זה מוקלט עבור הגירה (חלון לכל האתר).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ההקלטה לכל האתר החלה: כל שינוי של כל משתמש מוקלט עד שתעצרו אותה.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ההקלטה החלה: השינויים שלכם מוקלטים עד שתעצרו אותה.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ההקלטה נעצרה. מה שהיא לכדה נשאר עד שתשליכו אותה.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ההקלטה והאירועים שלה הוסרו.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>אין הקלטה %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>סמנו קודם את „כן, להשליך את ההקלטה הזו”.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>רק המשתמש שהקליט רשאי לעצור הקלטת הפעלה.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>בחרו את ההקלטה לעצירה.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>הקלטה מסוג זה כבר פועלת.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>לא ניתן לשנות את ההקלטה: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81257,6 +81501,1540 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>שוחרר.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>כל היעדים</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>פרסום אחרון</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>פרסום עותק סטטי חינמי של האתר שלך ב-GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>דפים מיושנים</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>פרסום סטטי</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>הפרסום הסטטי כבוי.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>יעד</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>לא ניתן היה לקרוא את היעדים: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>משימה מתבצעת</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>בנייה לבדיקה</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>הסתר</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>יצירת יעד</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>אף פעם</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>קריאת המדריך</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added נוספו, %changed השתנו, %removed הוסרו</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes מתוך %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>עוד %count אינם מופיעים ברשימה.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages דפים נכתבו</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path בגודל %size, יותר ממה שהמארח מתיר לקובץ.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % מהמגבלה</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds שנ׳</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag הוא הפרסום שיש לאתר כעת.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: משימה %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repository/ לאתר פרויקט של GitHub; ריק לדומיין מותאם אישית או לאתר משתמש.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. האתר</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. המארח</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. התחברות למאגר</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. המאגר</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. קישורים ונתיב בסיס</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. הדומיין שלך</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. מה הבנייה מכילה</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. מתי מתבצע הפרסום</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. סקירה ושמירה</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>אתר פרויקט של GitHub נמצא תחת /&lt;repository&gt;/; קישורים יחסיים עובדים שם ובכל מקום אחר.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>בנייה מאחזרת כל דף של %site כפי שמבקר שאינו מחובר רואה אותו, משכתבת את הקישורים, מעתיקה את הקבצים וכותבת את התוצאה לתיקיית היעד. דבר אינו מתפרסם עד שבודקים את הבנייה ולוחצים על פרסום.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>ביטוי cron, לדוגמה 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>מפתח פריסה נשמר כסוד %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>מפתח פריסה מאפשר להתקנה הזו לדחוף למאגר אחד בלבד דרך SSH ולשום מקום אחר. החצי הפרטי שלו נשאר בהגדרות &gt; סודות; רק החצי הציבורי מוצג.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>מפתח פריסה שנוצר עבור יעד זה</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>מפתח פריסה מתחבר דרך SSH: יש לשנות את כתובת ה-git לכתובת ה-SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>משימה מתבצעת, הופעלה על ידי %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>משימה של יעד זה עדיין מתבצעת (%detail). יש להמתין לסיומה.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>משימה של יעד זה עדיין מתבצעת. יש להמתין לסיומה.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>קישור מהדף /news/ לדף /about-us/team ייכתב כך</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>נוצר מפתח פריסה חדש. יש להוסיף כעת את החצי הציבורי שלו למאגר.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>דף שעדיין מכיל פלט ניפוי באגים, טוקן טופס או מזהה סשן לאחר הניקוי לעולם אינו מתפרסם.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>החזרה לאחור מיועדת למומחים: יש לסמן &quot;אני יודע מה זה משנה&quot; ולהקליד שוב את שם התג.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>אתר יכול להגיע עד %site, קובץ אחד עד %file, עם כ-100 GB תעבורה בחודש. בתוכנית חינמית המאגר חייב להיות ציבורי. GitHub Pages אינו מיועד לחנויות או לעסקאות מסחריות אחרות.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>יעד הוא אתר אחד המתפרסם במאגר git אחד. כאן לא נבנה ולא מתפרסם דבר: שמירה כותבת את ההגדרות אל settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>יעד הוא אתר אחד המתפרסם במקום אחד, לדוגמה האתר הציבורי שלך ב-GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>טוקן מתוך הגדרות &gt; סודות</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>תהליך עבודה של המאגר מפרסם אותו.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>יש להוסיף מפתח ציבורי זה למאגר עם הרשאת כתיבה. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, ולסמן Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>נוסף</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>מארח git אחר</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>תהליך אחר עובד על יעד זה: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>חזרה</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>נתיב בסיס</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>לפני</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>תחת נתיב בסיס</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ענף</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>קישורים שבורים</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>קישורים שבורים בבנייה</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>בנייה</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>בנייה %id על ידי %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>בניית %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>בנייה עכשיו</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>בנייה לבדיקה</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>על ידי</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>ידנית, כאן</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ביטול</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>שינוי</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>השתנה</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>שינויים</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>בדיקה תחילה</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>יש לבדוק את ההגדרות האלה</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>יש לבדוק מה הבנייה משנה, לעיין בה, ואז לפרסם אותה או להשליך אותה.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>יש לבחור את הפרסום שאליו חוזרים.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>יגיע בגרסה מאוחרת יותר.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>קומיט</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>קומיטים</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>יוצר קומיט מהבנייה, מתייג אותה ודוחף אותה אל %remote. דחיפה לעולם אינה כפויה; ניתן לחזור לכל פרסום מאוחר יותר.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>בהשוואה לתיקייה הקודמת: %added נוספו, %changed השתנו, %removed הוסרו, %unchanged ללא שינוי.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>בהשוואה לפרסום האחרון.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>אישור גישה</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>דומיין מותאם אישית</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>פלט ניפוי באגים, טוקני טפסים, מזהי סשן ו-nonces מוסרים תמיד.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>מפתח פריסה</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>מפתח הפריסה של %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>השלכה</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>השלכת הבנייה</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>דומיין</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>ריק: כתובת האתר. אחרת, כתובת פנימית של אותו אתר.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>הסתיים</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>כל קישור מתחיל בנתיב הבסיס.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>כל פרסום הוא קומיט עם תג static/%id/&lt;n&gt;. חזרה לאחור יוצרת קומיט חדש עם הקבצים של פרסום קודם: ההיסטוריה נשמרת, אף תג אינו זז ודבר אינו נכפה.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>קבצים נוספים</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>אחזור הדפים מ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>קובץ</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>קבצים</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>קבצים חסרים</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>הקבצים של</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>קבצים שלא ניתן היה לאסוף</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>טביעת אצבע</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>תיקייה</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>לכתובת SSH. המפתח נוצר לאחר השמירה; את החצי הציבורי שלו מוסיפים למאגר.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>לכתובת https://. GitHub: טוקן מפורט (fine-grained) עם הרשאת Contents לקריאה ולכתיבה במאגר.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>למומחים. האתר הציבורי משתנה ברגע שהדחיפה מסתיימת.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>טפסים</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>אירוח חינמי ממאגר GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>מהענף</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>כתובת git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages מתיר אתר של %site וקובץ של %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>המגבלות של GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages מפרסם את הקבצים כפי שהם (נדרש לקבצים שמתחילים ב-_).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub מגיש את הענף כפי שהוא נדחף. ברירת המחדל.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, השרת שלך: כל מאגר git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>חזרה לפרסום קודם</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>עזרה</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>עזרה באשף</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>הסתרתם</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>היסטוריה</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>ההיסטוריה של %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>מארח</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>איך GitHub Pages מקבל את הבנייה</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>בדקתי את השינויים</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>אני יודע מה זה משנה</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>מזהה</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>הוא כבוי: לא ניתן לבנות דבר עד שיופעל.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>פועל ברקע בתור %user; אפשר לסגור דף זה.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>משימה %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>נשמר כסוד %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>סוג</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>פרסום אחרון</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>השמטת הדפים האלה</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>השמטת המקטעים האלה</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>קישורים</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>קישורים שנכתבו מחדש</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>האתר החי</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>עיון בבנייה</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>אותיות קטנות, ספרות, _ ו- -, לדוגמה github-public. הוא נותן שם לתיקייה ולתגים (static/&lt;id&gt;/&lt;n&gt;) ולא ניתן לשנותו מאוחר יותר.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>יצירת מפתח חדש</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>יצירת יעד</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>יצירת המפתח</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>יש ליצור תחילה את המאגר אצל המארח; מאגר ריק מתאים.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>מניפסט</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>הודעה</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>רוב הדפים</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>שם</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>שם הטוקן בהגדרות &gt; סודות</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>יעד חדש</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>הבא</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>עדיין אין קומיט.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>לא נוצר מפתח: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>לא נמצא קובץ הפעלה של php לשורת הפקודה. יש להגדיר את migration.ini [AdminSettings] PhpCliPath לנתיב המלא שלו.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>עדיין אין תג.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>עדיין אין יעד.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>ללא</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>לא בבנייה.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>עדיין לא פורסם דבר.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>עדיין לא פורסם דבר: כל קובץ חדש.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>התראות</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>לפי לוח זמנים</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>במסוף</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>בשרת: ./console exp:static:serve %id מגיש אותו באותו אופן.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>נתיב אחד בכל שורה, * מתאים לכל חלק: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>רק שם נשמר עם היעד; הטוקן או המפתח עצמו נשאר בהגדרות &gt; סודות ולעולם אינו מופיע ביומן.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>רק מה שהדפים מזכירים</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>רק עם טוקן. env:NAME קורא במקום זאת משתנה סביבה של השרת.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>פתיחת התצוגה המקדימה</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>פותח את הבנייה כפי שהמארח יגיש אותה, מתיקיית היעד. הקישור עובד עבורך במשך שעה.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>אופציונלי. ריק: מה שפורסם.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>אופציונלי. עם דומיין, האתר מוגש מהשורש שלו.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>פלט</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>דפים</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>הדפים של היעד</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>דפים שנדחו</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>עיבוד לאחר מכן</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>תצוגה מקדימה</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>תצוגה מקדימה ופרסום</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>תצוגה מקדימה ופרסום של %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>תצוגה מקדימה של הבנייה</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>התקדמות</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>כתובת ציבורית</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>מפתח ציבורי</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>פרסום</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>פרסום עותק סטטי של אתר ב-GitHub Pages או בכל מארח git: בונים אותו, בודקים את השינויים, מפרסמים, וחוזרים לפרסום קודם כשצריך.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>פרסום שאליו חוזרים</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>פרסומים</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>דחיפה</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>קריאת המדריך</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>יומן</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>נדחה</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>יחסי</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>טעינה מחדש</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>הוסר</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>החלפת המפתח: הישן מפסיק לעבוד</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>דוח</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>דוח הבנייה</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>מאגר</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>סקירה</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>הסקירה בודקת כל הגדרה ומציגה את השורות שייכתבו. עדיין לא נשמר דבר.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>החזר לאחור</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>החזרה לאחור</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>שמירה</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>לוח זמנים</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>דף חיפוש</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>מזהי מקטעים, מופרדים בפסיקים.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>שליחתם לאתר החי</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>הגדרה</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>הגדרות</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>ההגדרות של %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>הגדרות</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>הגדרות &gt; סודות</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>מוצג ברשימות, לדוגמה &quot;האתר הציבורי ב-GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>התחברות עם GitHub App תגיע עם השילוב של GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>אתר</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>אתר לפרסום</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>גודל</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>גודל ומגבלות</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>גודל הבנייה</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>דפים מיושנים</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>התחיל</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>הופעל על ידי %user בשעה %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>פרסום סטטי</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>הפרסום הסטטי כבוי</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>הפרסום הסטטי כבוי.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>הפרסום הסטטי כבוי. יש להפעיל אותו תחילה בהגדרות &gt; פרסום סטטי.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>הפרסום הסטטי מופעל.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>שלב %step מתוך %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>שלבים</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>ניקוי</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>כיבוי</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>הפעלה</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>הפעלת הפרסום הסטטי</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>תג</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>תגים</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>יעד</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>ניתן ליצור ולשנות יעדים, אך דבר אינו נבנה או מתפרסם עד שהוא מופעל.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>מורה למנועי חיפוש מה לקרוא.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>לא ניתן היה להשליך את הבנייה: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>הבנייה זהה לפרסום האחרון: אין מה לפרסם.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>הבנייה הושלכה: התיקייה מכילה שוב את הפרסום האחרון.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>ברירות המחדל מתאימות לרוב האתרים.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>התיקייה מכילה בנייה שעדיין לא פורסמה; בנייה חדשה מחליפה אותה.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>לא ניתן לכתוב לתיקיית המשימות: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>לא ניתן היה להכין את המשימה: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>לא ניתן היה להפעיל את המשימה.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>המשימה הסתיימה. הדוח שלה נטען.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>המשימה דורשת משתמש מחובר.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>המשימה הופעלה אך לא דיווחה על מזהה התהליך שלה. יש לבדוק את %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>המפתח</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>הקובץ הגדול ביותר: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>השורות שייכתבו</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>רשימת הדפים עבור מנועי חיפוש; דורשת את הכתובת הציבורית.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>הדפים מאוחזרים כפי שמבקר שאינו מחובר רואה אותם. siteaccess של ניהול ועריכה לעולם אינם מוצעים.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>לא ניתן היה לעקוב אחר ההתקדמות. יש לטעון מחדש את הדף כדי לראות את מצב המשימה.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>החצי הציבורי של המפתח:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>שורש הענף</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>מאגר הסודות עדיין לא הוגדר (./console exp:upgrade --apply יוצר את הטבלה שלו), ולכן לא ניתן לשמור מפתח.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>השרת מתחבר בעצמו (מפתח SSH משלו או מסייע אישורי גישה), או שהמאגר נמצא בשרת הזה.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>לא ניתן היה לכתוב את ההגדרה: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>ההגדרות תקינות. השורות האלה ייכתבו:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>לא ניתן לקרוא את קובץ ההגדרות: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>האתר חוזר לקבצים של אותו פרסום; בנייה שעדיין לא פורסמה חייבת להתפרסם או להיות מושלכת קודם.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>הדף של האתר עצמו עבור כתובות שאינן קיימות.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>לא ניתן היה לשמור את היעד: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>היעד עדיין אינו מתחבר עם מפתח זה: יש לבחור &quot;מפתח פריסה שנוצר עבור יעד זה&quot; בהגדרות שלו.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>לא ניתן היה לקרוא את היעדים: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>עדיין אין בנייה לבדיקה.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>להתקנה זו אין siteaccess ציבורי. siteaccess של ניהול ועריכה לעולם אינם מתפרסמים.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>דף זה עוקב אחר המשימה תוך כדי התקדמותה; היא ממשיכה ברקע כשהדף נסגר.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>ליעד זה עדיין אין מפתח פריסה.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>יעד זה עדיין לא נבנה כאן.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>ליעד זה יש אחד.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>משליך את הבנייה הזו: התיקייה מכילה שוב את הפרסום האחרון. האתר החי אינו משתנה.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>יש לסמן תחילה &quot;בדקתי את השינויים&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>שעה</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>מפעילים</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>יש להקליד שוב את שם התג</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ללא שינוי</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>מה</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>מה משתנה</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>מה כל קובץ; נכתב תמיד.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>מה המשימה עשתה והיומן שלה. משימה שהופעלה כאן ממשיכה ברקע כשדף זה נסגר.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>מה שהמשימה הדפיסה כשגיאות</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>מה שהדפים מזכירים, וכל תמונה של תוכן שפורסם</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>מתי</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>כשפרסום נכשל</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>כשפרסום מצליח</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>כשתוכן מתפרסם</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>לאן הולכים קישורים למה שהעותק אינו מכיל (החיפוש, ההתחברות).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>מאיפה העותק הסטטי מוגש.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>איזה אתר מתפרסם, ומה שם היעד.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>עובד תחת כל נתיב. ברירת המחדל.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>נכתב בכל פעם שמוגדר דומיין מותאם אישית.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>כן</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>תמיד ניתן לבנות ולפרסם ידנית כאן ובמסוף.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>שם בלבד; הערך נשאר בהגדרות &gt; סודות</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>תחת %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>הסתיים ללא דוח</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>תוספת</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>נכשל</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>קובץ</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, או main עם התיקייה docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>מארח git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (עם טוקן) או git@github.com:owner/repo.git (עם מפתח פריסה); לעולם לא סיסמה או טוקן בתוכה.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, עבור מפת האתר והקישורים הקנוניים.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>תמונה</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>אף פעם</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>אין remote</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>ללא: הקומיטים נשארים בתיקייה</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>ללא: דבר לא השתנה</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>לא נדחף</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>דבר לא השתנה</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>דף</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>עבר</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open מושבת, ולכן לא ניתן להפעיל כאן משימה. יש להשתמש ב-./console exp:static:build בשרת.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>פרסום</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>פורסם</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>דחיפה ממתינה</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>נדחף</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>נדחה</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>יחסי</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>החזרה לאחור</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>הוחזר לאחור</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>פועל</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>התיקייה בלבד</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: נכתב לקובץ CNAME. יש להפנות את ה-DNS של הדומיין אל המארח כפי שהוא מסביר; הפעלת HTTPS עשויה להימשך זמן מה.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>כן, עדיין לא פורסם</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>תהליך עבודה של המאגר מפרסם אותו. הבנייה כותבת את קובץ תהליך העבודה; השאירו את התיקייה ריקה.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>לאחר שמירת יעד עם מאגר GitHub וטוקן או GitHub App, שלב זה יכול ליצור את המאגר ולהפעיל את GitHub Pages. אחרת, צרו קודם את המאגר ב-GitHub; מאגר ריק מספיק.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ענף או GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>בדיקת ה-DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>יצירת המאגר אם הוא לא קיים</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>צרו את המאגר ב-GitHub והפעילו את GitHub Pages בהגדרות שלו (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>יוצר את המאגר %repo כשהוא חסר (כשמתבקש), מפעיל את GitHub Pages מהענף או מ-GitHub Actions כפי שנשמר, ומגדיר את הדומיין המותאם אישית ואת HTTPS. משתמש בהגדרות השמורות: שמרו קודם את השינויים.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>פרטים ב-GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>הזינו קודם את הדומיין המותאם אישית.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>כל דחיפה נבדקת קודם מול המגבלות האלה.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>לכתובת https:// ב-GitHub. ה-App שהוגדר להתקנה זו מתחבר; הוא צריך את מזהה ההתקנה.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages מגיש מאגר פרטי רק בתוכנית בתשלום.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: תת-דומיין (www.example.com) צריך רשומת CNAME אל &lt;owner&gt;.github.io; דומיין ראשי (example.com) את רשומות A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>מזהה ההתקנה של ה-GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>בניית Pages אחרונה</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>מגבלות ותנאים</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>נדרש עבור GitHub Pages בתוכנית חינמית.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>ב-GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>רק עם GitHub App: המספר בסוף הכתובת של ההתקנה של ה-App ב-GitHub. ה-App עצמו מוגדר ב-staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>פרטי</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>ציבורי</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>שמרו קודם את היעד עם מאגר GitHub וטוקן או GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>הגדירו את הרשומות האלה אצל ספק הדומיין:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>הגדרה ב-GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>ה-DNS של %domain עדיין לא מצביע אל GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>ה-DNS של %domain מצביע אל GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>השילוב של GitHub לא זמין כאן: %problem. פרסום לענף עובד בכל זאת; הפעילו את GitHub Pages בהגדרות המאגר.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>שלבי GitHub לא זמינים ליעד זה: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>המצב של GitHub Pages מוצג כשאישור הגישה הוא טוקן או GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>שימוש בדומיין משלכם</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>מה לבחור: טוקן, מפתח פריסה או GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>עם מאגר GitHub וטוקן או GitHub App, האשף יכול ליצור את המאגר, להפעיל את GitHub Pages ולהגדיר את הדומיין בשבילכם (שלב 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>בבנייה</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>נבנה</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>מ-GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>מהענף %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>עדיין אין</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>לא נמצא</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>כבוי</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>פרטי</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ציבורי</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>בתור</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>לא ידוע</translation>
     </message>
 </context>
 </TS>

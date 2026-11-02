@@ -2,14 +2,14 @@
 title: staticcache.ini [StaticPublishSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [StaticPublishSettings] in staticcache.ini: Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail"
-keywords: staticcache.ini, StaticPublishSettings, INI, setting, Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail
+summary: "The settings of [StaticPublishSettings] in staticcache.ini: Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail ..."
+keywords: staticcache.ini, StaticPublishSettings, INI, setting, Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail, JobHistory, GitHubAPI, GitHubAPIURL, GitHubAppId, GitHubAppKey, GitHubOAuthClientId
 type: generated
 generated: exp:help:examples
 ---
 # staticcache.ini [StaticPublishSettings]
 
-The block `[StaticPublishSettings]` of `settings/staticcache.ini`, with 8 setting(s).
+The block `[StaticPublishSettings]` of `settings/staticcache.ini`, with 14 setting(s).
 
 Never edit `settings/staticcache.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -140,6 +140,99 @@ Default: empty.
 # settings/override/staticcache.ini.append.php
 [StaticPublishSettings]
 CommitEmail=
+*/ ?>
+```
+
+## JobHistory
+
+> How many jobs (builds, publishes, rollbacks started in the administration) keep their files  
+> in <WorkDir>/.jobs; older ones are removed. A job that is running is always kept.  
+
+Default: `50`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+JobHistory=50
+*/ ?>
+```
+
+## GitHubAPI
+
+> The GitHub integration: GitHub's API for targets with Kind=github-pages  
+> (create the repository, switch GitHub Pages on from the branch or from  
+> GitHub Actions, the custom domain and HTTPS, the Pages build status). It  
+> signs in with the target's Credential (token: or app:). enabled or disabled;  
+> publishing to the branch works without it.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+GitHubAPI=enabled
+*/ ?>
+```
+
+## GitHubAPIURL
+
+> The address of GitHub's REST API (GitHub Enterprise Server:  
+> https://<host>/api/v3).  
+
+Default: `https://api.github.com`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+GitHubAPIURL=https://api.github.com
+*/ ?>
+```
+
+## GitHubAppId
+
+> A GitHub App for Credential=app:<installation id>: the App's id, and the  
+> name of the secret (Setup > Secrets) that holds the private key (PEM) GitHub  
+> made for it. The App needs the repository permissions Contents, Pages and  
+> Administration (to create repositories), read and write.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+GitHubAppId=
+*/ ?>
+```
+
+## GitHubAppKey
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+GitHubAppKey=
+*/ ?>
+```
+
+## GitHubOAuthClientId
+
+> The client id of an OAuth App with the device flow switched on, for  
+> ./console exp:static:github signin: a user signs in on github.com and the  
+> token is kept in the secret store for Credential=token:<secret>.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+GitHubOAuthClientId=
 */ ?>
 ```
 

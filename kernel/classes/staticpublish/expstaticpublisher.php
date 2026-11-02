@@ -40,14 +40,14 @@ class expStaticPublisher
      *        $message )), push (bool|null: null takes [StaticPublishSettings] Push), credentials (expStaticCredentials,
      *        default from the target's Credential), build (array: options of expStaticBuild), commit_name,
      *        commit_email, git_manager, lookup (secret lookup for the credentials, tests), audit (callable( $name, $data ) instead of
-     *        expAudit, tests)
+     *        expAudit, tests), run_id (the id of the run instead of a new one: the administration's job id)
      */
     public function __construct( expStaticTarget $target, array $options = array() )
     {
         $this->target = $target;
         $this->options = $options + array( 'root' => (string)getcwd(), 'var_dir' => null, 'work_dir' => null, 'db' => null, 'by' => '',
                                            'emit' => null, 'push' => null, 'credentials' => null, 'build' => array(), 'commit_name' => null,
-                                           'commit_email' => null, 'git_manager' => true, 'lookup' => null, 'audit' => null );
+                                           'commit_email' => null, 'git_manager' => true, 'lookup' => null, 'audit' => null, 'run_id' => '' );
     }
 
     /** @return string a [StaticPublishSettings] value, or the default */
@@ -130,7 +130,8 @@ class expStaticPublisher
     {
         $options += array( 'build' => false, 'message' => '' );
         $started = time();
-        $runId = isset( $this->options['build']['run_id'] ) && $this->options['build']['run_id'] !== '' ? (string)$this->options['build']['run_id'] : expStaticBuild::newRunId();
+        $runId = (string)$this->options['run_id'] !== '' ? (string)$this->options['run_id']
+               : ( isset( $this->options['build']['run_id'] ) && $this->options['build']['run_id'] !== '' ? (string)$this->options['build']['run_id'] : expStaticBuild::newRunId() );
         $report = $this->report( 'publish', $runId );
         $problem = '';
         $lock = expStaticLock::acquire( $this->workDirectory(), $this->target->id(), 'publish', $problem );
@@ -206,7 +207,7 @@ class expStaticPublisher
     {
         $options += array( 'apply' => false, 'message' => '' );
         $started = time();
-        $report = $this->report( 'rollback', expStaticBuild::newRunId() );
+        $report = $this->report( 'rollback', (string)$this->options['run_id'] !== '' ? (string)$this->options['run_id'] : expStaticBuild::newRunId() );
         $report['apply'] = (bool)$options['apply'];
         $report['from_tag'] = '';
         $report['files'] = array();

@@ -291,6 +291,34 @@ class expMigrationAdmin
     }
 
     /**
+     * The fetch function migration/recording (kernel/migration/function_definition.php), for the bar "Recording..." on
+     * every page of the administration: the signed-in user's own recording and the site-wide window that run. Every
+     * user sees the site-wide window (their changes are recorded too); only holders of migration/edit may stop it.
+     * Reads the file of running recordings, no query; never throws.
+     *
+     * @return array result => array( mine (recording_id, started_at, or null), site (or null), can_stop_site (bool) )
+     */
+    public static function fetchRecording()
+    {
+        $out = array( 'mine' => null, 'site' => null, 'can_stop_site' => false );
+        try
+        {
+            if ( !class_exists( 'expMigrationRecording' ) )
+                return array( 'result' => $out );
+            $user = eZUser::currentUser();
+            if ( !$user->isRegistered() )
+                return array( 'result' => $out );
+            $out = expMigrationRecording::forUser( (int)$user->attribute( 'contentobject_id' ) ) + $out;
+            if ( $out['site'] !== null )
+                $out['can_stop_site'] = self::canDo( 'edit', $user );
+        }
+        catch ( Throwable $e )
+        {
+        }
+        return array( 'result' => $out );
+    }
+
+    /**
      * The counts of a status report (expMigrationStatus::report()) the dashboard shows. Pure.
      *
      * @param array $report

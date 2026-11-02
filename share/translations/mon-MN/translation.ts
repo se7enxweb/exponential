@@ -15158,6 +15158,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Хамгийн шинэ агуулга, хянуулахаар саатуулсан зүйлс болон сонголт дээрх үйлдлүүд.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Сайтын статик хуулбарыг GitHub Pages эсвэл дурын git хост руу нийтлэх.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статик нийтлэлт</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API-н хадгалсан асуулгуудын хариултууд болон түүний схемийн агуулгын ангиуд.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Статик хуулбарыг GitHub Pages эсвэл дурын git хост руу нийтлэх</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статик нийтлэлт</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Статик кэш хуудсуудыг энэ серверээс үйлчилдэг. Сайтын статик хуулбарыг өөр газар, GitHub Pages эсвэл дурын git хост дээр нийтлэхийн тулд статик нийтлэлтийг ашиглана уу.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Файл хэлбэрээр хадгалсан суулгацын өөрчлөлтүүд: тэдгээрийн төлөв, ажиллуулалтууд, ажиллуулах ба буцаах.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Сайтын статик хуулбарыг GitHub Pages эсвэл дурын git хост руу нийтлэх.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статик нийтлэлт</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Ажиллуулалтыг эхлүүлж чадсангүй.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Өөрчлөлтийг бичих</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Бичлэг явагдаж байх үед удирдлагад эсвэл сайтын хажуугийн самбарт таны өөрчилсөн зүйл шилжүүлгийн алхмууд болж хадгалагдана: агуулга, анги, үүрэг ба бодлого, хэсэг, хэрэглэгч ба бүлэг, URL нэр, тохиргоо. Дуусмагц зогсоож, юу барьж авсныг хараад, түүнээс шилжүүлэг үүсгэнэ үү.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Бичлэгүүдийг уншиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Бичлэгийн хүснэгтүүд хараахан алга: эхлээд шинэчлэлийг ажиллуулна уу (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Бичлэг migration.ini дотор унтраалттай ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Миний өөрчлөлтүүд</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Таныг зогсоох хүртэл зөвхөн таны өөрчилсөн зүйлийг, хаана ч өөрчилсөн, бичнэ.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Бичлэг</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time-с хойш, одоогоор %count өөрчлөлт.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Шошго (заавал биш)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Юу барьж авсныг харуулах</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Бичлэгийг зогсоох</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Миний өөрчлөлтийг бичиж эхлэх</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Бүх сайтын цонх</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Хаагдах хүртэл хэрэглэгч бүрийн болон консолын өөрчлөлт бүрийг бичнэ. Нээх үед таныг өөрөө мөн эсэхийг баталгаажуулахыг хүснэ.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Нээлттэй</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Цонхыг хаах</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Бүх сайтын цонхыг нээх</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Бичлэгүүд</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Хэрэглэгчийн бүртгэл (нэвтрэх нэр, имэйл, нууц үг) болон хэрэглэгчийн бүртгэлийн талбаруудыг хэзээ ч бичихгүй.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Өөрчлөлтүүд</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Бүх сайт</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name-ийн өөрчлөлтүүд</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Зогсоосон</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Одоогоор бичлэг алга.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Бичлэг %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Бүх бичлэг</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Түүнээс гарах шилжүүлэг</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Өөрчлөгдсөн зүйл бүрт нэг алхам болгон нэгтгэсэн өөрчлөлтүүд: энэ бичлэгээс үүсгэсэн шилжүүлэг юу хийхийг.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Энэ суулгацад YAML алхмын төрлүүд %types бий болоход түүнээс шилжүүлэг үүсгэж болно.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Санаатайгаар орхисон: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Юу ч бичигдсэнгүй.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Юу барьж авсан</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count өөрчлөлт, хийгдсэн дарааллаараа.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Өөрчлөлт</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Алхам</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Холбогдох</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Бас %count: ./console exp:migration:record:show бүгдийг жагсаана.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Хаях</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Бичлэг болон түүний барьж авсныг устгана. Өөрчлөгдсөн зүйл өөрчлөгдсөн хэвээр үлдэнэ.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Тийм, энэ бичлэгийг хаях</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Бичиж байна…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Таны өөрчлөлтүүдийг шилжүүлэгт зориулан бичиж байна.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Энэ сайт дахь өөрчлөлт бүрийг шилжүүлэгт зориулан бичиж байна (бүх сайтын цонх).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Бүх сайтын бичлэг эхэллээ: таныг зогсоох хүртэл хэрэглэгч бүрийн өөрчлөлт бүрийг бичнэ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Бичлэг эхэллээ: таныг зогсоох хүртэл таны өөрчлөлтүүдийг бичнэ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Бичлэг зогслоо. Барьж авсан зүйл таныг хаях хүртэл үлдэнэ.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Бичлэг болон түүний үйл явдлуудыг устгалаа.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id бичлэг алга.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Эхлээд «Тийм, энэ бичлэгийг хаях»-ыг тэмдэглэнэ үү.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Сешний бичлэгийг зөвхөн бичсэн хэрэглэгч зогсоож чадна.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Зогсоох бичлэгээ сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Энэ төрлийн бичлэг аль хэдийн явагдаж байна.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Бичлэгийг өөрчилж чадсангүй: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1540 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>Чөлөөлсөн.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Бүх зорилт</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Сүүлийн нийтлэлт</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Сайтынхаа үнэгүй статик хуулбарыг GitHub Pages дээр нийтлээрэй:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Хуучирсан хуудсууд</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статик нийтлэлт</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Статик нийтлэлт унтраалттай байна.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Зорилт</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Зорилтуудыг уншиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>даалгавар явагдаж байна</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>шалгах бүтээл</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>үүнийг нуух</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>зорилт үүсгэх</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>хэзээ ч үгүй</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>зааварчилгааг унших</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added нэмэгдсэн, %changed өөрчлөгдсөн, %removed хасагдсан</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit-ээс %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Өөр %count жагсаагдаагүй.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Бичигдсэн хуудас: %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path нь %size, хостын нэг файлд зөвшөөрөхөөс их байна.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>Хязгаарын %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds сек</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag бол сайтын одоогийн нийтлэлт.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: даалгавар %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub төслийн сайтад /агуулах/; өөрийн домэйн эсвэл хэрэглэгчийн сайтад хоосон.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Сайт</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Хост</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Агуулахад нэвтрэх</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Агуулах</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Холбоосууд ба үндсэн зам</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Таны өөрийн домэйн</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Бүтээлд юу орох</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Хэзээ нийтлэх</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Хянаж хадгалах</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub төслийн сайт /&lt;repository&gt;/ доор байрладаг; харьцангуй холбоосууд тэнд ч, өөр хаана ч ажиллана.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Бүтээл нь %site-ийн хуудас бүрийг нэвтрээгүй зочин харах байдлаар татаж, холбоосуудыг дахин бичиж, файлуудыг хуулж, үр дүнг зорилтын хавтас руу бичнэ. Та бүтээлийг шалгаж Нийтлэх товчийг дарах хүртэл юу ч нийтлэгдэхгүй.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron илэрхийлэл, жишээ нь 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Байршуулах түлхүүрийг %secret нууц болгон хадгалдаг.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Байршуулах түлхүүр нь энэ суулгацад зөвхөн нэг агуулах руу SSH-ээр илгээх боломж олгоно. Түүний хувийн хагас Тохируулга &gt; Нууцууд хэсэгт үлдэнэ; зөвхөн нийтийн хагасыг харуулна.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Энэ зорилтод зориулж үүсгэсэн байршуулах түлхүүр</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Байршуулах түлхүүр SSH-ээр нэвтэрдэг: git хаягийг SSH хаяг болгон өөрчилнө үү (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>%user-ийн эхлүүлсэн даалгавар явагдаж байна</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Энэ зорилтын даалгавар явагдсаар байна (%detail). Дуусахыг хүлээнэ үү.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Энэ зорилтын даалгавар явагдсаар байна. Дуусахыг хүлээнэ үү.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ хуудаснаас /about-us/team хуудас руу чиглэсэн холбоосыг дараах байдлаар бичнэ</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Шинэ байршуулах түлхүүр үүслээ. Түүний нийтийн хагасыг одоо агуулахад нэмнэ үү.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Цэвэрлэсний дараа ч дибаг гаралт, маягтын токен эсвэл сешний id агуулсан хуудсыг хэзээ ч нийтлэхгүй.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Буцаалт нь мэргэжилтнүүдэд зориулагдсан: &quot;Энэ юуг өөрчлөхийг би мэднэ&quot;-г тэмдэглээд шошгоны нэрийг дахин бичнэ үү.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Сайт %site хүртэл, нэг файл %file хүртэл байж болох ба сард 100 GB орчим траффиктай. Үнэгүй багцад агуулах нийтийн байх ёстой. GitHub Pages нь дэлгүүр эсвэл бусад арилжааны гүйлгээнд зориулагдаагүй.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Зорилт гэдэг нь нэг git агуулах руу нийтлэгдэх нэг сайт юм. Энд юу ч бүтээгдэхгүй, нийтлэгдэхгүй: Хадгалах нь тохиргоог settings/override/staticcache.ini.append.php руу бичнэ.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Зорилт гэдэг нь нэг газар нийтлэгдэх нэг сайт, жишээ нь GitHub Pages дээрх таны нийтийн сайт.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Тохируулга &gt; Нууцууд хэсгийн токен</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Агуулахын workflow үүнийг нийтэлнэ.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Энэ нийтийн түлхүүрийг бичих эрхтэйгээр агуулахад нэмнэ үү. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access-ийг тэмдэглэнэ.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Нэмэгдсэн</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Өөр git хост</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Өөр процесс энэ зорилт дээр ажиллаж байна: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Буцах</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Үндсэн зам</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Өмнө</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Үндсэн замын доор</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Салбар</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Эвдэрсэн холбоосууд</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Бүтээл дэх эвдэрсэн холбоосууд</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Бүтээл</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%user-ийн бүтээл %id</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name-ийг бүтээх</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Одоо бүтээх</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Шалгах бүтээл</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Хэн</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Гараар, энд</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Цуцлах</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Өөрчлөх</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Өөрчлөгдсөн</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Өөрчлөлтүүд</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Эхлээд шалгах</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Эдгээр тохиргоог шалгана уу</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Бүтээл юуг өөрчлөхийг шалгаж, үзээд дараа нь нийтлэх эсвэл хаяна уу.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Буцах нийтлэлтээ сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Дараагийн хувилбарт гарна.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Коммит</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Коммитууд</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Бүтээлийг коммитлож, шошголж, %remote руу илгээнэ. Илгээлтийг хэзээ ч хүчээр хийхгүй; дараа нь дурын нийтлэлт рүү буцаж болно.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Өмнөх хавтастай харьцуулбал: %added нэмэгдсэн, %changed өөрчлөгдсөн, %removed хасагдсан, %unchanged өөрчлөгдөөгүй.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Сүүлийн нийтлэлттэй харьцуулсан.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Нэвтрэх мэдээлэл</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Өөрийн домэйн</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Дибаг гаралт, маягтын токен, сешний id болон nonce-уудыг үргэлж хасна.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Байршуулах түлхүүр</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name-ийн байршуулах түлхүүр</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Хаях</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Бүтээлийг хаях</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Домэйн</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Хоосон: сайтын хаяг. Эс бөгөөс тухайн сайтын дотоод хаяг.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Дууссан</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Холбоос бүр үндсэн замаар эхэлнэ.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Нийтлэлт бүр static/%id/&lt;n&gt; шошготой коммит байна. Буцах нь өмнөх нийтлэлтийн файлуудтай шинэ коммит үүсгэнэ: түүх хадгалагдана, ямар ч шошго шилжихгүй, юу ч хүчээр хийгдэхгүй.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Нэмэлт файлууд</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Хуудсуудыг татах хаяг</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Файлууд</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Дутуу файлууд</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Файлууд:</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Цуглуулж чадаагүй файлууд</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Хурууны хээ</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Хавтас</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH хаягт. Түлхүүрийг хадгалсны дараа үүсгэнэ; та түүний нийтийн хагасыг агуулахад нэмнэ.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// хаягт. GitHub: агуулах дээр Contents унших ба бичих эрхтэй нарийвчилсан (fine-grained) токен.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Мэргэжилтнүүдэд. Илгээлт дуусмагц нийтийн сайт өөрчлөгдөнө.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Маягтууд</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub агуулахаас үнэгүй хостинг.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Салбараас</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git хаяг</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages нь %site хэмжээтэй сайт, %file хэмжээтэй файлыг зөвшөөрдөг.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages-ийн хязгаар</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages файлуудыг байгаагаар нь нийтэлнэ (_-ээр эхэлсэн файлуудад шаардлагатай).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub салбарыг илгээгдсэн байдлаар нь үйлчилнэ. Анхдагч.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, таны өөрийн сервер: дурын git агуулах.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Өмнөх нийтлэлт рүү буцах</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Тусламж</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Шидтэний тусламж</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Нуух</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Түүх</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name-ийн түүх</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Хост</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages бүтээлийг хэрхэн хүлээн авах</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Би өөрчлөлтүүдийг шалгасан</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Энэ юуг өөрчлөхийг би мэднэ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Унтраалттай байна: асаах хүртэл юу ч бүтээх боломжгүй.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Арын дэвсгэрт %user нэрээр ажиллана; та энэ хуудсыг хааж болно.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Даалгавар %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret нууц болгон хадгалсан.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Төрөл</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Сүүлийн нийтлэлт</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Эдгээр хуудсыг оруулахгүй</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Эдгээр хэсгийг оруулахгүй</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Холбоосууд</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Дахин бичигдсэн холбоосууд</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Амьд сайт</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Бүтээлийг үзэх</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Жижиг үсэг, цифр, _ ба -, жишээ нь github-public. Хавтас болон шошгуудыг (static/&lt;id&gt;/&lt;n&gt;) нэрлэх ба дараа өөрчлөх боломжгүй.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Шинэ түлхүүр үүсгэх</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Зорилт үүсгэх</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Түлхүүр үүсгэх</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Эхлээд хост дээр агуулахыг үүсгэнэ үү; хоосон байж болно.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Манифест</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Мессеж</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Ихэнх хуудас</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Нэр</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Тохируулга &gt; Нууцууд дахь токены нэр</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Шинэ зорилт</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Дараах</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Үгүй</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Коммит хараахан алга.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Түлхүүр үүсээгүй: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php командын мөрийн программ олдсонгүй. migration.ini [AdminSettings] PhpCliPath-д түүний бүтэн замыг тохируулна уу.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Шошго хараахан алга.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Зорилт хараахан алга.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Байхгүй</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Бүтээлд байхгүй.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Юу ч хараахан нийтлэгдээгүй.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Юу ч хараахан нийтлэгдээгүй: бүх файл шинэ.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Мэдэгдэл</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Хуваарийн дагуу</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Консол дээр</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Сервер дээр: ./console exp:static:serve %id мөн адил үйлчилнэ.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Мөр бүрт нэг зам, * нь дурын хэсэгт тохирно: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Зорилттой хамт зөвхөн нэр хадгална; токен эсвэл түлхүүр өөрөө Тохируулга &gt; Нууцууд хэсэгт үлдэж, бүртгэлд хэзээ ч гарахгүй.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Зөвхөн хуудсуудын нэрлэсэн зүйл</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Зөвхөн токентой. env:NAME оронд нь серверийн орчны хувьсагчийг уншина.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Урьдчилан харахыг нээх</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Бүтээлийг хост үйлчлэх байдлаар, зорилтын хавтаснаас нээнэ. Холбоос танд нэг цагийн турш ажиллана.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Заавал биш. Хоосон: нийтлэгдсэн зүйл.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Заавал биш. Домэйнтэй бол сайтыг түүний үндэсээс үйлчилнэ.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Гаралт</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Хуудсууд</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Зорилтын хуудсууд</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Татгалзсан хуудсууд</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Дараах боловсруулалт</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Урьдчилан харах</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Урьдчилан харах ба нийтлэх</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name-ийг урьдчилан харах ба нийтлэх</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Бүтээлийг урьдчилан харах</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Явц</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Нийтийн хаяг</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Нийтийн түлхүүр</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Нийтлэх</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Сайтын статик хуулбарыг GitHub Pages эсвэл дурын git хост руу нийтлэх: бүтээж, өөрчлөлтийг шалгаж, нийтлээд, шаардлагатай үед өмнөх нийтлэлт рүү буцна.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Буцах нийтлэлт</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Нийтлэлтүүд</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Илгээлт</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Зааварчилгааг унших</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Бүртгэл</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Татгалзсан</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Харьцангуй</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Дахин ачаалах</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Хасагдсан</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Түлхүүрийг солих: хуучин нь ажиллахаа болино</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Тайлан</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Бүтээлийн тайлан</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Агуулах</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Хяналт</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Хяналт нь тохиргоо бүрийг шалгаж, бичигдэх мөрүүдийг харуулна. Юу ч хараахан хадгалагдаагүй.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Буцаах</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Буцаалт</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Хадгалах</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Хуваарь</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Хайлтын хуудас</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Хэсгийн id-ууд, таслалаар тусгаарлана.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Тэднийг амьд сайт руу илгээх</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Тохиргоо</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Тохиргоо</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name-ийн тохиргоо</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Тохируулга</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Тохируулга &gt; Нууцууд</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Жагсаалтад харагдана, жишээ нь &quot;GitHub Pages дээрх нийтийн сайт&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App-аар нэвтрэх нь GitHub-ийн интеграцтай хамт гарна.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Сайт</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Нийтлэх сайт</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Хэмжээ</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Хэмжээ ба хязгаар</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Бүтээлийн хэмжээ</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Хуучирсан хуудсууд</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Эхэлсэн</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user %time-д эхлүүлсэн.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Төлөв</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статик нийтлэлт</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Статик нийтлэлт унтраалттай байна</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Статик нийтлэлт унтраалттай байна.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Статик нийтлэлт унтраалттай байна. Эхлээд Тохируулга &gt; Статик нийтлэлт хэсэгт асаана уу.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Статик нийтлэлт асаалттай байна.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%total-ийн %step-р алхам</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Алхамууд</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Цэвэрлэгээ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Унтраах</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Асаах</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Статик нийтлэлтийг асаах</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Шошго</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Шошгууд</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Зорилт</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Зорилтуудыг үүсгэж, өөрчилж болно, гэхдээ асаах хүртэл юу ч бүтээгдэхгүй, нийтлэгдэхгүй.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Хайлтын системд юуг унших ёстойг хэлнэ.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Бүтээлийг хаяж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Бүтээл сүүлийн нийтлэлттэй ижил байна: нийтлэх зүйл алга.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Бүтээлийг хаялаа: хавтас дахин сүүлийн нийтлэлтийг агуулж байна.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Анхдагч утгууд ихэнх сайтад тохирно.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Хавтас хараахан нийтлэгдээгүй бүтээл агуулж байна; шинэ бүтээл түүнийг орлоно.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Даалгавруудын хавтас руу бичих боломжгүй: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Даалгаврыг бэлтгэж чадсангүй: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Даалгаврыг эхлүүлж чадсангүй.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Даалгавар дууслаа. Тайланг ачаалж байна.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Даалгаварт нэвтэрсэн хэрэглэгч шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Даалгавар эхэлсэн боловч процессынхоо id-г мэдээлээгүй. %detail-ийг шалгана уу.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Түлхүүр</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Хамгийн том файл: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Бичигдэх мөрүүд</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Хайлтын системд зориулсан хуудсуудын жагсаалт; нийтийн хаяг шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Хуудсуудыг нэвтрээгүй зочин харах байдлаар татна. Удирдлага болон засварын сайтын хандалтуудыг хэзээ ч санал болгохгүй.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Явцыг дагаж чадсангүй. Даалгавар хэрхэн явагдаж байгааг харахын тулд хуудсыг дахин ачаална уу.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Түлхүүрийн нийтийн хагас:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Салбарын үндэс</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Нууцын сан хараахан тохируулагдаагүй (./console exp:upgrade --apply түүний хүснэгтийг үүсгэнэ), тиймээс түлхүүр хадгалах боломжгүй.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Сервер өөрөө нэвтэрнэ (өөрийн SSH түлхүүр эсвэл credential helper-ээр), эсвэл агуулах энэ сервер дээр байна.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Тохиргоог бичиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Тохиргоо хүчинтэй. Дараах мөрүүд бичигдэнэ:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Тохиргооны файлыг уншиж чадахгүй: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Сайт тухайн нийтлэлтийн файлууд руу буцна; хараахан нийтлэгдээгүй бүтээлийг эхлээд нийтлэх эсвэл хаях шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Байхгүй хаягуудад зориулсан сайтын өөрийн хуудас.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Зорилтыг хадгалж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Зорилт энэ түлхүүрээр хараахан нэвтрэхгүй байна: тохиргоонд нь &quot;Энэ зорилтод зориулж үүсгэсэн байршуулах түлхүүр&quot;-ийг сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Зорилтуудыг уншиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Шалгах бүтээл хараахан алга.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Энэ суулгацад нийтийн сайтын хандалт алга. Удирдлага болон засварын сайтын хандалтуудыг хэзээ ч нийтлэхгүй.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Энэ хуудас даалгаврыг явцын турш дагана; хуудсыг хаахад даалгавар арын дэвсгэрт үргэлжилнэ.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Энэ зорилтод байршуулах түлхүүр хараахан алга.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Энэ зорилтыг энд хараахан бүтээгээгүй.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Энэ зорилтод нэг байна.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Энэ бүтээлийг хаяна: хавтас дахин сүүлийн нийтлэлтийг агуулна. Амьд сайт өөрчлөгдөхгүй.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Эхлээд &quot;Би өөрчлөлтүүдийг шалгасан&quot;-ыг тэмдэглэнэ үү.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Цаг</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Өдөөгчид</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Шошгоны нэрийг дахин бичнэ үү</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Өөрчлөгдөөгүй</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Вебхук</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Юу</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Юу өөрчлөгдөх</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Файл бүр юу болох; үргэлж бичигдэнэ.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Даалгавар юу хийсэн ба түүний бүртгэл. Энд эхлүүлсэн даалгавар энэ хуудсыг хаахад арын дэвсгэрт үргэлжилнэ.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Даалгаврын алдаа болгон хэвлэсэн зүйл</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Хуудсуудын нэрлэсэн зүйл болон нийтлэгдсэн агуулгын бүх зураг</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Хэзээ</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Нийтлэлт амжилтгүй болоход</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Нийтлэлт амжилттай болоход</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Агуулга нийтлэгдэхэд</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Хуулбарт байхгүй зүйл рүү чиглэсэн холбоосууд хаашаа очих (хайлт, нэвтрэлт).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Статик хуулбарыг хаанаас үйлчлэх.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Аль сайтыг нийтлэх, зорилтыг юу гэж нэрлэх.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Дурын замын доор ажиллана. Анхдагч.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Өөрийн домэйн тохируулсан үед бичигдэнэ.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Тийм</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Та энд болон консол дээр үргэлж гараар бүтээж, нийтэлж болно.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>зөвхөн нэр; утга нь Тохируулга &gt; Нууцууд хэсэгт үлдэнэ</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path доор</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>тайлангүй дууссан</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>нэмэлт</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>амжилтгүй</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>файл</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, эсвэл docs хавтастай main.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git хост</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (токентой) эсвэл git@github.com:owner/repo.git (байршуулах түлхүүртэй); дотор нь нууц үг эсвэл токен хэзээ ч бүү оруул.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, сайтын зураглал болон каноник холбоосуудад.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>зураг</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>хэзээ ч үгүй</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>үгүй</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>алсын агуулахгүй</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>байхгүй: коммитууд хавтаст үлдэнэ</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>байхгүй: юу ч өөрчлөгдөөгүй</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>илгээгдээгүй</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>юу ч өөрчлөгдөөгүй</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>хуудас</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>амжилттай</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open идэвхгүй тул энд даалгавар эхлүүлэх боломжгүй. Сервер дээр ./console exp:static:build-ийг ашиглана уу.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>нийтлэлт</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>нийтлэгдсэн</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>илгээлт хүлээгдэж буй</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>илгээгдсэн</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>татгалзсан</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>харьцангуй</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>буцаалт</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>буцаагдсан</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ажиллаж байна</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>зөвхөн хавтас</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME файлд бичигдэнэ. Домэйны DNS-ийг хостын тайлбарласны дагуу хост руу чиглүүлнэ үү; HTTPS эхлэхэд хэсэг хугацаа шаардагдаж магадгүй.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>тийм, хараахан нийтлэгдээгүй</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Агуулахын ажлын урсгал үүнийг нийтэлнэ. Бүтээл ажлын урсгалын файлыг бичнэ; хавтсыг хоосон үлдээнэ үү.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub агуулах болон токен эсвэл GitHub App-тай зорилтыг хадгалсны дараа энэ алхам агуулахыг үүсгэж GitHub Pages-ийг асааж чадна. Эс бөгөөс эхлээд GitHub дээр агуулахаа үүсгэнэ үү; хоосон байсан ч болно.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Салбар уу, GitHub Actions уу?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS шалгах</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Агуулах байхгүй бол үүсгэх</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub дээр агуулахаа үүсгээд тохиргоонд нь GitHub Pages-ийг асаана уу (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Агуулах %repo байхгүй бол үүсгэж (хүссэн тохиолдолд), хадгалсны дагуу салбар эсвэл GitHub Actions-аас GitHub Pages-ийг асааж, өөрийн домэйн болон HTTPS-ийг тохируулна. Хадгалсан тохиргоог ашигладаг: эхлээд өөрчлөлтөө хадгална уу.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub дээрх дэлгэрэнгүй</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Эхлээд өөрийн домэйнээ оруулна уу.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Илгээлт бүрийг эхлээд эдгээр хязгаараар шалгана.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub дээрх https:// хаягийн хувьд. Энэ суулгацад тохируулсан App нэвтэрнэ; түүнд суулгацын id хэрэгтэй.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages хувийн агуулахыг зөвхөн төлбөртэй багц дээр үйлчилнэ.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: дэд домэйнд (www.example.com) &lt;owner&gt;.github.io руу чиглэсэн CNAME бичлэг; үндсэн домэйнд (example.com) A бичлэгүүд %ips хэрэгтэй.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App-ийн суулгацын id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Сүүлийн Pages бүтээл</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Хязгаар ба нөхцөл</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Үнэгүй багц дээр GitHub Pages-д шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub дээр</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Зөвхөн GitHub App-тай: GitHub дээрх App-ийн суулгацын хаягийн төгсгөл дэх тоо. App өөрөө staticcache.ini-д тохируулагдана (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Хувийн</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Нийтийн</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Эхлээд зорилтыг GitHub агуулах болон токен эсвэл GitHub App-тай хадгална уу.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Эдгээр бичлэгийг домэйн үйлчилгээ үзүүлэгч дээр тохируулна уу:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub дээр тохируулах</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain-ийн DNS одоогоор GitHub Pages руу чиглээгүй байна.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain-ийн DNS GitHub Pages руу чиглэж байна.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub-ийн интеграц энд боломжгүй: %problem. Салбар руу нийтлэх нь хэвээр ажиллана; агуулахын тохиргоонд GitHub Pages-ийг асаана уу.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Энэ зорилтод GitHub-ийн алхмууд боломжгүй: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Нэвтрэх мэдээлэл нь токен эсвэл GitHub App үед GitHub Pages-ийн төлөв харагдана.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Өөрийн домэйн ашиглах</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Аль нь сонгох вэ: токен, байршуулах түлхүүр эсвэл GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub агуулах болон токен эсвэл GitHub App байвал шидтэн таны өмнөөс агуулахыг үүсгэж, GitHub Pages-ийг асааж, домэйнийг тохируулж чадна (4-р алхам).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>бүтээгдэж байна</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>бүтээгдсэн</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions-аас</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>%branch салбараас</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>одоохондоо байхгүй</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>олдсонгүй</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>унтраалттай</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>хувийн</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>нийтийн</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>дараалалд</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>тодорхойгүй</translation>
     </message>
 </context>
 </TS>

@@ -267,4 +267,23 @@ class expPreloadRunnerLinksTest extends PHPUnit\Framework\TestCase
         $runner = $this->runner( array( 'start_paths' => array( '/about/', 'news', '/about' ) ) );
         $this->assertSame( array( 'https://k1e.example.invalid/about', 'https://k1e.example.invalid/news' ), $runner->startUrls( 'https://k1e.example.invalid' ) );
     }
+
+    /**
+     * Fetched from another address than the site's own (a CrawlURL, a sandbox), a page that links to its SiteURL in
+     * full links to its own pages: those links are followed on the crawl's address, other hosts are still left out.
+     */
+    public function testLinksToTheSiteUrlInFullAreMovedOntoTheCrawlAddress()
+    {
+        $html = '<a href="https://www.k1e.example.invalid/news">n</a> <a href="//www.k1e.example.invalid/about?x=1#top">a</a>'
+              . ' <a href="http://WWW.k1e.example.invalid/x">x</a> <a href="https://other.example.invalid/away">o</a> <a href="/local">l</a>'
+              . ' <img src="https://www.k1e.example.invalid/var/storage/images/a.png" alt="">';
+        $base = 'http://127.0.0.1:18312';
+        $runner = $this->runner( array( 'base_url' => $base, 'site_origins' => array( 'www.k1e.example.invalid' ) ) );
+        $this->assertSame( array( 'http://127.0.0.1:18312/news', 'http://127.0.0.1:18312/about?x=1', 'http://127.0.0.1:18312/x',
+                                  'http://127.0.0.1:18312/local' ),
+                           self::call( $runner, 'linksFrom', array( $html, $base . '/', $base ) ) );
+        $this->assertSame( array( 'http://127.0.0.1:18312/var/storage/images/a.png' ), self::call( $runner, 'imagesFrom', array( $html, $base . '/', $base ) ) );
+        // without site_origins only the crawl's own host counts, as before
+        $this->assertSame( array( 'http://127.0.0.1:18312/local' ), self::call( $this->runner( array( 'base_url' => $base ) ), 'linksFrom', array( $html, $base . '/', $base ) ) );
+    }
 }

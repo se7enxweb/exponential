@@ -15156,6 +15156,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>አዲሱ ይዘት፣ ለግምገማ የተያዘው፣ እና በምርጫ ላይ ያሉ እርምጃዎች።</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>የጣቢያን የማይለዋወጥ ቅጂ ወደ GitHub Pages ወይም ወደ ማንኛውም የ git አስተናጋጅ ያትሙ።</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>የማይለዋወጥ ሕትመት</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22155,6 +22163,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>የGraphQL API የተቀመጡ መጠይቆች መልሶች፣ እና የመዋቅሩ የይዘት ክፍሎች።</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>የማይለዋወጥ ቅጂ ወደ GitHub Pages ወይም ወደ ማንኛውም የ git አስተናጋጅ ያትሙ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>የማይለዋወጥ ሕትመት</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>የማይለዋወጥ መሸጎጫው ገጾችን ከዚህ አገልጋይ ያቀርባል። የጣቢያን የማይለዋወጥ ቅጂ በሌላ ቦታ፣ በ GitHub Pages ወይም በማንኛውም የ git አስተናጋጅ ላይ ለማተም የማይለዋወጥ ሕትመትን ይጠቀሙ።</translation>
     </message>
 </context>
 <context>
@@ -76212,6 +76232,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>እንደ ፋይሎች የተቀመጡ የጭነቱ ለውጦች፦ ሁኔታቸው፣ አፈጻጸሞቹ፣ ማስኬድ እና መመለስ።</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>የጣቢያን የማይለዋወጥ ቅጂ ወደ GitHub Pages ወይም ወደ ማንኛውም የ git አስተናጋጅ ያትሙ።</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>የማይለዋወጥ ሕትመት</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80560,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>አፈጻጸሙ ሊጀመር አልቻለም።</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ለውጦችን መቅዳት</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ቅጂ በሚካሄድበት ጊዜ በአስተዳደሩ ወይም በጣቢያው የጎን አሞሌ ላይ የሚቀይሩት እንደ ፍልሰት ደረጃዎች ይቀመጣል፦ ይዘት፣ ክፍሎች፣ ሚናዎችና ፖሊሲዎች፣ ክፍልፋዮች፣ ተጠቃሚዎችና ቡድኖች፣ የURL ተለዋጭ ስሞች፣ ቅንብሮች። ሲጨርሱ ያቁሙት፣ የያዘውን ይመልከቱ፣ ከእሱም ፍልሰት ይፍጠሩ።</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ቅጂዎቹን ማንበብ አልተቻለም፦ %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>የቅጂዎቹ ሰንጠረዦች ገና የሉም፦ መጀመሪያ ማሻሻያውን ያሂዱ (exp:upgrade --apply)።</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>መቅዳት በmigration.ini ውስጥ ጠፍቷል ([RecordingSettings] Recording=disabled)።</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>የእኔ ለውጦች</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>እስኪያቆሙት ድረስ እርስዎ የሚቀይሩትን ብቻ፣ የትም ቢቀይሩት፣ ይቀዳል።</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ቅጂ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ከ%time ጀምሮ፣ እስካሁን %count ለውጦች።</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>መለያ (አማራጭ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>የያዘውን አሳይ</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>መቅዳቱን አቁም</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>የእኔን ለውጦች መቅዳት ጀምር</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>የመላው ጣቢያ መስኮት</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>እስኪዘጋ ድረስ የእያንዳንዱን ተጠቃሚና የኮንሶሉን እያንዳንዱን ለውጥ ይቀዳል። ሲከፍቱት እርስዎ መሆንዎን እንዲያረጋግጡ ይጠየቃሉ።</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ክፍት</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>መስኮቱን ዝጋ</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>የመላው ጣቢያ መስኮት ክፈት</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ቅጂዎች</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>የተጠቃሚ መለያ (የመግቢያ ስም፣ ኢሜይል፣ የይለፍ ቃል) እና የተጠቃሚ መለያዎች መስኮች በፍጹም አይቀዱም።</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ለውጦች</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>መላው ጣቢያ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>የ%name ለውጦች</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ቆሟል</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>እስካሁን ምንም ቅጂ የለም።</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ቅጂ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ሁሉም ቅጂዎች</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>የሚፈጥረው ፍልሰት</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ለእያንዳንዱ የተቀየረ ነገር በአንድ ደረጃ የተሰበሰቡ ለውጦች፦ ከዚህ ቅጂ የሚፈጠር ፍልሰት የሚያደርገው።</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ይህ ጭነት የYAML ደረጃ ዓይነቶች %types ሲኖሩት ከእሱ ፍልሰት መፍጠር ይቻላል።</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ሆን ተብሎ የቀረ፦ %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ምንም አልተቀዳም።</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>የያዘው</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ለውጦች፣ በተደረጉበት ቅደም ተከተል።</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ለውጥ</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ደረጃ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>የሚመለከተው</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>ተጨማሪ %count፦ ./console exp:migration:record:show ሁሉንም ይዘረዝራል።</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ጣል</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ቅጂውንና የያዘውን ያስወግዳል። የተቀየረው እንደተቀየረ ይቆያል።</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>አዎ፣ ይህን ቅጂ ጣል</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>እየተቀዳ ነው…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ለውጦችዎ ለፍልሰት እየተቀዱ ነው።</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>በዚህ ጣቢያ ላይ ያለ እያንዳንዱ ለውጥ ለፍልሰት እየተቀዳ ነው (የመላው ጣቢያ መስኮት)።</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>የመላው ጣቢያ ቅጂ ጀምሯል፦ እስኪያቆሙት ድረስ የእያንዳንዱ ተጠቃሚ እያንዳንዱ ለውጥ ይቀዳል።</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ቅጂ ጀምሯል፦ እስኪያቆሙት ድረስ ለውጦችዎ ይቀዳሉ።</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ቅጂው ቆሟል። የያዘው እስኪጥሉት ድረስ ይቆያል።</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ቅጂውና ክስተቶቹ ተወግደዋል።</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ቅጂ %id የለም።</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>መጀመሪያ «አዎ፣ ይህን ቅጂ ጣል» የሚለውን ምልክት ያድርጉ።</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>የክፍለ ጊዜ ቅጂን ማቆም የሚችለው የቀዳው ተጠቃሚ ብቻ ነው።</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>የሚቆመውን ቅጂ ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>የዚህ ዓይነት ቅጂ አስቀድሞ እየተካሄደ ነው።</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ቅጂውን መቀየር አልተቻለም፦ %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81223,6 +81467,1540 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>ተለቋል።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>ሁሉም ዒላማዎች</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>የመጨረሻው ሕትመት</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>የጣቢያዎን ነጻ የማይለዋወጥ ቅጂ በ GitHub Pages ላይ ያትሙ፦</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ጊዜ ያለፈባቸው ገጾች</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>የማይለዋወጥ ሕትመት</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>የማይለዋወጥ ሕትመት ጠፍቷል።</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ዒላማ</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ዒላማዎቹ ሊነበቡ አልቻሉም፦ %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>ሥራ በሂደት ላይ ነው</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>የሚፈተሽ ግንባታ</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ይህን ደብቅ</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ዒላማ ፍጠር</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>በጭራሽ</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>መማሪያውን ያንብቡ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ታክለዋል፣ %changed ተቀይረዋል፣ %removed ተወግደዋል</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes ከ %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>ሌሎች %count አልተዘረዘሩም።</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages ገጾች ተጽፈዋል</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path መጠኑ %size ነው፤ አስተናጋጁ ለአንድ ፋይል ከሚፈቅደው በላይ።</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>ከገደቡ %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ሰ</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ጣቢያው አሁን ያለው ሕትመት ነው።</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target፦ ሥራ %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/ማከማቻ/ ለ GitHub የፕሮጀክት ጣቢያ፤ ለራስ ጎራ ወይም ለተጠቃሚ ጣቢያ ባዶ።</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. ጣቢያው</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. አስተናጋጁ</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. ወደ ማከማቻው መግባት</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. ማከማቻው</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. አገናኞች እና መሠረታዊ ዱካ</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. የራስዎ ጎራ</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. ግንባታው የሚይዘው</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. መቼ እንደሚታተም</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. ይገምግሙ እና ያስቀምጡ</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>የ GitHub የፕሮጀክት ጣቢያ የሚገኘው በ /&lt;repository&gt;/ ስር ነው፤ አንጻራዊ አገናኞች እዚያም በሌላ ቦታም ይሰራሉ።</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ግንባታ እያንዳንዱን የ %site ገጽ ያልገባ ጎብኚ በሚያየው መልኩ ያመጣል፣ አገናኞቹን እንደገና ይጽፋል፣ ፋይሎቹን ይቀዳል እና ውጤቱን ወደ ዒላማው አቃፊ ይጽፋል። ግንባታውን እስኪፈትሹና አትም እስኪጫኑ ድረስ ምንም አይታተምም።</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>የ cron አገላለጽ፣ ለምሳሌ 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>የማሰማሪያ ቁልፍ እንደ ምስጢር %secret ይቀመጣል።</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>የማሰማሪያ ቁልፍ ይህ ጭነት በ SSH ወደ አንድ ማከማቻ ብቻ ፑሽ እንዲያደርግ ያስችለዋል። የግል ግማሹ በ ዝግጅት &gt; ምስጢሮች ውስጥ ይቀራል፤ የሚታየው የሕዝብ ግማሹ ብቻ ነው።</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>ለዚህ ዒላማ የተሰራ የማሰማሪያ ቁልፍ</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>የማሰማሪያ ቁልፍ በ SSH ይገባል፦ የ git አድራሻውን ወደ SSH አድራሻው ይቀይሩ (git@github.com:owner/repo.git)።</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>ሥራ በሂደት ላይ ነው፣ የጀመረው %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>የዚህ ዒላማ ሥራ አሁንም በሂደት ላይ ነው (%detail)። እስኪያልቅ ይጠብቁ።</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>የዚህ ዒላማ ሥራ አሁንም በሂደት ላይ ነው። እስኪያልቅ ይጠብቁ።</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>ከገጽ /news/ ወደ ገጽ /about-us/team የሚወስድ አገናኝ እንዲህ ይጻፋል</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>አዲስ የማሰማሪያ ቁልፍ ተሰርቷል። የሕዝብ ግማሹን አሁን ወደ ማከማቻው ያክሉ።</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>ከማጽዳቱ በኋላ አሁንም የማረሚያ ውጤት፣ የቅጽ ቶከን ወይም የክፍለ ጊዜ መታወቂያ የያዘ ገጽ በጭራሽ አይታተምም።</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>መመለሻ ለባለሙያዎች ነው፦ &quot;ይህ ምን እንደሚቀይር አውቃለሁ&quot; የሚለውን ምልክት ያድርጉ እና የመለያውን ስም እንደገና ይተይቡ።</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>ጣቢያ እስከ %site፣ አንድ ፋይል እስከ %file ሊሆን ይችላል፣ በወር ወደ 100 GB ትራፊክ። በነጻ እቅድ ማከማቻው ሕዝባዊ መሆን አለበት። GitHub Pages ለሱቆች ወይም ለሌሎች የንግድ ግብይቶች የታሰበ አይደለም።</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>ዒላማ ወደ አንድ የ git ማከማቻ የሚታተም አንድ ጣቢያ ነው። እዚህ ምንም አይገነባም ወይም አይታተምም፦ አስቀምጥ ቅንብሮቹን ወደ settings/override/staticcache.ini.append.php ይጽፋል።</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>ዒላማ ወደ አንድ ቦታ የሚታተም አንድ ጣቢያ ነው፣ ለምሳሌ በ GitHub Pages ላይ ያለው የሕዝብ ጣቢያዎ።</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>ከ ዝግጅት &gt; ምስጢሮች የመጣ ቶከን</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>የማከማቻው የሥራ ፍሰት ያትመዋል።</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>ይህን የሕዝብ ቁልፍ በመጻፍ ፈቃድ ወደ ማከማቻው ያክሉ። GitHub፦ Settings &gt; Deploy keys &gt; Add deploy key፣ Allow write access ላይ ምልክት ያድርጉ።</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>ታክሏል</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>ሌላ የ git አስተናጋጅ</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>ሌላ ሂደት በዚህ ዒላማ ላይ እየሰራ ነው፦ %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>ተመለስ</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>መሠረታዊ ዱካ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>በፊት</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>በመሠረታዊ ዱካ ስር</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ቅርንጫፍ</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>የተሰበሩ አገናኞች</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>በግንባታው ውስጥ ያሉ የተሰበሩ አገናኞች</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>ግንባታ</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>ግንባታ %id በ %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name ገንባ</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>አሁን ገንባ</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>የሚፈተሽ ግንባታ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>በ</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>በእጅ፣ እዚህ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ሰርዝ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ቀይር</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ተቀይሯል</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ለውጦች</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>መጀመሪያ ይፈትሹት</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>እነዚህን ቅንብሮች ይፈትሹ</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>ግንባታው የሚቀይረውን ይፈትሹ፣ ይመልከቱት፣ ከዚያ ያትሙት ወይም ያስወግዱት።</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>የሚመለሱበትን ሕትመት ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>በኋለኛው ልቀት ይመጣል።</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ኮሚት</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>ኮሚቶች</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>ግንባታውን ኮሚት ያደርጋል፣ መለያ ይሰጠዋል እና ወደ %remote ፑሽ ያደርገዋል። ፑሽ በጭራሽ አይገደድም፤ በኋላ ወደ ማንኛውም ሕትመት መመለስ ይችላሉ።</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>ከቀደመው አቃፊ ጋር ሲነጻጸር፦ %added ታክለዋል፣ %changed ተቀይረዋል፣ %removed ተወግደዋል፣ %unchanged አልተቀየሩም።</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>ከመጨረሻው ሕትመት ጋር ሲነጻጸር።</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>የመግቢያ ማስረጃ</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>የራስ ጎራ</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>የማረሚያ ውጤት፣ የቅጽ ቶከኖች፣ የክፍለ ጊዜ መታወቂያዎች እና nonce ሁልጊዜ ይወገዳሉ።</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>የማሰማሪያ ቁልፍ</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>የ %name የማሰማሪያ ቁልፍ</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>አስወግድ</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>ግንባታውን አስወግድ</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>ጎራ</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>ባዶ፦ የጣቢያው አድራሻ። አለበለዚያ የዚያው ጣቢያ ውስጣዊ አድራሻ።</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>አብቅቷል</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>እያንዳንዱ አገናኝ በመሠረታዊ ዱካው ይጀምራል።</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>እያንዳንዱ ሕትመት static/%id/&lt;n&gt; መለያ ያለው ኮሚት ነው። መመለስ ከቀደመ ሕትመት ፋይሎች ጋር አዲስ ኮሚት ይሰራል፦ ታሪኩ ይቀራል፣ ምንም መለያ አይንቀሳቀስም እና ምንም አይገደድም።</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>ተጨማሪዎች</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>ገጾቹን ከዚህ አምጣ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ፋይል</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ፋይሎች</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>የጎደሉ ፋይሎች</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>ፋይሎች ከ</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>ሊሰበሰቡ ያልቻሉ ፋይሎች</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>የጣት አሻራ</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>አቃፊ</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>ለ SSH አድራሻ። ቁልፉ ከማስቀመጥ በኋላ ይሰራል፤ የሕዝብ ግማሹን እርስዎ ወደ ማከማቻው ያክላሉ።</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>ለ https:// አድራሻ። GitHub፦ በማከማቻው ላይ Contents የማንበብና የመጻፍ ፈቃድ ያለው ዝርዝር ፈቃድ ቶከን።</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>ለባለሙያዎች። ፑሹ እንደተጠናቀቀ የሕዝብ ጣቢያው ይቀየራል።</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>ቅጾች</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>ከ GitHub ማከማቻ ነጻ ማስተናገጃ።</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>ከቅርንጫፉ</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>የ git አድራሻ</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages የ %site ጣቢያ እና የ %file ፋይል ይፈቅዳል።</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>የ GitHub Pages ገደቦች</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ፋይሎቹን እንዳሉ ያትማቸዋል (በ _ ለሚጀምሩ ፋይሎች ያስፈልጋል)።</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ቅርንጫፉን ፑሽ እንደተደረገ ያቀርበዋል። ነባሪው።</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab፣ Gitea፣ የራስዎ አገልጋይ፦ ማንኛውም የ git ማከማቻ።</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>ወደ ቀደመ ሕትመት ተመለስ</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>እገዛ</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>በአዋቂው ላይ እገዛ</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>ደብቃቸው</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ታሪክ</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>የ %name ታሪክ</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>አስተናጋጅ</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages ግንባታውን እንዴት እንደሚቀበል</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>ለውጦቹን ፈትሻለሁ</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>ይህ ምን እንደሚቀይር አውቃለሁ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>መታወቂያ</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>ጠፍቷል፦ እስኪበራ ድረስ ምንም ሊገነባ አይችልም።</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>በጀርባ እንደ %user ይሰራል፤ ይህን ገጽ መዝጋት ይችላሉ።</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>ሥራ %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>እንደ ምስጢር %secret ተቀምጧል።</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ዓይነት</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>የመጨረሻው ሕትመት</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>እነዚህን ገጾች ተዋቸው</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>እነዚህን ክፍሎች ተዋቸው</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>አገናኞች</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>እንደገና የተጻፉ አገናኞች</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>ቀጥታ ጣቢያ</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>ግንባታውን ይመልከቱ</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>ትንንሽ ፊደላት፣ አሃዞች፣ _ እና -፣ ለምሳሌ github-public። አቃፊውንና መለያዎቹን (static/&lt;id&gt;/&lt;n&gt;) ይሰይማል፤ በኋላ ሊቀየር አይችልም።</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>አዲስ ቁልፍ ስራ</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ዒላማ ፍጠር</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>ቁልፉን ስራ</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>መጀመሪያ ማከማቻውን በአስተናጋጁ ላይ ይፍጠሩ፤ ባዶ ቢሆንም ችግር የለውም።</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>ማኒፌስት</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>መልዕክት</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>አብዛኞቹ ገጾች</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ስም</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>በ ዝግጅት &gt; ምስጢሮች ውስጥ ያለው የቶከኑ ስም</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>አዲስ ዒላማ</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>ቀጣይ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>አይ</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>እስካሁን ምንም ኮሚት የለም።</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>ምንም ቁልፍ አልተሰራም፦ %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>የ php የትዕዛዝ መስመር ፕሮግራም አልተገኘም። migration.ini [AdminSettings] PhpCliPath ን ወደ ሙሉ ዱካው ያቀናብሩ።</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>እስካሁን ምንም መለያ የለም።</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>እስካሁን ምንም ዒላማ የለም።</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>ምንም</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>በግንባታው ውስጥ የለም።</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>እስካሁን ምንም አልታተመም።</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>እስካሁን ምንም አልታተመም፦ እያንዳንዱ ፋይል አዲስ ነው።</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>አሳውቅ</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>በመርሐ ግብር</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>በኮንሶሉ ላይ</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>በአገልጋዩ ላይ፦ ./console exp:static:serve %id በተመሳሳይ መንገድ ያቀርበዋል።</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>በአንድ መስመር አንድ ዱካ፤ * ማንኛውንም ክፍል ይዛመዳል፦ /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>ከዒላማው ጋር የሚቀመጠው ስም ብቻ ነው፤ ቶከኑ ወይም ቁልፉ ራሱ በ ዝግጅት &gt; ምስጢሮች ውስጥ ይቀራል እና በምዝግብ ማስታወሻ ውስጥ በጭራሽ አይታይም።</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>ገጾቹ የሚጠቅሱትን ብቻ</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>በቶከን ብቻ። env:NAME በምትኩ የአገልጋዩን የአካባቢ ተለዋዋጭ ያነባል።</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>ቅድመ እይታውን ክፈት</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>ግንባታውን አስተናጋጁ በሚያቀርበው መልኩ ከዒላማው አቃፊ ይከፍታል። አገናኙ ለእርስዎ ለአንድ ሰዓት ይሰራል።</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>አማራጭ። ባዶ፦ የታተመው።</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>አማራጭ። በጎራ ጣቢያው በስሩ ላይ ይቀርባል።</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>ውጤት</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>ገጾች</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>የዒላማው ገጾች</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>ውድቅ የተደረጉ ገጾች</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>ድህረ-ሂደት</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ቅድመ እይታ</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>ቅድመ እይታ እና ሕትመት</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name ቅድመ እይታ እና ሕትመት</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>የግንባታው ቅድመ እይታ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ሂደት</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>የሕዝብ አድራሻ</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>የሕዝብ ቁልፍ</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>አትም</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>የጣቢያን የማይለዋወጥ ቅጂ ወደ GitHub Pages ወይም ወደ ማንኛውም የ git አስተናጋጅ ያትሙ፦ ይገንቡት፣ ለውጦቹን ይፈትሹ፣ ያትሙ፣ ሲያስፈልግም ወደ ቀደመ ሕትመት ይመለሱ።</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>የሚመለሱበት ሕትመት</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>ሕትመቶች</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ፑሽ</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>መማሪያውን ያንብቡ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>መዝገብ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ውድቅ ተደርጓል</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>አንጻራዊ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>እንደገና ጫን</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>ተወግዷል</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>ቁልፉን ተካ፦ አሮጌው መስራት ያቆማል</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ሪፖርት</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>የግንባታው ሪፖርት</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ማከማቻ</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>ግምገማ</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>ግምገማ እያንዳንዱን ቅንብር ይፈትሻል እና የሚጻፉትን መስመሮች ያሳያል። እስካሁን ምንም አልተቀመጠም።</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>መልስ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>መመለሻ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>አስቀምጥ</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>መርሐ ግብር</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>የፍለጋ ገጽ</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>የክፍል መታወቂያዎች፣ በኮማ የተለዩ።</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>ወደ ቀጥታ ጣቢያው ላካቸው</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ቅንብር</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ቅንብሮች</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>የ %name ቅንብሮች</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ዝግጅት</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>ዝግጅት &gt; ምስጢሮች</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>በዝርዝሮች ውስጥ ይታያል፣ ለምሳሌ &quot;በ GitHub Pages ላይ ያለ የሕዝብ ጣቢያ&quot;።</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>በ GitHub App መግባት ከ GitHub ውህደት ጋር ይመጣል።</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>ጣቢያ</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>የሚታተም ጣቢያ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>መጠን</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>መጠን እና ገደቦች</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>የግንባታው መጠን</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ጊዜ ያለፈባቸው ገጾች</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>የተጀመረ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>በ %user በ %time ተጀምሯል።</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ሁኔታ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>የማይለዋወጥ ሕትመት</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>የማይለዋወጥ ሕትመት ጠፍቷል</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>የማይለዋወጥ ሕትመት ጠፍቷል።</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>የማይለዋወጥ ሕትመት ጠፍቷል። መጀመሪያ በ ዝግጅት &gt; የማይለዋወጥ ሕትመት ውስጥ ያብሩት።</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>የማይለዋወጥ ሕትመት በርቷል።</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>ደረጃ %step ከ %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>ደረጃዎች</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>ማጽዳት</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>አጥፋ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>አብራ</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>የማይለዋወጥ ሕትመትን አብራ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>መለያ</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>መለያዎች</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ዒላማ</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>ዒላማዎች ሊፈጠሩና ሊቀየሩ ይችላሉ፤ ነገር ግን እስኪበራ ድረስ ምንም አይገነባም ወይም አይታተምም።</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>ለፍለጋ ሞተሮች ምን እንደሚያነቡ ይነግራል።</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>ግንባታው ሊወገድ አልቻለም፦ %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>ግንባታው ከመጨረሻው ሕትመት ጋር አንድ ነው፦ የሚታተም ነገር የለም።</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>ግንባታው ተወግዷል፦ አቃፊው እንደገና የመጨረሻውን ሕትመት ይዟል።</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>ነባሪዎቹ ለአብዛኞቹ ጣቢያዎች ይስማማሉ።</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>አቃፊው ገና ያልታተመ ግንባታ ይዟል፤ አዲስ ግንባታ ይተካዋል።</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>የሥራዎቹ አቃፊ ሊጻፍበት አይችልም፦ %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>ሥራው ሊዘጋጅ አልቻለም፦ %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>ሥራው ሊጀመር አልቻለም።</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>ሥራው አብቅቷል። ሪፖርቱ በመጫን ላይ ነው።</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>ሥራው የገባ ተጠቃሚ ያስፈልገዋል።</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>ሥራው ተጀምሯል ነገር ግን የሂደት መታወቂያውን አላሳወቀም። %detail ን ይፈትሹ።</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>ቁልፉ</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>ትልቁ ፋይል፦ %path፣ %size።</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>የሚጻፉት መስመሮች</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>ለፍለጋ ሞተሮች የገጾች ዝርዝር፤ የሕዝብ አድራሻውን ይፈልጋል።</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>ገጾቹ ያልገባ ጎብኚ በሚያያቸው መልኩ ይመጣሉ። የአስተዳደርና የአርትዖት የጣቢያ መዳረሻዎች በጭራሽ አይቀርቡም።</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>ሂደቱን መከታተል አልተቻለም። ሥራው እንዴት እንደሆነ ለማየት ገጹን እንደገና ይጫኑ።</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>የቁልፉ የሕዝብ ግማሽ፦</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>የቅርንጫፉ ስር</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>የምስጢር ማከማቻው ገና አልተዘጋጀም (./console exp:upgrade --apply ሰንጠረዡን ይፈጥራል)፤ ስለዚህ ምንም ቁልፍ ሊቀመጥ አይችልም።</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>አገልጋዩ በራሱ ይገባል (በራሱ የ SSH ቁልፍ ወይም በማስረጃ ረዳት)፣ ወይም ማከማቻው በዚህ አገልጋይ ላይ ነው።</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>ቅንብሩ ሊጻፍ አልቻለም፦ %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>ቅንብሮቹ ትክክል ናቸው። እነዚህ መስመሮች ይጻፋሉ፦</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>የቅንብሮች ፋይሉ ሊነበብ አይችልም፦ %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>ጣቢያው ወደዚያ ሕትመት ፋይሎች ይመለሳል፤ ገና ያልታተመ ግንባታ መጀመሪያ መታተም ወይም መወገድ አለበት።</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>የጣቢያው የራሱ ገጽ ለሌሉ አድራሻዎች።</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>ዒላማው ሊቀመጥ አልቻለም፦ %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ዒላማው እስካሁን በዚህ ቁልፍ አይገባም፦ በቅንብሮቹ ውስጥ &quot;ለዚህ ዒላማ የተሰራ የማሰማሪያ ቁልፍ&quot; ን ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ዒላማዎቹ ሊነበቡ አልቻሉም፦ %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>እስካሁን የሚፈተሽ ግንባታ የለም።</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>ይህ ጭነት የፊት የጣቢያ መዳረሻ የለውም። የአስተዳደርና የአርትዖት የጣቢያ መዳረሻዎች በጭራሽ አይታተሙም።</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>ይህ ገጽ ሥራውን በሂደቱ ይከታተላል፤ ገጹ ሲዘጋ ሥራው በጀርባ ይቀጥላል።</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>ይህ ዒላማ እስካሁን የማሰማሪያ ቁልፍ የለውም።</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>ይህ ዒላማ እስካሁን እዚህ አልተገነባም።</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>ይህ ዒላማ አንድ አለው።</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>ይህን ግንባታ ያስወግዳል፦ አቃፊው እንደገና የመጨረሻውን ሕትመት ይይዛል። ቀጥታ ጣቢያው አይቀየርም።</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>መጀመሪያ &quot;ለውጦቹን ፈትሻለሁ&quot; ላይ ምልክት ያድርጉ።</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ሰዓት</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ቀስቃሾች</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>የመለያውን ስም እንደገና ይተይቡ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ያልተቀየረ</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>ዌብሁክ</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ምን</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>የሚቀየረው</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>እያንዳንዱ ፋይል ምን እንደሆነ፤ ሁልጊዜ ይጻፋል።</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>ሥራው ያደረገው እና መዝገቡ። እዚህ የተጀመረ ሥራ ይህ ገጽ ሲዘጋ በጀርባ ይቀጥላል።</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>ሥራው እንደ ስህተት ያተመው</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>ገጾቹ የሚጠቅሱት እና እያንዳንዱ የታተመ ይዘት ምስል</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>መቼ</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>ሕትመት ሳይሳካ ሲቀር</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>ሕትመት ሲሳካ</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>ይዘት ሲታተም</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>ቅጂው ወደማይይዘው የሚወስዱ አገናኞች የሚሄዱበት (ፍለጋው፣ መግቢያው)።</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>የማይለዋወጥ ቅጂው የሚቀርብበት ቦታ።</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>የትኛው ጣቢያ እንደሚታተም እና ዒላማው ምን እንደሚባል።</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>በማንኛውም ዱካ ስር ይሰራል። ነባሪው።</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>የራስ ጎራ በተቀናበረ ቁጥር ይጻፋል።</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>አዎ</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>እዚህም በኮንሶሉ ላይም ሁልጊዜ በእጅ መገንባትና ማተም ይችላሉ።</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>ስም ብቻ፤ እሴቱ በ ዝግጅት &gt; ምስጢሮች ውስጥ ይቀራል</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>ከ %path በታች</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ያለ ሪፖርት አብቅቷል</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ተጨማሪ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>አልተሳካም</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ፋይል</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages፣ ወይም main ከአቃፊ docs ጋር።</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>የ git አስተናጋጅ</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ከቶከን ጋር) ወይም git@github.com:owner/repo.git (ከማሰማሪያ ቁልፍ ጋር)፤ በውስጡ የይለፍ ቃል ወይም ቶከን በጭራሽ።</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/፣ ለጣቢያ ካርታው እና ለቀኖናዊ አገናኞች።</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>ምስል</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>በጭራሽ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>አይ</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>የርቀት ማከማቻ የለም</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>ምንም፦ ኮሚቶች በአቃፊው ውስጥ ይቀራሉ</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>ምንም፦ ምንም አልተቀየረም</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ፑሽ አልተደረገም</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ምንም አልተቀየረም</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>ገጽ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ተሳክቷል</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ተሰናክሏል፤ ስለዚህ እዚህ ሥራ ሊጀመር አይችልም። በአገልጋዩ ላይ ./console exp:static:build ይጠቀሙ።</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>ሕትመት</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ታትሟል</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>ፑሽ በመጠባበቅ ላይ</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>ፑሽ ተደርጓል</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ውድቅ ተደርጓል</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>አንጻራዊ</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>መመለሻ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ተመልሷል</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>በመስራት ላይ</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>አቃፊው ብቻ</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com፦ ወደ ፋይሉ CNAME ይጻፋል። የጎራውን DNS አስተናጋጁ እንደሚያብራራው ወደ አስተናጋጁ ያመልክቱ፤ HTTPS ለመጀመር ትንሽ ጊዜ ሊወስድ ይችላል።</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>አዎ፣ ገና አልታተመም</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>የ GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>የማከማቻው የሥራ ፍሰት ያትመዋል። ግንባታው የሥራ ፍሰት ፋይሉን ይጽፋል፤ አቃፊውን ባዶ ይተዉት።</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>ዒላማን ከ GitHub ማከማቻ እና ከቶከን ወይም GitHub App ጋር ካስቀመጡ በኋላ ይህ ደረጃ ማከማቻውን መፍጠር እና GitHub Pagesን ማብራት ይችላል። ያለበለዚያ መጀመሪያ ማከማቻውን በ GitHub ላይ ይፍጠሩ፤ ባዶ ማከማቻ ይበቃል።</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ቅርንጫፍ ወይስ GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNSን ያረጋግጡ</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>ማከማቻው ከሌለ ይፍጠሩት</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>ማከማቻውን በ GitHub ላይ ይፍጠሩ እና በቅንብሮቹ ውስጥ GitHub Pagesን ያብሩ (Settings &gt; Pages)።</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>ማከማቻውን %repo ከሌለ ይፈጥራል (ከተጠየቀ)፣ GitHub Pagesን እንደተቀመጠው ከቅርንጫፉ ወይም ከ GitHub Actions ያበራል፣ እንዲሁም የራስ ጎራውን እና HTTPSን ያዘጋጃል። የተቀመጡትን ቅንብሮች ይጠቀማል፤ መጀመሪያ ለውጦቹን ያስቀምጡ።</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>ዝርዝሮች በ GitHub ላይ</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>መጀመሪያ የራስ ጎራውን ያስገቡ።</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>እያንዳንዱ push መጀመሪያ ከእነዚህ ገደቦች ጋር ይፈተሻል።</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>በ GitHub ላይ ላለ https:// አድራሻ። ለዚህ ጭነት የተዘጋጀው App ይገባል፤ የጭነቱን መለያ ቁጥር ይፈልጋል።</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages የግል ማከማቻን የሚያገለግለው በሚከፈልበት ዕቅድ ብቻ ነው።</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ንዑስ ጎራ (www.example.com) ወደ &lt;owner&gt;.github.io የሚያመለክት CNAME መዝገብ ይፈልጋል፤ ዋና ጎራ (example.com) ደግሞ የ A መዝገቦቹን %ips።</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>የ GitHub App ጭነት መለያ ቁጥር</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>የመጨረሻው የ Pages ግንባታ</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>ገደቦች እና ውሎች</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>በነጻ ዕቅድ ላይ ለ GitHub Pages ያስፈልጋል።</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>በ GitHub ላይ</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>በ GitHub App ብቻ: በ GitHub ላይ ያለው የ App ጭነት አድራሻ መጨረሻ ላይ ያለው ቁጥር። App ራሱ በ staticcache.ini ውስጥ ይዘጋጃል (GitHubAppId, GitHubAppKey)።</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>የግል</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>የሕዝብ</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>መጀመሪያ ዒላማውን ከ GitHub ማከማቻ እና ከቶከን ወይም GitHub App ጋር ያስቀምጡ።</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>እነዚህን መዝገቦች በጎራው አቅራቢ ላይ ያዘጋጁ፦</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>በ GitHub ላይ አዘጋጅ</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>የ %domain DNS ገና ወደ GitHub Pages አያመለክትም።</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>የ %domain DNS ወደ GitHub Pages ያመለክታል።</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>የ GitHub ውህደት እዚህ አይገኝም: %problem። ወደ ቅርንጫፉ ማተም ግን ይሠራል፤ GitHub Pagesን በማከማቻው ቅንብሮች ውስጥ ያብሩ።</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>የ GitHub ደረጃዎች ለዚህ ዒላማ አይገኙም: %problem።</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>የ GitHub Pages ሁኔታ የሚታየው ቶከን ወይም GitHub App የመግቢያ ማስረጃ ሲሆን ነው።</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>የራስዎን ጎራ ይጠቀሙ</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>የትኛውን መምረጥ: ቶከን፣ የማሰማሪያ ቁልፍ ወይስ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>በ GitHub ማከማቻ እና በቶከን ወይም GitHub App አዋቂው ማከማቻውን መፍጠር፣ GitHub Pagesን ማብራት እና ጎራውን ሊያዘጋጅልዎ ይችላል (ደረጃ 4)።</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>በመገንባት ላይ</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ተገንብቷል</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>ከ GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ከቅርንጫፉ %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>እስካሁን የለም</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>አልተገኘም</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ጠፍቷል</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>የግል</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>የሕዝብ</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>በወረፋ ላይ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ያልታወቀ</translation>
     </message>
 </context>
 </TS>

@@ -148,10 +148,17 @@ class expStaticCredentials
             return '';
         if ( $this->kind === 'app' )
         {
+            // the GitHub integration provides it unless a provider was registered (tests) or it is switched off
+            if ( !isset( self::$providers['app'] ) && class_exists( 'expStaticGitHub' ) )
+                expStaticGitHub::register();
             if ( !isset( self::$providers['app'] ) )
-                return 'Credential=app:' . $this->name . ' needs the GitHub integration (a GitHub App), which is not available here; use token: or sshkey:';
+                return 'Credential=app:' . $this->name . ' needs the GitHub integration (a GitHub App), which is not available here'
+                     . ( class_exists( 'expStaticGitHub' ) ? ' (' . expStaticGitHub::unavailable() . ')' : '' ) . '; use token: or sshkey:';
             $this->value = call_user_func( self::$providers['app'], $this->name, $target );
-            return is_string( $this->value ) && $this->value !== '' ? '' : 'the GitHub App installation ' . $this->name . ' gave no token';
+            if ( is_string( $this->value ) && $this->value !== '' )
+                return '';
+            $why = class_exists( 'expStaticGitHub' ) ? expStaticGitHub::lastProblem() : '';
+            return 'the GitHub App installation ' . $this->name . ' gave no token' . ( $why !== '' ? ': ' . $why : '' );
         }
         if ( $this->kind === 'sshkey' && strpos( $this->name, 'env:' ) === 0 )
             return 'sshkey: names a secret of the secret store, not an environment variable';
@@ -166,6 +173,17 @@ class expStaticCredentials
             return "the secret {$this->name} holds more than one line";
         $this->value = $value;
         return '';
+    }
+
+    /**
+     * The token of a token: or app: credential for GitHub's API (expStaticGitHub sends it in the Authorization
+     * header only). Call problem() first.
+     *
+     * @return string '' for a deploy key, none, or a credential problem() refused
+     */
+    public function apiToken()
+    {
+        return ( $this->kind === 'token' || $this->kind === 'app' ) && is_string( $this->value ) ? $this->value : '';
     }
 
     /** @return string|null a secret's value */

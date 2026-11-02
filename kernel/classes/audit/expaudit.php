@@ -105,6 +105,8 @@ class expAudit
             self::forRequest();
             if ( self::$inside > 4 )
                 return null;
+            // the recording of changes (expMigrationRecorder) sees every event of an operation, recorded here or not
+            self::tapRecorder( $name, $data );
             $config = expAuditConfig::get();
             if ( !$config['enabled'] )
                 return null;
@@ -167,13 +169,19 @@ class expAudit
         {
             self::forRequest();
             $config = expAuditConfig::get();
+            // an event the audit does not record but a recording of changes does: kept open for end() all the same
+            $recordOnly = false;
             if ( !$config['enabled'] || !expAuditTaxonomy::decide( $name, $config )['on'] )
-                return null;
+            {
+                if ( !self::recorderWants( $name ) )
+                    return null;
+                $recordOnly = true;
+            }
             $id = self::ulid();
             $parent = isset( $data['parent'] ) ? (string)$data['parent'] : ( self::$parentStack ? end( self::$parentStack ) : null );
             $depth = $parent !== null && isset( self::$open[$parent] ) ? self::$open[$parent]['depth'] + 1 : 0;
             self::$open[$id] = array( 'name' => $name, 'data' => $data + array( 'time_ms' => self::nowMs() ), 'depth' => $depth,
-                                      'children' => 0, 'omitted' => 0, 'parent' => $parent );
+                                      'children' => 0, 'omitted' => 0, 'parent' => $parent, 'record_only' => $recordOnly );
             return $id;
         }
         catch ( Throwable $e )
@@ -209,7 +217,43 @@ class expAudit
                                + array( 'children_omitted' => $open['omitted'] );
         $merged['id'] = $id;
         $merged['parent'] = $open['parent'];
+        if ( !empty( $open['record_only'] ) )
+        {
+            self::tapRecorder( $open['name'], $merged );
+            return null;
+        }
         return self::event( $open['name'], $merged );
+    }
+
+    /**
+     * Whether a recording of changes keeps this event (expMigrationRecorder::wants()); false in a process that has
+     * not loaded the class (a Velocity worker started before it existed).
+     *
+     * @param string $name
+     * @return bool
+     */
+    public static function recorderWants( $name )
+    {
+        return class_exists( 'expMigrationRecorder' ) && expMigrationRecorder::wants( (string)$name );
+    }
+
+    /**
+     * Hands an event to the recording of changes (expMigrationRecorder::observe()). Never throws.
+     *
+     * @param string $name
+     * @param array $data
+     */
+    protected static function tapRecorder( $name, array $data )
+    {
+        try
+        {
+            if ( self::recorderWants( $name ) )
+                expMigrationRecorder::observe( (string)$name, $data );
+        }
+        catch ( Throwable $e )
+        {
+            self::failure( $e, 'the recording of ' . (string)$name );
+        }
     }
 
     /**
@@ -341,7 +385,7 @@ class expAudit
             if ( !expAuditConfig::isOverridden() && !preg_match( '#^(settings/|extension/[^/]+/settings/)#', (string)$relativePath ) )
                 return 0;
             $isAuditIni = strtolower( $file ) === 'audit.ini';
-            if ( !$isAuditIni && !self::isOn( 'system.setting.write' ) )
+            if ( !$isAuditIni && !self::isOn( 'system.setting.write' ) && !self::recorderWants( 'system.setting.write' ) )
                 return 0;
             $old = (string)$oldContent === '' ? array() : ( new expIniWriter( (string)$oldContent ) )->values();
             $new = ( new expIniWriter( (string)$newContent ) )->values();

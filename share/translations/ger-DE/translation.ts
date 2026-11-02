@@ -17887,6 +17887,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Die neuesten Inhalte, was zur Prüfung zurückgehalten ist, und Aktionen für eine Auswahl.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Eine statische Kopie einer Website auf GitHub Pages oder einem beliebigen Git-Host veröffentlichen.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statisches Veröffentlichen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -25294,6 +25302,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Antworten der gespeicherten Abfragen der GraphQL-API und die Inhaltsklassen ihres Schemas.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Eine statische Kopie auf GitHub Pages oder einem beliebigen Git-Host veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statisches Veröffentlichen</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Der statische Cache liefert Seiten von diesem Server aus. Um eine statische Kopie einer Website an anderer Stelle zu veröffentlichen, auf GitHub Pages oder einem beliebigen Git-Host, verwenden Sie das statische Veröffentlichen.</translation>
     </message>
 </context>
 <context>
@@ -83160,6 +83180,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Änderungen an der Installation als Dateien: ihr Stand, die Läufe, ausführen und zurücknehmen.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Eine statische Kopie einer Website auf GitHub Pages oder einem beliebigen Git-Host veröffentlichen.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statisches Veröffentlichen</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -87532,6 +87560,222 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>The run could not be started.</source>
         <translation>Der Lauf konnte nicht gestartet werden.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Änderungen aufzeichnen</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Solange eine Aufzeichnung läuft, wird alles, was Sie in der Administration oder in der Website-Seitenleiste ändern, als Schritte einer Migration festgehalten: Inhalte, Klassen, Rollen und Richtlinien, Sektionen, Benutzer und Gruppen, URL-Aliase, Einstellungen. Beenden Sie sie, wenn Sie fertig sind, sehen Sie sich an, was sie festgehalten hat, und erzeugen Sie daraus eine Migration.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Die Aufzeichnungen konnten nicht gelesen werden: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Die Tabellen der Aufzeichnungen gibt es noch nicht: Führen Sie zuerst das Upgrade aus (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Die Aufzeichnung ist in migration.ini ausgeschaltet ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Meine Änderungen</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Zeichnet nur auf, was Sie ändern, wo auch immer Sie es ändern, bis Sie sie beenden.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Aufzeichnung</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>seit %time, bisher %count Änderung(en).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Bezeichnung (optional)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Zeigen, was sie festgehalten hat</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Aufzeichnung beenden</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Aufzeichnung meiner Änderungen starten</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fenster für die ganze Website</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Zeichnet jede Änderung jedes Benutzers und der Konsole auf, bis es geschlossen wird. Beim Öffnen werden Sie gebeten zu bestätigen, dass Sie es sind.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Offen</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Fenster schließen</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Fenster für die ganze Website öffnen</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Aufzeichnungen</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Das Konto eines Benutzers (Login, E-Mail, Passwort) und die Felder von Benutzerkonten werden nie aufgezeichnet.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Änderungen</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ganze Website</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Änderungen von %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Beendet</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Noch keine Aufzeichnung.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Aufzeichnung %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Alle Aufzeichnungen</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Die Migration, die daraus entstünde</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Die Änderungen, zu einem Schritt pro geändertem Ding zusammengefasst: was eine aus dieser Aufzeichnung erzeugte Migration täte.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Eine Migration kann daraus erzeugt werden, sobald diese Installation die YAML-Schritttypen %types hat.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Absichtlich weggelassen: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nichts wurde aufgezeichnet.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Was sie festgehalten hat</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count Änderung(en), in der Reihenfolge, in der sie gemacht wurden.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Änderung</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Schritt</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Betrifft</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count weitere: ./console exp:migration:record:show listet jede auf.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Verwerfen</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Entfernt die Aufzeichnung und was sie festgehalten hat. Was geändert wurde, bleibt geändert.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ja, diese Aufzeichnung verwerfen</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Aufzeichnung läuft…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Ihre Änderungen werden für eine Migration aufgezeichnet.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Jede Änderung auf dieser Website wird für eine Migration aufgezeichnet (Fenster für die ganze Website).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Die Aufzeichnung für die ganze Website hat begonnen: Jede Änderung jedes Benutzers wird aufgezeichnet, bis Sie sie beenden.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Die Aufzeichnung hat begonnen: Ihre Änderungen werden aufgezeichnet, bis Sie sie beenden.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Aufzeichnung beendet. Was sie festgehalten hat, bleibt, bis Sie sie verwerfen.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Die Aufzeichnung und ihre Ereignisse sind entfernt.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Es gibt keine Aufzeichnung %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Kreuzen Sie zuerst „Ja, diese Aufzeichnung verwerfen“ an.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Nur der Benutzer, der aufgezeichnet hat, darf eine Sitzungsaufzeichnung beenden.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Wählen Sie die Aufzeichnung, die beendet werden soll.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Eine Aufzeichnung dieser Art läuft bereits.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Die Aufzeichnung konnte nicht geändert werden: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -88195,6 +88439,1540 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Released.</source>
         <translation>Freigegeben.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Alle Ziele</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Letzte Veröffentlichung</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Veröffentlichen Sie eine kostenlose statische Kopie Ihrer Website auf GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Veraltete Seiten</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statisches Veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statisches Veröffentlichen ist ausgeschaltet.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Ziel</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Die Ziele konnten nicht gelesen werden: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>ein Auftrag läuft</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>Build zu prüfen</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ausblenden</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>Ziel anlegen</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nie</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>Anleitung lesen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added hinzugefügt, %changed geändert, %removed entfernt</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes von %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count weitere sind nicht aufgeführt.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages Seiten geschrieben</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ist %size groß, mehr als der Host für eine Datei erlaubt.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % des Limits</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds Sek.</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ist die Veröffentlichung, die die Website jetzt hat.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: Auftrag %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repository/ für eine GitHub-Projektseite; leer für eine eigene Domain oder eine Benutzerseite.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Die Website</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Der Host</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Anmeldung am Repository</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Das Repository</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Links und Basispfad</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Ihre eigene Domain</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Was der Build enthält</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Wann veröffentlicht wird</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Prüfen und speichern</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Eine GitHub-Projektseite liegt unter /&lt;repository&gt;/; relative Links funktionieren dort und überall sonst.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ein Build ruft jede Seite von %site so ab, wie ein nicht angemeldeter Besucher sie sieht, schreibt die Links um, kopiert die Dateien und schreibt das Ergebnis in den Ordner des Ziels. Nichts wird veröffentlicht, bevor Sie den Build prüfen und auf „Veröffentlichen“ klicken.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Ein Cron-Ausdruck, zum Beispiel 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Ein Deploy-Key wird als Geheimnis %secret aufbewahrt.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Ein Deploy-Key erlaubt dieser Installation, per SSH in genau ein Repository zu pushen und nirgendwo sonst hin. Seine private Hälfte bleibt unter Setup &gt; Geheimnisse; nur die öffentliche Hälfte wird angezeigt.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Ein für dieses Ziel erstellter Deploy-Key</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Ein Deploy-Key meldet sich per SSH an: Ändern Sie die Git-Adresse in die SSH-Adresse (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Ein Auftrag läuft, gestartet von %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Ein Auftrag dieses Ziels läuft noch (%detail). Warten Sie, bis er beendet ist.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Ein Auftrag dieses Ziels läuft noch. Warten Sie, bis er beendet ist.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Ein Link von der Seite /news/ zur Seite /about-us/team wird geschrieben als</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Ein neuer Deploy-Key wurde erstellt. Fügen Sie seine öffentliche Hälfte jetzt dem Repository hinzu.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Eine Seite, die nach der Bereinigung noch Debug-Ausgaben, ein Formular-Token oder eine Sitzungs-ID enthält, wird nie veröffentlicht.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Eine Rücknahme ist etwas für Experten: Kreuzen Sie „Ich weiß, was das ändert“ an und geben Sie den Namen des Tags erneut ein.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Eine Website darf bis zu %site groß sein, eine Datei bis zu %file, bei etwa 100 GB Datenverkehr im Monat. Bei einem kostenlosen Tarif muss das Repository öffentlich sein. GitHub Pages ist nicht für Shops oder andere kommerzielle Transaktionen gedacht.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Ein Ziel ist eine Website, die in einem Git-Repository veröffentlicht wird. Hier wird nichts gebaut oder veröffentlicht: „Speichern“ schreibt die Einstellungen in settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Ein Ziel ist eine Website, die an einem Ort veröffentlicht wird, zum Beispiel Ihre öffentliche Website auf GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Ein Token aus Setup &gt; Geheimnisse</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Ein Workflow des Repositorys veröffentlicht sie.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Fügen Sie diesen öffentlichen Schlüssel dem Repository mit Schreibzugriff hinzu. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, dann Allow write access ankreuzen.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Hinzugefügt</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Ein anderer Git-Host</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Ein anderer Prozess arbeitet an diesem Ziel: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Basispfad</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Vorher</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Unterhalb eines Basispfads</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Branch</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Defekte Links</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Defekte Links im Build</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Build</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Build %id von %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Build von %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Jetzt bauen</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Build zu prüfen</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Von</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Von Hand, hier</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ändern</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Änderungen</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Zuerst prüfen</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Prüfen Sie diese Einstellungen</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Prüfen Sie, was der Build ändert, sehen Sie ihn sich an und veröffentlichen oder verwerfen Sie ihn dann.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Wählen Sie die Veröffentlichung, zu der zurückgekehrt werden soll.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Kommt mit einer späteren Version.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commit</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Commits</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Committet den Build, versieht ihn mit einem Tag und pusht ihn nach %remote. Ein Push wird nie erzwungen; Sie können später zu jeder Veröffentlichung zurückkehren.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Verglichen mit dem vorherigen Ordner: %added hinzugefügt, %changed geändert, %removed entfernt, %unchanged unverändert.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Verglichen mit der letzten Veröffentlichung.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Zugangsdaten</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Eigene Domain</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Debug-Ausgaben, Formular-Tokens, Sitzungs-IDs und Nonces werden immer entfernt.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Deploy-Key</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Deploy-Key von %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Verwerfen</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Build verwerfen</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domain</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Leer: die Adresse der Website. Andernfalls eine interne Adresse derselben Website.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Beendet</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Jeder Link beginnt mit dem Basispfad.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Jede Veröffentlichung ist ein Commit mit einem Tag static/%id/&lt;n&gt;. Eine Rücknahme erstellt einen neuen Commit mit den Dateien einer früheren Veröffentlichung: Die Historie bleibt erhalten, kein Tag wird verschoben und nichts wird erzwungen.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Zusatzdateien</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Seiten abrufen von</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Dateien</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Fehlende Dateien</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Dateien von</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Dateien, die nicht gesammelt werden konnten</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Fingerabdruck</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Ordner</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Für eine SSH-Adresse. Der Schlüssel wird nach dem Speichern erstellt; Sie fügen seine öffentliche Hälfte dem Repository hinzu.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Für eine https://-Adresse. GitHub: ein Fine-grained Token mit Lese- und Schreibrecht für Contents im Repository.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Für Experten. Die öffentliche Website ändert sich, sobald der Push durch ist.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formulare</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Kostenloses Hosting aus einem GitHub-Repository.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Aus dem Branch</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git-Adresse</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages erlaubt eine Website von %site und eine Datei von %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Grenzen von GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages veröffentlicht die Dateien unverändert (nötig für Dateien, die mit _ beginnen).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub liefert den Branch so aus, wie er gepusht wurde. Die Voreinstellung.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, Ihr eigener Server: jedes Git-Repository.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Zu einer früheren Veröffentlichung zurückkehren</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Hilfe</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Hilfe zum Assistenten</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Ausblenden</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Verlauf</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Verlauf von %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Wie GitHub Pages den Build erhält</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Ich habe die Änderungen geprüft</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Ich weiß, was das ändert</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Es ist ausgeschaltet: Nichts kann gebaut werden, bis es eingeschaltet ist.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Es läuft im Hintergrund als %user; Sie können diese Seite schließen.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Auftrag %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Aufbewahrt als Geheimnis %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Art</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Letzte Veröffentlichung</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Diese Seiten auslassen</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Diese Sektionen auslassen</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Links</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Umgeschriebene Links</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Live-Website</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Build ansehen</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Kleinbuchstaben, Ziffern, _ und -, zum Beispiel github-public. Der Name benennt den Ordner und die Tags (static/&lt;id&gt;/&lt;n&gt;) und kann später nicht geändert werden.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Neuen Schlüssel erstellen</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Ziel anlegen</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Schlüssel erstellen</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Legen Sie zuerst das Repository beim Host an; ein leeres genügt.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Nachricht</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Die meisten Seiten</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Name des Tokens unter Setup &gt; Geheimnisse</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Neues Ziel</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Weiter</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nein</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Noch kein Commit.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Es wurde kein Schlüssel erstellt: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Es wurde kein php-Kommandozeilenprogramm gefunden. Setzen Sie migration.ini [AdminSettings] PhpCliPath auf seinen vollständigen Pfad.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Noch kein Tag.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Noch kein Ziel.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keine</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Nicht im Build.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Es wurde noch nichts veröffentlicht.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Es wurde noch nichts veröffentlicht: Jede Datei ist neu.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Benachrichtigen</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Nach Zeitplan</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Auf der Konsole</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Auf dem Server: ./console exp:static:serve %id liefert ihn auf die gleiche Weise aus.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Ein Pfad pro Zeile, * passt auf jeden Teil: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Beim Ziel wird nur ein Name gespeichert; das Token oder der Schlüssel selbst bleibt unter Setup &gt; Geheimnisse und erscheint nie in einem Protokoll.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Nur was die Seiten nennen</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Nur mit einem Token. env:NAME liest stattdessen eine Umgebungsvariable des Servers.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Vorschau öffnen</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Öffnet den Build so, wie der Host ihn ausliefern wird, aus dem Ordner des Ziels. Der Link funktioniert für Sie eine Stunde lang.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Optional. Leer: was veröffentlicht wurde.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Optional. Mit einer Domain wird die Website an ihrem Stamm ausgeliefert.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Ausgabe</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Seiten</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Seiten des Ziels</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Abgelehnte Seiten</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Nachbearbeitung</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Vorschau</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Vorschau und Veröffentlichung</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Vorschau und Veröffentlichung von %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Vorschau des Builds</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fortschritt</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Öffentliche Adresse</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Öffentlicher Schlüssel</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Eine statische Kopie einer Website auf GitHub Pages oder einem beliebigen Git-Host veröffentlichen: bauen, die Änderungen prüfen, veröffentlichen und bei Bedarf zu einer früheren Veröffentlichung zurückkehren.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Veröffentlichung, zu der zurückgekehrt wird</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Veröffentlichungen</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Push</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Anleitung lesen</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Protokoll</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Abgelehnt</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relativ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Neu laden</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Entfernt</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Schlüssel ersetzen: Der alte funktioniert dann nicht mehr</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Bericht</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Bericht des Builds</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repository</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Prüfung</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Die Prüfung kontrolliert jede Einstellung und zeigt die Zeilen, die geschrieben werden. Noch wird nichts gespeichert.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Zurücknehmen</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Rücknahme</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Zeitplan</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Suchseite</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Sektions-IDs, durch Kommas getrennt.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Zur Live-Website weiterleiten</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Einstellung</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Einstellungen von %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Setup &gt; Geheimnisse</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Wird in Listen angezeigt, zum Beispiel „Öffentliche Website auf GitHub Pages“.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Die Anmeldung mit einer GitHub App kommt mit der GitHub-Integration.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Website</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Zu veröffentlichende Website</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Größe und Grenzen</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Größe des Builds</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Veraltete Seiten</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Gestartet</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Gestartet von %user um %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statisches Veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statisches Veröffentlichen ist ausgeschaltet</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statisches Veröffentlichen ist ausgeschaltet.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statisches Veröffentlichen ist ausgeschaltet. Schalten Sie es zuerst unter Setup &gt; Statisches Veröffentlichen ein.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statisches Veröffentlichen ist eingeschaltet.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Schritt %step von %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Schritte</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Bereinigung</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Ausschalten</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Statisches Veröffentlichen einschalten</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Tag</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Tags</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Ziel</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Ziele können angelegt und geändert werden, aber nichts wird gebaut oder veröffentlicht, solange es nicht eingeschaltet ist.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Teilt Suchmaschinen mit, was sie lesen sollen.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Der Build konnte nicht verworfen werden: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Der Build ist identisch mit der letzten Veröffentlichung: Es gibt nichts zu veröffentlichen.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Der Build wurde verworfen: Der Ordner enthält wieder die letzte Veröffentlichung.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Die Voreinstellungen passen für die meisten Websites.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Der Ordner enthält einen noch nicht veröffentlichten Build; ein neuer Build ersetzt ihn.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Der Ordner der Aufträge ist nicht beschreibbar: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Der Auftrag konnte nicht vorbereitet werden: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Der Auftrag konnte nicht gestartet werden.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Der Auftrag ist beendet. Sein Bericht wird geladen.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Der Auftrag benötigt einen angemeldeten Benutzer.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Der Auftrag wurde gestartet, hat aber seine Prozess-ID nicht gemeldet. Prüfen Sie %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Der Schlüssel</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Die größte Datei: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Die Zeilen, die geschrieben werden</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Die Liste der Seiten für Suchmaschinen; benötigt die öffentliche Adresse.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Die Seiten werden so abgerufen, wie ein nicht angemeldeter Besucher sie sieht. Administrations- und Bearbeitungs-Siteaccesses werden nie angeboten.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Der Fortschritt konnte nicht verfolgt werden. Laden Sie die Seite neu, um den Stand des Auftrags zu sehen.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Die öffentliche Hälfte des Schlüssels:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Das Stammverzeichnis des Branches</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Der Geheimnisspeicher ist noch nicht eingerichtet (./console exp:upgrade --apply legt seine Tabelle an), daher kann kein Schlüssel aufbewahrt werden.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Der Server meldet sich selbst an (mit seinem eigenen SSH-Schlüssel oder Credential-Helper), oder das Repository liegt auf diesem Server.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Die Einstellung konnte nicht geschrieben werden: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Die Einstellungen sind gültig. Diese Zeilen werden geschrieben:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Die Einstellungsdatei kann nicht gelesen werden: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Die Website kehrt zu den Dateien dieser Veröffentlichung zurück; ein noch nicht veröffentlichter Build muss zuerst veröffentlicht oder verworfen werden.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Die eigene Seite der Website für Adressen, die nicht existieren.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Das Ziel konnte nicht gespeichert werden: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Das Ziel meldet sich noch nicht mit diesem Schlüssel an: Wählen Sie in seinen Einstellungen „Ein für dieses Ziel erstellter Deploy-Key“.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Die Ziele konnten nicht gelesen werden: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Es gibt noch keinen Build zu prüfen.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Diese Installation hat keinen Frontend-Siteaccess. Administrations- und Bearbeitungs-Siteaccesses werden nie veröffentlicht.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Diese Seite verfolgt den Auftrag während seines Ablaufs; er läuft im Hintergrund weiter, wenn die Seite geschlossen wird.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Dieses Ziel hat noch keinen Deploy-Key.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Dieses Ziel wurde hier noch nicht gebaut.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Dieses Ziel hat einen.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Verwirft diesen Build: Der Ordner enthält wieder die letzte Veröffentlichung. Die Live-Website ändert sich nicht.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Kreuzen Sie zuerst „Ich habe die Änderungen geprüft“ an.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zeit</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Auslöser</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Geben Sie den Namen des Tags erneut ein</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Unverändert</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Was</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Was sich ändert</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Was jede Datei ist; wird immer geschrieben.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Was der Auftrag getan hat, und sein Protokoll. Ein hier gestarteter Auftrag läuft im Hintergrund weiter, wenn diese Seite geschlossen wird.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Was der Auftrag als Fehler ausgegeben hat</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Was die Seiten nennen, und jedes Bild veröffentlichter Inhalte</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wann</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Wenn eine Veröffentlichung fehlschlägt</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Wenn eine Veröffentlichung gelingt</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Wenn Inhalte veröffentlicht werden</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Wohin Links auf das führen, was die Kopie nicht enthält (die Suche, die Anmeldung).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Von wo die statische Kopie ausgeliefert wird.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Welche Website veröffentlicht wird und wie das Ziel heißt.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Funktioniert unter jedem Pfad. Die Voreinstellung.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Wird geschrieben, sobald eine eigene Domain gesetzt ist.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Sie können hier und auf der Konsole jederzeit von Hand bauen und veröffentlichen.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>nur ein Name; der Wert bleibt unter Setup &gt; Geheimnisse</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>unterhalb von %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ohne Bericht beendet</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>zusätzlich</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, oder main mit dem Ordner docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>Git-Host</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (mit einem Token) oder git@github.com:owner/repo.git (mit einem Deploy-Key); niemals ein Passwort oder Token darin.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, für die Sitemap und die kanonischen Links.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>Bild</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nie</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nein</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>kein Remote</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>keine: Commits bleiben im Ordner</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>keine: nichts geändert</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>nicht gepusht</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>nichts geändert</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>Seite</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>bestanden</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ist deaktiviert, daher kann hier kein Auftrag gestartet werden. Verwenden Sie ./console exp:static:build auf dem Server.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>Veröffentlichung</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>veröffentlicht</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>Push ausstehend</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>gepusht</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>abgelehnt</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relativ</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>Rücknahme</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>zurückgenommen</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>läuft</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>nur der Ordner</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: wird in die Datei CNAME geschrieben. Richten Sie das DNS der Domain so auf den Host aus, wie dieser es beschreibt; HTTPS kann eine Weile brauchen, bis es funktioniert.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ja, noch nicht veröffentlicht</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Eine GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Ein Workflow des Repositorys veröffentlicht sie. Der Build schreibt die Workflow-Datei; lassen Sie den Ordner leer.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Nachdem ein Ziel mit einem GitHub-Repository und einem Token oder einer GitHub App gespeichert ist, kann dieser Schritt das Repository anlegen und GitHub Pages einschalten. Andernfalls legen Sie das Repository zuerst auf GitHub an; ein leeres genügt.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Branch oder GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS prüfen</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Repository anlegen, falls es nicht existiert</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Legen Sie das Repository auf GitHub an und schalten Sie GitHub Pages in dessen Einstellungen ein (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Legt das Repository %repo an, wenn es fehlt (falls gewünscht), schaltet GitHub Pages wie gespeichert aus dem Branch oder aus GitHub Actions ein und setzt die eigene Domain und HTTPS. Es verwendet die gespeicherten Einstellungen: Speichern Sie Änderungen zuerst.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Details auf GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Geben Sie zuerst die eigene Domain ein.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Jeder Push wird zuerst gegen diese Grenzen geprüft.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Für eine https://-Adresse auf GitHub. Die für diese Installation eingerichtete App meldet sich an; sie braucht die Installations-ID.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages stellt ein privates Repository nur mit einem kostenpflichtigen Tarif bereit.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: Eine Subdomain (www.example.com) braucht einen CNAME-Eintrag auf &lt;owner&gt;.github.io; eine Apex-Domain (example.com) die A-Einträge %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Installations-ID der GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Letzter Pages-Build</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Grenzen und Bedingungen</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Für GitHub Pages mit einem kostenlosen Tarif erforderlich.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Auf GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Nur mit einer GitHub App: die Zahl am Ende der Adresse der Installation der App auf GitHub. Die App selbst wird in staticcache.ini festgelegt (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Öffentlich</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Speichern Sie zuerst das Ziel mit einem GitHub-Repository und einem Token oder einer GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Setzen Sie diese Einträge beim Anbieter der Domain:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Auf GitHub einrichten</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Das DNS von %domain zeigt noch nicht auf GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Das DNS von %domain zeigt auf GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Die GitHub-Anbindung ist hier nicht verfügbar: %problem. Das Veröffentlichen in den Branch funktioniert trotzdem; schalten Sie GitHub Pages in den Einstellungen des Repositorys ein.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Die GitHub-Schritte sind für dieses Ziel nicht verfügbar: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Der Zustand von GitHub Pages wird mit einem Token oder einer GitHub App als Zugangsdaten angezeigt.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Eigene Domain verwenden</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Was wählen: Token, Deploy-Key oder GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Mit einem GitHub-Repository und einem Token oder einer GitHub App kann der Assistent das Repository für Sie anlegen, GitHub Pages einschalten und die Domain setzen (Schritt 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>wird gebaut</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>gebaut</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>aus GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>aus dem Branch %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>noch keiner</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nicht gefunden</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>aus</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>öffentlich</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>in der Warteschlange</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>unbekannt</translation>
     </message>
 </context>
 </TS>

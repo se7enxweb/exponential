@@ -69,14 +69,16 @@ class expStaticRepository
      * @param string $checkout the target's folder (expStaticTarget::directory())
      * @param expStaticCredentials $credentials
      * @param array $options push (bool, default true), commit_name, commit_email, git_manager (bool: use
-     *        expUpgradeGit when active, default true)
+     *        expUpgradeGit when active, default true), max_site_bytes, max_file_bytes (the limits of a github-pages target
+     *        checked before every push; default [StaticPublishSettings] MaxSiteBytes and MaxFileBytes)
      */
     public function __construct( expStaticTarget $target, $checkout, expStaticCredentials $credentials, array $options = array() )
     {
         $this->target = $target;
         $this->checkout = rtrim( str_replace( '\\', '/', (string)$checkout ), '/' );
         $this->credentials = $credentials;
-        $this->options = $options + array( 'push' => true, 'commit_name' => 'Exponential static publishing', 'commit_email' => '', 'git_manager' => true );
+        $this->options = $options + array( 'push' => true, 'commit_name' => 'Exponential static publishing', 'commit_email' => '', 'git_manager' => true,
+                                           'max_site_bytes' => null, 'max_file_bytes' => null );
     }
 
     /** @return string the checkout */
@@ -431,6 +433,18 @@ class expStaticRepository
             $result['problems'][] = "not pushed: $problem; exp:static:push tries again";
             return self::PENDING;
         }
+        $limits = $this->checkLimits();
+        if ( $limits !== null )
+        {
+            $result['limits'] = $limits;
+            $result['warnings'] = array_merge( $result['warnings'], $limits['warnings'] );
+            if ( $limits['errors'] )
+            {
+                foreach ( $limits['errors'] as $error )
+                    $result['problems'][] = "not pushed: $error; make the build smaller (Assets, ExcludePaths) and publish again";
+                return self::PENDING;
+            }
+        }
         $branch = $this->branch();
         $id = $this->target->id();
         $this->syncRemote();
@@ -450,6 +464,32 @@ class expStaticRepository
         }
         $result['problems'][] = 'the push failed (' . $this->firstLine( $push ) . '): the commit stays local and exp:static:push or the cronjob part staticpublish tries again';
         return self::PENDING;
+    }
+
+    /**
+     * The limits of GitHub Pages for the build in the checkout (expStaticGitHub::limits()), checked before every
+     * push of a github-pages target: a push over them is refused, as GitHub would refuse it or not serve it.
+     *
+     * @return array|null null for another kind of target or a checkout without a manifest
+     */
+    public function checkLimits()
+    {
+        if ( $this->target->setting( 'Kind' ) !== 'github-pages' || !class_exists( 'expStaticGitHub' ) )
+            return null;
+        $manifest = expStaticManifest::load( $this->checkout . '/' . $this->prefix() );
+        if ( $manifest === null )
+            return null;
+        $setting = function ( $name, $default )
+        {
+            if ( !class_exists( 'eZINI' ) )
+                return $default;
+            $ini = eZINI::instance( 'staticcache.ini' );
+            return $ini->hasVariable( 'StaticPublishSettings', $name ) ? (int)$ini->variable( 'StaticPublishSettings', $name ) : $default;
+        };
+        return expStaticGitHub::limits( $manifest, array(
+            'max_site_bytes' => $this->options['max_site_bytes'] !== null ? (int)$this->options['max_site_bytes'] : $setting( 'MaxSiteBytes', expStaticGitHub::SITE_BYTES ),
+            'max_file_bytes' => $this->options['max_file_bytes'] !== null ? (int)$this->options['max_file_bytes'] : $setting( 'MaxFileBytes', expStaticGitHub::FILE_BYTES ),
+        ) );
     }
 
     /**
@@ -524,6 +564,129 @@ class expStaticRepository
                                          $result['added'], $result['changed'], $result['removed'] );
         $this->tag( strtok( (string)$message, "\n" ), $result );
         return true;
+    }
+
+    /**
+     * The manifest of the last commit (the build as last published), or null before the first publish.
+     *
+     * @return expStaticManifest|null
+     */
+    public function committedManifest()
+    {
+        if ( !file_exists( $this->checkout . '/.git' ) || !$this->hasHead() )
+            return null;
+        $show = $this->git( array( 'show', 'HEAD:' . $this->prefix() . expStaticManifest::FILE ) );
+        $data = $show['ok'] ? json_decode( $show['output'], true ) : null;
+        if ( !is_array( $data ) )
+            return null;
+        try
+        {
+            return expStaticManifest::fromArray( $data );
+        }
+        catch ( InvalidArgumentException $e )
+        {
+            return null;
+        }
+    }
+
+    /**
+     * Throws a build away that was not published: the build's files go back to what the last commit holds (the files
+     * the build added are removed, the ones it changed or removed restored); before the first publish every file
+     * of the build is removed. Files no build wrote are not touched.
+     *
+     * @param array $result messages, problems are added here; removed and restored (counts) are set
+     * @return bool whether the checkout now holds the last publish
+     */
+    public function discard( array &$result )
+    {
+        $result += array( 'messages' => array(), 'warnings' => array(), 'problems' => array(), 'removed' => 0, 'restored' => 0 );
+        $problem = $this->checkoutProblem();
+        if ( $problem !== '' )
+        {
+            $result['problems'][] = $problem;
+            return false;
+        }
+        $dir = rtrim( $this->checkout . '/' . $this->prefix(), '/' );
+        $built = expStaticManifest::load( $dir );
+        $committed = $this->committedManifest();
+        $keep = $committed !== null ? $committed->entries() : array();
+        foreach ( $built !== null ? array_keys( $built->entries() ) : array() as $path )
+        {
+            if ( isset( $keep[$path] ) || !is_file( $dir . '/' . $path ) || !@unlink( $dir . '/' . $path ) )
+                continue;
+            $result['removed']++;
+            $parent = dirname( $dir . '/' . $path );
+            while ( strlen( $parent ) > strlen( $dir ) && is_dir( $parent ) && count( (array)scandir( $parent ) ) === 2 && @rmdir( $parent ) )
+                $parent = dirname( $parent );
+        }
+        if ( $committed !== null )
+        {
+            $paths = array( $this->prefix() . expStaticManifest::FILE );
+            foreach ( array_keys( $keep ) as $path )
+                $paths[] = $this->prefix() . $path;
+            foreach ( array_chunk( $paths, self::BATCH ) as $chunk )
+            {
+                $checkout = $this->git( array_merge( array( 'checkout', '--quiet', 'HEAD', '--' ), $chunk ) );
+                if ( !$checkout['ok'] )
+                {
+                    $result['problems'][] = 'the files of the last publish could not be restored: ' . $this->firstLine( $checkout );
+                    return false;
+                }
+            }
+            $result['restored'] = count( $paths );
+            $result['messages'][] = sprintf( 'the build was thrown away: %d file(s) of it removed, the files of the last publish restored', $result['removed'] );
+        }
+        else
+        {
+            if ( is_file( $dir . '/' . expStaticManifest::FILE ) )
+                @unlink( $dir . '/' . expStaticManifest::FILE );
+            $result['messages'][] = sprintf( 'the build was thrown away: %d file(s) removed (nothing was published yet)', $result['removed'] );
+        }
+        if ( is_file( $dir . '/' . expStaticManifest::PREVIOUS_FILE ) )
+            @unlink( $dir . '/' . expStaticManifest::PREVIOUS_FILE );
+        return true;
+    }
+
+    /**
+     * The target's tags, newest first: name, number, commit, time (Unix), subject.
+     *
+     * @return array[]
+     */
+    public function tagList()
+    {
+        $out = array();
+        $refs = $this->git( array( 'for-each-ref', '--format=%(refname:short)%09%(objectname)%09%(*objectname)%09%(creatordate:unix)%09%(subject)',
+                                   'refs/tags/' . self::TAG_PREFIX . $this->target->id() . '/' ) );
+        foreach ( $this->lines( $refs ) as $line )
+        {
+            $parts = explode( "\t", $line, 5 ) + array( '', '', '', '0', '' );
+            $number = self::tagNumber( $parts[0], $this->target->id() );
+            if ( $number < 1 )
+                continue;
+            $out[] = array( 'name' => $parts[0], 'number' => $number, 'commit' => $parts[2] !== '' ? $parts[2] : $parts[1],
+                            'time' => (int)$parts[3], 'subject' => $parts[4] );
+        }
+        usort( $out, function ( $a, $b ) { return $b['number'] <=> $a['number']; } );
+        return $out;
+    }
+
+    /**
+     * The last commits of the branch, newest first: commit, time (Unix), author, subject.
+     *
+     * @param int $limit
+     * @return array[]
+     */
+    public function commits( $limit = 30 )
+    {
+        if ( !file_exists( $this->checkout . '/.git' ) || !$this->hasHead() )
+            return array();
+        $out = array();
+        foreach ( $this->lines( $this->git( array( 'log', '-n', (string)max( 1, (int)$limit ), '--format=%H%x09%ct%x09%an%x09%s', 'HEAD' ) ) ) as $line )
+        {
+            $parts = explode( "\t", $line, 4 ) + array( '', '0', '', '' );
+            $out[] = array( 'commit' => $parts[0], 'time' => (int)$parts[1], 'author' => $parts[2], 'subject' => $parts[3] );
+        }
+        return $out;
     }
 
     /**

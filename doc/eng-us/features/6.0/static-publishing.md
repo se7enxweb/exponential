@@ -6,8 +6,8 @@ turns a front siteaccess into a folder of HTML pages and files, with every link 
 own, at the root of a domain or below a path such as `/my-site/`. Editors keep working in Exponential; the public
 site is a copy.
 
-It is new in Exponential 6.0.15. This page describes the build engine, publishing to git and their commands. The
-screens under Setup > Static publishing and the GitHub setup are added to it as they arrive.
+It is new in Exponential 6.0.15. This page describes the build engine, publishing to git, their commands and the
+screens under Setup > Static publishing. The GitHub setup is added to it when it arrives.
 
 [Features of 6.0](README.md) · Related: [Static cache generator](static-cache-generator.md),
 [Host static sites on GitHub Pages with Exponential 6.0.15+](../../guides/host-static-sites-on-github-pages.md),
@@ -94,6 +94,10 @@ All settings are in `staticcache.ini`, next to the static cache's `[CacheSetting
 | `WorkDir` | `static-publish` | Where builds are kept, below `var/<site>/` unless absolute |
 | `MaxSiteBytes` | `1000000000` | The build warns above 90 % of this (GitHub Pages allows 1 GB a site) |
 | `MaxFileBytes` | `100000000` | The build warns about larger files (GitHub allows 100 MB a file) |
+| `GitHubAPI` | `enabled` | The GitHub integration (repository, Pages, domain, build status); publishing to the branch works without it |
+| `GitHubAPIURL` | `https://api.github.com` | GitHub's REST API (`https://<host>/api/v3` for GitHub Enterprise Server) |
+| `GitHubAppId`, `GitHubAppKey` | empty | The GitHub App of `Credential=app:<installation>`: its id and the secret holding its private key |
+| `GitHubOAuthClientId` | empty | The OAuth App of `exp:static:github signin` (device flow) |
 
 `[Target_<id>]` (the shipped `[Target_example]` block is a template with every setting; it is not built):
 
@@ -115,7 +119,7 @@ All settings are in `staticcache.ini`, next to the static cache's `[CacheSetting
 | `ExcludePaths[]` | empty | Pages left out by path (`/members/*`); links to them go to the live site |
 | `ExcludeSections[]` | empty | Pages left out by the section of their content |
 | `Remote`, `Branch`, `Folder` | empty, `gh-pages`, empty | The git address the build is pushed to, its branch, and `docs` when the site is in `/docs` of the branch (the build is then written to `<folder>/docs`) |
-| `Credential` | `none` | How the push signs in: `token:<secret>`, `token:env:<VARIABLE>`, `sshkey:<secret>`, `app:<installation>` (with the GitHub integration) or `none` |
+| `Credential` | `none` | How the push signs in: `token:<secret>`, `token:env:<VARIABLE>`, `sshkey:<secret>`, `app:<installation>` (a GitHub App) or `none` |
 | `Kind`, `Delivery` | `github-pages`, `branch` | Read and checked now, used by the GitHub setup |
 | `Search`, `Forms`, `Triggers[]`, `Schedule`, `Notify[]`, `Webhook` | `disabled`, `hide`, `manual` and `cli`, empty, `failure`, empty | Read and checked now, used by later parts of static publishing |
 
@@ -127,6 +131,21 @@ The generated reference lists every setting with its comment:
 addresses are http or https, `Remote` holds no password or token, `Credential` names a secret instead of holding one,
 the lists hold known values. Mistakes are errors; doubtful combinations (a `PublicURL` whose path is not `BasePath`,
 a sitemap without `PublicURL`) are warnings.
+
+## In the administration
+
+**Setup > Static publishing** (the module `staticpublish`) does what the commands do, with screens: a wizard that
+makes and changes targets (written through the INI editor into `settings/override/staticcache.ini.append.php`), a
+build started in the background with its progress followed live, a preview of the build (what changes with sizes,
+the build's report, the size against the host's limits, the copy served behind a signed link) with **Publish** and
+**Discard**, the history with the rollback, the page of every job and the deploy key. A dashboard block lists the
+targets with their stale pages and last publish, and Setup > Cache links to it. The policies `staticpublish/read`,
+`build`, `publish` and `setup` take a Target limitation; publishing, rolling back, saving a target and the deploy key
+ask "Verify it's you". The help manual: [Static publishing](../../help/static-publishing/README.md).
+
+The administration starts its jobs as console processes (`exp:static:build`, `exp:static:publish` and
+`exp:static:rollback` with `--login`, `--run-id` and `--progress`), so a long build never holds a web request; the
+job files are in `<WorkDir>/.jobs` and `[StaticPublishSettings] JobHistory` sets how many are kept.
 
 ## Commands
 
@@ -141,6 +160,10 @@ a sitemap without `PublicURL`) are warnings.
 | `exp:static:push [<target>]` | Pushes the targets whose push failed again (also the cronjob part `staticpublish`) |
 | `exp:static:keys <target>` | `--generate` makes the target's SSH deploy key and prints its public half; without it, shows the public half and fingerprint |
 | `exp:static:status <target>` | The target's repository, credential (readable or not, never the value), the last runs and the pages; `--limit` |
+| `exp:static:github setup <target>` | Sets the target up on GitHub: `--create-repo` (`--public`, the default, or `--private`), GitHub Pages from the branch or `--pages=actions`, `--domain`, HTTPS unless `--no-https`; `--plan` only says what it would do |
+| `exp:static:github status <target>` | The repository, GitHub Pages (delivery, domain, HTTPS, certificate) and the last Pages build, with what differs from the target |
+| `exp:static:github signin --secret=<name>` | Signs in with GitHub (an OAuth App's device flow) and keeps the token as a secret for `Credential=token:<name>` |
+| `exp:static:dns <domain>` | Checks the A, AAAA and CNAME records of a custom domain against GitHub Pages and lists the records to set; `--owner` |
 
 Every command takes `--format=json` and then prints one JSON document, schema `exp-static/1`. The exit codes are
 those of `exp:upgrade`: 0 done, 1 failed, 2 usage, 3 the database unreachable, 4 internal error. The generated pages:
@@ -148,7 +171,8 @@ those of `exp:upgrade`: 0 done, 1 failed, 2 usage, 3 the database unreachable, 4
 [exp:static:serve](../../examples/commands/expstaticserve.md), [exp:static:targets](../../examples/commands/expstatictargets.md),
 [exp:static:publish](../../examples/commands/expstaticpublish.md), [exp:static:rollback](../../examples/commands/expstaticrollback.md),
 [exp:static:push](../../examples/commands/expstaticpush.md), [exp:static:keys](../../examples/commands/expstatickeys.md),
-[exp:static:status](../../examples/commands/expstaticstatus.md).
+[exp:static:status](../../examples/commands/expstaticstatus.md), [exp:static:github](../../examples/commands/expstaticgithub.md),
+[exp:static:dns](../../examples/commands/expstaticdns.md).
 
 ## Publishing to git
 
@@ -171,6 +195,38 @@ tables on every database. The audit records `system.staticpublish.publish`, `.ro
 Guides: [Repositories and credentials](../../guides/static-publishing-targets-and-credentials.md),
 [History and rollback](../../guides/static-publishing-history-and-rollback.md),
 [SSH deploy keys](../../guides/static-publishing-deploy-keys.md).
+
+## GitHub
+
+For a target with `Kind=github-pages` and a GitHub address, static publishing uses GitHub's REST API, behind a
+feature check (`expStaticGitHub::available()`: PHP's curl and openssl, and `GitHubAPI=enabled`). It signs in with
+the target's own credential, a token (`token:`) or a GitHub App installation (`app:`), sent in the `Authorization`
+header only. A deploy key or `none` only pushes.
+
+- **Setup** (`exp:static:github setup`, and **Set up on GitHub** in step 4 of the wizard): creates the repository,
+  public unless asked otherwise and empty, for the account or an organization; switches GitHub Pages on from the
+  branch and folder, or from GitHub Actions; sets the custom domain and enforces HTTPS once GitHub has its
+  certificate. Audited as `system.staticpublish.target` with the verb `github-setup`.
+- **Status** (`exp:static:github status`, and the box **On GitHub** in History and Preview): the repository, GitHub
+  Pages and the last Pages build (built, building, queued, failed), with what differs from the target's settings.
+- **GitHub Actions**: with `Delivery=actions` (or `Extras[]=workflow`) the build writes
+  `.github/workflows/static-publish-pages.yml`, which deploys the pushed files as they are. It needs the build at the
+  root of the branch, and a token with the Workflows permission to push it.
+- **Limits**: every push of a GitHub Pages target is checked first. A build over `MaxSiteBytes` or with a file over
+  `MaxFileBytes` is not pushed (the push stays pending); above 90 % of the site limit, a file over 50 MB and a
+  private repository are warnings.
+- **GitHub App**: `Credential=app:<installation>` signs in with an installation token of the App set in
+  `GitHubAppId` and `GitHubAppKey`, made with a JWT signed by the App's private key and kept for the process until
+  it expires; it reaches git through `GIT_ASKPASS` like a token.
+- **OAuth**: `exp:static:github signin` signs a user in with an OAuth App's device flow and keeps the token in the
+  secret store.
+- **DNS**: `exp:static:dns` and **Check the DNS** in step 6 compare a custom domain's records with GitHub Pages'
+  addresses (`expStaticDnsCheck`).
+
+Help: [Connect to GitHub](../../help/static-publishing/connect-to-github-token-key-or-app.md),
+[Branch or GitHub Actions](../../help/static-publishing/choose-branch-or-github-actions.md),
+[Use your own domain](../../help/static-publishing/use-your-own-domain.md),
+[GitHub Pages limits and terms](../../help/static-publishing/github-pages-limits-and-terms.md).
 
 ## Privacy
 

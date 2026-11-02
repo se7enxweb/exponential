@@ -15158,6 +15158,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>අලුත්ම අන්තර්ගතය, සමාලෝචනය සඳහා රඳවා ඇති දේ, සහ තේරීමක් මත ක්‍රියා.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>අඩවියක ස්ථිතික පිටපතක් GitHub Pages හෝ ඕනෑම git සත්කාරකයක ප්‍රකාශනය කරන්න.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ස්ථිතික ප්‍රකාශනය</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API හි ගබඩා කළ විමසුම්වල පිළිතුරු, සහ එහි ස්කීමාවේ අන්තර්ගත පන්ති.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>ස්ථිතික පිටපතක් GitHub Pages හෝ ඕනෑම git සත්කාරකයක ප්‍රකාශනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ස්ථිතික ප්‍රකාශනය</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>ස්ථිතික හැඹිලිය මෙම සේවාදායකයෙන් පිටු සපයයි. අඩවියක ස්ථිතික පිටපතක් වෙනත් තැනක, GitHub Pages හෝ ඕනෑම git සත්කාරකයක ප්‍රකාශනය කිරීමට, ස්ථිතික ප්‍රකාශනය භාවිත කරන්න.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ගොනු ලෙස තබා ඇති ස්ථාපනයේ වෙනස්කම්: ඒවායේ තත්ත්වය, ධාවන, ධාවනය සහ ආපසු හැරවීම.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>අඩවියක ස්ථිතික පිටපතක් GitHub Pages හෝ ඕනෑම git සත්කාරකයක ප්‍රකාශනය කරන්න.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ස්ථිතික ප්‍රකාශනය</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ධාවනය ආරම්භ කළ නොහැකි විය.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>වෙනස්කම් පටිගත කිරීම</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>පටිගත කිරීමක් ක්‍රියාත්මක වන අතරතුර ඔබ පරිපාලනයේ හෝ අඩවියේ පැති තීරුවේ වෙනස් කරන දේ සංක්‍රමණයක පියවර ලෙස තබා ගනී: අන්තර්ගතය, පන්ති, භූමිකා සහ ප්‍රතිපත්ති, කොටස්, පරිශීලකයින් සහ කණ්ඩායම්, URL අන්වර්ථ, සැකසුම්. අවසන් වූ විට එය නවත්වන්න, එය අල්ලාගත් දේ බලන්න, එයින් සංක්‍රමණයක් සාදන්න.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>පටිගත කිරීම් කියවිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>පටිගත කිරීම්වල වගු තවම නැත: පළමුව උත්ශ්‍රේණි කිරීම ධාවනය කරන්න (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini හි පටිගත කිරීම අක්‍රිය කර ඇත ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>මගේ වෙනස්කම්</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ඔබ නවත්වන තුරු ඔබ වෙනස් කරන දේ පමණක්, ඕනෑම තැනක, පටිගත කරයි.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>පටිගත කිරීම</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time සිට, මෙතෙක් වෙනස්කම් %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ලේබලය (විකල්ප)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>එය අල්ලාගත් දේ පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>පටිගත කිරීම නවත්වන්න</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>මගේ වෙනස්කම් පටිගත කිරීම අරඹන්න</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>මුළු අඩවියේ කවුළුව</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>වසන තුරු සෑම පරිශීලකයෙකුගේම සහ කොන්සෝලයේ සෑම වෙනස්කමක්ම පටිගත කරයි. විවෘත කිරීමේදී එය ඔබ බව තහවුරු කිරීමට ඉල්ලා සිටී.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>විවෘතයි</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>කවුළුව වසන්න</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>මුළු අඩවියේ කවුළුව විවෘත කරන්න</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>පටිගත කිරීම් ලැයිස්තුව</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>පරිශීලකයෙකුගේ ගිණුම (පිවිසුම් නාමය, ඊ-තැපෑල, මුරපදය) සහ පරිශීලක ගිණුම්වල ක්ෂේත්‍ර කිසි විටෙකත් පටිගත නොකෙරේ.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>වෙනස්කම්</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>මුළු අඩවිය</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ගේ වෙනස්කම්</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>නවතා ඇත</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>තවම පටිගත කිරීමක් නැත.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>පටිගත කිරීම %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>සියලු පටිගත කිරීම්</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>එයින් ඇති වන සංක්‍රමණය</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>වෙනස් වූ සෑම දෙයකටම එක් පියවරකට එකතු කළ වෙනස්කම්: මෙම පටිගත කිරීමෙන් සාදන සංක්‍රමණයක් කරන දේ.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>මෙම ස්ථාපනයට YAML පියවර වර්ග %types ලැබුණු විට එයින් සංක්‍රමණයක් සෑදිය හැක.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>හිතාමතාම ඉවත් කළා: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>කිසිවක් පටිගත නොවීය.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>එය අල්ලාගත් දේ</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>වෙනස්කම් %count, කළ අනුපිළිවෙළින්.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>වෙනස</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>පියවර</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>අදාළ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>තවත් %count: ./console exp:migration:record:show සියල්ල ලැයිස්තු කරයි.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ඉවත ලන්න</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>පටිගත කිරීම සහ එය අල්ලාගත් දේ ඉවත් කරයි. වෙනස් වූ දේ වෙනස් ලෙසම පවතී.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ඔව්, මෙම පටිගත කිරීම ඉවත ලන්න</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>පටිගත වෙමින්…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ඔබේ වෙනස්කම් සංක්‍රමණයක් සඳහා පටිගත වෙමින් පවතී.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>මෙම අඩවියේ සෑම වෙනස්කමක්ම සංක්‍රමණයක් සඳහා පටිගත වෙමින් පවතී (මුළු අඩවියේ කවුළුව).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>මුළු අඩවියේ පටිගත කිරීම ආරම්භ විය: ඔබ නවත්වන තුරු සෑම පරිශීලකයෙකුගේම සෑම වෙනස්කමක්ම පටිගත වේ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>පටිගත කිරීම ආරම්භ විය: ඔබ නවත්වන තුරු ඔබේ වෙනස්කම් පටිගත වේ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>පටිගත කිරීම නැවතිණි. එය අල්ලාගත් දේ ඔබ ඉවත ලන තුරු පවතී.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>පටිගත කිරීම සහ එහි සිදුවීම් ඉවත් කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>පටිගත කිරීමක් %id නැත.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>පළමුව "ඔව්, මෙම පටිගත කිරීම ඉවත ලන්න" සලකුණු කරන්න.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>සැසි පටිගත කිරීමක් නැවැත්විය හැක්කේ පටිගත කළ පරිශීලකයාට පමණි.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>නැවැත්විය යුතු පටිගත කිරීම තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>මේ වර්ගයේ පටිගත කිරීමක් දැනටමත් ක්‍රියාත්මකයි.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>පටිගත කිරීම වෙනස් කළ නොහැකි විය: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1540 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>නිදහස් කරන ලදී.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>සියලු ඉලක්ක</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>අවසන් ප්‍රකාශනය</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>ඔබේ අඩවියේ නොමිලේ ස්ථිතික පිටපතක් GitHub Pages හි ප්‍රකාශනය කරන්න:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>යල් පැනගිය පිටු</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ස්ථිතික ප්‍රකාශනය</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ස්ථිතික ප්‍රකාශනය අක්‍රියයි.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ඉලක්කය</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ඉලක්ක කියවිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>කාර්යයක් සිදු වෙමින් පවතී</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>පරීක්ෂා කිරීමට ගොඩනැගීම</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>මෙය සඟවන්න</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ඉලක්කයක් සාදන්න</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>කිසිදා නැත</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>නිබන්ධනය කියවන්න</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>එක් කළ %added, වෙනස් කළ %changed, ඉවත් කළ %removed</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit න් %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>තවත් %count ක් ලැයිස්තුගත කර නැත.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>පිටු %pages ක් ලියන ලදී</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path හි ප්‍රමාණය %size, සත්කාරකය එක් ගොනුවකට ඉඩ දෙන ප්‍රමාණයට වඩා වැඩිය.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>සීමාවෙන් %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>තත්. %seconds</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag යනු අඩවියේ දැනට ඇති ප්‍රකාශනයයි.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: කාර්යය %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub ව්‍යාපෘති අඩවියක් සඳහා /ගබඩාව/; අභිරුචි වසමක් හෝ පරිශීලක අඩවියක් සඳහා හිස්ව තබන්න.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. අඩවිය</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. සත්කාරකය</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. ගබඩාවට පිවිසීම</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. ගබඩාව</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. සබැඳි සහ මූලික මාර්ගය</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. ඔබේම වසම</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. ගොඩනැගීමේ අඩංගු දේ</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. ප්‍රකාශනය කරන විට</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. සමාලෝචනය කර සුරකින්න</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub ව්‍යාපෘති අඩවියක් /&lt;repository&gt;/ යටතේ පවතී; සාපේක්ෂ සබැඳි එහි සහ වෙනත් ඕනෑම තැනක ක්‍රියා කරයි.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ගොඩනැගීමක් %site හි සෑම පිටුවක්ම පිවිසී නොමැති අමුත්තෙකු දකින ආකාරයට ලබා ගනී, සබැඳි නැවත ලියයි, ගොනු පිටපත් කරයි සහ ප්‍රතිඵලය ඉලක්කයේ ෆෝල්ඩරයට ලියයි. ඔබ ගොඩනැගීම පරීක්ෂා කර &quot;ප්‍රකාශනය කරන්න&quot; ඔබන තෙක් කිසිවක් ප්‍රකාශනය නොවේ.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>cron රටාවක්, උදාහරණයක් ලෙස 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>යෙදවුම් යතුරක් %secret රහස ලෙස තබා ගනී.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>යෙදවුම් යතුරක් මෙම ස්ථාපනයට SSH හරහා එක් ගබඩාවකට පමණක් push කිරීමට ඉඩ දෙයි, වෙන කොතැනකටවත් නොවේ. එහි පුද්ගලික අර්ධය පිහිටුවීම &gt; රහස් හි රැඳේ; පෙන්වන්නේ පොදු අර්ධය පමණි.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>මෙම ඉලක්කය සඳහා සාදන ලද යෙදවුම් යතුරක්</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>යෙදවුම් යතුරක් SSH හරහා පිවිසේ: git ලිපිනය SSH ලිපිනයට වෙනස් කරන්න (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>%user ආරම්භ කළ කාර්යයක් සිදු වෙමින් පවතී</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>මෙම ඉලක්කයේ කාර්යයක් තවමත් සිදු වෙමින් පවතී (%detail). එය අවසන් වන තෙක් රැඳී සිටින්න.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>මෙම ඉලක්කයේ කාර්යයක් තවමත් සිදු වෙමින් පවතී. එය අවසන් වන තෙක් රැඳී සිටින්න.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ පිටුවේ සිට /about-us/team පිටුවට සබැඳියක් මෙසේ ලියනු ලැබේ</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>නව යෙදවුම් යතුරක් සාදන ලදී. එහි පොදු අර්ධය දැන්ම ගබඩාවට එක් කරන්න.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>පිරිසිදු කිරීමෙන් පසුවත් දෝෂ නිරාකරණ ප්‍රතිදානය, ආකෘති ටෝකනයක් හෝ සැසි හැඳුනුම්කාරකයක් ඇති පිටුවක් කිසිදා ප්‍රකාශනය නොවේ.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ආපසු හැරවීම ප්‍රවීණයන් සඳහා ය: &quot;මෙය වෙනස් කරන දේ මම දනිමි&quot; සලකුණු කර ටැගයේ නම නැවත ටයිප් කරන්න.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>අඩවියක් %site දක්වා, එක් ගොනුවක් %file දක්වා විය හැක, මසකට ආසන්න වශයෙන් 100 GB ගමනාගමනයක් සමඟ. නොමිලේ සැලැස්මක ගබඩාව පොදු විය යුතුය. GitHub Pages සාප්පු හෝ වෙනත් වාණිජ ගනුදෙනු සඳහා අදහස් කර නැත.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>ඉලක්කයක් යනු එක් git ගබඩාවකට ප්‍රකාශනය කරන එක් අඩවියකි. මෙහි කිසිවක් ගොඩනඟන්නේ හෝ ප්‍රකාශනය කරන්නේ නැත: &quot;සුරකින්න&quot; සැකසුම් settings/override/staticcache.ini.append.php වෙත ලියයි.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>ඉලක්කයක් යනු එක් ස්ථානයකට ප්‍රකාශනය කරන එක් අඩවියකි, උදාහරණයක් ලෙස GitHub Pages හි ඔබේ පොදු අඩවිය.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>පිහිටුවීම &gt; රහස් වෙතින් ටෝකනයක්</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>ගබඩාවේ workflow එකක් එය ප්‍රකාශනය කරයි.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>මෙම පොදු යතුර ලිවීමේ අවසරය සහිතව ගබඩාවට එක් කරන්න. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access සලකුණු කරන්න.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>එක් කළ</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>වෙනත් git සත්කාරකයක්</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>වෙනත් ක්‍රියාවලියක් මෙම ඉලක්කය මත ක්‍රියා කරයි: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>ආපසු</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>මූලික මාර්ගය</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>පෙර</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>මූලික මාර්ගයක් යටතේ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ශාඛාව</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>කැඩුණු සබැඳි</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>ගොඩනැගීමේ කැඩුණු සබැඳි</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>ගොඩනැගීම</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%user විසින් ගොඩනැගීම %id</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>ගොඩනැගීම %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>දැන් ගොඩනඟන්න</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>පරීක්ෂා කිරීමට ගොඩනැගීම</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>විසින්</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>අතින්, මෙහි</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>අවලංගු කරන්න</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>වෙනස් කරන්න</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>වෙනස් කළ</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>වෙනස්කම්</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>පළමුව එය පරීක්ෂා කරන්න</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>මෙම සැකසුම් පරීක්ෂා කරන්න</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>ගොඩනැගීම වෙනස් කරන දේ පරීක්ෂා කර, එය බලා, පසුව ප්‍රකාශනය කරන්න හෝ ඉවත දමන්න.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>ආපසු යා යුතු ප්‍රකාශනය තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>පසු නිකුතුවක ලැබේ.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commit කිරීම</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Commit කිරීම්</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>ගොඩනැගීම commit කර, ටැග් කර %remote වෙත push කරයි. Push කිරීමක් කිසිදා බලහත්කාරයෙන් නොකෙරේ; පසුව ඕනෑම ප්‍රකාශනයකට ආපසු යා හැක.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>පෙර ෆෝල්ඩරය සමඟ සසඳන විට: එක් කළ %added, වෙනස් කළ %changed, ඉවත් කළ %removed, වෙනස් නොවූ %unchanged.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>අවසන් ප්‍රකාශනය සමඟ සසඳා ඇත.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>අක්තපත්‍රය</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>අභිරුචි වසම</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>දෝෂ නිරාකරණ ප්‍රතිදානය, ආකෘති ටෝකන, සැසි හැඳුනුම්කාරක සහ nonce සැමවිටම ඉවත් කෙරේ.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>යෙදවුම් යතුර</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name හි යෙදවුම් යතුර</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ඉවත දමන්න</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>ගොඩනැගීම ඉවත දමන්න</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>වසම</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>හිස්: අඩවියේ ලිපිනය. නැතිනම් එම අඩවියේම අභ්‍යන්තර ලිපිනයක්.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>අවසන් විය</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>සෑම සබැඳියක්ම මූලික මාර්ගයෙන් ආරම්භ වේ.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>සෑම ප්‍රකාශනයක්ම static/%id/&lt;n&gt; ටැගය සහිත commit එකකි. ආපසු යාම පෙර ප්‍රකාශනයක ගොනු සමඟ නව commit එකක් සාදයි: ඉතිහාසය රැඳේ, කිසිදු ටැගයක් චලනය නොවේ, කිසිවක් බලහත්කාරයෙන් නොකෙරේ.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>අමතර</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>පිටු ලබා ගන්නේ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ගොනුව</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ගොනු</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>ගොනු අස්ථානගතයි</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>අඩවියේ ගොනු</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>එකතු කළ නොහැකි වූ ගොනු</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>ඇඟිලි සටහන</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>ෆෝල්ඩරය</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH ලිපිනයක් සඳහා. සුරැකීමෙන් පසු යතුර සාදනු ලැබේ; ඔබ එහි පොදු අර්ධය ගබඩාවට එක් කරයි.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// ලිපිනයක් සඳහා. GitHub: ගබඩාව මත Contents කියවීම සහ ලිවීම සහිත fine-grained ටෝකනයක්.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>ප්‍රවීණයන් සඳහා. push කිරීම අවසන් වූ වහාම පොදු අඩවිය වෙනස් වේ.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>ආකෘති</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub ගබඩාවකින් නොමිලේ සත්කාරකත්වය.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>ශාඛාවෙන්</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git ලිපිනය</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub යෙදුම</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site අඩවියකට සහ %file ගොනුවකට ඉඩ දෙයි.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages සීමා</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ගොනු ඒවා පවතින ආකාරයටම ප්‍රකාශනය කරයි (_ න් ආරම්භ වන ගොනු සඳහා අවශ්‍යයි).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ශාඛාව push කළ ආකාරයටම සපයයි. පෙරනිමිය.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, ඔබේම සේවාදායකය: ඕනෑම git ගබඩාවක්.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>පෙර ප්‍රකාශනයකට ආපසු යන්න</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>උදව්</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>විශාරදය සඳහා උදව්</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>ඒවා සඟවන්න</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ඉතිහාසය</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name හි ඉතිහාසය</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>සත්කාරකය</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages ගොඩනැගීම ලබා ගන්නා ආකාරය</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>මම වෙනස්කම් පරීක්ෂා කළෙමි</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>මෙය වෙනස් කරන දේ මම දනිමි</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>හැඳුනුම</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>එය අක්‍රියයි: එය සක්‍රිය වන තෙක් කිසිවක් ගොඩනැගිය නොහැක.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>එය %user ලෙස පසුබිමේ ධාවනය වේ; ඔබට මෙම පිටුව වසා දැමිය හැක.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>කාර්යය %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret රහස ලෙස තබා ඇත.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>වර්ගය</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>අවසන් ප්‍රකාශනය</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>මෙම පිටු ඉවත් කර තබන්න</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>මෙම කොටස් ඉවත් කර තබන්න</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>සබැඳි</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>නැවත ලියූ සබැඳි</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>සජීවී අඩවිය</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>ගොඩනැගීම බලන්න</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>කුඩා අකුරු, ඉලක්කම්, _ සහ -, උදාහරණයක් ලෙස github-public. එය ෆෝල්ඩරය සහ ටැග (static/&lt;id&gt;/&lt;n&gt;) නම් කරන අතර පසුව වෙනස් කළ නොහැක.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>නව යතුරක් සාදන්න</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ඉලක්කයක් සාදන්න</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>යතුර සාදන්න</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>පළමුව සත්කාරකයේ ගබඩාව සාදන්න; හිස් එකක් වුවද කමක් නැත.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>ගොනු ලැයිස්තුව</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>පණිවිඩය</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>බොහෝ පිටු</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>නම</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>පිහිටුවීම &gt; රහස් හි ටෝකනයේ නම</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>නව ඉලක්කය</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>ඊළඟ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>නැත</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>තවම commit එකක් නැත.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>යතුරක් සාදා නැත: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php විධාන රේඛා ද්වීමය ගොනුවක් හමු නොවීය. migration.ini [AdminSettings] PhpCliPath එහි සම්පූර්ණ මාර්ගයට සකසන්න.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>තවම ටැගයක් නැත.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>තවම ඉලක්කයක් නැත.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>කිසිවක් නැත</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>ගොඩනැගීමේ නැත.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>තවම කිසිවක් ප්‍රකාශනය කර නැත.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>තවම කිසිවක් ප්‍රකාශනය කර නැත: සෑම ගොනුවක්ම නවයි.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>දැනුම් දෙන්න</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>කාලසටහනකට අනුව</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>කොන්සෝලයේ</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>සේවාදායකයේ: ./console exp:static:serve %id එය එලෙසම සපයයි.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>පේළියකට එක් මාර්ගයක්, * ඕනෑම කොටසකට ගැළපේ: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>ඉලක්කය සමඟ ගබඩා කරන්නේ නමක් පමණි; ටෝකනය හෝ යතුර පිහිටුවීම &gt; රහස් හි රැඳෙන අතර කිසිදා ලොගයක නොපෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>පිටු නම් කරන දේ පමණි</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>ටෝකනයක් සමඟ පමණි. env:NAME ඒ වෙනුවට සේවාදායකයේ පරිසර විචල්‍යයක් කියවයි.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>පෙරදසුන විවෘත කරන්න</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>සත්කාරකය සපයන ආකාරයටම ඉලක්කයේ ෆෝල්ඩරයෙන් ගොඩනැගීම විවෘත කරයි. සබැඳිය ඔබට පැයක් ක්‍රියා කරයි.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>විකල්පයි. හිස්: ප්‍රකාශනය කළ දේ.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>විකල්පයි. වසමක් සමඟ අඩවිය එහි මූලයෙන් සපයනු ලැබේ.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>ප්‍රතිදානය</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>පිටු</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>ඉලක්කයේ පිටු</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>ප්‍රතික්ෂේප කළ පිටු</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>පශ්චාත් සැකසීම</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>පෙරදසුන</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>පෙරදසුන සහ ප්‍රකාශනය</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name පෙරදසුන සහ ප්‍රකාශනය</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>ගොඩනැගීමේ පෙරදසුන</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ප්‍රගතිය</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>පොදු ලිපිනය</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>පොදු යතුර</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>ප්‍රකාශනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>අඩවියක ස්ථිතික පිටපතක් GitHub Pages හෝ ඕනෑම git සත්කාරකයක ප්‍රකාශනය කරන්න: එය ගොඩනඟන්න, වෙනස්කම් පරීක්ෂා කරන්න, ප්‍රකාශනය කරන්න, සහ අවශ්‍ය විට පෙර ප්‍රකාශනයකට ආපසු යන්න.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>ආපසු යා යුතු ප්‍රකාශනය</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>ප්‍රකාශන</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Push කිරීම</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>නිබන්ධනය කියවන්න</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>සටහන් පොත</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ප්‍රතික්ෂේප විය</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>සාපේක්ෂ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>නැවත පූරණය කරන්න</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>ඉවත් කළ</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>යතුර ප්‍රතිස්ථාපනය කරන්න: පැරණි යතුර ක්‍රියා කිරීම නවතී</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>වාර්තාව</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>ගොඩනැගීමේ වාර්තාව</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ගබඩාව</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>සමාලෝචනය</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>සමාලෝචනය සෑම සැකසුමක්ම පරීක්ෂා කර ලියනු ලබන පේළි පෙන්වයි. තවම කිසිවක් සුරැකී නැත.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ආපසු හරවන්න</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ආපසු හැරවීම</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>සුරකින්න</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>කාලසටහන</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>සෙවුම් පිටුව</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>කොටස් හැඳුනුම්, කොමා වලින් වෙන් කළ.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>ඒවා සජීවී අඩවියට යවන්න</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>සැකසුම</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>සැකසුම්</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name හි සැකසුම්</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>පිහිටුවීම</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>පිහිටුවීම &gt; රහස්</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ලැයිස්තුවල පෙන්වයි, උදාහරණයක් ලෙස &quot;GitHub Pages හි පොදු අඩවිය&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub යෙදුමක් සමඟ පිවිසීම GitHub ඒකාබද්ධතාවය සමඟ ලැබේ.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>අඩවිය</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>ප්‍රකාශනය කළ යුතු අඩවිය</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ප්‍රමාණය</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>ප්‍රමාණය සහ සීමා</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>ගොඩනැගීමේ ප්‍රමාණය</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>යල් පැනගිය පිටු</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ආරම්භ විය</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user විසින් %time ට ආරම්භ කළා.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>තත්ත්වය</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ස්ථිතික ප්‍රකාශනය</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>ස්ථිතික ප්‍රකාශනය අක්‍රියයි</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ස්ථිතික ප්‍රකාශනය අක්‍රියයි.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>ස්ථිතික ප්‍රකාශනය අක්‍රියයි. පළමුව පිහිටුවීම &gt; ස්ථිතික ප්‍රකාශනය හි එය සක්‍රිය කරන්න.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>ස්ථිතික ප්‍රකාශනය සක්‍රියයි.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>පියවර %step / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>පියවර</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>පිරිසිදු කිරීම</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>අක්‍රිය කරන්න</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>සක්‍රිය කරන්න</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>ස්ථිතික ප්‍රකාශනය සක්‍රිය කරන්න</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ටැගය</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>ටැග</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ඉලක්කය</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>ඉලක්ක සෑදීමට සහ වෙනස් කිරීමට හැකි නමුත් එය සක්‍රිය කරන තෙක් කිසිවක් ගොඩනඟන්නේ හෝ ප්‍රකාශනය කරන්නේ නැත.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>කියවිය යුතු දේ සෙවුම් යන්ත්‍රවලට කියයි.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>ගොඩනැගීම ඉවත දැමිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>ගොඩනැගීම අවසන් ප්‍රකාශනයට සමානයි: ප්‍රකාශනය කිරීමට කිසිවක් නැත.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>ගොඩනැගීම ඉවත දමන ලදී: ෆෝල්ඩරයේ නැවතත් අවසන් ප්‍රකාශනය ඇත.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>පෙරනිමි අගයන් බොහෝ අඩවිවලට ගැළපේ.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>ෆෝල්ඩරයේ තවම ප්‍රකාශනය නොකළ ගොඩනැගීමක් ඇත; නව ගොඩනැගීමක් එය ප්‍රතිස්ථාපනය කරයි.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>කාර්යයන්ගේ ෆෝල්ඩරයට ලිවිය නොහැක: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>කාර්යය සූදානම් කළ නොහැකි විය: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>කාර්යය ආරම්භ කළ නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>කාර්යය අවසන් විය. එහි වාර්තාව පූරණය වෙමින්.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>කාර්යයට පිවිසී ඇති පරිශීලකයෙකු අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>කාර්යය ආරම්භ වූ නමුත් එහි ක්‍රියාවලි හැඳුනුම වාර්තා කළේ නැත. %detail පරීක්ෂා කරන්න.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>යතුර</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>විශාලතම ගොනුව: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>ලියනු ලබන පේළි</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>සෙවුම් යන්ත්‍ර සඳහා පිටු ලැයිස්තුව; පොදු ලිපිනය අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>පිටු ලබා ගන්නේ පිවිසී නොමැති අමුත්තෙකු දකින ආකාරයටයි. පරිපාලන සහ සංස්කරණ අඩවි ප්‍රවේශ කිසිදා ඉදිරිපත් නොකෙරේ.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>ප්‍රගතිය අනුගමනය කළ නොහැකි විය. කාර්යය සිදුවන ආකාරය බැලීමට පිටුව නැවත පූරණය කරන්න.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>යතුරේ පොදු අර්ධය:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ශාඛාවේ මූලය</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>රහස් ගබඩාව තවම සකසා නැත (./console exp:upgrade --apply එහි වගුව සාදයි), එබැවින් කිසිදු යතුරක් තබා ගත නොහැක.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>සේවාදායකය තනිවම පිවිසේ (තමන්ගේම SSH යතුර හෝ අක්තපත්‍ර සහායකය මඟින්), නැතහොත් ගබඩාව මෙම සේවාදායකයේ ඇත.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>සැකසුම ලිවිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>සැකසුම් වලංගුයි. මෙම පේළි ලියනු ලැබේ:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>සැකසුම් ගොනුව කියවිය නොහැක: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>අඩවිය එම ප්‍රකාශනයේ ගොනු වෙත ආපසු යයි; තවම ප්‍රකාශනය නොකළ ගොඩනැගීමක් පළමුව ප්‍රකාශනය කිරීම හෝ ඉවත දැමීම කළ යුතුය.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>නොපවතින ලිපින සඳහා අඩවියේම පිටුව.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>ඉලක්කය සුරැකිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ඉලක්කය තවම මෙම යතුරෙන් පිවිසෙන්නේ නැත: එහි සැකසුම්වල &quot;මෙම ඉලක්කය සඳහා සාදන ලද යෙදවුම් යතුරක්&quot; තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ඉලක්ක කියවිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>පරීක්ෂා කිරීමට තවම ගොඩනැගීමක් නැත.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>මෙම ස්ථාපනයට ඉදිරිපස අඩවි ප්‍රවේශයක් නැත. පරිපාලන සහ සංස්කරණ අඩවි ප්‍රවේශ කිසිදා ප්‍රකාශනය නොකෙරේ.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>මෙම පිටුව කාර්යය සිදුවන අතරතුර එය අනුගමනය කරයි; පිටුව වසා දැමූ විට එය පසුබිමේ දිගටම සිදු වේ.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>මෙම ඉලක්කයට තවම යෙදවුම් යතුරක් නැත.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>මෙම ඉලක්කය තවම මෙහි ගොඩනඟා නැත.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>මෙම ඉලක්කයට එකක් ඇත.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>මෙම ගොඩනැගීම ඉවත දමයි: ෆෝල්ඩරයේ නැවතත් අවසන් ප්‍රකාශනය ඇත. සජීවී අඩවිය වෙනස් නොවේ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>පළමුව &quot;මම වෙනස්කම් පරීක්ෂා කළෙමි&quot; සලකුණු කරන්න.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>කාලය</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ප්‍රේරක</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>ටැගයේ නම නැවත ටයිප් කරන්න</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>වෙනස් නොවූ</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>වෙබ්හුක්</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>කුමක්ද</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>වෙනස් වන දේ</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>එක් එක් ගොනුව කුමක්ද; සැමවිටම ලියනු ලැබේ.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>කාර්යය කළ දේ සහ එහි සටහන් පොත. මෙහි ආරම්භ කළ කාර්යයක් මෙම පිටුව වසා දැමූ විට පසුබිමේ දිගටම සිදු වේ.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>කාර්යය දෝෂ ලෙස මුද්‍රණය කළ දේ</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>පිටු නම් කරන දේ සහ ප්‍රකාශිත අන්තර්ගතයේ සෑම රූපයක්ම</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>කවදාද</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>ප්‍රකාශනයක් අසාර්ථක වූ විට</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>ප්‍රකාශනයක් සාර්ථක වූ විට</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>අන්තර්ගතය ප්‍රකාශනය කළ විට</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>පිටපතේ නොමැති දේ වෙත සබැඳි යන්නේ කොතැනටද (සෙවුම, පිවිසුම).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>ස්ථිතික පිටපත සපයනු ලබන ස්ථානය.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>ප්‍රකාශනය කරන්නේ කුමන අඩවියද, සහ ඉලක්කයේ නම කුමක්ද.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>ඕනෑම මාර්ගයක් යටතේ ක්‍රියා කරයි. පෙරනිමිය.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>අභිරුචි වසමක් සකසා ඇති සෑම විටම ලියනු ලැබේ.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ඔව්</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>ඔබට සැමවිටම මෙහි සහ කොන්සෝලයේ අතින් ගොඩනැගීමට සහ ප්‍රකාශනය කිරීමට හැක.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>නමක් පමණි; අගය පිහිටුවීම &gt; රහස් හි රැඳේ</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path යටතේ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>වාර්තාවකින් තොරව අවසන් විය</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>අමතර</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>අසාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ගොනුව</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, හෝ docs ෆෝල්ඩරය සමඟ main.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git සත්කාරකය</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ටෝකනයක් සමඟ) හෝ git@github.com:owner/repo.git (යෙදවුම් යතුරක් සමඟ); එහි කිසිදා මුරපදයක් හෝ ටෝකනයක් නොතබන්න.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, අඩවි සිතියම සහ කැනොනිකල් සබැඳි සඳහා.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>රූපය</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>කිසිදා නැත</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>නැත</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>දුරස්ථයක් නැත</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>නැත: commit ෆෝල්ඩරයේම රැඳේ</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>නැත: කිසිවක් වෙනස් නොවීය</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>push කර නැත</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>කිසිවක් වෙනස් නොවීය</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>පිටුව</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>සාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open අබල කර ඇත, එබැවින් මෙහි කාර්යයක් ආරම්භ කළ නොහැක. සේවාදායකයේ ./console exp:static:build භාවිත කරන්න.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>ප්‍රකාශනය</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ප්‍රකාශිත</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>push කිරීම පොරොත්තුවෙන්</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>push කළා</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ප්‍රතික්ෂේප විය</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>සාපේක්ෂ</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>ආපසු හැරවීම</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ආපසු හරවන ලදී</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ධාවනය වෙමින්</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>ෆෝල්ඩරය පමණි</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME ගොනුවට ලියනු ලැබේ. සත්කාරකය පැහැදිලි කරන පරිදි වසමේ DNS එය වෙත යොමු කරන්න; HTTPS ආරම්භ වීමට ටික කලක් ගත විය හැක.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ඔව්, තවම ප්‍රකාශනය කර නැත</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App එකක්</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>ගබඩාවේ workflow එකක් එය ප්‍රකාශනය කරයි. ගොඩනැගීම workflow ගොනුව ලියයි; ෆෝල්ඩරය හිස්ව තබන්න.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub ගබඩාවක් සහ ටෝකනයක් හෝ GitHub App එකක් සමඟ ඉලක්කයක් සුරැකීමෙන් පසු, මෙම පියවරට ගබඩාව සාදා GitHub Pages සක්‍රිය කළ හැක. නැතහොත් පළමුව GitHub මත ගබඩාව සාදන්න; හිස් එකක් වුවද කමක් නැත.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ශාඛාව ද GitHub Actions ද?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS පරීක්ෂා කරන්න</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>ගබඩාව නොමැති නම් සාදන්න</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub මත ගබඩාව සාදා එහි සැකසීම් තුළ GitHub Pages සක්‍රිය කරන්න (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>%repo ගබඩාව නොමැති නම් (ඉල්ලා ඇත්නම්) එය සාදයි, සුරැකි පරිදි ශාඛාවෙන් හෝ GitHub Actions වෙතින් GitHub Pages සක්‍රිය කරයි, සහ අභිරුචි වසම සහ HTTPS සකසයි. එය සුරැකි සැකසීම් භාවිත කරයි: පළමුව වෙනස්කම් සුරකින්න.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub මත විස්තර</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>පළමුව අභිරුචි වසම ඇතුළත් කරන්න.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>සෑම push එකක්ම පළමුව මෙම සීමාවන්ට එරෙහිව පරීක්ෂා කෙරේ.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub මත https:// ලිපිනයක් සඳහා. මෙම ස්ථාපනය සඳහා සැකසූ App පුරනය වේ; එයට ස්ථාපන id අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages පුද්ගලික ගබඩාවක් සපයන්නේ ගෙවන සැලසුමක පමණි.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: උප වසමකට (www.example.com) &lt;owner&gt;.github.io වෙත CNAME වාර්තාවක් අවශ්‍යයි; මූල වසමකට (example.com) A වාර්තා %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App හි ස්ථාපන id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>අවසන් Pages ගොඩනැගීම</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>සීමා සහ කොන්දේසි</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>නොමිලේ සැලසුමක GitHub Pages සඳහා අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub මත</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App සමඟ පමණි: GitHub මත App හි ස්ථාපනයේ ලිපිනය අවසානයේ ඇති අංකය. App එක staticcache.ini තුළ සකසා ඇත (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>පුද්ගලික</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>පොදු</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>පළමුව GitHub ගබඩාවක් සහ ටෝකනයක් හෝ GitHub App එකක් සමඟ ඉලක්කය සුරකින්න.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>වසමේ සැපයුම්කරු වෙත මෙම වාර්තා සකසන්න:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub මත පිහිටුවන්න</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain හි DNS තවම GitHub Pages වෙත යොමු නොවේ.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain හි DNS GitHub Pages වෙත යොමු වේ.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub ඒකාබද්ධතාව මෙහි ලබා ගත නොහැක: %problem. ශාඛාවට ප්‍රකාශනය කිරීම එසේ වුවද ක්‍රියා කරයි; ගබඩාවේ සැකසීම් තුළ GitHub Pages සක්‍රිය කරන්න.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>මෙම ඉලක්කය සඳහා GitHub පියවර ලබා ගත නොහැක: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>අක්තපත්‍රය ලෙස ටෝකනයක් හෝ GitHub App එකක් ඇති විට GitHub Pages හි තත්ත්වය පෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>ඔබේම වසම භාවිත කරන්න</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>තෝරා ගත යුත්තේ කුමක්ද: ටෝකනය, යෙදවුම් යතුර හෝ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub ගබඩාවක් සහ ටෝකනයක් හෝ GitHub App එකක් සමඟ, විශාරදයට ඔබ වෙනුවෙන් ගබඩාව සාදා, GitHub Pages සක්‍රිය කර වසම සැකසිය හැක (පියවර 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ගොඩනැගෙමින්</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ගොඩනගා ඇත</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions වෙතින්</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>%branch ශාඛාවෙන්</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>තවම නැත</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>හමු නොවීය</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>අක්‍රියයි</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>පුද්ගලික</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>පොදු</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>පෝලිමේ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>නොදනී</translation>
     </message>
 </context>
 </TS>

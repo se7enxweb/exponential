@@ -14,6 +14,7 @@ Defined in `kernel/migration/function_definition.php`. A parameter marked * is r
 
 | Function | Parameters |
 |---|---|
+| [recording](recording.md) |  |
 | [summary](summary.md) |  |
 
 - [All examples](../../README.md)

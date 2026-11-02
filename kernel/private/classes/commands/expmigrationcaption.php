@@ -38,7 +38,7 @@ class Expmigrationcaption extends ExpmigrationBase
             'dry-run' => 'The default, accepted for scripts that pass it: list what would change, change nothing',
             'format' => 'text (default) or json (the machine output exp-migration/1)',
             'list' => 'List the captions instead of taking one',
-            'label' => 'The label of the caption (default: "manual caption" with the time)',
+            'label' => 'The label of the caption or of the recording (a caption without one: "manual caption" with the time)',
             'backup-dir' => 'Where the captions made without git_manager are (default var/backup/upgrade)',
         ) );
     }

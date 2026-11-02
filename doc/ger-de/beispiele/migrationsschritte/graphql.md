@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Führt eine Abfrage oder Mutation der GraphQL-API im Prozess als Benutzer des Laufs aus und behält ihre Antwort für Referenzen.
 
-Ein Schritt einer YAML-Migration mit `type: graphql`. Die Klasse `expMigrationStepGraphql` ist in `settings/migration.ini` `[StepSettings] StepTypeList[graphql]` registriert.
+Ein Schritt einer YAML-Migration mit `type: graphql`. Die Klasse `expMigrationStepGraphql` (`kernel/classes/migration/steps/expmigrationstepgraphql.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[graphql]` registriert.
 
 ## Schlüssel
 
@@ -61,4 +61,4 @@ Er berührt keinen Cache.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationstepgraphql.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

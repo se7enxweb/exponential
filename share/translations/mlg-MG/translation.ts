@@ -15158,6 +15158,14 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Ny votoaty vaovao indrindra, izay tazonina hodinihina, ary asa amin'ny voafidy.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Mamoaka dika statikan&apos;ny tranonkala amin&apos;ny GitHub Pages na mpampiantrano git hafa.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Famoahana statika</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Valin&apos;ireo fanontaniana voatahirin&apos;ny GraphQL API, sy ireo kilasin&apos;ny votoatin&apos;ny rafiny.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Avoahy amin&apos;ny GitHub Pages na mpampiantrano git hafa ny dika statika</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Famoahana statika</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Ny tahiry vonjimaika mijanona dia manolotra pejy avy amin&apos;ity mpizara ity. Raha hamoaka dika statikan&apos;ny tranonkala any an-kafa, amin&apos;ny GitHub Pages na mpampiantrano git hafa ianao, ampiasao ny famoahana statika.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Fanovana ny fametrahana voatahiry ho rakitra: ny satany, ny fanatanterahana, fanatanterahana sy famerenana.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Mamoaka dika statikan&apos;ny tranonkala amin&apos;ny GitHub Pages na mpampiantrano git hafa.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Famoahana statika</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>The run could not be started.</source>
         <translation>Tsy natomboka ny fanatanterahana.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Fandraketana ny fanovana</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Raha mandeha ny fandraketana, izay ovainao ao amin'ny fitantanana na ao amin'ny bara ilan'ny tranonkala dia tehirizina ho dingana amin'ny famindrana: votoaty, kilasy, andraikitra sy politika, fizarana, mpampiasa sy vondrona, anarana solon'ny URL, fikirana. Ajanony rehefa vita, jereo izay noraisiny, ary mamorona famindrana avy aminy.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Tsy voavaky ireo fandraketana: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tsy mbola misy ny tabilaon'ny fandraketana: ampandehano aloha ny fanavaozana (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Maty ny fandraketana ao amin'ny migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Ny fanovako</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Izay ovainao ihany no raketiny, na aiza na aiza no anovanao azy, mandra-pijanonanao azy.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Fandraketana</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>nanomboka %time, fanovana %count hatramin'izao.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Marika (tsy voatery)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Asehoy izay noraisiny</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Ajanony ny fandraketana</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Atombohy ny fandraketana ny fanovako</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Varavarankely ho an'ny tranonkala manontolo</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Raketiny ny fanovana rehetra ataon'ny mpampiasa tsirairay sy ny console mandra-panidiana azy. Rehefa sokafanao, angatahina ianao hanamarina fa ianao tokoa.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Misokatra</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Hidio ny varavarankely</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Sokafy ny varavarankely ho an'ny tranonkala manontolo</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ireo fandraketana</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Tsy raketina mihitsy ny kaontin'ny mpampiasa (anarana fidirana, mailaka, tenimiafina) sy ny saha amin'ny kaontin'ny mpampiasa.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Fanovana</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ny tranonkala manontolo</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ny fanovan'i %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Najanona</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Tsy mbola misy fandraketana.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Fandraketana %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ny fandraketana rehetra</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ny famindrana hivoaka aminy</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ny fanovana natambatra ho dingana iray isaky ny zavatra novaina: izay hataon'ny famindrana noforonina avy amin'ity fandraketana ity.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Afaka mamorona famindrana avy aminy rehefa manana ireo karazana dingana YAML %types ity fametrahana ity.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Nesorina fanahy iniana: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Tsy nisy voaraketa.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Izay noraisiny</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Fanovana %count, araka ny filaharana nanaovana azy.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Fanovana (iray)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Dingana</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Momba</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count hafa: ./console exp:migration:record:show no mitanisa azy rehetra.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Ariany</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Esoriny ny fandraketana sy izay noraisiny. Izay novaina dia mijanona ho voaova.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Eny, ario ity fandraketana ity</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Mandraketa…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Raketina ho an'ny famindrana ny fanovanao.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Raketina ho an'ny famindrana ny fanovana rehetra amin'ity tranonkala ity (varavarankely ho an'ny tranonkala manontolo).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nanomboka ny fandraketana ny tranonkala manontolo: raketina ny fanovana rehetra ataon'ny mpampiasa tsirairay mandra-pijanonanao azy.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Nanomboka ny fandraketana: raketina ny fanovanao mandra-pijanonanao azy.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Najanona ny fandraketana. Mijanona izay noraisiny mandra-panariana azy.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Voaesotra ny fandraketana sy ireo zava-nitranga taminy.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Tsy misy fandraketana %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Mariho aloha ny "Eny, ario ity fandraketana ity".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Ny mpampiasa nandraketa ihany no afaka mampijanona fandraketana fivoriana.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Fidio ny fandraketana hajanona.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Efa mandeha ny fandraketana toy izao karazany izao.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Tsy azo novaina ny fandraketana: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1540 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>Released.</source>
         <translation>Navotsotra.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Tanjona rehetra</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Famoahana farany</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Avoahy maimaim-poana amin&apos;ny GitHub Pages ny dika statikan&apos;ny tranonkalanao:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Pejy efa lany andro</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Famoahana statika</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Maty ny famoahana statika.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Tanjona</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Tsy voavaky ny tanjona: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>misy asa mandeha</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>fanorenana hojerena</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>afeno ity</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>mamorona tanjona</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>tsy mbola</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>vakio ny torolalana</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added nampiana, %changed niova, %removed nesorina</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes amin&apos;ny %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Mbola misy %count hafa tsy voatanisa.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Pejy voasoratra: %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%size ny %path, mihoatra noho izay avelan&apos;ny mpampiantrano ho an&apos;ny rakitra iray.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % amin&apos;ny fetra</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag no famoahana ananan&apos;ny tranonkala ankehitriny.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: asa %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/tahiry/ ho an&apos;ny tranonkalan&apos;ny tetikasa GitHub; foana ho an&apos;ny sehatra manokana na tranonkalan&apos;ny mpampiasa.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Ny tranonkala</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Ny mpampiantrano</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Fidirana ao amin&apos;ny tahiry</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Ny tahiry</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Rohy sy lalana fototra</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Ny sehatrao manokana</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Izay ao anatin&apos;ny fanorenana</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Rahoviana no avoaka</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Jereo indray ary tehirizo</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Eo ambanin&apos;ny /&lt;repository&gt;/ no misy ny tranonkalan&apos;ny tetikasa GitHub; mandeha any sy na aiza na aiza ny rohy mifandray.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ny fanorenana dia maka ny pejy rehetra ao amin&apos;ny %site araka ny hitan&apos;ny mpitsidika tsy niditra, manoratra indray ny rohy, mandika ny rakitra ary manoratra ny vokatra ao amin&apos;ny lahatahirin&apos;ny tanjona. Tsy misy avoaka raha tsy efa nojerenao ny fanorenana ary notsindrianao ny Avoaky.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Fehezanteny cron, ohatra 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Tehirizina ho toy ny zava-miafina %secret ny lakilen&apos;ny fandefasana.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Ny lakilen&apos;ny fandefasana dia mamela ity fametrahana ity handefa amin&apos;ny tahiry iray ihany amin&apos;ny alalan&apos;ny SSH fa tsy any an-kafa. Mijanona ao amin&apos;ny Fametrahana &gt; Zava-miafina ny antsasany manokana; ny antsasany ho an&apos;ny besinimaro ihany no aseho.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Lakilen&apos;ny fandefasana natao ho an&apos;ity tanjona ity</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Miditra amin&apos;ny SSH ny lakilen&apos;ny fandefasana: ovay ho adiresy SSH ny adiresy git (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Misy asa mandeha, natombok&apos;i %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Mbola mandeha ny asan&apos;ity tanjona ity (%detail). Andraso ho vita izy.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Mbola mandeha ny asan&apos;ity tanjona ity. Andraso ho vita izy.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Ny rohy avy amin&apos;ny pejy /news/ mankany amin&apos;ny pejy /about-us/team dia hosoratana hoe</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Nisy lakilen&apos;ny fandefasana vaovao natao. Ampio ao amin&apos;ny tahiry izao ny antsasany ho an&apos;ny besinimaro.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Tsy avoaka mihitsy ny pejy izay mbola misy vokatra debug, token-ny taratasy fenoina na id-ny fotoam-pidirana aorian&apos;ny fanadiovana.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Ho an&apos;ny manam-pahaizana ny famerenana: mariho ny &quot;Fantatro izay ovain&apos;ity&quot; ary soraty indray ny anaran&apos;ny marika.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Mety hahatratra %site ny tranonkala, %file ny rakitra iray, miaraka amin&apos;ny fifamoivoizana 100 GB eo ho eo isam-bolana. Amin&apos;ny drafitra maimaim-poana dia tsy maintsy ho an&apos;ny besinimaro ny tahiry. Tsy natao ho an&apos;ny fivarotana na fifanakalozana ara-barotra hafa ny GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Ny tanjona dia tranonkala iray avoaka ao amin&apos;ny tahiry git iray. Tsy misy aorina na avoaka eto: ny Tehirizo dia manoratra ny fikirana ao amin&apos;ny settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Ny tanjona dia tranonkala iray avoaka amin&apos;ny toerana iray, ohatra ny tranonkalanao ho an&apos;ny besinimaro amin&apos;ny GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Token avy amin&apos;ny Fametrahana &gt; Zava-miafina</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Workflow-n&apos;ny tahiry no mamoaka azy.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Ampio ao amin&apos;ny tahiry miaraka amin&apos;ny zo hanoratra ity lakile ho an&apos;ny besinimaro ity. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, mariho ny Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Nampiana</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Mpampiantrano git hafa</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Misy dingana hafa miasa amin&apos;ity tanjona ity: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Miverina</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Lalana fototra</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Teo aloha</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Eo ambanin&apos;ny lalana fototra</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Sampana</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Rohy tapaka</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Rohy tapaka ao amin&apos;ny fanorenana</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Fanorenana</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Fanorenana %id nataon&apos;i %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Fanorenana ny %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Ataovy izao ny fanorenana</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Fanorenana hojerena</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nataon&apos;i</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Tanana, eto</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Foano</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ovay</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Niova</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Fiovana</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Jereo aloha</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Jereo ireto fikirana ireto</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Jereo izay ovain&apos;ny fanorenana, diniho, dia avoahy na ario.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Safidio ny famoahana hiverenana.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Ho tonga amin&apos;ny famoahana manaraka.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Fanamafisana</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Fanamafisana</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Manamafy ny fanorenana, manisy marika azy ary mandefa azy any amin&apos;ny %remote. Tsy terena mihitsy ny fandefasana; afaka miverina amin&apos;ny famoahana rehetra ianao any aoriana.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Raha ampitahaina amin&apos;ny lahatahiry teo aloha: %added nampiana, %changed niova, %removed nesorina, %unchanged tsy niova.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Ampitahaina amin&apos;ny famoahana farany.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Fahazoan-dalana hiditra</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Sehatra manokana</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Esorina foana ny vokatra debug, ny token-ny taratasy fenoina, ny id-ny fotoam-pidirana ary ny nonce.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Lakilen&apos;ny fandefasana</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Lakilen&apos;ny fandefasana an&apos;i %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Ario</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Ario ny fanorenana</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Sehatra</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Foana: ny adiresin&apos;ny tranonkala. Raha tsy izany, adiresy anatiny amin&apos;io tranonkala io ihany.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Vita</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Manomboka amin&apos;ny lalana fototra ny rohy rehetra.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Ny famoahana tsirairay dia fanamafisana misy marika static/%id/&lt;n&gt;. Ny fiverenana dia mamorona fanamafisana vaovao misy ny rakitry ny famoahana teo aloha: mijanona ny tantara, tsy misy marika afindra ary tsy misy terena.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Rakitra fanampiny</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Alaivo ny pejy avy amin&apos;ny</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Rakitra</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Rakitra</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Rakitra tsy hita</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Rakitry ny</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Rakitra tsy voaangona</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Mari-pantarina</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Lahatahiry</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Ho an&apos;ny adiresy SSH. Atao aorian&apos;ny fitehirizana ny lakile; ianao no manampy ny antsasany ho an&apos;ny besinimaro ao amin&apos;ny tahiry.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Ho an&apos;ny adiresy https://. GitHub: token fine-grained manana Contents famakiana sy fanoratana amin&apos;ny tahiry.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Ho an&apos;ny manam-pahaizana. Miova avy hatrany ny tranonkala ho an&apos;ny besinimaro rehefa vita ny fandefasana.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Taratasy fenoina</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Fampiantranoana maimaim-poana avy amin&apos;ny tahiry GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Avy amin&apos;ny sampana</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Adiresy git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>Mamela tranonkala %site sy rakitra %file ny GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Fetran&apos;ny GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>Mamoaka ny rakitra araka ny maha-izy azy ny GitHub Pages (ilaina ho an&apos;ny rakitra manomboka amin&apos;ny _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>Manolotra ny sampana araka ny nandefasana azy ny GitHub. Ny mahazatra.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, ny mpizaranao manokana: tahiry git rehetra.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Miverena amin&apos;ny famoahana teo aloha</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Fanampiana</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Fanampiana amin&apos;ny mpanampy</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Afeno izy ireo</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Tantara</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Tantaran&apos;ny %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Mpampiantrano</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Ahoana no handraisan&apos;ny GitHub Pages ny fanorenana</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Efa nojereko ny fiovana</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Fantatro izay ovain&apos;ity</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Id</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Maty izy: tsy misy azo aorina raha tsy velomina.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Mandeha ao ambadika amin&apos;ny maha-%user azy; azonao akatona ity pejy ity.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Asa %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Tehirizina ho toy ny zava-miafina %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Karazana</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Famoahana farany</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Avelao ireto pejy ireto</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Avelao ireto fizarana ireto</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Rohy</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Rohy nosoratana indray</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Tranonkala velona</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Jereo ny fanorenana</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Litera madinika, isa, _ ary -, ohatra github-public. Manome anarana ny lahatahiry sy ny marika (static/&lt;id&gt;/&lt;n&gt;) izy ary tsy azo ovaina any aoriana.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Mamorona lakile vaovao</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Mamorona tanjona</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Ataovy ny lakile</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Amboary aloha ao amin&apos;ny mpampiantrano ny tahiry; azo atao foana izy.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Lisitra</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Hafatra</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Ny ankamaroan&apos;ny pejy</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Anarana</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Anaran&apos;ny token ao amin&apos;ny Fametrahana &gt; Zava-miafina</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Tanjona vaovao</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Manaraka</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Tsia</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Mbola tsy misy fanamafisana.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Tsy nisy lakile natao: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Tsy hita ny programa php ho an&apos;ny baiko. Apetraho amin&apos;ny lalany feno ny migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Mbola tsy misy marika.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Mbola tsy misy tanjona.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Tsy misy</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Tsy ao amin&apos;ny fanorenana.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Mbola tsy nisy navoaka.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Mbola tsy nisy navoaka: vaovao ny rakitra rehetra.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Fampandrenesana</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Araka ny fandaharam-potoana</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Ao amin&apos;ny console</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Ao amin&apos;ny mpizara: ./console exp:static:serve %id dia manolotra azy toy izany koa.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Lalana iray isaky ny andalana, * mifanaraka amin&apos;ny ampahany rehetra: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Anarana ihany no tehirizina miaraka amin&apos;ny tanjona; ny token na ny lakile mihitsy dia mijanona ao amin&apos;ny Fametrahana &gt; Zava-miafina ary tsy miseho mihitsy ao anaty diary.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Izay tononin&apos;ny pejy ihany</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Miaraka amin&apos;ny token ihany. Ny env:NAME kosa dia mamaky ny fari-piainan&apos;ny tontolon&apos;ny mpizara.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Sokafy ny topi-maso</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Manokatra ny fanorenana araka ny hanolorana azy amin&apos;ny mpampiantrano, avy amin&apos;ny lahatahirin&apos;ny tanjona. Mandeha ho anao mandritra ny adiny iray ny rohy.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Tsy voatery. Foana: izay navoaka.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Tsy voatery. Raha misy sehatra dia aseho eo amin&apos;ny fotony ny tranonkala.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Vokatra</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Pejy</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Pejin&apos;ny tanjona</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Pejy nolavina</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Fikarakarana aoriana</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Topi-maso</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Topi-maso sy famoahana</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Topi-maso sy famoahana ny %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Jereo mialoha ny fanorenana</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fandrosoana</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Adiresy ho an&apos;ny besinimaro</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Lakile ho an&apos;ny besinimaro</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Avoaky</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Mamoaka dika statikan&apos;ny tranonkala amin&apos;ny GitHub Pages na mpampiantrano git hafa: aorino, jereo ny fiovana, avoahy, ary miverena amin&apos;ny famoahana teo aloha rehefa ilainao.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Famoahana hiverenana</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Famoahana</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Fandefasana</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Vakio ny torolalana</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Firaketana</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Nolavina</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Mifandray</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Ampidiro indray</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Nesorina</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Soloy ny lakile: tsy mandeha intsony ilay taloha</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Tatitra</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Tatitry ny fanorenana</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Tahiry</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Fandinihana</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Ny fandinihana dia manamarina ny fikirana rehetra ary mampiseho ny andalana hosoratana. Mbola tsy misy voatahiry.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Avereno</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Famerenana</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Tehirizo</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Fandaharam-potoana</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Pejy fikarohana</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Id-n&apos;ny fizarana, sarahan&apos;ny faingo.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Alefaso any amin&apos;ny tranonkala velona izy ireo</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Fikirana</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Fikirana</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Fikiran&apos;ny %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Fametrahana</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Fametrahana &gt; Zava-miafina</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Aseho ao anaty lisitra, ohatra &quot;Tranonkala ho an&apos;ny besinimaro amin&apos;ny GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Ho tonga miaraka amin&apos;ny fampifandraisana amin&apos;ny GitHub ny fidirana amin&apos;ny GitHub App.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Tranonkala</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Tranonkala havoaka</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Habe</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Habe sy fetra</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Haben&apos;ny fanorenana</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Pejy efa lany andro</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Natomboka</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Natombok&apos;i %user tamin&apos;ny %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Toetra</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Famoahana statika</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Maty ny famoahana statika</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Maty ny famoahana statika.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Maty ny famoahana statika. Velomy aloha ao amin&apos;ny Fametrahana &gt; Famoahana statika.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Velona ny famoahana statika.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Dingana %step amin&apos;ny %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Dingana</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Fanadiovana</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Vonoy</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Velomy</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Velomy ny famoahana statika</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Marika</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Marika</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Tanjona</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Azo amboarina sy ovaina ny tanjona, fa tsy misy aorina na avoaka raha tsy velomina.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Milaza amin&apos;ny motera fikarohana izay hovakiana.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Tsy voaario ny fanorenana: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Mitovy amin&apos;ny famoahana farany ny fanorenana: tsy misy havoaka.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Voaario ny fanorenana: ny famoahana farany indray no ao amin&apos;ny lahatahiry.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Mety amin&apos;ny ankamaroan&apos;ny tranonkala ny sanda mahazatra.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Misy fanorenana mbola tsy navoaka ao amin&apos;ny lahatahiry; ny fanorenana vaovao no hisolo azy.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Tsy azo soratana ny lahatahirin&apos;ny asa: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Tsy voaomana ny asa: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Tsy natomboka ny asa.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Vita ny asa. Ampidirina ny tatitra.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Mila mpampiasa efa niditra ny asa.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Natomboka ny asa nefa tsy nilaza ny id-ny dingana. Jereo ny %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Ny lakile</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Ny rakitra lehibe indrindra: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Ny andalana hosoratana</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Lisitry ny pejy ho an&apos;ny motera fikarohana; mila ny adiresy ho an&apos;ny besinimaro.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Alaina araka ny hitan&apos;ny mpitsidika tsy niditra ny pejy. Tsy atolotra mihitsy ny fidirana amin&apos;ny fitantanana sy fanovana.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Tsy voaarakaraka ny fandrosoana. Ampidiro indray ny pejy mba hahitanao ny fandehan&apos;ny asa.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Ny antsasaky ny lakile ho an&apos;ny besinimaro:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Ny foton&apos;ny sampana</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Mbola tsy voaomana ny fitehirizana zava-miafina (./console exp:upgrade --apply no mamorona ny tabilaony), ka tsy misy lakile azo tehirizina.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Miditra irery ny mpizara (amin&apos;ny lakile SSH-ny na credential helper), na ao amin&apos;ity mpizara ity ny tahiry.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Tsy voasoratra ny fikirana: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Manan-kery ny fikirana. Ireto andalana ireto no hosoratana:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Tsy azo vakiana ny rakitry ny fikirana: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Miverina amin&apos;ny rakitr&apos;io famoahana io ny tranonkala; ny fanorenana mbola tsy navoaka dia tsy maintsy avoaka na ariana aloha.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Ny pejin&apos;ny tranonkala ho an&apos;ny adiresy tsy misy.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Tsy voatahiry ny tanjona: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Mbola tsy miditra amin&apos;ity lakile ity ny tanjona: safidio ny &quot;Lakilen&apos;ny fandefasana natao ho an&apos;ity tanjona ity&quot; ao amin&apos;ny fikirany.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Tsy voavaky ny tanjona: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Mbola tsy misy fanorenana hojerena.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Tsy manana fidirana amin&apos;ny tranonkala ho an&apos;ny besinimaro ity fametrahana ity. Tsy avoaka mihitsy ny fidirana amin&apos;ny fitantanana sy fanovana.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Manaraka ny asa mandritra ny fandehany ity pejy ity; mitohy ao ambadika izy rehefa mikatona ny pejy.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Mbola tsy manana lakilen&apos;ny fandefasana ity tanjona ity.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Mbola tsy naorina teto ity tanjona ity.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Manana iray ity tanjona ity.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Manary ity fanorenana ity: ny famoahana farany indray no ao amin&apos;ny lahatahiry. Tsy miova ny tranonkala velona.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Mariho aloha ny &quot;Efa nojereko ny fiovana&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Fotoana</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Mpanomboka</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Soraty indray ny anaran&apos;ny marika</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Tsy niova</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Inona</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Izay miova</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Izay maha-izy ny rakitra tsirairay; soratana foana.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Izay nataon&apos;ny asa sy ny firaketany. Mitohy ao ambadika ny asa natomboka teto rehefa mikatona ity pejy ity.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Izay natonta ho hadisoana nataon&apos;ny asa</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Izay tononin&apos;ny pejy, sy ny sary rehetra amin&apos;ny votoaty navoaka</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Rahoviana</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Rehefa tsy mahomby ny famoahana</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Rehefa mahomby ny famoahana</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Rehefa misy votoaty avoaka</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Ho aiza ny rohy mankany amin&apos;izay tsy ao amin&apos;ny dika (ny fikarohana, ny fidirana).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Avy aiza no anolorana ny dika statika.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Iza no tranonkala avoaka, ary iza no anaran&apos;ny tanjona.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Mandeha eo ambanin&apos;ny lalana rehetra. Ny mahazatra.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Soratana isaky ny misy sehatra manokana voafaritra.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Eny</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Afaka manorina sy mamoaka amin&apos;ny tanana foana ianao eto sy ao amin&apos;ny console.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>anarana ihany; mijanona ao amin&apos;ny Fametrahana &gt; Zava-miafina ny sanda</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>eo ambanin&apos;ny %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>vita nefa tsy nisy tatitra</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>fanampiny</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>tsy nahomby</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>rakitra</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, na main miaraka amin&apos;ny lahatahiry docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>mpampiantrano git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (miaraka amin&apos;ny token) na git@github.com:owner/repo.git (miaraka amin&apos;ny lakilen&apos;ny fandefasana); tsy misy tenimiafina na token ao anatiny mihitsy.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, ho an&apos;ny sarintanin&apos;ny tranonkala sy ny rohy kanonika.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>sary</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>tsy mbola</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>tsia</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>tsy misy remote</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>tsy misy: mijanona ao amin&apos;ny lahatahiry ny fanamafisana</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>tsy misy: tsy nisy niova</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>tsy nalefa</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>tsy nisy niova</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>pejy</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>nahomby</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>Tsy mandeha ny proc_open, ka tsy azo atomboka eto ny asa. Ampiasao ./console exp:static:build ao amin&apos;ny mpizara.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>famoahana</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>navoaka</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>miandry fandefasana</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>nalefa</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>nolavina</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>mifandray</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>famerenana</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>naverina</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>mandeha</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>ny lahatahiry ihany</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: soratana ao amin&apos;ny rakitra CNAME. Atondroy any amin&apos;ny mpampiantrano ny DNS-n&apos;ny sehatra araka ny hazavainy; mety haharitra kely vao manomboka ny HTTPS.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>eny, mbola tsy navoaka</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App iray</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Workflow iray ao amin'ny tahiry no mamoaka azy. Ny fanorenana no manoratra ny rakitra workflow; avelao ho foana ny lahatahiry.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Rehefa voatahiry miaraka amin'ny tahiry GitHub sy token na GitHub App ny tanjona, afaka mamorona ny tahiry sy mampandeha GitHub Pages ity dingana ity. Raha tsy izany, mamorona aloha ny tahiry ao amin'ny GitHub; azo ekena na dia foana aza.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Sampana sa GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Hamarino ny DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Mamorona ny tahiry raha tsy misy</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Mamorona ny tahiry ao amin'ny GitHub ary ampandehano GitHub Pages ao amin'ny fikirakirana azy (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Mamorona ny tahiry %repo raha tsy misy (raha angatahina), mampandeha GitHub Pages avy amin'ny sampana na avy amin'ny GitHub Actions araka ny voatahiry, ary mametraka ny sehatra manokana sy HTTPS. Mampiasa ny fikirakirana voatahiry: tahirizo aloha ny fanovana.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Antsipiriany ao amin'ny GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Ampidiro aloha ny sehatra manokana.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Ny push tsirairay dia hamarinina aloha mifanaraka amin'ireo fetra ireo.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Ho an'ny adiresy https:// ao amin'ny GitHub. Ny App voakirakira ho an'ity fametrahana ity no miditra; mila ny id an'ny fametrahana izy.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages dia tsy manolotra tahiry miafina afa-tsy amin'ny drafitra mandoa vola.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ny zana-tsehatra (www.example.com) dia mila rakitsoratra CNAME mankany amin'ny &lt;owner&gt;.github.io; ny sehatra fototra (example.com) dia mila ireo rakitsoratra A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id an'ny fametrahana GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Fanorenana Pages farany</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Fetra sy fepetra</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Ilaina ho an'ny GitHub Pages amin'ny drafitra maimaim-poana.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Ao amin'ny GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Amin'ny GitHub App ihany: ny isa eo amin'ny faran'ny adiresin'ny fametrahana ny App ao amin'ny GitHub. Ny App mihitsy dia apetraka ao amin'ny staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Miafina</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Ho an'ny besinimaro</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Tahirizo aloha ny tanjona miaraka amin'ny tahiry GitHub sy token na GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Apetraho eo amin'ny mpamatsy ny sehatra ireto rakitsoratra ireto:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Kirakirao ao amin'ny GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Mbola tsy manondro an'i GitHub Pages ny DNS an'i %domain.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Manondro an'i GitHub Pages ny DNS an'i %domain.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Tsy misy eto ny fampifandraisana amin'ny GitHub: %problem. Mandeha ihany ny famoahana ao amin'ny sampana; ampandehano GitHub Pages ao amin'ny fikirakirana ny tahiry.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Tsy misy ho an'ity tanjona ity ireo dingana GitHub: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Aseho ny toetry ny GitHub Pages raha token na GitHub App no fahazoan-dalana hiditra.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Ampiasao ny sehatrao manokana</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Inona no hofidiana: token, lakilen'ny fandefasana sa GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Miaraka amin'ny tahiry GitHub sy token na GitHub App, ny mpanampy dia afaka mamorona ny tahiry, mampandeha GitHub Pages ary mametraka ny sehatra ho anao (dingana 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>eo am-panorenana</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>vita ny fanorenana</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>avy amin'ny GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>avy amin'ny sampana %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>mbola tsy misy</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>tsy hita</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>maty</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>miafina</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ho an'ny besinimaro</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>miandry anjara</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tsy fantatra</translation>
     </message>
 </context>
 </TS>

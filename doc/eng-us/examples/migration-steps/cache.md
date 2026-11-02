@@ -37,7 +37,7 @@ Besides these, every step takes the keys of the engine: `type`, `mode`, `if`, `r
 
 Every step of this type undoes itself when its migration is rolled back without `down:`.
 
-The caches it touches are the ones a step names (cleared after the run); those of the example: `template-block`, `tag:ini`, `content`.
+It touches no cache.
 
 ## Example
 

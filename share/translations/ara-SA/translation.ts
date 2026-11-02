@@ -15097,6 +15097,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>أحدث المحتوى، وما هو محتجز للمراجعة، وإجراءات على تحديد.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>انشر نسخة ثابتة من موقع على GitHub Pages أو أي مضيف git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>النشر الثابت</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22096,6 +22104,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>إجابات الاستعلامات المحفوظة لواجهة GraphQL البرمجية، وفئات المحتوى في مخططها.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>انشر نسخة ثابتة على GitHub Pages أو أي مضيف git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>النشر الثابت</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>تقدّم ذاكرة التخزين المؤقت الثابتة الصفحات من هذا الخادم. لنشر نسخة ثابتة من موقع في مكان آخر، على GitHub Pages أو أي مضيف git، استخدم النشر الثابت.</translation>
     </message>
 </context>
 <context>
@@ -74484,6 +74504,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>تغييرات على التثبيت محفوظة كملفات: حالتها، وعمليات التشغيل، والتشغيل والتراجع.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>انشر نسخة ثابتة من موقع على GitHub Pages أو أي مضيف git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>النشر الثابت</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -80592,6 +80620,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>تعذّر بدء التشغيل.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>تسجيل التغييرات</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>أثناء تشغيل التسجيل، يُحفظ ما تغيّره في الإدارة أو في الشريط الجانبي للموقع كخطوات ترحيل: المحتوى، والفئات، والأدوار والسياسات، والأقسام، والمستخدمون والمجموعات، وأسماء URL المستعارة، والإعدادات. أوقفه عند الانتهاء، وانظر ما التقطه، وأنشئ منه ترحيلاً.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>تعذّرت قراءة التسجيلات: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>جداول التسجيلات غير موجودة بعد: شغّل الترقية أولاً (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>التسجيل معطّل في migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>تغييراتي</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>يسجّل فقط ما تغيّره أنت، أينما غيّرته، حتى توقفه.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>تسجيل</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>منذ %time، وحتى الآن %count تغيير.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>تسمية (اختيارية)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>عرض ما التقطه</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>إيقاف التسجيل</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>بدء تسجيل تغييراتي</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>نافذة للموقع كله</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>يسجّل كل تغيير لكل مستخدم وللطرفية حتى تُغلق. يُطلب منك عند فتحها التحقق من هويتك.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>مفتوحة</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>إغلاق النافذة</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>فتح النافذة للموقع كله</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>التسجيلات</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>لا يُسجَّل أبداً حساب المستخدم (اسم الدخول، البريد الإلكتروني، كلمة المرور) ولا حقول حسابات المستخدمين.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>التغييرات</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>الموقع كله</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>تغييرات %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>متوقّف</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>لا يوجد تسجيل بعد.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>التسجيل %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>كل التسجيلات</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>الترحيل الذي سينتج عنه</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>التغييرات مجمّعة في خطوة واحدة لكل عنصر تغيّر: ما سيفعله ترحيل يُنشأ من هذا التسجيل.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>يمكن إنشاء ترحيل منه حين تتوفر في هذا التثبيت أنواع خطوات YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>مستبعد عمداً: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>لم يُسجَّل شيء.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ما التقطه</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count تغيير، بالترتيب الذي أُجريت به.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تغيير</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>خطوة</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>يتعلق بـ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count إضافية: يسرد ./console exp:migration:record:show جميعها.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>تجاهل</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>يزيل التسجيل وما التقطه. ما تغيّر يبقى متغيّراً.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>نعم، تجاهل هذا التسجيل</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>جارٍ التسجيل…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>تُسجَّل تغييراتك من أجل ترحيل.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>يُسجَّل كل تغيير في هذا الموقع من أجل ترحيل (نافذة للموقع كله).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>بدأ تسجيل الموقع كله: يُسجَّل كل تغيير لكل مستخدم حتى توقفه.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>بدأ التسجيل: تُسجَّل تغييراتك حتى توقفه.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>توقّف التسجيل. ما التقطه يبقى حتى تتجاهله.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>أُزيل التسجيل وأحداثه.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>لا يوجد تسجيل %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>حدّد أولاً «نعم، تجاهل هذا التسجيل».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>لا يمكن إيقاف تسجيل الجلسة إلا للمستخدم الذي سجّل.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>اختر التسجيل المراد إيقافه.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>يوجد تسجيل من هذا النوع قيد التشغيل بالفعل.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>تعذّر تغيير التسجيل: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81255,6 +81499,1540 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>رُفع الاحتجاز.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>كل الأهداف</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>آخر نشر</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>انشر نسخة ثابتة مجانية من موقعك على GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>الصفحات القديمة</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>النشر الثابت</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>النشر الثابت متوقف.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>الهدف</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>تعذّرت قراءة الأهداف: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>مهمة قيد التنفيذ</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>بناء بانتظار الفحص</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>إخفاء هذا</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>إنشاء هدف</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>أبدًا</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>قراءة الدليل التعليمي</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added مضاف، %changed متغيّر، %removed محذوف</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes من %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count أخرى غير مدرجة.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages صفحة مكتوبة</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>حجم %path هو %size، أكثر مما يسمح به المضيف لملف واحد.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % من الحد</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ث</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag هو النشر الحالي للموقع.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: المهمة %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/المستودع/ لموقع مشروع على GitHub؛ فارغ لنطاق مخصص أو موقع مستخدم.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. الموقع</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. المضيف</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. تسجيل الدخول إلى المستودع</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. المستودع</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. الروابط والمسار الأساسي</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. نطاقك الخاص</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. محتوى البناء</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. متى يُنشر</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. المراجعة والحفظ</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>يقع موقع مشروع GitHub تحت /&lt;repository&gt;/؛ والروابط النسبية تعمل هناك وفي أي مكان آخر.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>يجلب البناء كل صفحة من %site كما يراها زائر غير مسجّل الدخول، ويعيد كتابة الروابط، وينسخ الملفات ويكتب النتيجة في مجلد الهدف. لا يُنشر شيء حتى تفحص البناء وتضغط نشر.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>تعبير cron، مثلًا 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>يُحفظ مفتاح النشر كسرّ باسم %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>يسمح مفتاح النشر لهذا التثبيت بالدفع إلى مستودع واحد عبر SSH ولا مكان غيره. يبقى نصفه الخاص في الإعداد &gt; الأسرار؛ ولا يُعرض إلا النصف العام.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>مفتاح نشر أُنشئ لهذا الهدف</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>يسجّل مفتاح النشر الدخول عبر SSH: غيّر عنوان git إلى عنوان SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>مهمة قيد التنفيذ، بدأها %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>لا تزال مهمة لهذا الهدف قيد التنفيذ (%detail). انتظر حتى تنتهي.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>لا تزال مهمة لهذا الهدف قيد التنفيذ. انتظر حتى تنتهي.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>سيُكتب الرابط من الصفحة /news/ إلى الصفحة /about-us/team هكذا</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>أُنشئ مفتاح نشر جديد. أضف نصفه العام إلى المستودع الآن.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>الصفحة التي لا تزال تحمل مخرجات تصحيح أو رمز نموذج أو معرّف جلسة بعد التنظيف لا تُنشر أبدًا.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>التراجع للخبراء: حدّد &quot;أعرف ما يغيّره هذا&quot; واكتب اسم الوسم مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>يمكن أن يصل حجم الموقع إلى %site، والملف الواحد إلى %file، مع نحو 100 GB من الحركة شهريًا. في الخطة المجانية يجب أن يكون المستودع عامًا. GitHub Pages غير مخصص للمتاجر أو المعاملات التجارية الأخرى.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>الهدف هو موقع واحد يُنشر في مستودع git واحد. لا يُبنى ولا يُنشر شيء هنا: يكتب الحفظ الإعدادات في settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>الهدف هو موقع واحد يُنشر في مكان واحد، مثل موقعك العام على GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>رمز مميز من الإعداد &gt; الأسرار</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>يتولى سير عمل في المستودع نشره.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>أضف هذا المفتاح العام إلى المستودع مع صلاحية الكتابة. GitHub: Settings &gt; Deploy keys &gt; Add deploy key، وحدّد Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>مضاف</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>مضيف git آخر</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>عملية أخرى تعمل على هذا الهدف: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>رجوع</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>المسار الأساسي</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>قبل</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>تحت مسار أساسي</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>الفرع</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>روابط معطلة</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>روابط معطلة في البناء</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>البناء</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>البناء %id بواسطة %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>بناء %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ابنِ الآن</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>بناء بانتظار الفحص</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>بواسطة</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>يدويًا، هنا</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>إلغاء</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تغيير</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>متغيّر</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>التغييرات</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>افحصه أولًا</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>افحص هذه الإعدادات</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>افحص ما يغيّره البناء، وعاينه، ثم انشره أو تخلّص منه.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>اختر النشر الذي تريد الرجوع إليه.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>متاح في إصدار لاحق.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>الإيداع</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>الإيداعات</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>يودع البناء ويسمه ويدفعه إلى %remote. لا يُفرض الدفع أبدًا؛ يمكنك الرجوع إلى أي نشر لاحقًا.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>مقارنة بالمجلد السابق: %added مضاف، %changed متغيّر، %removed محذوف، %unchanged دون تغيير.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>مقارنة بآخر نشر.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>بيانات الاعتماد</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>نطاق مخصص</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>تُزال دائمًا مخرجات التصحيح ورموز النماذج ومعرّفات الجلسات والقيم العابرة (nonces).</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>مفتاح النشر</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>مفتاح النشر لـ %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>تجاهل</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>تجاهل البناء</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>النطاق</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>فارغ: عنوان الموقع. وإلا فعنوان داخلي للموقع نفسه.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>انتهى</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>يبدأ كل رابط بالمسار الأساسي.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>كل نشر هو إيداع بوسم static/%id/&lt;n&gt;. الرجوع ينشئ إيداعًا جديدًا بملفات نشر سابق: يبقى السجل، ولا يتحرك أي وسم ولا يُفرض شيء.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>الإضافات</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>اجلب الصفحات من</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>الملف</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>الملفات</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>ملفات مفقودة</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>ملفات</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>الملفات التي تعذّر جمعها</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>البصمة</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>المجلد</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>لعنوان SSH. يُنشأ المفتاح بعد الحفظ؛ وتضيف أنت نصفه العام إلى المستودع.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>لعنوان https://. GitHub: رمز مميز دقيق الصلاحيات مع Contents للقراءة والكتابة على المستودع.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>للخبراء. يتغيّر الموقع العام بمجرد اكتمال الدفع.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>النماذج</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>استضافة مجانية من مستودع GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>من الفرع</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>عنوان git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>يسمح GitHub Pages بموقع حجمه %site وملف حجمه %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>حدود GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>ينشر GitHub Pages الملفات كما هي (ضروري للملفات التي تبدأ بـ _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>يقدّم GitHub الفرع كما دُفع. الافتراضي.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab وGitea وخادمك الخاص: أي مستودع git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>الرجوع إلى نشر سابق</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>مساعدة</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>مساعدة في المعالج</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>إخفاؤها</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>السجل</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>سجل %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>المضيف</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>كيف يستقبل GitHub Pages البناء</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>لقد فحصت التغييرات</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>أعرف ما يغيّره هذا</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>المعرّف</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>إنه متوقف: لا يمكن بناء شيء حتى يُشغَّل.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>يعمل في الخلفية باسم %user؛ يمكنك إغلاق هذه الصفحة.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>المهمة %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>محفوظ كسرّ باسم %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>النوع</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>آخر نشر</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>استبعاد هذه الصفحات</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>استبعاد هذه الأقسام</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>الروابط</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>الروابط المعاد كتابتها</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>الموقع الحي</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>عاين البناء</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>أحرف لاتينية صغيرة وأرقام و_ و-، مثلًا github-public. يسمّي المجلد والوسوم (static/&lt;id&gt;/&lt;n&gt;) ولا يمكن تغييره لاحقًا.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>إنشاء مفتاح جديد</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>إنشاء هدف</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>إنشاء المفتاح</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>أنشئ المستودع على المضيف أولًا؛ لا بأس بمستودع فارغ.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>البيان</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>الرسالة</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>معظم الصفحات</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>اسم الرمز المميز في الإعداد &gt; الأسرار</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>هدف جديد</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>التالي</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>لا يوجد إيداع بعد.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>لم يُنشأ أي مفتاح: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>لم يُعثر على برنامج سطر أوامر php. اضبط migration.ini [AdminSettings] PhpCliPath على مساره الكامل.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>لا يوجد وسم بعد.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>لا يوجد هدف بعد.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>لا شيء</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>ليس في البناء.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>لم يُنشر شيء بعد.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>لم يُنشر شيء بعد: كل ملف جديد.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>الإشعار</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>وفق جدول زمني</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>من سطر الأوامر</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>على الخادم: الأمر ./console exp:static:serve %id يقدّمه بالطريقة نفسها.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>مسار واحد في كل سطر، و* تطابق أي جزء: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>لا يُخزَّن مع الهدف إلا اسم؛ يبقى الرمز المميز أو المفتاح نفسه في الإعداد &gt; الأسرار ولا يظهر أبدًا في سجل.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>فقط ما تذكره الصفحات</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>مع رمز مميز فقط. env:NAME يقرأ بدلًا من ذلك متغير بيئة من الخادم.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>فتح المعاينة</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>يفتح البناء كما سيقدّمه المضيف، من مجلد الهدف. يعمل الرابط لك لمدة ساعة.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>اختياري. فارغ: ما نُشر.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>اختياري. مع نطاق يُقدَّم الموقع من جذره.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>المخرجات</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>الصفحات</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>صفحات الهدف</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>صفحات مرفوضة</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>المعالجة اللاحقة</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>معاينة</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>المعاينة والنشر</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>معاينة ونشر %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>معاينة البناء</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>التقدم</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>العنوان العام</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>المفتاح العام</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>نشر</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>انشر نسخة ثابتة من موقع على GitHub Pages أو أي مضيف git: ابنِها، وافحص التغييرات، وانشر، وارجع إلى نشر سابق عند الحاجة.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>النشر المراد الرجوع إليه</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>عمليات النشر</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>الدفع</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>اقرأ الدليل التعليمي</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>السجل</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>مرفوض</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>نسبي</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>إعادة التحميل</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>محذوف</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>استبدال المفتاح: يتوقف المفتاح القديم عن العمل</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>التقرير</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>تقرير البناء</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>المستودع</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>المراجعة</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>تفحص المراجعة كل إعداد وتعرض الأسطر التي ستُكتب. لم يُحفظ شيء بعد.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>تراجع</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>التراجع</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>حفظ</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>الجدولة</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>صفحة البحث</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>معرّفات الأقسام، مفصولة بفواصل.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>إرسالها إلى الموقع الحي</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>الإعداد</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>الإعدادات</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>إعدادات %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>الإعداد</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>الإعداد &gt; الأسرار</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>يظهر في القوائم، مثلًا &quot;الموقع العام على GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>يأتي تسجيل الدخول باستخدام GitHub App مع تكامل GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>الموقع</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>الموقع المراد نشره</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>الحجم</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>الحجم والحدود</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>حجم البناء</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>الصفحات القديمة</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>بدأ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>بدأها %user في %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>النشر الثابت</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>النشر الثابت متوقف</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>النشر الثابت متوقف.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>النشر الثابت متوقف. شغّله أولًا في الإعداد &gt; النشر الثابت.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>النشر الثابت مشغّل.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>الخطوة %step من %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>الخطوات</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>التنظيف</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>إيقاف</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>تشغيل</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>تشغيل النشر الثابت</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>الوسم</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>الوسوم</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>الهدف</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>يمكن إنشاء الأهداف وتغييرها، لكن لا يُبنى ولا يُنشر شيء حتى يُشغَّل.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>يخبر محركات البحث بما تقرأه.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>تعذّر التخلص من البناء: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>البناء مطابق لآخر نشر: لا يوجد ما يُنشر.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>تم التخلص من البناء: يحتوي المجلد على آخر نشر مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>القيم الافتراضية تناسب معظم المواقع.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>يحتوي المجلد على بناء لم يُنشر بعد؛ أي بناء جديد يحل محله.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>لا يمكن الكتابة في مجلد المهام: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>تعذّر تحضير المهمة: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>تعذّر بدء المهمة.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>انتهت المهمة. جارٍ تحميل تقريرها.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>تحتاج المهمة إلى مستخدم مسجّل الدخول.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>بدأت المهمة لكنها لم تُبلغ عن معرّف عمليتها. افحص %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>المفتاح</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>أكبر ملف: %path، %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>الأسطر التي ستُكتب</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>قائمة الصفحات لمحركات البحث؛ تحتاج إلى العنوان العام.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>تُجلب الصفحات كما يراها زائر غير مسجّل الدخول. لا تُعرض أبدًا وصولات الإدارة والتحرير.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>تعذّرت متابعة التقدم. أعد تحميل الصفحة لترى حال المهمة.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>النصف العام من المفتاح:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>جذر الفرع</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>مخزن الأسرار غير مُعدّ بعد (الأمر ./console exp:upgrade --apply ينشئ جدوله)، لذا لا يمكن حفظ أي مفتاح.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>يسجّل الخادم الدخول بنفسه (بمفتاح SSH الخاص به أو بمساعد بيانات الاعتماد)، أو أن المستودع على هذا الخادم.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>تعذّرت كتابة الإعداد: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>الإعدادات صالحة. ستُكتب هذه الأسطر:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>لا يمكن قراءة ملف الإعدادات: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>يعود الموقع إلى ملفات ذلك النشر؛ والبناء الذي لم يُنشر بعد يجب نشره أو التخلص منه أولًا.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>صفحة الموقع الخاصة بالعناوين غير الموجودة.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>تعذّر حفظ الهدف: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>لا يسجّل الهدف الدخول بهذا المفتاح بعد: اختر &quot;مفتاح نشر أُنشئ لهذا الهدف&quot; في إعداداته.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>تعذّرت قراءة الأهداف: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>لا يوجد بناء بانتظار الفحص بعد.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>لا يوجد في هذا التثبيت وصول أمامي للموقع. لا تُنشر أبدًا وصولات الإدارة والتحرير.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>تتابع هذه الصفحة المهمة أثناء سيرها؛ وتستمر المهمة في الخلفية عند إغلاق الصفحة.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>لا يوجد لهذا الهدف مفتاح نشر بعد.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>لم يُبنَ هذا الهدف هنا بعد.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>لهذا الهدف مفتاح.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>يتخلص من هذا البناء: يحتوي المجلد على آخر نشر مرة أخرى. لا يتغيّر الموقع الحي.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>حدّد &quot;لقد فحصت التغييرات&quot; أولًا.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>الوقت</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>المشغّلات</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>اكتب اسم الوسم مرة أخرى</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>دون تغيير</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>خطاف الويب</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ماذا</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>ما يتغيّر</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ما هو كل ملف؛ يُكتب دائمًا.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>ما فعلته المهمة وسجلها. المهمة التي تبدأ هنا تستمر في الخلفية عند إغلاق هذه الصفحة.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>ما طبعته المهمة كأخطاء</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>ما تذكره الصفحات، وكل صورة من المحتوى المنشور</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>متى</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>عند فشل نشر</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>عند نجاح نشر</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>عند نشر المحتوى</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>إلى أين تذهب الروابط إلى ما لا تحتويه النسخة (البحث، تسجيل الدخول).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>المكان الذي تُقدَّم منه النسخة الثابتة.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>أي موقع يُنشر، وما اسم الهدف.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>يعمل تحت أي مسار. الافتراضي.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>يُكتب كلما ضُبط نطاق مخصص.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>يمكنك دائمًا البناء والنشر يدويًا هنا ومن سطر الأوامر.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>اسم فقط؛ تبقى القيمة في الإعداد &gt; الأسرار</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>تحت %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>انتهت دون تقرير</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>إضافي</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>فشل</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ملف</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages، أو main مع المجلد docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>مضيف git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (مع رمز مميز) أو git@github.com:owner/repo.git (مع مفتاح نشر)؛ دون كلمة مرور أو رمز مميز فيه أبدًا.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/، لخريطة الموقع والروابط الأساسية.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>صورة</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>أبدًا</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>لا يوجد مستودع بعيد</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>لا شيء: تبقى الإيداعات في المجلد</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>لا شيء: لم يتغيّر شيء</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>لم يُدفع</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>لم يتغيّر شيء</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>صفحة</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>نجح</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open معطّل، لذا لا يمكن بدء مهمة هنا. استخدم ./console exp:static:build على الخادم.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>نشر</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>منشور</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>الدفع معلّق</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>مدفوع</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>مرفوض</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>نسبي</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>تراجع</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>تم التراجع</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>قيد التشغيل</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>المجلد فقط</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: يُكتب في الملف CNAME. وجّه DNS النطاق إلى المضيف كما يشرح؛ قد يستغرق HTTPS بعض الوقت ليبدأ.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>نعم، لم يُنشر بعد</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>تطبيق GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>يتولى سير عمل في المستودع نشره. يكتب البناء ملف سير العمل؛ اترك المجلد فارغًا.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>بعد حفظ هدف بمستودع GitHub ورمز مميز أو GitHub App، يمكن لهذه الخطوة إنشاء المستودع وتشغيل GitHub Pages. وإلا فأنشئ المستودع على GitHub أولًا؛ لا بأس بمستودع فارغ.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>الفرع أم GitHub Actions؟</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>افحص DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>أنشئ المستودع إن لم يكن موجودًا</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>أنشئ المستودع على GitHub وشغّل GitHub Pages في إعداداته (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>ينشئ المستودع %repo إن كان غير موجود (عند الطلب)، ويشغّل GitHub Pages من الفرع أو من GitHub Actions حسب المحفوظ، ويضبط النطاق المخصص وHTTPS. يستخدم الإعدادات المحفوظة: احفظ التغييرات أولًا.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>التفاصيل على GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>أدخل النطاق المخصص أولًا.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>يُفحص كل دفع مقابل هذه الحدود أولًا.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>لعنوان https:// على GitHub. يسجّل الدخولَ التطبيقُ المُعدّ لهذا التثبيت؛ ويحتاج إلى معرّف التثبيت.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>لا يقدّم GitHub Pages مستودعًا خاصًا إلا في خطة مدفوعة.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: يحتاج النطاق الفرعي (www.example.com) إلى سجل CNAME يشير إلى &lt;owner&gt;.github.io؛ ويحتاج النطاق الجذري (example.com) إلى سجلات A التالية %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>معرّف تثبيت GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>آخر بناء لـ Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>الحدود والشروط</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>مطلوب لـ GitHub Pages في الخطة المجانية.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>على GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>مع GitHub App فقط: الرقم في نهاية عنوان تثبيت التطبيق على GitHub. يُضبط التطبيق نفسه في staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>خاص</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>عام</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>احفظ الهدف بمستودع GitHub ورمز مميز أو GitHub App أولًا.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>اضبط هذه السجلات لدى مزوّد النطاق:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>الإعداد على GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>لا يشير DNS الخاص بـ %domain إلى GitHub Pages بعد.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>يشير DNS الخاص بـ %domain إلى GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>تكامل GitHub غير متاح هنا: %problem. يعمل النشر إلى الفرع مع ذلك؛ شغّل GitHub Pages في إعدادات المستودع.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>خطوات GitHub غير متاحة لهذا الهدف: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>تُعرض حالة GitHub Pages عند استخدام رمز مميز أو GitHub App كبيانات اعتماد.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>استخدم نطاقك الخاص</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>أيّها تختار: رمز مميز أم مفتاح نشر أم GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>مع مستودع GitHub ورمز مميز أو GitHub App، يستطيع المعالج إنشاء المستودع وتشغيل GitHub Pages وضبط النطاق نيابةً عنك (الخطوة 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>قيد البناء</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>تم البناء</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>من GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>من الفرع %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>لا شيء بعد</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>غير موجود</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>متوقف</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>خاص</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>عام</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>في الانتظار</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>غير معروف</translation>
     </message>
 </context>
 </TS>

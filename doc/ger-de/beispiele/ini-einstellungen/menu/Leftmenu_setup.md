@@ -3,13 +3,13 @@ title: menu.ini [Leftmenu_setup]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [Leftmenu_setup] in menu.ini: Name, Groups, GroupNames, GroupTabs, GroupSections, GroupLinks_content_model, GroupLinks_site, GroupLinks_design ..."
-keywords: Einstellung, menu.ini, Leftmenu_setup, INI, setting, Name, Groups, GroupNames, GroupTabs, GroupSections, GroupLinks_content_model, GroupLinks_site, GroupLinks_design, GroupLinks_workflow, GroupLinks_users, GroupLinks_data, GroupLinks_system, GroupLinks_ai, GroupLinks_updates, LeadLinks, MegaMenuLinks, LinkIcons, LinkDescriptions, LinkFigureTemplates, Links, LinkNames, PolicyList_cache, PolicyList_audit, PolicyList_classes, PolicyList_collected, PolicyList_contentfinder, PolicyList_unreferenced_objects, PolicyList_broken_relations, PolicyList_storage_files, PolicyList_recent_content
+keywords: Einstellung, menu.ini, Leftmenu_setup, INI, setting, Name, Groups, GroupNames, GroupTabs, GroupSections, GroupLinks_content_model, GroupLinks_site, GroupLinks_design, GroupLinks_workflow, GroupLinks_users, GroupLinks_data, GroupLinks_system, GroupLinks_ai, GroupLinks_updates, LeadLinks, MegaMenuLinks, LinkIcons, LinkDescriptions, LinkFigureTemplates, Links, LinkNames, PolicyList_cache, PolicyList_static_publishing, PolicyList_audit, PolicyList_classes, PolicyList_collected, PolicyList_contentfinder, PolicyList_unreferenced_objects, PolicyList_broken_relations, PolicyList_storage_files
 type: generated
 generated: exp:help:examples
 ---
 # menu.ini [Leftmenu_setup]
 
-Der Block `[Leftmenu_setup]` von `settings/menu.ini`, mit 66 Einstellung(en).
+Der Block `[Leftmenu_setup]` von `settings/menu.ini`, mit 67 Einstellung(en).
 
 Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -239,7 +239,7 @@ GroupLinks_data[]=data_syncs
 
 > Erweiterungen: expqueue (die Auftragswarteschlange, auch mit expai ausgeliefert), sevenx\_dse (der Datenbankeditor)  
 
-Standard: eine Liste mit 13: `cache`, `system_information`, `help_center`, `upgrade_check`, `migrations`, `maintenance`, `cronjobs`, `logs`, `extensions`, `ini`, `sitedata`, `expqueue` ....
+Standard: eine Liste mit 14: `cache`, `static_publishing`, `system_information`, `help_center`, `upgrade_check`, `migrations`, `maintenance`, `cronjobs`, `logs`, `extensions`, `ini`, `sitedata` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -248,6 +248,7 @@ Standard: eine Liste mit 13: `cache`, `system_information`, `help_center`, `upgr
 # ein leeres "GroupLinks_system[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 GroupLinks_system[]
 GroupLinks_system[]=cache
+GroupLinks_system[]=static_publishing
 GroupLinks_system[]=system_information
 GroupLinks_system[]=help_center
 GroupLinks_system[]=upgrade_check
@@ -369,7 +370,7 @@ MegaMenuLinks[]=git_manager
 >                                   figure\_key=<key> nur für eine angezeigte Kachel eingebunden; leer oder nicht design: zeichnet keine  
 > Eine Erweiterung setzt sie für ihren eigenen Link in ihrer menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md).  
 
-Standard: ein Hash mit 60: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank`, `expai_models=cpu` ....
+Standard: ein Hash mit 61: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank`, `expai_models=cpu` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -397,13 +398,13 @@ LinkIcons[git_manager]=git
 LinkIcons[git_manager_backup]=archive
 LinkIcons[global_setting]=globe
 LinkIcons[ini]=sliders
-# ... 40 weitere in der ausgelieferten Datei
+# ... 41 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
 ## LinkDescriptions
 
-Standard: ein Hash mit 60: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.`, `expai_models=The AI providers and models, and their tests.` ....
+Standard: ein Hash mit 61: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.`, `expai_models=The AI providers and models, and their tests.` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -431,7 +432,7 @@ LinkDescriptions[git_manager]=The Git checkout of the installation and its updat
 LinkDescriptions[git_manager_backup]=Make, download and remove backups.
 LinkDescriptions[global_setting]=The settings of the whole site.
 LinkDescriptions[ini]=Read and edit the INI settings.
-# ... 40 weitere in der ausgelieferten Datei
+# ... 41 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
@@ -458,6 +459,8 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 
 > No PolicyList\_overview\[\]: the view opens with any one of the setup module's functions (kernel/setup/module.php),  
 > which one PolicyList entry cannot say; CheckViewAccess asks the view itself.  
+> Static publishing (module staticpublish): a site published as static files to GitHub Pages or any git host  
+> (doc/eng-us/help/static-publishing/README.md)  
 > The audit settings and archives (doc/eng-us/bc/6.0/audit.md, "Placement"), only with audit/manage  
 > The content finder (doc/eng-us/features/6.0/content-finder.md): find content by id or path, only with contentfinder/search  
 > The content checks (doc/eng-us/features/6.0/content-checks.md): unreferenced objects and broken relations, each only  
@@ -500,7 +503,7 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > PolicyList\_toolbar\_management\[\]=visual/\*  
 > RAD closes the group "Site and URLs"  
 
-Standard: ein Hash mit 47: `overview=setup/menu`, `cache=setup/cache`, `audit=audit/settings`, `classes=class/grouplist`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `recent_content=moderation/recent`, `maintenance=setup/maintenance`, `migrations=migration/status` ....
+Standard: ein Hash mit 48: `overview=setup/menu`, `cache=setup/cache`, `static_publishing=staticpublish/dashboard`, `audit=audit/settings`, `classes=class/grouplist`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `recent_content=moderation/recent`, `maintenance=setup/maintenance` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -510,6 +513,7 @@ Standard: ein Hash mit 47: `overview=setup/menu`, `cache=setup/cache`, `audit=au
 Links[]
 Links[overview]=setup/menu
 Links[cache]=setup/cache
+Links[static_publishing]=staticpublish/dashboard
 Links[audit]=audit/settings
 Links[classes]=class/grouplist
 Links[collected]=infocollector/overview
@@ -527,14 +531,13 @@ Links[design_node]=content/view/full/58
 Links[ini]=settings/view
 Links[languages]=content/translations
 Links[interface_languages]=setup/languages
-Links[mailpreferences]=mailpreferences/admin/status
-# ... 27 weitere in der ausgelieferten Datei
+# ... 28 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
 ## LinkNames
 
-Standard: ein Hash mit 21: `audit=Audit`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `recent_content=Recent content`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files`, `design_node=Design content`, `interface_languages=Interface languages` ....
+Standard: ein Hash mit 22: `static_publishing=Static publishing`, `audit=Audit`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `recent_content=Recent content`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files`, `design_node=Design content` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -542,6 +545,7 @@ Standard: ein Hash mit 21: `audit=Audit`, `contentfinder=Content finder`, `unref
 [Leftmenu_setup]
 # ein leeres "LinkNames[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 LinkNames[]
+LinkNames[static_publishing]=Static publishing
 LinkNames[audit]=Audit
 LinkNames[contentfinder]=Content finder
 LinkNames[unreferenced_objects]=Unreferenced objects
@@ -561,8 +565,7 @@ LinkNames[data_connections]=Connections
 LinkNames[secrets]=Secrets
 LinkNames[graphql]=GraphQL
 LinkNames[data_syncs]=Synchronisations
-LinkNames[sitedata]=Site data
-# ... 1 weitere in der ausgelieferten Datei
+# ... 2 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
@@ -577,6 +580,20 @@ Standard: eine Liste mit 1: `setup/managecache`.
 # ein leeres "PolicyList_cache[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 PolicyList_cache[]
 PolicyList_cache[]=setup/managecache
+*/ ?>
+```
+
+## PolicyList_static_publishing
+
+Standard: eine Liste mit 1: `staticpublish/read`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/menu.ini.append.php
+[Leftmenu_setup]
+# ein leeres "PolicyList_static_publishing[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+PolicyList_static_publishing[]
+PolicyList_static_publishing[]=staticpublish/read
 */ ?>
 ```
 

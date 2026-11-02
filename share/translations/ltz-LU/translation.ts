@@ -15158,6 +15158,14 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Déi neist Inhalter, wat fir d'Iwwerpréiwung zréckgehal gëtt, an Aktiounen op eng Auswiel.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Eng statesch Kopie vun engem Site op GitHub Pages oder all anere git-Host publizéieren.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statescht Publizéieren</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Äntwerte vun de gespäicherten Ufroe vun der GraphQL-API an d&apos;Inhaltsklasse vun hirem Schema.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Eng statesch Kopie op GitHub Pages oder all anere git-Host publizéieren</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statescht Publizéieren</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>De statesche Cache servéiert Säite vun dësem Server. Fir eng statesch Kopie vun engem Site soss anzwousch ze publizéieren, op GitHub Pages oder all anere git-Host, benotzt statescht Publizéieren.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Ännerunge vun der Installatioun, als Dateien gehalen: hiren Zoustand, d&apos;Leef, lafe loossen an zréckrollen.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Eng statesch Kopie vun engem Site op GitHub Pages oder all anere git-Host publizéieren.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statescht Publizéieren</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>The run could not be started.</source>
         <translation>De Laf konnt net gestart ginn.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Ännerungen ophuelen</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Soulaang eng Opnam leeft, gëtt dat, wat Dir an der Administratioun oder an der Säiteläischt vum Site ännert, als Schrëtt vun enger Migratioun gehalen: Inhalt, Klassen, Rollen a Richtlinnen, Sektiounen, Benotzer a Gruppen, URL-Aliasen, Astellungen. Stoppt se, wann Dir fäerdeg sidd, kuckt, wat se festgehalen huet, a generéiert eng Migratioun doraus.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>D'Opname konnten net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>D'Tabelle vun den Opnamen ginn et nach net: Lancéiert fir d'éischt den Upgrade (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>D'Ophuelen ass a migration.ini ausgeschalt ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Meng Ännerungen</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Hëlt just dat op, wat Dir ännert, egal wou, bis Dir se stoppt.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Opnam</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>zënter %time, bis elo %count Ännerung(en).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etikett (fakultativ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Weisen, wat se festgehalen huet</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Opnam stoppen</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Ufänken, meng Ännerungen opzehuelen</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fënster fir de ganze Site</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Hëlt all Ännerung vun all Benotzer a vun der Konsol op, bis se zougemaach gëtt. Beim Opmaache musst Dir bestätegen, datt Dir et sidd.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Op</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Fënster zoumaachen</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Fënster fir de ganze Site opmaachen</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Opnamen</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>De Kont vun engem Benotzer (Login, E-Mail, Passwuert) an d'Felder vu Benotzerkonten ginn ni opgeholl.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ännerungen</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ganze Site</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ännerunge vum %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Gestoppt</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Nach keng Opnam.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Opnam %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>All Opnamen</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>D'Migratioun, déi doraus géif entstoen</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>D'Ännerungen zesummegefaasst an ee Schrëtt pro geännert Saach: wat eng aus dëser Opnam generéiert Migratioun géif maachen.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Eng Migratioun kann doraus generéiert ginn, soubal dës Installatioun d'YAML-Schrëtttypen %types huet.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Bewosst ewechgelooss: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Näischt gouf opgeholl.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Wat se festgehalen huet</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count Ännerung(en), an der Reiefolleg, an där se gemaach goufen.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ännerung</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Schrëtt</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Betrëfft</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Nach %count: ./console exp:migration:record:show weist se all.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Verwerfen</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Läscht d'Opnam an dat, wat se festgehalen huet. Wat geännert gouf, bleift geännert.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Jo, dës Opnam verwerfen</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Hëlt op…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Är Ännerunge ginn fir eng Migratioun opgeholl.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>All Ännerung op dësem Site gëtt fir eng Migratioun opgeholl (Fënster fir de ganze Site).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>D'Opnam fir de ganze Site huet ugefaangen: all Ännerung vun all Benotzer gëtt opgeholl, bis Dir se stoppt.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>D'Opnam huet ugefaangen: Är Ännerunge ginn opgeholl, bis Dir se stoppt.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Opnam gestoppt. Wat se festgehalen huet, bleift, bis Dir se verwerft.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>D'Opnam an hir Evenementer goufe geläscht.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Et gëtt keng Opnam %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Kräizt fir d'éischt „Jo, dës Opnam verwerfen“ un.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Just de Benotzer, deen opgeholl huet, däerf eng Sessiounsopnam stoppen.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Wielt d'Opnam, déi gestoppt soll ginn.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Eng Opnam vun dëser Zort leeft schonn.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>D'Opnam konnt net geännert ginn: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1540 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>Released.</source>
         <translation>Fräiginn.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>All Ziler</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Lescht Publikatioun</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Publizéiert eng gratis statesch Kopie vun Ärem Site op GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Verault Säiten</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statescht Publizéieren</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statescht Publizéieren ass ausgeschalt.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Zil</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>D&apos;Ziler konnten net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>eng Aufgab leeft</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>Build fir ze kontrolléieren</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>dëst verstoppen</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>en Zil maachen</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ni</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>den Tutorial liesen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added derbäi, %changed geännert, %removed ewechgeholl</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes vun %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count weider sinn net opgelëscht.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages Säite geschriwwen</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path huet %size, méi wéi den Host fir ee Fichier erlaabt.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % vun der Limit</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ass d&apos;Publikatioun, déi de Site elo huet.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: Aufgab %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/depot/ fir e GitHub-Projetssite; eidel fir eng eege Domän oder e Benotzersite.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. De Site</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Den Host</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Umeldung beim Depot</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Den Depot</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Linken a Basispfad</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Är eege Domän</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Wat de Build enthält</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Wéini publizéiert gëtt</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Iwwerpréiwen a späicheren</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>E GitHub-Projetssite läit ënner /&lt;repository&gt;/; relativ Linke funktionéieren do an iwwerall soss.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>E Build rifft all Säit vun %site of, esou wéi e Besucher, deen net ugemellt ass, se gesäit, schreift d&apos;Linken ëm, kopéiert d&apos;Fichieren a schreift d&apos;Resultat an den Dossier vum Zil. Näischt gëtt publizéiert, ier Dir de Build kontrolléiert an op Publizéieren dréckt.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>En Cron-Ausdrock, zum Beispill 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>En Deploy-Key gëtt als Geheimnis %secret behalen.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>En Deploy-Key léisst dës Installatioun iwwer SSH an een eenzegen Depot pushen an néierens soss. Seng privat Hälschent bleift an Konfiguratioun &gt; Geheimnisser; nëmmen déi ëffentlech Hälschent gëtt gewisen.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>En Deploy-Key, dee fir dëst Zil gemaach gouf</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>En Deploy-Key mellt sech iwwer SSH un: ännert d&apos;git-Adress op déi SSH-Adress (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Eng Aufgab leeft, gestart vum %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Eng Aufgab vun dësem Zil leeft nach (%detail). Waart, bis se fäerdeg ass.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Eng Aufgab vun dësem Zil leeft nach. Waart, bis se fäerdeg ass.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>E Link vun der Säit /news/ op d&apos;Säit /about-us/team gëtt esou geschriwwen</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>En neien Deploy-Key gouf gemaach. Setzt seng ëffentlech Hälschent elo an den Depot.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Eng Säit, déi nom Botzen nach Debug-Ausgab, e Formulaire-Token oder eng Sessiouns-ID dréit, gëtt ni publizéiert.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Eng Zréckrollung ass fir Experten: kräizt „Ech weess, wat dat ännert“ un a tippt den Numm vum Tag nach eng Kéier.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>E Site däerf bis zu %site grouss sinn, ee Fichier bis zu %file, mat ongeféier 100 GB Traffic de Mount. Mat engem gratis Abonnement muss den Depot ëffentlech sinn. GitHub Pages ass net fir Geschäfter oder aner kommerziell Transaktioune geduecht.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>En Zil ass ee Site, deen an een git-Depot publizéiert gëtt. Hei gëtt näischt gebaut oder publizéiert: Späicheren schreift d&apos;Astellungen an settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>En Zil ass ee Site, deen op eng Plaz publizéiert gëtt, zum Beispill Ären ëffentleche Site op GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>En Token aus Konfiguratioun &gt; Geheimnisser</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>E Workflow vum Depot publizéiert en.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Setzt dësen ëffentleche Schlëssel mat Schreifrecht an den Depot. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, kräizt Allow write access un.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Derbäigesat</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>En anere git-Host</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>En anere Prozess schafft un dësem Zil: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Zréck</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Basispfad</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Virdrun</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Ënner engem Basispfad</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Zweig</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Futtis Linken</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Futtis Linken am Build</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Build</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Build %id vum %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Build vun %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Elo bauen</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Build fir ze kontrolléieren</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Vum</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Mat der Hand, hei</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ofbriechen</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Änneren</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Geännert</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ännerungen</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Fir d&apos;éischt kontrolléieren</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Kontrolléiert dës Astellungen</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Kontrolléiert, wat de Build ännert, kuckt en Iech un, publizéiert en dann oder geheit en ewech.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Wielt d&apos;Publikatioun, op déi zréckgaange gëtt.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Kënnt mat enger spéiderer Versioun.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commit</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Commits</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Mécht e Commit vum Build, taggt en a pusht en op %remote. E Push gëtt ni forcéiert; Dir kënnt spéider op all Publikatioun zréckgoen.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Verglach mam Dossier virdrun: %added derbäi, %changed geännert, %removed ewechgeholl, %unchanged onverännert.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Verglach mat der leschter Publikatioun.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Umeldedaten</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Eegen Domän</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Debug-Ausgab, Formulaire-Tokens, Sessiouns-IDen an Nonces ginn ëmmer erausgeholl.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Deploy-Key</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Deploy-Key vun %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Verwerfen</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>De Build verwerfen</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domän</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Eidel: d&apos;Adress vum Site. Soss eng intern Adress vum selwechte Site.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ofgeschloss</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>All Link fänkt mam Basispfad un.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>All Publikatioun ass e Commit mat engem Tag static/%id/&lt;n&gt;. Zréckgoen mécht en neie Commit mat de Fichiere vun enger fréierer Publikatioun: d&apos;Geschicht bleift, keen Tag gëtt verréckelt an näischt gëtt forcéiert.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Extraen</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>D&apos;Säiten ofruffe vun</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fichier</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fichieren</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Feelend Fichieren</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Fichiere vun</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Fichieren, déi net gesammelt konnte ginn</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Fangerofdrock</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Dossier</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Fir eng SSH-Adress. De Schlëssel gëtt nom Späichere gemaach; Dir setzt seng ëffentlech Hälschent an den Depot.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Fir eng https://-Adress. GitHub: e fine-grained Token mat Liese- a Schreifrecht op Contents fir den Depot.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Fir Experten. Den ëffentleche Site ännert sech, soubal de Push duerch ass.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formulairen</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Gratis Hosting aus engem GitHub-Depot.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Vum Zweig</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git-Adress</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages erlaabt e Site vun %site an ee Fichier vun %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Limitte vu GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages publizéiert d&apos;Fichieren esou wéi se sinn (néideg fir Fichieren, déi mat _ ufänken).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub servéiert den Zweig esou, wéi e gepusht gëtt. De Standard.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, Ären eegene Server: all git-Depot.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Op eng fréier Publikatioun zréckgoen</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Hëllef</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Hëllef zum Assistent</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Verstoppen</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historique</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Historique vun %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Wéi GitHub Pages de Build kritt</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Ech hunn d&apos;Ännerunge kontrolléiert</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Ech weess, wat dat ännert</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Et ass ausgeschalt: näischt ka gebaut ginn, bis et ugeschalt ass.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Et leeft am Hannergrond als %user; Dir kënnt dës Säit zoumaachen.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Aufgab %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Als Geheimnis %secret behalen.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Aart</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Lescht Publikatioun</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Dës Säiten auslossen</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Dës Rubriken auslossen</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Linken</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Ëmgeschriwwe Linken</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Live-Site</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>De Build ukucken</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Klengbuschtawen, Zifferen, _ an -, zum Beispill github-public. Et benennt den Dossier an d&apos;Tags (static/&lt;id&gt;/&lt;n&gt;) a kann duerno net méi geännert ginn.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>En neie Schlëssel maachen</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>En Zil maachen</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>De Schlëssel maachen</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Maacht den Depot fir d&apos;éischt um Host; en eidelen ass an der Rei.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Noriicht</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Déi meescht Säiten</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Numm</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Numm vum Token an Konfiguratioun &gt; Geheimnisser</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Neit Zil</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Weider</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Neen</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Nach kee Commit.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Kee Schlëssel gouf gemaach: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Keen php-Kommandozeilenprogramm gouf fonnt. Setzt migration.ini [AdminSettings] PhpCliPath op säi komplette Pfad.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Nach keen Tag.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Nach keen Zil.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keen</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Net am Build.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Nach näischt publizéiert.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Nach näischt publizéiert: all Fichier ass nei.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Benoriichtegen</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>No engem Zäitplang</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Op der Konsol</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Um Server: ./console exp:static:serve %id servéiert en op déi selwecht Aart.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Ee Pfad pro Zeil, * passt op all Deel: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Nëmmen en Numm gëtt mam Zil gespäichert; den Token oder de Schlëssel selwer bleift an Konfiguratioun &gt; Geheimnisser an erschéngt ni an engem Log.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Nëmmen dat, wat d&apos;Säiten nennen</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Nëmme mat engem Token. env:NAME liest amplaz eng Ëmfeldvariabel vum Server.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>D&apos;Virschau opmaachen</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Mécht de Build op, esou wéi den Host en servéiere wäert, aus dem Dossier vum Zil. De Link funktionéiert fir Iech eng Stonn laang.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Fakultativ. Eidel: dat, wat publizéiert gouf.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Fakultativ. Mat enger Domän gëtt de Site op hirer Wuerzel servéiert.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Ausgab</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Säiten</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Säite vum Zil</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Refuséiert Säiten</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Nobearbechtung</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Virschau</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Virschau a publizéieren</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Virschau a publizéieren: %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Virschau vum Build</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fortschrëtt</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Ëffentlech Adress</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Ëffentleche Schlëssel</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Publizéieren</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Eng statesch Kopie vun engem Site op GitHub Pages oder all anere git-Host publizéieren: en bauen, d&apos;Ännerunge kontrolléieren, publizéieren an op eng fréier Publikatioun zréckgoen, wann et néideg ass.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Publikatioun, op déi zréckgaange gëtt</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Publikatiounen</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Push</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Den Tutorial liesen</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Protokoll</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refuséiert</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relativ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Nei lueden</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Ewechgeholl</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>De Schlëssel ersetzen: deen ale funktionéiert net méi</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapport</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Rapport vum Build</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Depot</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Iwwerpréiwen</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>D&apos;Iwwerpréiwung kontrolléiert all Astellung a weist d&apos;Zeilen, déi geschriwwe ginn. Nach näischt ass gespäichert.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Zréckrollen</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Zréckrollung</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Späicheren</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Zäitplang</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Sichsäit</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Rubriken-IDen, duerch Kommaen getrennt.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Op de Live-Site schécken</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Astellung</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Astellungen</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Astellunge vun %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguratioun</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Konfiguratioun &gt; Geheimnisser</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>An de Lëschte gewisen, zum Beispill „Ëffentleche Site op GitHub Pages“.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>D&apos;Umeldung mat enger GitHub App kënnt mat der GitHub-Integratioun.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Websäit</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Websäit fir ze publizéieren</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Gréisst</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Gréisst a Limitten</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Gréisst vum Build</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Verault Säiten</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Gestart</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Gestart vum %user um %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zoustand</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statescht Publizéieren</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statescht Publizéieren ass ausgeschalt</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statescht Publizéieren ass ausgeschalt.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statescht Publizéieren ass ausgeschalt. Schalt et fir d&apos;éischt an Konfiguratioun &gt; Statescht Publizéieren un.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statescht Publizéieren ass ugeschalt.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Schrëtt %step vun %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Schrëtt</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Botzen</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Ausschalten</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Uschalten</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Statescht Publizéieren uschalten</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Tag</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Tags</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Zil</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Ziler kënne gemaach a geännert ginn, mee näischt gëtt gebaut oder publizéiert, bis et ugeschalt ass.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Seet de Sichmaschinnen, wat se liese sollen.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>De Build konnt net verworf ginn: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>De Build ass datselwecht wéi déi lescht Publikatioun: et gëtt näischt ze publizéieren.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>De Build gouf verworf: den Dossier enthält erëm déi lescht Publikatioun.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>D&apos;Standardastellunge passe fir déi meescht Siten.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Den Dossier enthält e Build, deen nach net publizéiert ass; en neie Build ersetzt en.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Den Dossier vun den Aufgabe ka net geschriwwe ginn: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>D&apos;Aufgab konnt net virbereet ginn: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>D&apos;Aufgab konnt net gestart ginn.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>D&apos;Aufgab ass fäerdeg. Hire Rapport gëtt gelueden.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>D&apos;Aufgab brauch en ugemellte Benotzer.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>D&apos;Aufgab gouf gestart, mee huet hir Prozess-ID net gemellt. Kontrolléiert %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>De Schlëssel</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>De gréisste Fichier: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>D&apos;Zeilen, déi geschriwwe ginn</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>D&apos;Lëscht vun de Säite fir Sichmaschinnen; brauch d&apos;ëffentlech Adress.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>D&apos;Säite ginn esou ofgeruff, wéi e Besucher, deen net ugemellt ass, se gesäit. Administratiouns- a Redaktiouns-Siteaccesse ginn ni ugebueden.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>De Fortschrëtt konnt net verfollegt ginn. Luet d&apos;Säit nei, fir ze gesinn, wéi d&apos;Aufgab virugeet.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Déi ëffentlech Hälschent vum Schlëssel:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>D&apos;Wuerzel vum Zweig</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>De Geheimnisspäicher ass nach net ageriicht (./console exp:upgrade --apply mécht seng Tabell), dofir ka kee Schlëssel behale ginn.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>De Server mellt sech selwer un (mat sengem eegene SSH-Schlëssel oder Credential-Helper), oder den Depot ass op dësem Server.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>D&apos;Astellung konnt net geschriwwe ginn: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>D&apos;Astellunge si gülteg. Dës Zeile ginn geschriwwen:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>D&apos;Astellungsdatei ka net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>De Site geet zréck op d&apos;Fichiere vun där Publikatioun; e Build, deen nach net publizéiert ass, muss fir d&apos;éischt publizéiert oder verworf ginn.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Déi eege Säit vum Site fir Adressen, déi net existéieren.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>D&apos;Zil konnt net gespäichert ginn: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>D&apos;Zil mellt sech nach net mat dësem Schlëssel un: wielt „En Deploy-Key, dee fir dëst Zil gemaach gouf“ a sengen Astellungen.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>D&apos;Ziler konnten net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Et gëtt nach kee Build fir ze kontrolléieren.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Dës Installatioun huet keen ëffentleche Siteaccess. Administratiouns- a Redaktiouns-Siteaccesse ginn ni publizéiert.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Dës Säit verfollegt d&apos;Aufgab, während se leeft; se leeft am Hannergrond weider, wann d&apos;Säit zougemaach gëtt.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Dëst Zil huet nach keen Deploy-Key.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Dëst Zil gouf hei nach net gebaut.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Dëst Zil huet een.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Geheit dëse Build ewech: den Dossier enthält erëm déi lescht Publikatioun. De Live-Site ännert sech net.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Kräizt fir d&apos;éischt „Ech hunn d&apos;Ännerunge kontrolléiert“ un.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zäit</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Ausléiser</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Tippt den Numm vum Tag nach eng Kéier</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Onverännert</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Wat</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Wat sech ännert</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Wat all Fichier ass; gëtt ëmmer geschriwwen.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Wat d&apos;Aufgab gemaach huet an hire Protokoll. Eng Aufgab, déi hei gestart gouf, leeft am Hannergrond weider, wann dës Säit zougemaach gëtt.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Wat d&apos;Aufgab als Feeler ausginn huet</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Wat d&apos;Säiten nennen, an all Bild vum publizéierten Inhalt</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wéini</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Wann eng Publikatioun feelschléit</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Wann eng Publikatioun geléngt</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Wann Inhalt publizéiert gëtt</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Wouhi Linke féieren, déi op eppes weisen, wat d&apos;Kopie net enthält (d&apos;Sich, d&apos;Umeldung).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Vu wou déi statesch Kopie servéiert gëtt.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Wéi ee Site publizéiert gëtt, a wéi d&apos;Zil heescht.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Funktionéiert ënner all Pfad. De Standard.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Gëtt geschriwwen, soubal eng eege Domän agestallt ass.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jo</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Dir kënnt ëmmer mat der Hand hei an op der Konsol bauen a publizéieren.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>nëmmen en Numm; de Wäert bleift an Konfiguratioun &gt; Geheimnisser</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>ënner %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ouni Rapport ofgeschloss</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>zousätzlech</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>feelgeschloen</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>Fichier</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, oder main mam Dossier docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git-Host</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (mat engem Token) oder git@github.com:owner/repo.git (mat engem Deploy-Key); ni e Passwuert oder Token dran.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, fir d&apos;Sitemap an d&apos;kanonesch Linken.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>Bild</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ni</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>neen</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>keen Remote</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>keen: d&apos;Commits bleiwen am Dossier</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>keen: näischt geännert</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>net gepusht</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>näischt geännert</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>Säit</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>gelongen</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ass desaktivéiert, dofir ka keng Aufgab hei gestart ginn. Benotzt ./console exp:static:build um Server.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>Publikatioun</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>publizéiert</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>Push ausstoend</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>gepusht</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>refuséiert</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relativ</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>Zréckrollung</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>zréckgerollt</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>leeft</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>nëmmen den Dossier</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: gëtt an de Fichier CNAME geschriwwen. Riicht den DNS vun der Domän op den Host, esou wéi deen et erkläert; HTTPS ka eng Zäit brauchen, bis et ugeet.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>jo, nach net publizéiert</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Eng GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>E Workflow vum Depot publizéiert en. De Build schreift de Workflow-Fichier; loosst den Dossier eidel.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Nodeems en Zil mat engem GitHub-Depot an engem Token oder enger GitHub App gespäichert ass, kann dëse Schrëtt den Depot uleeën a GitHub Pages uschalten. Soss leet den Depot fir d'éischt op GitHub un; en eidelen ass an der Rei.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Zweig oder GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS iwwerpréiwen</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Den Depot uleeën, wann en net existéiert</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Leet den Depot op GitHub un a schalt GitHub Pages a sengen Astellungen un (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Leet den Depot %repo un, wann e feelt (wann et gefrot gëtt), schalt GitHub Pages vum Zweig oder vu GitHub Actions un, esou wéi gespäichert, a setzt déi eegen Domän an HTTPS. Et benotzt déi gespäichert Astellungen: späichert d'Ännerungen fir d'éischt.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Detailer op GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Gitt fir d'éischt déi eegen Domän an.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>All Push gëtt fir d'éischt géint dës Limitte gepréift.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Fir eng https://-Adress op GitHub. D'App, déi fir dës Installatioun ageriicht ass, mellt sech un; si brauch d'Installatiouns-ID.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages servéiert e private Depot nëmme mat engem bezuelten Abonnement.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: eng Subdomän (www.example.com) brauch e CNAME-Record op &lt;owner&gt;.github.io; eng Apex-Domän (example.com) d'A-Records %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Installatiouns-ID vun der GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Leschte Pages-Build</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Limitten a Konditiounen</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Néideg fir GitHub Pages mat engem gratis Abonnement.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Op GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Nëmme mat enger GitHub App: d'Zuel um Enn vun der Adress vun der Installatioun vun der App op GitHub. D'App selwer gëtt an staticcache.ini agestallt (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Ëffentlech</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Späichert d'Zil fir d'éischt mat engem GitHub-Depot an engem Token oder enger GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Setzt dës Records beim Provider vun der Domän:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Op GitHub ariichten</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Den DNS vun %domain weist nach net op GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Den DNS vun %domain weist op GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>D'GitHub-Integratioun ass hei net disponibel: %problem. Publizéieren op den Zweig funktionéiert trotzdeem; schalt GitHub Pages an den Astellunge vum Depot un.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>D'GitHub-Schrëtt sinn net disponibel fir dëst Zil: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>De Status vu GitHub Pages gëtt mat engem Token oder enger GitHub App als Umeldedaten ugewisen.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Är eegen Domän benotzen</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Wat wielen: Token, Deploy-Key oder GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Mat engem GitHub-Depot an engem Token oder enger GitHub App kann den Assistent fir Iech den Depot uleeën, GitHub Pages uschalten an d'Domän setzen (Schrëtt 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>gëtt gebaut</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>gebaut</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>vu GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>vum Zweig %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>nach keen</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>net fonnt</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>aus</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ëffentlech</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>an der Waardeschlaang</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekannt</translation>
     </message>
 </context>
 </TS>

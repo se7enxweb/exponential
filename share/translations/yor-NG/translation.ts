@@ -15156,6 +15156,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Àkóónú tuntun jùlọ, ohun tí a dá dúró fún àyẹ̀wò, àti àwọn iṣẹ́ lórí àwọn ohun tí a yàn.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Tẹ ẹ̀dà aláìyípadà ti sáìtì kan jáde sí GitHub Pages tàbí agbàlejò git èyíkéyìí.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ìtẹ̀jáde aláìyípadà</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22155,6 +22163,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Àwọn ìdáhùn ti àwọn ìbéèrè tí a tọ́jú ti GraphQL API, àti àwọn kílásì àkóónú ti schema rẹ̀.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Tẹ ẹ̀dà aláìyípadà jáde sí GitHub Pages tàbí agbàlejò git èyíkéyìí</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ìtẹ̀jáde aláìyípadà</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Kásẹ̀ aláìyípadà ń pèsè àwọn ojú ìwé láti sáfá yìí. Láti tẹ ẹ̀dà aláìyípadà ti sáìtì kan jáde sí ibòmíràn, lórí GitHub Pages tàbí agbàlejò git èyíkéyìí, lo ìtẹ̀jáde aláìyípadà.</translation>
     </message>
 </context>
 <context>
@@ -76212,6 +76232,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Àwọn àyípadà sí ìfisórí tí a pa mọ́ bí fáìlì: ipò wọn, àwọn ìṣiṣẹ́, ṣiṣẹ́ kí o sì yí padà sẹ́yìn.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Tẹ ẹ̀dà aláìyípadà ti sáìtì kan jáde sí GitHub Pages tàbí agbàlejò git èyíkéyìí.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ìtẹ̀jáde aláìyípadà</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80560,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>A kò lè bẹ̀rẹ̀ ìṣiṣẹ́ náà.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Ìgbàsílẹ̀ àwọn àyípadà</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Nígbà tí ìgbàsílẹ̀ bá ń lọ lọ́wọ́, ohun tí o bá yípadà nínú ìṣàkóso tàbí nínú ọ̀pá ẹ̀gbẹ́ ojú-òpó ni a ń tọ́jú gẹ́gẹ́ bí ìgbésẹ̀ ìṣípòpadà: àkóónú, àwọn kíláàsì, àwọn ipa àti ìlànà, àwọn ìpín, àwọn olùṣàmúlò àti ẹgbẹ́, àwọn orúkọ àfidípò URL, àwọn ètò. Dá a dúró nígbà tí o bá parí, wo ohun tí ó mú, kí o sì ṣẹ̀dá ìṣípòpadà láti inú rẹ̀.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>A kò lè ka àwọn ìgbàsílẹ̀: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Àwọn tábìlì ìgbàsílẹ̀ kò tíì sí: kọ́kọ́ ṣe àtúnṣe (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Ìgbàsílẹ̀ ti wà ní pípa nínú migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Àwọn àyípadà mi</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ó ń gba ohun tí o yípadà nìkan sílẹ̀, níbikíbi tí o bá ti yí i padà, títí tí o fi dá a dúró.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ìgbàsílẹ̀</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>láti %time, àyípadà %count títí di báyìí.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Àmì (àṣàyàn)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Fi ohun tí ó mú hàn</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Dá ìgbàsílẹ̀ dúró</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Bẹ̀rẹ̀ ìgbàsílẹ̀ àwọn àyípadà mi</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fèrèsé fún gbogbo ojú-òpó</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Ó ń gba gbogbo àyípadà olùṣàmúlò kọ̀ọ̀kan àti ti kọ́ńsólù sílẹ̀ títí tí a ó fi tì í. Nígbà tí o bá ṣí i, a ó ní kí o jẹ́rìí pé ìwọ ni.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ṣíṣí</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Ti fèrèsé</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ṣí fèrèsé fún gbogbo ojú-òpó</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Àwọn ìgbàsílẹ̀</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>A kò ní gba àkọọ́lẹ̀ olùṣàmúlò (orúkọ ìwọlé, ímeèlì, ọ̀rọ̀ aṣínà) àti àwọn ààyè àkọọ́lẹ̀ olùṣàmúlò sílẹ̀ láé.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Àwọn àyípadà</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Gbogbo ojú-òpó</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Àwọn àyípadà %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Ti dúró</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Kò sí ìgbàsílẹ̀ kankan síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ìgbàsílẹ̀ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Gbogbo ìgbàsílẹ̀</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ìṣípòpadà tí yóò ṣe</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Àwọn àyípadà tí a kó pọ̀ sí ìgbésẹ̀ kan fún ohun kọ̀ọ̀kan tí ó yípadà: ohun tí ìṣípòpadà tí a ṣẹ̀dá láti inú ìgbàsílẹ̀ yìí yóò ṣe.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>A lè ṣẹ̀dá ìṣípòpadà láti inú rẹ̀ nígbà tí ìfisórí yìí bá ní àwọn irú ìgbésẹ̀ YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Ti fi sílẹ̀ mọ̀ọ́mọ̀: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Kò sí ohun tí a gbà sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ohun tí ó mú</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Àyípadà %count, ní ìtẹ̀léra tí a ṣe wọ́n.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Àyípadà</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Ìgbésẹ̀</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Nípa</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count sí i: ./console exp:migration:record:show ń ṣe àkójọ gbogbo wọn.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Jù sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Ó ń yọ ìgbàsílẹ̀ àti ohun tí ó mú kúrò. Ohun tí ó yípadà ń bá a lọ ní yíyípadà.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Bẹ́ẹ̀ni, ju ìgbàsílẹ̀ yìí sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ó ń gbà sílẹ̀…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>A ń gba àwọn àyípadà rẹ sílẹ̀ fún ìṣípòpadà kan.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>A ń gba gbogbo àyípadà lórí ojú-òpó yìí sílẹ̀ fún ìṣípòpadà kan (fèrèsé fún gbogbo ojú-òpó).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Ìgbàsílẹ̀ gbogbo ojú-òpó ti bẹ̀rẹ̀: a ó gba gbogbo àyípadà olùṣàmúlò kọ̀ọ̀kan sílẹ̀ títí tí o fi dá a dúró.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ìgbàsílẹ̀ ti bẹ̀rẹ̀: a ó gba àwọn àyípadà rẹ sílẹ̀ títí tí o fi dá a dúró.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Ìgbàsílẹ̀ ti dúró. Ohun tí ó mú yóò wà títí tí o fi jù ú sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>A ti yọ ìgbàsílẹ̀ àti àwọn ìṣẹ̀lẹ̀ rẹ̀ kúrò.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Kò sí ìgbàsílẹ̀ %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Kọ́kọ́ sàmì sí "Bẹ́ẹ̀ni, ju ìgbàsílẹ̀ yìí sílẹ̀".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Olùṣàmúlò tí ó gbà sílẹ̀ nìkan ló lè dá ìgbàsílẹ̀ àkókò ìlò dúró.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Yan ìgbàsílẹ̀ tí a ó dá dúró.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ìgbàsílẹ̀ irú yìí ti ń lọ lọ́wọ́.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>A kò lè yí ìgbàsílẹ̀ padà: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81223,6 +81467,1540 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>A ti tú u sílẹ̀.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Gbogbo ibi àfojúsùn</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Ìtẹ̀jáde tó kẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Tẹ ẹ̀dà aláìyípadà ọ̀fẹ́ ti sáìtì rẹ jáde lórí GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Àwọn ojú ìwé tó ti gbó</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ìtẹ̀jáde aláìyípadà</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>A ti pa ìtẹ̀jáde aláìyípadà.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Ibi àfojúsùn</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>A kò lè ka àwọn ibi àfojúsùn: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>iṣẹ́ kan ń lọ lọ́wọ́</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>ìkọ́ tí ó yẹ kí a ṣàyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>fi èyí pamọ́</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ṣẹ̀dá ibi àfojúsùn</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>láéláé</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>ka ìkẹ́kọ̀ọ́ náà</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ti fikún, %changed ti yípadà, %removed ti yọ kúrò</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes nínú %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count mìíràn kò sí nínú àkójọ.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>A ti kọ ojú ìwé %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path jẹ́ %size, ó ju ohun tí agbàlejò gbà fún fáìlì kan lọ.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % ti ààlà náà</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ìṣ</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ni ìtẹ̀jáde tí sáìtì náà ní báyìí.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: iṣẹ́ %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repository/ fún sáìtì iṣẹ́ akanṣe GitHub; òfo fún dómèènì àdáni tàbí sáìtì olùlò.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Sáìtì náà</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Agbàlejò náà</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Wíwọlé sí ibi ìpamọ́</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Ibi ìpamọ́ náà</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Àwọn ìjápọ̀ àti ọ̀nà ìpìlẹ̀</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Dómèènì tìrẹ</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Ohun tí ìkọ́ náà ní nínú</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Ìgbà tí a ó tẹ̀ ẹ́ jáde</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Ṣàyẹ̀wò kí o sì fi pamọ́</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Sáìtì iṣẹ́ akanṣe GitHub wà ní abẹ́ /&lt;repository&gt;/; àwọn ìjápọ̀ alábàátan ń ṣiṣẹ́ níbẹ̀ àti níbikíbi mìíràn.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ìkọ́ kan ń mú gbogbo ojú ìwé %site wá bí àlejò tí kò wọlé ṣe ń rí i, ó ń tún àwọn ìjápọ̀ kọ, ó ń ṣe ẹ̀dà àwọn fáìlì, ó sì ń kọ èsì rẹ̀ sí fóldà ibi àfojúsùn. A kò ní tẹ ohunkóhun jáde títí tí o bá ṣàyẹ̀wò ìkọ́ náà tí o sì tẹ Tẹ̀jáde.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Ìfihàn cron kan, fún àpẹẹrẹ 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>A tọ́jú kọ́kọ́rọ́ ìfiránṣẹ́ gẹ́gẹ́ bí àṣírí %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Kọ́kọ́rọ́ ìfiránṣẹ́ jẹ́ kí ìfisórí yìí tì sókè sí ibi ìpamọ́ kan ṣoṣo lórí SSH, kì í ṣe ibòmíràn. Ìdajì àdáni rẹ̀ wà nínú Ìgbékalẹ̀ &gt; Àwọn àṣírí; ìdajì gbangba nìkan ni a fihàn.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Kọ́kọ́rọ́ ìfiránṣẹ́ tí a ṣẹ̀dá fún ibi àfojúsùn yìí</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Kọ́kọ́rọ́ ìfiránṣẹ́ ń wọlé lórí SSH: yí àdírẹ́sì git padà sí ti SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Iṣẹ́ kan ń lọ lọ́wọ́, tí %user bẹ̀rẹ̀</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Iṣẹ́ kan ti ibi àfojúsùn yìí ṣì ń lọ (%detail). Dúró kí ó parí.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Iṣẹ́ kan ti ibi àfojúsùn yìí ṣì ń lọ. Dúró kí ó parí.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Ìjápọ̀ láti ojú ìwé /news/ sí ojú ìwé /about-us/team yóò jẹ́ kíkọ bí</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>A ti ṣẹ̀dá kọ́kọ́rọ́ ìfiránṣẹ́ tuntun. Fi ìdajì gbangba rẹ̀ kún ibi ìpamọ́ náà báyìí.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>A kì í tẹ ojú ìwé tí ó ṣì ní àbájáde ìṣàtúnṣe àṣìṣe, tókìnì fọ́ọ̀mù tàbí id ìgbà lẹ́yìn ìyọkúrò jáde láéláé.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Ìyípadà sẹ́yìn wà fún àwọn amòye: sàmì sí &quot;Mo mọ ohun tí èyí ń yí padà&quot; kí o sì tún tẹ orúkọ àmì náà.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Sáìtì kan lè tó %site, fáìlì kan lè tó %file, pẹ̀lú ìrìnnà tó tó 100 GB lóṣù. Lórí ètò ọ̀fẹ́, ibi ìpamọ́ gbọ́dọ̀ jẹ́ ti gbangba. GitHub Pages kò wà fún ṣọ́ọ̀bù tàbí àwọn ìdúnàádúrà ìṣòwò mìíràn.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Ibi àfojúsùn jẹ́ sáìtì kan tí a tẹ̀ jáde sí ibi ìpamọ́ git kan. A kò kọ́ tàbí tẹ ohunkóhun jáde níbí: Fi pamọ́ ń kọ àwọn ètò sí settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Ibi àfojúsùn jẹ́ sáìtì kan tí a tẹ̀ jáde sí ibì kan, fún àpẹẹrẹ sáìtì gbangba rẹ lórí GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Tókìnì kan láti Ìgbékalẹ̀ &gt; Àwọn àṣírí</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Ìṣàn iṣẹ́ kan ti ibi ìpamọ́ ni ó ń tẹ̀ ẹ́ jáde.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Fi kọ́kọ́rọ́ gbangba yìí kún ibi ìpamọ́ náà pẹ̀lú àṣẹ kíkọ. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, sàmì sí Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Ti fikún</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Agbàlejò git mìíràn</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Ìlànà mìíràn ń ṣiṣẹ́ lórí ibi àfojúsùn yìí: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Padà sẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Ọ̀nà ìpìlẹ̀</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ṣáájú</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Ní abẹ́ ọ̀nà ìpìlẹ̀ kan</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Ẹ̀ka</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Àwọn ìjápọ̀ tó já</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Àwọn ìjápọ̀ tó já nínú ìkọ́ náà</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Ìkọ́</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Ìkọ́ %id láti ọwọ́ %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Kọ́ %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Kọ́ báyìí</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Ìkọ́ tí ó yẹ kí a ṣàyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Láti ọwọ́</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Pẹ̀lú ọwọ́, níbí</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Fagilé</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Yí padà</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Ti yípadà</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Àwọn àyípadà</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Kọ́kọ́ ṣàyẹ̀wò rẹ̀</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Ṣàyẹ̀wò àwọn ètò wọ̀nyí</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Ṣàyẹ̀wò ohun tí ìkọ́ náà yí padà, wò ó, lẹ́yìn náà tẹ̀ ẹ́ jáde tàbí jù ú nù.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Yan ìtẹ̀jáde tí o fẹ́ padà sí.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Yóò dé pẹ̀lú ìtújáde tó ń bọ̀.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Ìfisílẹ̀</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Àwọn ìfisílẹ̀</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Ó ń fi ìkọ́ náà sílẹ̀, ó ń fi àmì sí i, ó sì ń tì í sókè sí %remote. A kì í fi agbára tì sókè láéláé; o lè padà sí ìtẹ̀jáde èyíkéyìí lẹ́yìn náà.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Ní ìfiwéra pẹ̀lú fóldà ti tẹ́lẹ̀: %added ti fikún, %changed ti yípadà, %removed ti yọ kúrò, %unchanged kò yípadà.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Ní ìfiwéra pẹ̀lú ìtẹ̀jáde tó kẹ́yìn.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Ìwé ẹ̀rí ìwọlé</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Dómèènì àdáni</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>A máa ń yọ àbájáde ìṣàtúnṣe àṣìṣe, àwọn tókìnì fọ́ọ̀mù, àwọn id ìgbà àti àwọn nonce kúrò nígbà gbogbo.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Kọ́kọ́rọ́ ìfiránṣẹ́</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Kọ́kọ́rọ́ ìfiránṣẹ́ ti %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Pa tì</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Pa ìkọ́ náà tì</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Dómèènì</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Òfo: àdírẹ́sì sáìtì náà. Bí bẹ́ẹ̀ kọ́, àdírẹ́sì inú ti sáìtì kan náà.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ti parí</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Gbogbo ìjápọ̀ ń bẹ̀rẹ̀ pẹ̀lú ọ̀nà ìpìlẹ̀.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Ìtẹ̀jáde kọ̀ọ̀kan jẹ́ ìfisílẹ̀ pẹ̀lú àmì static/%id/&lt;n&gt;. Pípadà sẹ́yìn ń ṣẹ̀dá ìfisílẹ̀ tuntun pẹ̀lú àwọn fáìlì ìtẹ̀jáde ti tẹ́lẹ̀: ìtàn ń wà, kò sí àmì tí ó yí ipò padà, a kò sì fi agbára ṣe ohunkóhun.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Àwọn àfikún</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Mú àwọn ojú ìwé wá láti</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fáìlì</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Àwọn fáìlì</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Àwọn fáìlì tó sọnù</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Àwọn fáìlì ti</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Àwọn fáìlì tí a kò lè kó jọ</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Ìtẹ̀ka</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Fóldà</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Fún àdírẹ́sì SSH. A ó ṣẹ̀dá kọ́kọ́rọ́ náà lẹ́yìn ìfipamọ́; ìwọ ni yóò fi ìdajì gbangba rẹ̀ kún ibi ìpamọ́ náà.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Fún àdírẹ́sì https://. GitHub: tókìnì fine-grained pẹ̀lú àṣẹ kíkà àti kíkọ Contents lórí ibi ìpamọ́ náà.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Fún àwọn amòye. Sáìtì gbangba yóò yí padà ní kété tí ìtìsókè bá parí.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Àwọn fọ́ọ̀mù</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Ìgbàlejò ọ̀fẹ́ láti ibi ìpamọ́ GitHub kan.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Láti ẹ̀ka náà</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Àdírẹ́sì git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages gba sáìtì tó tó %site àti fáìlì tó tó %file láàyè.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Àwọn ààlà GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ń tẹ àwọn fáìlì jáde bí wọ́n ṣe wà (ó pọndandan fún àwọn fáìlì tí ó bẹ̀rẹ̀ pẹ̀lú _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ń pèsè ẹ̀ka náà bí a ṣe tì í sókè. Ti àtilẹ̀wá.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, sáfá tìrẹ: ibi ìpamọ́ git èyíkéyìí.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Padà sí ìtẹ̀jáde ti tẹ́lẹ̀</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Ìrànlọ́wọ́</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Ìrànlọ́wọ́ pẹ̀lú alámọ̀ràn ìgbékalẹ̀</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Fi wọ́n pamọ́</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Ìtàn</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Ìtàn %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Agbàlejò</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Bí GitHub Pages ṣe ń gba ìkọ́ náà</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Mo ti ṣàyẹ̀wò àwọn àyípadà</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Mo mọ ohun tí èyí ń yí padà</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Ìdánimọ̀</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>A ti pa á: a kò lè kọ́ ohunkóhun títí tí a ó fi tàn án.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Ó ń ṣiṣẹ́ lẹ́yìn gẹ́gẹ́ bí %user; o lè pa ojú ìwé yìí.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Iṣẹ́ %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>A tọ́jú rẹ̀ gẹ́gẹ́ bí àṣírí %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Irú</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Ìtẹ̀jáde tó kẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Yọ àwọn ojú ìwé wọ̀nyí kúrò</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Yọ àwọn abala wọ̀nyí kúrò</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Àwọn ìjápọ̀</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Àwọn ìjápọ̀ tí a tún kọ</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Sáìtì tó ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Wo ìkọ́ náà</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Àwọn lẹ́tà kékeré, àwọn díjíìtì, _ àti -, fún àpẹẹrẹ github-public. Ó ń fún fóldà àti àwọn àmì (static/&lt;id&gt;/&lt;n&gt;) ní orúkọ, a kò sì lè yí i padà lẹ́yìn náà.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Ṣẹ̀dá kọ́kọ́rọ́ tuntun</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Ṣẹ̀dá ibi àfojúsùn</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Ṣẹ̀dá kọ́kọ́rọ́ náà</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Kọ́kọ́ ṣẹ̀dá ibi ìpamọ́ náà lórí agbàlejò; èyí tí ó ṣófo dára.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Àkójọ fáìlì</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Ìfiránṣẹ́</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Ọ̀pọ̀ jùlọ àwọn ojú ìwé</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Orúkọ</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Orúkọ tókìnì náà nínú Ìgbékalẹ̀ &gt; Àwọn àṣírí</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Ibi àfojúsùn tuntun</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Tókàn</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Rárá</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Kò sí ìfisílẹ̀ kankan síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>A kò ṣẹ̀dá kọ́kọ́rọ́ kankan: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>A kò rí bínárì ìlà àṣẹ php kankan. Ṣètò migration.ini [AdminSettings] PhpCliPath sí ọ̀nà rẹ̀ kíkún.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Kò sí àmì kankan síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Kò sí ibi àfojúsùn kankan síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Kò sí</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Kò sí nínú ìkọ́ náà.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>A kò tíì tẹ ohunkóhun jáde.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>A kò tíì tẹ ohunkóhun jáde: gbogbo fáìlì jẹ́ tuntun.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Ìfitóniléti</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Ní ìbámu pẹ̀lú ètò àkókò</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Lórí kọ́ńsóòlù</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Lórí sáfá: ./console exp:static:serve %id ń pèsè rẹ̀ ní ọ̀nà kan náà.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Ọ̀nà kan lórí ìlà kọ̀ọ̀kan, * bá apá èyíkéyìí mu: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Orúkọ nìkan ni a tọ́jú pẹ̀lú ibi àfojúsùn; tókìnì tàbí kọ́kọ́rọ́ fúnra rẹ̀ wà nínú Ìgbékalẹ̀ &gt; Àwọn àṣírí, kò sì ní fara hàn nínú ìwé ìṣẹ̀lẹ̀ láéláé.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Ohun tí àwọn ojú ìwé dárúkọ nìkan</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Pẹ̀lú tókìnì nìkan. env:NAME ń ka àyípadà àyíká ti sáfá dípò rẹ̀.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Ṣí awotẹ́lẹ̀ náà</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Ó ń ṣí ìkọ́ náà bí agbàlejò yóò ṣe pèsè rẹ̀, láti fóldà ibi àfojúsùn. Ìjápọ̀ náà yóò ṣiṣẹ́ fún ọ fún wákàtí kan.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Àṣàyàn. Òfo: ohun tí a tẹ̀ jáde.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Àṣàyàn. Pẹ̀lú dómèènì, a ó pèsè sáìtì náà ní gbòǹgbò rẹ̀.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Àbájáde</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Àwọn ojú ìwé</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Àwọn ojú ìwé ibi àfojúsùn</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Àwọn ojú ìwé tí a kọ̀</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Ìṣiṣẹ́ lẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Awotẹ́lẹ̀</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Awotẹ́lẹ̀ àti ìtẹ̀jáde</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Awotẹ́lẹ̀ àti ìtẹ̀jáde %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Wo awotẹ́lẹ̀ ìkọ́ náà</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ìtẹ̀síwájú</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Àdírẹ́sì gbangba</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Kọ́kọ́rọ́ gbangba</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Tẹ̀jáde</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Tẹ ẹ̀dà aláìyípadà ti sáìtì kan jáde sí GitHub Pages tàbí agbàlejò git èyíkéyìí: kọ́ ọ, ṣàyẹ̀wò àwọn àyípadà, tẹ̀ ẹ́ jáde, kí o sì padà sí ìtẹ̀jáde ti tẹ́lẹ̀ nígbà tí o bá nílò rẹ̀.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Ìtẹ̀jáde láti padà sí</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Àwọn ìtẹ̀jáde</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Ìtìsókè</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Ka ìkẹ́kọ̀ọ́ náà</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Àkọsílẹ̀</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ti kọ̀</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Alábàátan</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Tún gbé wọlé</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>A ti yọ kúrò</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Rọ́pò kọ́kọ́rọ́ náà: èyí àtijọ́ yóò dẹ́kun iṣẹ́</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Ìròyìn</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Ìròyìn ìkọ́ náà</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Ibi ìpamọ́</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Àyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Àyẹ̀wò ń ṣàyẹ̀wò gbogbo ètò, ó sì ń fi àwọn ìlà tí a ó kọ hàn. A kò tíì fi ohunkóhun pamọ́.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Yí padà sẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Ìyípadà sẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Fi pamọ́</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Ètò àkókò</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Ojú ìwé ìwákiri</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Àwọn id abala, tí a fi kọ́mà yà sọ́tọ̀.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Fi wọ́n ránṣẹ́ sí sáìtì tó ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ètò</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Àwọn ètò</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Àwọn ètò %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ìgbékalẹ̀</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Ìgbékalẹ̀ &gt; Àwọn àṣírí</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>A ń fihàn nínú àwọn àkójọ, fún àpẹẹrẹ &quot;Sáìtì gbangba lórí GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Wíwọlé pẹ̀lú GitHub App yóò dé pẹ̀lú ìṣọ̀kan GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Sáìtì</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Sáìtì láti tẹ̀ jáde</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ìwọ̀n</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Ìwọ̀n àti ààlà</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Ìwọ̀n ìkọ́ náà</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Àwọn ojú ìwé tó ti gbó</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Ti bẹ̀rẹ̀</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user ló bẹ̀rẹ̀ rẹ̀ ní %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ipò</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ìtẹ̀jáde aláìyípadà</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>A ti pa ìtẹ̀jáde aláìyípadà</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>A ti pa ìtẹ̀jáde aláìyípadà.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>A ti pa ìtẹ̀jáde aláìyípadà. Kọ́kọ́ tàn án nínú Ìgbékalẹ̀ &gt; Ìtẹ̀jáde aláìyípadà.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>A ti tan ìtẹ̀jáde aláìyípadà.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Ìgbésẹ̀ %step nínú %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Àwọn ìgbésẹ̀</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Ìyọkúrò</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Pa á</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Tan án</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Tan ìtẹ̀jáde aláìyípadà</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Àmì</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Àwọn àmì</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Ibi àfojúsùn</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>A lè ṣẹ̀dá àti yí àwọn ibi àfojúsùn padà, ṣùgbọ́n a kò ní kọ́ tàbí tẹ ohunkóhun jáde títí tí a ó fi tàn án.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Ó ń sọ fún àwọn ẹ̀rọ ìwákiri ohun tí wọn yóò kà.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>A kò lè ju ìkọ́ náà nù: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Ìkọ́ náà dà bí ìtẹ̀jáde tó kẹ́yìn: kò sí ohun tí a ó tẹ̀ jáde.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>A ti ju ìkọ́ náà nù: fóldà náà tún ní ìtẹ̀jáde tó kẹ́yìn nínú.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Àwọn ti àtilẹ̀wá bá ọ̀pọ̀ jùlọ sáìtì mu.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Fóldà náà ní ìkọ́ kan tí a kò tíì tẹ̀ jáde; ìkọ́ tuntun yóò rọ́pò rẹ̀.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>A kò lè kọ sí fóldà àwọn iṣẹ́: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>A kò lè pèsè iṣẹ́ náà sílẹ̀: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>A kò lè bẹ̀rẹ̀ iṣẹ́ náà.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Iṣẹ́ náà ti parí. A ń gbé ìròyìn rẹ̀ wọlé.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Iṣẹ́ náà nílò olùlò tí ó ti wọlé.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>A bẹ̀rẹ̀ iṣẹ́ náà ṣùgbọ́n kò jábọ̀ id ìlànà rẹ̀. Ṣàyẹ̀wò %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Kọ́kọ́rọ́ náà</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Fáìlì tó tóbi jùlọ: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Àwọn ìlà tí a ó kọ</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Àkójọ àwọn ojú ìwé fún àwọn ẹ̀rọ ìwákiri; ó nílò àdírẹ́sì gbangba.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>A ń mú àwọn ojú ìwé wá bí àlejò tí kò wọlé ṣe ń rí wọn. A kì í fi àwọn ìwọlé sáìtì ìṣàkóso àti àtúnṣe hàn láéláé.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>A kò lè tẹ̀lé ìtẹ̀síwájú náà. Tún ojú-ewé náà gbé wọlé láti rí bí iṣẹ́ náà ṣe ń lọ.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Ìdajì gbangba kọ́kọ́rọ́ náà:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Gbòǹgbò ẹ̀ka náà</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>A kò tíì ṣètò ibi ìpamọ́ àṣírí (./console exp:upgrade --apply ni yóò ṣẹ̀dá tábìlì rẹ̀), nítorí náà a kò lè tọ́jú kọ́kọ́rọ́ kankan.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Sáfá náà ń wọlé fúnra rẹ̀ (pẹ̀lú kọ́kọ́rọ́ SSH tirẹ̀ tàbí olùrànlọ́wọ́ ìwé ẹ̀rí), tàbí ibi ìpamọ́ náà wà lórí sáfá yìí.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>A kò lè kọ ètò náà: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Àwọn ètò náà tọ̀nà. A ó kọ àwọn ìlà wọ̀nyí:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>A kò lè ka fáìlì ètò náà: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Sáìtì náà yóò padà sí àwọn fáìlì ìtẹ̀jáde yẹn; ìkọ́ tí a kò tíì tẹ̀ jáde gbọ́dọ̀ kọ́kọ́ jẹ́ títẹ̀ jáde tàbí jíjù nù.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Ojú ìwé tí sáìtì náà ní fún àwọn àdírẹ́sì tí kò sí.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>A kò lè fi ibi àfojúsùn náà pamọ́: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Ibi àfojúsùn náà kò tíì wọlé pẹ̀lú kọ́kọ́rọ́ yìí: yan &quot;Kọ́kọ́rọ́ ìfiránṣẹ́ tí a ṣẹ̀dá fún ibi àfojúsùn yìí&quot; nínú àwọn ètò rẹ̀.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>A kò lè ka àwọn ibi àfojúsùn: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Kò tíì sí ìkọ́ kankan láti ṣàyẹ̀wò.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Ìfisórí yìí kò ní ìwọlé sáìtì iwájú. A kì í tẹ àwọn ìwọlé sáìtì ìṣàkóso àti àtúnṣe jáde láéláé.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Ojú ìwé yìí ń tẹ̀lé iṣẹ́ náà bí ó ṣe ń lọ; ó ń bá a lọ lẹ́yìn nígbà tí a bá pa ojú ìwé náà.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Ibi àfojúsùn yìí kò tíì ní kọ́kọ́rọ́ ìfiránṣẹ́.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>A kò tíì kọ́ ibi àfojúsùn yìí níbí.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Ibi àfojúsùn yìí ní ọ̀kan.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Ó ń ju ìkọ́ yìí nù: fóldà náà tún ní ìtẹ̀jáde tó kẹ́yìn nínú. Sáìtì tó ń ṣiṣẹ́ kò ní yí padà.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Kọ́kọ́ sàmì sí &quot;Mo ti ṣàyẹ̀wò àwọn àyípadà&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Àkókò</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Àwọn ohun ìbẹ̀rẹ̀</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Tún tẹ orúkọ àmì náà</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Kò yípadà</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Kí ni</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Ohun tí ó yí padà</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Ohun tí fáìlì kọ̀ọ̀kan jẹ́; a máa ń kọ ọ́ nígbà gbogbo.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Ohun tí iṣẹ́ náà ṣe àti àkọsílẹ̀ rẹ̀. Iṣẹ́ tí a bẹ̀rẹ̀ níbí ń bá a lọ lẹ́yìn nígbà tí a bá pa ojú ìwé yìí.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Ohun tí iṣẹ́ náà tẹ̀ jáde gẹ́gẹ́ bí àṣìṣe</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Ohun tí àwọn ojú ìwé dárúkọ, àti gbogbo àwòrán àkóónú tí a tẹ̀ jáde</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Ìgbà wo</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Nígbà tí ìtẹ̀jáde bá kùnà</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Nígbà tí ìtẹ̀jáde bá yọrí</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Nígbà tí a bá tẹ àkóónú jáde</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Ibi tí àwọn ìjápọ̀ sí ohun tí ẹ̀dà náà kò ní ń lọ (ìwákiri, ìwọlé).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Ibi tí a ti ń pèsè ẹ̀dà aláìyípadà náà.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Sáìtì wo ni a ń tẹ̀ jáde, àti orúkọ ibi àfojúsùn náà.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Ń ṣiṣẹ́ ní abẹ́ ọ̀nà èyíkéyìí. Ti àtilẹ̀wá.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>A máa ń kọ ọ́ nígbàkúùgbà tí a bá ṣètò dómèènì àdáni.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Bẹ́ẹ̀ ni</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>O lè máa kọ́ àti tẹ̀jáde pẹ̀lú ọwọ́ níbí àti lórí kọ́ńsóòlù nígbà gbogbo.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>orúkọ nìkan; iye náà wà nínú Ìgbékalẹ̀ &gt; Àwọn àṣírí</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>ní abẹ́ %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>parí láìsí ìròyìn</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>àfikún</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>kùnà</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fáìlì</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, tàbí main pẹ̀lú fóldà docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>agbàlejò git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (pẹ̀lú tókìnì) tàbí git@github.com:owner/repo.git (pẹ̀lú kọ́kọ́rọ́ ìfiránṣẹ́); kò gbọdọ̀ ní ọ̀rọ̀ aṣínà tàbí tókìnì nínú láéláé.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, fún máàpù sáìtì àti àwọn ìjápọ̀ ojúlówó.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>àwòrán</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>láéláé</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>rárá</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>kò sí ibi ìtìsókè</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>kò sí: àwọn ìfisílẹ̀ wà nínú fóldà</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>kò sí: kò sí ohun tí ó yí padà</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>a kò tì í sókè</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>kò sí ohun tí ó yí padà</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>ojú ìwé</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>yọrí</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>A ti pa proc_open, nítorí náà a kò lè bẹ̀rẹ̀ iṣẹ́ níbí. Lo ./console exp:static:build lórí sáfá.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>ìtẹ̀jáde</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ti tẹ̀ jáde</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>ìtìsókè ń dúró</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>ti tì sókè</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ti kọ̀</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>alábàátan</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>ìyípadà sẹ́yìn</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ti yí padà sẹ́yìn</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>fóldà nìkan</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: a kọ ọ́ sí fáìlì CNAME. Darí DNS dómèènì náà sí agbàlejò bí ó ṣe ṣàlàyé; HTTPS lè gba àkókò díẹ̀ kí ó tó bẹ̀rẹ̀.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>bẹ́ẹ̀ ni, a kò tíì tẹ̀ ẹ́ jáde</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App kan</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Workflow kan ti ibi ìpamọ́ ni ó ń tẹ̀ ẹ́ jáde. Ìkọ́ ń kọ fáìlì workflow; fi fódà náà sílẹ̀ ní òfo.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Lẹ́yìn tí o bá fi ibi àfojúsùn pamọ́ pẹ̀lú ibi ìpamọ́ GitHub àti tókìnì tàbí GitHub App, ìgbésẹ̀ yìí lè ṣẹ̀dá ibi ìpamọ́ náà kí ó sì tan GitHub Pages. Bí bẹ́ẹ̀ kọ́, kọ́kọ́ ṣẹ̀dá ibi ìpamọ́ náà lórí GitHub; èyí tó ṣófo dára.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Ẹ̀ka tàbí GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Ṣàyẹ̀wò DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Ṣẹ̀dá ibi ìpamọ́ bí kò bá sí</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Ṣẹ̀dá ibi ìpamọ́ lórí GitHub kí o sì tan GitHub Pages nínú ètò rẹ̀ (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Ó ń ṣẹ̀dá ibi ìpamọ́ %repo bí kò bá sí (bí a bá béèrè), ó ń tan GitHub Pages láti inú ẹ̀ka tàbí láti GitHub Actions bí a ṣe fi pamọ́, ó sì ń ṣètò dómèènì àdáni àti HTTPS. Ó ń lo ètò tí a fi pamọ́: kọ́kọ́ fi àwọn àyípadà pamọ́.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Àlàyé lórí GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Kọ́kọ́ tẹ dómèènì àdáni sí i.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>A máa ń kọ́kọ́ ṣàyẹ̀wò push kọ̀ọ̀kan sí àwọn ààlà wọ̀nyí.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Fún àdírẹ́sì https:// lórí GitHub. App tí a ṣètò fún ìfisílẹ̀ yìí ni ó ń wọlé; ó nílò id ìfisílẹ̀.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ń pèsè ibi ìpamọ́ àdáni lórí ètò ìsanwó nìkan.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomain (www.example.com) nílò àkọsílẹ̀ CNAME sí &lt;owner&gt;.github.io; apex domain (example.com) nílò àwọn àkọsílẹ̀ A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id ìfisílẹ̀ GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Ìkọ́ Pages tó kẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Àwọn ààlà àti àdéhùn</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Ó pọndandan fún GitHub Pages lórí ètò ọ̀fẹ́.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Lórí GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Pẹ̀lú GitHub App nìkan: nọ́mbà tó wà ní òpin àdírẹ́sì ìfisílẹ̀ App lórí GitHub. App fúnra rẹ̀ ni a ṣètò nínú staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Àdáni</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Gbangba</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Kọ́kọ́ fi ibi àfojúsùn pamọ́ pẹ̀lú ibi ìpamọ́ GitHub àti tókìnì tàbí GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Ṣètò àwọn àkọsílẹ̀ wọ̀nyí lọ́dọ̀ olùpèsè dómèènì náà:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Ṣètò lórí GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS ti %domain kò tíì tọ́ka sí GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS ti %domain ń tọ́ka sí GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Ìsopọ̀ GitHub kò sí níbí: %problem. Títẹ̀jáde sí ẹ̀ka ṣì ń ṣiṣẹ́; tan GitHub Pages nínú ètò ibi ìpamọ́ náà.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Àwọn ìgbésẹ̀ GitHub kò sí fún ibi àfojúsùn yìí: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>A ń fi ipò GitHub Pages hàn nígbà tí tókìnì tàbí GitHub App bá jẹ́ ìwé ẹ̀rí ìwọlé.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Lo dómèènì tìrẹ</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Èwo ni kí o yàn: tókìnì, kọ́kọ́rọ́ ìfiránṣẹ́ tàbí GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Pẹ̀lú ibi ìpamọ́ GitHub àti tókìnì tàbí GitHub App, alámọ̀ràn ìgbékalẹ̀ lè ṣẹ̀dá ibi ìpamọ́, tan GitHub Pages kí ó sì ṣètò dómèènì fún ọ (ìgbésẹ̀ 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ó ń kọ́</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ó ti kọ́</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>láti GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>láti ẹ̀ka %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>kò tíì sí</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>a kò rí i</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ó ti pa</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>àdáni</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>gbangba</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ó wà nínú ìlà</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>a kò mọ̀</translation>
     </message>
 </context>
 </TS>

@@ -28,14 +28,16 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
     /** The snapshot. Add, never change or remove. */
     const COMMANDS = array(
         'exp:static:targets' => '[format:]',
-        'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging]',
+        'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging][login:][run-id:][progress:]',
         'exp:static:diff' => '[format:][verify][check-links][mount:*]',
         'exp:static:serve' => '[port:][host:][base-path:][format:]',
-        'exp:static:publish' => '[build][message:][no-push][format:]',
-        'exp:static:rollback' => '[apply][message:][no-push][format:]',
+        'exp:static:publish' => '[build][message:][no-push][format:][login:][run-id:][progress:]',
+        'exp:static:rollback' => '[apply][message:][no-push][format:][login:][run-id:][progress:]',
         'exp:static:push' => '[format:]',
         'exp:static:keys' => '[generate][replace][format:]',
         'exp:static:status' => '[limit:][format:]',
+        'exp:static:github' => '[create-repo][public][private][pages:][domain:][no-https][plan][client-id:][secret:][format:]',
+        'exp:static:dns' => '[owner:][format:]',
     );
 
     /** The arguments. Add, never change or remove. */
@@ -48,6 +50,8 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:static:push' => '[target]',
         'exp:static:keys' => '[target]',
         'exp:static:status' => '[target]',
+        'exp:static:github' => '[action][target]',
+        'exp:static:dns' => '[domain]',
     );
 
     /** command => entry point in bin/php */
@@ -61,6 +65,8 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:static:push' => 'expstaticpush',
         'exp:static:keys' => 'expstatickeys',
         'exp:static:status' => 'expstaticstatus',
+        'exp:static:github' => 'expstaticgithub',
+        'exp:static:dns' => 'expstaticdns',
     );
 
     /** The keys of a publish, rollback or push report (expStaticPublisher), the push states and run states. Add only. */

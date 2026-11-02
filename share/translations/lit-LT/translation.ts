@@ -15097,6 +15097,14 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Naujausias turinys, peržiūrai sulaikytas turinys ir veiksmai su pažymėtais.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publikuokite statinę svetainės kopiją GitHub Pages arba bet kuriame git serveryje.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statinis publikavimas</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22096,6 +22104,18 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API išsaugotų užklausų atsakymai ir jos schemos turinio klasės.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Publikuokite statinę kopiją GitHub Pages arba bet kuriame git serveryje</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statinis publikavimas</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Statinė talpykla pateikia puslapius iš šio serverio. Norėdami publikuoti statinę svetainės kopiją kitur, GitHub Pages arba bet kuriame git serveryje, naudokite statinį publikavimą.</translation>
     </message>
 </context>
 <context>
@@ -76153,6 +76173,14 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Įdiegimo pakeitimai, saugomi kaip failai: jų būklė, vykdymai, vykdymas ir atšaukimas.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publikuokite statinę svetainės kopiją GitHub Pages arba bet kuriame git serveryje.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statinis publikavimas</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80592,6 +80620,222 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>The run could not be started.</source>
         <translation>Nepavyko pradėti vykdymo.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Pakeitimų įrašymas</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Kol vyksta įrašymas, tai, ką keičiate administravime ar svetainės šoninėje juostoje, išsaugoma kaip migracijos žingsniai: turinys, klasės, vaidmenys ir politikos, sekcijos, naudotojai ir grupės, URL slapyvardžiai, nustatymai. Baigę jį sustabdykite, pažiūrėkite, ką jis užfiksavo, ir sukurkite iš jo migraciją.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Nepavyko perskaityti įrašų: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Įrašų lentelių dar nėra: pirmiausia paleiskite atnaujinimą (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Įrašymas išjungtas faile migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mano pakeitimai</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Įrašo tik tai, ką keičiate jūs, kad ir kur keistumėte, kol jo nesustabdysite.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Įrašymas</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>nuo %time, iki šiol pakeitimų: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Žymė (nebūtina)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Rodyti, ką užfiksavo</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Sustabdyti įrašymą</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Pradėti įrašyti mano pakeitimus</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Visos svetainės langas</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Įrašo kiekvieną kiekvieno naudotojo ir konsolės pakeitimą, kol langas uždaromas. Atidarant reikės patvirtinti, kad tai jūs.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Atidarytas</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Uždaryti langą</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Atidaryti visos svetainės langą</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Įrašai</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Naudotojo paskyra (prisijungimo vardas, el. paštas, slaptažodis) ir naudotojų paskyrų laukai niekada neįrašomi.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Pakeitimai</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Visa svetainė</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Naudotojo %name pakeitimai</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Sustabdytas</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Įrašų dar nėra.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Įrašas %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Visi įrašai</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migracija, kuri iš jo susidarytų</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Pakeitimai, sujungti į vieną žingsnį kiekvienam pakeistam dalykui: ką padarytų iš šio įrašo sukurta migracija.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Iš jo bus galima sukurti migraciją, kai ši diegtis turės YAML žingsnių tipus %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Praleista tyčia: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nieko neįrašyta.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ką užfiksavo</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Pakeitimų: %count, tokia tvarka, kokia jie buvo atlikti.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Pakeitimas</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Žingsnis</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Susiję su</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Dar %count: ./console exp:migration:record:show išvardija visus.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Atmesti</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Pašalina įrašą ir tai, ką jis užfiksavo. Tai, kas pakeista, lieka pakeista.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Taip, atmesti šį įrašą</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Įrašoma…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Jūsų pakeitimai įrašomi migracijai.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Kiekvienas pakeitimas šioje svetainėje įrašomas migracijai (visos svetainės langas).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Visos svetainės įrašymas pradėtas: kiekvienas kiekvieno naudotojo pakeitimas įrašomas, kol jo nesustabdysite.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Įrašymas pradėtas: jūsų pakeitimai įrašomi, kol jo nesustabdysite.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Įrašymas sustabdytas. Tai, ką jis užfiksavo, lieka, kol jo neatmesite.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Įrašas ir jo įvykiai pašalinti.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Įrašo %id nėra.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Pirmiausia pažymėkite „Taip, atmesti šį įrašą“.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Sesijos įrašymą gali sustabdyti tik jį vykdęs naudotojas.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Pasirinkite įrašymą, kurį norite sustabdyti.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Tokios rūšies įrašymas jau vyksta.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Nepavyko pakeisti įrašo: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81255,6 +81499,1540 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Released.</source>
         <translation>Atleista.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Visos paskirtys</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Paskutinis publikavimas</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Publikuokite nemokamą statinę svetainės kopiją GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Pasenę puslapiai</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statinis publikavimas</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statinis publikavimas išjungtas.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Paskirtis</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Nepavyko nuskaityti paskirčių: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>vykdoma užduotis</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>rinkinys laukia patikrinimo</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>slėpti</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>sukurti paskirtį</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>niekada</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>skaityti mokomąją medžiagą</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added pridėta, %changed pakeista, %removed pašalinta</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes iš %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Dar %count nerodoma.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Įrašyta puslapių: %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path yra %size – daugiau, nei serveris leidžia vienam failui.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % ribos</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag – dabartinis svetainės publikavimas.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: užduotis %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/saugykla/ GitHub projekto svetainei; tuščia savam domenui arba naudotojo svetainei.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Svetainė</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Serveris</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Prisijungimas prie saugyklos</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Saugykla</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Nuorodos ir bazinis kelias</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Jūsų domenas</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Ką apima rinkinys</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Kada publikuojama</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Peržiūra ir įrašymas</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub projekto svetainė yra po /&lt;repository&gt;/; santykinės nuorodos veikia ten ir bet kur kitur.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Rinkinys gauna kiekvieną %site puslapį taip, kaip jį mato neprisijungęs lankytojas, perrašo nuorodas, nukopijuoja failus ir įrašo rezultatą į paskirties aplanką. Niekas nepublikuojama, kol nepatikrinate rinkinio ir nespustelite „Publikuoti“.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron išraiška, pavyzdžiui, 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Diegimo raktas saugomas kaip slaptoji reikšmė %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Diegimo raktas leidžia šiai įdiegčiai siųsti (push) į vieną saugyklą per SSH ir niekur kitur. Jo privatioji dalis lieka skiltyje Sąranka &gt; Slaptieji duomenys; rodoma tik viešoji dalis.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Šiai paskirčiai sukurtas diegimo raktas</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Diegimo raktas prisijungia per SSH: pakeiskite git adresą į SSH adresą (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Vykdoma užduotis, kurią pradėjo %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Šios paskirties užduotis dar vykdoma (%detail). Palaukite, kol ji baigsis.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Šios paskirties užduotis dar vykdoma. Palaukite, kol ji baigsis.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Nuoroda iš puslapio /news/ į puslapį /about-us/team bus įrašyta taip:</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Sukurtas naujas diegimo raktas. Dabar pridėkite jo viešąją dalį prie saugyklos.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Puslapis, kuriame po valymo vis dar yra derinimo išvesties, formos žetono ar seanso ID, niekada nepublikuojamas.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Atšaukimas skirtas ekspertams: pažymėkite „Žinau, ką tai pakeičia“ ir dar kartą įveskite žymos pavadinimą.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Svetainė gali būti iki %site, vienas failas – iki %file, o srautas – apie 100 GB per mėnesį. Naudojant nemokamą planą saugykla turi būti vieša. GitHub Pages nėra skirta parduotuvėms ar kitiems komerciniams sandoriams.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Paskirtis – tai viena svetainė, publikuojama į vieną git saugyklą. Čia niekas nesurenkama ir nepublikuojama: „Įrašyti“ įrašo nustatymus į settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Paskirtis – tai viena svetainė, publikuojama į vieną vietą, pavyzdžiui, jūsų vieša svetainė GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Žetonas iš Sąranka &gt; Slaptieji duomenys</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Ją publikuoja saugyklos darbo eiga (workflow).</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Pridėkite šį viešąjį raktą prie saugyklos su rašymo teise. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, pažymėkite Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Pridėta</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Kitas git serveris</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Su šia paskirtimi dirba kitas procesas: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Atgal</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Bazinis kelias</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Prieš</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Po baziniu keliu</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Šaka</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Neveikiančios nuorodos</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Neveikiančios nuorodos rinkinyje</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Rinkinys</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Rinkinys %id, sukūrė %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Surinkti %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Surinkti dabar</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Rinkinys patikrinimui</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kas</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Rankiniu būdu, čia</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atšaukti</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Keisti</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Pakeista</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Pakeitimai</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Pirmiausia patikrinkite</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Patikrinkite šiuos nustatymus</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Patikrinkite, ką rinkinys keičia, peržiūrėkite jį, tada publikuokite arba atmeskite.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Pasirinkite publikavimą, į kurį grįžti.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Bus pateikta vėlesnėje versijoje.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Įrašas</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Įrašai</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Įrašo rinkinį (commit), pažymi jį žyma ir išsiunčia (push) į %remote. Išsiuntimas niekada nėra priverstinis; vėliau galite grįžti prie bet kurio publikavimo.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Palyginti su ankstesniu aplanku: pridėta %added, pakeista %changed, pašalinta %removed, nepakeista %unchanged.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Palyginti su paskutiniu publikavimu.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Prisijungimo duomenys</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Savas domenas</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Derinimo išvestis, formų žetonai, seansų ID ir vienkartiniai kodai (nonce) visada pašalinami.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Diegimo raktas</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name diegimo raktas</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Atmesti</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Atmesti rinkinį</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domenas</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Tuščia: svetainės adresas. Kitu atveju – tos pačios svetainės vidinis adresas.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Baigta</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Kiekviena nuoroda prasideda baziniu keliu.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Kiekvienas publikavimas – tai įrašas (commit) su žyma static/%id/&lt;n&gt;. Grįžimas sukuria naują įrašą su ankstesnio publikavimo failais: istorija išlieka, jokia žyma nepajudinama ir niekas neprivertinama.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Papildomi failai</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Puslapius gauti iš</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Failas</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Failai</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Trūksta failų</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Failai iš</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Failai, kurių nepavyko surinkti</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Kontrolinis kodas</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Aplankas</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH adresui. Raktas sukuriamas po įrašymo; jo viešąją dalį pridedate prie saugyklos.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// adresui. GitHub: detalusis (fine-grained) žetonas su Contents skaitymo ir rašymo teise saugykloje.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Ekspertams. Vieša svetainė pasikeičia, kai tik išsiuntimas baigiamas.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formos</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Nemokamas talpinimas iš GitHub saugyklos.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Iš šakos</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git adresas</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages leidžia %site svetainę ir %file failą.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages ribos</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages publikuoja failus tokius, kokie jie yra (būtina failams, prasidedantiems _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub pateikia šaką tokią, kokia ji išsiųsta. Numatytoji parinktis.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, jūsų serveris: bet kuri git saugykla.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Grįžti prie ankstesnio publikavimo</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Pagalba</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Pagalba dėl vedlio</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Slėpti jas</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Istorija</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name istorija</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Serveris</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Kaip GitHub Pages gauna rinkinį</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Patikrinau pakeitimus</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Žinau, ką tai pakeičia</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Jis išjungtas: nieko negalima surinkti, kol jis neįjungtas.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Vykdoma fone kaip %user; šį puslapį galite uždaryti.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Užduotis %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Saugoma kaip slaptoji reikšmė %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tipas</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Paskutinis publikavimas</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Praleisti šiuos puslapius</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Praleisti šias sekcijas</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Nuorodos</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Perrašytos nuorodos</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Veikianti svetainė</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Peržiūrėti rinkinį</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Mažosios raidės, skaitmenys, _ ir -, pavyzdžiui, github-public. Juo pavadinamas aplankas ir žymos (static/&lt;id&gt;/&lt;n&gt;), vėliau jo pakeisti negalima.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Sukurti naują raktą</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Sukurti paskirtį</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Sukurti raktą</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Pirmiausia sukurkite saugyklą serveryje; tinka ir tuščia.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifestas</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Pranešimas</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Dauguma puslapių</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Žetono pavadinimas skiltyje Sąranka &gt; Slaptieji duomenys</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Nauja paskirtis</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Toliau</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Įrašų dar nėra.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Raktas nesukurtas: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nerasta php komandinės eilutės programa. Nustatykite migration.ini [AdminSettings] PhpCliPath visą jos kelią.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Žymų dar nėra.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Paskirčių dar nėra.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Nėra</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Nėra rinkinyje.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Dar niekas nepublikuota.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Dar niekas nepublikuota: kiekvienas failas naujas.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Pranešimai</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Pagal tvarkaraštį</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Konsolėje</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Serveryje: ./console exp:static:serve %id pateikia jį taip pat.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Vienas kelias eilutėje, * atitinka bet kurią dalį: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Su paskirtimi saugomas tik pavadinimas; pats žetonas ar raktas lieka skiltyje Sąranka &gt; Slaptieji duomenys ir niekada nepatenka į žurnalą.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Tik tai, ką nurodo puslapiai</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Tik su žetonu. env:NAME vietoj to nuskaito serverio aplinkos kintamąjį.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Atverti peržiūrą</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Atveria rinkinį taip, kaip jį pateiks serveris, iš paskirties aplanko. Nuoroda jums veikia vieną valandą.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Neprivaloma. Tuščia: tai, kas buvo publikuota.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Neprivaloma. Su domenu svetainė pateikiama jo šaknyje.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Išvestis</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Puslapiai</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Paskirties puslapiai</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Atmesti puslapiai</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Apdorojimas po surinkimo</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Peržiūra</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Peržiūra ir publikavimas</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name peržiūra ir publikavimas</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Peržiūrėti rinkinį</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Eiga</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Viešas adresas</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Viešasis raktas</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Publikuoti</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Publikuokite statinę svetainės kopiją GitHub Pages arba bet kuriame git serveryje: surinkite ją, patikrinkite pakeitimus, publikuokite ir, prireikus, grįžkite prie ankstesnio publikavimo.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Publikavimas, į kurį grįžti</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Publikavimai</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Išsiuntimas</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Skaityti mokomąją medžiagą</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Žurnalas</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Atmesta</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Santykinės</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Įkelti iš naujo</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Pašalinta</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Pakeisti raktą: senasis nustos veikti</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Ataskaita</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Rinkinio ataskaita</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Saugykla</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Peržiūra</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Peržiūra patikrina kiekvieną nustatymą ir parodo eilutes, kurios bus įrašytos. Kol kas niekas neįrašoma.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Atšaukti</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Atšaukimas</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Įrašyti</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Tvarkaraštis</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Paieškos puslapis</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Sekcijų ID, atskirti kableliais.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Nukreipti į veikiančią svetainę</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Nustatymas</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nustatymai</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name nustatymai</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sąranka</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Sąranka &gt; Slaptieji duomenys</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Rodoma sąrašuose, pavyzdžiui, „Vieša svetainė GitHub Pages“.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Prisijungimas su GitHub App bus pateiktas kartu su GitHub integracija.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Svetainė</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Publikuojama svetainė</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Dydis</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Dydis ir ribos</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Rinkinio dydis</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Pasenę puslapiai</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Pradėta</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Pradėjo %user, %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Būsena</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statinis publikavimas</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statinis publikavimas išjungtas</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statinis publikavimas išjungtas.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statinis publikavimas išjungtas. Pirmiausia įjunkite jį skiltyje Sąranka &gt; Statinis publikavimas.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statinis publikavimas įjungtas.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%step žingsnis iš %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Žingsniai</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Valymas</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Išjungti</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Įjungti</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Įjungti statinį publikavimą</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Žyma</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Žymos</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Paskirtis</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Paskirtis galima kurti ir keisti, tačiau niekas nebus surinkta ar publikuota, kol funkcija neįjungta.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Nurodo paieškos sistemoms, ką skaityti.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Rinkinio nepavyko atmesti: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Rinkinys toks pat kaip paskutinis publikavimas: nėra ko publikuoti.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Rinkinys atmestas: aplanke vėl yra paskutinis publikavimas.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Numatytosios reikšmės tinka daugumai svetainių.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Aplanke yra dar nepublikuotas rinkinys; naujas rinkinys jį pakeis.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Neįmanoma rašyti į užduočių aplanką: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Užduoties nepavyko parengti: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Užduoties nepavyko pradėti.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Užduotis baigta. Įkeliama jos ataskaita.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Užduočiai reikia prisijungusio naudotojo.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Užduotis pradėta, bet nepranešė savo proceso ID. Patikrinkite %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Raktas</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Didžiausias failas: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Eilutės, kurios bus įrašytos</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Puslapių sąrašas paieškos sistemoms; reikalingas viešas adresas.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Puslapiai gaunami taip, kaip juos mato neprisijungęs lankytojas. Administravimo ir redagavimo svetainės prieigos niekada nesiūlomos.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Nepavyko sekti eigos. Įkelkite puslapį iš naujo, kad pamatytumėte, kaip sekasi užduočiai.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Viešoji rakto dalis:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Šakos šaknis</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Slaptųjų duomenų saugykla dar neparengta (./console exp:upgrade --apply sukuria jos lentelę), todėl raktų saugoti negalima.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Serveris prisijungia pats (savo SSH raktu arba prisijungimo duomenų pagalbine programa), arba saugykla yra šiame serveryje.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Nustatymo nepavyko įrašyti: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Nustatymai teisingi. Bus įrašytos šios eilutės:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Nepavyko nuskaityti nustatymų failo: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Svetainė grįžta prie to publikavimo failų; dar nepublikuotas rinkinys pirmiausia turi būti publikuotas arba atmestas.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Svetainės puslapis neegzistuojantiems adresams.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Paskirties nepavyko įrašyti: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Paskirtis dar neprisijungia šiuo raktu: jos nustatymuose pasirinkite „Šiai paskirčiai sukurtas diegimo raktas“.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Nepavyko nuskaityti paskirčių: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Dar nėra rinkinio, kurį reikėtų patikrinti.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Šioje įdiegtyje nėra viešos svetainės prieigos. Administravimo ir redagavimo svetainės prieigos niekada nepublikuojamos.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Šis puslapis seka užduoties eigą; uždarius puslapį ji tęsiasi fone.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Ši paskirtis dar neturi diegimo rakto.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Ši paskirtis čia dar nebuvo surinkta.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Ši paskirtis jį turi.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Atmeta šį rinkinį: aplanke vėl yra paskutinis publikavimas. Veikianti svetainė nesikeičia.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Pirmiausia pažymėkite „Patikrinau pakeitimus“.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Laikas</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Paleidikliai</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Dar kartą įveskite žymos pavadinimą</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Nepakeista</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Žiniatinklio kablys</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Kas</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Kas keičiasi</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Kas yra kiekvienas failas; įrašomas visada.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Ką užduotis atliko ir jos žurnalas. Čia pradėta užduotis tęsiasi fone, kai šis puslapis uždaromas.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Ką užduotis išvedė kaip klaidas</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Tai, ką nurodo puslapiai, ir kiekvienas publikuoto turinio paveikslėlis</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kada</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Kai publikavimas nepavyksta</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Kai publikavimas pavyksta</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Kai publikuojamas turinys</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Kur nukreipiamos nuorodos į tai, ko kopijoje nėra (paieška, prisijungimas).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Iš kur pateikiama statinė kopija.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Kuri svetainė publikuojama ir kaip vadinasi paskirtis.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Veikia po bet kuriuo keliu. Numatytoji parinktis.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Įrašomas, kai nustatytas savas domenas.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Taip</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Visada galite surinkti ir publikuoti rankiniu būdu čia ir konsolėje.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>tik pavadinimas; reikšmė lieka skiltyje Sąranka &gt; Slaptieji duomenys</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>po %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>baigta be ataskaitos</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>papildomas</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>nepavyko</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>failas</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages arba main su aplanku docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git serveris</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (su žetonu) arba git@github.com:owner/repo.git (su diegimo raktu); jame niekada nebūna slaptažodžio ar žetono.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, svetainės žemėlapiui ir kanoninėms nuorodoms.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>paveikslėlis</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>niekada</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>nėra nuotolinės saugyklos</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>nėra: įrašai lieka aplanke</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>nėra: niekas nepasikeitė</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>neišsiųsta</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>niekas nepasikeitė</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>puslapis</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>pavyko</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open išjungta, todėl čia negalima pradėti užduoties. Serveryje naudokite ./console exp:static:build.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>publikavimas</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>publikuota</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>laukia išsiuntimo</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>išsiųsta</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>atmesta</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>santykinės</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>atšaukimas</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>atšaukta</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>vykdoma</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>tik aplankas</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: įrašoma į failą CNAME. Nukreipkite domeno DNS į serverį, kaip jis nurodo; HTTPS įsijungimas gali užtrukti.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>taip, dar nepublikuota</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Ją publikuoja saugyklos darbo eiga (workflow). Rinkinys įrašo darbo eigos failą; palikite aplanką tuščią.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Įrašius paskirtį su GitHub saugykla ir žetonu arba GitHub App, šis žingsnis gali sukurti saugyklą ir įjungti GitHub Pages. Kitu atveju pirma sukurkite saugyklą GitHub; tinka ir tuščia.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Šaka ar GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Tikrinti DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Sukurti saugyklą, jei jos nėra</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Sukurkite saugyklą GitHub ir įjunkite GitHub Pages jos nustatymuose (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Sukuria saugyklą %repo, kai jos trūksta (jei prašoma), įjungia GitHub Pages iš šakos arba iš GitHub Actions, kaip įrašyta, ir nustato savą domeną bei HTTPS. Naudoja įrašytus nustatymus: pirma įrašykite pakeitimus.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Išsami informacija GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Pirma įveskite savą domeną.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Kiekvienas push pirmiausia tikrinamas pagal šiuos limitus.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>https:// adresui GitHub. Prisijungia šiam diegimui nustatyta App; jai reikia diegimo id.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages privačią saugyklą teikia tik su mokamu planu.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomenui (www.example.com) reikia CNAME įrašo į &lt;owner&gt;.github.io; viršūniniam domenui (example.com) A įrašų %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App diegimo id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Paskutinis Pages rinkinys</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Limitai ir sąlygos</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Reikia GitHub Pages su nemokamu planu.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Sistemoje GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Tik su GitHub App: skaičius App diegimo GitHub adreso pabaigoje. Pati App nustatoma staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privati</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Vieša</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Pirma įrašykite paskirtį su GitHub saugykla ir žetonu arba GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Nustatykite šiuos įrašus domeno teikėjo sistemoje:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Nustatyti GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain DNS dar nenukreiptas į GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain DNS nukreiptas į GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub integracija čia neprieinama: %problem. Publikavimas į šaką vis tiek veikia; įjunkite GitHub Pages saugyklos nustatymuose.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub žingsniai šiai paskirčiai neprieinami: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages būsena rodoma, kai prisijungimo duomenys yra žetonas arba GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Naudoti savo domeną</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Ką pasirinkti: žetoną, diegimo raktą ar GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Turėdamas GitHub saugyklą ir žetoną arba GitHub App, vedlys gali už jus sukurti saugyklą, įjungti GitHub Pages ir nustatyti domeną (4 žingsnis).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>renkama</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>surinkta</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>iš GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>iš šakos %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>dar nėra</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nerasta</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>išjungta</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privati</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>vieša</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>eilėje</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nežinoma</translation>
     </message>
 </context>
 </TS>

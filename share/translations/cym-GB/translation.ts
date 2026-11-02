@@ -15158,6 +15158,14 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Y cynnwys mwyaf newydd, yr hyn sy'n cael ei ddal i'w adolygu, a gweithredoedd ar ddetholiad.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Cyhoeddi copi statig o wefan i GitHub Pages neu unrhyw westeiwr git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Cyhoeddi statig</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Atebion ymholiadau wedi&apos;u cadw yr API GraphQL, a dosbarthiadau cynnwys ei sgema.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Cyhoeddi copi statig i GitHub Pages neu unrhyw westeiwr git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Cyhoeddi statig</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Mae&apos;r storfa statig yn gweini tudalennau o&apos;r gweinydd hwn. I gyhoeddi copi statig o wefan yn rhywle arall, ar GitHub Pages neu unrhyw westeiwr git, defnyddiwch gyhoeddi statig.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Newidiadau i&apos;r gosodiad wedi&apos;u cadw fel ffeiliau: eu cyflwr, y rhediadau, rhedeg a dychwelyd.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Cyhoeddi copi statig o wefan i GitHub Pages neu unrhyw westeiwr git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Cyhoeddi statig</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>The run could not be started.</source>
         <translation>Nid oedd modd cychwyn y rhediad.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Recordio newidiadau</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Tra bo recordiad ar waith, mae'r hyn rydych yn ei newid yn y weinyddiaeth neu ym mar ochr y wefan yn cael ei gadw fel camau mudo: cynnwys, dosbarthiadau, rolau a pholisïau, adrannau, defnyddwyr a grwpiau, arallenwau URL, gosodiadau. Stopiwch ef pan fyddwch wedi gorffen, edrychwch ar yr hyn a ddaliodd a chynhyrchwch fudo ohono.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Nid oedd modd darllen y recordiadau: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Nid yw tablau'r recordiadau'n bodoli eto: rhedwch yr uwchraddiad yn gyntaf (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Mae recordio wedi'i ddiffodd yn migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Fy newidiadau</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Yn recordio dim ond yr hyn rydych chi'n ei newid, ble bynnag rydych chi'n ei newid, nes i chi ei stopio.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Recordiad</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ers %time, %count newid hyd yma.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Label (dewisol)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Dangos yr hyn a ddaliodd</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Stopio recordio</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Dechrau recordio fy newidiadau</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Ffenestr i'r wefan gyfan</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Yn recordio pob newid gan bob defnyddiwr a'r consol nes iddi gael ei chau. Wrth ei hagor gofynnir i chi gadarnhau mai chi sydd yno.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ar agor</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Cau'r ffenestr</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Agor y ffenestr i'r wefan gyfan</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Recordiadau</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ni chaiff cyfrif defnyddiwr (enw mewngofnodi, e-bost, cyfrinair) na meysydd cyfrifon defnyddwyr byth eu recordio.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Newidiadau</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Y wefan gyfan</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Newidiadau %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Wedi'i stopio</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Dim recordiad eto.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Recordiad %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Pob recordiad</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Y mudo a ddeuai ohono</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Y newidiadau wedi'u cyfuno'n un cam fesul peth a newidiwyd: yr hyn y byddai mudo a gynhyrchir o'r recordiad hwn yn ei wneud.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Gellir cynhyrchu mudo ohono unwaith y bydd gan y gosodiad hwn y mathau o gamau YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Wedi'i adael allan yn fwriadol: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ni recordiwyd dim.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Yr hyn a ddaliodd</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count newid, yn y drefn y'u gwnaed.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Newid</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Cam</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Yn ymwneud â</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count arall: mae ./console exp:migration:record:show yn eu rhestru i gyd.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Taflu</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Yn tynnu'r recordiad a'r hyn a ddaliodd. Mae'r hyn a newidiwyd yn aros wedi'i newid.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ie, taflu'r recordiad hwn</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Yn recordio…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Mae eich newidiadau'n cael eu recordio ar gyfer mudo.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Mae pob newid ar y wefan hon yn cael ei recordio ar gyfer mudo (ffenestr i'r wefan gyfan).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Mae'r recordiad i'r wefan gyfan wedi dechrau: caiff pob newid gan bob defnyddiwr ei recordio nes i chi ei stopio.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Mae'r recordiad wedi dechrau: caiff eich newidiadau eu recordio nes i chi ei stopio.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Recordio wedi'i stopio. Mae'r hyn a ddaliodd yn aros nes i chi ei daflu.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Mae'r recordiad a'i ddigwyddiadau wedi'u tynnu.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nid oes recordiad %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Ticiwch "Ie, taflu'r recordiad hwn" yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Dim ond y defnyddiwr a recordiodd all stopio recordiad sesiwn.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Dewiswch y recordiad i'w stopio.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Mae recordiad o'r math hwn eisoes ar waith.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Nid oedd modd newid y recordiad: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1540 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>Released.</source>
         <translation>Wedi'i ryddhau.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Pob targed</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Cyhoeddiad diwethaf</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Cyhoeddwch gopi statig o&apos;ch gwefan am ddim ar GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Tudalennau hen</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Cyhoeddi statig</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Mae cyhoeddi statig wedi&apos;i ddiffodd.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Targed</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Nid oedd modd darllen y targedau: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>mae tasg ar waith</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>adeiladwaith i&apos;w wirio</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>cuddio hwn</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>creu targed</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>byth</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>darllen y tiwtorial</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added wedi&apos;u hychwanegu, %changed wedi&apos;u newid, %removed wedi&apos;u tynnu</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes o %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Nid yw %count arall wedi&apos;u rhestru.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages tudalen wedi&apos;u hysgrifennu</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>Mae %path yn %size, mwy nag y mae&apos;r gwesteiwr yn ei ganiatáu i ffeil.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % o&apos;r terfyn</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds e</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag yw&apos;r cyhoeddiad sydd gan y wefan nawr.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: tasg %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/ystorfa/ ar gyfer gwefan prosiect GitHub; gwag ar gyfer parth personol neu wefan defnyddiwr.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Y wefan</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Y gwesteiwr</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Mewngofnodi i&apos;r ystorfa</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Yr ystorfa</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Dolenni a llwybr sylfaen</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Eich parth eich hun</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Beth mae&apos;r adeiladwaith yn ei gynnwys</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Pryd y caiff ei gyhoeddi</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Adolygu a chadw</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Mae gwefan prosiect GitHub yn byw o dan /&lt;repository&gt;/; mae dolenni cymharol yn gweithio yno ac yn unrhyw le arall.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Mae adeiladwaith yn nôl pob tudalen o %site fel y&apos;i gwelir gan ymwelydd nad yw wedi mewngofnodi, yn ailysgrifennu&apos;r dolenni, yn copïo&apos;r ffeiliau ac yn ysgrifennu&apos;r canlyniad i ffolder y targed. Ni chyhoeddir dim nes i chi wirio&apos;r adeiladwaith a phwyso Cyhoeddi.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Mynegiad cron, er enghraifft 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Cedwir allwedd defnyddio fel y gyfrinach %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Mae allwedd defnyddio yn gadael i&apos;r gosodiad hwn wthio i un ystorfa dros SSH a dim unman arall. Mae ei hanner preifat yn aros yn Gosod &gt; Cyfrinachau; dim ond yr hanner cyhoeddus a ddangosir.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Allwedd defnyddio a grëwyd ar gyfer y targed hwn</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Mae allwedd defnyddio yn mewngofnodi dros SSH: newidiwch y cyfeiriad git i&apos;r un SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Mae tasg ar waith, wedi&apos;i dechrau gan %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Mae tasg y targed hwn yn dal ar waith (%detail). Arhoswch iddi orffen.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Mae tasg y targed hwn yn dal ar waith. Arhoswch iddi orffen.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Bydd dolen o&apos;r dudalen /news/ i&apos;r dudalen /about-us/team yn cael ei hysgrifennu fel</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Crëwyd allwedd defnyddio newydd. Ychwanegwch ei hanner cyhoeddus at yr ystorfa nawr.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Ni chyhoeddir byth dudalen sy&apos;n dal i gynnwys allbwn dadfygio, tocyn ffurflen neu ID sesiwn ar ôl ei glanhau.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Mae dychweliad ar gyfer arbenigwyr: ticiwch &quot;Rwy&apos;n gwybod beth mae hyn yn ei newid&quot; a theipiwch enw&apos;r nod eto.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Gall gwefan fod hyd at %site, un ffeil hyd at %file, gyda thua 100 GB o draffig y mis. Ar gynllun am ddim rhaid i&apos;r ystorfa fod yn gyhoeddus. Nid yw GitHub Pages wedi&apos;i fwriadu ar gyfer siopau na thrafodion masnachol eraill.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Un wefan wedi&apos;i chyhoeddi i un ystorfa git yw targed. Nid oes dim yn cael ei adeiladu na&apos;i gyhoeddi yma: mae Cadw yn ysgrifennu&apos;r gosodiadau i settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Un wefan wedi&apos;i chyhoeddi i un lle yw targed, er enghraifft eich gwefan gyhoeddus ar GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Tocyn o Gosod &gt; Cyfrinachau</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Mae llif gwaith yr ystorfa yn ei chyhoeddi.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Ychwanegwch yr allwedd gyhoeddus hon at yr ystorfa gyda mynediad ysgrifennu. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, ticiwch Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Ychwanegwyd</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Gwesteiwr git arall</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Mae proses arall yn gweithio ar y targed hwn: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Yn ôl</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Llwybr sylfaen</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Cyn</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>O dan lwybr sylfaen</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Cangen</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Dolenni wedi torri</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Dolenni wedi torri yn yr adeiladwaith</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Adeiladwaith</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Adeiladwaith %id gan %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Adeiladu %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Adeiladu nawr</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Adeiladwaith i&apos;w wirio</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Gan</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Â llaw, yma</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Canslo</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Newid</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Newidiwyd</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Newidiadau</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Gwiriwch ef yn gyntaf</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Gwiriwch y gosodiadau hyn</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Gwiriwch beth mae&apos;r adeiladwaith yn ei newid, edrychwch arno, yna cyhoeddwch ef neu ei daflu.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Dewiswch y cyhoeddiad i ddychwelyd iddo.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Yn dod mewn rhyddhad diweddarach.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Ymrwymiad</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Ymrwymiadau</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Mae&apos;n ymrwymo&apos;r adeiladwaith, yn ei nodi ac yn ei wthio i %remote. Ni orfodir gwthiad byth; gallwch fynd yn ôl i unrhyw gyhoeddiad yn nes ymlaen.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>O&apos;i gymharu â&apos;r ffolder o&apos;r blaen: %added wedi&apos;u hychwanegu, %changed wedi&apos;u newid, %removed wedi&apos;u tynnu, %unchanged heb eu newid.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>O&apos;i gymharu â&apos;r cyhoeddiad diwethaf.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Manylion mewngofnodi</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Parth personol</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Mae allbwn dadfygio, tocynnau ffurflen, IDs sesiwn a nonces bob amser yn cael eu tynnu allan.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Allwedd defnyddio</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Allwedd defnyddio %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Taflu</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Taflu&apos;r adeiladwaith</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Parth</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Gwag: cyfeiriad y wefan. Fel arall, cyfeiriad mewnol yr un wefan.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Gorffennodd</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Mae pob dolen yn dechrau gyda&apos;r llwybr sylfaen.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Mae pob cyhoeddiad yn ymrwymiad gyda nod static/%id/&lt;n&gt;. Mae mynd yn ôl yn creu ymrwymiad newydd gyda ffeiliau cyhoeddiad cynharach: mae&apos;r hanes yn aros, nid oes nod yn symud ac ni orfodir dim.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Pethau ychwanegol</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Nôl y tudalennau o</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Ffeil</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Ffeiliau</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Ffeiliau ar goll</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Ffeiliau</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Ffeiliau nad oedd modd eu casglu</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Ôl bys</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Ffolder</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Ar gyfer cyfeiriad SSH. Caiff yr allwedd ei chreu ar ôl cadw; rydych yn ychwanegu ei hanner cyhoeddus at yr ystorfa.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Ar gyfer cyfeiriad https://. GitHub: tocyn manwl gyda Contents darllen ac ysgrifennu ar yr ystorfa.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Ar gyfer arbenigwyr. Mae&apos;r wefan gyhoeddus yn newid cyn gynted ag y bydd y gwthiad wedi&apos;i gwblhau.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Ffurflenni</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Gwe-letya am ddim o ystorfa GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>O&apos;r gangen</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Cyfeiriad git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>Mae GitHub Pages yn caniatáu gwefan o %site a ffeil o %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Terfynau GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>Mae GitHub Pages yn cyhoeddi&apos;r ffeiliau fel y maent (angenrheidiol ar gyfer ffeiliau sy&apos;n dechrau gyda _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>Mae GitHub yn gweini&apos;r gangen fel y&apos;i gwthiwyd. Y rhagosodiad.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, eich gweinydd eich hun: unrhyw ystorfa git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Mynd yn ôl i gyhoeddiad cynharach</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Cymorth</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Cymorth gyda&apos;r dewin</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Eu cuddio</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Hanes</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Hanes %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Gwesteiwr</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Sut mae GitHub Pages yn derbyn yr adeiladwaith</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Rwyf wedi gwirio&apos;r newidiadau</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Rwy&apos;n gwybod beth mae hyn yn ei newid</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Mae wedi&apos;i ddiffodd: nid oes modd adeiladu dim nes ei fod ymlaen.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Mae&apos;n rhedeg yn y cefndir fel %user; gallwch gau&apos;r dudalen hon.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Tasg %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Wedi&apos;i chadw fel y gyfrinach %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Math</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Cyhoeddiad diwethaf</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Gadael y tudalennau hyn allan</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Gadael yr adrannau hyn allan</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Dolenni</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Dolenni wedi&apos;u hailysgrifennu</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Gwefan fyw</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Edrych ar yr adeiladwaith</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Llythrennau bach, digidau, _ a -, er enghraifft github-public. Mae&apos;n enwi&apos;r ffolder a&apos;r nodau (static/&lt;id&gt;/&lt;n&gt;) ac ni ellir ei newid yn nes ymlaen.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Creu allwedd newydd</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Creu targed</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Creu&apos;r allwedd</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Crëwch yr ystorfa ar y gwesteiwr yn gyntaf; mae un wag yn iawn.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Maniffest</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Neges</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Y rhan fwyaf o dudalennau</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Enw</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Enw&apos;r tocyn yn Gosod &gt; Cyfrinachau</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Targed newydd</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Nesaf</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Dim ymrwymiad eto.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Ni chrëwyd allwedd: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Ni chanfuwyd rhaglen llinell orchymyn php. Gosodwch migration.ini [AdminSettings] PhpCliPath i&apos;w llwybr llawn.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Dim nod eto.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Dim targed eto.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Dim</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Nid yw yn yr adeiladwaith.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Nid oes dim wedi&apos;i gyhoeddi eto.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Nid oes dim wedi&apos;i gyhoeddi eto: mae pob ffeil yn newydd.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Hysbysu</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Yn ôl amserlen</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Ar y consol</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Ar y gweinydd: mae ./console exp:static:serve %id yn ei weini yn yr un ffordd.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Un llwybr i bob llinell, mae * yn cyfateb i unrhyw ran: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Dim ond enw a gedwir gyda&apos;r targed; mae&apos;r tocyn neu&apos;r allwedd ei hun yn aros yn Gosod &gt; Cyfrinachau ac nid yw byth yn ymddangos mewn log.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Dim ond yr hyn y mae&apos;r tudalennau&apos;n ei enwi</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Dim ond gyda thocyn. Mae env:NAME yn darllen newidyn amgylchedd y gweinydd yn lle hynny.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Agor y rhagolwg</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Mae&apos;n agor yr adeiladwaith fel y bydd y gwesteiwr yn ei weini, o ffolder y targed. Mae&apos;r ddolen yn gweithio i chi am awr.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Dewisol. Gwag: yr hyn a gyhoeddwyd.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Dewisol. Gyda pharth, caiff y wefan ei gweini wrth ei gwraidd.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Allbwn</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Tudalennau</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Tudalennau&apos;r targed</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Tudalennau a wrthodwyd</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Ôl-brosesu</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Rhagolwg</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Rhagolwg a chyhoeddi</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Rhagolwg a chyhoeddi %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Rhagolwg o&apos;r adeiladwaith</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Cynnydd</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Cyfeiriad cyhoeddus</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Allwedd gyhoeddus</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Cyhoeddi</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Cyhoeddi copi statig o wefan i GitHub Pages neu unrhyw westeiwr git: ei adeiladu, gwirio&apos;r newidiadau, cyhoeddi, a mynd yn ôl i gyhoeddiad cynharach pan fydd angen.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Cyhoeddiad i ddychwelyd iddo</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Cyhoeddiadau</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Gwthiad</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Darllen y tiwtorial</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Cofnod</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Gwrthodwyd</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Cymharol</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Ail-lwytho</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Tynnwyd</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Amnewid yr allwedd: bydd yr hen un yn peidio â gweithio</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Adroddiad</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Adroddiad yr adeiladwaith</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Ystorfa</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Adolygu</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Mae Adolygu yn gwirio pob gosodiad ac yn dangos y llinellau a gaiff eu hysgrifennu. Nid oes dim wedi&apos;i gadw eto.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Dychwelyd</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Dychweliad</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Cadw</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Amserlen</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Tudalen chwilio</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>IDs adrannau, wedi&apos;u gwahanu gan atalnodau.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Eu hanfon i&apos;r wefan fyw</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Gosodiad</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Gosodiadau</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Gosodiadau %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Gosod</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Gosod &gt; Cyfrinachau</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Yn cael ei ddangos mewn rhestrau, er enghraifft &quot;Gwefan gyhoeddus ar GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Daw mewngofnodi gydag GitHub App gyda&apos;r integreiddio GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Gwefan</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Gwefan i&apos;w chyhoeddi</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Maint</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Maint a therfynau</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Maint yr adeiladwaith</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Tudalennau hen</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Dechreuwyd</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Dechreuwyd gan %user am %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Cyflwr</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Cyhoeddi statig</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Mae cyhoeddi statig wedi&apos;i ddiffodd</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Mae cyhoeddi statig wedi&apos;i ddiffodd.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Mae cyhoeddi statig wedi&apos;i ddiffodd. Trowch ef ymlaen yn Gosod &gt; Cyhoeddi statig yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Mae cyhoeddi statig wedi&apos;i droi ymlaen.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Cam %step o %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Camau</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Glanhau</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Diffodd</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Troi ymlaen</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Troi cyhoeddi statig ymlaen</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Nod</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Nodau</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Targed</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Gellir creu a newid targedau, ond nid oes dim yn cael ei adeiladu na&apos;i gyhoeddi nes ei fod wedi&apos;i droi ymlaen.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Mae&apos;n dweud wrth beiriannau chwilio beth i&apos;w ddarllen.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Nid oedd modd taflu&apos;r adeiladwaith: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Mae&apos;r adeiladwaith yr un fath â&apos;r cyhoeddiad diwethaf: nid oes dim i&apos;w gyhoeddi.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Taflwyd yr adeiladwaith: mae&apos;r ffolder yn dal y cyhoeddiad diwethaf eto.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Mae&apos;r rhagosodiadau&apos;n addas i&apos;r rhan fwyaf o wefannau.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Mae&apos;r ffolder yn dal adeiladwaith nad yw wedi&apos;i gyhoeddi eto; bydd adeiladwaith newydd yn cymryd ei le.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Nid oes modd ysgrifennu i ffolder y tasgau: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Nid oedd modd paratoi&apos;r dasg: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Nid oedd modd dechrau&apos;r dasg.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Mae&apos;r dasg wedi gorffen. Yn llwytho ei hadroddiad.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Mae&apos;r dasg angen defnyddiwr sydd wedi mewngofnodi.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Dechreuwyd y dasg ond nid adroddodd ID ei phroses. Gwiriwch %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Yr allwedd</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Y ffeil fwyaf: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Y llinellau a gaiff eu hysgrifennu</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Y rhestr o dudalennau ar gyfer peiriannau chwilio; mae angen y cyfeiriad cyhoeddus.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Caiff y tudalennau eu nôl fel y&apos;u gwelir gan ymwelydd nad yw wedi mewngofnodi. Ni chynigir mynedfeydd i&apos;r wefan ar gyfer gweinyddu a golygu byth.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Nid oedd modd dilyn y cynnydd. Ail-lwythwch y dudalen i weld sut mae&apos;r dasg yn dod yn ei blaen.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Hanner cyhoeddus yr allwedd:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Gwraidd y gangen</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Nid yw&apos;r storfa gyfrinachau wedi&apos;i gosod eto (mae ./console exp:upgrade --apply yn creu ei thabl), felly nid oes modd cadw allwedd.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Mae&apos;r gweinydd yn mewngofnodi ar ei ben ei hun (ei allwedd SSH ei hun neu helpwr manylion mewngofnodi), neu mae&apos;r ystorfa ar y gweinydd hwn.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Nid oedd modd ysgrifennu&apos;r gosodiad: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Mae&apos;r gosodiadau&apos;n ddilys. Caiff y llinellau hyn eu hysgrifennu:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Nid oes modd darllen y ffeil gosodiadau: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Mae&apos;r wefan yn mynd yn ôl i ffeiliau&apos;r cyhoeddiad hwnnw; rhaid cyhoeddi neu daflu adeiladwaith nad yw wedi&apos;i gyhoeddi eto yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Tudalen y wefan ei hun ar gyfer cyfeiriadau nad ydynt yn bodoli.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Nid oedd modd cadw&apos;r targed: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Nid yw&apos;r targed yn mewngofnodi gyda&apos;r allwedd hon eto: dewiswch &quot;Allwedd defnyddio a grëwyd ar gyfer y targed hwn&quot; yn ei osodiadau.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Nid oedd modd darllen y targedau: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Nid oes adeiladwaith i&apos;w wirio eto.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Nid oes gan y gosodiad hwn fynediad blaen i&apos;r wefan. Ni chyhoeddir mynedfeydd i&apos;r wefan ar gyfer gweinyddu a golygu byth.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Mae&apos;r dudalen hon yn dilyn y dasg wrth iddi fynd; mae&apos;n parhau yn y cefndir pan fydd y dudalen ar gau.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Nid oes gan y targed hwn allwedd defnyddio eto.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Nid yw&apos;r targed hwn wedi&apos;i adeiladu yma eto.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Mae gan y targed hwn un.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Mae&apos;n taflu&apos;r adeiladwaith hwn: mae&apos;r ffolder yn dal y cyhoeddiad diwethaf eto. Nid yw&apos;r wefan fyw yn newid.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Ticiwch &quot;Rwyf wedi gwirio&apos;r newidiadau&quot; yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Amser</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Sbardunau</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Teipiwch enw&apos;r nod eto</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Heb ei newid</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Bachyn gwe</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Beth</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Beth sy&apos;n newid</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Beth yw pob ffeil; caiff ei ysgrifennu bob amser.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Beth wnaeth y dasg a&apos;i chofnod. Mae tasg a ddechreuwyd yma yn parhau yn y cefndir pan fydd y dudalen hon ar gau.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Yr hyn a argraffodd y dasg fel gwallau</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Yr hyn y mae&apos;r tudalennau&apos;n ei enwi, a phob delwedd o gynnwys cyhoeddedig</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Pryd</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Pan fydd cyhoeddiad yn methu</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Pan fydd cyhoeddiad yn llwyddo</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Pan gyhoeddir cynnwys</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Ble mae dolenni i&apos;r hyn nad yw yn y copi yn mynd (y chwilio, y mewngofnodi).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>O ble mae&apos;r copi statig yn cael ei weini.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Pa wefan a gyhoeddir, a beth yw enw&apos;r targed.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Gweithio o dan unrhyw lwybr. Y rhagosodiad.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Caiff ei ysgrifennu pryd bynnag y gosodir parth personol.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ie</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Gallwch bob amser adeiladu a chyhoeddi â llaw yma ac ar y consol.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>enw yn unig; mae&apos;r gwerth yn aros yn Gosod &gt; Cyfrinachau</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>o dan %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>gorffennodd heb adroddiad</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ychwanegol</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>wedi methu</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ffeil</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, neu main gyda&apos;r ffolder docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>gwesteiwr git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (gyda thocyn) neu git@github.com:owner/repo.git (gydag allwedd defnyddio); byth gyfrinair na thocyn ynddo.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, ar gyfer y map gwefan a&apos;r dolenni canonaidd.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>delwedd</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>byth</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>na</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>dim pell</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>dim: mae ymrwymiadau&apos;n aros yn y ffolder</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>dim: dim wedi newid</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>heb ei wthio</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>dim wedi newid</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>tudalen</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>llwyddodd</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>Mae proc_open wedi&apos;i analluogi, felly nid oes modd dechrau tasg yma. Defnyddiwch ./console exp:static:build ar y gweinydd.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>cyhoeddiad</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>cyhoeddwyd</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>gwthiad yn aros</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>wedi&apos;i wthio</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>gwrthodwyd</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>cymharol</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>dychweliad</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>dychwelwyd</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>yn rhedeg</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>y ffolder yn unig</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: caiff ei ysgrifennu i&apos;r ffeil CNAME. Pwyntiwch DNS y parth at y gwesteiwr fel y mae&apos;n egluro; gall HTTPS gymryd amser i ddechrau.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ie, heb ei gyhoeddi eto</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Mae llif gwaith yr ystorfa yn ei gyhoeddi. Mae'r adeiladu'n ysgrifennu ffeil y llif gwaith; gadewch y ffolder yn wag.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Ar ôl cadw targed gydag ystorfa GitHub a thocyn neu GitHub App, gall y cam hwn greu'r ystorfa a throi GitHub Pages ymlaen. Fel arall, crëwch yr ystorfa ar GitHub yn gyntaf; mae un wag yn iawn.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Cangen neu GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Gwirio'r DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Creu'r ystorfa os nad yw'n bodoli</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Crëwch yr ystorfa ar GitHub a throwch GitHub Pages ymlaen yn ei gosodiadau (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Yn creu'r ystorfa %repo pan fydd ar goll (os gofynnir), yn troi GitHub Pages ymlaen o'r gangen neu o GitHub Actions fel y'i cadwyd, ac yn gosod y parth personol a HTTPS. Mae'n defnyddio'r gosodiadau a gadwyd: cadwch newidiadau yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Manylion ar GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Rhowch y parth personol yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Mae pob gwthiad yn cael ei wirio yn erbyn y terfynau hyn yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Ar gyfer cyfeiriad https:// ar GitHub. Mae'r App a osodwyd ar gyfer y gosodiad hwn yn mewngofnodi; mae angen id y gosodiad arno.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>Dim ond ar gynllun taledig y mae GitHub Pages yn gweini ystorfa breifat.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: mae is-barth (www.example.com) angen cofnod CNAME i &lt;owner&gt;.github.io; parth apig (example.com) y cofnodion A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id gosodiad y GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Adeiladu Pages diwethaf</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Terfynau ac amodau</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Angen ar gyfer GitHub Pages ar gynllun am ddim.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Ar GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Dim ond gyda GitHub App: y rhif ar ddiwedd cyfeiriad gosodiad yr App ar GitHub. Mae'r App ei hun yn cael ei osod yn staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Preifat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Cyhoeddus</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Cadwch y targed gydag ystorfa GitHub a thocyn neu GitHub App yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Gosodwch y cofnodion hyn gyda darparwr y parth:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Gosod ar GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Nid yw DNS %domain yn pwyntio at GitHub Pages eto.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Mae DNS %domain yn pwyntio at GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Nid yw'r integreiddio GitHub ar gael yma: %problem. Mae cyhoeddi i'r gangen yn gweithio'r un fath; trowch GitHub Pages ymlaen yng ngosodiadau'r ystorfa.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Nid yw'r camau GitHub ar gael ar gyfer y targed hwn: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Dangosir cyflwr GitHub Pages gyda thocyn neu GitHub App fel y manylion mewngofnodi.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Defnyddio eich parth eich hun</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Pa un i'w ddewis: tocyn, allwedd defnyddio neu GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Gydag ystorfa GitHub a thocyn neu GitHub App, gall y dewin greu'r ystorfa, troi GitHub Pages ymlaen a gosod y parth i chi (cam 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>yn adeiladu</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>wedi'i adeiladu</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>o GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>o'r gangen %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>dim eto</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>heb ei ganfod</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>i ffwrdd</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>preifat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>cyhoeddus</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>mewn ciw</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>anhysbys</translation>
     </message>
 </context>
 </TS>

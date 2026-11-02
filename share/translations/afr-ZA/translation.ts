@@ -15097,6 +15097,14 @@ Let wel: Die pakkette sal nie gedeïnstalleer word nie.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Die nuutste inhoud, wat vir hersiening teruggehou word, en aksies op &apos;n keuse.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publiseer &apos;n statiese kopie van &apos;n werf na GitHub Pages of enige git-gasheer.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiese publisering</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22096,6 +22104,18 @@ Let wel: Die pakkette sal nie gedeïnstalleer word nie.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Antwoorde van die GraphQL-API se gestoorde navrae, en die inhoudsklasse van sy skema.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Publiseer &apos;n statiese kopie na GitHub Pages of enige git-gasheer</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiese publisering</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Die statiese kas bedien bladsye vanaf hierdie bediener. Gebruik statiese publisering om &apos;n statiese kopie van &apos;n werf elders te publiseer, op GitHub Pages of enige git-gasheer.</translation>
     </message>
 </context>
 <context>
@@ -76153,6 +76173,14 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Veranderinge aan die installasie as lêers bewaar: hul toestand, die lopies, uitvoer en terugrol.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publiseer &apos;n statiese kopie van &apos;n werf na GitHub Pages of enige git-gasheer.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiese publisering</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80592,6 +80620,222 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>The run could not be started.</source>
         <translation>Die lopie kon nie begin word nie.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Veranderinge opneem</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Terwyl 'n opname loop, word wat jy in die administrasie of in die werf se kantbalk verander as stappe van 'n migrasie gehou: inhoud, klasse, rolle en beleide, afdelings, gebruikers en groepe, URL-aliasse, instellings. Stop dit wanneer jy klaar is, kyk wat dit vasgevang het en genereer 'n migrasie daaruit.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Die opnames kon nie gelees word nie: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Die tabelle van die opnames bestaan nog nie: voer eers die opgradering uit (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Opname is in migration.ini afgeskakel ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>My veranderinge</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Neem net op wat jy verander, waar jy dit ook al verander, totdat jy dit stop.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Opname</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>sedert %time, tot dusver %count verandering(e).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiket (opsioneel)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Wys wat dit vasgevang het</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Stop opname</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Begin om my veranderinge op te neem</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Venster vir die hele werf</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Neem elke verandering van elke gebruiker en van die konsole op totdat dit gesluit word. Wanneer jy dit oopmaak, word jy gevra om te bevestig dat dit jy is.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Oop</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Sluit die venster</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Maak die venster vir die hele werf oop</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Opnames</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>'n Gebruiker se rekening (aanmeldnaam, e-pos, wagwoord) en die velde van gebruikersrekeninge word nooit opgeneem nie.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Veranderinge</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Hele werf</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Veranderinge van %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Gestop</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Nog geen opname nie.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Opname %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Alle opnames</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Die migrasie wat dit sou maak</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Die veranderinge saamgevoeg tot een stap per ding wat verander het: wat 'n migrasie wat uit hierdie opname gegenereer word, sou doen.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>'n Migrasie kan daaruit gegenereer word sodra hierdie installasie die YAML-staptipes %types het.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Doelbewus weggelaat: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Niks is opgeneem nie.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Wat dit vasgevang het</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count verandering(e), in die volgorde waarin dit gemaak is.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Verandering</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Stap</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Betref</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Nog %count: ./console exp:migration:record:show lys almal.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Gooi weg</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Verwyder die opname en wat dit vasgevang het. Wat verander is, bly verander.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ja, gooi hierdie opname weg</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Neem op…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Jou veranderinge word vir 'n migrasie opgeneem.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Elke verandering op hierdie werf word vir 'n migrasie opgeneem (venster vir die hele werf).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Die opname vir die hele werf het begin: elke verandering van elke gebruiker word opgeneem totdat jy dit stop.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Die opname het begin: jou veranderinge word opgeneem totdat jy dit stop.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Opname gestop. Wat dit vasgevang het, bly totdat jy dit weggooi.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Die opname en sy gebeure is verwyder.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Daar is geen opname %id nie.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Merk eers "Ja, gooi hierdie opname weg".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Slegs die gebruiker wat opgeneem het, mag 'n sessie-opname stop.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Kies die opname om te stop.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>'n Opname van hierdie soort loop reeds.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Die opname kon nie verander word nie: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81255,6 +81499,1540 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>Released.</source>
         <translation>Vrygestel.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Alle teikens</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Laaste publikasie</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Publiseer &apos;n gratis statiese kopie van u werf op GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Verouderde bladsye</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiese publisering</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statiese publisering is afgeskakel.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Teiken</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Die teikens kon nie gelees word nie: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>&apos;n taak is aan die gang</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>bou om na te gaan</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>versteek dit</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>skep &apos;n teiken</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nooit</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>lees die tutoriaal</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added bygevoeg, %changed gewysig, %removed verwyder</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes van %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Nog %count word nie gelys nie.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages bladsye geskryf</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path is %size, meer as wat die gasheer vir een lêer toelaat.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % van die limiet</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag is die publikasie wat die werf nou het.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: taak %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/bewaarplek/ vir &apos;n GitHub-projekwerf; leeg vir &apos;n eie domein of &apos;n gebruikerswerf.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Die werf</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Die gasheer</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Aanmelding by die bewaarplek</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Die bewaarplek</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Skakels en basispad</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. U eie domein</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Wat die bou bevat</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Wanneer dit gepubliseer word</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Hersien en stoor</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>&apos;n GitHub-projekwerf woon onder /&lt;repository&gt;/; relatiewe skakels werk daar en oral elders.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>&apos;n Bou haal elke bladsy van %site af soos &apos;n besoeker wat nie aangemeld is nie dit sien, herskryf die skakels, kopieer die lêers en skryf die resultaat na die teiken se gids. Niks word gepubliseer voordat u die bou nagaan en op Publiseer druk nie.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>&apos;n Cron-uitdrukking, byvoorbeeld 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>&apos;n Ontplooiingsleutel word as die geheim %secret bewaar.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>&apos;n Ontplooiingsleutel laat hierdie installasie toe om oor SSH na een bewaarplek te stoot en nêrens anders nie. Sy private helfte bly in Opstelling &gt; Geheime; slegs die publieke helfte word gewys.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>&apos;n Ontplooiingsleutel wat vir hierdie teiken gemaak is</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>&apos;n Ontplooiingsleutel meld oor SSH aan: verander die git-adres na die SSH-adres (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>&apos;n Taak is aan die gang, begin deur %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>&apos;n Taak van hierdie teiken is nog aan die gang (%detail). Wag totdat dit klaar is.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>&apos;n Taak van hierdie teiken is nog aan die gang. Wag totdat dit klaar is.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>&apos;n Skakel van die bladsy /news/ na die bladsy /about-us/team sal geskryf word as</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>&apos;n Nuwe ontplooiingsleutel is gemaak. Voeg nou sy publieke helfte by die bewaarplek.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>&apos;n Bladsy wat ná die stroping steeds ontfoutingsuitvoer, &apos;n vormteken of &apos;n sessie-ID bevat, word nooit gepubliseer nie.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>&apos;n Terugrolling is vir kenners: merk &quot;Ek weet wat dit verander&quot; en tik die naam van die etiket weer.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>&apos;n Werf mag tot %site groot wees, een lêer tot %file, met ongeveer 100 GB verkeer per maand. Op &apos;n gratis plan moet die bewaarplek publiek wees. GitHub Pages is nie bedoel vir winkels of ander kommersiële transaksies nie.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>&apos;n Teiken is een werf wat na een git-bewaarplek gepubliseer word. Niks word hier gebou of gepubliseer nie: Stoor skryf die instellings na settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>&apos;n Teiken is een werf wat na een plek gepubliseer word, byvoorbeeld u publieke werf op GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>&apos;n Toegangsteken uit Opstelling &gt; Geheime</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>&apos;n Werkvloei van die bewaarplek publiseer dit.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Voeg hierdie publieke sleutel met skryftoegang by die bewaarplek. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, merk Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Bygevoeg</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>&apos;n Ander git-gasheer</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>&apos;n Ander proses werk aan hierdie teiken: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Terug</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Basispad</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Voorheen</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Onder &apos;n basispad</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Tak</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Gebroke skakels</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Gebroke skakels in die bou</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Bou</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Bou %id deur %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Bou %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Bou nou</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Bou om na te gaan</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Deur</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Met die hand, hier</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kanselleer</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Verander</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Gewysig</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Veranderinge</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Gaan dit eers na</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Gaan hierdie instellings na</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Gaan na wat die bou verander, kyk daarna, en publiseer dit dan of gooi dit weg.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Kies die publikasie om na terug te gaan.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Kom met &apos;n latere vrystelling.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Vaslegging</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Vasleggings</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Lê die bou vas, etiketteer dit en stoot dit na %remote. &apos;n Stoot word nooit afgedwing nie; u kan later na enige publikasie terugkeer.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Vergeleke met die gids van voorheen: %added bygevoeg, %changed gewysig, %removed verwyder, %unchanged onveranderd.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Vergeleke met die laaste publikasie.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Aanmeldbewys</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Eie domein</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Ontfoutingsuitvoer, vormtekens, sessie-ID&apos;s en nonces word altyd verwyder.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Ontplooiingsleutel</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Ontplooiingsleutel van %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Verwerp</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Verwerp die bou</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domein</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Leeg: die adres van die werf. Andersins &apos;n interne adres van dieselfde werf.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Geëindig</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Elke skakel begin met die basispad.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Elke publikasie is &apos;n vaslegging met &apos;n etiket static/%id/&lt;n&gt;. Terugkeer maak &apos;n nuwe vaslegging met die lêers van &apos;n vroeëre publikasie: die geskiedenis bly, geen etiket skuif nie en niks word afgedwing nie.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Ekstras</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Haal die bladsye af van</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Lêer</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Lêers</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Lêers ontbreek</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Lêers van</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Lêers wat nie versamel kon word nie</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Vingerafdruk</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Gids</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Vir &apos;n SSH-adres. Die sleutel word ná die stoor gemaak; u voeg sy publieke helfte by die bewaarplek.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Vir &apos;n https://-adres. GitHub: &apos;n fynkorrelige toegangsteken met Contents lees en skryf op die bewaarplek.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Vir kenners. Die publieke werf verander sodra die stoot deur is.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Vorms</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Gratis gasheerdiens vanuit &apos;n GitHub-bewaarplek.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Vanaf die tak</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git-adres</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages laat &apos;n werf van %site en &apos;n lêer van %file toe.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages-limiete</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages publiseer die lêers soos hulle is (nodig vir lêers wat met _ begin).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub bedien die tak soos dit gestoot word. Die verstek.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, u eie bediener: enige git-bewaarplek.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Gaan terug na &apos;n vroeëre publikasie</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Hulp</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Hulp met die towenaar</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Versteek hulle</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Geskiedenis</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Geskiedenis van %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Gasheer</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Hoe GitHub Pages die bou ontvang</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Ek het die veranderinge nagegaan</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Ek weet wat dit verander</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Dit is afgeskakel: niks kan gebou word voordat dit aan is nie.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Dit loop in die agtergrond as %user; u kan hierdie bladsy toemaak.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Taak %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Bewaar as die geheim %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Soort</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Laaste publikasie</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Laat hierdie bladsye uit</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Laat hierdie afdelings uit</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Skakels</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Skakels herskryf</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Lewendige werf</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Kyk na die bou</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Kleinletters, syfers, _ en -, byvoorbeeld github-public. Dit benoem die gids en die etikette (static/&lt;id&gt;/&lt;n&gt;) en kan nie later verander word nie.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Maak &apos;n nuwe sleutel</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Skep &apos;n teiken</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Maak die sleutel</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Skep eers die bewaarplek op die gasheer; &apos;n leë een is goed.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifes</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Boodskap</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Die meeste bladsye</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Naam van die toegangsteken in Opstelling &gt; Geheime</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Nuwe teiken</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Volgende</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Nog geen vaslegging nie.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Geen sleutel is gemaak nie: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Geen php-opdragreëlprogram is gevind nie. Stel migration.ini [AdminSettings] PhpCliPath op sy volle pad.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Nog geen etiket nie.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Nog geen teiken nie.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Geen</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Nie in die bou nie.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Niks is nog gepubliseer nie.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Niks is nog gepubliseer nie: elke lêer is nuut.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Kennisgewing</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Volgens &apos;n skedule</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Op die konsole</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Op die bediener: ./console exp:static:serve %id bedien dit op dieselfde manier.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Een pad per reël, * pas by enige deel: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Slegs &apos;n naam word saam met die teiken gestoor; die toegangsteken of sleutel self bly in Opstelling &gt; Geheime en verskyn nooit in &apos;n logboek nie.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Slegs wat die bladsye noem</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Slegs met &apos;n toegangsteken. env:NAME lees eerder &apos;n omgewingsveranderlike van die bediener.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Open die voorskou</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Open die bou soos die gasheer dit sal bedien, vanuit die teiken se gids. Die skakel werk vir u vir &apos;n uur.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Opsioneel. Leeg: wat gepubliseer is.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Opsioneel. Met &apos;n domein word die werf by sy wortel bedien.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Uitvoer</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Bladsye</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Bladsye van die teiken</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Bladsye geweier</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Naverwerking</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Voorskou</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Voorskou en publiseer</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Voorskou en publiseer %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Voorskou van die bou</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Vordering</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Publieke adres</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Publieke sleutel</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Publiseer</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Publiseer &apos;n statiese kopie van &apos;n werf na GitHub Pages of enige git-gasheer: bou dit, gaan die veranderinge na, publiseer, en gaan terug na &apos;n vroeëre publikasie wanneer u moet.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Publikasie om na terug te gaan</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Publikasies</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Stoot</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Lees die tutoriaal</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Logboek</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Geweier</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relatief</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Herlaai</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Verwyder</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Vervang die sleutel: die ou een hou op werk</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Verslag</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Verslag van die bou</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Bewaarplek</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Hersien</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Hersiening gaan elke instelling na en wys die reëls wat geskryf sal word. Niks is nog gestoor nie.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Rol terug</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Terugrolling</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Stoor</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Skedule</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Soekbladsy</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Afdeling-ID&apos;s, geskei deur kommas.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Stuur hulle na die lewendige werf</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Instelling</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Instellings</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Instellings van %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Opstelling</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Opstelling &gt; Geheime</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Getoon in lyste, byvoorbeeld &quot;Publieke werf op GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Aanmelding met &apos;n GitHub App kom met die GitHub-integrasie.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Werf</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Werf om te publiseer</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Grootte</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Grootte en limiete</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Grootte van die bou</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Verouderde bladsye</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Begin</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Begin deur %user om %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Toestand</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiese publisering</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statiese publisering is afgeskakel</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statiese publisering is afgeskakel.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statiese publisering is afgeskakel. Skakel dit eers aan in Opstelling &gt; Statiese publisering.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statiese publisering is aangeskakel.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Stap %step van %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Stappe</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Stroping</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Skakel af</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Skakel aan</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Skakel statiese publisering aan</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Etiket</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Etikette</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Teiken</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Teikens kan geskep en verander word, maar niks word gebou of gepubliseer voordat dit aangeskakel is nie.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Sê vir soekenjins wat om te lees.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Die bou kon nie weggegooi word nie: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Die bou is dieselfde as die laaste publikasie: daar is niks om te publiseer nie.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Die bou is weggegooi: die gids bevat weer die laaste publikasie.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Die verstekwaardes pas die meeste werwe.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Die gids bevat &apos;n bou wat nog nie gepubliseer is nie; &apos;n nuwe bou vervang dit.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Die gids van die take kan nie geskryf word nie: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Die taak kon nie voorberei word nie: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Die taak kon nie begin word nie.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Die taak is klaar. Sy verslag word gelaai.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Die taak benodig &apos;n aangemelde gebruiker.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Die taak is begin maar het nie sy proses-ID gerapporteer nie. Gaan %detail na.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Die sleutel</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Die grootste lêer: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Die reëls wat geskryf sal word</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Die lys bladsye vir soekenjins; benodig die publieke adres.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Die bladsye word afgehaal soos &apos;n besoeker wat nie aangemeld is nie hulle sien. Administrasie- en redigeerwerftoegange word nooit aangebied nie.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Die vordering kon nie gevolg word nie. Herlaai die bladsy om te sien hoe dit met die taak gaan.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Die publieke helfte van die sleutel:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Die wortel van die tak</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Die geheimestoor is nog nie opgestel nie (./console exp:upgrade --apply maak sy tabel), dus kan geen sleutel bewaar word nie.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Die bediener meld self aan (sy eie SSH-sleutel of geloofsbriefhelper), of die bewaarplek is op hierdie bediener.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Die instelling kon nie geskryf word nie: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Die instellings is geldig. Hierdie reëls sal geskryf word:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Die instellingslêer kan nie gelees word nie: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Die werf gaan terug na die lêers van daardie publikasie; &apos;n bou wat nog nie gepubliseer is nie, moet eers gepubliseer of weggegooi word.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Die werf se eie bladsy vir adresse wat nie bestaan nie.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Die teiken kon nie gestoor word nie: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Die teiken meld nog nie met hierdie sleutel aan nie: kies &quot;&apos;n Ontplooiingsleutel wat vir hierdie teiken gemaak is&quot; in sy instellings.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Die teikens kon nie gelees word nie: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Daar is nog geen bou om na te gaan nie.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Hierdie installasie het geen voorkant-werftoegang nie. Administrasie- en redigeerwerftoegange word nooit gepubliseer nie.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Hierdie bladsy volg die taak terwyl dit loop; dit gaan in die agtergrond voort wanneer die bladsy toegemaak word.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Hierdie teiken het nog geen ontplooiingsleutel nie.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Hierdie teiken is nog nie hier gebou nie.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Hierdie teiken het een.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Gooi hierdie bou weg: die gids bevat weer die laaste publikasie. Die lewendige werf verander nie.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Merk eers &quot;Ek het die veranderinge nagegaan&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tyd</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Snellers</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Tik die naam van die etiket weer</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Onveranderd</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Wat</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Wat verander</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Wat elke lêer is; word altyd geskryf.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Wat die taak gedoen het en sy logboek. &apos;n Taak wat hier begin is, gaan in die agtergrond voort wanneer hierdie bladsy toegemaak word.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Wat die taak as foute gedruk het</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Wat die bladsye noem, en elke beeld van gepubliseerde inhoud</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Wanneer</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Wanneer &apos;n publikasie misluk</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Wanneer &apos;n publikasie slaag</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Wanneer inhoud gepubliseer word</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Waarheen skakels gaan na wat die kopie nie bevat nie (die soektog, die aanmelding).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Waarvandaan die statiese kopie bedien word.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Watter werf gepubliseer word, en wat die teiken genoem word.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Werk onder enige pad. Die verstek.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Geskryf wanneer &apos;n eie domein gestel is.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>U kan altyd hier en op die konsole met die hand bou en publiseer.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>slegs &apos;n naam; die waarde bly in Opstelling &gt; Geheime</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>onder %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>geëindig sonder &apos;n verslag</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ekstra</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>misluk</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>lêer</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, of main met die gids docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git-gasheer</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (met &apos;n toegangsteken) of git@github.com:owner/repo.git (met &apos;n ontplooiingsleutel); nooit &apos;n wagwoord of toegangsteken daarin nie.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, vir die werfkaart en die kanonieke skakels.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>beeld</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nooit</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nee</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>geen afstandbewaarplek</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>geen: vasleggings bly in die gids</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>geen: niks het verander nie</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>nie gestoot nie</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>niks het verander nie</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>bladsy</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>geslaag</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open is gedeaktiveer, dus kan &apos;n taak nie hier begin word nie. Gebruik ./console exp:static:build op die bediener.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>publikasie</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>gepubliseer</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>stoot hangend</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>gestoot</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>geweier</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relatief</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>terugrolling</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>teruggerol</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>loop</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>slegs die gids</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: in die lêer CNAME geskryf. Rig die DNS van die domein na die gasheer soos dit verduidelik; HTTPS kan &apos;n rukkie neem om te begin.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ja, nog nie gepubliseer nie</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>'n GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>'n Werkvloei van die bewaarplek publiseer dit. Die bou skryf die werkvloeilêer; laat die gids leeg.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Nadat 'n teiken met 'n GitHub-bewaarplek en 'n toegangsteken of GitHub App gestoor is, kan hierdie stap die bewaarplek skep en GitHub Pages aanskakel. Skep andersins eers die bewaarplek op GitHub; 'n leë een is goed.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Tak of GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Kontroleer die DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Skep die bewaarplek as dit nie bestaan nie</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Skep die bewaarplek op GitHub en skakel GitHub Pages in sy instellings aan (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Skep die bewaarplek %repo wanneer dit ontbreek (indien gevra), skakel GitHub Pages aan vanaf die tak of vanaf GitHub Actions soos gestoor, en stel die eie domein en HTTPS in. Dit gebruik die gestoorde instellings: stoor eers veranderinge.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Besonderhede op GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Voer eers die eie domein in.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Elke stoot word eers teen hierdie limiete gekontroleer.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Vir 'n https://-adres op GitHub. Die App wat vir hierdie installasie opgestel is, meld aan; dit benodig die installasie-ID.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages bedien 'n privaat bewaarplek slegs op 'n betaalde plan.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: 'n subdomein (www.example.com) benodig 'n CNAME-rekord na &lt;owner&gt;.github.io; 'n apeksdomein (example.com) die A-rekords %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Installasie-ID van die GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Laaste Pages-bou</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Limiete en voorwaardes</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Nodig vir GitHub Pages op 'n gratis plan.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Op GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Slegs met 'n GitHub App: die nommer aan die einde van die adres van die App se installasie op GitHub. Die App self word in staticcache.ini gestel (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privaat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Publiek</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Stoor eers die teiken met 'n GitHub-bewaarplek en 'n toegangsteken of GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Stel hierdie rekords by die verskaffer van die domein in:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Stel op GitHub op</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Die DNS van %domain wys nog nie na GitHub Pages nie.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Die DNS van %domain wys na GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Die GitHub-integrasie is nie hier beskikbaar nie: %problem. Publisering na die tak werk steeds; skakel GitHub Pages in die bewaarplek se instellings aan.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Die GitHub-stappe is nie vir hierdie teiken beskikbaar nie: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Die toestand van GitHub Pages word gewys met 'n toegangsteken of GitHub App as die aanmeldbewys.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Gebruik jou eie domein</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Wat om te kies: toegangsteken, ontplooiingsleutel of GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Met 'n GitHub-bewaarplek en 'n toegangsteken of GitHub App kan die towenaar die bewaarplek skep, GitHub Pages aanskakel en die domein vir jou instel (stap 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>word gebou</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>gebou</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>vanaf GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>vanaf die tak %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>nog geen</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nie gevind nie</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>af</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privaat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>publiek</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>in die tou</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekend</translation>
     </message>
 </context>
 </TS>

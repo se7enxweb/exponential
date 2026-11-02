@@ -15877,6 +15877,14 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Det nyeste innholdet, det som holdes tilbake for gjennomgang, og handlinger på et utvalg.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publiser en statisk kopi av et nettsted til GitHub Pages eller en annen git-vert.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statisk publisering</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22956,6 +22964,18 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Svar på GraphQL-API-ets lagrede spørringer, og innholdsklassene i skjemaet.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Publiser en statisk kopi til GitHub Pages eller en annen git-vert</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statisk publisering</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Den statiske cachen leverer sider fra denne serveren. For å publisere en statisk kopi av et nettsted et annet sted, på GitHub Pages eller en annen git-vert, bruk statisk publisering.</translation>
     </message>
 </context>
 <context>
@@ -76022,6 +76042,14 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Endringer i installasjonen lagret som filer: tilstanden deres, kjøringene, kjør og rull tilbake.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publiser en statisk kopi av et nettsted til GitHub Pages eller en annen git-vert.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statisk publisering</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>
@@ -81820,6 +81848,222 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>The run could not be started.</source>
         <translation>Kjøringen kunne ikke startes.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Ta opp endringer</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Mens et opptak pågår, lagres det du endrer i administrasjonen eller i nettstedets sidefelt som steg i en migrering: innhold, klasser, roller og policyer, seksjoner, brukere og grupper, URL-aliaser, innstillinger. Stopp det når du er ferdig, se hva det fanget, og generer en migrering fra det.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Opptakene kunne ikke leses: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabellene for opptak finnes ikke ennå: kjør først oppgraderingen (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Opptak er slått av i migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mine endringer</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Tar bare opp det du endrer, uansett hvor du endrer det, til du stopper det.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Opptak</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>siden %time, så langt %count endring(er).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etikett (valgfri)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Vis hva det fanget</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Stopp opptaket</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Start opptak av mine endringer</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Vindu for hele nettstedet</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Tar opp hver endring fra hver bruker og fra konsollen til det lukkes. Når du åpner det, blir du bedt om å bekrefte at det er deg.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Åpent</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Lukk vinduet</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Åpne vinduet for hele nettstedet</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Opptakene</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>En brukers konto (pålogging, e-post, passord) og feltene i brukerkontoer blir aldri tatt opp.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Endringer</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Hele nettstedet</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Endringer av %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Stoppet</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ingen opptak ennå.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Opptak %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Alle opptak</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migreringen det ville gi</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Endringene samlet i ett steg per endret ting: hva en migrering generert fra dette opptaket ville gjøre.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>En migrering kan genereres fra det når denne installasjonen har YAML-stegtypene %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Utelatt med vilje: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ingenting ble tatt opp.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Hva det fanget</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count endring(er), i den rekkefølgen de ble gjort.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Endring</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Steg</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Gjelder</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count til: ./console exp:migration:record:show viser alle.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Forkast</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Fjerner opptaket og det det fanget. Det som er endret, forblir endret.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ja, forkast dette opptaket</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Tar opp…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Endringene dine tas opp for en migrering.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Hver endring på dette nettstedet tas opp for en migrering (vindu for hele nettstedet).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Opptaket for hele nettstedet har startet: hver endring fra hver bruker tas opp til du stopper det.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Opptaket har startet: endringene dine tas opp til du stopper det.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Opptaket er stoppet. Det det fanget, blir værende til du forkaster det.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Opptaket og hendelsene er fjernet.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Det finnes ikke noe opptak %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Kryss først av for «Ja, forkast dette opptaket».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Bare brukeren som tok opp, kan stoppe et øktopptak.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Velg opptaket som skal stoppes.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Et opptak av denne typen pågår allerede.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Opptaket kunne ikke endres: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -82483,6 +82727,1540 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>Released.</source>
         <translation>Frigitt.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Alle mål</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Siste publisering</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Publiser en gratis statisk kopi av nettstedet ditt på GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Utdaterte sider</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statisk publisering</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statisk publisering er slått av.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Mål</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Målene kunne ikke leses: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>en jobb pågår</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>bygg til kontroll</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>skjul dette</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>opprett et mål</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>aldri</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>les veiledningen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added lagt til, %changed endret, %removed fjernet</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes av %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count til er ikke oppført.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages sider skrevet</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path er %size, mer enn verten tillater for én fil.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % av grensen</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag er publiseringen nettstedet har nå.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: jobb %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/depot/ for et GitHub-prosjektnettsted; tomt for et eget domene eller et brukernettsted.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Nettstedet</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Verten</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Innlogging i depotet</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Depotet</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Lenker og basissti</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Ditt eget domene</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Hva bygget inneholder</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Når det publiseres</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Gjennomgå og lagre</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Et GitHub-prosjektnettsted ligger under /&lt;repository&gt;/; relative lenker fungerer der og alle andre steder.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Et bygg henter hver side av %site slik en besøkende som ikke er logget inn ser den, skriver om lenkene, kopierer filene og skriver resultatet til målets mappe. Ingenting publiseres før du kontrollerer bygget og trykker Publiser.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Et cron-uttrykk, for eksempel 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>En deploy-nøkkel lagres som hemmeligheten %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>En deploy-nøkkel lar denne installasjonen laste opp til ett depot over SSH og ingen andre steder. Den private halvdelen blir værende i Oppsett &gt; Hemmeligheter; bare den offentlige halvdelen vises.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>En deploy-nøkkel laget for dette målet</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>En deploy-nøkkel logger inn over SSH: endre git-adressen til SSH-adressen (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>En jobb pågår, startet av %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>En jobb for dette målet pågår fortsatt (%detail). Vent til den er ferdig.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>En jobb for dette målet pågår fortsatt. Vent til den er ferdig.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>En lenke fra siden /news/ til siden /about-us/team blir skrevet som</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>En ny deploy-nøkkel ble laget. Legg til den offentlige halvdelen i depotet nå.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>En side som fortsatt har feilsøkingsutdata, et skjematoken eller en økt-ID etter rensingen, publiseres aldri.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>En tilbakerulling er for eksperter: kryss av for «Jeg vet hva dette endrer» og skriv inn navnet på etiketten igjen.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Et nettsted kan være opptil %site, én fil opptil %file, med omtrent 100 GB trafikk i måneden. På en gratisplan må depotet være offentlig. GitHub Pages er ikke ment for nettbutikker eller andre kommersielle transaksjoner.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Et mål er ett nettsted publisert til ett git-depot. Ingenting bygges eller publiseres her: Lagre skriver innstillingene til settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Et mål er ett nettsted publisert til ett sted, for eksempel det offentlige nettstedet ditt på GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Et token fra Oppsett &gt; Hemmeligheter</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>En arbeidsflyt i depotet publiserer det.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Legg til denne offentlige nøkkelen i depotet med skrivetilgang. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, kryss av for Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Lagt til</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>En annen git-vert</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>En annen prosess arbeider med dette målet: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Tilbake</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Basissti</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Før</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Under en basissti</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Gren</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Brutte lenker</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Brutte lenker i bygget</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Bygg</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Bygg %id av %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Bygg %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Bygg nå</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Bygg til kontroll</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Av</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>For hånd, her</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Endre</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Endret</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Endringer</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Kontroller det først</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Kontroller disse innstillingene</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Kontroller hva bygget endrer, se på det, og publiser det eller kast det.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Velg publiseringen du vil gå tilbake til.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Kommer i en senere versjon.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Innsending</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Innsendinger</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Sender inn bygget, gir det en etikett og laster det opp til %remote. En opplasting tvinges aldri; du kan gå tilbake til en hvilken som helst publisering senere.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Sammenlignet med mappen før: %added lagt til, %changed endret, %removed fjernet, %unchanged uendret.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Sammenlignet med siste publisering.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Legitimasjon</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Eget domene</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Feilsøkingsutdata, skjematokener, økt-ID-er og nonce-verdier fjernes alltid.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Deploy-nøkkel</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Deploy-nøkkel for %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Forkast</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Forkast bygget</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domene</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Tomt: adressen til nettstedet. Ellers en intern adresse til det samme nettstedet.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Avsluttet</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Hver lenke begynner med basisstien.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Hver publisering er en innsending med etiketten static/%id/&lt;n&gt;. Å gå tilbake lager en ny innsending med filene fra en tidligere publisering: historikken blir værende, ingen etikett flyttes og ingenting tvinges.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Tillegg</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Hent sidene fra</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fil</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Filer</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Filer mangler</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Filer fra</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Filer som ikke kunne samles inn</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Fingeravtrykk</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Mappe</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>For en SSH-adresse. Nøkkelen lages etter lagring; du legger den offentlige halvdelen til i depotet.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>For en https://-adresse. GitHub: et finmasket token med Contents lese- og skrivetilgang til depotet.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>For eksperter. Det offentlige nettstedet endres så snart opplastingen er fullført.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Skjemaer</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Gratis hosting fra et GitHub-depot.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Fra grenen</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git-adresse</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages tillater et nettsted på %site og en fil på %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Grenser for GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages publiserer filene som de er (nødvendig for filer som begynner med _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub leverer grenen slik den lastes opp. Standard.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, din egen server: et hvilket som helst git-depot.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Gå tilbake til en tidligere publisering</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Hjelp</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Hjelp med veiviseren</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Skjul dem</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historikk</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Historikk for %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Vert</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Hvordan GitHub Pages mottar bygget</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Jeg har kontrollert endringene</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Jeg vet hva dette endrer</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Den er slått av: ingenting kan bygges før den er slått på.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Den kjører i bakgrunnen som %user; du kan lukke denne siden.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Jobb %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Lagret som hemmeligheten %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Siste publisering</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Utelat disse sidene</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Utelat disse seksjonene</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Lenker</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Lenker omskrevet</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Nettstedet i drift</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Se på bygget</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Små bokstaver, sifre, _ og -, for eksempel github-public. Det navngir mappen og etikettene (static/&lt;id&gt;/&lt;n&gt;) og kan ikke endres senere.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Lag en ny nøkkel</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Opprett et mål</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Lag nøkkelen</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Opprett depotet hos verten først; et tomt depot holder.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Melding</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>De fleste sider</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Navnet på tokenet i Oppsett &gt; Hemmeligheter</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Nytt mål</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Neste</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nei</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Ingen innsending ennå.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Ingen nøkkel ble laget: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Fant ingen php-kommandolinjebinær. Sett migration.ini [AdminSettings] PhpCliPath til full sti.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Ingen etikett ennå.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Ingen mål ennå.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ingen</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Ikke i bygget.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Ingenting er publisert ennå.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Ingenting er publisert ennå: hver fil er ny.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Varsle</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Etter en tidsplan</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>På konsollen</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>På serveren: ./console exp:static:serve %id leverer det på samme måte.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Én sti per linje, * samsvarer med en hvilken som helst del: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Bare et navn lagres med målet; selve tokenet eller nøkkelen blir værende i Oppsett &gt; Hemmeligheter og vises aldri i en logg.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Bare det sidene nevner</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Bare med et token. env:NAME leser i stedet en miljøvariabel på serveren.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Åpne forhåndsvisningen</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Åpner bygget slik verten vil levere det, fra målets mappe. Lenken fungerer for deg i én time.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Valgfritt. Tomt: det som ble publisert.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Valgfritt. Med et domene leveres nettstedet ved roten.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Utdata</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Sider</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Målets sider</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Avviste sider</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Etterbehandling</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Forhåndsvisning</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Forhåndsvis og publiser</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Forhåndsvis og publiser %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Forhåndsvis bygget</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fremdrift</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Offentlig adresse</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Offentlig nøkkel</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Publiser</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Publiser en statisk kopi av et nettsted til GitHub Pages eller en annen git-vert: bygg det, kontroller endringene, publiser, og gå tilbake til en tidligere publisering når du trenger det.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Publisering å gå tilbake til</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Publiseringer</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Opplasting</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Les veiledningen</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Logg</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Avvist</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relativ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Last inn på nytt</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Fjernet</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Erstatt nøkkelen: den gamle slutter å virke</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapport</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Rapport for bygget</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Depot</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Gjennomgang</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Gjennomgangen kontrollerer hver innstilling og viser linjene som vil bli skrevet. Ingenting er lagret ennå.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Rull tilbake</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Tilbakerulling</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Lagre</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Tidsplan</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Søkeside</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Seksjons-ID-er, atskilt med komma.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Send dem til nettstedet i drift</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Innstilling</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Innstillinger</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Innstillinger for %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Oppsett</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Oppsett &gt; Hemmeligheter</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Vises i lister, for eksempel «Offentlig nettsted på GitHub Pages».</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Innlogging med en GitHub App kommer med GitHub-integrasjonen.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Nettsted</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Nettsted som skal publiseres</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Størrelse</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Størrelse og grenser</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Størrelsen på bygget</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Utdaterte sider</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startet</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Startet av %user kl. %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statisk publisering</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statisk publisering er slått av</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statisk publisering er slått av.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statisk publisering er slått av. Slå det på i Oppsett &gt; Statisk publisering først.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statisk publisering er slått på.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Trinn %step av %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Trinn</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Rensing</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Slå av</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Slå på</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Slå på statisk publisering</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Etikett</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Etiketter</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Mål</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Mål kan opprettes og endres, men ingenting bygges eller publiseres før det er slått på.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Forteller søkemotorer hva de skal lese.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Bygget kunne ikke kastes: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Bygget er det samme som siste publisering: det er ingenting å publisere.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Bygget ble kastet: mappen inneholder siste publisering igjen.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Standardverdiene passer for de fleste nettsteder.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Mappen inneholder et bygg som ikke er publisert ennå; et nytt bygg erstatter det.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Mappen for jobbene kan ikke skrives: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Jobben kunne ikke klargjøres: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Jobben kunne ikke startes.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Jobben er ferdig. Laster inn rapporten.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Jobben trenger en innlogget bruker.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Jobben ble startet, men rapporterte ikke prosess-ID-en sin. Kontroller %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Nøkkelen</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Den største filen: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Linjene som vil bli skrevet</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Listen over sider for søkemotorer; krever den offentlige adressen.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Sidene hentes slik en besøkende som ikke er logget inn ser dem. Siteaccesser for administrasjon og redigering tilbys aldri.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Fremdriften kunne ikke følges. Last inn siden på nytt for å se hvordan det går med jobben.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Den offentlige halvdelen av nøkkelen:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Roten av grenen</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Hemmelighetslageret er ikke satt opp ennå (./console exp:upgrade --apply lager tabellen), så ingen nøkkel kan lagres.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Serveren logger inn selv (sin egen SSH-nøkkel eller credential helper), eller depotet ligger på denne serveren.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Innstillingen kunne ikke skrives: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Innstillingene er gyldige. Disse linjene vil bli skrevet:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Innstillingsfilen kan ikke leses: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Nettstedet går tilbake til filene fra den publiseringen; et bygg som ikke er publisert ennå, må publiseres eller kastes først.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Nettstedets egen side for adresser som ikke finnes.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Målet kunne ikke lagres: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Målet logger ennå ikke inn med denne nøkkelen: velg «En deploy-nøkkel laget for dette målet» i innstillingene.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Målene kunne ikke leses: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Det finnes ikke noe bygg å kontrollere ennå.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Denne installasjonen har ingen offentlig siteaccess. Siteaccesser for administrasjon og redigering publiseres aldri.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Denne siden følger jobben mens den pågår; den fortsetter i bakgrunnen når siden lukkes.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Dette målet har ingen deploy-nøkkel ennå.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Dette målet er ikke bygget her ennå.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Dette målet har en.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Kaster dette bygget: mappen inneholder siste publisering igjen. Nettstedet i drift endres ikke.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Kryss av for «Jeg har kontrollert endringene» først.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tid</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Utløsere</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Skriv inn navnet på etiketten igjen</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Uendret</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Hva</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Hva som endres</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Hva hver fil er; skrives alltid.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Hva jobben gjorde, og loggen. En jobb som startes her, fortsetter i bakgrunnen når denne siden lukkes.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Det jobben skrev ut som feil</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Det sidene nevner, og hvert bilde i publisert innhold</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Når</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Når en publisering mislykkes</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Når en publisering lykkes</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Når innhold publiseres</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Hvor lenker til det kopien ikke inneholder, går (søket, innloggingen).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Hvor den statiske kopien leveres fra.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Hvilket nettsted som publiseres, og hva målet heter.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Fungerer under en hvilken som helst sti. Standard.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Skrives når et eget domene er angitt.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Du kan alltid bygge og publisere for hånd her og på konsollen.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>bare et navn; verdien blir værende i Oppsett &gt; Hemmeligheter</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>under %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>avsluttet uten rapport</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ekstra</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>mislyktes</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fil</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, eller main med mappen docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git-vert</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (med et token) eller git@github.com:owner/repo.git (med en deploy-nøkkel); aldri et passord eller token i den.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, for nettstedskartet og de kanoniske lenkene.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>bilde</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>aldri</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>ingen fjernkilde</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>ingen: innsendinger blir i mappen</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>ingen: ingenting endret</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ikke lastet opp</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ingenting endret</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>side</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>bestått</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open er deaktivert, så en jobb kan ikke startes her. Bruk ./console exp:static:build på serveren.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>publisering</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>publisert</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>opplasting venter</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>lastet opp</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>avvist</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relativ</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>tilbakerulling</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>rullet tilbake</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>kjører</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>bare mappen</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: skrives til filen CNAME. Pek domenets DNS mot verten slik den forklarer; HTTPS kan ta en stund før det starter.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ja, ikke publisert ennå</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>En GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>En workflow i depotet publiserer det. Bygget skriver workflow-filen; la mappen stå tom.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Når et mål er lagret med et GitHub-depot og et token eller en GitHub App, kan dette trinnet opprette depotet og slå på GitHub Pages. Ellers oppretter du depotet på GitHub først; et tomt depot holder.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Gren eller GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Sjekk DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Opprett depotet hvis det ikke finnes</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Opprett depotet på GitHub og slå på GitHub Pages i innstillingene (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Oppretter depotet %repo hvis det mangler (når det er ønsket), slår på GitHub Pages fra grenen eller fra GitHub Actions slik det er lagret, og setter eget domene og HTTPS. Bruker de lagrede innstillingene: lagre endringer først.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Detaljer på GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Skriv inn eget domene først.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Hver push sjekkes først mot disse grensene.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>For en https://-adresse på GitHub. Appen som er satt opp for denne installasjonen, logger på; den trenger installasjons-ID-en.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages viser et privat depot bare med et betalt abonnement.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: et underdomene (www.example.com) trenger en CNAME-post til &lt;owner&gt;.github.io; et apex-domene (example.com) A-postene %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Installasjons-ID for GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Siste Pages-bygg</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Grenser og vilkår</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Nødvendig for GitHub Pages med gratis abonnement.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>På GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Bare med en GitHub App: tallet på slutten av adressen til appens installasjon på GitHub. Selve appen angis i staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Offentlig</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Lagre målet med et GitHub-depot og et token eller en GitHub App først.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Sett disse postene hos leverandøren av domenet:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Sett opp på GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS for %domain peker ikke på GitHub Pages ennå.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS for %domain peker på GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub-integrasjonen er ikke tilgjengelig her: %problem. Publisering til grenen virker likevel; slå på GitHub Pages i depotets innstillinger.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub-trinnene er ikke tilgjengelige for dette målet: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Statusen for GitHub Pages vises med et token eller en GitHub App som legitimasjon.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Bruk ditt eget domene</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Hva du bør velge: token, deploy-nøkkel eller GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Med et GitHub-depot og et token eller en GitHub App kan veiviseren opprette depotet, slå på GitHub Pages og sette domenet for deg (trinn 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>bygges</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>bygget</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>fra GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>fra grenen %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ingen ennå</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ikke funnet</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>av</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>offentlig</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>i kø</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ukjent</translation>
     </message>
 </context>
 </TS>

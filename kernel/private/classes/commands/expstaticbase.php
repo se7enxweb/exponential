@@ -30,14 +30,16 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
     {
         return array(
             'exp:static:targets' => '[format:]',
-            'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging]',
+            'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging][login:][run-id:][progress:]',
             'exp:static:diff' => '[format:][verify][check-links][mount:*]',
             'exp:static:serve' => '[port:][host:][base-path:][format:]',
-            'exp:static:publish' => '[build][message:][no-push][format:]',
-            'exp:static:rollback' => '[apply][message:][no-push][format:]',
+            'exp:static:publish' => '[build][message:][no-push][format:][login:][run-id:][progress:]',
+            'exp:static:rollback' => '[apply][message:][no-push][format:][login:][run-id:][progress:]',
             'exp:static:push' => '[format:]',
             'exp:static:keys' => '[generate][replace][format:]',
             'exp:static:status' => '[limit:][format:]',
+            'exp:static:github' => '[create-repo][public][private][pages:][domain:][no-https][plan][client-id:][secret:][format:]',
+            'exp:static:dns' => '[owner:][format:]',
         );
     }
 
@@ -57,6 +59,8 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
             'exp:static:push' => '[target]',
             'exp:static:keys' => '[target]',
             'exp:static:status' => '[target]',
+            'exp:static:github' => '[action][target]',
+            'exp:static:dns' => '[domain]',
         );
     }
 
@@ -86,6 +90,19 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
             'generate' => 'Make a new deploy key (ed25519) and store its private half in the secret store',
             'replace' => 'With --generate: replace the target\'s deploy key (the old one stops working)',
             'limit' => 'How many of the last runs to list (default 10)',
+            'create-repo' => 'setup: create the repository when it does not exist (empty; the first publish fills it)',
+            'public' => 'With --create-repo: a public repository (the default; GitHub Pages on a free plan needs one)',
+            'private' => 'With --create-repo: a private repository (GitHub Pages serves it only on a paid plan)',
+            'pages' => 'setup: branch or actions instead of the target\'s Delivery, or off to leave GitHub Pages as it is',
+            'domain' => 'setup: this custom domain instead of the target\'s CustomDomain (none removes it)',
+            'no-https' => 'setup: do not enforce HTTPS for the custom domain',
+            'plan' => 'setup: only say what would be done, change nothing',
+            'client-id' => 'signin: the client id of the OAuth App (default [StaticPublishSettings] GitHubOAuthClientId)',
+            'secret' => 'signin: the name of the secret the token is kept as (Setup > Secrets); the target names it as Credential=token:<secret>',
+            'owner' => 'The GitHub account or organization that owns the repository (the CNAME must name <owner>.github.io)',
+            'login' => 'Run as this user (the administration starts its jobs so); recorded as who ran it',
+            'run-id' => 'The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job\'s id)',
+            'progress' => 'Also append the progress, one JSON object per line, to this file (the administration follows it)',
         );
     }
 
@@ -100,6 +117,61 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
     protected function publisher( \expStaticTarget $target, $db, array $options = array() )
     {
         return new \expStaticPublisher( $target, $options + array( 'root' => defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : (string)getcwd(), 'db' => $db ) );
+    }
+
+    /** @var string the file of --progress, '' without it */
+    protected $progressFile = '';
+
+    /**
+     * The options of a job the administration starts (--login, --run-id, --progress): checked, the user signed in, the
+     * progress file kept for the end event. A usage error ends the command.
+     *
+     * @param array $options
+     * @return array by (who runs it, '' for the default), run_id ('' for a new one), progress (an emit callable or null)
+     */
+    protected function jobOptions( array $options )
+    {
+        $out = array( 'by' => '', 'run_id' => '', 'progress' => null );
+        $login = isset( $options['login'] ) && $options['login'] !== false ? trim( (string)$options['login'] ) : '';
+        if ( $login !== '' )
+        {
+            $user = \eZUser::fetchByName( $login );
+            if ( !$user instanceof \eZUser )
+                $this->usage( "--login names no user: $login" );
+            \eZUser::setCurrentlyLoggedInUser( $user, $user->attribute( 'contentobject_id' ), \eZUser::NO_SESSION_REGENERATE );
+            $out['by'] = $login;
+        }
+        $runId = isset( $options['run-id'] ) && $options['run-id'] !== false ? trim( (string)$options['run-id'] ) : '';
+        if ( $runId !== '' && !\expStaticJob::validId( $runId ) )
+            $this->usage( "--run-id must look like 20261101-120000-a1b2c3, not $runId" );
+        $out['run_id'] = $runId;
+        $file = isset( $options['progress'] ) && $options['progress'] !== false ? (string)$options['progress'] : '';
+        if ( $file !== '' )
+        {
+            if ( !is_dir( dirname( $file ) ) || is_dir( $file ) )
+                $this->usage( "--progress must name a file in a folder that exists, not $file" );
+            $this->progressFile = $file;
+            $out['progress'] = \expStaticProgress::writer( $file );
+        }
+        return $out;
+    }
+
+    /**
+     * Two emit callbacks as one (either may be null).
+     *
+     * @param callable|null $a
+     * @param callable|null $b
+     * @return callable|null
+     */
+    protected static function bothEmit( $a, $b )
+    {
+        if ( $a === null || $b === null )
+            return $a !== null ? $a : $b;
+        return function ( $type, $message = '', array $data = array() ) use ( $a, $b )
+        {
+            call_user_func( $a, $type, $message, $data );
+            call_user_func( $b, $type, $message, $data );
+        };
     }
 
     /** Ends with exit 1 when static publishing is switched off. */
@@ -259,6 +331,11 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
         $report = array( 'schema' => \expStaticBuild::REPORT, 'command' => $this->name() ) + $report;
         if ( !isset( $report['exit'] ) )
             $report['exit'] = !empty( $report['errors'] ) ? \expUpgrade::EXIT_FAILED : \expUpgrade::EXIT_OK;
+        if ( $this->progressFile !== '' )
+        {
+            $writer = \expStaticProgress::writer( $this->progressFile );
+            $writer( 'end', (string)(int)$report['exit'] );
+        }
         if ( $format === 'json' )
             $this->cli()->output( json_encode( $report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) );
         else

@@ -1,0 +1,78 @@
+{
+    "command:expmigrationgenerate --from-recording": {
+        "en": "Generate a YAML migration from a recording of changes (its id); it needs the YAML step types the recording uses",
+        "de": "Erzeugt eine YAML-Migration aus einer Aufzeichnung von Änderungen (ihre ID); dafür braucht es die YAML-Schritttypen, die die Aufzeichnung verwendet"
+    },
+    "command:expmigrationrecorddiscard": {
+        "en": "Discard a recording of changes: the recording and every event it captured are removed (a running one stops recording); a dry run unless --apply",
+        "de": "Verwirft eine Aufzeichnung von Änderungen: die Aufzeichnung und jedes erfasste Ereignis werden entfernt (eine laufende hört auf aufzuzeichnen); ein Probelauf ohne --apply"
+    },
+    "command:expmigrationrecordlist": {
+        "en": "List the recordings of changes, running and stopped, the newest first, with their kind, state and number of events",
+        "de": "Listet die Aufzeichnungen von Änderungen, laufende und beendete, die neueste zuerst, mit Art, Zustand und Zahl der Ereignisse"
+    },
+    "command:expmigrationrecordlist --count": {
+        "en": "How many recordings to list, the newest first (default 50)",
+        "de": "Wie viele Aufzeichnungen gelistet werden, die neueste zuerst (Standard 50)"
+    },
+    "command:expmigrationrecordshow": {
+        "en": "Show a recording of changes: every event it captured as the migration step it stands for, or with --plan the steps a migration of it would have",
+        "de": "Zeigt eine Aufzeichnung von Änderungen: jedes erfasste Ereignis als der Migrationsschritt, für den es steht, oder mit --plan die Schritte, die eine Migration daraus hätte"
+    },
+    "command:expmigrationrecordshow --plan": {
+        "en": "The steps a migration of the recording would have (its events folded per thing changed) instead of every event",
+        "de": "Die Schritte, die eine Migration der Aufzeichnung hätte (ihre Ereignisse je geänderter Sache zusammengefasst), statt jedes Ereignisses"
+    },
+    "command:expmigrationrecordstart": {
+        "en": "Start a recording of changes: one user's own changes (a session recording) or every change of the site (--site-wide), kept as the steps of a YAML migration; a dry run unless --apply",
+        "de": "Startet eine Aufzeichnung von Änderungen: die eigenen Änderungen eines Benutzers (eine Sitzungsaufzeichnung) oder jede Änderung der Website (--site-wide), festgehalten als Schritte einer YAML-Migration; ein Probelauf ohne --apply"
+    },
+    "command:expmigrationrecordstart --label": {
+        "en": "The label of the caption or of the recording (a caption without one: \"manual caption\" with the time)",
+        "de": "Die Bezeichnung des Sicherungspunkts oder der Aufzeichnung (ein Sicherungspunkt ohne eine: \"manual caption\" mit der Uhrzeit)"
+    },
+    "command:expmigrationrecordstart --site-wide": {
+        "en": "The site-wide recording: every change of every user and of the console (without it: one user's own changes)",
+        "de": "Die websiteweite Aufzeichnung: jede Änderung jedes Benutzers und der Konsole (ohne: die eigenen Änderungen eines Benutzers)"
+    },
+    "command:expmigrationrecordstart --user": {
+        "en": "The user, by login, whose own changes a session recording keeps (default: [RunSettings] RunAsUser of migration.ini)",
+        "de": "Der Benutzer, nach Login, dessen eigene Änderungen eine Sitzungsaufzeichnung festhält (Standard: [RunSettings] RunAsUser der migration.ini)"
+    },
+    "command:expmigrationrecordstatus": {
+        "en": "The recordings of changes that run: the site-wide window and the user's own recording, with how much each has recorded; repairs the file of running recordings",
+        "de": "Die laufenden Aufzeichnungen von Änderungen: das websiteweite Fenster und die eigene Aufzeichnung des Benutzers, mit dem bisher Aufgezeichneten; repariert die Datei der laufenden Aufzeichnungen"
+    },
+    "command:expmigrationrecordstatus --user": {
+        "en": "The user, by login, whose own changes a session recording keeps (default: [RunSettings] RunAsUser of migration.ini)",
+        "de": "Der Benutzer, nach Login, dessen eigene Änderungen eine Sitzungsaufzeichnung festhält (Standard: [RunSettings] RunAsUser der migration.ini)"
+    },
+    "command:expmigrationrecordstop": {
+        "en": "Stop a recording of changes: the one named, a user's own (--user) or the site-wide window (--site-wide); its events stay for exp:migration:generate --from-recording; a dry run unless --apply",
+        "de": "Beendet eine Aufzeichnung von Änderungen: die genannte, die eigene eines Benutzers (--user) oder das websiteweite Fenster (--site-wide); ihre Ereignisse bleiben für exp:migration:generate --from-recording; ein Probelauf ohne --apply"
+    },
+    "command:expmigrationrecordstop --site-wide": {
+        "en": "The site-wide recording: every change of every user and of the console (without it: one user's own changes)",
+        "de": "Die websiteweite Aufzeichnung: jede Änderung jedes Benutzers und der Konsole (ohne: die eigenen Änderungen eines Benutzers)"
+    },
+    "command:expmigrationrecordstop --user": {
+        "en": "The user, by login, whose own changes a session recording keeps (default: [RunSettings] RunAsUser of migration.ini)",
+        "de": "Der Benutzer, nach Login, dessen eigene Änderungen eine Sitzungsaufzeichnung festhält (Standard: [RunSettings] RunAsUser der migration.ini)"
+    },
+    "ini:settings/migration.ini [RecordingSettings] EventList": {
+        "en": "The audit events a recording keeps, by name (the kernel's audit taxonomy). Empty: every event a migration step can\nrepeat (the list of expMigrationRecordingEvent::STEPS, in guides/migrations-generators-and-recording.md).",
+        "de": "Die Audit-Ereignisse, die eine Aufzeichnung festhält, nach Name (die Audit-Taxonomie des Kernels). Leer: jedes Ereignis, das ein Migrationsschritt\nwiederholen kann (die Liste von expMigrationRecordingEvent::STEPS, in guides/migrations-generators-and-recording.md)."
+    },
+    "ini:settings/migration.ini [RecordingSettings] MaxEvents": {
+        "en": "The most events one recording keeps; the recording keeps running but adds nothing more, and says so. 0: no limit.",
+        "de": "Die meisten Ereignisse, die eine Aufzeichnung festhält; die Aufzeichnung läuft weiter, fügt aber nichts mehr hinzu und sagt das. 0: keine Grenze."
+    },
+    "ini:settings/migration.ini [RecordingSettings] Recording": {
+        "en": "Recordings of changes (./console exp:migration:record:start, Setup > Migrations > Recording): what is changed in\nthe administration, the website sidebar or a command while a recording runs is kept as the steps of a YAML\nmigration, for ./console exp:migration:generate --from-recording=<id>. A session recording keeps one user's own\nchanges; a site-wide recording keeps every change of every user. The recording sees the kernel's operations\n(content published, a node moved, a class stored, a role changed, a setting written ...), not web requests.\n\ndisabled: nothing is recorded and no recording can be started.",
+        "de": "Aufzeichnungen von Änderungen (./console exp:migration:record:start, Einrichtung > Migrationen > Aufzeichnung): was in\nder Administration, der Website-Seitenleiste oder mit einem Befehl geändert wird, während eine Aufzeichnung läuft, wird als Schritte einer YAML-\nMigration festgehalten, für ./console exp:migration:generate --from-recording=<id>. Eine Sitzungsaufzeichnung hält die eigenen\nÄnderungen eines Benutzers fest; eine websiteweite Aufzeichnung jede Änderung jedes Benutzers. Die Aufzeichnung sieht die Operationen des Kernels\n(Inhalt veröffentlicht, ein Knoten verschoben, eine Klasse gespeichert, eine Rolle geändert, eine Einstellung geschrieben ...), keine Web-Anfragen.\n\ndisabled: nichts wird aufgezeichnet und keine Aufzeichnung kann gestartet werden."
+    },
+    "ini:settings/migration.ini [RecordingSettings] UserKeepAttributeList": {
+        "en": "The attributes of user objects that are not personal data and may be recorded (identifiers, e.g. a \"signature\"\na site uses for a team account). Empty: none. The account (login, e-mail, password) is never recorded, whatever\nthis says: a generated migration names it by a secret reference.",
+        "de": "Die Attribute von Benutzerobjekten, die keine personenbezogenen Daten sind und aufgezeichnet werden dürfen (Bezeichner, z. B. eine \"signature\",\ndie eine Website für ein Teamkonto nutzt). Leer: keine. Das Konto (Login, E-Mail, Passwort) wird nie aufgezeichnet, was immer\nhier steht: eine erzeugte Migration nennt es über eine Geheimnis-Referenz."
+    }
+}

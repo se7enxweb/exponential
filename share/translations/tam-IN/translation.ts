@@ -15156,6 +15156,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>புதிய உள்ளடக்கம், மதிப்பாய்வுக்காக நிறுத்திவைக்கப்பட்டவை, ஒரு தேர்வின் மீதான செயல்கள்.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ஒரு தளத்தின் நிலையான நகலை GitHub Pages அல்லது எந்த git வழங்கியிலும் வெளியிடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>நிலையான வெளியீடு</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22155,6 +22163,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API இன் சேமிக்கப்பட்ட வினவல்களின் பதில்களும் அதன் ஸ்கீமாவின் உள்ளடக்க வகுப்புகளும்.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>நிலையான நகலை GitHub Pages அல்லது எந்த git வழங்கியிலும் வெளியிடுங்கள்</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>நிலையான வெளியீடு</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>நிலையான தற்காலிகச் சேமிப்பு இந்தச் சேவையகத்திலிருந்து பக்கங்களை வழங்குகிறது. ஒரு தளத்தின் நிலையான நகலை வேறிடத்தில், GitHub Pages அல்லது எந்த git வழங்கியிலும் வெளியிட, நிலையான வெளியீட்டைப் பயன்படுத்துங்கள்.</translation>
     </message>
 </context>
 <context>
@@ -76212,6 +76232,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>கோப்புகளாக வைக்கப்பட்ட நிறுவல் மாற்றங்கள்: அவற்றின் நிலை, இயக்கங்கள், இயக்குதல் மற்றும் திரும்பப்பெறுதல்.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ஒரு தளத்தின் நிலையான நகலை GitHub Pages அல்லது எந்த git வழங்கியிலும் வெளியிடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>நிலையான வெளியீடு</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80560,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>இயக்கத்தைத் தொடங்க முடியவில்லை.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>மாற்றங்களைப் பதிவுசெய்தல்</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>பதிவு நடக்கும்போது நிர்வாகத்திலோ தளத்தின் பக்கப்பட்டியிலோ நீங்கள் மாற்றுவது ஒரு இடம்பெயர்வின் படிகளாக வைக்கப்படும்: உள்ளடக்கம், வகுப்புகள், பாத்திரங்களும் கொள்கைகளும், பிரிவுகள், பயனர்களும் குழுக்களும், URL மாற்றுப்பெயர்கள், அமைப்புகள். முடிந்ததும் நிறுத்தி, அது என்ன பிடித்தது எனப் பார்த்து, அதிலிருந்து ஒரு இடம்பெயர்வை உருவாக்குங்கள்.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>பதிவுகளைப் படிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>பதிவுகளின் அட்டவணைகள் இன்னும் இல்லை: முதலில் மேம்படுத்தலை இயக்குங்கள் (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini இல் பதிவு அணைக்கப்பட்டுள்ளது ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>என் மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>நீங்கள் நிறுத்தும் வரை, நீங்கள் மாற்றுவதை மட்டும், எங்கு மாற்றினாலும், பதிவுசெய்கிறது.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>பதிவு</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time முதல், இதுவரை %count மாற்றங்கள்.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>லேபிள் (விருப்பம்)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>அது என்ன பிடித்தது எனக் காட்டு</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>பதிவை நிறுத்து</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>என் மாற்றங்களைப் பதிவுசெய்யத் தொடங்கு</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>முழுத் தளத்துக்கான சாளரம்</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>மூடப்படும் வரை ஒவ்வொரு பயனரின் மற்றும் கன்சோலின் ஒவ்வொரு மாற்றத்தையும் பதிவுசெய்கிறது. திறக்கும்போது நீங்கள்தான் என உறுதிசெய்யக் கேட்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>திறந்துள்ளது</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>சாளரத்தை மூடு</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>முழுத் தளத்துக்கான சாளரத்தைத் திற</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>பதிவுகள்</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>பயனரின் கணக்கு (உள்நுழைவுப் பெயர், மின்னஞ்சல், கடவுச்சொல்) மற்றும் பயனர் கணக்குகளின் புலங்கள் ஒருபோதும் பதிவுசெய்யப்படுவதில்லை.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>முழுத் தளம்</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name இன் மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>நிறுத்தப்பட்டது</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>இன்னும் பதிவு இல்லை.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>பதிவு %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>எல்லாப் பதிவுகளும்</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>இதிலிருந்து உருவாகும் இடம்பெயர்வு</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>மாற்றப்பட்ட ஒவ்வொன்றுக்கும் ஒரு படியாகத் தொகுக்கப்பட்ட மாற்றங்கள்: இந்தப் பதிவிலிருந்து உருவாக்கப்படும் இடம்பெயர்வு செய்வது.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>இந்த நிறுவலில் YAML படி வகைகள் %types இருக்கும்போது இதிலிருந்து இடம்பெயர்வை உருவாக்கலாம்.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>வேண்டுமென்றே விடப்பட்டது: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>எதுவும் பதிவுசெய்யப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>அது என்ன பிடித்தது</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count மாற்றங்கள், செய்யப்பட்ட வரிசையில்.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>மாற்றம்</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>படி</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>தொடர்புடையது</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>மேலும் %count: ./console exp:migration:record:show அனைத்தையும் பட்டியலிடும்.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>நிராகரி</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>பதிவையும் அது பிடித்ததையும் நீக்குகிறது. மாற்றப்பட்டது மாற்றப்பட்டதாகவே இருக்கும்.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ஆம், இந்தப் பதிவை நிராகரி</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>பதிவுசெய்கிறது…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>உங்கள் மாற்றங்கள் ஒரு இடம்பெயர்வுக்காகப் பதிவுசெய்யப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>இந்தத் தளத்தின் ஒவ்வொரு மாற்றமும் ஒரு இடம்பெயர்வுக்காகப் பதிவுசெய்யப்படுகிறது (முழுத் தளத்துக்கான சாளரம்).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>முழுத் தளப் பதிவு தொடங்கியது: நீங்கள் நிறுத்தும் வரை ஒவ்வொரு பயனரின் ஒவ்வொரு மாற்றமும் பதிவுசெய்யப்படும்.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>பதிவு தொடங்கியது: நீங்கள் நிறுத்தும் வரை உங்கள் மாற்றங்கள் பதிவுசெய்யப்படும்.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>பதிவு நிறுத்தப்பட்டது. அது பிடித்தது நீங்கள் நிராகரிக்கும் வரை இருக்கும்.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>பதிவும் அதன் நிகழ்வுகளும் நீக்கப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>பதிவு %id இல்லை.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>முதலில் "ஆம், இந்தப் பதிவை நிராகரி" என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>அமர்வுப் பதிவைப் பதிவுசெய்த பயனர் மட்டுமே நிறுத்தலாம்.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>நிறுத்த வேண்டிய பதிவைத் தேர்ந்தெடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>இந்த வகைப் பதிவு ஏற்கனவே நடக்கிறது.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>பதிவை மாற்ற முடியவில்லை: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81223,6 +81467,1540 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>விடுவிக்கப்பட்டது.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>அனைத்து இலக்குகளும்</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>கடைசி வெளியீடு</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>உங்கள் தளத்தின் இலவச நிலையான நகலை GitHub Pages இல் வெளியிடுங்கள்:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>காலாவதியான பக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>நிலையான வெளியீடு</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>நிலையான வெளியீடு அணைக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>இலக்கு</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>இலக்குகளைப் படிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>ஒரு பணி நடந்துகொண்டிருக்கிறது</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>சரிபார்க்க வேண்டிய உருவாக்கம்</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>இதை மறை</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ஓர் இலக்கை உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ஒருபோதும் இல்லை</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>பயிற்சி வழிகாட்டியைப் படி</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added சேர்க்கப்பட்டன, %changed மாற்றப்பட்டன, %removed நீக்கப்பட்டன</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit இல் %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>மேலும் %count பட்டியலிடப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages பக்கங்கள் எழுதப்பட்டன</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path இன் அளவு %size, இது ஒரு கோப்புக்கு வழங்கி அனுமதிப்பதை விட அதிகம்.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>வரம்பின் %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds வி</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag என்பது தளத்தில் இப்போது உள்ள வெளியீடு.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: பணி %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/களஞ்சியம்/ GitHub திட்டத் தளத்துக்கு; சொந்த டொமைன் அல்லது பயனர் தளத்துக்குக் காலியாக விடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. தளம்</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. வழங்கி</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. களஞ்சியத்தில் உள்நுழைதல்</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. களஞ்சியம்</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. இணைப்புகளும் அடிப்படைப் பாதையும்</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. உங்கள் சொந்த டொமைன்</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. உருவாக்கத்தில் என்ன உள்ளது</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. எப்போது வெளியிடப்படுகிறது</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. மதிப்பாய்வு செய்து சேமி</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub திட்டத் தளம் /&lt;repository&gt;/ இன் கீழ் இருக்கும்; சார்பு இணைப்புகள் அங்கும் வேறு எங்கும் வேலை செய்யும்.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ஓர் உருவாக்கம் %site இன் ஒவ்வொரு பக்கத்தையும் உள்நுழையாத பார்வையாளர் பார்ப்பது போலவே பெற்று, இணைப்புகளை மாற்றி எழுதி, கோப்புகளை நகலெடுத்து, முடிவை இலக்கின் கோப்புறையில் எழுதுகிறது. நீங்கள் உருவாக்கத்தைச் சரிபார்த்து வெளியிடு என்பதை அழுத்தும் வரை எதுவும் வெளியிடப்படாது.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>ஒரு cron கோவை, எடுத்துக்காட்டாக 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>வரிசைப்படுத்தல் விசை %secret என்ற ரகசியமாக வைக்கப்படுகிறது.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>வரிசைப்படுத்தல் விசை இந்த நிறுவலை SSH வழியாக ஒரே ஒரு களஞ்சியத்துக்கு மட்டும் அனுப்ப அனுமதிக்கிறது, வேறெங்கும் இல்லை. அதன் தனிப்பட்ட பாதி அமைவு &gt; ரகசியங்கள் இல் இருக்கும்; பொதுப் பாதி மட்டுமே காட்டப்படும்.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>இந்த இலக்குக்காக உருவாக்கப்பட்ட வரிசைப்படுத்தல் விசை</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>வரிசைப்படுத்தல் விசை SSH வழியாக உள்நுழைகிறது: git முகவரியை SSH முகவரியாக மாற்றுங்கள் (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>%user தொடங்கிய ஒரு பணி நடந்துகொண்டிருக்கிறது</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>இந்த இலக்கின் ஒரு பணி இன்னும் நடந்துகொண்டிருக்கிறது (%detail). அது முடியும் வரை காத்திருங்கள்.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>இந்த இலக்கின் ஒரு பணி இன்னும் நடந்துகொண்டிருக்கிறது. அது முடியும் வரை காத்திருங்கள்.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ பக்கத்திலிருந்து /about-us/team பக்கத்துக்கான இணைப்பு இவ்வாறு எழுதப்படும்</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>புதிய வரிசைப்படுத்தல் விசை உருவாக்கப்பட்டது. அதன் பொதுப் பாதியை இப்போதே களஞ்சியத்தில் சேருங்கள்.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>அகற்றுதலுக்குப் பிறகும் பிழைத்திருத்த வெளியீடு, படிவ டோக்கன் அல்லது அமர்வு அடையாளம் கொண்ட பக்கம் ஒருபோதும் வெளியிடப்படாது.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>திரும்பப்பெறுதல் நிபுணர்களுக்கானது: &quot;இது என்ன மாற்றும் என்று எனக்குத் தெரியும்&quot; என்பதைத் தேர்வுசெய்து குறிச்சொல்லின் பெயரை மீண்டும் தட்டச்சு செய்யுங்கள்.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>ஒரு தளம் %site வரையும், ஒரு கோப்பு %file வரையும் இருக்கலாம், மாதத்துக்கு சுமார் 100 GB போக்குவரத்துடன். இலவசத் திட்டத்தில் களஞ்சியம் பொதுவாக இருக்க வேண்டும். GitHub Pages கடைகளுக்கோ பிற வணிகப் பரிவர்த்தனைகளுக்கோ உரியதல்ல.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>ஓர் இலக்கு என்பது ஒரு git களஞ்சியத்தில் வெளியிடப்படும் ஒரு தளம். இங்கே எதுவும் உருவாக்கப்படவோ வெளியிடப்படவோ இல்லை: சேமி அமைப்புகளை settings/override/staticcache.ini.append.php இல் எழுதுகிறது.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>ஓர் இலக்கு என்பது ஓர் இடத்தில் வெளியிடப்படும் ஒரு தளம், எடுத்துக்காட்டாக GitHub Pages இல் உள்ள உங்கள் பொதுத் தளம்.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>அமைவு &gt; ரகசியங்கள் இலிருந்து ஒரு டோக்கன்</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>களஞ்சியத்தின் ஒரு பணிப்பாய்வு அதை வெளியிடுகிறது.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>இந்தப் பொது விசையை எழுதும் அனுமதியுடன் களஞ்சியத்தில் சேருங்கள். GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access ஐத் தேர்வுசெய்யுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>சேர்க்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>வேறொரு git வழங்கி</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>வேறொரு செயல்முறை இந்த இலக்கில் வேலை செய்கிறது: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>பின்செல்</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>அடிப்படைப் பாதை</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>முன்பு</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>ஓர் அடிப்படைப் பாதையின் கீழ்</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>கிளை</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>உடைந்த இணைப்புகள்</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>உருவாக்கத்தில் உடைந்த இணைப்புகள்</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>உருவாக்கம்</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%user செய்த உருவாக்கம் %id</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name ஐ உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>இப்போதே உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>சரிபார்க்க வேண்டிய உருவாக்கம்</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>செய்தவர்</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>கைமுறையாக, இங்கே</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ரத்துசெய்</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>மாற்று</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>முதலில் அதைச் சரிபாருங்கள்</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>இந்த அமைப்புகளைச் சரிபாருங்கள்</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>உருவாக்கம் என்ன மாற்றுகிறது என்று சரிபார்த்து, அதைப் பார்த்து, பின்னர் வெளியிடுங்கள் அல்லது நிராகரியுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>திரும்பச் செல்ல வேண்டிய வெளியீட்டைத் தேர்ந்தெடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>பிந்தைய வெளியீட்டில் வரும்.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>கமிட்</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>கமிட்கள்</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>உருவாக்கத்தை கமிட் செய்து, குறிச்சொல் இட்டு, %remote க்கு அனுப்புகிறது. அனுப்புதல் ஒருபோதும் கட்டாயப்படுத்தப்படாது; பின்னர் எந்த வெளியீட்டுக்கும் திரும்பச் செல்லலாம்.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>முந்தைய கோப்புறையுடன் ஒப்பிடுகையில்: %added சேர்க்கப்பட்டன, %changed மாற்றப்பட்டன, %removed நீக்கப்பட்டன, %unchanged மாறவில்லை.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>கடைசி வெளியீட்டுடன் ஒப்பிடப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>நற்சான்று</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>சொந்த டொமைன்</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>பிழைத்திருத்த வெளியீடு, படிவ டோக்கன்கள், அமர்வு அடையாளங்கள் மற்றும் nonce-கள் எப்போதும் அகற்றப்படும்.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>வரிசைப்படுத்தல் விசை</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name இன் வரிசைப்படுத்தல் விசை</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>நிராகரி</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>உருவாக்கத்தை நிராகரி</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>டொமைன்</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>காலியாக: தளத்தின் முகவரி. இல்லையெனில் அதே தளத்தின் உள் முகவரி.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>முடிந்தது</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>ஒவ்வொரு இணைப்பும் அடிப்படைப் பாதையுடன் தொடங்கும்.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>ஒவ்வொரு வெளியீடும் static/%id/&lt;n&gt; குறிச்சொல்லுடன் கூடிய ஒரு கமிட். திரும்பச் செல்வது முந்தைய வெளியீட்டின் கோப்புகளுடன் புதிய கமிட்டை உருவாக்கும்: வரலாறு அப்படியே இருக்கும், எந்தக் குறிச்சொல்லும் நகராது, எதுவும் கட்டாயப்படுத்தப்படாது.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>கூடுதல் கோப்புகள்</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>பக்கங்களைப் பெறும் இடம்</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>கோப்பு</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>கோப்புகள்</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>கோப்புகள் இல்லை</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>இதன் கோப்புகள்</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>சேகரிக்க முடியாத கோப்புகள்</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>கைரேகை</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>கோப்புறை</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH முகவரிக்கு. சேமித்த பிறகு விசை உருவாக்கப்படும்; அதன் பொதுப் பாதியை நீங்கள் களஞ்சியத்தில் சேர்க்க வேண்டும்.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// முகவரிக்கு. GitHub: களஞ்சியத்தில் Contents படிக்கவும் எழுதவும் அனுமதி கொண்ட fine-grained டோக்கன்.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>நிபுணர்களுக்கு. அனுப்புதல் முடிந்தவுடனே பொதுத் தளம் மாறும்.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>படிவங்கள்</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub களஞ்சியத்திலிருந்து இலவச வழங்கல்.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>கிளையிலிருந்து</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git முகவரி</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site அளவுள்ள தளத்தையும் %file அளவுள்ள கோப்பையும் அனுமதிக்கிறது.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages வரம்புகள்</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages கோப்புகளை அப்படியே வெளியிடுகிறது (_ இல் தொடங்கும் கோப்புகளுக்குத் தேவை).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub கிளையை அனுப்பியபடியே வழங்குகிறது. இயல்புநிலை.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, உங்கள் சொந்தச் சேவையகம்: எந்த git களஞ்சியமும்.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>முந்தைய வெளியீட்டுக்குத் திரும்பு</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>உதவி</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>வழிகாட்டிக்கான உதவி</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>அவற்றை மறை</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>வரலாறு</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name இன் வரலாறு</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>வழங்கி</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages உருவாக்கத்தை எவ்வாறு பெறுகிறது</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>மாற்றங்களைச் சரிபார்த்துவிட்டேன்</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>இது என்ன மாற்றும் என்று எனக்குத் தெரியும்</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>அடையாளம்</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>இது அணைக்கப்பட்டுள்ளது: இயக்கப்படும் வரை எதையும் உருவாக்க முடியாது.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>இது %user ஆகப் பின்னணியில் இயங்குகிறது; இந்தப் பக்கத்தை மூடலாம்.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>பணி %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret என்ற ரகசியமாக வைக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>வகை</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>கடைசி வெளியீடு</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>இந்தப் பக்கங்களைத் தவிர்</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>இந்தப் பிரிவுகளைத் தவிர்</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>இணைப்புகள்</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>மாற்றி எழுதப்பட்ட இணைப்புகள்</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>நேரடித் தளம்</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>உருவாக்கத்தைப் பார்</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>சிறிய எழுத்துகள், இலக்கங்கள், _ மற்றும் -, எடுத்துக்காட்டாக github-public. இது கோப்புறைக்கும் குறிச்சொற்களுக்கும் (static/&lt;id&gt;/&lt;n&gt;) பெயரிடுகிறது, பின்னர் மாற்ற முடியாது.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>புதிய விசையை உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ஓர் இலக்கை உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>விசையை உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>முதலில் வழங்கியில் களஞ்சியத்தை உருவாக்குங்கள்; காலியானதும் சரி.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>கோப்புப் பட்டியல்</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>செய்தி</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>பெரும்பாலான பக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>பெயர்</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>அமைவு &gt; ரகசியங்கள் இல் உள்ள டோக்கனின் பெயர்</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>புதிய இலக்கு</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>அடுத்து</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>இல்லை</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>இன்னும் கமிட் இல்லை.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>எந்த விசையும் உருவாக்கப்படவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php கட்டளை வரி நிரல் எதுவும் கண்டறியப்படவில்லை. migration.ini [AdminSettings] PhpCliPath இல் அதன் முழுப் பாதையை அமையுங்கள்.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>இன்னும் குறிச்சொல் இல்லை.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>இன்னும் இலக்கு இல்லை.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>எதுவுமில்லை</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>உருவாக்கத்தில் இல்லை.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>இதுவரை எதுவும் வெளியிடப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>இதுவரை எதுவும் வெளியிடப்படவில்லை: ஒவ்வொரு கோப்பும் புதியது.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>அறிவி</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>அட்டவணைப்படி</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>கன்சோலில்</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>சேவையகத்தில்: ./console exp:static:serve %id அதையே அதே வழியில் வழங்குகிறது.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>ஒரு வரிக்கு ஒரு பாதை, * எந்தப் பகுதியுடனும் பொருந்தும்: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>இலக்குடன் ஒரு பெயர் மட்டுமே சேமிக்கப்படும்; டோக்கன் அல்லது விசை அமைவு &gt; ரகசியங்கள் இல் இருக்கும், எந்தப் பதிவிலும் தோன்றாது.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>பக்கங்கள் குறிப்பிடுபவை மட்டும்</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>டோக்கனுடன் மட்டும். env:NAME அதற்குப் பதிலாகச் சேவையகத்தின் சூழல் மாறியைப் படிக்கும்.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>முன்னோட்டத்தைத் திற</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>இலக்கின் கோப்புறையிலிருந்து, வழங்கி வழங்குவது போலவே உருவாக்கத்தைத் திறக்கிறது. இணைப்பு உங்களுக்கு ஒரு மணி நேரம் வேலை செய்யும்.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>விருப்பத்தேர்வு. காலியாக: வெளியிடப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>விருப்பத்தேர்வு. டொமைனுடன் தளம் அதன் மூலத்தில் வழங்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>வெளியீட்டு உரை</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>பக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>இலக்கின் பக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>மறுக்கப்பட்ட பக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>பின்செயலாக்கம்</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>முன்னோட்டம்</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>முன்னோட்டமிட்டு வெளியிடு</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name ஐ முன்னோட்டமிட்டு வெளியிடு</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>உருவாக்கத்தை முன்னோட்டமிடு</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>முன்னேற்றம்</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>பொது முகவரி</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>பொது விசை</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>வெளியிடு</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>ஒரு தளத்தின் நிலையான நகலை GitHub Pages அல்லது எந்த git வழங்கியிலும் வெளியிடுங்கள்: அதை உருவாக்கி, மாற்றங்களைச் சரிபார்த்து, வெளியிட்டு, தேவைப்படும்போது முந்தைய வெளியீட்டுக்குத் திரும்புங்கள்.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>திரும்பச் செல்ல வேண்டிய வெளியீடு</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>வெளியீடுகள்</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>அனுப்புதல்</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>பயிற்சி வழிகாட்டியைப் படி</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>பதிவு</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>மறுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>சார்பு</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>மீண்டும் ஏற்று</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>நீக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>விசையை மாற்று: பழையது வேலை செய்வது நின்றுவிடும்</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>அறிக்கை</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>உருவாக்கத்தின் அறிக்கை</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>களஞ்சியம்</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>மதிப்பாய்வு</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>மதிப்பாய்வு ஒவ்வொரு அமைப்பையும் சரிபார்த்து எழுதப்படும் வரிகளைக் காட்டுகிறது. இன்னும் எதுவும் சேமிக்கப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>திரும்பப்பெறு</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>திரும்பப்பெறுதல்</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>சேமி</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>அட்டவணை</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>தேடல் பக்கம்</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>பிரிவு அடையாளங்கள், காற்புள்ளிகளால் பிரிக்கப்பட்டவை.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>அவற்றை நேரடித் தளத்துக்கு அனுப்பு</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>அமைப்பு</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>அமைப்புகள்</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name இன் அமைப்புகள்</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>அமைவு</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>அமைவு &gt; ரகசியங்கள்</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>பட்டியல்களில் காட்டப்படும், எடுத்துக்காட்டாக &quot;GitHub Pages இல் உள்ள பொதுத் தளம்&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App மூலம் உள்நுழைதல் GitHub ஒருங்கிணைப்புடன் வரும்.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>தளம்</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>வெளியிட வேண்டிய தளம்</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>அளவு</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>அளவும் வரம்புகளும்</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>உருவாக்கத்தின் அளவு</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>காலாவதியான பக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>தொடங்கியது</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%time இல் %user தொடங்கினார்.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>நிலை</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>நிலையான வெளியீடு</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>நிலையான வெளியீடு அணைக்கப்பட்டுள்ளது</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>நிலையான வெளியீடு அணைக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>நிலையான வெளியீடு அணைக்கப்பட்டுள்ளது. முதலில் அமைவு &gt; நிலையான வெளியீடு இல் அதை இயக்குங்கள்.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>நிலையான வெளியீடு இயக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>படி %step / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>படிகள்</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>அகற்றுதல்</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>அணை</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>இயக்கு</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>நிலையான வெளியீட்டை இயக்கு</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>குறிச்சொல்</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>குறிச்சொற்கள்</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>இலக்கு</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>இலக்குகளை உருவாக்கவும் மாற்றவும் முடியும், ஆனால் இது இயக்கப்படும் வரை எதுவும் உருவாக்கப்படவோ வெளியிடப்படவோ மாட்டாது.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>தேடுபொறிகளுக்கு எதைப் படிக்க வேண்டும் என்று சொல்கிறது.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>உருவாக்கத்தை நிராகரிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>உருவாக்கம் கடைசி வெளியீட்டைப் போன்றதே: வெளியிட எதுவும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>உருவாக்கம் நிராகரிக்கப்பட்டது: கோப்புறையில் மீண்டும் கடைசி வெளியீடு உள்ளது.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>இயல்புநிலைகள் பெரும்பாலான தளங்களுக்குப் பொருந்தும்.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>கோப்புறையில் இன்னும் வெளியிடப்படாத உருவாக்கம் உள்ளது; புதிய உருவாக்கம் அதை மாற்றிவிடும்.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>பணிகளின் கோப்புறையில் எழுத முடியாது: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>பணியைத் தயாரிக்க முடியவில்லை: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>பணியைத் தொடங்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>பணி முடிந்தது. அதன் அறிக்கை ஏற்றப்படுகிறது.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>பணிக்கு உள்நுழைந்த பயனர் தேவை.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>பணி தொடங்கியது, ஆனால் அதன் செயல்முறை அடையாளத்தைத் தெரிவிக்கவில்லை. %detail ஐச் சரிபாருங்கள்.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>விசை</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>மிகப்பெரிய கோப்பு: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>எழுதப்படும் வரிகள்</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>தேடுபொறிகளுக்கான பக்கங்களின் பட்டியல்; பொது முகவரி தேவை.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>உள்நுழையாத பார்வையாளர் பார்ப்பது போலவே பக்கங்கள் பெறப்படுகின்றன. நிர்வாக மற்றும் திருத்த siteaccess-கள் ஒருபோதும் வழங்கப்படாது.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>முன்னேற்றத்தைப் பின்தொடர முடியவில்லை. பணி எப்படிச் செல்கிறது என்று பார்க்கப் பக்கத்தை மீண்டும் ஏற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>விசையின் பொதுப் பாதி:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>கிளையின் மூலம்</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>ரகசியக் களஞ்சியம் இன்னும் அமைக்கப்படவில்லை (./console exp:upgrade --apply அதன் அட்டவணையை உருவாக்கும்), எனவே எந்த விசையையும் வைக்க முடியாது.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>சேவையகம் தானாகவே உள்நுழைகிறது (அதன் சொந்த SSH விசை அல்லது நற்சான்று உதவியாளர் மூலம்), அல்லது களஞ்சியம் இந்தச் சேவையகத்திலேயே உள்ளது.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>அமைப்பை எழுத முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>அமைப்புகள் செல்லுபடியானவை. இந்த வரிகள் எழுதப்படும்:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>அமைப்புக் கோப்பைப் படிக்க முடியாது: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>தளம் அந்த வெளியீட்டின் கோப்புகளுக்குத் திரும்பும்; இன்னும் வெளியிடப்படாத உருவாக்கத்தை முதலில் வெளியிட வேண்டும் அல்லது நிராகரிக்க வேண்டும்.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>இல்லாத முகவரிகளுக்கான தளத்தின் சொந்தப் பக்கம்.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>இலக்கைச் சேமிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>இலக்கு இன்னும் இந்த விசையுடன் உள்நுழையவில்லை: அதன் அமைப்புகளில் &quot;இந்த இலக்குக்காக உருவாக்கப்பட்ட வரிசைப்படுத்தல் விசை&quot; என்பதைத் தேர்ந்தெடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>இலக்குகளைப் படிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>சரிபார்க்க இன்னும் எந்த உருவாக்கமும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>இந்த நிறுவலில் முன்பக்க siteaccess இல்லை. நிர்வாக மற்றும் திருத்த siteaccess-கள் ஒருபோதும் வெளியிடப்படாது.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>இந்தப் பக்கம் பணி நடக்கும்போது அதைப் பின்தொடர்கிறது; பக்கம் மூடப்பட்டாலும் அது பின்னணியில் தொடரும்.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>இந்த இலக்குக்கு இன்னும் வரிசைப்படுத்தல் விசை இல்லை.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>இந்த இலக்கு இங்கே இன்னும் உருவாக்கப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>இந்த இலக்குக்கு ஒன்று உள்ளது.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>இந்த உருவாக்கத்தை நிராகரிக்கிறது: கோப்புறையில் மீண்டும் கடைசி வெளியீடு இருக்கும். நேரடித் தளம் மாறாது.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>முதலில் &quot;மாற்றங்களைச் சரிபார்த்துவிட்டேன்&quot; என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>நேரம்</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>தூண்டிகள்</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>குறிச்சொல்லின் பெயரை மீண்டும் தட்டச்சு செய்யுங்கள்</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>மாறவில்லை</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>வெப்ஹூக்</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>என்ன</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>என்ன மாறுகிறது</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ஒவ்வொரு கோப்பும் என்ன; எப்போதும் எழுதப்படும்.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>பணி என்ன செய்தது மற்றும் அதன் பதிவு. இங்கே தொடங்கிய பணி இந்தப் பக்கம் மூடப்பட்டாலும் பின்னணியில் தொடரும்.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>பணி பிழைகளாக அச்சிட்டவை</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>பக்கங்கள் குறிப்பிடுபவை, மற்றும் வெளியிடப்பட்ட உள்ளடக்கத்தின் ஒவ்வொரு படமும்</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>எப்போது</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>வெளியீடு தோல்வியடையும்போது</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>வெளியீடு வெற்றிபெறும்போது</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>உள்ளடக்கம் வெளியிடப்படும்போது</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>நகலில் இல்லாதவற்றுக்கான இணைப்புகள் எங்கே செல்லும் (தேடல், உள்நுழைவு).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>நிலையான நகல் எங்கிருந்து வழங்கப்படுகிறது.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>எந்தத் தளம் வெளியிடப்படுகிறது, இலக்கின் பெயர் என்ன.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>எந்தப் பாதையின் கீழும் வேலை செய்யும். இயல்புநிலை.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>சொந்த டொமைன் அமைக்கப்படும்போதெல்லாம் எழுதப்படும்.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ஆம்</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>இங்கேயும் கன்சோலிலும் எப்போதும் கைமுறையாக உருவாக்கி வெளியிடலாம்.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>ஒரு பெயர் மட்டும்; மதிப்பு அமைவு &gt; ரகசியங்கள் இல் இருக்கும்</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path இன் கீழ்</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>அறிக்கை இல்லாமல் முடிந்தது</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>கூடுதல்</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>கோப்பு</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, அல்லது docs கோப்புறையுடன் main.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git வழங்கி</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (டோக்கனுடன்) அல்லது git@github.com:owner/repo.git (வரிசைப்படுத்தல் விசையுடன்); அதில் ஒருபோதும் கடவுச்சொல்லோ டோக்கனோ இருக்கக்கூடாது.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, தளவரைபடத்துக்கும் நியமன இணைப்புகளுக்கும்.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>படம்</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ஒருபோதும் இல்லை</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>இல்லை</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>தொலை களஞ்சியம் இல்லை</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>எதுவுமில்லை: கமிட்கள் கோப்புறையிலேயே இருக்கும்</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>எதுவுமில்லை: எதுவும் மாறவில்லை</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>அனுப்பப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>எதுவும் மாறவில்லை</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>பக்கம்</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>தேறியது</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open முடக்கப்பட்டுள்ளது, எனவே இங்கே பணியைத் தொடங்க முடியாது. சேவையகத்தில் ./console exp:static:build ஐப் பயன்படுத்துங்கள்.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>வெளியீடு</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>வெளியிடப்பட்டது</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>அனுப்புதல் நிலுவையில்</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>அனுப்பப்பட்டது</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>மறுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>சார்பு</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>திரும்பப்பெறுதல்</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>திரும்பப்பெறப்பட்டது</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>இயங்குகிறது</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>கோப்புறை மட்டும்</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME கோப்பில் எழுதப்படும். டொமைனின் DNS ஐ வழங்கி விளக்குவது போல் அதை நோக்கி அமையுங்கள்; HTTPS தொடங்கச் சிறிது நேரம் ஆகலாம்.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ஆம், இன்னும் வெளியிடப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>ஒரு GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>களஞ்சியத்தின் ஒரு பணிப்பாய்வு அதை வெளியிடுகிறது. உருவாக்கம் பணிப்பாய்வுக் கோப்பை எழுதுகிறது; கோப்புறையை வெறுமையாக விடவும்.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub களஞ்சியம் மற்றும் டோக்கன் அல்லது GitHub App உடன் இலக்கைச் சேமித்த பிறகு, இந்தப் படி களஞ்சியத்தை உருவாக்கி GitHub Pages ஐ இயக்க முடியும். இல்லையெனில் முதலில் GitHub இல் களஞ்சியத்தை உருவாக்கவும்; வெற்றுக் களஞ்சியமும் போதும்.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>கிளையா அல்லது GitHub Actions ஆ?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS ஐச் சரிபார்</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>களஞ்சியம் இல்லையெனில் அதை உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub இல் களஞ்சியத்தை உருவாக்கி அதன் அமைப்புகளில் GitHub Pages ஐ இயக்கவும் (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>களஞ்சியம் %repo இல்லாதபோது அதை உருவாக்குகிறது (கேட்கப்பட்டால்), சேமித்தபடி கிளையிலிருந்து அல்லது GitHub Actions இலிருந்து GitHub Pages ஐ இயக்குகிறது, மேலும் சொந்த டொமைன் மற்றும் HTTPS ஐ அமைக்கிறது. சேமித்த அமைப்புகளைப் பயன்படுத்துகிறது: முதலில் மாற்றங்களைச் சேமிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub இல் விவரங்கள்</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>முதலில் சொந்த டொமைனை உள்ளிடவும்.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>ஒவ்வொரு push உம் முதலில் இந்த வரம்புகளுடன் சரிபார்க்கப்படுகிறது.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub இல் உள்ள https:// முகவரிக்கு. இந்த நிறுவலுக்காக அமைக்கப்பட்ட App உள்நுழைகிறது; அதற்கு நிறுவல் id தேவை.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages தனிப்பட்ட களஞ்சியத்தைக் கட்டணத் திட்டத்தில் மட்டுமே வழங்குகிறது.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: துணை டொமைனுக்கு (www.example.com) &lt;owner&gt;.github.io க்கு ஒரு CNAME பதிவு தேவை; மூல டொமைனுக்கு (example.com) A பதிவுகள் %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App இன் நிறுவல் id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>கடைசி Pages உருவாக்கம்</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>வரம்புகளும் விதிமுறைகளும்</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>இலவசத் திட்டத்தில் GitHub Pages க்குத் தேவை.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub இல்</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App உடன் மட்டும்: GitHub இல் App நிறுவலின் முகவரியின் இறுதியில் உள்ள எண். App தானே staticcache.ini இல் அமைக்கப்படுகிறது (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>தனிப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>பொது</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>முதலில் GitHub களஞ்சியம் மற்றும் டோக்கன் அல்லது GitHub App உடன் இலக்கைச் சேமிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>டொமைன் வழங்குநரிடம் இந்தப் பதிவுகளை அமைக்கவும்:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub இல் அமை</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain இன் DNS இன்னும் GitHub Pages ஐச் சுட்டவில்லை.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain இன் DNS GitHub Pages ஐச் சுட்டுகிறது.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub ஒருங்கிணைப்பு இங்கே கிடைக்கவில்லை: %problem. கிளைக்கு வெளியிடுவது அப்படியும் வேலை செய்யும்; களஞ்சியத்தின் அமைப்புகளில் GitHub Pages ஐ இயக்கவும்.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>இந்த இலக்குக்கு GitHub படிகள் கிடைக்கவில்லை: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>நற்சான்றாக டோக்கன் அல்லது GitHub App இருக்கும்போது GitHub Pages இன் நிலை காட்டப்படும்.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>உங்கள் சொந்த டொமைனைப் பயன்படுத்து</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>எதைத் தேர்வு செய்வது: டோக்கன், வரிசைப்படுத்தல் விசை அல்லது GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub களஞ்சியம் மற்றும் டோக்கன் அல்லது GitHub App இருந்தால், வழிகாட்டி உங்களுக்காகக் களஞ்சியத்தை உருவாக்கி, GitHub Pages ஐ இயக்கி, டொமைனை அமைக்க முடியும் (படி 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>உருவாக்கப்படுகிறது</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>உருவாக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions இலிருந்து</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>கிளை %branch இலிருந்து</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>இன்னும் இல்லை</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>கிடைக்கவில்லை</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>முடக்கம்</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>தனிப்பட்டது</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>பொது</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>வரிசையில்</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>தெரியாது</translation>
     </message>
 </context>
 </TS>

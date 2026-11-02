@@ -15158,6 +15158,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>नमीं सामग्री, समीक्षा आस्तै केह् रोकेआ गेदा ऐ, ते चोन पर कार्रवाइयां।</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>कुसै साइट दी स्टैटिक कापी GitHub Pages जां कुसै बी git होस्ट पर प्रकाशत करो।</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>स्टैटिक प्रकाशन</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API दियें सेव कीती दियें क्वेरियें दे जवाब, ते उसदे स्कीमा दे सामग्री वर्ग।</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>स्टैटिक कापी GitHub Pages जां कुसै बी git होस्ट पर प्रकाशत करो</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>स्टैटिक प्रकाशन</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>स्टैटिक कैश इस सर्वर थमां सफे परोसदा ऐ। कुसै साइट दी स्टैटिक कापी कुतै होर, GitHub Pages जां कुसै बी git होस्ट पर प्रकाशत करने आस्तै स्टैटिक प्रकाशन बरतो।</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>फाइलें दे रूप च रक्खे गेदे इंस्टालेशन दे बदलाव: उंदी स्थिति, रन, चलाना ते वापस लैना।</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>कुसै साइट दी स्टैटिक कापी GitHub Pages जां कुसै बी git होस्ट पर प्रकाशत करो।</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>स्टैटिक प्रकाशन</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>रन शुरू नेईं होई सकेआ।</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>बदलाएं दी रिकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>जिन्ना चिर रिकॉर्डिंग चलदी ऐ, तुस प्रशासन च जां साइट दी साइडबार च जेह्‌ड़ा बदलदे ओ ओह् इक माइग्रेशन दे कदमें दे रूप च रक्खेआ जंदा ऐ: सामग्री, क्लासां, भूमिकां ते नीतियां, सेक्शन, बरतूनी आह्‌ले ते समूह, URL उपनांऽ, सेटिंगां। कम्म पूरा होने पर इसगी रोको, दिक्खो इसने केह् पकड़ेआ, ते इस थमां इक माइग्रेशन बनाओ।</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>रिकॉर्डिंगां पढ़ी नेईं जाई सकियां: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>रिकॉर्डिंग दियां तालिकां अजें नेईं न: पैह्‌लें अपग्रेड चलाओ (exp:upgrade --apply)।</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini च रिकॉर्डिंग बंद ऐ ([RecordingSettings] Recording=disabled)।</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>मेरे बदलाऽ</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>जिन्ना चिर तुस नेईं रोकदे, सिर्फ उऐ रिकॉर्ड करदी ऐ जेह्‌ड़ा तुस बदलदे ओ, जित्थें बी बदलो।</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>रिकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time थमां, हून तगर %count बदलाऽ।</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>लेबल (अपनी मर्जी)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>दस्सो इसने केह् पकड़ेआ</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>रिकॉर्डिंग रोको</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>मेरे बदलाएं दी रिकॉर्डिंग शुरू करो</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>सारी साइट दी बारी</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>बंद होने तगर हर बरतूनी आह्‌ले ते कंसोल दा हर बदलाऽ रिकॉर्ड करदी ऐ। खोह्‌लने बेल्लै तुंदे शा पुष्टि मंगी जंदी ऐ जे एह् तुस गै ओ।</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>खु'ल्ली</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>बारी बंद करो</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>सारी साइट दी बारी खोह्‌लो</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>रिकॉर्डिंगां</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>बरतूनी आह्‌ले दा खाता (लॉगिन, ई-मेल, पासवर्ड) ते बरतूनी खातें दे फील्ड कदें बी रिकॉर्ड नेईं होंदे।</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>बदलाऽ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>सारी साइट</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name दे बदलाऽ</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>रुकी दी</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>अजें कोई रिकॉर्डिंग नेईं।</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>रिकॉर्डिंग %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>सारियां रिकॉर्डिंगां</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>इस थमां बनने आह्‌ला माइग्रेशन</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>हर बदली दी चीज़ आस्तै इक कदम च कट्ठे कीते दे बदलाऽ: इस रिकॉर्डिंग थमां बने दा माइग्रेशन केह् करग।</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>जदूं इस इंस्टॉलेशन च YAML कदम किस्मां %types होङन तां इस थमां माइग्रेशन बनाई सकदे ओ।</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>जानी-बुज्झियै छोड़ेआ: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>किश बी रिकॉर्ड नेईं होआ।</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>इसने केह् पकड़ेआ</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count बदलाऽ, उस्सै क्रम च जिस च कीते गे।</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>बदलाऽ (इक)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>कदम</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>सरबंधत</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>होर %count: ./console exp:migration:record:show सारें दी सूची दिंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>त्यागो</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>रिकॉर्डिंग ते जेह्‌ड़ा पकड़ेआ उसगी हटांदा ऐ। जेह्‌ड़ा बदलेआ ओह् बदलेआ गै रौंह्‌दा ऐ।</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>हां, एह् रिकॉर्डिंग त्यागो</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>रिकॉर्डिंग चलै'रदी ऐ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>तुंदे बदलाऽ इक माइग्रेशन आस्तै रिकॉर्ड होआ'रदे न।</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>इस साइट दा हर बदलाऽ इक माइग्रेशन आस्तै रिकॉर्ड होआ'रदा ऐ (सारी साइट दी बारी)।</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>सारी साइट दी रिकॉर्डिंग शुरू होई: जिन्ना चिर तुस नेईं रोकदे, हर बरतूनी आह्‌ले दा हर बदलाऽ रिकॉर्ड होग।</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>रिकॉर्डिंग शुरू होई: जिन्ना चिर तुस नेईं रोकदे, तुंदे बदलाऽ रिकॉर्ड होङन।</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>रिकॉर्डिंग रुकी गेई। जेह्‌ड़ा पकड़ेआ ओह् त्यागने तगर रौह्‌ग।</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>रिकॉर्डिंग ते उसदियां घटनां हटाई दित्तियां गेइयां।</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>कोई रिकॉर्डिंग %id नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>पैह्‌लें "हां, एह् रिकॉर्डिंग त्यागो" पर नशान लाओ।</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>सत्र रिकॉर्डिंग सिर्फ उऐ बरतूनी आह्‌ला रोकी सकदा ऐ जिसने रिकॉर्ड कीता।</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>रोकने आस्तै रिकॉर्डिंग चुनो।</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>इस किस्म दी रिकॉर्डिंग पैह्‌लें गै चलै'रदी ऐ।</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>रिकॉर्डिंग बदली नेईं जाई सकी: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1540 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>छुड़काया गेआ।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>सारे लक्ष्य</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>आखरी प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>अपनी साइट दी मुफ्त स्टैटिक कापी GitHub Pages पर प्रकाशत करो:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>पुराने होई गेदे सफे</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>स्टैटिक प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>स्टैटिक प्रकाशन बंद ऐ।</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>लक्ष्य</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>लक्ष्य नेईं पढ़े जाई सके: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>इक कम्म चला करदा ऐ</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>जांचने आस्तै बिल्ड</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>इसगी लुकाओ</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>लक्ष्य बनाओ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>कदें नेईं</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>ट्यूटोरियल पढ़ो</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added जोड़े गे, %changed बदले गे, %removed हटाए गे</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit चा %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count होर सूची च नेईं न।</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages सफे लिखे गे</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path दा आकार %size ऐ, जेह्ड़ा होस्ट इक फाइल आस्तै जिन्नी इजाजत दिंदा ऐ उसथमां ज्यादा ऐ।</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>सीमा दा %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds सकिंट</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ओह् प्रकाशन ऐ जेह्ड़ा साइट पर हून ऐ।</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: कम्म %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub प्रोजेक्ट साइट आस्तै /रिपॉजिटरी/; अपने डोमेन जां यूज़र साइट आस्तै खाली।</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. साइट</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. होस्ट</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. रिपॉजिटरी च साइन इन</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. रिपॉजिटरी</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. लिंक ते बेस पाथ</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. तुंदा अपना डोमेन</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. बिल्ड च केह् ऐ</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. एह् कदूं प्रकाशत होंदा ऐ</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. समीक्षा ते सहेजो</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub प्रोजेक्ट साइट /&lt;repository&gt;/ दे हेठ रौंह्दी ऐ; रिलेटिव लिंक उत्थै ते होर कुतै बी कम्म करदे न।</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>इक बिल्ड %site दे हर सफे गी उ&apos;आं लैंदा ऐ जि&apos;यां साइन इन नेईं कीते दा आगंतुक उसगी दिक्खदा ऐ, लिंक दुबारा लिखदा ऐ, फाइलां कापी करदा ऐ ते नतीजा लक्ष्य दे फोल्डर च लिखदा ऐ। जदूं तकर तुस बिल्ड जांचियै प्रकाशत करो नेईं दबांदे, किश बी प्रकाशत नेईं होंदा।</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>इक cron एक्सप्रेशन, मसाल आस्तै 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>डिप्लॉय कुंजी %secret गुप्त मान दे रूप च रक्खी गेदी ऐ।</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>डिप्लॉय कुंजी इस इंस्टालेशन गी SSH राहें सिर्फ इक रिपॉजिटरी च पुश करन दिंदी ऐ, होर कुतै नेईं। इसदा निजी हिस्सा सेटअप &gt; गुप्त मान च रौंह्दा ऐ; सिर्फ सार्वजनिक हिस्सा दस्सेआ जंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>इस लक्ष्य आस्तै बनाई गेदी डिप्लॉय कुंजी</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>डिप्लॉय कुंजी SSH राहें साइन इन करदी ऐ: git पता SSH आह्ले पते च बदलो (git@github.com:owner/repo.git)।</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>इक कम्म चला करदा ऐ, %user ने शुरू कीता</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>इस लक्ष्य दा इक कम्म अजें बी चला करदा ऐ (%detail)। उसदे खत्म होने दी उडीक करो।</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>इस लक्ष्य दा इक कम्म अजें बी चला करदा ऐ। उसदे खत्म होने दी उडीक करो।</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ सफे थमां /about-us/team सफे तगर दा लिंक इ&apos;यां लिखेआ जाग</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>नमीं डिप्लॉय कुंजी बनाई गेई। हून इसदा सार्वजनिक हिस्सा रिपॉजिटरी च जोड़ो।</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>जेह्ड़ा सफा सफाई दे बाद बी डीबग आउटपुट, फार्म टोकन जां सेशन id रखदा ऐ, ओह् कदें प्रकाशत नेईं होंदा।</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>वापसी माहिरें आस्तै ऐ: &quot;मिगी पता ऐ जे एह् केह् बदलदा ऐ&quot; पर निशान लाओ ते टैग दा नां फिरी टाइप करो।</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>साइट %site तगर, इक फाइल %file तगर होई सकदी ऐ, म्हीने च लगभग 100 GB ट्रैफिक कन्नै। मुफ्त प्लान पर रिपॉजिटरी सार्वजनिक होनी चाहिदी। GitHub Pages दुकानें जां होर व्यापारिक लेन-देन आस्तै नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>लक्ष्य इक git रिपॉजिटरी च प्रकाशत होने आह्ली इक साइट ऐ। इत्थै किश बी बिल्ड जां प्रकाशत नेईं होंदा: सहेजो सेटिंगें गी settings/override/staticcache.ini.append.php च लिखदा ऐ।</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>लक्ष्य इक थाह्र प्रकाशत होने आह्ली इक साइट ऐ, मसाल आस्तै GitHub Pages पर तुंदी सार्वजनिक साइट।</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>सेटअप &gt; गुप्त मान थमां इक टोकन</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>रिपॉजिटरी दा इक वर्कफ़्लो इसगी प्रकाशत करदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>इस सार्वजनिक कुंजी गी लिखने दी इजाजत कन्नै रिपॉजिटरी च जोड़ो। GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access पर निशान लाओ।</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>जोड़ेआ गेआ</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>कोई होर git होस्ट</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>कोई होर प्रोसैस इस लक्ष्य पर कम्म करा करदा ऐ: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>पिच्छें</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>बेस पाथ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>पैह्लें</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>बेस पाथ दे हेठ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ब्रांच</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>टुट्टे दे लिंक</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>बिल्ड च टुट्टे दे लिंक</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>बिल्ड</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%user दा बिल्ड %id</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name बिल्ड करो</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>हून बिल्ड करो</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>जांचने आस्तै बिल्ड</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>करने आह्ला</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>हत्थें, इत्थै</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करो</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>बदलो</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>बदलेआ गेआ</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>बदलाव</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>पैह्लें इसगी जांचो</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>इनें सेटिंगें गी जांचो</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>जांचो जे बिल्ड केह् बदलदा ऐ, उसगी दिक्खो, फिरी उसगी प्रकाशत करो जां सुट्टी देओ।</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>ओह् प्रकाशन चुनो जिस पर वापस जाना ऐ।</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>बाद दी रिलीज़ च औग।</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>कमिट</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>कमिट</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>बिल्ड गी कमिट करदा ऐ, टैग करदा ऐ ते %remote पर पुश करदा ऐ। पुश कदें जबरदस्ती नेईं कीता जंदा; तुस बाद च कुसै बी प्रकाशन पर वापस जाई सकदे ओ।</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>पैह्लें आह्ले फोल्डर कन्नै तुलना: %added जोड़े गे, %changed बदले गे, %removed हटाए गे, %unchanged बिना बदलाव।</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>आखरी प्रकाशन कन्नै तुलना।</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>क्रेडेंशियल</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>अपना डोमेन</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>डीबग आउटपुट, फार्म टोकन, सेशन id ते नॉन्स हमेशा कड्ढे जंदे न।</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>डिप्लॉय कुंजी</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name दी डिप्लॉय कुंजी</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>सुट्टी देओ</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>बिल्ड सुट्टी देओ</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>डोमेन</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>खाली: साइट दा पता। नेईं तां उस्सै साइट दा इक अंदरूनी पता।</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>खत्म होआ</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>हर लिंक बेस पाथ कन्नै शुरू होंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>हर प्रकाशन static/%id/&lt;n&gt; टैग आह्ला इक कमिट ऐ। वापस जाने पर पैह्लें दे प्रकाशन दियें फाइलें कन्नै नमां कमिट बनदा ऐ: इतिहास बचे दा रौंह्दा ऐ, कोई टैग नेईं हिलदा ते किश बी जबरदस्ती नेईं कीता जंदा।</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>बाद्धू फाइलां</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>सफे इत्थूं लैओ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>फाइल</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>फाइलां</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>गायब फाइलां</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>साइट दियां फाइलां:</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>फाइलां जेह्ड़ियां इकट्ठियां नेईं कीतियां जाई सकियां</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>फिंगरप्रिंट</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>फोल्डर</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH पते आस्तै। कुंजी सहेजने दे बाद बनदी ऐ; तुस इसदा सार्वजनिक हिस्सा रिपॉजिटरी च जोड़दे ओ।</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// पते आस्तै। GitHub: रिपॉजिटरी पर Contents पढ़ने ते लिखने आह्ला fine-grained टोकन।</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>माहिरें आस्तै। पुश पूरा होंदे गै सार्वजनिक साइट बदली जंदी ऐ।</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>फार्म</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub रिपॉजिटरी थमां मुफ्त होस्टिंग।</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>ब्रांच थमां</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git पता</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site दी साइट ते %file दी फाइल दी इजाजत दिंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages दियां सीमां</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages फाइलें गी जि&apos;यां न उ&apos;आं गै प्रकाशत करदा ऐ (_ कन्नै शुरू होने आह्ली फाइलें आस्तै जरूरी)।</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ब्रांच गी उ&apos;आं गै परोसदा ऐ जि&apos;यां ओह् पुश कीती गेई। डिफॉल्ट।</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, तुंदा अपना सर्वर: कोई बी git रिपॉजिटरी।</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>पैह्लें दे प्रकाशन पर वापस जाओ</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>मदद</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>विज़ार्ड कन्नै मदद</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>उनेंगी लुकाओ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>इतिहास</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name दा इतिहास</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>होस्ट</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages गी बिल्ड कि&apos;यां मिलदा ऐ</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>मैं बदलाव जांची लैते न</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>मिगी पता ऐ जे एह् केह् बदलदा ऐ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>आईडी</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>एह् बंद ऐ: जदूं तकर एह् चालू नेईं होंदा, किश बी बिल्ड नेईं होई सकदा।</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>एह् %user दे रूप च पिछोकड़ च चलदा ऐ; तुस एह् सफा बंद करी सकदे ओ।</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>कम्म %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret गुप्त मान दे रूप च रक्खेआ गेदा।</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>किस्म</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>आखरी प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>इनें सफें गी छोड़ो</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>इनें खंडें गी छोड़ो</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>लिंक</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>दुबारा लिखे गेदे लिंक</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>लाइव साइट</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>बिल्ड दिक्खो</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>छोटे अक्खर, अंक, _ ते -, मसाल आस्तै github-public। एह् फोल्डर ते टैगें (static/&lt;id&gt;/&lt;n&gt;) दा नां बनदा ऐ ते बाद च बदलेआ नेईं जाई सकदा।</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>नमीं कुंजी बनाओ</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>लक्ष्य बनाओ</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>कुंजी बनाओ</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>पैह्लें होस्ट पर रिपॉजिटरी बनाओ; खाली रिपॉजिटरी बी ठीक ऐ।</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>मैनिफेस्ट</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>संदेश</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>मते सारे सफे</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>नां</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>सेटअप &gt; गुप्त मान च टोकन दा नां</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>नमां लक्ष्य</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>अगला</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>नेईं</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>अजें कोई कमिट नेईं।</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>कोई कुंजी नेईं बनी: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>कोई php कमांड लाइन बाइनरी नेईं मिली। migration.ini [AdminSettings] PhpCliPath गी उसदे पूरे पाथ पर सेट करो।</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>अजें कोई टैग नेईं।</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>अजें कोई लक्ष्य नेईं।</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>कोई नेईं</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>बिल्ड च नेईं।</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>अजें किश बी प्रकाशत नेईं होआ।</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>अजें किश बी प्रकाशत नेईं होआ: हर फाइल नमीं ऐ।</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>सूचित करो</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>शेड्यूल मताबक</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>कंसोल पर</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>सर्वर पर: ./console exp:static:serve %id बी इसगी उस्सै चाल्ली परोसदा ऐ।</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>हर लाइन च इक पाथ, * कुसै बी हिस्से कन्नै मेल खंदा ऐ: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>लक्ष्य कन्नै सिर्फ नां सहेजेआ जंदा ऐ; टोकन जां कुंजी आपूं सेटअप &gt; गुप्त मान च रौंह्दी ऐ ते कदें बी लॉग च नेईं दिखदी।</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>सिर्फ ओह् जेह्ड़ा सफे दसदे न</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>सिर्फ टोकन कन्नै। env:NAME इसदे बजाए सर्वर दा इक माहौल वेरिएबल पढ़दा ऐ।</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>पूर्वावलोकन खोह्लो</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>बिल्ड गी उ&apos;आं खोह्लदा ऐ जि&apos;यां होस्ट उसगी परोसग, लक्ष्य दे फोल्डर थमां। लिंक तुंदे आस्तै इक घैंटे तगर कम्म करदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>बैकल्पिक। खाली: जेह्ड़ा प्रकाशत होआ।</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>बैकल्पिक। डोमेन कन्नै साइट उसदी जड़ पर परोसी जंदी ऐ।</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>आउटपुट</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>सफे</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>लक्ष्य दे सफे</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>नकारे गेदे सफे</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>बाद दी प्रोसैसिंग</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>पूर्वावलोकन</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>पूर्वावलोकन ते प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name दा पूर्वावलोकन ते प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>बिल्ड दा पूर्वावलोकन</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>प्रगति</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>सार्वजनिक पता</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>सार्वजनिक कुंजी</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>प्रकाशत करो</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>कुसै साइट दी स्टैटिक कापी GitHub Pages जां कुसै बी git होस्ट पर प्रकाशत करो: उसगी बिल्ड करो, बदलाव जांचो, प्रकाशत करो, ते लोड़ पौने पर पैह्लें दे प्रकाशन पर वापस जाओ।</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>वापस जाने आस्तै प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>पुश</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>ट्यूटोरियल पढ़ो</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>रिकार्ड</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>नकारेआ गेआ</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>रिलेटिव</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>फिरी लोड करो</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>हटाया गेआ</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>कुंजी बदलो: पुरानी कुंजी कम्म करना बंद करी देग</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>रिपोर्ट</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>बिल्ड दी रिपोर्ट</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>रिपॉजिटरी</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>समीक्षा</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>समीक्षा हर सेटिंग जांचदी ऐ ते ओह् लाइनां दसदी ऐ जेह्ड़ियां लिखियां जाङन। अजें किश बी नेईं सहेजेआ गेआ।</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>वापस लैओ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>वापसी</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>सहेजो</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>शेड्यूल</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>खोज सफा</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>खंड id, कौमें कन्नै बक्ख कीते दे।</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>उनेंगी लाइव साइट पर भेजो</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>सेटिंग</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>सेटिंगां</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name दियां सेटिंगां</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>सेटअप</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>सेटअप &gt; गुप्त मान</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>सूचियें च दस्सेआ जंदा ऐ, मसाल आस्तै &quot;GitHub Pages पर सार्वजनिक साइट&quot;।</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App कन्नै साइन इन GitHub इंटीग्रेशन कन्नै औग।</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>साइट</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>प्रकाशत करने आह्ली साइट</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>आकार</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>आकार ते सीमां</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>बिल्ड दा आकार</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>पुराने होई गेदे सफे</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>शुरू होआ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user ने %time पर शुरू कीता।</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>स्टैटिक प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>स्टैटिक प्रकाशन बंद ऐ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>स्टैटिक प्रकाशन बंद ऐ।</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>स्टैटिक प्रकाशन बंद ऐ। पैह्लें इसगी सेटअप &gt; स्टैटिक प्रकाशन च चालू करो।</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>स्टैटिक प्रकाशन चालू ऐ।</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%total चा चरण %step</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>चरण</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>सफाई</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>बंद करो</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>चालू करो</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>स्टैटिक प्रकाशन चालू करो</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>टैग</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>टैग</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>लक्ष्य</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>लक्ष्य बनाए ते बदले जाई सकदे न, पर जदूं तकर एह् चालू नेईं होंदा, किश बी बिल्ड जां प्रकाशत नेईं होंदा।</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>सर्च इंजनें गी दसदा ऐ जे केह् पढ़ना ऐ।</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>बिल्ड सुट्टेआ नेईं जाई सकेआ: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>बिल्ड आखरी प्रकाशन आह्ला गै ऐ: प्रकाशत करने आस्तै किश नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>बिल्ड सुट्टी दित्ता गेआ: फोल्डर च फिरी आखरी प्रकाशन ऐ।</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>डिफॉल्ट मती सारी साइटें आस्तै ठीक न।</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>फोल्डर च इक बिल्ड ऐ जेह्ड़ा अजें प्रकाशत नेईं होआ; नमां बिल्ड उसदी जगह लैग।</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>कम्में दे फोल्डर च लिखेआ नेईं जाई सकदा: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>कम्म तैयार नेईं कीता जाई सकेआ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>कम्म शुरू नेईं कीता जाई सकेआ।</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>कम्म खत्म होई गेआ। उसदी रिपोर्ट लोड होआ करदी ऐ।</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>कम्म आस्तै साइन इन कीते दे प्रयोक्ता दी लोड़ ऐ।</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>कम्म शुरू होआ पर उसने अपनी प्रोसैस id नेईं दस्सी। %detail जांचो।</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>कुंजी</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>सब्भनें शा बड्डी फाइल: %path, %size।</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>ओह् लाइनां जेह्ड़ियां लिखियां जाङन</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>सर्च इंजनें आस्तै सफें दी सूची; सार्वजनिक पते दी लोड़ ऐ।</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>सफे उ&apos;आं लैते जंदे न जि&apos;यां साइन इन नेईं कीते दा आगंतुक उनेंगी दिक्खदा ऐ। प्रशासन ते संपादन साइटएक्सेस कदें पेश नेईं कीते जंदे।</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>प्रगति नेईं दिक्खी जाई सकी। कम्म कि&apos;यां चला करदा ऐ, दिक्खने आस्तै सफा फिरी लोड करो।</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>कुंजी दा सार्वजनिक हिस्सा:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ब्रांच दी जड़</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>गुप्त मानें दा भंडार अजें सेट नेईं ऐ (./console exp:upgrade --apply उसदी टेबल बनांदा ऐ), इस करी कोई कुंजी नेईं रक्खी जाई सकदी।</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>सर्वर आपूं साइन इन करदा ऐ (अपनी SSH कुंजी जां क्रेडेंशियल हेल्पर कन्नै), जां रिपॉजिटरी इस्सै सर्वर पर ऐ।</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>सेटिंग नेईं लिखी जाई सकी: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>सेटिंगां ठीक न। एह् लाइनां लिखियां जाङन:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>सेटिंग फाइल नेईं पढ़ी जाई सकदी: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>साइट उस प्रकाशन दियें फाइलें पर वापस जंदी ऐ; अजें प्रकाशत नेईं होए दा बिल्ड पैह्लें प्रकाशत करना जां सुट्टना पौग।</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>नेईं होने आह्ले पतें आस्तै साइट दा अपना सफा।</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>लक्ष्य नेईं सहेजेआ जाई सकेआ: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>लक्ष्य अजें इस कुंजी कन्नै साइन इन नेईं करदा: उसदी सेटिंगें च &quot;इस लक्ष्य आस्तै बनाई गेदी डिप्लॉय कुंजी&quot; चुनो।</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>लक्ष्य नेईं पढ़े जाई सके: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>अजें जांचने आस्तै कोई बिल्ड नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>इस इंस्टालेशन च कोई सामने आह्ला साइटएक्सेस नेईं ऐ। प्रशासन ते संपादन साइटएक्सेस कदें प्रकाशत नेईं होंदे।</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>एह् सफा कम्म दे चलदे उसदे पिच्छें चलदा ऐ; सफा बंद होने पर बी कम्म पिछोकड़ च चलदा रौंह्दा ऐ।</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>इस लक्ष्य दी अजें कोई डिप्लॉय कुंजी नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>एह् लक्ष्य अजें इत्थै बिल्ड नेईं होआ।</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>इस लक्ष्य दी इक ऐ।</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>इस बिल्ड गी सुट्टी दिंदा ऐ: फोल्डर च फिरी आखरी प्रकाशन होग। लाइव साइट नेईं बदलदी।</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>पैह्लें &quot;मैं बदलाव जांची लैते न&quot; पर निशान लाओ।</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>समां</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ट्रिगर</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>टैग दा नां फिरी टाइप करो</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>बिना बदलाव</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>वेबहुक</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>केह्</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>केह् बदलदा ऐ</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>हर फाइल केह् ऐ; हमेशा लिखेआ जंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>कम्म ने केह् कीता ते उसदा रिकार्ड। इत्थै शुरू होआ कम्म एह् सफा बंद करने पर बी पिछोकड़ च चलदा रौंह्दा ऐ।</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>कम्म ने गलतियें दे रूप च केह् छापेआ</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>जेह्ड़ा सफे दसदे न, ते प्रकाशत सामग्री दी हर तस्वीर</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>कदूं</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>जदूं प्रकाशन नेईं होई सकै</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>जदूं प्रकाशन कामयाब होऐ</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>जदूं सामग्री प्रकाशत होंदी ऐ</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>जेह्ड़ी चीजां कापी च नेईं न, उंदे लिंक कुत्थै जंदे न (खोज, लॉगिन)।</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>स्टैटिक कापी कुत्थूं परोसी जंदी ऐ।</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>केह्ड़ी साइट प्रकाशत होंदी ऐ, ते लक्ष्य दा नां केह् ऐ।</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>कुसै बी पाथ दे हेठ कम्म करदा ऐ। डिफॉल्ट।</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>जदूं बी अपना डोमेन सेट होंदा ऐ, लिखेआ जंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>हां</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>तुस हमेशा इत्थै ते कंसोल पर हत्थें बिल्ड ते प्रकाशत करी सकदे ओ।</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>सिर्फ इक नां; मान सेटअप &gt; गुप्त मान च रौंह्दा ऐ</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path दे हेठ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>बिना रिपोर्ट दे खत्म होआ</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>बाद्धू</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>नेईं होआ</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>फाइल</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, जां docs फोल्डर कन्नै main।</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git होस्ट</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (टोकन कन्नै) जां git@github.com:owner/repo.git (डिप्लॉय कुंजी कन्नै); इस च कदें पासवर्ड जां टोकन नेईं।</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, साइटमैप ते कैनोनिकल लिंकें आस्तै।</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>तस्वीर</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>कदें नेईं</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>नेईं</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>कोई रिमोट नेईं</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>कोई नेईं: कमिट फोल्डर च रौंह्दे न</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>कोई नेईं: किश नेईं बदलेआ</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>पुश नेईं होआ</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>किश नेईं बदलेआ</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>सफा</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>पास होआ</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open बंद ऐ, इस करी इत्थै कम्म शुरू नेईं कीता जाई सकदा। सर्वर पर ./console exp:static:build बरतो।</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>प्रकाशन</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>प्रकाशत</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>पुश बाकी ऐ</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>पुश होआ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>नकारेआ गेआ</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>रिलेटिव</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>वापसी</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>वापस लैता गेआ</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>चला करदा</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>सिर्फ फोल्डर</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME फाइल च लिखेआ जंदा ऐ। होस्ट दे दस्से मताबक डोमेन दे DNS गी होस्ट पासै करो; HTTPS शुरू होने च किश समां लग्गी सकदा ऐ।</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>हां, अजें प्रकाशत नेईं</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>इक GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>रिपॉजिटरी दा इक वर्कफ्लो इसगी प्रकाशत करदा ऐ। बिल्ड वर्कफ्लो फाइल लिखदा ऐ; फोल्डर खाली छोड़ो।</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub रिपॉजिटरी ते टोकन जां GitHub App कन्नै लक्ष्य सेव करने दे बाद, एह् कदम रिपॉजिटरी बनाई सकदा ऐ ते GitHub Pages चालू करी सकदा ऐ। नेईं तां पैह्लें GitHub पर रिपॉजिटरी बनाओ; खाली बी ठीक ऐ।</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ब्रांच जां GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS जांचो</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>जेकर रिपॉजिटरी नेईं ऐ तां बनाओ</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub पर रिपॉजिटरी बनाओ ते उसदी सेटिंग्स च GitHub Pages चालू करो (Settings &gt; Pages)।</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>रिपॉजिटरी %repo नेईं होने पर बनांदा ऐ (जेकर मंगेआ गेआ), सेव कीते मुताबक ब्रांच जां GitHub Actions थमां GitHub Pages चालू करदा ऐ, ते अपना डोमेन ते HTTPS सेट करदा ऐ। एह् सेव कीती गेदी सेटिंग्स बरतदा ऐ: पैह्लें बदलाव सेव करो।</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub पर ब्यौरा</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>पैह्लें अपना डोमेन दर्ज करो।</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>हर पुश पैह्लें इनें सीमें दे मुताबक जांचेआ जंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub पर https:// पते आस्तै। इस इंस्टॉलेशन आस्तै सेट कीता गेदा App साइन इन करदा ऐ; उसी इंस्टॉलेशन id चाहिदा ऐ।</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages निजी रिपॉजिटरी सिर्फ भुगतान आह्ले प्लान पर परोसदा ऐ।</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: सबडोमेन (www.example.com) गी &lt;owner&gt;.github.io आह्ली CNAME रिकॉर्ड चाहिदी ऐ; मूल डोमेन (example.com) गी A रिकॉर्ड %ips।</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App दी इंस्टॉलेशन id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>आखरी Pages बिल्ड</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>सीमां ते शर्तां</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>मुफ्त प्लान पर GitHub Pages आस्तै जरूरी।</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub पर</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>सिर्फ GitHub App कन्नै: GitHub पर App दे इंस्टॉलेशन दे पते दे अखीर च नंबर। App खुद staticcache.ini च सेट कीता जंदा ऐ (GitHubAppId, GitHubAppKey)।</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>निजी</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>सार्वजनक</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>पैह्लें लक्ष्य गी GitHub रिपॉजिटरी ते टोकन जां GitHub App कन्नै सेव करो।</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>डोमेन दे प्रदाता कोल एह् रिकॉर्ड सेट करो:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub पर सेट करो</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain दा DNS हाली GitHub Pages पासै इशारा नेईं करदा।</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain दा DNS GitHub Pages पासै इशारा करदा ऐ।</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub इंटीग्रेशन इत्थें उपलब्ध नेईं ऐ: %problem। ब्रांच च प्रकाशन फ्ही बी कम्म करदा ऐ; रिपॉजिटरी दी सेटिंग्स च GitHub Pages चालू करो।</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>इस लक्ष्य आस्तै GitHub कदम उपलब्ध नेईं न: %problem।</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages दी स्थिति क्रेडेंशियल दे रूप च टोकन जां GitHub App होने पर दस्सी जंदी ऐ।</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>अपना डोमेन बरतो</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>केह् चुनना ऐ: टोकन, डिप्लॉय कुंजी जां GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub रिपॉजिटरी ते टोकन जां GitHub App कन्नै, विज़ार्ड तुंदे आस्तै रिपॉजिटरी बनाई सकदा ऐ, GitHub Pages चालू करी सकदा ऐ ते डोमेन सेट करी सकदा ऐ (कदम 4)।</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>बिल्ड होआ करदा ऐ</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>बिल्ड होई गेआ</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions थमां</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ब्रांच %branch थमां</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>हाली कोई नेईं</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>नेईं लब्भा</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>बंद</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>निजी</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>सार्वजनक</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>कतार च</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>अनजान</translation>
     </message>
 </context>
 </TS>

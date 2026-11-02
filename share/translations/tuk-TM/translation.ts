@@ -15158,6 +15158,14 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Iň täze mazmun, barlag üçin saklanýanlar we saýlanan elementler boýunça hereketler.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Saýtyň statik nusgasyny GitHub Pages-e ýa-da islendik git hostingine neşir ediň.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik neşir</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API-niň saklanan soraglarynyň jogaplary we onuň shemasynyň mazmun klaslary.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>GitHub Pages-e ýa-da islendik git hostingine statik nusga neşir ediň</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik neşir</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Statik keş sahypalary şu serwerden berýär. Saýtyň statik nusgasyny başga bir ýerde, GitHub Pages-de ýa-da islendik git hostinginde neşir etmek üçin statik neşiri ulanyň.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Gurnamadaky faýl görnüşinde saklanýan üýtgeşmeler: olaryň ýagdaýy, işledilmeler, işletmek we yzyna almak.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Saýtyň statik nusgasyny GitHub Pages-e ýa-da islendik git hostingine neşir ediň.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik neşir</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>The run could not be started.</source>
         <translation>Işledilmäni başladyp bolmady.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Üýtgeşmeleri ýazga almak</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Ýazga alyş dowam edýärkä, dolandyryşda ýa-da saýtyň gapdal panelinde üýtgedýän zatlaryňyz göçürişiň ädimleri hökmünde saklanýar: mazmun, synplar, rollar we syýasatlar, bölümler, ulanyjylar we toparlar, URL lakamlary, sazlamalar. Gutaranyňyzda ony duruzyň, nämäni tutandygyna serediň we ondan göçüriş dörediň.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ýazgylary okap bolmady: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Ýazgylaryň tablisalary heniz ýok: ilki täzelenmäni işlediň (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Ýazga alyş migration.ini-de öçürilen ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Meniň üýtgeşmelerim</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Siz duruzýançaňyz diňe siziň üýtgedýän zadyňyzy, nirede üýtgetseňiz-de, ýazga alýar.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ýazgy</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time bäri, häzire çenli %count üýtgeşme.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Bellik (hökmany däl)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Nämäni tutandygyny görkez</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Ýazga alyşy duruz</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Üýtgeşmelerimi ýazga almaga başla</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Tutuş saýtyň penjiresi</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Ýapylýança her ulanyjynyň we konsolyň her üýtgeşmesini ýazga alýar. Açanyňyzda özüňizdigini tassyklamak soralýar.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Açyk</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Penjiräni ýap</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Tutuş saýtyň penjiresini aç</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ýazgylar</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ulanyjynyň hasaby (giriş ady, e-poçta, parol) we ulanyjy hasaplarynyň meýdanlary hiç haçan ýazga alynmaýar.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Üýtgeşmeler</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tutuş saýt</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name üýtgeşmeleri</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Duruzyldy</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Heniz ýazgy ýok.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ýazgy %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ähli ýazgylar</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ondan çykjak göçüriş</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Üýtgän her zat üçin bir ädime birleşdirilen üýtgeşmeler: bu ýazgydan döredilen göçürişiň etjek zatlary.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Bu gurnamada YAML ädim görnüşleri %types bolanda ondan göçüriş döredip bolar.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Bilkastlaýyn galdyryldy: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Hiç zat ýazga alynmady.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Nämäni tutdy</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count üýtgeşme, edilen tertibinde.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Üýtgeşme</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Ädim</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Degişli</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Ýene %count: ./console exp:migration:record:show hemmesini sanaýar.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Ret et</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Ýazgyny we onuň tutan zatlaryny aýyrýar. Üýtgän zat üýtgän bolup galýar.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Hawa, bu ýazgyny ret et</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ýazga alynýar…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Üýtgeşmeleriňiz göçüriş üçin ýazga alynýar.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Bu saýtdaky her üýtgeşme göçüriş üçin ýazga alynýar (tutuş saýtyň penjiresi).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Tutuş saýtyň ýazgysy başlandy: siz duruzýançaňyz her ulanyjynyň her üýtgeşmesi ýazga alynýar.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ýazga alyş başlandy: siz duruzýançaňyz üýtgeşmeleriňiz ýazga alynýar.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Ýazga alyş duruzyldy. Tutan zatlary siz ret edýänçäňiz galýar.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Ýazgy we onuň wakalary aýryldy.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id ýazgysy ýok.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Ilki «Hawa, bu ýazgyny ret et» belläň.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Sessiýa ýazgysyny diňe ýazga alan ulanyjy duruzyp biler.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Duruzyljak ýazgyny saýlaň.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Bu görnüşdäki ýazgy eýýäm dowam edýär.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Ýazgyny üýtgedip bolmady: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1540 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>Released.</source>
         <translation>Boşadyldy.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Ähli maksatlar</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Soňky neşir</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Saýtyňyzyň mugt statik nusgasyny GitHub Pages-de neşir ediň:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Köne sahypalar</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik neşir</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statik neşir öçürilen.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Maksat</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Maksatlary okap bolmady: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>bir tabşyryk ýerine ýetirilýär</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>barlanmaly gurnama</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>muny gizle</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>maksat döret</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hiç haçan</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>gollanmany okaň</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added goşuldy, %changed üýtgedildi, %removed aýryldy</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes / %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Ýene %count sanawda görkezilmedi.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages sahypa ýazyldy</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ölçegi %size, bu hostingiň bir faýl üçin rugsat berýäninden uly.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>Çägiň %percent % möçberi</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sek</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag saýtyň häzirki neşiridir.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: tabşyryk %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub taslama saýty üçin /ammar/; hususy domen ýa-da ulanyjy saýty üçin boş.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Saýt</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Hosting</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Ammara girmek</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Ammar</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Baglanyşyklar we esasy ýol</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Öz domeniňiz</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Gurnamada näme bar</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Haçan neşir edilýär</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Gözden geçir we ýatda sakla</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub taslama saýty /&lt;repository&gt;/ ýolunyň aşagynda ýerleşýär; otnositel baglanyşyklar ol ýerde we beýleki ýerlerde hem işleýär.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Gurnama %site saýtynyň her sahypasyny girmedik myhmanyň görşi ýaly alýar, baglanyşyklary täzeden ýazýar, faýllary göçürýär we netijäni maksadyň bukjasyna ýazýar. Siz gurnamany barlap, Neşir et düwmesine basýançaňyz hiç zat neşir edilmeýär.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron aňlatmasy, mysal üçin 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Ýerleşdiriş açary %secret gizlin bahasy hökmünde saklanýar.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Ýerleşdiriş açary bu gurnamanyň SSH arkaly diňe bir ammara iberiş etmegine rugsat berýär, başga hiç ýere däl. Onuň hususy ýarymy Sazlama &gt; Gizlin bahalar bölüminde galýar; diňe açyk ýarymy görkezilýär.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Bu maksat üçin döredilen ýerleşdiriş açary</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Ýerleşdiriş açary SSH arkaly girýär: git salgysyny SSH salgysyna üýtgediň (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Bir tabşyryk ýerine ýetirilýär, başladan: %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Bu maksadyň bir tabşyrygy entek ýerine ýetirilýär (%detail). Onuň gutarmagyna garaşyň.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Bu maksadyň bir tabşyrygy entek ýerine ýetirilýär. Onuň gutarmagyna garaşyň.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ sahypasyndan /about-us/team sahypasyna baglanyşyk şeýle ýazylar</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Täze ýerleşdiriş açary döredildi. Onuň açyk ýarymyny häzir ammara goşuň.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Arassalanandan soň hem debug çykyşyny, forma tokenini ýa-da sessiýa belgisini saklaýan sahypa hiç haçan neşir edilmeýär.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Yzyna alyş hünärmenler üçin: &quot;Munuň näme üýtgedýändigini bilýärin&quot; belläň we belligiň adyny täzeden ýazyň.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Saýt %site çenli, bir faýl %file çenli bolup biler, aýda takmynan 100 GB trafik bilen. Mugt meýilnamada ammar açyk bolmaly. GitHub Pages dükanlar ýa-da beýleki täjirçilik amallary üçin niýetlenmedik.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Maksat bir git ammaryna neşir edilýän bir saýtdyr. Bu ýerde hiç zat gurnalmaýar we neşir edilmeýär: Ýatda sakla sazlamalary settings/override/staticcache.ini.append.php faýlyna ýazýar.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Maksat bir ýere neşir edilýän bir saýtdyr, mysal üçin GitHub Pages-däki açyk saýtyňyz.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Sazlama &gt; Gizlin bahalar bölüminden token</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Ammaryň iş akymy ony neşir edýär.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Bu açyk açary ammara ýazmak rugsady bilen goşuň. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access belläň.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Goşuldy</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Başga bir git hostingi</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Bu maksat bilen başga bir proses işleýär: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Yza</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Esasy ýol</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Öň</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Esasy ýoluň aşagynda</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Şaha</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Bozuk baglanyşyklar</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Gurnamadaky bozuk baglanyşyklar</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Gurnama</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Gurnama %id, %user tarapyndan</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Gurnama: %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Häzir gurna</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Barlanmaly gurnama</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kim tarapyndan</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>El bilen, şu ýerde</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ýatyr</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Üýtget</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Üýtgedildi</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Üýtgeşmeler</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Ilki barlaň</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Bu sazlamalary barlaň</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Gurnamanyň näme üýtgedýändigini barlaň, oňa serediň, soň ony neşir ediň ýa-da taşlaň.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Gaýdyp barmaly neşiri saýlaň.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Soňky wersiýalaryň birinde peýda bolar.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commit ýazgysy</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Commit ýazgylary</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Gurnamany commit edýär, oňa bellik goýýar we %remote salgysyna iberýär. Iberiş hiç haçan mejbury edilmeýär; soňra islendik neşire gaýdyp bilersiňiz.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Öňki bukja bilen deňeşdirilende: %added goşuldy, %changed üýtgedildi, %removed aýryldy, %unchanged üýtgemedi.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Soňky neşir bilen deňeşdirilende.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Giriş maglumaty</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Hususy domen</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Debug çykyşy, forma tokenleri, sessiýa belgileri we nonce bahalary hemişe aýrylýar.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Ýerleşdiriş açary</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name ýerleşdiriş açary</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Taşla</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Gurnamany taşla</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domen</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Boş: saýtyň salgysy. Bolmasa şol saýtyň içki salgysy.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Gutardy</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Her baglanyşyk esasy ýol bilen başlaýar.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Her neşir static/%id/&lt;n&gt; bellikli commit ýazgysydyr. Yzyna gaýtmak öňki neşiriň faýllary bilen täze commit döredýär: taryh saklanýar, hiç bir bellik süýşmeýär we hiç zat mejbury edilmeýär.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Goşmaça faýllar</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Sahypalary şu ýerden al</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faýl</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Faýllar</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Ýetmeýän faýllar</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Şu saýtyň faýllary</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Ýygnap bolmadyk faýllar</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Barmak yzy</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Bukja</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH salgysy üçin. Açar ýatda saklanandan soň döredilýär; onuň açyk ýarymyny ammara siz goşýarsyňyz.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// salgysy üçin. GitHub: ammarda Contents okamak we ýazmak rugsady bolan jikme-jik (fine-grained) token.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Hünärmenler üçin. Iberiş tamamlanan badyna açyk saýt üýtgeýär.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formalar</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub ammaryndan mugt hosting.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Şahadan</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git salgysy</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site ölçegli saýta we %file ölçegli faýla rugsat berýär.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages çäkleri</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages faýllary bolşy ýaly neşir edýär (_ bilen başlaýan faýllar üçin gerek).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub şahany iberilişi ýaly berýär. Deslapky.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, öz serweriňiz: islendik git ammary.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Öňki neşire gaýdyp bar</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Kömek</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Ussat boýunça kömek</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Olary gizle</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Taryh</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name taryhy</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Hosting</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages gurnamany nähili alýar</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Üýtgeşmeleri barladym</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Munuň näme üýtgedýändigini bilýärin</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Belgi</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Ol öçürilen: ol açylýança hiç zat gurnalyp bilinmez.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Ol fon režiminde %user hökmünde işleýär; bu sahypany ýapyp bilersiňiz.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Tabşyryk %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret gizlin bahasy hökmünde saklanýar.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Görnüş</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Soňky neşir</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Bu sahypalary goşma</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Bu bölümleri goşma</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Baglanyşyklar</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Täzeden ýazylan baglanyşyklar</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Işleýän saýt</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Gurnama seret</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Kiçi harplar, sanlar, _ we -, mysal üçin github-public. Ol bukjanyň we bellikleriň (static/&lt;id&gt;/&lt;n&gt;) adyny kesgitleýär we soňra üýtgedilip bilinmez.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Täze açar döret</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Maksat döret</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Açary döret</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Ilki ammary hostingde dörediň; boş ammar hem bolýar.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest faýly</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Habar</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Sahypalaryň köpüsi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ady</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Sazlama &gt; Gizlin bahalar bölümindäki tokeniň ady</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Täze maksat</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Indiki</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ýok</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Entek commit ýazgysy ýok.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Açar döredilmedi: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php buýruk setiri programmasy tapylmady. migration.ini [AdminSettings] PhpCliPath sazlamasyna onuň doly ýoluny ýazyň.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Entek bellik ýok.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Entek maksat ýok.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Hiç biri</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Gurnamada ýok.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Entek hiç zat neşir edilmedi.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Entek hiç zat neşir edilmedi: her faýl täze.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Habar bermek</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Meýilnama boýunça</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Konsolda</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Serwerde: ./console exp:static:serve %id ony şol bir görnüşde berýär.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Her setirde bir ýol, * islendik bölege gabat gelýär: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Maksat bilen diňe at saklanýar; tokeniň ýa-da açaryň özi Sazlama &gt; Gizlin bahalar bölüminde galýar we hiç bir žurnalda görünmeýär.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Diňe sahypalaryň atlandyrýan zatlary</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Diňe token bilen. env:NAME onuň ýerine serweriň gurşaw üýtgeýänini okaýar.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Öňünden görmegi aç</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Gurnamany maksadyň bukjasyndan hostingiň berjegi ýaly açýar. Baglanyşyk siziň üçin bir sagat işleýär.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Hökmany däl. Boş: neşir edilen.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Hökmany däl. Domen bilen saýt onuň kökünde berilýär.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Çykyş</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Sahypalar</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Maksadyň sahypalary</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Ret edilen sahypalar</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Soňky işläp taýýarlama</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Öňünden görmek</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Öňünden gör we neşir et</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Öňünden gör we neşir et: %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Gurnamany öňünden gör</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ösüş</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Açyk salgy</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Açyk açar</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Neşir et</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Saýtyň statik nusgasyny GitHub Pages-e ýa-da islendik git hostingine neşir ediň: ony gurnaň, üýtgeşmeleri barlaň, neşir ediň we gerek bolanda öňki neşire gaýdyp baryň.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Gaýdyp barmaly neşir</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Neşirler</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Iberiş</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Gollanmany okaň</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Žurnal</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ret edildi</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Otnositel</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Täzeden ýükle</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Aýryldy</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Açary çalyş: köne açar işlemesini bes eder</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Hasabat</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Gurnamanyň hasabaty</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Ammar</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Gözden geçir</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Gözden geçiriş her sazlamany barlaýar we ýazyljak setirleri görkezýär. Entek hiç zat ýatda saklanmady.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Yzyna al</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Yzyna alyş</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Ýatda sakla</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Meýilnama</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Gözleg sahypasy</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Bölüm belgileri, otur bilen bölünen.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Olary işleýän saýta ugrat</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Sazlama</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Sazlamalar</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name sazlamalary</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sazlama</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Sazlama &gt; Gizlin bahalar</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Sanawlarda görkezilýär, mysal üçin &quot;GitHub Pages-däki açyk saýt&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App bilen girmek GitHub integrasiýasy bilen bile geler.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Saýt</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Neşir edilmeli saýt</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ölçeg</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Ölçeg we çäkler</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Gurnamanyň ölçegi</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Köne sahypalar</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Başlandy</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user tarapyndan %time wagtynda başlandy.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ýagdaý</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik neşir</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statik neşir öçürilen</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statik neşir öçürilen.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statik neşir öçürilen. Ilki ony Sazlama &gt; Statik neşir bölüminde açyň.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statik neşir açyk.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Ädim %step / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Ädimler</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Arassalamak</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Öçür</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Aç</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Statik neşiri aç</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Bellik</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Bellikler</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Maksat</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Maksatlary döredip we üýtgedip bolýar, ýöne ol açylýança hiç zat gurnalmaýar we neşir edilmeýär.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Gözleg ulgamlaryna näme okamalydygyny aýdýar.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Gurnamany taşlap bolmady: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Gurnama soňky neşir bilen birmeňzeş: neşir etmeli zat ýok.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Gurnama taşlandy: bukjada ýene soňky neşir bar.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Deslapky bahalar saýtlaryň köpüsine laýyk gelýär.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Bukjada entek neşir edilmedik gurnama bar; täze gurnama onuň ornuny tutar.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Tabşyryklaryň bukjasyna ýazyp bolanok: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Tabşyrygy taýýarlap bolmady: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Tabşyrygy başlap bolmady.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Tabşyryk gutardy. Onuň hasabaty ýüklenýär.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Tabşyryk üçin ulgama giren ulanyjy gerek.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Tabşyryk başlandy, ýöne öz prosesiniň belgisini habar bermedi. %detail barlaň.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Açar</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Iň uly faýl: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Ýazyljak setirler</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Gözleg ulgamlary üçin sahypalaryň sanawy; açyk salgy gerek.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Sahypalar girmedik myhmanyň görşi ýaly alynýar. Dolandyryş we redaktirleme saýt girelgeleri hiç haçan hödürlenmeýär.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Ösüşi yzarlap bolmady. Tabşyrygyň ýagdaýyny görmek üçin sahypany täzeden ýükläň.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Açaryň açyk ýarymy:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Şahanyň köki</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Gizlin bahalaryň ammary entek sazlanmadyk (./console exp:upgrade --apply onuň tablisasyny döredýär), şonuň üçin hiç bir açary saklap bolmaýar.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Serwer özbaşdak girýär (öz SSH açary ýa-da giriş maglumaty kömekçisi bilen), ýa-da ammar şu serwerde.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Sazlamany ýazyp bolmady: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Sazlamalar dogry. Şu setirler ýazylar:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Sazlamalar faýlyny okap bolanok: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Saýt şol neşiriň faýllaryna gaýdyp barýar; entek neşir edilmedik gurnama ilki neşir edilmeli ýa-da taşlanmaly.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Saýtyň ýok salgylar üçin öz sahypasy.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Maksady ýatda saklap bolmady: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Maksat entek bu açar bilen girmeýär: onuň sazlamalarynda &quot;Bu maksat üçin döredilen ýerleşdiriş açary&quot; saýlaň.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Maksatlary okap bolmady: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Entek barlanmaly gurnama ýok.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Bu gurnamada öň tarap saýt girelgesi ýok. Dolandyryş we redaktirleme saýt girelgeleri hiç haçan neşir edilmeýär.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Bu sahypa tabşyrygy ýerine ýetirilişi boýunça yzarlaýar; sahypa ýapylanda ol fon režiminde dowam edýär.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Bu maksadyň entek ýerleşdiriş açary ýok.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Bu maksat bu ýerde entek gurnalmady.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Bu maksadyň açary bar.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Bu gurnamany taşlaýar: bukjada ýene soňky neşir bolar. Işleýän saýt üýtgemeýär.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Ilki &quot;Üýtgeşmeleri barladym&quot; belläň.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Wagt</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Işjeňleşdirijiler</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Belligiň adyny täzeden ýazyň</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Üýtgemedi</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Näme</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Näme üýtgeýär</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Her faýlyň näme bolýandygy; hemişe ýazylýar.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Tabşyrygyň näme edendigi we onuň žurnaly. Şu ýerde başlanan tabşyryk bu sahypa ýapylanda fon režiminde dowam edýär.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Tabşyrygyň ýalňyşlyk hökmünde çykaranlary</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Sahypalaryň atlandyrýan zatlary we neşir edilen mazmunyň her suraty</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Haçan</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Neşir şowsuz bolanda</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Neşir şowly bolanda</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Mazmun neşir edilende</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Nusgada ýok zatlara (gözleg, giriş) baglanyşyklaryň nirä barýandygy.</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Statik nusganyň nireden berilýändigi.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Haýsy saýtyň neşir edilýändigi we maksadyň ady.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Islendik ýoluň aşagynda işleýär. Deslapky.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Hususy domen bellenende ýazylýar.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Hawa</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Bu ýerde we konsolda hemişe el bilen gurnap we neşir edip bilersiňiz.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>diňe at; bahasy Sazlama &gt; Gizlin bahalar bölüminde galýar</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path aşagynda</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>hasabatsyz gutardy</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>goşmaça</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>şowsuz</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>faýl</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages ýa-da docs bukjasy bilen main.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git hostingi</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (token bilen) ýa-da git@github.com:owner/repo.git (ýerleşdiriş açary bilen); onda hiç haçan parol ýa-da token bolmaly däl.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, saýt kartasy we kanoniki baglanyşyklar üçin.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>surat</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hiç haçan</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ýok</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>uzakdaky ammar ýok</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>ýok: commit ýazgylary bukjada galýar</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>ýok: hiç zat üýtgemedi</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>iberilmedi</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>hiç zat üýtgemedi</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>sahypa</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>şowly</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open öçürilen, şonuň üçin bu ýerde tabşyryk başlap bolmaýar. Serwerde ./console exp:static:build ulanyň.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>neşir</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>neşir edildi</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>iberiş garaşylýar</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>iberildi</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ret edildi</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>otnositel</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>yzyna alyş</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>yzyna alyndy</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ýerine ýetirilýär</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>diňe bukja</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME faýlyna ýazylýar. Domeniň DNS-ini hostingiň düşündirişi ýaly oňa gönükdiriň; HTTPS-iň işläp başlamagy wagt alyp biler.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>hawa, entek neşir edilmedi</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Ony ammaryň iş akymy neşir edýär. Gurnama iş akymynyň faýlyny ýazýar; bukjany boş goýuň.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Maksat GitHub ammary we token ýa-da GitHub App bilen ýatda saklanandan soň, bu ädim ammary döredip, GitHub Pages-i açyp biler. Bolmasa, ilki GitHub-da ammary dörediň; boş ammar hem bolýar.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Şaha ýa-da GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS-i barla</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Ammar ýok bolsa, ony döret</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub-da ammary dörediň we onuň sazlamalarynda GitHub Pages-i açyň (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>%repo ammary ýok bolsa, ony döredýär (soralan bolsa), GitHub Pages-i ýatda saklanyşy ýaly şahadan ýa-da GitHub Actions-dan açýar, hususy domeni we HTTPS-i sazlaýar. Ýatda saklanan sazlamalary ulanýar: ilki üýtgeşmeleri ýatda saklaň.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub-daky jikme-jiklikler</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Ilki hususy domeni giriziň.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Her push ilki bu çäklere görä barlanýar.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub-daky https:// salgy üçin. Bu gurnama üçin sazlanan App girýär; oňa gurnamanyň id-si gerek.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages hususy ammary diňe tölegli meýilnamada hödürleýär.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomen (www.example.com) üçin &lt;owner&gt;.github.io-a CNAME ýazgysy gerek; esasy domen (example.com) üçin A ýazgylary %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App-yň gurnama id-si</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Soňky Pages gurnamasy</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Çäkler we şertler</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Mugt meýilnamada GitHub Pages üçin gerek.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub-da</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Diňe GitHub App bilen: GitHub-da App gurnamasynyň salgysynyň ahyryndaky san. App-yň özi staticcache.ini-de sazlanýar (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Hususy</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Açyk</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Ilki maksady GitHub ammary we token ýa-da GitHub App bilen ýatda saklaň.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Bu ýazgylary domeniň üpjünçisinde sazlaň:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub-da sazla</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain domeniniň DNS-i entek GitHub Pages-e görkezmeýär.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain domeniniň DNS-i GitHub Pages-e görkezýär.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub integrasiýasy bu ýerde elýeterli däl: %problem. Şaha neşir etmek şonda-da işleýär; ammaryň sazlamalarynda GitHub Pages-i açyň.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub ädimleri bu maksat üçin elýeterli däl: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages-iň ýagdaýy giriş maglumaty hökmünde token ýa-da GitHub App bolanda görkezilýär.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Öz domeniňizi ulanyň</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Haýsyny saýlamaly: token, ýerleşdiriş açary ýa-da GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub ammary we token ýa-da GitHub App bilen ussat siziň üçin ammary döredip, GitHub Pages-i açyp we domeni sazlap biler (4-nji ädim).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>gurnalýar</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>gurnaldy</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions-dan</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>%branch şahasyndan</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>entek ýok</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>tapylmady</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>öçük</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>hususy</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>açyk</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>nobatda</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>näbelli</translation>
     </message>
 </context>
 </TS>

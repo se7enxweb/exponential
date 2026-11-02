@@ -1,0 +1,70 @@
+{
+    "command:expstaticdns": {
+        "en": "Check the DNS records of a custom domain for GitHub Pages: the A, AAAA and CNAME records compared with GitHub's addresses, and what to change",
+        "de": "Die DNS-Einträge einer eigenen Domain für GitHub Pages prüfen: die A-, AAAA- und CNAME-Einträge verglichen mit den Adressen von GitHub, und was zu ändern ist"
+    },
+    "command:expstaticdns --owner": {
+        "en": "The GitHub account or organization that owns the repository (the CNAME must name <owner>.github.io)",
+        "de": "Das GitHub-Konto oder die Organisation, der das Repository gehört (der CNAME muss <owner>.github.io nennen)"
+    },
+    "command:expstaticgithub": {
+        "en": "Set a static publishing target up on GitHub (the repository, GitHub Pages from the branch or Actions, the custom domain, HTTPS), show its state there, or sign in with GitHub",
+        "de": "Ein Ziel des statischen Veröffentlichens auf GitHub einrichten (das Repository, GitHub Pages aus dem Branch oder mit Actions, die eigene Domain, HTTPS), seinen Zustand dort zeigen oder sich bei GitHub anmelden"
+    },
+    "command:expstaticgithub --client-id": {
+        "en": "signin: the client id of the OAuth App (default [StaticPublishSettings] GitHubOAuthClientId)",
+        "de": "signin: die Client-ID der OAuth App (Standard [StaticPublishSettings] GitHubOAuthClientId)"
+    },
+    "command:expstaticgithub --create-repo": {
+        "en": "setup: create the repository when it does not exist (empty; the first publish fills it)",
+        "de": "setup: das Repository anlegen, wenn es fehlt (leer; die erste Veröffentlichung füllt es)"
+    },
+    "command:expstaticgithub --domain": {
+        "en": "setup: this custom domain instead of the target's CustomDomain (none removes it)",
+        "de": "setup: diese eigene Domain statt der CustomDomain des Ziels (none entfernt sie)"
+    },
+    "command:expstaticgithub --no-https": {
+        "en": "setup: do not enforce HTTPS for the custom domain",
+        "de": "setup: HTTPS für die eigene Domain nicht erzwingen"
+    },
+    "command:expstaticgithub --pages": {
+        "en": "setup: branch or actions instead of the target's Delivery, or off to leave GitHub Pages as it is",
+        "de": "setup: branch oder actions statt der Delivery des Ziels, oder off, um GitHub Pages so zu lassen, wie es ist"
+    },
+    "command:expstaticgithub --plan": {
+        "en": "setup: only say what would be done, change nothing",
+        "de": "setup: nur sagen, was getan würde, nichts ändern"
+    },
+    "command:expstaticgithub --private": {
+        "en": "With --create-repo: a private repository (GitHub Pages serves it only on a paid plan)",
+        "de": "Mit --create-repo: ein privates Repository (GitHub Pages liefert es nur mit einem bezahlten Tarif aus)"
+    },
+    "command:expstaticgithub --public": {
+        "en": "With --create-repo: a public repository (the default; GitHub Pages on a free plan needs one)",
+        "de": "Mit --create-repo: ein öffentliches Repository (der Standard; GitHub Pages im kostenlosen Tarif braucht eines)"
+    },
+    "command:expstaticgithub --secret": {
+        "en": "signin: the name of the secret the token is kept as (Setup > Secrets); the target names it as Credential=token:<secret>",
+        "de": "signin: der Name des Geheimnisses, unter dem das Token abgelegt wird (Setup > Secrets); das Ziel nennt es als Credential=token:<secret>"
+    },
+    "ini:settings/site.ini [ReauthGroup_system] Rules": {
+        "en": "Migrations: a run, a resume or a simulation, a rollback, and (later) the editor and the generators; seeing them\n(status, history, log, the dry run) is never asked\nStatic publishing: a publish, a rollback, saving a target, the deploy key and the switch; seeing, building and the\npreview are never asked",
+        "de": "Migrationen: ein Lauf, eine Fortsetzung oder eine Simulation, eine Rücknahme und (später) der Editor und die Generatoren;\nfürs Ansehen (Status, Verlauf, Log, Probelauf) wird nie gefragt\nStatisches Veröffentlichen: eine Veröffentlichung, eine Rücknahme, das Speichern eines Ziels, der Deploy-Key und der\nSchalter; fürs Ansehen, Bauen und die Vorschau wird nie gefragt"
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] GitHubAPI": {
+        "en": "The GitHub integration: GitHub's API for targets with Kind=github-pages\n(create the repository, switch GitHub Pages on from the branch or from\nGitHub Actions, the custom domain and HTTPS, the Pages build status). It\nsigns in with the target's Credential (token: or app:). enabled or disabled;\npublishing to the branch works without it.",
+        "de": "Die GitHub-Anbindung: die API von GitHub für Ziele mit Kind=github-pages\n(das Repository anlegen, GitHub Pages aus dem Branch oder mit GitHub Actions\neinschalten, die eigene Domain und HTTPS, der Build-Zustand von Pages). Sie\nmeldet sich mit dem Credential des Ziels an (token: oder app:). enabled oder\ndisabled; das Veröffentlichen in den Branch geht auch ohne sie."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] GitHubAPIURL": {
+        "en": "The address of GitHub's REST API (GitHub Enterprise Server:\nhttps://<host>/api/v3).",
+        "de": "Die Adresse der REST-API von GitHub (GitHub Enterprise Server:\nhttps://<host>/api/v3)."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] GitHubAppId": {
+        "en": "A GitHub App for Credential=app:<installation id>: the App's id, and the\nname of the secret (Setup > Secrets) that holds the private key (PEM) GitHub\nmade for it. The App needs the repository permissions Contents, Pages and\nAdministration (to create repositories), read and write.",
+        "de": "Eine GitHub App für Credential=app:<installation id>: die ID der App und der\nName des Geheimnisses (Setup > Secrets) mit dem privaten Schlüssel (PEM), den\nGitHub für sie erzeugt hat. Die App braucht die Repository-Berechtigungen\nContents, Pages und Administration (zum Anlegen von Repositorys), Lesen und Schreiben."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] GitHubOAuthClientId": {
+        "en": "The client id of an OAuth App with the device flow switched on, for\n./console exp:static:github signin: a user signs in on github.com and the\ntoken is kept in the secret store for Credential=token:<secret>.",
+        "de": "Die Client-ID einer OAuth App mit eingeschaltetem Device Flow, für\n./console exp:static:github signin: ein Benutzer meldet sich auf github.com an,\nund das Token wird für Credential=token:<secret> im Geheimnisspeicher abgelegt."
+    }
+}

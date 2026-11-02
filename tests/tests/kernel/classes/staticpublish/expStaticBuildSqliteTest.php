@@ -13,6 +13,7 @@
  *  SB-04 a page that set a session cookie is refused, the build fails and the folder is not changed
  *  SB-05 a dry run reports and changes nothing; a partial build (--paths) keeps the rest of the build
  *  SB-06 base-path links
+ *  SB-07 built from a CrawlURL, the site's links to its own SiteURL in full are followed and rewritten
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -314,5 +315,28 @@ class expStaticBuildSqliteTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'href="/repo/design/s/stylesheets/site.css"', $item );
         $this->assertSame( 0, $report['link_check']['broken_count'], json_encode( $report['link_check']['broken'] ) );
         $this->assertGreaterThan( 0, expStaticLinkChecker::check( $dir, '/' )['broken_count'], 'base-path links work below the base path only' );
+    }
+
+    /** SB-07 */
+    public function testLinksToTheSiteUrlInFullAreFollowedFromTheCrawlUrl()
+    {
+        $this->site();
+        // the pages are fetched from http://site.test (the CrawlURL), but link to www.example.com (the SiteURL) in full
+        $this->site['/'] = self::page( 'Home', '<h1>Home</h1><a href="https://www.example.com/about-us">About</a> <a href="//www.example.com/news">News</a>'
+                                              . ' <a href="https://other.example.org/away">Away</a>' );
+        $this->site['/news'] = self::page( 'News', '<a href="https://WWW.example.com/news/item-1?x=1#more">Item</a> <a href="http://www.example.com/news/item-1">Again</a>' );
+        list( $report, $dir ) = $this->build( array( 'Assets' => 'referenced' ) );
+        $this->assertSame( 0, $report['exit'], json_encode( $report['errors'] ) );
+        $this->assertSame( 4, $report['counts']['pages'], json_encode( $report['pages'] ) );
+        foreach ( array( 'about-us/index.html', 'news/index.html', 'news/item-1/index.html' ) as $file )
+            $this->assertFileExists( "$dir/$file" );
+        $this->assertNotContains( '/away', $this->requested, 'another host is not crawled' );
+        $home = file_get_contents( "$dir/index.html" );
+        $this->assertStringContainsString( '<a href="about-us/">About</a>', $home );
+        $this->assertStringContainsString( '<a href="news/">News</a>', $home );
+        $this->assertStringContainsString( 'https://other.example.org/away', $home );
+        // a page with a query is not exported: it goes to the live site, as before
+        $this->assertStringContainsString( '<a href="item-1/">Again</a>', file_get_contents( "$dir/news/index.html" ) );
+        $this->assertSame( 0, $report['link_check']['broken_count'], json_encode( $report['link_check']['broken'] ) );
     }
 }

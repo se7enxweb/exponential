@@ -57,9 +57,13 @@ Die linke Spalte ändert sich mit dem Reiter:
   eine Rücknahme im Hintergrund und das Protokoll jedes Laufs
   ([Migrationen in der Administration](migrationen/in-der-administration.md); was Migrationen sind, für Administratoren:
   [Migrationen für Administratoren](migrationen/migrationen-fuer-administratoren.md); alles Weitere:
-  [Migrationen](migrationen/README.md)). Eine weitere ist **Neue Inhalte** in der Gruppe **Inhaltsmodell**: die
-  neuesten Inhalte der ganzen Site, was zur Prüfung zurückgehalten ist, wer es eingereicht hat, und Aktionen auf
-  einer Auswahl ([Neue Inhalte](neue-inhalte.md)).
+  [Migrationen](migrationen/README.md)). Neben **Cache** in derselben Gruppe veröffentlicht **Statisches
+  Veröffentlichen** eine statische Kopie einer Site auf GitHub Pages oder einem anderen Host für Repositorys: ein Ziel,
+  mit einem Assistenten angelegt, ein Build im Hintergrund, die Änderungen vor **Veröffentlichen** geprüft und jede
+  Veröffentlichung aufbewahrt, um zu ihr zurückzukehren
+  ([Statisches Veröffentlichen](statisches-veroeffentlichen/README.md)). Eine weitere ist **Neue Inhalte** in der
+  Gruppe **Inhaltsmodell**: die neuesten Inhalte der ganzen Site, was zur Prüfung zurückgehalten ist, wer es
+  eingereicht hat, und Aktionen auf einer Auswahl ([Neue Inhalte](neue-inhalte.md)).
 
 ![Das Menü eines Objekts im Baum](bilder/context-menu.webp)
 
@@ -102,6 +106,9 @@ Administratoren sehen außerdem Blöcke zum System, zu Updates und zu Sicherheit
 fehlt), den letzten Lauf mit seinem Stand, einen Hinweis, solange ein Lauf im Gang ist, und **Alle Migrationen**, einen
 Link zu Setup > Migrationen. Der Block erscheint nur für Benutzer, die die Migrationen sehen dürfen
 ([Der Dashboard-Block](migrationen/status-und-verlauf.md#der-dashboard-block)).
+Der Block **Statisches Veröffentlichen** listet jedes Ziel mit seinen veralteten Seiten und seiner letzten
+Veröffentlichung auf; vor dem ersten Ziel ist er eine Zeile mit Links zum Assistenten und zum Tutorial, und
+**ausblenden** entfernt ihn für Sie ([Statisches Veröffentlichen](statisches-veroeffentlichen/README.md)).
 
 ![Meine Lesezeichen: die Objekte, die Sie mit „Lesezeichen setzen“ markiert haben, um sie mit einem Klick wieder zu öffnen](bilder/accounts/my-bookmarks.webp)
 

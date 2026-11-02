@@ -36,6 +36,7 @@ your site first.
 | Translate the texts of an extension | [Translations](translations.md) | `translations/<locale>/translation.ts`, `ezpI18n::tr()`, `\|i18n`, `TranslationExtensions[]` |
 | Make pages fast and keep them current | [Caching](caching.md) | the view cache, `cache-block`, `ezcache.php`, Velocity's response cache |
 | Put a PHP change live | [Deploying with Velocity](velocity-deploy.md) | `exp:velocity deploy` and its steps |
+| Turn what you configure into a migration | [Record an administrator session](migrations-record-an-admin-session.md) | `exp:migration:record:*`, Setup > Migrations > Recording, `exp:migration:generate --from-recording` |
 
 ## The example extension at a glance
 

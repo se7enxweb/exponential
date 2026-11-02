@@ -35,7 +35,7 @@ class Expstaticbuild extends ExpstaticBase
                              "./console exp:static:build github-public --paths=/about-us  only this page\n" .
                              "./console exp:static:build github-public --format=json --report=var/log/static.json",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging]', '[target]', array(
+        return (array)$this->startup( '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging][login:][run-id:][progress:]', '[target]', array(
             'full' => 'Crawl the whole site (the default without --paths or --nodes); not with --paths or --nodes',
             'paths' => 'Build only these pages, by their path in the site (/about-us; a comma list or repeated); the rest of the last build stays',
             'nodes' => 'Build only the pages of these nodes (node ids; a comma list or repeated); the rest of the last build stays',
@@ -45,6 +45,9 @@ class Expstaticbuild extends ExpstaticBase
             'crawl-url' => 'Fetch the pages from this address instead of the target\'s CrawlURL or the siteaccess\'s SiteURL (http://127.0.0.1:8080)',
             'max-pages' => 'Stop the crawl after this many pages (default the target\'s MaxPages)',
             'keep-staging' => 'Keep the staging folder of the build (its path is in the report) instead of removing it',
+            'login' => 'Run as this user (the administration starts its jobs so); recorded as who ran it',
+            'run-id' => 'The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job\'s id)',
+            'progress' => 'Also append the progress, one JSON object per line, to this file (the administration follows it)',
         ) );
     }
 
@@ -72,6 +75,7 @@ class Expstaticbuild extends ExpstaticBase
         if ( $reportFile !== '' && ( !is_dir( dirname( $reportFile ) ) || is_dir( $reportFile ) ) )
             $this->usage( "--report must name a file in a folder that exists, not $reportFile" );
 
+        $job = $this->jobOptions( $options );
         $target = $this->target( $options, $format );
         if ( !\expStaticTarget::enabled() )
             $this->finish( array( 'mode' => 'build', 'target' => $target->id(), 'warnings' => array(),
@@ -80,10 +84,11 @@ class Expstaticbuild extends ExpstaticBase
 
         $command = $this;
         $build = new \expStaticBuild( $target, array(
-            'emit' => $format === 'json' ? null : function ( $type, $message, array $data = array() ) use ( $command )
+            'emit' => self::bothEmit( $format === 'json' ? null : function ( $type, $message, array $data = array() ) use ( $command )
             {
                 $command->progress( $type, $message );
-            },
+            }, $job['progress'] ),
+            'run_id' => $job['run_id'],
             'dry_run' => !empty( $options['dry-run'] ),
             'full' => !empty( $options['full'] ),
             'paths' => $paths,

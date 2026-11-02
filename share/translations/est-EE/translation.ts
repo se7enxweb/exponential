@@ -15097,6 +15097,14 @@ Märkus: pakette ei desinstallita.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Uusim sisu, ülevaatuseks kinni peetud sisu ja toimingud valikuga.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Avaldage saidi staatiline koopia GitHub Pagesis või mis tahes git-hostis.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Staatiline avaldamine</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22096,6 +22104,18 @@ Märkus: pakette ei desinstallita.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API salvestatud päringute vastused ja selle skeemi sisuklassid.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Avaldage staatiline koopia GitHub Pagesis või mis tahes git-hostis</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Staatiline avaldamine</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Staatiline vahemälu serveerib lehti sellest serverist. Saidi staatilise koopia avaldamiseks mujal, GitHub Pagesis või mis tahes git-hostis, kasutage staatilist avaldamist.</translation>
     </message>
 </context>
 <context>
@@ -76153,6 +76173,14 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Paigalduse muudatused failidena: nende olek, käivitused, käivitamine ja tagasivõtmine.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Avaldage saidi staatiline koopia GitHub Pagesis või mis tahes git-hostis.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Staatiline avaldamine</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80592,6 +80620,222 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>The run could not be started.</source>
         <translation>Käivitust ei õnnestunud alustada.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Muudatuste salvestamine</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Salvestamise ajal säilitatakse see, mida muudate halduses või saidi külgribal, migratsiooni sammudena: sisu, klassid, rollid ja poliitikad, sektsioonid, kasutajad ja rühmad, URL-i aliased, seaded. Peatage see, kui olete valmis, vaadake, mida see jäädvustas, ja looge sellest migratsioon.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Salvestusi ei õnnestunud lugeda: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Salvestuste tabeleid veel pole: käivitage esmalt uuendus (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Salvestamine on failis migration.ini välja lülitatud ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Minu muudatused</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Salvestab ainult seda, mida teie muudate, ükskõik kus, kuni selle peatate.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Salvestamine</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>alates %time, seni muudatusi: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Silt (valikuline)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Näita, mida see jäädvustas</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Peata salvestamine</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Alusta minu muudatuste salvestamist</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Kogu saidi aken</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Salvestab iga kasutaja ja konsooli iga muudatuse, kuni aken suletakse. Avamisel palutakse teil kinnitada, et see olete teie.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Avatud</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Sulge aken</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ava kogu saidi aken</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Salvestused</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Kasutaja kontot (kasutajanimi, e-post, parool) ja kasutajakontode välju ei salvestata kunagi.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Muudatused</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Kogu sait</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Kasutaja %name muudatused</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Peatatud</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Salvestusi veel pole.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Salvestus %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Kõik salvestused</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migratsioon, mis sellest tekiks</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Muudatused, koondatud üheks sammuks iga muudetud asja kohta: mida teeks sellest salvestusest loodud migratsioon.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Sellest saab luua migratsiooni, kui sellel paigaldusel on YAML-i sammutüübid %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Teadlikult välja jäetud: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Midagi ei salvestatud.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Mida see jäädvustas</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Muudatusi: %count, tegemise järjekorras.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Muudatus</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Samm</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Puudutab</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Veel %count: ./console exp:migration:record:show loetleb kõik.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Hülga</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Eemaldab salvestuse ja selle, mida see jäädvustas. Muudetu jääb muudetuks.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Jah, hülga see salvestus</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Salvestamine käib…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Teie muudatused salvestatakse migratsiooni jaoks.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Iga muudatus sellel saidil salvestatakse migratsiooni jaoks (kogu saidi aken).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Kogu saidi salvestamine on alanud: iga kasutaja iga muudatus salvestatakse, kuni selle peatate.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Salvestamine on alanud: teie muudatused salvestatakse, kuni selle peatate.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Salvestamine peatatud. See, mida see jäädvustas, jääb alles, kuni selle hülgate.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Salvestus ja selle sündmused on eemaldatud.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Salvestust %id pole.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Märkige esmalt „Jah, hülga see salvestus“.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Seansi salvestamise võib peatada ainult kasutaja, kes salvestas.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Valige peatatav salvestus.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Seda liiki salvestamine juba käib.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Salvestust ei õnnestunud muuta: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81255,6 +81499,1540 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>Released.</source>
         <translation>Vabastatud.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Kõik sihtkohad</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Viimane avaldamine</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Avaldage oma saidi tasuta staatiline koopia GitHub Pagesis:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Aegunud lehed</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Staatiline avaldamine</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Staatiline avaldamine on välja lülitatud.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Sihtkoht</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Sihtkohti ei õnnestunud lugeda: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>töö on käimas</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>kooste kontrollimiseks</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>peida see</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>loo sihtkoht</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mitte kunagi</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>loe õpetust</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added lisatud, %changed muudetud, %removed eemaldatud</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes / %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Veel %count pole loetletud.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages lehte kirjutatud</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path on %size, rohkem kui host ühe faili jaoks lubab.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % piirangust</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag on avaldamine, mis saidil praegu on.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: töö %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/hoidla/ GitHubi projektisaidi jaoks; tühi oma domeeni või kasutajasaidi jaoks.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Sait</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Host</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Hoidlasse sisselogimine</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Hoidla</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Lingid ja baastee</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Teie oma domeen</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Mida kooste sisaldab</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Millal avaldatakse</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Ülevaatus ja salvestamine</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHubi projektisait asub tee /&lt;repository&gt;/ all; suhtelised lingid töötavad seal ja ka mujal.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Kooste toob saidi %site iga lehe nii, nagu seda näeb sisselogimata külastaja, kirjutab lingid ümber, kopeerib failid ja kirjutab tulemuse sihtkoha kausta. Midagi ei avaldata enne, kui olete koostet kontrollinud ja vajutanud Avalda.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Croni avaldis, näiteks 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Juurutusvõtit hoitakse saladusena %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Juurutusvõti lubab sellel paigaldusel SSH kaudu edasi lükata ühte hoidlasse ja mitte kuhugi mujale. Selle privaatne pool jääb asukohta Häälestus &gt; Saladused; näidatakse ainult avalikku poolt.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Selle sihtkoha jaoks loodud juurutusvõti</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Juurutusvõti logib sisse SSH kaudu: muutke git-aadress SSH-aadressiks (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Töö on käimas, alustas %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Selle sihtkoha töö on veel käimas (%detail). Oodake, kuni see lõpeb.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Selle sihtkoha töö on veel käimas. Oodake, kuni see lõpeb.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Link lehelt /news/ lehele /about-us/team kirjutatakse kujul</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Loodi uus juurutusvõti. Lisage selle avalik pool nüüd hoidlasse.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Lehte, mis pärast puhastamist sisaldab endiselt silumisväljundit, vormitõendit või seansi ID-d, ei avaldata kunagi.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Tagasivõtmine on ekspertidele: märkige &quot;Tean, mida see muudab&quot; ja tippige sildi nimi uuesti.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Sait võib olla kuni %site, üks fail kuni %file, liiklust umbes 100 GB kuus. Tasuta paketi puhul peab hoidla olema avalik. GitHub Pages pole mõeldud poodidele ega muudele kaubanduslikele tehingutele.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Sihtkoht on üks sait, mis avaldatakse ühte git-hoidlasse. Siin ei koostata ega avaldata midagi: Salvesta kirjutab sätted faili settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Sihtkoht on üks sait, mis avaldatakse ühte kohta, näiteks teie avalik sait GitHub Pagesis.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Tõend asukohast Häälestus &gt; Saladused</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Hoidla töövoog avaldab selle.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Lisage see avalik võti hoidlasse kirjutusõigusega. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, märkige Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Lisatud</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Muu git-host</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Teine protsess töötab selle sihtkohaga: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Tagasi</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Baastee</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Enne</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Baastee all</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Haru</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Katkised lingid</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Katkised lingid koostes</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Kooste</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Kooste %id, koostas %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Koosta %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Koosta kohe</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Kooste kontrollimiseks</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kasutaja</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Käsitsi, siin</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Loobu</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Muuda</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Muudetud</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Muudatused</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Kontrollige seda esmalt</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Kontrollige neid sätteid</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Kontrollige, mida kooste muudab, vaadake seda ning seejärel avaldage see või visake ära.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Valige avaldamine, mille juurde naasta.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Tuleb hilisemas väljalaskes.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Sissekanne</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Sissekanded</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Teeb koostest sissekande, sildistab selle ja lükkab edasi asukohta %remote. Edasilükkamist ei sunnita kunagi; hiljem saate naasta mis tahes avaldamise juurde.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Võrreldes varasema kaustaga: %added lisatud, %changed muudetud, %removed eemaldatud, %unchanged muutmata.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Võrreldes viimase avaldamisega.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Mandaat</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Oma domeen</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Silumisväljund, vormitõendid, seansi ID-d ja nonce&apos;id eemaldatakse alati.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Juurutusvõti</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name juurutusvõti</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Hülga</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Hülga kooste</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domeen</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Tühi: saidi aadress. Muul juhul sama saidi sisemine aadress.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Lõppenud</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Iga link algab baasteega.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Iga avaldamine on sissekanne sildiga static/%id/&lt;n&gt;. Tagasiminek teeb uue sissekande varasema avaldamise failidega: ajalugu jääb alles, ükski silt ei liigu ja midagi ei sunnita.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Lisafailid</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Too lehed aadressilt</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fail</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Failid</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Puuduvad failid</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Failid:</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Failid, mida ei õnnestunud koguda</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Sõrmejälg</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Kaust</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH-aadressi jaoks. Võti luuakse pärast salvestamist; selle avaliku poole lisate ise hoidlasse.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https://-aadressi jaoks. GitHub: peeneteraline tõend, millel on hoidlas Contents lugemis- ja kirjutusõigus.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Ekspertidele. Avalik sait muutub kohe, kui edasilükkamine on lõpule jõudnud.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Vormid</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Tasuta majutus GitHubi hoidlast.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Harust</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git-aadress</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages lubab saiti suurusega %site ja faili suurusega %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pagesi piirangud</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages avaldab failid nii, nagu need on (vajalik failide puhul, mis algavad märgiga _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub serveerib haru nii, nagu see edasi lükati. Vaikimisi.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, teie oma server: mis tahes git-hoidla.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Naase varasema avaldamise juurde</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Abi</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Abi viisardiga</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Peida need</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Ajalugu</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name ajalugu</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Kuidas GitHub Pages koostet vastu võtab</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Olen muudatusi kontrollinud</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Tean, mida see muudab</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>See on välja lülitatud: midagi ei saa koostada enne, kui see on sisse lülitatud.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>See töötab taustal kasutajana %user; võite selle lehe sulgeda.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Töö %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Hoitakse saladusena %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Liik</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Viimane avaldamine</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Jäta need lehed välja</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Jäta need jaotised välja</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Lingid</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Ümberkirjutatud lingid</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Avalik sait</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Vaata koostet</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Väiketähed, numbrid, _ ja -, näiteks github-public. See annab nime kaustale ja siltidele (static/&lt;id&gt;/&lt;n&gt;) ning seda ei saa hiljem muuta.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Loo uus võti</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Loo sihtkoht</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Loo võti</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Looge hoidla esmalt hostis; tühi hoidla sobib.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Sõnum</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Enamik lehti</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Tõendi nimi asukohas Häälestus &gt; Saladused</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Uus sihtkoht</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Edasi</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Sissekandeid veel pole.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Võtit ei loodud: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php käsurea programmi ei leitud. Määrake migration.ini [AdminSettings] PhpCliPath väärtuseks selle täielik tee.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Silte veel pole.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Sihtkohti veel pole.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Puudub</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Pole koostes.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Midagi pole veel avaldatud.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Midagi pole veel avaldatud: iga fail on uus.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Teavitused</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Ajakava järgi</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Konsoolis</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Serveris: ./console exp:static:serve %id serveerib seda samamoodi.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Üks tee rea kohta, * vastab mis tahes osale: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Sihtkohaga salvestatakse ainult nimi; tõend või võti ise jääb asukohta Häälestus &gt; Saladused ega ilmu kunagi logisse.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Ainult see, mida lehed nimetavad</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Ainult tõendiga. env:NAME loeb selle asemel serveri keskkonnamuutujat.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Ava eelvaade</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Avab kooste nii, nagu host seda serveerib, sihtkoha kaustast. Link töötab teie jaoks ühe tunni.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Valikuline. Tühi: see, mis avaldati.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Valikuline. Domeeniga serveeritakse saiti selle juurest.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Väljund</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Lehed</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Sihtkoha lehed</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Tagasi lükatud lehed</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Järeltöötlus</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Eelvaade</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Eelvaade ja avaldamine</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name eelvaade ja avaldamine</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Koostu eelvaade</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Edenemine</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Avalik aadress</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Avalik võti</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Avalda</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Avaldage saidi staatiline koopia GitHub Pagesis või mis tahes git-hostis: koostage see, kontrollige muudatusi, avaldage ja naaske vajaduse korral varasema avaldamise juurde.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Avaldamine, mille juurde naasta</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Avaldamised</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Edasilükkamine</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Loe õpetust</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Kirje</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Tagasi lükatud</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Suhteline</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Laadi uuesti</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Eemaldatud</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Asenda võti: vana lakkab töötamast</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Aruanne</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Koostu aruanne</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Hoidla</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Ülevaatus</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Ülevaatus kontrollib iga sätet ja näitab ridu, mis kirjutatakse. Midagi pole veel salvestatud.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Võta tagasi</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Tagasivõtmine</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvesta</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Ajakava</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Otsinguleht</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Jaotiste ID-d, komadega eraldatud.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Saada need avalikule saidile</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Säte</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Sätted</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name sätted</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Häälestus</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Häälestus &gt; Saladused</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Kuvatakse loendites, näiteks &quot;Avalik sait GitHub Pagesis&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub Appiga sisselogimine tuleb koos GitHubi integratsiooniga.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Sait</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Avaldatav sait</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Suurus</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Suurus ja piirangud</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Koostu suurus</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Aegunud lehed</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Alustatud</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Alustas %user kell %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Olek</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Staatiline avaldamine</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Staatiline avaldamine on välja lülitatud</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Staatiline avaldamine on välja lülitatud.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Staatiline avaldamine on välja lülitatud. Lülitage see esmalt sisse asukohas Häälestus &gt; Staatiline avaldamine.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Staatiline avaldamine on sisse lülitatud.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Samm %step / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Sammud</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Puhastus</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Lülita välja</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Lülita sisse</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Lülita staatiline avaldamine sisse</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Silt</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Sildid</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Sihtkoht</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Sihtkohti saab luua ja muuta, kuid midagi ei koostata ega avaldata enne, kui see on sisse lülitatud.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Ütleb otsingumootoritele, mida lugeda.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Koostet ei õnnestunud ära visata: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Kooste on sama mis viimane avaldamine: avaldada pole midagi.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Kooste visati ära: kaustas on taas viimane avaldamine.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Vaikeväärtused sobivad enamikule saitidele.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Kaustas on kooste, mida pole veel avaldatud; uus kooste asendab selle.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Tööde kausta ei saa kirjutada: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Tööd ei õnnestunud ette valmistada: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Tööd ei õnnestunud alustada.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Töö on lõppenud. Aruande laadimine.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Töö vajab sisselogitud kasutajat.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Töö käivitati, kuid see ei teatanud oma protsessi ID-d. Kontrollige: %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Võti</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Suurim fail: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Read, mis kirjutatakse</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Lehtede loend otsingumootoritele; vajab avalikku aadressi.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Lehed tuuakse nii, nagu neid näeb sisselogimata külastaja. Haldus- ja toimetamissaidipääse ei pakuta kunagi.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Edenemist ei õnnestunud jälgida. Laadige leht uuesti, et näha, kuidas tööl läheb.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Võtme avalik pool:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Haru juur</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Saladuste hoidla pole veel seadistatud (./console exp:upgrade --apply loob selle tabeli), seega ei saa võtit hoida.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Server logib ise sisse (oma SSH-võtme või mandaadiabilisega) või on hoidla selles serveris.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Sätet ei õnnestunud kirjutada: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Sätted on kehtivad. Kirjutatakse need read:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Sätete faili ei saa lugeda: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Sait naaseb selle avaldamise failide juurde; veel avaldamata kooste tuleb esmalt avaldada või ära visata.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Saidi oma leht aadresside jaoks, mida pole olemas.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Sihtkohta ei õnnestunud salvestada: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Sihtkoht ei logi veel selle võtmega sisse: valige selle sätetes &quot;Selle sihtkoha jaoks loodud juurutusvõti&quot;.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Sihtkohti ei õnnestunud lugeda: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Kontrollimiseks pole veel koostet.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Sellel paigaldusel pole avalikku saidipääsu. Haldus- ja toimetamissaidipääse ei avaldata kunagi.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>See leht jälgib tööd selle käigus; töö jätkub taustal, kui leht suletakse.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Sellel sihtkohal pole veel juurutusvõtit.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Seda sihtkohta pole siin veel koostatud.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Sellel sihtkohal on see olemas.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Viskab selle koostu ära: kaustas on taas viimane avaldamine. Avalik sait ei muutu.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Märkige esmalt &quot;Olen muudatusi kontrollinud&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Aeg</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Käivitajad</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Tippige sildi nimi uuesti</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Muutmata</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Veebihaak</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Mis</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Mis muutub</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Mis iga fail on; kirjutatakse alati.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Mida töö tegi ja selle kirje. Siin alustatud töö jätkub taustal, kui see leht suletakse.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Mida töö vigadena väljastas</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>See, mida lehed nimetavad, ja avaldatud sisu iga pilt</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Millal</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Kui avaldamine nurjub</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Kui avaldamine õnnestub</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Kui sisu avaldatakse</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Kuhu viivad lingid sellele, mida koopia ei sisalda (otsing, sisselogimine).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Kust staatilist koopiat serveeritakse.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Milline sait avaldatakse ja mis on sihtkoha nimi.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Töötab mis tahes tee all. Vaikimisi.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Kirjutatakse alati, kui oma domeen on määratud.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jah</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Siin ja konsoolis saate alati käsitsi koostada ja avaldada.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>ainult nimi; väärtus jääb asukohta Häälestus &gt; Saladused</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>tee %path all</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>lõppes aruandeta</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>lisa</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>nurjus</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fail</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages või main kaustaga docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git-host</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (tõendiga) või git@github.com:owner/repo.git (juurutusvõtmega); kunagi mitte parooli ega tõendit selles.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, saidikaardi ja kanooniliste linkide jaoks.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>pilt</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mitte kunagi</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ei</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>kaughoidlat pole</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>puudub: sissekanded jäävad kausta</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>puudub: midagi ei muutunud</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>edasi lükkamata</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>midagi ei muutunud</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>leht</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>läbitud</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open on keelatud, seega ei saa siin tööd alustada. Kasutage serveris käsku ./console exp:static:build.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>avaldamine</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>avaldatud</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>edasilükkamine ootel</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>edasi lükatud</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>tagasi lükatud</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>suhteline</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>tagasivõtmine</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>tagasi võetud</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>käimas</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>ainult kaust</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: kirjutatakse faili CNAME. Suunake domeeni DNS hostile, nagu host juhendab; HTTPS-i käivitumine võib veidi aega võtta.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>jah, veel avaldamata</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Selle avaldab hoidla töövoog. Kooste kirjutab töövoo faili; jätke kaust tühjaks.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Kui siht on salvestatud GitHubi hoidla ja tõendi või GitHub Appiga, saab see samm hoidla luua ja GitHub Pagesi sisse lülitada. Muidu looge esmalt hoidla GitHubis; tühi hoidla sobib.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Haru või GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Kontrolli DNS-i</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Loo hoidla, kui seda pole</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Looge hoidla GitHubis ja lülitage selle seadetes GitHub Pages sisse (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Loob hoidla %repo, kui see puudub (kui soovitud), lülitab GitHub Pagesi sisse harust või GitHub Actionsist, nagu salvestatud, ning seab oma domeeni ja HTTPS-i. Kasutab salvestatud seadeid: salvestage muudatused enne.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Üksikasjad GitHubis</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Sisestage esmalt oma domeen.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Iga push kontrollitakse esmalt nende piirangute vastu.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHubi https://-aadressi jaoks. Sisse logib selle paigalduse jaoks seadistatud App; see vajab paigalduse ID-d.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages teenindab privaatset hoidlat ainult tasulise paketiga.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: alamdomeen (www.example.com) vajab CNAME-kirjet, mis viitab &lt;owner&gt;.github.io-le; tipudomeen (example.com) A-kirjeid %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub Appi paigalduse ID</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Viimane Pagesi kooste</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Piirangud ja tingimused</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Vajalik GitHub Pagesi jaoks tasuta paketiga.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHubis</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Ainult GitHub Appiga: number Appi paigalduse aadressi lõpus GitHubis. App ise määratakse failis staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privaatne</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Avalik</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Salvestage esmalt siht GitHubi hoidla ja tõendi või GitHub Appiga.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Määrake need kirjed domeeni teenusepakkuja juures:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Seadista GitHubis</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Domeeni %domain DNS ei viita veel GitHub Pagesile.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Domeeni %domain DNS viitab GitHub Pagesile.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHubi lõimimine pole siin saadaval: %problem. Harusse avaldamine töötab sellegipoolest; lülitage GitHub Pages sisse hoidla seadetes.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHubi sammud pole selle sihi jaoks saadaval: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pagesi olekut näidatakse, kui mandaadiks on tõend või GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Kasuta oma domeeni</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Mida valida: tõend, juurutusvõti või GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHubi hoidla ja tõendi või GitHub Appiga saab viisard teie eest hoidla luua, GitHub Pagesi sisse lülitada ja domeeni seada (samm 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>koostamisel</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>koostatud</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actionsist</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>harust %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>veel pole</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ei leitud</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>väljas</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privaatne</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>avalik</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>järjekorras</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>teadmata</translation>
     </message>
 </context>
 </TS>

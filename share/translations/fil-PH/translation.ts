@@ -15158,6 +15158,14 @@ Paalala: Hindi ia-uninstall ang mga package.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Ang pinakabagong nilalaman, ang pinipigil para sa pagsusuri, at mga aksyon sa isang pinili.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Mag-publish ng static na kopya ng isang site sa GitHub Pages o sa anumang git host.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Static na pag-publish</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Paalala: Hindi ia-uninstall ang mga package.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Mga sagot ng mga naka-imbak na query ng GraphQL API, at ang mga class ng nilalaman ng schema nito.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Mag-publish ng static na kopya sa GitHub Pages o sa anumang git host</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Static na pag-publish</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Ang static cache ay naghahatid ng mga pahina mula sa server na ito. Para mag-publish ng static na kopya ng site sa ibang lugar, sa GitHub Pages o sa anumang git host, gamitin ang static na pag-publish.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Mga pagbabago sa instalasyon na nakatago bilang mga file: ang kanilang katayuan, ang mga pagpapatakbo, patakbuhin at ibalik.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Mag-publish ng static na kopya ng isang site sa GitHub Pages o sa anumang git host.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Static na pag-publish</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>The run could not be started.</source>
         <translation>Hindi masimulan ang pagpapatakbo.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Pagre-record ng mga pagbabago</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Habang tumatakbo ang isang recording, ang binabago mo sa administrasyon o sa sidebar ng site ay itinatago bilang mga hakbang ng isang migration: nilalaman, mga klase, mga tungkulin at patakaran, mga seksyon, mga user at grupo, mga URL alias, mga setting. Itigil ito kapag tapos ka na, tingnan kung ano ang nakuha nito, at gumawa ng migration mula rito.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Hindi mabasa ang mga recording: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Wala pa ang mga talaan ng mga recording: patakbuhin muna ang upgrade (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Naka-off ang pagre-record sa migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Ang mga pagbabago ko</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Nire-record lamang ang binabago mo, saanman mo ito baguhin, hanggang itigil mo ito.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Pagre-record</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>mula %time, %count pagbabago sa ngayon.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Label (opsyonal)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Ipakita ang nakuha nito</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Itigil ang pagre-record</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Simulan ang pagre-record ng mga pagbabago ko</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Window para sa buong site</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Nire-record ang bawat pagbabago ng bawat user at ng console hanggang ito ay isara. Sa pagbukas nito, hihilingin sa iyong patunayan na ikaw ito.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Bukas</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Isara ang window</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Buksan ang window para sa buong site</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Mga recording</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ang account ng isang user (login, e-mail, password) at ang mga field ng mga user account ay hindi kailanman nire-record.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Mga pagbabago</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Buong site</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Mga pagbabago ni %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Itinigil</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Wala pang recording.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Pagre-record %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Lahat ng recording</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ang migration na gagawin nito</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ang mga pagbabago na pinagsama sa isang hakbang bawat bagay na binago: ang gagawin ng isang migration na ginawa mula sa recording na ito.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Makakagawa ng migration mula rito kapag may mga uri ng hakbang na YAML %types na ang installation na ito.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Sinadyang hindi isinama: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Walang na-record.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ang nakuha nito</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count pagbabago, sa pagkakasunod-sunod ng paggawa.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Pagbabago</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Hakbang</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Tungkol sa</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count pa: inililista ng ./console exp:migration:record:show ang lahat.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Itapon</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Inaalis ang recording at ang nakuha nito. Ang binago ay nananatiling binago.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Oo, itapon ang recording na ito</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Nagre-record…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Nire-record ang mga pagbabago mo para sa isang migration.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Nire-record ang bawat pagbabago sa site na ito para sa isang migration (window para sa buong site).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nagsimula na ang recording ng buong site: nire-record ang bawat pagbabago ng bawat user hanggang itigil mo ito.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Nagsimula na ang recording: nire-record ang mga pagbabago mo hanggang itigil mo ito.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Itinigil ang recording. Mananatili ang nakuha nito hanggang itapon mo ito.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Inalis na ang recording at ang mga kaganapan nito.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Walang recording na %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Lagyan muna ng tsek ang "Oo, itapon ang recording na ito".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Ang user lamang na nag-record ang maaaring magtigil ng session recording.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Piliin ang recording na ititigil.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>May tumatakbo nang recording na ganitong uri.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Hindi mabago ang recording: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1540 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>Released.</source>
         <translation>Pinalaya.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Lahat ng destinasyon</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Huling pag-publish</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Mag-publish ng libreng static na kopya ng iyong site sa GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Mga luma nang pahina</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Static na pag-publish</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Naka-off ang static na pag-publish.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Destinasyon</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Hindi mabasa ang mga destinasyon: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>may trabahong tumatakbo</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>build na susuriin</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>itago ito</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>gumawa ng destinasyon</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hindi kailanman</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>basahin ang tutorial</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added idinagdag, %changed binago, %removed inalis</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes sa %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count pa ang hindi nakalista.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages pahina ang naisulat</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>Ang %path ay %size, higit sa pinapayagan ng host para sa isang file.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % ng limitasyon</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds seg</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>Ang %tag ang pag-publish na nasa site ngayon.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: trabaho %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repositoryo/ para sa site ng proyekto sa GitHub; walang laman para sa sariling domain o site ng user.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Ang site</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Ang host</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Pag-sign in sa repositoryo</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Ang repositoryo</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Mga link at batayang path</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Ang sarili mong domain</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Ang laman ng build</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Kailan ito ipa-publish</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Suriin at i-save</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Ang site ng proyekto sa GitHub ay nasa ilalim ng /&lt;repository&gt;/; gumagana roon at saanman ang mga relatibong link.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Kinukuha ng build ang bawat pahina ng %site ayon sa nakikita ng bisitang hindi naka-sign in, isinusulat muli ang mga link, kinokopya ang mga file at isinusulat ang resulta sa folder ng destinasyon. Walang naipa-publish hangga&apos;t hindi mo sinusuri ang build at pinipindot ang I-publish.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Isang cron expression, halimbawa 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Ang deploy key ay itinatago bilang secret na %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Pinapayagan ng deploy key ang installation na ito na mag-push sa iisang repositoryo sa pamamagitan ng SSH at wala nang iba. Nananatili ang pribadong kalahati nito sa Setup &gt; Mga secret; ang pampublikong kalahati lang ang ipinapakita.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Isang deploy key na ginawa para sa destinasyong ito</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Nagsa-sign in ang deploy key sa pamamagitan ng SSH: palitan ang address ng git ng SSH address (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>May trabahong tumatakbo, sinimulan ni %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Tumatakbo pa ang isang trabaho ng destinasyong ito (%detail). Hintaying matapos ito.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Tumatakbo pa ang isang trabaho ng destinasyong ito. Hintaying matapos ito.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Ang link mula sa pahinang /news/ papunta sa pahinang /about-us/team ay isusulat bilang</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Gumawa ng bagong deploy key. Idagdag na ngayon ang pampublikong kalahati nito sa repositoryo.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Ang pahinang may debug output, form token o session id pa rin pagkatapos ng paglilinis ay hindi kailanman ipa-publish.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Para sa mga eksperto ang pagbabalik: lagyan ng tsek ang &quot;Alam ko kung ano ang binabago nito&quot; at i-type muli ang pangalan ng tag.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Ang isang site ay maaaring umabot nang %site, ang isang file nang %file, na may humigit-kumulang 100 GB na traffic bawat buwan. Sa libreng plan, dapat pampubliko ang repositoryo. Hindi para sa mga tindahan o iba pang komersiyal na transaksyon ang GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Ang destinasyon ay isang site na ipina-publish sa isang git repositoryo. Walang binubuo o ipina-publish dito: isinusulat ng I-save ang mga setting sa settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Ang destinasyon ay isang site na ipina-publish sa isang lugar, halimbawa ang iyong pampublikong site sa GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Isang token mula sa Setup &gt; Mga secret</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Ipina-publish ito ng isang workflow ng repositoryo.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Idagdag ang pampublikong key na ito sa repositoryo nang may write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, lagyan ng tsek ang Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Idinagdag</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Ibang git host</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>May ibang prosesong gumagana sa destinasyong ito: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Bumalik</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Batayang path</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Dati</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Sa ilalim ng batayang path</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Sangay</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Mga sirang link</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Mga sirang link sa build</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Build</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Build %id ni %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Build na %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>I-build ngayon</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Build na susuriin</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ni</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Mano-mano, dito</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kanselahin</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Baguhin</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Binago</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Mga pagbabago</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Suriin muna ito</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Suriin ang mga setting na ito</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Suriin kung ano ang binabago ng build, tingnan ito, saka i-publish o itapon.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Piliin ang pag-publish na babalikan.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Darating sa susunod na release.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Pag-commit</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Mga commit</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Kino-commit ang build, tina-tag ito at pinu-push sa %remote. Hindi kailanman pinipilit ang push; maaari kang bumalik sa anumang pag-publish sa ibang pagkakataon.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Kumpara sa naunang folder: %added idinagdag, %changed binago, %removed inalis, %unchanged hindi nagbago.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Kumpara sa huling pag-publish.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kredensyal</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Sariling domain</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Laging tinatanggal ang debug output, mga form token, mga session id at mga nonce.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Deploy key</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Deploy key ng %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Itapon</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Itapon ang build</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domeyn</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Walang laman: ang address ng site. Kung hindi, isang internal na address ng parehong site.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Natapos</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Nagsisimula ang bawat link sa batayang path.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Ang bawat pag-publish ay isang commit na may tag na static/%id/&lt;n&gt;. Ang pagbabalik ay gumagawa ng bagong commit gamit ang mga file ng naunang pag-publish: nananatili ang kasaysayan, walang tag na gumagalaw at walang pinipilit.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Mga dagdag</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Kunin ang mga pahina mula sa</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Mga file</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Mga nawawalang file</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Mga file ng</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Mga file na hindi makolekta</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Fingerprint</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Folder</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Para sa SSH address. Gagawin ang key pagkatapos mag-save; idaragdag mo ang pampublikong kalahati nito sa repositoryo.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Para sa https:// address. GitHub: isang fine-grained token na may Contents read at write sa repositoryo.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Para sa mga eksperto. Nagbabago ang pampublikong site sa sandaling matapos ang push.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Mga form</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Libreng hosting mula sa isang GitHub repositoryo.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Mula sa sangay</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Address ng git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>Pinapayagan ng GitHub Pages ang site na %site at file na %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Mga limitasyon ng GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>Ipina-publish ng GitHub Pages ang mga file nang ganoon mismo (kailangan para sa mga file na nagsisimula sa _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>Inihahatid ng GitHub ang sangay ayon sa pagka-push nito. Ang default.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, sarili mong server: anumang git repositoryo.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Bumalik sa naunang pag-publish</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Tulong</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Tulong sa wizard</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Itago ang mga ito</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Kasaysayan</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Kasaysayan ng %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Paano tinatanggap ng GitHub Pages ang build</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Nasuri ko na ang mga pagbabago</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Alam ko kung ano ang binabago nito</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Naka-off ito: walang mabubuo hangga&apos;t hindi ito naka-on.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Tumatakbo ito sa background bilang %user; maaari mong isara ang pahinang ito.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Trabaho %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Itinatago bilang secret na %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Uri</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Huling pag-publish</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Huwag isama ang mga pahinang ito</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Huwag isama ang mga seksyong ito</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Mga link</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Mga link na isinulat muli</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Live na site</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Tingnan ang build</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Maliliit na titik, digit, _ at -, halimbawa github-public. Pinapangalanan nito ang folder at ang mga tag (static/&lt;id&gt;/&lt;n&gt;) at hindi na mababago pagkatapos.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Gumawa ng bagong key</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Gumawa ng destinasyon</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Gawin ang key</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Gawin muna ang repositoryo sa host; ayos lang kahit walang laman.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mensahe</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Karamihan ng mga pahina</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Pangalan</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Pangalan ng token sa Setup &gt; Mga secret</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Bagong destinasyon</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Susunod</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hindi</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Wala pang commit.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Walang nagawang key: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Walang nakitang php command line binary. Itakda ang buong path nito sa migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Wala pang tag.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Wala pang destinasyon.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Wala</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Wala sa build.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Wala pang naipa-publish.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Wala pang naipa-publish: bago ang bawat file.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Mag-abiso</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Ayon sa iskedyul</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Sa console</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Sa server: ./console exp:static:serve %id ang naghahatid nito sa parehong paraan.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Isang path bawat linya, tumutugma ang * sa anumang bahagi: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Pangalan lang ang iniimbak kasama ng destinasyon; ang mismong token o key ay nananatili sa Setup &gt; Mga secret at hindi kailanman lumalabas sa log.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Ang binabanggit lang ng mga pahina</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Gamit lang ang token. Ang env:NAME ay nagbabasa sa halip ng environment variable ng server.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Buksan ang preview</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Binubuksan ang build ayon sa paghahatid ng host, mula sa folder ng destinasyon. Gumagana para sa iyo ang link sa loob ng isang oras.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Opsyonal. Walang laman: kung ano ang naipa-publish.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Opsyonal. Kapag may domain, inihahatid ang site sa root nito.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Output</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Mga pahina</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Mga pahina ng destinasyon</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Mga tinanggihang pahina</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Post-processing</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Preview</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Preview at pag-publish</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Preview at pag-publish ng %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>I-preview ang build</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progreso</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Pampublikong address</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Pampublikong key</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>I-publish</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Mag-publish ng static na kopya ng isang site sa GitHub Pages o sa anumang git host: buuin ito, suriin ang mga pagbabago, i-publish, at bumalik sa naunang pag-publish kapag kailangan.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Pag-publish na babalikan</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Mga pag-publish</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Pag-push</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Basahin ang tutorial</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Tala</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Tinanggihan</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relatibo</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>I-reload</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Inalis</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Palitan ang key: hihinto sa paggana ang luma</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Ulat</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Ulat ng build</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repositoryo</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Pagsusuri</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Sinusuri ng pagsusuri ang bawat setting at ipinapakita ang mga linyang isusulat. Wala pang naise-save.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Ibalik</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Pagbabalik</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>I-save</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Iskedyul</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Pahina ng paghahanap</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Mga id ng seksyon, pinaghihiwalay ng kuwit.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Ipadala ang mga ito sa live na site</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Setting</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Mga setting</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Mga setting ng %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Setup &gt; Mga secret</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Ipinapakita sa mga listahan, halimbawa &quot;Pampublikong site sa GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Darating ang pag-sign in gamit ang GitHub App kasama ng GitHub integration.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Site</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Site na ipa-publish</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Laki</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Laki at mga limitasyon</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Laki ng build</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Mga luma nang pahina</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Nagsimula</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Sinimulan ni %user noong %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Static na pag-publish</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Naka-off ang static na pag-publish</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Naka-off ang static na pag-publish.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Naka-off ang static na pag-publish. I-on muna ito sa Setup &gt; Static na pag-publish.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Naka-on ang static na pag-publish.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Hakbang %step ng %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Mga hakbang</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Paglilinis</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>I-off</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>I-on</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>I-on ang static na pag-publish</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Tag</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Mga tag</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Destinasyon</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Maaaring gumawa at magbago ng mga destinasyon, pero walang binubuo o ipina-publish hangga&apos;t hindi ito naka-on.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Sinasabi sa mga search engine kung ano ang babasahin.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Hindi maitapon ang build: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Pareho ang build sa huling pag-publish: walang ipa-publish.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Itinapon ang build: muling laman ng folder ang huling pag-publish.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Angkop ang mga default sa karamihan ng mga site.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>May build sa folder na hindi pa naipa-publish; papalitan ito ng bagong build.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Hindi masulatan ang folder ng mga trabaho: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Hindi maihanda ang trabaho: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Hindi masimulan ang trabaho.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Natapos na ang trabaho. Nilo-load ang ulat nito.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Kailangan ng trabaho ng user na naka-sign in.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Nasimulan ang trabaho pero hindi nito iniulat ang process id nito. Suriin ang %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Ang key</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Ang pinakamalaking file: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Ang mga linyang isusulat</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Ang listahan ng mga pahina para sa mga search engine; kailangan ang pampublikong address.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Kinukuha ang mga pahina ayon sa nakikita ng bisitang hindi naka-sign in. Hindi kailanman iniaalok ang mga siteaccess ng administrasyon at pag-edit.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Hindi masundan ang progreso. I-reload ang pahina para makita ang kalagayan ng trabaho.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Ang pampublikong kalahati ng key:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Ang root ng sangay</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Hindi pa naka-set up ang imbakan ng mga secret (ginagawa ng ./console exp:upgrade --apply ang table nito), kaya walang key na maitatago.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Kusang nagsa-sign in ang server (gamit ang sarili nitong SSH key o credential helper), o nasa server na ito ang repositoryo.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Hindi maisulat ang setting: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Wasto ang mga setting. Isusulat ang mga linyang ito:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Hindi mabasa ang file ng mga setting: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Babalik ang site sa mga file ng pag-publish na iyon; ang build na hindi pa naipa-publish ay dapat munang i-publish o itapon.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Ang sariling pahina ng site para sa mga address na hindi umiiral.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Hindi ma-save ang destinasyon: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Hindi pa nagsa-sign in ang destinasyon gamit ang key na ito: piliin ang &quot;Isang deploy key na ginawa para sa destinasyong ito&quot; sa mga setting nito.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Hindi mabasa ang mga destinasyon: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Wala pang build na susuriin.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Walang front siteaccess ang installation na ito. Hindi kailanman ipina-publish ang mga siteaccess ng administrasyon at pag-edit.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Sinusundan ng pahinang ito ang trabaho habang tumatakbo; nagpapatuloy ito sa background kapag isinara ang pahina.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Wala pang deploy key ang destinasyong ito.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Hindi pa nabubuo rito ang destinasyong ito.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Mayroon nito ang destinasyong ito.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Itinatapon ang build na ito: muling laman ng folder ang huling pag-publish. Hindi nagbabago ang live na site.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Lagyan muna ng tsek ang &quot;Nasuri ko na ang mga pagbabago&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Oras</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Mga trigger</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>I-type muli ang pangalan ng tag</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Hindi nagbago</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Ano</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Ano ang nagbabago</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Kung ano ang bawat file; laging isinusulat.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Ang ginawa ng trabaho at ang tala nito. Ang trabahong sinimulan dito ay nagpapatuloy sa background kapag isinara ang pahinang ito.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Ang inilabas ng trabaho bilang mga error</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Ang binabanggit ng mga pahina, at bawat larawan ng na-publish na nilalaman</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kailan</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Kapag nabigo ang pag-publish</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Kapag nagtagumpay ang pag-publish</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Kapag may na-publish na nilalaman</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Kung saan pupunta ang mga link sa wala sa kopya (ang paghahanap, ang login).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Kung saan inihahatid ang static na kopya.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Aling site ang ipina-publish, at ano ang tawag sa destinasyon.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Gumagana sa ilalim ng anumang path. Ang default.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Isinusulat tuwing may nakatakdang sariling domain.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Oo</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Maaari kang laging bumuo at mag-publish nang mano-mano dito at sa console.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>pangalan lang; nananatili ang value sa Setup &gt; Mga secret</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>sa ilalim ng %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>natapos nang walang ulat</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>dagdag</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>nabigo</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>file</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, o main na may folder na docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git host</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (may token) o git@github.com:owner/repo.git (may deploy key); hindi kailanman may password o token dito.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, para sa sitemap at sa mga canonical link.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>larawan</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hindi kailanman</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hindi</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>walang remote</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>wala: nananatili sa folder ang mga commit</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>wala: walang nagbago</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>hindi na-push</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>walang nagbago</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>pahina</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>nagtagumpay</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>Naka-disable ang proc_open, kaya hindi masisimulan dito ang trabaho. Gamitin ang ./console exp:static:build sa server.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>pag-publish</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>na-publish</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>nakabinbin ang push</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>na-push</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>tinanggihan</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relatibo</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>pagbabalik</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>naibalik</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>tumatakbo</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>ang folder lang</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: isinusulat sa file na CNAME. Ituro ang DNS ng domain sa host ayon sa paliwanag nito; maaaring matagalan bago magsimula ang HTTPS.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>oo, hindi pa na-publish</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Isang GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Inilalathala ito ng isang workflow ng repositoryo. Isinusulat ng build ang workflow file; iwanang walang laman ang folder.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Pagkatapos i-save ang isang destinasyon na may GitHub repositoryo at token o GitHub App, magagawa ng hakbang na ito ang repositoryo at mabubuksan ang GitHub Pages. Kung hindi, gawin muna ang repositoryo sa GitHub; ayos lang ang walang laman.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Sangay o GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Suriin ang DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Gawin ang repositoryo kung wala pa ito</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Gawin ang repositoryo sa GitHub at buksan ang GitHub Pages sa mga setting nito (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Ginagawa ang repositoryong %repo kapag wala ito (kapag hiniling), binubuksan ang GitHub Pages mula sa sangay o mula sa GitHub Actions ayon sa naka-save, at itinatakda ang sariling domain at HTTPS. Ginagamit nito ang mga naka-save na setting: i-save muna ang mga pagbabago.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Mga detalye sa GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Ilagay muna ang sariling domain.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Sinusuri muna ang bawat push batay sa mga limitasyong ito.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Para sa isang https:// na address sa GitHub. Ang App na naka-set up para sa installation na ito ang nagsa-sign in; kailangan nito ang id ng installation.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>Naghahatid lang ang GitHub Pages ng pribadong repositoryo sa isang bayad na plan.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: kailangan ng subdomain (www.example.com) ang isang CNAME record papunta sa &lt;owner&gt;.github.io; ng apex domain (example.com) ang mga A record na %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id ng installation ng GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Huling build ng Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Mga limitasyon at tuntunin</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Kailangan para sa GitHub Pages sa libreng plan.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Sa GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Sa GitHub App lang: ang numero sa dulo ng address ng installation ng App sa GitHub. Ang App mismo ay itinatakda sa staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Pribado</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Pampubliko</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>I-save muna ang destinasyon na may GitHub repositoryo at token o GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Itakda ang mga record na ito sa provider ng domain:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>I-set up sa GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Hindi pa nakaturo sa GitHub Pages ang DNS ng %domain.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Nakaturo sa GitHub Pages ang DNS ng %domain.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Hindi available dito ang GitHub integration: %problem. Gumagana pa rin ang pag-publish sa sangay; buksan ang GitHub Pages sa mga setting ng repositoryo.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Hindi available ang mga hakbang sa GitHub para sa destinasyong ito: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Ipinapakita ang estado ng GitHub Pages kapag token o GitHub App ang kredensyal.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Gamitin ang sarili mong domain</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Alin ang pipiliin: token, deploy key o GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Kapag may GitHub repositoryo at token o GitHub App, magagawa ng wizard ang repositoryo, mabubuksan ang GitHub Pages at maitatakda ang domain para sa iyo (hakbang 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>binubuo</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>nabuo na</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>mula sa GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>mula sa sangay na %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>wala pa</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>hindi nahanap</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>nakasara</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>pribado</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>pampubliko</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>nakapila</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>hindi alam</translation>
     </message>
 </context>
 </TS>

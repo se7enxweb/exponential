@@ -1446,3 +1446,32 @@ label.a4-package-option-label {
 @media (max-width: 960px) {
   .a4-graphql-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ---- migration/recording: Setup > Migrations > Recording (design:migration/recording.tpl, recording_view.tpl) ---- */
+/* My changes beside the site-wide window; one column on a narrow screen */
+.a4-setup-recording-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--a4-space-4); align-items: start; }
+@media (max-width: 960px) {
+  .a4-setup-recording-grid { grid-template-columns: minmax(0, 1fr); }
+}
+/* The steps a migration of a recording would have, numbered */
+.a4-setup-recording-steps { margin: 0; padding-inline-start: var(--a4-space-5); }
+.a4-setup-recording-steps > li + li { margin-top: var(--a4-space-2); }
+/* The bar "Recording..." on every page of the administration while the user's changes are recorded
+   (design:parts/exp_migration_recording_bar.tpl, an .a4-notice.is-bad.no-icon): the dot, the text and Stop in a row */
+.a4-setup-recording-bar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2) var(--a4-space-4); }
+.a4-setup-recording-bar > p { margin: 0; }
+.a4-setup-recording-bar > p + p { margin-top: 0; }
+/* the dot and "Recording..." in a row: the dot has its size only in a flex parent */
+.a4-setup-recording-bar > p:first-child { display: inline-flex; align-items: center; gap: var(--a4-space-2); }
+.a4-setup-recording-bar form { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin: 0; margin-inline-start: auto; }
+.a4-setup-recording-bar .a4-dot { background-color: var(--a4-bad); box-shadow: 0 0 0 4px var(--a4-bad-bg); animation: a4-pulse 1.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .a4-setup-recording-bar .a4-dot { animation: none; }
+}
+@media (forced-colors: active) {
+  .a4-setup-recording-bar .a4-dot { background-color: CanvasText; }
+}
+/* Setup > Static publishing (module staticpublish): repository addresses and folder paths are long words */
+.a4-setup-publish .a4-meta,
+.a4-setup-publish .a4-code,
+.a4-setup-publish .a4-facts dd { overflow-wrap: anywhere; }

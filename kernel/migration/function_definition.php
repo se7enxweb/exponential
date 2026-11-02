@@ -15,4 +15,11 @@ $FunctionList['summary'] = array( 'name' => 'summary',
     'parameter_type' => 'standard',
     'parameters' => array() );
 
+// recording: the recording of the signed-in user's own changes and the site-wide window that run (the bar
+// "Recording..." of the administration, design:parts/exp_migration_recording_bar.tpl); read from a small file, no query
+$FunctionList['recording'] = array( 'name' => 'recording',
+    'call_method' => array( 'class' => 'expMigrationAdmin', 'method' => 'fetchRecording' ),
+    'parameter_type' => 'standard',
+    'parameters' => array() );
+
 ?>

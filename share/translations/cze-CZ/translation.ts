@@ -15583,6 +15583,14 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Nejnovější obsah, co je zadrženo ke kontrole, a akce s výběrem.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publikování statické kopie webu na GitHub Pages nebo jakýkoli git hosting.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statické publikování</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22168,6 +22176,18 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Odpovědi uložených dotazů GraphQL API a třídy obsahu jeho schématu.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Publikovat statickou kopii na GitHub Pages nebo jakýkoli git hosting</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statické publikování</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Statická mezipaměť poskytuje stránky z tohoto serveru. Chcete-li publikovat statickou kopii webu jinde, na GitHub Pages nebo jakémkoli git hostingu, použijte statické publikování.</translation>
     </message>
 </context>
 <context>
@@ -76050,6 +76070,14 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Změny instalace uložené jako soubory: jejich stav, běhy, spuštění a vrácení.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publikování statické kopie webu na GitHub Pages nebo jakýkoli git hosting.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statické publikování</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>
@@ -81848,6 +81876,222 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The run could not be started.</source>
         <translation>Běh nelze spustit.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Nahrávání změn</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Během nahrávání se to, co měníte v administraci nebo v postranním panelu webu, ukládá jako kroky migrace: obsah, třídy, role a zásady, sekce, uživatelé a skupiny, aliasy URL, nastavení. Až budete hotovi, nahrávání zastavte, podívejte se, co zachytilo, a vygenerujte z něj migraci.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Nahrávky nelze přečíst: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabulky nahrávek zatím neexistují: nejprve spusťte aktualizaci (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Nahrávání je v migration.ini vypnuté ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Moje změny</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Nahrává jen to, co měníte vy, ať to měníte kdekoli, dokud ho nezastavíte.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Nahrávání</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>od %time, zatím změn: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Popisek (volitelný)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Zobrazit, co zachytilo</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Zastavit nahrávání</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Začít nahrávat moje změny</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Okno pro celý web</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Nahrává každou změnu každého uživatele i konzole, dokud není zavřeno. Při otevření budete požádáni o ověření, že jste to vy.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Otevřeno</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Zavřít okno</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Otevřít okno pro celý web</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Nahrávky</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Účet uživatele (přihlašovací jméno, e-mail, heslo) a pole uživatelských účtů se nikdy nenahrávají.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Změny</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Celý web</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Změny uživatele %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Zastaveno</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Zatím žádná nahrávka.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Nahrávka %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Všechny nahrávky</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migrace, která by z ní vznikla</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Změny sloučené do jednoho kroku na každou změněnou věc: co by udělala migrace vygenerovaná z této nahrávky.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Migraci z ní půjde vygenerovat, až tato instalace bude mít typy kroků YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Záměrně vynecháno: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nic se nenahrálo.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Co zachytilo</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Změn: %count, v pořadí, v jakém byly provedeny.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Změna</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Krok</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Týká se</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Dalších %count: ./console exp:migration:record:show vypíše všechny.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Zahodit</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Odstraní nahrávku a to, co zachytila. Co bylo změněno, zůstane změněno.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ano, zahodit tuto nahrávku</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Nahrává se…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Vaše změny se nahrávají pro migraci.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Každá změna na tomto webu se nahrává pro migraci (okno pro celý web).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nahrávání celého webu začalo: každá změna každého uživatele se nahrává, dokud ho nezastavíte.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Nahrávání začalo: vaše změny se nahrávají, dokud ho nezastavíte.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Nahrávání zastaveno. Co zachytilo, zůstane, dokud ho nezahodíte.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Nahrávka a její události byly odstraněny.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nahrávka %id neexistuje.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Nejprve zaškrtněte „Ano, zahodit tuto nahrávku“.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Nahrávání relace smí zastavit jen uživatel, který nahrával.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Vyberte nahrávku, kterou chcete zastavit.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Nahrávání tohoto druhu už probíhá.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Nahrávku nelze změnit: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -82511,6 +82755,1540 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Released.</source>
         <translation>Uvolněno.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Všechny cíle</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Poslední publikace</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Publikujte bezplatnou statickou kopii svého webu na GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Zastaralé stránky</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statické publikování</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statické publikování je vypnuto.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Cíl</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Cíle nelze načíst: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>probíhá úloha</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>sestavení ke kontrole</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>skrýt</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>vytvořit cíl</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nikdy</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>přečíst návod</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added přidáno, %changed změněno, %removed odebráno</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes z %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Dalších %count není uvedeno.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Zapsáno stránek: %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path má %size, více, než hosting dovoluje pro jeden soubor.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % limitu</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag je publikace, kterou web nyní má.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: úloha %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repozitář/ pro projektový web na GitHubu; prázdné pro vlastní doménu nebo uživatelský web.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Web</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Hosting</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Přihlášení k repozitáři</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Repozitář</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Odkazy a základní cesta</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Vlastní doména</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Co sestavení obsahuje</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Kdy se publikuje</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Kontrola a uložení</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Projektový web na GitHubu leží pod /&lt;repository&gt;/; relativní odkazy fungují tam i kdekoli jinde.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Sestavení načte každou stránku webu %site tak, jak ji vidí nepřihlášený návštěvník, přepíše odkazy, zkopíruje soubory a zapíše výsledek do složky cíle. Nic se nepublikuje, dokud sestavení nezkontrolujete a nestisknete Publikovat.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Výraz cron, například 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Klíč pro nasazení je uložen jako tajný údaj %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Klíč pro nasazení umožňuje této instalaci odesílat přes SSH do jednoho repozitáře a nikam jinam. Jeho soukromá část zůstává v Nastavení &gt; Tajné údaje; zobrazuje se jen veřejná část.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Klíč pro nasazení vytvořený pro tento cíl</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Klíč pro nasazení se přihlašuje přes SSH: změňte git adresu na adresu SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Probíhá úloha, kterou spustil %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Úloha tohoto cíle stále probíhá (%detail). Počkejte, až skončí.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Úloha tohoto cíle stále probíhá. Počkejte, až skončí.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Odkaz ze stránky /news/ na stránku /about-us/team bude zapsán jako</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Byl vytvořen nový klíč pro nasazení. Nyní přidejte jeho veřejnou část do repozitáře.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Stránka, která po očištění stále obsahuje ladicí výstup, token formuláře nebo ID relace, se nikdy nepublikuje.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Vrácení je pro odborníky: zaškrtněte „Vím, co to změní“ a znovu zadejte název značky.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Web může mít až %site, jeden soubor až %file, s přibližně 100 GB přenosu měsíčně. Na bezplatném tarifu musí být repozitář veřejný. GitHub Pages nejsou určeny pro obchody ani jiné komerční transakce.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Cíl je jeden web publikovaný do jednoho git repozitáře. Nic se zde nesestavuje ani nepublikuje: Uložit zapíše nastavení do settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Cíl je jeden web publikovaný na jedno místo, například váš veřejný web na GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Token z Nastavení &gt; Tajné údaje</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Publikuje jej pracovní postup (workflow) repozitáře.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Přidejte tento veřejný klíč do repozitáře s právem zápisu. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, zaškrtněte Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Přidáno</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Jiný git hosting</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Na tomto cíli pracuje jiný proces: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Zpět</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Základní cesta</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Předtím</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Pod základní cestou</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Větev</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Nefunkční odkazy</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Nefunkční odkazy v sestavení</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Sestavení</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Sestavení %id od %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Sestavit %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Sestavit nyní</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Sestavení ke kontrole</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Spustil</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Ručně, zde</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Zrušit</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Změnit</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Změněno</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Změny</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Nejprve zkontrolovat</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Zkontrolujte tato nastavení</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Zkontrolujte, co sestavení mění, prohlédněte si ho a pak ho publikujte, nebo zahoďte.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Vyberte publikaci, ke které se chcete vrátit.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Bude k dispozici v pozdější verzi.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Potvrzení</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Potvrzení</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Potvrdí sestavení, označí je značkou a odešle je do %remote. Odeslání není nikdy vynucené; k jakékoli publikaci se můžete později vrátit.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Ve srovnání s předchozí složkou: %added přidáno, %changed změněno, %removed odebráno, %unchanged beze změny.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Ve srovnání s poslední publikací.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Přihlašovací údaj</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Vlastní doména</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Ladicí výstup, tokeny formulářů, ID relací a nonce se vždy odstraní.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Klíč pro nasazení</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Klíč pro nasazení cíle %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Zahodit</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Zahodit sestavení</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Doména</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Prázdné: adresa webu. Jinak interní adresa téhož webu.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Skončeno</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Každý odkaz začíná základní cestou.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Každá publikace je potvrzení se značkou static/%id/&lt;n&gt;. Návrat vytvoří nové potvrzení se soubory dřívější publikace: historie zůstává, žádná značka se nepřesouvá a nic se nevynucuje.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Doplňky</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Načítat stránky z</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Soubor</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Soubory</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Chybějící soubory</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Soubory webu</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Soubory, které nebylo možné shromáždit</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Otisk</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Složka</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Pro adresu SSH. Klíč se vytvoří po uložení; jeho veřejnou část přidáte do repozitáře.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Pro adresu https://. GitHub: jemně odstupňovaný token (fine-grained) s oprávněním Contents pro čtení a zápis v repozitáři.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Pro odborníky. Veřejný web se změní, jakmile odeslání proběhne.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formuláře</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Bezplatný hosting z repozitáře GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Z větve</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git adresa</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages povolují web o velikosti %site a soubor o velikosti %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Limity GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages publikují soubory tak, jak jsou (nutné pro soubory začínající na _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub poskytuje větev tak, jak byla odeslána. Výchozí.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, váš vlastní server: jakýkoli git repozitář.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Vrátit se k dřívější publikaci</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Nápověda</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Nápověda k průvodci</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Skrýt je</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historie</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Historie %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Hosting</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Jak GitHub Pages přijímají sestavení</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Změny jsou zkontrolovány</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Vím, co to změní</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Je vypnuto: dokud se nezapne, nelze nic sestavit.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Běží na pozadí jako %user; tuto stránku můžete zavřít.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Úloha %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Uloženo jako tajný údaj %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Druh</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Poslední publikace</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Vynechat tyto stránky</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Vynechat tyto sekce</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Odkazy</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Přepsané odkazy</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Živý web</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Prohlédnout sestavení</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Malá písmena, číslice, _ a -, například github-public. Pojmenovává složku a značky (static/&lt;id&gt;/&lt;n&gt;) a později jej nelze změnit.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Vytvořit nový klíč</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Vytvořit cíl</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Vytvořit klíč</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Nejprve vytvořte repozitář u hostingu; prázdný stačí.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest souborů</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Zpráva</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Většina stránek</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Název</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Název tokenu v Nastavení &gt; Tajné údaje</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Nový cíl</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Další</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Zatím žádné potvrzení.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Klíč nebyl vytvořen: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nebyl nalezen žádný spustitelný soubor php pro příkazový řádek. Nastavte migration.ini [AdminSettings] PhpCliPath na jeho úplnou cestu.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Zatím žádná značka.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Zatím žádný cíl.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Žádné</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Není v sestavení.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Zatím nebylo nic publikováno.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Zatím nebylo nic publikováno: každý soubor je nový.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Upozornit</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Podle plánu</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>V konzoli</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Na serveru: ./console exp:static:serve %id jej poskytuje stejně.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Jedna cesta na řádek, * odpovídá libovolné části: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>U cíle se ukládá jen název; samotný token nebo klíč zůstává v Nastavení &gt; Tajné údaje a nikdy se neobjeví v protokolu.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Jen to, co stránky uvádějí</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Jen s tokenem. env:NAME místo toho čte proměnnou prostředí serveru.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Otevřít náhled</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Otevře sestavení tak, jak jej bude poskytovat hosting, ze složky cíle. Odkaz pro vás funguje hodinu.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Volitelné. Prázdné: to, co bylo publikováno.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Volitelné. S doménou se web poskytuje v jejím kořeni.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Výstup</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Stránky</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Stránky cíle</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Odmítnuté stránky</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Následné zpracování</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Náhled</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Náhled a publikování</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Náhled a publikování %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Náhled sestavení</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Průběh</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Veřejná adresa</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Veřejný klíč</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Publikovat</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Publikujte statickou kopii webu na GitHub Pages nebo jakýkoli git hosting: sestavte ji, zkontrolujte změny, publikujte a v případě potřeby se vraťte k dřívější publikaci.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Publikace, ke které se vrátit</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Publikace</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Odeslání</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Přečíst návod</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Záznam</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Odmítnuto</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relativní</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Načíst znovu</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Odebráno</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Nahradit klíč: starý přestane fungovat</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Hlášení</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Hlášení o sestavení</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repozitář</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Kontrola</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Kontrola ověří každé nastavení a ukáže řádky, které budou zapsány. Zatím se nic neukládá.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Vrátit</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Vrácení</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Uložit</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Plán</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Stránka vyhledávání</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>ID sekcí oddělená čárkami.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Poslat je na živý web</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Nastavení</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nastavení</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Nastavení %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nastavení</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Nastavení &gt; Tajné údaje</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Zobrazuje se v seznamech, například „Veřejný web na GitHub Pages“.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Přihlášení pomocí GitHub App přijde s integrací GitHubu.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Web</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Web k publikování</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Velikost</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Velikost a limity</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Velikost sestavení</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Zastaralé stránky</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Spuštěno</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Spustil %user v %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statické publikování</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statické publikování je vypnuto</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statické publikování je vypnuto.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statické publikování je vypnuto. Nejprve je zapněte v Nastavení &gt; Statické publikování.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statické publikování je zapnuto.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Krok %step z %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Kroky</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Očištění</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Vypnout</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Zapnout</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Zapnout statické publikování</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Značka</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Značky</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Cíl</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Cíle lze vytvářet a měnit, ale nic se nesestaví ani nepublikuje, dokud není zapnuto.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Říká vyhledávačům, co mají číst.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Sestavení nelze zahodit: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Sestavení je stejné jako poslední publikace: není co publikovat.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Sestavení bylo zahozeno: složka opět obsahuje poslední publikaci.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Výchozí hodnoty vyhovují většině webů.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Složka obsahuje sestavení, které ještě není publikováno; nové sestavení jej nahradí.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Do složky úloh nelze zapisovat: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Úlohu nelze připravit: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Úlohu nelze spustit.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Úloha skončila. Načítá se její hlášení.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Úloha vyžaduje přihlášeného uživatele.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Úloha byla spuštěna, ale neohlásila ID svého procesu. Zkontrolujte %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Klíč</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Největší soubor: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Řádky, které budou zapsány</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Seznam stránek pro vyhledávače; vyžaduje veřejnou adresu.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Stránky se načítají tak, jak je vidí nepřihlášený návštěvník. Přístupy k webu pro administraci a úpravy se nikdy nenabízejí.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Průběh nelze sledovat. Načtěte stránku znovu a podívejte se, jak úloha pokračuje.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Veřejná část klíče:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Kořen větve</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Úložiště tajných údajů ještě není nastaveno (./console exp:upgrade --apply vytvoří jeho tabulku), takže nelze uložit žádný klíč.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Server se přihlašuje sám (vlastním klíčem SSH nebo pomocníkem pro přihlašovací údaje), nebo je repozitář na tomto serveru.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Nastavení nelze zapsat: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Nastavení jsou platná. Zapíší se tyto řádky:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Soubor nastavení nelze načíst: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Web se vrátí k souborům dané publikace; dosud nepublikované sestavení je nutné nejprve publikovat nebo zahodit.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Vlastní stránka webu pro adresy, které neexistují.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Cíl nelze uložit: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Cíl se tímto klíčem zatím nepřihlašuje: v jeho nastavení zvolte „Klíč pro nasazení vytvořený pro tento cíl“.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Cíle nelze načíst: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Zatím není žádné sestavení ke kontrole.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Tato instalace nemá žádný přístup k webu pro návštěvníky. Přístupy k webu pro administraci a úpravy se nikdy nepublikují.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Tato stránka sleduje úlohu během jejího průběhu; po zavření stránky úloha pokračuje na pozadí.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Tento cíl zatím nemá klíč pro nasazení.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Tento cíl zde zatím nebyl sestaven.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Tento cíl jeden má.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Zahodí toto sestavení: složka opět obsahuje poslední publikaci. Živý web se nezmění.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Nejprve zaškrtněte „Změny jsou zkontrolovány“.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Čas</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Spouštěče</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Znovu zadejte název značky</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Beze změny</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Co</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Co se mění</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Co je každý soubor; zapisuje se vždy.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Co úloha udělala a její záznam. Úloha spuštěná zde pokračuje na pozadí i po zavření této stránky.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Co úloha vypsala jako chyby</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>To, co stránky uvádějí, a každý obrázek publikovaného obsahu</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kdy</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Když publikace selže</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Když publikace uspěje</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Když se publikuje obsah</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Kam vedou odkazy na to, co kopie neobsahuje (vyhledávání, přihlášení).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Odkud se statická kopie poskytuje.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Který web se publikuje a jak se cíl jmenuje.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Funguje pod jakoukoli cestou. Výchozí.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Zapisuje se vždy, když je nastavena vlastní doména.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ano</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Sestavovat a publikovat ručně můžete vždy zde i v konzoli.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>jen název; hodnota zůstává v Nastavení &gt; Tajné údaje</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>pod %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>skončeno bez hlášení</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>doplněk</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>selhalo</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>soubor</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, nebo main se složkou docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git hosting</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (s tokenem) nebo git@github.com:owner/repo.git (s klíčem pro nasazení); nikdy v ní heslo ani token.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, pro mapu webu a kanonické odkazy.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>obrázek</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nikdy</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>žádný vzdálený repozitář</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>žádné: potvrzení zůstávají ve složce</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>žádné: nic se nezměnilo</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>neodesláno</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>nic se nezměnilo</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>stránka</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>prošlo</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open je zakázáno, takže zde nelze spustit úlohu. Na serveru použijte ./console exp:static:build.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>publikace</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>publikováno</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>čeká na odeslání</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>odesláno</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>odmítnuto</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relativní</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>vrácení</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>vráceno</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>běží</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>jen složka</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: zapíše se do souboru CNAME. Nasměrujte DNS domény na hosting podle jeho pokynů; spuštění HTTPS může chvíli trvat.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ano, zatím nepublikováno</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Aplikace GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Publikuje ho workflow repozitáře. Sestavení zapíše soubor workflow; složku nechte prázdnou.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Po uložení cíle s repozitářem GitHub a tokenem nebo GitHub App může tento krok vytvořit repozitář a zapnout GitHub Pages. Jinak nejprve vytvořte repozitář na GitHubu; stačí i prázdný.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Větev, nebo GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Zkontrolovat DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Vytvořit repozitář, pokud neexistuje</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Vytvořte repozitář na GitHubu a v jeho nastavení zapněte GitHub Pages (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Vytvoří repozitář %repo, pokud chybí (je-li to požadováno), zapne GitHub Pages z větve nebo z GitHub Actions podle uloženého nastavení a nastaví vlastní doménu a HTTPS. Používá uložené nastavení: nejprve uložte změny.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Podrobnosti na GitHubu</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Nejprve zadejte vlastní doménu.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Každý push se nejprve kontroluje vůči těmto limitům.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Pro adresu https:// na GitHubu. Přihlašuje se App nastavená pro tuto instalaci; potřebuje ID instalace.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages obsluhuje soukromý repozitář jen v placeném tarifu.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdoména (www.example.com) potřebuje záznam CNAME na &lt;owner&gt;.github.io; kořenová doména (example.com) záznamy A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>ID instalace GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Poslední sestavení Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Limity a podmínky</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Nutné pro GitHub Pages v bezplatném tarifu.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Na GitHubu</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Jen s GitHub App: číslo na konci adresy instalace App na GitHubu. Samotná App se nastavuje v staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Soukromý</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Veřejný</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Nejprve uložte cíl s repozitářem GitHub a tokenem nebo GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Nastavte tyto záznamy u poskytovatele domény:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Nastavit na GitHubu</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS domény %domain zatím neukazuje na GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS domény %domain ukazuje na GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Integrace s GitHubem zde není dostupná: %problem. Publikování do větve přesto funguje; zapněte GitHub Pages v nastavení repozitáře.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Kroky GitHubu nejsou pro tento cíl dostupné: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Stav GitHub Pages se zobrazuje s tokenem nebo GitHub App jako přihlašovacím údajem.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Použít vlastní doménu</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Co zvolit: token, klíč pro nasazení, nebo GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>S repozitářem GitHub a tokenem nebo GitHub App může průvodce za vás vytvořit repozitář, zapnout GitHub Pages a nastavit doménu (krok 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>sestavuje se</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>sestaveno</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>z GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>z větve %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>zatím žádné</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nenalezeno</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>vypnuto</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>soukromý</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>veřejný</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ve frontě</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>neznámý</translation>
     </message>
 </context>
 </TS>

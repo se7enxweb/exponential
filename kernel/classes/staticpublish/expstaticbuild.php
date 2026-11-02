@@ -303,7 +303,9 @@ class expStaticBuild
                 call_user_func( $emit, $type === 'phase' ? 'phase-item' : $type, $message, $data );
         }, array( 'siteaccess' => $target->siteAccess(),
                   'max_pages' => $this->options['max_pages'] ? (int)$this->options['max_pages'] : (int)$target->setting( 'MaxPages' ),
-                  'max_depth' => (int)$maxDepth, 'paths' => $paths, 'export' => $export ) + $crawlOptions );
+                  'max_depth' => (int)$maxDepth, 'paths' => $paths, 'export' => $export,
+                  // a page fetched from the CrawlURL may link to its SiteURL (or the LiveURL) in full: the same site
+                  'site_origins' => array_slice( $origins, 1 ) ) + $crawlOptions );
         $runner->run();
         $crawler = $runner->lastCrawler();
         if ( $crawler !== null )
@@ -559,6 +561,14 @@ class expStaticBuild
             $extras['robots.txt'] = expStaticExtras::robots( $publicUrl, $writeSitemap );
         if ( $writeSitemap )
             $extras['sitemap.xml'] = (string)expStaticExtras::sitemap( $publicUrl, $sitemap );
+        // the GitHub Actions workflow that deploys the branch: with Delivery=actions, or asked for as an extra
+        if ( $target->setting( 'Kind' ) === 'github-pages' && ( $target->setting( 'Delivery' ) === 'actions' || $target->hasExtra( 'workflow' ) ) )
+        {
+            if ( trim( (string)$target->setting( 'Folder' ), '/' ) !== '' )
+                $this->warning( 'The GitHub Actions workflow is written only when the build is at the root of the branch (Folder empty): GitHub reads workflows from .github/workflows there.' );
+            else
+                $extras[expStaticGitHub::WORKFLOW_FILE] = expStaticGitHub::workflow( (string)$target->setting( 'Branch' ) );
+        }
         foreach ( $extras as $file => $content )
         {
             if ( $manifest->has( $file ) )

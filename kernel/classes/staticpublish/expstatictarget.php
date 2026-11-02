@@ -427,6 +427,10 @@ class expStaticTarget
             $warnings[] = 'Extras[]=sitemap needs PublicURL (or CustomDomain): a sitemap lists absolute addresses. It is not written.';
         if ( in_array( 'cname', $s['Extras'], true ) && $s['CustomDomain'] === '' )
             $warnings[] = 'Extras[]=cname needs CustomDomain. No CNAME file is written.';
+        if ( $s['Kind'] === 'github-pages' && $s['Delivery'] === 'actions' && trim( $s['Folder'], '/' ) !== '' )
+            $warnings[] = 'Delivery=actions writes its workflow only with the build at the root of the branch: leave Folder empty.';
+        if ( $s['Kind'] === 'github-pages' && $s['Remote'] !== '' && class_exists( 'expStaticGitHub' ) && expStaticGitHub::parseRemote( $s['Remote'] ) === null )
+            $warnings[] = 'Remote is not a github.com repository: the GitHub steps (create the repository, Pages, the domain, the build status) are not available.';
         return array( 'errors' => $errors, 'warnings' => $warnings );
     }
 

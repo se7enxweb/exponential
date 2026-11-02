@@ -15158,6 +15158,14 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Ođđaseamos sisdoallu, mii lea doallojuvvon guorahallama várás, ja doaimmat válljemiin.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Almmut neahttabáikki stáhtalaš kopiija GitHub Pages:ii dahje makkár beare git-guossoheaddjái.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Stáhtalaš almmuheapmi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL-API:a vurkejuvvon jearaldagaid vástádusat ja dan hámi sisdoalloluohkát.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Almmut stáhtalaš kopiija GitHub Pages:ii dahje makkár beare git-guossoheaddjái</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Stáhtalaš almmuheapmi</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Stáhtalaš gaskavuorká fállá siidduid dán bálvás. Jus háliidat almmuhit neahttabáikki stáhtalaš kopiija eará sajis, GitHub Pages:is dahje makkár beare git-guossoheaddjis, geavat stáhtalaš almmuheami.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Installašuvnna rievdadusat fiilan seailluhuvvon: sin dilli, vuodjimat, vuodjin ja ruovttoluotta máhcaheapmi.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Almmut neahttabáikki stáhtalaš kopiija GitHub Pages:ii dahje makkár beare git-guossoheaddjái.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Stáhtalaš almmuheapmi</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>The run could not be started.</source>
         <translation>Vuodjima ii sáhttán álggahit.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Báddet rievdadusaid</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Go báddehus lea jođus, dat maid don rievdadat hálddahusas dahje neahttabáikki siidoholggas vurkejuvvo sirdima lávkin: sisdoallu, klássat, rollat ja njuolggadusat, oasit, geavaheaddjit ja joavkkut, URL-alias, heivehusat. Bisset dan go leat gárvvis, geahča maid dat lea dohppen ja ráhkat das sirdima.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Báddemiid ii sáhttán lohkat: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Báddemiid tabeallat eai leat vel: vuos vuoje ođasmahttima (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Báddén lea jáddaduvvon migration.ini:s ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mu rievdadusat</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Bádde dušše dan maid don rievdadat, gos ihkinassii, dassážii go bisset dan.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Báddehus</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time rájes, dán rádjái %count rievdadusa.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Lihpu (eaktodáhtolaš)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Čájet maid dat lea dohppen</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Bisset báddema</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Álggat mu rievdadusaid báddema</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Láse olles neahttabáikái</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Bádde juohke geavaheaddji ja konsolla juohke rievdadusa dassážii go dat giddejuvvo. Rahpama oktavuođas dus jearrat duođaštit ahte leat don.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Rabas</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Gidde láse</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Raba láse olles neahttabáikái</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Báddehusat</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Geavaheaddji konto (sisačálihannamma, e-poasta, beassansátni) ja geavaheaddjikontuid gieddit eai goassege báddejuvvo.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Rievdadusat</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Olles neahttabáiki</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name rievdadusat</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Bissejuvvon</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ii vel báddehus.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Báddehus %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Buot báddehusat</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Sirdin mii das šattašii</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Rievdadusat čohkkejuvvon ovtta lávkái juohke rievdaduvvon ášši ovddas: maid dán báddehusas ráhkaduvvon sirdin dagašii.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Das sáhttá ráhkadit sirdima go dán sajáiduhttimis leat YAML-lávkešlájat %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Dáhtolaččat guđđojuvvon olggobeallái: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Mihkkege ii báddejuvvon.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Maid dat lea dohppen</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count rievdadusa, dan ortnegis go dat dahkkojuvvojedje.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Rievdadus</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Lávki</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Guoská</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Vel %count: ./console exp:migration:record:show listu buot.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Bálkes</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Sihku báddehusa ja dan maid dat lea dohppen. Mii lea rievdaduvvon, bissu rievdaduvvon.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Juo, bálkes dán báddehusa</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Báddemin…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Du rievdadusat báddejuvvojit sirdima várás.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Juohke rievdadus dán neahttabáikkis báddejuvvo sirdima várás (láse olles neahttabáikái).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Olles neahttabáikki báddehus lea álgán: juohke geavaheaddji juohke rievdadus báddejuvvo dassážii go bisset dan.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Báddehus lea álgán: du rievdadusat báddejuvvojit dassážii go bisset dan.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Báddehus bissejuvvon. Maid dat lea dohppen bissu dassážii go bálkestat dan.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Báddehus ja dan dáhpáhusat leat sihkkojuvvon.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Ii gávdno báddehus %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Merke vuos «Juo, bálkes dán báddehusa».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Dušše geavaheaddji gii báddii sáhttá bissehit čoahkkima báddehusa.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Vállje báddehusa mii galgá bissehuvvot.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Dán šlája báddehus lea juo jođus.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Báddehusa ii sáhttán rievdadit: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1540 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>Released.</source>
         <translation>Luitojuvvon.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Buot ulbmilat</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Maŋimuš almmuheapmi</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Almmut nuvttá stáhtalaš kopiija iežat neahttabáikkis GitHub Pages:ii:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Boares siiddut</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Stáhtalaš almmuheapmi</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Stáhtalaš almmuheapmi lea jaddaduvvon.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Ulbmil</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Ulbmiliid ii sáhttán lohkat: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>bargu lea jođus</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>huksen dárkkisteapmái</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>čiega dán</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ráhkat ulbmila</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ii goassige</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>loga oahpahusa</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added lasihuvvon, %changed rievdaduvvon, %removed sihkkojuvvon</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes, ráddjehus %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count eará eai leat listtus.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages siiddu čállojuvvon</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path lea %size, eanet go guossoheaddji lobiha ovtta fiilii.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % ráddjehusas</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sek</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag lea almmuheapmi mii neahttabáikkis lea dál.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: bargu %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/vuorká/ GitHub-prošeaktabáikki várás; guorus iežat domena dahje geavaheaddjibáikki várás.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Neahttabáiki</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Guossoheaddji</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Sisačáliheapmi vuorkái</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Vuorká</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Liŋkkat ja vuođđobálggis</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Iežat domena</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Mii huksemis lea</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Goas almmuhuvvo</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Dárkkis ja vurke</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub-prošeaktabáiki orru /&lt;repository&gt;/ vuolde; relatiivvalaš liŋkkat doibmet doppe ja buot eará sajiin.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Huksen viežžá %site juohke siiddu nugo sisačálekeahtes galledeaddji dan oaidná, čállá liŋkkaid ođđasit, kopiere fiillaid ja čállá boađusa ulbmila máhppii. Mihkkege ii almmuhuvvo ovdal go don dárkkistat huksema ja deaddilat Almmut.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron-cealkka, ovdamearkka dihte 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Almmuhančoavdda vurkejuvvo čiehkádussan %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Almmuhančoavdda diktá dán installašuvnna dulddidit ovtta vuorkái SSH bokte iige makkárge eará sadjái. Dan priváhta bealli bázzá Ásaheapmi &gt; Čiehkádusat; dušše almmolaš bealli čájehuvvo.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Almmuhančoavdda mii lea ráhkaduvvon dán ulbmilii</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Almmuhančoavdda čálihuvvá sisa SSH bokte: rievdat git-čujuhusa SSH-čujuhussan (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Bargu lea jođus, %user álggahii dan</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Dán ulbmila bargu lea ain jođus (%detail). Vuorde dassážii go dat nohká.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Dán ulbmila bargu lea ain jođus. Vuorde dassážii go dat nohká.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Liŋka siiddus /news/ siidui /about-us/team čállojuvvo ná</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Ođđa almmuhančoavdda ráhkaduvvui. Lasit dan almmolaš beali vuorkái dál.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Siidu mas ain leat debugčállosat, skovvatoken dahje session-id buhtisteami maŋŋá, ii goassige almmuhuvvo.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Máhcaheapmi lea áššedovdiide: merke &quot;Mun dieđán maid dát rievdada&quot; ja čále merka nama fas.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Neahttabáiki sáhttá leat gitta %site, okta fiila gitta %file, sullii 100 GB johtolagain mánus. Nuvttá plánas vuorká ferte leat almmolaš. GitHub Pages ii leat oaivvilduvvon gávppiide dahje eará kommersiála transakšuvnnaide.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Ulbmil lea okta neahttabáiki mii almmuhuvvo ovtta git-vuorkái. Dáppe ii huksejuvvo iige almmuhuvvo mihkkege: Vurke čállá ásahusaid fiilii settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Ulbmil lea okta neahttabáiki mii almmuhuvvo ovtta sadjái, ovdamearkka dihte du almmolaš neahttabáiki GitHub Pages:is.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Token mii lea Ásaheapmi &gt; Čiehkádusat</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Vuorkká bargoproseassa almmuha dan.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Lasit dán almmolaš čoavdaga vuorkái čállinlobiin. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, merke Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Lasihuvvon</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Eará git-guossoheaddji</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Eará proseassa bargá dáinna ulbmiliin: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Ruovttoluotta</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Vuođđobálggis</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Ovdal</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Vuođđobálgá vuolde</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Oavsi</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Boatkanan liŋkkat</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Boatkanan liŋkkat huksemis</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Huksen</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Huksen %id, ráhkadii %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Huksen %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Hukse dál</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Huksen dárkkisteapmái</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Gii</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Gieđain, dáppe</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Šluhtte</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Rievdat</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Rievdaduvvon</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Rievdadusat</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Dárkkis vuos</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Dárkkis dáid ásahusaid</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Dárkkis maid huksen rievdada, geahča dan, ja almmut dahje bálkes dan.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Vállje almmuheami masa máhccat.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Boahtá maŋit veršuvnnas.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Čáliheapmi</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Čáliheamit</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Čállá huksema, merke dan ja dulddida dan dása: %remote. Dulddideapmi ii goassige bákkuhuvvo; sáhtát maŋŋil máhccat makkár beare almmuheapmái.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Buohtastahttojuvvon ovddit máhpain: %added lasihuvvon, %changed rievdaduvvon, %removed sihkkojuvvon, %unchanged rievdakeahttá.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Buohtastahttojuvvon maŋimuš almmuhemiin.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Duođaštus</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Iežat domena</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Debugčállosat, skovvatokenat, session-id:t ja nonce:t váldojuvvojit álo eret.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Almmuhančoavdda</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name almmuhančoavdda</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Bálkes</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Bálkes huksema</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domena</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Guorus: neahttabáikki čujuhus. Muđui seamma neahttabáikki siskkáldas čujuhus.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Nohkan</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Juohke liŋka álgá vuođđobálgáin.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Juohke almmuheapmi lea čáliheapmi merkkain static/%id/&lt;n&gt;. Máhccan ráhkada ođđa čáliheami ovddit almmuheami fiillaiguin: historjá bissu, ii oktage merka sirdojuvvo iige mihkkege bákkuhuvvo.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Lasáhusat</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Viečča siidduid dás</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fiila</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fiillat</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Fiillat váilot</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Fiillat báikkis</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Fiillat maid ii sáhttán čoaggit</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Suorbmaguovdu</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Máhppa</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH-čujuhussii. Čoavdda ráhkaduvvo vurkema maŋŋá; don lasihat dan almmolaš beali vuorkái.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https://-čujuhussii. GitHub: dárkilis token (fine-grained) mas lea Contents lohkan- ja čállinlohpi vuorkái.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Áššedovdiide. Almmolaš neahttabáiki rievdá dalán go dulddideapmi lea čađahuvvon.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Skovit</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Nuvttá guossoheapmi GitHub-vuorkkás.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Oavssis</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git-čujuhus</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub-ápa</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages lobiha neahttabáikki mii lea %site ja fiilla mii lea %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages ráddjehusat</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages almmuha fiillaid nugo dat leat (dárbbašlaš fiillaide mat álget _ mearkkain).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub fállá oavssi nugo dat lea dulddiiduvvon. Standárda.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, iežat bálvá: makkár beare git-vuorká.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Máhca ovddit almmuheapmái</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Veahkki</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Veahkki čuvvogii</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Čiega daid</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historjá</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name historjá</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Guossoheaddji</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Movt GitHub Pages oažžu huksema</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Mun lean dárkkistan rievdadusaid</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Mun dieđán maid dát rievdada</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Dat lea jaddaduvvon: mihkkege ii sáhte huksejuvvot ovdal go dat lea čadnon.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Dat bargá duogážis %user namas; sáhtát giddet dán siiddu.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Bargu %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Vurkejuvvon čiehkádussan %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Šládja</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Maŋimuš almmuheapmi</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Guođe eret dáid siidduid</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Guođe eret dáid oasiid</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Liŋkkat</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Liŋkkat čállojuvvon ođđasit</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Eallis neahttabáiki</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Geahča huksema</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Unna bustávat, logut, _ ja -, ovdamearkka dihte github-public. Dat namuha máhpa ja merkkaid (static/&lt;id&gt;/&lt;n&gt;) iige sáhte rievdaduvvot maŋŋil.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Ráhkat ođđa čoavdaga</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Ráhkat ulbmila</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Ráhkat čoavdaga</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Ráhkat vuos vuorkká guossoheaddjis; guorus vuorká lea buorre.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Fiilalistu (manifest)</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Dieđáhus</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Eanaš siiddut</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namma</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Tokena namma Ásaheapmi &gt; Čiehkádusat</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Ođđa ulbmil</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Boahtte</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ii</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Ii vel čáliheapmi.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Čoavdda ii ráhkaduvvon: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Ii gávdnon php gohččunlinjáprográmma. Bija migration.ini [AdminSettings] PhpCliPath dan ollislaš bálgái.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Ii vel merka.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Ii vel ulbmil.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ii mihkkege</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Ii huksemis.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Mihkkege ii leat vel almmuhuvvon.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Mihkkege ii leat vel almmuhuvvon: juohke fiila lea ođas.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Dieđit</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Áigetávvala mielde</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Konsollas</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Bálvás: ./console exp:static:serve %id fállá dan seamma láhkái.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Okta bálggis juohke linjái, * heive makkár beare oassái: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Dušše namma vurkejuvvo ulbmiliin; token dahje čoavdda ieš bázzá Ásaheapmi &gt; Čiehkádusat iige goassige oidno logas.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Dušše dat maid siiddut namuhit</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Dušše tokeniin. env:NAME lohká baicca bálvá birasvariábela.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Raba ovdačájeheami</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Rahpá huksema nugo guossoheaddji dan fállá, ulbmila máhpas. Liŋka doaibmá dutnje diimmu.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Eaktodáhtolaš. Guorus: dat mii almmuhuvvui.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Eaktodáhtolaš. Domenain neahttabáiki fállojuvvo dan ruohttasis.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Olggosbuvttus</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Siiddut</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Ulbmila siiddut</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Hilgojuvvon siiddut</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Maŋŋegieđahallan</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Ovdačájeheapmi</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Ovdačájeheapmi ja almmuheapmi</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name ovdačájeheapmi ja almmuheapmi</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Huksema ovdačájeheapmi</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ovdáneapmi</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Almmolaš čujuhus</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Almmolaš čoavdda</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Almmut</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Almmut neahttabáikki stáhtalaš kopiija GitHub Pages:ii dahje makkár beare git-guossoheaddjái: hukse dan, dárkkis rievdadusaid, almmut, ja máhca ovddit almmuheapmái go dárbbašat.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Almmuheapmi masa máhccat</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Almmuheamit</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Dulddideapmi</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Loga oahpahusa</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Logga</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Hilgojuvvon</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relatiivvalaš</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Viečča ođđasit</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Sihkkojuvvon</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Buhtte čoavdaga: boares heaitá doaibmamis</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Raporta</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Huksema raporta</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Vuorká</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Dárkkisteapmi</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Dárkkisteapmi dárkkista juohke ásahusa ja čájeha linjáid mat čállojuvvojit. Mihkkege ii leat vel vurkejuvvon.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Máhcat</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Máhcaheapmi</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Vurke</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Áigetávval</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Ohcansiidu</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Oasiid id:t, sirrejuvvon rihkkosiiguin.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Sádde daid eallis neahttabáikái</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ásahus</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ásahusat</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name ásahusat</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ásaheapmi</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Ásaheapmi &gt; Čiehkádusat</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Čájehuvvo listtuin, ovdamearkka dihte &quot;Almmolaš neahttabáiki GitHub Pages:is&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Sisačáliheapmi GitHub-ápain boahtá GitHub-integrašuvnnain.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Neahttabáiki</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Neahttabáiki maid almmuhit</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Sturrodat</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Sturrodat ja ráddjehusat</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Huksema sturrodat</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Boares siiddut</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Álggahuvvon</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user álggahii %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dilli</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Stáhtalaš almmuheapmi</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Stáhtalaš almmuheapmi lea jaddaduvvon</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Stáhtalaš almmuheapmi lea jaddaduvvon.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Stáhtalaš almmuheapmi lea jaddaduvvon. Čana dan vuos dás: Ásaheapmi &gt; Stáhtalaš almmuheapmi.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Stáhtalaš almmuheapmi lea čadnon.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Lávki %step / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Lávkkit</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Buhtisteapmi</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Jaddat</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Čana</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Čana stáhtalaš almmuheami</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Merka</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Merkkat</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Ulbmil</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Ulbmiliid sáhttá ráhkadit ja rievdadit, muhto mihkkege ii huksejuvvo iige almmuhuvvo ovdal go dat lea čadnon.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Muitala ohcanmášiinnaide maid lohkat.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Huksema ii sáhttán bálkestit: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Huksen lea seamma go maŋimuš almmuheapmi: ii leat mihkkege maid almmuhit.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Huksen bálkestuvvui: máhpas lea fas maŋimuš almmuheapmi.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Standárdaárvvut heivejit eanaš neahttabáikkiide.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Máhpas lea huksen mii ii leat vel almmuhuvvon; ođđa huksen buhtte dan.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Bargguid máhppii ii sáhte čállit: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Barggu ii sáhttán ráhkkanit: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Barggu ii sáhttán álggahit.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Bargu lea nohkan. Raporta viežžojuvvo.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Bargu dárbbaša sisačálihuvvon geavaheaddji.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Bargu álggahuvvui muhto ii dieđihan iežas proseassa-id. Dárkkis %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Čoavdda</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Stuorimus fiila: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Linját mat čállojuvvojit</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Siidolistu ohcanmášiinnaide; dárbbaša almmolaš čujuhusa.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Siiddut viežžojuvvojit nugo sisačálekeahtes galledeaddji daid oaidná. Hálddahus- ja doaimmahansiteaccessat eai goassige fállojuvvo.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Ovdáneami ii sáhttán čuovvut. Viečča siiddu ođđasit oaidnin dihte movt bargu manná.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Čoavdaga almmolaš bealli:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Oavssi ruohtas</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Čiehkádusvuorká ii leat vel ásahuvvon (./console exp:upgrade --apply ráhkada dan tabealla), nu ahte ii oktage čoavdda sáhte vurkejuvvot.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Bálvá čálihuvvá sisa ieš (iežas SSH-čoavdagiin dahje duođaštusveahkkeprográmmain), dahje vuorká lea dán bálvás.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Ásahusa ii sáhttán čállit: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Ásahusat leat gustovaččat. Dát linját čállojuvvojit:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Ásahusfiilla ii sáhte lohkat: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Neahttabáiki máhccá dan almmuheami fiillaide; huksen mii ii leat vel almmuhuvvon ferte vuos almmuhuvvot dahje bálkestuvvot.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Neahttabáikki iežas siidu čujuhusaide mat eai gávdno.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Ulbmila ii sáhttán vurket: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Ulbmil ii vel čálihuva sisa dáinna čoavdagiin: vállje &quot;Almmuhančoavdda mii lea ráhkaduvvon dán ulbmilii&quot; dan ásahusain.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Ulbmiliid ii sáhttán lohkat: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Ii leat vel huksen maid dárkkistit.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Dán installašuvnnas ii leat almmolaš siteaccess. Hálddahus- ja doaimmahansiteaccessat eai goassige almmuhuvvo.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Dát siidu čuovvu barggu dan mielde go dat manná; dat joatká duogážis go siidu giddejuvvo.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Dán ulbmilis ii leat vel almmuhančoavdda.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Dát ulbmil ii leat vel huksejuvvon dáppe.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Dán ulbmilis lea okta.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Bálkesta dán huksema: máhpas lea fas maŋimuš almmuheapmi. Eallis neahttabáiki ii rievdda.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Merke vuos &quot;Mun lean dárkkistan rievdadusaid&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Áigi</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Álggaheaddjit</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Čále merka nama fas</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Rievdakeahttá</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Mii</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Mii rievdá</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Mii juohke fiila lea; čállojuvvo álo.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Maid bargu dagai ja dan logga. Bargu mii álggahuvvo dáppe joatká duogážis go dát siidu giddejuvvo.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Maid bargu čálii meattáhussan</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Dat maid siiddut namuhit, ja juohke govva almmuhuvvon sisdoalus</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Goas</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Go almmuheapmi ii lihkostuva</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Go almmuheapmi lihkostuvvá</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Go sisdoallu almmuhuvvo</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Gosa liŋkkat dasa mii kopiijas ii leat mannet (ohcan, sisačáliheapmi).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Gos stáhtalaš kopiija fállojuvvo.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Guhte neahttabáiki almmuhuvvo, ja mii ulbmila namma lea.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Doaibmá makkár beare bálgá vuolde. Standárda.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Čállojuvvo go iežat domena lea mearriduvvon.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Juo</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Sáhtát álo huksit ja almmuhit gieđain dáppe ja konsollas.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>dušše namma; árvu bázzá Ásaheapmi &gt; Čiehkádusat</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path vuolde</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>nogai raporttaha</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>lasáhus</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ii lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fiila</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, dahje main máhpain docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git-guossoheaddji</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (tokeniin) dahje git@github.com:owner/repo.git (almmuhančoavdagiin); ii goassige beassansátni dahje token das.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, siidokártta ja kanonalaš liŋkkaid várás.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>govva</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ii goassige</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ii</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>ii gáiddus vuorká</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>ii mihkkege: čáliheamit bissot máhpas</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>ii mihkkege: mihkkege ii rievdan</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ii dulddiiduvvon</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>mihkkege ii rievdan</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>siidu</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>lihkostuvai</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open lea jaddaduvvon, nu ahte bargu ii sáhte álggahuvvot dáppe. Geavat ./console exp:static:build bálvás.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>almmuheapmi</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>almmuhuvvon</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>dulddideapmi vuordá</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>dulddiiduvvon</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>hilgojuvvon</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relatiivvalaš</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>máhcaheapmi</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>máhcahuvvon</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>jođus</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>dušše máhppa</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: čállojuvvo fiilii CNAME. Čujut domena DNS guossoheaddjái nugo dat čilge; HTTPS sáhttá ádjánit ovdal go álgá.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>juo, ii vel almmuhuvvon</translation>
+    </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Vuorkká bargogoarta almmuha dan. Huksen čállá bargogoartafiilla; guođe máppa guorusin.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Go leat vurken ulbmila GitHub-vuorkkáin ja tokeniin dahje GitHub App:ain, de dát lávki sáhttá ráhkadit vuorkká ja čatnat GitHub Pages ala. Muđui ráhkat vuos vuorkká GitHub:as; guorus vuorká lea buorre.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Oavsi vai GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Dárkko DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Ráhkat vuorkká jus dat ii gávdno</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Ráhkat vuorkká GitHub:as ja čatna GitHub Pages ala dan heivehusain (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Ráhkada vuorkká %repo go dat váilu (go bivdojuvvo), čatná GitHub Pages ala oavssis dahje GitHub Actions:as nugo vurkejuvvon, ja bidjá iežat domena ja HTTPS. Geavaha vurkejuvvon heivehusaid: vurke vuos rievdadusaid.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Dieđut GitHub:as</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Čális vuos iežat domena.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Juohke dulddiideapmi dárkkistuvvo vuos dáid ráddjehusaid ektui.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>https://-čujuhussii GitHub:as. App mii lea heivehuvvon dán sajáiduhttimii čálihuvvá sisa; dat dárbbaša sajáiduhttima id.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages fállá priváhta vuorkká dušše máksojuvvon plánas.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: vuolledomena (www.example.com) dárbbaša CNAME-merkoštusa &lt;owner&gt;.github.io:ii; váldodomena (example.com) A-merkoštusaid %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App sajáiduhttima id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Maŋimuš Pages-huksen</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Ráddjehusat ja eavttut</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Dárbbašlaš GitHub Pages várás nuvttá plánas.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub:as</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Dušše GitHub App:ain: nummir App sajáiduhttima čujuhusa loahpas GitHub:as. App ieš heivehuvvo staticcache.ini:s (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Priváhta</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Almmolaš</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Vurke vuos ulbmila GitHub-vuorkkáin ja tokeniin dahje GitHub App:ain.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Bija dáid merkoštusaid domena fálli lusa:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Heivet GitHub:as</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain DNS ii čujut vel GitHub Pages ala.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain DNS čujuha GitHub Pages ala.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub-integrašuvdna ii leat olámuttus dáppe: %problem. Almmuheapmi oksii doaibmá goittotge; čatna GitHub Pages ala vuorkká heivehusain.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub-lávkkit eai leat olámuttus dán ulbmilii: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages dilli čájehuvvo go duođaštus lea token dahje GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Geavat iežat domena</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Maid válljet: token, almmuhančoavdda dahje GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub-vuorkkáin ja tokeniin dahje GitHub App:ain sáhttá čuvvu du ovddas ráhkadit vuorkká, čatnat GitHub Pages ala ja bidjat domena (lávki 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>huksejuvvo</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>huksejuvvon</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions:as</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>oavssis %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ii vel mihkkege</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ii gávdnon</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>eret</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>priváhta</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>almmolaš</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>vuordimin</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>amas</translation>
     </message>
 </context>
 </TS>
