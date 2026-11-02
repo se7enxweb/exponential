@@ -59,12 +59,15 @@ class AdminSetupWizardTemplatesTest extends PHPUnit\Framework\TestCase
         $found = array();
         foreach ( array( 'design', 'kernel', 'settings' ) as $top )
         {
-            $files = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::root() . "/$top", FilesystemIterator::SKIP_DOTS ) );
+            // CATCH_GET_CHILD: a test running beside this one makes and removes its own template folders under design/;
+            // a folder gone between listing and opening is skipped instead of ending the walk with an exception
+            $files = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::root() . "/$top", FilesystemIterator::SKIP_DOTS ),
+                                                    RecursiveIteratorIterator::LEAVES_ONLY, RecursiveIteratorIterator::CATCH_GET_CHILD );
             foreach ( $files as $file )
             {
-                if ( !preg_match( '#\.(?:tpl|php|ini|js)$#', $file->getFilename() ) )
+                if ( !preg_match( '#\.(?:tpl|php|ini|js)$#', $file->getFilename() ) || !is_file( $file->getPathname() ) )
                     continue;
-                if ( preg_match( $pattern, (string)file_get_contents( $file->getPathname() ) ) )
+                if ( preg_match( $pattern, (string)@file_get_contents( $file->getPathname() ) ) )
                     $found[] = substr( $file->getPathname(), strlen( self::root() ) + 1 );
             }
         }

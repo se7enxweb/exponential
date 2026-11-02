@@ -27803,7 +27803,7 @@ a64cfa46b8f48e5a5fa9b77178cccc6f  tests/tests/design/AdminRetiredClassesTest.php
 8ece8ddb00b8dc5b62126ebd234606ea  tests/tests/design/AdminSelfContainedTest.php
 8a3b808d1ee42e2d45746587cb9cdd28  tests/tests/design/AdminSetupOverviewTest.php
 c14605b059143dd7cdcd79fe6d02daa0  tests/tests/design/AdminSetupTabsLeftMenuTest.php
-2e4cb26e421af95bf1a80f6e07b916a8  tests/tests/design/AdminSetupWizardTemplatesTest.php
+1bbd917d4b1d5f827bd2928bccacba89  tests/tests/design/AdminSetupWizardTemplatesTest.php
 94a67d0efe9a74e17b3bd6d35233b34d  tests/tests/design/AdminSidebarDrawerTest.php
 6915ce6688eed31f2837d7020708d9e3  tests/tests/design/AdminSiteAccessMenuTest.php
 863edd4195b5d84af835c4faf19c20fd  tests/tests/design/AdminStoredValueEscapingTest.php
