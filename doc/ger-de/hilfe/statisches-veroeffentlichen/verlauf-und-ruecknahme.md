@@ -21,8 +21,10 @@ Die öffentliche Site, die wieder eine frühere Veröffentlichung zeigt, mit der
 
 Öffnen Sie **Verlauf** am Ziel. Er listet auf:
 
-- **Veröffentlichungen**: jede Veröffentlichung und Rücknahme mit Zeitpunkt, Zustand, Push-Zustand, Tag, wer und wie
-  viele Dateien sich geändert haben. Das Datum öffnet die Seite des Laufs.
+- **Veröffentlichungen**: jede Veröffentlichung und Rücknahme, die neueste zuerst, mit Zeitpunkt, Zustand, Version
+  (die Nummer ihres Tags, ein Strich, wenn sie keinen gemacht hat), kurzer Commit-Kennung (ein Link auf den Commit bei
+  GitHub, wenn das Repository dort liegt), Push-Zustand, wer und wie viele Dateien sich geändert haben. Das Datum
+  öffnet die Seite des Laufs. Auf einem schmalen Bildschirm ist jeder Lauf ein Block beschrifteter Zeilen.
 - **Tags**: die neuesten zuerst, jedes mit seinem Commit (ein Link auf den Commit bei GitHub, wenn das Repository dort
   liegt).
 - **Commits**: die letzten Commits des Branches.

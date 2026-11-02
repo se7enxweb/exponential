@@ -83440,6 +83440,10 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Inyandiko yayo isigara. Amashusho, amafishi n'amahuza ajya ku zindi mbuga ntibikurwaho na rimwe.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Verisiyo</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

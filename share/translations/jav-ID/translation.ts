@@ -83448,6 +83448,10 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Teksé tetep ana. Gambar, formulir lan pranala menyang situs liya ora tau dibusak.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -126,6 +126,37 @@ class expStaticRedirects
         return array_slice( $stubs, 0, self::MAX, true );
     }
 
+    /**
+     * Where a redirect the crawl met ends: the redirects that follow it one after the other are followed in the map,
+     * at most $max of them. Pure.
+     *
+     * @param array $redirects url => array( status, location ), as expPreloadRunner::redirects()
+     * @param string $from the address that answered with a redirect
+     * @param int $max the most redirects in a row
+     * @return array to (the address the chain ends on), hops, error ('' or why it ends nowhere: a loop, a chain
+     *         too long, no Location)
+     */
+    public static function resolveChain( array $redirects, $from, $max = 5 )
+    {
+        $seen = array( (string)$from => true );
+        $to = (string)$from;
+        $hops = 0;
+        while ( isset( $redirects[$to] ) )
+        {
+            if ( $hops >= (int)$max )
+                return array( 'to' => $to, 'hops' => $hops, 'error' => sprintf( 'chain longer than %d', (int)$max ) );
+            $next = isset( $redirects[$to]['location'] ) ? (string)$redirects[$to]['location'] : '';
+            if ( $next === '' )
+                return array( 'to' => $to, 'hops' => $hops, 'error' => 'without a Location' );
+            $hops++;
+            if ( isset( $seen[$next] ) )
+                return array( 'to' => $next, 'hops' => $hops, 'error' => 'loop' );
+            $seen[$next] = true;
+            $to = $next;
+        }
+        return array( 'to' => $to, 'hops' => $hops, 'error' => '' );
+    }
+
     /** Adds one stub unless the build has that file already or it is not a file name. */
     private static function put( array &$stubs, $from, $to, $source, callable $taken )
     {

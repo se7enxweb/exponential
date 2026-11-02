@@ -83440,6 +83440,10 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Noho mau ko lākou kikokikona. ʻAʻole loa e wehe ʻia nā kiʻi, nā palapala a me nā loulou i nā pūnaewele ʻē aʻe.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Mana</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

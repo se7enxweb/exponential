@@ -83440,6 +83440,10 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ndeto ciacio itigaraga. Mbica, fomu na ngwatanio cia thaiti ingĩ itiheragwo.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Ũrutwo</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

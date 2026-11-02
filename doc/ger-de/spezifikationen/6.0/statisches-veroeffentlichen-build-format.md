@@ -47,6 +47,29 @@ Gerätename (`CON`, `PRN`, `AUX`, `NUL`, `COM1` bis `COM9`, `LPT1` bis `LPT9`). 
 `ExcludePaths[]` (Shell-Muster auf den Seitenpfad, `*` passt auf jeden Teil, ein Muster, das auf `/*` endet, passt auch
 auf die Seite selbst) oder `ExcludeSections[]` (die Sektion des Knotens der Seite).
 
+## Adressen, die weiterleiten
+
+Das Durchlaufen folgt einer Weiterleitung (Status 3xx) nicht selbst. Eine Adresse, die mit einer antwortet, wird nie
+als Kopie der Seite geschrieben, zu der sie führt; sie wird zu einem **Weiterleitungs-Stub** an ihrer eigenen Datei:
+dieselbe kleine Seite wie die Stubs von `Extras[]=redirects` (ein Meta-Refresh, ein Canonical-Link, `robots`
+`noindex`, `<html lang="en">`, ein einfacher Link), im Manifest als `extra` geführt. Der Stub führt zu:
+
+| Wo die Weiterleitung endet | Wohin der Stub zeigt |
+|---|---|
+| Eine Seite, die die Kopie enthält | Diese Seite in der Kopie (ein relativer oder Basispfad-Link, wie `Links` sagt); Canonical: ihre Adresse unter `PublicURL` |
+| Eine Seite der Website, die die Kopie nicht enthält, oder eine Seite der Administration | Die Adresse auf der Live-Website (`LiveURL`, wie andere Links auf das, was die Kopie nicht enthält) |
+| Dasselbe mit `OutsideLinks=unlink` (oder `AdminLinks=unlink` für eine Seite der Administration) | Die Startseite der Kopie: ein Stub ohne Ziel wäre eine Sackgasse |
+| Ein anderer Host | Diese Adresse, wie sie ist; sie wird nie abgerufen |
+
+Die Adresse, zu der eine Weiterleitung führt, wird einmal durchlaufen, unter ihrer eigenen Adresse und in der Tiefe der
+weiterleitenden, wenn sie auf dem Host des Durchlaufens liegt (oder einer anderen Adresse der Website, `SiteURL` oder
+`LiveURL`) und eine Seite der Website ist. Einer Kette (`/a` zu `/b` zu `/`) wird bis zu ihrem Ende gefolgt, höchstens
+5 Weiterleitungen hintereinander. Kein Stub wird geschrieben, und die Adresse wird mit ihrem Grund unter `skipped`
+gemeldet, bei einer Schleife, einer längeren Kette, einer Weiterleitung ohne `Location`, einer Weiterleitung auf ihre
+eigene Datei (`/a` zu `/a/`), einer Adresse mit Query-String oder einer, die kein Dateiname sein kann, und in einer
+Kopie ohne Startseite, wenn der Link nach außen herausgenommen wird. Ein Link einer Seite auf eine weiterleitende
+Adresse führt zu ihrem Stub. `counts.redirects_followed` zählt die geschriebenen Stubs, `redirects_followed` listet sie.
+
 ## Was herausgenommen wird
 
 Jede Seite und die 404-Seite der Website verlieren:
@@ -214,11 +237,12 @@ dasselbe Objekt in eine Datei.
 | `scope` | `full` oder `partial` |
 | `target`, `siteaccess`, `run_id`, `started_at`, `duration_ms`, `directory` | der Build |
 | `links` | `mode`, `base_path`, `public_url` |
-| `counts` | `pages`, `pages_refused`, `pages_skipped`, `pages_excluded`, `files`, `storage`, `files_failed`, `extras`, `links_rewritten`, `links_live`, `links_external`, `links_removed_outside`, `links_removed_admin`, `links_unavailable`, `site_broken_links`, `bytes`, `stripped` (nach dem, was herausgenommen wurde) |
+| `counts` | `pages`, `pages_refused`, `pages_skipped`, `pages_excluded`, `files`, `storage`, `files_failed`, `extras`, `links_rewritten`, `links_live`, `links_external`, `links_removed_outside`, `links_removed_admin`, `links_unavailable`, `site_broken_links`, `bytes`, `stripped` (nach dem, was herausgenommen wurde), `redirects` (Stubs von `Extras[]=redirects`), `redirects_followed` (Stubs von Adressen, die weiterleiten) |
 | `diff` | `added`, `changed`, `removed`, `unchanged` (Anzahlen), `bytes_added`, `bytes_removed`, `files` (die Pfade, höchstens 500 von jedem) |
 | `pages` | jede Seite: `path`, `file`, `bytes`, `node`, `stripped` |
 | `refused` | jede abgelehnte Seite: `path`, `url`, `reasons` |
 | `skipped` | jede übersprungene Seite: `path`, `reason` |
+| `redirects_followed` | jeder Stub einer Adresse, die weiterleitet: `path`, `status`, `to` (wo die Weiterleitung endet), `kind` (`page`, `live`, `front`), `file` |
 | `files_failed` | jede nicht gesammelte Datei: `file`, `url`, `error` |
 | `link_check` | `mount`, `files`, `links`, `broken` (höchstens 200: `file`, `link`, `resolved`), `broken_count`, `skipped` |
 | `limits` | `bytes`, `max_site_bytes`, `max_file_bytes`, `too_large` |

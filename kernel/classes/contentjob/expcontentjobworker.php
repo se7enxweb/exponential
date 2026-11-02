@@ -52,6 +52,37 @@ class expContentJobWorker
     protected $job = null;
 
     /**
+     * How long a batch's transaction may hold SQLite's write lock, in seconds, before the next batch is made
+     * smaller. SQLite has one writer at a time: every other write, a user's save among them, waits for the batch.
+     */
+    const SQLITE_BATCH_SECONDS = 2.0;
+
+    /**
+     * The size of the next batch: on SQLite halved after a batch that held the write lock longer than
+     * SQLITE_BATCH_SECONDS (down to 1), doubled again after one that took less than a quarter of it (up to the
+     * configured BatchSize). Other databases write side by side and keep BatchSize. On the demo (2026-11-02)
+     * batches of 10 help manual topics held the lock 4 to 7 s each.
+     *
+     * @param int $current the size of the batch just done
+     * @param int $max the configured BatchSize
+     * @param float $held the seconds the batch's transaction held the lock (begin() done to commit)
+     * @param bool $sqlite whether the database is SQLite
+     * @return int
+     */
+    public static function nextBatchSize( $current, $max, $held, $sqlite )
+    {
+        $max = max( 1, (int) $max );
+        $current = min( $max, max( 1, (int) $current ) );
+        if ( !$sqlite )
+            return $max;
+        if ( $held > self::SQLITE_BATCH_SECONDS )
+            return max( 1, intdiv( $current, 2 ) );
+        if ( $held < self::SQLITE_BATCH_SECONDS / 4 )
+            return min( $max, $current * 2 );
+        return $current;
+    }
+
+    /**
      * As root, becomes the site user: the owner of the installation's var/ directory (index.php may belong to
      * root on a managed host). Call before the kernel reads a setting, writes a cache or opens the database.
      *
@@ -230,6 +261,9 @@ class expContentJobWorker
         $batchSize = max( 1, (int) expContentJob::setting( 'BatchSize' ) );
         $pause = max( 0, (int) expContentJob::setting( 'BatchPause' ) );
         $busyRetries = max( 0, (int) expContentJob::setting( 'BusyRetries' ) );
+        // on SQLite the batches shrink while one holds the write lock too long (nextBatchSize())
+        $nextSize = $batchSize;
+        $sqlite = null;
         // the tries of the current batch that met a busy database; prepare() runs again before the next one
         $tries = 0;
         $prepared = false;
@@ -261,9 +295,15 @@ class expContentJobWorker
                 // begin() inside the try: on SQLite it waits SQLiteTransactionWait for the write lock and throws
                 // "database is busy" when another writer held it all that time
                 $this->begin();
-                $r = $this->audited( function () use ( $handler, $job, $batchSize ) { return $handler->runBatch( $job, $batchSize ); } );
+                $begun = microtime( true );
+                $size = $nextSize;
+                $r = $this->audited( function () use ( $handler, $job, $size ) { return $handler->runBatch( $job, $size ); } );
                 if ( !$this->commit() )
                     throw new expContentJobException( 'the batch could not be committed (database error)' );
+                // known once begin() has connected (not before: a database that cannot be reached fails the batch)
+                if ( $sqlite === null )
+                    $sqlite = eZDB::hasInstance() && eZDB::instance()->databaseName() === 'sqlite';
+                $nextSize = self::nextBatchSize( $size, $batchSize, microtime( true ) - $begun, $sqlite );
             }
             catch ( Throwable $e )
             {

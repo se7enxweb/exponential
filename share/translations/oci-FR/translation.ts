@@ -83440,6 +83440,10 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Lor tèxte demòra. Los imatges, los formularis e los ligams cap a d'autres sites son pas jamai levats.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -41,7 +41,13 @@ konnte eine Veröffentlichung mit "database is locked" scheitern, egal wie lang 
 1. Es öffnet, einmal je Verbindung und erneut in jedem geforkten Prozess, eine Sperrdatei neben der Datenbank:
    `<database file>.writer-lock`, zum Beispiel `var/storage/sqlite3/exponential.db.writer-lock`.
 2. Es nimmt ein exklusives `flock()` auf diese Datei und versucht es alle 1 bis 15 ms erneut; Schreiber, die schon länger
-   als eine Sekunde warten, versuchen es öfter, was sie ungefähr in der Reihenfolge ihrer Ankunft bedient.
+   als eine Sekunde warten, versuchen es öfter, was sie ungefähr in der Reihenfolge ihrer Ankunft bedient. Solange es
+   wartet, hält es ein geteiltes `flock()` auf eine zweite Datei, `<database file>.writer-queue`, die den anderen
+   sagt, dass ein Schreiber wartet. Ein Schreiber, der die Sperre frei vorfindet, während andere warten, lässt sie
+   ihnen 30 ms lang, bevor er es selbst versucht. Ohne das nahm eine Schleife, die festschreibt und sofort wieder
+   beginnt (der Cronjob-Teil `indexcontent`, die Stapel eines Inhaltsauftrags), die Sperre Bruchteile einer
+   Millisekunde nach jedem Commit wieder und hielt sie minutenlang; das Speichern einer Seite dahinter scheiterte nach
+   seiner ganzen Wartezeit mit "database is busy".
 3. Mit gehaltener Sperre führt es `BEGIN IMMEDIATE` aus, das die Schreibsperre von SQLite am Anfang nimmt, wo das
    Busy-Timeout gilt. Auf Schreiber außerhalb der Warteschlange (eine einzelne Anweisung, ein anderes Programm) wartet der
    Busy-Handler von SQLite innerhalb der verbleibenden Zeit.

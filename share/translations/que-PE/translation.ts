@@ -83440,6 +83440,10 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Qillqankuna qhepakun. Siq'ikuna, formulariokuna, hukkunaq sitionkunaman t'inkikunapas manapuni qhichusqachu.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versiyun</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

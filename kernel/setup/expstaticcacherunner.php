@@ -111,7 +111,7 @@ class expStaticCacheRunner
         $this->emit = $emit;
         if ( isset( $options['export'] ) && is_callable( $options['export'] ) )
             $this->export = $options['export'];
-        foreach ( array( 'base_url', 'base_path', 'site_origins', 'timeout', 'fetcher', 'headers' ) as $name )
+        foreach ( array( 'base_url', 'base_path', 'site_origins', 'timeout', 'fetcher', 'headers', 'record_redirects' ) as $name )
             if ( isset( $options[$name] ) )
                 $this->crawlOptions[$name] = $options[$name];
 

@@ -8,6 +8,8 @@
  *        a file the build has and a module action do not
  *  RD-03 wildcards without * to a page of the build; others not
  *  RD-04 a stub page: meta refresh, canonical, noindex, escaped
+ *  RD-05 a redirect the crawl met: where its chain ends, a loop, a chain too long, no Location; a Location header
+ *        made absolute
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -73,5 +75,33 @@ class expStaticRedirectsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '<html lang="en">', $html );
         $this->assertStringNotContainsString( 'canonical', expStaticRedirects::stub( 'x/' ) );
         $this->assertStringContainsString( 'url=a&quot;b', expStaticRedirects::stub( 'a"b' ) );
+    }
+
+    /** RD-05 */
+    public function testResolveChain()
+    {
+        $map = array(
+            'http://s.test/authors' => array( 'status' => 302, 'location' => 'http://s.test/' ),
+            'http://s.test/authors/jane' => array( 'status' => 301, 'location' => 'http://s.test/authors' ),
+            'http://s.test/a' => array( 'status' => 302, 'location' => 'http://s.test/b' ),
+            'http://s.test/b' => array( 'status' => 302, 'location' => 'http://s.test/a' ),
+            'http://s.test/none' => array( 'status' => 302, 'location' => '' ),
+        );
+        $this->assertSame( array( 'to' => 'http://s.test/', 'hops' => 1, 'error' => '' ), expStaticRedirects::resolveChain( $map, 'http://s.test/authors' ) );
+        $this->assertSame( array( 'to' => 'http://s.test/', 'hops' => 2, 'error' => '' ), expStaticRedirects::resolveChain( $map, 'http://s.test/authors/jane' ) );
+        $this->assertSame( 'loop', expStaticRedirects::resolveChain( $map, 'http://s.test/a' )['error'] );
+        $this->assertSame( 'without a Location', expStaticRedirects::resolveChain( $map, 'http://s.test/none' )['error'] );
+        $this->assertSame( 'chain longer than 1', expStaticRedirects::resolveChain( $map, 'http://s.test/authors/jane', 1 )['error'] );
+        $chain = array();
+        for ( $i = 0; $i < 9; $i++ )
+            $chain["http://s.test/$i"] = array( 'status' => 302, 'location' => 'http://s.test/' . ( $i + 1 ) );
+        $this->assertSame( 'chain longer than 5', expStaticRedirects::resolveChain( $chain, 'http://s.test/0', 5 )['error'] );
+        $this->assertSame( '', expStaticRedirects::resolveChain( $chain, 'http://s.test/5', 5 )['error'] );
+
+        $this->assertSame( 'http://s.test/', expPreloadRunner::resolveLocation( '/', 'http://s.test/authors' ) );
+        $this->assertSame( 'http://s.test:8080/news/x', expPreloadRunner::resolveLocation( 'x', 'http://s.test:8080/news/item' ) );
+        $this->assertSame( 'https://other.example/x', expPreloadRunner::resolveLocation( '//other.example/x', 'https://s.test/a' ) );
+        $this->assertSame( 'https://other.example/x', expPreloadRunner::resolveLocation( 'https://other.example/x', 'http://s.test/a' ) );
+        $this->assertSame( '', expPreloadRunner::resolveLocation( ' ', 'http://s.test/a' ) );
     }
 }

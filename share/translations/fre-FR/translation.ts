@@ -84880,6 +84880,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Leur texte est conservé. Les images, les formulaires et les liens vers d'autres sites ne sont jamais retirés.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

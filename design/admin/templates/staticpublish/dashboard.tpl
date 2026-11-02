@@ -1,5 +1,7 @@
 {* The staticpublish/dashboard view: Setup > Static publishing. Variables: enabled (staticcache.ini [StaticPublishSettings]
-   Enabled), targets (expStaticAdmin::overview() of each target the user may read), can_setup (staticpublish/setup on
+   Enabled), targets (expStaticAdmin::overview() of each target the user may read: with version, the n of the last tag,
+   commit and commit_short, the tag's commit, commit_url, and deploy, the state of the last run; the state of the Pages
+   build is on the history, which asks GitHub, not here), can_setup (staticpublish/setup on
    every target: new targets and the switch), messages, problem, site_limit. *}
 <div class="a4-page a4-setup-publish" id="exp-staticpublish-dashboard">
 
@@ -51,8 +53,12 @@
         {foreach $t.errors as $error}<p class="a4-bad-text">{$error|wash}</p>{/foreach}
         <dl class="a4-facts">
             <div><dt>{'Site'|i18n( 'design/admin/staticpublish' )}</dt><dd>{$t.siteaccess|wash}</dd></div>
+            <div><dt>{'Version'|i18n( 'design/admin/staticpublish' )}</dt>
+                <dd>{if $t.version}<strong>{$t.version|wash}</strong> <code class="a4-code">{$t.last_tag|wash}</code>{else}<span class="a4-muted">{'none yet'|i18n( 'design/admin/staticpublish' )}</span>{/if}</dd></div>
+            <div><dt>{'Commit'|i18n( 'design/admin/staticpublish' )}</dt>
+                <dd>{if $t.commit_short}{if $t.commit_url}<a href="{concat( $t.commit_url, $t.commit )|wash}" rel="noopener noreferrer"><code class="a4-code">{$t.commit_short|wash}</code></a>{else}<code class="a4-code" title="{$t.commit|wash}">{$t.commit_short|wash}</code>{/if}{else}-{/if}</dd></div>
             <div><dt>{'Last publish'|i18n( 'design/admin/staticpublish' )}</dt>
-                <dd>{if $t.last_run}<a href={concat( 'staticpublish/log/', $t.last_run.run_id )|ezurl}>{$t.last_run.started_at|l10n( 'shortdatetime' )}</a> {include uri='design:staticpublish/parts/run_state.tpl' run=$t.last_run}{else}<span class="a4-muted">{'never'|i18n( 'design/admin/staticpublish' )}</span>{/if}</dd></div>
+                <dd>{include uri='design:staticpublish/parts/deploy_state.tpl' deploy=$t.deploy}{if $t.deploy.run_id} <a href={concat( 'staticpublish/log/', $t.deploy.run_id )|ezurl}>{$t.deploy.time|l10n( 'shortdatetime' )}</a>{/if}</dd></div>
             <div><dt>{'Stale pages'|i18n( 'design/admin/staticpublish' )}</dt><dd>{if $t.stale}<span class="a4-badge is-warn">{$t.stale|wash}</span>{else}0{/if}</dd></div>
             <div><dt>{'Build to check'|i18n( 'design/admin/staticpublish' )}</dt><dd>{if $t.pending_build}<a href={concat( 'staticpublish/preview/', $t.id )|ezurl}>{'yes, not published yet'|i18n( 'design/admin/staticpublish' )}</a>{else}{'no'|i18n( 'design/admin/staticpublish' )}{/if}</dd></div>
             <div><dt>{'Size'|i18n( 'design/admin/staticpublish' )}</dt><dd>{if $t.bytes}{$t.bytes|si( 'byte' )} <span class="a4-meta">{'%percent % of the limit'|i18n( 'design/admin/staticpublish',, hash( '%percent', $t.limit_percent ) )|wash}</span>{else}-{/if}</dd></div>

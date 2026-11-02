@@ -83470,6 +83470,10 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Allagaat qimaannarneqassapput. Assit, immersugassat nittartakkanullu allanut innersuussutit peerneqarneq ajorput.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versioni</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83440,6 +83440,10 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Woƒe nuŋɔŋlɔ susɔna. Womeɖea nɔnɔmetatawo, nuŋlɔɖiwo kple kadodo siwo yi nyatakakadzraɖoƒe bubuwo ɖa gbeɖe o.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>ʋɛsiɔn</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

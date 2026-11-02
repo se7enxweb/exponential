@@ -83473,6 +83473,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ghItlhchaj ratlh. mIllogh, mu'tlhegh, latlh Daqmey rarwI' je not teqlu'.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>chovnatlh</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

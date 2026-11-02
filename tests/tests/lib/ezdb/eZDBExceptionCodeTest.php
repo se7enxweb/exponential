@@ -60,7 +60,7 @@ class eZDBExceptionCodeTest extends PHPUnit\Framework\TestCase
         }
         foreach ( $this->files as $file )
         {
-            foreach ( array( '', '-journal', '-wal', '-shm', '.writer-lock' ) as $suffix )
+            foreach ( array( '', '-journal', '-wal', '-shm', '.writer-lock', '.writer-queue' ) as $suffix )
             {
                 if ( file_exists( $file . $suffix ) )
                     unlink( $file . $suffix );

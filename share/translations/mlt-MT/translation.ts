@@ -83470,6 +83470,10 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>It-test tagħhom jibqa'. Stampi, formoli u links għal siti oħra qatt ma jitneħħew.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Verżjoni</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>
