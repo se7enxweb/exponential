@@ -81126,43 +81126,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>మైగ్రేషన్ %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>కొత్త మైగ్రేషన్</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML మైగ్రేషన్: దీన్ని టెక్స్ట్‌గా రాయండి లేదా ఫారమ్‌లో దీని దశలను నిర్మించండి, తనిఖీ చేయండి, ఆపై మైగ్రేషన్ల ఫోల్డర్‌లో సేవ్ చేయండి.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఈ మైగ్రేషన్ ఇప్పటికే అమలైంది, కాబట్టి ఇది మళ్లీ సేవ్ చేయబడదు: మార్చిన ఫైల్‌ను చెక్‌సమ్ రక్షణ తిరస్కరిస్తుంది. మార్పును కొత్త మైగ్రేషన్‌లో చేయండి.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>వెబ్ సర్వర్ ఫైల్‌ను రాయలేదు.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>పైన ఉన్న వ్యాఖ్య పంక్తులు హెడర్ (description, author, requires, environments, engines). ఫారమ్‌లో దశను జోడించినప్పుడు లేదా మార్చినప్పుడు, మైగ్రేషన్ మళ్లీ రాయబడుతుంది: దశల మధ్య ఉన్న వ్యాఖ్యలు ఉంచబడవు.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>మైగ్రేషన్ పేరు</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>ఇది ఎక్కడికి వెళ్తుంది</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>సైట్</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML టెక్స్ట్</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81198,35 +81198,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఇంకా దశలు లేవు: ఫారమ్‌తో ఒకటి జోడించండి, లేదా వాటిని టెక్స్ట్‌లో రాయండి.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>దశ %number ను మార్చు</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>ఒక దశను జోడించండి</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>దశ యొక్క ఫారమ్ దాని దశ రకం నుండి తయారవుతుంది: దాని కీలు, ప్రతి ఒక్కటి ఏమి తీసుకుంటుంది మరియు అది చెందిన మోడ్‌లు.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>దశ రకం</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>దీని ఫారమ్‌ను చూపించు</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>దశలో దాని రకానికి తెలియని కీలు ఉన్నాయి; దశను మార్చినప్పుడు అవి వదిలివేయబడతాయి: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>మోడ్</translation>
     </message>
     <message>
         <source>In</source>
@@ -81234,19 +81234,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>%modes లో మాత్రమే</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>డిఫాల్ట్: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>షరతులు, సూచనలు మరియు వ్యాఖ్య</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>కామాలతో వేరు చేసిన పేరు=విలువ జతలు. ఈ దశ విలువలు: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81254,19 +81254,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>దశను మార్చు</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>దశను జోడించు</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check ఏమి చెబుతుంది: హెడర్, డాక్యుమెంట్ మరియు దాని దశ రకం తనిఖీ చేసిన ప్రతి దశ.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>మైగ్రేషన్ తనిఖీలో ఉత్తీర్ణమైంది.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81274,23 +81274,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>సేవ్ చేయబడే విధంగా YAML.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ను చూపించు</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML మైగ్రేషన్లు</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>అమలైంది</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఇంకా YAML మైగ్రేషన్లు లేవు.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81298,39 +81298,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>మైగ్రేషన్ ఫోల్డర్లలో YAML మైగ్రేషన్ %id లేదు.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>దశ రకాన్ని ఎంచుకోండి.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>దశ జోడించబడింది. సేవ్ చేసే ముందు మైగ్రేషన్‌ను తనిఖీ చేయండి.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>దశ మార్చబడింది. సేవ్ చేసే ముందు మైగ్రేషన్‌ను తనిఖీ చేయండి.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఒక దశను ఎంచుకోండి.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఈ దశకు ఫారమ్ లేదు (ఒక లూప్, లేదా ఈ ఇన్‌స్టాలేషన్‌లో లేని దశ రకం): దీన్ని టెక్స్ట్‌లో మార్చండి.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>మైగ్రేషన్ ఎక్కడికి వెళ్లాలో ఎంచుకోండి: సైట్ లేదా క్రియాశీల ఎక్స్‌టెన్షన్.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file సేవ్ చేయబడింది. మైగ్రేషన్ అమలయ్యే ముందు ప్రయోగాత్మక రన్ చేయండి.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>సేవ్ కాలేదు: %reason</translation>
     </message>
 </context>
 <context>

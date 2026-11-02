@@ -81158,43 +81158,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Flutningur %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nýr flutningur</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-flutningur: skrifaðu hann sem texta eða byggðu skref hans í eyðublaðinu, athugaðu hann og vistaðu hann síðan í flutningamöppu.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Þessi flutningur hefur þegar keyrt og er því ekki vistaður aftur: gátsummuvörnin myndi hafna breyttri skrá. Gerðu breytinguna í nýjum flutningi.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vefþjónninn getur ekki skrifað skrána.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Athugasemdalínurnar efst eru hausinn (description, author, requires, environments, engines). Þegar skrefi er bætt við eða því breytt í eyðublaðinu er flutningurinn skrifaður upp á nýtt: athugasemdir milli skrefanna haldast ekki.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Heiti flutningsins</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvert hann fer</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Vefurinn</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-texti</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81230,35 +81230,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Engin skref enn: bættu einu við með eyðublaðinu eða skrifaðu þau í textann.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Breyta skrefi %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Bæta við skrefi</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eyðublað skrefs er búið til úr gerð skrefsins: lyklum þess, hvað hver þeirra tekur og hömunum sem það tilheyrir.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerð skrefs</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Sýna eyðublað þess</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrefið hefur lykla sem gerð þess þekkir ekki; þeim er sleppt þegar skrefinu er breytt: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Hamur</translation>
     </message>
     <message>
         <source>In</source>
@@ -81266,19 +81266,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>aðeins í %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjálfgefið: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Skilyrði, tilvísanir og athugasemd</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Pör Heiti=gildi, aðskilin með kommum. Gildi þessa skrefs: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81286,19 +81286,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Breyta skrefi</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Bæta skrefi við</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Það sem exp:migration:check segir: hausinn, skjalið og hvert skref athugað af gerð sinni.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Flutningurinn stenst athugunina.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81306,23 +81306,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML eins og það verður vistað.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Sýna YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-flutningar</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>hefur keyrt</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Engir YAML-flutningar enn.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81330,39 +81330,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Enginn YAML-flutningur %id er í flutningamöppunum.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu gerð skrefs.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrefinu hefur verið bætt við. Athugaðu flutninginn áður en þú vistar hann.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrefinu hefur verið breytt. Athugaðu flutninginn áður en þú vistar hann.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu skref.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Þetta skref hefur ekkert eyðublað (lykkja, eða gerð skrefs sem þessi uppsetning hefur ekki): breyttu því í textanum.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu hvert flutningurinn fer: vefurinn eða virk viðbót.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file vistað. Keyrðu prufukeyrslu áður en flutningurinn keyrir.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekki vistað: %reason</translation>
     </message>
 </context>
 <context>

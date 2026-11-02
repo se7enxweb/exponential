@@ -81126,43 +81126,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ମାଇଗ୍ରେସନ୍ %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ନୂଆ ମାଇଗ୍ରେସନ୍</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ଏକ YAML ମାଇଗ୍ରେସନ୍: ଏହାକୁ ପାଠ୍ୟ ଭାବେ ଲେଖନ୍ତୁ କିମ୍ବା ଫର୍ମରେ ଏହାର ପଦକ୍ଷେପଗୁଡ଼ିକ ଗଠନ କରନ୍ତୁ, ଯାଞ୍ଚ କରନ୍ତୁ, ତାପରେ ଏକ ମାଇଗ୍ରେସନ୍ ଫୋଲ୍ଡର୍‌ରେ ସଞ୍ଚୟ କରନ୍ତୁ।</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>ଏହି ମାଇଗ୍ରେସନ୍ ପୂର୍ବରୁ ଚାଲିସାରିଛି, ତେଣୁ ଏହା ପୁଣି ସଞ୍ଚୟ ହେବ ନାହିଁ: ଚେକସମ୍ ସୁରକ୍ଷା ଏକ ବଦଳାଯାଇଥିବା ଫାଇଲ୍‌କୁ ପ୍ରତ୍ୟାଖ୍ୟାନ କରିବ। ଏକ ନୂଆ ମାଇଗ୍ରେସନ୍‌ରେ ପରିବର୍ତ୍ତନ କରନ୍ତୁ।</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ୱେବ୍ ସର୍ଭର୍ ଫାଇଲ୍‌ଟି ଲେଖିପାରିବ ନାହିଁ।</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>ଉପରେ ଥିବା ମନ୍ତବ୍ୟ ଧାଡ଼ିଗୁଡ଼ିକ ହେଡର୍ (description, author, requires, environments, engines)। ଫର୍ମରେ ଏକ ପଦକ୍ଷେପ ଯୋଡ଼ାଗଲେ କିମ୍ବା ବଦଳାଗଲେ, ମାଇଗ୍ରେସନ୍ ପୁଣି ଲେଖାଯାଏ: ପଦକ୍ଷେପଗୁଡ଼ିକ ମଧ୍ୟରେ ଥିବା ମନ୍ତବ୍ୟ ରଖାଯାଏ ନାହିଁ।</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ମାଇଗ୍ରେସନ୍‌ର ନାମ</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>ଏହା କେଉଁଠି ଯିବ</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>ସାଇଟ୍</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ପାଠ୍ୟ</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81198,35 +81198,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ପଦକ୍ଷେପ ନାହିଁ: ଫର୍ମ ସହିତ ଗୋଟିଏ ଯୋଡ଼ନ୍ତୁ, କିମ୍ବା ପାଠ୍ୟରେ ସେଗୁଡ଼ିକ ଲେଖନ୍ତୁ।</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>ପଦକ୍ଷେପ %number ବଦଳାନ୍ତୁ</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>ଏକ ପଦକ୍ଷେପ ଯୋଡ଼ନ୍ତୁ</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>ଏକ ପଦକ୍ଷେପର ଫର୍ମ ତାହାର ପଦକ୍ଷେପ ପ୍ରକାରରୁ ତିଆରି ହୁଏ: ଏହାର କି, ପ୍ରତ୍ୟେକ କ'ଣ ନିଏ ଏବଂ ଏହା କେଉଁ ମୋଡ୍‌ର ଅଂଶ।</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>ପଦକ୍ଷେପ ପ୍ରକାର</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>ଏହାର ଫର୍ମ ଦେଖାନ୍ତୁ</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>ପଦକ୍ଷେପରେ ଏପରି କି ଅଛି ଯାହା ଏହାର ପ୍ରକାର ଜାଣେ ନାହିଁ; ପଦକ୍ଷେପ ବଦଳାଗଲେ ସେଗୁଡ଼ିକ ବାଦ୍ ପଡ଼େ: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>ମୋଡ୍</translation>
     </message>
     <message>
         <source>In</source>
@@ -81234,19 +81234,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>କେବଳ %modes ରେ</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>ଡିଫଲ୍ଟ: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>ସର୍ତ୍ତ, ସନ୍ଦର୍ଭ ଏବଂ ମନ୍ତବ୍ୟ</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>କମା ଦ୍ୱାରା ପୃଥକ ନାମ=ମୂଲ୍ୟ ଯୋଡ଼ି। ଏହି ପଦକ୍ଷେପର ମୂଲ୍ୟଗୁଡ଼ିକ: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81254,19 +81254,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>ପଦକ୍ଷେପ ବଦଳାନ୍ତୁ</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>ପଦକ୍ଷେପ ଯୋଡ଼ନ୍ତୁ</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check କ'ଣ କହେ: ହେଡର୍, ଡକ୍ୟୁମେଣ୍ଟ ଏବଂ ପ୍ରତ୍ୟେକ ପଦକ୍ଷେପ, ତାହାର ପଦକ୍ଷେପ ପ୍ରକାର ଦ୍ୱାରା ଯାଞ୍ଚ ହୋଇଛି।</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>ମାଇଗ୍ରେସନ୍ ଯାଞ୍ଚରେ ଉତ୍ତୀର୍ଣ୍ଣ ହେଲା।</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81274,23 +81274,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ଯେପରି ସଞ୍ଚୟ ହେବ।</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ଦେଖାନ୍ତୁ</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ମାଇଗ୍ରେସନ୍‌ଗୁଡ଼ିକ</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ଚାଲିସାରିଛି</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି YAML ମାଇଗ୍ରେସନ୍ ନାହିଁ।</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81298,39 +81298,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>ମାଇଗ୍ରେସନ୍ ଫୋଲ୍ଡର୍‌ଗୁଡ଼ିକରେ କୌଣସି YAML ମାଇଗ୍ରେସନ୍ %id ନାହିଁ।</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>ଏକ ପଦକ୍ଷେପ ପ୍ରକାର ବାଛନ୍ତୁ।</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ପଦକ୍ଷେପ ଯୋଡ଼ାଗଲା। ସଞ୍ଚୟ କରିବା ପୂର୍ବରୁ ମାଇଗ୍ରେସନ୍ ଯାଞ୍ଚ କରନ୍ତୁ।</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ପଦକ୍ଷେପ ବଦଳାଗଲା। ସଞ୍ଚୟ କରିବା ପୂର୍ବରୁ ମାଇଗ୍ରେସନ୍ ଯାଞ୍ଚ କରନ୍ତୁ।</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>ଏକ ପଦକ୍ଷେପ ବାଛନ୍ତୁ।</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ଏହି ପଦକ୍ଷେପର କୌଣସି ଫର୍ମ ନାହିଁ (ଏକ ଲୁପ୍, କିମ୍ବା ଏପରି ପଦକ୍ଷେପ ପ୍ରକାର ଯାହା ଏହି ଇନଷ୍ଟଲେସନ୍‌ରେ ନାହିଁ): ଏହାକୁ ପାଠ୍ୟରେ ବଦଳାନ୍ତୁ।</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>ମାଇଗ୍ରେସନ୍ କେଉଁଠି ଯିବ ବାଛନ୍ତୁ: ସାଇଟ୍ କିମ୍ବା ଏକ ସକ୍ରିୟ ଏକ୍ସଟେନସନ୍।</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file ସଞ୍ଚୟ ହେଲା। ମାଇଗ୍ରେସନ୍ ଚାଲିବା ପୂର୍ବରୁ ଏକ ପରୀକ୍ଷଣ ରନ୍ ଚଲାନ୍ତୁ।</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>ସଞ୍ଚୟ ହୋଇନାହିଁ: %reason</translation>
     </message>
 </context>
 <context>

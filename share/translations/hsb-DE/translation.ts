@@ -81128,43 +81128,43 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracija %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nowa migracija</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migracija: napisajće ju jako tekst abo zestajće jeje kroki we formularje, přepruwujće ju a składujće ju potom do rjadowaka migracijow.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuta migracija je hižo běžała a so tohodla znowa njeskładuje: změnjenu dataju by škit kontrolneje sumy wotpokazał. Přewjedźće změnu w nowej migraciji.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Webowy serwer njemóže dataju pisać.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Komentarne linki horjeka su hłowa (description, author, requires, environments, engines). Hdyž so krok we formularje přida abo změni, so migracija znowa napisa: komentary mjez krokami so njewobchowaja.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Mjeno migracije</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hdźe přińdźe</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Sydło</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-tekst</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hišće žane kroki: přidajće jedyn z formularom abo napisajće je do teksta.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok %number změnić</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Jedyn krok přidać</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Formular kroka wuchadźa z jeho typa kroka: jeho kluče, štož kóždy přijima, a modusy, ke kotrymž słuša.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ kroka</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formular pokazać</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok ma kluče, kotrež jeho typ njeznaje; wone wotpadnu, hdyž so krok změni: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modus</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>jenož w %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Wuměnjenja, referency a komentar</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Pory Mjeno=hódnota, dźělene přez komy. Hódnoty tutoho kroka: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok změnić</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok přidać</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Štož exp:migration:check praji: hłowa, dokument a kóždy krok, přepruwowany wot swojeho typa kroka.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracija přepruwowanje wobstoji.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML, kaž so składuje.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML pokazać</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migracije</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>je běžała</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hišće žane YAML-migracije njejsu.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>W rjadowakach migracijow žana YAML-migracija %id njeje.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wubjerće typ kroka.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok je přidaty. Přepruwujće migraciju, prjedy hač ju składujeće.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok je změnjeny. Přepruwujće migraciju, prjedy hač ju składujeće.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wubjerće krok.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutón krok nima formular (šlejfa abo typ kroka, kotryž tuta instalacija nima): změńće jón w teksće.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wubjerće, hdźe migracija přińdźe: sydło abo aktiwne rozšěrjenje.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file składowane. Wuwjedźće pruwowy běh, prjedy hač migracija běži.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Njeskładowane: %reason</translation>
     </message>
 </context>
 <context>

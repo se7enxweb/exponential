@@ -81128,43 +81128,43 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Godaansa %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Godaansa haaraa</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Godaansa YAML: akka barreeffamaatti barreessi ykn tarkaanfiiwwan isaa unka keessatti ijaari, gulaali, achiis kuusaa faayilii godaansotaa keessatti olkaa'i.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Godaansi kun duraan hojjeteera, kanaaf irra deebi'ee hin olkaa'amu: faayiliin jijjiirame eegduu lakkoofsa mirkaneessaatiin ni didama. Jijjiirama sana godaansa haaraa keessatti raawwadhu.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarvarri weebii faayilicha barreessuu hin danda'u.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarareen yaadaa gubbaa jiran mataa dha (description, author, requires, environments, engines). Yeroo tarkaanfiin unka keessatti dabalamu ykn jijjiiramu, godaansi irra deebi'ee barreeffama: yaadonni tarkaanfiiwwan gidduu jiran hin eegaman.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Maqaa godaansichaa</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Eessa deema</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Marsariitii</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Barreeffama YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ammaaf tarkaanfiin hin jiru: unkaan tokko dabali, ykn barreeffama keessatti barreessi.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkaanfii %number jijjiiri</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkaanfii tokko dabali</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unki tarkaanfii gosa tarkaanfii isaa irraa hojjetama: furtuuwwan isaa, tokkoon tokkoon isaanii maal akka fudhatu fi haalawwan inni keessatti argamu.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Gosa tarkaanfii</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Unka isaa agarsiisi</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkaanfichi furtuuwwan gosti isaa hin beekne qaba; yeroo tarkaanfichi jijjiiramu ni hafu: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Haala</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>%modes keessatti qofa</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Durtii: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Haalawwan, wabiiwwan fi yaada</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Cimdiiwwan maqaa=gatii koomaan addaan baafaman. Gatiiwwan tarkaanfii kanaa: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkaanfii jijjiiri</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkaanfii dabali</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wanti exp:migration:check jedhu: mataa, sanadicha fi tarkaanfii hunda gosa tarkaanfii isaatiin gulaalame.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Godaansichi gulaala darbeera.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML akkuma olkaa'amutti.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML agarsiisi</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Godaansota YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>hojjeteera</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ammaaf godaansonni YAML hin jiran.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuusaa faayilii godaansotaa keessatti godaansi YAML %id hin jiru.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gosa tarkaanfii filadhu.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkaanfichi dabalameera. Osoo hin olkaa'in dura godaansicha gulaali.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkaanfichi jijjiirameera. Osoo hin olkaa'in dura godaansicha gulaali.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkaanfii filadhu.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkaanfiin kun unka hin qabu (marsaa, ykn gosa tarkaanfii dhaabbiin kun hin qabne): barreeffama keessatti jijjiiri.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Godaansi eessa akka deemu filadhu: marsariitii ykn dabalata hojii irra jiru.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file olkaa'ameera. Godaansi osoo hin hojjetin dura raawwii yaalii gaggeessi.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Hin olkaa'amne: %reason</translation>
     </message>
 </context>
 <context>

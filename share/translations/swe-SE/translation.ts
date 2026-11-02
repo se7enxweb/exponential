@@ -82431,43 +82431,43 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrering %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny migrering</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>En YAML-migrering: skriv den som text eller bygg dess steg i formuläret, kontrollera den och spara den sedan i en migreringsmapp.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Den här migreringen har redan körts, så den sparas inte igen: en ändrad fil skulle avvisas av kontrollsummeskyddet. Gör ändringen i en ny migrering.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Webbservern kan inte skriva filen.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentarsraderna överst är huvudet (description, author, requires, environments, engines). När ett steg läggs till eller ändras i formuläret skrivs migreringen om: kommentarer mellan stegen behålls inte.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Migreringens namn</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Var den hamnar</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Webbplatsen</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-text</translation>
     </message>
     <message>
         <source>Check</source>
@@ -82503,35 +82503,35 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inga steg ännu: lägg till ett med formuläret eller skriv dem i texten.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändra steg %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till ett steg</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett stegs formulär skapas utifrån dess stegtyp: dess nycklar, vad var och en tar emot och vilka lägen det hör till.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Stegtyp</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa dess formulär</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Steget har nycklar som dess typ inte känner till; de utelämnas när steget ändras: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Läge</translation>
     </message>
     <message>
         <source>In</source>
@@ -82539,19 +82539,19 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>endast i %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Villkor, referenser och kommentar</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Par av namn=värde, avgränsade med kommatecken. Värdena för det här steget: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -82559,19 +82559,19 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändra steg</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till steg</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vad exp:migration:check säger: huvudet, dokumentet och varje steg, kontrollerat av sin stegtyp.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migreringen klarar kontrollen.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -82579,23 +82579,23 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-koden så som den kommer att sparas.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migreringar</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>har körts</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det finns inga YAML-migreringar ännu.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -82603,39 +82603,39 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det finns ingen YAML-migrering %id i migreringsmapparna.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj en stegtyp.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Steget har lagts till. Kontrollera migreringen innan du sparar den.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Steget har ändrats. Kontrollera migreringen innan du sparar den.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj ett steg.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det här steget har inget formulär (en loop eller en stegtyp som den här installationen inte har): ändra det i texten.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj var migreringen hamnar: webbplatsen eller ett aktivt tillägg.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file har sparats. Gör en torrkörning innan migreringen körs.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Inte sparad: %reason</translation>
     </message>
 </context>
 <context>

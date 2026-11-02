@@ -1480,6 +1480,8 @@
         "WebDAV": "protocol name"
     },
     "fre-FR": {
+        "Migration %id": "migration is the same word in French",
+        "Mode": "the same word in French (the step mode)",
         "Publication": "the same word in French",
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
         "#levelIndex1:#levelIndex2": "only PDF placeholder tokens and a separator; no words to translate",
@@ -5660,6 +5662,7 @@
         "xmlUrl": "code identifier"
     },
     "cat-ES": {
+        "Mode": "Catalan word spelled the same",
         "Zoom: %1 %": "zoom is the usual Catalan term",
         "Rectangle": "Catalan word spelled the same",
         "Contrast": "Catalan word spelled the same",
@@ -9362,6 +9365,7 @@
         "Webhook": "Vietnamese uses the English term webhook"
     },
     "ind-ID": {
+        "Mode": "Indonesian word spelled the same",
         "OK": "kept as in Indonesian software",
         "ID %id": "acronym and placeholder",
         "Folder": "same word in Indonesian (glossary)",

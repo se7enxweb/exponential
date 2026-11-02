@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Миграсияи %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Миграсияи нав</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Миграсияи YAML: онро ҳамчун матн нависед ё қадамҳояшро дар шакл созед, санҷед ва сипас дар ҷузвдони миграсияҳо захира кунед.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ин миграсия аллакай иҷро шудааст, бинобар ин дубора захира намешавад: файли тағйирёфтаро ҳифзи ҷамъи санҷишӣ рад мекард. Тағйирро дар миграсияи нав анҷом диҳед.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Веб-сервер файлро навишта наметавонад.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сатрҳои шарҳ дар аввал сарлавҳа мебошанд (description, author, requires, environments, engines). Вақте ки қадам дар шакл илова ё тағйир дода мешавад, миграсия аз нав навишта мешавад: шарҳҳои байни қадамҳо нигоҳ дошта намешаванд.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Номи миграсия</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ба куҷо меравад</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Сайт</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Матни YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳоло қадам нест: якеро бо шакл илова кунед ё онҳоро дар матн нависед.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Тағйир додани қадами %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Илова кардани қадам</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Шакли қадам аз навъи қадами он сохта мешавад: калидҳояш, он чи ҳар яке қабул мекунад ва реҷаҳое, ки ба онҳо тааллуқ дорад.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Навъи қадам</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Нишон додани шакли он</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Қадам калидҳое дорад, ки навъаш намедонад; ҳангоми тағйир додани қадам онҳо партофта мешаванд: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Реҷа</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>танҳо дар %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Пешфарз: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Шартҳо, истинодҳо ва шарҳ</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҷуфтҳои ном=қимат, ки бо вергул ҷудо шудаанд. Қиматҳои ин қадам: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Тағйир додани қадам</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Қадамро илова кардан</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Он чи exp:migration:check мегӯяд: сарлавҳа, ҳуҷҷат ва ҳар қадам, ки аз ҷониби навъи қадамаш санҷида шудааст.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Миграсия аз санҷиш мегузарад.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML, чунон ки захира мешавад.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Нишон додани YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Миграсияҳои YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>иҷро шуд</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳоло миграсияҳои YAML нестанд.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дар ҷузвдонҳои миграсия миграсияи YAML %id нест.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Навъи қадамро интихоб кунед.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Қадам илова шуд. Пеш аз захира кардан миграсияро санҷед.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Қадам тағйир дода шуд. Пеш аз захира кардан миграсияро санҷед.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Қадамро интихоб кунед.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ин қадам шакл надорад (давр ё навъи қадаме, ки ин насб надорад): онро дар матн тағйир диҳед.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Интихоб кунед, ки миграсия ба куҷо меравад: ба сайт ё ба васеъшавии фаъол.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file захира шуд. Пеш аз иҷрои миграсия иҷрои озмоиширо гузаронед.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Захира нашуд: %reason</translation>
     </message>
 </context>
 <context>

@@ -85387,43 +85387,43 @@ Gracias por la retroalimentación</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migración %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nueva migración</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una migración YAML: escríbela como texto o arma sus pasos en el formulario, revísala y luego guárdala en una carpeta de migraciones.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta migración ya se ejecutó, así que no se vuelve a guardar: la protección por suma de verificación rechazaría un archivo modificado. Haz el cambio en una nueva migración.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>El servidor web no puede escribir el archivo.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Las líneas de comentario del inicio son el encabezado (description, author, requires, environments, engines). Cuando se agrega o se cambia un paso en el formulario, la migración se vuelve a escribir: los comentarios entre los pasos no se conservan.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de la migración</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>A dónde va</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>El sitio</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Texto YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -85459,35 +85459,35 @@ Gracias por la retroalimentación</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Todavía no hay pasos: agrega uno con el formulario o escríbelos en el texto.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar el paso %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar un paso</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>El formulario de un paso se forma a partir de su tipo de paso: sus claves, lo que acepta cada una y los modos a los que pertenece.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de paso</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar su formulario</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>El paso tiene claves que su tipo no conoce; se omiten cuando se cambia el paso: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo</translation>
     </message>
     <message>
         <source>In</source>
@@ -85495,19 +85495,19 @@ Gracias por la retroalimentación</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>solo en %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Predeterminado: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Condiciones, referencias y comentario</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Pares Nombre=valor separados por comas. Los valores de este paso: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -85515,19 +85515,19 @@ Gracias por la retroalimentación</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar paso</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar paso</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lo que dice exp:migration:check: el encabezado, el documento y cada paso revisado por su tipo de paso.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>La migración pasa la revisión.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -85535,23 +85535,23 @@ Gracias por la retroalimentación</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>El YAML tal como se guardará.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar el YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Migraciones YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ya se ejecutó</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Todavía no hay migraciones YAML.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -85559,39 +85559,39 @@ Gracias por la retroalimentación</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay ninguna migración YAML %id en las carpetas de migraciones.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elige un tipo de paso.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se agregó el paso. Revisa la migración antes de guardarla.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se cambió el paso. Revisa la migración antes de guardarla.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elige un paso.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este paso no tiene formulario (un ciclo o un tipo de paso que esta instalación no tiene): cámbialo en el texto.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elige a dónde va la migración: al sitio o a una extensión activa.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se guardó %file. Haz una ejecución de prueba antes de que se ejecute la migración.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>No se guardó: %reason</translation>
     </message>
 </context>
 <context>

@@ -81158,43 +81158,43 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracija %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nova migracija</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML migracija: napišite je kao tekst ili sastavite njene korake u obrascu, proverite je, a zatim je sačuvajte u fascikli migracija.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ova migracija je već pokrenuta, pa se ne čuva ponovo: zaštita kontrolnog zbira bi odbila izmenjenu datoteku. Izmenu napravite u novoj migraciji.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veb-server ne može da upiše datoteku.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Linije komentara na vrhu su zaglavlje (description, author, requires, environments, engines). Kada se korak doda ili izmeni u obrascu, migracija se ponovo ispisuje: komentari između koraka se ne zadržavaju.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Naziv migracije</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Gde ide</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Sajt</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML tekst</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81230,35 +81230,35 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Još nema koraka: dodajte jedan pomoću obrasca ili ih napišite u tekstu.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Izmeni korak %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj jedan korak</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrazac koraka pravi se iz njegovog tipa koraka: njegovi ključevi, šta svaki prima i režimi kojima pripada.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tip koraka</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Prikaži njegov obrazac</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Korak ima ključeve koje njegov tip ne poznaje; izostavljaju se kada se korak izmeni: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režim</translation>
     </message>
     <message>
         <source>In</source>
@@ -81266,19 +81266,19 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>samo u %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Podrazumevano: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Uslovi, reference i komentar</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Parovi Naziv=vrednost razdvojeni zarezima. Vrednosti ovog koraka: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81286,19 +81286,19 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Izmeni korak</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj korak</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šta kaže exp:migration:check: zaglavlje, dokument i svaki korak koji je proverio njegov tip koraka.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracija prolazi proveru.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81306,23 +81306,23 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML onako kako će biti sačuvan.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Prikaži YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML migracije</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>pokrenuta</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Još nema YAML migracija.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81330,39 +81330,39 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>U fasciklama migracija nema YAML migracije %id.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izaberite tip koraka.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Korak je dodat. Proverite migraciju pre nego što je sačuvate.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Korak je izmenjen. Proverite migraciju pre nego što je sačuvate.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izaberite korak.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ovaj korak nema obrazac (petlja ili tip koraka koji ova instalacija nema): izmenite ga u tekstu.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izaberite gde ide migracija: sajt ili aktivno proširenje.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sačuvano: %file. Pokrenite probno pokretanje pre nego što se migracija pokrene.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Nije sačuvano: %reason</translation>
     </message>
 </context>
 <context>

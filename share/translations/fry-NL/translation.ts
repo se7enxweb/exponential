@@ -81128,43 +81128,43 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migraasje %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nije migraasje</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>In YAML-migraasje: skriuw se as tekst of stel har stappen gear yn it formulier, kontrolearje se en bewarje se dan yn in migraasjemap.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dizze migraasje is al útfierd en wurdt dêrom net wer bewarre: in feroare bestân soe troch de kontrôlesombeskerming wegere wurde. Meitsje de feroaring yn in nije migraasje.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>De webserver kin it bestân net skriuwe.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>De opmerkingsrigels boppe-oan binne de koptekst (description, author, requires, environments, engines). As in stap yn it formulier tafoege of feroare wurdt, wurdt de migraasje opnij skreaun: opmerkingen tusken de stappen bliuwe net bewarre.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Namme fan de migraasje</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Wêr't it hinne giet</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>De webside</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-tekst</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Noch gjin stappen: foegje der ien ta mei it formulier, of skriuw se yn de tekst.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Stap %number feroarje</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>In stap tafoegje</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>It formulier fan in stap komt fuort út syn staptype: syn kaaien, wat elk oannimt en de modi dêr't er by heart.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Staptype</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier sjen litte</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>De stap hat kaaien dy't syn type net ken; se wurde weilitten as de stap feroare wurdt: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modus</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>allinnich yn %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Standert: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Betingsten, ferwizingen en opmerking</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Pearen Namme=wearde, skieden troch komma's. De wearden fan dizze stap: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Stap feroarje</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Stap tafoegje</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wat exp:migration:check seit: de koptekst, it dokumint en elke stap, kontrolearre troch syn staptype.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>De migraasje komt troch de kontrôle.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>De YAML sa't dy bewarre wurdt.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML sjen litte</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migraasjes</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>is útfierd</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der binne noch gjin YAML-migraasjes.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der is gjin YAML-migraasje %id yn de migraasjemappen.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies in staptype.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>De stap is tafoege. Kontrolearje de migraasje foardat jo se bewarje.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>De stap is feroare. Kontrolearje de migraasje foardat jo se bewarje.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies in stap.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dizze stap hat gjin formulier (in lus, of in staptype dat dizze ynstallaasje net hat): feroarje him yn de tekst.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies wêr't de migraasje hinne giet: de webside of in aktive útwreiding.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file bewarre. Doch in proefútfiering foardat de migraasje útfierd wurdt.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Net bewarre: %reason</translation>
     </message>
 </context>
 <context>

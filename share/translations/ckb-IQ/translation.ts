@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>گواستنەوەی %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>گواستنەوەی نوێ</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>گواستنەوەیەکی YAML: وەک دەق بینووسە یان هەنگاوەکانی لە فۆرمەکەدا دروست بکە، بیپشکنە، پاشان لە بوخچەیەکی گواستنەوەکاندا پاشەکەوتی بکە.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>ئەم گواستنەوەیە پێشتر جێبەجێ کراوە، بۆیە دووبارە پاشەکەوت ناکرێتەوە: فایلێکی گۆڕدراو لەلایەن پاسەوانی چێکسەمەوە ڕەت دەکرێتەوە. گۆڕانکارییەکە لە گواستنەوەیەکی نوێدا بکە.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ڕاژەکاری وێب ناتوانێت فایلەکە بنووسێت.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>دێڕە تێبینییەکانی سەرەوە سەردێڕەکەن (description, author, requires, environments, engines). کاتێک هەنگاوێک لە فۆرمەکەدا زیاد دەکرێت یان دەگۆڕدرێت، گواستنەوەکە دووبارە دەنووسرێتەوە: تێبینییەکانی نێوان هەنگاوەکان ناهێڵرێنەوە.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ناوی گواستنەوەکە</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>بۆ کوێ دەچێت</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>ماڵپەڕەکە</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>دەقی YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>هێشتا هیچ هەنگاوێک نییە: یەکێک بە فۆرمەکە زیاد بکە، یان لە دەقەکەدا بیاننووسە.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>گۆڕینی هەنگاوی %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>هەنگاوێک زیاد بکە</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>فۆرمی هەنگاوێک لە جۆری هەنگاوەکەی دروست دەکرێت: کلیلەکانی، ئەوەی هەر یەکێکیان وەریدەگرێت و ئەو شێوازانەی سەر بەیانە.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>جۆری هەنگاو</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>فۆرمەکەی پیشان بدە</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>هەنگاوەکە کلیلی هەیە کە جۆرەکەی نایانناسێت؛ کاتێک هەنگاوەکە دەگۆڕدرێت لادەبرێن: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>شێواز</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>تەنها لە %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>بنەڕەت: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>مەرجەکان، ئاماژەکان و تێبینی</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>جووتە ناو=بەها کە بە فاریزە جیاکراونەتەوە. بەهاکانی ئەم هەنگاوە: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>گۆڕینی هەنگاو</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>زیادکردنی هەنگاو</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>ئەوەی exp:migration:check دەیڵێت: سەردێڕەکە، بەڵگەنامەکە و هەموو هەنگاوێک کە جۆری هەنگاوەکەی پشکنیویەتی.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>گواستنەوەکە لە پشکنینەکە دەردەچێت.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAMLەکە بەو شێوەیەی پاشەکەوت دەکرێت.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAMLەکە پیشان بدە</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>گواستنەوەکانی YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>جێبەجێ کراوە</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>هێشتا هیچ گواستنەوەیەکی YAML نییە.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>هیچ گواستنەوەیەکی YAML بە %id لە بوخچەکانی گواستنەوەدا نییە.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>جۆری هەنگاوێک هەڵبژێرە.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>هەنگاوەکە زیاد کرا. پێش پاشەکەوتکردنی، گواستنەوەکە بپشکنە.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>هەنگاوەکە گۆڕدرا. پێش پاشەکەوتکردنی، گواستنەوەکە بپشکنە.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>هەنگاوێک هەڵبژێرە.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ئەم هەنگاوە فۆرمی نییە (خولێک، یان جۆرە هەنگاوێک کە ئەم دامەزراندنە نییەتی): لە دەقەکەدا بیگۆڕە.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>هەڵبژێرە گواستنەوەکە بۆ کوێ دەچێت: ماڵپەڕەکە یان پاشکۆیەکی چالاک.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file پاشەکەوت کرا. پێش ئەوەی گواستنەوەکە جێبەجێ بکرێت، جێبەجێکردنێکی تاقیکاری بکە.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>پاشەکەوت نەکرا: %reason</translation>
     </message>
 </context>
 <context>

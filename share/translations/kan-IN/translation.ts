@@ -81126,43 +81126,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೈಗ್ರೇಶನ್ %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹೊಸ ಮೈಗ್ರೇಶನ್</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ಮೈಗ್ರೇಶನ್: ಅದನ್ನು ಪಠ್ಯವಾಗಿ ಬರೆಯಿರಿ ಅಥವಾ ಅದರ ಹಂತಗಳನ್ನು ಫಾರ್ಮ್‌ನಲ್ಲಿ ರಚಿಸಿ, ಅದನ್ನು ಪರಿಶೀಲಿಸಿ, ನಂತರ ಅದನ್ನು ಮೈಗ್ರೇಶನ್‌ಗಳ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಉಳಿಸಿ.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಈ ಮೈಗ್ರೇಶನ್ ಈಗಾಗಲೇ ರನ್ ಆಗಿದೆ, ಆದ್ದರಿಂದ ಅದನ್ನು ಮತ್ತೆ ಉಳಿಸಲಾಗುವುದಿಲ್ಲ: ಬದಲಾದ ಫೈಲ್ ಅನ್ನು ಚೆಕ್‌ಸಮ್ ರಕ್ಷಣೆ ತಿರಸ್ಕರಿಸುತ್ತದೆ. ಬದಲಾವಣೆಯನ್ನು ಹೊಸ ಮೈಗ್ರೇಶನ್‌ನಲ್ಲಿ ಮಾಡಿ.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ವೆಬ್ ಸರ್ವರ್ ಈ ಫೈಲ್ ಅನ್ನು ಬರೆಯಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೇಲ್ಭಾಗದ ಟಿಪ್ಪಣಿ ಸಾಲುಗಳು ಶೀರ್ಷಿಕೆ ಭಾಗವಾಗಿವೆ (description, author, requires, environments, engines). ಫಾರ್ಮ್‌ನಲ್ಲಿ ಹಂತವನ್ನು ಸೇರಿಸಿದಾಗ ಅಥವಾ ಬದಲಾಯಿಸಿದಾಗ, ಮೈಗ್ರೇಶನ್ ಅನ್ನು ಮತ್ತೆ ಬರೆಯಲಾಗುತ್ತದೆ: ಹಂತಗಳ ನಡುವಿನ ಟಿಪ್ಪಣಿಗಳನ್ನು ಉಳಿಸಿಕೊಳ್ಳಲಾಗುವುದಿಲ್ಲ.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೈಗ್ರೇಶನ್‌ನ ಹೆಸರು</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅದು ಎಲ್ಲಿಗೆ ಹೋಗುತ್ತದೆ</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>ಸೈಟ್</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ಪಠ್ಯ</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81198,35 +81198,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಹಂತಗಳಿಲ್ಲ: ಫಾರ್ಮ್ ಮೂಲಕ ಒಂದನ್ನು ಸೇರಿಸಿ, ಅಥವಾ ಅವುಗಳನ್ನು ಪಠ್ಯದಲ್ಲಿ ಬರೆಯಿರಿ.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹಂತ %number ಬದಲಾಯಿಸು</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>ಒಂದು ಹಂತವನ್ನು ಸೇರಿಸು</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹಂತದ ಫಾರ್ಮ್ ಅದರ ಹಂತದ ಪ್ರಕಾರದಿಂದ ರಚಿತವಾಗುತ್ತದೆ: ಅದರ ಕೀಗಳು, ಪ್ರತಿಯೊಂದೂ ಏನನ್ನು ಸ್ವೀಕರಿಸುತ್ತದೆ ಮತ್ತು ಅದು ಸೇರಿರುವ ಮೋಡ್‌ಗಳು.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹಂತದ ಪ್ರಕಾರ</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅದರ ಫಾರ್ಮ್ ತೋರಿಸು</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹಂತದಲ್ಲಿ ಅದರ ಪ್ರಕಾರಕ್ಕೆ ತಿಳಿಯದ ಕೀಗಳಿವೆ; ಹಂತವನ್ನು ಬದಲಾಯಿಸಿದಾಗ ಅವುಗಳನ್ನು ಬಿಡಲಾಗುತ್ತದೆ: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೋಡ್</translation>
     </message>
     <message>
         <source>In</source>
@@ -81234,19 +81234,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>%modes ನಲ್ಲಿ ಮಾತ್ರ</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>ಡೀಫಾಲ್ಟ್: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>ಷರತ್ತುಗಳು, ಉಲ್ಲೇಖಗಳು ಮತ್ತು ಟಿಪ್ಪಣಿ</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅಲ್ಪವಿರಾಮಗಳಿಂದ ಬೇರ್ಪಡಿಸಿದ ಹೆಸರು=ಮೌಲ್ಯ ಜೋಡಿಗಳು. ಈ ಹಂತದ ಮೌಲ್ಯಗಳು: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81254,19 +81254,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹಂತ ಬದಲಾಯಿಸು</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹಂತ ಸೇರಿಸು</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check ಏನು ಹೇಳುತ್ತದೆ: ಶೀರ್ಷಿಕೆ ಭಾಗ, ದಾಖಲೆ ಮತ್ತು ಅದರ ಹಂತದ ಪ್ರಕಾರದಿಂದ ಪರಿಶೀಲಿಸಲಾದ ಪ್ರತಿಯೊಂದು ಹಂತ.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೈಗ್ರೇಶನ್ ಪರಿಶೀಲನೆಯಲ್ಲಿ ಉತ್ತೀರ್ಣವಾಗಿದೆ.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81274,23 +81274,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಉಳಿಸಲಾಗುವಂತೆ YAML.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ತೋರಿಸು</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ಮೈಗ್ರೇಶನ್‌ಗಳು</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ರನ್ ಆಗಿದೆ</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ YAML ಮೈಗ್ರೇಶನ್‌ಗಳಿಲ್ಲ.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81298,39 +81298,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೈಗ್ರೇಶನ್ ಫೋಲ್ಡರ್‌ಗಳಲ್ಲಿ YAML ಮೈಗ್ರೇಶನ್ %id ಇಲ್ಲ.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹಂತದ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹಂತವನ್ನು ಸೇರಿಸಲಾಗಿದೆ. ಉಳಿಸುವ ಮೊದಲು ಮೈಗ್ರೇಶನ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹಂತವನ್ನು ಬದಲಾಯಿಸಲಾಗಿದೆ. ಉಳಿಸುವ ಮೊದಲು ಮೈಗ್ರೇಶನ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಒಂದು ಹಂತವನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಈ ಹಂತಕ್ಕೆ ಫಾರ್ಮ್ ಇಲ್ಲ (ಲೂಪ್, ಅಥವಾ ಈ ಇನ್‌ಸ್ಟಾಲೇಶನ್‌ನಲ್ಲಿ ಇಲ್ಲದ ಹಂತದ ಪ್ರಕಾರ): ಅದನ್ನು ಪಠ್ಯದಲ್ಲಿ ಬದಲಾಯಿಸಿ.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೈಗ್ರೇಶನ್ ಎಲ್ಲಿಗೆ ಹೋಗುತ್ತದೆ ಎಂಬುದನ್ನು ಆಯ್ಕೆಮಾಡಿ: ಸೈಟ್ ಅಥವಾ ಸಕ್ರಿಯ ವಿಸ್ತರಣೆ.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file ಉಳಿಸಲಾಗಿದೆ. ಮೈಗ್ರೇಶನ್ ರನ್ ಆಗುವ ಮೊದಲು ಡ್ರೈ ರನ್ ಮಾಡಿ.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>ಉಳಿಸಲಾಗಿಲ್ಲ: %reason</translation>
     </message>
 </context>
 <context>

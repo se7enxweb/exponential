@@ -81137,43 +81137,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>שוניא %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>שוניא חדתא</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>שוניא ד־YAML: כתוב יתה ככתיבתא או בני דרגהא בטופסא, בחור יתה, ובתר כן נטר יתה בתיקא דשוניא.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>הדא שוניא כבר רהטת, ועל כן לא מתנטרא תוב: פנקיתא משניא מתסרבא מן נטורא דסכום בוחרנא. עביד שנויא בשוניא חדתא.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>שמשא דרשתא לא יכיל למכתב פנקיתא.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>שורי פירושא דבריש אינון רישא (description, author, requires, environments, engines). כד דרגא מתוספא או משתניא בטופסא, שוניא מתכתבא תוב: פירושי דבין דרגא לא מתנטרין.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>שמא דשוניא</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>לאן אזלא</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>כתיבתא ד־YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81209,35 +81209,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>עד כען ליכא דרגא: אוסיף חדא בטופסא, או כתוב יתהון בכתיבתא.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>שני דרגא %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>אוסיף דרגא</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>טופסא דדרגא מתעביד מן גנסא דדרגא דידה: קלידהא, מאי דכל חד נסיב, ואורחתא דהיא מנהון.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>גנסא דדרגא</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>חוי טופסהא</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>לדרגא אית קלידי דגנסה לא ידע; משתבקין כד דרגא משתניא: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>אורחא</translation>
     </message>
     <message>
         <source>In</source>
@@ -81245,19 +81245,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>בלחוד באורחתא %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>קביעא: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>תנאי, רמזי ופירושא</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>זוגי שמא=טימי פרישין בפסיקי. טימי דהדא דרגא: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81265,19 +81265,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>שני דרגא</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>לאוספא דרגא</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>מאי דאמר exp:migration:check: רישא, כתבא וכל דרגא דבחיר מן גנסא דדרגא דידה.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>שוניא עברא בוחרנא.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81285,23 +81285,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML כמא דמתנטר.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>חוי YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>שוניא ד־YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>רהטת</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>עד כען ליכא שוניא ד־YAML.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81309,39 +81309,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>ליכא שוניא ד־YAML %id בתיקי דשוניא.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>בחר גנסא דדרגא.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>דרגא אתוספת. בחור שוניא קדם דתנטר יתה.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>דרגא אשתניאת. בחור שוניא קדם דתנטר יתה.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>בחר דרגא.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>להדא דרגא ליכא טופסא (חוגא, או גנסא דדרגא דליתיה בהדין תקונא): שני יתה בכתיבתא.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>בחר לאן אזלא שוניא: לאתרא או להרחבתא פעילתא.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file נטיר. רהט רהטא דנסיונא קדם דרהטא שוניא.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>לא נטיר: %reason</translation>
     </message>
 </context>
 <context>

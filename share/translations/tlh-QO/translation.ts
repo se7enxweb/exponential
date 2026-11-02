@@ -81161,43 +81161,43 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>vIHghach %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>vIHghach chu'</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML vIHghach: ghItlh yIghItlh pagh navDaq mIwmeyDaj yIchenmoH; yI'ol; vaj vIHghachmey ghItlh pa'Daq yIpol.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>vIHghachvam Qaplu'pu', vaj pollu'qa'be': ghItlh choHlu'bogh lajQo' mI' 'avwI'. vIHghach chu'Daq choH yIchenmoH.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ghItlh ghItlhlaHbe' Web SapwI'.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dung QIjmeH ghItlh tlheghmey'e' nach (description, author, requires, environments, engines). navDaq mIw chellu'DI' pagh choHlu'DI', vIHghach ghItlhlu'qa': mIwmey jojDaq QIjmeH ghItlh polbe'lu'.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>vIHghach pong</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>nuqDaq ghoS</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Daq</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ghItlh</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81233,35 +81233,35 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>mIw tu'lu'be' 'ach: nav yIlo' 'ej wa' yIchel, pagh ghItlhDaq mIwmey yIghItlh.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>mIw %number yIchoH</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>wa' mIw yIchel</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>mIw nav chenmoH mIw SeghDaj: ngaQHa'moHwI'meyDaj, nuq laj Hoch wa', ta'meH Seghmey ghajbogh je.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>mIw Segh</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>navDaj yI'ang</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>mIwvaD ngaQHa'moHwI'mey Sovbe'bogh SeghDaj tu'lu'; mIw choHlu'DI' bIH teqlu': %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>ta'meH Segh</translation>
     </message>
     <message>
         <source>In</source>
@@ -81269,19 +81269,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>%modes neH</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>motlh: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>ghu'mey, rarwI'mey, QIjmeH ghItlh je</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>pong=lo'laHghach chovnatlhmey, rIn'eDmey SepmoHlu'. mIwvam lo'laHghachmey: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81289,19 +81289,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>mIw yIchoH</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>mIw yIchel</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check ja'bogh: nach, ghItlh, Hoch mIw 'ollu'bogh mIw SeghDaj je.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>'olghach chav vIHghach.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81309,23 +81309,23 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML, pollu'DI' rurbogh.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML yI'ang</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML vIHghachmey</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>Qaplu'pu'</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML vIHghach tu'lu'be' 'ach.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81333,39 +81333,39 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>vIHghachmey ghItlh pa'meyDaq YAML vIHghach %id tu'lu'be'.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>mIw Segh yIwIv.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>mIw chellu'pu'. vIHghach Dapolpa' vIHghach yI'ol.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>mIw choHlu'pu'. vIHghach Dapolpa' vIHghach yI'ol.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>mIw yIwIv.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>nav ghajbe' mIwvam (gho, pagh mIw Segh ghajbe'bogh jomghachvam): ghItlhDaq yIchoH.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>vIHghach lanlu'meH Daq yIwIv: Daq'a' pagh chelwI' QaplI'bogh.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file pollu'pu'. vIHghach Qaplu'pa' QapmoHghach waH yIQapmoH.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>polbe'lu': %reason</translation>
     </message>
 </context>
 <context>

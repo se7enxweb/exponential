@@ -81158,43 +81158,43 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrarea %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrare nouă</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>O migrare YAML: scrie-o ca text sau construiește-i pașii în formular, verific-o, apoi salveaz-o într-un folder de migrări.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Această migrare a rulat deja, deci nu este salvată din nou: un fișier modificat ar fi respins de protecția prin sumă de control. Fă modificarea într-o migrare nouă.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serverul web nu poate scrie fișierul.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Liniile de comentariu de la început sunt antetul (description, author, requires, environments, engines). Când un pas este adăugat sau modificat în formular, migrarea este rescrisă: comentariile dintre pași nu se păstrează.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Numele migrării</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Unde merge</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Site-ul</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Text YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81230,35 +81230,35 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Încă niciun pas: adaugă unul cu formularul sau scrie-i în text.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifică pasul %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Adaugă un pas</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Formularul unui pas este construit din tipul său de pas: cheile sale, ce acceptă fiecare și modurile cărora le aparține.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tip de pas</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Afișează formularul</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasul are chei pe care tipul său nu le cunoaște; ele sunt omise când pasul este modificat: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mod</translation>
     </message>
     <message>
         <source>In</source>
@@ -81266,19 +81266,19 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>doar în %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Implicit: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Condiții, referințe și comentariu</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Perechi nume=valoare separate prin virgule. Valorile acestui pas: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81286,19 +81286,19 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifică pasul</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Adaugă pas</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce spune exp:migration:check: antetul, documentul și fiecare pas verificat de tipul său de pas.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrarea trece verificarea.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81306,23 +81306,23 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-ul așa cum va fi salvat.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Afișează YAML-ul</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrări YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>a rulat</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Încă nu există migrări YAML.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81330,39 +81330,39 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu există nicio migrare YAML %id în folderele de migrări.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alege un tip de pas.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasul a fost adăugat. Verifică migrarea înainte de a o salva.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasul a fost modificat. Verifică migrarea înainte de a o salva.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alege un pas.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Acest pas nu are formular (o buclă sau un tip de pas pe care această instalare nu îl are): modifică-l în text.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alege unde merge migrarea: site-ul sau o extensie activă.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file a fost salvat. Fă o rulare de probă înainte ca migrarea să ruleze.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesalvat: %reason</translation>
     </message>
 </context>
 <context>

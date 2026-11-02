@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>מיגראַציע %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>נײַע מיגראַציע</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>אַ YAML־מיגראַציע: שרײַבט זי ווי טעקסט אָדער בויט אירע טריט אין פֿאָרמולאַר, קאָנטראָלירט זי, און דערנאָך היט זי אויף אין אַ מיגראַציע־מאַפּע.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>די מיגראַציע איז שוין געלאָפֿן, דערפֿאַר ווערט זי נישט ווידער אויפֿגעהיט: אַ געענדערטע טעקע וואָלט אָפּגעוואָרפֿן געוואָרן פֿון דעם קאָנטראָלסומע־וועכטער. מאַכט די ענדערונג אין אַ נײַער מיגראַציע.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>דער וועבסערווער קען נישט שרײַבן די טעקע.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>די קאָמענטאַר־שורות אויבן זענען דער קאָפּ (description, author, requires, environments, engines). ווען מע לייגט צו אָדער מע ענדערט אַ טריט אין פֿאָרמולאַר, ווערט די מיגראַציע איבערגעשריבן: קאָמענטאַרן צווישן די טריט ווערן נישט אָפּגעהיט.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>נאָמען פֿון דער מיגראַציע</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>וווּהין זי גייט</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>דער וועבזײַטל</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML־טעקסט</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>נאָך קיין טריט: לייגט צו איינעם מיט דעם פֿאָרמולאַר, אָדער שרײַבט זיי אין טעקסט.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>ענדערן טריט %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>צולייגן אַ טריט</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>דער פֿאָרמולאַר פֿון אַ טריט ווערט געמאַכט פֿון זײַן טריט־טיפּ: זײַנע שליסלען, וואָס יעדער נעמט אָן און די מאָדוסן צו וועלכע ער געהערט.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>טריט־טיפּ</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>ווײַזן איר פֿאָרמולאַר</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>דער טריט האָט שליסלען וואָס זײַן טיפּ קען נישט; זיי ווערן אויסגעלאָזט ווען מע ענדערט דעם טריט: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>מאָדוס</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>נאָר אין %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>סטאַנדאַרט: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>באַדינגונגען, רעפֿערענצן און קאָמענטאַר</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>פּאָרן נאָמען=ווערט, אָפּגעטיילט מיט קאָמעס. די ווערטן פֿון דעם טריט: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>ענדערן דעם טריט</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>צולייגן טריט</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>וואָס exp:migration:check זאָגט: דער קאָפּ, דער דאָקומענט און יעדער טריט, קאָנטראָלירט פֿון זײַן טריט־טיפּ.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>די מיגראַציע שטייט אויס די קאָנטראָל.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>דער YAML ווי ער וועט ווערן אויפֿגעהיט.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>ווײַזן דעם YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML־מיגראַציעס</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>איז געלאָפֿן</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>עס זענען נאָך נישטאָ קיין YAML־מיגראַציעס.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>אין די מיגראַציע־מאַפּעס איז נישטאָ קיין YAML־מיגראַציע %id.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>קלײַבט אויס אַ טריט־טיפּ.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>דער טריט איז צוגעלייגט. קאָנטראָלירט די מיגראַציע איידער איר היט זי אויף.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>דער טריט איז געענדערט. קאָנטראָלירט די מיגראַציע איידער איר היט זי אויף.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>קלײַבט אויס אַ טריט.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>דער טריט האָט נישט קיין פֿאָרמולאַר (אַ שלייף, אָדער אַ טריט־טיפּ וואָס די אינסטאַלאַציע האָט נישט): ענדערט אים אין טעקסט.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>קלײַבט אויס וווּהין די מיגראַציע גייט: דער וועבזײַטל אָדער אַן אַקטיווע פֿאַרברייטערונג.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file אויפֿגעהיט. מאַכט אַ פּראָבע־לויף איידער די מיגראַציע לויפֿט.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>נישט אויפֿגעהיט: %reason</translation>
     </message>
 </context>
 <context>

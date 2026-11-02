@@ -81136,43 +81136,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ܫܘܢܝܐ %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ܫܘܢܝܐ ܚܕܬܐ</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܫܘܢܝܐ ܕ YAML: ܟܬܘܒ ܠܗ ܐܝܟ ܟܬܝܒܬܐ ܐܘ ܒܢܝ ܦܣܥ̈ܬܗ ܒܛܘܦܣܐ، ܒܚܘܪ ܠܗ، ܘܗܝܕܝܢ ܛܪ ܠܗ ܒܬܝܩܐ ܕܫܘܢ̈ܝܐ.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܗܢܐ ܫܘܢܝܐ ܟܒܪ ܪܗܛ، ܘܡܛܠ ܗܢܐ ܠܐ ܡܬܢܛܪ ܬܘܒ: ܦܢܩܝܬܐ ܡܫܚܠܦܬܐ ܡܬܛܪܕܐ ܗܘܬ ܡܢ ܢܛܘܪܐ ܕܚܘܫܒܢܐ ܕܒܘܚܪܢܐ. ܥܒܕ ܫܘܚܠܦܐ ܒܫܘܢܝܐ ܚܕܬܐ.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܡܫܡܫܢܐ ܕܘܝܒ ܠܐ ܡܨܐ ܠܡܟܬܒ ܦܢܩܝܬܐ.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܣܪ̈ܛܐ ܕܦܘܫܩܐ ܕܒܪܝܫܐ ܐܝܬܝܗܘܢ ܪܝܫܐ (description, author, requires, environments, engines). ܡܐ ܕܦܣܥܬܐ ܡܬܬܘܣܦܐ ܐܘ ܡܫܬܚܠܦܐ ܒܛܘܦܣܐ، ܫܘܢܝܐ ܡܬܟܬܒ ܙܒܢܐ ܐܚܪܬܐ: ܦܘ̈ܫܩܐ ܕܒܝܬ ܦܣܥ̈ܬܐ ܠܐ ܡܬܢܛܪܝܢ.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ܫܡܐ ܕܫܘܢܝܐ</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>ܠܐܝܟܐ ܐܙܠ</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>ܐܬܪܐ</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>ܟܬܝܒܬܐ ܕ YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81208,35 +81208,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܠܝܬ ܦܣܥ̈ܬܐ ܥܕܡܐ ܠܗܫܐ: ܐܘܣܦ ܚܕܐ ܒܛܘܦܣܐ، ܐܘ ܟܬܘܒ ܐܢܝܢ ܒܟܬܝܒܬܐ.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>ܫܘܚܠܦܐ ܕܦܣܥܬܐ %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>ܐܘܣܦ ܦܣܥܬܐ ܚܕܐ</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܛܘܦܣܐ ܕܦܣܥܬܐ ܡܬܥܒܕ ܡܢ ܓܢܣܐ ܕܦܣܥܬܗ: ܩܠܝܕ̈ܘܗܝ، ܡܐ ܕܟܠ ܚܕ ܡܩܒܠ، ܘܐܘܪ̈ܚܐ ܕܗܝ ܕܝܠܗܘܢ.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>ܓܢܣܐ ܕܦܣܥܬܐ</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>ܚܘܝ ܛܘܦܣܗ</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>ܠܦܣܥܬܐ ܐܝܬ ܩܠܝܕ̈ܐ ܕܓܢܣܗ ܠܐ ܝܕܥ ܠܗܘܢ؛ ܡܫܬܒܩܝܢ ܡܐ ܕܦܣܥܬܐ ܡܫܬܚܠܦܐ: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>ܐܘܪܚܐ</translation>
     </message>
     <message>
         <source>In</source>
@@ -81244,19 +81244,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>ܒ %modes ܒܠܚܘܕ</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>ܣܝܡܐ ܡܢ ܩܕܝܡ: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>ܫܪ̈ܛܐ، ܡܚܘ̈ܝܢܘܬܐ ܘܦܘܫܩܐ</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>ܙܘܓ̈ܐ ܕܫܡܐ=ܛܝܡܐ ܦܪ̈ܝܫܐ ܒܦܣܘܩ̈ܐ. ܛܝܡ̈ܐ ܕܗܕܐ ܦܣܥܬܐ: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81264,19 +81264,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>ܫܘܚܠܦܐ ܕܦܣܥܬܐ</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>ܬܘܣܦܬܐ ܕܦܣܥܬܐ</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܡܐ ܕܐܡܪ exp:migration:check: ܪܝܫܐ، ܟܬܒܐ، ܘܟܠ ܦܣܥܬܐ ܕܒܚܝܪܐ ܡܢ ܓܢܣܐ ܕܦܣܥܬܗ.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܫܘܢܝܐ ܥܒܪ ܒܘܚܪܢܐ.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81284,23 +81284,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ܐܝܟ ܕܢܬܢܛܪ.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>ܚܘܝ ܠ YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>ܫܘܢ̈ܝܐ ܕ YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ܪܗܛ</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܠܝܬ ܫܘܢ̈ܝܐ ܕ YAML ܥܕܡܐ ܠܗܫܐ.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81308,39 +81308,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܠܝܬ ܫܘܢܝܐ ܕ YAML %id ܒܬܝܩ̈ܐ ܕܫܘܢ̈ܝܐ.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܓܒܝ ܓܢܣܐ ܕܦܣܥܬܐ.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܦܣܥܬܐ ܐܬܬܘܣܦܬ. ܒܚܘܪ ܠܫܘܢܝܐ ܩܕܡ ܕܬܛܪܝܘܗܝ.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܦܣܥܬܐ ܐܫܬܚܠܦܬ. ܒܚܘܪ ܠܫܘܢܝܐ ܩܕܡ ܕܬܛܪܝܘܗܝ.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܓܒܝ ܦܣܥܬܐ.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܠܗܕܐ ܦܣܥܬܐ ܠܝܬ ܛܘܦܣܐ (ܚܘܕܪܐ، ܐܘ ܓܢܣܐ ܕܦܣܥܬܐ ܕܠܝܬ ܠܗ ܠܗܕܐ ܣܝܡܬܐ): ܫܚܠܦ ܠܗ ܒܟܬܝܒܬܐ.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>ܓܒܝ ܠܐܝܟܐ ܐܙܠ ܫܘܢܝܐ: ܠܐܬܪܐ ܐܘ ܠܬܘܣܦܬܐ ܦܥܠܬܐ.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file ܐܬܢܛܪ. ܥܒܕ ܪܗܛܐ ܕܒܘܚܪܢܐ ܩܕܡ ܕܢܪܗܛ ܫܘܢܝܐ.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>ܠܐ ܐܬܢܛܪ: %reason</translation>
     </message>
 </context>
 <context>

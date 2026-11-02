@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>སྤོ་བཤུད་ %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>སྤོ་བཤུད་གསརཔ།</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML སྤོ་བཤུད་ཅིག་ ཡིག་ཚགས་སྦེ་འབྲི་ ཡང་ན་ འབྲི་ཤོག་ནང་ དེའི་གོ་རིམ་ཚུ་བཟོ་ ལྟ་བརྟག་འབད་ཞིནམ་ལས་ སྤོ་བཤུད་ཀྱི་སྣོད་ཐུམ་ཅིག་ནང་ སྲུང་བཞག་འབད།</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>སྤོ་བཤུད་འདི་ ཧེ་མ་ལས་ གཡོག་བཀོལ་ཚར་ཡི། དེ་འབདཝ་ལས་ ལོག་སྟེ་སྲུང་བཞག་མི་འབད། བསྒྱུར་བཅོས་འབད་མི་ཡིག་སྣོད་ཅིག་ ཞིབ་བསྡོམས་སྲུང་སྐྱོབ་ཀྱིས་ ངོས་ལེན་མི་འབད། བསྒྱུར་བཅོས་འདི་ སྤོ་བཤུད་གསརཔ་ཅིག་ནང་འབད།</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཝེབ་སར་བར་གྱིས་ ཡིག་སྣོད་འདི་ འབྲི་མི་ཚུགས།</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>གོང་འཁར་གྱི་མཆན་འགྲེལ་ཐིག་ཚུ་ མགོ་ཡིག་ (description, author, requires, environments, engines) ཨིན། འབྲི་ཤོག་ནང་ གོ་རིམ་ཅིག་ཁ་སྐོང་ ཡང་ན་ བསྒྱུར་བཅོས་འབད་བའི་སྐབས་ སྤོ་བཤུད་ལོག་སྟེ་འབྲིཝ་ཨིན། གོ་རིམ་ཚུ་གི་བར་ན་ཡོད་པའི་ མཆན་འགྲེལ་ཚུ་ མི་བཞག</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>སྤོ་བཤུད་ཀྱི་མིང་།</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>ག་ཏེ་འགྱོ་ནི།</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡོངས་འབྲེལ་ས་ཁོངས།</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ཡིག་ཚགས།</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ད་ལྟོ་ཡང་ གོ་རིམ་མེད། འབྲི་ཤོག་གིས་ གཅིག་ཁ་སྐོང་རྐྱབས་ ཡང་ན་ ཡིག་ཚགས་ནང་ འབྲི།</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>གོ་རིམ་ %number བསྒྱུར་བཅོས་འབད།</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>གོ་རིམ་ཅིག་ ཁ་སྐོང་རྐྱབས།</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>གོ་རིམ་གྱི་འབྲི་ཤོག་འདི་ དེའི་གོ་རིམ་རིགས་ལས་བཟོཝ་ཨིན། དེའི་ལྡེ་མིག་ཚུ་ རེ་རེ་གིས་ག་ཅི་ལེནམ་ཨིན་ན་དང་ དེ་ག་དེ་བཟུམ་གྱི་ཐབས་ལམ་ཚུ་ནང་ཚུདཔ་ཨིན་ན།</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>གོ་རིམ་གྱི་རིགས།</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>དེའི་འབྲི་ཤོག་སྟོན།</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>གོ་རིམ་འདི་ནང་ དེའི་རིགས་ཀྱིས་ མ་ཤེས་པའི་ལྡེ་མིག་ཚུ་ཡོད། གོ་རིམ་བསྒྱུར་བཅོས་འབད་བའི་སྐབས་ དེ་ཚུ་བཏོན་གཏངམ་ཨིན: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐབས་ལམ།</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>%modes ནང་རྐྱངམ་ཅིག</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>སྔོན་སྒྲིག: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>ཆ་རྐྱེན་ གཞི་བསྟུན་དང་ མཆན་འགྲེལ།</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>མིང་=གནས་གོང་ ཆ་ཚུ་ ཀོ་མ་གིས་ཕྱེ་སྟེ། གོ་རིམ་འདི་གི་གནས་གོང་ཚུ: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>གོ་རིམ་བསྒྱུར་བཅོས།</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>གོ་རིམ་ཁ་སྐོང་།</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check གིས་ག་ཅི་སླབ་ཨིན་ན། མགོ་ཡིག་ ཡིག་ཆ་དང་ གོ་རིམ་རེ་རེ་ དེའི་གོ་རིམ་རིགས་ཀྱིས་ ལྟ་བརྟག་འབད་ཡོདཔ།</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>སྤོ་བཤུད་འདི་ ལྟ་བརྟག་ནང་ མཐར་འཁྱོལ་བྱུང་ཡི།</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>སྲུང་བཞག་འབད་འོང་མི་ YAML།</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML སྟོན།</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML སྤོ་བཤུད་ཚུ།</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>གཡོག་བཀོལ་ཚར་ཡི།</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ད་ལྟོ་ཡང་ YAML སྤོ་བཤུད་མེད།</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>སྤོ་བཤུད་ཀྱི་སྣོད་ཐུམ་ཚུ་ནང་ YAML སྤོ་བཤུད་ %id མེད།</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>གོ་རིམ་གྱི་རིགས་ གདམ་ཁ་རྐྱབས།</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>གོ་རིམ་ཁ་སྐོང་རྐྱབ་ཡི། སྲུང་བཞག་མ་འབད་བའི་ཧེ་མ་ སྤོ་བཤུད་ལྟ་བརྟག་འབད།</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>གོ་རིམ་བསྒྱུར་བཅོས་འབད་ཡི། སྲུང་བཞག་མ་འབད་བའི་ཧེ་མ་ སྤོ་བཤུད་ལྟ་བརྟག་འབད།</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>གོ་རིམ་ཅིག་ གདམ་ཁ་རྐྱབས།</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>གོ་རིམ་འདི་ལུ་ འབྲི་ཤོག་མེད། (འཁོར་ལམ་ཅིག་ ཡང་ན་ གཞི་བཙུགས་འདི་ནང་མེད་པའི་ གོ་རིམ་རིགས་ཅིག) ཡིག་ཚགས་ནང་ བསྒྱུར་བཅོས་འབད།</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>སྤོ་བཤུད་ག་ཏེ་འགྱོ་ནི་ཨིན་ན་ གདམ་ཁ་རྐྱབས། ཡོངས་འབྲེལ་ས་ཁོངས་ ཡང་ན་ ལག་ལེན་འཐབ་བཞིན་པའི་ རྒྱ་སྐྱེད་ཅིག</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file སྲུང་བཞག་འབད་ཡི། སྤོ་བཤུད་གཡོག་མ་བཀོལ་བའི་ཧེ་མ་ བརྟག་ཞིབ་གཡོག་བཀོལ་ཅིག་འབད།</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>སྲུང་བཞག་མ་འབད: %reason</translation>
     </message>
 </context>
 <context>

@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Միգրացիա %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Նոր միգրացիա</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML միգրացիա․ գրեք այն որպես տեքստ կամ կառուցեք դրա քայլերը ձևում, ստուգեք այն, ապա պահպանեք միգրացիաների պանակում։</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Այս միգրացիան արդեն գործարկվել է, ուստի այն նորից չի պահպանվում․ փոխված ֆայլը կմերժվեր ստուգիչ գումարի պաշտպանության կողմից։ Կատարեք փոփոխությունը նոր միգրացիայում։</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Վեբ սերվերը չի կարող գրել ֆայլը։</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Վերևի մեկնաբանության տողերը վերնագիրն են (description, author, requires, environments, engines)։ Երբ ձևում քայլ է ավելացվում կամ փոխվում, միգրացիան նորից է գրվում․ քայլերի միջև եղած մեկնաբանությունները չեն պահպանվում։</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Միգրացիայի անունը</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ուր է այն գնում</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Կայքը</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML տեքստ</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Դեռ քայլեր չկան․ ավելացրեք մեկը ձևով կամ գրեք դրանք տեքստում։</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Փոխել քայլ %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ավելացնել մեկ քայլ</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Քայլի ձևը կազմվում է նրա քայլի տեսակից՝ նրա բանալիները, թե ինչ է ընդունում յուրաքանչյուրը, և այն ռեժիմները, որոնց պատկանում է։</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Քայլի տեսակ</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Ցուցադրել դրա ձևը</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Քայլն ունի բանալիներ, որոնք նրա տեսակը չգիտի․ դրանք դուրս են մնում, երբ քայլը փոխվում է՝ %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Ռեժիմ</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>միայն՝ %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Լռելյայն՝ %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Պայմաններ, հղումներ և մեկնաբանություն</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Անուն=արժեք զույգեր՝ ստորակետերով բաժանված։ Այս քայլի արժեքները՝ %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Փոխել քայլը</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ավելացնել քայլ</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ինչ է ասում exp:migration:check հրամանը՝ վերնագիրը, փաստաթուղթը և յուրաքանչյուր քայլ՝ ստուգված իր քայլի տեսակով։</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Միգրացիան անցնում է ստուգումը։</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-ը այնպես, ինչպես այն կպահպանվի։</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Ցուցադրել YAML-ը</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML միգրացիաներ</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>գործարկվել է</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Դեռ YAML միգրացիաներ չկան։</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Միգրացիաների պանակներում %id YAML միգրացիա չկա։</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ընտրեք քայլի տեսակ։</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Քայլն ավելացված է։ Ստուգեք միգրացիան, նախքան այն պահպանելը։</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Քայլը փոխված է։ Ստուգեք միգրացիան, նախքան այն պահպանելը։</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ընտրեք քայլ։</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Այս քայլը ձև չունի (ցիկլ կամ քայլի տեսակ, որը այս տեղադրումը չունի)․ փոխեք այն տեքստում։</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ընտրեք, թե ուր է գնում միգրացիան՝ կայք կամ ակտիվ ընդլայնում։</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Պահպանված է՝ %file։ Կատարեք փորձնական գործարկում, նախքան միգրացիան կգործարկվի։</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Չի պահպանվել՝ %reason</translation>
     </message>
 </context>
 <context>

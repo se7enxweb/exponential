@@ -81128,43 +81128,43 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutama %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutama kutsva</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutama kweYAML: kunyore sezvinyorwa kana kuti gadzira matanho akwo mufomu, kutarise, wozokuchengetedza muforoda yekutama.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutama uku kwakatomhanya, saka hakuchengetedzwe zvakare: faira rakashandurwa raizorambwa nemuchengeti wenhamba yekuongorora. Ita shanduko mukutama kutsva.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sevha yewebhu haigoni kunyora faira.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitsara yetsinhiro iri pamusoro ndiyo musoro (description, author, requires, environments, engines). Kana danho rawedzerwa kana kushandurwa mufomu, kutama kunonyorwa patsva: tsinhiro dziri pakati pematanho hadzichengetwe.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Zita rekutama</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kwazvinoenda</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Saiti</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvinyorwa zveYAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapasati paine matanho: wedzera rimwe nefomu, kana kuti anyore muzvinyorwa.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Shandura danho %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Wedzera rimwe danho</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fomu yedanho inogadzirwa kubva parudzi rwaro rwedanho: kiyi dzaro, zvinotorwa neimwe neimwe uye nzira dzarinowanikwa madziri.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Rudzi rwedanho</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Ratidza fomu yaro</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Danho rine kiyi dzisingazivikanwe nerudzi rwaro; dzinosiiwa kana danho rachinjwa: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzira</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>mu %modes chete</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvakajairwa: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvinodiwa, zvinongedzo netsinhiro</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapeya ezita=kukosha akapatsanurwa nemakoma. Kukosha kwedanho iri: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Shandura danho</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Wedzera danho</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvinotaurwa na exp:migration:check: musoro, gwaro uye danho rimwe nerimwe rakatariswa nerudzi rwaro rwedanho.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutama kunopfuura kutariswa.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML sezvairi kuzochengetedzwa.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Ratidza YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutama kweYAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>kwakamhanya</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapasati pane kutama kweYAML.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapana kutama kweYAML %id mumaforoda ekutama.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarudza rudzi rwedanho.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Danho rawedzerwa. Tarisa kutama usati wakuchengetedza.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Danho rashandurwa. Tarisa kutama usati wakuchengetedza.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarudza danho.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Danho iri harina fomu (dzokororo, kana rudzi rwedanho rusipo mukuisirwa uku): rishandure muzvinyorwa.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarudza kwekuenda kutama: saiti kana chiwedzero chiri kushanda.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file yachengetedzwa. Ita kumhanyisa kwekuedza kutama kusati kwamhanya.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Hazvina kuchengetedzwa: %reason</translation>
     </message>
 </context>
 <context>

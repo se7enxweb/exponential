@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>مائيگريشن %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>نئين مائيگريشن</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML مائيگريشن: ان کي متن طور لکو يا فارم ۾ ان جا قدم ٺاهيو، ان کي جانچيو، پوءِ ان کي مائيگريشن فولڊر ۾ محفوظ ڪريو.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>هي مائيگريشن اڳ ۾ ئي هلي چڪي آهي، تنهن ڪري ٻيهر محفوظ نه ٿيندي: تبديل ٿيل فائل کي چيڪ سم جو محافظ رد ڪري ڇڏيندو. تبديلي نئين مائيگريشن ۾ ڪريو.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ويب سرور فائل نٿو لکي سگهي.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>مٿي تبصري جون سٽون هيڊر آهن (description، author، requires، environments، engines). جڏهن فارم ۾ ڪو قدم شامل يا تبديل ڪيو وڃي ٿو، مائيگريشن ٻيهر لکي وڃي ٿي: قدمن جي وچ وارا تبصرا نه رکيا ويندا.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>مائيگريشن جو نالو</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>اها ڪٿي وڃي ٿي</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>سائيٽ</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML متن</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>اڃا ڪو قدم ناهي: فارم سان هڪ شامل ڪريو، يا انهن کي متن ۾ لکو.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم %number تبديل ڪريو</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>هڪ قدم شامل ڪريو</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم جو فارم ان جي قدم جي قسم مان ٺهي ٿو: ان جون ڪنجيون، هر هڪ ڇا وٺي ٿي ۽ اهي موڊ جن سان اهو تعلق رکي ٿو.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم جو قسم</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>ان جو فارم ڏيکاريو</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم ۾ اهڙيون ڪنجيون آهن جن کي ان جو قسم نٿو ڄاڻي؛ قدم تبديل ٿيڻ وقت اهي ڇڏيون وينديون: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>موڊ</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>صرف %modes ۾</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>ڊفالٽ: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>شرطون، حوالا ۽ تبصرو</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>نالو=قدر جوڙا، ڪاما سان الڳ ٿيل. هن قدم جا قدر: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم تبديل ڪريو</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم شامل ڪريو</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check ڇا ٿو چوي: هيڊر، دستاويز ۽ هر قدم، ان جي قدم جي قسم طرفان جانچيل.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>مائيگريشن جانچ ۾ پاس آهي.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML جيئن اهو محفوظ ٿيندو.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ڏيکاريو</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML مائيگريشنز</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>هلي چڪي</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>اڃا ڪا YAML مائيگريشن ناهي.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>مائيگريشن فولڊرن ۾ ڪا YAML مائيگريشن %id ناهي.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم جو قسم چونڊيو.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم شامل ٿي ويو. محفوظ ڪرڻ کان اڳ مائيگريشن جانچيو.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم تبديل ٿي ويو. محفوظ ڪرڻ کان اڳ مائيگريشن جانچيو.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>هڪ قدم چونڊيو.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>هن قدم جو ڪو فارم ناهي (هڪ لوپ، يا اهڙو قدم جو قسم جيڪو هن انسٽاليشن ۾ ناهي): ان کي متن ۾ تبديل ڪريو.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>چونڊيو ته مائيگريشن ڪٿي وڃي: سائيٽ يا ڪا فعال ايڪسٽينشن.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file محفوظ ٿي وئي. مائيگريشن هلڻ کان اڳ آزمائشي رن هلايو.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>محفوظ نه ٿيو: %reason</translation>
     </message>
 </context>
 <context>

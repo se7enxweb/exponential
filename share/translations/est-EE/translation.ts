@@ -81158,43 +81158,43 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migratsioon %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Uus migratsioon</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migratsioon: kirjutage see tekstina või koostage selle sammud vormis, kontrollige seda ja salvestage see siis migratsioonide kausta.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>See migratsioon on juba käivitatud, seega seda uuesti ei salvestata: kontrollsumma kaitse lükkaks muudetud faili tagasi. Tehke muudatus uues migratsioonis.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veebiserver ei saa faili kirjutada.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentaariread alguses on päis (description, author, requires, environments, engines). Kui vormis lisatakse või muudetakse sammu, kirjutatakse migratsioon uuesti: sammude vahelisi kommentaare ei säilitata.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Migratsiooni nimi</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuhu see läheb</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Sait</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-tekst</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81230,35 +81230,35 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Samme veel pole: lisage üks vormiga või kirjutage need teksti.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda sammu %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Sammu lisamine</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sammu vorm luuakse selle sammu tüübist: selle võtmed, mida igaüks vastu võtab, ja režiimid, kuhu see kuulub.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Sammu tüüp</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita selle vormi</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Sammul on võtmeid, mida selle tüüp ei tunne; sammu muutmisel jäetakse need välja: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režiim</translation>
     </message>
     <message>
         <source>In</source>
@@ -81266,19 +81266,19 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>ainult režiimides %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaikimisi: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Tingimused, viited ja kommentaar</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Paarid Nimi=väärtus, komadega eraldatud. Selle sammu väärtused: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81286,19 +81286,19 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda sammu</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa samm</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mida ütleb exp:migration:check: päis, dokument ja iga samm, mida kontrollib selle sammu tüüp.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migratsioon läbib kontrolli.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81306,23 +81306,23 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-tekst sellisena, nagu see salvestatakse.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Näita YAML-i</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migratsioonid</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>käivitatud</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migratsioone veel pole.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81330,39 +81330,39 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migratsioonide kaustades pole YAML-migratsiooni %id.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige sammu tüüp.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Samm on lisatud. Kontrollige migratsiooni enne selle salvestamist.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Samm on muudetud. Kontrollige migratsiooni enne selle salvestamist.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige samm.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sellel sammul pole vormi (tsükkel või sammu tüüp, mida sellel paigaldusel pole): muutke seda tekstis.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige, kuhu migratsioon läheb: sait või aktiivne laiendus.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file on salvestatud. Tehke proovikäivitus, enne kui migratsioon käivitub.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei salvestatud: %reason</translation>
     </message>
 </context>
 <context>

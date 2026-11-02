@@ -83124,43 +83124,43 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migração %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nova migração</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uma migração YAML: escreva-a como texto ou monte seus passos no formulário, verifique-a e depois salve-a em uma pasta de migrações.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta migração já foi executada, por isso não é salva novamente: um arquivo alterado seria recusado pela proteção de checksum. Faça a alteração em uma nova migração.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>O servidor web não consegue gravar o arquivo.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>As linhas de comentário no topo são o cabeçalho (description, author, requires, environments, engines). Quando um passo é adicionado ou alterado no formulário, a migração é reescrita: os comentários entre os passos não são mantidos.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome da migração</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Para onde vai</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>O site</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Texto YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -83196,35 +83196,35 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ainda não há passos: adicione um com o formulário ou escreva-os no texto.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Alterar passo %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar um passo</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>O formulário de um passo é feito a partir do seu tipo de passo: suas chaves, o que cada uma aceita e os modos aos quais ele pertence.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de passo</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar o formulário</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>O passo tem chaves que seu tipo não conhece; elas são omitidas quando o passo é alterado: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo</translation>
     </message>
     <message>
         <source>In</source>
@@ -83232,19 +83232,19 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>somente em %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Padrão: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Condições, referências e comentário</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Pares Nome=valor separados por vírgulas. Os valores deste passo: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -83252,19 +83252,19 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Alterar passo</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar passo</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>O que exp:migration:check diz: o cabeçalho, o documento e cada passo verificado pelo seu tipo de passo.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>A migração passa na verificação.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -83272,23 +83272,23 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>O YAML como será salvo.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar o YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrações YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>executada</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ainda não há migrações YAML.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -83296,39 +83296,39 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não há migração YAML %id nas pastas de migrações.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha um tipo de passo.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>O passo foi adicionado. Verifique a migração antes de salvá-la.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>O passo foi alterado. Verifique a migração antes de salvá-la.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha um passo.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este passo não tem formulário (um laço ou um tipo de passo que esta instalação não tem): altere-o no texto.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Escolha para onde vai a migração: o site ou uma extensão ativa.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file salvo. Faça uma execução de teste antes que a migração seja executada.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Não salvo: %reason</translation>
     </message>
 </context>
 <context>

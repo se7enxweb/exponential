@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>স্থানান্তৰণ %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>নতুন স্থানান্তৰণ</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>এটা YAML স্থানান্তৰণ: ইয়াক পাঠ হিচাপে লিখক বা ফৰ্মত ইয়াৰ পদক্ষেপসমূহ গঢ়ক, ইয়াক পৰীক্ষা কৰক, তাৰ পিছত এটা স্থানান্তৰণ ফোল্ডাৰত সঞ্চয় কৰক।</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>এই স্থানান্তৰণটো ইতিমধ্যে চলোৱা হৈছে, গতিকে ইয়াক পুনৰ সঞ্চয় কৰা নহয়: চেকছাম ৰক্ষকে সলনি কৰা ফাইল অস্বীকাৰ কৰিব। নতুন স্থানান্তৰণত সালসলনিটো কৰক।</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ৱেব ছাৰ্ভাৰে ফাইলটো লিখিব নোৱাৰে।</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>ওপৰৰ মন্তব্য শাৰীবোৰ হৈছে হেডাৰ (description, author, requires, environments, engines)। ফৰ্মত এটা পদক্ষেপ যোগ বা সলনি কৰিলে স্থানান্তৰণটো পুনৰ লিখা হয়: পদক্ষেপবোৰৰ মাজৰ মন্তব্যবোৰ ৰখা নহয়।</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>স্থানান্তৰণৰ নাম</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>ক'লৈ যায়</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>ছাইট</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML পাঠ</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>এতিয়ালৈ কোনো পদক্ষেপ নাই: ফৰ্মৰ জৰিয়তে এটা যোগ কৰক, বা সেইবোৰ পাঠত লিখক।</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>পদক্ষেপ %number সলনি কৰক</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>এটা পদক্ষেপ যোগ কৰক</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>এটা পদক্ষেপৰ ফৰ্ম ইয়াৰ পদক্ষেপৰ প্ৰকাৰৰ পৰা গঠিত হয়: ইয়াৰ চাবিসমূহ, প্ৰতিটোৱে কি লয় আৰু ই কোনবোৰ ম'ডৰ অন্তৰ্গত।</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>পদক্ষেপৰ প্ৰকাৰ</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>ইয়াৰ ফৰ্ম দেখুৱাওক</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>পদক্ষেপটোত এনে চাবি আছে যিবোৰ ইয়াৰ প্ৰকাৰে নাজানে; পদক্ষেপটো সলনি কৰিলে সেইবোৰ বাদ দিয়া হয়: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>ম'ড</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>কেৱল %modes ত</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>অবিকল্পিত: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>চৰ্ত, প্ৰসংগ আৰু মন্তব্য</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>কমাৰে পৃথক কৰা নাম=মান যোৰ। এই পদক্ষেপৰ মানসমূহ: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>পদক্ষেপ সলনি কৰক</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>পদক্ষেপ যোগ কৰক</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check এ কি কয়: হেডাৰ, নথি আৰু ইয়াৰ পদক্ষেপৰ প্ৰকাৰে পৰীক্ষা কৰা প্ৰতিটো পদক্ষেপ।</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>স্থানান্তৰণটো পৰীক্ষাত উত্তীৰ্ণ হৈছে।</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>যিদৰে সঞ্চয় কৰা হ'ব তেনেদৰে YAML।</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML দেখুৱাওক</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML স্থানান্তৰণসমূহ</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>চলোৱা হৈছে</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>এতিয়ালৈ কোনো YAML স্থানান্তৰণ নাই।</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>স্থানান্তৰণ ফোল্ডাৰবোৰত কোনো YAML স্থানান্তৰণ %id নাই।</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>এটা পদক্ষেপৰ প্ৰকাৰ বাছনি কৰক।</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>পদক্ষেপটো যোগ কৰা হ'ল। সঞ্চয় কৰাৰ আগতে স্থানান্তৰণটো পৰীক্ষা কৰক।</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>পদক্ষেপটো সলনি কৰা হ'ল। সঞ্চয় কৰাৰ আগতে স্থানান্তৰণটো পৰীক্ষা কৰক।</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>এটা পদক্ষেপ বাছনি কৰক।</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>এই পদক্ষেপৰ কোনো ফৰ্ম নাই (এটা লুপ, বা এনে এটা পদক্ষেপৰ প্ৰকাৰ যি এই ইনষ্টলেশ্বনত নাই): ইয়াক পাঠত সলনি কৰক।</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>স্থানান্তৰণটো ক'লৈ যাব বাছনি কৰক: ছাইট বা এটা সক্ৰিয় এক্সটেনশ্বন।</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file সঞ্চয় কৰা হ'ল। স্থানান্তৰণ চলাৰ আগতে এটা পৰীক্ষামূলক চলন কৰক।</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>সঞ্চয় কৰা হোৱা নাই: %reason</translation>
     </message>
 </context>
 <context>

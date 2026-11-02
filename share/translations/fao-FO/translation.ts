@@ -81128,43 +81128,43 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Flyting %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nýggj flyting</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein YAML-flyting: skriva hana sum tekst ella set stigini saman í formularinum, kanna hana og goym hana síðan í eina flytingarmappu.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Henda flyting er longu koyrd og verður tí ikki goymd aftur: ein broytt fíla vildi verið avvíst av kontrolsummuverjuni. Ger broytingina í eini nýggjari flyting.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vevambætarin kann ikki skriva fíluna.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Viðmerkingarlinjurnar ovast eru høvdið (description, author, requires, environments, engines). Tá ið eitt stig verður lagt afturat ella broytt í formularinum, verður flytingin skrivað av nýggjum: viðmerkingar millum stigini verða ikki varðveittar.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn á flytingini</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvar hon skal liggja</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Heimasíðan</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-tekstur</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eingi stig enn: legg eitt afturat við formularinum, ella skriva tey í tekstin.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Broyt stig %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg eitt stig afturat</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Formularin hjá einum stigi verður gjørdur út frá stigslagnum: lyklarnir, hvat hvør teirra tekur ímóti, og hvørjum háttum tað hoyrir til.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Stigslag</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Vís formularin</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Stigið hevur lyklar, sum slagið ikki kennir; teir verða tiknir burtur, tá ið stigið verður broytt: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Háttur</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>bert í %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Forsett virði: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Treytir, tilvísingar og viðmerking</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Pør við navn=virði, skild sundur við komma. Virðini í hesum stigi: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Broyt stig</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg stig afturat</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvat exp:migration:check sigur: høvdið, skjalið og hvørt stig, kannað av sínum stigslagi.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytingin stendst kanningina.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML, sum tað verður goymt.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Vís YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-flytingar</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>er koyrd</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eingar YAML-flytingar eru enn.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eingin YAML-flyting %id er í flytingarmappunum.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vel eitt stigslag.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stigið er lagt afturat. Kanna flytingina, áðrenn tú goymir hana.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stigið er broytt. Kanna flytingina, áðrenn tú goymir hana.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vel eitt stig.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hetta stig hevur ongan formular (ein lykkja ella eitt stigslag, sum henda innlegging ikki hevur): broyt tað í tekstinum.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vel, hvar flytingin skal liggja: heimasíðan ella ein virkin víðkan.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file er goymd. Ger eina royndarkoyring, áðrenn flytingin verður koyrd.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikki goymt: %reason</translation>
     </message>
 </context>
 <context>

@@ -81126,43 +81126,43 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Koçberkirin %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Koçberkirina nû</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Koçberkirineke YAML: wê wek nivîs binivîse an gavên wê di formê de ava bike, kontrol bike, paşê di peldankeke koçberkirinan de tomar bike.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ev koçberkirin berê xebitiye, ji ber vê yekê ji nû ve nayê tomarkirin: parêzvana checksumê dê pelekî guhertî red bike. Guhertinê di koçberkirineke nû de bike.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Servera webê nikare pelê binivîse.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rêzên şîroveyê yên li jor serî ne (description, author, requires, environments, engines). Dema ku gavek di formê de tê zêdekirin an guhertin, koçberkirin ji nû ve tê nivîsandin: şîroveyên di navbera gavan de nayên parastin.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Navê koçberkirinê</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ew diçe ku</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Malper</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivîsa YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81198,35 +81198,35 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hê gav tune ne: bi formê yekê lê zêde bike, an wan di nivîsê de binivîse.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Gava %number biguherîne</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Gavekê lê zêde bike</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma gavekê ji cureyê gava wê tê çêkirin: mifteyên wê, ya ku her yek digire û modên ku ew aîdî wan e.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Cureyê gavê</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma wê nîşan bide</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Mifteyên gavê hene ku cureyê wê nas nake; dema gav tê guhertin ew tên derxistin: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mod</translation>
     </message>
     <message>
         <source>In</source>
@@ -81234,19 +81234,19 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>tenê di %modes de</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Ya xwerû: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Merc, referans û şîrove</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Cotên Nav=nirx ku bi bêhnokan ji hev hatine veqetandin. Nirxên vê gavê: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81254,19 +81254,19 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Gavê biguherîne</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Gavê lê zêde bike</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ya ku exp:migration:check dibêje: serî, belge û her gava ku ji aliyê cureyê gava xwe ve hatiye kontrolkirin.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Koçberkirin ji kontrolê derbas dibe.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81274,23 +81274,23 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML wek ku dê were tomarkirin.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML nîşan bide</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Koçberkirinên YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>xebitiye</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hê koçberkirinên YAML tune ne.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81298,39 +81298,39 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Di peldankên koçberkirinê de koçberkirina YAML %id tune ye.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cureyekî gavê hilbijêre.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gav hat zêdekirin. Berî ku tu tomar bikî, koçberkirinê kontrol bike.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gav hat guhertin. Berî ku tu tomar bikî, koçberkirinê kontrol bike.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gavekê hilbijêre.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma vê gavê tune ye (xelek, an cureyekî gavê ku di vê sazkirinê de tune ye): wê di nivîsê de biguherîne.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hilbijêre ka koçberkirin diçe ku: malper an pêvekeke çalak.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file hat tomarkirin. Berî ku koçberkirin bixebite, ceribandineke bê guhertin bixebitîne.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Nehat tomarkirin: %reason</translation>
     </message>
 </context>
 <context>

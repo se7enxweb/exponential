@@ -81126,43 +81126,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>இடம்பெயர்வு %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>புதிய இடம்பெயர்வு</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒரு YAML இடம்பெயர்வு: அதை உரையாக எழுதவும் அல்லது படிவத்தில் அதன் படிகளை உருவாக்கவும், சரிபார்க்கவும், பின்னர் ஒரு இடம்பெயர்வுக் கோப்புறையில் சேமிக்கவும்.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>இந்த இடம்பெயர்வு ஏற்கனவே இயங்கிவிட்டது, எனவே மீண்டும் சேமிக்கப்படாது: மாற்றப்பட்ட கோப்பைச் சரிபார்ப்புத்தொகைக் காவல் நிராகரிக்கும். மாற்றத்தை ஒரு புதிய இடம்பெயர்வில் செய்யவும்.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>வலை சேவையகத்தால் கோப்பை எழுத முடியாது.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>மேலே உள்ள கருத்து வரிகள் தலைப்பகுதி (description, author, requires, environments, engines). படிவத்தில் ஒரு படி சேர்க்கப்படும்போது அல்லது மாற்றப்படும்போது, இடம்பெயர்வு மீண்டும் எழுதப்படும்: படிகளுக்கு இடையிலான கருத்துகள் வைக்கப்படாது.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>இடம்பெயர்வின் பெயர்</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>அது எங்கு செல்லும்</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>தளம்</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML உரை</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81198,35 +81198,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>இன்னும் படிகள் இல்லை: படிவத்தின் மூலம் ஒன்றைச் சேர்க்கவும், அல்லது உரையில் அவற்றை எழுதவும்.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>படி %number ஐ மாற்று</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒரு படியைச் சேர்</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒரு படியின் படிவம் அதன் படி வகையிலிருந்து உருவாக்கப்படுகிறது: அதன் விசைகள், ஒவ்வொன்றும் ஏற்பவை மற்றும் அது சேரும் பயன்முறைகள்.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>படி வகை</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>அதன் படிவத்தைக் காட்டு</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>இந்தப் படியில் அதன் வகை அறியாத விசைகள் உள்ளன; படி மாற்றப்படும்போது அவை விடுபடும்: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>பயன்முறை</translation>
     </message>
     <message>
         <source>In</source>
@@ -81234,19 +81234,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>%modes இல் மட்டும்</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>இயல்புநிலை: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>நிபந்தனைகள், குறிப்புகள் மற்றும் கருத்து</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>காற்புள்ளிகளால் பிரிக்கப்பட்ட பெயர்=மதிப்பு இணைகள். இந்தப் படியின் மதிப்புகள்: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81254,19 +81254,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>படியை மாற்று</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>படியைச் சேர்</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check கூறுவது: தலைப்பகுதி, ஆவணம் மற்றும் அதன் படி வகையால் சரிபார்க்கப்பட்ட ஒவ்வொரு படியும்.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>இடம்பெயர்வு சரிபார்ப்பில் தேர்ச்சி பெற்றது.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81274,23 +81274,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>சேமிக்கப்படும் வடிவில் YAML.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ஐக் காட்டு</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML இடம்பெயர்வுகள்</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>இயங்கிவிட்டது</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>இன்னும் YAML இடம்பெயர்வுகள் இல்லை.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81298,39 +81298,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>இடம்பெயர்வுக் கோப்புறைகளில் YAML இடம்பெயர்வு %id இல்லை.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒரு படி வகையைத் தேர்ந்தெடுக்கவும்.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>படி சேர்க்கப்பட்டது. சேமிக்கும் முன் இடம்பெயர்வைச் சரிபார்க்கவும்.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>படி மாற்றப்பட்டது. சேமிக்கும் முன் இடம்பெயர்வைச் சரிபார்க்கவும்.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒரு படியைத் தேர்ந்தெடுக்கவும்.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>இந்தப் படிக்குப் படிவம் இல்லை (ஒரு சுழற்சி, அல்லது இந்த நிறுவலில் இல்லாத ஒரு படி வகை): அதை உரையில் மாற்றவும்.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>இடம்பெயர்வு எங்கு செல்லும் எனத் தேர்ந்தெடுக்கவும்: தளம் அல்லது செயலில் உள்ள ஒரு நீட்டிப்பு.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file சேமிக்கப்பட்டது. இடம்பெயர்வு இயங்கும் முன் ஒரு சோதனை இயக்கத்தை இயக்கவும்.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>சேமிக்கப்படவில்லை: %reason</translation>
     </message>
 </context>
 <context>

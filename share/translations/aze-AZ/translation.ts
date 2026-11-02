@@ -81128,43 +81128,43 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Miqrasiya %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni miqrasiya</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML miqrasiyası: onu mətn kimi yazın və ya addımlarını formada qurun, yoxlayın, sonra miqrasiyalar qovluğunda yadda saxlayın.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu miqrasiya artıq icra olunub, ona görə yenidən yadda saxlanılmır: dəyişdirilmiş fayl yoxlama cəmi qoruyucusu tərəfindən rədd ediləcəkdi. Dəyişikliyi yeni miqrasiyada edin.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veb server faylı yaza bilmir.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yuxarıdakı şərh sətirləri başlıqdır (description, author, requires, environments, engines). Formada addım əlavə edildikdə və ya dəyişdirildikdə miqrasiya yenidən yazılır: addımlar arasındakı şərhlər saxlanılmır.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Miqrasiyanın adı</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hara gedir</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Sayt</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML mətni</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hələ addım yoxdur: formada birini əlavə edin və ya onları mətndə yazın.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>%number nömrəli addımı dəyiş</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir addım əlavə et</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Addımın forması onun addım tipindən qurulur: açarları, hər birinin nə qəbul etdiyi və aid olduğu rejimlər.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Addım tipi</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formasını göstər</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Addımın tipinin tanımadığı açarları var; addım dəyişdirildikdə onlar çıxarılır: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Rejim</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>yalnız %modes rejimində</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Standart: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Şərtlər, istinadlar və şərh</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Vergüllə ayrılmış Ad=dəyər cütləri. Bu addımın dəyərləri: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Addımı dəyiş</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Addım əlavə et</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check nə deyir: başlıq, sənəd və öz addım tipi ilə yoxlanılan hər addım.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Miqrasiya yoxlamadan keçir.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yadda saxlanılacağı kimi YAML.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-ı göstər</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML miqrasiyaları</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>icra olunub</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hələ YAML miqrasiyası yoxdur.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Miqrasiya qovluqlarında %id YAML miqrasiyası yoxdur.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Addım tipini seçin.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Addım əlavə edildi. Yadda saxlamazdan əvvəl miqrasiyanı yoxlayın.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Addım dəyişdirildi. Yadda saxlamazdan əvvəl miqrasiyanı yoxlayın.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Addım seçin.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu addımın forması yoxdur (dövr və ya bu quraşdırmada olmayan addım tipi): onu mətndə dəyişin.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Miqrasiyanın hara gedəcəyini seçin: sayt və ya aktiv genişlənmə.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file yadda saxlanıldı. Miqrasiya icra olunmazdan əvvəl sınaq icrası edin.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Yadda saxlanmadı: %reason</translation>
     </message>
 </context>
 <context>

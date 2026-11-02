@@ -81158,43 +81158,43 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migraatio %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi migraatio</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migraatio: kirjoita se tekstinä tai kokoa sen vaiheet lomakkeella, tarkista se ja tallenna se sitten migraatiokansioon.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tämä migraatio on jo ajettu, joten sitä ei tallenneta uudelleen: tarkistussummavahti hylkäisi muutetun tiedoston. Tee muutos uudessa migraatiossa.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verkkopalvelin ei voi kirjoittaa tiedostoa.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alun kommenttirivit ovat otsake (description, author, requires, environments, engines). Kun vaihe lisätään tai sitä muutetaan lomakkeella, migraatio kirjoitetaan uudelleen: vaiheiden välisiä kommentteja ei säilytetä.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Migraation nimi</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Minne se menee</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivusto</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-teksti</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81230,35 +81230,35 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei vielä vaiheita: lisää yksi lomakkeella tai kirjoita ne tekstiin.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuta vaihetta %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaiheen lisääminen</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaiheen lomake muodostetaan sen vaihetyypistä: sen avaimet, mitä kukin ottaa vastaan ja toimintatilat, joihin se kuuluu.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaiheen tyyppi</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä sen lomake</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaiheessa on avaimia, joita sen tyyppi ei tunne; ne jätetään pois, kun vaihetta muutetaan: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Toimintatila</translation>
     </message>
     <message>
         <source>In</source>
@@ -81266,19 +81266,19 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>vain tiloissa %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Oletus: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Ehdot, viittaukset ja kommentti</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimi=arvo-pareja pilkuilla erotettuina. Tämän vaiheen arvot: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81286,19 +81286,19 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuta vaihetta</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää vaihe</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitä exp:migration:check sanoo: otsake, dokumentti ja jokainen vaihe sen vaihetyypin tarkistamana.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migraatio läpäisee tarkistuksen.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81306,23 +81306,23 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML sellaisena kuin se tallennetaan.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migraatiot</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ajettu</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migraatioita ei ole vielä.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81330,39 +81330,39 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migraatiokansioissa ei ole YAML-migraatiota %id.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse vaiheen tyyppi.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaihe on lisätty. Tarkista migraatio ennen kuin tallennat sen.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaihe on muutettu. Tarkista migraatio ennen kuin tallennat sen.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse vaihe.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tällä vaiheella ei ole lomaketta (silmukka tai vaihetyyppi, jota tässä asennuksessa ei ole): muuta sitä tekstissä.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse, minne migraatio menee: sivustoon vai aktiiviseen laajennukseen.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallennettu: %file. Tee kuiva-ajo ennen kuin migraatio ajetaan.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei tallennettu: %reason</translation>
     </message>
 </context>
 <context>

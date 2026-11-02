@@ -81808,43 +81808,43 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrering %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny migrering</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>En YAML-migrering: skriv den som tekst eller byg dens trin i formularen, kontrollér den, og gem den derefter i en migreringsmappe.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne migrering er allerede kørt og gemmes derfor ikke igen: en ændret fil ville blive afvist af kontrolsumsbeskyttelsen. Foretag ændringen i en ny migrering.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Webserveren kan ikke skrive filen.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentarlinjerne øverst er hovedet (description, author, requires, environments, engines). Når et trin tilføjes eller ændres i formularen, skrives migreringen igen: kommentarer mellem trinene bevares ikke.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Migreringens navn</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvor den skal placeres</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Webstedet</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-tekst</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81880,35 +81880,35 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen trin endnu: tilføj et med formularen, eller skriv dem i teksten.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Ændr trin %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføj et trin</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Formularen for et trin dannes ud fra dets trintype: dets nøgler, hvad hver af dem tager imod, og de tilstande, det hører til.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Trintype</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis dens formular</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Trinnet har nøgler, som dets type ikke kender; de udelades, når trinnet ændres: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilstand</translation>
     </message>
     <message>
         <source>In</source>
@@ -81916,19 +81916,19 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>kun i %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Betingelser, referencer og kommentar</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn=værdi-par adskilt af kommaer. Værdierne for dette trin: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81936,19 +81936,19 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ændr trin</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføj trin</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvad exp:migration:check siger: hovedet, dokumentet og hvert trin kontrolleret af dets trintype.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migreringen består kontrollen.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81956,23 +81956,23 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-teksten, som den bliver gemt.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migreringer</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>er kørt</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der er ingen YAML-migreringer endnu.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81980,39 +81980,39 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der findes ingen YAML-migrering %id i migreringsmapperne.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg en trintype.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trinnet er tilføjet. Kontrollér migreringen, før du gemmer den.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trinnet er ændret. Kontrollér migreringen, før du gemmer den.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg et trin.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette trin har ingen formular (en løkke eller en trintype, som denne installation ikke har): ændr det i teksten.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg, hvor migreringen skal placeres: webstedet eller en aktiv udvidelse.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file er gemt. Foretag en prøvekørsel, før migreringen køres.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke gemt: %reason</translation>
     </message>
 </context>
 <context>

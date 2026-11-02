@@ -81126,43 +81126,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>માઇગ્રેશન %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>નવું માઇગ્રેશન</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML માઇગ્રેશન: તેને ટેક્સ્ટ તરીકે લખો અથવા ફોર્મમાં તેનાં પગલાં બનાવો, તેને તપાસો, પછી તેને માઇગ્રેશન ફોલ્ડરમાં સાચવો.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>આ માઇગ્રેશન પહેલેથી ચાલી ગયું છે, તેથી તે ફરીથી સાચવવામાં આવતું નથી: બદલાયેલી ફાઇલને ચેકસમ રક્ષક નકારશે. ફેરફાર નવા માઇગ્રેશનમાં કરો.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>વેબ સર્વર ફાઇલ લખી શકતું નથી.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>ઉપરની ટિપ્પણી પંક્તિઓ હેડર છે (description, author, requires, environments, engines). ફોર્મમાં કોઈ પગલું ઉમેરવામાં કે બદલવામાં આવે ત્યારે માઇગ્રેશન ફરીથી લખાય છે: પગલાં વચ્ચેની ટિપ્પણીઓ રાખવામાં આવતી નથી.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>માઇગ્રેશનનું નામ</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>તે ક્યાં જશે</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>સાઇટ</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ટેક્સ્ટ</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81198,35 +81198,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>હજી કોઈ પગલાં નથી: ફોર્મ વડે એક ઉમેરો, અથવા તેમને ટેક્સ્ટમાં લખો.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>પગલું %number બદલો</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>એક પગલું ઉમેરો</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>પગલાનું ફોર્મ તેના પગલાના પ્રકાર પરથી બને છે: તેની કી, દરેક શું સ્વીકારે છે અને તે કયા મોડનું છે.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>પગલાનો પ્રકાર</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>તેનું ફોર્મ બતાવો</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>પગલામાં એવી કી છે જે તેનો પ્રકાર જાણતો નથી; પગલું બદલવામાં આવે ત્યારે તે છોડી દેવાય છે: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>મોડ</translation>
     </message>
     <message>
         <source>In</source>
@@ -81234,19 +81234,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>ફક્ત %modes માં</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>ડિફૉલ્ટ: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>શરતો, સંદર્ભો અને ટિપ્પણી</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>અલ્પવિરામથી અલગ કરેલી નામ=મૂલ્ય જોડીઓ. આ પગલાનાં મૂલ્યો: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81254,19 +81254,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>પગલું બદલો</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>પગલું ઉમેરો</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check શું કહે છે: હેડર, દસ્તાવેજ અને દરેક પગલું, તેના પગલાના પ્રકાર દ્વારા તપાસાયેલું.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>માઇગ્રેશન તપાસમાં સફળ થાય છે.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81274,23 +81274,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>જે રીતે સાચવવામાં આવશે તે YAML.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML બતાવો</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML માઇગ્રેશન</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ચાલી ગયું</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>હજી કોઈ YAML માઇગ્રેશન નથી.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81298,39 +81298,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>માઇગ્રેશન ફોલ્ડરોમાં %id નામનું કોઈ YAML માઇગ્રેશન નથી.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>પગલાનો પ્રકાર પસંદ કરો.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>પગલું ઉમેરાયું છે. સાચવતાં પહેલાં માઇગ્રેશન તપાસો.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>પગલું બદલાયું છે. સાચવતાં પહેલાં માઇગ્રેશન તપાસો.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>એક પગલું પસંદ કરો.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>આ પગલાનું કોઈ ફોર્મ નથી (લૂપ, અથવા એવો પગલાનો પ્રકાર જે આ ઇન્સ્ટોલેશનમાં નથી): તેને ટેક્સ્ટમાં બદલો.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>માઇગ્રેશન ક્યાં જશે તે પસંદ કરો: સાઇટ અથવા સક્રિય એક્સ્ટેન્શન.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file સાચવ્યું. માઇગ્રેશન ચાલે તે પહેલાં ડ્રાય રન ચલાવો.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>સાચવ્યું નથી: %reason</translation>
     </message>
 </context>
 <context>

@@ -82340,43 +82340,43 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracja %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nowa migracja</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracja YAML: napisz ją jako tekst lub zbuduj jej kroki w formularzu, sprawdź ją, a następnie zapisz w folderze migracji.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta migracja została już wykonana, więc nie jest zapisywana ponownie: zmieniony plik zostałby odrzucony przez ochronę sumy kontrolnej. Wprowadź zmianę w nowej migracji.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serwer WWW nie może zapisać pliku.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wiersze komentarza na początku to nagłówek (description, author, requires, environments, engines). Gdy krok zostanie dodany lub zmieniony w formularzu, migracja jest zapisywana od nowa: komentarze między krokami nie są zachowywane.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa migracji</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokąd trafi</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Witryna</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekst YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -82412,35 +82412,35 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Brak kroków: dodaj jeden za pomocą formularza lub wpisz je w tekście.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Zmień krok %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodawanie kroku</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Formularz kroku powstaje na podstawie jego typu: jego klucze, co każdy z nich przyjmuje i tryby, do których należy.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ kroku</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż jego formularz</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok ma klucze, których jego typ nie zna; przy zmianie kroku zostaną pominięte: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Tryb</translation>
     </message>
     <message>
         <source>In</source>
@@ -82448,19 +82448,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>tylko w trybach %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Domyślnie: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Warunki, odwołania i komentarz</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Pary Nazwa=wartość oddzielone przecinkami. Wartości tego kroku: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -82468,19 +82468,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Zmień krok</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj krok</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Co mówi exp:migration:check: nagłówek, dokument i każdy krok sprawdzony przez jego typ kroku.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracja przechodzi sprawdzenie.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -82488,23 +82488,23 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekst YAML w postaci, w jakiej zostanie zapisany.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracje YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>wykonana</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie ma jeszcze migracji YAML.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -82512,39 +82512,39 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>W folderach migracji nie ma migracji YAML %id.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz typ kroku.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok został dodany. Sprawdź migrację, zanim ją zapiszesz.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok został zmieniony. Sprawdź migrację, zanim ją zapiszesz.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz krok.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ten krok nie ma formularza (pętla lub typ kroku, którego ta instalacja nie ma): zmień go w tekście.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz, dokąd trafi migracja: do witryny czy do aktywnego rozszerzenia.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisano %file. Wykonaj przebieg próbny, zanim migracja zostanie uruchomiona.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie zapisano: %reason</translation>
     </message>
 </context>
 <context>

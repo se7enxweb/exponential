@@ -81136,43 +81136,43 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasi %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasi anyar</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasi YAML: tulis salaku téks atawa susun léngkah-léngkahna dina formulir, pariksa, tuluy simpen kana map migrasi.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasi ieu geus dijalankeun, jadi teu disimpen deui: berkas anu dirobah bakal ditolak ku panangtayungan checksum. Jieun parobahan dina migrasi anyar.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Server wéb teu bisa nulis berkas.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Baris koméntar di luhur nyaéta lulugu (description, author, requires, environments, engines). Lamun léngkah ditambahkeun atawa dirobah dina formulir, migrasi ditulis deui: koméntar di antara léngkah-léngkah henteu dijaga.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaran migrasi</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ka mana tujuanana</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Situs</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Téks YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81208,35 +81208,35 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Can aya léngkah: tambahkeun hiji ku formulir, atawa tulis dina téks.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Robah léngkah %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambahkeun hiji léngkah</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulir léngkah dijieun tina tipe léngkahna: koncina, naon anu ditarima ku unggal konci jeung modeu tempat léngkah éta.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipe léngkah</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Témbongkeun formulirna</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Léngkah ieu boga konci anu teu dipikanyaho ku tipena; konci éta dileungitkeun lamun léngkah dirobah: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modeu</translation>
     </message>
     <message>
         <source>In</source>
@@ -81244,19 +81244,19 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>ngan dina %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Baku: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarat, rujukan jeung koméntar</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasangan Ngaran=nilai dipisahkeun ku koma. Nilai léngkah ieu: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81264,19 +81264,19 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Robah léngkah</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambahkeun léngkah</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naon anu dicaritakeun ku exp:migration:check: lulugu, dokumén jeung unggal léngkah anu dipariksa ku tipe léngkahna.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasi lulus pamariksaan.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81284,23 +81284,23 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML sakumaha anu bakal disimpen.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Témbongkeun YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasi YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>geus dijalankeun</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Can aya migrasi YAML.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81308,39 +81308,39 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Teu aya migrasi YAML %id dina map migrasi.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih tipe léngkah.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Léngkah geus ditambahkeun. Pariksa migrasi saméméh disimpen.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Léngkah geus dirobah. Pariksa migrasi saméméh disimpen.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih léngkah.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Léngkah ieu teu boga formulir (puteran, atawa tipe léngkah anu teu aya dina pamasangan ieu): robah dina téks.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih ka mana migrasi disimpen: situs atawa éksténsi anu aktif.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file geus disimpen. Jalankeun uji coba garing saméméh migrasi dijalankeun.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Teu disimpen: %reason</translation>
     </message>
 </context>
 <context>

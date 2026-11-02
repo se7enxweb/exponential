@@ -81126,43 +81126,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Ìṣílọ %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ìṣílọ tuntun</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ìṣílọ YAML kan: kọ ọ́ bí ọ̀rọ̀ tàbí kọ́ àwọn ìgbésẹ̀ rẹ̀ nínú fọ́ọ̀mù, ṣàyẹ̀wò rẹ̀, lẹ́yìn náà fi pamọ́ sínú fóldà ìṣílọ kan.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ìṣílọ yìí ti ṣiṣẹ́ tẹ́lẹ̀, nítorí náà a kò ní fi pamọ́ lẹ́ẹ̀kan sí i: olùṣọ́ àpapọ̀ àyẹ̀wò yóò kọ fáìlì tí a yí padà. Ṣe àyípadà náà nínú ìṣílọ tuntun.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sáfà wẹ́ẹ̀bù kò lè kọ fáìlì náà.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Àwọn ìlà àsọyé tó wà lókè ni àkọlé (description, author, requires, environments, engines). Nígbà tí a bá ṣàfikún tàbí yí ìgbésẹ̀ kan padà nínú fọ́ọ̀mù, a ó tún ìṣílọ náà kọ: a kì í pa àwọn àsọyé tó wà láàrin àwọn ìgbésẹ̀ mọ́.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Orúkọ ìṣílọ náà</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ibi tí ó ń lọ</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ojú-òpó náà</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Ọ̀rọ̀ YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81198,35 +81198,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kò sí ìgbésẹ̀ kankan síbẹ̀: ṣàfikún ọ̀kan pẹ̀lú fọ́ọ̀mù, tàbí kọ wọ́n sínú ọ̀rọ̀.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Yí ìgbésẹ̀ %number padà</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ṣàfikún ìgbésẹ̀ kan</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Irú ìgbésẹ̀ ni a fi ń ṣe fọ́ọ̀mù ìgbésẹ̀ kan: àwọn kọ́kọ́rọ́ rẹ̀, ohun tí ọ̀kọ̀ọ̀kan ń gbà àti àwọn ipò iṣẹ́ tí ó jẹ́ tirẹ̀.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Irú ìgbésẹ̀</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Fi fọ́ọ̀mù rẹ̀ hàn</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ìgbésẹ̀ náà ní àwọn kọ́kọ́rọ́ tí irú rẹ̀ kò mọ̀; a ó fi wọ́n sílẹ̀ nígbà tí a bá yí ìgbésẹ̀ náà padà: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Ipò iṣẹ́</translation>
     </message>
     <message>
         <source>In</source>
@@ -81234,19 +81234,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>nínú %modes nìkan</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Àìyípadà: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Àwọn ipò, ìtọ́kasí àti àsọyé</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Àwọn méjì-méjì orúkọ=iye tí a fi kọ́mà yà sọ́tọ̀. Àwọn iye ìgbésẹ̀ yìí: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81254,19 +81254,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Yí ìgbésẹ̀ padà</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ṣàfikún ìgbésẹ̀</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohun tí exp:migration:check sọ: àkọlé, ìwé náà àti gbogbo ìgbésẹ̀ tí irú ìgbésẹ̀ rẹ̀ ṣàyẹ̀wò.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ìṣílọ náà yege nínú àyẹ̀wò.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81274,23 +81274,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML bí a ó ṣe fi pamọ́.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Fi YAML hàn</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Àwọn ìṣílọ YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ti ṣiṣẹ́</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kò sí ìṣílọ YAML kankan síbẹ̀.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81298,39 +81298,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kò sí ìṣílọ YAML %id nínú àwọn fóldà ìṣílọ.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yan irú ìgbésẹ̀.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>A ti ṣàfikún ìgbésẹ̀ náà. Ṣàyẹ̀wò ìṣílọ náà kí o tó fi pamọ́.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>A ti yí ìgbésẹ̀ náà padà. Ṣàyẹ̀wò ìṣílọ náà kí o tó fi pamọ́.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yan ìgbésẹ̀ kan.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ìgbésẹ̀ yìí kò ní fọ́ọ̀mù (ìyípo kan, tàbí irú ìgbésẹ̀ tí ìfisórí yìí kò ní): yí i padà nínú ọ̀rọ̀.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yan ibi tí ìṣílọ náà ń lọ: ojú-òpó náà tàbí ìfàgùn tó ń ṣiṣẹ́.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>A ti fi %file pamọ́. Ṣe ìdánrawò kí ìṣílọ náà tó ṣiṣẹ́.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>A kò fi pamọ́: %reason</translation>
     </message>
 </context>
 <context>

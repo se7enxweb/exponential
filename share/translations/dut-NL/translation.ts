@@ -82353,43 +82353,43 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migratie %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuwe migratie</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Een YAML-migratie: schrijf ze als tekst of stel haar stappen samen in het formulier, controleer ze en sla ze daarna op in een migratiemap.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze migratie is al uitgevoerd en wordt daarom niet opnieuw opgeslagen: een gewijzigd bestand zou door de controlesombewaking worden geweigerd. Breng de wijziging aan in een nieuwe migratie.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>De webserver kan het bestand niet schrijven.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>De commentaarregels bovenaan vormen de kop (description, author, requires, environments, engines). Wordt een stap in het formulier toegevoegd of gewijzigd, dan wordt de migratie opnieuw geschreven: commentaar tussen de stappen blijft niet behouden.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam van de migratie</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Waar ze terechtkomt</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>De site</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-tekst</translation>
     </message>
     <message>
         <source>Check</source>
@@ -82425,35 +82425,35 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nog geen stappen: voeg er een toe met het formulier of schrijf ze in de tekst.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Stap %number wijzigen</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Een stap toevoegen</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het formulier van een stap komt voort uit het staptype: de sleutels, wat elke sleutel aanneemt en tot welke modi de stap behoort.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Staptype</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier tonen</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>De stap heeft sleutels die het type niet kent; ze vallen weg wanneer de stap wordt gewijzigd: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modus</translation>
     </message>
     <message>
         <source>In</source>
@@ -82461,19 +82461,19 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>alleen in %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Standaard: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorwaarden, verwijzingen en opmerking</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Paren naam=waarde, gescheiden door komma's. De waarden van deze stap: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -82481,19 +82481,19 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Stap wijzigen</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Stap toevoegen</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wat exp:migration:check zegt: de kop, het document en elke stap, gecontroleerd door zijn staptype.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>De migratie doorstaat de controle.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -82501,23 +82501,23 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>De YAML zoals hij wordt opgeslagen.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML tonen</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migraties</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>is uitgevoerd</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er zijn nog geen YAML-migraties.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -82525,39 +82525,39 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>In de migratiemappen staat geen YAML-migratie %id.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies een staptype.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>De stap is toegevoegd. Controleer de migratie voordat u ze opslaat.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>De stap is gewijzigd. Controleer de migratie voordat u ze opslaat.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies een stap.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze stap heeft geen formulier (een lus, of een staptype dat deze installatie niet heeft): wijzig hem in de tekst.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies waar de migratie terechtkomt: de site of een actieve extensie.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file opgeslagen. Voer een proefuitvoering uit voordat de migratie wordt uitgevoerd.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet opgeslagen: %reason</translation>
     </message>
 </context>
 <context>

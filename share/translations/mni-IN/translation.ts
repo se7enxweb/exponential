@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>মাইগ্রেসন %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>অনৌবা মাইগ্রেসন</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML মাইগ্রেসন অমা: মসিবু টেক্সট ওইনা ইয়ু নত্ত্রগা ফর্মদা মসিগী খোংথাংশিং শেম্মু, চেক তৌবিয়ু, অদুগা মাইগ্রেসন ফোল্দর অমদা থম্মু।</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>মাইগ্রেসন অসি হান্নদগী রন তৌখ্রে, মরম অদুনা অমুক হন্না থম্লোই: হোংদোকখিবা ফাইল অমা চেকসম ঙাক্লবনা য়াদবা ওইগনি। হোংদোকপা অদু অনৌবা মাইগ্রেসন অমদা তৌবিয়ু।</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ৱেব সর্ভরনা ফাইল অসি ইবা ঙম্মোই।</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>মথক্তা লৈবা খন্নরোলগী লাইনশিং অসি হেদর অনি (description, author, requires, environments, engines)। ফর্মদা খোংথাং অমা হাপচিনবা নত্ত্রগা হোংদোকপা মতমদা মাইগ্রেসন অসি অমুক হন্না ইয়ি: খোংথাংশিংগী মরক্তা লৈবা খন্নরোলশিং থম্বা ঙম্লোই।</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>মাইগ্রেসনগী মমিং</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>কদায়দা চৎলগনি</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>সাইট</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML টেক্সট</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>হৌজিক ফাওবা খোংথাং অমত্তা লৈতে: ফর্মগা লোয়ননা অমা হাপচিনবিয়ু, নত্ত্রগা টেক্সটতা মখোয় ইবিয়ু।</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>খোংথাং %number হোংদোকপা</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>খোংথাং অমা হাপচিনবা</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>খোংথাং অমগী ফর্ম অসি মসিগী খোংথাংগী মখলদগী শেমগনি: মসিগী কীশিং, মখোয় অমমম্তনা করি লৌবগে অমসুং মসি যাওবা মোদশিং।</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>খোংথাংগী মখল</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>মসিগী ফর্ম উৎপা</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>খোংথাং অসিদা মসিগী মখলনা খঙদবা কীশিং লৈ; খোংথাং হোংদোকপা মতমদা মখোয় থাদোকই: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>মোদ</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>%modes দা খক্তা</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>দিফোল্ট: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>ফিভমশিং, রেফারেন্সশিং অমসুং খন্নরোল</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>কমানা খায়দোকপা মমিং=মমল পেয়রশিং। খোংথাং অসিগী মমলশিং: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>খোংথাং হোংদোকপা</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>খোংথাং হাপচিনবা</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check না হায়বা: হেদর, দোকুমেন্ট অমসুং মসিগী খোংথাংগী মখলনা চেক তৌবা খোংথাং খুদিংমক।</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>মাইগ্রেসন অসিনা চেক অদু পাস তৌই।</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>থমগদবা মওং অদুদা লৈবা YAML।</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML উৎপা</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML মাইগ্রেসনশিং</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>রন তৌখ্রে</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>হৌজিক ফাওবা YAML মাইগ্রেসন অমত্তা লৈতে।</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>মাইগ্রেসন ফোল্দরশিংদা YAML মাইগ্রেসন %id লৈতে।</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>খোংথাংগী মখল অমা খনবিয়ু।</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>খোংথাং হাপচিনখ্রে। থম্বগী মমাংদা মাইগ্রেসন চেক তৌবিয়ু।</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>খোংথাং হোংদোকখ্রে। থম্বগী মমাংদা মাইগ্রেসন চেক তৌবিয়ু।</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>খোংথাং অমা খনবিয়ু।</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>খোংথাং অসিদা ফর্ম লৈতে (লুপ অমা, নত্ত্রগা ইনস্তলেসন অসিদা লৈতবা খোংথাংগী মখল অমা): টেক্সটতা হোংদোকপিয়ু।</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>মাইগ্রেসন অসি কদায়দা চৎলগনি খনবিয়ু: সাইট নত্ত্রগা থবক তৌরিবা এক্সতেনসন অমা।</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file থম্লে। মাইগ্রেসন রন তৌদ্রিঙৈগী মমাংদা ড্রাই রন অমা তৌবিয়ু।</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>থম্বা ঙমদ্রে: %reason</translation>
     </message>
 </context>
 <context>

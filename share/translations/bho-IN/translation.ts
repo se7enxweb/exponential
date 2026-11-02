@@ -81136,43 +81136,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>माइग्रेशन %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>नया माइग्रेशन</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>एगो YAML माइग्रेशन: एकरा टेक्स्ट के रूप में लिखीं भा फॉर्म में एकर चरण बनाईं, जाँचीं, फेर कवनो माइग्रेशन फ़ोल्डर में सहेजीं।</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>ई माइग्रेशन पहिलहीं चल चुकल बा, एह से फेर से ना सहेजाई: बदलल फ़ाइल के चेकसम सुरक्षा नामंजूर कर दी। बदलाव कवनो नया माइग्रेशन में करीं।</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>वेब सर्वर फ़ाइल ना लिख सके।</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>ऊपर के टिप्पणी वाला लाइन हेडर हवे (description, author, requires, environments, engines)। जब फॉर्म में कवनो चरण जोड़ल भा बदलल जाला, त माइग्रेशन फेर से लिखल जाला: चरणन के बीच के टिप्पणी ना बचे।</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>माइग्रेशन के नाँव</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>कहाँ जाई</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>साइट</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML टेक्स्ट</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81208,35 +81208,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>अबहीं कवनो चरण नइखे: फॉर्म से एगो जोड़ीं, भा टेक्स्ट में लिखीं।</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>चरण %number बदलीं</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>एगो चरण जोड़ीं</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>कवनो चरण के फॉर्म ओकरा चरण के प्रकार से बनेला: ओकर कुंजी, हर कुंजी का लेला आ ऊ कवना मोड के हवे।</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>चरण के प्रकार</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>एकर फॉर्म देखाईं</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>चरण में अइसन कुंजी बा जेकरा के ओकर प्रकार ना जाने; चरण बदलला पर ऊ छूट जाई: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>मोड</translation>
     </message>
     <message>
         <source>In</source>
@@ -81244,19 +81244,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>खाली %modes में</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>डिफ़ॉल्ट: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>शर्त, संदर्भ आ टिप्पणी</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>नाँव=मान जोड़ी, कॉमा से अलग। एह चरण के मान: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81264,19 +81264,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>चरण बदलीं</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>चरण जोड़ीं</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check का कहेला: हेडर, दस्तावेज आ हर चरण, ओकरा चरण के प्रकार से जाँचल।</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>माइग्रेशन जाँच में पास बा।</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81284,23 +81284,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML, जइसे ई सहेजाई।</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML देखाईं</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML माइग्रेशन</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>चल चुकल बा</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>अबहीं कवनो YAML माइग्रेशन नइखे।</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81308,39 +81308,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>माइग्रेशन फ़ोल्डरन में कवनो YAML माइग्रेशन %id नइखे।</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>चरण के प्रकार चुनीं।</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>चरण जोड़ दिहल गइल। सहेजे से पहिले माइग्रेशन जाँचीं।</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>चरण बदल दिहल गइल। सहेजे से पहिले माइग्रेशन जाँचीं।</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>एगो चरण चुनीं।</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>एह चरण के कवनो फॉर्म नइखे (एगो लूप, भा अइसन चरण प्रकार जे एह इंस्टॉलेशन में नइखे): एकरा के टेक्स्ट में बदलीं।</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>चुनीं कि माइग्रेशन कहाँ जाई: साइट भा कवनो सक्रिय एक्सटेंशन।</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file सहेजाइल। माइग्रेशन चले से पहिले आजमाइशी रन चलाईं।</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>ना सहेजाइल: %reason</translation>
     </message>
 </context>
 <context>

@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थानान्तरणम् %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>नूतनं स्थानान्तरणम्</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-स्थानान्तरणम्: तत् पाठरूपेण लिखतु अथवा प्रपत्रे तस्य सोपानानि रचयतु, तत् परीक्षताम्, ततः स्थानान्तरण-सञ्चिकाधान्यां संरक्षतु।</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>इदं स्थानान्तरणं पूर्वमेव निष्पादितम्, अतः पुनः न संरक्ष्यते: परिवर्तितां सञ्चिकां चेकसम्-रक्षकः निराकरिष्यति। परिवर्तनं नूतने स्थानान्तरणे करोतु।</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>जालसेवकः सञ्चिकां लेखितुं न शक्नोति।</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>उपरि स्थिताः टिप्पणीपङ्क्तयः शीर्षकम् (description, author, requires, environments, engines)। यदा प्रपत्रे सोपानं योज्यते परिवर्त्यते वा, तदा स्थानान्तरणं पुनः लिख्यते: सोपानानां मध्ये स्थिताः टिप्पण्यः न रक्ष्यन्ते।</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थानान्तरणस्य नाम</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>कुत्र गच्छति</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>जालस्थानम्</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-पाठः</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>अद्यापि सोपानानि न सन्ति: प्रपत्रेण एकं योजयतु, अथवा तानि पाठे लिखतु।</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>सोपानं %number परिवर्तयतु</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>एकं सोपानं योजयतु</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>सोपानस्य प्रपत्रं तस्य सोपानप्रकारात् निर्मीयते: तस्य कुञ्जिकाः, प्रत्येकं किं स्वीकरोति, ये विधयः तस्य सम्बद्धाः च।</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>सोपानप्रकारः</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>तस्य प्रपत्रं दर्शयतु</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>सोपाने ताः कुञ्जिकाः सन्ति याः तस्य प्रकारः न जानाति; सोपाने परिवर्तिते ताः त्यज्यन्ते: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>विधिः</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>केवलं %modes इत्यत्र</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>पूर्वनिर्धारितम्: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रतिबन्धाः, सन्दर्भाः टिप्पणी च</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>अल्पविरामैः पृथक्कृताः नाम=मूल्यम् युग्माः। अस्य सोपानस्य मूल्यानि: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>सोपानं परिवर्तयतु</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>सोपानं योजयतु</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check यत् वदति: शीर्षकम्, प्रलेखः, स्वसोपानप्रकारेण परीक्षितं प्रत्येकं सोपानं च।</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थानान्तरणं परीक्षणे उत्तीर्णम्।</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>यथा संरक्षिष्यते तथा YAML।</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML दर्शयतु</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-स्थानान्तरणानि</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>निष्पादितम्</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>अद्यापि YAML-स्थानान्तरणानि न सन्ति।</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थानान्तरण-सञ्चिकाधानीषु YAML-स्थानान्तरणम् %id नास्ति।</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>सोपानप्रकारं चिनोतु।</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>सोपानं योजितम्। संरक्षणात् पूर्वं स्थानान्तरणं परीक्षताम्।</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>सोपानं परिवर्तितम्। संरक्षणात् पूर्वं स्थानान्तरणं परीक्षताम्।</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>सोपानं चिनोतु।</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>अस्य सोपानस्य प्रपत्रं नास्ति (आवर्तनम्, अथवा अस्यां स्थापनायाम् अविद्यमानः सोपानप्रकारः): तत् पाठे परिवर्तयतु।</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थानान्तरणं कुत्र गच्छति इति चिनोतु: जालस्थानम् अथवा सक्रियः विस्तारः।</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file संरक्षितम्। स्थानान्तरणस्य निष्पादनात् पूर्वं परीक्षणनिष्पादनं करोतु।</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>न संरक्षितम्: %reason</translation>
     </message>
 </context>
 <context>

@@ -82568,43 +82568,43 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migration %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nouvelle migration</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Une migration YAML : écrivez-la sous forme de texte ou composez ses étapes dans le formulaire, vérifiez-la, puis enregistrez-la dans un dossier de migrations.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cette migration a déjà été exécutée, elle n’est donc pas enregistrée à nouveau : un fichier modifié serait refusé par le contrôle des sommes de contrôle. Apportez la modification dans une nouvelle migration.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le serveur web ne peut pas écrire le fichier.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les lignes de commentaire en tête forment l’en-tête (description, author, requires, environments, engines). Lorsqu’une étape est ajoutée ou modifiée dans le formulaire, la migration est réécrite : les commentaires entre les étapes ne sont pas conservés.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom de la migration</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Destination</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Le site</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Texte YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -82640,35 +82640,35 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucune étape pour l’instant : ajoutez-en une avec le formulaire ou écrivez-les dans le texte.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier l’étape %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter une étape</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le formulaire d’une étape est construit à partir de son type d’étape : ses clés, ce que chacune accepte et les modes auxquels elle appartient.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Type d’étape</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher son formulaire</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>L’étape contient des clés que son type ne connaît pas ; elles sont omises lorsque l’étape est modifiée : %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode</translation>
     </message>
     <message>
         <source>In</source>
@@ -82676,19 +82676,19 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>uniquement dans %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Par défaut : %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Conditions, références et commentaire</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Paires nom=valeur séparées par des virgules. Les valeurs de cette étape : %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -82696,19 +82696,19 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier l’étape</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter l’étape</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce que dit exp:migration:check : l’en-tête, le document et chaque étape vérifiée par son type d’étape.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>La migration passe la vérification.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -82716,23 +82716,23 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le YAML tel qu’il sera enregistré.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher le YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrations YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>exécutée</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il n’y a pas encore de migrations YAML.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -82740,39 +82740,39 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il n’y a pas de migration YAML %id dans les dossiers de migrations.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisissez un type d’étape.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>L’étape est ajoutée. Vérifiez la migration avant de l’enregistrer.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>L’étape est modifiée. Vérifiez la migration avant de l’enregistrer.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisissez une étape.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cette étape n’a pas de formulaire (une boucle, ou un type d’étape que cette installation n’a pas) : modifiez-la dans le texte.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisissez où va la migration : le site ou une extension active.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file enregistré. Faites un essai à blanc avant l’exécution de la migration.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Non enregistrée : %reason</translation>
     </message>
 </context>
 <context>

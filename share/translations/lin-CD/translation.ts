@@ -81128,43 +81128,43 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasyo %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasyo ya sika</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasyo ya YAML: komá yangó lokola makomi to tonga matambe na yangó na formilɛ, talá yangó, sima bómbá yangó na dossier ya migrasyo.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasyo oyo esilá kotambwisama, yango wana ekobombama lisusu te: fichier oyo ebongolami ekoboyama na mokɛngɛli ya motuya ya botáli. Salá mbongwana na migrasyo ya sika.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Server ya web ekoki kokoma fichier te.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Milongo ya maloba ya bolimboli na likoló ezali motó (description, author, requires, environments, engines). Soki litambe ebakisami to ebongolami na formilɛ, migrasyo ekomamaka lisusu: maloba ya bolimboli kati na matambe ebombamaka te.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nkómbó ya migrasyo</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Esika ekokende</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Site</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Makomi ya YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Litambe moko te naino: bakisá moko na formilɛ, to komá yangó na makomi.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Bongolá litambe %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakisá litambe moko</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Formilɛ ya litambe esalemaka na lolenge na yangó ya litambe: bakilé na yangó, oyo moko na moko ezwaka mpe bandenge oyo ezali na yangó.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Lolenge ya litambe</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Lakisá formilɛ na yangó</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Litambe ezali na bakilé oyo lolenge na yangó eyebi te; ekolongolama soki litambe ebongolami: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Ndenge</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>kaka na %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Na ndenge ya liboso: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Masɛngami, bitalisi mpe maloba ya bolimboli</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Nkómbó=motuya, mibalé-mibalé, bakabolami na bavirgule. Mituya ya litambe oyo: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Bongolá litambe</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakisá litambe</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oyo exp:migration:check elobi: motó, mokanda mpe litambe nyonso oyo etalami na lolenge na yangó ya litambe.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasyo elongi botáli.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ndenge ekobombama.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Lakisá YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasyo ya YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>esilá kotambwisama</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasyo ya YAML ezali naino te.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasyo ya YAML %id ezali te na badossier ya migrasyo.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poná lolenge ya litambe.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Litambe ebakisami. Talá migrasyo liboso ya kobómba yangó.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Litambe ebongolami. Talá migrasyo liboso ya kobómba yangó.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poná litambe.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Litambe oyo ezali na formilɛ te (nzinga, to lolenge ya litambe oyo installation oyo ezali na yangó te): bongolá yangó na makomi.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poná esika migrasyo ekokende: site to bobakisi moko oyo ezali kosala.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file ebombami. Salá komeka liboso ete migrasyo etambwisama.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebombami te: %reason</translation>
     </message>
 </context>
 <context>

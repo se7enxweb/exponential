@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြောင်းရွှေ့မှု %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြောင်းရွှေ့မှု အသစ်</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ပြောင်းရွှေ့မှု: စာသားအဖြစ် ရေးပါ သို့မဟုတ် ဖောင်တွင် ၎င်း၏ အဆင့်များကို တည်ဆောက်ပါ၊ စစ်ဆေးပါ၊ ထို့နောက် ပြောင်းရွှေ့မှု ဖိုင်တွဲတစ်ခုထဲသို့ သိမ်းပါ။</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဤပြောင်းရွှေ့မှုကို လုပ်ဆောင်ပြီးဖြစ်သောကြောင့် ထပ်မသိမ်းပါ: ပြောင်းထားသော ဖိုင်ကို checksum ကာကွယ်မှုက ငြင်းပယ်မည်။ ပြောင်းလဲမှုကို ပြောင်းရွှေ့မှု အသစ်တွင် ပြုလုပ်ပါ။</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဝဘ်ဆာဗာသည် ဖိုင်ကို ရေး၍မရပါ။</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>ထိပ်ရှိ မှတ်ချက်စာကြောင်းများသည် ခေါင်းစီး ဖြစ်သည် (description, author, requires, environments, engines)။ ဖောင်တွင် အဆင့်တစ်ခု ထည့်သည့်အခါ သို့မဟုတ် ပြောင်းသည့်အခါ ပြောင်းရွှေ့မှုကို ပြန်ရေးသည်: အဆင့်များကြားရှိ မှတ်ချက်များကို မထိန်းသိမ်းပါ။</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြောင်းရွှေ့မှု၏ အမည်</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>ထားမည့်နေရာ</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>ဆိုက်</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML စာသား</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့် မရှိသေးပါ: ဖောင်ဖြင့် တစ်ခု ထည့်ပါ သို့မဟုတ် စာသားထဲတွင် ရေးပါ။</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့် %number ကို ပြောင်းရန်</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့်တစ်ခု ထည့်ရန်</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့်တစ်ခု၏ ဖောင်ကို ၎င်း၏ အဆင့်အမျိုးအစားမှ ပြုလုပ်သည်: ၎င်း၏ သော့များ၊ တစ်ခုစီ လက်ခံသည့်အရာနှင့် ၎င်း ပါဝင်သည့် မုဒ်များ။</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့် အမျိုးအစား</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>၎င်း၏ ဖောင်ကို ပြရန်</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့်တွင် ၎င်း၏ အမျိုးအစား မသိသော သော့များ ရှိသည်; အဆင့်ကို ပြောင်းသည့်အခါ ၎င်းတို့ကို ချန်လှပ်မည်: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>မုဒ်</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>%modes တွင်သာ</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>မူလတန်ဖိုး: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>အခြေအနေများ၊ ကိုးကားချက်များနှင့် မှတ်ချက်</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>ကော်မာဖြင့် ခွဲထားသော အမည်=တန်ဖိုး အတွဲများ။ ဤအဆင့်၏ တန်ဖိုးများ: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့် ပြောင်းရန်</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့် ထည့်ရန်</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check ပြောသည့်အရာ: ခေါင်းစီး၊ စာတမ်းနှင့် ၎င်း၏ အဆင့်အမျိုးအစားဖြင့် စစ်ဆေးထားသော အဆင့်တိုင်း။</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြောင်းရွှေ့မှုသည် စစ်ဆေးမှုကို အောင်မြင်သည်။</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>သိမ်းမည့်အတိုင်း YAML စာသား။</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ကို ပြရန်</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ပြောင်းရွှေ့မှုများ</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>လုပ်ဆောင်ပြီး</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ပြောင်းရွှေ့မှု မရှိသေးပါ။</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြောင်းရွှေ့မှု ဖိုင်တွဲများတွင် YAML ပြောင်းရွှေ့မှု %id မရှိပါ။</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့်အမျိုးအစားတစ်ခု ရွေးပါ။</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့်ကို ထည့်ပြီးပါပြီ။ မသိမ်းမီ ပြောင်းရွှေ့မှုကို စစ်ဆေးပါ။</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့်ကို ပြောင်းပြီးပါပြီ။ မသိမ်းမီ ပြောင်းရွှေ့မှုကို စစ်ဆေးပါ။</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့်တစ်ခု ရွေးပါ။</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဤအဆင့်တွင် ဖောင် မရှိပါ (ထပ်ကျော့တစ်ခု သို့မဟုတ် ဤထည့်သွင်းမှုတွင် မရှိသော အဆင့်အမျိုးအစား): စာသားထဲတွင် ပြောင်းပါ။</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြောင်းရွှေ့မှု ထားမည့်နေရာကို ရွေးပါ: ဆိုက် သို့မဟုတ် အသက်ဝင်နေသော တိုးချဲ့မှုတစ်ခု။</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file ကို သိမ်းပြီးပါပြီ။ ပြောင်းရွှေ့မှု မလုပ်ဆောင်မီ စမ်းသပ်လုပ်ဆောင်မှု တစ်ခု လုပ်ပါ။</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>မသိမ်းဆည်းခဲ့ပါ: %reason</translation>
     </message>
 </context>
 <context>

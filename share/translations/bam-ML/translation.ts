@@ -81128,43 +81128,43 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔyɛlɛma %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔyɛlɛma kura</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML yɔrɔyɛlɛma dɔ: a sɛbɛn i n'a fɔ sɛbɛn walima a taamasenw labɛn formilɛri kɔnɔ, a lajɛ, o kɔfɛ a mara yɔrɔyɛlɛmaw dosiye dɔ kɔnɔ.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nin yɔrɔyɛlɛma waleyara ka ban, o de kosɔn a tɛ mara tugun: jatesen kɔlɔsili tun bɛna fisiye yɛlɛmalen ban. Yɛlɛmali kɛ yɔrɔyɛlɛma kura dɔ kɔnɔ.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wɛbu sɛrɛwɛri tɛ se ka fisiye sɛbɛn.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hakilina sɛbɛnni minnu bɛ sanfɛ, olu ye kunkan ye (description, author, requires, environments, engines). Ni taamasen dɔ farala a kan walima a yɛlɛmana formilɛri kɔnɔ, yɔrɔyɛlɛma bɛ sɛbɛn kokura: hakilina minnu bɛ taamasenw cɛ, olu tɛ mara.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔyɛlɛma tɔgɔ</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>A bɛ taa yɔrɔ min</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Siti</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML sɛbɛn</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Taamasen si tɛ yen fɔlɔ: kelen fara a kan ni formilɛri ye, walima u sɛbɛn sɛbɛn kɔnɔ.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Taamasen %number yɛlɛma</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Taamasen dɔ fara a kan</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Taamasen formilɛri bɛ dilan a taamasen suguya la: a kilew, u kelen kelen bɛ min ta ani a bɛ taabolo minnu na.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Taamasen suguya</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>A formilɛri jira</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Kili dɔw bɛ taamasen na, a suguya tɛ minnu dɔn; u bɛ bɔ a la ni taamasen yɛlɛmana: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Taabolo</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>%modes dɔrɔn na</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Daminɛ nafa: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Sariyaw, referansiw ani hakilina</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Tɔgɔ=nafa fila-fila minnu farala ɲɔgɔn na ni virigiliw ye. Nin taamasen nafaw: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Taamasen yɛlɛma</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Taamasen fara a kan</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check bɛ min fɔ: kunkan, dokuman ani taamasen bɛɛ min lajɛra a taamasen suguya fɛ.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔyɛlɛma ɲɛna lajɛli la.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML i n'a fɔ a bɛna mara cogo min na.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML jira</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML yɔrɔyɛlɛmaw</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>a waleyara</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML yɔrɔyɛlɛma si tɛ yen fɔlɔ.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML yɔrɔyɛlɛma %id tɛ yɔrɔyɛlɛmaw dosiyew kɔnɔ.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Taamasen suguya dɔ sugandi.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Taamasen farala a kan. Yɔrɔyɛlɛma lajɛ sani i k'a mara.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Taamasen yɛlɛmana. Yɔrɔyɛlɛma lajɛ sani i k'a mara.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Taamasen dɔ sugandi.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Formilɛri tɛ nin taamasen fɛ (segin-segin dɔ, walima taamasen suguya min tɛ nin sigili la): a yɛlɛma sɛbɛn kɔnɔ.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔyɛlɛma bɛ taa yɔrɔ min, o sugandi: siti walima ɛkisitansiyɔn waleyalen dɔ.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file marara. Kɔrɔbɔli waleya kɛ sani yɔrɔyɛlɛma ka waleya.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>A ma mara: %reason</translation>
     </message>
 </context>
 <context>

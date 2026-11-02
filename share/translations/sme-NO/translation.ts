@@ -81128,43 +81128,43 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrašuvdna %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Ođđa migrašuvdna</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migrašuvdna: čále dan teakstan dahje hukse dan lávkkiid skovis, dárkkis dan ja vurke dan dasto migrašuvdnamáhppii.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dát migrašuvdna lea juo vuddjojuvvon, danin dat ii vurkejuvvo ođđasit: dárkkistansubmmi suodjalus hilgošii rievdaduvvon fiilla. Daga rievdadusa ođđa migrašuvnnas.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neahttabálvá ii sáhte čállit fiilla.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentárlinját bajimusas leat oaivi (description, author, requires, environments, engines). Go lávki lasihuvvo dahje rievdaduvvo skovis, migrašuvdna čállojuvvo ođđasit: kommentárat lávkkiid gaskkas eai seilu.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrašuvnna namma</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Gosa dat manná</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Neahttabáiki</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-teaksta</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ii vel lávkkit: lasit ovtta skoviin, dahje čále daid teakstii.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Rievdat lávkki %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Lasit ovtta lávkki</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lávkki skovvi ráhkaduvvo dan lávkešlájas: dan čoavdásiin, maid juohke okta váldá ja vugiin maidda dat gullá.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Lávkešládja</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Čájet dan skovi</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Lávkkis leat čoavdásat maid dan šládja ii dovdda; dat guđđojuvvojit eret go lávki rievdaduvvo: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuohki</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>dušše %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Standárda: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Eavttut, čujuhusat ja kommentára</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Namma=árvu-páras, sirrejuvvon rihkuiguin. Dán lávkki árvvut: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Rievdat lávkki</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Lasit lávkki</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maid exp:migration:check dadjá: oaivi, dokumeanta ja juohke lávki dárkkistuvvon dan lávkešlájain.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrašuvdna manná dárkkisteami čađa.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML nugo dat vurkejuvvo.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Čájet YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migrašuvnnat</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>lea vuddjojuvvon</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eai leat vel YAML-migrašuvnnat.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrašuvdnamáhpain ii leat YAML-migrašuvdna %id.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vállje lávkešlája.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lávki lea lasihuvvon. Dárkkis migrašuvnna ovdal go vurket dan.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lávki lea rievdaduvvon. Dárkkis migrašuvnna ovdal go vurket dan.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vállje lávkki.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dán lávkkis ii leat skovvi (luhkka, dahje lávkešládja mii dán installašuvnnas ii leat): rievdat dan teavsttas.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vállje gosa migrašuvdna manná: neahttabáikái dahje aktiivvalaš lassiprográmmii.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file vurkejuvvui. Vuoje geahččalanvuodjima ovdal go migrašuvdna vuodjá.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Ii vurkejuvvon: %reason</translation>
     </message>
 </context>
 <context>

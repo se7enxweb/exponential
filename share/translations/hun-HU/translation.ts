@@ -81158,43 +81158,43 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migráció: %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Új migráció</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migráció: írja meg szövegként, vagy állítsa össze a lépéseit az űrlapon, ellenőrizze, majd mentse egy migrációs mappába.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez a migráció már lefutott, ezért nem kerül újra mentésre: az ellenőrzőösszeg-védelem elutasítana egy módosított fájlt. A módosítást egy új migrációban végezze el.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>A webkiszolgáló nem tudja írni a fájlt.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>A kezdő megjegyzéssorok alkotják a fejlécet (description, author, requires, environments, engines). Ha az űrlapon lépést ad hozzá vagy módosít, a migráció újra kiírásra kerül: a lépések közötti megjegyzések nem maradnak meg.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>A migráció neve</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hová kerül</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>A webhely</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-szöveg</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81230,35 +81230,35 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Még nincsenek lépések: adjon hozzá egyet az űrlappal, vagy írja be őket a szövegbe.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>%number. lépés módosítása</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Egy lépés hozzáadása</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egy lépés űrlapja a lépéstípusából készül: a kulcsaiból, abból, hogy mindegyik mit fogad, és azokból a módokból, amelyekhez tartozik.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Lépéstípus</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Űrlap megjelenítése</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>A lépésnek olyan kulcsai vannak, amelyeket a típusa nem ismer; ezek a lépés módosításakor kimaradnak: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mód</translation>
     </message>
     <message>
         <source>In</source>
@@ -81266,19 +81266,19 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>csak ezekben a módokban: %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Alapértelmezett: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Feltételek, hivatkozások és megjegyzés</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Név=érték párok vesszővel elválasztva. A lépés értékei: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81286,19 +81286,19 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Lépés módosítása</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Lépés hozzáadása</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Amit az exp:migration:check mond: a fejléc, a dokumentum és minden lépés, a saját lépéstípusa szerint ellenőrizve.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>A migráció megfelel az ellenőrzésen.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81306,23 +81306,23 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>A YAML-szöveg úgy, ahogyan mentésre kerül.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>A YAML megjelenítése</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migrációk</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>lefutott</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Még nincsenek YAML-migrációk.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81330,39 +81330,39 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>A migrációs mappákban nincs %id nevű YAML-migráció.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Válasszon lépéstípust.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>A lépés hozzáadva. Mentés előtt ellenőrizze a migrációt.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>A lépés módosítva. Mentés előtt ellenőrizze a migrációt.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Válasszon lépést.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ennek a lépésnek nincs űrlapja (ciklus, vagy olyan lépéstípus, amely ebben a telepítésben nincs meg): módosítsa a szövegben.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki, hová kerüljön a migráció: a webhelyre vagy egy aktív bővítménybe.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mentve: %file. Végezzen próbafuttatást, mielőtt a migráció lefut.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Nincs mentve: %reason</translation>
     </message>
 </context>
 <context>

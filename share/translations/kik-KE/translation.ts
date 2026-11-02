@@ -81128,43 +81128,43 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũthamio %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũthamio mwerũ</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũthamio wa YAML: ũwandĩke ta mahoro kana ũake makinya maguo thĩinĩ wa fomu, ũtiire, ningĩ ũũige thĩinĩ wa foda ya mĩthamio.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũthamio ũyũ nĩũtengerio mbere, nĩ ũndũ ũcio ndũkũigwo rĩngĩ: faili ĩgarũrĩtwo yahota kũregwo nĩ mũrangĩri wa namba ya ũtiiri. Ĩka mũgarũrũko ũcio thĩinĩ wa mũthamio mwerũ.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seva ya wẽbu ndĩngĩhota kwandĩka faili.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mĩhari ya maoni ya igũrũ nĩ kĩongo (description, author, requires, environments, engines). Rĩrĩa ikinya rĩongereirwo kana rĩgarũrĩtwo thĩinĩ wa fomu, mũthamio nĩũandĩkagwo rĩngĩ: maoni marĩa marĩ gatagatĩ ka makinya matiigagwo.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Rĩĩtwa rĩa mũthamio</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Harĩa ũgũthiĩ</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Thaiti</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Mahoro ma YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gũtirĩ makinya rĩu: ongerera rĩmwe na fomu, kana ũmandĩke thĩinĩ wa mahoro.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Garũra ikinya %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongerera ikinya rĩmwe</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fomu ya ikinya ĩthondekagwo kuuma mũthembainĩ wa ikinya rĩu: ihingũro ciarĩo, kĩrĩa o kĩmwe kĩoyaga na njĩra iria rĩrĩ thĩinĩ wacio.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũthemba wa ikinya</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Onania fomu yarĩo</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikinya rĩrĩ na ihingũro iria mũthemba warĩo ũtooĩ; nĩcirutagwo rĩrĩa ikinya rĩgũgarũrwo: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Njĩra</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>thĩinĩ wa %modes tu</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Kĩa mbere: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Mabataro, mathiĩnĩro na maoni</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Rĩĩtwa=thogora, igayũkanĩtio na koma. Thogora wa ikinya rĩrĩ: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Garũra ikinya</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongerera ikinya</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kĩrĩa exp:migration:check yugaga: kĩongo, ndogomendi na o ikinya rĩtiirĩtwo nĩ mũthemba warĩo wa ikinya.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũthamio nĩũhĩtũkĩte gũtiirwo.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML o ta ũrĩa ĩrĩigwo.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Onania YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Mĩthamio ya YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>nĩũtengerio</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gũtirĩ mĩthamio ya YAML rĩu.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gũtirĩ mũthamio wa YAML %id thĩinĩ wa foda cia mĩthamio.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thuura mũthemba wa ikinya.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikinya nĩrĩongereirwo. Tiira mũthamio mbere ya kũũiga.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikinya nĩrĩgarũrĩtwo. Tiira mũthamio mbere ya kũũiga.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thuura ikinya.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikinya rĩrĩ rĩtirĩ na fomu (gĩthiũrũrũka, kana mũthemba wa ikinya ũrĩa ũhaandi ũyũ ũtarĩ naguo): rĩgarũre thĩinĩ wa mahoro.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thuura harĩa mũthamio ũgũthiĩ: thaiti kana kĩongerereri kĩrĩa kĩrutaga wĩra.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file nĩĩigĩtwo. Tengeria ũgerio mbere ya mũthamio gũtengerio.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Ndũigĩtwo: %reason</translation>
     </message>
 </context>
 <context>

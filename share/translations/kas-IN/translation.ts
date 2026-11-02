@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>مایگریشَن %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>نوٚو مایگریشَن</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>اکھ YAML مایگریشَن: یہِ لیٚکھِو مَتنَس منٛز یا فارمس منٛز بنٲوِو اَمِیک قدم، یہِ چیک کٔرِو، پَتہٕ کٔرِو یہِ مایگریشَن فولڈَرس منٛز محفوظ۔</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>یہِ مایگریشَن چھُ گۄڈے چلیومُت، تَوے یِیہِ نہٕ دوبارٕ محفوظ کرنہٕ: بَدلاومژِ فایِل کَرِہ چیکسَم گارڈ نامنظور۔ بَدلاو کٔرِو اکِس نَوِس مایگریشَنس منٛز۔</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ویب سَروَر ہیٚکہِ نہٕ فایِل لیٚکھِتھ۔</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>پیٹھہٕ تبصرٕچ لایِنہٕ چھےٚ ہیڈَر (description, author, requires, environments, engines)۔ ییٚلہِ فارمس منٛز اکھ قدم شٲمِل یا بَدلاونہٕ یِیہِ، مایگریشَن یِیہِ دوبارٕ لیٚکھنہٕ: قدمَن درمیان تبصرٕ روزَن نہٕ۔</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>مایگریشَنُک ناو</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>یہِ کَتیٚن گژھان چھُ</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>سایِٹ</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML مَتن</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>وُنی چھُنہٕ کانٛہہ قدم: فارمہٕ سٟتؠ کٔرِو اکھ شٲمِل، یا لیٚکھِو تِم مَتنَس منٛز۔</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم %number بَدلٲوِو</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>اکھ قدم شٲمِل کٔرِو</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>قدمُک فارم بنان چھُ اَمِکہِ قدمہٕ کِس قِسمہٕ پیٹھہٕ: اَمِچ کی، پرٛتھ اکھ کیا ہیوان چھےٚ تہٕ کَمَن موڈَن منٛز یہِ چھُ۔</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>قدمُک قِسِم</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>اَمِیک فارم وُچھِو</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>قدمس چھےٚ تِژھ کی یِمَن اَمیُک قِسِم زانان چھُنہٕ؛ قدم بَدلاونہٕ وِزِ ترٛاونہٕ یِیَن تِم: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>موڈ</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>صِرف %modes منٛز</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>ڈیفالٹ: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>شرٕطہٕ، حوالہٕ تہٕ تبصرٕ</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>ناو=قٕدر جوڑٕ، کاماہَو سٟتؠ الگ کٔرِتھ۔ یَمہِ قدمٕچ قٕدرٕ: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم بَدلٲوِو</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم شٲمِل کٔرِو</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check کیا ونان چھُ: ہیڈَر، دستاویز تہٕ پرٛتھ قدم، یُس اَمِکہِ قدمہٕ کِس قِسمہٕ سٟتؠ چیک کرنہٕ آو۔</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>مایگریشَن چھُ چیک پاس کران۔</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML یِتھہٕ پٲٹھؠ یہِ محفوظ یِیہِ کرنہٕ۔</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML وُچھِو</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML مایگریشَن</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>چلیومُت</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>وُنی چھُنہٕ کانٛہہ YAML مایگریشَن۔</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>مایگریشَن فولڈَرَن منٛز چھُنہٕ کانٛہہ YAML مایگریشَن %id۔</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>قدمُک قِسِم ژارِو۔</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم گوٚو شٲمِل۔ محفوظ کرنہٕ برونٛہہ کٔرِو مایگریشَن چیک۔</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>قدم گوٚو بَدلاونہٕ۔ محفوظ کرنہٕ برونٛہہ کٔرِو مایگریشَن چیک۔</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>اکھ قدم ژارِو۔</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>یَمہِ قدمس چھُنہٕ کانٛہہ فارم (اکھ لوپ، یا قدمُک تِتھ قِسِم یُس یَمہِ انسٹالیشَنس منٛز چھُنہٕ): یہِ بَدلٲوِو مَتنَس منٛز۔</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>ژارِو زِ مایگریشَن کَتیٚن گژھہِ: سایِٹ یا اکھ فعال ایکسٹینشَن۔</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file گوٚو محفوظ۔ مایگریشَن چلنہٕ برونٛہہ چلٲوِو آزمٲیشی رَن۔</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>محفوظ گوٚو نہٕ: %reason</translation>
     </message>
 </context>
 <context>

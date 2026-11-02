@@ -81158,43 +81158,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Μετεγκατάσταση %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Νέα μετεγκατάσταση</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Μια μετεγκατάσταση YAML: γράψτε την ως κείμενο ή συνθέστε τα βήματά της στη φόρμα, ελέγξτε την και έπειτα αποθηκεύστε την σε έναν φάκελο μετεγκαταστάσεων.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτή η μετεγκατάσταση έχει ήδη εκτελεστεί, γι' αυτό δεν αποθηκεύεται ξανά: ένα αλλαγμένο αρχείο θα απορριπτόταν από την προστασία αθροίσματος ελέγχου. Κάντε την αλλαγή σε μια νέα μετεγκατάσταση.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο διακομιστής ιστού δεν μπορεί να γράψει το αρχείο.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι γραμμές σχολίων στην αρχή είναι η κεφαλίδα (description, author, requires, environments, engines). Όταν ένα βήμα προστίθεται ή αλλάζει στη φόρμα, η μετεγκατάσταση γράφεται ξανά: τα σχόλια ανάμεσα στα βήματα δεν διατηρούνται.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα της μετεγκατάστασης</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Πού πηγαίνει</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο ιστότοπος</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Κείμενο YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81230,35 +81230,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Κανένα βήμα ακόμη: προσθέστε ένα με τη φόρμα ή γράψτε τα στο κείμενο.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή βήματος %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη ενός βήματος</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η φόρμα ενός βήματος δημιουργείται από τον τύπο βήματός του: τα κλειδιά του, τι δέχεται το καθένα και τις λειτουργίες στις οποίες ανήκει.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Τύπος βήματος</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση της φόρμας</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Το βήμα έχει κλειδιά που ο τύπος του δεν γνωρίζει· παραλείπονται όταν αλλάζει το βήμα: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Λειτουργία</translation>
     </message>
     <message>
         <source>In</source>
@@ -81266,19 +81266,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>μόνο σε %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Προεπιλογή: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνθήκες, αναφορές και σχόλιο</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Ζεύγη όνομα=τιμή χωρισμένα με κόμματα. Οι τιμές αυτού του βήματος: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81286,19 +81286,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή βήματος</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη βήματος</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Τι λέει το exp:migration:check: η κεφαλίδα, το έγγραφο και κάθε βήμα, ελεγμένο από τον τύπο βήματός του.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η μετεγκατάσταση περνά τον έλεγχο.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81306,23 +81306,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το YAML όπως θα αποθηκευτεί.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση του YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Μετεγκαταστάσεις YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>εκτελέστηκε</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν υπάρχουν ακόμη μετεγκαταστάσεις YAML.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81330,39 +81330,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν υπάρχει μετεγκατάσταση YAML %id στους φακέλους μετεγκαταστάσεων.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε έναν τύπο βήματος.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το βήμα προστέθηκε. Ελέγξτε τη μετεγκατάσταση πριν την αποθηκεύσετε.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το βήμα άλλαξε. Ελέγξτε τη μετεγκατάσταση πριν την αποθηκεύσετε.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε ένα βήμα.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό το βήμα δεν έχει φόρμα (ένας βρόχος ή ένας τύπος βήματος που δεν διαθέτει αυτή η εγκατάσταση): αλλάξτε το στο κείμενο.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε πού πηγαίνει η μετεγκατάσταση: ο ιστότοπος ή μια ενεργή επέκταση.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το %file αποθηκεύτηκε. Κάντε μια δοκιμαστική εκτέλεση πριν εκτελεστεί η μετεγκατάσταση.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν αποθηκεύτηκε: %reason</translation>
     </message>
 </context>
 <context>

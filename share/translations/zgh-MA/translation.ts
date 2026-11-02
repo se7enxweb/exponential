@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴰⵙⵎⵓⵜⵜⵢ %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴰⵙⵎⵓⵜⵜⵢ ⴰⵎⴰⵢⵏⵓ</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴰⵙⵎⵓⵜⵜⵢ ⵏ YAML: ⴰⵔⵓ ⵜ ⵙ ⵓⴹⵔⵉⵚ ⵏⵖ ⴱⵏⵓ ⵜⵉⵙⵡⵉⵔⵉⵏ ⵏⵏⵙ ⴳ ⵓⵏⵎⵓⴷⵉ, ⵙⵏⵇⴷ ⵜ, ⵙⴳ ⵎⴰⵏ ⵃⴹⵓ ⵜ ⴳ ⵢⴰⵏ ⵓⴽⴰⵔⴰⵎ ⵏ ⵉⵙⵎⵓⵜⵜⵢⵏ.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴰⵙⵎⵓⵜⵜⵢ ⴰ ⵉⵜⵜⵓⵙⴷⵓ ⵢⴰⴷ, ⵙ ⵓⵢⴰ ⵓⵔ ⵉⵜⵜⵓⵃⴹⴰ ⴷⴰⵖ: ⴰⴼⴰⵢⵍⵓ ⵉⵜⵜⵓⵙⵏⴼⵍⵏ ⴰⴷ ⵜ ⵢⴰⴳⵢ ⵓⵎⵃⴹⴰⵢ ⵏ ⵜⵓⵎⴰⵏⵜ ⵏ ⵓⵙⵏⵇⴷ. ⴳ ⴰⵙⵏⴼⵍ ⴳ ⵢⴰⵏ ⵓⵙⵎⵓⵜⵜⵢ ⴰⵎⴰⵢⵏⵓ.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵓⵔ ⵉⵣⵎⵔ ⵓⵎⴰⴽⴰⵢ ⵏ ⵡⵉⴱ ⴰⴷ ⵢⴰⵔⵓ ⴰⴼⴰⵢⵍⵓ.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵉⵣⵔⵉⵔⵉⴳⵏ ⵏ ⵓⵡⵏⵏⴰⵏ ⴳ ⵓⴼⵍⵍⴰ ⴳⴰⵏ ⴰⵣⵡⵍ (description, author, requires, environments, engines). ⵎⴽ ⵜⵜⵓⵔⵏⴰ ⵏⵖ ⵜⵜⵓⵙⵏⴼⵍ ⵢⴰⵜ ⵜⴼⵔⴽⵉⵜ ⴳ ⵓⵏⵎⵓⴷⵉ, ⴰⵙⵎⵓⵜⵜⵢ ⵉⵜⵜⵓⵔⴰ ⴷⴰⵖ: ⵉⵡⵏⵏⴰⵏⵏ ⴳⵔ ⵜⵉⴼⵔⴽⵉⵜⵉⵏ ⵓⵔ ⵜⵜⵓⵃⴹⴰⵏ.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵉⵙⵎ ⵏ ⵓⵙⵎⵓⵜⵜⵢ</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵎⴰⵏⵉ ⵔⴰⴷ ⵢⵓⵢⵍ</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴰⵙⵉⵜ</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴰⴹⵔⵉⵚ ⵏ YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵓⵍⴰ ⵜⴰⴼⵔⴽⵉⵜ ⵙⵓⵍ: ⵔⵏⵓ ⵢⴰⵜ ⵙ ⵓⵏⵎⵓⴷⵉ, ⵏⵖ ⴰⵔⵓ ⵜⵏⵜ ⴳ ⵓⴹⵔⵉⵚ.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵙⵏⴼⵍ ⵜⴰⴼⵔⴽⵉⵜ %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵔⵏⵓ ⵢⴰⵜ ⵜⴼⵔⴽⵉⵜ</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴰⵏⵎⵓⴷⵉ ⵏ ⵜⴼⵔⴽⵉⵜ ⵉⵜⵜⵓⴳ ⵙⴳ ⵓⵏⴰⵡ ⵏⵏⵙ ⵏ ⵜⴼⵔⴽⵉⵜ: ⵜⵉⵙⴰⵔⵓⵜⵉⵏ ⵏⵏⵙ, ⵎⴰⴷ ⵜⵜⴰⵎⵥ ⴽⵓ ⵢⴰⵜ ⴷ ⵜⵖⴰⵔⴰⵙⵉⵏ ⵎⵉ ⵜⵍⵍⴰ.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴰⵏⴰⵡ ⵏ ⵜⴼⵔⴽⵉⵜ</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵙⴽⵏ ⴰⵏⵎⵓⴷⵉ ⵏⵏⵙ</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵜⴰⴼⵔⴽⵉⵜ ⵖⵓⵔⵙ ⵜⵉⵙⴰⵔⵓⵜⵉⵏ ⵓⵔ ⵉⵙⵙⵏ ⵓⵏⴰⵡ ⵏⵏⵙ; ⵜⵜⵓⵙⵙⵓⴼⵖⵏⵜ ⵎⴽ ⵜⵜⵓⵙⵏⴼⵍ ⵜⴼⵔⴽⵉⵜ: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵜⴰⵖⴰⵔⴰⵙⵜ</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵖⴰⵙ ⴳ %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴰⵎⵣⵡⴰⵔⵓ: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵜⵉⵡⵜⵉⵍⵉⵏ, ⵜⵉⵎⵙⵙⵓⴳⴰ ⴷ ⵓⵡⵏⵏⴰⵏ</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵜⵉⵢⵓⴳⴰ ⵉⵙⵎ=ⴰⵣⴰⵍ ⵉⵜⵜⵓⴱⴹⴰⵏ ⵙ ⵜⵉⵙⴽⵔⴰⵔ. ⵉⵣⴰⵍⵏ ⵏ ⵜⴼⵔⴽⵉⵜ ⴰ: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵙⵏⴼⵍ ⵜⴰⴼⵔⴽⵉⵜ</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵔⵏⵓ ⵜⴰⴼⵔⴽⵉⵜ</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵎⴰⴷ ⵉⵜⵜⵉⵏⵉ exp:migration:check: ⴰⵣⵡⵍ, ⴰⵙⵉⴳⵍ ⴷ ⴽⵓ ⵜⴰⴼⵔⴽⵉⵜ ⵉⵙⵏⵇⴷ ⵓⵏⴰⵡ ⵏⵏⵙ.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴰⵙⵎⵓⵜⵜⵢ ⵉⵣⵔⵉ ⴰⵙⵏⵇⴷ.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ⵣⵓⵏ ⵎⴰⵎⴽ ⵔⴰⴷ ⵉⵜⵜⵓⵃⴹⵓ.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵙⴽⵏ YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵉⵙⵎⵓⵜⵜⵢⵏ ⵏ YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵉⵜⵜⵓⵙⴷⵓ</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵓⵍⴰ ⵢⴰⵏ ⵓⵙⵎⵓⵜⵜⵢ ⵏ YAML ⵙⵓⵍ.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵓⵍⴰ ⵢⴰⵏ ⵓⵙⵎⵓⵜⵜⵢ ⵏ YAML %id ⴳ ⵉⴽⴰⵔⴰⵎⵏ ⵏ ⵉⵙⵎⵓⵜⵜⵢⵏ.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴼⵔⵏ ⴰⵏⴰⵡ ⵏ ⵜⴼⵔⴽⵉⵜ.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵜⵜⵓⵔⵏⴰ ⵜⴼⵔⴽⵉⵜ. ⵙⵏⵇⴷ ⴰⵙⵎⵓⵜⵜⵢ ⵇⴱⵍ ⴰⴷ ⵜ ⵜⵃⴹⵓⴷ.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵜⵜⵓⵙⵏⴼⵍ ⵜⴼⵔⴽⵉⵜ. ⵙⵏⵇⴷ ⴰⵙⵎⵓⵜⵜⵢ ⵇⴱⵍ ⴰⴷ ⵜ ⵜⵃⴹⵓⴷ.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴼⵔⵏ ⵢⴰⵜ ⵜⴼⵔⴽⵉⵜ.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵜⴰⴼⵔⴽⵉⵜ ⴰ ⵓⵔ ⵖⵓⵔⵙ ⴰⵏⵎⵓⴷⵉ (ⵜⴰⵏⴹⵜ, ⵏⵖ ⴰⵏⴰⵡ ⵏ ⵜⴼⵔⴽⵉⵜ ⵓⵔ ⵉⵍⵍⵉⵏ ⴳ ⵓⵙⵙⵔⵙ ⴰ): ⵙⵏⴼⵍ ⵜ ⴳ ⵓⴹⵔⵉⵚ.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⴼⵔⵏ ⵎⴰⵏⵉ ⵔⴰⴷ ⵢⵓⵢⵍ ⵓⵙⵎⵓⵜⵜⵢ: ⴰⵙⵉⵜ ⵏⵖ ⵢⴰⵏ ⵓⵙⵖⵣⴼ ⵓⵔⵎⵉⴷ.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵉⵜⵜⵓⵃⴹⴰ %file. ⵙⴷⵓ ⴰⵙⴷⵓ ⵏ ⵓⵔⵎ ⵇⴱⵍ ⴰⴷ ⵉⵜⵜⵓⵙⴷⵓ ⵓⵙⵎⵓⵜⵜⵢ.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>ⵓⵔ ⵉⵜⵜⵓⵃⴹⴰ: %reason</translation>
     </message>
 </context>
 <context>

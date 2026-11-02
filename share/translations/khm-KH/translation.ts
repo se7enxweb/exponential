@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ការផ្ទេរ %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ការផ្ទេរថ្មី</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ការផ្ទេរ YAML៖ សរសេរវាជាអត្ថបទ ឬបង្កើតជំហានរបស់វានៅក្នុងទម្រង់ ពិនិត្យវា រួចរក្សាទុកវាក្នុងថតការផ្ទេរមួយ។</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>ការផ្ទេរនេះបានដំណើរការរួចហើយ ដូច្នេះវាមិនត្រូវបានរក្សាទុកម្ដងទៀតទេ៖ ឯកសារដែលបានផ្លាស់ប្ដូរនឹងត្រូវបានបដិសេធដោយការការពារ checksum។ សូមធ្វើការផ្លាស់ប្ដូរក្នុងការផ្ទេរថ្មីមួយ។</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ម៉ាស៊ីនមេគេហទំព័រមិនអាចសរសេរឯកសារនេះបានទេ។</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>បន្ទាត់មតិយោបល់នៅខាងលើគឺជាក្បាល (description, author, requires, environments, engines)។ នៅពេលជំហានមួយត្រូវបានបន្ថែម ឬផ្លាស់ប្ដូរក្នុងទម្រង់ ការផ្ទេរត្រូវបានសរសេរឡើងវិញ៖ មតិយោបល់រវាងជំហានទាំងនោះមិនត្រូវបានរក្សាទុកទេ។</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>ឈ្មោះការផ្ទេរ</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>កន្លែងដែលវាទៅ</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>គេហទំព័រ</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>អត្ថបទ YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>មិនទាន់មានជំហាននៅឡើយ៖ បន្ថែមមួយដោយប្រើទម្រង់ ឬសរសេរវានៅក្នុងអត្ថបទ។</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>ផ្លាស់ប្ដូរជំហាន %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>បន្ថែមជំហានមួយ</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>ទម្រង់នៃជំហានមួយត្រូវបានបង្កើតពីប្រភេទជំហានរបស់វា៖ សោរបស់វា អ្វីដែលសោនីមួយៗទទួល និងរបៀបដែលវាស្ថិតនៅ។</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>ប្រភេទជំហាន</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>បង្ហាញទម្រង់របស់វា</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>ជំហាននេះមានសោដែលប្រភេទរបស់វាមិនស្គាល់ ពួកវាត្រូវបានទុកចោលនៅពេលជំហានត្រូវបានផ្លាស់ប្ដូរ៖ %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>របៀប</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>តែក្នុង %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>លំនាំដើម៖ %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>លក្ខខណ្ឌ ឯកសារយោង និងមតិយោបល់</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>គូ ឈ្មោះ=តម្លៃ បំបែកដោយសញ្ញាក្បៀស។ តម្លៃនៃជំហាននេះ៖ %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>ផ្លាស់ប្ដូរជំហាន</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>បន្ថែមជំហាន</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>អ្វីដែល exp:migration:check និយាយ៖ ក្បាល ឯកសារ និងជំហាននីមួយៗដែលបានពិនិត្យដោយប្រភេទជំហានរបស់វា។</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>ការផ្ទេរឆ្លងកាត់ការពិនិត្យ។</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ដូចដែលវានឹងត្រូវរក្សាទុក។</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>បង្ហាញ YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>ការផ្ទេរ YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>បានដំណើរការ</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>មិនទាន់មានការផ្ទេរ YAML នៅឡើយទេ។</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>គ្មានការផ្ទេរ YAML %id នៅក្នុងថតការផ្ទេរទេ។</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>ជ្រើសរើសប្រភេទជំហាន។</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ជំហានត្រូវបានបន្ថែម។ ពិនិត្យការផ្ទេរមុនពេលអ្នករក្សាទុកវា។</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ជំហានត្រូវបានផ្លាស់ប្ដូរ។ ពិនិត្យការផ្ទេរមុនពេលអ្នករក្សាទុកវា។</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>ជ្រើសរើសជំហានមួយ។</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ជំហាននេះគ្មានទម្រង់ទេ (រង្វិលជុំមួយ ឬប្រភេទជំហានដែលការដំឡើងនេះមិនមាន)៖ សូមផ្លាស់ប្ដូរវានៅក្នុងអត្ថបទ។</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>ជ្រើសរើសកន្លែងដែលការផ្ទេរនឹងទៅ៖ គេហទំព័រ ឬផ្នែកបន្ថែមសកម្មមួយ។</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>បានរក្សាទុក %file។ ធ្វើការដំណើរការសាកល្បងមុនពេលការផ្ទេរដំណើរការ។</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>មិនបានរក្សាទុក៖ %reason</translation>
     </message>
 </context>
 <context>

@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Fetuku %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Fetuku foʻou</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko ha fetuku YAML: tohi ia ko ha tohi pe langa hono ngaahi sitepu ʻi he foomú, sivi ia, pea tauhi ia ʻi ha folota fetuku.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuo ʻosi fakalele ʻa e fetuku ko ʻení, ko ia ʻoku ʻikai toe tauhi ia: ʻe fakafisingaʻi ʻe he leʻo checksum ha faile kuo liliu. Fai ʻa e liliú ʻi ha fetuku foʻou.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻikai lava ʻe he sētivā uepí ʻo tohi ʻa e faile.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e ngaahi laine fakakaukau ʻi ʻolungá ko e ʻuluʻi tohi ia (description, author, requires, environments, engines). ʻI he taimi ʻoku tānaki pe liliu ai ha sitepu ʻi he foomú, ʻoku toe tohi ʻa e fetukú: ʻoku ʻikai tauhi ʻa e ngaahi fakakaukau ʻi he vahaʻa ʻo e ngaahi sitepú.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Hingoa ʻo e fetukú</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e feituʻu ʻe ʻalu ki ai</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e uepisaití</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Tohi YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku teʻeki ai ha sitepu: tānaki ha taha ʻaki ʻa e foomú, pe tohi kinautolu ʻi he tohí.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Liliu ʻa e sitepu %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Tānaki ha sitepu</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku faʻu ʻa e foomu ʻo ha sitepu mei hono faʻahinga sitepu: ʻa hono ngaahi kī, ʻa e meʻa ʻoku tali ʻe he taha kotoa pea mo e ngaahi founga ʻoku kau ki ai.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Faʻahinga sitepu</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakahā hono foomu</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻi ai ha ngaahi kī ʻa e sitepú ʻoku ʻikai ʻiloʻi ʻe hono faʻahingá; ʻoku tuku ia ki tuʻa ʻi he taimi ʻoku liliu ai ʻa e sitepú: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Founga</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻi he %modes pē</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuʻumaʻu: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaahi tuʻunga, ngaahi maʻuʻanga mo e fakakaukau</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaahi ua Hingoa=mahuʻinga ʻoku vahevahe ʻaki ha koma. Ngaahi mahuʻinga ʻo e sitepu ko ʻení: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Liliu ʻa e sitepu</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Tānaki sitepu</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻA e meʻa ʻoku pehē ʻe exp:migration:check: ko e ʻuluʻi tohí, ko e tohí kakato mo e sitepu kotoa pē kuo sivi ʻe hono faʻahinga sitepu.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku lavaʻi ʻe he fetukú ʻa e siví.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e YAML ʻo hangē ko ia ʻe tauhí.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakahā ʻa e YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaahi fetuku YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>kuo fakalele</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku teʻeki ai ha ngaahi fetuku YAML.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻikai ha fetuku YAML %id ʻi he ngaahi folota fetukú.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fili ha faʻahinga sitepu.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuo tānaki ʻa e sitepú. Sivi ʻa e fetukú kimuʻa pea ke tauhi ia.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuo liliu ʻa e sitepú. Sivi ʻa e fetukú kimuʻa pea ke tauhi ia.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fili ha sitepu.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻikai ha foomu ʻa e sitepu ko ʻení (ko ha takai, pe ko ha faʻahinga sitepu ʻoku ʻikai ʻi he fokotuʻu ko ʻení): liliu ia ʻi he tohí.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fili ʻa e feituʻu ʻe ʻalu ki ai ʻa e fetukú: ko e uepisaití pe ko ha fakalahi ʻoku ngāue.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuo tauhi ʻa e %file. Fai ha fakalele ʻahiʻahi kimuʻa pea fakalele ʻa e fetukú.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Naʻe ʻikai tauhi: %reason</translation>
     </message>
 </context>
 <context>

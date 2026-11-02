@@ -81158,43 +81158,43 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracija %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nauja migracija</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML migracija: parašykite ją kaip tekstą arba sudėkite jos žingsnius formoje, patikrinkite ją ir tada įrašykite į migracijų aplanką.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ši migracija jau buvo vykdyta, todėl ji neįrašoma iš naujo: kontrolinės sumos apsauga atmestų pakeistą failą. Pakeitimą atlikite naujoje migracijoje.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žiniatinklio serveris negali įrašyti failo.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Komentarų eilutės viršuje yra antraštė (description, author, requires, environments, engines). Kai žingsnis pridedamas ar keičiamas formoje, migracija perrašoma: komentarai tarp žingsnių neišsaugomi.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracijos pavadinimas</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kur ji bus</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Svetainė</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML tekstas</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81230,35 +81230,35 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žingsnių dar nėra: pridėkite vieną per formą arba įrašykite juos tekste.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Keisti žingsnį %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Žingsnio pridėjimas</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žingsnio forma sudaroma pagal jo žingsnio tipą: jo raktus, ką kiekvienas priima, ir režimus, kuriems jis priklauso.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Žingsnio tipas</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Rodyti jo formą</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Žingsnis turi raktų, kurių jo tipas nežino; keičiant žingsnį jie praleidžiami: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režimas</translation>
     </message>
     <message>
         <source>In</source>
@@ -81266,19 +81266,19 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>tik režimuose %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Numatytoji reikšmė: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Sąlygos, nuorodos ir komentaras</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Poros Pavadinimas=reikšmė, atskirtos kableliais. Šio žingsnio reikšmės: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81286,19 +81286,19 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Keisti žingsnį</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridėti žingsnį</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ką sako exp:migration:check: antraštė, dokumentas ir kiekvienas žingsnis, patikrintas jo žingsnio tipo.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracija praeina patikrinimą.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81306,23 +81306,23 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML taip, kaip bus įrašytas.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Rodyti YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML migracijos</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>įvykdyta</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML migracijų dar nėra.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81330,39 +81330,39 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracijų aplankuose nėra YAML migracijos %id.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite žingsnio tipą.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žingsnis pridėtas. Prieš įrašydami migraciją, ją patikrinkite.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žingsnis pakeistas. Prieš įrašydami migraciją, ją patikrinkite.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite žingsnį.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šis žingsnis neturi formos (ciklas arba žingsnio tipas, kurio šis diegimas neturi): keiskite jį tekste.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite, kur bus migracija: svetainėje ar aktyviame plėtinyje.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Įrašyta: %file. Prieš paleisdami migraciją atlikite bandomąjį vykdymą.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Neįrašyta: %reason</translation>
     </message>
 </context>
 <context>

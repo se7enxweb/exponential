@@ -81126,43 +81126,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>മൈഗ്രേഷൻ %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>പുതിയ മൈഗ്രേഷൻ</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു YAML മൈഗ്രേഷൻ: ഇത് ടെക്സ്റ്റായി എഴുതുക അല്ലെങ്കിൽ ഇതിന്റെ ഘട്ടങ്ങൾ ഫോമിൽ നിർമ്മിക്കുക, പരിശോധിക്കുക, തുടർന്ന് ഒരു മൈഗ്രേഷൻ ഫോൾഡറിൽ സംരക്ഷിക്കുക.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഈ മൈഗ്രേഷൻ ഇതിനകം പ്രവർത്തിച്ചു, അതിനാൽ വീണ്ടും സംരക്ഷിക്കുന്നില്ല: മാറ്റിയ ഫയൽ ചെക്ക്സം സംരക്ഷണം നിരസിക്കും. മാറ്റം ഒരു പുതിയ മൈഗ്രേഷനിൽ വരുത്തുക.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>വെബ് സെർവറിന് ഈ ഫയൽ എഴുതാൻ കഴിയില്ല.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>മുകളിലുള്ള അഭിപ്രായ വരികളാണ് ഹെഡർ (description, author, requires, environments, engines). ഫോമിൽ ഒരു ഘട്ടം ചേർക്കുകയോ മാറ്റുകയോ ചെയ്യുമ്പോൾ മൈഗ്രേഷൻ വീണ്ടും എഴുതപ്പെടും: ഘട്ടങ്ങൾക്കിടയിലുള്ള അഭിപ്രായങ്ങൾ നിലനിർത്തില്ല.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>മൈഗ്രേഷന്റെ പേര്</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>ഇത് എവിടെ പോകുന്നു</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>സൈറ്റ്</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML ടെക്സ്റ്റ്</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81198,35 +81198,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഇതുവരെ ഘട്ടങ്ങളൊന്നുമില്ല: ഫോം ഉപയോഗിച്ച് ഒന്ന് ചേർക്കുക, അല്ലെങ്കിൽ ടെക്സ്റ്റിൽ എഴുതുക.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>ഘട്ടം %number മാറ്റുക</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു ഘട്ടം ചേർക്കുക</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു ഘട്ടത്തിന്റെ ഫോം അതിന്റെ ഘട്ട തരത്തിൽ നിന്നാണ് നിർമ്മിക്കുന്നത്: അതിന്റെ കീകൾ, ഓരോന്നും സ്വീകരിക്കുന്നത്, അത് ഉൾപ്പെടുന്ന മോഡുകൾ.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>ഘട്ട തരം</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>ഇതിന്റെ ഫോം കാണിക്കുക</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>ഈ ഘട്ടത്തിൽ അതിന്റെ തരത്തിന് അറിയാത്ത കീകളുണ്ട്; ഘട്ടം മാറ്റുമ്പോൾ അവ ഒഴിവാക്കപ്പെടും: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>മോഡ്</translation>
     </message>
     <message>
         <source>In</source>
@@ -81234,19 +81234,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>%modes എന്നതിൽ മാത്രം</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>സ്ഥിരസ്ഥിതി: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>വ്യവസ്ഥകൾ, റഫറൻസുകൾ, അഭിപ്രായം</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>കോമകളാൽ വേർതിരിച്ച പേര്=മൂല്യം ജോഡികൾ. ഈ ഘട്ടത്തിന്റെ മൂല്യങ്ങൾ: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81254,19 +81254,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>ഘട്ടം മാറ്റുക</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>ഘട്ടം ചേർക്കുക</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check പറയുന്നത്: ഹെഡർ, ഡോക്യുമെന്റ്, അതിന്റെ ഘട്ട തരം പരിശോധിച്ച ഓരോ ഘട്ടവും.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>മൈഗ്രേഷൻ പരിശോധനയിൽ വിജയിച്ചു.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81274,23 +81274,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>സംരക്ഷിക്കപ്പെടുന്ന രൂപത്തിലുള്ള YAML.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML കാണിക്കുക</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML മൈഗ്രേഷനുകൾ</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>പ്രവർത്തിച്ചു</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഇതുവരെ YAML മൈഗ്രേഷനുകളൊന്നുമില്ല.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81298,39 +81298,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>മൈഗ്രേഷൻ ഫോൾഡറുകളിൽ YAML മൈഗ്രേഷൻ %id ഇല്ല.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു ഘട്ട തരം തിരഞ്ഞെടുക്കുക.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഘട്ടം ചേർത്തു. സംരക്ഷിക്കുന്നതിന് മുമ്പ് മൈഗ്രേഷൻ പരിശോധിക്കുക.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഘട്ടം മാറ്റി. സംരക്ഷിക്കുന്നതിന് മുമ്പ് മൈഗ്രേഷൻ പരിശോധിക്കുക.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു ഘട്ടം തിരഞ്ഞെടുക്കുക.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഈ ഘട്ടത്തിന് ഫോം ഇല്ല (ഒരു ലൂപ്പ്, അല്ലെങ്കിൽ ഈ ഇൻസ്റ്റാളേഷനിൽ ഇല്ലാത്ത ഒരു ഘട്ട തരം): ഇത് ടെക്സ്റ്റിൽ മാറ്റുക.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>മൈഗ്രേഷൻ എവിടെ പോകണമെന്ന് തിരഞ്ഞെടുക്കുക: സൈറ്റ് അല്ലെങ്കിൽ സജീവമായ ഒരു എക്സ്റ്റൻഷൻ.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file സംരക്ഷിച്ചു. മൈഗ്രേഷൻ പ്രവർത്തിക്കുന്നതിന് മുമ്പ് ഒരു ഡ്രൈ റൺ നടത്തുക.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>സംരക്ഷിച്ചില്ല: %reason</translation>
     </message>
 </context>
 <context>

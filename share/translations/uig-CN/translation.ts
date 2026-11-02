@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>يۆتكەش %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>يېڭى يۆتكەش</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML يۆتكەش: ئۇنى تېكىست قىلىپ يېزىڭ ياكى جەدۋەلدە قەدەملىرىنى قۇرۇڭ، تەكشۈرۈڭ، ئاندىن يۆتكەش قىسقۇچىغا ساقلاڭ.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>بۇ يۆتكەش ئاللىقاچان ئىجرا بولغان، شۇڭا قايتا ساقلانمايدۇ: ئۆزگەرتىلگەن ھۆججەتنى تەكشۈرۈش يىغىندىسى قوغدىغۇچىسى رەت قىلىدۇ. ئۆزگەرتىشنى يېڭى يۆتكەشتە قىلىڭ.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>تور مۇلازىمېتىرى ھۆججەتنى يازالمايدۇ.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>ئۈستىدىكى ئىزاھات قۇرلىرى بەت بېشى (description, author, requires, environments, engines). جەدۋەلدە بىر قەدەم قوشۇلسا ياكى ئۆزگەرتىلسە، يۆتكەش قايتا يېزىلىدۇ: قەدەملەر ئارىسىدىكى ئىزاھاتلار ساقلانمايدۇ.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>يۆتكەشنىڭ ئىسمى</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>قەيەرگە كىرىدۇ</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>تور بېكەت</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML تېكىستى</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>تېخى قەدەم يوق: جەدۋەل ئارقىلىق بىرنى قوشۇڭ ياكى ئۇلارنى تېكىستكە يېزىڭ.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>%number-قەدەمنى ئۆزگەرتىش</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>بىر قەدەم قوشۇش</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>قەدەمنىڭ جەدۋىلى ئۇنىڭ قەدەم تىپىدىن ھاسىل قىلىنىدۇ: ئاچقۇچلىرى، ھەر بىرى نېمىنى قوبۇل قىلىدىغانلىقى ۋە ئۇ تەۋە بولغان ھالەتلەر.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>قەدەم تىپى</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>جەدۋىلىنى كۆرسەت</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>بۇ قەدەمدە ئۇنىڭ تىپى بىلمەيدىغان ئاچقۇچلار بار؛ قەدەم ئۆزگەرتىلگەندە ئۇلار چىقىرىۋېتىلىدۇ: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>ھالەت</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>پەقەت %modes دا</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>كۆڭۈلدىكى: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>شەرتلەر، نەقىللەر ۋە ئىزاھات</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>پەش بىلەن ئايرىلغان ئىسىم=قىممەت جۈپلىرى. بۇ قەدەمنىڭ قىممەتلىرى: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>قەدەمنى ئۆزگەرتىش</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>قەدەم قوشۇش</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check نىڭ دېگىنى: بەت بېشى، پۈتۈك ۋە قەدەم تىپى تەرىپىدىن تەكشۈرۈلگەن ھەر بىر قەدەم.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>يۆتكەش تەكشۈرۈشتىن ئۆتتى.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ساقلىنىدىغان شەكلىدىكى YAML.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML نى كۆرسەت</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML يۆتكەشلەر</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ئىجرا بولغان</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>تېخى YAML يۆتكەشلەر يوق.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>يۆتكەش قىسقۇچلىرىدا YAML يۆتكەش %id يوق.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>قەدەم تىپىنى تاللاڭ.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>قەدەم قوشۇلدى. ساقلاشتىن بۇرۇن يۆتكەشنى تەكشۈرۈڭ.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>قەدەم ئۆزگەرتىلدى. ساقلاشتىن بۇرۇن يۆتكەشنى تەكشۈرۈڭ.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>بىر قەدەمنى تاللاڭ.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>بۇ قەدەمنىڭ جەدۋىلى يوق (دەۋرە ياكى بۇ ئورنىتىشتا يوق قەدەم تىپى): ئۇنى تېكىستتە ئۆزگەرتىڭ.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>يۆتكەشنىڭ قەيەرگە كىرىدىغانلىقىنى تاللاڭ: تور بېكەت ياكى ئاكتىپ كېڭەيتمە.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file ساقلاندى. يۆتكەش ئىجرا بولۇشتىن بۇرۇن سىناق ئىجرا قىلىڭ.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>ساقلانمىدى: %reason</translation>
     </message>
 </context>
 <context>

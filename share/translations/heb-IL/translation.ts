@@ -81160,43 +81160,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>הגירה %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>הגירה חדשה</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>הגירת YAML: כתבו אותה כטקסט או בנו את צעדיה בטופס, בדקו אותה ולאחר מכן שמרו אותה בתיקיית הגירות.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>הגירה זו כבר רצה ולכן אינה נשמרת שוב: מנגנון ההגנה של סכום הביקורת היה דוחה קובץ ששונה. בצעו את השינוי בהגירה חדשה.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>שרת האינטרנט אינו יכול לכתוב את הקובץ.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>שורות ההערה בראש הן הכותרת (description, author, requires, environments, engines). כאשר צעד נוסף או משתנה בטופס, ההגירה נכתבת מחדש: הערות בין הצעדים אינן נשמרות.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>שם ההגירה</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>לאן היא הולכת</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>האתר</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>טקסט YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81232,35 +81232,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>עדיין אין צעדים: הוסיפו אחד בעזרת הטופס או כתבו אותם בטקסט.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>שינוי צעד %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסיפו צעד</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>הטופס של צעד נבנה מסוג הצעד שלו: המפתחות שלו, מה כל אחד מקבל ומצבי הפעולה שאליהם הוא שייך.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>סוג צעד</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>הצגת הטופס שלו</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>לצעד יש מפתחות שהסוג שלו אינו מכיר; הם יושמטו כאשר הצעד ישתנה: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>מצב פעולה</translation>
     </message>
     <message>
         <source>In</source>
@@ -81268,19 +81268,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>רק ב-%modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>ברירת מחדל: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>תנאים, הפניות והערה</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>זוגות שם=ערך מופרדים בפסיקים. הערכים של צעד זה: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81288,19 +81288,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>שינוי צעד</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>הוספת צעד</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>מה exp:migration:check אומר: הכותרת, המסמך וכל צעד כפי שנבדק על ידי סוג הצעד שלו.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>ההגירה עוברת את הבדיקה.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81308,23 +81308,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ה-YAML כפי שיישמר.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>הצגת ה-YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>הגירות YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>רצה</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>עדיין אין הגירות YAML.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81332,39 +81332,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>אין הגירת YAML %id בתיקיות ההגירות.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>בחרו סוג צעד.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>הצעד נוסף. בדקו את ההגירה לפני שתשמרו אותה.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>הצעד שונה. בדקו את ההגירה לפני שתשמרו אותה.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>בחרו צעד.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>לצעד זה אין טופס (לולאה, או סוג צעד שאינו קיים בהתקנה זו): שנו אותו בטקסט.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>בחרו לאן ההגירה תגיע: האתר או הרחבה פעילה.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file נשמר. בצעו ריצת ניסיון לפני שההגירה רצה.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>לא נשמר: %reason</translation>
     </message>
 </context>
 <context>

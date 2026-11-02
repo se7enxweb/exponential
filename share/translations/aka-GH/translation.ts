@@ -81128,43 +81128,43 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutukɔ %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutukɔ foforɔ</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML tutukɔ: kyerɛw no sɛ nsɛm anaa yɛ n'anammɔn wɔ krataa no so, hwɛ no, na afei sie no wɔ atutukɔ fɔlda bi mu.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutukɔ yi ayɛ adwuma dedaw, enti wɔrensan nsie no bio: checksum bammɔ no bɛpo fael a wɔasesa. Yɛ nsakraeɛ no wɔ tutukɔ foforɔ mu.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wɛb sɛva no ntumi nkyerɛw fael no.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Adwenekyerɛ nkyerɛwee a ɛwɔ soro no ne ti no (description, author, requires, environments, engines). Sɛ wɔde anammɔn ka ho anaa wɔsesa no wɔ krataa no so a, wɔsan kyerɛw tutukɔ no: wɔnkora adwenekyerɛ a ɛwɔ anammɔn no ntam.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutukɔ no din</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Baabi a ɛbɛkɔ</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Site no</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML nsɛm</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anammɔn biara nni hɔ da: fa baako ka ho wɔ krataa no so, anaa kyerɛw wɔn wɔ nsɛm no mu.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesa anammɔn %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Fa anammɔn bi ka ho</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anammɔn krataa fi ne anammɔn su mu: ne nsafoa, deɛ biara gye ne akwan a ɛka ho.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Anammɔn su</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Kyerɛ ne krataa</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Anammɔn no wɔ nsafoa a ne su nnim; sɛ wɔsesa anammɔn no a, wɔyi wɔn fi mu: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɔkwan</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>%modes nko ara mu</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Deɛ ɛwɔ hɔ dedaw: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Ahyɛdeɛ, nkyerɛkyerɛ ne adwenekyerɛ</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Din=bo abien abien a kɔma tetew mu. Anammɔn yi bo ahodoɔ: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesa anammɔn</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Fa anammɔn ka ho</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deɛ exp:migration:check ka: ti no, dɔkumɛnt no ne anammɔn biara a ne anammɔn su ahwɛ.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutukɔ no ayɛ yiye wɔ nhwɛ no mu.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML no sɛdeɛ wɔbɛsie no.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Kyerɛ YAML no</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML atutukɔ</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ayɛ adwuma</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML atutukɔ biara nni hɔ da.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML tutukɔ %id nni atutukɔ fɔlda no mu.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Paw anammɔn su bi.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wɔde anammɔn no aka ho. Hwɛ tutukɔ no ansa na woasie.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wɔasesa anammɔn no. Hwɛ tutukɔ no ansa na woasie.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Paw anammɔn bi.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anammɔn yi nni krataa (loop, anaa anammɔn su a nhyehyɛeɛ yi nni): sesa no wɔ nsɛm no mu.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Paw baabi a tutukɔ no bɛkɔ: site no anaa ntoasoɔ bi a ɛreyɛ adwuma.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wɔasie %file. Yɛ sɔhwɛ dwumadie ansa na tutukɔ no ayɛ adwuma.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Wɔnsieeɛ: %reason</translation>
     </message>
 </context>
 <context>

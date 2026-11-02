@@ -81128,43 +81128,43 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Bản di chuyển %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Bản di chuyển mới</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Một bản di chuyển YAML: viết dưới dạng văn bản hoặc dựng các bước trong biểu mẫu, kiểm tra, rồi lưu vào một thư mục di chuyển.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bản di chuyển này đã chạy rồi, nên không được lưu lại: một tệp đã thay đổi sẽ bị cơ chế bảo vệ tổng kiểm tra từ chối. Hãy thực hiện thay đổi trong một bản di chuyển mới.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Máy chủ web không thể ghi tệp này.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Các dòng chú thích ở đầu là phần tiêu đề (description, author, requires, environments, engines). Khi một bước được thêm hoặc thay đổi trong biểu mẫu, bản di chuyển được viết lại: các chú thích giữa các bước không được giữ lại.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Tên bản di chuyển</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nơi đặt</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Trang web</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Văn bản YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chưa có bước nào: thêm một bước bằng biểu mẫu, hoặc viết chúng trong văn bản.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Thay đổi bước %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm một bước</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Biểu mẫu của một bước được tạo từ loại bước của nó: các khóa, giá trị mà mỗi khóa nhận và các chế độ mà bước thuộc về.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Loại bước</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị biểu mẫu</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Bước có các khóa mà loại của nó không biết; chúng bị bỏ đi khi bước được thay đổi: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Chế độ</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>chỉ trong %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Mặc định: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Điều kiện, tham chiếu và chú thích</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Các cặp Tên=giá trị, phân cách bằng dấu phẩy. Các giá trị của bước này: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Thay đổi bước</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm bước</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kết quả của exp:migration:check: phần tiêu đề, tài liệu và từng bước được kiểm tra theo loại bước của nó.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bản di chuyển vượt qua kiểm tra.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML như khi được lưu.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Bản di chuyển YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>đã chạy</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chưa có bản di chuyển YAML nào.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không có bản di chuyển YAML %id trong các thư mục di chuyển.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn một loại bước.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Đã thêm bước. Hãy kiểm tra bản di chuyển trước khi lưu.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Đã thay đổi bước. Hãy kiểm tra bản di chuyển trước khi lưu.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn một bước.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bước này không có biểu mẫu (một vòng lặp, hoặc một loại bước mà bản cài đặt này không có): hãy thay đổi nó trong văn bản.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn nơi đặt bản di chuyển: trang web hoặc một tiện ích mở rộng đang hoạt động.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Đã lưu %file. Hãy chạy thử trước khi bản di chuyển được chạy.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Chưa lưu: %reason</translation>
     </message>
 </context>
 <context>

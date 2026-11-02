@@ -81128,43 +81128,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>සංක්‍රමණය %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>නව සංක්‍රමණය</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML සංක්‍රමණයක්: එය පෙළ ලෙස ලියන්න හෝ පෝරමයේ එහි පියවර ගොඩනඟන්න, එය පරීක්ෂා කරන්න, ඉන්පසු එය සංක්‍රමණ ෆෝල්ඩරයක සුරකින්න.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>මෙම සංක්‍රමණය දැනටමත් ධාවනය වී ඇති නිසා එය නැවත සුරකින්නේ නැත: වෙනස් කළ ගොනුවක් චෙක්සම් ආරක්ෂකය විසින් ප්‍රතික්ෂේප කරනු ඇත. වෙනස නව සංක්‍රමණයක කරන්න.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>වෙබ් සේවාදායකයට ගොනුව ලිවිය නොහැක.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>ඉහළින් ඇති අදහස් පේළි ශීර්ෂය වේ (description, author, requires, environments, engines). පෝරමයේ පියවරක් එක් කළ විට හෝ වෙනස් කළ විට, සංක්‍රමණය නැවත ලියනු ලැබේ: පියවර අතර ඇති අදහස් රඳවා නොගනී.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>සංක්‍රමණයේ නම</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>එය යන තැන</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>අඩවිය</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML පෙළ</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>තවමත් පියවර නැත: පෝරමය මඟින් එකක් එක් කරන්න, නැතහොත් ඒවා පෙළෙහි ලියන්න.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>පියවර %number වෙනස් කරන්න</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>පියවරක් එක් කරන්න</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>පියවරක පෝරමය සෑදෙන්නේ එහි පියවර වර්ගයෙනි: එහි යතුරු, එක් එක් යතුර ගන්නා දේ සහ එය අයත් ප්‍රකාර.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>පියවර වර්ගය</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>එහි පෝරමය පෙන්වන්න</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>පියවරේ එහි වර්ගය නොදන්නා යතුරු ඇත; පියවර වෙනස් කළ විට ඒවා ඉවත් වේ: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>ප්‍රකාරය</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>%modes හි පමණි</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>පෙරනිමිය: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>කොන්දේසි, යොමු සහ අදහස් දැක්වීම</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>කොමාවලින් වෙන් කළ නම=අගය යුගල. මෙම පියවරේ අගයන්: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>පියවර වෙනස් කරන්න</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>පියවර එක් කරන්න</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>exp:migration:check පවසන දේ: ශීර්ෂය, ලේඛනය සහ එහි පියවර වර්ගය මඟින් පරීක්ෂා කළ සෑම පියවරක්ම.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>සංක්‍රමණය පරීක්ෂාව සමත් වේ.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>සුරකින ආකාරයටම YAML.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML පෙන්වන්න</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML සංක්‍රමණ</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ධාවනය වී ඇත</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>තවමත් YAML සංක්‍රමණ නැත.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>සංක්‍රමණ ෆෝල්ඩරවල YAML සංක්‍රමණය %id නැත.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>පියවර වර්ගයක් තෝරන්න.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>පියවර එක් කරන ලදී. සුරැකීමට පෙර සංක්‍රමණය පරීක්ෂා කරන්න.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>පියවර වෙනස් කරන ලදී. සුරැකීමට පෙර සංක්‍රමණය පරීක්ෂා කරන්න.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>පියවරක් තෝරන්න.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>මෙම පියවරට පෝරමයක් නැත (ලූපයක්, හෝ මෙම ස්ථාපනයේ නැති පියවර වර්ගයක්): එය පෙළෙහි වෙනස් කරන්න.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>සංක්‍රමණය යන්නේ කොතැනටද යන්න තෝරන්න: අඩවිය හෝ සක්‍රිය දිගුවක්.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file සුරැකිණි. සංක්‍රමණය ධාවනය වීමට පෙර පරීක්ෂණ ධාවනයක් කරන්න.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>සුරැකුණේ නැත: %reason</translation>
     </message>
 </context>
 <context>

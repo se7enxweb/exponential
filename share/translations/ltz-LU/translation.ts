@@ -81128,43 +81128,43 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migratioun %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nei Migratioun</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eng YAML-Migratioun: schreift se als Text oder stellt hir Schrëtt am Formulaire zesummen, kontrolléiert se an späichert se dann an engem Migratiounsdossier.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dës Migratioun ass scho gelaf a gëtt dofir net nach eng Kéier gespäichert: E geännerte Fichier géif vun der Préifsummekontroll refuséiert ginn. Maacht d'Ännerung an enger neier Migratioun.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>De Webserver kann de Fichier net schreiwen.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Kommentarzeilen uewen sinn de Kapp (description, author, requires, environments, engines). Wann e Schrëtt am Formulaire derbäigesat oder geännert gëtt, gëtt d'Migratioun nei geschriwwen: Kommentaren tëscht de Schrëtt bleiwen net erhalen.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Numm vun der Migratioun</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Wouhin se kënnt</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Websäit</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-Text</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach keng Schrëtt: Setzt een mam Formulaire derbäi oder schreift se an den Text.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Schrëtt %number änneren</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>E Schrëtt derbäisetzen</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>De Formulaire vun engem Schrëtt entsteet aus sengem Schrëtttyp: seng Schlësselen, wat jiddwereen unhëlt an zu wéi enge Modi e gehéiert.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Schrëtttyp</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Säi Formulaire weisen</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>De Schrëtt huet Schlësselen, déi säin Typ net kennt; si falen ewech, wann de Schrëtt geännert gëtt: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modus</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>nëmmen an %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Konditiounen, Referenzen a Kommentar</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Pairen Numm=Wäert, mat Kommaen getrennt. D'Wäerter vun dësem Schrëtt: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Schrëtt änneren</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Schrëtt derbäisetzen</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wat exp:migration:check seet: de Kapp, d'Dokument an all Schrëtt, vu sengem Schrëtttyp kontrolléiert.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Migratioun besteet d'Kontroll.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>De YAML, sou wéi e gespäichert gëtt.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML weisen</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-Migratiounen</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ass gelaf</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Et gëtt nach keng YAML-Migratiounen.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>An de Migratiounsdossieren gëtt et keng YAML-Migratioun %id.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielt e Schrëtttyp.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>De Schrëtt ass derbäigesat. Kontrolléiert d'Migratioun, ier Dir se späichert.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>De Schrëtt ass geännert. Kontrolléiert d'Migratioun, ier Dir se späichert.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielt e Schrëtt.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dëse Schrëtt huet kee Formulaire (eng Schleif oder e Schrëtttyp, deen dës Installatioun net huet): Ännert en am Text.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielt, wouhin d'Migratioun kënnt: d'Websäit oder eng aktiv Extensioun.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file gespäichert. Maacht en Testlaf, ier d'Migratioun leeft.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Net gespäichert: %reason</translation>
     </message>
 </context>
 <context>

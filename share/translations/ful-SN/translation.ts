@@ -81128,43 +81128,43 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Eggol %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Eggol kesol</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eggol YAML: winndu ngol hono binndol walla mbaɗaa laawɗe mayre e fiilde ƴamol, laar ngol, caggal ɗuum mooftu ngol e nder dossier egge.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eggol ngol dogii ko adii, ɗum waɗi ngol mooftetaake kadi: fichier waylaaɗo salete e reentaade checksum. Waɗ waylo ngoo e eggol kesol.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarworde geese waawaa winndude fichier oo.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gori miijo dow ɗii ko hoore (description, author, requires, environments, engines). So daawal ɓeydaama walla waylaama e fiilde ƴamol, eggol ngol winndetee kadi: miijooji hakkunde laawɗe ɗee mooftetaake.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Innde eggol ngol</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɗo ngol yahata</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Lowre ndee</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Binndol YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alaa daawal tawee: ɓeydu gootal e fiilde ƴamol, walla winndu ɗe e binndol ngol.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Waylu daawal %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɓeydu daawal gootal</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiilde ƴamol daawal ko e fannu daawal mayre ɗum waɗetee: saaya mayre, ko gooto fof jaɓata e mbaydiiji ɗi ngal jeyaa.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Fannu daawal</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Hollu fiilde ƴamol mayre</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Daawal ngal ina jogii saaya ɗe fannu mayre anndaa; ɗe ittetee so daawal ngal waylaama: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mbaydi</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>e %modes tan</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko woowaa: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarɗiiji, tuugnorɗe e miijo</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɗiɗi Innde=keewal seerndaaɗe e kommaaji. Keewale ngal daawal: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Waylu daawal</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɓeydu daawal</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko exp:migration:check wiyi: hoore nde, dokimaa oo e kala daawal laaraaɗo e fannu daawal mayre.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eggol ngol rawnii laarol ngol.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Binndol YAML no ngol mooftortee.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Hollu YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Egge YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>dogii</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alaa eggol YAML tawee.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alaa eggol YAML %id e nder dossier-ji egge.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Suɓo fannu daawal.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Daawal ngal ɓeydaama. Laar eggol ngol hade maa mooftude ngol.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Daawal ngal waylaama. Laar eggol ngol hade maa mooftude ngol.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Suɓo daawal.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngal daawal alaa fiilde ƴamol (kurlol, walla fannu daawal ko ngol aafgol alaa): waylu ngal e binndol ngol.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Suɓo ɗo eggol ngol yahata: lowre ndee walla ɓeydaari golliindi.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file mooftaama. Waɗ dogga ndaarugol hade eggol ngol dogde.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Mooftaaka: %reason</translation>
     </message>
 </context>
 <context>

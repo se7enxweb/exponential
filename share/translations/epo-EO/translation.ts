@@ -81128,43 +81128,43 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrado %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nova migrado</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migrado: skribu ĝin kiel tekston aŭ kunmetu ĝiajn paŝojn en la formularo, kontrolu ĝin, poste konservu ĝin en migrad-dosierujon.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉi tiu migrado jam ruliĝis, do ĝi ne estas konservata denove: la kontrolsuma gardo rifuzus ŝanĝitan dosieron. Faru la ŝanĝon en nova migrado.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>La retservilo ne povas skribi la dosieron.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>La komentaj linioj supre estas la kapo (description, author, requires, environments, engines). Kiam paŝo estas aldonita aŭ ŝanĝita en la formularo, la migrado estas reskribita: komentoj inter la paŝoj ne estas konservataj.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nomo de la migrado</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kien ĝi iras</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>La retejo</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-teksto</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ankoraŭ neniuj paŝoj: aldonu unu per la formularo, aŭ skribu ilin en la teksto.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Ŝanĝi paŝon %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Aldono de paŝo</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>La formularo de paŝo estas farita el ĝia paŝotipo: ĝiaj ŝlosiloj, kion ĉiu akceptas kaj la reĝimoj, al kiuj ĝi apartenas.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Paŝotipo</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Montri ĝian formularon</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>La paŝo havas ŝlosilojn, kiujn ĝia tipo ne konas; ili estas forlasitaj, kiam la paŝo estas ŝanĝita: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Reĝimo</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>nur en %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Defaŭlto: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Kondiĉoj, referencoj kaj komento</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Paroj Nomo=valoro apartigitaj per komoj. La valoroj de ĉi tiu paŝo: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ŝanĝi paŝon</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Aldoni paŝon</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kion diras exp:migration:check: la kapo, la dokumento kaj ĉiu paŝo kontrolita de ĝia paŝotipo.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>La migrado trapasas la kontrolon.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>La YAML, kiel ĝi estos konservita.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Montri la YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-migradoj</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>ruliĝis</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ankoraŭ ne estas YAML-migradoj.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne estas YAML-migrado %id en la migrad-dosierujoj.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektu paŝotipon.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>La paŝo estas aldonita. Kontrolu la migradon antaŭ ol konservi ĝin.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>La paŝo estas ŝanĝita. Kontrolu la migradon antaŭ ol konservi ĝin.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektu paŝon.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉi tiu paŝo ne havas formularon (ciklo, aŭ paŝotipo, kiun ĉi tiu instalaĵo ne havas): ŝanĝu ĝin en la teksto.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektu, kien la migrado iras: la retejo aŭ aktiva kromprogramo.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>%file konservita. Faru provrulon antaŭ ol la migrado ruliĝas.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne konservita: %reason</translation>
     </message>
 </context>
 <context>

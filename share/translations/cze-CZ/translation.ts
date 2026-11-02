@@ -82414,43 +82414,43 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrace %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Nová migrace</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrace YAML: napište ji jako text nebo sestavte její kroky ve formuláři, zkontrolujte ji a pak ji uložte do složky migrací.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tato migrace již proběhla, proto se znovu neukládá: změněný soubor by ochrana kontrolním součtem odmítla. Proveďte změnu v nové migraci.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Webový server nemůže soubor zapsat.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Řádky komentářů nahoře tvoří hlavičku (description, author, requires, environments, engines). Když se krok ve formuláři přidá nebo změní, migrace se zapíše znovu: komentáře mezi kroky se nezachovají.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Název migrace</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kam patří</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Web</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Text YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -82486,35 +82486,35 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatím žádné kroky: přidejte jeden pomocí formuláře, nebo je napište do textu.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit krok %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat jeden krok</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář kroku vychází z jeho typu kroku: z jeho klíčů, z toho, co každý přijímá, a z režimů, do kterých patří.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ kroku</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit formulář</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok má klíče, které jeho typ nezná; při změně kroku budou vynechány: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režim</translation>
     </message>
     <message>
         <source>In</source>
@@ -82522,19 +82522,19 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>jen v režimech %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Podmínky, reference a komentář</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Dvojice Název=hodnota oddělené čárkami. Hodnoty tohoto kroku: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -82542,19 +82542,19 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit krok</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat krok</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Co říká exp:migration:check: hlavička, dokument a každý krok zkontrolovaný svým typem kroku.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrace prošla kontrolou.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -82562,23 +82562,23 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Text YAML tak, jak bude uložen.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrace YAML</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>proběhla</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatím nejsou žádné migrace YAML.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -82586,39 +82586,39 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ve složkách migrací není žádná migrace YAML %id.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte typ kroku.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok je přidán. Před uložením migraci zkontrolujte.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Krok je změněn. Před uložením migraci zkontrolujte.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte krok.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tento krok nemá formulář (smyčka nebo typ kroku, který tato instalace nemá): změňte ho v textu.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte, kam migrace patří: web nebo aktivní rozšíření.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uloženo %file. Před spuštěním migrace proveďte zkušební běh.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Neuloženo: %reason</translation>
     </message>
 </context>
 <context>

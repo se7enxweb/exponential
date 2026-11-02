@@ -81128,43 +81128,43 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasyon %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Bagong migrasyon</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isang YAML na migrasyon: isulat ito bilang teksto o buuin ang mga hakbang nito sa form, suriin ito, saka i-save ito sa isang folder ng mga migrasyon.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Napatakbo na ang migrasyong ito, kaya hindi na ito muling ise-save: tatanggihan ng pananggalang ng checksum ang binagong file. Gawin ang pagbabago sa isang bagong migrasyon.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hindi maisulat ng web server ang file.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang mga linya ng komento sa itaas ay ang header (description, author, requires, environments, engines). Kapag may hakbang na idinagdag o binago sa form, muling isinusulat ang migrasyon: hindi pinapanatili ang mga komento sa pagitan ng mga hakbang.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Pangalan ng migrasyon</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kung saan ito mapupunta</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang site</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstong YAML</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81200,35 +81200,35 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wala pang hakbang: magdagdag ng isa gamit ang form, o isulat ang mga ito sa teksto.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Baguhin ang hakbang %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Magdagdag ng hakbang</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang form ng isang hakbang ay ginagawa mula sa uri ng hakbang nito: ang mga key nito, ang tinatanggap ng bawat isa at ang mga mode na kinabibilangan nito.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Uri ng hakbang</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Ipakita ang form nito</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>May mga key ang hakbang na hindi alam ng uri nito; inaalis ang mga ito kapag binago ang hakbang: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Moda</translation>
     </message>
     <message>
         <source>In</source>
@@ -81236,19 +81236,19 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>sa %modes lamang</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Default na halaga: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Mga kondisyon, reference at komento</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Mga pares na pangalan=halaga na pinaghihiwalay ng kuwit. Ang mga halaga ng hakbang na ito: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81256,19 +81256,19 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Baguhin ang hakbang</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Idagdag ang hakbang</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang sinasabi ng exp:migration:check: ang header, ang dokumento at bawat hakbang na sinuri ng uri ng hakbang nito.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pumapasa ang migrasyon sa pagsusuri.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81276,23 +81276,23 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang YAML kung paano ito ise-save.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Ipakita ang YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Mga YAML na migrasyon</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>napatakbo na</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wala pang YAML na migrasyon.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81300,39 +81300,39 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Walang YAML na migrasyon na %id sa mga folder ng migrasyon.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pumili ng uri ng hakbang.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naidagdag na ang hakbang. Suriin ang migrasyon bago mo ito i-save.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nabago na ang hakbang. Suriin ang migrasyon bago mo ito i-save.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pumili ng hakbang.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Walang form ang hakbang na ito (isang loop, o uri ng hakbang na wala sa instalasyong ito): baguhin ito sa teksto.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Piliin kung saan mapupunta ang migrasyon: ang site o isang aktibong extension.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na-save ang %file. Magsagawa ng pagsubok na pagpapatakbo bago patakbuhin ang migrasyon.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Hindi na-save: %reason</translation>
     </message>
 </context>
 <context>

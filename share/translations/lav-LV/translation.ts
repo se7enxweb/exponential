@@ -81158,43 +81158,43 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrācija %id</translation>
     </message>
     <message>
         <source>New migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Jauna migrācija</translation>
     </message>
     <message>
         <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML migrācija: uzrakstiet to kā tekstu vai izveidojiet tās soļus veidlapā, pārbaudiet to un pēc tam saglabājiet migrāciju mapē.</translation>
     </message>
     <message>
         <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šī migrācija jau ir izpildīta, tāpēc tā netiek saglabāta vēlreiz: kontrolsummas aizsardzība noraidītu mainītu failu. Veiciet izmaiņu jaunā migrācijā.</translation>
     </message>
     <message>
         <source>The file cannot be written by the web server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tīmekļa serveris nevar ierakstīt šo failu.</translation>
     </message>
     <message>
         <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Komentāru rindas augšpusē ir galvene (description, author, requires, environments, engines). Kad veidlapā tiek pievienots vai mainīts solis, migrācija tiek uzrakstīta no jauna: komentāri starp soļiem netiek saglabāti.</translation>
     </message>
     <message>
         <source>Name of the migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrācijas nosaukums</translation>
     </message>
     <message>
         <source>Where it goes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kur tā tiks novietota</translation>
     </message>
     <message>
         <source>The site</source>
-        <translation type="unfinished"></translation>
+        <translation>Vietne</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML teksts</translation>
     </message>
     <message>
         <source>Check</source>
@@ -81230,35 +81230,35 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>No steps yet: add one with the form, or write them in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vēl nav soļu: pievienojiet vienu ar veidlapu vai ierakstiet tos tekstā.</translation>
     </message>
     <message>
         <source>Change step %number</source>
-        <translation type="unfinished"></translation>
+        <translation>Mainīt soli %number</translation>
     </message>
     <message>
         <source>Add a step</source>
-        <translation type="unfinished"></translation>
+        <translation>Pievienot vienu soli</translation>
     </message>
     <message>
         <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
-        <translation type="unfinished"></translation>
+        <translation>Soļa veidlapa tiek veidota no tā soļa tipa: tā atslēgām, ko katra pieņem, un režīmiem, kuriem tas pieder.</translation>
     </message>
     <message>
         <source>Step type</source>
-        <translation type="unfinished"></translation>
+        <translation>Soļa tips</translation>
     </message>
     <message>
         <source>Show its form</source>
-        <translation type="unfinished"></translation>
+        <translation>Rādīt tā veidlapu</translation>
     </message>
     <message>
         <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
-        <translation type="unfinished"></translation>
+        <translation>Solim ir atslēgas, kuras tā tips nepazīst; mainot soli, tās tiek izlaistas: %keys</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režīms</translation>
     </message>
     <message>
         <source>In</source>
@@ -81266,19 +81266,19 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>only in %modes</source>
-        <translation type="unfinished"></translation>
+        <translation>tikai %modes</translation>
     </message>
     <message>
         <source>Default: %value</source>
-        <translation type="unfinished"></translation>
+        <translation>Noklusējums: %value</translation>
     </message>
     <message>
         <source>Conditions, references and comment</source>
-        <translation type="unfinished"></translation>
+        <translation>Nosacījumi, atsauces un komentārs</translation>
     </message>
     <message>
         <source>Name=value pairs separated by commas. The values of this step: %values</source>
-        <translation type="unfinished"></translation>
+        <translation>Nosaukums=vērtība pāri, atdalīti ar komatiem. Šī soļa vērtības: %values</translation>
     </message>
     <message>
         <source>Example</source>
@@ -81286,19 +81286,19 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>Change step</source>
-        <translation type="unfinished"></translation>
+        <translation>Mainīt soli</translation>
     </message>
     <message>
         <source>Add step</source>
-        <translation type="unfinished"></translation>
+        <translation>Pievienot soli</translation>
     </message>
     <message>
         <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko saka exp:migration:check: galvene, dokuments un katrs solis, ko pārbaudījis tā soļa tips.</translation>
     </message>
     <message>
         <source>The migration passes the check.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrācija iztur pārbaudi.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -81306,23 +81306,23 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>The YAML as it will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML tādā veidā, kā tas tiks saglabāts.</translation>
     </message>
     <message>
         <source>Show the YAML</source>
-        <translation type="unfinished"></translation>
+        <translation>Rādīt YAML</translation>
     </message>
     <message>
         <source>YAML migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML migrācijas</translation>
     </message>
     <message>
         <source>has run</source>
-        <translation type="unfinished"></translation>
+        <translation>izpildīta</translation>
     </message>
     <message>
         <source>There are no YAML migrations yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vēl nav nevienas YAML migrācijas.</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -81330,39 +81330,39 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>There is no YAML migration %id in the migration folders.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrāciju mapēs nav YAML migrācijas %id.</translation>
     </message>
     <message>
         <source>Choose a step type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvēlieties soļa tipu.</translation>
     </message>
     <message>
         <source>The step is added. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Solis ir pievienots. Pārbaudiet migrāciju, pirms to saglabājat.</translation>
     </message>
     <message>
         <source>The step is changed. Check the migration before you save it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Solis ir mainīts. Pārbaudiet migrāciju, pirms to saglabājat.</translation>
     </message>
     <message>
         <source>Choose a step.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvēlieties soli.</translation>
     </message>
     <message>
         <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šim solim nav veidlapas (cikls vai soļa tips, kura šajā instalācijā nav): mainiet to tekstā.</translation>
     </message>
     <message>
         <source>Choose where the migration goes: the site or an active extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvēlieties, kur migrācija tiks novietota: vietnē vai aktīvā paplašinājumā.</translation>
     </message>
     <message>
         <source>Saved %file. Run a dry run before the migration runs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Saglabāts %file. Pirms migrācijas izpildes veiciet izmēģinājuma izpildi.</translation>
     </message>
     <message>
         <source>Not saved: %reason</source>
-        <translation type="unfinished"></translation>
+        <translation>Nav saglabāts: %reason</translation>
     </message>
 </context>
 <context>
