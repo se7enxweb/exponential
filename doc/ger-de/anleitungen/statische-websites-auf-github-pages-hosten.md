@@ -15,7 +15,9 @@ Funktionsseite führt auf, was jeder Teil hinzufügt.
 
 [Anleitungen](README.md) · Verwandt: [Statisches Veröffentlichen](../funktionen/6.0/statisches-veroeffentlichen.md),
 [Das Build-Format](../spezifikationen/6.0/statisches-veroeffentlichen-build-format.md),
-[Generator für den statischen Cache](../funktionen/6.0/generator-fuer-den-statischen-cache.md)
+[Generator für den statischen Cache](../funktionen/6.0/generator-fuer-den-statischen-cache.md),
+[Überblick für Administratoren](statisches-veroeffentlichen.md), [CI und GitHub Actions](statisches-veroeffentlichen-ci-und-github-actions.md),
+[Fehlerbehebung](statisches-veroeffentlichen-fehlerbehebung.md)
 
 ## Was Sie bekommen
 

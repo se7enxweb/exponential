@@ -3447,7 +3447,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b23ae6aef577b7860d1172a9314270fa  doc/changelogs/6.0/6.0.15.md
+3719a5f125f2abc6cb335556d4910922  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3668,6 +3668,7 @@ fe76752d44638f44f345857617e38f5f  doc/eng-us/bc/6.0/php8.md
 1b035a77f2a56fa9b0225c8aca76b934  doc/eng-us/bc/6.0/sql-query-cache.md
 fb85be121ac1186257310cd979fc3c1e  doc/eng-us/bc/6.0/sqlite-transactions.md
 04e2b3effc91ccae524c980b807607a9  doc/eng-us/bc/6.0/static-cache-defaults.md
+6a059f73dc479c2c0b901465f5930e48  doc/eng-us/bc/6.0/static-publishing.md
 7889f36fad4374eb4863c2f13552e5f1  doc/eng-us/bc/6.0/subitems-table-options.md
 d05afb933159cdb572cbe6d71508e874  doc/eng-us/bc/6.0/svg-images.md
 927b5c757878ec6d4f08032ee4d1dd45  doc/eng-us/bc/6.0/translated-documentation.md
@@ -6925,7 +6926,9 @@ e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-co
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
 3e7ec8a6e94f07b8109ffff887640b40  doc/eng-us/glossary.md
 e3e117bf283a09a375595e52cb21f59d  doc/eng-us/goals.md
-1d5602bef1e7f0e84df7780ef67e4412  doc/eng-us/guides/README.md
+03cd407a4e853601a2b1ecd03bcc6072  doc/eng-us/guides/README.md
+c3cd4759e8cbd9569458f6ad5c01021a  doc/eng-us/guides/a-static-blog-with-exponential.md
+cb328df2d889368b2297e4864f4c9c19  doc/eng-us/guides/a-static-documentation-site.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
 a68843766fba12d6bf9d1878a045e9eb  doc/eng-us/guides/approving-new-editor-accounts.md
 158d25c3e5f52e97b5cfaad49c8e6a00  doc/eng-us/guides/benchmarking.md
@@ -6940,15 +6943,18 @@ b73a9d2acee4cfc8c68b3afca0bab7a5  doc/eng-us/guides/classic-menu-settings.md
 5cf42ad6134131064ef1745e4b8d528b  doc/eng-us/guides/content-model-and-editing.md
 846157371af78bde8e5f3f03efb1b216  doc/eng-us/guides/cronjobs.md
 c4098dd82a695af4cf63e0cc2c0076b6  doc/eng-us/guides/deploying.md
+23a9c8cdb46d76ce256d68b16b140ee7  doc/eng-us/guides/develop-in-public-publish-free.md
 ab00d66607f66a79d69efd28d9fba855  doc/eng-us/guides/drafts-and-pending.md
 9ada1e3590016a37138e5ff78bab4322  doc/eng-us/guides/environment-variables.md
 a518e62944d14435eac07c9fde4b2306  doc/eng-us/guides/extensions-page.md
 24521ba35e99771f8f0afb9e4c127129  doc/eng-us/guides/extensions.md
 cdac22058aa72ebee655751b3f933e83  doc/eng-us/guides/finding-an-error-by-its-reference.md
+894669d16b286513e23b77f1636e365b  doc/eng-us/guides/from-static-cache-to-static-publishing.md
+c690e4c835b4e22552064ed34d2157ac  doc/eng-us/guides/from-static-html-to-exponential-and-back.md
 996ecbfce279c75c2c2fdfdd94d6a171  doc/eng-us/guides/getting-started.md
 f7352a34a1031d780b6996c1dab0204a  doc/eng-us/guides/graphql-recipes.md
 39b2ec78e026ac8f19a5466682cc008a  doc/eng-us/guides/graphql-walkthrough.md
-affc291f4a13e6a8d4d1a5c3faed556b  doc/eng-us/guides/host-static-sites-on-github-pages.md
+34cbb71d8cb3a87c1b10475196c7d5f1  doc/eng-us/guides/host-static-sites-on-github-pages.md
 fbcbc9cf7bbfb1f95906327d9513b2c6  doc/eng-us/guides/images/account-approval/approval-item.png
 8bcb3ac63cc2341e4ef7d3045867af4b  doc/eng-us/guides/images/account-approval/approved.png
 4a8739c9f2f5b65580e85608c8d2f948  doc/eng-us/guides/images/account-approval/section-workflow.png
@@ -7035,10 +7041,17 @@ d4dbea52097a5db3012531c9e7aa662f  doc/eng-us/guides/smarty-templates-security.md
 cacbe6383326b6771b72d2dbf36ba63a  doc/eng-us/guides/smarty-templates-troubleshooting.md
 3decd09d352cb3f0562225fc3293ce9a  doc/eng-us/guides/smarty-templates-tutorial.md
 92f6df3058686a857a9d44516611ea05  doc/eng-us/guides/smarty-templates.md
+0ea11cb00a8f8328134dc9570a018867  doc/eng-us/guides/static-publishing-ci-and-github-actions.md
+db841cc634480c49b7b618fd04db8d69  doc/eng-us/guides/static-publishing-custom-domains-and-dns.md
 569d6daa6eee147300e288b42a976f3a  doc/eng-us/guides/static-publishing-deploy-keys.md
 558fe0f5a25f69322510c7ee71b86554  doc/eng-us/guides/static-publishing-dynamic-features.md
+28fe94174557834ea703f619b6135ce5  doc/eng-us/guides/static-publishing-for-multisite-installations.md
 8a5e11b6f4abd5001f29ba202f81274b  doc/eng-us/guides/static-publishing-history-and-rollback.md
+3dfbe72d89e3a5d0568d38ef7072098f  doc/eng-us/guides/static-publishing-limits-and-github-terms.md
+28d6a7e65e9e714330db33e1ce69888b  doc/eng-us/guides/static-publishing-on-windows-and-clusters.md
 34c91503bdd48e027a50cf933c5be222  doc/eng-us/guides/static-publishing-targets-and-credentials.md
+116fe5d08d69e43f5a4df2880c634754  doc/eng-us/guides/static-publishing-troubleshooting.md
+c8c423b5cf4afb376cf4ea6209f73f6d  doc/eng-us/guides/static-publishing.md
 0e616e641c81de1e6783d78293e100f6  doc/eng-us/guides/system-information.md
 d035e16cb63dcde8ecc14a1d2866bd78  doc/eng-us/guides/template-conversion.md
 d1b8c66ba0a9cc758c55c45be1bb8bc6  doc/eng-us/guides/template-engines-speed.md
@@ -7074,7 +7087,7 @@ fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
 952b7b28226e6eff085df210c88d6b08  doc/eng-us/guides/workflows.md
 ba6c6e3806e95b1fc79ffa6020f4bac3  doc/eng-us/guides/your-devices-and-sessions.md
-b414c1167cdf71c19062dd705f9aed13  doc/eng-us/help/README.md
+1ba5ebfde9579e699f5bb0b7c109f23f  doc/eng-us/help/README.md
 f3a6eb643757b14f92dc0cede99d6396  doc/eng-us/help/accounts-and-sign-in.md
 d01718b937d8c4a62ee8bfdc16551093  doc/eng-us/help/admin-tour.md
 7f1138a79b4899b1a89537b328971761  doc/eng-us/help/adopters/adopters-checklists.md
@@ -7122,6 +7135,7 @@ aee058de16635e047513ef716bc6345a  doc/eng-us/help/adopters/planning/content-mode
 0c4a034155ff7e4c52940634c6e1b7d8  doc/eng-us/help/adopters/planning/skills-and-training.md
 ea02dcc8b30e47c90673ae187f7d5169  doc/eng-us/help/adopters/planning/team-and-roles.md
 51cff2dce0763a64c14632c32f10a46a  doc/eng-us/help/adopters/planning/timeline.md
+fe975a2d6bff24c4b053e60319414dd5  doc/eng-us/help/adopters/try-exponential-and-publish-a-free-site.md
 edc70ca47eb6700a1709cb8e4069c75b  doc/eng-us/help/adopters/what-adoption-means.md
 fc9f3722ffb3447b2576137911cd1975  doc/eng-us/help/advocates/7x-and-the-foundation-for-advocates.md
 a5137fdd11e1a617f892ff22e5750a0b  doc/eng-us/help/advocates/a-90-day-advocate-plan.md
@@ -7267,7 +7281,7 @@ fa5dab70befbd178aa40216b7f623265  doc/eng-us/help/ai-agents/governance/roles-and
 0bd8aee009f2b4137aaefa9e73f74c4b  doc/eng-us/help/ai-agents/what-ai-in-exponential-does-not-do.md
 b35c20df3fe71d3407d738c69f807483  doc/eng-us/help/ai-agents/what-exists-today.md
 6babacb7e73787cbff0ed30f4169ebba  doc/eng-us/help/ai-agents/which-path-fits-your-task.md
-5065ed94804d99289c3318b7b3ece85b  doc/eng-us/help/book-building-a-site/README.md
+3f9c521a72bd80288eb14250549bddc4  doc/eng-us/help/book-building-a-site/README.md
 eac21ef53aa0b553fcddc55266dd145a  doc/eng-us/help/book-building-a-site/approving-guestbook-entries.md
 f18994401595864aa709afbf8df97fc5  doc/eng-us/help/book-building-a-site/sections-and-the-welcome-page.md
 3adb6bae191c189204554fe511b9748c  doc/eng-us/help/book-building-a-site/start-the-project.md
@@ -7276,6 +7290,7 @@ f18994401595864aa709afbf8df97fc5  doc/eng-us/help/book-building-a-site/sections-
 3ddb00b8261945b2008668a5c999fbdc  doc/eng-us/help/book-building-a-site/the-main-layout.md
 deba775d2f096efb569a83ef80d62696  doc/eng-us/help/book-building-a-site/the-members-page.md
 1997132c83d4fcf2b90ecce677fdea29  doc/eng-us/help/book-building-a-site/the-news-pages.md
+c892ba7b5174b1866c0077c80be02b4d  doc/eng-us/help/book-building-a-site/your-first-static-site-in-15-minutes.md
 fbad120ff4849ff4a97b35b5b7c5e46e  doc/eng-us/help/book-learning/README.md
 cfa1f42df5aa29d7711fa66252e4751e  doc/eng-us/help/book-learning/a-standards-compliant-site.md
 442ce06f2952a534052d31408915410f  doc/eng-us/help/book-learning/caching-in-templates.md
@@ -7911,6 +7926,7 @@ e907c3fbae5f561201838e8a151571a8  doc/eng-us/help/cms-developers/users-and-regis
 bd3c30feada22eb45ea4623348c7a75d  doc/eng-us/help/cms-developers/versions-drafts-and-publishing.md
 02fcc1ecdc038944cc37b628142509bf  doc/eng-us/help/cms-developers/view-modes.md
 713307ded7bda53e476b451063637137  doc/eng-us/help/cms-developers/workflows-and-triggers.md
+59d89c24964249232fb0b059964b6a87  doc/eng-us/help/community/a-free-site-for-your-user-group.md
 b0b2d625b6f4227bf2e2a0862764018e  doc/eng-us/help/community/community-checklists.md
 a3aad1846c0ef1e706b35f6d5b936f60  doc/eng-us/help/community/community-faq.md
 b1b8051a1bef3f3005048f980115b40f  doc/eng-us/help/community/community-glossary.md
@@ -8039,6 +8055,7 @@ a0b9c78d56cc4c0cf03b85c0405c622c  doc/eng-us/help/creators/website-creators/choo
 4cad85ba165c56a898cf5fd86e5b3a13  doc/eng-us/help/creators/website-creators/choosing-datatypes.md
 097b738d1e544d46a8535a9cab607f40  doc/eng-us/help/creators/website-creators/classic-landing-pages-with-ezflow.md
 9e833030488d2a2565f8757de016ec46  doc/eng-us/help/creators/website-creators/content-classes-for-websites.md
+afc599b51cd22fe3a068e4cbe31f12f9  doc/eng-us/help/creators/website-creators/deliver-client-sites-as-static-sites.md
 3bef1994614f2a24bb950fd77b50cae5  doc/eng-us/help/creators/website-creators/designing-your-content-model.md
 a71683a6bcd4ac2fcedce9c868617e40  doc/eng-us/help/creators/website-creators/designs-and-the-fallback-chain.md
 7a09e4e3428ad8815d49e42c27784b95  doc/eng-us/help/creators/website-creators/files-and-downloads.md
@@ -9031,6 +9048,7 @@ cab6de22870209d6675751e8c7a3d2f9  doc/eng-us/help/government/accessibility/wcag-
 e9adb450ba3ebf52a88579ff4ef1a0e8  doc/eng-us/help/government/accessibility/what-exponential-provides.md
 fb4ea84a4e0960955e683f428ad26d87  doc/eng-us/help/government/accessibility/what-is-not-covered.md
 0314845de209bab4043bd4574a1fc2ed  doc/eng-us/help/government/accessibility/writing-an-accessibility-statement.md
+889f5c5207c11756fd777829401ea235  doc/eng-us/help/government/accessible-static-sites-for-public-information.md
 8945b2d4472e14e0f8d65ad7987c20dd  doc/eng-us/help/government/building/README.md
 af4d6ed44d7cc5cb8f2b6f3f2eaac7d8  doc/eng-us/help/government/building/citizen-accounts/README.md
 dda6daa0eac156bfd8a57efbbd2b66c3  doc/eng-us/help/government/building/citizen-accounts/account-hygiene.md
@@ -10039,6 +10057,7 @@ ad3c6176e2df7c9aaf202c2f10cb8a65  doc/eng-us/help/hosting/servers/velocity-besid
 4c6828461ce6ce68407b478b16d7e386  doc/eng-us/help/hosting/servers/velocity-for-hosts.md
 07f8fed4fddfe0f38b05dd65281733c2  doc/eng-us/help/hosting/servers/velocity-https-certificates.md
 86f811bb9fe49ca9c1915aea1a6e3361  doc/eng-us/help/hosting/servers/velocity-workers-and-pools.md
+f6579144431c6fa63f4a0fc3fe2c4c00  doc/eng-us/help/hosting/static-publishing-and-your-hosting.md
 fcdea3299a32c3730f641822280611cf  doc/eng-us/help/images/accounts/admin-tour-header-dark.webp
 58926ad2a9a9b9f7a48a56d711f50cf0  doc/eng-us/help/images/accounts/change-password-form.webp
 86837f82d2244615e6714193b4b371a0  doc/eng-us/help/images/accounts/current-user-box.webp
@@ -10677,6 +10696,7 @@ dd68249ba65441fbc20334cea119e8f5  doc/eng-us/help/individuals/setup/choosing-an-
 bddededec4a71f9421c599b53f415fc4  doc/eng-us/help/individuals/setup/running-on-a-small-budget.md
 be58b903d57573e6a824d2f2be923686  doc/eng-us/help/individuals/setup/shared-hosting-or-a-small-server.md
 5e40536e0cd0ab30a3b5b47b289f7d4f  doc/eng-us/help/individuals/what-exists-and-what-does-not.md
+f8861c025f98ad7f95a3637a50ea1b00  doc/eng-us/help/individuals/your-personal-site-for-free.md
 7a7efb15e4ccd6385edfc8090a41f3a7  doc/eng-us/help/integrators/ai-job-queue-and-mcp.md
 536abcdacc4f4282637972fce70b9543  doc/eng-us/help/integrators/building-an-integration-as-an-extension.md
 963af4e756891c458cb1094c5545f360  doc/eng-us/help/integrators/bulk-data-exchange-with-xrowextract.md
@@ -10712,6 +10732,7 @@ dda29dd579d4310ab1fd3f51a527d3cf  doc/eng-us/help/integrators/migrating-content-
 83d4b12bb12553c9d21a58a337142d1f  doc/eng-us/help/integrators/migrations-in-client-projects.md
 439e6efa814fe1f304e7f16b7642abfa  doc/eng-us/help/integrators/monitoring-integrations.md
 34585342a20ad56bc624c7bd9bc9e0af  doc/eng-us/help/integrators/oauth-applications-for-integrations.md
+bc31a6eeef105de25390dfd35dab3274  doc/eng-us/help/integrators/offer-static-hosting-to-your-clients.md
 9bb3a9724c602be2cd2dc64d9e9ef89c  doc/eng-us/help/integrators/outgoing-webhooks-from-the-audit-trail.md
 d930e1540170ef1bcd448ccbf51c4a9c  doc/eng-us/help/integrators/packages-import-and-export.md
 e0d89e91600656d815a04d5d72aaeaac  doc/eng-us/help/integrators/payment-gateways-and-the-shop.md
@@ -10754,6 +10775,7 @@ d7cdfcb533669c841bcd84560689c86c  doc/eng-us/help/leadership/running-a-team-on-g
 f6c60070cdf23f326dc88b169ffbcf4c  doc/eng-us/help/leadership/what-exponential-is.md
 8d61e8f5d772e4bf6a332b17bcae4dec  doc/eng-us/help/leadership/working-together.md
 e09a7537cbc3d11394c22546abb70910  doc/eng-us/help/leadership/working-with-the-community.md
+4eb52c126a283e1bd09623bfeb29fb53  doc/eng-us/help/local-businesses/a-fast-free-brochure-site-for-your-business.md
 e0e9dece16cc576b3d00097a07f0720e  doc/eng-us/help/local-businesses/budget/README.md
 5c148324cef979baaeae756002334ec4  doc/eng-us/help/local-businesses/budget/budget-worksheet.md
 5ba37e0f21c2bb663428944de299601e  doc/eng-us/help/local-businesses/budget/the-cost-picture.md
@@ -11021,6 +11043,7 @@ f0559498dcd382721582d01118209c59  doc/eng-us/help/mobile-app-developers/rest-api
 e68fe2eced95ad725375c49248ceb1b0  doc/eng-us/help/mobile-app-developers/testing/testing-against-a-demo.md
 2c099fe9a37f746cd9c996f399aa30f2  doc/eng-us/help/mobile-app-developers/what-the-apis-do-not-do.md
 5a6698cd8399945624f54401de4c2c25  doc/eng-us/help/mobile-app-developers/which-api-for-your-app.md
+fe33ef220e0e4638cf118a887a4a0d03  doc/eng-us/help/non-profits/a-free-website-for-your-nonprofit.md
 c49ff3f06466b607fd9d2ead0f6ef129  doc/eng-us/help/non-profits/accessibility/README.md
 40bbecb67bd5b35dc0945c4719d515c6  doc/eng-us/help/non-profits/accessibility/accessibility-basics-for-non-profits.md
 0a2dc4bf2134cccb1594ce7f8e22458f  doc/eng-us/help/non-profits/accessibility/accessibility-statement-for-non-profits.md
@@ -11076,6 +11099,7 @@ a81b2a0dd9abed67809f4fc8eda69309  doc/eng-us/help/non-profits/transparency/finan
 9b5b02702ae411467ea9ef65115d5634  doc/eng-us/help/non-profits/volunteers/volunteer-member-area.md
 0cfa280566b79f68dcedfeb69cc244f7  doc/eng-us/help/non-profits/volunteers/volunteer-sign-up-form-step-by-step.md
 3569dbab3dfaa9d280ea369669e477ed  doc/eng-us/help/non-profits/volunteers/volunteers-as-editors.md
+e6c77a2b2e1dce297bf0d3bf37970923  doc/eng-us/help/non-technical-people/a-website-without-hosting-costs.md
 db4d4fdf5619d26fe231711194ec3221  doc/eng-us/help/non-technical-people/checklists/README.md
 c4bdebb153cdd881c60c4319b7a75f67  doc/eng-us/help/non-technical-people/checklists/accessibility-checklist-in-plain-words.md
 62393f57ee6a17e6c8984d491a2cec79  doc/eng-us/help/non-technical-people/checklists/before-you-publish-checklist.md
@@ -11236,6 +11260,7 @@ fedab4b1703cc626159405b92653b78f  doc/eng-us/help/php-developers/rest-and-remote
 c8b13b92e9b90ab579eadedea6635aa5  doc/eng-us/help/php-developers/security-in-php-code.md
 3f26ebbcd6c984fa367e8a0df33caf33  doc/eng-us/help/php-developers/sql-with-ezdb.md
 681c9735a721c1fea2555599a1097e0a  doc/eng-us/help/php-developers/static-analysis-with-phpstan.md
+9f8e4744139e7ae61fa9b34fdfbf68a9  doc/eng-us/help/php-developers/static-publishing-from-the-command-line-and-ci.md
 9bda36c70848dc6e03ffc867d27cea91  doc/eng-us/help/php-developers/static-state-traps.md
 9bb8497d245f5431f64868e4e145a0bf  doc/eng-us/help/php-developers/supported-php-versions.md
 dfe1719906a2ed1eb8f50b52c2164f07  doc/eng-us/help/php-developers/the-coding-standard.md
@@ -11428,6 +11453,7 @@ cb069f021c747f081ba27cafc71d8a5b  doc/eng-us/help/press/story-velocity-control-p
 bbe2371f54123677d35b88f28839ca2e  doc/eng-us/help/press/story-velocity.md
 3b03503eba385f37f19886131a0c8c5d  doc/eng-us/help/press/style-and-spelling-for-coverage.md
 c6b62654335f62b902c2df65535e3bca  doc/eng-us/help/press/taking-your-own-screenshots.md
+122e8613304a7baeddd260c9851e760d  doc/eng-us/help/press/talking-about-free-static-sites-with-exponential.md
 f3cae929db2df0591d18808aebbbfeca  doc/eng-us/help/press/the-6-0-x-releases-at-a-glance.md
 ce7e3a03b2aa9247149d7f8b585d4a12  doc/eng-us/help/press/the-foundation-for-reporters.md
 5ea1dab8541b5cdb3e48d9f52c33ebe5  doc/eng-us/help/press/the-history-for-long-form-stories.md
@@ -11672,20 +11698,30 @@ fc23d60d728e81d272031605c23d84a3  doc/eng-us/help/sqli-import/README.md
 7f4dc9243ab6deb0ed1d81bf1851b8b0  doc/eng-us/help/sqli-import/schedules-and-cron.md
 d573b991b0d68701551d0a1541af5eec  doc/eng-us/help/sqli-import/the-import-editor.md
 31561f92b58b4db7a20db82581154906  doc/eng-us/help/sqli-import/upgrading-from-1x.md
-eb50a9f3ce9a750ef143fb5a8cffa568  doc/eng-us/help/static-publishing/README.md
+7d528455277003609a13d4b0bcfc357a  doc/eng-us/help/static-publishing/README.md
 be48efb890664a903b7df285511f74dc  doc/eng-us/help/static-publishing/build-preview-and-publish.md
 0d795daa0fa3f5b47b4edd3e2257f069  doc/eng-us/help/static-publishing/choose-branch-or-github-actions.md
 f95eacdd60f486d6e20ce8ddf4e58f73  doc/eng-us/help/static-publishing/connect-to-github-token-key-or-app.md
-7363b385eebb4285d23838a478b957a5  doc/eng-us/help/static-publishing/github-pages-limits-and-terms.md
+8b90f1f450dd101a925efd5e713e3662  doc/eng-us/help/static-publishing/create-a-github-account-and-repository.md
+6d09fda5c223baff2e77bdcd41ff68e1  doc/eng-us/help/static-publishing/faq.md
+d888d8a7e50413a92da11dc6f28e2efc  doc/eng-us/help/static-publishing/github-pages-limits-and-terms.md
 a4cd5c7f877ed210e68fd3a93e1337b9  doc/eng-us/help/static-publishing/history-and-rollback.md
+881a5ccb189a5366ac14d7417668d9d6  doc/eng-us/help/static-publishing/images-files-and-downloads.md
+42f10f9a2dbe3617ba0ce3f949c8b473  doc/eng-us/help/static-publishing/is-static-right-for-my-site.md
+923c83f9646f19d8f34e37ba5a62ebcd  doc/eng-us/help/static-publishing/keep-private-content-private.md
 aff87c69d51e9005ceab3776258f53b1  doc/eng-us/help/static-publishing/languages-on-a-static-site.md
+38e7cf76ef4dcb87fb3367c506ed183a  doc/eng-us/help/static-publishing/links-and-base-path.md
+a9af522720b28cdffb0bbd9a7a7c3752  doc/eng-us/help/static-publishing/make-a-free-website-in-15-minutes.md
 b37ba9198888aebcff387ed09d7ee69d  doc/eng-us/help/static-publishing/notifications-and-webhooks.md
+95cb98c43a6a280374c38560733d948b  doc/eng-us/help/static-publishing/other-git-hosts-gitlab-gitea-and-your-own-server.md
 0c3f3c50dd85f66a018241bb83d733a5  doc/eng-us/help/static-publishing/publish-automatically.md
 8b46c0568318c26af90ce1c27704a05c  doc/eng-us/help/static-publishing/search-forms-and-comments-on-a-static-site.md
 9746ef9f57cbc6190dce2efefff12165  doc/eng-us/help/static-publishing/seo-on-a-static-site.md
-57442f5a7e70269424248494ff567c11  doc/eng-us/help/static-publishing/the-setup-wizard.md
+70107c29b2e19bbe5d8a74e2fdedc876  doc/eng-us/help/static-publishing/the-setup-wizard.md
 c239a2e93d7ecf4b244fd20ab605a0a3  doc/eng-us/help/static-publishing/the-website-sidebar-panel.md
 94271000257e23bc268f59d9be6fb3c9  doc/eng-us/help/static-publishing/use-your-own-domain.md
+2ce5d37871bdd3878447ab561b1988b7  doc/eng-us/help/static-publishing/what-static-publishing-is.md
+252816f7f080e15d04c5d600f7f65692  doc/eng-us/help/static-publishing/when-a-publish-fails.md
 0e3787840fe0e35f6540a85ea68d8a0d  doc/eng-us/help/static-publishing/who-may-publish-roles-and-policies.md
 0a15a3cdf80e301b1531867ca2882cb8  doc/eng-us/help/students/asking-for-help-and-study-groups.md
 acdb522552b0a53695952072877c4e3e  doc/eng-us/help/students/bugs-you-find-while-learning.md
@@ -11720,6 +11756,7 @@ f5e7e98c2fc06fdbaa1309685628532b  doc/eng-us/help/students/project-05-a-multilin
 7d745abdf5d349c0e4ce0d4e986318ff  doc/eng-us/help/students/project-08-your-first-extension.md
 43ebae9de02fce60ecf0ae35d4091461  doc/eng-us/help/students/project-09-roles-for-a-restricted-editor.md
 1fc31961ab3822393a197509a967ce4b  doc/eng-us/help/students/project-10-capstone-a-complete-small-site.md
+bf295dfa8a2c8178527cd2970bdeb2ba  doc/eng-us/help/students/publish-your-portfolio-free-on-github-pages.md
 30095b0819c6ce6f8c19d672b9e92aa4  doc/eng-us/help/students/reading-logs-and-errors.md
 402236544bf186d568d5558dc4d52931  doc/eng-us/help/students/resetting-and-rebuilding-your-study-site.md
 f299f9011896fa8260a12031d7ec76e8  doc/eng-us/help/students/sharing-one-study-site-with-a-class.md
@@ -11867,6 +11904,7 @@ fc69322ab6f1c57c5f762c484275a3e7  doc/eng-us/help/theme-designers/handoff-checkl
 6abc2c8245a7d03feb60eb8b4c207040  doc/eng-us/help/theme-designers/motion-and-interaction.md
 c5a69191cd43b4ab4f3b846c7550c530  doc/eng-us/help/theme-designers/reading-paths-for-theme-designers.md
 c0c3849e4bc027e6eb720623bc393bd5  doc/eng-us/help/theme-designers/redesigning-an-existing-site.md
+c25a769f730c123c41b857427c787ead  doc/eng-us/help/theme-designers/show-your-theme-as-a-live-static-demo.md
 c484e99139377300b77b87fe8a37a054  doc/eng-us/help/theme-designers/social-share-and-metadata-images.md
 90e5ac43465e20dc9e6cd718db850019  doc/eng-us/help/theme-designers/spacing-and-grid.md
 0ad103d7fe214322bd88440906fa0675  doc/eng-us/help/theme-designers/theme-design-review-checklist.md
@@ -12337,6 +12375,7 @@ c47c01dcb73f0157fd02affb3231291b  doc/eng-us/help/trainers/site-administrators/m
 bcf1fbe64ac3079dddd424b515966a01  doc/eng-us/help/trainers/site-administrators/module-10-upgrades-extensions-and-packages/the-extensions-page.md
 7e4bdadfe5f22608ce364d22fb19ef4f  doc/eng-us/help/trainers/site-administrators/module-10-upgrades-extensions-and-packages/the-upgrade-check.md
 e53d0396ec0530fbf3206ffe2599d8df  doc/eng-us/help/trainers/site-administrators/module-10-upgrades-extensions-and-packages/updates-with-ezupdate-and-git-manager.md
+25163004e2e6725e336e9efea27e4b6c  doc/eng-us/help/trainers/teach-web-publishing-with-static-sites.md
 a6c01c6b34c8cd9ed303efe7ddc6da0e  doc/eng-us/help/trainers/teaching-the-core-concepts.md
 fbb5296062edece64f9cf1d5860e79d9  doc/eng-us/help/trainers/theme-designers/README.md
 272839eebe3853969cdd18363a5a188f  doc/eng-us/help/trainers/theme-designers/module-01-designs-and-the-fallback-chain/README.md
@@ -12488,6 +12527,7 @@ cec80db9ceb63172fe7f3a2f752e55c6  doc/eng-us/help/web-framework-developers/routi
 b6905a1babebcacb35eb3686dfbd3e72  doc/eng-us/help/web-framework-developers/scheduled-tasks-and-cronjobs.md
 f02045d072aa21bf4ee7a8a8ca15db52  doc/eng-us/help/web-framework-developers/servers-and-deployment.md
 565c12ec996a6620c8db6e43739dc4af  doc/eng-us/help/web-framework-developers/siteaccesses-hosts-and-tenants.md
+cf804811f8d9c1a2cd14136fbaeab510  doc/eng-us/help/web-framework-developers/static-publishing-compared-with-static-site-generators.md
 42575b69e38bbac222c06aff10143194  doc/eng-us/help/web-framework-developers/symfony-and-the-legacy-bridge.md
 e491e2f38dd47b324bd54cf9f1c10772  doc/eng-us/help/web-framework-developers/template-resolution-designs-and-overrides.md
 5068b7700514b2c57d8c44fedb5c32bc  doc/eng-us/help/web-framework-developers/templates-vs-twig-and-blade.md
@@ -12503,7 +12543,9 @@ b2d5d75778dd42e9008b5bbb1d929515  doc/eng-us/help/web-framework-developers/url-a
 5705660267772847d9f5dd00c10f5519  doc/eng-us/help/web-framework-developers/when-to-choose-exponential.md
 4f3c4ae4817f4548b802da90f18fea3d  doc/eng-us/help/web-framework-developers/workflows-triggers-and-domain-events.md
 62812f350b4cd48c81feb4a16f0670df  doc/eng-us/help/web-framework-developers/your-first-module-step-by-step.md
+7c5605271feff5892f240b35eff20731  doc/eng-us/help/what-changes-for-editors-when-the-site-is-static.md
 021271df1e1f1eba12f845c397ff78c3  doc/eng-us/help/what-the-editor-role-allows.md
+2f1a13e5b6d44fd2ff35a06909c8bf69  doc/eng-us/help/whats-new-in-6-0-15-static-publishing.md
 722b56501b2cc591a3c1fff704a73e44  doc/eng-us/help/when-something-goes-wrong.md
 e4fd0a7be47125531215af42c249dcf7  doc/eng-us/help/who-is-7x.md
 a223d41b90505f6d4ef7a9e911cf0507  doc/eng-us/help/who-is-the-exponential-foundation.md
@@ -12856,7 +12898,7 @@ cbda8dec23b0413752f3eb9abfe7326d  doc/eng-us/install/05-setup-wizard.md
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
 775ac59139d5fbe41099044e578388be  doc/eng-us/install/09-databases.md
 9cecda935c0e6b1bf89e5fe5b7f9e810  doc/eng-us/install/10-after-installing.md
-b5204dac86baddd7878d56bee973589c  doc/eng-us/install/11-upgrading.md
+37decaa74fbd47826653347e4b02ac49  doc/eng-us/install/11-upgrading.md
 0918b106ad9b3f0f011e5bee80ba60c1  doc/eng-us/install/12-troubleshooting.md
 56924c9876d782b4b3f1c429c3000549  doc/eng-us/install/13-security-hardening.md
 58bdac2e3d9f8272c048d26eb6257e97  doc/eng-us/install/14-migrating-from-4x.md
@@ -12925,7 +12967,7 @@ f9f738c497f745bb5e02d68375b9f630  doc/eng-us/specifications/4.3/admin_refresh/fu
 e14335da02fc54b98c731ab8152fbda6  doc/eng-us/specifications/4.3/comment_system/functional_requirements.txt
 13e5ff5275d9513182c2d9f8b64059e0  doc/eng-us/specifications/4.4/extension_ordering/extensionordering_design.rst
 37bdde9f4ce498fd035d13e1631bbbfb  doc/eng-us/specifications/4.5/asynchronous_publishing.txt
-6c4d3e92a02c27f9c70e492b7a0e2b59  doc/eng-us/specifications/6.0/README.md
+47ecf5e0f238144fd9a735958faccfad  doc/eng-us/specifications/6.0/README.md
 eda0b07008cb76a441bdf3174151403c  doc/eng-us/specifications/6.0/audit-event-model.md
 abe08b4c1433579efbb54605157734a1  doc/eng-us/specifications/6.0/bccie.md
 3b236abbadda99711e6f6484b0ba2d48  doc/eng-us/specifications/6.0/cjw_newsletter.md
@@ -12960,6 +13002,7 @@ acf80981b12ccd8ca2d672ee2d1c1ec0  doc/eng-us/specifications/6.0/runnable-command
 26d18bdf558a01bafff2ac715a841d66  doc/eng-us/specifications/6.0/sqlite3-database-driver.md
 94b87b31117ff2cb3541957ab9c62c72  doc/eng-us/specifications/6.0/static-publishing-build-format.md
 c267a0550b900807dfed443c52266c85  doc/eng-us/specifications/6.0/static-publishing-form-endpoint.md
+b452d0a629e4af725d82380f64c0b4b2  doc/eng-us/specifications/6.0/static-publishing-manifest.md
 b118225dc0e1ae32082c94ca48138d4c  doc/eng-us/specifications/6.0/syndication.md
 b23159133a1d0d3c2ad55fbda0c8597a  doc/eng-us/specifications/6.0/velocity-engine-settings.md
 1f27955fa2b346075a4c0762ba079e22  doc/eng-us/specifications/6.0/velocity-http2-and-security.md
@@ -13172,7 +13215,7 @@ bad2519096e06e1dde4533665f591654  doc/eng-us/standards/php-and-composer.md
 2267325f3fa45dde68c5c77fc42be96c  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-a2dc63d1d965d26c28b46ee9cf8569a9  doc/eng-us/translation-waves.md
+15d1c141344fe60394ad3c8001f59b2f  doc/eng-us/translation-waves.md
 3c8a3d79f60b6093c9dfec548dd48c84  doc/ger-de/.dirnames.json
 25867792cc1baa4f05cba3bbd13a860f  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
@@ -13221,12 +13264,12 @@ af366e64a9465d3110503cab5c8d899a  doc/ger-de/.examples/descriptions/30-migration
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-4a04fde6c986964bfdcb5eeb427a47db  doc/ger-de/.paths.json
+94c06929af08b4c127df3f82f42f2ddc  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
-1af7739474c2df44ead2d7828759448d  doc/ger-de/anleitungen/README.md
+b996fac4b099e5b60b88cbb71ac5afa6  doc/ger-de/anleitungen/README.md
 6fdd11bb18b8d79973c0a1a8fd5e3748  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 277fc76f4ca9f5a9a7987b4c7c862311  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
@@ -13279,6 +13322,8 @@ af70505a0f88374afebf5acd1a3521df  doc/ger-de/anleitungen/caches-vorwaermen.md
 ff26b11a2d28f8fee575a03afb1d9aaa  doc/ger-de/anleitungen/caches.md
 543db21e1a75a888d85d7e6347dd2687  doc/ger-de/anleitungen/cronjobs.md
 e9159f73e1f92f04a0571a6696814f4c  doc/ger-de/anleitungen/eigentuemer-aendern.md
+187275b90a6a296fc3e1d51138bf9d46  doc/ger-de/anleitungen/ein-statisches-blog-mit-exponential.md
+b406cbc3208dc72c2f80f6fd73e6c3ae  doc/ger-de/anleitungen/eine-statische-dokumentations-site.md
 1d34a16a2b5967dd35fff27ef271a844  doc/ger-de/anleitungen/einstellungsseite.md
 3fe6751fd962193fc20de472c59b64c5  doc/ger-de/anleitungen/entfernte-dienste-und-apps.md
 7a9042cb3c39fb122fb664e3758b0364  doc/ger-de/anleitungen/entwuerfe-und-ausstehende-objekte.md
@@ -13312,6 +13357,7 @@ af627c78de1d3dfc407aaf30c265131d  doc/ger-de/anleitungen/migrationen-yaml-schrit
 6f5099620267732e42deef55a035638e  doc/ger-de/anleitungen/migrationen.md
 465336715cb5f76e2f9ecd9aaca6024a  doc/ger-de/anleitungen/neue-redakteurskonten-freigeben.md
 a0976fe58065ceb997a8d1fac6b00996  doc/ger-de/anleitungen/objektzustaende.md
+fb6880b3d82b28215fb0d664ecf3f351  doc/ger-de/anleitungen/oeffentlich-entwickeln-kostenlos-veroeffentlichen.md
 1271f7f154a24ac92678b9dc95861a1a  doc/ger-de/anleitungen/pakete.md
 575b4ba2020a8e3d1d389c78eb8b9257  doc/ger-de/anleitungen/passkeys.md
 e6b2e42e0fbcb6f71c0d627295536c75  doc/ger-de/anleitungen/pdf-exporte.md
@@ -13323,11 +13369,18 @@ e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 65397ae907e9925c848b87c52e153223  doc/ger-de/anleitungen/setup-dateien-von-der-konsole.md
 3d68e8329fa2aaef4030a2530bd4e3a1  doc/ger-de/anleitungen/sicherheit-und-audit.md
 9e388232668d81a22e1a5ec8da626be5  doc/ger-de/anleitungen/sitzungen.md
-4887893e28ed5a746840fe0212a0f0dc  doc/ger-de/anleitungen/statische-websites-auf-github-pages-hosten.md
+e740194d8f3cc624f41db9d6bdf51640  doc/ger-de/anleitungen/statische-websites-auf-github-pages-hosten.md
+2d35a7a3170f5fb7ee5c38a074f7ef18  doc/ger-de/anleitungen/statisches-veroeffentlichen-ci-und-github-actions.md
 22181fd2efb68afb99149172011da890  doc/ger-de/anleitungen/statisches-veroeffentlichen-deploy-keys.md
 a69dd29dbd1ecd48baf7206358e184cb  doc/ger-de/anleitungen/statisches-veroeffentlichen-dynamische-funktionen.md
+f0ef4c3d685e2b6f79525c13e55cdd1b  doc/ger-de/anleitungen/statisches-veroeffentlichen-eigene-domains-und-dns.md
+d89de0ebe5288701fcc5f6ca99972080  doc/ger-de/anleitungen/statisches-veroeffentlichen-fehlerbehebung.md
+e21c432bbcc6381c6df5764db88b963f  doc/ger-de/anleitungen/statisches-veroeffentlichen-fuer-multisite-installationen.md
+2675b8089e0a723fdb4b3c8648500aef  doc/ger-de/anleitungen/statisches-veroeffentlichen-grenzen-und-github-bedingungen.md
 8a1f7f299f2773a102a3f53329f39ade  doc/ger-de/anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md
+b3db2a43f8417b62277a7baeaf96114c  doc/ger-de/anleitungen/statisches-veroeffentlichen-unter-windows-und-in-clustern.md
 e0ae991ca3d22de9371e2f23ca4e32c1  doc/ger-de/anleitungen/statisches-veroeffentlichen-verlauf-und-zuruecknehmen.md
+2c4a0da979c9fe4b31551304699ab49f  doc/ger-de/anleitungen/statisches-veroeffentlichen.md
 5cde673181ca9270862809be220cfb98  doc/ger-de/anleitungen/systeminformationen.md
 e2353a9acc40010bfb026b399ea3a82d  doc/ger-de/anleitungen/template-engines-geschwindigkeit.md
 e7be92b09a1fa57489bf3f6b2642ba21  doc/ger-de/anleitungen/template-konvertierung.md
@@ -13347,6 +13400,8 @@ d0f3ff1fc81771c32b16742e54f7ec95  doc/ger-de/anleitungen/twig-templates-rezepte.
 58ef9ee1db2c783c9a482cfa4b020230  doc/ger-de/anleitungen/upgrade-pruefung.md
 56e698d0f903cd6c6bcffc9ed8a67faa  doc/ger-de/anleitungen/upgrade-schritte-fuer-erweiterungen.md
 8d5e959f90212c55a89c8d9a3166c3a2  doc/ger-de/anleitungen/urls-und-aliase.md
+1daf6e6c7cb5c69aa8b955e48c7d1846  doc/ger-de/anleitungen/vom-statischen-cache-zum-statischen-veroeffentlichen.md
+e3df8372cd5e4c7aa625e0fab21222ad  doc/ger-de/anleitungen/von-statischem-html-zu-exponential-und-zurueck.md
 b055f7da6714bbbb0030b07eb7b6615c  doc/ger-de/anleitungen/wartungsmodus.md
 e85dd39016eef809cb91b42a067f4bc0  doc/ger-de/anleitungen/workflows.md
 a309c3015f2e4822e567a6faa9f998b7  doc/ger-de/anleitungen/zwei-faktor-anmeldung.md
@@ -13451,6 +13506,7 @@ f16c71aee0885dfb239e5224c8791a7f  doc/ger-de/bc/6.0/soap-einstiegsskript-index-s
 b6f5671a6d8c8c99ad7a188252af1387  doc/ger-de/bc/6.0/sql-abfrage-cache.md
 18a8a897af6e9f4e71e174f2b2423e5d  doc/ger-de/bc/6.0/sqlite-transaktionen.md
 ed99f303639d301e1bf5ddb4e8c4facc  doc/ger-de/bc/6.0/standardwerte-des-statischen-caches.md
+f16f5e23b0a3ebfd383e1385efc1d390  doc/ger-de/bc/6.0/statisches-veroeffentlichen.md
 4d00c3e39c2236e5bb40312a2a0d2a12  doc/ger-de/bc/6.0/svg-bilder.md
 499335a7f7db9207c3e139c29af80c4a  doc/ger-de/bc/6.0/symbole.md
 21bfeea0b8bc4040a92b663f15947183  doc/ger-de/bc/6.0/tab-orte-blaettern-und-sortieren.md
@@ -16810,7 +16866,7 @@ b24fea4973006b0896c1709f46c42007  doc/ger-de/geschichte/velocity/2026-10.md
 1549837b01e8d4331951a6ab40a67e4c  doc/ger-de/geschichte/velocity/README.md
 e462cda8d5b6e1e0d0d0185eecad9e94  doc/ger-de/geschichte/velocity/installer-und-pakete.md
 e9533888a72db8dae4b0e08382534d66  doc/ger-de/glossar.md
-0562bd56c8299f607fbb4d9f85448980  doc/ger-de/hilfe/README.md
+394932ed045bb76e3f2852067aec99e2  doc/ger-de/hilfe/README.md
 184a29662c44eee5ace950f8eff0cd18  doc/ger-de/hilfe/administratorpasswort-aendern.md
 9d80999100f6fc01d6769705d3ac7e48  doc/ger-de/hilfe/anmelden-im-editor.md
 8bd0a5eb4b20867b8eedd184b9b7873b  doc/ger-de/hilfe/anmelden-in-der-administration.md
@@ -16831,6 +16887,7 @@ cd30d1dd2ac29340def51137e297d215  doc/ger-de/hilfe/anwender-umsteiger/checkliste
 ad4d239d11d1d2569b082db8ec8c8897  doc/ger-de/hilfe/anwender-umsteiger/entscheiden/langlebigkeit-und-unterstuetzung.md
 aff4aafa506402c7dcf990cf5cc9538b  doc/ger-de/hilfe/anwender-umsteiger/entscheiden/lizenzen-fuer-anwender.md
 4ee9eaed4535d169d135e033863c790a  doc/ger-de/hilfe/anwender-umsteiger/entscheiden/wer-den-betrieb-uebernimmt.md
+996b67f2b1893cdce6ea8cb6a359566a  doc/ger-de/hilfe/anwender-umsteiger/exponential-ausprobieren-und-eine-kostenlose-website-veroeffentlichen.md
 8889f3d7447699c5305a9d37c0fef9a8  doc/ger-de/hilfe/anwender-umsteiger/fahrplan-zur-einfuehrung.md
 65b46fe759d12527a7ba62a9a6fb00d8  doc/ger-de/hilfe/anwender-umsteiger/faq-zur-einfuehrung.md
 89ebf5a20b1c0189d6a74c3e125d46f5  doc/ger-de/hilfe/anwender-umsteiger/glossar-zur-einfuehrung.md
@@ -17375,7 +17432,7 @@ cdbfb512780e1edaf6933621dcfed367  doc/ger-de/hilfe/bilder/update-logs.webp
 dcb910709a5882c7bba598552127dc71  doc/ger-de/hilfe/bilder/update-maintenance.webp
 7ea57e7e8417716321a7c37cab9ba6de  doc/ger-de/hilfe/bilder/update-upgrade-check.webp
 66ff5b2352a5a5d0b6320f655b3f62e3  doc/ger-de/hilfe/bilder/versions.webp
-350c5360e57a5661c3267b39a701f02a  doc/ger-de/hilfe/buch-eine-website-bauen/README.md
+2c3a88248f85965a0c527c53c2e67290  doc/ger-de/hilfe/buch-eine-website-bauen/README.md
 ed96548fca982e0f59765089b9ebfe9f  doc/ger-de/hilfe/buch-eine-website-bauen/das-gaestebuch.md
 2fd888b0a7af9abc32a681748e8a1c8b  doc/ger-de/hilfe/buch-eine-website-bauen/das-hauptlayout.md
 72132283dea8ccc3affc754b72020f9d  doc/ger-de/hilfe/buch-eine-website-bauen/das-projekt-beginnen.md
@@ -17383,6 +17440,7 @@ ed96548fca982e0f59765089b9ebfe9f  doc/ger-de/hilfe/buch-eine-website-bauen/das-g
 c3ac769c03febbae8340bcb2b835217e  doc/ger-de/hilfe/buch-eine-website-bauen/die-mitgliederseite.md
 114ac291573bbf2f8da97b8b94655f71  doc/ger-de/hilfe/buch-eine-website-bauen/die-nachrichtenseiten.md
 229f647dbdbc3db2df5770a2079500fe  doc/ger-de/hilfe/buch-eine-website-bauen/gaestebucheintraege-freigeben.md
+032a3cafaf4211155d511556def413b8  doc/ger-de/hilfe/buch-eine-website-bauen/ihre-erste-statische-website-in-15-minuten.md
 1c8284804e0dc4f940b57a58440b17ac  doc/ger-de/hilfe/buch-eine-website-bauen/sektionen-und-die-startseite.md
 3d8491221363afa4e390a4964b8e7b72  doc/ger-de/hilfe/buch-lernen/README.md
 42e82367a13b22e674c6e5f38fdf59c6  doc/ger-de/hilfe/buch-lernen/benutzer-gruppen-und-rollen-im-beispiel.md
@@ -18092,6 +18150,7 @@ d174e4a5604d65326bdeec2100488ea1  doc/ger-de/hilfe/ersteller/website-ersteller/h
 ab08c8c00cd813f052d48c77f7450552  doc/ger-de/hilfe/ersteller/website-ersteller/ihre-website-planen.md
 5e5b721dded98e11e611394dd4bb6b68  doc/ger-de/hilfe/ersteller/website-ersteller/inhaltsklassen-fuer-websites.md
 a9b7eefc018952aff785aabc71a2a9b7  doc/ger-de/hilfe/ersteller/website-ersteller/klassische-landingpages-mit-ezflow.md
+75d569c72505b3066fc0e4fa8fbf4d8b  doc/ger-de/hilfe/ersteller/website-ersteller/kundenwebsites-als-statische-websites-ausliefern.md
 dca2620f1daa52a683a997366a9b9726  doc/ger-de/hilfe/ersteller/website-ersteller/landingpages-mit-dem-layouts-editor.md
 007bb899769b199245b073dd4df96714  doc/ger-de/hilfe/ersteller/website-ersteller/layout-regeln.md
 fb8f9b4d4d4aebe3d4ec0dd787da2fd2  doc/ger-de/hilfe/ersteller/website-ersteller/layouttypen-zonen-und-bloecke.md
@@ -18485,6 +18544,7 @@ c87a518eb5a397d7e068f6e3d235fb18  doc/ger-de/hilfe/gemeinschaft/anderen-helfen/t
 7fb9aa498a9a9964216c6415a2cf4963  doc/ger-de/hilfe/gemeinschaft/beitreten/wo-sich-menschen-treffen.md
 3a3a9c0bfbad861a60b1b32ef5a31e77  doc/ger-de/hilfe/gemeinschaft/checklisten-fuer-die-community.md
 ed9a6875965f6c403f55817014095dca  doc/ger-de/hilfe/gemeinschaft/community-hier-beginnen.md
+4b4dbbe7148df606ab5436a343a3a8a4  doc/ger-de/hilfe/gemeinschaft/eine-kostenlose-website-fuer-ihre-user-group.md
 708240abaa2283e1b72217abe1859d97  doc/ger-de/hilfe/gemeinschaft/faq-fuer-die-community.md
 08d5c03763a7024391744ad9286d5a3e  doc/ger-de/hilfe/gemeinschaft/glossar-fuer-die-community.md
 3a09b05f2878ab0b2d0ea5a4a47d4a0e  doc/ger-de/hilfe/gemeinschaft/ihre-erste-woche-in-der-community.md
@@ -18792,6 +18852,7 @@ a03cffad6f781a2fbcd82672906f920a  doc/ger-de/hilfe/hosting/sicherheit/sicherheit
 773ccaaa6454d632c683fd475ede31dd  doc/ger-de/hilfe/hosting/sicherheit/tls-und-https.md
 89600dda8a132d475ce027d3fb9ac5a5  doc/ger-de/hilfe/hosting/sicherheit/trennung-von-mandanten.md
 b7007a5a1e0ad8960cadd403d87caa73  doc/ger-de/hilfe/hosting/sicherheit/zweistufige-anmeldung.md
+41614992fe5d50d2f0d6af35044c15ea  doc/ger-de/hilfe/hosting/statisches-veroeffentlichen-und-ihr-hosting.md
 083fb64ba1c4023b0c306a81c48cc032  doc/ger-de/hilfe/images/bookmarks/bookmark-page-no-access--admin-light.webp
 efbf11c7058723cd2ba05ff9db77defd  doc/ger-de/hilfe/images/bookmarks/bookmark-page-no-access--admin4-dark.webp
 1871b111af503b2c7d4c3e31943983e0  doc/ger-de/hilfe/images/bookmarks/bookmark-page-no-access--editor-dark.webp
@@ -18890,6 +18951,7 @@ bbfd66970f1b397389e7213b14e83aef  doc/ger-de/hilfe/integratoren/playbook-fuer-in
 7082a5d44727e3ace7f0abfdd97f05dd  doc/ger-de/hilfe/integratoren/sicherheit-fuer-integrationen.md
 d48b613ee00f01eecf62a1d709a16fea  doc/ger-de/hilfe/integratoren/sicherheits-checkliste-fuer-integrationen.md
 bc9dab2ea23607a96822057e0093dbe2  doc/ger-de/hilfe/integratoren/single-sign-on-und-social-login.md
+200cd61d697bd7c602120c3c0fbf965c  doc/ger-de/hilfe/integratoren/statisches-hosting-fuer-ihre-kunden-anbieten.md
 2249edef0f3239157556c120e510cad5  doc/ger-de/hilfe/integratoren/syndizierung-zwischen-installationen.md
 355a1e638e1404e5a83cde5f7d3c86f2  doc/ger-de/hilfe/integratoren/uebergabe-einer-integration.md
 a4079eacdea5bab07b34149aae6bc586  doc/ger-de/hilfe/integratoren/upgrades-ohne-defekte-integrationen.md
@@ -19129,6 +19191,7 @@ ff763a66b7aadf4848d624a6ee121d55  doc/ger-de/hilfe/lernende/git-als-lernende-nut
 ea3f6779774e4474340959bd0e6c244a  doc/ger-de/hilfe/lernende/glossar-fuer-lernende.md
 dfc89b5a3b96849bceb28f93597b8477  doc/ger-de/hilfe/lernende/hilfeseiten-nach-thema-fuer-lernende.md
 1e2686e4624f93e3a4924477015e81e9  doc/ger-de/hilfe/lernende/ihr-erster-beitrag-schritt-fuer-schritt.md
+b9283f3912f2ea5dd1126513320192b6  doc/ger-de/hilfe/lernende/ihr-portfolio-kostenlos-auf-github-pages-veroeffentlichen.md
 d5f1c12c0f1d1cfa0daae10997e3fd0f  doc/ger-de/hilfe/lernende/ihre-erste-stunde-in-der-administration.md
 50d1c4ef73cbe6ecb820af5abc193f7b  doc/ger-de/hilfe/lernende/ihre-erste-website-auf-drei-wegen.md
 beb27f0090af3578fb171734616184ee  doc/ger-de/hilfe/lernende/lernende-hier-beginnen.md
@@ -19164,6 +19227,7 @@ a6b1b75bdb44931724647d391a209560  doc/ger-de/hilfe/lokale-unternehmen/budget/das
 1fc426f01b889ab2949301caf2344b9a  doc/ger-de/hilfe/lokale-unternehmen/budget/was-einen-externen-dienst-braucht.md
 85e3a7bacefc0ea95058c1c9c486ac66  doc/ger-de/hilfe/lokale-unternehmen/checklisten/README.md
 7516ff011f126605da2a2dc59a6262a1  doc/ger-de/hilfe/lokale-unternehmen/checklisten/checkliste-zum-livegang.md
+c3051f98219bbf79b2c125b6dd34a5fd  doc/ger-de/hilfe/lokale-unternehmen/eine-schnelle-kostenlose-visitenkarten-website-fuer-ihr-unternehmen.md
 157f7bcfa3ee2c72025411841fec452e  doc/ger-de/hilfe/lokale-unternehmen/einfacher-shop/README.md
 7a52b2ce3aaaccdc321d6b31ad8d31f4  doc/ger-de/hilfe/lokale-unternehmen/einfacher-shop/brauchen-sie-einen-shop.md
 a545b2561e782b920ad1855d73002a30  doc/ger-de/hilfe/lokale-unternehmen/einfacher-shop/ein-kleiner-katalog.md
@@ -19310,6 +19374,7 @@ e5a4089acf8f54a4b66e1bb2649d2191  doc/ger-de/hilfe/mobile-app-entwickler/veroeff
 4fb6a317c89f20c5aba7d4acf610a832  doc/ger-de/hilfe/mobile-app-entwickler/was-die-apis-nicht-koennen.md
 09a111d770ea2227fafce84e2f8f8093  doc/ger-de/hilfe/mobile-app-entwickler/welche-api-fuer-ihre-app.md
 98480585266235816a7ceb8cdb9e50f3  doc/ger-de/hilfe/mobile-app-entwickler/wie-exponential-inhalte-in-eine-app-gelangen.md
+50ac3cdb9e82ab25c7c38f1aabec9672  doc/ger-de/hilfe/neu-in-6-0-15-statisches-veroeffentlichen.md
 074633aaf6f8b4fb8e3aef48e4f72500  doc/ger-de/hilfe/neue-inhalte.md
 6f7eb0250c3ff0e1d62d392149f80dde  doc/ger-de/hilfe/nicht-technische-menschen/begriffe/README.md
 a8171eeb84149a540c77a4b25ed0f8aa  doc/ger-de/hilfe/nicht-technische-menschen/begriffe/caches-erklaert.md
@@ -19325,6 +19390,7 @@ d02d469feaaad3d267e25112b1528bd3  doc/ger-de/hilfe/nicht-technische-menschen/beg
 f4e9615237e3fc763ca4932cd2903a9a  doc/ger-de/hilfe/nicht-technische-menschen/checklisten/monatlich-fuer-website-verantwortliche.md
 15d07c3880c7653f45155e2fb515b72f  doc/ger-de/hilfe/nicht-technische-menschen/checklisten/uebergabe-wenn-jemand-geht.md
 c62f3dbc175b480b2e23953c0705a7d0  doc/ger-de/hilfe/nicht-technische-menschen/checklisten/vor-dem-veroeffentlichen.md
+8c0982a79ea1bf039aef994dc2fb3fb8  doc/ger-de/hilfe/nicht-technische-menschen/eine-website-ohne-hosting-kosten.md
 c8fdfbae93720a168f4032a854fc835b  doc/ger-de/hilfe/nicht-technische-menschen/erste-schritte/README.md
 2d5bfe6787a23c32314d1e6a9ed55fd1  doc/ger-de/hilfe/nicht-technische-menschen/erste-schritte/den-schreibassistenten-nutzen.md
 5d30d737de18359fd41d4513cb5db1f2  doc/ger-de/hilfe/nicht-technische-menschen/erste-schritte/die-erste-anmeldung.md
@@ -19381,6 +19447,7 @@ c51ff706b7082d54698ad93e4fdb2594  doc/ger-de/hilfe/non-profit-organisationen/ehr
 b2600775091f7694fbbff22c982dab4b  doc/ger-de/hilfe/non-profit-organisationen/ehrenamtliche/ehrenamtliche-redakteure-schulen.md
 46e420d793b007477b4468e95ff58117  doc/ger-de/hilfe/non-profit-organisationen/ehrenamtliche/mitgliederbereich-fuer-ehrenamtliche.md
 7ca7e877037c0989c946c047ce3beaef  doc/ger-de/hilfe/non-profit-organisationen/ehrenamtliche/spamschutz-fuer-ehrenamtsformulare.md
+57757ffe3fbb20766a7d99aa31cd1fc5  doc/ger-de/hilfe/non-profit-organisationen/eine-kostenlose-website-fuer-ihre-gemeinnuetzige-organisation.md
 c4eda0bfc0bdcdce8bc33dc40b330d9c  doc/ger-de/hilfe/non-profit-organisationen/faq-fuer-non-profit-organisationen.md
 bc13d471ab6c61877126b991e067f3ed  doc/ger-de/hilfe/non-profit-organisationen/foerdermittel/README.md
 8ba598675131e5bfac582610ffd10375  doc/ger-de/hilfe/non-profit-organisationen/foerdermittel/budgetposten-fuer-hosting-und-wartung.md
@@ -19585,6 +19652,7 @@ fbca0b51b845f56edad246a0c24c3022  doc/ger-de/hilfe/php-entwickler/phpunit-ohne-d
 60824329750d021541fba3c654734d0d  doc/ger-de/hilfe/php-entwickler/sicherheit-in-php-code.md
 acd1940619ce592cd21068b6d6faedc1  doc/ger-de/hilfe/php-entwickler/sql-mit-ezdb.md
 56ff302e12241c3ec032877c447a5f60  doc/ger-de/hilfe/php-entwickler/statische-analyse-mit-phpstan.md
+dc8cb71fe1c582c0601b3b137e49cfa6  doc/ger-de/hilfe/php-entwickler/statisches-veroeffentlichen-auf-der-kommandozeile-und-in-ci.md
 633f2ff78c4006a3d39ab517dcc07d1c  doc/ger-de/hilfe/php-entwickler/unterstuetzte-php-versionen.md
 6482068d0e99131d683fe5a725c383bb  doc/ger-de/hilfe/php-entwickler/warum-keine-typdeklarationen.md
 f729bdea8454a0afa6b7057937252983  doc/ger-de/hilfe/php-entwickler/wie-eine-anfrage-in-php-ablaeuft.md
@@ -19769,6 +19837,7 @@ c9656e14ead65959378a147988beca1d  doc/ger-de/hilfe/presse/ueber-die-community-sc
 c3d9b2a1ce36d60f6031b1339612f8d4  doc/ger-de/hilfe/presse/ueber-ein-erweiterungs-release-berichten.md
 0d3c21226f63368da91ea38b7948d06d  doc/ger-de/hilfe/presse/ueber-ein-release-berichten.md
 326074303d10058fcd2084cf147c706e  doc/ger-de/hilfe/presse/ueber-finanzierung-und-sponsoren-schreiben.md
+ec184360e3743f19484fa4340fc506f1  doc/ger-de/hilfe/presse/ueber-kostenlose-statische-websites-mit-exponential-sprechen.md
 35ad7cfa4bb007234063cbba122e4861  doc/ger-de/hilfe/presse/ueber-platform-releases-berichten.md
 ffc46a3e5b33efb3aba7c2404f6b4204  doc/ger-de/hilfe/presse/ueber-sicherheitskorrekturen-berichten.md
 b203fb4ef6c56777b54750aa6f0d790c  doc/ger-de/hilfe/presse/ueber-velocity-releases-berichten.md
@@ -19807,6 +19876,7 @@ b87c8ad046215bef94d4b788c52c2c70  doc/ger-de/hilfe/privatpersonen/familienseiten
 31ed8ac915702b6eec83d68020c41f42  doc/ger-de/hilfe/privatpersonen/familienseiten/privatsphaere-fuer-ihre-familie.md
 c6c1fac89b0ac270ae42a6099769a095  doc/ger-de/hilfe/privatpersonen/faq-fuer-privatpersonen.md
 cb4a21a437e808858f2776bcd3daf87d  doc/ger-de/hilfe/privatpersonen/glossar-fuer-privatpersonen.md
+0b7565ae9d253ce559b975a6a059a309  doc/ger-de/hilfe/privatpersonen/ihre-persoenliche-website-kostenlos.md
 b48450e0fa377e1503408246c531118e  doc/ger-de/hilfe/privatpersonen/im-betrieb/README.md
 c9faa9bdb027af672829d7c8a4731ffe  doc/ger-de/hilfe/privatpersonen/im-betrieb/grundlagen-zu-spam-und-sicherheit.md
 9caa414e93325a5b80795bf150528384  doc/ger-de/hilfe/privatpersonen/im-betrieb/lernen-mit-der-stufe-student.md
@@ -20006,20 +20076,30 @@ d5b3cedb5adc84c82b4ea67b02ec1cfd  doc/ger-de/hilfe/sqli-import/aktualisierung-vo
 d229868061c504d4a7675593302ac931  doc/ger-de/hilfe/sqli-import/importe-und-laeufe.md
 038a380a22e33db9548b4cb0d168eae3  doc/ger-de/hilfe/sqli-import/zeitplaene-und-cron.md
 6b37ffe4b4ca1e11f721159fad23bd48  doc/ger-de/hilfe/standard-administratorpasswort.md
-c91b38fd3136d6e3d03cd66945728c0d  doc/ger-de/hilfe/statisches-veroeffentlichen/README.md
+128c9faaf93af5f2a2a103fa871886d5  doc/ger-de/hilfe/statisches-veroeffentlichen/README.md
+73f41c7091a4b5af46f00fd1adbf80ae  doc/ger-de/hilfe/statisches-veroeffentlichen/andere-git-hosts-gitlab-gitea-und-eigener-server.md
 e53602a8a2c71d5d309e7368f93bb80a  doc/ger-de/hilfe/statisches-veroeffentlichen/automatisch-veroeffentlichen.md
 2a6cdd08a2282f2a9f0b2b527e9f47a0  doc/ger-de/hilfe/statisches-veroeffentlichen/benachrichtigungen-und-webhooks.md
+2a493fbf4b3c3b00ec0e68f0e6970c61  doc/ger-de/hilfe/statisches-veroeffentlichen/bilder-dateien-und-downloads.md
 a0ba55a3953fa1abe2dc3eaa6a5c5062  doc/ger-de/hilfe/statisches-veroeffentlichen/branch-oder-github-actions-waehlen.md
 1dcd36f08b79444d7a5a774223eb680f  doc/ger-de/hilfe/statisches-veroeffentlichen/build-vorschau-und-veroeffentlichen.md
 c3017b0c20a79874a63517331be0724e  doc/ger-de/hilfe/statisches-veroeffentlichen/der-bereich-in-der-website-seitenleiste.md
-0d86814ec41eab27dfb203bd72773598  doc/ger-de/hilfe/statisches-veroeffentlichen/der-einrichtungsassistent.md
+3b6787ec20fab732112924cf1e17dea6  doc/ger-de/hilfe/statisches-veroeffentlichen/der-einrichtungsassistent.md
 70b3d5f986ea5f6fab3a7b1db4c32174  doc/ger-de/hilfe/statisches-veroeffentlichen/eigene-domain-verwenden.md
-e7144d401f59ec42479bbdc9805808d5  doc/ger-de/hilfe/statisches-veroeffentlichen/grenzen-und-bedingungen-von-github-pages.md
+26f0a4df71d4955e22c26a9cca7c527a  doc/ger-de/hilfe/statisches-veroeffentlichen/ein-github-konto-und-repository-anlegen.md
+c3c065d21b97e88b1a158b26938a7382  doc/ger-de/hilfe/statisches-veroeffentlichen/faq.md
+875ba715fdd63f1bbe9cd38e5626f91f  doc/ger-de/hilfe/statisches-veroeffentlichen/grenzen-und-bedingungen-von-github-pages.md
+1c338bec1f6df22246fb50934530fcc1  doc/ger-de/hilfe/statisches-veroeffentlichen/in-15-minuten-eine-kostenlose-website.md
+ff7416a0d7130bfb0ee91b439179d36d  doc/ger-de/hilfe/statisches-veroeffentlichen/links-und-basispfad.md
 f21ebb63f5bc55ac5b2a635b42f56e1b  doc/ger-de/hilfe/statisches-veroeffentlichen/mit-github-verbinden-token-key-oder-app.md
+ebcde31e38b22d5707e3d00bb8b03d6c  doc/ger-de/hilfe/statisches-veroeffentlichen/passt-statisch-zu-meiner-website.md
+1351cf4f9bfb09ae690c7757949f4698  doc/ger-de/hilfe/statisches-veroeffentlichen/private-inhalte-privat-halten.md
 a11a0a28d2d52cd108d2bdb0e51d517c  doc/ger-de/hilfe/statisches-veroeffentlichen/seo-auf-einer-statischen-site.md
 4b9ba8d516326d762558ebea27303556  doc/ger-de/hilfe/statisches-veroeffentlichen/sprachen-auf-einer-statischen-site.md
 694c50eb0db716929964146be0d2dcd6  doc/ger-de/hilfe/statisches-veroeffentlichen/suche-formulare-und-kommentare-auf-einer-statischen-site.md
 6b158c938c9fdad4291c482b53b4d0b4  doc/ger-de/hilfe/statisches-veroeffentlichen/verlauf-und-ruecknahme.md
+6c6fd11d41e1b182fe18e96da66c6072  doc/ger-de/hilfe/statisches-veroeffentlichen/was-statisches-veroeffentlichen-ist.md
+aa7950ea103082ba387a015e033b0e2a  doc/ger-de/hilfe/statisches-veroeffentlichen/wenn-eine-veroeffentlichung-fehlschlaegt.md
 d33aee31a89c450d6cf2048147ea92af  doc/ger-de/hilfe/statisches-veroeffentlichen/wer-veroeffentlichen-darf-rollen-und-richtlinien.md
 e5481f5aca9fbf3f22b247f3572cb15b  doc/ger-de/hilfe/suchen.md
 11f6935aa99a4119d4977f067c15fc9a  doc/ger-de/hilfe/systemseiten-als-lesezeichen.md
@@ -20128,6 +20208,7 @@ e3a6fc97e2f2de77e3b494890fc52827  doc/ger-de/hilfe/theme-designer/fuer-performan
 2532f5b3c710870e2b24a6eeba097509  doc/ger-de/hilfe/theme-designer/fuer-viele-sprachen-gestalten.md
 bcb85a97b6d0893697b0b5a1a945ca29  doc/ger-de/hilfe/theme-designer/glossar-fuer-theme-designer.md
 b4ca9cf4a4c7114fc834f80cc25be9eb  doc/ger-de/hilfe/theme-designer/ihr-erster-tag-als-theme-designer.md
+81e07a9595cd58cc6e6bb68c0c8c7667  doc/ger-de/hilfe/theme-designer/ihr-theme-als-live-demo-zeigen.md
 1c222034fb0a7b31c4ac2bda0f2d4439  doc/ger-de/hilfe/theme-designer/inhaltslisten-und-karten-gestalten.md
 315b54956d7e739bea5eb69ffdba74ea  doc/ger-de/hilfe/theme-designer/interaktive-zustaende-gestalten.md
 6cee6cca32aa2ea73577f7a9f0ced869  doc/ger-de/hilfe/theme-designer/komponenteninventar.md
@@ -20690,6 +20771,7 @@ a5fea382b180bba6350938e647035351  doc/ger-de/hilfe/trainer/website-administrator
 b2e3de2dc08d3f6b02e141b4da0eb1f7  doc/ger-de/hilfe/trainer/website-administratoren/modul-10-upgrades-erweiterungen-und-pakete/ein-upgrade-planen-und-durchfuehren.md
 2a01d671c22b09d986abb00a87cdb015  doc/ger-de/hilfe/trainer/website-administratoren/modul-10-upgrades-erweiterungen-und-pakete/pakete.md
 2bfb761bc9df6ecc35507c3922da3517  doc/ger-de/hilfe/trainer/website-administratoren/modul-10-upgrades-erweiterungen-und-pakete/updates-mit-ezupdate-und-git-manager.md
+f87ba7db0e8d141836fc370b0af01687  doc/ger-de/hilfe/trainer/webveroeffentlichung-mit-statischen-websites-unterrichten.md
 008c06dcf2089ec107e1df04c16ddbb6  doc/ger-de/hilfe/trainer/workshops/README.md
 c1b81e8f5641f31e1fe3727a6b78dd13  doc/ger-de/hilfe/trainer/workshops/modul-01-einen-workshop-planen/README.md
 24e12df6a4fdaa514f12eebe10c1fc01  doc/ger-de/hilfe/trainer/workshops/modul-01-einen-workshop-planen/der-ablaufplan.md
@@ -21268,6 +21350,7 @@ bb0383782cd4dc260fcda4fd3fd8d3f8  doc/ger-de/hilfe/verwaltung/aufgaben/veroeffen
 7661c72aad0c9fa940664181f1174a18  doc/ger-de/hilfe/verwaltung/aufgaben/veroeffentlichen/viele-elemente-auf-einmal-bearbeiten.md
 2280be7263be4571dc05e03e20db7b41  doc/ger-de/hilfe/verwaltung/aufgaben/veroeffentlichen/vor-dem-veroeffentlichen-eine-vorschau-ansehen.md
 4d02bff9e175d6fcb2803f1b9ea41ee0  doc/ger-de/hilfe/verwaltung/aufgaben/veroeffentlichen/zwei-versionen-vergleichen.md
+264642d4be74910ae465331ec5323910  doc/ger-de/hilfe/verwaltung/barrierefreie-statische-websites-fuer-oeffentliche-informationen.md
 27f352e61a5ca900011bbb9ac4302fcd  doc/ger-de/hilfe/verwaltung/barrierefreiheit/README.md
 0d506c58d5262012592c5fd7d3a08d5c  doc/ger-de/hilfe/verwaltung/barrierefreiheit/admin4-was-abgedeckt-ist.md
 81dba67bb9533b2d985526eff23672cc  doc/ger-de/hilfe/verwaltung/barrierefreiheit/alternativtext-fuer-bilder.md
@@ -21817,6 +21900,7 @@ da6a75154dccea7f8c8ae10f6b4aebf0  doc/ger-de/hilfe/verwaltung/transparenz-und-in
 0fe97e515606ebdf0332027c749a8839  doc/ger-de/hilfe/verwaltung/verwaltungen-hier-beginnen.md
 cfa697bd0173b4a8b1c03e8a2f968ef5  doc/ger-de/hilfe/warum-exponential-php-7-4-unterstuetzt.md
 eaf218cf108fef60292e0cfb369a6a16  doc/ger-de/hilfe/was-die-redakteursrolle-erlaubt.md
+633650641ad4302fa10226ad95b9a272  doc/ger-de/hilfe/was-sich-fuer-redakteure-aendert-wenn-die-website-statisch-ist.md
 bcefb0645cf813c8c539267f26ce550d  doc/ger-de/hilfe/web-framework-entwickler/authentifizierung-und-sitzungen.md
 4dabc94e5cc21ff125e998c68822cb75  doc/ger-de/hilfe/web-framework-entwickler/autorisierung-rollen-und-richtlinien.md
 5b6b7e056fc096064de4b75c9ab132e5  doc/ger-de/hilfe/web-framework-entwickler/begriffswoerterbuch.md
@@ -21854,6 +21938,7 @@ a6e2c957cd3245c6af181ed5c1ad4028  doc/ger-de/hilfe/web-framework-entwickler/orm-
 bfcad995b7702da8609c387a3c01afe5  doc/ger-de/hilfe/web-framework-entwickler/routing-mit-modulen-und-views.md
 84deb092ad6b45df5bf9dd17ae2fb14c  doc/ger-de/hilfe/web-framework-entwickler/server-und-deployment.md
 76b33406bfb3fb53890d4d03e46c74cd  doc/ger-de/hilfe/web-framework-entwickler/siteaccesses-hosts-und-mandanten.md
+3b73451aeebe60f358c5f6580626f853  doc/ger-de/hilfe/web-framework-entwickler/statisches-veroeffentlichen-im-vergleich-mit-static-site-generatoren.md
 c7584ac44c690d3bbb960ff520653fce  doc/ger-de/hilfe/web-framework-entwickler/stolperfallen-fuer-framework-entwickler.md
 fcc49eca4c2a4e0ad0c0e654b051c915  doc/ger-de/hilfe/web-framework-entwickler/symfony-und-die-legacy-bridge.md
 19dfc5ff13cfff62207a945facec871c  doc/ger-de/hilfe/web-framework-entwickler/template-aufloesung-designs-und-overrides.md
@@ -22223,7 +22308,7 @@ bb19e39caf6993f1bcf9f5b660eb3d9d  doc/ger-de/installation/06-kickstarter.md
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
 c7ee2583299b7d3cc39b8f46e97d32c8  doc/ger-de/installation/09-datenbanken.md
 e34fdc1d32d662c3da6ba883562fa080  doc/ger-de/installation/10-nach-der-installation.md
-ee872efd6414186944be53df7afc2bb0  doc/ger-de/installation/11-aktualisieren.md
+b8d795ebb1ea91d94d2d59204e2bc9de  doc/ger-de/installation/11-aktualisieren.md
 966a618e5e048602edbba5c0f70b3038  doc/ger-de/installation/12-fehlerbehebung.md
 f159a990cb201711216fabfaa300a852  doc/ger-de/installation/13-sicherheitshaertung.md
 83b7964c05a1617eb2cbe90e5f4db2ce  doc/ger-de/installation/14-migration-von-4x.md
@@ -22255,7 +22340,7 @@ c74c61782aae1da372a0885d9225ed72  doc/ger-de/installation/migration/shopify.md
 370891338e6b7eecbc0ccf974791157b  doc/ger-de/installation/migration/symfony-anwendungen.md
 7afe7da9a50da9a5b91d6b6f220248fb  doc/ger-de/installation/migration/website-baukaesten.md
 f4364e8ca67a26c8ba3463b279f83d39  doc/ger-de/installation/migration/wordpress.md
-fab0273dea8c1cdb1b226d543cc78e43  doc/ger-de/spezifikationen/6.0/README.md
+d5ae2ad812688ea3e85cb3acb52e7c98  doc/ger-de/spezifikationen/6.0/README.md
 cb14f86e781d2b9b69cfc504606c22ea  doc/ger-de/spezifikationen/6.0/audit-ereignismodell.md
 46a672ef5e561501db056a629bf555ff  doc/ger-de/spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md
 c48e255150e2911443c00aa09df401b3  doc/ger-de/spezifikationen/6.0/bccie.md
@@ -22290,6 +22375,7 @@ e74b59965ce8bdb608a720100c84692b  doc/ger-de/spezifikationen/6.0/sicherheitsvorg
 876a7f3c2cc819436930c0fa5235088c  doc/ger-de/spezifikationen/6.0/sqlite3-datenbanktreiber.md
 79b45ec0b9bde6df0f70a6cacd005834  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-build-format.md
 3b4c9352f7670bd3c487fd1b31af9f28  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-formular-endpunkt.md
+f443531cf0ddf1ae2f5ca3f0028045b9  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-manifest.md
 f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 8faea3493dbcfc10fdf62435ec8c2a7d  doc/ger-de/spezifikationen/6.0/velocity-engine-einstellungen.md
 c26c10f120d2b58bf79e3ceefedb7568  doc/ger-de/spezifikationen/6.0/velocity-http2-und-sicherheit.md
@@ -22498,7 +22584,7 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 385c4d12f5d3e25efd6406b7a9338d2a  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-89381139815ce0c826e6b6a5efbdbc0c  doc/ger-de/uebersetzungswellen.md
+4e64b1843809c214350c119d20ed2cbb  doc/ger-de/uebersetzungswellen.md
 b6bb5b8684060dcf354d412da94f823e  doc/ger-de/ziele.md
 1147a04b0458d869f2da4e5c14256142  exponential.cron
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
@@ -26225,7 +26311,7 @@ c4c0a602ae69e69429f9341c8c240481  settings/debugbar.ini
 546a2136d4ba2d6bff06dee5f0a8fe6f  settings/design.ini
 b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-f1f6715acfe02c46e9b4d6cefc008b6c  settings/exphelp.ini
+1b5340da3c269c84cb16e015c956827d  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini

@@ -31,7 +31,11 @@ früheren zurückkehren können.
 
 ## Hier beginnen
 
-- Neu dabei? Folgen Sie dem Tutorial
+- **Jetzt eine kostenlose Website**: [In 15 Minuten eine kostenlose Website](in-15-minuten-eine-kostenlose-website.md).
+  Zum ersten Mal bei GitHub? [Ein GitHub-Konto und Repository anlegen](ein-github-konto-und-repository-anlegen.md).
+- **Wissen, was es ist und ob es passt**: [Was statisches Veröffentlichen ist](was-statisches-veroeffentlichen-ist.md),
+  [Passt statisch zu meiner Website?](passt-statisch-zu-meiner-website.md) und die [FAQ](faq.md).
+- **Richtig einrichten**: das Tutorial
   [Statische Websites auf GitHub Pages hosten](../../anleitungen/statische-websites-auf-github-pages-hosten.md): von
   einer bestehenden Site bis zu einer erreichbaren `github.io`-Adresse.
 - Was es ist und was es dem statischen Cache hinzufügt:
@@ -92,6 +96,10 @@ Jede Seite hat eine Schaltfläche **Hilfe**, die die Seite dieses Handbuchs dazu
   [Formular-Endpunkt](../../spezifikationen/6.0/statisches-veroeffentlichen-formular-endpunkt.md).
 - Ohne Knopfdruck: [Automatisch veröffentlichen](automatisch-veroeffentlichen.md) und
   [Benachrichtigungen und Webhooks](benachrichtigungen-und-webhooks.md).
+- Links, Dateien und Datenschutz: [Links und Basispfad](links-und-basispfad.md),
+  [Bilder, Dateien und Downloads](bilder-dateien-und-downloads.md), [Private Inhalte privat halten](private-inhalte-privat-halten.md).
+- Nicht auf GitHub: [Andere Git-Hosts: GitLab, Gitea und eigener Server](andere-git-hosts-gitlab-gitea-und-eigener-server.md).
+- Etwas ging schief: [Wenn eine Veröffentlichung fehlschlägt](wenn-eine-veroeffentlichung-fehlschlaegt.md).
 - Von der Seite selbst: [Der Bereich in der Website-Seitenleiste](der-bereich-in-der-website-seitenleiste.md) zeigt,
   ob eine Seite veraltet ist, und veröffentlicht nur diese Seite.
 

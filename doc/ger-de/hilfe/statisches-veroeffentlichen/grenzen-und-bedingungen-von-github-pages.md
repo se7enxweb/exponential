@@ -53,7 +53,7 @@ GitHub für GitHub Pages und seine Nutzungsrichtlinien: Sie gelten für Ihre Web
 Eine Website, deren Inhalte nicht öffentlich sein dürfen, gehört in ein privates Repository mit einem kostenpflichtigen
 Tarif oder auf einen anderen Host: Ein kostenloser Tarif liefert nur öffentliche Repositorys aus, und deren Dateien
 sind auch auf GitHub öffentlich. Siehe
-[Private Inhalte privat halten](../../funktionen/6.0/statisches-veroeffentlichen.md#datenschutz).
+[Private Inhalte privat halten](private-inhalte-privat-halten.md).
 
 ## Nächster Schritt
 

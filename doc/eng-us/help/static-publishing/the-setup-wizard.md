@@ -108,8 +108,8 @@ the records to set at the provider of the domain. Details: [Use your own domain]
 
 ## 8. When it is published
 
-By hand here and on the console. Publishing when content is published and on a schedule, notifications and the webhook
-are stored now and come into effect with a later release.
+Always by hand here and on the console; besides that, when content is published and on a schedule, both run by the
+cronjob part `staticpublish`, with notifications and a webhook afterwards ([Publish automatically](publish-automatically.md)).
 
 ## 9. Review and save
 
