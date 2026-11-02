@@ -426,11 +426,12 @@ RateLimitWindow=60
 
 > Schema-Erweiterungen: Klassen, die expGraphQLSchemaExtension implementieren und Abfragen der Wurzel, Felder von  
 > Location und die Typen ihrer Datentypen hinzufügen; jede antwortet nur dort, wo sie verfügbar ist (ihre Erweiterung  
-> aktiv). Der Kernel liefert die von eztags (die Abfragen tag und tags, die eztags-Felder als \[Tag\]) und die von  
-> explayouts (die Abfrage layout, Location.layout) mit. Eine Erweiterung fügt ihre eigene in ihrer  
-> settings/graphql.ini.append.php hinzu.  
+> aktiv). Der Kernel liefert die von eztags (die Abfragen tag und tags, die eztags-Felder als \[Tag\]), die von  
+> explayouts (die Abfrage layout, Location.layout) und die der Migrationen (die nur lesenden Abfragen migrationStatus,  
+> migrations, migrationRuns und migrationRun, für Benutzer mit migration/read) mit. Eine Erweiterung fügt ihre eigene in  
+> ihrer settings/graphql.ini.append.php hinzu.  
 
-Standard: eine Liste mit 2: `expGraphQLTagsExtension`, `expGraphQLLayoutsExtension`.
+Standard: eine Liste mit 3: `expGraphQLTagsExtension`, `expGraphQLLayoutsExtension`, `expMigrationGraphQLExtension`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -440,6 +441,7 @@ Standard: eine Liste mit 2: `expGraphQLTagsExtension`, `expGraphQLLayoutsExtensi
 SchemaExtensionList[]
 SchemaExtensionList[]=expGraphQLTagsExtension
 SchemaExtensionList[]=expGraphQLLayoutsExtension
+SchemaExtensionList[]=expMigrationGraphQLExtension
 */ ?>
 ```
 

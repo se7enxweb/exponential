@@ -719,6 +719,7 @@ class expMigrationRunner
                     $context->notify( 'migration/step/before', array( $context->runId(), $migration, $context ) );
                     $start = microtime( true );
                     $useTransaction = $this->useTransaction( $migration );
+                    self::beginEvents( $migration );
                     try
                     {
                         if ( $useTransaction )
@@ -726,6 +727,7 @@ class expMigrationRunner
                         $entry['messages'] = array_values( array_map( 'strval', (array)$migration->down( $context ) ) );
                         if ( $useTransaction )
                             $context->commit();
+                        self::endEvents( true );
                         $context->removeRecord( $entry['source'], $entry['id'] );
                         $entry['state'] = expMigration::PENDING;
                         $entry['action'] = 'undone';
@@ -734,6 +736,7 @@ class expMigrationRunner
                     {
                         if ( $useTransaction )
                             $context->rollback();
+                        self::endEvents( !$useTransaction );
                         $entry['action'] = 'failed';
                         $entry['messages'][] = $e->getMessage();
                         $report['errors'][] = $entry['id'] . ': ' . $e->getMessage();
@@ -804,6 +807,7 @@ class expMigrationRunner
         $entry['transaction'] = $useTransaction ? $context->transactionMode() : expMigrationContext::TRANSACTION_NONE;
         $startedAt = time();
         $start = microtime( true );
+        self::beginEvents( $migration );
         try
         {
             if ( $useTransaction )
@@ -817,11 +821,13 @@ class expMigrationRunner
             }
             if ( $useTransaction )
                 $context->commit();
+            self::endEvents( true );
             $entry['state'] = expMigration::DONE;
             $entry['action'] = 'applied';
         }
         catch ( Throwable $e )
         {
+            self::endEvents( !$useTransaction );
             if ( $useTransaction )
             {
                 $context->rollback();
@@ -971,6 +977,39 @@ class expMigrationRunner
     {
         $this->progress( 'step-done', array( 'id' => $entry['id'], 'index' => (int)$index, 'total' => (int)$total, 'state' => $entry['state'],
                                              'action' => $entry['action'], 'duration_ms' => (int)$entry['duration_ms'] ) );
+    }
+
+    /**
+     * The event journal of the GraphQL API learns that a migration starts (expGraphQLEventListener::beginMigration()).
+     *
+     * @param expMigration $migration
+     */
+    protected static function beginEvents( expMigration $migration )
+    {
+        if ( class_exists( 'expGraphQLEventListener' ) )
+            expGraphQLEventListener::beginMigration( (string)$migration->id(), self::eventsMode( $migration ) );
+    }
+
+    /**
+     * @param bool $kept the changes of the migration stay (false: rolled back)
+     */
+    protected static function endEvents( $kept )
+    {
+        if ( class_exists( 'expGraphQLEventListener' ) )
+            expGraphQLEventListener::endMigration( $kept );
+    }
+
+    /**
+     * What a migration's content changes put into the event journal of the GraphQL API: its header events: (each,
+     * summary, none); each for a migration without a header (an upgrade step). Pure.
+     *
+     * @param expMigration $migration
+     * @return string
+     */
+    public static function eventsMode( expMigration $migration )
+    {
+        $definition = method_exists( $migration, 'definition' ) ? $migration->definition() : null;
+        return $definition instanceof expMigrationDefinition ? $definition->events() : 'each';
     }
 
     /**

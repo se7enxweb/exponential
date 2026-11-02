@@ -136,8 +136,9 @@ RateLimitPerMinute=120
 > Abfragen der GraphQL-API (/api/graphql), im Rahmen der Rechte des Eigentümers, Inhalte zu lesen  
 > Mutationen der GraphQL-API (graphql.ini MutationsEnabled), zusammen mit graphql:read: Jede Mutation prüft weiterhin die  
 > Richtlinien des Eigentümers an dem Inhalt, den sie ändert  
+> Der Zustand und die Läufe der Migrationen (/api/migration/v1/\*), nur lesend  
 
-Standard: ein Hash mit 7: `read=content/read`, `publish=content/create`, `edit=content/edit`, `remove=content/remove`, `help=exphelp/context`, `graphql:read=content/read`, `graphql:write=content/edit`.
+Standard: ein Hash mit 8: `read=content/read`, `publish=content/create`, `edit=content/edit`, `remove=content/remove`, `help=exphelp/context`, `graphql:read=content/read`, `graphql:write=content/edit`, `migration:read=migration/read`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -152,12 +153,13 @@ Scopes[remove]=content/remove
 Scopes[help]=exphelp/context
 Scopes[graphql:read]=content/read
 Scopes[graphql:write]=content/edit
+Scopes[migration:read]=migration/read
 */ ?>
 ```
 
 ## ScopeNames
 
-Standard: ein Hash mit 7: `read=Read content`, `publish=Create and publish content`, `edit=Edit content`, `remove=Remove content`, `help=Read context help`, `graphql:read=Read content through GraphQL`, `graphql:write=Change content through GraphQL`.
+Standard: ein Hash mit 8: `read=Read content`, `publish=Create and publish content`, `edit=Edit content`, `remove=Remove content`, `help=Read context help`, `graphql:read=Read content through GraphQL`, `graphql:write=Change content through GraphQL`, `migration:read=Read the state of the migrations`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -172,6 +174,7 @@ ScopeNames[remove]=Remove content
 ScopeNames[help]=Read context help
 ScopeNames[graphql:read]=Read content through GraphQL
 ScopeNames[graphql:write]=Change content through GraphQL
+ScopeNames[migration:read]=Read the state of the migrations
 */ ?>
 ```
 
@@ -192,7 +195,7 @@ DefaultReadScope=read
 
 ## RouteScopes
 
-Standard: ein Hash mit 7: `ezp7xRestContentController_CreateContentNode=publish`, `ezp7xRestContentController_UpdateContentNode=edit`, `ezp7xRestContentController_DeleteContentNode=remove`, `expHelpRestController_topic=help`, `expHelpRestController_manual=help`, `expGraphQLRestController_query=graphql:read`, `expGraphQLRestController_subscribe=graphql:read`.
+Standard: ein Hash mit 10: `ezp7xRestContentController_CreateContentNode=publish`, `ezp7xRestContentController_UpdateContentNode=edit`, `ezp7xRestContentController_DeleteContentNode=remove`, `expHelpRestController_topic=help`, `expHelpRestController_manual=help`, `expGraphQLRestController_query=graphql:read`, `expGraphQLRestController_subscribe=graphql:read`, `expMigrationRestController_status=migration:read`, `expMigrationRestController_runs=migration:read`, `expMigrationRestController_run=migration:read`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -207,6 +210,9 @@ RouteScopes[expHelpRestController_topic]=help
 RouteScopes[expHelpRestController_manual]=help
 RouteScopes[expGraphQLRestController_query]=graphql:read
 RouteScopes[expGraphQLRestController_subscribe]=graphql:read
+RouteScopes[expMigrationRestController_status]=migration:read
+RouteScopes[expMigrationRestController_runs]=migration:read
+RouteScopes[expMigrationRestController_run]=migration:read
 */ ?>
 ```
 

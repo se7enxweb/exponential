@@ -45,6 +45,7 @@ Every step type of YAML migrations the kernel registers in `settings/migration.i
 | [data](data.md) | insert, ensure, update, delete | Inserts, updates or deletes rows of a table on every engine, the values quoted by the connection |
 | [sql](sql.md) |  | Runs statements of the engine the installation runs on, written in the step or in files next to the migration |
 | [settings](settings.md) |  | Changes one INI file of settings/override or settings/siteaccess/<name> through the INI editor, with a backup |
+| [graphql](graphql.md) |  | Runs a query or mutation of the GraphQL API in process as the run's user, and keeps its answer for references |
 
 - [All examples](../README.md)
 

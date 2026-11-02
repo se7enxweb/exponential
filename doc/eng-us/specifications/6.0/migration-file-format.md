@@ -59,6 +59,7 @@ by a value is prose and ignored.
 | `maintenance` | `yes` or `no` | `no` |
 | `author` | one line of text | empty |
 | `transactional` | `yes` or `no`: `no` runs the migration without a transaction | `yes` |
+| `events` | what its content changes put into the event journal of the GraphQL API (webhooks, subscriptions): `each` (every change, tagged with the migration), `summary` (one event at the end), `none` ([the event journal](../../features/6.0/graphql.md#the-event-journal)) | `each` |
 
 - Lists are comma-separated; a list key may repeat and the values add up.
 - A key that is not in the table is an error (so a misspelled key does not pass silently); a key other than a list

@@ -208,8 +208,8 @@
         "de": "enabled: der neueste Sicherungspunkt einer Migration wird statt eines neuen wiederverwendet, solange Datenbank,\nSpeicher unter var/, settings/override und der Commit der Installation so sind wie beim Anlegen. Die Prüfung ist\ngenau auf PostgreSQL (die Änderungszähler jeder Tabelle), MySQL/MariaDB (CHECKSUM TABLE jeder Tabelle) und SQLite\n(die Zeilen jeder Tabelle); MongoDB und Oracle legen immer einen neuen an."
     },
     "ini:settings/migration.ini [MigrationSettings] DirectoryList": {
-        "en": "The site's migration directories, relative to the installation's root or absolute. Each holds\nfiles named YYYYMMDDHHMMSS_name.<type> (php, yml, sql, <engine>.sql, ini); subdirectories are not\nsearched.",
-        "de": "Die Migrationsverzeichnisse der Site, relativ zur Wurzel der Installation oder absolut. Jedes enthält\nDateien namens YYYYMMDDHHMMSS_name.<type> (php, yml, sql, <engine>.sql, ini); Unterverzeichnisse werden nicht\ndurchsucht."
+        "en": "The site's migration directories, relative to the installation's root or absolute. Each holds\nfiles named YYYYMMDDHHMMSS_name.<type> (php, yml, sql, <engine>.sql, mongodb.json, ini); subdirectories are not\nsearched.",
+        "de": "Die Migrationsverzeichnisse der Site, relativ zur Wurzel der Installation oder absolut. Jedes enthält\nDateien namens YYYYMMDDHHMMSS_name.<type> (php, yml, sql, <engine>.sql, mongodb.json, ini); Unterverzeichnisse werden nicht\ndurchsucht."
     },
     "ini:settings/migration.ini [MigrationSettings] Enabled": {
         "en": "enabled: migrations are looked for in the directories below. disabled: none are found.",

@@ -75,7 +75,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [rad.ini](rad/README.md) | Kernel | 4 |
 | [requestclassifier.ini](requestclassifier/README.md) | Kernel | 7 |
 | [requestrules.ini](requestrules/README.md) | Kernel | 4 |
-| [rest.ini](rest/README.md) | Kernel | 18 |
+| [rest.ini](rest/README.md) | Kernel | 19 |
 | [secrets.ini](secrets/README.md) | Kernel | 1 |
 | [setup.ini](setup/README.md) | Kernel | 24 |
 | [shop.ini](shop/README.md) | Kernel | 10 |

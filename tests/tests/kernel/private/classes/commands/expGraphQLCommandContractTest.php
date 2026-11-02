@@ -77,7 +77,7 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
                                   'CurrencyPrice', 'EnumValue', 'SearchResult', 'SearchFacet', 'SearchFacetValue', 'Tag', 'Layout',
                                   'LayoutZone', 'LayoutBlock', 'LayoutBlockParameter',
                                   'Upload', 'FieldInput', 'FieldFormat', 'MutationStatus', 'ContentPayload', 'PreviewToken',
-                                  'ContentEvent', 'ContentEventKind' );
+                                  'ContentEvent', 'ContentEventKind', 'Migration', 'MigrationStatus', 'MigrationRun', 'MigrationRunEntry' );
 
     const SORT_FIELDS = array( 'PATH', 'PUBLISHED', 'MODIFIED', 'SECTION', 'DEPTH', 'CLASS_IDENTIFIER', 'CLASS_NAME', 'PRIORITY', 'NAME', 'NODE_ID' );
 

@@ -44,6 +44,7 @@ listed on its generated reference page ([all step types](../examples/migration-s
 | [`data`](../examples/migration-steps/data.md) | rows of a table, the values quoted by the connection | insert, ensure, update, delete |
 | [`sql`](../examples/migration-steps/sql.md) | statements of the engine, in the step or in files next to the migration | |
 | [`settings`](../examples/migration-steps/settings.md) | one INI file of `settings/override` or of a siteaccess, with a backup | |
+| [`graphql`](../examples/migration-steps/graphql.md) | a query or mutation of the GraphQL API, in process as the run's user | |
 
 Every step goes through the kernel's own API, the way the administration does it: a new object is made by its class
 (`eZContentClass::instantiate()`), a new version by `createNewVersionIn()`, and both are published by the publish
@@ -385,6 +386,34 @@ installation (`transport: file` writes it below `var/log/mail` instead), so the 
 `command` runs only the `exp:*` commands of `migration.ini [StepSettings] CommandAllowList[]` (a name, or a name
 ending in `*` for a group), never `exp:migration:*` or `exp:upgrade*`, and hands the command and its arguments to PHP
 as a list: there is no shell, so a `;` or a `$` in an argument is a character.
+
+## GraphQL queries and mutations
+
+`graphql` runs a query or mutation of the installation's [GraphQL API](../features/6.0/graphql.md) in process, as the
+user the migration runs as: no HTTP request, no token, no network. Give exactly one of `persisted` (a persisted query
+by name or SHA-256), `query` (the text) or `file` (a `.graphql` file next to the migration). Its answer is kept for
+references: `data`, `result` (the value of the first root field) and `errors`.
+
+```yaml
+- type: graphql
+  persisted: news-root                 # stored with ./console exp:graphql:persist
+  variables: { id: 2 }
+  references: { root: result }
+- type: graphql
+  query: |
+    mutation New($parent: Int!, $name: String) {
+      createContent(parentId: $parent, classIdentifier: "folder", fields: [ { identifier: "name", value: $name } ]) { contentId nodeId }
+    }
+  variables: { parent: 2, name: "Below ${ref.root.name}" }
+  references: { folder: result }       # ${ref.folder.nodeId}
+```
+
+An answer with errors fails the step (`allow_errors: true` lets it pass when it has data). A mutation needs
+`graphql.ini [GraphQLSettings] MutationsEnabled=enabled` and checks the user's rights as for any client; its changes
+are part of the migration's transaction and are undone by `down:` or a rollback to the caption, never by the step.
+Nothing runs in a dry run. Without `webonyx/graphql-php` the step fails and says so. The content events of a migration
+go to the event journal tagged with it; the header `events:` (`each`, `summary`, `none`) decides how many
+([the file format](../specifications/6.0/migration-file-format.md#the-header)).
 
 ## Workflows and notifications
 

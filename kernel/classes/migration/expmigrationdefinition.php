@@ -28,9 +28,10 @@
  *   -- author: Jane Doe
  *
  * Keys: id (when given it must equal the file name's id), description, environments, requires, engines (lists,
- * comma-separated, may repeat), maintenance (yes/no), author. Lines without a lowercase "key:" are prose and ignored;
- * an unknown key is an error, so a misspelled key does not pass silently. The header ends at the first line that is
- * not a comment (a PHP file's "<?php", an INI file's "#?ini ...?" line and a YAML "---" come before it).
+ * comma-separated, may repeat), maintenance (yes/no), author, transactional (yes/no), events (each, summary, none).
+ * Lines without a lowercase "key:" are prose and ignored; an unknown key is an error, so a misspelled key does not
+ * pass silently. The header ends at the first line that is not a comment (a PHP file's "<?php", an INI file's
+ * "#?ini ...?" line and a YAML "---" come before it).
  *
  * @since 6.0.15
  * @package kernel
@@ -50,7 +51,10 @@ class expMigrationDefinition
     const ENGINE_ALIASES = array( 'pgsql' => 'postgresql' );
 
     /** The header keys; the lists may repeat. */
-    const KEYS = array( 'id', 'description', 'environments', 'requires', 'engines', 'maintenance', 'author', 'transactional' );
+    const KEYS = array( 'id', 'description', 'environments', 'requires', 'engines', 'maintenance', 'author', 'transactional', 'events' );
+
+    /** The values of the header key events: what the content changes of the migration put into the event journal. */
+    const EVENTS = array( 'each', 'summary', 'none' );
     const LIST_KEYS = array( 'environments', 'requires', 'engines' );
 
     /** How much of a file is read for the header. */
@@ -266,6 +270,15 @@ class expMigrationDefinition
                 $errors[] = "$key: $value is not yes or no";
             return;
         }
+        if ( $key === 'events' )
+        {
+            $mode = strtolower( $value );
+            if ( !in_array( $mode, self::EVENTS, true ) )
+                $errors[] = "events: $value is not " . implode( ', ', self::EVENTS );
+            else
+                $header[$key] = $mode;
+            return;
+        }
         $header[$key] = $value;
     }
 
@@ -379,6 +392,18 @@ class expMigrationDefinition
     public function transactional()
     {
         return !isset( $this->header['transactional'] ) || $this->header['transactional'];
+    }
+
+    /**
+     * What the content changes of the migration put into the event journal of the GraphQL API (webhooks and
+     * subscriptions): each (the default) every change as an event of its own, tagged with the migration; summary one
+     * event at the end (a mutation event "migration" with the objects and nodes it changed); none nothing.
+     *
+     * @return string each, summary or none
+     */
+    public function events()
+    {
+        return isset( $this->header['events'] ) ? (string)$this->header['events'] : 'each';
     }
 
     /**

@@ -207,7 +207,10 @@ class expGraphQLSubscriptions
                         'parentNodeIds' => array( 'type' => $ints, 'resolve' => function ( $event ) { return isset( $event['parentNodeIds'] ) ? $event['parentNodeIds'] : array(); } ),
                         'oldParentNodeId' => $field( Type::int(), 'oldParentNodeId', 'A move: the parent before.' ),
                         'newParentNodeId' => $field( Type::int(), 'newParentNodeId', 'A move: the parent after.' ),
-                        'mutation' => $field( Type::string(), 'mutation', 'The event mutation: the GraphQL mutation (createContent ...).' ),
+                        'mutation' => $field( Type::string(), 'mutation', 'The event mutation: the GraphQL mutation (createContent ...), or migration for the summary of a migration.' ),
+                        'migration' => $field( Type::string(), 'migration', 'The id of the migration that made the change (null: not a migration).' ),
+                        'objectIds' => array( 'type' => $ints, 'description' => 'The summary of a migration: the content objects it changed.',
+                                              'resolve' => function ( $event ) { return isset( $event['objectIds'] ) ? $event['objectIds'] : array(); } ),
                         'content' => array(
                             'type' => $types->content(),
                             'description' => 'The content as it is now, as the subscriber may read it (null when it is gone or may not be read).',

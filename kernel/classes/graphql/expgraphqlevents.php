@@ -20,7 +20,8 @@
  *
  * An event (record()) is a flat array of scalars and lists of scalars: event, id, time, objectId, remoteId, version,
  * classIdentifier, classId, sectionId, ownerId, name, language, languages, nodeIds, mainNodeId, parentNodeIds,
- * pathStrings, stateIds, userId, siteaccess, mutation, oldParentNodeId, newParentNodeId.
+ * pathStrings, stateIds, userId, siteaccess, mutation, oldParentNodeId, newParentNodeId, migration (the id of the
+ * migration that made the change), objectIds (the objects of a migration's summary event).
  *
  * Plain PHP and files only: no kernel class is needed to read the journal (tests run it without a database).
  *
@@ -133,8 +134,8 @@ class expGraphQLEvents
     public static function record( array $data )
     {
         $ints = array( 'objectId', 'version', 'classId', 'sectionId', 'ownerId', 'mainNodeId', 'userId', 'oldParentNodeId', 'newParentNodeId' );
-        $intLists = array( 'nodeIds', 'parentNodeIds', 'stateIds' );
-        $strings = array( 'remoteId', 'classIdentifier', 'name', 'language', 'siteaccess', 'mutation' );
+        $intLists = array( 'nodeIds', 'parentNodeIds', 'stateIds', 'objectIds' );
+        $strings = array( 'remoteId', 'classIdentifier', 'name', 'language', 'siteaccess', 'mutation', 'migration' );
         $stringLists = array( 'languages', 'pathStrings' );
         $record = array( 'v' => self::VERSION,
                          'id' => isset( $data['id'] ) && is_string( $data['id'] ) && $data['id'] !== '' ? $data['id'] : self::newId(),
@@ -433,8 +434,8 @@ class expGraphQLEvents
                          'event' => isset( $event['event'] ) ? (string)$event['event'] : '',
                          'time' => gmdate( 'Y-m-d\TH:i:s', (int)$time ) . sprintf( '.%03dZ', (int)round( ( $time - (int)$time ) * 1000 ) % 1000 ) );
         foreach ( array( 'objectId', 'remoteId', 'version', 'classIdentifier', 'name', 'language', 'languages', 'nodeIds', 'mainNodeId',
-                         'parentNodeIds', 'oldParentNodeId', 'newParentNodeId', 'mutation' ) as $key )
-            $public[$key] = isset( $event[$key] ) ? $event[$key] : ( in_array( $key, array( 'languages', 'nodeIds', 'parentNodeIds' ), true ) ? array() : null );
+                         'parentNodeIds', 'oldParentNodeId', 'newParentNodeId', 'mutation', 'migration', 'objectIds' ) as $key )
+            $public[$key] = isset( $event[$key] ) ? $event[$key] : ( in_array( $key, array( 'languages', 'nodeIds', 'parentNodeIds', 'objectIds' ), true ) ? array() : null );
         return $public;
     }
 
