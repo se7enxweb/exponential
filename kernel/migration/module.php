@@ -134,6 +134,7 @@ $ViewList['editor'] = array(
 // [TriggerSettings]): no session, no policy (site.ini AnonymousAccessList[], PolicyOmitList[]); the signature, the
 // source address and the nonce are the permission
 $ViewList['trigger'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'trigger.php',
     'params' => array(),
     'unordered_params' => array() );

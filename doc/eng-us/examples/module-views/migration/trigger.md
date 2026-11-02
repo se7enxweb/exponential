@@ -22,6 +22,12 @@ A view of the `migration` module, defined in `kernel/migration/module.php` and r
 Listed in `settings/site.ini` `[RoleSettings] PolicyOmitList[]`: no policy is checked, everyone may open it.
 The view names no policy function, so the user needs a policy for the whole module: `migration/*` (every function of the module) in one of the roles assigned to them.
 
+## Details
+
+| Key | Value |
+|---|---|
+| Navigation part | `ezsetupnavigationpart` |
+
 ## Example
 
 A link in a template (`ezurl` adds the siteaccess and quotes the address); the parameter values are placeholders:

@@ -244,7 +244,7 @@ class expMigrationHeal
                 $this->problems[] = "paths: $dir is a file, not a folder";
                 continue;
             }
-            if ( $this->options['apply'] && !@mkdir( $dir, $this->dirMode(), true ) && !is_dir( $dir ) )
+            if ( $this->options['apply'] && !@mkdir( $dir, eZDir::dirMode( $this->dirMode() ), true ) && !is_dir( $dir ) )
             {
                 $this->problems[] = "paths: $dir could not be made";
                 continue;
@@ -278,7 +278,7 @@ class expMigrationHeal
                 {
                     if ( !$this->owned( $path ) )
                         $foreign++;
-                    else if ( !$this->options['apply'] || @chmod( $path, ( $perms & 07777 ) | $need ) )
+                    else if ( !$this->options['apply'] || ( $isDir ? @chmod( $path, eZDir::dirMode( ( $perms & 0777 ) | $need ) ) : @chmod( $path, eZFile::fileMode( ( $perms & 0777 ) | $need ) ) ) )
                         $changed++;
                     else
                         $foreign++;
