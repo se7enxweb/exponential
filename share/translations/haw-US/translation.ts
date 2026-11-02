@@ -80590,6 +80590,222 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>The run could not be started.</source>
         <translation>ʻAʻole hiki ke hoʻomaka i ka holo.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Hoʻopaʻa i nā loli</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Iā ka hoʻopaʻa ʻana e holo ana, mālama ʻia nā mea āu e hoʻololi ai ma ka hoʻokele a i ʻole ma ka pā ʻaoʻao o ka pūnaewele ma ke ʻano he mau kaʻina o kekahi neʻe ʻana: ka ʻike, nā papa, nā kuleana a me nā kulekele, nā māhele, nā mea hoʻohana a me nā hui, nā inoa ʻē o URL, nā hoʻonohonoho. E hoʻōki iā ia ke pau ʻoe, e nānā i nā mea āna i hopu ai, a e hana i neʻe ʻana mai laila mai.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ʻAʻole hiki ke heluhelu i nā hoʻopaʻa ʻana: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ʻAʻole i loaʻa nā papa o nā hoʻopaʻa ʻana: e holo mua i ka hoʻokiʻekiʻe (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Ua hoʻopio ʻia ka hoʻopaʻa ʻana ma migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Kaʻu mau loli</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Hoʻopaʻa wale i nā mea āu e hoʻololi ai, ma nā wahi a pau, a hiki i kou hoʻōki ʻana.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Hoʻopaʻa ʻana</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>mai %time mai, %count loli a hiki i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Lepili (koho)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>E hōʻike i nā mea āna i hopu ai</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Hoʻōki i ka hoʻopaʻa ʻana</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>E hoʻomaka i ka hoʻopaʻa ʻana i kaʻu mau loli</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Puka aniani no ka pūnaewele holoʻokoʻa</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Hoʻopaʻa i kēlā me kēia loli o kēlā me kēia mea hoʻohana a me ka papa kauoha a pani ʻia. Ke wehe ʻoe, e noi ʻia ʻoe e hōʻoia ʻo ʻoe nō.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Hāmama</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Pani i ka puka aniani</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Wehe i ka puka aniani no ka pūnaewele holoʻokoʻa</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Nā hoʻopaʻa ʻana</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ʻAʻole loa e hoʻopaʻa ʻia ka moʻokāki o kekahi mea hoʻohana (inoa komo, leka uila, ʻōlelo huna) a me nā kahua o nā moʻokāki mea hoʻohana.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Nā loli</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ka pūnaewele holoʻokoʻa</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Nā loli a %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Ua hoʻōki ʻia</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ʻAʻohe hoʻopaʻa ʻana i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Hoʻopaʻa ʻana %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Nā hoʻopaʻa ʻana a pau</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ka neʻe ʻana e puka mai ana</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Nā loli i hoʻohui ʻia i hoʻokahi kaʻina no kēlā me kēia mea i loli: ka mea e hana ai ka neʻe ʻana i hana ʻia mai kēia hoʻopaʻa ʻana.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Hiki ke hana i neʻe ʻana mai laila mai ke loaʻa i kēia hoʻonohonoho nā ʻano kaʻina YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Haʻalele ʻia me ka manaʻo: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ʻAʻohe mea i hoʻopaʻa ʻia.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Nā mea āna i hopu ai</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count loli, ma ke kaʻina i hana ʻia ai.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Loli</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Kaʻina</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>E pili ana i</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count hou aku: papa inoa ʻo ./console exp:migration:record:show i nā mea a pau.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Kiola</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Wehe i ka hoʻopaʻa ʻana a me nā mea āna i hopu ai. Noho loli nō ka mea i loli.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ʻAe, kiola i kēia hoʻopaʻa ʻana</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ke hoʻopaʻa nei…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Ke hoʻopaʻa ʻia nei kāu mau loli no kekahi neʻe ʻana.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Ke hoʻopaʻa ʻia nei kēlā me kēia loli ma kēia pūnaewele no kekahi neʻe ʻana (puka aniani no ka pūnaewele holoʻokoʻa).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Ua hoʻomaka ka hoʻopaʻa ʻana o ka pūnaewele holoʻokoʻa: e hoʻopaʻa ʻia kēlā me kēia loli o kēlā me kēia mea hoʻohana a hiki i kou hoʻōki ʻana.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ua hoʻomaka ka hoʻopaʻa ʻana: e hoʻopaʻa ʻia kāu mau loli a hiki i kou hoʻōki ʻana.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Ua hoʻōki ʻia ka hoʻopaʻa ʻana. E noho nā mea āna i hopu ai a hiki i kou kiola ʻana.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Ua wehe ʻia ka hoʻopaʻa ʻana a me kona mau hanana.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ʻAʻohe hoʻopaʻa ʻana %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>E kaha mua i ka "ʻAe, kiola i kēia hoʻopaʻa ʻana".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ʻO ka mea hoʻohana nāna i hoʻopaʻa wale nō e hiki ke hoʻōki i ka hoʻopaʻa ʻana kau.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>E koho i ka hoʻopaʻa ʻana e hoʻōki ʻia.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ke holo nei kekahi hoʻopaʻa ʻana o kēia ʻano.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ʻAʻole hiki ke hoʻololi i ka hoʻopaʻa ʻana: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Noho ka pūnaewele papahana GitHub ma lalo o /&lt;repository&gt;/; hana nā loulou pili ma laila a ma nā wahi ʻē aʻe.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Kiʻi ke kūkulu ʻana i kēlā me kēia ʻaoʻao o %site e like me ka ʻike ʻana o ka malihini i komo ʻole, kākau hou i nā loulou, kope i nā faila a kākau i ka hopena i ka wahi faila o ka pahuhopu. ʻAʻohe mea e hoʻopuka ʻia a hiki i kou nānā ʻana i ke kūkulu ʻana a kaomi i Hoʻopuka.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>ʻAʻole loa e hoʻopuka ʻia ka ʻaoʻao e lawe mau ana i ka puka hoʻomaʻemaʻe hewa, ka hōʻailona palapala a i ʻole ka id kau ma hope o ka holoi ʻana.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>No ka poʻe akamai ka hoʻihoʻi ʻana: e kaha i "Ua ʻike au i ka mea e hoʻololi ʻia" a e kikokiko hou i ka inoa o ka lepili.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>No ka poʻe akamai ka hoʻihoʻi ʻana: e kaha i &quot;Ua ʻike au i ka mea e hoʻololi ʻia&quot; a e kikokiko hou i ka inoa o ka lepili.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Wehe i ka nānā mua</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Wehe i ke kūkulu ʻana e like me ka hāʻawi ʻana a ka mea hoʻokipa, mai ka wahi faila o ka pahuhopu. Hana ka loulou nou no hoʻokahi hola.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Hoʻonohonoho &gt; Nā mea huna</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Hōʻike ʻia ma nā papa inoa, no ka laʻana "Pūnaewele ākea ma GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Hōʻike ʻia ma nā papa inoa, no ka laʻana &quot;Pūnaewele ākea ma GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Hoʻi ka pūnaewele i nā faila o ia hoʻopuka; pono e hoʻopuka a kiola mua ʻia ke kūkulu ʻana i hoʻopuka ʻole ʻia.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Ka ʻaoʻao ponoʻī o ka pūnaewele no nā helu wahi i loaʻa ʻole.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>ʻAʻole hiki ke mālama i ka pahuhopu: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ʻAʻole naʻe komo ka pahuhopu me kēia kī: e koho i "He kī hoʻolaha i hana ʻia no kēia pahuhopu" ma kona mau hoʻonohonoho.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ʻAʻole naʻe komo ka pahuhopu me kēia kī: e koho i &quot;He kī hoʻolaha i hana ʻia no kēia pahuhopu&quot; ma kona mau hoʻonohonoho.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Kiola i kēia kūkulu ʻana: paʻa hou ka wahi faila i ka hoʻopuka hope loa. ʻAʻole loli ka pūnaewele ola.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>E kaha mua i "Ua nānā au i nā hoʻololi".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>E kaha mua i &quot;Ua nānā au i nā hoʻololi&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>yes, not published yet</source>
         <translation>ʻae, ʻaʻole naʻe i hoʻopuka ʻia</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Kiʻi ke kūkulu ʻana i kēlā me kēia ʻaoʻao o %site e like me ka ʻike ʻana o ka malihini i komo ʻole, kākau hou i nā loulou, kope i nā faila a kākau i ka hopena i ka wahi faila o ka pahuhopu. ʻAʻohe mea e hoʻopuka ʻia a hiki i kou nānā ʻana i ke kūkulu ʻana a kaomi i Hoʻopuka.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>No ka poʻe akamai ka hoʻihoʻi ʻana: e kaha i "Ua ʻike au i ka mea e hoʻololi ʻia" a e kikokiko hou i ka inoa o ka lepili.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Wehe i ke kūkulu ʻana e like me ka hāʻawi ʻana a ka mea hoʻokipa, mai ka wahi faila o ka pahuhopu. Hana ka loulou nou no hoʻokahi hola.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Hōʻike ʻia ma nā papa inoa, no ka laʻana "Pūnaewele ākea ma GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Ka ʻaoʻao ponoʻī o ka pūnaewele no nā helu wahi i loaʻa ʻole.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ʻAʻole naʻe komo ka pahuhopu me kēia kī: e koho i "He kī hoʻolaha i hana ʻia no kēia pahuhopu" ma kona mau hoʻonohonoho.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>E kaha mua i "Ua nānā au i nā hoʻololi".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

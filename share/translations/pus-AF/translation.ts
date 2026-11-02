@@ -80588,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>اجرا پیل نه شوه.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>د بدلونونو ثبتول</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>تر هغه چې ثبت روان وي، هغه څه چې تاسو په اداره یا د سایټ په څنګ پټه کې بدلوئ د یوې کډونې د ګامونو په توګه ساتل کېږي: منځپانګه، ټولګي، رولونه او پالیسۍ، برخې، کاروونکي او ډلې، د URL مستعار نومونه، امستنې. کله چې کار مو پای ته ورسېد ودروئ یې، وګورئ چې څه یې نیولي او له هغه یوه کډونه جوړه کړئ.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ثبتونه ونه لوستل شول: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>د ثبتونو جدولونه لا نشته: لومړی لوړونه وچلوئ (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>ثبتول په migration.ini کې بند دي ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>زما بدلونونه</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>یوازې هغه څه ثبتوي چې تاسو یې بدلوئ، هر چېرې چې یې بدل کړئ، تر هغه چې ودروئ یې.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ثبت</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>له %time راهیسې، تر اوسه %count بدلونونه.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>لیبل (اختیاري)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>وښایه چې څه یې نیولي</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ثبت ودروئ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>زما د بدلونونو ثبت پیل کړئ</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>د ټول سایټ کړکۍ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>د هر کاروونکي او کنسول هر بدلون ثبتوي تر هغه چې وتړل شي. د پرانیستلو پر مهال به ستاسو له تاسو وغوښتل شي چې تایید کړئ دا تاسو یاست.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>پرانیستې</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>کړکۍ وتړئ</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>د ټول سایټ کړکۍ پرانیزئ</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ثبتونه</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>د کاروونکي حساب (د ننوتلو نوم، برېښلیک، پټنوم) او د کاروونکو حسابونو ساحې هېڅکله نه ثبتېږي.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>بدلونونه</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ټول سایټ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>د %name بدلونونه</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>درول شوی</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>تر اوسه هېڅ ثبت نشته.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ثبت %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ټول ثبتونه</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>هغه کډونه چې ترې جوړېږي</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>بدلونونه د هر بدل شوي شي لپاره په یوه ګام کې یوځای شوي: هغه څه چې له دې ثبت جوړه شوې کډونه به یې کوي.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>کله چې دا نصب د YAML ګام ډولونه %types ولري، ترې کډونه جوړېدای شي.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>په قصد پرېښودل شوي: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>هېڅ ونه ثبت شول.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>څه یې نیولي</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count بدلونونه، په هغه ترتیب چې شوي.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>بدلون</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ګام</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>اړوند</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>نور %count: ./console exp:migration:record:show ټول لېست کوي.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>لرې کول</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ثبت او هغه څه چې یې نیولي لرې کوي. هغه څه چې بدل شوي بدل پاتې کېږي.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>هو، دا ثبت لرې کړئ</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ثبتېږي…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ستاسو بدلونونه د یوې کډونې لپاره ثبتېږي.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>په دې سایټ کې هر بدلون د یوې کډونې لپاره ثبتېږي (د ټول سایټ کړکۍ).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>د ټول سایټ ثبت پیل شو: د هر کاروونکي هر بدلون ثبتېږي تر هغه چې ودروئ یې.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ثبت پیل شو: ستاسو بدلونونه ثبتېږي تر هغه چې ودروئ یې.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ثبت ودرول شو. هغه څه چې یې نیولي پاتې کېږي تر هغه چې لرې یې کړئ.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ثبت او پېښې یې لرې شوې.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>هېڅ ثبت %id نشته.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>لومړی «هو، دا ثبت لرې کړئ» په نښه کړئ.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>د غونډې ثبت یوازې هغه کاروونکی درولی شي چې ثبت یې کړی.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>هغه ثبت وټاکئ چې باید ودرول شي.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>د دې ډول یو ثبت دمخه روان دی.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ثبت بدل نشو: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81399,7 +81615,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>د GitHub پروژې سایټ د /&lt;repository&gt;/ لاندې دی؛ نسبي لینکونه هلته او هر بل ځای کار کوي.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>یو جوړښت د %site هره پاڼه هغسې راوړي لکه څنګه یې یو نه ننوتلی لیدونکی ویني، لینکونه بیا لیکي، دوتنې کاپي کوي او پایله د موخې فولډر ته لیکي. تر هغه چې تاسو جوړښت ونه ګورئ او خپرول کېکاږئ، هیڅ نه خپرېږي.</translation>
     </message>
     <message>
@@ -81447,8 +81663,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>هغه پاڼه چې له پاکولو وروسته لا هم د ډیبګ محصول، د فورم ټوکن یا د ناستې پېژند ولري هېڅکله نه خپرېږي.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>بېرته ګرځونه د ماهرانو لپاره ده: "زه پوهېږم چې دا څه بدلوي" نښه کړئ او د نښې نوم بیا ولیکئ.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>بېرته ګرځونه د ماهرانو لپاره ده: &quot;زه پوهېږم چې دا څه بدلوي&quot; نښه کړئ او د نښې نوم بیا ولیکئ.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81959,7 +82175,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>مخکتنه پرانیزئ</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>جوړښت هغسې پرانیزي لکه څنګه چې کوربه به یې وړاندې کړي، د موخې له فولډر څخه. لینک ستاسو لپاره یو ساعت کار کوي.</translation>
     </message>
     <message>
@@ -82135,8 +82351,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>جوړونه &gt; رازونه</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>په لېستونو کې ښودل کېږي، د بېلګې په توګه "په GitHub Pages کې عامه سایټ".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>په لېستونو کې ښودل کېږي، د بېلګې په توګه &quot;په GitHub Pages کې عامه سایټ&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82343,7 +82559,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>سایټ د هغې خپرونې دوتنو ته بېرته ګرځي؛ هغه جوړښت چې لا نه دی خپور شوی باید لومړی خپور یا لرې وغورځول شي.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>د سایټ خپله پاڼه د هغو پتو لپاره چې شتون نه لري.</translation>
     </message>
     <message>
@@ -82351,8 +82567,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>موخه خوندي نه شوه: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>موخه لا په دې کیلي نه ننوځي: په امستنو کې یې "د دې موخې لپاره جوړه شوې ډیپلای کیلي" وټاکئ.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>موخه لا په دې کیلي نه ننوځي: په امستنو کې یې &quot;د دې موخې لپاره جوړه شوې ډیپلای کیلي&quot; وټاکئ.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82387,8 +82603,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>دا جوړښت لرې غورځوي: فولډر بیا وروستۍ خپرونه لري. ژوندی سایټ نه بدلېږي.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>لومړی "ما بدلونونه کتلي دي" نښه کړئ.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>لومړی &quot;ما بدلونونه کتلي دي&quot; نښه کړئ.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82609,6 +82825,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>هو، لا نه دی خپور شوی</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>یو جوړښت د %site هره پاڼه هغسې راوړي لکه څنګه یې یو نه ننوتلی لیدونکی ویني، لینکونه بیا لیکي، دوتنې کاپي کوي او پایله د موخې فولډر ته لیکي. تر هغه چې تاسو جوړښت ونه ګورئ او خپرول کېکاږئ، هیڅ نه خپرېږي.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>بېرته ګرځونه د ماهرانو لپاره ده: "زه پوهېږم چې دا څه بدلوي" نښه کړئ او د نښې نوم بیا ولیکئ.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>جوړښت هغسې پرانیزي لکه څنګه چې کوربه به یې وړاندې کړي، د موخې له فولډر څخه. لینک ستاسو لپاره یو ساعت کار کوي.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>په لېستونو کې ښودل کېږي، د بېلګې په توګه "په GitHub Pages کې عامه سایټ".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>د سایټ خپله پاڼه د هغو پتو لپاره چې شتون نه لري.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>موخه لا په دې کیلي نه ننوځي: په امستنو کې یې "د دې موخې لپاره جوړه شوې ډیپلای کیلي" وټاکئ.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>لومړی "ما بدلونونه کتلي دي" نښه کړئ.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

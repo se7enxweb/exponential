@@ -22176,7 +22176,7 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Sayaq utqay waqaychaqa kay servidormanta raphikunata qun. Huk webpa sayaq kikinchasqanta huk lawpi, GitHub Pages nisqapi utaq ima git wasichaqpipas lluqsichinaykipaqqa, sayaq lluqsichiyta llamk'achiy.</translation>
+        <translation>Sayaq utqay waqaychaqa kay servidormanta raphikunata qun. Huk webpa sayaq kikinchasqanta huk lawpi, GitHub Pages nisqapi utaq ima git wasichaqpipas lluqsichinaykipaqqa, sayaq lluqsichiyta llamk&apos;achiy.</translation>
     </message>
 </context>
 <context>
@@ -80590,6 +80590,222 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>The run could not be started.</source>
         <translation>Purichiyta mana qallariyta atikurqanchu.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Tikraykunata qillqay</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Qillqay purichkaptinqa, kamachiypi utaq kitiq waqta barranpi tikrasqaykiqa huk astakuypa purikunan hina waqaychakun: willakuy, laya, ruraykuna kamachikuykunapas, rakikuna, llamk'aqkuna huñukunapas, URL huk sutikuna, churakuykuna. Tukuspaqa sayachiy, ima hap'isqanta qhaway, chaymantataq huk astakuyta ruray.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Qillqasqakunata mana ñawinchayta atikurqanchu: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Qillqasqakunap tablankuna manaraq kanchu: ñawpaqta musuqyachiyta puriy (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Qillqayqa migration.ini nisqapi wañuchisqa ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Tikraykunay</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Qam tikrasqallaykita qillqan, maypipas tikraptiyki, sayachinaykikama.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Qillqasqa</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time pachamanta, kunankama %count tikray.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Unanchay (munaspaqa)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Ima hap'isqanta rikuchiy</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Qillqayta sayachiy</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Tikraykunayta qillqayta qallariy</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Llapan kitipaq ventana</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Sapanka llamk'aqpa konsolpa sapanka tikraynintam qillqan wichq'akunankama. Kicharispaqa qam kasqaykita takyachinaykitam mañakunqa.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Kichasqa</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Ventanata wichq'ay</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Llapan kitipaq ventanata kichay</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Qillqasqakuna</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Llamk'aqpa yupanmi (yaykuna suti, e-mail, pakasqa simi) llamk'aqkunap yupanpa chaqrankunapas mana hayk'appas qillqakunchu.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Tikraykuna</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Llapan kiti</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name nisqap tikraynin</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Sayachisqa</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Manaraq qillqasqa kanchu.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Qillqasqa %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Llapan qillqasqakuna</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Chaymanta lluqsiq astakuy</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Sapanka tikrasqa kaqpaq huk purikunapi huñusqa tikraykuna: kay qillqasqamanta rurasqa astakuy ima ruranan.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Kay churakuyqa YAML purikuna layakunata %types kapuptinqa, chaymanta astakuyta rurakunman.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Yachaspa saqisqa: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Manam imapas qillqasqachu.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ima hap'isqan</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count tikray, rurasqa kasqanman hina.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Tikray</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Puriku</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Imamanta</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Astawan %count: ./console exp:migration:record:show llapanta sutinchan.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Wikch'uy</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Qillqasqata ima hap'isqantapas qichun. Tikrasqaqa tikrasqallam qipan.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Arí, kay qillqasqata wikch'uy</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Qillqachkan…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Tikraykunaykiqa huk astakuypaqmi qillqakuchkan.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Kay kitipi sapanka tikrayqa huk astakuypaqmi qillqakuchkan (llapan kitipaq ventana).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Llapan kitip qillqaynin qallarirqanña: sapanka llamk'aqpa sapanka tikraynin qillqakunqa sayachinaykikama.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Qillqay qallarirqanña: tikraykunayki qillqakunqa sayachinaykikama.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Qillqay sayachisqa. Ima hap'isqanqa wikch'unaykikamam qipanqa.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Qillqasqapas imakuna pasasqanpas qichusqañam.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Manam qillqasqa %id kanchu.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Ñawpaqta "Arí, kay qillqasqata wikch'uy" nisqata akllay.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Qillqaq llamk'aqllam huñunakuy qillqayta sayachiyta atin.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Sayachinapaq qillqasqata akllay.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Kay layapi qillqayqa purichkanñam.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Qillqasqata mana tikrayta atikurqanchu: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81271,7 +81487,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Stale pages</source>
-        <translation>Mawk'a raphikuna</translation>
+        <translation>Mawk&apos;a raphikuna</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -81291,7 +81507,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>a job is going on</source>
-        <translation>huk llamk'ay purichkan</translation>
+        <translation>huk llamk&apos;ay purichkan</translation>
     </message>
     <message>
         <source>build to check</source>
@@ -81307,7 +81523,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>never</source>
-        <translation>mana hayk'aqpas</translation>
+        <translation>mana hayk&apos;aqpas</translation>
     </message>
     <message>
         <source>read the tutorial</source>
@@ -81350,7 +81566,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>%target: job %id</source>
-        <translation>%target: llamk'ay %id</translation>
+        <translation>%target: llamk&apos;ay %id</translation>
     </message>
     <message>
         <source>+%added ~%changed -%removed</source>
@@ -81358,7 +81574,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
-        <translation>/waqaychana/ GitHub proyecto webpaq; ch'usaq kikin dominiopaq utaq runapa webninpaq.</translation>
+        <translation>/waqaychana/ GitHub proyecto webpaq; ch&apos;usaq kikin dominiopaq utaq runapa webninpaq.</translation>
     </message>
     <message>
         <source>1. The site</source>
@@ -81378,7 +81594,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>5. Links and base path</source>
-        <translation>5. T'inkikuna tiksi ñanpas</translation>
+        <translation>5. T&apos;inkikuna tiksi ñanpas</translation>
     </message>
     <message>
         <source>6. Your own domain</source>
@@ -81386,11 +81602,11 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>7. What the build holds</source>
-        <translation>7. Hatarichisqa ima hap'isqan</translation>
+        <translation>7. Hatarichisqa ima hap&apos;isqan</translation>
     </message>
     <message>
         <source>8. When it is published</source>
-        <translation>8. Hayk'ap lluqsichisqa</translation>
+        <translation>8. Hayk&apos;ap lluqsichisqa</translation>
     </message>
     <message>
         <source>9. Review and save</source>
@@ -81398,11 +81614,11 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
-        <translation>GitHub proyecto webqa /&lt;repository&gt;/ uraypim tiyan; kikinpura t'inkikunaqa chaypi hukkunapipas llamk'anmi.</translation>
+        <translation>GitHub proyecto webqa /&lt;repository&gt;/ uraypim tiyan; kikinpura t&apos;inkikunaqa chaypi hukkunapipas llamk&apos;anmi.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Huk hatarichisqaqa %site nisqapa sapanka raphinta apamun mana yaykusqa watukuq rikusqanman hina, t'inkikunata musuqmanta qillqan, willañiqikunata kikinchan, lluqsisqantataq chayanapa karpetanman qillqan. Manam imapas lluqsichisqachu hatarichisqata qhawanaykikama, Lluqsichiy nisqata ñit'inaykikamapas.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Huk hatarichisqaqa %site nisqapa sapanka raphinta apamun mana yaykusqa watukuq rikusqanman hina, t&apos;inkikunata musuqmanta qillqan, willañiqikunata kikinchan, lluqsisqantataq chayanapa karpetanman qillqan. Manam imapas lluqsichisqachu hatarichisqata qhawanaykikama, Lluqsichiy nisqata ñit&apos;inaykikamapas.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -81426,19 +81642,19 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
-        <translation>Huk llamk'ay purichkan, %user qallarichisqan</translation>
+        <translation>Huk llamk&apos;ay purichkan, %user qallarichisqan</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Kay chayanapa huk llamk'aynin purichkanraqmi (%detail). Tukunankama suyay.</translation>
+        <translation>Kay chayanapa huk llamk&apos;aynin purichkanraqmi (%detail). Tukunankama suyay.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Kay chayanapa huk llamk'aynin purichkanraqmi. Tukunankama suyay.</translation>
+        <translation>Kay chayanapa huk llamk&apos;aynin purichkanraqmi. Tukunankama suyay.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
-        <translation>/news/ raphimanta /about-us/team raphiman t'inkiqa kayhinam qillqasqa kanqa</translation>
+        <translation>/news/ raphimanta /about-us/team raphiman t&apos;inkiqa kayhinam qillqasqa kanqa</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
@@ -81446,11 +81662,11 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
-        <translation>Ch'uyanchasqa kaptinpas depuración lluqsiyta, formulario tokenta utaq sesión idta apachkaq raphiqa mana hayk'aqpas lluqsichisqachu.</translation>
+        <translation>Ch&apos;uyanchasqa kaptinpas depuración lluqsiyta, formulario tokenta utaq sesión idta apachkaq raphiqa mana hayk&apos;aqpas lluqsichisqachu.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Kutichiyqa yachaqkunapaqmi: "Yachanim kay ima tikrasqanta" nisqata akllay, unanchaypa sutintataq hukmanta qillqay.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Kutichiyqa yachaqkunapaqmi: &quot;Yachanim kay ima tikrasqanta&quot; nisqata akllay, unanchaypa sutintataq hukmanta qillqay.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81470,7 +81686,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>A workflow of the repository publishes it.</source>
-        <translation>Waqaychanapa huk llamk'ay puriyninmi lluqsichin.</translation>
+        <translation>Waqaychanapa huk llamk&apos;ay puriyninmi lluqsichin.</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
@@ -81486,7 +81702,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Another process works on this target: %detail</source>
-        <translation>Huk ruraymi kay chayanapi llamk'achkan: %detail</translation>
+        <translation>Huk ruraymi kay chayanapi llamk&apos;achkan: %detail</translation>
     </message>
     <message>
         <source>Back</source>
@@ -81506,15 +81722,15 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Branch</source>
-        <translation>K'allma</translation>
+        <translation>K&apos;allma</translation>
     </message>
     <message>
         <source>Broken links</source>
-        <translation>P'akisqa t'inkikuna</translation>
+        <translation>P&apos;akisqa t&apos;inkikuna</translation>
     </message>
     <message>
         <source>Broken links in the build</source>
-        <translation>Hatarichisqapi p'akisqa t'inkikuna</translation>
+        <translation>Hatarichisqapi p&apos;akisqa t&apos;inkikuna</translation>
     </message>
     <message>
         <source>Build</source>
@@ -81570,7 +81786,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Check what the build changes, look at it, then publish it or throw it away.</source>
-        <translation>Hatarichisqa ima tikrasqanta qhaway, qhawariy, chaymanta lluqsichiy utaq wikch'uy.</translation>
+        <translation>Hatarichisqa ima tikrasqanta qhaway, qhawariy, chaymanta lluqsichiy utaq wikch&apos;uy.</translation>
     </message>
     <message>
         <source>Choose the publish to go back to.</source>
@@ -81590,7 +81806,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
-        <translation>Hatarichisqata takyachin, unanchan, %remote nisqamantaq apachin. Apachiyqa mana hayk'aqpas kallpawanchu; qhipaman ima lluqsichisqamanpas kutiyta atinki.</translation>
+        <translation>Hatarichisqata takyachin, unanchan, %remote nisqamantaq apachin. Apachiyqa mana hayk&apos;aqpas kallpawanchu; qhipaman ima lluqsichisqamanpas kutiyta atinki.</translation>
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
@@ -81622,11 +81838,11 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Wikch'uy</translation>
+        <translation>Wikch&apos;uy</translation>
     </message>
     <message>
         <source>Discard the build</source>
-        <translation>Hatarichisqata wikch'uy</translation>
+        <translation>Hatarichisqata wikch&apos;uy</translation>
     </message>
     <message>
         <source>Domain</source>
@@ -81634,7 +81850,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Ch'usaq: webpa tiyanan. Mana chayqa, kikin webpa ukhu tiyanan.</translation>
+        <translation>Ch&apos;usaq: webpa tiyanan. Mana chayqa, kikin webpa ukhu tiyanan.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -81642,7 +81858,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Every link starts with the base path.</source>
-        <translation>Sapanka t'inkim tiksi ñanwan qallarin.</translation>
+        <translation>Sapanka t&apos;inkim tiksi ñanwan qallarin.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
@@ -81678,7 +81894,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Fingerprint</source>
-        <translation>Ruk'ana unancha</translation>
+        <translation>Ruk&apos;ana unancha</translation>
     </message>
     <message>
         <source>Folder</source>
@@ -81706,7 +81922,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>From the branch</source>
-        <translation>K'allmamanta</translation>
+        <translation>K&apos;allmamanta</translation>
     </message>
     <message>
         <source>Git address</source>
@@ -81738,7 +81954,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>GitHub serves the branch as it is pushed. The default.</source>
-        <translation>GitHub k'allmata apachisqanman hina qun. Ñawpaqmanta kaq.</translation>
+        <translation>GitHub k&apos;allmata apachisqanman hina qun. Ñawpaqmanta kaq.</translation>
     </message>
     <message>
         <source>GitLab, Gitea, your own server: any git repository.</source>
@@ -81794,11 +82010,11 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>Qhipapi %user hina purin; kay raphita wichq'ayta atinki.</translation>
+        <translation>Qhipapi %user hina purin; kay raphita wichq&apos;ayta atinki.</translation>
     </message>
     <message>
         <source>Job %id</source>
-        <translation>Llamk'ay %id</translation>
+        <translation>Llamk&apos;ay %id</translation>
     </message>
     <message>
         <source>Kept as the secret %secret.</source>
@@ -81822,11 +82038,11 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Links</source>
-        <translation>T'inkikuna</translation>
+        <translation>T&apos;inkikuna</translation>
     </message>
     <message>
         <source>Links rewritten</source>
-        <translation>Musuqmanta qillqasqa t'inkikuna</translation>
+        <translation>Musuqmanta qillqasqa t&apos;inkikuna</translation>
     </message>
     <message>
         <source>Live site</source>
@@ -81854,7 +82070,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Ñawpaqta wasichaqpi waqaychanata ruray; ch'usaqpas allinmi.</translation>
+        <translation>Ñawpaqta wasichaqpi waqaychanata ruray; ch&apos;usaqpas allinmi.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81898,7 +82114,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>Manam php kamachiy siqi binariota tarikurqanchu. migration.ini [AdminSettings] PhpCliPath nisqata hunt'a ñanninman churay.</translation>
+        <translation>Manam php kamachiy siqi binariota tarikurqanchu. migration.ini [AdminSettings] PhpCliPath nisqata hunt&apos;a ñanninman churay.</translation>
     </message>
     <message>
         <source>No tag yet.</source>
@@ -81946,7 +82162,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
-        <translation>Chayanawanqa sutillam waqaychasqa; tokenqa utaq llaveqa Wakichiy &gt; Pakasqakuna nisqapi qhipan, manataq hayk'aqpas qillqa registropi rikhurinchu.</translation>
+        <translation>Chayanawanqa sutillam waqaychasqa; tokenqa utaq llaveqa Wakichiy &gt; Pakasqakuna nisqapi qhipan, manataq hayk&apos;aqpas qillqa registropi rikhurinchu.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
@@ -81961,12 +82177,12 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <translation>Ñawpaq qhawayta kichay</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Hatarichisqata wasichaq qunqanman hina kichan, chayanapa karpetanmanta. T'inkiqa huk horalla qampaq llamk'an.</translation>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Hatarichisqata wasichaq qunqanman hina kichan, chayanapa karpetanmanta. T&apos;inkiqa huk horalla qampaq llamk&apos;an.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
-        <translation>Munaspa. Ch'usaq: lluqsichisqa kaq.</translation>
+        <translation>Munaspa. Ch&apos;usaq: lluqsichisqa kaq.</translation>
     </message>
     <message>
         <source>Optional. With a domain the site is served at its root.</source>
@@ -82066,7 +82282,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Replace the key: the old one stops working</source>
-        <translation>Llaveta tikray: mawk'a llaveqa manaña llamk'anqachu</translation>
+        <translation>Llaveta tikray: mawk&apos;a llaveqa manaña llamk&apos;anqachu</translation>
     </message>
     <message>
         <source>Report</source>
@@ -82137,8 +82353,8 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <translation>Wakichiy &gt; Pakasqakuna</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Sutinchaykunapi rikuchisqa, ahinataq "GitHub Pages nisqapi llapanpaq web".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Sutinchaykunapi rikuchisqa, ahinataq &quot;GitHub Pages nisqapi llapanpaq web&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82166,7 +82382,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Stale pages</source>
-        <translation>Mawk'a raphikuna</translation>
+        <translation>Mawk&apos;a raphikuna</translation>
     </message>
     <message>
         <source>Started</source>
@@ -82210,7 +82426,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Strip</source>
-        <translation>Ch'uyanchay</translation>
+        <translation>Ch&apos;uyanchay</translation>
     </message>
     <message>
         <source>Switch off</source>
@@ -82246,7 +82462,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>The build could not be thrown away: %problem</source>
-        <translation>Hatarichisqata mana wikch'uyta atikurqanchu: %problem</translation>
+        <translation>Hatarichisqata mana wikch&apos;uyta atikurqanchu: %problem</translation>
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
@@ -82254,7 +82470,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
-        <translation>Hatarichisqa wikch'usqa karqan: karpetaqa hukmanta qhipa lluqsichisqata hap'in.</translation>
+        <translation>Hatarichisqa wikch&apos;usqa karqan: karpetaqa hukmanta qhipa lluqsichisqata hap&apos;in.</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
@@ -82262,31 +82478,31 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>The folder holds a build that is not published yet; a new build replaces it.</source>
-        <translation>Karpetaqa manaraq lluqsichisqa hatarichisqata hap'in; musuq hatarichisqam rantinqa.</translation>
+        <translation>Karpetaqa manaraq lluqsichisqa hatarichisqata hap&apos;in; musuq hatarichisqam rantinqa.</translation>
     </message>
     <message>
         <source>The folder of the jobs cannot be written: %detail</source>
-        <translation>Llamk'aykunapa karpetanman mana qillqayta atikunchu: %detail</translation>
+        <translation>Llamk&apos;aykunapa karpetanman mana qillqayta atikunchu: %detail</translation>
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
-        <translation>Llamk'ayta mana wakichiyta atikurqanchu: %detail</translation>
+        <translation>Llamk&apos;ayta mana wakichiyta atikurqanchu: %detail</translation>
     </message>
     <message>
         <source>The job could not be started.</source>
-        <translation>Llamk'ayta mana qallarichiyta atikurqanchu.</translation>
+        <translation>Llamk&apos;ayta mana qallarichiyta atikurqanchu.</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>Llamk'ayqa tukurqanmi. Willakuy qillqanta apamuchkan.</translation>
+        <translation>Llamk&apos;ayqa tukurqanmi. Willakuy qillqanta apamuchkan.</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
-        <translation>Llamk'ayqa yaykusqa runatam munan.</translation>
+        <translation>Llamk&apos;ayqa yaykusqa runatam munan.</translation>
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
-        <translation>Llamk'ayqa qallarirqan, ichaqa manam ruraypa idninta willarqanchu. %detail nisqata qhaway.</translation>
+        <translation>Llamk&apos;ayqa qallarirqan, ichaqa manam ruraypa idninta willarqanchu. %detail nisqata qhaway.</translation>
     </message>
     <message>
         <source>The key</source>
@@ -82306,11 +82522,11 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Raphikunaqa mana yaykusqa watukuq rikusqanman hina apamusqa. Kamachiy, allichay siteaccesskunaqa mana hayk'aqpas qusqachu.</translation>
+        <translation>Raphikunaqa mana yaykusqa watukuq rikusqanman hina apamusqa. Kamachiy, allichay siteaccesskunaqa mana hayk&apos;aqpas qusqachu.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>Puriynintaqa mana qatiyta atikurqanchu. Raphita musuqmanta apamuy llamk'ay imayna kachkasqanta rikunaykipaq.</translation>
+        <translation>Puriynintaqa mana qatiyta atikurqanchu. Raphita musuqmanta apamuy llamk&apos;ay imayna kachkasqanta rikunaykipaq.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
@@ -82318,7 +82534,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>The root of the branch</source>
-        <translation>K'allmapa saphin</translation>
+        <translation>K&apos;allmapa saphin</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
@@ -82342,10 +82558,10 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>Webqa chay lluqsichisqapa willañiqinkunaman kutin; manaraq lluqsichisqa hatarichisqataqa ñawpaqta lluqsichina utaq wikch'una.</translation>
+        <translation>Webqa chay lluqsichisqapa willañiqinkunaman kutin; manaraq lluqsichisqa hatarichisqataqa ñawpaqta lluqsichina utaq wikch&apos;una.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Webpa kikin raphin mana kaq tiyanakunapaq.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <translation>Chayanata mana waqaychayta atikurqanchu: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Chayanaqa manaraq kay llavewan yaykunchu: allichaykunanpi "Kay chayanapaq rurasqa churanapaq llave" nisqata akllay.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Chayanaqa manaraq kay llavewan yaykunchu: allichaykunanpi &quot;Kay chayanapaq rurasqa churanapaq llave&quot; nisqata akllay.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82366,11 +82582,11 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
-        <translation>Kay churasqaqa manam ñawpaq siteaccessniyuqchu. Kamachiy, allichay siteaccesskunaqa mana hayk'aqpas lluqsichisqachu.</translation>
+        <translation>Kay churasqaqa manam ñawpaq siteaccessniyuqchu. Kamachiy, allichay siteaccesskunaqa mana hayk&apos;aqpas lluqsichisqachu.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
-        <translation>Kay raphiqa llamk'ayta purisqanman hina qatin; raphi wichq'asqa kaptinqa llamk'ayqa qhipapi purichkanpuni.</translation>
+        <translation>Kay raphiqa llamk&apos;ayta purisqanman hina qatin; raphi wichq&apos;asqa kaptinqa llamk&apos;ayqa qhipapi purichkanpuni.</translation>
     </message>
     <message>
         <source>This target has no deploy key yet.</source>
@@ -82386,11 +82602,11 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
-        <translation>Kay hatarichisqata wikch'un: karpetaqa hukmanta qhipa lluqsichisqata hap'in. Kawsaq webqa mana tikrakunchu.</translation>
+        <translation>Kay hatarichisqata wikch&apos;un: karpetaqa hukmanta qhipa lluqsichisqata hap&apos;in. Kawsaq webqa mana tikrakunchu.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Ñawpaqta "Tikraykunata qhawarqanim" nisqata akllay.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Ñawpaqta &quot;Tikraykunata qhawarqanim&quot; nisqata akllay.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82426,19 +82642,19 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Llamk'ay ima rurasqan, qillqa registronpas. Kaypi qallarisqa llamk'ayqa kay raphi wichq'asqa kaptinqa qhipapi purichkanpuni.</translation>
+        <translation>Llamk&apos;ay ima rurasqan, qillqa registronpas. Kaypi qallarisqa llamk&apos;ayqa kay raphi wichq&apos;asqa kaptinqa qhipapi purichkanpuni.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
-        <translation>Llamk'ay pantay hina ima qillqamusqan</translation>
+        <translation>Llamk&apos;ay pantay hina ima qillqamusqan</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
-        <translation>Raphikuna sutichasqan, lluqsichisqa contenidopa sapanka rikch'ayninpas</translation>
+        <translation>Raphikuna sutichasqan, lluqsichisqa contenidopa sapanka rikch&apos;ayninpas</translation>
     </message>
     <message>
         <source>When</source>
-        <translation>Hayk'ap</translation>
+        <translation>Hayk&apos;ap</translation>
     </message>
     <message>
         <source>When a publish fails</source>
@@ -82454,7 +82670,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>Kikinchasqapi mana kaqman t'inkikuna maymanchus rinku (maskay, yaykuy).</translation>
+        <translation>Kikinchasqapi mana kaqman t&apos;inkikuna maymanchus rinku (maskay, yaykuy).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
@@ -82466,7 +82682,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
-        <translation>Ima ñan uraypipas llamk'an. Ñawpaqmanta kaq.</translation>
+        <translation>Ima ñan uraypipas llamk&apos;an. Ñawpaqmanta kaq.</translation>
     </message>
     <message>
         <source>Written whenever a custom domain is set.</source>
@@ -82514,19 +82730,19 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
-        <translation>https://github.com/owner/repo.git (tokenwan) utaq git@github.com:owner/repo.git (churanapaq llavewan); mana hayk'aqpas chaypi pakasqa simi nitaq token.</translation>
+        <translation>https://github.com/owner/repo.git (tokenwan) utaq git@github.com:owner/repo.git (churanapaq llavewan); mana hayk&apos;aqpas chaypi pakasqa simi nitaq token.</translation>
     </message>
     <message>
         <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
-        <translation>https://owner.github.io/repository/, web mapapaq canonical t'inkikunapaqpas.</translation>
+        <translation>https://owner.github.io/repository/, web mapapaq canonical t&apos;inkikunapaqpas.</translation>
     </message>
     <message>
         <source>image</source>
-        <translation>rikch'ay</translation>
+        <translation>rikch&apos;ay</translation>
     </message>
     <message>
         <source>never</source>
-        <translation>mana hayk'aqpas</translation>
+        <translation>mana hayk&apos;aqpas</translation>
     </message>
     <message>
         <source>no</source>
@@ -82562,7 +82778,7 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     </message>
     <message>
         <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
-        <translation>proc_open wañuchisqa, chayrayku manam kaypi llamk'ayta qallarichiyta atikunchu. Servidorpi ./console exp:static:build nisqata llamk'achiy.</translation>
+        <translation>proc_open wañuchisqa, chayrayku manam kaypi llamk&apos;ayta qallarichiyta atikunchu. Servidorpi ./console exp:static:build nisqata llamk&apos;achiy.</translation>
     </message>
     <message>
         <source>publish</source>
@@ -82611,6 +82827,34 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>yes, not published yet</source>
         <translation>arí, manaraq lluqsichisqa</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Huk hatarichisqaqa %site nisqapa sapanka raphinta apamun mana yaykusqa watukuq rikusqanman hina, t'inkikunata musuqmanta qillqan, willañiqikunata kikinchan, lluqsisqantataq chayanapa karpetanman qillqan. Manam imapas lluqsichisqachu hatarichisqata qhawanaykikama, Lluqsichiy nisqata ñit'inaykikamapas.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Kutichiyqa yachaqkunapaqmi: "Yachanim kay ima tikrasqanta" nisqata akllay, unanchaypa sutintataq hukmanta qillqay.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Hatarichisqata wasichaq qunqanman hina kichan, chayanapa karpetanmanta. T'inkiqa huk horalla qampaq llamk'an.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Sutinchaykunapi rikuchisqa, ahinataq "GitHub Pages nisqapi llapanpaq web".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Webpa kikin raphin mana kaq tiyanakunapaq.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Chayanaqa manaraq kay llavewan yaykunchu: allichaykunanpi "Kay chayanapaq rurasqa churanapaq llave" nisqata akllay.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Ñawpaqta "Tikraykunata qhawarqanim" nisqata akllay.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

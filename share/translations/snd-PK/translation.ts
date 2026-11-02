@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>رن شروع نه ٿي سگهي.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>تبديليون رڪارڊ ڪرڻ</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>جيستائين رڪارڊنگ هلي رهي آهي، توهان انتظام ۾ يا سائيٽ جي پاسي واري بار ۾ جيڪو بدلايو ٿا اهو هڪ لڏپلاڻ جي قدمن طور سانڍيو وڃي ٿو: مواد، ڪلاس، ڪردار ۽ پاليسيون، حصا، استعمال ڪندڙ ۽ ٽوليون، URL ٻيا نالا، سيٽنگون. ڪم پورو ٿيڻ تي ان کي روڪيو، ڏسو ته ان ڇا پڪڙيو، ۽ ان مان هڪ لڏپلاڻ ٺاهيو.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>رڪارڊنگون پڙهي نه سگهيون: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>رڪارڊنگن جا جدول اڃا موجود ناهن: پهرين اپ گريڊ هلايو (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini ۾ رڪارڊنگ بند آهي ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>منهنجون تبديليون</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>جيستائين توهان نه روڪيو، فقط اهو رڪارڊ ڪري ٿي جيڪو توهان بدلايو ٿا، جتي به بدلايو.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>رڪارڊنگ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time کان، هيستائين %count تبديليون.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ليبل (اختياري)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ڏيکاريو ته ان ڇا پڪڙيو</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>رڪارڊنگ روڪيو</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>منهنجي تبديلين جي رڪارڊنگ شروع ڪريو</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>سڄي سائيٽ جي دري</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>بند ٿيڻ تائين هر استعمال ڪندڙ ۽ ڪنسول جي هر تبديلي رڪارڊ ڪري ٿي. کولڻ وقت توهان کان تصديق گهري وڃي ٿي ته اهو توهان آهيو.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>کليل</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>دري بند ڪريو</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>سڄي سائيٽ جي دري کوليو</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>رڪارڊنگون</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>استعمال ڪندڙ جو کاتو (لاگ ان، اي ميل، پاسورڊ) ۽ استعمال ڪندڙن جي کاتن جا خانا ڪڏهن به رڪارڊ نه ٿيندا آهن.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>تبديليون</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>سڄي سائيٽ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name جون تبديليون</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>روڪيل</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>اڃا ڪا رڪارڊنگ ناهي.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>رڪارڊنگ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>سڀ رڪارڊنگون</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ان مان ٺهندڙ لڏپلاڻ</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>هر بدليل شيءِ لاءِ هڪ قدم ۾ گڏ ڪيل تبديليون: هن رڪارڊنگ مان ٺهيل لڏپلاڻ ڇا ڪندي.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>جڏهن هن تنصيب ۾ YAML قدم جا قسم %types هوندا ته ان مان لڏپلاڻ ٺاهي سگهجي ٿي.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ڄاڻي واڻي ڇڏيو ويو: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ڪجهه به رڪارڊ نه ٿيو.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ان ڇا پڪڙيو</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count تبديليون، ان ترتيب ۾ جنهن ۾ ڪيون ويون.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تبديلي</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>قدم</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>بابت</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>وڌيڪ %count: ./console exp:migration:record:show سڀني جي فهرست ڏئي ٿو.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>اڇلايو</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>رڪارڊنگ ۽ جيڪو ان پڪڙيو اهو هٽائي ٿو. جيڪو بدليو اهو بدليل ئي رهي ٿو.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ها، هيءَ رڪارڊنگ اڇلايو</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>رڪارڊ ٿي رهي آهي…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>توهان جون تبديليون هڪ لڏپلاڻ لاءِ رڪارڊ ٿي رهيون آهن.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>هن سائيٽ جي هر تبديلي هڪ لڏپلاڻ لاءِ رڪارڊ ٿي رهي آهي (سڄي سائيٽ جي دري).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>سڄي سائيٽ جي رڪارڊنگ شروع ٿي وئي: جيستائين توهان نه روڪيو، هر استعمال ڪندڙ جي هر تبديلي رڪارڊ ٿيندي.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>رڪارڊنگ شروع ٿي وئي: جيستائين توهان نه روڪيو، توهان جون تبديليون رڪارڊ ٿينديون.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>رڪارڊنگ روڪي وئي. جيڪو ان پڪڙيو اهو اڇلائڻ تائين رهندو.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>رڪارڊنگ ۽ ان جا واقعا هٽايا ويا.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ڪا رڪارڊنگ %id ناهي.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>پهرين "ها، هيءَ رڪارڊنگ اڇلايو" تي نشان لڳايو.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>سيشن رڪارڊنگ فقط اهو استعمال ڪندڙ روڪي سگهي ٿو جنهن رڪارڊ ڪئي.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>روڪڻ لاءِ رڪارڊنگ چونڊيو.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>هن قسم جي رڪارڊنگ اڳ ۾ ئي هلي رهي آهي.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>رڪارڊنگ بدلائي نه سگهي: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub پروجيڪٽ سائيٽ /&lt;repository&gt;/ هيٺ هوندي آهي؛ لاڳاپيل لنڪس اتي ۽ ٻين سڀني هنڌن تي ڪم ڪن ٿيون.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>هڪ بلڊ %site جو هر صفحو ائين آڻي ٿو جيئن سائن ان نه ٿيل گهمندڙ ان کي ڏسي ٿو، لنڪس ٻيهر لکي ٿو، فائلون ڪاپي ڪري ٿو ۽ نتيجو ٽارگيٽ جي فولڊر ۾ لکي ٿو. جيستائين توهان بلڊ جانچي شايع ڪريو نه دٻايو، ڪجهه به شايع نٿو ٿئي.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>جنهن صفحي ۾ صفائي کان پوءِ به ڊيبگ آئوٽ پٽ، فارم ٽوڪن يا سيشن آءِ ڊي هجي، اهو ڪڏهن به شايع نٿو ٿئي.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>واپسي ماهرن لاءِ آهي: "مان ڄاڻان ٿو ته هي ڇا بدلائي ٿو" تي نشان لڳايو ۽ ٽيگ جو نالو ٻيهر لکو.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>واپسي ماهرن لاءِ آهي: &quot;مان ڄاڻان ٿو ته هي ڇا بدلائي ٿو&quot; تي نشان لڳايو ۽ ٽيگ جو نالو ٻيهر لکو.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>پريويو کوليو</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>بلڊ کي ائين کولي ٿو جيئن هوسٽ ان کي پيش ڪندو، ٽارگيٽ جي فولڊر مان. لنڪ توهان لاءِ هڪ ڪلاڪ ڪم ڪري ٿي.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>سيٽ اپ &gt; ڳجهيون معلومات</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>فهرستن ۾ ڏيکاريو ويندو آهي، مثال طور "GitHub Pages تي عوامي سائيٽ".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>فهرستن ۾ ڏيکاريو ويندو آهي، مثال طور &quot;GitHub Pages تي عوامي سائيٽ&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>سائيٽ ان اشاعت جي فائلن ڏانهن واپس وڃي ٿي؛ اڃا شايع نه ٿيل بلڊ کي پهريان شايع يا ڦٽو ڪرڻو پوندو.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>اڻ موجود پتن لاءِ سائيٽ جو پنهنجو صفحو.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ٽارگيٽ محفوظ نه ٿي سگهيو: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ٽارگيٽ اڃا هن ڪنجي سان سائن ان نٿو ٿئي: ان جي سيٽنگن ۾ "هن ٽارگيٽ لاءِ ٺاهيل ڊيپلاءِ ڪنجي" چونڊيو.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ٽارگيٽ اڃا هن ڪنجي سان سائن ان نٿو ٿئي: ان جي سيٽنگن ۾ &quot;هن ٽارگيٽ لاءِ ٺاهيل ڊيپلاءِ ڪنجي&quot; چونڊيو.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>هن بلڊ کي ڦٽو ڪري ٿو: فولڊر ۾ ٻيهر آخري اشاعت هوندي. لائيو سائيٽ نٿي بدلجي.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>پهريان "مون تبديليون جانچي ورتيون آهن" تي نشان لڳايو.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>پهريان &quot;مون تبديليون جانچي ورتيون آهن&quot; تي نشان لڳايو.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>ها، اڃا شايع ناهي ٿيو</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>هڪ بلڊ %site جو هر صفحو ائين آڻي ٿو جيئن سائن ان نه ٿيل گهمندڙ ان کي ڏسي ٿو، لنڪس ٻيهر لکي ٿو، فائلون ڪاپي ڪري ٿو ۽ نتيجو ٽارگيٽ جي فولڊر ۾ لکي ٿو. جيستائين توهان بلڊ جانچي شايع ڪريو نه دٻايو، ڪجهه به شايع نٿو ٿئي.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>واپسي ماهرن لاءِ آهي: "مان ڄاڻان ٿو ته هي ڇا بدلائي ٿو" تي نشان لڳايو ۽ ٽيگ جو نالو ٻيهر لکو.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>بلڊ کي ائين کولي ٿو جيئن هوسٽ ان کي پيش ڪندو، ٽارگيٽ جي فولڊر مان. لنڪ توهان لاءِ هڪ ڪلاڪ ڪم ڪري ٿي.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>فهرستن ۾ ڏيکاريو ويندو آهي، مثال طور "GitHub Pages تي عوامي سائيٽ".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>اڻ موجود پتن لاءِ سائيٽ جو پنهنجو صفحو.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ٽارگيٽ اڃا هن ڪنجي سان سائن ان نٿو ٿئي: ان جي سيٽنگن ۾ "هن ٽارگيٽ لاءِ ٺاهيل ڊيپلاءِ ڪنجي" چونڊيو.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>پهريان "مون تبديليون جانچي ورتيون آهن" تي نشان لڳايو.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

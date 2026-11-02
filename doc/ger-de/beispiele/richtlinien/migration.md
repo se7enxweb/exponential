@@ -13,7 +13,7 @@ Die Richtlinienfunktionen von `migration` und ihre Einschränkungen, aus `$Funct
 
 ## edit
 
-Keine Ansicht des Moduls nennt sie; Code prüft sie (`eZUser::hasAccessTo( 'migration', 'edit' )` oder der Fetch `user/has_access_to`).
+Geprüft von den Ansichten: [recording](../modulansichten/migration/recording.md).
 
 Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
 

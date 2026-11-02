@@ -15160,7 +15160,7 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Embann un eilskrid stadek eus ul lec'hienn war GitHub Pages pe war forzh peseurt herberc'hier git.</translation>
+        <translation>Embann un eilskrid stadek eus ul lec&apos;hienn war GitHub Pages pe war forzh peseurt herberc&apos;hier git.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22168,7 +22168,7 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
     </message>
     <message>
         <source>Publish a static copy to GitHub Pages or any git host</source>
-        <translation>Embann un eilskrid stadek war GitHub Pages pe war forzh peseurt herberc'hier git</translation>
+        <translation>Embann un eilskrid stadek war GitHub Pages pe war forzh peseurt herberc&apos;hier git</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22176,7 +22176,7 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Ar grubuilh stadek a ginnig pajennoù adalek ar servijer-mañ. Evit embann un eilskrid stadek eus ul lec'hienn e lec'h all, war GitHub Pages pe war forzh peseurt herberc'hier git, implijit an embann stadek.</translation>
+        <translation>Ar grubuilh stadek a ginnig pajennoù adalek ar servijer-mañ. Evit embann un eilskrid stadek eus ul lec&apos;hienn e lec&apos;h all, war GitHub Pages pe war forzh peseurt herberc&apos;hier git, implijit an embann stadek.</translation>
     </message>
 </context>
 <context>
@@ -76236,7 +76236,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Embann un eilskrid stadek eus ul lec'hienn war GitHub Pages pe war forzh peseurt herberc'hier git.</translation>
+        <translation>Embann un eilskrid stadek eus ul lec&apos;hienn war GitHub Pages pe war forzh peseurt herberc&apos;hier git.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -80590,6 +80590,222 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>The run could not be started.</source>
         <translation>N&apos;eus ket bet gallet kregiñ al lañsadenn.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Enrollañ ar c'hemmoù</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>E-pad ma 'z a en-dro un enrolladenn, ar pezh a cheñchit er merañ pe e barrenn gostez al lec'hienn a vez miret evel pazennoù ur migradur: endalc'had, klasoù, rolloù ha politikerezhioù, rannoù, implijerien ha strolladoù, aliasoù URL, arventennoù. Paouezit ganti pa vo echu ganeoc'h, sellit ouzh ar pezh he deus paket ha krouit ur migradur diwarni.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>N'haller ket lenn an enrolladennoù: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>N'eus ket eus taolennoù an enrolladennoù c'hoazh: lañsit an hizivadur da gentañ (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Diweredekaet eo an enrollañ e migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Ma c'hemmoù</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ne enroll nemet ar pezh a cheñchit, n'eus forzh pelec'h, betek ma paouezot ganti.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Enrolladenn</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>abaoe %time, %count kemm betek-henn.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Tikedenn (diret)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Diskouez ar pezh he deus paket</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Paouez da enrollañ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Kregiñ da enrollañ ma c'hemmoù</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Prenestr evit al lec'hienn a-bezh</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Enrollañ a ra pep kemm gant pep implijer hag ar c'honsol betek ma vo serret. Pa vez digoret e vez goulennet diganeoc'h gwiriañ ez eo c'hwi.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Digor</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Serriñ ar prenestr</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Digeriñ ar prenestr evit al lec'hienn a-bezh</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Enrolladennoù</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Kont un implijer (anv kevreañ, postel, ger-tremen) ha maeziennoù kontoù an implijerien n'int biskoazh enrollet.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Kemmoù</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Al lec'hienn a-bezh</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Kemmoù %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Paouezet</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Enrolladenn ebet c'hoazh.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Enrolladenn %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>An holl enrolladennoù</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ar migradur a vefe graet diwarni</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ar c'hemmoù strollet en ur bazenn evit pep tra cheñchet: ar pezh a rafe ur migradur krouet diwar an enrolladenn-mañ.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Gallout a raio bezañ krouet ur migradur diwarni pa vo ar seurtoù pazennoù YAML %types gant ar staliadur-mañ.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Lezet er-maez a-ratozh: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Netra n'eo bet enrollet.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ar pezh he deus paket</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count kemm, en urzh ma 'z int bet graet.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Kemm</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Pazenn</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>A sell ouzh</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count all: ./console exp:migration:record:show a ro roll anezho holl.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Dilezel</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Lemel a ra an enrolladenn hag ar pezh he deus paket. Ar pezh a zo bet cheñchet a chom cheñchet.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ya, dilezel an enrolladenn-mañ</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Oc'h enrollañ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Enrollet e vez ho kemmoù evit ur migradur.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Pep kemm el lec'hienn-mañ a vez enrollet evit ur migradur (prenestr evit al lec'hienn a-bezh).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Kroget eo an enrolladenn evit al lec'hienn a-bezh: pep kemm gant pep implijer a vez enrollet betek ma paouezot ganti.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Kroget eo an enrolladenn: ho kemmoù a vez enrollet betek ma paouezot ganti.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Paouezet eo an enrolladenn. Ar pezh he deus paket a chom betek ma tilezot anezhi.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Lamet eo bet an enrolladenn hag he darvoudoù.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>N'eus enrolladenn %id ebet.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Askit da gentañ "Ya, dilezel an enrolladenn-mañ".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>An implijer en deus enrollet hepken a c'hall paouez gant un enrolladenn dalc'h.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Dibabit an enrolladenn da baouez.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Un enrolladenn eus ar seurt-se a ya en-dro dija.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>N'haller ket kemmañ an enrolladenn: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81267,7 +81483,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Publish a free static copy of your site on GitHub Pages:</source>
-        <translation>Embannit un eilskrid stadek digoust eus ho lec'hienn war GitHub Pages:</translation>
+        <translation>Embannit un eilskrid stadek digoust eus ho lec&apos;hienn war GitHub Pages:</translation>
     </message>
     <message>
         <source>Stale pages</source>
@@ -81287,7 +81503,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>N'eus ket bet gallet lenn ar palioù: %problem</translation>
+        <translation>N&apos;eus ket bet gallet lenn ar palioù: %problem</translation>
     </message>
     <message>
         <source>a job is going on</source>
@@ -81311,7 +81527,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>read the tutorial</source>
-        <translation>lenn ar c'helennskrid</translation>
+        <translation>lenn ar c&apos;helennskrid</translation>
     </message>
 </context>
 <context>
@@ -81326,7 +81542,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>%count more are not listed.</source>
-        <translation>%count all n'int ket listennet.</translation>
+        <translation>%count all n&apos;int ket listennet.</translation>
     </message>
     <message>
         <source>%pages pages written</source>
@@ -81334,7 +81550,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
-        <translation>%path a ra %size, muioc'h eget ar pezh a aotre an herberc'hier evit ur restr.</translation>
+        <translation>%path a ra %size, muioc&apos;h eget ar pezh a aotre an herberc&apos;hier evit ur restr.</translation>
     </message>
     <message>
         <source>%percent % of the limit</source>
@@ -81346,7 +81562,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>%tag is the publish the site has now.</source>
-        <translation>%tag eo an embannadenn a zo gant al lec'hienn bremañ.</translation>
+        <translation>%tag eo an embannadenn a zo gant al lec&apos;hienn bremañ.</translation>
     </message>
     <message>
         <source>%target: job %id</source>
@@ -81358,23 +81574,23 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
-        <translation>/kavlec'h/ evit ul lec'hienn raktres GitHub; goullo evit un domani personel pe ul lec'hienn implijer.</translation>
+        <translation>/kavlec&apos;h/ evit ul lec&apos;hienn raktres GitHub; goullo evit un domani personel pe ul lec&apos;hienn implijer.</translation>
     </message>
     <message>
         <source>1. The site</source>
-        <translation>1. Al lec'hienn</translation>
+        <translation>1. Al lec&apos;hienn</translation>
     </message>
     <message>
         <source>2. The host</source>
-        <translation>2. An herberc'hier</translation>
+        <translation>2. An herberc&apos;hier</translation>
     </message>
     <message>
         <source>3. Signing in to the repository</source>
-        <translation>3. Kennaskañ d'ar c'havlec'h</translation>
+        <translation>3. Kennaskañ d&apos;ar c&apos;havlec&apos;h</translation>
     </message>
     <message>
         <source>4. The repository</source>
-        <translation>4. Ar c'havlec'h</translation>
+        <translation>4. Ar c&apos;havlec&apos;h</translation>
     </message>
     <message>
         <source>5. Links and base path</source>
@@ -81382,7 +81598,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>6. Your own domain</source>
-        <translation>6. Ho tomani deoc'h</translation>
+        <translation>6. Ho tomani deoc&apos;h</translation>
     </message>
     <message>
         <source>7. What the build holds</source>
@@ -81398,11 +81614,11 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
-        <translation>Ul lec'hienn raktres GitHub a vev dindan /&lt;repository&gt;/; al liammoù kar a ya en-dro eno hag e pep lec'h all.</translation>
+        <translation>Ul lec&apos;hienn raktres GitHub a vev dindan /&lt;repository&gt;/; al liammoù kar a ya en-dro eno hag e pep lec&apos;h all.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ur savadur a zegas pep pajenn eus %site evel ma wel anezhi ur gweladenner n'eo ket kennasket, a adskriv al liammoù, a eilskriv ar restroù hag a skriv an disoc'h e teuliad ar pal. Netra n'eo embannet a-raok ma vo gwiriet ar savadur ganeoc'h ha pouezet war Embann.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ur savadur a zegas pep pajenn eus %site evel ma wel anezhi ur gweladenner n&apos;eo ket kennasket, a adskriv al liammoù, a eilskriv ar restroù hag a skriv an disoc&apos;h e teuliad ar pal. Netra n&apos;eo embannet a-raok ma vo gwiriet ar savadur ganeoc&apos;h ha pouezet war Embann.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -81410,19 +81626,19 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>A deploy key is kept as the secret %secret.</source>
-        <translation>Miret eo an alc'hwez deploy evel ar c'huzhadenn %secret.</translation>
+        <translation>Miret eo an alc&apos;hwez deploy evel ar c&apos;huzhadenn %secret.</translation>
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>Un alc'hwez deploy a ro tro d'ar staliadur-mañ da vountañ d'ur c'havlec'h hepken dre SSH ha da netra all. E hanterenn brevez a chom e Kefluniañ &gt; Kuzhadennoù; an hanterenn foran hepken a vez diskouezet.</translation>
+        <translation>Un alc&apos;hwez deploy a ro tro d&apos;ar staliadur-mañ da vountañ d&apos;ur c&apos;havlec&apos;h hepken dre SSH ha da netra all. E hanterenn brevez a chom e Kefluniañ &gt; Kuzhadennoù; an hanterenn foran hepken a vez diskouezet.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
-        <translation>Un alc'hwez deploy krouet evit ar pal-mañ</translation>
+        <translation>Un alc&apos;hwez deploy krouet evit ar pal-mañ</translation>
     </message>
     <message>
         <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
-        <translation>Un alc'hwez deploy a gennask dre SSH: cheñchit ar chomlec'h git evit an hini SSH (git@github.com:owner/repo.git).</translation>
+        <translation>Un alc&apos;hwez deploy a gennask dre SSH: cheñchit ar chomlec&apos;h git evit an hini SSH (git@github.com:owner/repo.git).</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
@@ -81430,39 +81646,39 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Ul labour eus ar pal-mañ a zo war ober c'hoazh (%detail). Gortozit ma echuo.</translation>
+        <translation>Ul labour eus ar pal-mañ a zo war ober c&apos;hoazh (%detail). Gortozit ma echuo.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Ul labour eus ar pal-mañ a zo war ober c'hoazh. Gortozit ma echuo.</translation>
+        <translation>Ul labour eus ar pal-mañ a zo war ober c&apos;hoazh. Gortozit ma echuo.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
-        <translation>Ul liamm eus ar bajenn /news/ d'ar bajenn /about-us/team a vo skrivet evel</translation>
+        <translation>Ul liamm eus ar bajenn /news/ d&apos;ar bajenn /about-us/team a vo skrivet evel</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
-        <translation>Krouet ez eus bet un alc'hwez deploy nevez. Ouzhpennit e hanterenn foran d'ar c'havlec'h bremañ.</translation>
+        <translation>Krouet ez eus bet un alc&apos;hwez deploy nevez. Ouzhpennit e hanterenn foran d&apos;ar c&apos;havlec&apos;h bremañ.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
-        <translation>Ur bajenn a gendalc'h da gaout ec'hankad diveugañ, ur jedouer furmskrid pe un naoudi dalc'h goude ar skarzhañ n'eo morse embannet.</translation>
+        <translation>Ur bajenn a gendalc&apos;h da gaout ec&apos;hankad diveugañ, ur jedouer furmskrid pe un naoudi dalc&apos;h goude ar skarzhañ n&apos;eo morse embannet.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>An distro a zo evit an arbennigourien: askit "Gouzout a ran petra a cheñch an dra-se" ha skrivit anv ar merk en-dro.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>An distro a zo evit an arbennigourien: askit &quot;Gouzout a ran petra a cheñch an dra-se&quot; ha skrivit anv ar merk en-dro.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Ul lec'hienn a c'hall tizhout %site, ur restr %file, gant tro-dro 100 GB a drafik bep miz. Gant ur steuñv digoust e rank ar c'havlec'h bezañ foran. GitHub Pages n'eo ket graet evit stalioù pe treuzgreadoù kenwerzhel all.</translation>
+        <translation>Ul lec&apos;hienn a c&apos;hall tizhout %site, ur restr %file, gant tro-dro 100 GB a drafik bep miz. Gant ur steuñv digoust e rank ar c&apos;havlec&apos;h bezañ foran. GitHub Pages n&apos;eo ket graet evit stalioù pe treuzgreadoù kenwerzhel all.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>Ur pal eo ul lec'hienn embannet en ur c'havlec'h git. Netra n'eo savet nag embannet amañ: Enrollañ a skriv an arventennoù e settings/override/staticcache.ini.append.php.</translation>
+        <translation>Ur pal eo ul lec&apos;hienn embannet en ur c&apos;havlec&apos;h git. Netra n&apos;eo savet nag embannet amañ: Enrollañ a skriv an arventennoù e settings/override/staticcache.ini.append.php.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>Ur pal eo ul lec'hienn embannet en ul lec'h, da skouer ho lec'hienn foran war GitHub Pages.</translation>
+        <translation>Ur pal eo ul lec&apos;hienn embannet en ul lec&apos;h, da skouer ho lec&apos;hienn foran war GitHub Pages.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
@@ -81470,11 +81686,11 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>A workflow of the repository publishes it.</source>
-        <translation>Ul labour-red (workflow) eus ar c'havlec'h a embann anezhañ.</translation>
+        <translation>Ul labour-red (workflow) eus ar c&apos;havlec&apos;h a embann anezhañ.</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
-        <translation>Ouzhpennit an alc'hwez foran-mañ d'ar c'havlec'h gant ar gwir da skrivañ. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, askit Allow write access.</translation>
+        <translation>Ouzhpennit an alc&apos;hwez foran-mañ d&apos;ar c&apos;havlec&apos;h gant ar gwir da skrivañ. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, askit Allow write access.</translation>
     </message>
     <message>
         <source>Added</source>
@@ -81482,7 +81698,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Another git host</source>
-        <translation>Un herberc'hier git all</translation>
+        <translation>Un herberc&apos;hier git all</translation>
     </message>
     <message>
         <source>Another process works on this target: %detail</source>
@@ -81578,7 +81794,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Comes with a later release.</source>
-        <translation>Gant ur stumm diwezhatoc'h.</translation>
+        <translation>Gant ur stumm diwezhatoc&apos;h.</translation>
     </message>
     <message>
         <source>Commit</source>
@@ -81590,7 +81806,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
-        <translation>Kas a ra ar savadur (commit), e verkañ (tag) hag e vountañ da %remote. Morse ne vez rediet ur bountadenn; gallout a rit distreiñ da forzh peseurt embannadenn diwezhatoc'h.</translation>
+        <translation>Kas a ra ar savadur (commit), e verkañ (tag) hag e vountañ da %remote. Morse ne vez rediet ur bountadenn; gallout a rit distreiñ da forzh peseurt embannadenn diwezhatoc&apos;h.</translation>
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
@@ -81610,15 +81826,15 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
-        <translation>Ec'hankad diveugañ, jedouerioù furmskrid, naoudioù dalc'h ha nonces a vez lamet bepred.</translation>
+        <translation>Ec&apos;hankad diveugañ, jedouerioù furmskrid, naoudioù dalc&apos;h ha nonces a vez lamet bepred.</translation>
     </message>
     <message>
         <source>Deploy key</source>
-        <translation>Alc'hwez deploy</translation>
+        <translation>Alc&apos;hwez deploy</translation>
     </message>
     <message>
         <source>Deploy key of %name</source>
-        <translation>Alc'hwez deploy %name</translation>
+        <translation>Alc&apos;hwez deploy %name</translation>
     </message>
     <message>
         <source>Discard</source>
@@ -81634,7 +81850,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Goullo: chomlec'h al lec'hienn. A-hend-all, ur chomlec'h diabarzh eus an hevelep lec'hienn.</translation>
+        <translation>Goullo: chomlec&apos;h al lec&apos;hienn. A-hend-all, ur chomlec&apos;h diabarzh eus an hevelep lec&apos;hienn.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -81646,7 +81862,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>Pep embannadenn a zo ur gasadenn gant ur merk static/%id/&lt;n&gt;. Distreiñ a ra ur gasadenn nevez gant restroù un embannadenn gent: an istor a chom, merk ebet ne fiñv ha netra n'eo rediet.</translation>
+        <translation>Pep embannadenn a zo ur gasadenn gant ur merk static/%id/&lt;n&gt;. Distreiñ a ra ur gasadenn nevez gant restroù un embannadenn gent: an istor a chom, merk ebet ne fiñv ha netra n&apos;eo rediet.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -81674,7 +81890,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Files that could not be collected</source>
-        <translation>Restroù n'eus ket bet gallet dastum</translation>
+        <translation>Restroù n&apos;eus ket bet gallet dastum</translation>
     </message>
     <message>
         <source>Fingerprint</source>
@@ -81686,15 +81902,15 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
-        <translation>Evit ur chomlec'h SSH. Krouet e vez an alc'hwez goude enrollañ; c'hwi a ouzhpenn e hanterenn foran d'ar c'havlec'h.</translation>
+        <translation>Evit ur chomlec&apos;h SSH. Krouet e vez an alc&apos;hwez goude enrollañ; c&apos;hwi a ouzhpenn e hanterenn foran d&apos;ar c&apos;havlec&apos;h.</translation>
     </message>
     <message>
         <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
-        <translation>Evit ur chomlec'h https://. GitHub: ur jedouer fine-grained gant Contents e lenn hag e skrivañ war ar c'havlec'h.</translation>
+        <translation>Evit ur chomlec&apos;h https://. GitHub: ur jedouer fine-grained gant Contents e lenn hag e skrivañ war ar c&apos;havlec&apos;h.</translation>
     </message>
     <message>
         <source>For experts. The public site changes as soon as the push is through.</source>
-        <translation>Evit an arbennigourien. Al lec'hienn foran a cheñch kerkent ha ma vez tremenet ar bountadenn.</translation>
+        <translation>Evit an arbennigourien. Al lec&apos;hienn foran a cheñch kerkent ha ma vez tremenet ar bountadenn.</translation>
     </message>
     <message>
         <source>Forms</source>
@@ -81702,7 +81918,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Free hosting from a GitHub repository.</source>
-        <translation>Herberc'hiañ digoust adalek ur c'havlec'h GitHub.</translation>
+        <translation>Herberc&apos;hiañ digoust adalek ur c&apos;havlec&apos;h GitHub.</translation>
     </message>
     <message>
         <source>From the branch</source>
@@ -81710,7 +81926,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Git address</source>
-        <translation>Chomlec'h git</translation>
+        <translation>Chomlec&apos;h git</translation>
     </message>
     <message>
         <source>GitHub Actions</source>
@@ -81726,7 +81942,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>GitHub Pages allows a site of %site and a file of %file.</source>
-        <translation>GitHub Pages a aotre ul lec'hienn a %site hag ur restr a %file.</translation>
+        <translation>GitHub Pages a aotre ul lec&apos;hienn a %site hag ur restr a %file.</translation>
     </message>
     <message>
         <source>GitHub Pages limits</source>
@@ -81734,7 +81950,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
-        <translation>GitHub Pages a embann ar restroù evel m'emaint (ret evit ar restroù a grog gant _).</translation>
+        <translation>GitHub Pages a embann ar restroù evel m&apos;emaint (ret evit ar restroù a grog gant _).</translation>
     </message>
     <message>
         <source>GitHub serves the branch as it is pushed. The default.</source>
@@ -81742,11 +81958,11 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>GitLab, Gitea, your own server: any git repository.</source>
-        <translation>GitLab, Gitea, ho servijer deoc'h: forzh peseurt kavlec'h git.</translation>
+        <translation>GitLab, Gitea, ho servijer deoc&apos;h: forzh peseurt kavlec&apos;h git.</translation>
     </message>
     <message>
         <source>Go back to an earlier publish</source>
-        <translation>Distreiñ d'un embannadenn gent</translation>
+        <translation>Distreiñ d&apos;un embannadenn gent</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81770,7 +81986,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Host</source>
-        <translation>Herberc'hier</translation>
+        <translation>Herberc&apos;hier</translation>
     </message>
     <message>
         <source>How GitHub Pages receives the build</source>
@@ -81778,7 +81994,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>I have checked the changes</source>
-        <translation>Gwiriet em eus ar c'hemmoù</translation>
+        <translation>Gwiriet em eus ar c&apos;hemmoù</translation>
     </message>
     <message>
         <source>I know what this changes</source>
@@ -81790,7 +82006,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>It is switched off: nothing can be built until it is on.</source>
-        <translation>Lazhet eo: netra ne c'hall bezañ savet a-raok ma vo enaouet.</translation>
+        <translation>Lazhet eo: netra ne c&apos;hall bezañ savet a-raok ma vo enaouet.</translation>
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
@@ -81802,7 +82018,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Kept as the secret %secret.</source>
-        <translation>Miret evel ar c'huzhadenn %secret.</translation>
+        <translation>Miret evel ar c&apos;huzhadenn %secret.</translation>
     </message>
     <message>
         <source>Kind</source>
@@ -81830,7 +82046,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Live site</source>
-        <translation>Lec'hienn war-eeun</translation>
+        <translation>Lec&apos;hienn war-eeun</translation>
     </message>
     <message>
         <source>Look at the build</source>
@@ -81838,11 +82054,11 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
-        <translation>Lizherennoù bihan, sifroù, _ ha -, da skouer github-public. Anv an teuliad hag ar merkoù (static/&lt;id&gt;/&lt;n&gt;) eo ha ne c'hall ket bezañ cheñchet diwezhatoc'h.</translation>
+        <translation>Lizherennoù bihan, sifroù, _ ha -, da skouer github-public. Anv an teuliad hag ar merkoù (static/&lt;id&gt;/&lt;n&gt;) eo ha ne c&apos;hall ket bezañ cheñchet diwezhatoc&apos;h.</translation>
     </message>
     <message>
         <source>Make a new key</source>
-        <translation>Krouiñ un alc'hwez nevez</translation>
+        <translation>Krouiñ un alc&apos;hwez nevez</translation>
     </message>
     <message>
         <source>Make a target</source>
@@ -81850,11 +82066,11 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Make the key</source>
-        <translation>Krouiñ an alc'hwez</translation>
+        <translation>Krouiñ an alc&apos;hwez</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Krouit ar c'havlec'h war an herberc'hier da gentañ; mat eo unan goullo.</translation>
+        <translation>Krouit ar c&apos;havlec&apos;h war an herberc&apos;hier da gentañ; mat eo unan goullo.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81882,7 +82098,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>War-lerc'h</translation>
+        <translation>War-lerc&apos;h</translation>
     </message>
     <message>
         <source>No</source>
@@ -81890,23 +82106,23 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>No commit yet.</source>
-        <translation>Kasadenn ebet c'hoazh.</translation>
+        <translation>Kasadenn ebet c&apos;hoazh.</translation>
     </message>
     <message>
         <source>No key was made: %problem</source>
-        <translation>N'eus bet krouet alc'hwez ebet: %problem</translation>
+        <translation>N&apos;eus bet krouet alc&apos;hwez ebet: %problem</translation>
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>N'eus bet kavet binarel php evit al linenn-urzhiañ ebet. Lakait migration.ini [AdminSettings] PhpCliPath war e hent klok.</translation>
+        <translation>N&apos;eus bet kavet binarel php evit al linenn-urzhiañ ebet. Lakait migration.ini [AdminSettings] PhpCliPath war e hent klok.</translation>
     </message>
     <message>
         <source>No tag yet.</source>
-        <translation>Merk ebet c'hoazh.</translation>
+        <translation>Merk ebet c&apos;hoazh.</translation>
     </message>
     <message>
         <source>No target yet.</source>
-        <translation>Pal ebet c'hoazh.</translation>
+        <translation>Pal ebet c&apos;hoazh.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81914,15 +82130,15 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Not in the build.</source>
-        <translation>N'emañ ket er savadur.</translation>
+        <translation>N&apos;emañ ket er savadur.</translation>
     </message>
     <message>
         <source>Nothing was published yet.</source>
-        <translation>Netra n'eo bet embannet c'hoazh.</translation>
+        <translation>Netra n&apos;eo bet embannet c&apos;hoazh.</translation>
     </message>
     <message>
         <source>Nothing was published yet: every file is new.</source>
-        <translation>Netra n'eo bet embannet c'hoazh: nevez eo pep restr.</translation>
+        <translation>Netra n&apos;eo bet embannet c&apos;hoazh: nevez eo pep restr.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -81934,7 +82150,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>On the console</source>
-        <translation>War ar c'honsol</translation>
+        <translation>War ar c&apos;honsol</translation>
     </message>
     <message>
         <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
@@ -81946,7 +82162,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
-        <translation>Un anv hepken a vez miret gant ar pal; ar jedouer pe an alc'hwez e-unan a chom e Kefluniañ &gt; Kuzhadennoù ha n'en em ziskouez morse en ur marilh.</translation>
+        <translation>Un anv hepken a vez miret gant ar pal; ar jedouer pe an alc&apos;hwez e-unan a chom e Kefluniañ &gt; Kuzhadennoù ha n&apos;en em ziskouez morse en ur marilh.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
@@ -81954,15 +82170,15 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>Gant ur jedouer hepken. env:NAME a lenn ur varienn endro eus ar servijer e-lec'h.</translation>
+        <translation>Gant ur jedouer hepken. env:NAME a lenn ur varienn endro eus ar servijer e-lec&apos;h.</translation>
     </message>
     <message>
         <source>Open the preview</source>
         <translation>Digeriñ an alberz</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Digeriñ a ra ar savadur evel ma vo kinniget gant an herberc'hier, eus teuliad ar pal. Mont a ra al liamm en-dro evidoc'h e-pad un eurvezh.</translation>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Digeriñ a ra ar savadur evel ma vo kinniget gant an herberc&apos;hier, eus teuliad ar pal. Mont a ra al liamm en-dro evidoc&apos;h e-pad un eurvezh.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
@@ -81970,11 +82186,11 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Optional. With a domain the site is served at its root.</source>
-        <translation>Diret. Gant un domani e vez kinniget al lec'hienn en he gwrizienn.</translation>
+        <translation>Diret. Gant un domani e vez kinniget al lec&apos;hienn en he gwrizienn.</translation>
     </message>
     <message>
         <source>Output</source>
-        <translation>Ec'hankad</translation>
+        <translation>Ec&apos;hankad</translation>
     </message>
     <message>
         <source>Pages</source>
@@ -81986,7 +82202,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Pages refused</source>
-        <translation>Pajennoù nac'het</translation>
+        <translation>Pajennoù nac&apos;het</translation>
     </message>
     <message>
         <source>Post-processing</source>
@@ -82014,11 +82230,11 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Public address</source>
-        <translation>Chomlec'h foran</translation>
+        <translation>Chomlec&apos;h foran</translation>
     </message>
     <message>
         <source>Public key</source>
-        <translation>Alc'hwez foran</translation>
+        <translation>Alc&apos;hwez foran</translation>
     </message>
     <message>
         <source>Publish</source>
@@ -82026,7 +82242,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Embannit un eilskrid stadek eus ul lec'hienn war GitHub Pages pe war forzh peseurt herberc'hier git: savit anezhañ, gwiriit ar c'hemmoù, embannit, ha distroit d'un embannadenn gent pa vo ezhomm.</translation>
+        <translation>Embannit un eilskrid stadek eus ul lec&apos;hienn war GitHub Pages pe war forzh peseurt herberc&apos;hier git: savit anezhañ, gwiriit ar c&apos;hemmoù, embannit, ha distroit d&apos;un embannadenn gent pa vo ezhomm.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -82042,7 +82258,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Read the tutorial</source>
-        <translation>Lenn ar c'helennskrid</translation>
+        <translation>Lenn ar c&apos;helennskrid</translation>
     </message>
     <message>
         <source>Record</source>
@@ -82050,7 +82266,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Refused</source>
-        <translation>Nac'het</translation>
+        <translation>Nac&apos;het</translation>
     </message>
     <message>
         <source>Relative</source>
@@ -82066,7 +82282,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Replace the key: the old one stops working</source>
-        <translation>Erlec'hiañ an alc'hwez: ehan a ray an hini kozh</translation>
+        <translation>Erlec&apos;hiañ an alc&apos;hwez: ehan a ray an hini kozh</translation>
     </message>
     <message>
         <source>Report</source>
@@ -82078,7 +82294,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Repository</source>
-        <translation>Kavlec'h</translation>
+        <translation>Kavlec&apos;h</translation>
     </message>
     <message>
         <source>Review</source>
@@ -82086,7 +82302,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
-        <translation>Adwelet a wir pep arventenn hag a ziskouez al linennoù a vo skrivet. Netra n'eo enrollet c'hoazh.</translation>
+        <translation>Adwelet a wir pep arventenn hag a ziskouez al linennoù a vo skrivet. Netra n&apos;eo enrollet c&apos;hoazh.</translation>
     </message>
     <message>
         <source>Roll back</source>
@@ -82114,7 +82330,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Send them to the live site</source>
-        <translation>Kas anezho d'al lec'hienn war-eeun</translation>
+        <translation>Kas anezho d&apos;al lec&apos;hienn war-eeun</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -82137,8 +82353,8 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <translation>Kefluniañ &gt; Kuzhadennoù</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Diskouezet el listennoù, da skouer "Lec'hienn foran war GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Diskouezet el listennoù, da skouer &quot;Lec&apos;hienn foran war GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82146,11 +82362,11 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Site</source>
-        <translation>Lec'hienn</translation>
+        <translation>Lec&apos;hienn</translation>
     </message>
     <message>
         <source>Site to publish</source>
-        <translation>Lec'hienn da embann</translation>
+        <translation>Lec&apos;hienn da embann</translation>
     </message>
     <message>
         <source>Size</source>
@@ -82238,19 +82454,19 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
-        <translation>Gallout a reer krouiñ ha kemmañ palioù, met netra n'eo savet nag embannet a-raok ma vo enaouet.</translation>
+        <translation>Gallout a reer krouiñ ha kemmañ palioù, met netra n&apos;eo savet nag embannet a-raok ma vo enaouet.</translation>
     </message>
     <message>
         <source>Tells search engines what to read.</source>
-        <translation>Lavaret a ra d'ar c'hefluskerioù enklask petra lenn.</translation>
+        <translation>Lavaret a ra d&apos;ar c&apos;hefluskerioù enklask petra lenn.</translation>
     </message>
     <message>
         <source>The build could not be thrown away: %problem</source>
-        <translation>N'eus ket bet gallet dilezel ar savadur: %problem</translation>
+        <translation>N&apos;eus ket bet gallet dilezel ar savadur: %problem</translation>
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
-        <translation>Heñvel eo ar savadur ouzh an embannadenn ziwezhañ: n'eus netra da embann.</translation>
+        <translation>Heñvel eo ar savadur ouzh an embannadenn ziwezhañ: n&apos;eus netra da embann.</translation>
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
@@ -82258,23 +82474,23 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
-        <translation>An talvoudoù dre ziouer a ya mat d'an darn vrasañ eus al lec'hiennoù.</translation>
+        <translation>An talvoudoù dre ziouer a ya mat d&apos;an darn vrasañ eus al lec&apos;hiennoù.</translation>
     </message>
     <message>
         <source>The folder holds a build that is not published yet; a new build replaces it.</source>
-        <translation>Ur savadur n'eo ket embannet c'hoazh a zo en teuliad; ur savadur nevez a erlec'hio anezhañ.</translation>
+        <translation>Ur savadur n&apos;eo ket embannet c&apos;hoazh a zo en teuliad; ur savadur nevez a erlec&apos;hio anezhañ.</translation>
     </message>
     <message>
         <source>The folder of the jobs cannot be written: %detail</source>
-        <translation>N'haller ket skrivañ e teuliad al labourioù: %detail</translation>
+        <translation>N&apos;haller ket skrivañ e teuliad al labourioù: %detail</translation>
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
-        <translation>N'eus ket bet gallet prientiñ al labour: %detail</translation>
+        <translation>N&apos;eus ket bet gallet prientiñ al labour: %detail</translation>
     </message>
     <message>
         <source>The job could not be started.</source>
-        <translation>N'eus ket bet gallet loc'hañ al labour.</translation>
+        <translation>N&apos;eus ket bet gallet loc&apos;hañ al labour.</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
@@ -82286,11 +82502,11 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
-        <translation>Loc'het eo bet al labour met n'en deus ket roet naoudi e brosez. Gwiriit %detail.</translation>
+        <translation>Loc&apos;het eo bet al labour met n&apos;en deus ket roet naoudi e brosez. Gwiriit %detail.</translation>
     </message>
     <message>
         <source>The key</source>
-        <translation>An alc'hwez</translation>
+        <translation>An alc&apos;hwez</translation>
     </message>
     <message>
         <source>The largest file: %path, %size.</source>
@@ -82302,19 +82518,19 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>Roll ar pajennoù evit ar c'hefluskerioù enklask; ezhomm en deus eus ar chomlec'h foran.</translation>
+        <translation>Roll ar pajennoù evit ar c&apos;hefluskerioù enklask; ezhomm en deus eus ar chomlec&apos;h foran.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Degaset e vez ar pajennoù evel ma wel anezho ur gweladenner n'eo ket kennasket. Morse ne vez kinniget ar siteaccessoù merañ hag aozañ.</translation>
+        <translation>Degaset e vez ar pajennoù evel ma wel anezho ur gweladenner n&apos;eo ket kennasket. Morse ne vez kinniget ar siteaccessoù merañ hag aozañ.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>N'eus ket bet gallet heuliañ an araokadur. Adkargit ar bajenn evit gwelet penaos ez a al labour.</translation>
+        <translation>N&apos;eus ket bet gallet heuliañ an araokadur. Adkargit ar bajenn evit gwelet penaos ez a al labour.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
-        <translation>Hanterenn foran an alc'hwez:</translation>
+        <translation>Hanterenn foran an alc&apos;hwez:</translation>
     </message>
     <message>
         <source>The root of the branch</source>
@@ -82322,15 +82538,15 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>N'eo ket staliet c'hoazh ar stal kuzhadennoù (./console exp:upgrade --apply a grou he zaolenn), neuze n'haller mirout alc'hwez ebet.</translation>
+        <translation>N&apos;eo ket staliet c&apos;hoazh ar stal kuzhadennoù (./console exp:upgrade --apply a grou he zaolenn), neuze n&apos;haller mirout alc&apos;hwez ebet.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
-        <translation>Ar servijer a gennask e-unan (gant e alc'hwez SSH pe e skoazeller titouroù kennaskañ), pe emañ ar c'havlec'h war ar servijer-mañ.</translation>
+        <translation>Ar servijer a gennask e-unan (gant e alc&apos;hwez SSH pe e skoazeller titouroù kennaskañ), pe emañ ar c&apos;havlec&apos;h war ar servijer-mañ.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
-        <translation>N'eus ket bet gallet skrivañ an arventenn: %problem</translation>
+        <translation>N&apos;eus ket bet gallet skrivañ an arventenn: %problem</translation>
     </message>
     <message>
         <source>The settings are valid. These lines will be written:</source>
@@ -82338,47 +82554,47 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
-        <translation>N'haller ket lenn restr an arventennoù: %problem</translation>
+        <translation>N&apos;haller ket lenn restr an arventennoù: %problem</translation>
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>Distreiñ a ra al lec'hienn da restroù an embannadenn-se; ur savadur n'eo ket embannet c'hoazh a rank bezañ embannet pe dilezet da gentañ.</translation>
+        <translation>Distreiñ a ra al lec&apos;hienn da restroù an embannadenn-se; ur savadur n&apos;eo ket embannet c&apos;hoazh a rank bezañ embannet pe dilezet da gentañ.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Pajenn al lec'hienn e-unan evit ar chomlec'hioù n'eus ket anezho.</translation>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Pajenn al lec&apos;hienn e-unan evit ar chomlec&apos;hioù n&apos;eus ket anezho.</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
-        <translation>N'eus ket bet gallet enrollañ ar pal: %problem</translation>
+        <translation>N&apos;eus ket bet gallet enrollañ ar pal: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ar pal ne gennask ket gant an alc'hwez-mañ c'hoazh: dibabit "Un alc'hwez deploy krouet evit ar pal-mañ" en e arventennoù.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Ar pal ne gennask ket gant an alc&apos;hwez-mañ c&apos;hoazh: dibabit &quot;Un alc&apos;hwez deploy krouet evit ar pal-mañ&quot; en e arventennoù.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>N'eus ket bet gallet lenn ar palioù: %problem</translation>
+        <translation>N&apos;eus ket bet gallet lenn ar palioù: %problem</translation>
     </message>
     <message>
         <source>There is no build to check yet.</source>
-        <translation>N'eus savadur ebet da wiriañ c'hoazh.</translation>
+        <translation>N&apos;eus savadur ebet da wiriañ c&apos;hoazh.</translation>
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
-        <translation>N'eus siteaccess foran ebet gant ar staliadur-mañ. Morse ne vez embannet ar siteaccessoù merañ hag aozañ.</translation>
+        <translation>N&apos;eus siteaccess foran ebet gant ar staliadur-mañ. Morse ne vez embannet ar siteaccessoù merañ hag aozañ.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
-        <translation>Ar bajenn-mañ a heuilh al labour e-keit ha ma ya; kenderc'hel a ra en drekleur pa vez serret ar bajenn.</translation>
+        <translation>Ar bajenn-mañ a heuilh al labour e-keit ha ma ya; kenderc&apos;hel a ra en drekleur pa vez serret ar bajenn.</translation>
     </message>
     <message>
         <source>This target has no deploy key yet.</source>
-        <translation>N'en deus ar pal-mañ alc'hwez deploy ebet c'hoazh.</translation>
+        <translation>N&apos;en deus ar pal-mañ alc&apos;hwez deploy ebet c&apos;hoazh.</translation>
     </message>
     <message>
         <source>This target has not been built here yet.</source>
-        <translation>N'eo ket bet savet ar pal-mañ amañ c'hoazh.</translation>
+        <translation>N&apos;eo ket bet savet ar pal-mañ amañ c&apos;hoazh.</translation>
     </message>
     <message>
         <source>This target has one.</source>
@@ -82386,11 +82602,11 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
-        <translation>Dilezel a ra ar savadur-mañ: an embannadenn ziwezhañ a zo en teuliad en-dro. Ne cheñch ket al lec'hienn war-eeun.</translation>
+        <translation>Dilezel a ra ar savadur-mañ: an embannadenn ziwezhañ a zo en teuliad en-dro. Ne cheñch ket al lec&apos;hienn war-eeun.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Askit "Gwiriet em eus ar c'hemmoù" da gentañ.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Askit &quot;Gwiriet em eus ar c&apos;hemmoù&quot; da gentañ.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82398,7 +82614,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>Triggers</source>
-        <translation>Loc'herioù</translation>
+        <translation>Loc&apos;herioù</translation>
     </message>
     <message>
         <source>Type the name of the tag again</source>
@@ -82426,7 +82642,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Ar pezh en deus graet al labour hag e varilh. Ul labour lañset amañ a gendalc'h en drekleur pa vez serret ar bajenn-mañ.</translation>
+        <translation>Ar pezh en deus graet al labour hag e varilh. Ul labour lañset amañ a gendalc&apos;h en drekleur pa vez serret ar bajenn-mañ.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
@@ -82434,7 +82650,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
-        <translation>Ar pezh a envel ar pajennoù, ha pep skeudenn eus an endalc'had embannet</translation>
+        <translation>Ar pezh a envel ar pajennoù, ha pep skeudenn eus an endalc&apos;had embannet</translation>
     </message>
     <message>
         <source>When</source>
@@ -82442,7 +82658,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>When a publish fails</source>
-        <translation>Pa c'hwit un embannadenn</translation>
+        <translation>Pa c&apos;hwit un embannadenn</translation>
     </message>
     <message>
         <source>When a publish succeeds</source>
@@ -82450,19 +82666,19 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>When content is published</source>
-        <translation>Pa vez embannet endalc'had</translation>
+        <translation>Pa vez embannet endalc&apos;had</translation>
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>Da belec'h ez a al liammoù d'ar pezh n'emañ ket en eilskrid (an enklask, ar c'hennaskañ).</translation>
+        <translation>Da belec&apos;h ez a al liammoù d&apos;ar pezh n&apos;emañ ket en eilskrid (an enklask, ar c&apos;hennaskañ).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
-        <translation>Eus pelec'h e vez kinniget an eilskrid stadek.</translation>
+        <translation>Eus pelec&apos;h e vez kinniget an eilskrid stadek.</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>Peseurt lec'hienn a vez embannet, ha penaos e vez anvet ar pal.</translation>
+        <translation>Peseurt lec&apos;hienn a vez embannet, ha penaos e vez anvet ar pal.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
@@ -82478,7 +82694,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>Gallout a rit bepred sevel hag embann gant an dorn amañ ha war ar c'honsol.</translation>
+        <translation>Gallout a rit bepred sevel hag embann gant an dorn amañ ha war ar c&apos;honsol.</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
@@ -82498,7 +82714,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>failed</source>
-        <translation>c'hwitet</translation>
+        <translation>c&apos;hwitet</translation>
     </message>
     <message>
         <source>file</source>
@@ -82510,11 +82726,11 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>git host</source>
-        <translation>herberc'hier git</translation>
+        <translation>herberc&apos;hier git</translation>
     </message>
     <message>
         <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
-        <translation>https://github.com/owner/repo.git (gant ur jedouer) pe git@github.com:owner/repo.git (gant un alc'hwez deploy); morse ur ger-tremen pe ur jedouer ennañ.</translation>
+        <translation>https://github.com/owner/repo.git (gant ur jedouer) pe git@github.com:owner/repo.git (gant un alc&apos;hwez deploy); morse ur ger-tremen pe ur jedouer ennañ.</translation>
     </message>
     <message>
         <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
@@ -82534,23 +82750,23 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>no remote</source>
-        <translation>kavlec'h a-bell ebet</translation>
+        <translation>kavlec&apos;h a-bell ebet</translation>
     </message>
     <message>
         <source>none: commits stay in the folder</source>
-        <translation>hini ebet: ar c'hasadennoù a chom en teuliad</translation>
+        <translation>hini ebet: ar c&apos;hasadennoù a chom en teuliad</translation>
     </message>
     <message>
         <source>none: nothing changed</source>
-        <translation>hini ebet: netra n'eo cheñchet</translation>
+        <translation>hini ebet: netra n&apos;eo cheñchet</translation>
     </message>
     <message>
         <source>not pushed</source>
-        <translation>n'eo ket bountet</translation>
+        <translation>n&apos;eo ket bountet</translation>
     </message>
     <message>
         <source>nothing changed</source>
-        <translation>netra n'eo cheñchet</translation>
+        <translation>netra n&apos;eo cheñchet</translation>
     </message>
     <message>
         <source>page</source>
@@ -82562,7 +82778,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
-        <translation>Diweredekaet eo proc_open, neuze n'haller ket loc'hañ ul labour amañ. Implijit ./console exp:static:build war ar servijer.</translation>
+        <translation>Diweredekaet eo proc_open, neuze n&apos;haller ket loc&apos;hañ ul labour amañ. Implijit ./console exp:static:build war ar servijer.</translation>
     </message>
     <message>
         <source>publish</source>
@@ -82574,7 +82790,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>push pending</source>
-        <translation>bountadenn o c'hortoz</translation>
+        <translation>bountadenn o c&apos;hortoz</translation>
     </message>
     <message>
         <source>pushed</source>
@@ -82582,7 +82798,7 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>refused</source>
-        <translation>nac'het</translation>
+        <translation>nac&apos;het</translation>
     </message>
     <message>
         <source>relative</source>
@@ -82606,11 +82822,39 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: skrivet er restr CNAME. Lakait DNS an domani da vukañ war an herberc'hier evel ma tispleg; HTTPS a c'hall kemer amzer a-raok loc'hañ.</translation>
+        <translation>www.example.com: skrivet er restr CNAME. Lakait DNS an domani da vukañ war an herberc&apos;hier evel ma tispleg; HTTPS a c&apos;hall kemer amzer a-raok loc&apos;hañ.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
-        <translation>ya, n'eo ket embannet c'hoazh</translation>
+        <translation>ya, n&apos;eo ket embannet c&apos;hoazh</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ur savadur a zegas pep pajenn eus %site evel ma wel anezhi ur gweladenner n'eo ket kennasket, a adskriv al liammoù, a eilskriv ar restroù hag a skriv an disoc'h e teuliad ar pal. Netra n'eo embannet a-raok ma vo gwiriet ar savadur ganeoc'h ha pouezet war Embann.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>An distro a zo evit an arbennigourien: askit "Gouzout a ran petra a cheñch an dra-se" ha skrivit anv ar merk en-dro.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Digeriñ a ra ar savadur evel ma vo kinniget gant an herberc'hier, eus teuliad ar pal. Mont a ra al liamm en-dro evidoc'h e-pad un eurvezh.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Diskouezet el listennoù, da skouer "Lec'hienn foran war GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Pajenn al lec'hienn e-unan evit ar chomlec'hioù n'eus ket anezho.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Ar pal ne gennask ket gant an alc'hwez-mañ c'hoazh: dibabit "Un alc'hwez deploy krouet evit ar pal-mañ" en e arventennoù.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Askit "Gwiriet em eus ar c'hemmoù" da gentañ.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

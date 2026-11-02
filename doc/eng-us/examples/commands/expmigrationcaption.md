@@ -41,7 +41,7 @@ back to. --list lists the captions, newest first, with the command that restores
 | `--dry-run` |  | The default, accepted for scripts that pass it: list what would change, change nothing |
 | `--format` | required | text (default) or json (the machine output exp-migration/1) |
 | `--list` |  | List the captions instead of taking one |
-| `--label` | required | The label of the caption (default: "manual caption" with the time) |
+| `--label` | required | The label of the caption or of the recording (a caption without one: "manual caption" with the time) |
 | `--backup-dir` | required | Where the captions made without git_manager are (default var/backup/upgrade) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

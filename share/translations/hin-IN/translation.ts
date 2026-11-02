@@ -80620,6 +80620,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>रन शुरू नहीं किया जा सका।</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>बदलावों की रिकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>जब तक रिकॉर्डिंग चलती है, आप प्रशासन में या साइट की साइडबार में जो बदलते हैं वह एक माइग्रेशन के चरणों के रूप में रखा जाता है: सामग्री, क्लास, भूमिकाएँ और नीतियाँ, सेक्शन, उपयोगकर्ता और समूह, URL उपनाम, सेटिंग्स। काम पूरा होने पर इसे रोकें, देखें इसने क्या पकड़ा, और इससे एक माइग्रेशन बनाएँ।</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>रिकॉर्डिंग पढ़ी नहीं जा सकीं: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>रिकॉर्डिंग की तालिकाएँ अभी मौजूद नहीं हैं: पहले अपग्रेड चलाएँ (exp:upgrade --apply)।</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini में रिकॉर्डिंग बंद है ([RecordingSettings] Recording=disabled)।</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>मेरे बदलाव</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>केवल वही रिकॉर्ड करती है जो आप बदलते हैं, जहाँ भी बदलें, जब तक आप इसे रोक न दें।</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>रिकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time से, अब तक %count बदलाव।</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>लेबल (वैकल्पिक)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>दिखाएँ इसने क्या पकड़ा</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>रिकॉर्डिंग रोकें</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>मेरे बदलावों की रिकॉर्डिंग शुरू करें</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>पूरी साइट की खिड़की</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>बंद होने तक हर उपयोगकर्ता और कंसोल का हर बदलाव रिकॉर्ड करती है। खोलते समय आपसे पुष्टि माँगी जाती है कि यह आप ही हैं।</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>खुली</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>खिड़की बंद करें</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>पूरी साइट की खिड़की खोलें</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>रिकॉर्डिंग सूची</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>उपयोगकर्ता का खाता (लॉगिन, ई-मेल, पासवर्ड) और उपयोगकर्ता खातों के फ़ील्ड कभी रिकॉर्ड नहीं होते।</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>बदलाव</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>पूरी साइट</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name के बदलाव</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>रुकी हुई</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>अभी कोई रिकॉर्डिंग नहीं।</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>रिकॉर्डिंग %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>सभी रिकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>इससे बनने वाला माइग्रेशन</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>हर बदली गई चीज़ के लिए एक चरण में समेटे गए बदलाव: इस रिकॉर्डिंग से बना माइग्रेशन क्या करेगा।</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>जब इस इंस्टॉलेशन में YAML चरण प्रकार %types होंगे तब इससे माइग्रेशन बनाया जा सकेगा।</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>जानबूझकर छोड़ा गया: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>कुछ भी रिकॉर्ड नहीं हुआ।</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>इसने क्या पकड़ा</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count बदलाव, उसी क्रम में जिसमें किए गए।</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>बदलाव (एक)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>चरण</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>विषय</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>और %count: ./console exp:migration:record:show सभी की सूची देता है।</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>त्यागें</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>रिकॉर्डिंग और उसने जो पकड़ा उसे हटा देता है। जो बदला गया वह बदला ही रहता है।</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>हाँ, यह रिकॉर्डिंग त्यागें</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>रिकॉर्डिंग चल रही है…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>आपके बदलाव एक माइग्रेशन के लिए रिकॉर्ड हो रहे हैं।</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>इस साइट का हर बदलाव एक माइग्रेशन के लिए रिकॉर्ड हो रहा है (पूरी साइट की खिड़की)।</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>पूरी साइट की रिकॉर्डिंग शुरू हो गई: हर उपयोगकर्ता का हर बदलाव तब तक रिकॉर्ड होगा जब तक आप इसे न रोकें।</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>रिकॉर्डिंग शुरू हो गई: आपके बदलाव तब तक रिकॉर्ड होंगे जब तक आप इसे न रोकें।</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>रिकॉर्डिंग रुक गई। इसने जो पकड़ा वह त्यागने तक बना रहेगा।</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>रिकॉर्डिंग और उसकी घटनाएँ हटा दी गईं।</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>कोई रिकॉर्डिंग %id नहीं है।</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>पहले "हाँ, यह रिकॉर्डिंग त्यागें" पर निशान लगाएँ।</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>सत्र रिकॉर्डिंग केवल वही उपयोगकर्ता रोक सकता है जिसने रिकॉर्ड किया।</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>रोकने के लिए रिकॉर्डिंग चुनें।</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>इस प्रकार की रिकॉर्डिंग पहले से चल रही है।</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>रिकॉर्डिंग बदली नहीं जा सकी: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81431,7 +81647,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub प्रोजेक्ट साइट /&lt;repository&gt;/ के नीचे होती है; सापेक्ष लिंक वहाँ और हर दूसरी जगह काम करते हैं।</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>बिल्ड %site के हर पृष्ठ को वैसे ही लाता है जैसे साइन इन न किया हुआ आगंतुक उसे देखता है, लिंक दोबारा लिखता है, फ़ाइलें कॉपी करता है और परिणाम को लक्ष्य के फ़ोल्डर में लिखता है। जब तक आप बिल्ड की जाँच करके प्रकाशित करें नहीं दबाते, तब तक कुछ भी प्रकाशित नहीं होता।</translation>
     </message>
     <message>
@@ -81479,7 +81695,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>जिस पृष्ठ में सफ़ाई के बाद भी डीबग आउटपुट, फ़ॉर्म टोकन या सत्र आईडी रह जाए, वह कभी प्रकाशित नहीं होता।</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>वापसी विशेषज्ञों के लिए है: “मैं जानता हूँ कि इससे क्या बदलेगा” पर टिक करें और टैग का नाम फिर से टाइप करें।</translation>
     </message>
     <message>
@@ -81991,7 +82207,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>पूर्वावलोकन खोलें</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>बिल्ड को लक्ष्य के फ़ोल्डर से वैसे ही खोलता है जैसे होस्ट उसे परोसेगा। यह लिंक आपके लिए एक घंटे तक काम करता है।</translation>
     </message>
     <message>
@@ -82167,7 +82383,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>सेटअप &gt; गोपनीय मान</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>सूचियों में दिखाया जाता है, उदाहरण के लिए “GitHub Pages पर सार्वजनिक साइट”।</translation>
     </message>
     <message>
@@ -82375,7 +82591,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>साइट उस प्रकाशन की फ़ाइलों पर वापस चली जाती है; जो बिल्ड अभी प्रकाशित नहीं हुआ है, उसे पहले प्रकाशित करना या त्यागना होगा।</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>मौजूद न होने वाले पतों के लिए साइट का अपना पृष्ठ।</translation>
     </message>
     <message>
@@ -82383,7 +82599,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>लक्ष्य सहेजा नहीं जा सका: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>लक्ष्य अभी इस कुंजी से साइन इन नहीं करता: उसकी सेटिंग्स में “इस लक्ष्य के लिए बनाई गई डिप्लॉय कुंजी” चुनें।</translation>
     </message>
     <message>
@@ -82419,7 +82635,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>इस बिल्ड को त्याग देता है: फ़ोल्डर में फिर से पिछला प्रकाशन होगा। लाइव साइट नहीं बदलती।</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>पहले “मैंने बदलावों की जाँच कर ली है” पर टिक करें।</translation>
     </message>
     <message>
@@ -82641,6 +82857,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>हाँ, अभी प्रकाशित नहीं</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>बिल्ड %site के हर पृष्ठ को वैसे ही लाता है जैसे साइन इन न किया हुआ आगंतुक उसे देखता है, लिंक दोबारा लिखता है, फ़ाइलें कॉपी करता है और परिणाम को लक्ष्य के फ़ोल्डर में लिखता है। जब तक आप बिल्ड की जाँच करके प्रकाशित करें नहीं दबाते, तब तक कुछ भी प्रकाशित नहीं होता।</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>वापसी विशेषज्ञों के लिए है: “मैं जानता हूँ कि इससे क्या बदलेगा” पर टिक करें और टैग का नाम फिर से टाइप करें।</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>बिल्ड को लक्ष्य के फ़ोल्डर से वैसे ही खोलता है जैसे होस्ट उसे परोसेगा। यह लिंक आपके लिए एक घंटे तक काम करता है।</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>सूचियों में दिखाया जाता है, उदाहरण के लिए “GitHub Pages पर सार्वजनिक साइट”।</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>मौजूद न होने वाले पतों के लिए साइट का अपना पृष्ठ।</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>लक्ष्य अभी इस कुंजी से साइन इन नहीं करता: उसकी सेटिंग्स में “इस लक्ष्य के लिए बनाई गई डिप्लॉय कुंजी” चुनें।</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>पहले “मैंने बदलावों की जाँच कर ली है” पर टिक करें।</translation>
     </message>
     <message>
         <source>A GitHub App</source>

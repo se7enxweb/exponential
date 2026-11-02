@@ -37,6 +37,7 @@ Produktivdatenbank ausgeführt; probieren Sie jedes Beispiel zuerst an einer Kop
 | Die Texte einer Erweiterung übersetzen | [Übersetzungen](uebersetzungen.md) | `translations/<locale>/translation.ts`, `ezpI18n::tr()`, `\|i18n`, `TranslationExtensions[]` |
 | Seiten schnell machen und aktuell halten | [Caching](caching.md) | der View-Cache, `cache-block`, `ezcache.php`, der Response-Cache von Velocity |
 | Eine PHP-Änderung live schalten | [Deployment mit Velocity](velocity-deployment.md) | `exp:velocity deploy` und seine Schritte |
+| Was Sie einrichten, zu einer Migration machen | [Eine Sitzung aufzeichnen](migrationen-sitzung-aufzeichnen.md) | `exp:migration:record:*`, Setup > Migrationen > Aufzeichnung, `exp:migration:generate --from-recording` |
 
 ## Die Beispielerweiterung im Überblick
 

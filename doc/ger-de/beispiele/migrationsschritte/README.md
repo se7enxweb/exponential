@@ -32,6 +32,19 @@ Jeder Schritttyp von YAML-Migrationen, den der Kernel in `settings/migration.ini
 | [trash](trash.md) | move, restore, purge | Verschiebt Inhalte in den Papierkorb, stellt sie aus ihm wieder her oder löscht sie endgültig |
 | [file](file.md) |  | Hängt eine Datei aus dem Migrationsordner an ein Dateiattribut (ezbinaryfile, ezmedia) eines Objekts |
 | [image](image.md) |  | Legt ein Bild aus dem Migrationsordner in ein Bildattribut eines Objekts, mit Alternativtext, Fokuspunkt und Zuschnitt |
+| [cache](cache.md) |  | Leert Caches von ezcache nach ID oder Tag und die Ansichtscaches einzelner Objekte, sofort oder nach dem Lauf |
+| [search](search.md) | reindex, full | Indiziert Objekte in der Suchmaschine neu (die genannten oder die, die der Lauf geändert hat) oder alle Objekte |
+| [autoload](autoload.md) |  | Erzeugt das Autoload-Array der Erweiterungen oder der Kernel-Klassen, die Erweiterungen ersetzen, neu |
+| [layout](layout.md) | create, update, ensure, delete | Legt ein Layout von Exponential Layouts mit seinen Zonen und ihren Verknüpfungen zu geteilten Layouts an, ändert, sichert oder löscht es |
+| [layout_block](layout_block.md) | create, update, ensure, delete | Legt einen Block in einer Zone eines Layouts von Exponential Layouts mit seinen Parametern an, ändert, sichert oder löscht ihn |
+| [layout_rule](layout_rule.md) | create, update, ensure, delete | Legt eine Regel von Exponential Layouts an, die Seiten einem Layout zuordnet, ändert, sichert oder löscht sie |
+| [http](http.md) |  | Sendet eine HTTP-Anfrage an ein anderes System, mit Geheimnissen über ihren Namen und einer optionalen Signatur, und behält die Antwort für Referenzen |
+| [mail](mail.md) |  | Sendet eine E-Mail über den Mailtransport der Installation |
+| [command](command.md) |  | Führt einen exp:*-Konsolenbefehl der Installation aus, den migration.ini erlaubt, ohne Shell |
+| [schema](schema.md) | create_table, drop_table, add_column, drop_column, add_index, drop_index | Legt eine Tabelle, eine Spalte oder einen Index auf jeder Engine über die Schema-Handler des Kernels an oder entfernt sie |
+| [data](data.md) | insert, ensure, update, delete | Fügt Zeilen einer Tabelle auf jeder Engine ein, ändert oder löscht sie; die Werte setzt die Verbindung in Anführungszeichen |
+| [sql](sql.md) |  | Führt Anweisungen der Engine aus, auf der die Installation läuft, im Schritt geschrieben oder in Dateien neben der Migration |
+| [settings](settings.md) |  | Ändert eine INI-Datei von settings/override oder settings/siteaccess/<name> über den INI-Editor, mit Sicherungskopie |
 
 - [Alle Beispiele](../README.md)
 

@@ -24,11 +24,12 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 > The most specific pattern wins; on a tie the later line wins. Events marked "always"  
 > in the catalogue (system.audit.\*, access.view.sensitive) ignore Disabled\[\].  
 > Migrations (migration.ini): a run, a migration applied (also a changed file accepted with  
-> --force --reason), failed or rolled back, a caption taken, the migrations repository pushed.  
+> --force --reason), failed or rolled back, a caption taken, the migrations repository pushed,  
+> and the requests, mails and console commands of their http, mail and command steps.  
 > A site that switches system.\* off keeps them with these lines.  
 > Static publishing: a publish (also a push tried again), a rollback, a deploy key made, a target saved.  
 
-Standard: eine Liste mit 43: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.staticpublish.publish`, `system.staticpublish.rollback`, `system.staticpublish.credential`, `system.staticpublish.target` ....
+Standard: eine Liste mit 47: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.migration.http`, `system.migration.mail`, `system.migration.command`, `system.migration.record` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -44,6 +45,10 @@ Enabled[]=system.migration.fail
 Enabled[]=system.migration.rollback
 Enabled[]=system.migration.caption
 Enabled[]=system.migration.push
+Enabled[]=system.migration.http
+Enabled[]=system.migration.mail
+Enabled[]=system.migration.command
+Enabled[]=system.migration.record
 Enabled[]=system.staticpublish.publish
 Enabled[]=system.staticpublish.rollback
 Enabled[]=system.staticpublish.credential
@@ -52,11 +57,7 @@ Enabled[]=content.node.move
 Enabled[]=content.node.remove.*
 Enabled[]=content.node.hide
 Enabled[]=content.node.reveal
-Enabled[]=content.node.swap
-Enabled[]=content.node.section
-Enabled[]=content.object.remove
-Enabled[]=content.object.purge
-# ... 23 weitere in der ausgelieferten Datei
+# ... 27 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

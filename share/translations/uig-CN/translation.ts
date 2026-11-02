@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ئىجرانى باشلىغىلى بولمىدى.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ئۆزگىرىشلەرنى خاتىرىلەش</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>خاتىرىلەش داۋاملىشىۋاتقاندا، باشقۇرۇشتا ياكى تور بېكەتنىڭ يان بالدىقىدا ئۆزگەرتكەنلىرىڭىز يۆتكەشنىڭ قەدەملىرى سۈپىتىدە ساقلىنىدۇ: مەزمۇن، تۈرلەر، رول ۋە سىياسەتلەر، بۆلەكلەر، ئىشلەتكۈچىلەر ۋە گۇرۇپپىلار، URL تەخەللۇسلىرى، تەڭشەكلەر. تاماملىغاندا توختىتىڭ، نېمىنى تۇتقانلىقىنى كۆرۈڭ ۋە ئۇنىڭدىن يۆتكەش قۇرۇڭ.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>خاتىرىلەرنى ئوقۇغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>خاتىرىلەرنىڭ جەدۋەللىرى تېخى يوق: ئالدى بىلەن يېڭىلاشنى ئىجرا قىلىڭ (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>خاتىرىلەش migration.ini دا تاقالغان ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>مېنىڭ ئۆزگىرىشلىرىم</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>سىز توختاتقۇچە پەقەت سىز ئۆزگەرتكەننى، قەيەردە ئۆزگەرتسىڭىزمۇ، خاتىرىلەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>خاتىرە</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time دىن بۇيان، ھازىرغىچە %count ئۆزگىرىش.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>بەلگە (ئىختىيارى)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>نېمىنى تۇتقانلىقىنى كۆرسىتىش</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>خاتىرىلەشنى توختىتىش</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ئۆزگىرىشلىرىمنى خاتىرىلەشنى باشلاش</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>پۈتۈن تور بېكەت كۆزنىكى</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>تاقالغۇچە ھەر بىر ئىشلەتكۈچى ۋە كونسولنىڭ ھەر بىر ئۆزگىرىشىنى خاتىرىلەيدۇ. ئاچقاندا ئۆزىڭىز ئىكەنلىكىڭىزنى دەلىللەش تەلەپ قىلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ئوچۇق</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>كۆزنەكنى تاقاش</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>پۈتۈن تور بېكەت كۆزنىكىنى ئېچىش</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>خاتىرىلەر</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ئىشلەتكۈچىنىڭ ھېساباتى (كىرىش ئاتى، ئېلخەت، پارول) ۋە ئىشلەتكۈچى ھېساباتلىرىنىڭ بۆلەكلىرى ھەرگىز خاتىرىلەنمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ئۆزگىرىشلەر</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>پۈتۈن تور بېكەت</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name نىڭ ئۆزگىرىشلىرى</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>توختىتىلغان</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>تېخى خاتىرە يوق.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>خاتىرە %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>بارلىق خاتىرىلەر</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ئۇنىڭدىن چىقىدىغان يۆتكەش</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ئۆزگەرتىلگەن ھەر بىر نەرسە ئۈچۈن بىر قەدەمگە يىغىلغان ئۆزگىرىشلەر: بۇ خاتىرىدىن قۇرۇلغان يۆتكەشنىڭ قىلىدىغىنى.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>بۇ ئورنىتىشتا YAML قەدەم تۈرلىرى %types بولغاندا ئۇنىڭدىن يۆتكەش قۇرغىلى بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>قەستەن چىقىرىۋېتىلدى: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ھېچنېمە خاتىرىلەنمىدى.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>نېمىنى تۇتقانلىقى</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ئۆزگىرىش، قىلىنغان تەرتىپ بويىچە.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ئۆزگىرىش</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>قەدەم</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>مۇناسىۋەتلىك</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>يەنە %count: ./console exp:migration:record:show ھەممىسىنى تىزىدۇ.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>تاشلاش</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>خاتىرە ۋە ئۇ تۇتقاننى ئۆچۈرىدۇ. ئۆزگەرتىلگەن ئۆزگەرگەن پېتى قالىدۇ.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ھەئە، بۇ خاتىرىنى تاشلاش</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>خاتىرىلىنىۋاتىدۇ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ئۆزگىرىشلىرىڭىز يۆتكەش ئۈچۈن خاتىرىلىنىۋاتىدۇ.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>بۇ تور بېكەتتىكى ھەر بىر ئۆزگىرىش يۆتكەش ئۈچۈن خاتىرىلىنىۋاتىدۇ (پۈتۈن تور بېكەت كۆزنىكى).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>پۈتۈن تور بېكەت خاتىرىلەش باشلاندى: سىز توختاتقۇچە ھەر بىر ئىشلەتكۈچىنىڭ ھەر بىر ئۆزگىرىشى خاتىرىلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>خاتىرىلەش باشلاندى: سىز توختاتقۇچە ئۆزگىرىشلىرىڭىز خاتىرىلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>خاتىرىلەش توختىتىلدى. تۇتقانلىرى سىز تاشلىغۇچە قالىدۇ.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>خاتىرە ۋە ئۇنىڭ ھادىسىلىرى ئۆچۈرۈلدى.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id خاتىرىسى يوق.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ئالدى بىلەن «ھەئە، بۇ خاتىرىنى تاشلاش» نى بەلگىلەڭ.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>سۆھبەت خاتىرىسىنى پەقەت خاتىرىلىگەن ئىشلەتكۈچىلا توختىتالايدۇ.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>توختىتىلىدىغان خاتىرىنى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>بۇ خىلدىكى خاتىرىلەش ئاللىبۇرۇن داۋاملىشىۋاتىدۇ.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>خاتىرىنى ئۆزگەرتكىلى بولمىدى: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub تۈر تور بېكىتى /&lt;repository&gt;/ ئاستىدا تۇرىدۇ؛ نىسبىي ئۇلانمىلار ئۇ يەردە ۋە باشقا ھەممە جايدا ئىشلەيدۇ.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>ياسالما %site نىڭ ھەر بىر بېتىنى كىرمىگەن زىيارەتچى كۆرگەندەك ئالىدۇ، ئۇلانمىلارنى قايتا يازىدۇ، ھۆججەتلەرنى كۆچۈرىدۇ ۋە نەتىجىنى نىشاننىڭ قىسقۇچىغا يازىدۇ. سىز ياسالمىنى تەكشۈرۈپ «ئېلان قىل» نى باسمىغۇچە ھېچنېمە ئېلان قىلىنمايدۇ.</translation>
     </message>
     <message>
@@ -81449,7 +81665,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>تازىلىغاندىن كېيىنمۇ سازلاش چىقىرىمى، جەدۋەل توكېنى ياكى ئەڭگىمە كىملىكى بار بەت ھەرگىز ئېلان قىلىنمايدۇ.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>قايتۇرۇش مۇتەخەسسىسلەر ئۈچۈن: «بۇنىڭ نېمىنى ئۆزگەرتىدىغانلىقىنى بىلىمەن» نى بەلگىلەڭ ۋە بەلگىنىڭ نامىنى قايتا كىرگۈزۈڭ.</translation>
     </message>
     <message>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ئالدىن كۆرۈشنى ئاچ</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>ياسالمىنى نىشاننىڭ قىسقۇچىدىن ساھىبخانا تەمىنلەيدىغاندەك ئاچىدۇ. ئۇلانما سىز ئۈچۈن بىر سائەت ئىشلەيدۇ.</translation>
     </message>
     <message>
@@ -82137,7 +82353,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ئورنىتىش &gt; مەخپىي قىممەتلەر</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>تىزىملىكلەردە كۆرسىتىلىدۇ، مەسىلەن «GitHub Pages دىكى ئاممىۋى تور بېكەت».</translation>
     </message>
     <message>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>تور بېكەت شۇ ئېلاننىڭ ھۆججەتلىرىگە قايتىدۇ؛ تېخى ئېلان قىلىنمىغان ياسالما ئالدى بىلەن ئېلان قىلىنىشى ياكى تاشلىنىشى كېرەك.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>مەۋجۇت بولمىغان ئادرېسلار ئۈچۈن تور بېكەتنىڭ ئۆز بېتى.</translation>
     </message>
     <message>
@@ -82353,7 +82569,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>نىشاننى ساقلىغىلى بولمىدى: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>نىشان تېخى بۇ ئاچقۇچ بىلەن كىرمەيدۇ: ئۇنىڭ تەڭشەكلىرىدە «بۇ نىشان ئۈچۈن ياسالغان ئورۇنلاشتۇرۇش ئاچقۇچى» نى تاللاڭ.</translation>
     </message>
     <message>
@@ -82389,7 +82605,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>بۇ ياسالمىنى تاشلايدۇ: قىسقۇچتا يەنە ئاخىرقى ئېلان بولىدۇ. جانلىق تور بېكەت ئۆزگەرمەيدۇ.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>ئالدى بىلەن «ئۆزگىرىشلەرنى تەكشۈردۈم» نى بەلگىلەڭ.</translation>
     </message>
     <message>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>ھەئە، تېخى ئېلان قىلىنمىدى</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ياسالما %site نىڭ ھەر بىر بېتىنى كىرمىگەن زىيارەتچى كۆرگەندەك ئالىدۇ، ئۇلانمىلارنى قايتا يازىدۇ، ھۆججەتلەرنى كۆچۈرىدۇ ۋە نەتىجىنى نىشاننىڭ قىسقۇچىغا يازىدۇ. سىز ياسالمىنى تەكشۈرۈپ «ئېلان قىل» نى باسمىغۇچە ھېچنېمە ئېلان قىلىنمايدۇ.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>قايتۇرۇش مۇتەخەسسىسلەر ئۈچۈن: «بۇنىڭ نېمىنى ئۆزگەرتىدىغانلىقىنى بىلىمەن» نى بەلگىلەڭ ۋە بەلگىنىڭ نامىنى قايتا كىرگۈزۈڭ.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>ياسالمىنى نىشاننىڭ قىسقۇچىدىن ساھىبخانا تەمىنلەيدىغاندەك ئاچىدۇ. ئۇلانما سىز ئۈچۈن بىر سائەت ئىشلەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>تىزىملىكلەردە كۆرسىتىلىدۇ، مەسىلەن «GitHub Pages دىكى ئاممىۋى تور بېكەت».</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>مەۋجۇت بولمىغان ئادرېسلار ئۈچۈن تور بېكەتنىڭ ئۆز بېتى.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>نىشان تېخى بۇ ئاچقۇچ بىلەن كىرمەيدۇ: ئۇنىڭ تەڭشەكلىرىدە «بۇ نىشان ئۈچۈن ياسالغان ئورۇنلاشتۇرۇش ئاچقۇچى» نى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>ئالدى بىلەن «ئۆزگىرىشلەرنى تەكشۈردۈم» نى بەلگىلەڭ.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

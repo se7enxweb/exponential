@@ -80590,6 +80590,222 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>The run could not be started.</source>
         <translation>Non se puido iniciar a execución.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Gravar cambios</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Mentres unha gravación está en marcha, o que cambias na administración ou na barra lateral do sitio gárdase como pasos dunha migración: contido, clases, roles e políticas, seccións, usuarios e grupos, alias de URL, axustes. Detena cando remates, mira o que capturou e xera a partir dela unha migración.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Non se puideron ler as gravacións: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>As táboas das gravacións aínda non existen: executa primeiro a actualización (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>A gravación está desactivada en migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Os meus cambios</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Grava só o que ti cambias, onde queira que o cambies, ata que a deteñas.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Gravación</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>desde %time, %count cambio(s) ata agora.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiqueta (opcional)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Ver o que capturou</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Deter a gravación</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Comezar a gravar os meus cambios</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Xanela para todo o sitio</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Grava cada cambio de cada usuario e da consola ata que se peche. Ao abrila pídeseche que verifiques que es ti.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aberta</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Pechar a xanela</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Abrir a xanela para todo o sitio</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Gravacións</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>A conta dun usuario (nome de usuario, correo electrónico, contrasinal) e os campos das contas de usuario nunca se gravan.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Cambios</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Todo o sitio</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Cambios de %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Detida</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Aínda non hai ningunha gravación.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Gravación %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Todas as gravacións</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>A migración que xeraría</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Os cambios agrupados nun paso por cada elemento cambiado: o que faría unha migración xerada a partir desta gravación.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Poderase xerar unha migración a partir dela cando esta instalación teña os tipos de paso YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Omitido a propósito: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Non se gravou nada.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>O que capturou</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count cambio(s), na orde en que se fixeron.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Cambio</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Paso</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Afecta a</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count máis: ./console exp:migration:record:show lístaos todos.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Descartar</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Elimina a gravación e o que capturou. O que se cambiou segue cambiado.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Si, descartar esta gravación</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Gravando…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Os teus cambios grávanse para unha migración.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Cada cambio neste sitio grávase para unha migración (xanela para todo o sitio).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>A gravación de todo o sitio comezou: cada cambio de cada usuario grávase ata que a deteñas.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>A gravación comezou: os teus cambios grávanse ata que a deteñas.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Gravación detida. O que capturou consérvase ata que a descartes.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Elimináronse a gravación e os seus eventos.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Non existe a gravación %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Marca primeiro «Si, descartar esta gravación».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Só o usuario que gravou pode deter unha gravación de sesión.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Escolle a gravación que queres deter.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Xa hai unha gravación deste tipo en marcha.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Non se puido cambiar a gravación: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <translation>Un sitio de proxecto de GitHub está baixo /&lt;repository&gt;/; as ligazóns relativas funcionan alí e en calquera outro lugar.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Unha compilación obtén cada páxina de %site tal como a ve un visitante sen sesión iniciada, reescribe as ligazóns, copia os ficheiros e escribe o resultado no cartafol do destino. Non se publica nada ata que revise a compilación e prema Publicar.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <translation>Unha páxina que aínda leve saída de depuración, un token de formulario ou un id de sesión despois da limpeza nunca se publica.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Unha reversión é para expertos: marque "Sei o que cambia isto" e escriba de novo o nome da etiqueta.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Unha reversión é para expertos: marque &quot;Sei o que cambia isto&quot; e escriba de novo o nome da etiqueta.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <translation>Abrir a vista previa</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Abre a compilación tal como a servirá o aloxamento, desde o cartafol do destino. A ligazón funciona para vostede durante unha hora.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <translation>Configuración &gt; Segredos</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Móstrase nas listas, por exemplo "Sitio público en GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Móstrase nas listas, por exemplo &quot;Sitio público en GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <translation>O sitio volve aos ficheiros desa publicación; unha compilación aínda non publicada debe publicarse ou descartarse primeiro.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>A páxina propia do sitio para enderezos que non existen.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <translation>Non se puido gardar o destino: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>O destino aínda non inicia sesión con esta chave: escolla "Unha chave de despregamento creada para este destino" na súa configuración.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>O destino aínda non inicia sesión con esta chave: escolla &quot;Unha chave de despregamento creada para este destino&quot; na súa configuración.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <translation>Descarta esta compilación: o cartafol volve conter a última publicación. O sitio en liña non cambia.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Marque primeiro "Revisei os cambios".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Marque primeiro &quot;Revisei os cambios&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>yes, not published yet</source>
         <translation>si, aínda non publicado</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Unha compilación obtén cada páxina de %site tal como a ve un visitante sen sesión iniciada, reescribe as ligazóns, copia os ficheiros e escribe o resultado no cartafol do destino. Non se publica nada ata que revise a compilación e prema Publicar.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Unha reversión é para expertos: marque "Sei o que cambia isto" e escriba de novo o nome da etiqueta.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Abre a compilación tal como a servirá o aloxamento, desde o cartafol do destino. A ligazón funciona para vostede durante unha hora.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Móstrase nas listas, por exemplo "Sitio público en GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>A páxina propia do sitio para enderezos que non existen.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>O destino aínda non inicia sesión con esta chave: escolla "Unha chave de despregamento creada para este destino" na súa configuración.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Marque primeiro "Revisei os cambios".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

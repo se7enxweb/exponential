@@ -32,6 +32,19 @@ Every step type of YAML migrations the kernel registers in `settings/migration.i
 | [trash](trash.md) | move, restore, purge | Moves content to the trash, restores it from the trash, or purges it for good |
 | [file](file.md) |  | Attaches a file of the migrations folder to a file attribute (ezbinaryfile, ezmedia) of an object |
 | [image](image.md) |  | Puts an image of the migrations folder into an image attribute of an object, with its alternative text, focal point and crop rectangle |
+| [cache](cache.md) |  | Clears caches of ezcache by id or tag and the view caches of single objects, at once or after the run |
+| [search](search.md) | reindex, full | Reindexes objects in the search engine (the ones named or the ones the run changed), or every object |
+| [autoload](autoload.md) |  | Regenerates the autoload array of the extensions or of the kernel classes extensions replace |
+| [layout](layout.md) | create, update, ensure, delete | Creates, updates, ensures or deletes a layout of Exponential Layouts with its zones and their links to shared layouts |
+| [layout_block](layout_block.md) | create, update, ensure, delete | Creates, updates, ensures or deletes a block in a zone of a layout of Exponential Layouts, with its parameters |
+| [layout_rule](layout_rule.md) | create, update, ensure, delete | Creates, updates, ensures or deletes a rule of Exponential Layouts that maps pages to a layout |
+| [http](http.md) |  | Sends one HTTP request to another system, with secrets by name and an optional signature, and keeps the answer for references |
+| [mail](mail.md) |  | Sends one e-mail through the mail transport of the installation |
+| [command](command.md) |  | Runs one exp:* console command of the installation that migration.ini allows, without a shell |
+| [schema](schema.md) | create_table, drop_table, add_column, drop_column, add_index, drop_index | Makes or drops a table, a column or an index on every engine through the kernel's schema handlers |
+| [data](data.md) | insert, ensure, update, delete | Inserts, updates or deletes rows of a table on every engine, the values quoted by the connection |
+| [sql](sql.md) |  | Runs statements of the engine the installation runs on, written in the step or in files next to the migration |
+| [settings](settings.md) |  | Changes one INI file of settings/override or settings/siteaccess/<name> through the INI editor, with a backup |
 
 - [All examples](../README.md)
 

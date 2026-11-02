@@ -2,14 +2,14 @@
 title: migration.ini [StepSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [StepSettings] in migration.ini: StepTypeList, MaxLoopIterations"
-keywords: Einstellung, migration.ini, StepSettings, INI, setting, StepTypeList, MaxLoopIterations
+summary: "Die Einstellungen von [StepSettings] in migration.ini: StepTypeList, CommandAllowList, MaxLoopIterations"
+keywords: Einstellung, migration.ini, StepSettings, INI, setting, StepTypeList, CommandAllowList, MaxLoopIterations
 type: generated
 generated: exp:help:examples
 ---
 # migration.ini [StepSettings]
 
-Der Block `[StepSettings]` von `settings/migration.ini`, mit 2 Einstellung(en).
+Der Block `[StepSettings]` von `settings/migration.ini`, mit 3 Einstellung(en).
 
 Bearbeiten Sie `settings/migration.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -22,7 +22,7 @@ Bearbeiten Sie `settings/migration.ini` nie selbst: Ein Update ersetzt die Datei
 > Die Schritttypen von YAML-Migrationen: StepTypeList\[<Name>\]=<Klasse>, wobei <Name> das ist, was "type:" eines Schritts nennt, und  
 > die Klasse expMigrationStepType implementiert. Eine Erweiterung registriert ihre eigenen in ihrer migration.ini.append.php.  
 
-Standard: ein Hash mit 18: `reference=expMigrationStepReference`, `assert=expMigrationStepAssert`, `content=expMigrationStepContent`, `location=expMigrationStepLocation`, `content_version=expMigrationStepContentVersion`, `content_class=expMigrationStepContentClass`, `content_class_group=expMigrationStepContentClassGroup`, `user=expMigrationStepUser`, `user_group=expMigrationStepUserGroup`, `role=expMigrationStepRole`, `section=expMigrationStepSection`, `language=expMigrationStepLanguage` ....
+Standard: ein Hash mit 31: `reference=expMigrationStepReference`, `assert=expMigrationStepAssert`, `content=expMigrationStepContent`, `location=expMigrationStepLocation`, `content_version=expMigrationStepContentVersion`, `content_class=expMigrationStepContentClass`, `content_class_group=expMigrationStepContentClassGroup`, `user=expMigrationStepUser`, `user_group=expMigrationStepUserGroup`, `role=expMigrationStepRole`, `section=expMigrationStepSection`, `language=expMigrationStepLanguage` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -48,6 +48,30 @@ StepTypeList[url_alias]=expMigrationStepUrlAlias
 StepTypeList[trash]=expMigrationStepTrash
 StepTypeList[file]=expMigrationStepFile
 StepTypeList[image]=expMigrationStepImage
+StepTypeList[cache]=expMigrationStepCache
+StepTypeList[search]=expMigrationStepSearch
+# ... 11 weitere in der ausgelieferten Datei
+*/ ?>
+```
+
+## CommandAllowList
+
+> Die Konsolenbefehle, die der Schritttyp command ausführen darf: exp:\*-Befehle von ./console, mit Namen (exp:services:compile) oder  
+> mit \* am Ende für eine Gruppe (exp:static:\*). Nichts anderes läuft, und exp:migration:\* und exp:upgrade\* laufen nie  
+> (sie nehmen die Sperre, die der Lauf hält). Es gibt keine Shell: Befehl und Argumente werden als Liste übergeben.  
+
+Standard: eine Liste mit 4: `exp:services:compile`, `exp:graphql:persist`, `exp:help:content`, `exp:static:build`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[StepSettings]
+# ein leeres "CommandAllowList[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+CommandAllowList[]
+CommandAllowList[]=exp:services:compile
+CommandAllowList[]=exp:graphql:persist
+CommandAllowList[]=exp:help:content
+CommandAllowList[]=exp:static:build
 */ ?>
 ```
 

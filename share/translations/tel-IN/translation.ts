@@ -80588,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>రన్‌ను ప్రారంభించడం సాధ్యం కాలేదు.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>మార్పుల రికార్డింగ్</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>రికార్డింగ్ నడుస్తున్నంత వరకు మీరు నిర్వహణలో లేదా సైట్ సైడ్‌బార్‌లో మార్చేది ఒక మైగ్రేషన్ దశలుగా ఉంచబడుతుంది: కంటెంట్, తరగతులు, పాత్రలు మరియు విధానాలు, విభాగాలు, వినియోగదారులు మరియు సమూహాలు, URL మారుపేర్లు, సెట్టింగ్‌లు. పూర్తయ్యాక దాన్ని ఆపండి, అది ఏమి పట్టుకుందో చూడండి, దాని నుండి మైగ్రేషన్‌ను సృష్టించండి.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>రికార్డింగ్‌లను చదవలేకపోయాము: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>రికార్డింగ్ పట్టికలు ఇంకా లేవు: ముందుగా అప్‌గ్రేడ్‌ను అమలు చేయండి (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini లో రికార్డింగ్ ఆఫ్ చేయబడింది ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>నా మార్పులు</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>మీరు ఆపే వరకు మీరు మార్చేదాన్ని మాత్రమే, ఎక్కడ మార్చినా, రికార్డ్ చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>రికార్డింగ్</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time నుండి, ఇప్పటివరకు %count మార్పులు.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>లేబుల్ (ఐచ్ఛికం)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>అది ఏమి పట్టుకుందో చూపించు</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>రికార్డింగ్ ఆపు</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>నా మార్పుల రికార్డింగ్ ప్రారంభించు</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>మొత్తం సైట్ కిటికీ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>మూసే వరకు ప్రతి వినియోగదారు మరియు కన్సోల్ యొక్క ప్రతి మార్పును రికార్డ్ చేస్తుంది. తెరిచేటప్పుడు మీరేనని ధృవీకరించమని అడుగుతుంది.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>తెరిచి ఉంది</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>కిటికీ మూసివేయి</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>మొత్తం సైట్ కిటికీ తెరువు</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>రికార్డింగ్‌లు</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>వినియోగదారు ఖాతా (లాగిన్, ఇ-మెయిల్, పాస్‌వర్డ్) మరియు వినియోగదారు ఖాతాల ఫీల్డ్‌లు ఎప్పుడూ రికార్డ్ చేయబడవు.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>మార్పులు</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>మొత్తం సైట్</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name యొక్క మార్పులు</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ఆపబడింది</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ఇంకా రికార్డింగ్ లేదు.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>రికార్డింగ్ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>అన్ని రికార్డింగ్‌లు</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>దీని నుండి వచ్చే మైగ్రేషన్</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>మార్చిన ప్రతి దానికి ఒక దశగా కలిపిన మార్పులు: ఈ రికార్డింగ్ నుండి సృష్టించిన మైగ్రేషన్ ఏమి చేస్తుందో.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ఈ ఇన్‌స్టాలేషన్‌లో YAML దశ రకాలు %types ఉన్నప్పుడు దీని నుండి మైగ్రేషన్ సృష్టించవచ్చు.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ఉద్దేశపూర్వకంగా వదిలేశాం: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ఏమీ రికార్డ్ కాలేదు.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>అది ఏమి పట్టుకుంది</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count మార్పులు, చేసిన క్రమంలో.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>మార్పు</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>దశ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>సంబంధించినది</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>మరో %count: ./console exp:migration:record:show అన్నింటినీ జాబితా చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>విస్మరించు</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>రికార్డింగ్‌ను మరియు అది పట్టుకున్నదాన్ని తొలగిస్తుంది. మారినది మారినట్లే ఉంటుంది.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>అవును, ఈ రికార్డింగ్‌ను విస్మరించు</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>రికార్డ్ అవుతోంది…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>మీ మార్పులు ఒక మైగ్రేషన్ కోసం రికార్డ్ అవుతున్నాయి.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ఈ సైట్‌లోని ప్రతి మార్పు ఒక మైగ్రేషన్ కోసం రికార్డ్ అవుతోంది (మొత్తం సైట్ కిటికీ).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>మొత్తం సైట్ రికార్డింగ్ ప్రారంభమైంది: మీరు ఆపే వరకు ప్రతి వినియోగదారు యొక్క ప్రతి మార్పు రికార్డ్ అవుతుంది.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>రికార్డింగ్ ప్రారంభమైంది: మీరు ఆపే వరకు మీ మార్పులు రికార్డ్ అవుతాయి.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>రికార్డింగ్ ఆగింది. అది పట్టుకున్నది మీరు విస్మరించే వరకు ఉంటుంది.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>రికార్డింగ్ మరియు దాని సంఘటనలు తొలగించబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>రికార్డింగ్ %id లేదు.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ముందుగా "అవును, ఈ రికార్డింగ్‌ను విస్మరించు" ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>సెషన్ రికార్డింగ్‌ను రికార్డ్ చేసిన వినియోగదారు మాత్రమే ఆపగలరు.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ఆపాల్సిన రికార్డింగ్‌ను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ఈ రకమైన రికార్డింగ్ ఇప్పటికే నడుస్తోంది.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>రికార్డింగ్‌ను మార్చలేకపోయాము: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81399,7 +81615,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub ప్రాజెక్ట్ సైట్ /&lt;repository&gt;/ కింద ఉంటుంది; సాపేక్ష లింక్‌లు అక్కడ మరియు ఇంకెక్కడైనా పనిచేస్తాయి.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>ఒక బిల్డ్ %site లోని ప్రతి పేజీని సైన్ ఇన్ చేయని సందర్శకుడు చూసే విధంగా తెచ్చి, లింక్‌లను తిరిగి వ్రాసి, ఫైల్‌లను కాపీ చేసి, ఫలితాన్ని లక్ష్యం యొక్క ఫోల్డర్‌లో వ్రాస్తుంది. మీరు బిల్డ్‌ను తనిఖీ చేసి ప్రచురించండి నొక్కే వరకు ఏదీ ప్రచురించబడదు.</translation>
     </message>
     <message>
@@ -81447,8 +81663,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>తొలగింపు తర్వాత కూడా డీబగ్ అవుట్‌పుట్, ఫారమ్ టోకెన్ లేదా సెషన్ ఐడి ఉన్న పేజీ ఎప్పుడూ ప్రచురించబడదు.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>వెనక్కి తీసుకోవడం నిపుణుల కోసం: "ఇది ఏమి మారుస్తుందో నాకు తెలుసు" ను టిక్ చేసి ట్యాగ్ పేరును మళ్లీ టైప్ చేయండి.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>వెనక్కి తీసుకోవడం నిపుణుల కోసం: &quot;ఇది ఏమి మారుస్తుందో నాకు తెలుసు&quot; ను టిక్ చేసి ట్యాగ్ పేరును మళ్లీ టైప్ చేయండి.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81959,7 +82175,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ప్రివ్యూను తెరవండి</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>హోస్ట్ అందించే విధంగానే, లక్ష్యం యొక్క ఫోల్డర్ నుండి బిల్డ్‌ను తెరుస్తుంది. లింక్ మీ కోసం ఒక గంట పనిచేస్తుంది.</translation>
     </message>
     <message>
@@ -82135,8 +82351,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>సెటప్ &gt; రహస్యాలు</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>జాబితాలలో చూపబడుతుంది, ఉదాహరణకు "GitHub Pages లో పబ్లిక్ సైట్".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>జాబితాలలో చూపబడుతుంది, ఉదాహరణకు &quot;GitHub Pages లో పబ్లిక్ సైట్&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82343,7 +82559,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>సైట్ ఆ ప్రచురణ ఫైల్‌లకు వెనక్కి వెళ్తుంది; ఇంకా ప్రచురించని బిల్డ్‌ను ముందుగా ప్రచురించాలి లేదా విస్మరించాలి.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>ఉనికిలో లేని చిరునామాల కోసం సైట్ యొక్క సొంత పేజీ.</translation>
     </message>
     <message>
@@ -82351,8 +82567,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>లక్ష్యాన్ని సేవ్ చేయలేకపోయాము: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>లక్ష్యం ఇంకా ఈ కీతో సైన్ ఇన్ అవ్వదు: దాని సెట్టింగ్‌లలో "ఈ లక్ష్యం కోసం సృష్టించిన డిప్లాయ్ కీ" ను ఎంచుకోండి.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>లక్ష్యం ఇంకా ఈ కీతో సైన్ ఇన్ అవ్వదు: దాని సెట్టింగ్‌లలో &quot;ఈ లక్ష్యం కోసం సృష్టించిన డిప్లాయ్ కీ&quot; ను ఎంచుకోండి.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82387,8 +82603,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ఈ బిల్డ్‌ను విస్మరిస్తుంది: ఫోల్డర్‌లో మళ్లీ చివరి ప్రచురణ ఉంటుంది. లైవ్ సైట్ మారదు.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ముందుగా "నేను మార్పులను తనిఖీ చేశాను" ను టిక్ చేయండి.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ముందుగా &quot;నేను మార్పులను తనిఖీ చేశాను&quot; ను టిక్ చేయండి.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82609,6 +82825,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>అవును, ఇంకా ప్రచురించబడలేదు</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ఒక బిల్డ్ %site లోని ప్రతి పేజీని సైన్ ఇన్ చేయని సందర్శకుడు చూసే విధంగా తెచ్చి, లింక్‌లను తిరిగి వ్రాసి, ఫైల్‌లను కాపీ చేసి, ఫలితాన్ని లక్ష్యం యొక్క ఫోల్డర్‌లో వ్రాస్తుంది. మీరు బిల్డ్‌ను తనిఖీ చేసి ప్రచురించండి నొక్కే వరకు ఏదీ ప్రచురించబడదు.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>వెనక్కి తీసుకోవడం నిపుణుల కోసం: "ఇది ఏమి మారుస్తుందో నాకు తెలుసు" ను టిక్ చేసి ట్యాగ్ పేరును మళ్లీ టైప్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>హోస్ట్ అందించే విధంగానే, లక్ష్యం యొక్క ఫోల్డర్ నుండి బిల్డ్‌ను తెరుస్తుంది. లింక్ మీ కోసం ఒక గంట పనిచేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>జాబితాలలో చూపబడుతుంది, ఉదాహరణకు "GitHub Pages లో పబ్లిక్ సైట్".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>ఉనికిలో లేని చిరునామాల కోసం సైట్ యొక్క సొంత పేజీ.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>లక్ష్యం ఇంకా ఈ కీతో సైన్ ఇన్ అవ్వదు: దాని సెట్టింగ్‌లలో "ఈ లక్ష్యం కోసం సృష్టించిన డిప్లాయ్ కీ" ను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>ముందుగా "నేను మార్పులను తనిఖీ చేశాను" ను టిక్ చేయండి.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

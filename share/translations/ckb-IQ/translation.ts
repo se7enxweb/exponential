@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>جێبەجێکردنەکە دەستی پێنەکرا.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>تۆمارکردنی گۆڕانکارییەکان</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>تا تۆمارکردنێک کار دەکات، ئەوەی لە بەڕێوەبردن یان لە شریتی لاتەنیشتی ماڵپەڕ دەیگۆڕیت وەک هەنگاوەکانی گواستنەوەیەک دەپارێزرێت: ناوەڕۆک، پۆلەکان، ڕۆڵ و سیاسەتەکان، بەشەکان، بەکارهێنەران و گرووپەکان، ناوە خوازراوەکانی URL، ڕێکخستنەکان. کاتێک تەواو بوویت ڕایبگرە، سەیر بکە چی گرتووە و لێیەوە گواستنەوەیەک دروست بکە.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>تۆمارەکان نەخوێندرانەوە: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>خشتەکانی تۆمار هێشتا بوونیان نییە: سەرەتا بەرزکردنەوە ئەنجام بدە (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>تۆمارکردن لە migration.ini دا کوژاوەتەوە ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>گۆڕانکارییەکانی من</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>تەنها ئەوە تۆمار دەکات کە تۆ دەیگۆڕیت، لە هەر شوێنێک بێت، تا ڕایدەگریت.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>تۆمار</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>لە %time ەوە، تا ئێستا %count گۆڕانکاری.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ناونیشان (ئارەزوومەندانە)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>پیشاندانی ئەوەی گرتوویەتی</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ڕاگرتنی تۆمارکردن</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>دەستپێکردنی تۆمارکردنی گۆڕانکارییەکانم</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>پەنجەرەی هەموو ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>هەموو گۆڕانکارییەکی هەموو بەکارهێنەرێک و کۆنسۆڵ تۆمار دەکات تا دادەخرێت. لە کاتی کردنەوەدا داوات لێ دەکرێت پشتڕاستی بکەیتەوە کە خۆتیت.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>کراوە</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>داخستنی پەنجەرە</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>کردنەوەی پەنجەرەی هەموو ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>تۆمارەکان</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>هەژماری بەکارهێنەر (ناوی چوونەژوورەوە، ئیمەیڵ، وشەی نهێنی) و خانەکانی هەژماری بەکارهێنەران هەرگیز تۆمار ناکرێن.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>گۆڕانکارییەکان</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>هەموو ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>گۆڕانکارییەکانی %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ڕاگیراو</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>هێشتا هیچ تۆمارێک نییە.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>تۆمار %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>هەموو تۆمارەکان</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ئەو گواستنەوەیەی لێی دروست دەبێت</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>گۆڕانکارییەکان کۆکراونەتەوە بۆ یەک هەنگاو بۆ هەر شتێکی گۆڕاو: ئەوەی گواستنەوەیەکی دروستکراو لەم تۆمارە دەیکات.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>کاتێک ئەم دامەزراندنە جۆرەکانی هەنگاوی YAML %types ی هەبێت، دەتوانرێت گواستنەوەی لێ دروست بکرێت.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>بە ئەنقەست لابرا: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>هیچ شتێک تۆمار نەکرا.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ئەوەی گرتوویەتی</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count گۆڕانکاری، بەو ڕیزبەندییەی کراون.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>گۆڕانکاری</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>هەنگاو</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>پەیوەندیدار بە</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count ی تر: ./console exp:migration:record:show هەموویان لیست دەکات.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>فڕێدان</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>تۆمارەکە و ئەوەی گرتوویەتی لادەبات. ئەوەی گۆڕاوە گۆڕاو دەمێنێتەوە.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>بەڵێ، ئەم تۆمارە فڕێ بدە</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>تۆمار دەکرێت…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>گۆڕانکارییەکانت بۆ گواستنەوەیەک تۆمار دەکرێن.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>هەموو گۆڕانکارییەک لەم ماڵپەڕەدا بۆ گواستنەوەیەک تۆمار دەکرێت (پەنجەرەی هەموو ماڵپەڕ).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>تۆمارکردنی هەموو ماڵپەڕ دەستی پێکرد: هەموو گۆڕانکارییەکی هەموو بەکارهێنەرێک تۆمار دەکرێت تا ڕایدەگریت.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>تۆمارکردن دەستی پێکرد: گۆڕانکارییەکانت تۆمار دەکرێن تا ڕایدەگریت.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>تۆمارکردن ڕاگیرا. ئەوەی گرتوویەتی دەمێنێتەوە تا فڕێی دەدەیت.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>تۆمارەکە و ڕووداوەکانی لابران.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>هیچ تۆمارێکی %id نییە.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>سەرەتا «بەڵێ، ئەم تۆمارە فڕێ بدە» نیشانە بکە.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>تەنها ئەو بەکارهێنەرەی تۆماری کردووە دەتوانێت تۆماری دانیشتن ڕابگرێت.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ئەو تۆمارە هەڵبژێرە کە ڕادەگیرێت.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>تۆمارێکی ئەم جۆرە پێشتر کار دەکات.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>تۆمارەکە نەگۆڕدرا: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ماڵپەڕی پرۆژەیەکی GitHub لە ژێر /&lt;repository&gt;/ دایە؛ بەستەرە ڕێژەییەکان لەوێ و لە هەر شوێنێکی تر کار دەکەن.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>بنیاتنانێک هەموو پەڕەیەکی %site دەهێنێت وەک ئەوەی سەردانکەرێکی نەچووەژوورەوە دەیبینێت، بەستەرەکان دووبارە دەنووسێتەوە، فایلەکان کۆپی دەکات و ئەنجامەکە دەنووسێت بۆ بوخچەی ئامانجەکە. هیچ شتێک بڵاو ناکرێتەوە تا بنیاتنانەکە نەپشکنن و بڵاوکردنەوە دانەگرن.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>پەڕەیەک کە دوای پاککردنەوە هێشتا دەرهاوێشتەی هەڵەدۆزی، تۆکنی فۆرم یان ناسنامەی دانیشتن لەخۆ بگرێت هەرگیز بڵاو ناکرێتەوە.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>گەڕاندنەوە بۆ شارەزایانە: "دەزانم ئەمە چی دەگۆڕێت" دیاری بکەن و ناوی تاگەکە دووبارە بنووسنەوە.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>گەڕاندنەوە بۆ شارەزایانە: &quot;دەزانم ئەمە چی دەگۆڕێت&quot; دیاری بکەن و ناوی تاگەکە دووبارە بنووسنەوە.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>پێشبینینەکە بکەنەوە</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>بنیاتنانەکە دەکاتەوە وەک ئەوەی خانەخوێ پێشکەشی دەکات، لە بوخچەی ئامانجەکەوە. بەستەرەکە بۆ ماوەی کاتژمێرێک بۆ ئێوە کار دەکات.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>دامەزراندن &gt; نهێنییەکان</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>لە لیستەکاندا پیشان دەدرێت، بۆ نموونە "ماڵپەڕی گشتی لەسەر GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>لە لیستەکاندا پیشان دەدرێت، بۆ نموونە &quot;ماڵپەڕی گشتی لەسەر GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ماڵپەڕەکە دەگەڕێتەوە بۆ فایلەکانی ئەو بڵاوکردنەوەیە؛ بنیاتنانێک کە هێشتا بڵاو نەکراوەتەوە دەبێت سەرەتا بڵاو بکرێتەوە یان فڕێ بدرێت.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>پەڕەی تایبەتی ماڵپەڕەکە بۆ ئەو ناونیشانانەی بوونیان نییە.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ئامانجەکە پاشەکەوت نەکرا: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ئامانجەکە هێشتا بەم کلیلە ناچێتە ژوورەوە: لە ڕێکخستنەکانیدا "کلیلی دیپلۆیی دروستکراو بۆ ئەم ئامانجە" هەڵبژێرن.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ئامانجەکە هێشتا بەم کلیلە ناچێتە ژوورەوە: لە ڕێکخستنەکانیدا &quot;کلیلی دیپلۆیی دروستکراو بۆ ئەم ئامانجە&quot; هەڵبژێرن.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ئەم بنیاتنانە فڕێ دەدات: بوخچەکە دووبارە دوایین بڵاوکردنەوە لەخۆ دەگرێت. ماڵپەڕی ڕاستەوخۆ ناگۆڕێت.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>سەرەتا "گۆڕانکارییەکانم پشکنیوە" دیاری بکەن.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>سەرەتا &quot;گۆڕانکارییەکانم پشکنیوە&quot; دیاری بکەن.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>بەڵێ، هێشتا بڵاو نەکراوەتەوە</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>بنیاتنانێک هەموو پەڕەیەکی %site دەهێنێت وەک ئەوەی سەردانکەرێکی نەچووەژوورەوە دەیبینێت، بەستەرەکان دووبارە دەنووسێتەوە، فایلەکان کۆپی دەکات و ئەنجامەکە دەنووسێت بۆ بوخچەی ئامانجەکە. هیچ شتێک بڵاو ناکرێتەوە تا بنیاتنانەکە نەپشکنن و بڵاوکردنەوە دانەگرن.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>گەڕاندنەوە بۆ شارەزایانە: "دەزانم ئەمە چی دەگۆڕێت" دیاری بکەن و ناوی تاگەکە دووبارە بنووسنەوە.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>بنیاتنانەکە دەکاتەوە وەک ئەوەی خانەخوێ پێشکەشی دەکات، لە بوخچەی ئامانجەکەوە. بەستەرەکە بۆ ماوەی کاتژمێرێک بۆ ئێوە کار دەکات.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>لە لیستەکاندا پیشان دەدرێت، بۆ نموونە "ماڵپەڕی گشتی لەسەر GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>پەڕەی تایبەتی ماڵپەڕەکە بۆ ئەو ناونیشانانەی بوونیان نییە.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ئامانجەکە هێشتا بەم کلیلە ناچێتە ژوورەوە: لە ڕێکخستنەکانیدا "کلیلی دیپلۆیی دروستکراو بۆ ئەم ئامانجە" هەڵبژێرن.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>سەرەتا "گۆڕانکارییەکانم پشکنیوە" دیاری بکەن.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

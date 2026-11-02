@@ -80590,6 +80590,222 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>The run could not be started.</source>
         <translation>Mënuñu woon a tàmbali doxal bi.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Bind coppite yi</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Bi bind bi di dox, li ngay soppi ci yorkat bi walla ci barr bu wet bu site bi dañuy denc ko niki tànki toxu: li ci biir, klaas yi, liggéey yi ak sàrt yi, xaaj yi, jëfandikukat yi ak mbooloo yi, turu weneen yu URL, tànneef yi. Taxawal ko soo noppee, xool li mu jàpp, te defar toxu ci li.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Mënuñu a jàng bind yi: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Taabal yu bind yi amaguñu: njëkk dëbbal yeesal bi (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Bind bi fey nañu ko ci migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Samay coppite</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Day bind rekk li ngay soppi, fépp fu nga ko soppi, ba nga taxawal ko.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Bind</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>li dale ci %time, coppite %count ba leegi.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Màndarga (bu dul war)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Wone li mu jàpp</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Taxawal bind bi</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Tàmbali bind samay coppite</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Palanteeru site bi yépp</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Day bind coppite bu nekk ci jëfandikukat bu nekk ak konsol bi ba ñu tëj ko. Soo ko ubbee, dañuy laaj nga wóorlu ne yaw la.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ubbeeku na</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Tëj palanteer bi</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ubbi palanteeru site bi yépp</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Bind yi</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Kontu jëfandikukat (turu dugg, imeel, baatu jàll) ak barab yu kontu jëfandikukat yi duñu leen mukk bind.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Coppite yi</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Site bi yépp</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Coppitey %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Taxaw na</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Amagul benn bind.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Bind %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Bind yépp</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Toxu bi mu ciy génne</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Coppite yi ñu boole ci benn tànk ngir lu nekk lu ñu soppi: li toxu bu ñu defar ci bind bii di def.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Mën nañu defar toxu ci moom bu instalaasioŋ bii amee xeeti tànki YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Bàyyi nañu ko ci coobare: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Dara bindu.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Li mu jàpp</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Coppite %count, ci toftal gi ñu ko defe.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Coppite</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Tànk</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Jëm ci</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Yeneen %count: ./console exp:migration:record:show day lim yépp.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Sànni</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Day far bind bi ak li mu jàpp. Li ñu soppi day des ni ñu ko soppee.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Waaw, sànni bind bii</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Mi ngi bind…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Say coppite dañuy bind ngir toxu.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Coppite bu nekk ci site bii dañuy bind ngir toxu (palanteeru site bi yépp).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Bindu site bi yépp tàmbali na: coppite bu nekk ci jëfandikukat bu nekk dañu koy bind ba nga taxawal ko.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Bind bi tàmbali na: say coppite dañuy bind ba nga taxawal ko.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Bind bi taxaw na. Li mu jàpp day des ba nga sànni ko.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Far nañu bind bi ak xew-xewam yi.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Amul benn bind %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Njëkk tànn "Waaw, sànni bind bii".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Jëfandikukat bi bind rekk moo mën a taxawal bindu ndaje.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Tànnal bind bi ñuy taxawal.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Bind bu xeet wii mi ngi dox ba noppi.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Mënuñu a soppi bind bi: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Situ projet GitHub dafa nekk ci suufu /&lt;repository&gt;/; lëkkalekaay yu relatif yi dañuy dox fa ak fépp feneen.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Tabax dafay yóbbu xët bu nekk bu %site ni ko ganaa bu duggul di gise, di bindaat lëkkalekaay yi, di duppi fisie yi te di bind njureel gi ci dosieu jëmuwaay bi. Dara du siiwalu ba nga saytu tabax bi te bës ci Siiwal.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Xët bu ci des ba léegi génnu debug, token bu formulaar walla id bu sesiyoŋ ginnaaw ba ñu ko setal, duñu ko siiwal mukk.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Dellu ginnaaw ngir boroom xam-xam la: tànnal "Xam naa li lii di soppi" te bindaat turu màndarga mi.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Dellu ginnaaw ngir boroom xam-xam la: tànnal &quot;Xam naa li lii di soppi&quot; te bindaat turu màndarga mi.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Ubbi xool lu jiitu</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Dafay ubbi tabax bi ni host bi koy joxe, ci dosieu jëmuwaay bi. Lëkkalekaay bi dafay dox ci yaw benn waxtu.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Defar &gt; Mbóot yi</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Dañu koy wone ci lim yi, misaal "Sit bu siiwu ci GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Dañu koy wone ci lim yi, misaal &quot;Sit bu siiwu ci GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Sit bi dafay dellu ci fisie yu siiwal boobu; tabax bu ñu siiwalagul war nañu ko siiwal walla sànni ko njëkk.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Xët bu sit bi ci boppam ngir adrees yu amul.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Mënuñu woon a denc jëmuwaay bi: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Jëmuwaay bi duggagul ak caabi bii: tànnal "Caabi yónnee bu ñu defar ngir jëmuwaay bii" ci tànneefam.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Jëmuwaay bi duggagul ak caabi bii: tànnal &quot;Caabi yónnee bu ñu defar ngir jëmuwaay bii&quot; ci tànneefam.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Dafay sànni tabax bii: dosie bi dafa ëmbaat siiwal bu mujj bi. Sit bu dund bi du soppiku.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Tànnal "Saytu naa coppite yi" njëkk.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Tànnal &quot;Saytu naa coppite yi&quot; njëkk.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>yes, not published yet</source>
         <translation>waaw, siiwaluñu ko ba léegi</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Tabax dafay yóbbu xët bu nekk bu %site ni ko ganaa bu duggul di gise, di bindaat lëkkalekaay yi, di duppi fisie yi te di bind njureel gi ci dosieu jëmuwaay bi. Dara du siiwalu ba nga saytu tabax bi te bës ci Siiwal.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Dellu ginnaaw ngir boroom xam-xam la: tànnal "Xam naa li lii di soppi" te bindaat turu màndarga mi.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Dafay ubbi tabax bi ni host bi koy joxe, ci dosieu jëmuwaay bi. Lëkkalekaay bi dafay dox ci yaw benn waxtu.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Dañu koy wone ci lim yi, misaal "Sit bu siiwu ci GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Xët bu sit bi ci boppam ngir adrees yu amul.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Jëmuwaay bi duggagul ak caabi bii: tànnal "Caabi yónnee bu ñu defar ngir jëmuwaay bii" ci tànneefam.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Tànnal "Saytu naa coppite yi" njëkk.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

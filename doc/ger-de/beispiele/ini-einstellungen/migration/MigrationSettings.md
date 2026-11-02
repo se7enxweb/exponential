@@ -33,9 +33,9 @@ Enabled=enabled
 
 ## DirectoryList
 
-> Die Migrationsverzeichnisse der Site, relativ zur Wurzel der Installation oder absolut. Jedes enthält  
-> Dateien namens YYYYMMDDHHMMSS\_name.<type> (php, yml, sql, <engine>.sql, ini); Unterverzeichnisse werden nicht  
-> durchsucht.  
+> The site's migration directories, relative to the installation's root or absolute. Each holds  
+> files named YYYYMMDDHHMMSS\_name.<type> (php, yml, sql, <engine>.sql, mongodb.json, ini); subdirectories are not  
+> searched.  
 
 Standard: eine Liste mit 1: `migrations`.
 

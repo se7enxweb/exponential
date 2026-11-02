@@ -82030,6 +82030,222 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>The run could not be started.</source>
         <translation>L’exécution n’a pas pu être lancée.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Enregistrer les modifications</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Pendant un enregistrement, ce que vous modifiez dans l'administration ou dans la barre latérale du site est conservé sous forme d'étapes d'une migration : contenus, classes, rôles et politiques, sections, utilisateurs et groupes, alias d'URL, réglages. Arrêtez-le quand vous avez terminé, regardez ce qu'il a capturé et générez-en une migration.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Les enregistrements n'ont pas pu être lus : %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Les tables des enregistrements n'existent pas encore : lancez d'abord la mise à jour (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>L'enregistrement est désactivé dans migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mes modifications</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>N'enregistre que ce que vous modifiez, où que vous le modifiiez, jusqu'à ce que vous l'arrêtiez.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Enregistrement</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>depuis %time, %count modification(s) jusqu'ici.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Libellé (facultatif)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Voir ce qu'il a capturé</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Arrêter l'enregistrement</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Commencer à enregistrer mes modifications</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fenêtre pour tout le site</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Enregistre chaque modification de chaque utilisateur et de la console jusqu'à sa fermeture. L'ouvrir vous demande de confirmer que c'est bien vous.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ouverte</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Fermer la fenêtre</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ouvrir la fenêtre pour tout le site</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Enregistrements</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Le compte d'un utilisateur (identifiant, e-mail, mot de passe) et les champs des comptes utilisateur ne sont jamais enregistrés.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Modifications</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tout le site</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Modifications de %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Arrêté</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Aucun enregistrement pour l'instant.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Enregistrement %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Tous les enregistrements</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>La migration qu'il produirait</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Les modifications regroupées en une étape par élément modifié : ce que ferait une migration générée à partir de cet enregistrement.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Une migration pourra en être générée dès que cette installation aura les types d'étapes YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Omis volontairement : %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Rien n'a été enregistré.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ce qu'il a capturé</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count modification(s), dans l'ordre où elles ont été faites.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Modification</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Étape</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Concerne</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count de plus : ./console exp:migration:record:show les liste toutes.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Abandonner</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Supprime l'enregistrement et ce qu'il a capturé. Ce qui a été modifié reste modifié.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Oui, abandonner cet enregistrement</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Enregistrement en cours…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Vos modifications sont enregistrées pour une migration.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Chaque modification sur ce site est enregistrée pour une migration (fenêtre pour tout le site).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>L'enregistrement pour tout le site a commencé : chaque modification de chaque utilisateur est enregistrée jusqu'à ce que vous l'arrêtiez.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>L'enregistrement a commencé : vos modifications sont enregistrées jusqu'à ce que vous l'arrêtiez.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Enregistrement arrêté. Ce qu'il a capturé reste jusqu'à ce que vous l'abandonniez.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>L'enregistrement et ses événements sont supprimés.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Il n'y a pas d'enregistrement %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Cochez d'abord « Oui, abandonner cet enregistrement ».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Seul l'utilisateur qui a enregistré peut arrêter un enregistrement de session.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Choisissez l'enregistrement à arrêter.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Un enregistrement de ce type est déjà en cours.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>L'enregistrement n'a pas pu être modifié : %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -82841,7 +83057,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Un site de projet GitHub se trouve sous /&lt;repository&gt;/ ; les liens relatifs y fonctionnent, comme partout ailleurs.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Une génération récupère chaque page de %site telle que la voit un visiteur non connecté, réécrit les liens, copie les fichiers et écrit le résultat dans le dossier de la cible. Rien n’est publié tant que vous n’avez pas vérifié la génération et cliqué sur Publier.</translation>
     </message>
     <message>
@@ -82889,7 +83105,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Une page qui contient encore une sortie de débogage, un jeton de formulaire ou un identifiant de session après le nettoyage n’est jamais publiée.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>Un retour arrière est réservé aux experts : cochez « Je sais ce que cela change » et saisissez à nouveau le nom de l’étiquette.</translation>
     </message>
     <message>
@@ -83401,7 +83617,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Ouvrir l’aperçu</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Ouvre la génération telle que l’hébergeur la servira, depuis le dossier de la cible. Le lien fonctionne pour vous pendant une heure.</translation>
     </message>
     <message>
@@ -83577,7 +83793,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Administration &gt; Gestion des secrets</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>Affiché dans les listes, par exemple « Site public sur GitHub Pages ».</translation>
     </message>
     <message>
@@ -83785,7 +84001,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Le site revient aux fichiers de cette publication ; une génération pas encore publiée doit d’abord être publiée ou abandonnée.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>La page du site pour les adresses qui n’existent pas.</translation>
     </message>
     <message>
@@ -83793,7 +84009,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>La cible n’a pas pu être enregistrée : %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>La cible ne se connecte pas encore avec cette clé : choisissez « Une clé de déploiement créée pour cette cible » dans ses réglages.</translation>
     </message>
     <message>
@@ -83829,7 +84045,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Abandonne cette génération : le dossier contient de nouveau la dernière publication. Le site en ligne ne change pas.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>Cochez d’abord « J’ai vérifié les modifications ».</translation>
     </message>
     <message>
@@ -84051,6 +84267,34 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>yes, not published yet</source>
         <translation>oui, pas encore publiée</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Une génération récupère chaque page de %site telle que la voit un visiteur non connecté, réécrit les liens, copie les fichiers et écrit le résultat dans le dossier de la cible. Rien n’est publié tant que vous n’avez pas vérifié la génération et cliqué sur Publier.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Un retour arrière est réservé aux experts : cochez « Je sais ce que cela change » et saisissez à nouveau le nom de l’étiquette.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Ouvre la génération telle que l’hébergeur la servira, depuis le dossier de la cible. Le lien fonctionne pour vous pendant une heure.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Affiché dans les listes, par exemple « Site public sur GitHub Pages ».</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>La page du site pour les adresses qui n’existent pas.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>La cible ne se connecte pas encore avec cette clé : choisissez « Une clé de déploiement créée pour cette cible » dans ses réglages.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Cochez d’abord « J’ai vérifié les modifications ».</translation>
     </message>
     <message>
         <source>A GitHub App</source>

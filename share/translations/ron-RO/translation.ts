@@ -80620,6 +80620,222 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>The run could not be started.</source>
         <translation>Rularea nu a putut fi pornită.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Înregistrarea modificărilor</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Cât timp rulează o înregistrare, ce modificați în administrare sau în bara laterală a site-ului se păstrează ca pași ai unei migrări: conținut, clase, roluri și politici, secțiuni, utilizatori și grupuri, aliasuri URL, setări. Opriți-o când ați terminat, uitați-vă ce a capturat și generați din ea o migrare.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Înregistrările nu au putut fi citite: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabelele înregistrărilor nu există încă: rulați mai întâi actualizarea (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Înregistrarea este dezactivată în migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Modificările mele</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Înregistrează doar ce modificați dumneavoastră, oriunde ați modifica, până o opriți.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Înregistrare</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>din %time, până acum %count modificare/modificări.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etichetă (opțional)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Afișează ce a capturat</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Oprește înregistrarea</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Începe înregistrarea modificărilor mele</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fereastră pentru tot site-ul</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Înregistrează fiecare modificare a fiecărui utilizator și a consolei până când este închisă. La deschidere vi se cere să confirmați că sunteți dumneavoastră.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Deschisă</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Închide fereastra</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Deschide fereastra pentru tot site-ul</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Înregistrări</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Contul unui utilizator (nume de utilizator, e-mail, parolă) și câmpurile conturilor de utilizator nu sunt niciodată înregistrate.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Modificări</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tot site-ul</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Modificările lui %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Oprită</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Încă nicio înregistrare.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Înregistrarea %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Toate înregistrările</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migrarea care ar rezulta</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Modificările grupate într-un pas pentru fiecare element modificat: ce ar face o migrare generată din această înregistrare.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Din ea se va putea genera o migrare când această instalare va avea tipurile de pași YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Omis intenționat: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nu s-a înregistrat nimic.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ce a capturat</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count modificare/modificări, în ordinea în care au fost făcute.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Modificare</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Pas</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Privește</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Încă %count: ./console exp:migration:record:show le listează pe toate.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Renunță</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Elimină înregistrarea și ce a capturat. Ce a fost modificat rămâne modificat.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Da, renunț la această înregistrare</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Se înregistrează…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Modificările dumneavoastră sunt înregistrate pentru o migrare.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Fiecare modificare de pe acest site este înregistrată pentru o migrare (fereastră pentru tot site-ul).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Înregistrarea pentru tot site-ul a început: fiecare modificare a fiecărui utilizator este înregistrată până o opriți.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Înregistrarea a început: modificările dumneavoastră sunt înregistrate până o opriți.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Înregistrare oprită. Ce a capturat rămâne până renunțați la ea.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Înregistrarea și evenimentele ei au fost eliminate.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nu există înregistrarea %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Bifați mai întâi „Da, renunț la această înregistrare”.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Doar utilizatorul care a înregistrat poate opri o înregistrare de sesiune.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Alegeți înregistrarea de oprit.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>O înregistrare de acest fel rulează deja.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Înregistrarea nu a putut fi modificată: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81431,7 +81647,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Un site de proiect GitHub se află sub /&lt;repository&gt;/; linkurile relative funcționează acolo și oriunde altundeva.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Un build preia fiecare pagină a %site așa cum o vede un vizitator neautentificat, rescrie linkurile, copiază fișierele și scrie rezultatul în folderul țintei. Nimic nu este publicat până nu verificați build-ul și apăsați Publică.</translation>
     </message>
     <message>
@@ -81479,7 +81695,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>O pagină care după curățare încă mai conține ieșire de depanare, un token de formular sau un id de sesiune nu este publicată niciodată.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>O anulare este pentru experți: bifați „Știu ce schimbă aceasta” și tastați din nou numele etichetei.</translation>
     </message>
     <message>
@@ -81991,7 +82207,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Deschide previzualizarea</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Deschide build-ul așa cum îl va servi gazda, din folderul țintei. Linkul funcționează pentru dumneavoastră timp de o oră.</translation>
     </message>
     <message>
@@ -82167,7 +82383,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Configurare &gt; Secrete</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>Afișat în liste, de exemplu „Site public pe GitHub Pages”.</translation>
     </message>
     <message>
@@ -82375,7 +82591,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Site-ul revine la fișierele acelei publicări; un build încă nepublicat trebuie mai întâi publicat sau aruncat.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Pagina proprie a site-ului pentru adresele care nu există.</translation>
     </message>
     <message>
@@ -82383,7 +82599,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Ținta nu a putut fi salvată: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>Ținta nu se autentifică încă cu această cheie: alegeți „O cheie de implementare creată pentru această țintă” în setările ei.</translation>
     </message>
     <message>
@@ -82419,7 +82635,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Aruncă acest build: folderul conține din nou ultima publicare. Site-ul live nu se schimbă.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>Bifați mai întâi „Am verificat modificările”.</translation>
     </message>
     <message>
@@ -82641,6 +82857,34 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>yes, not published yet</source>
         <translation>da, încă nepublicat</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Un build preia fiecare pagină a %site așa cum o vede un vizitator neautentificat, rescrie linkurile, copiază fișierele și scrie rezultatul în folderul țintei. Nimic nu este publicat până nu verificați build-ul și apăsați Publică.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>O anulare este pentru experți: bifați „Știu ce schimbă aceasta” și tastați din nou numele etichetei.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Deschide build-ul așa cum îl va servi gazda, din folderul țintei. Linkul funcționează pentru dumneavoastră timp de o oră.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Afișat în liste, de exemplu „Site public pe GitHub Pages”.</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Pagina proprie a site-ului pentru adresele care nu există.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Ținta nu se autentifică încă cu această cheie: alegeți „O cheie de implementare creată pentru această țintă” în setările ei.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Bifați mai întâi „Am verificat modificările”.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

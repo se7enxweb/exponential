@@ -80590,6 +80590,222 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>The run could not be started.</source>
         <translation>Ishga tushirishni boshlab bo‘lmadi.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Oʻzgarishlarni yozib olish</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Yozib olish davom etar ekan, boshqaruvda yoki saytning yon panelida oʻzgartirganlaringiz migratsiya qadamlari sifatida saqlanadi: kontent, sinflar, rollar va siyosatlar, boʻlimlar, foydalanuvchilar va guruhlar, URL taxalluslari, sozlamalar. Tugatgach, uni toʻxtating, nimani ushlaganini koʻring va undan migratsiya yarating.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Yozuvlarni oʻqib boʻlmadi: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Yozuvlar jadvallari hali mavjud emas: avval yangilashni ishga tushiring (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Yozib olish migration.ini da oʻchirilgan ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mening oʻzgarishlarim</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Siz toʻxtatmaguningizcha faqat siz oʻzgartirgan narsani, qayerda oʻzgartirsangiz ham, yozib oladi.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Yozuv</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time dan beri, hozirgacha %count oʻzgarish.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Yorliq (ixtiyoriy)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Nimani ushlaganini koʻrsatish</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Yozib olishni toʻxtatish</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Oʻzgarishlarimni yozib olishni boshlash</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Butun sayt oynasi</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Yopilguncha har bir foydalanuvchi va konsolning har bir oʻzgarishini yozib oladi. Ochishda bu siz ekaningizni tasdiqlash soʻraladi.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ochiq</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Oynani yopish</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Butun sayt oynasini ochish</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Yozuvlar</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Foydalanuvchi hisobi (login, e-pochta, parol) va foydalanuvchi hisoblari maydonlari hech qachon yozib olinmaydi.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Oʻzgarishlar</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Butun sayt</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name oʻzgarishlari</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Toʻxtatilgan</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Hali yozuv yoʻq.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Yozuv %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Barcha yozuvlar</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Undan chiqadigan migratsiya</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Har bir oʻzgargan narsa uchun bitta qadamga birlashtirilgan oʻzgarishlar: bu yozuvdan yaratilgan migratsiya nima qilishi.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Bu oʻrnatishda YAML qadam turlari %types boʻlganda undan migratsiya yaratish mumkin.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Ataylab chiqarib tashlangan: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Hech narsa yozib olinmadi.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Nimani ushlagani</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count oʻzgarish, bajarilgan tartibida.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Oʻzgarish</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Qadam</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Tegishli</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Yana %count: ./console exp:migration:record:show hammasini roʻyxatlaydi.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Voz kechish</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Yozuvni va u ushlagan narsalarni oʻchiradi. Oʻzgargan narsa oʻzgargancha qoladi.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ha, bu yozuvdan voz kechish</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Yozib olinmoqda…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Oʻzgarishlaringiz migratsiya uchun yozib olinmoqda.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Bu saytdagi har bir oʻzgarish migratsiya uchun yozib olinmoqda (butun sayt oynasi).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Butun sayt yozuvi boshlandi: siz toʻxtatmaguningizcha har bir foydalanuvchining har bir oʻzgarishi yozib olinadi.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Yozib olish boshlandi: siz toʻxtatmaguningizcha oʻzgarishlaringiz yozib olinadi.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Yozib olish toʻxtatildi. U ushlagan narsa siz voz kechmaguningizcha qoladi.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Yozuv va uning hodisalari oʻchirildi.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id yozuvi yoʻq.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Avval «Ha, bu yozuvdan voz kechish» ni belgilang.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Seans yozuvini faqat yozib olgan foydalanuvchi toʻxtata oladi.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Toʻxtatiladigan yozuvni tanlang.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Bu turdagi yozuv allaqachon davom etmoqda.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Yozuvni oʻzgartirib boʻlmadi: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>GitHub loyiha sayti /&lt;repository&gt;/ ostida joylashadi; nisbiy havolalar u yerda ham, boshqa har qanday joyda ham ishlaydi.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Yig‘ma %site saytining har bir sahifasini tizimga kirmagan tashrifchi ko‘rganidek yuklab oladi, havolalarni qayta yozadi, fayllarni nusxalaydi va natijani maqsad papkasiga yozadi. Siz yig‘mani tekshirib, Nashr qilish tugmasini bosmaguningizcha hech narsa nashr qilinmaydi.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Tozalashdan keyin ham nosozliklarni tuzatish chiqishi, forma tokeni yoki seans identifikatori qolgan sahifa hech qachon nashr qilinmaydi.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Orqaga qaytarish mutaxassislar uchun: "Bu nimani o‘zgartirishini bilaman" belgisini qo‘ying va teg nomini qayta kiriting.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Orqaga qaytarish mutaxassislar uchun: &quot;Bu nimani o‘zgartirishini bilaman&quot; belgisini qo‘ying va teg nomini qayta kiriting.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Oldindan ko‘rishni ochish</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Yig‘mani maqsad papkasidan, xost uni qanday bersa, shunday ochadi. Havola siz uchun bir soat ishlaydi.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Sozlash &gt; Maxfiy qiymatlar</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Ro‘yxatlarda ko‘rsatiladi, masalan "GitHub Pages’dagi ochiq sayt".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Ro‘yxatlarda ko‘rsatiladi, masalan &quot;GitHub Pages’dagi ochiq sayt&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Sayt o‘sha nashr fayllariga qaytadi; hali nashr qilinmagan yig‘ma avval nashr qilinishi yoki tashlab yuborilishi kerak.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Mavjud bo‘lmagan manzillar uchun saytning o‘z sahifasi.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Maqsadni saqlab bo‘lmadi: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Maqsad hali bu kalit bilan kirmaydi: uning sozlamalarida "Shu maqsad uchun yaratilgan joylashtirish kaliti" ni tanlang.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Maqsad hali bu kalit bilan kirmaydi: uning sozlamalarida &quot;Shu maqsad uchun yaratilgan joylashtirish kaliti&quot; ni tanlang.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Bu yig‘mani tashlab yuboradi: papkada yana oxirgi nashr turadi. Jonli sayt o‘zgarmaydi.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Avval "O‘zgarishlarni tekshirdim" belgisini qo‘ying.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Avval &quot;O‘zgarishlarni tekshirdim&quot; belgisini qo‘ying.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>yes, not published yet</source>
         <translation>ha, hali nashr qilinmagan</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Yig‘ma %site saytining har bir sahifasini tizimga kirmagan tashrifchi ko‘rganidek yuklab oladi, havolalarni qayta yozadi, fayllarni nusxalaydi va natijani maqsad papkasiga yozadi. Siz yig‘mani tekshirib, Nashr qilish tugmasini bosmaguningizcha hech narsa nashr qilinmaydi.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Orqaga qaytarish mutaxassislar uchun: "Bu nimani o‘zgartirishini bilaman" belgisini qo‘ying va teg nomini qayta kiriting.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Yig‘mani maqsad papkasidan, xost uni qanday bersa, shunday ochadi. Havola siz uchun bir soat ishlaydi.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Ro‘yxatlarda ko‘rsatiladi, masalan "GitHub Pages’dagi ochiq sayt".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Mavjud bo‘lmagan manzillar uchun saytning o‘z sahifasi.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Maqsad hali bu kalit bilan kirmaydi: uning sozlamalarida "Shu maqsad uchun yaratilgan joylashtirish kaliti" ni tanlang.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Avval "O‘zgarishlarni tekshirdim" belgisini qo‘ying.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

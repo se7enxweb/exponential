@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ⴰⵙⴷⵓ ⵓⵔ ⵉⵣⵎⵉⵔ ⴰⴷ ⵉⵙⵏⵜⵉ.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ⴰⵙⵙⴽⵍⵙ ⵏ ⵉⵙⵏⴼⵍⵏ</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ⵎⵏⵉⴽ ⵉⵜⵜⴻⴷⴷⵓ ⵓⵙⵙⴽⵍⵙ, ⴰⵢⵍⵍⵉ ⵜⵙⵏⴼⵍⴷ ⴳ ⵓⵙⵡⵓⴷⴷⵓ ⵏⵖ ⴳ ⵜⴰⴳⵍⴷⴰ ⵏ ⵜⴰⵎⵎⴰ ⵏ ⵓⵙⵉⵜ ⵉⵜⵜⵓⵃⴹⴰ ⴰⵎ ⵜⵉⴼⵔⴽⵉⵡⵉⵏ ⵏ ⵓⵙⵎⵓⵜⵜⵢ: ⴰⴳⴱⵓⵔ, ⵜⵉⵙⵡⵉⵜⵉⵏ, ⵜⵉⵡⵓⵔⵉⵡⵉⵏ ⴷ ⵜⵙⵔⵜⵉⵜⵉⵏ, ⵜⵉⴳⵣⵎⵉⵡⵉⵏ, ⵉⵏⵙⵙⵎⵔⵙⵏ ⴷ ⵜⵔⴰⴱⴱⵓⵜⵉⵏ, ⵉⵙⵎⴰⵡⵏ ⵢⴰⴹⵏⵉⵏ ⵏ URL, ⵜⵉⵙⵖⴰⵍ. ⵙⴱⴷⴷ ⵜ ⵎⵏⵉⴽ ⵜⴽⵎⵎⵍⴷ, ⵥⵕ ⵎⴰⵢⴷ ⵉⵟⵟⴼ, ⵜⵙⴽⵔⴷ ⵙⴳ ⵙ ⴰⵙⵎⵓⵜⵜⵢ.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ⵓⵔ ⵜⵜⵢⴰⵖⵔⴰⵏⵜ ⵜⵉⵙⵙⴽⵍⵙⵉⵏ: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ⵜⵉⴼⵍⵡⵉⵏ ⵏ ⵜⵙⵙⴽⵍⵙⵉⵏ ⵓⵔ ⵙⵓⵍ ⵍⵍⵉⵏⵜ: ⵙⵎⵓⵜⵜⵓ ⵙ ⵜⵉⵣⵡⴰⵔ ⴰⵙⵎⴰⵢⵏⵓ (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>ⴰⵙⵙⴽⵍⵙ ⵉⵜⵜⵓⵙⵅⵙⵉ ⴳ migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>ⵉⵙⵏⴼⵍⵏ ⵉⵏⵓ</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ⵉⵜⵜⵙⵙⴽⵍⴰⵙ ⵖⴰⵙ ⴰⵢⵍⵍⵉ ⵜⵙⵏⴼⵍⴷ, ⴰⵏⵙⴰ ⵢⴰⴷ ⵜ ⵜⵙⵏⴼⵍⴷ, ⴰⵔ ⴷ ⵜ ⵜⵙⴱⴷⴷⴷ.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ⵜⴰⵙⵙⴽⵍⵙⵜ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ⵙⴳ %time, ⴰⵔ ⴷⵖⵉ %count ⵏ ⵓⵙⵏⴼⵍ.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ⵜⴰⴱⵔⴰⵜ (ⵜⴰⵏⴼⵍⵉⵜ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ⵙⴽⵏ ⵎⴰⵢⴷ ⵉⵟⵟⴼ</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ⵙⴱⴷⴷ ⴰⵙⵙⴽⵍⵙ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ⵙⵏⵜⵉ ⴰⵙⵙⴽⵍⵙ ⵏ ⵉⵙⵏⴼⵍⵏ ⵉⵏⵓ</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>ⴰⵙⵔⵜⵢ ⵉ ⵓⵙⵉⵜ ⴰⴽⴽ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ⵉⵜⵜⵙⵙⴽⵍⴰⵙ ⴽⵓ ⴰⵙⵏⴼⵍ ⵏ ⴽⵓ ⴰⵏⵙⵙⵎⵔⵙ ⴷ ⵓⵏⵙⴽⴰⵍ ⴰⵔ ⴷ ⵉⵜⵜⵓⵔⴳⵍ. ⵎⵏⵉⴽ ⵜ ⵜⵕⵥⵎⴷ, ⴰⴷ ⴰⴽ ⵜⵜⵓⵙⵜⵔⵏ ⴰⴷ ⵜⵙⵙⴼⵙⵔⴷ ⵉⵙ ⴽⵢⵢ.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ⵉⵕⵥⵎ</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>ⵔⴳⵍ ⴰⵙⵔⵜⵢ</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>ⵕⵥⵎ ⴰⵙⵔⵜⵢ ⵉ ⵓⵙⵉⵜ ⴰⴽⴽ</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ⵜⵉⵙⵙⴽⵍⵙⵉⵏ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ⴰⵎⵉⴹⴰⵏ ⵏ ⵓⵏⵙⵙⵎⵔⵙ (ⵉⵙⵎ ⵏ ⵓⴽⵛⵛⵓⵎ, ⵉⵎⴰⵢⵍ, ⴰⵡⴰⵍ ⵏ ⵓⵣⵔⴰⵢ) ⴷ ⵉⴳⵔⴰⵏ ⵏ ⵉⵎⵉⴹⴰⵏⵏ ⵏ ⵉⵏⵙⵙⵎⵔⵙⵏ ⵓⵔ ⵜⵜⵢⴰⵙⵙⴽⵍⵙⵏ ⴰⵙⵍⵉⴳ.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ⵉⵙⵏⴼⵍⵏ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ⴰⵙⵉⵜ ⴰⴽⴽ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>ⵉⵙⵏⴼⵍⵏ ⵏ %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ⵉⵜⵜⵓⵙⴱⴷⴷ</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ⵓⵔ ⵙⵓⵍ ⵜⵍⵍⵉ ⵜⵙⵙⴽⵍⵙⵜ.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ⵜⴰⵙⵙⴽⵍⵙⵜ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ⵜⵉⵙⵙⴽⵍⵙⵉⵏ ⴰⴽⴽ</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ⴰⵙⵎⵓⵜⵜⵢ ⵍⵍⵉ ⴷ ⵉⴽⴽⴰⵏ ⵙⴳ ⵙ</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ⵉⵙⵏⴼⵍⵏ ⵉⵜⵜⵓⵙⵎⵓⵏⵏ ⴳ ⵢⴰⵜ ⵜⴼⵔⴽⵉⵜ ⵉ ⴽⵓ ⵜⴰⵖⴰⵡⵙⴰ ⵉⵜⵜⵓⵙⵏⴼⵍⵏ: ⴰⵢⵍⵍⵉ ⴰⵔ ⵉⵙⴽⴰⵔ ⵓⵙⵎⵓⵜⵜⵢ ⵉⵜⵜⵓⵙⴽⴰⵔⵏ ⵙⴳ ⵜⵙⵙⴽⵍⵙⵜ ⴰⴷ.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ⵉⵖⵢ ⴰⴷ ⵉⵜⵜⵓⵙⴽⵔ ⵓⵙⵎⵓⵜⵜⵢ ⵙⴳ ⵙ ⵎⵏⵉⴽ ⵜⵍⴰ ⵜⵙⵔⵙⴰ ⴰⴷ ⵉⵏⴰⵡⵏ ⵏ ⵜⴼⵔⴽⵉⵡⵉⵏ YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ⵉⵜⵜⵓⴼⵍ ⵙ ⵓⵏⵡⴰⵢ: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ⵓⵔ ⵉⵜⵜⵓⵙⵙⴽⵍⵙ ⵢⴰⵜ.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ⵎⴰⵢⴷ ⵉⵟⵟⴼ</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ⵏ ⵓⵙⵏⴼⵍ, ⵙ ⵓⵏⵎⴰⵍ ⴳ ⵜⵜⵓⵙⴽⴰⵔⵏ.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ⴰⵙⵏⴼⵍ</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ⵜⴰⴼⵔⴽⵉⵜ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>ⵅⴼ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count ⵢⴰⴹⵏ: ./console exp:migration:record:show ⴰⵔ ⵜⵏ ⵉⵙⵙⵓⴷⵓⵙ ⴰⴽⴽ.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ⵙⵙⵓⵜⵔ</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ⵉⵜⵜⴽⴽⵙ ⵜⴰⵙⵙⴽⵍⵙⵜ ⴷ ⵎⴰⵢⴷ ⵉⵟⵟⴼ. ⴰⵢⵍⵍⵉ ⵉⵜⵜⵓⵙⵏⴼⵍⵏ ⴰⴷ ⵉⵇⵇⵉⵎ ⵉⵜⵜⵓⵙⵏⴼⵍ.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ⵢⴰⵀ, ⵙⵙⵓⵜⵔ ⵜⴰⵙⵙⴽⵍⵙⵜ ⴰⴷ</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ⴰⵔ ⵉⵜⵜⵙⵙⴽⵍⴰⵙ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ⵉⵙⵏⴼⵍⵏ ⵏⵏⴽ ⴰⵔ ⵜⵜⵢⴰⵙⵙⴽⵍⴰⵙⵏ ⵉ ⵓⵙⵎⵓⵜⵜⵢ.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ⴽⵓ ⴰⵙⵏⴼⵍ ⴳ ⵓⵙⵉⵜ ⴰⴷ ⴰⵔ ⵉⵜⵜⵢⴰⵙⵙⴽⵍⴰⵙ ⵉ ⵓⵙⵎⵓⵜⵜⵢ (ⴰⵙⵔⵜⵢ ⵉ ⵓⵙⵉⵜ ⴰⴽⴽ).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ⵉⴱⴷⴰ ⵓⵙⵙⴽⵍⵙ ⵏ ⵓⵙⵉⵜ ⴰⴽⴽ: ⴽⵓ ⴰⵙⵏⴼⵍ ⵏ ⴽⵓ ⴰⵏⵙⵙⵎⵔⵙ ⴰⴷ ⵉⵜⵜⵓⵙⵙⴽⵍⵙ ⴰⵔ ⴷ ⵜ ⵜⵙⴱⴷⴷⴷ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ⵉⴱⴷⴰ ⵓⵙⵙⴽⵍⵙ: ⵉⵙⵏⴼⵍⵏ ⵏⵏⴽ ⴰⴷ ⵜⵜⵓⵙⵙⴽⵍⵙⵏ ⴰⵔ ⴷ ⵜ ⵜⵙⴱⴷⴷⴷ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ⵉⵜⵜⵓⵙⴱⴷⴷ ⵓⵙⵙⴽⵍⵙ. ⵎⴰⵢⴷ ⵉⵟⵟⴼ ⴰⴷ ⵉⵇⵇⵉⵎ ⴰⵔ ⴷ ⵜ ⵜⵙⵙⵓⵜⵔⴷ.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ⵜⴰⵙⵙⴽⵍⵙⵜ ⴷ ⵉⵎⵓⴷⴷⵓⵔ ⵏⵏⵙ ⵜⵜⵓⴽⴽⵙⵏ.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ⵓⵔ ⵜⵍⵍⵉ ⵜⵙⵙⴽⵍⵙⵜ %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ⵔⵛⵎ ⵙ ⵜⵉⵣⵡⴰⵔ "ⵢⴰⵀ, ⵙⵙⵓⵜⵔ ⵜⴰⵙⵙⴽⵍⵙⵜ ⴰⴷ".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ⵖⴰⵙ ⴰⵏⵙⵙⵎⵔⵙ ⵍⵍⵉ ⵉⵙⵙⴽⵍⵙⵏ ⴰⵢⴷ ⵉⵖⵢⵏ ⴰⴷ ⵉⵙⴱⴷⴷ ⵜⴰⵙⵙⴽⵍⵙⵜ ⵏ ⵜⵖⵉⵎⵉⵜ.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ⴼⵔⵏ ⵜⴰⵙⵙⴽⵍⵙⵜ ⵍⵍⵉ ⵔⴰⴷ ⵜⵜⵓⵙⴱⴷⴷ.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ⵜⴰⵙⵙⴽⵍⵙⵜ ⵏ ⵡⴰⵏⴰⵡ ⴰⴷ ⵜⵜⴻⴷⴷⵓ ⵢⴰⴷ.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ⵓⵔ ⵜⵜⵢⴰⵙⵏⴼⴰⵍ ⵜⵙⵙⴽⵍⵙⵜ: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ⴰⵙⵎⵍ ⵏ ⵓⵙⵏⴼⴰⵔ ⵏ GitHub ⵉⵍⵍⴰ ⴷⴷⴰⵡ /&lt;repository&gt;/; ⵉⵥⴷⴰⵢⵏ ⵉⵎⵔⵉⵔⵏ ⵜⵜⵎⵓⵔⵔⴰⵢⵏ ⴷⵉⵏⵏ ⴷ ⴳ ⴽⵔⴰ ⵏ ⵓⴷⵖⴰⵔ ⵢⴰⴹⵏ.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>ⴰⵙⴽⵓ ⵉⵜⵜⴰⵡⵉ ⴷ ⴽⵓ ⵜⴰⵙⵏⴰ ⵏ %site ⴰⵎⵎ ⵎⴰ ⵜⵜ ⵉⵥⵕⵕⴰ ⵓⵏⴱⴳⵉ ⵓⵔ ⵉⴽⵛⵉⵎⵏ, ⵉⵜⵜⴰⵔⴰ ⵉⵥⴷⴰⵢⵏ ⴷⴰⵖ, ⵉⵙⵙⵏⵖⴰⵍ ⵉⴼⵓⵢⵍⴰ ⴷ ⵉⵜⵜⴰⵔⴰ ⴰⵢⵏⵏⴰⵢ ⴳ ⵓⴽⴰⵔⴰⵎ ⵏ ⵜⵏⵊⴰⵕⵜ. ⵓⵍⴰ ⵢⴰⵜ ⵓⵔ ⵜⵜⵓⵙⵙⵓⴼⵖ ⴰⵔ ⴷ ⵜⵙⵏⵇⴷⴷ ⴰⵙⴽⵓ ⵜⴽⵍⵉⴽⵉⴷ ⵖⴼ ⵙⵙⵓⴼⵖ.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ⵜⴰⵙⵏⴰ ⵍⵍⵉ ⴳ ⵙⵓⵍ ⵉⵍⵍⴰ ⵓⴼⴼⵖ ⵏ ⵓⵙⴼⴰⵔⵓ ⵏ ⵜⵣⴳⵍⵉⵏ, ⴰⵜⵓⴽⵏ ⵏ ⵜⵍⵖⴰ ⵏⵖ ⴰⵙⵓⵎⴰⵢ ⵏ ⵜⵖⵉⵎⵉⵜ ⴷⴼⴼⵉⵔ ⵓⵙⵣⴷⴳ ⵓⵔ ⵜⵜⵓⵙⵙⵓⴼⵖ ⵜⵉⴽⴽⵍⵜ.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ⴰⵔⴰⵔ ⵙ ⴷⴼⴼⵉⵔ ⵉ ⵉⵎⵓⵙⵏⴰⵡⵏ: ⵔⵛⵎ "ⵙⵙⵏⵖ ⵎⴰⵢⴷ ⵉⵙⵏⴼⵍ ⵓⵢⴰ" ⵜⴰⵔⵓⴷ ⵉⵙⵎ ⵏ ⵜⵎⴰⵜⴰⵔⵜ ⴷⴰⵖ.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ⴰⵔⴰⵔ ⵙ ⴷⴼⴼⵉⵔ ⵉ ⵉⵎⵓⵙⵏⴰⵡⵏ: ⵔⵛⵎ &quot;ⵙⵙⵏⵖ ⵎⴰⵢⴷ ⵉⵙⵏⴼⵍ ⵓⵢⴰ&quot; ⵜⴰⵔⵓⴷ ⵉⵙⵎ ⵏ ⵜⵎⴰⵜⴰⵔⵜ ⴷⴰⵖ.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ⵕⵥⵎ ⴰⵙⴽⴰⵏ ⴰⵎⵣⵡⴰⵔⵓ</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>ⵉⵕⵥⵥⵎ ⴰⵙⴽⵓ ⴰⵎⵎ ⵎⴰ ⵜ ⵔⴰⴷ ⵢⴰⴽⴽ ⵓⵎⵙⵏⴰⵖ, ⵙⴳ ⵓⴽⴰⵔⴰⵎ ⵏ ⵜⵏⵊⴰⵕⵜ. ⴰⵥⴷⴰⵢ ⵉⵜⵜⵎⵓⵔⵔⴰⵢ ⵉ ⴽⵢⵢⵉ ⵢⴰⵜ ⵜⵙⵔⴰⴳⵜ.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ⴰⵙⵔⵙ &gt; ⵉⵙⵏⵜⵍⵏ</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>ⵉⵜⵜⵓⵙⴽⴰⵏ ⴳ ⵜⵍⴳⴰⵎⵉⵏ, ⵙ ⵓⵎⴷⵢⴰ "ⴰⵙⵎⵍ ⴰⵎⴰⴳⴷⴰⵢ ⴳ GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ⵉⵜⵜⵓⵙⴽⴰⵏ ⴳ ⵜⵍⴳⴰⵎⵉⵏ, ⵙ ⵓⵎⴷⵢⴰ &quot;ⴰⵙⵎⵍ ⴰⵎⴰⴳⴷⴰⵢ ⴳ GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ⴰⵙⵎⵍ ⵉⵜⵜⵓⵖⵓⵍ ⵖⵔ ⵉⴼⵓⵢⵍⴰ ⵏ ⵓⵙⵙⵓⴼⵖ ⵏⵏⴰ; ⴰⵙⴽⵓ ⵓⵔ ⵙⵓⵍ ⵉⵜⵜⵓⵙⵙⵓⴼⵖⵏ ⵉⵇⵇⴰⵏ ⴰⴷ ⵉⵜⵜⵓⵙⵙⵓⴼⵖ ⵏⵖ ⴰⴷ ⵉⵜⵜⵓⵊⵊ ⵣⴷⴰⵜ.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>ⵜⴰⵙⵏⴰ ⵏ ⵓⵙⵎⵍ ⵙ ⵉⵎⴰⵏ ⵏⵏⵙ ⵉ ⵜⵏⵙⵉⵡⵉⵏ ⵓⵔ ⵉⵍⵍⵉⵏ.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ⵓⵔ ⵜⵣⵎⵉⵔ ⵜⵏⵊⴰⵕⵜ ⴰⴷ ⵜⵜⵓⵃⴹⵓ: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ⵜⴰⵏⵊⴰⵕⵜ ⵓⵔ ⵙⵓⵍ ⵜⴽⵛⵉⵎ ⵙ ⵜⵙⴰⵔⵓⵜ ⴰ: ⵙⵜⵉ "ⵜⴰⵙⴰⵔⵓⵜ ⵏ ⵓⵙⵙⵔⵙ ⵉⵜⵜⵓⵙⴽⴰⵔⵏ ⵉ ⵜⵏⵊⴰⵕⵜ ⴰ" ⴳ ⵜⵙⵖⴰⵍ ⵏⵏⵙ.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ⵜⴰⵏⵊⴰⵕⵜ ⵓⵔ ⵙⵓⵍ ⵜⴽⵛⵉⵎ ⵙ ⵜⵙⴰⵔⵓⵜ ⴰ: ⵙⵜⵉ &quot;ⵜⴰⵙⴰⵔⵓⵜ ⵏ ⵓⵙⵙⵔⵙ ⵉⵜⵜⵓⵙⴽⴰⵔⵏ ⵉ ⵜⵏⵊⴰⵕⵜ ⴰ&quot; ⴳ ⵜⵙⵖⴰⵍ ⵏⵏⵙ.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ⵉⵜⵜⴰⵊⵊ ⴰⵙⴽⵓ ⴰ: ⴰⴽⴰⵔⴰⵎ ⵉⵖⵓⵔⵙ ⴰⵙⵙⵓⴼⵖ ⴰⵎⴳⴳⴰⵔⵓ ⴷⴰⵖ. ⴰⵙⵎⵍ ⴰⵎⴰⴷⴷⵔ ⵓⵔ ⵉⵜⵜⵏⴼⴰⵍ.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ⵔⵛⵎ "ⵙⵏⵇⴷⵖ ⵉⵙⵏⴼⵍⵏ" ⵣⴷⴰⵜ.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ⵔⵛⵎ &quot;ⵙⵏⵇⴷⵖ ⵉⵙⵏⴼⵍⵏ&quot; ⵣⴷⴰⵜ.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>ⵢⴰⵀ, ⵓⵔ ⵙⵓⵍ ⵉⵜⵜⵓⵙⵙⵓⴼⵖ</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ⴰⵙⴽⵓ ⵉⵜⵜⴰⵡⵉ ⴷ ⴽⵓ ⵜⴰⵙⵏⴰ ⵏ %site ⴰⵎⵎ ⵎⴰ ⵜⵜ ⵉⵥⵕⵕⴰ ⵓⵏⴱⴳⵉ ⵓⵔ ⵉⴽⵛⵉⵎⵏ, ⵉⵜⵜⴰⵔⴰ ⵉⵥⴷⴰⵢⵏ ⴷⴰⵖ, ⵉⵙⵙⵏⵖⴰⵍ ⵉⴼⵓⵢⵍⴰ ⴷ ⵉⵜⵜⴰⵔⴰ ⴰⵢⵏⵏⴰⵢ ⴳ ⵓⴽⴰⵔⴰⵎ ⵏ ⵜⵏⵊⴰⵕⵜ. ⵓⵍⴰ ⵢⴰⵜ ⵓⵔ ⵜⵜⵓⵙⵙⵓⴼⵖ ⴰⵔ ⴷ ⵜⵙⵏⵇⴷⴷ ⴰⵙⴽⵓ ⵜⴽⵍⵉⴽⵉⴷ ⵖⴼ ⵙⵙⵓⴼⵖ.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>ⴰⵔⴰⵔ ⵙ ⴷⴼⴼⵉⵔ ⵉ ⵉⵎⵓⵙⵏⴰⵡⵏ: ⵔⵛⵎ "ⵙⵙⵏⵖ ⵎⴰⵢⴷ ⵉⵙⵏⴼⵍ ⵓⵢⴰ" ⵜⴰⵔⵓⴷ ⵉⵙⵎ ⵏ ⵜⵎⴰⵜⴰⵔⵜ ⴷⴰⵖ.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>ⵉⵕⵥⵥⵎ ⴰⵙⴽⵓ ⴰⵎⵎ ⵎⴰ ⵜ ⵔⴰⴷ ⵢⴰⴽⴽ ⵓⵎⵙⵏⴰⵖ, ⵙⴳ ⵓⴽⴰⵔⴰⵎ ⵏ ⵜⵏⵊⴰⵕⵜ. ⴰⵥⴷⴰⵢ ⵉⵜⵜⵎⵓⵔⵔⴰⵢ ⵉ ⴽⵢⵢⵉ ⵢⴰⵜ ⵜⵙⵔⴰⴳⵜ.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>ⵉⵜⵜⵓⵙⴽⴰⵏ ⴳ ⵜⵍⴳⴰⵎⵉⵏ, ⵙ ⵓⵎⴷⵢⴰ "ⴰⵙⵎⵍ ⴰⵎⴰⴳⴷⴰⵢ ⴳ GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>ⵜⴰⵙⵏⴰ ⵏ ⵓⵙⵎⵍ ⵙ ⵉⵎⴰⵏ ⵏⵏⵙ ⵉ ⵜⵏⵙⵉⵡⵉⵏ ⵓⵔ ⵉⵍⵍⵉⵏ.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ⵜⴰⵏⵊⴰⵕⵜ ⵓⵔ ⵙⵓⵍ ⵜⴽⵛⵉⵎ ⵙ ⵜⵙⴰⵔⵓⵜ ⴰ: ⵙⵜⵉ "ⵜⴰⵙⴰⵔⵓⵜ ⵏ ⵓⵙⵙⵔⵙ ⵉⵜⵜⵓⵙⴽⴰⵔⵏ ⵉ ⵜⵏⵊⴰⵕⵜ ⴰ" ⴳ ⵜⵙⵖⴰⵍ ⵏⵏⵙ.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>ⵔⵛⵎ "ⵙⵏⵇⴷⵖ ⵉⵙⵏⴼⵍⵏ" ⵣⴷⴰⵜ.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

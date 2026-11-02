@@ -93,11 +93,11 @@ nicht durchsucht. Eine Datei, deren Name nicht mit `YYYYMMDDHHMMSS_` beginnt (ei
 
 ## Typen
 
-Der Typ ist die Endung der Datei: `php`, `yml`, `sql`, `<engine>.sql` (`mysql`, `postgresql`, `sqlite`, `oracle`,
-`mongodb`) und `ini`. In 6.0.15 wird eine Migration in **PHP** oder in **YAML** geschrieben: Die Engine findet, ordnet
-und prüft die anderen Typen, und der Runner lehnt sie mit einem Fehler ab, bis ihre Schritte kommen.
-`exp:migration:check` meldet eine `.sql`- oder `.ini`-Migration aus demselben Grund als Fehler. Eine PHP- und eine
-YAML-Migration können einander voraussetzen und sich im selben Lauf Werte weitergeben (Referenzen).
+Der Typ ist die Endung der Datei: `php`, `yml`, `sql`, `<engine>.sql` (`mysql`, `pgsql` oder `postgresql`, `sqlite`,
+`oracle`), `mongodb.json` und `ini`. Eine Migration wird in **PHP**, in **YAML**, in **SQL** (eine Datei je Engine oder
+eine portable Datei) oder als **INI**-Einstellungen geschrieben; SQL- und INI-Migrationen laufen als YAML-Migration
+ihrer Schritte ([Migrationen: SQL und Einstellungen](migrationen-sql-und-einstellungen.md)). Migrationen jedes Typs
+können einander voraussetzen und sich im selben Lauf Werte weitergeben (Referenzen).
 
 ## YAML-Migrationen
 
@@ -131,10 +131,11 @@ steps:
   und `content_version` (Objekte, ihre Übersetzungen, Orte und Versionen), `content_class` und `content_class_group`
   (Klassen mit ihren Attributen), `user`, `user_group` und `role` (Konten, Gruppen, Rollen mit Richtlinien,
   Einschränkungen und Zuweisungen), `section`, `language`, `object_state_group`, `tag` (eztags), `url_alias`
-  (Aliase und Platzhalter), `trash`, `file` und `image` (Dateien des Migrationsordners)
-  ([Schritte von YAML-Migrationen](migrationen-yaml-schritte.md)); die Schritttypen für Caches, den Suchindex und
-  Layouts kommen später, und eine Erweiterung fügt ihre eigenen genauso hinzu. Die übrigen Schlüssel eines Schritts werden gegen das
-  Schema seines Typs geprüft, bevor irgendetwas läuft.
+  (Aliase und Platzhalter), `trash`, `file` und `image` (Dateien des Migrationsordners), `cache`, `search` und `autoload`,
+  `layout`, `layout_block` und `layout_rule` (Exponential Layouts), `http`, `mail` und `command` (Konsolenbefehle der
+  Positivliste) ([Schritte von YAML-Migrationen](migrationen-yaml-schritte.md)); eine Erweiterung fügt ihre eigenen
+  genauso hinzu. Die übrigen Schlüssel eines Schritts werden gegen das Schema seines Typs geprüft, bevor irgendetwas
+  läuft.
 - `${ref.<Name>}` ist eine Referenz (gesetzt von `references:` eines früheren Schritts, von einem `reference`-Schritt
   oder von einer früheren PHP- oder YAML-Migration des Laufs), `${loop.<Name>}` eine Schleifenvariable,
   `${idmap.<Art>.<Name>}` eine ID der ID-Zuordnung `migrations/idmap/<Umgebung>.json`, `${run.environment}` die
@@ -284,7 +285,7 @@ Die Seiten: [Migrationen in der Administration](../hilfe/migrationen/in-der-admi
 
 ## Noch nicht in 6.0.15
 
-Die YAML-Schritttypen für Caches und den Suchindex, Layouts, `http`, `mail` und `command`, SQL- und INI-Migrationen, der Editor und die Generatoren in der Administration
+Der Editor und die Generatoren in der Administration
 (Generatoren außer dem Gerüst), das Aufzeichnen und `exp:velocity deploy --migrate` sind geplant und nicht Teil
 dieses Releases.
 

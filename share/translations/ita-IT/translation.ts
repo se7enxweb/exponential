@@ -81997,6 +81997,222 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>The run could not be started.</source>
         <translation>Impossibile avviare l&apos;esecuzione.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Registrare le modifiche</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Mentre una registrazione è in corso, ciò che modifichi nell'amministrazione o nella barra laterale del sito viene conservato come passi di una migrazione: contenuti, classi, ruoli e politiche, sezioni, utenti e gruppi, alias URL, impostazioni. Fermala quando hai finito, guarda cosa ha catturato e genera da essa una migrazione.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Non è stato possibile leggere le registrazioni: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Le tabelle delle registrazioni non esistono ancora: esegui prima l'aggiornamento (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>La registrazione è disattivata in migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Le mie modifiche</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Registra solo ciò che modifichi tu, ovunque tu lo modifichi, finché non la fermi.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Registrazione</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>da %time, finora %count modifica/e.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etichetta (facoltativa)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Mostra cosa ha catturato</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Ferma la registrazione</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Inizia a registrare le mie modifiche</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Finestra per tutto il sito</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Registra ogni modifica di ogni utente e della console finché non viene chiusa. Aprendola ti viene chiesto di verificare che sei tu.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aperta</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Chiudi la finestra</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Apri la finestra per tutto il sito</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Registrazioni</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>L'account di un utente (login, e-mail, password) e i campi degli account utente non vengono mai registrati.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Modifiche</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tutto il sito</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Modifiche di %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Fermata</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ancora nessuna registrazione.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Registrazione %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Tutte le registrazioni</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>La migrazione che ne risulterebbe</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Le modifiche raggruppate in un passo per ogni elemento modificato: ciò che farebbe una migrazione generata da questa registrazione.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Se ne potrà generare una migrazione quando questa installazione avrà i tipi di passo YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Omesso di proposito: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Non è stato registrato nulla.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Cosa ha catturato</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count modifica/e, nell'ordine in cui sono state fatte.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Modifica</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Passo</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Riguarda</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Altre %count: ./console exp:migration:record:show le elenca tutte.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Scarta</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Rimuove la registrazione e ciò che ha catturato. Ciò che è stato modificato resta modificato.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Sì, scarta questa registrazione</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Registrazione in corso…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Le tue modifiche vengono registrate per una migrazione.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Ogni modifica su questo sito viene registrata per una migrazione (finestra per tutto il sito).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>La registrazione per tutto il sito è iniziata: ogni modifica di ogni utente viene registrata finché non la fermi.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>La registrazione è iniziata: le tue modifiche vengono registrate finché non la fermi.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Registrazione fermata. Ciò che ha catturato resta finché non la scarti.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>La registrazione e i suoi eventi sono stati rimossi.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Non esiste la registrazione %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Spunta prima «Sì, scarta questa registrazione».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Solo l'utente che ha registrato può fermare una registrazione di sessione.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Scegli la registrazione da fermare.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Una registrazione di questo tipo è già in corso.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Non è stato possibile modificare la registrazione: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -82698,7 +82914,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>a job is going on</source>
-        <translation>un'attività è in corso</translation>
+        <translation>un&apos;attività è in corso</translation>
     </message>
     <message>
         <source>build to check</source>
@@ -82741,7 +82957,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
-        <translation>%path è di %size, più di quanto l'host consenta per un file.</translation>
+        <translation>%path è di %size, più di quanto l&apos;host consenta per un file.</translation>
     </message>
     <message>
         <source>%percent % of the limit</source>
@@ -82773,7 +82989,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>2. The host</source>
-        <translation>2. L'host</translation>
+        <translation>2. L&apos;host</translation>
     </message>
     <message>
         <source>3. Signing in to the repository</source>
@@ -82808,12 +83024,12 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Un sito di progetto GitHub si trova sotto /&lt;repository&gt;/; i link relativi funzionano lì e ovunque.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Una build recupera ogni pagina di %site come la vede un visitatore non connesso, riscrive i link, copia i file e scrive il risultato nella cartella della destinazione. Nulla viene pubblicato finché non verifichi la build e premi Pubblica.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
-        <translation>Un'espressione cron, per esempio 0 3 * * *</translation>
+        <translation>Un&apos;espressione cron, per esempio 0 3 * * *</translation>
     </message>
     <message>
         <source>A deploy key is kept as the secret %secret.</source>
@@ -82821,7 +83037,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>Una chiave di deploy permette a questa installazione di eseguire il push su un solo repository via SSH e da nessun'altra parte. La sua metà privata resta in Impostazioni &gt; Segreti; viene mostrata solo la metà pubblica.</translation>
+        <translation>Una chiave di deploy permette a questa installazione di eseguire il push su un solo repository via SSH e da nessun&apos;altra parte. La sua metà privata resta in Impostazioni &gt; Segreti; viene mostrata solo la metà pubblica.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
@@ -82829,19 +83045,19 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
-        <translation>Una chiave di deploy accede via SSH: cambia l'indirizzo git con quello SSH (git@github.com:owner/repo.git).</translation>
+        <translation>Una chiave di deploy accede via SSH: cambia l&apos;indirizzo git con quello SSH (git@github.com:owner/repo.git).</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
-        <translation>Un'attività è in corso, avviata da %user</translation>
+        <translation>Un&apos;attività è in corso, avviata da %user</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Un'attività di questa destinazione è ancora in corso (%detail). Attendi che finisca.</translation>
+        <translation>Un&apos;attività di questa destinazione è ancora in corso (%detail). Attendi che finisca.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Un'attività di questa destinazione è ancora in corso. Attendi che finisca.</translation>
+        <translation>Un&apos;attività di questa destinazione è ancora in corso. Attendi che finisca.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
@@ -82856,8 +83072,8 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Una pagina che dopo la pulizia contiene ancora output di debug, un token di modulo o un id di sessione non viene mai pubblicata.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Il ripristino è per esperti: spunta "So cosa cambia" e digita di nuovo il nome del tag.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Il ripristino è per esperti: spunta &quot;So cosa cambia&quot; e digita di nuovo il nome del tag.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -83005,7 +83221,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
-        <translation>Rispetto all'ultima pubblicazione.</translation>
+        <translation>Rispetto all&apos;ultima pubblicazione.</translation>
     </message>
     <message>
         <source>Credential</source>
@@ -83041,7 +83257,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Vuoto: l'indirizzo del sito. Altrimenti un indirizzo interno dello stesso sito.</translation>
+        <translation>Vuoto: l&apos;indirizzo del sito. Altrimenti un indirizzo interno dello stesso sito.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -83261,7 +83477,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Crea prima il repository sull'host; va bene anche vuoto.</translation>
+        <translation>Crea prima il repository sull&apos;host; va bene anche vuoto.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -83361,15 +83577,15 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>Solo con un token. env:NAME legge invece una variabile d'ambiente del server.</translation>
+        <translation>Solo con un token. env:NAME legge invece una variabile d&apos;ambiente del server.</translation>
     </message>
     <message>
         <source>Open the preview</source>
-        <translation>Apri l'anteprima</translation>
+        <translation>Apri l&apos;anteprima</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Apre la build come la servirà l'host, dalla cartella della destinazione. Il link funziona per te per un'ora.</translation>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Apre la build come la servirà l&apos;host, dalla cartella della destinazione. Il link funziona per te per un&apos;ora.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
@@ -83544,12 +83760,12 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Impostazioni &gt; Segreti</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Mostrato negli elenchi, per esempio "Sito pubblico su GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Mostrato negli elenchi, per esempio &quot;Sito pubblico su GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>L'accesso con una GitHub App arriverà con l'integrazione GitHub.</translation>
+        <translation>L&apos;accesso con una GitHub App arriverà con l&apos;integrazione GitHub.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -83657,11 +83873,11 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
-        <translation>La build è uguale all'ultima pubblicazione: non c'è nulla da pubblicare.</translation>
+        <translation>La build è uguale all&apos;ultima pubblicazione: non c&apos;è nulla da pubblicare.</translation>
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
-        <translation>La build è stata scartata: la cartella contiene di nuovo l'ultima pubblicazione.</translation>
+        <translation>La build è stata scartata: la cartella contiene di nuovo l&apos;ultima pubblicazione.</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
@@ -83677,23 +83893,23 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
-        <translation>Impossibile preparare l'attività: %detail</translation>
+        <translation>Impossibile preparare l&apos;attività: %detail</translation>
     </message>
     <message>
         <source>The job could not be started.</source>
-        <translation>Impossibile avviare l'attività.</translation>
+        <translation>Impossibile avviare l&apos;attività.</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>L'attività è terminata. Caricamento del rapporto.</translation>
+        <translation>L&apos;attività è terminata. Caricamento del rapporto.</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
-        <translation>L'attività richiede un utente connesso.</translation>
+        <translation>L&apos;attività richiede un utente connesso.</translation>
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
-        <translation>L'attività è stata avviata ma non ha comunicato l'id del processo. Controlla %detail.</translation>
+        <translation>L&apos;attività è stata avviata ma non ha comunicato l&apos;id del processo. Controlla %detail.</translation>
     </message>
     <message>
         <source>The key</source>
@@ -83709,7 +83925,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>L'elenco delle pagine per i motori di ricerca; richiede l'indirizzo pubblico.</translation>
+        <translation>L&apos;elenco delle pagine per i motori di ricerca; richiede l&apos;indirizzo pubblico.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
@@ -83717,7 +83933,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>Impossibile seguire l'avanzamento. Ricarica la pagina per vedere a che punto è l'attività.</translation>
+        <translation>Impossibile seguire l&apos;avanzamento. Ricarica la pagina per vedere a che punto è l&apos;attività.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
@@ -83729,7 +83945,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>L'archivio dei segreti non è ancora configurato (./console exp:upgrade --apply crea la sua tabella), quindi non è possibile conservare alcuna chiave.</translation>
+        <translation>L&apos;archivio dei segreti non è ancora configurato (./console exp:upgrade --apply crea la sua tabella), quindi non è possibile conservare alcuna chiave.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
@@ -83737,7 +83953,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
-        <translation>Impossibile scrivere l'impostazione: %problem</translation>
+        <translation>Impossibile scrivere l&apos;impostazione: %problem</translation>
     </message>
     <message>
         <source>The settings are valid. These lines will be written:</source>
@@ -83752,7 +83968,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Il sito torna ai file di quella pubblicazione; una build non ancora pubblicata deve prima essere pubblicata o scartata.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>La pagina del sito per gli indirizzi che non esistono.</translation>
     </message>
     <message>
@@ -83760,8 +83976,8 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Impossibile salvare la destinazione: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>La destinazione non accede ancora con questa chiave: scegli "Una chiave di deploy creata per questa destinazione" nelle sue impostazioni.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>La destinazione non accede ancora con questa chiave: scegli &quot;Una chiave di deploy creata per questa destinazione&quot; nelle sue impostazioni.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -83769,7 +83985,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>There is no build to check yet.</source>
-        <translation>Non c'è ancora nessuna build da verificare.</translation>
+        <translation>Non c&apos;è ancora nessuna build da verificare.</translation>
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
@@ -83777,7 +83993,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
-        <translation>Questa pagina segue l'attività mentre procede; l'attività continua in background quando la pagina viene chiusa.</translation>
+        <translation>Questa pagina segue l&apos;attività mentre procede; l&apos;attività continua in background quando la pagina viene chiusa.</translation>
     </message>
     <message>
         <source>This target has no deploy key yet.</source>
@@ -83793,11 +84009,11 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
-        <translation>Scarta questa build: la cartella contiene di nuovo l'ultima pubblicazione. Il sito live non cambia.</translation>
+        <translation>Scarta questa build: la cartella contiene di nuovo l&apos;ultima pubblicazione. Il sito live non cambia.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Spunta prima "Ho verificato le modifiche".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Spunta prima &quot;Ho verificato le modifiche&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -83833,11 +84049,11 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Cosa ha fatto l'attività e il suo registro. Un'attività avviata qui prosegue in background quando questa pagina viene chiusa.</translation>
+        <translation>Cosa ha fatto l&apos;attività e il suo registro. Un&apos;attività avviata qui prosegue in background quando questa pagina viene chiusa.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
-        <translation>Ciò che l'attività ha stampato come errori</translation>
+        <translation>Ciò che l&apos;attività ha stampato come errori</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
@@ -83861,7 +84077,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>Dove portano i link a ciò che la copia non contiene (la ricerca, l'accesso).</translation>
+        <translation>Dove portano i link a ciò che la copia non contiene (la ricerca, l&apos;accesso).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
@@ -83969,7 +84185,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
-        <translation>proc_open è disabilitato, quindi qui non è possibile avviare un'attività. Usa ./console exp:static:build sul server.</translation>
+        <translation>proc_open è disabilitato, quindi qui non è possibile avviare un&apos;attività. Usa ./console exp:static:build sul server.</translation>
     </message>
     <message>
         <source>publish</source>
@@ -84013,11 +84229,39 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: scritto nel file CNAME. Punta il DNS del dominio all'host come indicato da quest'ultimo; l'HTTPS può richiedere un po' di tempo per attivarsi.</translation>
+        <translation>www.example.com: scritto nel file CNAME. Punta il DNS del dominio all&apos;host come indicato da quest&apos;ultimo; l&apos;HTTPS può richiedere un po&apos; di tempo per attivarsi.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>sì, non ancora pubblicata</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Una build recupera ogni pagina di %site come la vede un visitatore non connesso, riscrive i link, copia i file e scrive il risultato nella cartella della destinazione. Nulla viene pubblicato finché non verifichi la build e premi Pubblica.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Il ripristino è per esperti: spunta "So cosa cambia" e digita di nuovo il nome del tag.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Apre la build come la servirà l'host, dalla cartella della destinazione. Il link funziona per te per un'ora.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Mostrato negli elenchi, per esempio "Sito pubblico su GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>La pagina del sito per gli indirizzi che non esistono.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>La destinazione non accede ancora con questa chiave: scegli "Una chiave di deploy creata per questa destinazione" nelle sue impostazioni.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Spunta prima "Ho verificato le modifiche".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

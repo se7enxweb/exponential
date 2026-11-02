@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>실행을 시작할수 없습니다.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>변경사항 기록</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>기록이 진행되는 동안 관리화면이나 싸이트 측면띠에서 변경한 내용은 이전의 단계로 보관됩니다: 내용, 클라스, 역할과 정책, 부분, 사용자와 그루빠, URL 별칭, 설정. 작업이 끝나면 기록을 중지하고 기록된 내용을 확인한 다음 이전을 생성하십시오.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>기록을 읽을수 없습니다: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>기록표가 아직 없습니다: 먼저 갱신을 실행하십시오 (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini에서 기록이 꺼져있습니다 ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>나의 변경사항</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>중지할 때까지 당신이 변경한 내용만, 어디서 변경하든 기록합니다.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>기록</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time 부터, 지금까지 변경 %count 건.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>표식 (선택)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>기록된 내용 보기</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>기록 중지</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>나의 변경사항 기록 시작</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>싸이트 전체 창</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>닫을 때까지 모든 사용자와 조종탁의 모든 변경을 기록합니다. 열 때 본인확인을 요구합니다.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>열림</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>창 닫기</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>싸이트 전체 창 열기</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>기록목록</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>사용자 계정 (가입명, 전자우편, 암호)과 사용자 계정의 마당은 절대로 기록되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>변경수</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>싸이트 전체</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name 의 변경사항</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>중지됨</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>아직 기록이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>기록 %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>모든 기록</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>생성될 이전</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>변경된 항목마다 한 단계로 합친 변경사항: 이 기록에서 생성한 이전이 할 일.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>이 설치에 YAML 단계 류형 %types 이 있으면 여기서 이전을 생성할수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>의도적으로 제외됨: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>기록된것이 없습니다.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>기록된 내용</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>변경 %count 건, 진행된 순서대로.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>변경</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>단계</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>대상</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count 건 더: ./console exp:migration:record:show 로 모두 볼수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>페기</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>기록과 기록된 내용을 삭제합니다. 변경된것은 변경된 상태로 남습니다.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>예, 이 기록을 페기합니다</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>기록중…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>당신의 변경사항이 이전을 위해 기록되고있습니다.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>이 싸이트의 모든 변경이 이전을 위해 기록되고있습니다 (싸이트 전체 창).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>싸이트 전체 기록이 시작되였습니다: 중지할 때까지 모든 사용자의 모든 변경이 기록됩니다.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>기록이 시작되였습니다: 중지할 때까지 당신의 변경사항이 기록됩니다.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>기록이 중지되였습니다. 기록된 내용은 페기할 때까지 남아있습니다.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>기록과 그 사건들이 삭제되였습니다.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>기록 %id 이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>먼저 《예, 이 기록을 페기합니다》를 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>세션 기록은 기록한 사용자만 중지할수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>중지할 기록을 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>이 종류의 기록이 이미 진행중입니다.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>기록을 변경할수 없습니다: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub 프로젝트 싸이트는 /&lt;repository&gt;/ 아래에 있습니다. 상대련결은 그곳과 다른 모든 곳에서 동작합니다.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>빌드는 로그인하지 않은 방문자가 보는 그대로 %site의 모든 페지를 가져오고 련결을 다시 쓰며 화일들을 복사한 다음 결과를 대상의 등록부에 기록합니다. 빌드를 확인하고 게시를 누를 때까지 아무것도 게시되지 않습니다.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>정리후에도 오유수정 출력, 양식 토큰 또는 세션 ID가 남아있는 페지는 절대로 게시되지 않습니다.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>되돌림은 전문가용입니다. "이것이 무엇을 바꾸는지 알고있습니다"에 표시하고 꼬리표 이름을 다시 입력하십시오.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>되돌림은 전문가용입니다. &quot;이것이 무엇을 바꾸는지 알고있습니다&quot;에 표시하고 꼬리표 이름을 다시 입력하십시오.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>미리보기 열기</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>호스트가 제공할 모양 그대로 대상의 등록부에서 빌드를 엽니다. 이 련결은 한시간동안 쓸수 있습니다.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>설정 &gt; 비밀 값</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>목록에 표시됩니다. 실례로 "GitHub Pages의 공개 싸이트".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>목록에 표시됩니다. 실례로 &quot;GitHub Pages의 공개 싸이트&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>싸이트가 그 게시의 화일들로 되돌아갑니다. 아직 게시되지 않은 빌드는 먼저 게시하거나 폐기하여야 합니다.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>존재하지 않는 주소를 위한 싸이트 자체의 페지.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>대상을 보관할수 없습니다: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>대상이 아직 이 열쇠로 로그인하지 않습니다. 대상의 설정에서 "이 대상을 위해 만든 배포열쇠"를 선택하십시오.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>대상이 아직 이 열쇠로 로그인하지 않습니다. 대상의 설정에서 &quot;이 대상을 위해 만든 배포열쇠&quot;를 선택하십시오.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>이 빌드를 폐기합니다. 등록부에 다시 마지막 게시가 들어갑니다. 실제 싸이트는 바뀌지 않습니다.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>먼저 "변경내용을 확인하였습니다"에 표시하십시오.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>먼저 &quot;변경내용을 확인하였습니다&quot;에 표시하십시오.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>예, 아직 게시되지 않음</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>빌드는 로그인하지 않은 방문자가 보는 그대로 %site의 모든 페지를 가져오고 련결을 다시 쓰며 화일들을 복사한 다음 결과를 대상의 등록부에 기록합니다. 빌드를 확인하고 게시를 누를 때까지 아무것도 게시되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>되돌림은 전문가용입니다. "이것이 무엇을 바꾸는지 알고있습니다"에 표시하고 꼬리표 이름을 다시 입력하십시오.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>호스트가 제공할 모양 그대로 대상의 등록부에서 빌드를 엽니다. 이 련결은 한시간동안 쓸수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>목록에 표시됩니다. 실례로 "GitHub Pages의 공개 싸이트".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>존재하지 않는 주소를 위한 싸이트 자체의 페지.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>대상이 아직 이 열쇠로 로그인하지 않습니다. 대상의 설정에서 "이 대상을 위해 만든 배포열쇠"를 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>먼저 "변경내용을 확인하였습니다"에 표시하십시오.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

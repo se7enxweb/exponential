@@ -80592,6 +80592,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>The run could not be started.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Recording changes</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>The recordings could not be read: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>My changes</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Records only what you change, wherever you change it, until you stop it.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Recording</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>since %time, %count change(s) so far.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Label (optional)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Show what it captured</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Stop recording</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Start recording my changes</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Site-wide window</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Close the window</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Open the site-wide window</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Recordings</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Changes</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Site-wide</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Changes of %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Stopped</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>No recording yet.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Recording %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>All recordings</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>The migration it would make</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>The changes folded into one step per thing changed: what a migration generated from this recording would do.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>A migration can be generated from it once this installation has the YAML step types %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Left out on purpose: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nothing was recorded.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>What it captured</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count change(s), in the order they were made.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Change</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Step</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>About</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count more: ./console exp:migration:record:show lists every one.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Discard</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Removes the recording and what it captured. What was changed stays changed.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Yes, discard this recording</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Recording…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Your changes are recorded for a migration.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Every change on this site is recorded for a migration (site-wide window).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>The site-wide recording has started: every change of every user is recorded until you stop it.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Recording has started: your changes are recorded until you stop it.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Recording stopped. What it captured stays until you discard it.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>The recording and its events are removed.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>There is no recording %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Tick "Yes, discard this recording" first.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Only the user who recorded may stop a session recording.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Choose the recording to stop.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>A recording of this kind is running already.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>The recording could not be changed: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81403,8 +81619,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -81451,8 +81667,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>A page that still carries debug output, a form token or a session id after stripping is never published.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81963,8 +82179,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Open the preview</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</translation>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
@@ -82139,8 +82355,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Setup &gt; Secrets</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Shown in lists, for example "Public site on GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82347,16 +82563,16 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>The site's own page for addresses that do not exist.</translation>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>The site&apos;s own page for addresses that do not exist.</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
         <translation>The target could not be saved: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82391,8 +82607,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Throws this build away: the folder holds the last publish again. The live site does not change.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Tick "I have checked the changes" first.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Tick &quot;I have checked the changes&quot; first.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82613,6 +82829,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>yes, not published yet</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Shown in lists, for example "Public site on GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>The site's own page for addresses that do not exist.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Tick "I have checked the changes" first.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

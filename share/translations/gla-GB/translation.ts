@@ -22176,7 +22176,7 @@ An aire: Cha tèid na pacaidean a dhì-stàladh.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Bidh an tasgadan stataigeach a' frithealadh dhuilleagan bhon fhrithealaiche seo. Gus lethbhreac stataigeach de làrach fhoillseachadh an àiteigin eile, air GitHub Pages no air òstair git sam bith, cleachdaibh am foillseachadh stataigeach.</translation>
+        <translation>Bidh an tasgadan stataigeach a&apos; frithealadh dhuilleagan bhon fhrithealaiche seo. Gus lethbhreac stataigeach de làrach fhoillseachadh an àiteigin eile, air GitHub Pages no air òstair git sam bith, cleachdaibh am foillseachadh stataigeach.</translation>
     </message>
 </context>
 <context>
@@ -80590,6 +80590,222 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>The run could not be started.</source>
         <translation>Cha b&apos; urrainn dhuinn an ruith a thòiseachadh.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Atharraichean a chlàradh</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Fhad 's a tha clàradh a' dol, thèid na dh'atharraicheas tu san rianachd no ann am bàr-taoibh na làraich a ghleidheadh mar cheuman imrich: susbaint, clasaichean, dreuchdan is poileasaidhean, earrannan, cleachdaichean is buidhnean, ailias URL, roghainnean. Cuir stad air nuair a bhios tu deiseil, thoir sùil air na ghlac e agus gin imrich às.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Cha b' urrainn dhuinn na clàraidhean a leughadh: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Chan eil clàran nan clàraidhean ann fhathast: ruith an t-àrdachadh an toiseach (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Tha an clàradh dheth ann am migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Na h-atharraichean agam</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Cha chlàraich e ach na dh'atharraicheas tusa, ge b' e càite, gus an cuir thu stad air.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Clàradh</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>bho %time, %count atharrachadh gu ruige seo.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Leubail (roghainneil)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Seall na ghlac e</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Cuir stad air a' chlàradh</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Tòisich air na h-atharraichean agam a chlàradh</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Uinneag airson na làraich gu lèir</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Clàraidh e gach atharrachadh aig gach cleachdaiche is aig a' chonsoil gus an tèid a dùnadh. Nuair a dh'fhosglas tu i, thèid iarraidh ort dearbhadh gur tusa a th' ann.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Fosgailte</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Dùin an uinneag</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Fosgail an uinneag airson na làraich gu lèir</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Clàraidhean</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Cha tèid cunntas cleachdaiche (ainm clàraidh a-steach, post-d, facal-faire) no raointean nan cunntasan cleachdaiche a chlàradh gu bràth.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Atharraichean</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>An làrach gu lèir</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Atharraichean %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Air stad</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Chan eil clàradh ann fhathast.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Clàradh %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Na clàraidhean uile</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>An imrich a thigeadh às</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Na h-atharraichean air an cruinneachadh gu aon cheum airson gach rud a dh'atharraich: na dhèanadh imrich a ghineadh bhon chlàradh seo.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Gabhaidh imrich a ghintinn às nuair a bhios seòrsaichean cheuman YAML %types aig an stàladh seo.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Air fhàgail a-mach a dh'aon ghnothach: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Cha deach dad a chlàradh.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Na ghlac e</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count atharrachadh, san òrdugh san deach an dèanamh.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Atharrachadh</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Ceum</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Mu dhèidhinn</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count eile: liostaichidh ./console exp:migration:record:show iad uile.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Tilg air falbh</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Thoir air falbh an clàradh agus na ghlac e. Fanaidh na chaidh atharrachadh air atharrachadh.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Tha, tilg an clàradh seo air falbh</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>A' clàradh…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Tha na h-atharraichean agad gan clàradh airson imrich.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Tha gach atharrachadh air an làrach seo ga chlàradh airson imrich (uinneag airson na làraich gu lèir).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Thòisich clàradh na làraich gu lèir: thèid gach atharrachadh aig gach cleachdaiche a chlàradh gus an cuir thu stad air.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Thòisich an clàradh: thèid na h-atharraichean agad a chlàradh gus an cuir thu stad air.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Chaidh stad a chur air a' chlàradh. Fanaidh na ghlac e gus an tilg thu air falbh e.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Chaidh an clàradh 's na tachartasan aige a thoirt air falbh.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Chan eil clàradh %id ann.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Cuir cromag ri "Tha, tilg an clàradh seo air falbh" an toiseach.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Chan fhaod ach an cleachdaiche a rinn an clàradh stad a chur air clàradh seisein.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Tagh an clàradh air an tèid stad a chur.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Tha clàradh dhen t-seòrsa seo a' dol mu thràth.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Cha b' urrainn dhuinn an clàradh atharrachadh: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81267,11 +81483,11 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Publish a free static copy of your site on GitHub Pages:</source>
-        <translation>Foillsichibh lethbhreac stataigeach saor 'n-asgaidh dhen làrach agaibh air GitHub Pages:</translation>
+        <translation>Foillsichibh lethbhreac stataigeach saor &apos;n-asgaidh dhen làrach agaibh air GitHub Pages:</translation>
     </message>
     <message>
         <source>Stale pages</source>
-        <translation>Duilleagan a dh'aois</translation>
+        <translation>Duilleagan a dh&apos;aois</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -81287,11 +81503,11 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>Cha b' urrainn dhuinn na h-amasan a leughadh: %problem</translation>
+        <translation>Cha b&apos; urrainn dhuinn na h-amasan a leughadh: %problem</translation>
     </message>
     <message>
         <source>a job is going on</source>
-        <translation>tha obair a' dol</translation>
+        <translation>tha obair a&apos; dol</translation>
     </message>
     <message>
         <source>build to check</source>
@@ -81334,7 +81550,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
-        <translation>Tha %path %size, barrachd na cheadaicheas an t-òstair do dh'fhaidhle.</translation>
+        <translation>Tha %path %size, barrachd na cheadaicheas an t-òstair do dh&apos;fhaidhle.</translation>
     </message>
     <message>
         <source>%percent % of the limit</source>
@@ -81346,7 +81562,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>%tag is the publish the site has now.</source>
-        <translation>Is e %tag am foillseachadh a th' aig an làrach an-dràsta.</translation>
+        <translation>Is e %tag am foillseachadh a th&apos; aig an làrach an-dràsta.</translation>
     </message>
     <message>
         <source>%target: job %id</source>
@@ -81401,7 +81617,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <translation>Bidh làrach pròiseict GitHub fo /&lt;repository&gt;/; obraichidh ceanglaichean dàimheach an sin agus àite sam bith eile.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Gheibh togail gach duilleag de %site mar a chì aoigh nach do chlàraich a-steach i, sgrìobhaidh i na ceanglaichean às ùr, nì i lethbhreac dhe na faidhlichean agus sgrìobhaidh i an toradh gu pasgan an amais. Cha tèid càil fhoillseachadh gus an sgrùd sibh an togail agus am brùth sibh Foillsich.</translation>
     </message>
     <message>
@@ -81426,15 +81642,15 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
-        <translation>Tha obair a' dol, air a tòiseachadh le %user</translation>
+        <translation>Tha obair a&apos; dol, air a tòiseachadh le %user</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Tha obair aig an amas seo fhathast a' dol (%detail). Fuirichibh gus an crìochnaich i.</translation>
+        <translation>Tha obair aig an amas seo fhathast a&apos; dol (%detail). Fuirichibh gus an crìochnaich i.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Tha obair aig an amas seo fhathast a' dol. Fuirichibh gus an crìochnaich i.</translation>
+        <translation>Tha obair aig an amas seo fhathast a&apos; dol. Fuirichibh gus an crìochnaich i.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
@@ -81449,20 +81665,20 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <translation>Cha tèid duilleag fhoillseachadh gu bràth ma tha às-chur dì-bhugachaidh, tòcan foirm no ID seisein innte fhathast às dèidh an sgioblachaidh.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Tha toirt air ais do dh'eòlaichean: cuiribh cromag ri “Tha fios agam dè dh'atharraicheas seo” agus sgrìobhaibh ainm an taga a-rithist.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Tha toirt air ais do dh&apos;eòlaichean: cuiribh cromag ri “Tha fios agam dè dh&apos;atharraicheas seo” agus sgrìobhaibh ainm an taga a-rithist.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Faodaidh làrach a bhith suas ri %site, aon fhaidhle suas ri %file, le mu 100 GB de thrafaig gach mìos. Air plana saor 'n-asgaidh feumaidh an t-ionad-tasgaidh a bhith poblach. Chan eil GitHub Pages airson bhùthan no gnothaichean malairteach eile.</translation>
+        <translation>Faodaidh làrach a bhith suas ri %site, aon fhaidhle suas ri %file, le mu 100 GB de thrafaig gach mìos. Air plana saor &apos;n-asgaidh feumaidh an t-ionad-tasgaidh a bhith poblach. Chan eil GitHub Pages airson bhùthan no gnothaichean malairteach eile.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>'S e amas aon làrach a thèid fhoillseachadh gu aon ionad-tasgaidh git. Cha tèid càil a thogail no fhoillseachadh an seo: sgrìobhaidh Sàbhail na roghainnean gu settings/override/staticcache.ini.append.php.</translation>
+        <translation>&apos;S e amas aon làrach a thèid fhoillseachadh gu aon ionad-tasgaidh git. Cha tèid càil a thogail no fhoillseachadh an seo: sgrìobhaidh Sàbhail na roghainnean gu settings/override/staticcache.ini.append.php.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>'S e amas aon làrach a thèid fhoillseachadh ann an aon àite, mar eisimpleir an làrach phoblach agaibh air GitHub Pages.</translation>
+        <translation>&apos;S e amas aon làrach a thèid fhoillseachadh ann an aon àite, mar eisimpleir an làrach phoblach agaibh air GitHub Pages.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
@@ -81570,7 +81786,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Check what the build changes, look at it, then publish it or throw it away.</source>
-        <translation>Sgrùdaibh dè dh'atharraicheas an togail, thoiribh sùil oirre, an uairsin foillsichibh i no tilgibh air falbh i.</translation>
+        <translation>Sgrùdaibh dè dh&apos;atharraicheas an togail, thoiribh sùil oirre, an uairsin foillsichibh i no tilgibh air falbh i.</translation>
     </message>
     <message>
         <source>Choose the publish to go back to.</source>
@@ -81594,7 +81810,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
-        <translation>An coimeas ris a' phasgan roimhe: %added air a chur ris, %changed air atharrachadh, %removed air a thoirt air falbh, %unchanged gun atharrachadh.</translation>
+        <translation>An coimeas ris a&apos; phasgan roimhe: %added air a chur ris, %changed air atharrachadh, %removed air a thoirt air falbh, %unchanged gun atharrachadh.</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
@@ -81642,11 +81858,11 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Every link starts with the base path.</source>
-        <translation>Tòisichidh gach ceangal leis a' bhun-slighe.</translation>
+        <translation>Tòisichidh gach ceangal leis a&apos; bhun-slighe.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>'S e gealladh le taga static/%id/&lt;n&gt; a th' anns gach foillseachadh. Ma thilleas sibh, thèid gealladh ùr a dhèanamh le faidhlichean foillseachaidh nas tràithe: mairidh an eachdraidh, cha ghluais taga sam bith agus cha tèid càil a sparradh.</translation>
+        <translation>&apos;S e gealladh le taga static/%id/&lt;n&gt; a th&apos; anns gach foillseachadh. Ma thilleas sibh, thèid gealladh ùr a dhèanamh le faidhlichean foillseachaidh nas tràithe: mairidh an eachdraidh, cha ghluais taga sam bith agus cha tèid càil a sparradh.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -81674,7 +81890,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Files that could not be collected</source>
-        <translation>Faidhlichean nach b' urrainnear a chruinneachadh</translation>
+        <translation>Faidhlichean nach b&apos; urrainnear a chruinneachadh</translation>
     </message>
     <message>
         <source>Fingerprint</source>
@@ -81694,7 +81910,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>For experts. The public site changes as soon as the push is through.</source>
-        <translation>Do dh'eòlaichean. Atharraichidh an làrach phoblach cho luath 's a bhios am putadh deiseil.</translation>
+        <translation>Do dh&apos;eòlaichean. Atharraichidh an làrach phoblach cho luath &apos;s a bhios am putadh deiseil.</translation>
     </message>
     <message>
         <source>Forms</source>
@@ -81702,7 +81918,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Free hosting from a GitHub repository.</source>
-        <translation>Aoigheachd saor 'n-asgaidh o ionad-tasgaidh GitHub.</translation>
+        <translation>Aoigheachd saor &apos;n-asgaidh o ionad-tasgaidh GitHub.</translation>
     </message>
     <message>
         <source>From the branch</source>
@@ -81782,7 +81998,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>I know what this changes</source>
-        <translation>Tha fios agam dè dh'atharraicheas seo</translation>
+        <translation>Tha fios agam dè dh&apos;atharraicheas seo</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81794,7 +82010,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>Tha e a' ruith sa chùlaibh mar %user; faodaidh sibh an duilleag seo a dhùnadh.</translation>
+        <translation>Tha e a&apos; ruith sa chùlaibh mar %user; faodaidh sibh an duilleag seo a dhùnadh.</translation>
     </message>
     <message>
         <source>Job %id</source>
@@ -81866,7 +82082,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Most pages</source>
-        <translation>A' mhòr-chuid de dhuilleagan</translation>
+        <translation>A&apos; mhòr-chuid de dhuilleagan</translation>
     </message>
     <message>
         <source>Name</source>
@@ -81934,7 +82150,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>On the console</source>
-        <translation>Air a' chonsoil</translation>
+        <translation>Air a&apos; chonsoil</translation>
     </message>
     <message>
         <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
@@ -81950,7 +82166,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
-        <translation>Dìreach na dh'ainmicheas na duilleagan</translation>
+        <translation>Dìreach na dh&apos;ainmicheas na duilleagan</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
@@ -81961,7 +82177,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <translation>Fosgail an ro-shealladh</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Fosglaidh e an togail mar a fhrithealas an t-òstair i, bho phasgan an amais. Obraichidh an ceangal dhuibh fad uair a thìde.</translation>
     </message>
     <message>
@@ -82066,7 +82282,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Replace the key: the old one stops working</source>
-        <translation>Cuir iuchair eile na h-àite: sguiridh an t-seann tè a dh'obair</translation>
+        <translation>Cuir iuchair eile na h-àite: sguiridh an t-seann tè a dh&apos;obair</translation>
     </message>
     <message>
         <source>Report</source>
@@ -82137,7 +82353,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <translation>Suidheachadh &gt; Rùintean-dìomhair</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>Ga shealltainn ann an liostaichean, mar eisimpleir “Làrach phoblach air GitHub Pages”.</translation>
     </message>
     <message>
@@ -82166,7 +82382,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Stale pages</source>
-        <translation>Duilleagan a dh'aois</translation>
+        <translation>Duilleagan a dh&apos;aois</translation>
     </message>
     <message>
         <source>Started</source>
@@ -82242,11 +82458,11 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Tells search engines what to read.</source>
-        <translation>Innsidh e do dh'einnseanan-luirg dè leughas iad.</translation>
+        <translation>Innsidh e do dh&apos;einnseanan-luirg dè leughas iad.</translation>
     </message>
     <message>
         <source>The build could not be thrown away: %problem</source>
-        <translation>Cha b' urrainnear an togail a thilgeil air falbh: %problem</translation>
+        <translation>Cha b&apos; urrainnear an togail a thilgeil air falbh: %problem</translation>
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
@@ -82258,7 +82474,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
-        <translation>Freagraidh na roghainnean bunaiteach air a' mhòr-chuid de làraichean.</translation>
+        <translation>Freagraidh na roghainnean bunaiteach air a&apos; mhòr-chuid de làraichean.</translation>
     </message>
     <message>
         <source>The folder holds a build that is not published yet; a new build replaces it.</source>
@@ -82270,15 +82486,15 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
-        <translation>Cha b' urrainnear an obair ullachadh: %detail</translation>
+        <translation>Cha b&apos; urrainnear an obair ullachadh: %detail</translation>
     </message>
     <message>
         <source>The job could not be started.</source>
-        <translation>Cha b' urrainnear an obair a thòiseachadh.</translation>
+        <translation>Cha b&apos; urrainnear an obair a thòiseachadh.</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>Tha an obair deiseil. A' luchdadh na h-aithisg aice.</translation>
+        <translation>Tha an obair deiseil. A&apos; luchdadh na h-aithisg aice.</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
@@ -82286,7 +82502,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
-        <translation>Chaidh an obair a thòiseachadh ach cha do dh'innis i ID a pròiseis. Sgrùdaibh %detail.</translation>
+        <translation>Chaidh an obair a thòiseachadh ach cha do dh&apos;innis i ID a pròiseis. Sgrùdaibh %detail.</translation>
     </message>
     <message>
         <source>The key</source>
@@ -82310,7 +82526,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>Cha b' urrainnear an t-adhartas a leantainn. Ath-luchdaichibh an duilleag gus faicinn ciamar a tha an obair a' dol.</translation>
+        <translation>Cha b&apos; urrainnear an t-adhartas a leantainn. Ath-luchdaichibh an duilleag gus faicinn ciamar a tha an obair a&apos; dol.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
@@ -82318,7 +82534,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>The root of the branch</source>
-        <translation>Freumh a' mheòir</translation>
+        <translation>Freumh a&apos; mheòir</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
@@ -82330,7 +82546,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
-        <translation>Cha b' urrainnear an roghainn a sgrìobhadh: %problem</translation>
+        <translation>Cha b&apos; urrainnear an roghainn a sgrìobhadh: %problem</translation>
     </message>
     <message>
         <source>The settings are valid. These lines will be written:</source>
@@ -82345,20 +82561,20 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <translation>Tillidh an làrach gu faidhlichean an fhoillseachaidh sin; feumar togail nach deach fhoillseachadh fhathast fhoillseachadh no a thilgeil air falbh an toiseach.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Duilleag na làraich fhèin airson seòlaidhean nach eil ann.</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
-        <translation>Cha b' urrainnear an t-amas a shàbhaladh: %problem</translation>
+        <translation>Cha b&apos; urrainnear an t-amas a shàbhaladh: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Chan eil an t-amas a' clàradh a-steach leis an iuchair seo fhathast: taghaibh “Iuchair cur-an-sàs a chaidh a chruthachadh dhan amas seo” sna roghainnean aige.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Chan eil an t-amas a&apos; clàradh a-steach leis an iuchair seo fhathast: taghaibh “Iuchair cur-an-sàs a chaidh a chruthachadh dhan amas seo” sna roghainnean aige.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>Cha b' urrainn dhuinn na h-amasan a leughadh: %problem</translation>
+        <translation>Cha b&apos; urrainn dhuinn na h-amasan a leughadh: %problem</translation>
     </message>
     <message>
         <source>There is no build to check yet.</source>
@@ -82370,7 +82586,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
-        <translation>Leanaidh an duilleag seo an obair fhad 's a tha i a' dol; cumaidh i a' dol sa chùlaibh nuair a thèid an duilleag a dhùnadh.</translation>
+        <translation>Leanaidh an duilleag seo an obair fhad &apos;s a tha i a&apos; dol; cumaidh i a&apos; dol sa chùlaibh nuair a thèid an duilleag a dhùnadh.</translation>
     </message>
     <message>
         <source>This target has no deploy key yet.</source>
@@ -82389,7 +82605,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <translation>Tilgidh e an togail seo air falbh: tha am foillseachadh mu dheireadh sa phasgan a-rithist. Cha atharraich an làrach bheò.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>Cuiribh cromag ri “Sgrùd mi na h-atharraichean” an toiseach.</translation>
     </message>
     <message>
@@ -82418,15 +82634,15 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>What changes</source>
-        <translation>Na dh'atharraicheas</translation>
+        <translation>Na dh&apos;atharraicheas</translation>
     </message>
     <message>
         <source>What each file is; always written.</source>
-        <translation>Dè th' anns gach faidhle; air a sgrìobhadh an-còmhnaidh.</translation>
+        <translation>Dè th&apos; anns gach faidhle; air a sgrìobhadh an-còmhnaidh.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Na rinn an obair agus an clàr aice. Cumaidh obair a thòisich an seo a' dol sa chùlaibh nuair a thèid an duilleag seo a dhùnadh.</translation>
+        <translation>Na rinn an obair agus an clàr aice. Cumaidh obair a thòisich an seo a&apos; dol sa chùlaibh nuair a thèid an duilleag seo a dhùnadh.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
@@ -82434,7 +82650,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
-        <translation>Na dh'ainmicheas na duilleagan, agus gach dealbh de shusbaint fhoillsichte</translation>
+        <translation>Na dh&apos;ainmicheas na duilleagan, agus gach dealbh de shusbaint fhoillsichte</translation>
     </message>
     <message>
         <source>When</source>
@@ -82442,7 +82658,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>When a publish fails</source>
-        <translation>Nuair a dh'fhàilligeas foillseachadh</translation>
+        <translation>Nuair a dh&apos;fhàilligeas foillseachadh</translation>
     </message>
     <message>
         <source>When a publish succeeds</source>
@@ -82462,7 +82678,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>Dè an làrach a thèid fhoillseachadh, agus dè an t-ainm a th' air an amas.</translation>
+        <translation>Dè an làrach a thèid fhoillseachadh, agus dè an t-ainm a th&apos; air an amas.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
@@ -82478,7 +82694,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>Faodaidh sibh an-còmhnaidh togail is foillseachadh le làimh an seo agus air a' chonsoil.</translation>
+        <translation>Faodaidh sibh an-còmhnaidh togail is foillseachadh le làimh an seo agus air a&apos; chonsoil.</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
@@ -82498,7 +82714,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>failed</source>
-        <translation>dh'fhàillig e</translation>
+        <translation>dh&apos;fhàillig e</translation>
     </message>
     <message>
         <source>file</source>
@@ -82506,7 +82722,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>gh-pages, or main with the folder docs.</source>
-        <translation>gh-pages, no main leis a' phasgan docs.</translation>
+        <translation>gh-pages, no main leis a&apos; phasgan docs.</translation>
     </message>
     <message>
         <source>git host</source>
@@ -82542,7 +82758,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>none: nothing changed</source>
-        <translation>chan eil gin: cha do dh'atharraich càil</translation>
+        <translation>chan eil gin: cha do dh&apos;atharraich càil</translation>
     </message>
     <message>
         <source>not pushed</source>
@@ -82550,7 +82766,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>nothing changed</source>
-        <translation>cha do dh'atharraich càil</translation>
+        <translation>cha do dh&apos;atharraich càil</translation>
     </message>
     <message>
         <source>page</source>
@@ -82598,7 +82814,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>running</source>
-        <translation>a' ruith</translation>
+        <translation>a&apos; ruith</translation>
     </message>
     <message>
         <source>the folder only</source>
@@ -82606,11 +82822,39 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: air a sgrìobhadh dhan fhaidhle CNAME. Stiùiribh DNS na h-àrainne chun an òstair mar a mhìnicheas e; dh'fhaodadh gun toir HTTPS greis mus tòisich e.</translation>
+        <translation>www.example.com: air a sgrìobhadh dhan fhaidhle CNAME. Stiùiribh DNS na h-àrainne chun an òstair mar a mhìnicheas e; dh&apos;fhaodadh gun toir HTTPS greis mus tòisich e.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>tha, gun fhoillseachadh fhathast</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Gheibh togail gach duilleag de %site mar a chì aoigh nach do chlàraich a-steach i, sgrìobhaidh i na ceanglaichean às ùr, nì i lethbhreac dhe na faidhlichean agus sgrìobhaidh i an toradh gu pasgan an amais. Cha tèid càil fhoillseachadh gus an sgrùd sibh an togail agus am brùth sibh Foillsich.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Tha toirt air ais do dh'eòlaichean: cuiribh cromag ri “Tha fios agam dè dh'atharraicheas seo” agus sgrìobhaibh ainm an taga a-rithist.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Fosglaidh e an togail mar a fhrithealas an t-òstair i, bho phasgan an amais. Obraichidh an ceangal dhuibh fad uair a thìde.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Ga shealltainn ann an liostaichean, mar eisimpleir “Làrach phoblach air GitHub Pages”.</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Duilleag na làraich fhèin airson seòlaidhean nach eil ann.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Chan eil an t-amas a' clàradh a-steach leis an iuchair seo fhathast: taghaibh “Iuchair cur-an-sàs a chaidh a chruthachadh dhan amas seo” sna roghainnean aige.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Cuiribh cromag ri “Sgrùd mi na h-atharraichean” an toiseach.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

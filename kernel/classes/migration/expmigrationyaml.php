@@ -510,10 +510,15 @@ class expMigrationYaml implements expMigration
         return $this->document['down'];
     }
 
-    /** @return bool whether the migration runs in a transaction where the engine has one */
+    /**
+     * Whether the migration runs in a transaction where the engine has one: not when the document says
+     * "transactional: false" or the header "transactional: no".
+     *
+     * @return bool
+     */
     public function transactional()
     {
-        return (bool)$this->document['transactional'];
+        return (bool)$this->document['transactional'] && $this->definition->transactional();
     }
 
     /**
@@ -922,6 +927,9 @@ class expMigrationYaml implements expMigration
             $result = self::result( $result );
             foreach ( $result['lines'] as $line )
                 $lines[] = $line;
+            // the object a step created or changed is reindexed after the run (expMigrationAfterRun)
+            if ( $context instanceof expMigrationContext && isset( $result['values']['object_id'] ) && empty( $result['values']['purged'] ) )
+                $context->touchObject( $result['values']['object_id'] );
             if ( isset( $step['references'] ) && is_array( $step['references'] ) )
             {
                 foreach ( $step['references'] as $name => $key )

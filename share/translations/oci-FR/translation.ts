@@ -15160,7 +15160,7 @@ Nòta: los paquets seràn pas desinstallats.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Publicatz una còpia estatica d'un site sus GitHub Pages o sus quin òste git que siá.</translation>
+        <translation>Publicatz una còpia estatica d&apos;un site sus GitHub Pages o sus quin òste git que siá.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22176,7 +22176,7 @@ Nòta: los paquets seràn pas desinstallats.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>L'escondedor estatic servís las paginas a partir d'aqueste servidor. Per publicar una còpia estatica d'un site endacòm mai, sus GitHub Pages o sus quin òste git que siá, utilizatz la publicacion estatica.</translation>
+        <translation>L&apos;escondedor estatic servís las paginas a partir d&apos;aqueste servidor. Per publicar una còpia estatica d&apos;un site endacòm mai, sus GitHub Pages o sus quin òste git que siá, utilizatz la publicacion estatica.</translation>
     </message>
 </context>
 <context>
@@ -76236,7 +76236,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Publicatz una còpia estatica d'un site sus GitHub Pages o sus quin òste git que siá.</translation>
+        <translation>Publicatz una còpia estatica d&apos;un site sus GitHub Pages o sus quin òste git que siá.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -80590,6 +80590,222 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>The run could not be started.</source>
         <translation>L’execucion se podiá pas aviar.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Enregistrar las modificacions</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Pendent un enregistrament, çò que modificatz dins l'administracion o dins la barra laterala del site es gardat coma etapas d'una migracion: contengut, classas, ròtles e politicas, seccions, utilizaires e grops, aliases d'URL, paramètres. Arrestatz-lo quand avètz acabat, agachatz çò qu'a capturat e generatz-ne una migracion.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Los enregistraments se pòdon pas legir: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Las taulas dels enregistraments existisson pas encara: aviatz d'en primièr la mesa a jorn (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>L'enregistrament es desactivat dins migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mas modificacions</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Enregistra pas que çò que modificatz, ont que lo modifiquetz, fins que l'arrestetz.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Enregistrament</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>dempuèi %time, %count modificacion(s) fins ara.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiqueta (facultativa)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Veire çò qu'a capturat</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Arrestar l'enregistrament</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Començar d'enregistrar mas modificacions</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fenèstra per tot lo site</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Enregistra cada modificacion de cada utilizaire e de la consòla fins a sa tampadura. En la dobrir, vos es demandat de confirmar qu'es plan vos.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Dobèrta</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Tampar la fenèstra</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Dobrir la fenèstra per tot lo site</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Enregistraments</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Lo compte d'un utilizaire (identificant, corrièl, senhal) e los camps dels comptes d'utilizaire son pas jamai enregistrats.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Modificacions</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tot lo site</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Modificacions de %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Arrestat</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Cap d'enregistrament pel moment.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Enregistrament %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Totes los enregistraments</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>La migracion que ne sortiriá</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Las modificacions amassadas en una etapa per element modificat: çò que fariá una migracion generada a partir d'aqueste enregistrament.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Se'n poirà generar una migracion quand aquesta installacion aurà los tipes d'etapas YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Omés volontàriament: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Pas res es estat enregistrat.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Çò qu'a capturat</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count modificacion(s), dins l'òrdre que son estadas fachas.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Modificacion</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Etapa</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Concernís</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count de mai: ./console exp:migration:record:show las lista totas.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Abandonar</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Suprimís l'enregistrament e çò qu'a capturat. Çò qu'es estat modificat demòra modificat.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Òc, abandonar aqueste enregistrament</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Enregistrament en cors…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Vòstras modificacions son enregistradas per una migracion.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Cada modificacion sus aqueste site es enregistrada per una migracion (fenèstra per tot lo site).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>L'enregistrament per tot lo site a començat: cada modificacion de cada utilizaire es enregistrada fins que l'arrestetz.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>L'enregistrament a començat: vòstras modificacions son enregistradas fins que l'arrestetz.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Enregistrament arrestat. Çò qu'a capturat demòra fins que l'abandonetz.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>L'enregistrament e sos eveniments son estats suprimits.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>I a pas d'enregistrament %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Marcatz d'en primièr « Òc, abandonar aqueste enregistrament ».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Sonque l'utilizaire qu'a enregistrat pòt arrestar un enregistrament de session.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Causissètz l'enregistrament d'arrestar.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Un enregistrament d'aqueste tipe es ja en cors.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>L'enregistrament se pòt pas modificar: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81334,7 +81550,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
-        <translation>%path fa %size, mai que çò que l'òste permet per un fichièr.</translation>
+        <translation>%path fa %size, mai que çò que l&apos;òste permet per un fichièr.</translation>
     </message>
     <message>
         <source>%percent % of the limit</source>
@@ -81346,7 +81562,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>%tag is the publish the site has now.</source>
-        <translation>%tag es la publicacion qu'a lo site ara.</translation>
+        <translation>%tag es la publicacion qu&apos;a lo site ara.</translation>
     </message>
     <message>
         <source>%target: job %id</source>
@@ -81358,7 +81574,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
-        <translation>/depaus/ per un site de projècte GitHub; void per un domeni personalizat o un site d'utilizaire.</translation>
+        <translation>/depaus/ per un site de projècte GitHub; void per un domeni personalizat o un site d&apos;utilizaire.</translation>
     </message>
     <message>
         <source>1. The site</source>
@@ -81366,7 +81582,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>2. The host</source>
-        <translation>2. L'òste</translation>
+        <translation>2. L&apos;òste</translation>
     </message>
     <message>
         <source>3. Signing in to the repository</source>
@@ -81401,7 +81617,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>Un site de projècte GitHub se tròba jos /&lt;repository&gt;/; los ligams relatius i foncionan, e pertot endacòm mai.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Una construccion recupèra cada pagina de %site coma la vei un visitaire pas connectat, reescriu los ligams, còpia los fichièrs e escriu lo resultat dins lo dossièr de la cibla. Res es pas publicat abans que verifiquètz la construccion e que quichètz Publicar.</translation>
     </message>
     <message>
@@ -81422,7 +81638,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
-        <translation>Una clau de desplegament se connècta per SSH: cambiatz l'adreça git per l'adreça SSH (git@github.com:owner/repo.git).</translation>
+        <translation>Una clau de desplegament se connècta per SSH: cambiatz l&apos;adreça git per l&apos;adreça SSH (git@github.com:owner/repo.git).</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
@@ -81430,11 +81646,11 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Un prètzfait d'aquesta cibla es encara en cors (%detail). Esperatz que s'acabe.</translation>
+        <translation>Un prètzfait d&apos;aquesta cibla es encara en cors (%detail). Esperatz que s&apos;acabe.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Un prètzfait d'aquesta cibla es encara en cors. Esperatz que s'acabe.</translation>
+        <translation>Un prètzfait d&apos;aquesta cibla es encara en cors. Esperatz que s&apos;acabe.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
@@ -81449,12 +81665,12 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>Una pagina que pòrta encara de sortida de desbugatge, un geton de formulari o un identificant de session aprèp lo netejatge es pas jamai publicada.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Un retorn en arrièr es per los expèrts: marcatz "Sabi çò que cambia aquò" e tornatz picar lo nom de l'etiqueta.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Un retorn en arrièr es per los expèrts: marcatz &quot;Sabi çò que cambia aquò&quot; e tornatz picar lo nom de l&apos;etiqueta.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Un site pòt far fins a %site, un fichièr fins a %file, amb environ 100 Go de trafic per mes. Amb un plan gratuit lo depaus deu èsser public. GitHub Pages es pas fach per las botigas o d'autras transaccions comercialas.</translation>
+        <translation>Un site pòt far fins a %site, un fichièr fins a %file, amb environ 100 Go de trafic per mes. Amb un plan gratuit lo depaus deu èsser public. GitHub Pages es pas fach per las botigas o d&apos;autras transaccions comercialas.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
@@ -81562,7 +81778,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Check it first</source>
-        <translation>Verificatz-la d'en primièr</translation>
+        <translation>Verificatz-la d&apos;en primièr</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81590,11 +81806,11 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
-        <translation>Valida la construccion, l'etiqueta e la manda cap a %remote. Un mandadís es pas jamai forçat; podètz tornar a quina publicacion que siá mai tard.</translation>
+        <translation>Valida la construccion, l&apos;etiqueta e la manda cap a %remote. Un mandadís es pas jamai forçat; podètz tornar a quina publicacion que siá mai tard.</translation>
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
-        <translation>Comparat al dossièr d'abans: %added apondudas, %changed modificadas, %removed suprimidas, %unchanged sens cambiament.</translation>
+        <translation>Comparat al dossièr d&apos;abans: %added apondudas, %changed modificadas, %removed suprimidas, %unchanged sens cambiament.</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
@@ -81634,7 +81850,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Void: l'adreça del site. Siquenon, una adreça intèrna del meteis site.</translation>
+        <translation>Void: l&apos;adreça del site. Siquenon, una adreça intèrna del meteis site.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -81646,7 +81862,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>Cada publicacion es una validacion amb una etiqueta static/%id/&lt;n&gt;. Tornar en arrièr fa una validacion novèla amb los fichièrs d'una publicacion anteriora: l'istoric demòra, cap d'etiqueta se desplaça pas e res es pas forçat.</translation>
+        <translation>Cada publicacion es una validacion amb una etiqueta static/%id/&lt;n&gt;. Tornar en arrièr fa una validacion novèla amb los fichièrs d&apos;una publicacion anteriora: l&apos;istoric demòra, cap d&apos;etiqueta se desplaça pas e res es pas forçat.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -81686,7 +81902,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
-        <translation>Per una adreça SSH. La clau es creada aprèp l'enregistrament; apondètz sa mitat publica al depaus.</translation>
+        <translation>Per una adreça SSH. La clau es creada aprèp l&apos;enregistrament; apondètz sa mitat publica al depaus.</translation>
     </message>
     <message>
         <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
@@ -81702,7 +81918,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Free hosting from a GitHub repository.</source>
-        <translation>Albergament gratuit a partir d'un depaus GitHub.</translation>
+        <translation>Albergament gratuit a partir d&apos;un depaus GitHub.</translation>
     </message>
     <message>
         <source>From the branch</source>
@@ -81754,7 +81970,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Help with the wizard</source>
-        <translation>Ajuda per l'assistent</translation>
+        <translation>Ajuda per l&apos;assistent</translation>
     </message>
     <message>
         <source>Hide them</source>
@@ -81794,7 +82010,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>S'executa en rèire-plan coma %user; podètz tampar aquesta pagina.</translation>
+        <translation>S&apos;executa en rèire-plan coma %user; podètz tampar aquesta pagina.</translation>
     </message>
     <message>
         <source>Job %id</source>
@@ -81854,7 +82070,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Creatz d'en primièr lo depaus sus l'òste; un depaus void conven.</translation>
+        <translation>Creatz d&apos;en primièr lo depaus sus l&apos;òste; un depaus void conven.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81902,7 +82118,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>No tag yet.</source>
-        <translation>Pas encara cap d'etiqueta.</translation>
+        <translation>Pas encara cap d&apos;etiqueta.</translation>
     </message>
     <message>
         <source>No target yet.</source>
@@ -81954,19 +82170,19 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>Sonque amb un geton. env:NAME legís allòc una variabla d'environament del servidor.</translation>
+        <translation>Sonque amb un geton. env:NAME legís allòc una variabla d&apos;environament del servidor.</translation>
     </message>
     <message>
         <source>Open the preview</source>
-        <translation>Dobrir l'apercebut</translation>
+        <translation>Dobrir l&apos;apercebut</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Dobrís la construccion coma l'òste la servirà, a partir del dossièr de la cibla. Lo ligam fonciona per vos pendent una ora.</translation>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Dobrís la construccion coma l&apos;òste la servirà, a partir del dossièr de la cibla. Lo ligam fonciona per vos pendent una ora.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
-        <translation>Opcional. Void: çò qu'es estat publicat.</translation>
+        <translation>Opcional. Void: çò qu&apos;es estat publicat.</translation>
     </message>
     <message>
         <source>Optional. With a domain the site is served at its root.</source>
@@ -82026,7 +82242,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Publicatz una còpia estatica d'un site sus GitHub Pages o sus quin òste git que siá: construsissètz-la, verificatz los cambiaments, publicatz e tornatz a una publicacion anteriora quand ne cal.</translation>
+        <translation>Publicatz una còpia estatica d&apos;un site sus GitHub Pages o sus quin òste git que siá: construsissètz-la, verificatz los cambiaments, publicatz e tornatz a una publicacion anteriora quand ne cal.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -82066,7 +82282,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Replace the key: the old one stops working</source>
-        <translation>Remplaçar la clau: l'anciana fonciona pas pus</translation>
+        <translation>Remplaçar la clau: l&apos;anciana fonciona pas pus</translation>
     </message>
     <message>
         <source>Report</source>
@@ -82137,12 +82353,12 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>Configuracion &gt; Secrets</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Afichat dins las listas, per exemple "Site public sus GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Afichat dins las listas, per exemple &quot;Site public sus GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>La connexion amb una GitHub App arribarà amb l'integracion GitHub.</translation>
+        <translation>La connexion amb una GitHub App arribarà amb l&apos;integracion GitHub.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -82194,7 +82410,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
-        <translation>La publicacion estatica es desactivada. Activatz-la d'en primièr dins Configuracion &gt; Publicacion estatica.</translation>
+        <translation>La publicacion estatica es desactivada. Activatz-la d&apos;en primièr dins Configuracion &gt; Publicacion estatica.</translation>
     </message>
     <message>
         <source>Static publishing is switched on.</source>
@@ -82238,7 +82454,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
-        <translation>Las ciblas se pòdon crear e modificar, mas res es pas construch ni publicat fins qu'es activada.</translation>
+        <translation>Las ciblas se pòdon crear e modificar, mas res es pas construch ni publicat fins qu&apos;es activada.</translation>
     </message>
     <message>
         <source>Tells search engines what to read.</source>
@@ -82302,11 +82518,11 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>La lista de las paginas pels motors de recèrca; necessita l'adreça publica.</translation>
+        <translation>La lista de las paginas pels motors de recèrca; necessita l&apos;adreça publica.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Las paginas son recuperadas coma las vei un visitaire pas connectat. Los siteaccess d'administracion e d'edicion son pas jamai prepausats.</translation>
+        <translation>Las paginas son recuperadas coma las vei un visitaire pas connectat. Los siteaccess d&apos;administracion e d&apos;edicion son pas jamai prepausats.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
@@ -82322,11 +82538,11 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>L'emmagazinatge dels secrets es pas encara configurat (./console exp:upgrade --apply crea sa taula), doncas cap de clau pòt pas èsser gardada.</translation>
+        <translation>L&apos;emmagazinatge dels secrets es pas encara configurat (./console exp:upgrade --apply crea sa taula), doncas cap de clau pòt pas èsser gardada.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
-        <translation>Lo servidor se connècta el meteis (sa pròpria clau SSH o son assistent d'identificants), o lo depaus es sus aqueste servidor.</translation>
+        <translation>Lo servidor se connècta el meteis (sa pròpria clau SSH o son assistent d&apos;identificants), o lo depaus es sus aqueste servidor.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
@@ -82342,10 +82558,10 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>Lo site torna als fichièrs d'aquesta publicacion; una construccion pas encara publicada deu èsser publicada o abandonada d'en primièr.</translation>
+        <translation>Lo site torna als fichièrs d&apos;aquesta publicacion; una construccion pas encara publicada deu èsser publicada o abandonada d&apos;en primièr.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>La pagina pròpria del site per las adreças que existisson pas.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>La cibla a pas pogut èsser enregistrada: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>La cibla se connècta pas encara amb aquesta clau: causissètz "Una clau de desplegament creada per aquesta cibla" dins sos paramètres.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>La cibla se connècta pas encara amb aquesta clau: causissètz &quot;Una clau de desplegament creada per aquesta cibla&quot; dins sos paramètres.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82366,7 +82582,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
-        <translation>Aquesta installacion a pas cap de siteaccess public. Los siteaccess d'administracion e d'edicion son pas jamai publicats.</translation>
+        <translation>Aquesta installacion a pas cap de siteaccess public. Los siteaccess d&apos;administracion e d&apos;edicion son pas jamai publicats.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
@@ -82382,15 +82598,15 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>This target has one.</source>
-        <translation>Aquesta cibla n'a una.</translation>
+        <translation>Aquesta cibla n&apos;a una.</translation>
     </message>
     <message>
         <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
         <translation>Abandona aquesta construccion: lo dossièr conten tornamai la darrièra publicacion. Lo site en linha càmbia pas.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Marcatz d'en primièr "Ai verificat los cambiaments".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Marcatz d&apos;en primièr &quot;Ai verificat los cambiaments&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82402,7 +82618,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Type the name of the tag again</source>
-        <translation>Tornatz picar lo nom de l'etiqueta</translation>
+        <translation>Tornatz picar lo nom de l&apos;etiqueta</translation>
     </message>
     <message>
         <source>Unchanged</source>
@@ -82422,11 +82638,11 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>What each file is; always written.</source>
-        <translation>Çò qu'es cada fichièr; totjorn escrich.</translation>
+        <translation>Çò qu&apos;es cada fichièr; totjorn escrich.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Çò qu'a fach lo prètzfait e son jornal. Un prètzfait aviat aicí contunha en rèire-plan quand aquesta pagina es tampada.</translation>
+        <translation>Çò qu&apos;a fach lo prètzfait e son jornal. Un prètzfait aviat aicí contunha en rèire-plan quand aquesta pagina es tampada.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
@@ -82458,11 +82674,11 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
-        <translation>D'ont la còpia estatica es servida.</translation>
+        <translation>D&apos;ont la còpia estatica es servida.</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>Quin site es publicat, e cossí s'apèla la cibla.</translation>
+        <translation>Quin site es publicat, e cossí s&apos;apèla la cibla.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
@@ -82470,7 +82686,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Written whenever a custom domain is set.</source>
-        <translation>Escrich cada còp qu'un domeni personalizat es definit.</translation>
+        <translation>Escrich cada còp qu&apos;un domeni personalizat es definit.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -82606,11 +82822,39 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: escrich dins lo fichièr CNAME. Fasètz pontar lo DNS del domeni cap a l'òste coma o explica; l'HTTPS pòt metre un moment a s'activar.</translation>
+        <translation>www.example.com: escrich dins lo fichièr CNAME. Fasètz pontar lo DNS del domeni cap a l&apos;òste coma o explica; l&apos;HTTPS pòt metre un moment a s&apos;activar.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>òc, pas encara publicat</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Una construccion recupèra cada pagina de %site coma la vei un visitaire pas connectat, reescriu los ligams, còpia los fichièrs e escriu lo resultat dins lo dossièr de la cibla. Res es pas publicat abans que verifiquètz la construccion e que quichètz Publicar.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Un retorn en arrièr es per los expèrts: marcatz "Sabi çò que cambia aquò" e tornatz picar lo nom de l'etiqueta.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Dobrís la construccion coma l'òste la servirà, a partir del dossièr de la cibla. Lo ligam fonciona per vos pendent una ora.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Afichat dins las listas, per exemple "Site public sus GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>La pagina pròpria del site per las adreças que existisson pas.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>La cibla se connècta pas encara amb aquesta clau: causissètz "Una clau de desplegament creada per aquesta cibla" dins sos paramètres.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Marcatz d'en primièr "Ai verificat los cambiaments".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

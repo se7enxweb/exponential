@@ -15160,7 +15160,7 @@ Nota: los paquetes nun se desinstalarán.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Espublizar una copia estática d'un sitiu en GitHub Pages o en cualquier agospiamientu git.</translation>
+        <translation>Espublizar una copia estática d&apos;un sitiu en GitHub Pages o en cualquier agospiamientu git.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22176,7 +22176,7 @@ Nota: los paquetes nun se desinstalarán.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>La caché estática sirve les páxines dende esti sirvidor. Pa espublizar una copia estática d'un sitiu n'otru llugar, en GitHub Pages o en cualquier agospiamientu git, usa la espublización estática.</translation>
+        <translation>La caché estática sirve les páxines dende esti sirvidor. Pa espublizar una copia estática d&apos;un sitiu n&apos;otru llugar, en GitHub Pages o en cualquier agospiamientu git, usa la espublización estática.</translation>
     </message>
 </context>
 <context>
@@ -76236,7 +76236,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Espublizar una copia estática d'un sitiu en GitHub Pages o en cualquier agospiamientu git.</translation>
+        <translation>Espublizar una copia estática d&apos;un sitiu en GitHub Pages o en cualquier agospiamientu git.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -80590,6 +80590,222 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>The run could not be started.</source>
         <translation>Nun se pudo aniciar la execución.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Grabar cambeos</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Mentanto una grabación ta en marcha, lo que cambies na alministración o na barra llateral del sitiu guárdase como pasos d'una migración: conteníu, clases, roles y polítiques, seiciones, usuarios y grupos, alies d'URL, axustes. Detienla cuando acabes, mira lo que captó y xenera una migración a partir d'ella.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Nun se pudieron lleer les grabaciones: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Les tables de les grabaciones entá nun esisten: executa primero l'anovamientu (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>La grabación ta desactivada en migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Los mios cambeos</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Graba namás lo que cambies tu, onde quiera que lo cambies, hasta que la detengas.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Grabación</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>dende %time, %count cambéu(os) hasta agora.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiqueta (opcional)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Ver lo que captó</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Detener la grabación</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Entamar a grabar los mios cambeos</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Ventana pa tol sitiu</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Graba cada cambéu de cada usuariu y de la consola hasta que se zarre. Al abrila pídesete que verifiques que yes tu.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Abierta</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Zarrar la ventana</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Abrir la ventana pa tol sitiu</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Grabaciones</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>La cuenta d'un usuariu (nome d'usuariu, corréu electrónicu, contraseña) y los campos de les cuentes d'usuariu enxamás se graben.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Cambeos</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tol sitiu</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Cambeos de %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Detenida</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Entá nun hai nenguna grabación.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Grabación %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Toles grabaciones</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>La migración que xeneraría</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Los cambeos axuntaos nun pasu per cada elementu camudáu: lo que fadría una migración xenerada a partir d'esta grabación.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Va poder xenerase una migración a partir d'ella cuando esta instalación tenga los tipos de pasu YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Dexao fuera adrede: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nun se grabó nada.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Lo que captó</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count cambéu(os), nel orde en que se ficieron.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Cambéu</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Pasu</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Afecta a</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count más: ./console exp:migration:record:show amuésalos toos.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Descartar</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Desanicia la grabación y lo que captó. Lo que se camudó sigue camudáu.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Sí, descartar esta grabación</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Grabando…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Los tos cambeos grábense pa una migración.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Cada cambéu nesti sitiu grábase pa una migración (ventana pa tol sitiu).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>La grabación de tol sitiu entamó: cada cambéu de cada usuariu grábase hasta que la detengas.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>La grabación entamó: los tos cambeos grábense hasta que la detengas.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Grabación detenida. Lo que captó caltiénse hasta que la descartes.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Desaniciáronse la grabación y los sos eventos.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nun esiste la grabación %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Marca primero «Sí, descartar esta grabación».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Namás l'usuariu que grabó pue detener una grabación de sesión.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Escueyi la grabación que quies detener.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Yá hai una grabación d'esti tipu en marcha.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Nun se pudo camudar la grabación: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81334,7 +81550,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
-        <translation>%path ocupa %size, más de lo que l'agospiamientu permite pa un ficheru.</translation>
+        <translation>%path ocupa %size, más de lo que l&apos;agospiamientu permite pa un ficheru.</translation>
     </message>
     <message>
         <source>%percent % of the limit</source>
@@ -81358,7 +81574,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
-        <translation>/repositoriu/ pa un sitiu de proyeutu de GitHub; baleru pa un dominiu propiu o un sitiu d'usuariu.</translation>
+        <translation>/repositoriu/ pa un sitiu de proyeutu de GitHub; baleru pa un dominiu propiu o un sitiu d&apos;usuariu.</translation>
     </message>
     <message>
         <source>1. The site</source>
@@ -81366,7 +81582,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>2. The host</source>
-        <translation>2. L'agospiamientu</translation>
+        <translation>2. L&apos;agospiamientu</translation>
     </message>
     <message>
         <source>3. Signing in to the repository</source>
@@ -81390,7 +81606,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>8. When it is published</source>
-        <translation>8. Cuándo s'espubliza</translation>
+        <translation>8. Cuándo s&apos;espubliza</translation>
     </message>
     <message>
         <source>9. Review and save</source>
@@ -81401,8 +81617,8 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <translation>Un sitiu de proyeutu de GitHub ta embaxo de /&lt;repository&gt;/; los enllaces relativos funcionen ehí y en cualquier otru llugar.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Una compilación descarga cada páxina de %site como la ve un visitante que nun anició sesión, reescribe los enllaces, copia los ficheros y escribe'l resultáu na carpeta del destín. Nun s'espubliza nada hasta que compruebes la compilación y calques Espublizar.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Una compilación descarga cada páxina de %site como la ve un visitante que nun anició sesión, reescribe los enllaces, copia los ficheros y escribe&apos;l resultáu na carpeta del destín. Nun s&apos;espubliza nada hasta que compruebes la compilación y calques Espublizar.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -81410,11 +81626,11 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>A deploy key is kept as the secret %secret.</source>
-        <translation>Guárdase una clave de despliegue como'l secretu %secret.</translation>
+        <translation>Guárdase una clave de despliegue como&apos;l secretu %secret.</translation>
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>Una clave de despliegue permite qu'esta instalación unvie a un repositoriu per SSH y a nengún otru sitiu. La so metá privada queda en Configuración &gt; Secretos; namás s'amuesa la metá pública.</translation>
+        <translation>Una clave de despliegue permite qu&apos;esta instalación unvie a un repositoriu per SSH y a nengún otru sitiu. La so metá privada queda en Configuración &gt; Secretos; namás s&apos;amuesa la metá pública.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
@@ -81430,11 +81646,11 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Entá hai una xera d'esti destín en cursu (%detail). Espera a que fine.</translation>
+        <translation>Entá hai una xera d&apos;esti destín en cursu (%detail). Espera a que fine.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Entá hai una xera d'esti destín en cursu. Espera a que fine.</translation>
+        <translation>Entá hai una xera d&apos;esti destín en cursu. Espera a que fine.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
@@ -81446,19 +81662,19 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
-        <translation>Enxamás s'espubliza una páxina que, dempués de la llimpieza, entá lleve salida de depuración, un token de formulariu o un id de sesión.</translation>
+        <translation>Enxamás s&apos;espubliza una páxina que, dempués de la llimpieza, entá lleve salida de depuración, un token de formulariu o un id de sesión.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Una reversión ye pa espertos: marca «Sé lo que camuda esto» y teclia otra vegada'l nome de la etiqueta.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Una reversión ye pa espertos: marca «Sé lo que camuda esto» y teclia otra vegada&apos;l nome de la etiqueta.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Un sitiu pue ocupar hasta %site, un ficheru hasta %file, con unos 100 GB de tráficu al mes. Nun plan de baldre'l repositoriu tien de ser públicu. GitHub Pages nun ta pensáu pa tiendes nin otres transaiciones comerciales.</translation>
+        <translation>Un sitiu pue ocupar hasta %site, un ficheru hasta %file, con unos 100 GB de tráficu al mes. Nun plan de baldre&apos;l repositoriu tien de ser públicu. GitHub Pages nun ta pensáu pa tiendes nin otres transaiciones comerciales.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>Un destín ye un sitiu espublizáu nun repositoriu git. Equí nun se compila nin s'espubliza nada: Guardar escribe los axustes en settings/override/staticcache.ini.append.php.</translation>
+        <translation>Un destín ye un sitiu espublizáu nun repositoriu git. Equí nun se compila nin s&apos;espubliza nada: Guardar escribe los axustes en settings/override/staticcache.ini.append.php.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
@@ -81474,7 +81690,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
-        <translation>Amiesta esta clave pública al repositoriu con accesu d'escritura. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, marca Allow write access.</translation>
+        <translation>Amiesta esta clave pública al repositoriu con accesu d&apos;escritura. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, marca Allow write access.</translation>
     </message>
     <message>
         <source>Added</source>
@@ -81502,7 +81718,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Below a base path</source>
-        <translation>Embaxo d'un camín base</translation>
+        <translation>Embaxo d&apos;un camín base</translation>
     </message>
     <message>
         <source>Branch</source>
@@ -81590,11 +81806,11 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
-        <translation>Confirma la compilación, etiquétala y únviala a %remote. L'unviu enxamás se fuerza; más alantre pues volver a cualquier espublización.</translation>
+        <translation>Confirma la compilación, etiquétala y únviala a %remote. L&apos;unviu enxamás se fuerza; más alantre pues volver a cualquier espublización.</translation>
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
-        <translation>En comparanza cola carpeta d'enantes: %added amestaos, %changed camudaos, %removed desaniciaos, %unchanged ensin cambeos.</translation>
+        <translation>En comparanza cola carpeta d&apos;enantes: %added amestaos, %changed camudaos, %removed desaniciaos, %unchanged ensin cambeos.</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
@@ -81646,7 +81862,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>Cada espublización ye una confirmación con una etiqueta static/%id/&lt;n&gt;. Volver atrás fai una confirmación nueva colos ficheros d'una espublización anterior: l'historial caltiénse, nenguna etiqueta se mueve y nada se fuerza.</translation>
+        <translation>Cada espublización ye una confirmación con una etiqueta static/%id/&lt;n&gt;. Volver atrás fai una confirmación nueva colos ficheros d&apos;una espublización anterior: l&apos;historial caltiénse, nenguna etiqueta se mueve y nada se fuerza.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -81694,7 +81910,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>For experts. The public site changes as soon as the push is through.</source>
-        <translation>Pa espertos. El sitiu públicu camuda en cuanto l'unviu se completa.</translation>
+        <translation>Pa espertos. El sitiu públicu camuda en cuanto l&apos;unviu se completa.</translation>
     </message>
     <message>
         <source>Forms</source>
@@ -81734,11 +81950,11 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
-        <translation>GitHub Pages espubliza los ficheros tal como tán (necesario pa ficheros qu'empiecen por _).</translation>
+        <translation>GitHub Pages espubliza los ficheros tal como tán (necesario pa ficheros qu&apos;empiecen por _).</translation>
     </message>
     <message>
         <source>GitHub serves the branch as it is pushed. The default.</source>
-        <translation>GitHub sirve la caña tal como s'unvia. La predeterminada.</translation>
+        <translation>GitHub sirve la caña tal como s&apos;unvia. La predeterminada.</translation>
     </message>
     <message>
         <source>GitLab, Gitea, your own server: any git repository.</source>
@@ -81790,7 +82006,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>It is switched off: nothing can be built until it is on.</source>
-        <translation>Ta desactivada: nun se pue compilar nada hasta que s'active.</translation>
+        <translation>Ta desactivada: nun se pue compilar nada hasta que s&apos;active.</translation>
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
@@ -81802,7 +82018,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Kept as the secret %secret.</source>
-        <translation>Guardada como'l secretu %secret.</translation>
+        <translation>Guardada como&apos;l secretu %secret.</translation>
     </message>
     <message>
         <source>Kind</source>
@@ -81854,7 +82070,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Crea primero'l repositoriu nel agospiamientu; val uno baleru.</translation>
+        <translation>Crea primero&apos;l repositoriu nel agospiamientu; val uno baleru.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81898,7 +82114,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>Nun s'alcontró nengún binariu de llinia de comandos de php. Afita migration.ini [AdminSettings] PhpCliPath col so camín completu.</translation>
+        <translation>Nun s&apos;alcontró nengún binariu de llinia de comandos de php. Afita migration.ini [AdminSettings] PhpCliPath col so camín completu.</translation>
     </message>
     <message>
         <source>No tag yet.</source>
@@ -81918,11 +82134,11 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Nothing was published yet.</source>
-        <translation>Entá nun s'espublizó nada.</translation>
+        <translation>Entá nun s&apos;espublizó nada.</translation>
     </message>
     <message>
         <source>Nothing was published yet: every file is new.</source>
-        <translation>Entá nun s'espublizó nada: cada ficheru ye nuevu.</translation>
+        <translation>Entá nun s&apos;espublizó nada: cada ficheru ye nuevu.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -81954,19 +82170,19 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>Namás con un token. env:NAME llee nel so llugar una variable d'entornu del sirvidor.</translation>
+        <translation>Namás con un token. env:NAME llee nel so llugar una variable d&apos;entornu del sirvidor.</translation>
     </message>
     <message>
         <source>Open the preview</source>
         <translation>Abrir la previsualización</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Abre la compilación como la va servir l'agospiamientu, dende la carpeta del destín. L'enllaz funciona pa ti mientres una hora.</translation>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Abre la compilación como la va servir l&apos;agospiamientu, dende la carpeta del destín. L&apos;enllaz funciona pa ti mientres una hora.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
-        <translation>Opcional. Baleru: lo que s'espublizó.</translation>
+        <translation>Opcional. Baleru: lo que s&apos;espublizó.</translation>
     </message>
     <message>
         <source>Optional. With a domain the site is served at its root.</source>
@@ -82026,7 +82242,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Espubliza una copia estática d'un sitiu en GitHub Pages o en cualquier agospiamientu git: compílala, comprueba los cambeos, espublízala y vuelve a una espublización anterior cuando lo precises.</translation>
+        <translation>Espubliza una copia estática d&apos;un sitiu en GitHub Pages o en cualquier agospiamientu git: compílala, comprueba los cambeos, espublízala y vuelve a una espublización anterior cuando lo precises.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -82137,12 +82353,12 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <translation>Configuración &gt; Secretos</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>Amuésase nes llistes, por exemplu «Sitiu públicu en GitHub Pages».</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>L'aniciu de sesión con una GitHub App llega cola integración de GitHub.</translation>
+        <translation>L&apos;aniciu de sesión con una GitHub App llega cola integración de GitHub.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -82150,7 +82366,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Site to publish</source>
-        <translation>Sitiu qu'espublizar</translation>
+        <translation>Sitiu qu&apos;espublizar</translation>
     </message>
     <message>
         <source>Size</source>
@@ -82238,7 +82454,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
-        <translation>Los destinos puen crease y camudase, pero nun se compila nin s'espubliza nada hasta que s'active.</translation>
+        <translation>Los destinos puen crease y camudase, pero nun se compila nin s&apos;espubliza nada hasta que s&apos;active.</translation>
     </message>
     <message>
         <source>Tells search engines what to read.</source>
@@ -82250,7 +82466,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
-        <translation>La compilación ye igual que la última espublización: nun hai nada qu'espublizar.</translation>
+        <translation>La compilación ye igual que la última espublización: nun hai nada qu&apos;espublizar.</translation>
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
@@ -82278,7 +82494,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>La xera finó. Cargando'l so informe.</translation>
+        <translation>La xera finó. Cargando&apos;l so informe.</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
@@ -82306,7 +82522,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Les páxines descárguense como les ve un visitante que nun anició sesión. Enxamás s'ufren los siteaccess d'alministración y d'edición.</translation>
+        <translation>Les páxines descárguense como les ve un visitante que nun anició sesión. Enxamás s&apos;ufren los siteaccess d&apos;alministración y d&apos;edición.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
@@ -82322,15 +82538,15 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>L'almacén de secretos entá nun ta configuráu (./console exp:upgrade --apply crea la so tabla), polo que nun se pue guardar nenguna clave.</translation>
+        <translation>L&apos;almacén de secretos entá nun ta configuráu (./console exp:upgrade --apply crea la so tabla), polo que nun se pue guardar nenguna clave.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
-        <translation>El sirvidor anicia sesión por sí mesmu (cola so propia clave SSH o un ayudante de credenciales), o'l repositoriu ta nesti sirvidor.</translation>
+        <translation>El sirvidor anicia sesión por sí mesmu (cola so propia clave SSH o un ayudante de credenciales), o&apos;l repositoriu ta nesti sirvidor.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
-        <translation>Nun se pudo escribir l'axuste: %problem</translation>
+        <translation>Nun se pudo escribir l&apos;axuste: %problem</translation>
     </message>
     <message>
         <source>The settings are valid. These lines will be written:</source>
@@ -82338,14 +82554,14 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
-        <translation>Nun se pue lleer el ficheru d'axustes: %problem</translation>
+        <translation>Nun se pue lleer el ficheru d&apos;axustes: %problem</translation>
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>El sitiu vuelve a los ficheros d'esa espublización; una compilación entá ensin espublizar tien d'espublizase o descartase primero.</translation>
+        <translation>El sitiu vuelve a los ficheros d&apos;esa espublización; una compilación entá ensin espublizar tien d&apos;espublizase o descartase primero.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>La páxina propia del sitiu pa direiciones que nun esisten.</translation>
     </message>
     <message>
@@ -82353,7 +82569,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <translation>Nun se pudo guardar el destín: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>El destín entá nun anicia sesión con esta clave: escueyi «Una clave de despliegue creada pa esti destín» nos sos axustes.</translation>
     </message>
     <message>
@@ -82366,7 +82582,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
-        <translation>Esta instalación nun tien nengún siteaccess públicu. Los siteaccess d'alministración y d'edición enxamás s'espublicen.</translation>
+        <translation>Esta instalación nun tien nengún siteaccess públicu. Los siteaccess d&apos;alministración y d&apos;edición enxamás s&apos;espublicen.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
@@ -82389,7 +82605,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <translation>Descarta esta compilación: la carpeta tien otra vegada la última espublización. El sitiu en direuto nun camuda.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>Marca primero «Comprobé los cambeos».</translation>
     </message>
     <message>
@@ -82402,7 +82618,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Type the name of the tag again</source>
-        <translation>Teclia otra vegada'l nome de la etiqueta</translation>
+        <translation>Teclia otra vegada&apos;l nome de la etiqueta</translation>
     </message>
     <message>
         <source>Unchanged</source>
@@ -82450,11 +82666,11 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>When content is published</source>
-        <translation>Cuando s'espubliza conteníu</translation>
+        <translation>Cuando s&apos;espubliza conteníu</translation>
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>Ónde van los enllaces a lo que la copia nun tien (la gueta, l'aniciu de sesión).</translation>
+        <translation>Ónde van los enllaces a lo que la copia nun tien (la gueta, l&apos;aniciu de sesión).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
@@ -82462,7 +82678,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>Qué sitiu s'espubliza y cómo se llama'l destín.</translation>
+        <translation>Qué sitiu s&apos;espubliza y cómo se llama&apos;l destín.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
@@ -82470,7 +82686,7 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>Written whenever a custom domain is set.</source>
-        <translation>Escríbese siempre que s'afite un dominiu propiu.</translation>
+        <translation>Escríbese siempre que s&apos;afite un dominiu propiu.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -82606,11 +82822,39 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: escríbese nel ficheru CNAME. Apunta'l DNS del dominiu al agospiamientu como esplica; HTTPS pue tardar un tiempu n'aniciase.</translation>
+        <translation>www.example.com: escríbese nel ficheru CNAME. Apunta&apos;l DNS del dominiu al agospiamientu como esplica; HTTPS pue tardar un tiempu n&apos;aniciase.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>sí, entá ensin espublizar</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Una compilación descarga cada páxina de %site como la ve un visitante que nun anició sesión, reescribe los enllaces, copia los ficheros y escribe'l resultáu na carpeta del destín. Nun s'espubliza nada hasta que compruebes la compilación y calques Espublizar.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Una reversión ye pa espertos: marca «Sé lo que camuda esto» y teclia otra vegada'l nome de la etiqueta.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Abre la compilación como la va servir l'agospiamientu, dende la carpeta del destín. L'enllaz funciona pa ti mientres una hora.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Amuésase nes llistes, por exemplu «Sitiu públicu en GitHub Pages».</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>La páxina propia del sitiu pa direiciones que nun esisten.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>El destín entá nun anicia sesión con esta clave: escueyi «Una clave de despliegue creada pa esti destín» nos sos axustes.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Marca primero «Comprobé los cambeos».</translation>
     </message>
     <message>
         <source>A GitHub App</source>

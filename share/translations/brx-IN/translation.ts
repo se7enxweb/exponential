@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>रानखौ जागायनो हायाखै।</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>सोलायनायफोरनि रेकर्डिं</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>रेकर्डिं जाबाय थानाय समाव नोंथाङा प्रशासनाव एबा साइटनि साइडबारआव जेसे सोलायो बेखौ मोनसे माइग्रेसननि खान्थि महरै दोनना दोनो: बिथोन, क्लास, बिहुं आरो नेम, सेक्सन, बाहायग्रा आरो दल, URL मुंजोख्रा, सेटिं। खामानि जोबलाब्ला बेखौ थाद्लां, बेयो मा हमदोंमोन नाय, आरो बेनिफ्राय मोनसे माइग्रेसन सोरजि।</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>रेकर्डिंफोरखौ फरायनो हायाखिसै: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>रेकर्डिंनि टेबुलफोर दासिमबो गैया: गिबियावनो आपग्रेड जाबाय (exp:upgrade --apply)।</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini आव रेकर्डिं बन्द ([RecordingSettings] Recording=disabled)।</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>आंनि सोलायनायफोर</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>नोंथाङा थाद्लांनाय समाव सिम नोंथाङा जेसे सोलायो, जेरावनो सोलायो, बेखौल' रेकर्ड खालामो।</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>रेकर्डिं</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time निफ्राय, दासिम %count सोलायनाय।</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>लेबेल (गोनांथि नङा)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>बेयो मा हमदोंमोन दिन्थि</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>रेकर्डिं थाद्लां</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>आंनि सोलायनायफोरनि रेकर्डिं जागायहो</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>गासै साइटनि खिरकि</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>बन्द जानाय सिम गासै बाहायग्रा आरो कन्सलनि गासै सोलायनायखौ रेकर्ड खालामो। खेवनाय समाव नोंनो जाखौ थारैथि खालामनो बुङो।</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>खेवनाय</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>खिरकि बन्द खालाम</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>गासै साइटनि खिरकि खेव</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>रेकर्डिंफोर</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>बाहायग्रानि एकाउन्ट (लगइन, इ-मेल, पासवार्ड) आरो बाहायग्रा एकाउन्टनि फिल्डफोरखौ जेबि समावबो रेकर्ड खालामा।</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>सोलायनायफोर</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>गासै साइट</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name नि सोलायनायफोर</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>थाद्लांबाय</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>दासिमबो रेकर्डिं गैया।</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>रेकर्डिं %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>गासै रेकर्डिंफोर</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>बेनिफ्राय जानो थाखाय माइग्रेसन</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>सोलायनाय मोनसे मोनसे जिनिसनि थाखाय मोनसे खान्थियाव फोलोमनाय सोलायनायफोर: बे रेकर्डिंनिफ्राय सोरजिनाय माइग्रेसनआ मा खालामगोन।</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>बे इनस्टलेसनाव YAML खान्थि रोखोमफोर %types थायोब्ला बेनिफ्राय माइग्रेसन सोरजिनो हागोन।</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>मिथिनानै बोखावनाय: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>जेसेबो रेकर्ड जायाखै।</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>बेयो मा हमदोंमोन</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count सोलायनाय, खालामनाय बिथाङाव।</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>सोलायनाय</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>खान्थि</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>सोमोन्दो</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>आरो %count: ./console exp:migration:record:show गासैखौ लिस्ट खालामो।</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>नागार</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>रेकर्डिं आरो बेयो जेसे हमदोंमोन बेखौ बोखावो। जेसे सोलायबाय बेयो सोलायनायलानो थायो।</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>नंगौ, बे रेकर्डिंखौ नागार</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>रेकर्ड जागासिनो दं…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>नोंनि सोलायनायफोरा मोनसे माइग्रेसननि थाखाय रेकर्ड जागासिनो दं।</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>बे साइटनि गासै सोलायनायखौ मोनसे माइग्रेसननि थाखाय रेकर्ड खालामगासिनो दं (गासै साइटनि खिरकि)।</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>गासै साइटनि रेकर्डिं जागायबाय: नोंथाङा थाद्लांनाय सिम गासै बाहायग्रानि गासै सोलायनाय रेकर्ड जागोन।</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>रेकर्डिं जागायबाय: नोंथाङा थाद्लांनाय सिम नोंनि सोलायनायफोर रेकर्ड जागोन।</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>रेकर्डिं थाद्लांबाय। बेयो जेसे हमदोंमोन बेयो नागारनाय सिम थागोन।</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>रेकर्डिं आरो बेनि जाथायफोरखौ बोखावबाय।</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>रेकर्डिं %id गैया।</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>गिबियावनो "नंगौ, बे रेकर्डिंखौ नागार" आव सिन हो।</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>सेसन रेकर्डिंखौ रेकर्ड खालामग्रा बाहायग्रानोल' थाद्लांनो हायो।</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>थाद्लांनो थाखाय रेकर्डिं सायख।</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>बे रोखोमनि रेकर्डिं सिगांनिफ्रायनो जाबाय थादों।</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>रेकर्डिं सोलायनो हायाखिसै: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,8 +81617,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub नि प्रजेक्ट साइटआ /&lt;repository&gt;/ नि सिङाव थायो; रिलेटिभ लिंकफोरा बेयाव आरो गुबुन जायगायावबो हाबायो।</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>मोनसे बिल्डआ %site नि मोनफ्रोमबो बिलाइखौ साइन इन खालामाखै सुबुं नुनाय बादि लायो, लिंकफोरखौ गोदान महराव लिरो, फाइलफोरखौ कपि खालामो आरो फलाफलखौ लक्ष्यनि फोल्डारआव लिरो। नोंथाङा बिल्डखौ नायसिनो आरो "फोरमाय" नेबखांनो सिम जेबो फोरमायनाय जाया।</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>मोनसे बिल्डआ %site नि मोनफ्रोमबो बिलाइखौ साइन इन खालामाखै सुबुं नुनाय बादि लायो, लिंकफोरखौ गोदान महराव लिरो, फाइलफोरखौ कपि खालामो आरो फलाफलखौ लक्ष्यनि फोल्डारआव लिरो। नोंथाङा बिल्डखौ नायसिनो आरो &quot;फोरमाय&quot; नेबखांनो सिम जेबो फोरमायनाय जाया।</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -81414,7 +81630,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>मोनसे डिप्लय कीआ बे इनस्टलेसनखौ SSH जों मोनसे रिपजिटरिआव पुस खालामनो होयो, गुबुन जायगायाव नङा। बेनि प्राइभेट बाहागोआ सेटआप &gt; गुबुन मानफोर आव थायो; पाब्लिक बाहागोल'नो दिन्थिनाय जायो।</translation>
+        <translation>मोनसे डिप्लय कीआ बे इनस्टलेसनखौ SSH जों मोनसे रिपजिटरिआव पुस खालामनो होयो, गुबुन जायगायाव नङा। बेनि प्राइभेट बाहागोआ सेटआप &gt; गुबुन मानफोर आव थायो; पाब्लिक बाहागोल&apos;नो दिन्थिनाय जायो।</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
@@ -81430,11 +81646,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>बे लक्ष्यनि मोनसे खामानि दासिमबो थाबाय (%detail)। बे जोबनो सिम नेथ'।</translation>
+        <translation>बे लक्ष्यनि मोनसे खामानि दासिमबो थाबाय (%detail)। बे जोबनो सिम नेथ&apos;।</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>बे लक्ष्यनि मोनसे खामानि दासिमबो थाबाय। बे जोबनो सिम नेथ'।</translation>
+        <translation>बे लक्ष्यनि मोनसे खामानि दासिमबो थाबाय। बे जोबनो सिम नेथ&apos;।</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>सापखांनायनि उनावबो डिबाग आउटपुट, फर्म टोकेन एबा सेसन आइडि थानाय बिलाइखौ मावबो फोरमायनाय जाया।</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>फिन लाबोनाया एक्सपार्टफोरनि थाखाय: "बेयो मा सोलायो बेखौ आं मिथिगौ" खौ टिक खालाम आरो टेगनि मुंखौ फिन लिर।</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>फिन लाबोनाया एक्सपार्टफोरनि थाखाय: &quot;बेयो मा सोलायो बेखौ आं मिथिगौ&quot; खौ टिक खालाम आरो टेगनि मुंखौ फिन लिर।</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81946,22 +82162,22 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
-        <translation>लक्ष्यजों मुं ल'नो रैखानाय जायो; टोकेन एबा की गाव सेटआप &gt; गुबुन मानफोर आव थायो आरो मावबो लगआव दिन्थिफुंआ।</translation>
+        <translation>लक्ष्यजों मुं ल&apos;नो रैखानाय जायो; टोकेन एबा की गाव सेटआप &gt; गुबुन मानफोर आव थायो आरो मावबो लगआव दिन्थिफुंआ।</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
-        <translation>बिलाइफोरा मा मुं लायो बेल'</translation>
+        <translation>बिलाइफोरा मा मुं लायो बेल&apos;</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>टोकेनजों ल'नो। env:NAME आ बेनि सोलाय सार्भारनि मोनसे एन्भाइरनमेन्ट भेरियेबलखौ फरायो।</translation>
+        <translation>टोकेनजों ल&apos;नो। env:NAME आ बेनि सोलाय सार्भारनि मोनसे एन्भाइरनमेन्ट भेरियेबलखौ फरायो।</translation>
     </message>
     <message>
         <source>Open the preview</source>
         <translation>सोलोंथाइखौ खेव</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>होस्टआ होनाय बादि बिल्डखौ लक्ष्यनि फोल्डारनिफ्राय खेवो। लिंकआ नोंथांनि थाखाय मोनसे घन्टा हाबायो।</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>सेटआप &gt; गुबुन मानफोर</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>लिस्टफोराव दिन्थिनाय जायो, बिदिन्थियाव "GitHub Pages आव पाब्लिक साइट"।</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>लिस्टफोराव दिन्थिनाय जायो, बिदिन्थियाव &quot;GitHub Pages आव पाब्लिक साइट&quot;।</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>साइटआ बे फोरमायनायनि फाइलफोराव फिन थांगोन; दासिमबो फोरमायाखै मोनसे बिल्डखौ सिगां फोरमायनांगोन एबा हुखुमोरनांगोन।</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>गैयि ठिकानाफोरनि थाखाय साइटनि गावनि बिलाइ।</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>लक्ष्यखौ रैखानो हायाखै: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>लक्ष्यआ दासिमबो बे कीजों साइन इन खालामा: बेनि सेटिंफोराव "बे लक्ष्यनि थाखाय सोरजिनाय मोनसे डिप्लय की" खौ सायख।</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>लक्ष्यआ दासिमबो बे कीजों साइन इन खालामा: बेनि सेटिंफोराव &quot;बे लक्ष्यनि थाखाय सोरजिनाय मोनसे डिप्लय की&quot; खौ सायख।</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>बे बिल्डखौ हुखुमोरो: फोल्डारआव फिन जोबथा फोरमायनाया थायो। लाइभ साइटआ सोलाया।</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>सिगां "आं सोलायनायफोरखौ नायसिबाय" खौ टिक खालाम।</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>सिगां &quot;आं सोलायनायफोरखौ नायसिबाय&quot; खौ टिक खालाम।</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82482,7 +82698,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
-        <translation>मुं ल'नो; मानआ सेटआप &gt; गुबुन मानफोर आव थायो</translation>
+        <translation>मुं ल&apos;नो; मानआ सेटआप &gt; गुबुन मानफोर आव थायो</translation>
     </message>
     <message>
         <source>below %path</source>
@@ -82574,7 +82790,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>push pending</source>
-        <translation>पुस नेथ'दों</translation>
+        <translation>पुस नेथ&apos;दों</translation>
     </message>
     <message>
         <source>pushed</source>
@@ -82602,7 +82818,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>the folder only</source>
-        <translation>फोल्डार ल'नो</translation>
+        <translation>फोल्डार ल&apos;नो</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>होय, दासिमबो फोरमायाखै</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>मोनसे बिल्डआ %site नि मोनफ्रोमबो बिलाइखौ साइन इन खालामाखै सुबुं नुनाय बादि लायो, लिंकफोरखौ गोदान महराव लिरो, फाइलफोरखौ कपि खालामो आरो फलाफलखौ लक्ष्यनि फोल्डारआव लिरो। नोंथाङा बिल्डखौ नायसिनो आरो "फोरमाय" नेबखांनो सिम जेबो फोरमायनाय जाया।</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>फिन लाबोनाया एक्सपार्टफोरनि थाखाय: "बेयो मा सोलायो बेखौ आं मिथिगौ" खौ टिक खालाम आरो टेगनि मुंखौ फिन लिर।</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>होस्टआ होनाय बादि बिल्डखौ लक्ष्यनि फोल्डारनिफ्राय खेवो। लिंकआ नोंथांनि थाखाय मोनसे घन्टा हाबायो।</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>लिस्टफोराव दिन्थिनाय जायो, बिदिन्थियाव "GitHub Pages आव पाब्लिक साइट"।</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>गैयि ठिकानाफोरनि थाखाय साइटनि गावनि बिलाइ।</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>लक्ष्यआ दासिमबो बे कीजों साइन इन खालामा: बेनि सेटिंफोराव "बे लक्ष्यनि थाखाय सोरजिनाय मोनसे डिप्लय की" खौ सायख।</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>सिगां "आं सोलायनायफोरखौ नायसिबाय" खौ टिक खालाम।</translation>
     </message>
     <message>
         <source>A GitHub App</source>

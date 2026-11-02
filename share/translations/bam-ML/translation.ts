@@ -80590,6 +80590,222 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>The run could not be started.</source>
         <translation>Waleya ma se ka daminɛ.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Yɛlɛmaw sɛbɛnni</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Sɛbɛnni bɛ taa tuma min na, i bɛ min yɛlɛma ɲɛmɔgɔya la walima siti in kɛrɛfɛ bara kan, o bɛ mara i n'a fɔ taali sen dɔw: kɔnɔnafɛnw, kilasiw, baaraw ani sariyaw, yɔrɔw, baarakɛlaw ani jɛkuluw, URL tɔgɔ wɛrɛw, labɛnw. A jɔ n'i banna, a lajɛ a ye min minɛ, ka taali dilan o la.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Sɛbɛnniw ma se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Sɛbɛnniw ka tabaliw tɛ yen fɔlɔ: i ka kurayali kɛ fɔlɔ (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Sɛbɛnni datugura migration.ini kɔnɔ ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>N ka yɛlɛmaw</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>A bɛ i yɛrɛ ka yɛlɛmaw dɔrɔn sɛbɛn, i y'a yɛlɛma yɔrɔ o yɔrɔ, fo i k'a jɔ.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Sɛbɛnni</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>kabini %time, yɛlɛma %count fo sisan.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Taamasyɛn (n'i b'a fɛ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>A ye min minɛ, o jira</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Sɛbɛnni jɔ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>N ka yɛlɛmaw sɛbɛnni daminɛ</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Siti bɛɛ ka finɛtiri</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>A bɛ baarakɛla bɛɛ ni konsɔli ka yɛlɛma bɛɛ sɛbɛn fo a ka datugu. N'i b'a da wuli, u b'a ɲini i fɛ i k'a sɛmɛntiya ko e don.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>A dayɛlɛlen</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Finɛtiri datugu</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Siti bɛɛ ka finɛtiri da wuli</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Sɛbɛnniw</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Baarakɛla ka jatebɔsɛbɛn (donni tɔgɔ, imɛri, gundo daɲɛ) ani baarakɛlaw ka jatebɔsɛbɛnw ka yɔrɔw tɛ sɛbɛn abada.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Yɛlɛmaw</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Siti bɛɛ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ka yɛlɛmaw</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>A jɔra</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Sɛbɛnni si tɛ yen fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Sɛbɛnni %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Sɛbɛnni bɛɛ</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Taali min bɛna bɔ a la</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Yɛlɛmaw ladalen taamasen kelen kɔnɔ fɛn o fɛn yɛlɛmana: taali min dilanna nin sɛbɛnni in na, o tun bɛna min kɛ.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Taali bɛ se ka dilan a la ni nin sigili in sɔrɔla YAML taamasen suguyaw %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>A tora kɛnɛma ni laɲini ye: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Foyi ma sɛbɛn.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>A ye min minɛ</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Yɛlɛma %count, u kɛra cogo min na.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Yɛlɛma</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Taamasen</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>A ɲɛsinnen</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count wɛrɛw: ./console exp:migration:record:show b'u bɛɛ yira.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Fili</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>A bɛ sɛbɛnni ni a ye min minɛ bɔ yen. Min yɛlɛmana, o bɛ to yɛlɛmanen.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ɔwɔ, nin sɛbɛnni in fili</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>A bɛ sɛbɛnni kɛ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>I ka yɛlɛmaw bɛ sɛbɛn taali dɔ kosɔn.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Nin siti in kan yɛlɛma bɛɛ bɛ sɛbɛn taali dɔ kosɔn (siti bɛɛ ka finɛtiri).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Siti bɛɛ ka sɛbɛnni daminɛna: baarakɛla bɛɛ ka yɛlɛma bɛɛ bɛna sɛbɛn fo i k'a jɔ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Sɛbɛnni daminɛna: i ka yɛlɛmaw bɛna sɛbɛn fo i k'a jɔ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Sɛbɛnni jɔra. A ye min minɛ, o bɛna to fo i k'a fili.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Sɛbɛnni ni a ka kow bɔra yen.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Sɛbɛnni %id tɛ yen.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>I ka "Ɔwɔ, nin sɛbɛnni in fili" taamasyɛn fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Baarakɛla min ye sɛbɛnni kɛ, o dɔrɔn de bɛ se ka sesɔn sɛbɛnni jɔ.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Sɛbɛnni min ka kan ka jɔ, o sugandi.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Nin suguya sɛbɛnni bɛ taa fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Sɛbɛnni ma se ka yɛlɛma: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,16 +81617,16 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <translation>GitHub porozɛ siti bɛ /&lt;repository&gt;/ jukɔrɔ; siri sumanenw bɛ baara kɛ yen ani yɔrɔ wɛrɛ bɛɛ la.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Dilanni bɛ %site ka ɲɛ bɛɛ ta i n'a fɔ lajɛlikɛla min ma don b'a ye cogo min na, ka siriw sɛbɛn kokura, ka fisiyew kopi ani ka jaabi sɛbɛn taayɔrɔ ka kɛsu kɔnɔ. Foyi tɛ bila kɛnɛ kan fɔ i ka dilanni lajɛ ka Bila kɛnɛ kan digi.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Dilanni bɛ %site ka ɲɛ bɛɛ ta i n&apos;a fɔ lajɛlikɛla min ma don b&apos;a ye cogo min na, ka siriw sɛbɛn kokura, ka fisiyew kopi ani ka jaabi sɛbɛn taayɔrɔ ka kɛsu kɔnɔ. Foyi tɛ bila kɛnɛ kan fɔ i ka dilanni lajɛ ka Bila kɛnɛ kan digi.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
-        <translation>Cron kumasen, i n'a fɔ 0 3 * * *</translation>
+        <translation>Cron kumasen, i n&apos;a fɔ 0 3 * * *</translation>
     </message>
     <message>
         <source>A deploy key is kept as the secret %secret.</source>
-        <translation>Bilali kile bɛ mara i n'a fɔ gundo %secret.</translation>
+        <translation>Bilali kile bɛ mara i n&apos;a fɔ gundo %secret.</translation>
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
@@ -81426,7 +81642,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
-        <translation>Baara dɔ bɛ kɛ, %user de y'a daminɛ</translation>
+        <translation>Baara dɔ bɛ kɛ, %user de y&apos;a daminɛ</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
@@ -81449,8 +81665,8 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <translation>Ɲɛ min bɛ ni ɲɛjiri bɔlenw ye hali bi, walima formulɛri tɔkɛn, walima sesiyɔn tɔgɔ saniyali kɔfɛ, o tɛ bila kɛnɛ kan abada.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Segin kɔ ye dɔnnikɛlaw ta ye: "N b'a dɔn nin bɛ min yɛlɛma" sugandi ka taamasiyɛn tɔgɔ sɛbɛn tugun.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Segin kɔ ye dɔnnikɛlaw ta ye: &quot;N b&apos;a dɔn nin bɛ min yɛlɛma&quot; sugandi ka taamasiyɛn tɔgɔ sɛbɛn tugun.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81462,7 +81678,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>Taayɔrɔ ye siti kelen ye min bɛ bila yɔrɔ kelen na, i n'a fɔ i ka siti kɛnɛ kan GitHub Pages kan.</translation>
+        <translation>Taayɔrɔ ye siti kelen ye min bɛ bila yɔrɔ kelen na, i n&apos;a fɔ i ka siti kɛnɛ kan GitHub Pages kan.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
@@ -81470,7 +81686,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>A workflow of the repository publishes it.</source>
-        <translation>Marayɔrɔ ka baarasira dɔ b'a bila kɛnɛ kan.</translation>
+        <translation>Marayɔrɔ ka baarasira dɔ b&apos;a bila kɛnɛ kan.</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
@@ -81590,7 +81806,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
-        <translation>Dilanni bɛ mara, ka taamasiyɛn don a la ani k'a ci %remote ma. Ci tɛ kɛ ni fanga ye abada; i bɛ se ka segin bilali o bilali ma kɔfɛ.</translation>
+        <translation>Dilanni bɛ mara, ka taamasiyɛn don a la ani k&apos;a ci %remote ma. Ci tɛ kɛ ni fanga ye abada; i bɛ se ka segin bilali o bilali ma kɔfɛ.</translation>
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
@@ -81634,7 +81850,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Lankolon: siti adarɛsi. N'o tɛ, siti kelen in adarɛsi kɔnɔnata.</translation>
+        <translation>Lankolon: siti adarɛsi. N&apos;o tɛ, siti kelen in adarɛsi kɔnɔnata.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -81686,7 +81902,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
-        <translation>SSH adarɛsi kama. Kile bɛ dilan marali kɔfɛ; i b'a tilayɔrɔ kɛnɛ kan fara marayɔrɔ kan.</translation>
+        <translation>SSH adarɛsi kama. Kile bɛ dilan marali kɔfɛ; i b&apos;a tilayɔrɔ kɛnɛ kan fara marayɔrɔ kan.</translation>
     </message>
     <message>
         <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
@@ -81782,7 +81998,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>I know what this changes</source>
-        <translation>N b'a dɔn nin bɛ min yɛlɛma</translation>
+        <translation>N b&apos;a dɔn nin bɛ min yɛlɛma</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81794,7 +82010,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>A bɛ baara kɛ kɔfɛ i n'a fɔ %user; i bɛ se ka nin ɲɛ datugu.</translation>
+        <translation>A bɛ baara kɛ kɔfɛ i n&apos;a fɔ %user; i bɛ se ka nin ɲɛ datugu.</translation>
     </message>
     <message>
         <source>Job %id</source>
@@ -81802,7 +82018,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Kept as the secret %secret.</source>
-        <translation>A marara i n'a fɔ gundo %secret.</translation>
+        <translation>A marara i n&apos;a fɔ gundo %secret.</translation>
     </message>
     <message>
         <source>Kind</source>
@@ -81838,7 +82054,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
-        <translation>Sɛbɛnnisun fitininw, jateden, _ ani -, i n'a fɔ github-public. A bɛ tɔgɔ da kɛsu ani taamasiyɛnw na (static/&lt;id&gt;/&lt;n&gt;) wa a tɛ se ka yɛlɛma kɔfɛ.</translation>
+        <translation>Sɛbɛnnisun fitininw, jateden, _ ani -, i n&apos;a fɔ github-public. A bɛ tɔgɔ da kɛsu ani taamasiyɛnw na (static/&lt;id&gt;/&lt;n&gt;) wa a tɛ se ka yɛlɛma kɔfɛ.</translation>
     </message>
     <message>
         <source>Make a new key</source>
@@ -81938,7 +82154,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
-        <translation>Sɛriwɛri kan: ./console exp:static:serve %id b'a di o cogo kelen na.</translation>
+        <translation>Sɛriwɛri kan: ./console exp:static:serve %id b&apos;a di o cogo kelen na.</translation>
     </message>
     <message>
         <source>One path per line, * matches any part: /members/*</source>
@@ -81961,8 +82177,8 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <translation>Ɲɛfɛlajɛ da wuli</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Dilanni bɛ da wuli i n'a fɔ jatigi bɛna a di cogo min na, ka bɔ taayɔrɔ ka kɛsu la. Siri bɛ baara kɛ i ye lɛrɛ kelen kɔnɔ.</translation>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Dilanni bɛ da wuli i n&apos;a fɔ jatigi bɛna a di cogo min na, ka bɔ taayɔrɔ ka kɛsu la. Siri bɛ baara kɛ i ye lɛrɛ kelen kɔnɔ.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
@@ -82026,7 +82242,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Siti dɔ kopi jɔlen bila kɛnɛ kan GitHub Pages kan walima git jatigi o jatigi kan: a dilan, yɛlɛmaw lajɛ, a bila kɛnɛ kan, ani ka segin bilali fɔlɔ dɔ ma ni mako b'a la.</translation>
+        <translation>Siti dɔ kopi jɔlen bila kɛnɛ kan GitHub Pages kan walima git jatigi o jatigi kan: a dilan, yɛlɛmaw lajɛ, a bila kɛnɛ kan, ani ka segin bilali fɔlɔ dɔ ma ni mako b&apos;a la.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -82137,8 +82353,8 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <translation>Labɛnni &gt; Gundow</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>A bɛ jira lisiw kɔnɔ, i n'a fɔ "Siti kɛnɛ kan GitHub Pages kan".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>A bɛ jira lisiw kɔnɔ, i n&apos;a fɔ &quot;Siti kɛnɛ kan GitHub Pages kan&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82174,7 +82390,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Started by %user at %time.</source>
-        <translation>%user y'a daminɛ %time.</translation>
+        <translation>%user y&apos;a daminɛ %time.</translation>
     </message>
     <message>
         <source>State</source>
@@ -82302,11 +82518,11 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>Ɲɛw lisi ɲininikɛminɛnw kama; adarɛsi kɛnɛ kan mago b'a la.</translation>
+        <translation>Ɲɛw lisi ɲininikɛminɛnw kama; adarɛsi kɛnɛ kan mago b&apos;a la.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Ɲɛw bɛ ta i n'a fɔ lajɛlikɛla min ma don b'u ye cogo min na. Ɲɛmɔgɔya ani latilenni siteaccess tɛ di abada.</translation>
+        <translation>Ɲɛw bɛ ta i n&apos;a fɔ lajɛlikɛla min ma don b&apos;u ye cogo min na. Ɲɛmɔgɔya ani latilenni siteaccess tɛ di abada.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
@@ -82322,7 +82538,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>Gundow marayɔrɔ ma labɛn fɔlɔ (./console exp:upgrade --apply b'a ka tabali dilan), o de kosɔn kile si tɛ se ka mara.</translation>
+        <translation>Gundow marayɔrɔ ma labɛn fɔlɔ (./console exp:upgrade --apply b&apos;a ka tabali dilan), o de kosɔn kile si tɛ se ka mara.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
@@ -82345,7 +82561,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <translation>Siti bɛ segin o bilali ka fisiyew ma; dilanni min ma bila kɛnɛ kan fɔlɔ, o ka kan ka bila kɛnɛ kan walima ka fili fɔlɔ.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Siti yɛrɛ ka ɲɛ adarɛsi minnu tɛ yen olu kama.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <translation>Taayɔrɔ ma se ka mara: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Taayɔrɔ tɛ don ni nin kile ye fɔlɔ: "Bilali kile min dilanna nin taayɔrɔ in kama" sugandi a ka labɛnw kɔnɔ.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Taayɔrɔ tɛ don ni nin kile ye fɔlɔ: &quot;Bilali kile min dilanna nin taayɔrɔ in kama&quot; sugandi a ka labɛnw kɔnɔ.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <translation>Nin dilanni bɛ fili: kɛsu bɛ ni bilali laban ye tugun. Siti kɛnɛ kan tɛ yɛlɛma.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>"N ye yɛlɛmaw lajɛ" sugandi fɔlɔ.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>&quot;N ye yɛlɛmaw lajɛ&quot; sugandi fɔlɔ.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82430,7 +82646,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
-        <translation>Baara ye min bɔ i n'a fɔ filiw</translation>
+        <translation>Baara ye min bɔ i n&apos;a fɔ filiw</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
@@ -82606,11 +82822,39 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: a bɛ sɛbɛn fisiye CNAME kɔnɔ. Domɛni ka DNS ɲɛsin jatigi ma i n'a fɔ a b'a ɲɛfɔ cogo min na; HTTPS bɛ se ka mɛn sani a ka daminɛ.</translation>
+        <translation>www.example.com: a bɛ sɛbɛn fisiye CNAME kɔnɔ. Domɛni ka DNS ɲɛsin jatigi ma i n&apos;a fɔ a b&apos;a ɲɛfɔ cogo min na; HTTPS bɛ se ka mɛn sani a ka daminɛ.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>ɔwɔ, a ma bila kɛnɛ kan fɔlɔ</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Dilanni bɛ %site ka ɲɛ bɛɛ ta i n'a fɔ lajɛlikɛla min ma don b'a ye cogo min na, ka siriw sɛbɛn kokura, ka fisiyew kopi ani ka jaabi sɛbɛn taayɔrɔ ka kɛsu kɔnɔ. Foyi tɛ bila kɛnɛ kan fɔ i ka dilanni lajɛ ka Bila kɛnɛ kan digi.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Segin kɔ ye dɔnnikɛlaw ta ye: "N b'a dɔn nin bɛ min yɛlɛma" sugandi ka taamasiyɛn tɔgɔ sɛbɛn tugun.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Dilanni bɛ da wuli i n'a fɔ jatigi bɛna a di cogo min na, ka bɔ taayɔrɔ ka kɛsu la. Siri bɛ baara kɛ i ye lɛrɛ kelen kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>A bɛ jira lisiw kɔnɔ, i n'a fɔ "Siti kɛnɛ kan GitHub Pages kan".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Siti yɛrɛ ka ɲɛ adarɛsi minnu tɛ yen olu kama.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Taayɔrɔ tɛ don ni nin kile ye fɔlɔ: "Bilali kile min dilanna nin taayɔrɔ in kama" sugandi a ka labɛnw kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>"N ye yɛlɛmaw lajɛ" sugandi fɔlɔ.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

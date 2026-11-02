@@ -80588,6 +80588,222 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>The run could not be started.</source>
         <translation>Utekelezaji haukuweza kuanzishwa.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Kurekodi mabadiliko</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Wakati rekodi inaendelea, unachobadilisha katika usimamizi au katika upau wa pembeni wa tovuti huhifadhiwa kama hatua za uhamishaji: maudhui, madarasa, majukumu na sera, sehemu, watumiaji na vikundi, majina mbadala ya URL, mipangilio. Isimamishe ukimaliza, angalia ilichonasa, na utengeneze uhamishaji kutoka kwake.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Rekodi hazikuweza kusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Majedwali ya rekodi bado hayapo: endesha kwanza usasishaji (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Kurekodi kumezimwa katika migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mabadiliko yangu</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Hurekodi tu unachobadilisha, popote unapokibadilisha, hadi uisimamishe.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Rekodi</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>tangu %time, mabadiliko %count hadi sasa.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Lebo (si lazima)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Onyesha ilichonasa</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Simamisha kurekodi</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Anza kurekodi mabadiliko yangu</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Dirisha la tovuti nzima</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Hurekodi kila badiliko la kila mtumiaji na la koni hadi lifungwe. Unapolifungua, unaombwa kuthibitisha kuwa ni wewe.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Wazi</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Funga dirisha</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Fungua dirisha la tovuti nzima</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Rekodi zote</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Akaunti ya mtumiaji (jina la kuingia, barua pepe, nenosiri) na sehemu za akaunti za watumiaji hazirekodiwi kamwe.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Mabadiliko</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tovuti nzima</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Mabadiliko ya %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Imesimamishwa</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Bado hakuna rekodi.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Rekodi %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Rekodi zote zilizopo</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Uhamishaji ambao ingetengeneza</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Mabadiliko yaliyounganishwa kuwa hatua moja kwa kila kitu kilichobadilishwa: kile ambacho uhamishaji uliotengenezwa kutoka rekodi hii ungefanya.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Uhamishaji unaweza kutengenezwa kutoka kwake mara usakinishaji huu utakapokuwa na aina za hatua za YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Imeachwa kwa makusudi: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Hakuna kilichorekodiwa.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ilichonasa</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Mabadiliko %count, kwa mpangilio yalivyofanywa.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Badiliko</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Hatua</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Kuhusu</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count zaidi: ./console exp:migration:record:show huorodhesha zote.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Tupa</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Huondoa rekodi na ilichonasa. Kilichobadilishwa hubaki kimebadilishwa.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ndiyo, tupa rekodi hii</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Inarekodi…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Mabadiliko yako yanarekodiwa kwa ajili ya uhamishaji.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Kila badiliko kwenye tovuti hii linarekodiwa kwa ajili ya uhamishaji (dirisha la tovuti nzima).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Rekodi ya tovuti nzima imeanza: kila badiliko la kila mtumiaji linarekodiwa hadi uisimamishe.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Kurekodi kumeanza: mabadiliko yako yanarekodiwa hadi uisimamishe.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Kurekodi kumesimamishwa. Ilichonasa hubaki hadi uitupe.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Rekodi na matukio yake yameondolewa.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Hakuna rekodi %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Weka alama kwanza kwenye "Ndiyo, tupa rekodi hii".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Ni mtumiaji aliyerekodi pekee anayeweza kusimamisha rekodi ya kipindi.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Chagua rekodi ya kusimamisha.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Rekodi ya aina hii tayari inaendelea.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Rekodi haikuweza kubadilishwa: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81399,7 +81615,7 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>Tovuti ya mradi wa GitHub iko chini ya /&lt;repository&gt;/; viungo vya jamaa vinafanya kazi huko na kwingineko popote.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Muundo huleta kila ukurasa wa %site kama anavyouona mgeni ambaye hajaingia, huandika upya viungo, hunakili faili na huandika matokeo kwenye folda ya lengo. Hakuna kinachochapishwa hadi ukague muundo na ubonyeze Chapisha.</translation>
     </message>
     <message>
@@ -81447,8 +81663,8 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>Ukurasa ambao bado una matokeo ya utatuzi, tokeni ya fomu au kitambulisho cha kipindi baada ya kusafishwa hauchapishwi kamwe.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Urudishaji nyuma ni kwa wataalamu: weka alama kwenye "Ninajua hii inabadilisha nini" na uandike tena jina la lebo.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Urudishaji nyuma ni kwa wataalamu: weka alama kwenye &quot;Ninajua hii inabadilisha nini&quot; na uandike tena jina la lebo.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81959,7 +82175,7 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>Fungua uhakiki</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Hufungua muundo jinsi mwenyeji atakavyouhudumia, kutoka folda ya lengo. Kiungo kinakufanyia kazi kwa saa moja.</translation>
     </message>
     <message>
@@ -82135,8 +82351,8 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>Usanidi &gt; Siri</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Huonyeshwa katika orodha, kwa mfano "Tovuti ya umma kwenye GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Huonyeshwa katika orodha, kwa mfano &quot;Tovuti ya umma kwenye GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82343,7 +82559,7 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>Tovuti inarudi kwenye faili za chapisho hilo; muundo ambao bado haujachapishwa lazima uchapishwe au utupwe kwanza.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Ukurasa wa tovuti yenyewe kwa anwani ambazo hazipo.</translation>
     </message>
     <message>
@@ -82351,8 +82567,8 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>Lengo halikuweza kuhifadhiwa: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Lengo bado haliingii kwa ufunguo huu: chagua "Ufunguo wa kusambaza ulioundwa kwa lengo hili" katika mipangilio yake.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Lengo bado haliingii kwa ufunguo huu: chagua &quot;Ufunguo wa kusambaza ulioundwa kwa lengo hili&quot; katika mipangilio yake.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82387,8 +82603,8 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>Hutupa muundo huu: folda ina chapisho la mwisho tena. Tovuti hai haibadiliki.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Weka alama kwanza kwenye "Nimekagua mabadiliko".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Weka alama kwanza kwenye &quot;Nimekagua mabadiliko&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82609,6 +82825,34 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>yes, not published yet</source>
         <translation>ndiyo, bado haijachapishwa</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Muundo huleta kila ukurasa wa %site kama anavyouona mgeni ambaye hajaingia, huandika upya viungo, hunakili faili na huandika matokeo kwenye folda ya lengo. Hakuna kinachochapishwa hadi ukague muundo na ubonyeze Chapisha.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Urudishaji nyuma ni kwa wataalamu: weka alama kwenye "Ninajua hii inabadilisha nini" na uandike tena jina la lebo.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Hufungua muundo jinsi mwenyeji atakavyouhudumia, kutoka folda ya lengo. Kiungo kinakufanyia kazi kwa saa moja.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Huonyeshwa katika orodha, kwa mfano "Tovuti ya umma kwenye GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Ukurasa wa tovuti yenyewe kwa anwani ambazo hazipo.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Lengo bado haliingii kwa ufunguo huu: chagua "Ufunguo wa kusambaza ulioundwa kwa lengo hili" katika mipangilio yake.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Weka alama kwanza kwenye "Nimekagua mabadiliko".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

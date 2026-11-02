@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Ажиллуулалтыг эхлүүлж чадсангүй.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Өөрчлөлтийг бичих</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Бичлэг явагдаж байх үед удирдлагад эсвэл сайтын хажуугийн самбарт таны өөрчилсөн зүйл шилжүүлгийн алхмууд болж хадгалагдана: агуулга, анги, үүрэг ба бодлого, хэсэг, хэрэглэгч ба бүлэг, URL нэр, тохиргоо. Дуусмагц зогсоож, юу барьж авсныг хараад, түүнээс шилжүүлэг үүсгэнэ үү.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Бичлэгүүдийг уншиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Бичлэгийн хүснэгтүүд хараахан алга: эхлээд шинэчлэлийг ажиллуулна уу (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Бичлэг migration.ini дотор унтраалттай ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Миний өөрчлөлтүүд</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Таныг зогсоох хүртэл зөвхөн таны өөрчилсөн зүйлийг, хаана ч өөрчилсөн, бичнэ.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Бичлэг</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time-с хойш, одоогоор %count өөрчлөлт.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Шошго (заавал биш)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Юу барьж авсныг харуулах</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Бичлэгийг зогсоох</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Миний өөрчлөлтийг бичиж эхлэх</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Бүх сайтын цонх</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Хаагдах хүртэл хэрэглэгч бүрийн болон консолын өөрчлөлт бүрийг бичнэ. Нээх үед таныг өөрөө мөн эсэхийг баталгаажуулахыг хүснэ.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Нээлттэй</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Цонхыг хаах</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Бүх сайтын цонхыг нээх</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Бичлэгүүд</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Хэрэглэгчийн бүртгэл (нэвтрэх нэр, имэйл, нууц үг) болон хэрэглэгчийн бүртгэлийн талбаруудыг хэзээ ч бичихгүй.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Өөрчлөлтүүд</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Бүх сайт</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name-ийн өөрчлөлтүүд</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Зогсоосон</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Одоогоор бичлэг алга.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Бичлэг %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Бүх бичлэг</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Түүнээс гарах шилжүүлэг</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Өөрчлөгдсөн зүйл бүрт нэг алхам болгон нэгтгэсэн өөрчлөлтүүд: энэ бичлэгээс үүсгэсэн шилжүүлэг юу хийхийг.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Энэ суулгацад YAML алхмын төрлүүд %types бий болоход түүнээс шилжүүлэг үүсгэж болно.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Санаатайгаар орхисон: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Юу ч бичигдсэнгүй.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Юу барьж авсан</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count өөрчлөлт, хийгдсэн дарааллаараа.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Өөрчлөлт</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Алхам</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Холбогдох</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Бас %count: ./console exp:migration:record:show бүгдийг жагсаана.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Хаях</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Бичлэг болон түүний барьж авсныг устгана. Өөрчлөгдсөн зүйл өөрчлөгдсөн хэвээр үлдэнэ.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Тийм, энэ бичлэгийг хаях</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Бичиж байна…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Таны өөрчлөлтүүдийг шилжүүлэгт зориулан бичиж байна.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Энэ сайт дахь өөрчлөлт бүрийг шилжүүлэгт зориулан бичиж байна (бүх сайтын цонх).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Бүх сайтын бичлэг эхэллээ: таныг зогсоох хүртэл хэрэглэгч бүрийн өөрчлөлт бүрийг бичнэ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Бичлэг эхэллээ: таныг зогсоох хүртэл таны өөрчлөлтүүдийг бичнэ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Бичлэг зогслоо. Барьж авсан зүйл таныг хаях хүртэл үлдэнэ.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Бичлэг болон түүний үйл явдлуудыг устгалаа.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id бичлэг алга.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Эхлээд «Тийм, энэ бичлэгийг хаях»-ыг тэмдэглэнэ үү.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Сешний бичлэгийг зөвхөн бичсэн хэрэглэгч зогсоож чадна.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Зогсоох бичлэгээ сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Энэ төрлийн бичлэг аль хэдийн явагдаж байна.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Бичлэгийг өөрчилж чадсангүй: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub төслийн сайт /&lt;repository&gt;/ доор байрладаг; харьцангуй холбоосууд тэнд ч, өөр хаана ч ажиллана.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Бүтээл нь %site-ийн хуудас бүрийг нэвтрээгүй зочин харах байдлаар татаж, холбоосуудыг дахин бичиж, файлуудыг хуулж, үр дүнг зорилтын хавтас руу бичнэ. Та бүтээлийг шалгаж Нийтлэх товчийг дарах хүртэл юу ч нийтлэгдэхгүй.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Цэвэрлэсний дараа ч дибаг гаралт, маягтын токен эсвэл сешний id агуулсан хуудсыг хэзээ ч нийтлэхгүй.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Буцаалт нь мэргэжилтнүүдэд зориулагдсан: "Энэ юуг өөрчлөхийг би мэднэ"-г тэмдэглээд шошгоны нэрийг дахин бичнэ үү.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Буцаалт нь мэргэжилтнүүдэд зориулагдсан: &quot;Энэ юуг өөрчлөхийг би мэднэ&quot;-г тэмдэглээд шошгоны нэрийг дахин бичнэ үү.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Урьдчилан харахыг нээх</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Бүтээлийг хост үйлчлэх байдлаар, зорилтын хавтаснаас нээнэ. Холбоос танд нэг цагийн турш ажиллана.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Тохируулга &gt; Нууцууд</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Жагсаалтад харагдана, жишээ нь "GitHub Pages дээрх нийтийн сайт".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Жагсаалтад харагдана, жишээ нь &quot;GitHub Pages дээрх нийтийн сайт&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Сайт тухайн нийтлэлтийн файлууд руу буцна; хараахан нийтлэгдээгүй бүтээлийг эхлээд нийтлэх эсвэл хаях шаардлагатай.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Байхгүй хаягуудад зориулсан сайтын өөрийн хуудас.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Зорилтыг хадгалж чадсангүй: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Зорилт энэ түлхүүрээр хараахан нэвтрэхгүй байна: тохиргоонд нь "Энэ зорилтод зориулж үүсгэсэн байршуулах түлхүүр"-ийг сонгоно уу.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Зорилт энэ түлхүүрээр хараахан нэвтрэхгүй байна: тохиргоонд нь &quot;Энэ зорилтод зориулж үүсгэсэн байршуулах түлхүүр&quot;-ийг сонгоно уу.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Энэ бүтээлийг хаяна: хавтас дахин сүүлийн нийтлэлтийг агуулна. Амьд сайт өөрчлөгдөхгүй.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Эхлээд "Би өөрчлөлтүүдийг шалгасан"-ыг тэмдэглэнэ үү.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Эхлээд &quot;Би өөрчлөлтүүдийг шалгасан&quot;-ыг тэмдэглэнэ үү.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>тийм, хараахан нийтлэгдээгүй</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Бүтээл нь %site-ийн хуудас бүрийг нэвтрээгүй зочин харах байдлаар татаж, холбоосуудыг дахин бичиж, файлуудыг хуулж, үр дүнг зорилтын хавтас руу бичнэ. Та бүтээлийг шалгаж Нийтлэх товчийг дарах хүртэл юу ч нийтлэгдэхгүй.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Буцаалт нь мэргэжилтнүүдэд зориулагдсан: "Энэ юуг өөрчлөхийг би мэднэ"-г тэмдэглээд шошгоны нэрийг дахин бичнэ үү.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Бүтээлийг хост үйлчлэх байдлаар, зорилтын хавтаснаас нээнэ. Холбоос танд нэг цагийн турш ажиллана.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Жагсаалтад харагдана, жишээ нь "GitHub Pages дээрх нийтийн сайт".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Байхгүй хаягуудад зориулсан сайтын өөрийн хуудас.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Зорилт энэ түлхүүрээр хараахан нэвтрэхгүй байна: тохиргоонд нь "Энэ зорилтод зориулж үүсгэсэн байршуулах түлхүүр"-ийг сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Эхлээд "Би өөрчлөлтүүдийг шалгасан"-ыг тэмдэглэнэ үү.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

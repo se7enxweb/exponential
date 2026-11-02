@@ -80622,6 +80622,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>לא ניתן היה להפעיל את הריצה.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>הקלטת שינויים</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>בזמן שהקלטה פועלת, מה שאתם משנים בממשק הניהול או בסרגל הצד של האתר נשמר כצעדים של הגירה: תוכן, מחלקות, תפקידים ומדיניות, מקטעים, משתמשים וקבוצות, כינויי URL, הגדרות. עצרו אותה כשסיימתם, בדקו מה היא לכדה וצרו ממנה הגירה.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>לא ניתן לקרוא את ההקלטות: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>טבלאות ההקלטות עדיין לא קיימות: הריצו קודם את השדרוג (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>ההקלטה כבויה ב־migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>השינויים שלי</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>מקליטה רק את מה שאתם משנים, בכל מקום שבו תשנו, עד שתעצרו אותה.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>הקלטה</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>מאז %time, עד כה %count שינויים.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>תווית (רשות)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>הצגת מה שהיא לכדה</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>עצירת ההקלטה</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>התחלת הקלטת השינויים שלי</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>חלון לכל האתר</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>מקליט כל שינוי של כל משתמש ושל המסוף עד שהוא נסגר. בפתיחתו תתבקשו לאמת שזה אתם.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>פתוח</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>סגירת החלון</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>פתיחת החלון לכל האתר</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>הקלטות</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>חשבון של משתמש (שם כניסה, דוא״ל, סיסמה) והשדות של חשבונות משתמשים אינם מוקלטים לעולם.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>שינויים</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>כל האתר</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>השינויים של %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>נעצרה</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>עדיין אין הקלטות.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>הקלטה %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>כל ההקלטות</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ההגירה שתיווצר ממנה</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>השינויים מקובצים לצעד אחד לכל דבר ששונה: מה שהגירה שנוצרה מהקלטה זו הייתה עושה.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ניתן יהיה ליצור ממנה הגירה כשלהתקנה הזו יהיו סוגי הצעדים של YAML ‏%types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>הושמט בכוונה: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>לא הוקלט דבר.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>מה שהיא לכדה</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count שינויים, לפי הסדר שבו נעשו.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>שינוי</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>צעד</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>נוגע ל</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>עוד %count: ‏./console exp:migration:record:show מציג את כולם.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>השלכה</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>מסירה את ההקלטה ואת מה שהיא לכדה. מה ששונה נשאר משונה.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>כן, להשליך את ההקלטה הזו</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>מקליט…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>השינויים שלכם מוקלטים עבור הגירה.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>כל שינוי באתר זה מוקלט עבור הגירה (חלון לכל האתר).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ההקלטה לכל האתר החלה: כל שינוי של כל משתמש מוקלט עד שתעצרו אותה.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ההקלטה החלה: השינויים שלכם מוקלטים עד שתעצרו אותה.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ההקלטה נעצרה. מה שהיא לכדה נשאר עד שתשליכו אותה.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ההקלטה והאירועים שלה הוסרו.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>אין הקלטה %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>סמנו קודם את „כן, להשליך את ההקלטה הזו”.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>רק המשתמש שהקליט רשאי לעצור הקלטת הפעלה.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>בחרו את ההקלטה לעצירה.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>הקלטה מסוג זה כבר פועלת.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>לא ניתן לשנות את ההקלטה: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81433,7 +81649,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>אתר פרויקט של GitHub נמצא תחת /&lt;repository&gt;/; קישורים יחסיים עובדים שם ובכל מקום אחר.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>בנייה מאחזרת כל דף של %site כפי שמבקר שאינו מחובר רואה אותו, משכתבת את הקישורים, מעתיקה את הקבצים וכותבת את התוצאה לתיקיית היעד. דבר אינו מתפרסם עד שבודקים את הבנייה ולוחצים על פרסום.</translation>
     </message>
     <message>
@@ -81481,8 +81697,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>דף שעדיין מכיל פלט ניפוי באגים, טוקן טופס או מזהה סשן לאחר הניקוי לעולם אינו מתפרסם.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>החזרה לאחור מיועדת למומחים: יש לסמן "אני יודע מה זה משנה" ולהקליד שוב את שם התג.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>החזרה לאחור מיועדת למומחים: יש לסמן &quot;אני יודע מה זה משנה&quot; ולהקליד שוב את שם התג.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81993,7 +82209,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>פתיחת התצוגה המקדימה</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>פותח את הבנייה כפי שהמארח יגיש אותה, מתיקיית היעד. הקישור עובד עבורך במשך שעה.</translation>
     </message>
     <message>
@@ -82169,8 +82385,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>הגדרות &gt; סודות</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>מוצג ברשימות, לדוגמה "האתר הציבורי ב-GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>מוצג ברשימות, לדוגמה &quot;האתר הציבורי ב-GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82377,7 +82593,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>האתר חוזר לקבצים של אותו פרסום; בנייה שעדיין לא פורסמה חייבת להתפרסם או להיות מושלכת קודם.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>הדף של האתר עצמו עבור כתובות שאינן קיימות.</translation>
     </message>
     <message>
@@ -82385,8 +82601,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>לא ניתן היה לשמור את היעד: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>היעד עדיין אינו מתחבר עם מפתח זה: יש לבחור "מפתח פריסה שנוצר עבור יעד זה" בהגדרות שלו.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>היעד עדיין אינו מתחבר עם מפתח זה: יש לבחור &quot;מפתח פריסה שנוצר עבור יעד זה&quot; בהגדרות שלו.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82421,8 +82637,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>משליך את הבנייה הזו: התיקייה מכילה שוב את הפרסום האחרון. האתר החי אינו משתנה.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>יש לסמן תחילה "בדקתי את השינויים".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>יש לסמן תחילה &quot;בדקתי את השינויים&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82643,6 +82859,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>כן, עדיין לא פורסם</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>בנייה מאחזרת כל דף של %site כפי שמבקר שאינו מחובר רואה אותו, משכתבת את הקישורים, מעתיקה את הקבצים וכותבת את התוצאה לתיקיית היעד. דבר אינו מתפרסם עד שבודקים את הבנייה ולוחצים על פרסום.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>החזרה לאחור מיועדת למומחים: יש לסמן "אני יודע מה זה משנה" ולהקליד שוב את שם התג.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>פותח את הבנייה כפי שהמארח יגיש אותה, מתיקיית היעד. הקישור עובד עבורך במשך שעה.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>מוצג ברשימות, לדוגמה "האתר הציבורי ב-GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>הדף של האתר עצמו עבור כתובות שאינן קיימות.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>היעד עדיין אינו מתחבר עם מפתח זה: יש לבחור "מפתח פריסה שנוצר עבור יעד זה" בהגדרות שלו.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>יש לסמן תחילה "בדקתי את השינויים".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

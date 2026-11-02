@@ -13,7 +13,7 @@ The policy functions of `migration` and their limitations, from `$FunctionList` 
 
 ## edit
 
-No view of the module names it; code checks it (`eZUser::hasAccessTo( 'migration', 'edit' )` or the `user/has_access_to` fetch).
+Checked by the views: [recording](../module-views/migration/recording.md).
 
 No limitations: the policy is all or nothing.
 

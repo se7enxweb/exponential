@@ -80590,6 +80590,222 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>The run could not be started.</source>
         <translation>Koyringin kundi ikki byrjast.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Upptaka broytingar</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Meðan ein upptøka gongur, verður tað, sum tú broytir í umsitingini ella í síðubjálkanum á heimasíðuni, goymt sum stig í eini flyting: innihald, flokkar, leiklutir og politikkir, partar, brúkarar og bólkar, URL-aliasir, stillingar. Steðga henni, tá ið tú ert liðug(ur), hygg at, hvat hon fangaði, og ger eina flyting úr henni.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Upptøkurnar kundu ikki lesast: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Talvurnar hjá upptøkunum eru ikki til enn: koyr fyrst dagføringina (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Upptøka er sløkt í migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mínar broytingar</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Tekur bert upp tað, sum tú broytir, hvar tú so broytir tað, til tú steðgar henni.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Upptøka</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>síðan %time, higartil %count broyting(ar).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Merki (valfrítt)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Vís, hvat hon fangaði</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Steðga upptøkuni</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Byrja at taka mínar broytingar upp</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Gluggi fyri alla heimasíðuna</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Tekur upp hvørja broyting hjá hvørjum brúkara og hjá stýrisvindeyganum, til hann verður latin aftur. Tá ið tú letur hann upp, verður tú biðin(n) um at váttá, at tað ert tú.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Opin</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Lat gluggan aftur</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Lat gluggan fyri alla heimasíðuna upp</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Upptøkur</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Kontan hjá einum brúkara (innritanarnavn, teldupostur, loyniorð) og teigarnir í brúkarakontum verða ongantíð tiknir upp.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Broytingar</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Øll heimasíðan</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Broytingar hjá %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Steðgað</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ongin upptøka enn.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Upptøka %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Allar upptøkur</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Flytingin, sum hon fór at geva</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Broytingarnar savnaðar í eitt stig fyri hvønn broyttan lut: hvat ein flyting gjørd úr hesi upptøku fór at gera.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Ein flyting kann gerast úr henni, tá ið henda uppseting hevur YAML-stigslagini %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Við vilja útilatið: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Einki varð tikið upp.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Hvat hon fangaði</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count broyting(ar), í tí raðfylgju, tær vórðu gjørdar.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Broyting</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Stig</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Viðvíkur</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count afturat: ./console exp:migration:record:show listar allar.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Burturkasta</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Strikar upptøkuna og tað, sum hon fangaði. Tað, sum er broytt, verður verandi broytt.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ja, burturkasta hesa upptøkuna</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Tekur upp…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Tínar broytingar verða tiknar upp til eina flyting.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Hvør broyting á hesi heimasíðu verður tikin upp til eina flyting (gluggi fyri alla heimasíðuna).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Upptøkan fyri alla heimasíðuna er byrjað: hvør broyting hjá hvørjum brúkara verður tikin upp, til tú steðgar henni.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Upptøkan er byrjað: tínar broytingar verða tiknar upp, til tú steðgar henni.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Upptøkan er steðgað. Tað, sum hon fangaði, verður verandi, til tú burturkastar hana.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Upptøkan og hendingar hennara eru strikaðar.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Ongin upptøka %id er til.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Krossa fyrst við „Ja, burturkasta hesa upptøkuna“.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Bert brúkarin, sum tók upp, kann steðga eini setuupptøku.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Vel upptøkuna, sum skal steðgast.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ein upptøka av hesum slagnum gongur longu.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Upptøkan kundi ikki broytast: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Ein GitHub verkætlanarsíða liggur undir /&lt;repository&gt;/; viðvíkjandi leinki virka har og allastaðni aðrastaðni.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Ein bygging heintar hvørja síðu av %site, sum ein vitjandi, ið ikki er innritaður, sær hana, skrivar leinkini um, avritar fílurnar og skrivar úrslitið í mappuna hjá málinum. Einki verður útgivið, fyrr enn tú hevur kannað bygging og trýst á Útgev.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Ein síða, sum eftir reinsing enn inniheldur kembingarúttak, eitt oyðublaðstoken ella eitt setu-id, verður ongantíð útgivin.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Ein afturtøka er fyri serfrøðingar: set kross við "Eg veit, hvat hetta broytir" og skriva navnið á merkinum aftur.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Ein afturtøka er fyri serfrøðingar: set kross við &quot;Eg veit, hvat hetta broytir&quot; og skriva navnið á merkinum aftur.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Opna forsýningina</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Opnar bygging, sum hýsarin fer at veita hana, úr mappuni hjá málinum. Leinkið virkar fyri teg í ein tíma.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Uppseting &gt; Loyndarmál</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Víst í listum, til dømis "Almenn heimasíða á GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Víst í listum, til dømis &quot;Almenn heimasíða á GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Heimasíðan fer aftur til fílurnar úr teirri útgávuni; ein bygging, sum ikki er útgivin enn, má fyrst útgevast ella kastast.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Egna síða heimasíðunnar fyri adressur, sum ikki eru til.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Málið kundi ikki goymast: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Málið ritar ikki inn við hesum lyklinum enn: vel "Ein deploy-lykil gjørdur til hetta málið" í stillingunum.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Málið ritar ikki inn við hesum lyklinum enn: vel &quot;Ein deploy-lykil gjørdur til hetta málið&quot; í stillingunum.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Kastar hesa bygging: mappan inniheldur aftur seinastu útgávuna. Livandi heimasíðan broytist ikki.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Set fyrst kross við "Eg havi kannað broytingarnar".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Set fyrst kross við &quot;Eg havi kannað broytingarnar&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>yes, not published yet</source>
         <translation>ja, ikki útgivið enn</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ein bygging heintar hvørja síðu av %site, sum ein vitjandi, ið ikki er innritaður, sær hana, skrivar leinkini um, avritar fílurnar og skrivar úrslitið í mappuna hjá málinum. Einki verður útgivið, fyrr enn tú hevur kannað bygging og trýst á Útgev.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Ein afturtøka er fyri serfrøðingar: set kross við "Eg veit, hvat hetta broytir" og skriva navnið á merkinum aftur.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Opnar bygging, sum hýsarin fer at veita hana, úr mappuni hjá málinum. Leinkið virkar fyri teg í ein tíma.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Víst í listum, til dømis "Almenn heimasíða á GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Egna síða heimasíðunnar fyri adressur, sum ikki eru til.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Málið ritar ikki inn við hesum lyklinum enn: vel "Ein deploy-lykil gjørdur til hetta málið" í stillingunum.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Set fyrst kross við "Eg havi kannað broytingarnar".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

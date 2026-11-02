@@ -80590,6 +80590,222 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>The run could not be started.</source>
         <translation>Dili masugdan ang padagan.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Pagrekord sa mga kausaban</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Samtang nagdagan ang usa ka rekording, ang imong usbon sa administrasyon o sa sidebar sa site gitipigan isip mga lakang sa usa ka migration: sulod, mga klase, mga papel ug palisiya, mga seksyon, mga user ug grupo, mga URL alias, mga setting. Hunonga kini kung nahuman ka na, tan-awa kung unsa ang nakuha niini, ug paghimo og migration gikan niini.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Dili mabasa ang mga rekording: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Wala pa ang mga talaan sa mga rekording: padagana una ang upgrade (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Gipalong ang pagrekord sa migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Akong mga kausaban</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Girekord lang ang imong usbon, bisan asa nimo kini usbon, hangtod nga imong hunongon.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Rekording</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>sukad %time, %count ka kausaban hangtod karon.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Label (opsyonal)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Ipakita ang nakuha niini</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Hunonga ang pagrekord</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Sugdi ang pagrekord sa akong mga kausaban</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Bintana alang sa tibuok site</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Girekord ang matag kausaban sa matag user ug sa console hangtod kini sirad-an. Sa pag-abli niini, hangyoon ka nga pamatud-an nga ikaw kini.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Abli</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Sirhi ang bintana</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ablihi ang bintana alang sa tibuok site</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Mga rekording</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ang account sa usa ka user (login, e-mail, password) ug ang mga field sa mga user account dili gayud girekord.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Mga kausaban</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tibuok site</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Mga kausaban ni %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Gihunong</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Wala pay rekording.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Rekording %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Tanang rekording</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ang migration nga mahimo niini</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ang mga kausaban nga gihiusa sa usa ka lakang matag butang nga giusab: ang buhaton sa usa ka migration nga gihimo gikan niini nga rekording.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Makahimo og migration gikan niini kung aduna nay mga matang sa lakang nga YAML %types kini nga instalasyon.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Tinuyo nga wala gilakip: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Walay narekord.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ang nakuha niini</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ka kausaban, sumala sa han-ay sa paghimo.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Kausaban</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Lakang</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Mahitungod sa</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count pa: gilista sa ./console exp:migration:record:show ang tanan.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Ilabay</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Gitangtang ang rekording ug ang nakuha niini. Ang giusab magpabilin nga giusab.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Oo, ilabay kini nga rekording</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Nagrekord…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Girekord ang imong mga kausaban alang sa usa ka migration.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Girekord ang matag kausaban niini nga site alang sa usa ka migration (bintana alang sa tibuok site).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nagsugod na ang rekording sa tibuok site: girekord ang matag kausaban sa matag user hangtod nimo kini hunongon.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Nagsugod na ang rekording: girekord ang imong mga kausaban hangtod nimo kini hunongon.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Gihunong ang rekording. Ang nakuha niini magpabilin hangtod nimo kini ilabay.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Natangtang na ang rekording ug ang mga panghitabo niini.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Walay rekording nga %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>I-tsek una ang "Oo, ilabay kini nga rekording".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Ang user lang nga nagrekord ang makahunong sa rekording sa session.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Pilia ang rekording nga hunongon.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Aduna nay nagdagan nga rekording niini nga matang.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Dili mausab ang rekording: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>Ang site sa proyekto sa GitHub anaa ilalom sa /&lt;repository&gt;/; ang relatibong mga link molihok didto ug bisan asa pa.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Ang build mokuha sa matag panid sa %site sama sa makita sa bisita nga wala naka-sign in, mosulat pag-usab sa mga link, mokopya sa mga file ug mosulat sa resulta sa folder sa tumong. Walay ma-publish hangtod nga susihon nimo ang build ug pindoton ang I-publish.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>Ang panid nga aduna pay debug output, form token o session id human sa paglimpyo dili gayud i-publish.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Ang pagbalik alang sa mga eksperto: i-tsek ang "Nahibalo ko kon unsa ang usbon niini" ug i-type pag-usab ang ngalan sa tag.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Ang pagbalik alang sa mga eksperto: i-tsek ang &quot;Nahibalo ko kon unsa ang usbon niini&quot; ug i-type pag-usab ang ngalan sa tag.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>Ablihi ang preview</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Ablihan ang build sama sa paghatag niini sa host, gikan sa folder sa tumong. Molihok ang link alang kanimo sulod sa usa ka oras.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>Pag-setup &gt; Mga sekreto</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Gipakita sa mga lista, pananglitan "Publiko nga site sa GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Gipakita sa mga lista, pananglitan &quot;Publiko nga site sa GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>Mobalik ang site sa mga file sa maong publikasyon; ang build nga wala pa ma-publish kinahanglan i-publish o ilabay una.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Ang kaugalingong panid sa site alang sa mga address nga wala maglungtad.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>Dili matipigan ang tumong: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Wala pa mo-sign in ang tumong gamit kining yawe: pilia ang "Usa ka deploy key nga gihimo alang niining tumong" sa mga setting niini.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Wala pa mo-sign in ang tumong gamit kining yawe: pilia ang &quot;Usa ka deploy key nga gihimo alang niining tumong&quot; sa mga setting niini.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>Ilabay kining build: ang folder maghupot na usab sa kataposang publikasyon. Dili mausab ang live nga site.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>I-tsek una ang "Gisusi nako ang mga kausaban".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>I-tsek una ang &quot;Gisusi nako ang mga kausaban&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>yes, not published yet</source>
         <translation>oo, wala pa ma-publish</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ang build mokuha sa matag panid sa %site sama sa makita sa bisita nga wala naka-sign in, mosulat pag-usab sa mga link, mokopya sa mga file ug mosulat sa resulta sa folder sa tumong. Walay ma-publish hangtod nga susihon nimo ang build ug pindoton ang I-publish.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Ang pagbalik alang sa mga eksperto: i-tsek ang "Nahibalo ko kon unsa ang usbon niini" ug i-type pag-usab ang ngalan sa tag.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Ablihan ang build sama sa paghatag niini sa host, gikan sa folder sa tumong. Molihok ang link alang kanimo sulod sa usa ka oras.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Gipakita sa mga lista, pananglitan "Publiko nga site sa GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Ang kaugalingong panid sa site alang sa mga address nga wala maglungtad.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Wala pa mo-sign in ang tumong gamit kining yawe: pilia ang "Usa ka deploy key nga gihimo alang niining tumong" sa mga setting niini.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>I-tsek una ang "Gisusi nako ang mga kausaban".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

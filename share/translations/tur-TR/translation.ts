@@ -15158,7 +15158,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Bir sitenin statik kopyasını GitHub Pages'e veya herhangi bir git sunucusuna yayımlayın.</translation>
+        <translation>Bir sitenin statik kopyasını GitHub Pages&apos;e veya herhangi bir git sunucusuna yayımlayın.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22166,7 +22166,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
     </message>
     <message>
         <source>Publish a static copy to GitHub Pages or any git host</source>
-        <translation>GitHub Pages'e veya herhangi bir git sunucusuna statik bir kopya yayımlayın</translation>
+        <translation>GitHub Pages&apos;e veya herhangi bir git sunucusuna statik bir kopya yayımlayın</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22174,7 +22174,7 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Statik önbellek sayfaları bu sunucudan sunar. Bir sitenin statik kopyasını başka bir yerde, GitHub Pages'te veya herhangi bir git sunucusunda yayımlamak için statik yayımlamayı kullanın.</translation>
+        <translation>Statik önbellek sayfaları bu sunucudan sunar. Bir sitenin statik kopyasını başka bir yerde, GitHub Pages&apos;te veya herhangi bir git sunucusunda yayımlamak için statik yayımlamayı kullanın.</translation>
     </message>
 </context>
 <context>
@@ -74791,7 +74791,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Bir sitenin statik kopyasını GitHub Pages'e veya herhangi bir git sunucusuna yayımlayın.</translation>
+        <translation>Bir sitenin statik kopyasını GitHub Pages&apos;e veya herhangi bir git sunucusuna yayımlayın.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -80595,6 +80595,222 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The run could not be started.</source>
         <translation>Çalıştırma başlatılamadı.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Değişiklikleri kaydetme</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Bir kayıt sürerken yönetim panelinde veya site kenar çubuğunda değiştirdiğiniz her şey bir geçişin adımları olarak tutulur: içerik, sınıflar, roller ve politikalar, bölümler, kullanıcılar ve gruplar, URL takma adları, ayarlar. İşiniz bitince durdurun, neleri yakaladığına bakın ve ondan bir geçiş oluşturun.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Kayıtlar okunamadı: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Kayıt tabloları henüz yok: önce yükseltmeyi çalıştırın (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Kayıt, migration.ini içinde kapalı ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Değişikliklerim</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Siz durdurana kadar yalnızca sizin değiştirdiklerinizi, nerede değiştirirseniz değiştirin kaydeder.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Kayıt</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time zamanından beri, şimdiye kadar %count değişiklik.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiket (isteğe bağlı)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Neleri yakaladığını göster</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Kaydı durdur</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Değişikliklerimi kaydetmeye başla</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Tüm site penceresi</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Kapatılana kadar her kullanıcının ve konsolun her değişikliğini kaydeder. Açarken siz olduğunuzu doğrulamanız istenir.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Açık</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Pencereyi kapat</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Tüm site penceresini aç</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Kayıtlar</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Bir kullanıcının hesabı (kullanıcı adı, e-posta, parola) ve kullanıcı hesaplarının alanları asla kaydedilmez.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Değişiklikler</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tüm site</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Değişiklikleri yapan: %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Durduruldu</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Henüz kayıt yok.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Kayıt %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Tüm kayıtlar</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ortaya çıkacak geçiş</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Değişiklikler, değişen her şey için tek adımda toplanmış hâlde: bu kayıttan oluşturulan bir geçişin yapacakları.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Bu kurulumda %types YAML adım türleri olduğunda ondan bir geçiş oluşturulabilir.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Bilerek dışarıda bırakıldı: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Hiçbir şey kaydedilmedi.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Neleri yakaladı</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count değişiklik, yapıldıkları sırayla.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Değişiklik</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Adım</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>İlgili</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count tane daha: ./console exp:migration:record:show hepsini listeler.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>At</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Kaydı ve yakaladıklarını kaldırır. Değiştirilen değişmiş olarak kalır.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Evet, bu kaydı at</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Kaydediliyor…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Değişiklikleriniz bir geçiş için kaydediliyor.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Bu sitedeki her değişiklik bir geçiş için kaydediliyor (tüm site penceresi).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Tüm site kaydı başladı: siz durdurana kadar her kullanıcının her değişikliği kaydedilir.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Kayıt başladı: siz durdurana kadar değişiklikleriniz kaydedilir.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Kayıt durduruldu. Yakaladıkları, siz atana kadar kalır.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Kayıt ve olayları kaldırıldı.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id adlı kayıt yok.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Önce "Evet, bu kaydı at" kutusunu işaretleyin.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Bir oturum kaydını yalnızca kaydı yapan kullanıcı durdurabilir.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Durdurulacak kaydı seçin.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Bu türde bir kayıt zaten sürüyor.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Kayıt değiştirilemedi: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81406,7 +81622,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Bir GitHub proje sitesi /&lt;repository&gt;/ altında yer alır; göreli bağlantılar orada ve başka her yerde çalışır.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Bir derleme, %site sitesinin her sayfasını oturum açmamış bir ziyaretçinin gördüğü gibi alır, bağlantıları yeniden yazar, dosyaları kopyalar ve sonucu hedefin klasörüne yazar. Siz derlemeyi kontrol edip Yayımla düğmesine basana kadar hiçbir şey yayımlanmaz.</translation>
     </message>
     <message>
@@ -81454,8 +81670,8 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Temizlemeden sonra hâlâ hata ayıklama çıktısı, form belirteci veya oturum kimliği taşıyan bir sayfa asla yayımlanmaz.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Geri alma uzmanlar içindir: "Bunun neyi değiştirdiğini biliyorum" kutusunu işaretleyin ve etiketin adını yeniden yazın.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Geri alma uzmanlar içindir: &quot;Bunun neyi değiştirdiğini biliyorum&quot; kutusunu işaretleyin ve etiketin adını yeniden yazın.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81467,7 +81683,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>Bir hedef, tek bir yere yayımlanan tek bir sitedir; örneğin GitHub Pages'teki herkese açık siteniz.</translation>
+        <translation>Bir hedef, tek bir yere yayımlanan tek bir sitedir; örneğin GitHub Pages&apos;teki herkese açık siteniz.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
@@ -81966,7 +82182,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Önizlemeyi aç</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Derlemeyi, barındırma hizmetinin sunacağı şekilde hedefin klasöründen açar. Bağlantı sizin için bir saat çalışır.</translation>
     </message>
     <message>
@@ -82031,7 +82247,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Bir sitenin statik kopyasını GitHub Pages'e veya herhangi bir git sunucusuna yayımlayın: derleyin, değişiklikleri kontrol edin, yayımlayın ve gerektiğinde önceki bir yayına geri dönün.</translation>
+        <translation>Bir sitenin statik kopyasını GitHub Pages&apos;e veya herhangi bir git sunucusuna yayımlayın: derleyin, değişiklikleri kontrol edin, yayımlayın ve gerektiğinde önceki bir yayına geri dönün.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -82142,8 +82358,8 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Kurulum &gt; Gizli değerler</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Listelerde gösterilir, örneğin "GitHub Pages'teki herkese açık site".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Listelerde gösterilir, örneğin &quot;GitHub Pages&apos;teki herkese açık site&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82350,7 +82566,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Site o yayının dosyalarına geri döner; henüz yayımlanmamış bir derleme önce yayımlanmalı veya ondan vazgeçilmelidir.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Sitenin, var olmayan adresler için kendi sayfası.</translation>
     </message>
     <message>
@@ -82358,8 +82574,8 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Hedef kaydedilemedi: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Hedef henüz bu anahtarla oturum açmıyor: ayarlarında "Bu hedef için oluşturulan bir dağıtım anahtarı" seçeneğini seçin.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Hedef henüz bu anahtarla oturum açmıyor: ayarlarında &quot;Bu hedef için oluşturulan bir dağıtım anahtarı&quot; seçeneğini seçin.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82394,8 +82610,8 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Bu derlemeden vazgeçer: klasör yeniden son yayını içerir. Canlı site değişmez.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Önce "Değişiklikleri kontrol ettim" kutusunu işaretleyin.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Önce &quot;Değişiklikleri kontrol ettim&quot; kutusunu işaretleyin.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,11 +82827,39 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: CNAME dosyasına yazılır. Alan adının DNS kaydını barındırma hizmetinin açıkladığı şekilde ona yönlendirin; HTTPS'nin devreye girmesi biraz zaman alabilir.</translation>
+        <translation>www.example.com: CNAME dosyasına yazılır. Alan adının DNS kaydını barındırma hizmetinin açıkladığı şekilde ona yönlendirin; HTTPS&apos;nin devreye girmesi biraz zaman alabilir.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>evet, henüz yayımlanmadı</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Bir derleme, %site sitesinin her sayfasını oturum açmamış bir ziyaretçinin gördüğü gibi alır, bağlantıları yeniden yazar, dosyaları kopyalar ve sonucu hedefin klasörüne yazar. Siz derlemeyi kontrol edip Yayımla düğmesine basana kadar hiçbir şey yayımlanmaz.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Geri alma uzmanlar içindir: "Bunun neyi değiştirdiğini biliyorum" kutusunu işaretleyin ve etiketin adını yeniden yazın.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Derlemeyi, barındırma hizmetinin sunacağı şekilde hedefin klasöründen açar. Bağlantı sizin için bir saat çalışır.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Listelerde gösterilir, örneğin "GitHub Pages'teki herkese açık site".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Sitenin, var olmayan adresler için kendi sayfası.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Hedef henüz bu anahtarla oturum açmıyor: ayarlarında "Bu hedef için oluşturulan bir dağıtım anahtarı" seçeneğini seçin.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Önce "Değişiklikleri kontrol ettim" kutusunu işaretleyin.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

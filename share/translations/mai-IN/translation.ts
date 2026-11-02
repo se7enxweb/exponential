@@ -80598,6 +80598,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>रन शुरू नहि कएल जा सकल।</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>परिवर्तनक रिकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>जाधरि रिकॉर्डिंग चलि रहल अछि, अहाँ प्रशासनमे वा साइटक साइडबारमे जे बदलैत छी से एकटा माइग्रेशनक चरणक रूपमे राखल जाइत अछि: सामग्री, क्लास, भूमिका आ नीति, खण्ड, प्रयोक्ता आ समूह, URL उपनाम, सेटिंग। काज पूरा भेलापर एकरा रोकू, देखू ई की पकड़लक, आ एहिसँ एकटा माइग्रेशन बनाउ।</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>रिकॉर्डिंग पढ़ल नहि जा सकल: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>रिकॉर्डिंगक तालिका एखन धरि नहि अछि: पहिने अपग्रेड चलाउ (exp:upgrade --apply)।</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini मे रिकॉर्डिंग बन्द अछि ([RecordingSettings] Recording=disabled)।</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>हमर परिवर्तन</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>अहाँ नहि रोकब ताधरि मात्र ओहे रिकॉर्ड करैत अछि जे अहाँ बदलैत छी, जतय बदलू।</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>रिकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time सँ, एखन धरि %count परिवर्तन।</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>लेबल (ऐच्छिक)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>देखाउ ई की पकड़लक</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>रिकॉर्डिंग रोकू</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>हमर परिवर्तनक रिकॉर्डिंग शुरू करू</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>पूरा साइटक खिड़की</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>बन्द होएबा धरि प्रत्येक प्रयोक्ता आ कंसोलक प्रत्येक परिवर्तन रिकॉर्ड करैत अछि। खोलबा काल पुष्टि माँगल जाइत अछि जे ई अहीं छी।</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>खुजल</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>खिड़की बन्द करू</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>पूरा साइटक खिड़की खोलू</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>रिकॉर्डिंग सभ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>प्रयोक्ताक खाता (लॉगिन, ई-मेल, पासवर्ड) आ प्रयोक्ता खाताक फील्ड कहियो रिकॉर्ड नहि होइत अछि।</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>परिवर्तन सभ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>पूरा साइट</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name क परिवर्तन</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>रुकल</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>एखन धरि कोनो रिकॉर्डिंग नहि।</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>रिकॉर्डिंग %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>सभ रिकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>एहिसँ बनय बला माइग्रेशन</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>प्रत्येक बदलल वस्तुक लेल एक चरणमे समेटल परिवर्तन: एहि रिकॉर्डिंगसँ बनल माइग्रेशन की करत।</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>जखन एहि स्थापनामे YAML चरण प्रकार %types होएत तखन एहिसँ माइग्रेशन बनाओल जा सकत।</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>जानि-बूझि कऽ छोड़ल: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>किछु रिकॉर्ड नहि भेल।</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ई की पकड़लक</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count परिवर्तन, ओहि क्रममे जाहिमे कएल गेल।</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>परिवर्तन</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>चरण</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>सम्बन्धित</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>आर %count: ./console exp:migration:record:show सभक सूची दैत अछि।</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>त्यागू</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>रिकॉर्डिंग आ जे पकड़लक से हटबैत अछि। जे बदलल से बदलले रहैत अछि।</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>हँ, ई रिकॉर्डिंग त्यागू</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>रिकॉर्डिंग चलि रहल अछि…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>अहाँक परिवर्तन एकटा माइग्रेशनक लेल रिकॉर्ड भऽ रहल अछि।</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>एहि साइटक प्रत्येक परिवर्तन एकटा माइग्रेशनक लेल रिकॉर्ड भऽ रहल अछि (पूरा साइटक खिड़की)।</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>पूरा साइटक रिकॉर्डिंग शुरू भेल: अहाँ नहि रोकब ताधरि प्रत्येक प्रयोक्ताक प्रत्येक परिवर्तन रिकॉर्ड होएत।</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>रिकॉर्डिंग शुरू भेल: अहाँ नहि रोकब ताधरि अहाँक परिवर्तन रिकॉर्ड होएत।</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>रिकॉर्डिंग रुकल। जे पकड़लक से त्यागबा धरि रहत।</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>रिकॉर्डिंग आ ओकर घटना हटा देल गेल।</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>कोनो रिकॉर्डिंग %id नहि अछि।</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>पहिने "हँ, ई रिकॉर्डिंग त्यागू" पर चिन्ह लगाउ।</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>सत्र रिकॉर्डिंग मात्र ओ प्रयोक्ता रोकि सकैत छथि जे रिकॉर्ड कएने छथि।</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>रोकबाक लेल रिकॉर्डिंग चुनू।</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>एहि प्रकारक रिकॉर्डिंग पहिनेसँ चलि रहल अछि।</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>रिकॉर्डिंग बदलल नहि जा सकल: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81409,7 +81625,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub प्रोजेक्ट साइट /&lt;repository&gt;/ क नीचाँ रहैत अछि; सापेक्ष लिंक ओतहु आ आन कतहु काज करैत अछि।</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>बिल्ड %site क प्रत्येक पृष्ठ ओहिना आनैत अछि जेना साइन इन नहि कएल आगंतुक देखैत छथि, लिंक फेरसँ लिखैत अछि, फाइल कॉपी करैत अछि आ परिणाम लक्ष्यक फोल्डरमे लिखैत अछि। जा धरि अहाँ बिल्ड जाँचि केँ प्रकाशित करू नहि दबाबी, ता धरि किछु प्रकाशित नहि होइत अछि।</translation>
     </message>
     <message>
@@ -81457,12 +81673,12 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>जाहि पृष्ठ मे सफाईक बादो डिबग आउटपुट, फॉर्म टोकन वा सेशन आईडी रहैत अछि, से कहियो प्रकाशित नहि होइत अछि।</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>रोलबैक विशेषज्ञ सभक लेल अछि: "हम जनैत छी जे ई की बदलैत अछि" पर टिक करू आ टैगक नाम फेरसँ टाइप करू।</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>रोलबैक विशेषज्ञ सभक लेल अछि: &quot;हम जनैत छी जे ई की बदलैत अछि&quot; पर टिक करू आ टैगक नाम फेरसँ टाइप करू।</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>एकटा साइट %site धरि, एकटा फाइल %file धरि भ' सकैत अछि, आ मासमे लगभग 100 GB ट्रैफिक। मुफ्त प्लान पर रिपॉजिटरी सार्वजनिक होएब आवश्यक अछि। GitHub Pages दोकान वा आन व्यावसायिक लेन-देनक लेल नहि अछि।</translation>
+        <translation>एकटा साइट %site धरि, एकटा फाइल %file धरि भ&apos; सकैत अछि, आ मासमे लगभग 100 GB ट्रैफिक। मुफ्त प्लान पर रिपॉजिटरी सार्वजनिक होएब आवश्यक अछि। GitHub Pages दोकान वा आन व्यावसायिक लेन-देनक लेल नहि अछि।</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
@@ -81494,7 +81710,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Another process works on this target: %detail</source>
-        <translation>आन प्रक्रिया एहि लक्ष्य पर काज क' रहल अछि: %detail</translation>
+        <translation>आन प्रक्रिया एहि लक्ष्य पर काज क&apos; रहल अछि: %detail</translation>
     </message>
     <message>
         <source>Back</source>
@@ -81802,7 +82018,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>ई पृष्ठभूमिमे %user क रूपमे चलैत अछि; अहाँ ई पृष्ठ बंद क' सकैत छी।</translation>
+        <translation>ई पृष्ठभूमिमे %user क रूपमे चलैत अछि; अहाँ ई पृष्ठ बंद क&apos; सकैत छी।</translation>
     </message>
     <message>
         <source>Job %id</source>
@@ -81969,7 +82185,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>पूर्वावलोकन खोलू</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>बिल्डकेँ लक्ष्यक फोल्डरसँ ओहिना खोलैत अछि जेना होस्ट परोसत। ई लिंक अहाँक लेल एक घंटा धरि काज करैत अछि।</translation>
     </message>
     <message>
@@ -82074,7 +82290,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Replace the key: the old one stops working</source>
-        <translation>की बदलू: पुरान की काज करब बंद क' दैत अछि</translation>
+        <translation>की बदलू: पुरान की काज करब बंद क&apos; दैत अछि</translation>
     </message>
     <message>
         <source>Report</source>
@@ -82145,8 +82361,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>सेटअप &gt; गोपनीय मान सभ</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>सूचीमे देखाओल जाइत अछि, उदाहरणक लेल "GitHub Pages पर सार्वजनिक साइट"।</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>सूचीमे देखाओल जाइत अछि, उदाहरणक लेल &quot;GitHub Pages पर सार्वजनिक साइट&quot;।</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82286,7 +82502,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>कार्य समाप्त भ' गेल। ओकर रिपोर्ट लोड भ' रहल अछि।</translation>
+        <translation>कार्य समाप्त भ&apos; गेल। ओकर रिपोर्ट लोड भ&apos; रहल अछि।</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
@@ -82353,7 +82569,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>साइट ओहि प्रकाशनक फाइल पर वापस जाइत अछि; जे बिल्ड एखन धरि प्रकाशित नहि भेल अछि ओकरा पहिने प्रकाशित करू वा फेकि दिअ।</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>नहि रहल पता सभक लेल साइटक अपन पृष्ठ।</translation>
     </message>
     <message>
@@ -82361,8 +82577,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>लक्ष्य नहि सहेजल जा सकल: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>लक्ष्य एखन धरि एहि कीसँ साइन इन नहि करैत अछि: ओकर सेटिंगमे "एहि लक्ष्यक लेल बनाओल गेल डिप्लॉय की" चुनू।</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>लक्ष्य एखन धरि एहि कीसँ साइन इन नहि करैत अछि: ओकर सेटिंगमे &quot;एहि लक्ष्यक लेल बनाओल गेल डिप्लॉय की&quot; चुनू।</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82397,8 +82613,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ई बिल्ड फेकि दैत अछि: फोल्डरमे फेरसँ अंतिम प्रकाशन रहैत अछि। लाइव साइट नहि बदलैत अछि।</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>पहिने "हम परिवर्तन जाँचि लेलहुँ अछि" पर टिक करू।</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>पहिने &quot;हम परिवर्तन जाँचि लेलहुँ अछि&quot; पर टिक करू।</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82486,7 +82702,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>अहाँ सदिखन एतय आ कंसोल पर हाथसँ बिल्ड आ प्रकाशित क' सकैत छी।</translation>
+        <translation>अहाँ सदिखन एतय आ कंसोल पर हाथसँ बिल्ड आ प्रकाशित क&apos; सकैत छी।</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
@@ -82619,6 +82835,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>हँ, एखन धरि प्रकाशित नहि</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>बिल्ड %site क प्रत्येक पृष्ठ ओहिना आनैत अछि जेना साइन इन नहि कएल आगंतुक देखैत छथि, लिंक फेरसँ लिखैत अछि, फाइल कॉपी करैत अछि आ परिणाम लक्ष्यक फोल्डरमे लिखैत अछि। जा धरि अहाँ बिल्ड जाँचि केँ प्रकाशित करू नहि दबाबी, ता धरि किछु प्रकाशित नहि होइत अछि।</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>रोलबैक विशेषज्ञ सभक लेल अछि: "हम जनैत छी जे ई की बदलैत अछि" पर टिक करू आ टैगक नाम फेरसँ टाइप करू।</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>बिल्डकेँ लक्ष्यक फोल्डरसँ ओहिना खोलैत अछि जेना होस्ट परोसत। ई लिंक अहाँक लेल एक घंटा धरि काज करैत अछि।</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>सूचीमे देखाओल जाइत अछि, उदाहरणक लेल "GitHub Pages पर सार्वजनिक साइट"।</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>नहि रहल पता सभक लेल साइटक अपन पृष्ठ।</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>लक्ष्य एखन धरि एहि कीसँ साइन इन नहि करैत अछि: ओकर सेटिंगमे "एहि लक्ष्यक लेल बनाओल गेल डिप्लॉय की" चुनू।</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>पहिने "हम परिवर्तन जाँचि लेलहुँ अछि" पर टिक करू।</translation>
     </message>
     <message>
         <source>A GitHub App</source>

@@ -89,11 +89,11 @@ file whose name does not start with `YYYYMMDDHHMMSS_` (a README, a `.gitkeep`) i
 
 ## Types
 
-The type is the file's extension: `php`, `yml`, `sql`, `<engine>.sql` (`mysql`, `postgresql`, `sqlite`, `oracle`,
-`mongodb`) and `ini`. In 6.0.15 a migration is written in **PHP** or in **YAML**: the engine finds, orders and checks
-the other types, and the runner refuses them with an error until their steps arrive. `exp:migration:check` reports a
-`.sql` or `.ini` migration as an error for the same reason. A PHP migration and a YAML migration can require each
-other and pass values on to each other (references) in the same run.
+The type is the file's extension: `php`, `yml`, `sql`, `<engine>.sql` (`mysql`, `pgsql` or `postgresql`, `sqlite`,
+`oracle`), `mongodb.json` and `ini`. A migration is written in **PHP**, in **YAML**, in **SQL** (a file per engine, or
+one portable file) or as **INI** settings; SQL and INI migrations run as the YAML migration of their steps
+([Migrations: SQL and settings](migrations-sql-and-settings.md)). Migrations of every type can require each other
+and pass values on to each other (references) in the same run.
 
 ## YAML migrations
 
@@ -127,8 +127,10 @@ steps:
   (objects, their translations, locations and versions), `content_class` and `content_class_group` (classes with
   their attributes), `user`, `user_group` and `role` (accounts, groups, roles with policies, limitations and
   assignments), `section`, `language`, `object_state_group`, `tag` (eztags), `url_alias` (aliases and
-  wildcards), `trash`, `file` and `image` (files of the migrations folder) ([YAML migration steps](migrations-yaml-steps.md));
-  the step types for caches, the search index and layouts come later, and an extension adds its own the same way. A step's other keys are checked against its type's schema before anything runs.
+  wildcards), `trash`, `file` and `image` (files of the migrations folder), `cache`, `search` and `autoload`,
+  `layout`, `layout_block` and `layout_rule` (Exponential Layouts), `http`, `mail` and `command` (allowlisted console
+  commands) ([YAML migration steps](migrations-yaml-steps.md)); an extension adds its own the same way. A step's other
+  keys are checked against its type's schema before anything runs.
 - `${ref.<name>}` is a reference (set by `references:` of an earlier step, by a `reference` step, or by an earlier
   PHP or YAML migration of the run), `${loop.<name>}` a loop variable, `${idmap.<kind>.<name>}` an id of the id map
   `migrations/idmap/<environment>.json`, `${run.environment}` the run's environment.
@@ -272,7 +274,7 @@ The pages: [Migrations in the administration](../help/migrations/in-the-administ
 
 ## Not in 6.0.15 yet
 
-The YAML step types for caches and the search index, layouts, `http`, `mail` and `command`, SQL and INI migrations, the editor and the
+The editor and the
 generators in the administration (generators other than the skeleton), recording, and `exp:velocity deploy --migrate`
 are planned and not part of this release.
 

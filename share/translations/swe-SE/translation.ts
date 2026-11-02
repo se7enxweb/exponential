@@ -81893,6 +81893,222 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The run could not be started.</source>
         <translation>Körningen kunde inte startas.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Spela in ändringar</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Medan en inspelning pågår sparas det du ändrar i administrationen eller i webbplatsens sidofält som steg i en migrering: innehåll, klasser, roller och policyer, sektioner, användare och grupper, URL-alias, inställningar. Stoppa den när du är klar, titta på vad den fångade och generera en migrering från den.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Inspelningarna kunde inte läsas: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Inspelningarnas tabeller finns inte ännu: kör först uppgraderingen (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Inspelning är avstängd i migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mina ändringar</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Spelar bara in det du ändrar, var du än ändrar det, tills du stoppar den.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Inspelning</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>sedan %time, hittills %count ändring(ar).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etikett (valfri)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Visa vad den fångade</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Stoppa inspelningen</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Börja spela in mina ändringar</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fönster för hela webbplatsen</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Spelar in varje ändring av varje användare och av konsolen tills det stängs. När du öppnar det ombeds du bekräfta att det är du.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öppet</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Stäng fönstret</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Öppna fönstret för hela webbplatsen</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Inspelningar</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>En användares konto (inloggning, e-post, lösenord) och fälten i användarkonton spelas aldrig in.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ändringar</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Hela webbplatsen</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ändringar av %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Stoppad</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ingen inspelning ännu.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Inspelning %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Alla inspelningar</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migreringen den skulle ge</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ändringarna sammanslagna till ett steg per ändrad sak: vad en migrering genererad från den här inspelningen skulle göra.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>En migrering kan genereras från den när den här installationen har YAML-stegtyperna %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Utelämnat avsiktligt: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Inget spelades in.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Vad den fångade</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ändring(ar), i den ordning de gjordes.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ändring</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Steg</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Gäller</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count till: ./console exp:migration:record:show listar alla.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Kasta</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Tar bort inspelningen och det den fångade. Det som ändrats förblir ändrat.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ja, kasta den här inspelningen</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Spelar in…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Dina ändringar spelas in för en migrering.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Varje ändring på den här webbplatsen spelas in för en migrering (fönster för hela webbplatsen).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Inspelningen för hela webbplatsen har startat: varje ändring av varje användare spelas in tills du stoppar den.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Inspelningen har startat: dina ändringar spelas in tills du stoppar den.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Inspelningen stoppad. Det den fångade finns kvar tills du kastar den.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Inspelningen och dess händelser är borttagna.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Det finns ingen inspelning %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Markera först ”Ja, kasta den här inspelningen”.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Endast användaren som spelade in får stoppa en sessionsinspelning.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Välj inspelningen som ska stoppas.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>En inspelning av det här slaget pågår redan.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Inspelningen kunde inte ändras: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -82704,7 +82920,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>En GitHub-projektwebbplats ligger under /&lt;repository&gt;/; relativa länkar fungerar där och överallt annars.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Ett bygge hämtar varje sida av %site så som en besökare som inte är inloggad ser den, skriver om länkarna, kopierar filerna och skriver resultatet till målets mapp. Inget publiceras förrän du kontrollerar bygget och trycker på Publicera.</translation>
     </message>
     <message>
@@ -82752,8 +82968,8 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>En sida som fortfarande innehåller felsökningsutdata, en formulärtoken eller ett sessions-id efter rensningen publiceras aldrig.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>En återställning är för experter: kryssa i "Jag vet vad detta ändrar" och skriv taggens namn igen.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>En återställning är för experter: kryssa i &quot;Jag vet vad detta ändrar&quot; och skriv taggens namn igen.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -83264,7 +83480,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Öppna förhandsgranskningen</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Öppnar bygget så som värden kommer att leverera det, från målets mapp. Länken fungerar för dig i en timme.</translation>
     </message>
     <message>
@@ -83440,8 +83656,8 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Konfiguration &gt; Hemligheter</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Visas i listor, till exempel "Publik webbplats på GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Visas i listor, till exempel &quot;Publik webbplats på GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -83648,7 +83864,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Webbplatsen går tillbaka till filerna från den publiceringen; ett bygge som inte publicerats ännu måste publiceras eller kastas först.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Webbplatsens egen sida för adresser som inte finns.</translation>
     </message>
     <message>
@@ -83656,8 +83872,8 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Målet kunde inte sparas: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Målet loggar inte in med den här nyckeln ännu: välj "En driftsättningsnyckel skapad för det här målet" i dess inställningar.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Målet loggar inte in med den här nyckeln ännu: välj &quot;En driftsättningsnyckel skapad för det här målet&quot; i dess inställningar.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -83692,8 +83908,8 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Kastar det här bygget: mappen innehåller den senaste publiceringen igen. Live-webbplatsen ändras inte.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Kryssa i "Jag har kontrollerat ändringarna" först.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Kryssa i &quot;Jag har kontrollerat ändringarna&quot; först.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -83914,6 +84130,34 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>yes, not published yet</source>
         <translation>ja, inte publicerad ännu</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ett bygge hämtar varje sida av %site så som en besökare som inte är inloggad ser den, skriver om länkarna, kopierar filerna och skriver resultatet till målets mapp. Inget publiceras förrän du kontrollerar bygget och trycker på Publicera.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>En återställning är för experter: kryssa i "Jag vet vad detta ändrar" och skriv taggens namn igen.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Öppnar bygget så som värden kommer att leverera det, från målets mapp. Länken fungerar för dig i en timme.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Visas i listor, till exempel "Publik webbplats på GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Webbplatsens egen sida för adresser som inte finns.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Målet loggar inte in med den här nyckeln ännu: välj "En driftsättningsnyckel skapad för det här målet" i dess inställningar.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Kryssa i "Jag har kontrollerat ändringarna" först.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

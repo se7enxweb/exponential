@@ -80588,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ರನ್ ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ಬದಲಾವಣೆಗಳ ದಾಖಲೀಕರಣ</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ದಾಖಲೀಕರಣ ನಡೆಯುತ್ತಿರುವಾಗ ನೀವು ಆಡಳಿತದಲ್ಲಿ ಅಥವಾ ತಾಣದ ಪಕ್ಕಪಟ್ಟಿಯಲ್ಲಿ ಬದಲಿಸುವುದು ಒಂದು ವಲಸೆಯ ಹಂತಗಳಾಗಿ ಇರಿಸಲಾಗುತ್ತದೆ: ವಿಷಯ, ವರ್ಗಗಳು, ಪಾತ್ರಗಳು ಮತ್ತು ನೀತಿಗಳು, ವಿಭಾಗಗಳು, ಬಳಕೆದಾರರು ಮತ್ತು ಗುಂಪುಗಳು, URL ಪರ್ಯಾಯ ಹೆಸರುಗಳು, ಸೆಟ್ಟಿಂಗ್‌ಗಳು. ಮುಗಿದ ನಂತರ ಅದನ್ನು ನಿಲ್ಲಿಸಿ, ಅದು ಏನು ಹಿಡಿದಿದೆ ಎಂದು ನೋಡಿ, ಅದರಿಂದ ವಲಸೆಯನ್ನು ರಚಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ದಾಖಲೆಗಳನ್ನು ಓದಲಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ದಾಖಲೆಗಳ ಕೋಷ್ಟಕಗಳು ಇನ್ನೂ ಇಲ್ಲ: ಮೊದಲು ನವೀಕರಣವನ್ನು ಚಲಾಯಿಸಿ (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini ನಲ್ಲಿ ದಾಖಲೀಕರಣ ಆಫ್ ಆಗಿದೆ ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>ನನ್ನ ಬದಲಾವಣೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ನೀವು ನಿಲ್ಲಿಸುವವರೆಗೆ ನೀವು ಬದಲಿಸುವುದನ್ನು ಮಾತ್ರ, ಎಲ್ಲಿ ಬದಲಿಸಿದರೂ, ದಾಖಲಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ದಾಖಲೀಕರಣ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time ರಿಂದ, ಇಲ್ಲಿಯವರೆಗೆ %count ಬದಲಾವಣೆಗಳು.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ಲೇಬಲ್ (ಐಚ್ಛಿಕ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ಅದು ಏನು ಹಿಡಿದಿದೆ ತೋರಿಸು</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ದಾಖಲೀಕರಣ ನಿಲ್ಲಿಸು</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ನನ್ನ ಬದಲಾವಣೆಗಳ ದಾಖಲೀಕರಣ ಪ್ರಾರಂಭಿಸು</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>ಇಡೀ ತಾಣದ ಕಿಟಕಿ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ಮುಚ್ಚುವವರೆಗೆ ಪ್ರತಿ ಬಳಕೆದಾರರ ಮತ್ತು ಕನ್ಸೋಲ್‌ನ ಪ್ರತಿ ಬದಲಾವಣೆಯನ್ನು ದಾಖಲಿಸುತ್ತದೆ. ತೆರೆಯುವಾಗ ನೀವೇ ಎಂದು ದೃಢೀಕರಿಸಲು ಕೇಳಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ತೆರೆದಿದೆ</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>ಕಿಟಕಿ ಮುಚ್ಚು</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>ಇಡೀ ತಾಣದ ಕಿಟಕಿ ತೆರೆ</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ದಾಖಲೆಗಳು</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ಬಳಕೆದಾರರ ಖಾತೆ (ಲಾಗಿನ್, ಇ-ಮೇಲ್, ಪಾಸ್‌ವರ್ಡ್) ಮತ್ತು ಬಳಕೆದಾರ ಖಾತೆಗಳ ಕ್ಷೇತ್ರಗಳನ್ನು ಎಂದಿಗೂ ದಾಖಲಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ಬದಲಾವಣೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ಇಡೀ ತಾಣ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ಅವರ ಬದಲಾವಣೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ನಿಲ್ಲಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ದಾಖಲೆ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ದಾಖಲೆ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ಎಲ್ಲಾ ದಾಖಲೆಗಳು</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ಇದರಿಂದ ಆಗುವ ವಲಸೆ</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ಬದಲಾದ ಪ್ರತಿಯೊಂದಕ್ಕೂ ಒಂದು ಹಂತವಾಗಿ ಸೇರಿಸಿದ ಬದಲಾವಣೆಗಳು: ಈ ದಾಖಲೆಯಿಂದ ರಚಿಸಿದ ವಲಸೆ ಏನು ಮಾಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ಈ ಸ್ಥಾಪನೆಯಲ್ಲಿ YAML ಹಂತದ ಪ್ರಕಾರಗಳು %types ಇದ್ದಾಗ ಇದರಿಂದ ವಲಸೆಯನ್ನು ರಚಿಸಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ಉದ್ದೇಶಪೂರ್ವಕವಾಗಿ ಬಿಡಲಾಗಿದೆ: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ಏನೂ ದಾಖಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ಅದು ಏನು ಹಿಡಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ಬದಲಾವಣೆಗಳು, ಮಾಡಿದ ಕ್ರಮದಲ್ಲಿ.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ಬದಲಾವಣೆ</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ಹಂತ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>ಸಂಬಂಧಿಸಿದ್ದು</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>ಇನ್ನೂ %count: ./console exp:migration:record:show ಎಲ್ಲವನ್ನೂ ಪಟ್ಟಿ ಮಾಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ತ್ಯಜಿಸು</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ದಾಖಲೆಯನ್ನು ಮತ್ತು ಅದು ಹಿಡಿದಿದ್ದನ್ನು ತೆಗೆದುಹಾಕುತ್ತದೆ. ಬದಲಾದುದು ಬದಲಾದಂತೆಯೇ ಇರುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ಹೌದು, ಈ ದಾಖಲೆಯನ್ನು ತ್ಯಜಿಸು</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ದಾಖಲಿಸಲಾಗುತ್ತಿದೆ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ನಿಮ್ಮ ಬದಲಾವಣೆಗಳನ್ನು ಒಂದು ವಲಸೆಗಾಗಿ ದಾಖಲಿಸಲಾಗುತ್ತಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ಈ ತಾಣದ ಪ್ರತಿ ಬದಲಾವಣೆಯನ್ನು ಒಂದು ವಲಸೆಗಾಗಿ ದಾಖಲಿಸಲಾಗುತ್ತಿದೆ (ಇಡೀ ತಾಣದ ಕಿಟಕಿ).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ಇಡೀ ತಾಣದ ದಾಖಲೀಕರಣ ಪ್ರಾರಂಭವಾಗಿದೆ: ನೀವು ನಿಲ್ಲಿಸುವವರೆಗೆ ಪ್ರತಿ ಬಳಕೆದಾರರ ಪ್ರತಿ ಬದಲಾವಣೆ ದಾಖಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ದಾಖಲೀಕರಣ ಪ್ರಾರಂಭವಾಗಿದೆ: ನೀವು ನಿಲ್ಲಿಸುವವರೆಗೆ ನಿಮ್ಮ ಬದಲಾವಣೆಗಳು ದಾಖಲಾಗುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ದಾಖಲೀಕರಣ ನಿಂತಿದೆ. ಅದು ಹಿಡಿದಿದ್ದು ನೀವು ತ್ಯಜಿಸುವವರೆಗೆ ಉಳಿಯುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ದಾಖಲೆ ಮತ್ತು ಅದರ ಘಟನೆಗಳನ್ನು ತೆಗೆದುಹಾಕಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ದಾಖಲೆ %id ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ಮೊದಲು "ಹೌದು, ಈ ದಾಖಲೆಯನ್ನು ತ್ಯಜಿಸು" ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ಅಧಿವೇಶನ ದಾಖಲೀಕರಣವನ್ನು ದಾಖಲಿಸಿದ ಬಳಕೆದಾರರು ಮಾತ್ರ ನಿಲ್ಲಿಸಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ನಿಲ್ಲಿಸಬೇಕಾದ ದಾಖಲೀಕರಣವನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ಈ ರೀತಿಯ ದಾಖಲೀಕರಣ ಈಗಾಗಲೇ ನಡೆಯುತ್ತಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ದಾಖಲೆಯನ್ನು ಬದಲಿಸಲಾಗಲಿಲ್ಲ: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81399,7 +81615,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub ಪ್ರಾಜೆಕ್ಟ್ ಸೈಟ್ /&lt;repository&gt;/ ಅಡಿಯಲ್ಲಿ ಇರುತ್ತದೆ; ಸಾಪೇಕ್ಷ ಲಿಂಕ್‌ಗಳು ಅಲ್ಲಿ ಮತ್ತು ಬೇರೆಲ್ಲೆಡೆ ಕೆಲಸ ಮಾಡುತ್ತವೆ.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>ಬಿಲ್ಡ್ %site ನ ಪ್ರತಿ ಪುಟವನ್ನು ಸೈನ್ ಇನ್ ಮಾಡದ ಸಂದರ್ಶಕ ನೋಡುವಂತೆ ತರುತ್ತದೆ, ಲಿಂಕ್‌ಗಳನ್ನು ಪುನಃ ಬರೆಯುತ್ತದೆ, ಫೈಲ್‌ಗಳನ್ನು ನಕಲಿಸುತ್ತದೆ ಮತ್ತು ಫಲಿತಾಂಶವನ್ನು ಗುರಿಯ ಫೋಲ್ಡರ್‌ಗೆ ಬರೆಯುತ್ತದೆ. ನೀವು ಬಿಲ್ಡ್ ಪರಿಶೀಲಿಸಿ ಪ್ರಕಟಿಸು ಒತ್ತುವವರೆಗೆ ಏನನ್ನೂ ಪ್ರಕಟಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
     </message>
     <message>
@@ -81447,8 +81663,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ಸ್ವಚ್ಛಗೊಳಿಸಿದ ನಂತರವೂ ಡೀಬಗ್ ಔಟ್‌ಪುಟ್, ಫಾರ್ಮ್ ಟೋಕನ್ ಅಥವಾ ಸೆಷನ್ ಐಡಿ ಹೊಂದಿರುವ ಪುಟವನ್ನು ಎಂದಿಗೂ ಪ್ರಕಟಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ರೋಲ್‌ಬ್ಯಾಕ್ ಪರಿಣತರಿಗೆ ಮಾತ್ರ: "ಇದು ಏನನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ ಎಂದು ನನಗೆ ತಿಳಿದಿದೆ" ಗುರುತು ಮಾಡಿ ಮತ್ತು ಟ್ಯಾಗ್‌ನ ಹೆಸರನ್ನು ಮತ್ತೆ ಟೈಪ್ ಮಾಡಿ.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ರೋಲ್‌ಬ್ಯಾಕ್ ಪರಿಣತರಿಗೆ ಮಾತ್ರ: &quot;ಇದು ಏನನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ ಎಂದು ನನಗೆ ತಿಳಿದಿದೆ&quot; ಗುರುತು ಮಾಡಿ ಮತ್ತು ಟ್ಯಾಗ್‌ನ ಹೆಸರನ್ನು ಮತ್ತೆ ಟೈಪ್ ಮಾಡಿ.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81959,7 +82175,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ಮುನ್ನೋಟ ತೆರೆಯಿರಿ</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>ಹೋಸ್ಟ್ ಒದಗಿಸುವಂತೆಯೇ ಬಿಲ್ಡ್ ಅನ್ನು ಗುರಿಯ ಫೋಲ್ಡರ್‌ನಿಂದ ತೆರೆಯುತ್ತದೆ. ಲಿಂಕ್ ನಿಮಗೆ ಒಂದು ಗಂಟೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ.</translation>
     </message>
     <message>
@@ -82135,8 +82351,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ಸೆಟಪ್ &gt; ರಹಸ್ಯಗಳು</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>ಪಟ್ಟಿಗಳಲ್ಲಿ ತೋರಿಸಲಾಗುತ್ತದೆ, ಉದಾಹರಣೆಗೆ "GitHub Pages ನಲ್ಲಿ ಸಾರ್ವಜನಿಕ ಸೈಟ್".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ಪಟ್ಟಿಗಳಲ್ಲಿ ತೋರಿಸಲಾಗುತ್ತದೆ, ಉದಾಹರಣೆಗೆ &quot;GitHub Pages ನಲ್ಲಿ ಸಾರ್ವಜನಿಕ ಸೈಟ್&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82343,7 +82559,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ಸೈಟ್ ಆ ಪ್ರಕಟಣೆಯ ಫೈಲ್‌ಗಳಿಗೆ ಹಿಂದಿರುಗುತ್ತದೆ; ಇನ್ನೂ ಪ್ರಕಟಿಸದ ಬಿಲ್ಡ್ ಅನ್ನು ಮೊದಲು ಪ್ರಕಟಿಸಬೇಕು ಅಥವಾ ತ್ಯಜಿಸಬೇಕು.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲದ ವಿಳಾಸಗಳಿಗಾಗಿ ಸೈಟ್‌ನ ಸ್ವಂತ ಪುಟ.</translation>
     </message>
     <message>
@@ -82351,8 +82567,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ಗುರಿಯನ್ನು ಉಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ಗುರಿ ಇನ್ನೂ ಈ ಕೀಯೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡುವುದಿಲ್ಲ: ಅದರ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ "ಈ ಗುರಿಗಾಗಿ ರಚಿಸಿದ ಡಿಪ್ಲಾಯ್ ಕೀ" ಆಯ್ಕೆಮಾಡಿ.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ಗುರಿ ಇನ್ನೂ ಈ ಕೀಯೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡುವುದಿಲ್ಲ: ಅದರ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ &quot;ಈ ಗುರಿಗಾಗಿ ರಚಿಸಿದ ಡಿಪ್ಲಾಯ್ ಕೀ&quot; ಆಯ್ಕೆಮಾಡಿ.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82387,8 +82603,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ಈ ಬಿಲ್ಡ್ ಅನ್ನು ತ್ಯಜಿಸುತ್ತದೆ: ಫೋಲ್ಡರ್ ಮತ್ತೆ ಕೊನೆಯ ಪ್ರಕಟಣೆಯನ್ನು ಹೊಂದುತ್ತದೆ. ಲೈವ್ ಸೈಟ್ ಬದಲಾಗುವುದಿಲ್ಲ.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ಮೊದಲು "ನಾನು ಬದಲಾವಣೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿದ್ದೇನೆ" ಗುರುತು ಮಾಡಿ.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ಮೊದಲು &quot;ನಾನು ಬದಲಾವಣೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿದ್ದೇನೆ&quot; ಗುರುತು ಮಾಡಿ.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82609,6 +82825,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>ಹೌದು, ಇನ್ನೂ ಪ್ರಕಟಿಸಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ಬಿಲ್ಡ್ %site ನ ಪ್ರತಿ ಪುಟವನ್ನು ಸೈನ್ ಇನ್ ಮಾಡದ ಸಂದರ್ಶಕ ನೋಡುವಂತೆ ತರುತ್ತದೆ, ಲಿಂಕ್‌ಗಳನ್ನು ಪುನಃ ಬರೆಯುತ್ತದೆ, ಫೈಲ್‌ಗಳನ್ನು ನಕಲಿಸುತ್ತದೆ ಮತ್ತು ಫಲಿತಾಂಶವನ್ನು ಗುರಿಯ ಫೋಲ್ಡರ್‌ಗೆ ಬರೆಯುತ್ತದೆ. ನೀವು ಬಿಲ್ಡ್ ಪರಿಶೀಲಿಸಿ ಪ್ರಕಟಿಸು ಒತ್ತುವವರೆಗೆ ಏನನ್ನೂ ಪ್ರಕಟಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>ರೋಲ್‌ಬ್ಯಾಕ್ ಪರಿಣತರಿಗೆ ಮಾತ್ರ: "ಇದು ಏನನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ ಎಂದು ನನಗೆ ತಿಳಿದಿದೆ" ಗುರುತು ಮಾಡಿ ಮತ್ತು ಟ್ಯಾಗ್‌ನ ಹೆಸರನ್ನು ಮತ್ತೆ ಟೈಪ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>ಹೋಸ್ಟ್ ಒದಗಿಸುವಂತೆಯೇ ಬಿಲ್ಡ್ ಅನ್ನು ಗುರಿಯ ಫೋಲ್ಡರ್‌ನಿಂದ ತೆರೆಯುತ್ತದೆ. ಲಿಂಕ್ ನಿಮಗೆ ಒಂದು ಗಂಟೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>ಪಟ್ಟಿಗಳಲ್ಲಿ ತೋರಿಸಲಾಗುತ್ತದೆ, ಉದಾಹರಣೆಗೆ "GitHub Pages ನಲ್ಲಿ ಸಾರ್ವಜನಿಕ ಸೈಟ್".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲದ ವಿಳಾಸಗಳಿಗಾಗಿ ಸೈಟ್‌ನ ಸ್ವಂತ ಪುಟ.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ಗುರಿ ಇನ್ನೂ ಈ ಕೀಯೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡುವುದಿಲ್ಲ: ಅದರ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ "ಈ ಗುರಿಗಾಗಿ ರಚಿಸಿದ ಡಿಪ್ಲಾಯ್ ಕೀ" ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>ಮೊದಲು "ನಾನು ಬದಲಾವಣೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿದ್ದೇನೆ" ಗುರುತು ಮಾಡಿ.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

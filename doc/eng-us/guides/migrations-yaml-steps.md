@@ -31,6 +31,19 @@ listed on its generated reference page ([all step types](../examples/migration-s
 | [`trash`](../examples/migration-steps/trash.md) | moves content to the trash, restores it, purges it | move, restore, purge |
 | [`file`](../examples/migration-steps/file.md) | attaches a file of the migrations folder to a file attribute | |
 | [`image`](../examples/migration-steps/image.md) | an image of the migrations folder, its alternative text, focal point and crop rectangle | |
+| [`cache`](../examples/migration-steps/cache.md) | clears caches of ezcache by id or tag, and the view caches of objects | |
+| [`search`](../examples/migration-steps/search.md) | reindexes objects, or every object, in the search engine | reindex, full |
+| [`autoload`](../examples/migration-steps/autoload.md) | regenerates the autoload array of the extensions or of the kernel overrides | |
+| [`layout`](../examples/migration-steps/layout.md) | a layout of Exponential Layouts with its zones, shared or linked to a shared one | create, update, ensure, delete |
+| [`layout_block`](../examples/migration-steps/layout_block.md) | a block in a zone of a layout, with its parameters | create, update, ensure, delete |
+| [`layout_rule`](../examples/migration-steps/layout_rule.md) | a rule that maps pages to a layout | create, update, ensure, delete |
+| [`http`](../examples/migration-steps/http.md) | one HTTP request to another system, secrets by name, signed if asked | |
+| [`mail`](../examples/migration-steps/mail.md) | one e-mail through the mail transport of the installation | |
+| [`command`](../examples/migration-steps/command.md) | one `exp:*` console command of the allowlist, without a shell | |
+| [`schema`](../examples/migration-steps/schema.md) | a table, a column or an index on every engine ([SQL and settings](migrations-sql-and-settings.md)) | create_table, drop_table, add_column, drop_column, add_index, drop_index |
+| [`data`](../examples/migration-steps/data.md) | rows of a table, the values quoted by the connection | insert, ensure, update, delete |
+| [`sql`](../examples/migration-steps/sql.md) | statements of the engine, in the step or in files next to the migration | |
+| [`settings`](../examples/migration-steps/settings.md) | one INI file of `settings/override` or of a siteaccess, with a backup | |
 
 Every step goes through the kernel's own API, the way the administration does it: a new object is made by its class
 (`eZContentClass::instantiate()`), a new version by `createNewVersionIn()`, and both are published by the publish
@@ -254,6 +267,124 @@ migration that uses them:
 change is a new version published through the publish operation, or `in_place: true`. `focal:` and `crop:` set the
 focal point and crop rectangle of the image as the image editor does (fractions of the original's width and height);
 `null` removes one, and a step with only `focal:` or `crop:` keeps the image.
+
+## Caches, the search index and autoloads
+
+A run clears the caches its migrations touched, and only those: every step type declares the caches its steps touch
+(a content step `content`, a class step `classid`, `content` and `sortkey`, a URL alias `content` and `urlalias` ...;
+each reference page lists them), and after a run that applied migrations, or a rollback that undid some, the kernel clears
+that list once through ezcache (`migration.ini [RunSettings] ClearCaches`). The report of the run lists the caches
+(`caches`) with the deploy that clears exactly them on a server with PHP-FPM and Velocity too (`deploy`):
+
+```text
+./console exp:velocity deploy --caches=classid,content,template-block,urlalias --apply
+```
+
+The objects the steps created or changed are reindexed after the run as well: queued for the cronjob `indexcontent`
+by default (`[RunSettings] Reindex=queue`), indexed at once (`now`) or left alone (`disabled`). The report says how
+many (`reindex`).
+
+Three step types are for what the declared caches and the reindex do not cover:
+
+```yaml
+- type: cache
+  caches: [ template-block ]        # ids of ezcache
+  tags: [ ini ]                     # tags of ezcache (every cache with the tag)
+  objects: [ "remote:home" ]        # the content view caches of these objects, at once
+  when: now                         # end (the default): with the run's list after the run
+- type: search
+  objects: [ "remote:home" ]        # without: the objects the run changed so far
+  queue: false                      # index at once instead of queueing
+- type: search
+  mode: full                        # every published object ...
+  classes: [ article ]              # ... of these classes
+- type: autoload
+  scope: extension                  # var/autoload/ezp_extension.php; kernel-override: ezp_override.php
+```
+
+A `cache` step's caches join the run's list (a tag as `tag:<name>`, since `content`, `template` and `ini` are an id
+and a tag at once); with `when: now` they are cleared at once, for a later step that needs it. `search` reindexes
+objects a step changed without saying so (a PHP migration, an SQL change) or everything after a change of the search
+engine. `autoload` runs the autoload generator in a process of its own and checks the file it writes; PHP-FPM and
+Velocity load the new classes after `./console exp:velocity deploy --apply`. The kernel's own autoload array belongs
+to the code of a release and is never written by a migration. All three undo themselves: a rollback clears the
+caches again, needs no index change of its own and regenerates the array from the classes that are there.
+
+## Layouts
+
+`layout`, `layout_block` and `layout_rule` change Exponential Layouts (the extensions `explayouts` and
+`explayouts_core`) through its services, the way the layout editor does: a change is made in the layout's draft and
+the draft is published at the end of the step (`publish: false` leaves it for an editor to look at). Without the
+extensions the steps fail and say so; `missing: skip` lets them pass.
+
+```yaml
+- type: layout
+  mode: ensure
+  identifier: header_footer
+  name: Header / Footer
+  shared: true                         # other layouts can take the blocks of its zones
+  zones: { header: {}, footer: {} }
+- type: layout
+  mode: ensure
+  identifier: landing_page
+  name: Landing page
+  layout_type: layout_2                # the zones of the type are added
+  zones:
+    header: { link: "header_footer/header" }   # the blocks of the shared layout's zone header
+    main: {}
+- type: layout_block
+  mode: ensure
+  layout: landing_page
+  zone: main
+  name: Welcome                        # how the step finds the block in the zone
+  definition: title
+  view_type: title
+  parameters: { title: Welcome, tag: h1 }
+- type: layout_rule
+  mode: ensure
+  layout: landing_page
+  targets: [ { type: node, value: "remote:landing" } ]   # node and subtree take any identifier of a node
+  conditions: [ { type: siteaccess, value: site } ]
+  priority: 50
+```
+
+A layout is named by its identifier, a block by its name in a zone (names in a zone must differ), a rule by its
+layout and its targets. A zone linked to a shared layout has no blocks of its own: change them in the shared layout.
+`{ link: none }` gives a zone its own blocks again. A create of each of the three undoes itself on a rollback without
+`down:`; the steps declare the caches `content` and `template-block`, and the services clear the layout resolver's
+own cache.
+
+## HTTP requests, mails and console commands
+
+Three step types reach out of the installation. None sends, mails or runs anything in a dry run, each is recorded in
+the audit log (`system.migration.http`, `system.migration.mail`, `system.migration.command`), and none can be taken
+back: a migration with one needs `down:` (which can send the request that undoes it) or a rollback to its caption.
+
+```yaml
+- type: http
+  method: POST
+  url: https://cdn.example.com/purge
+  bearer: cdn.token                    # the name of a secret (Setup > Secrets, or env:VARIABLE)
+  secret_headers: { X-Api-Key: cdn.api_key }
+  json: { paths: [ "/news/*" ] }
+  sign: migration.webhook              # signed as webhooks of Exponential are
+  expect: [ 200, 202 ]
+  references: { purge_status: status } # status, body, json
+- type: mail
+  to: [ editors@example.com ]
+  subject: The news section has a teaser image now
+  body: From today on, news items have a teaser image.
+- type: command
+  command: exp:services:compile        # an exp:* command of [StepSettings] CommandAllowList[]
+  arguments: [ --quiet ]
+```
+
+Secrets are named, never written in the migration or its log; a URL with a user or password is refused, no redirect
+is followed, and the log and the audit show the URL without its query. A mail goes through the mail transport of the
+installation (`transport: file` writes it below `var/log/mail` instead), so the mail gate and the mail settings apply.
+`command` runs only the `exp:*` commands of `migration.ini [StepSettings] CommandAllowList[]` (a name, or a name
+ending in `*` for a group), never `exp:migration:*` or `exp:upgrade*`, and hands the command and its arguments to PHP
+as a list: there is no shell, so a `;` or a `$` in an argument is a character.
 
 ## Workflows and notifications
 

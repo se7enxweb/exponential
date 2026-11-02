@@ -80620,6 +80620,222 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>The run could not be started.</source>
         <translation>Ingerlatsineq aallartinneqarsinnaanngilaq.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Allannguutinik immiussineq</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Immiussineq ingerlatillugu, aqutsiviup iluani imaluunniit nittartakkap saniani allannguutitit nuutsinermi alloriarnertut toqqorneqartarput: imarisai, klassit, inissisimaffiit malittarisassallu, immikkoortut, atuisut gruppillu, URL-ip taaguutaasa allat, aaqqissuussinerit. Naammassiguit unitsiguk, isiginiaruk suut tigusimaneraat, nuutsinerlu tamatumannga pilersillugu.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Immiussat atuarneqarsinnaanngillat: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Immiussat nalunaarsuiffii suli pinngillat: siullermik nutarterineq aallartiguk (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Immiussineq migration.ini-mi qamitaavoq ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Allannguutikka</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Illit allanngortitatit kisimik immiussarpai, sumi allanngortikkaluarukkit, unitsinnissavit tungaanut.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Immiussineq</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time aallarnerfigalugu, maannamut %count allannguut.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Taaguut (piumasarineqanngitsoq)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Takutiguk suut tigusimaneraat</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Immiussineq unitsiguk</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Allannguutikka immiussinissaat aallartiguk</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Nittartagaq tamakkerlugu igalaaq</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Atuisut tamarmik konsolillu allannguutaat tamaasa immiussarpai matuneqarnissaata tungaanut. Ammarniarukku illit ilumut illiunerit uppernarsassavat.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ammasoq</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Igalaaq matuguk</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Nittartagaq tamakkerlugu igalaaq ammaruk</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Immiussat</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Atuisup kontoa (iserfissaq, e-mail, isissutissaq) atuisullu kontoisa immersugassai immiussorneqarneq ajorput.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Allannguutit</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Nittartagaq tamaat</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name-p allannguutai</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Unitsitaq</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Suli immiussamik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Immiussaq %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Immiussat tamarmik</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Nuutsineq tamatumannga pilersussaq</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Allannguutit allanngortinneqartut ataasiakkaat alloriarnermut ataatsimut katersorneqarsimasut: immiussamit uannga pilersinneqartoq nuutsinerup suliassai.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Ikkussinerup matuma YAML-ip alloriarnerisa assigiinngisitaarnerinik %types pigisaqalerneratigut nuutsineq tamatumannga pilersinneqarsinnaavoq.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Sianiginnilluni peerneqarsimasut: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Immiussorneqarsimasoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Suut tigusimaneraat</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count allannguut, suliarineqarnerisut tullerriiaarlugit.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Allannguut</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Alloriarneq</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Pineqartoq</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Suli %count: ./console exp:migration:record:show tamaasa allattorpai.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Igiguk</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Immiussaq tigusimasaalu peerpai. Allanngortinneqarsimasut allanngortinneqarsimasutut qimanneqassapput.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Aap, immiussaq una igiguk</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Immiussivoq…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Allannguutitit nuutsinissamut immiussorneqarput.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Nittartakkami matumani allannguut tamarmi nuutsinissamut immiussorneqarpoq (nittartagaq tamakkerlugu igalaaq).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nittartagaq tamakkerlugu immiussineq aallartippoq: atuisut tamarmik allannguutaat tamarmik immiussorneqassapput unitsinnissavit tungaanut.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Immiussineq aallartippoq: allannguutitit immiussorneqassapput unitsinnissavit tungaanut.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Immiussineq unitsinneqarpoq. Tigusimasai igitsinnissavit tungaanut qimanneqassapput.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Immiussaq pisimasuilu peerneqarput.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Immiussaq %id peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Siullermik "Aap, immiussaq una igiguk" nalunaaqutsiguk.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Atuisoq immiussisoq kisimi naapiffimmi immiussineq unitsissinnaavaa.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Immiussineq unitsitassaq toqqaruk.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Immiussineq taamaattoq ingerlareerpoq.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Immiussaq allanngortinneqarsinnaanngilaq: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81431,7 +81647,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>GitHub-imi suliniummut nittartagaq /&lt;repository&gt;/ ataaniittarpoq; innersuussutit ataqatigiissut tassani allanilu sumiluunniit atuupput.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Sanaaq %site-ip quppernerinik tamanik pulartup iserfigisimanngitsup takusartagaattut aallersisarpoq, innersuussutinik allanngortitsilluni, fiilinik assiliilluni inernerlu saqqummiuffiup mappianut allattarlugu. Sanaaq misissorlugu Saqqummiuguk tooreqqaanngikkukku saqqummiussisoqassanngilaq.</translation>
     </message>
     <message>
@@ -81479,7 +81695,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Quppernerup suli piiaanerup kingorna debug-imik anitsinermik, formularip token-ianik imaluunniit session-ip kinaassutsimik imaqartup saqqummiunneqartanngilaq.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>Utertitsineq ilisimasalinnut kisiannut: »Ilisimavara una suna allanngortinneraa« nalunaaqutsiguk taaguullu aqqa ilaqqiguk.</translation>
     </message>
     <message>
@@ -81991,7 +82207,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Siumut takuneq ammaruk</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Sanaaq angerlarsimaffiup tunniussinissaatut saqqummiuffiup mappianit ammarpaa. Innersuussut nalunaaquttap akunnera ataaseq illit atorsinnaavat.</translation>
     </message>
     <message>
@@ -82167,7 +82383,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Aaqqissuussineq &gt; Isertugat</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>Allattorsimaffinni takutinneqartarpoq, assersuutigalugu »Nittartagaq tamanut ammasoq GitHub Pages-imi«.</translation>
     </message>
     <message>
@@ -82375,7 +82591,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Nittartagaq saqqummiussinerup taassuma fiiliinut uterpoq; sanaaq suli saqqummiunneqanngitsoq siullermik saqqummiunneqassaaq igineqassalluunniit.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Nittartakkap quppernera nammineq najukkanut atuanngitsunut.</translation>
     </message>
     <message>
@@ -82383,7 +82599,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Saqqummiuffik toqqorneqarsinnaanngilaq: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>Saqqummiuffik suli matuersaammik matuminnga iserneq ajorpoq: aaqqissuussinerini »Ikkussinermut matuersaat saqqummiuffimmut matumunnga pilersitaq« toqqaruk.</translation>
     </message>
     <message>
@@ -82419,7 +82635,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Sanaaq una igissavaa: mappimi saqqummiussineq kingulleq aterpoq. Nittartagaq atuuttoq allanngunngilaq.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>Siullermik »Allannguutit misissorpakka« nalunaaqutsiguk.</translation>
     </message>
     <message>
@@ -82641,6 +82857,34 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>yes, not published yet</source>
         <translation>aap, suli saqqummiunneqanngilaq</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Sanaaq %site-ip quppernerinik tamanik pulartup iserfigisimanngitsup takusartagaattut aallersisarpoq, innersuussutinik allanngortitsilluni, fiilinik assiliilluni inernerlu saqqummiuffiup mappianut allattarlugu. Sanaaq misissorlugu Saqqummiuguk tooreqqaanngikkukku saqqummiussisoqassanngilaq.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Utertitsineq ilisimasalinnut kisiannut: »Ilisimavara una suna allanngortinneraa« nalunaaqutsiguk taaguullu aqqa ilaqqiguk.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Sanaaq angerlarsimaffiup tunniussinissaatut saqqummiuffiup mappianit ammarpaa. Innersuussut nalunaaquttap akunnera ataaseq illit atorsinnaavat.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Allattorsimaffinni takutinneqartarpoq, assersuutigalugu »Nittartagaq tamanut ammasoq GitHub Pages-imi«.</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Nittartakkap quppernera nammineq najukkanut atuanngitsunut.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Saqqummiuffik suli matuersaammik matuminnga iserneq ajorpoq: aaqqissuussinerini »Ikkussinermut matuersaat saqqummiuffimmut matumunnga pilersitaq« toqqaruk.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Siullermik »Allannguutit misissorpakka« nalunaaqutsiguk.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

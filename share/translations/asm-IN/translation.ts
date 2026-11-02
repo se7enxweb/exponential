@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>চলন আৰম্ভ কৰিব পৰা নগ&apos;ল।</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>সালসলনি ৰেকৰ্ড কৰা</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ৰেকৰ্ডিং চলি থকাৰ সময়ত আপুনি প্ৰশাসনত বা ছাইটৰ কাষৰ বাৰত যি সলনি কৰে সেয়া এটা প্ৰব্ৰজনৰ পদক্ষেপ হিচাপে ৰখা হয়: সমল, শ্ৰেণী, ভূমিকা আৰু নীতি, শাখা, ব্যৱহাৰকাৰী আৰু গোট, URL উপনাম, ছেটিংছ। কাম শেষ হ'লে ইয়াক বন্ধ কৰক, ই কি ধৰিছে চাওক আৰু ইয়াৰ পৰা এটা প্ৰব্ৰজন সৃষ্টি কৰক।</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ৰেকৰ্ডিংবোৰ পঢ়িব পৰা নগ'ল: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ৰেকৰ্ডিঙৰ তালিকাবোৰ এতিয়াও নাই: প্ৰথমে আপগ্ৰেড চলাওক (exp:upgrade --apply)।</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini ত ৰেকৰ্ডিং বন্ধ আছে ([RecordingSettings] Recording=disabled)।</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>মোৰ সালসলনি</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>আপুনি বন্ধ নকৰালৈকে কেৱল আপুনি যি সলনি কৰে, য'তেই নকৰক, সেয়াহে ৰেকৰ্ড কৰে।</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ৰেকৰ্ডিং</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time ৰ পৰা, এতিয়ালৈকে %count সালসলনি।</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>লেবেল (বৈকল্পিক)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ই কি ধৰিছে দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ৰেকৰ্ডিং বন্ধ কৰক</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>মোৰ সালসলনিৰ ৰেকৰ্ডিং আৰম্ভ কৰক</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>গোটেই ছাইটৰ উইণ্ড'</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>বন্ধ নোহোৱালৈকে প্ৰতিজন ব্যৱহাৰকাৰী আৰু কনচ'লৰ প্ৰতিটো সালসলনি ৰেকৰ্ড কৰে। খোলোঁতে আপুনিয়েই বুলি নিশ্চিত কৰিবলৈ কোৱা হয়।</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>খোলা</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>উইণ্ড' বন্ধ কৰক</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>গোটেই ছাইটৰ উইণ্ড' খোলক</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ৰেকৰ্ডিংসমূহ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ব্যৱহাৰকাৰীৰ একাউণ্ট (লগইন, ই-মেইল, পাছৱৰ্ড) আৰু ব্যৱহাৰকাৰী একাউণ্টৰ ক্ষেত্ৰবোৰ কেতিয়াও ৰেকৰ্ড কৰা নহয়।</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>সালসলনিসমূহ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>গোটেই ছাইট</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ৰ সালসলনি</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>বন্ধ</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>এতিয়ালৈকে কোনো ৰেকৰ্ডিং নাই।</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ৰেকৰ্ডিং %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>সকলো ৰেকৰ্ডিং</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ইয়াৰ পৰা হ'বলগীয়া প্ৰব্ৰজন</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>প্ৰতিটো সলনি হোৱা বস্তুৰ বাবে এটা পদক্ষেপত একত্ৰিত সালসলনি: এই ৰেকৰ্ডিঙৰ পৰা সৃষ্টি কৰা প্ৰব্ৰজনে কি কৰিব।</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>এই সংস্থাপনত YAML পদক্ষেপৰ প্ৰকাৰ %types থাকিলে ইয়াৰ পৰা প্ৰব্ৰজন সৃষ্টি কৰিব পৰা যাব।</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ইচ্ছাকৃতভাৱে বাদ দিয়া: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>একো ৰেকৰ্ড হোৱা নাই।</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ই কি ধৰিছে</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count সালসলনি, কৰা ক্ৰমত।</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>সালসলনি</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>পদক্ষেপ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>সম্পৰ্কিত</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>আৰু %count: ./console exp:migration:record:show এ সকলোৰে তালিকা দিয়ে।</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>বাতিল কৰক</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ৰেকৰ্ডিং আৰু ই যি ধৰিছে সেয়া আঁতৰায়। যি সলনি হৈছে সেয়া সলনি হৈয়ে থাকে।</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>হয়, এই ৰেকৰ্ডিং বাতিল কৰক</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ৰেকৰ্ড হৈ আছে…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>আপোনাৰ সালসলনি এটা প্ৰব্ৰজনৰ বাবে ৰেকৰ্ড হৈ আছে।</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>এই ছাইটৰ প্ৰতিটো সালসলনি এটা প্ৰব্ৰজনৰ বাবে ৰেকৰ্ড হৈ আছে (গোটেই ছাইটৰ উইণ্ড')।</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>গোটেই ছাইটৰ ৰেকৰ্ডিং আৰম্ভ হ'ল: আপুনি বন্ধ নকৰালৈকে প্ৰতিজন ব্যৱহাৰকাৰীৰ প্ৰতিটো সালসলনি ৰেকৰ্ড হ'ব।</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ৰেকৰ্ডিং আৰম্ভ হ'ল: আপুনি বন্ধ নকৰালৈকে আপোনাৰ সালসলনি ৰেকৰ্ড হ'ব।</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ৰেকৰ্ডিং বন্ধ হ'ল। ই যি ধৰিছে আপুনি বাতিল নকৰালৈকে থাকিব।</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ৰেকৰ্ডিং আৰু ইয়াৰ ঘটনাবোৰ আঁতৰোৱা হ'ল।</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>কোনো ৰেকৰ্ডিং %id নাই।</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>প্ৰথমে "হয়, এই ৰেকৰ্ডিং বাতিল কৰক" চিহ্নিত কৰক।</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ছেছন ৰেকৰ্ডিং কেৱল ৰেকৰ্ড কৰা ব্যৱহাৰকাৰীয়েহে বন্ধ কৰিব পাৰে।</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>বন্ধ কৰিবলগীয়া ৰেকৰ্ডিং বাছক।</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>এই প্ৰকাৰৰ ৰেকৰ্ডিং ইতিমধ্যে চলি আছে।</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ৰেকৰ্ডিং সলনি কৰিব পৰা নগ'ল: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81287,7 +81503,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>লক্ষ্যসমূহ পঢ়িব পৰা নগ'ল: %problem</translation>
+        <translation>লক্ষ্যসমূহ পঢ়িব পৰা নগ&apos;ল: %problem</translation>
     </message>
     <message>
         <source>a job is going on</source>
@@ -81318,7 +81534,7 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/admin/staticpublish</name>
     <message>
         <source>%added added, %changed changed, %removed removed</source>
-        <translation>%added যোগ কৰা হ'ল, %changed সলনি কৰা হ'ল, %removed আঁতৰোৱা হ'ল</translation>
+        <translation>%added যোগ কৰা হ&apos;ল, %changed সলনি কৰা হ&apos;ল, %removed আঁতৰোৱা হ&apos;ল</translation>
     </message>
     <message>
         <source>%bytes of %limit (%percent %)</source>
@@ -81330,7 +81546,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%pages pages written</source>
-        <translation>%pages টা পৃষ্ঠা লিখা হ'ল</translation>
+        <translation>%pages টা পৃষ্ঠা লিখা হ&apos;ল</translation>
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub প্ৰকল্প ছাইট /&lt;repository&gt;/ ৰ তলত থাকে; আপেক্ষিক লিংক তাত আৰু আন যিকোনো ঠাইত কাম কৰে।</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>এটা বিল্ডে %site ৰ প্ৰতিটো পৃষ্ঠা ছাইন ইন নকৰা দৰ্শনাৰ্থীয়ে দেখাৰ দৰে আনে, লিংকবোৰ পুনৰ লিখে, ফাইলবোৰ কপি কৰে আৰু ফলাফল লক্ষ্যৰ ফোল্ডাৰত লিখে। আপুনি বিল্ড পৰীক্ষা কৰি প্ৰকাশ কৰক টিপা নহালৈকে একো প্ৰকাশ কৰা নহয়।</translation>
     </message>
     <message>
@@ -81414,7 +81630,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>এটা ডিপ্লয় কি-য়ে এই ইনষ্টলেশ্বনক SSH ৰ জৰিয়তে কেৱল এটা ৰিপজিটৰীলৈ পুশ্ব কৰিবলৈ দিয়ে, আন ক'তো নহয়। ইয়াৰ ব্যক্তিগত অংশ ছেটআপ &gt; গোপন মান-ত থাকে; কেৱল ৰাজহুৱা অংশ দেখুওৱা হয়।</translation>
+        <translation>এটা ডিপ্লয় কি-য়ে এই ইনষ্টলেশ্বনক SSH ৰ জৰিয়তে কেৱল এটা ৰিপজিটৰীলৈ পুশ্ব কৰিবলৈ দিয়ে, আন ক&apos;তো নহয়। ইয়াৰ ব্যক্তিগত অংশ ছেটআপ &gt; গোপন মান-ত থাকে; কেৱল ৰাজহুৱা অংশ দেখুওৱা হয়।</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
@@ -81438,23 +81654,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
-        <translation>/news/ পৃষ্ঠাৰ পৰা /about-us/team পৃষ্ঠালৈ এটা লিংক এনেদৰে লিখা হ'ব</translation>
+        <translation>/news/ পৃষ্ঠাৰ পৰা /about-us/team পৃষ্ঠালৈ এটা লিংক এনেদৰে লিখা হ&apos;ব</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
-        <translation>এটা নতুন ডিপ্লয় কি সৃষ্টি কৰা হ'ল। ইয়াৰ ৰাজহুৱা অংশ এতিয়াই ৰিপজিটৰীত যোগ কৰক।</translation>
+        <translation>এটা নতুন ডিপ্লয় কি সৃষ্টি কৰা হ&apos;ল। ইয়াৰ ৰাজহুৱা অংশ এতিয়াই ৰিপজিটৰীত যোগ কৰক।</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
         <translation>পৰিষ্কাৰ কৰাৰ পিছতো ডিবাগ আউটপুট, ফৰ্ম টোকেন বা ছেছন আইডি থকা পৃষ্ঠা কেতিয়াও প্ৰকাশ কৰা নহয়।</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>উভতাই নিয়া বিশেষজ্ঞৰ বাবে: "মই জানো ই কি সলনি কৰে" টিক দিয়ক আৰু টেগৰ নামটো পুনৰ টাইপ কৰক।</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>উভতাই নিয়া বিশেষজ্ঞৰ বাবে: &quot;মই জানো ই কি সলনি কৰে&quot; টিক দিয়ক আৰু টেগৰ নামটো পুনৰ টাইপ কৰক।</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>এটা ছাইট %site লৈকে, এটা ফাইল %file লৈকে হ'ব পাৰে, মাহে প্ৰায় 100 GB ট্ৰাফিকৰ সৈতে। বিনামূলীয়া প্লেনত ৰিপজিটৰী ৰাজহুৱা হ'ব লাগিব। GitHub Pages দোকান বা আন বাণিজ্যিক লেনদেনৰ বাবে নহয়।</translation>
+        <translation>এটা ছাইট %site লৈকে, এটা ফাইল %file লৈকে হ&apos;ব পাৰে, মাহে প্ৰায় 100 GB ট্ৰাফিকৰ সৈতে। বিনামূলীয়া প্লেনত ৰিপজিটৰী ৰাজহুৱা হ&apos;ব লাগিব। GitHub Pages দোকান বা আন বাণিজ্যিক লেনদেনৰ বাবে নহয়।</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
@@ -81470,7 +81686,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A workflow of the repository publishes it.</source>
-        <translation>ৰিপজিটৰীৰ এটা ৱৰ্কফ্ল'ৱে ইয়াক প্ৰকাশ কৰে।</translation>
+        <translation>ৰিপজিটৰীৰ এটা ৱৰ্কফ্ল&apos;ৱে ইয়াক প্ৰকাশ কৰে।</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
@@ -81478,7 +81694,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Added</source>
-        <translation>যোগ কৰা হ'ল</translation>
+        <translation>যোগ কৰা হ&apos;ল</translation>
     </message>
     <message>
         <source>Another git host</source>
@@ -81554,7 +81770,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Changed</source>
-        <translation>সলনি কৰা হ'ল</translation>
+        <translation>সলনি কৰা হ&apos;ল</translation>
     </message>
     <message>
         <source>Changes</source>
@@ -81594,7 +81810,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
-        <translation>আগৰ ফোল্ডাৰৰ সৈতে তুলনা: %added যোগ কৰা হ'ল, %changed সলনি কৰা হ'ল, %removed আঁতৰোৱা হ'ল, %unchanged অপৰিৱৰ্তিত।</translation>
+        <translation>আগৰ ফোল্ডাৰৰ সৈতে তুলনা: %added যোগ কৰা হ&apos;ল, %changed সলনি কৰা হ&apos;ল, %removed আঁতৰোৱা হ&apos;ল, %unchanged অপৰিৱৰ্তিত।</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
@@ -81634,11 +81850,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>খালী: ছাইটৰ ঠিকনা। নহ'লে একেটা ছাইটৰ এটা আভ্যন্তৰীণ ঠিকনা।</translation>
+        <translation>খালী: ছাইটৰ ঠিকনা। নহ&apos;লে একেটা ছাইটৰ এটা আভ্যন্তৰীণ ঠিকনা।</translation>
     </message>
     <message>
         <source>Ended</source>
-        <translation>শেষ হ'ল</translation>
+        <translation>শেষ হ&apos;ল</translation>
     </message>
     <message>
         <source>Every link starts with the base path.</source>
@@ -81854,7 +82070,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>প্ৰথমে হোষ্টত ৰিপজিটৰীটো সৃষ্টি কৰক; খালী এটা হ'লেও হ'ব।</translation>
+        <translation>প্ৰথমে হোষ্টত ৰিপজিটৰীটো সৃষ্টি কৰক; খালী এটা হ&apos;লেও হ&apos;ব।</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81894,11 +82110,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No key was made: %problem</source>
-        <translation>কোনো কি সৃষ্টি কৰা নহ'ল: %problem</translation>
+        <translation>কোনো কি সৃষ্টি কৰা নহ&apos;ল: %problem</translation>
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>কোনো php কমাণ্ড লাইন বাইনেৰী পোৱা নগ'ল। migration.ini [AdminSettings] PhpCliPath ত ইয়াৰ সম্পূৰ্ণ পথ ছেট কৰক।</translation>
+        <translation>কোনো php কমাণ্ড লাইন বাইনেৰী পোৱা নগ&apos;ল। migration.ini [AdminSettings] PhpCliPath ত ইয়াৰ সম্পূৰ্ণ পথ ছেট কৰক।</translation>
     </message>
     <message>
         <source>No tag yet.</source>
@@ -81934,7 +82150,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>On the console</source>
-        <translation>কনচ'লত</translation>
+        <translation>কনচ&apos;লত</translation>
     </message>
     <message>
         <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>পূৰ্বদৰ্শন খোলক</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>হোষ্টে পৰিৱেশন কৰাৰ দৰে লক্ষ্যৰ ফোল্ডাৰৰ পৰা বিল্ডটো খোলে। লিংকটো আপোনাৰ বাবে এঘণ্টা কাম কৰে।</translation>
     </message>
     <message>
@@ -82026,7 +82242,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>এটা ছাইটৰ স্থিতিশীল কপি GitHub Pages বা যিকোনো git হোষ্টত প্ৰকাশ কৰক: বিল্ড কৰক, পৰিৱৰ্তন পৰীক্ষা কৰক, প্ৰকাশ কৰক, আৰু প্ৰয়োজন হ'লে আগৰ এটা প্ৰকাশনলৈ উভতি যাওক।</translation>
+        <translation>এটা ছাইটৰ স্থিতিশীল কপি GitHub Pages বা যিকোনো git হোষ্টত প্ৰকাশ কৰক: বিল্ড কৰক, পৰিৱৰ্তন পৰীক্ষা কৰক, প্ৰকাশ কৰক, আৰু প্ৰয়োজন হ&apos;লে আগৰ এটা প্ৰকাশনলৈ উভতি যাওক।</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -82062,7 +82278,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Removed</source>
-        <translation>আঁতৰোৱা হ'ল</translation>
+        <translation>আঁতৰোৱা হ&apos;ল</translation>
     </message>
     <message>
         <source>Replace the key: the old one stops working</source>
@@ -82086,7 +82302,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
-        <translation>পৰ্যালোচনাই প্ৰতিটো ছেটিং পৰীক্ষা কৰে আৰু লিখা হ'বলগীয়া শাৰীবোৰ দেখুৱায়। এতিয়ালৈ একো সঞ্চয় কৰা হোৱা নাই।</translation>
+        <translation>পৰ্যালোচনাই প্ৰতিটো ছেটিং পৰীক্ষা কৰে আৰু লিখা হ&apos;বলগীয়া শাৰীবোৰ দেখুৱায়। এতিয়ালৈ একো সঞ্চয় কৰা হোৱা নাই।</translation>
     </message>
     <message>
         <source>Roll back</source>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ছেটআপ &gt; গোপন মান</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>তালিকাত দেখুওৱা হয়, উদাহৰণস্বৰূপে "GitHub Pages-ত ৰাজহুৱা ছাইট"।</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>তালিকাত দেখুওৱা হয়, উদাহৰণস্বৰূপে &quot;GitHub Pages-ত ৰাজহুৱা ছাইট&quot;।</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82246,7 +82462,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The build could not be thrown away: %problem</source>
-        <translation>বিল্ডটো পেলাই দিব পৰা নগ'ল: %problem</translation>
+        <translation>বিল্ডটো পেলাই দিব পৰা নগ&apos;ল: %problem</translation>
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
@@ -82254,7 +82470,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
-        <translation>বিল্ডটো পেলাই দিয়া হ'ল: ফোল্ডাৰত পুনৰ শেহতীয়া প্ৰকাশনটো আছে।</translation>
+        <translation>বিল্ডটো পেলাই দিয়া হ&apos;ল: ফোল্ডাৰত পুনৰ শেহতীয়া প্ৰকাশনটো আছে।</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
@@ -82270,15 +82486,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
-        <translation>কাৰ্যটো প্ৰস্তুত কৰিব পৰা নগ'ল: %detail</translation>
+        <translation>কাৰ্যটো প্ৰস্তুত কৰিব পৰা নগ&apos;ল: %detail</translation>
     </message>
     <message>
         <source>The job could not be started.</source>
-        <translation>কাৰ্যটো আৰম্ভ কৰিব পৰা নগ'ল।</translation>
+        <translation>কাৰ্যটো আৰম্ভ কৰিব পৰা নগ&apos;ল।</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>কাৰ্যটো শেষ হ'ল। ইয়াৰ প্ৰতিবেদন লোড কৰি থকা হৈছে।</translation>
+        <translation>কাৰ্যটো শেষ হ&apos;ল। ইয়াৰ প্ৰতিবেদন লোড কৰি থকা হৈছে।</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
@@ -82286,7 +82502,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
-        <translation>কাৰ্যটো আৰম্ভ হ'ল কিন্তু ইয়াৰ প্ৰক্ৰিয়া আইডি জনোৱা নাই। %detail পৰীক্ষা কৰক।</translation>
+        <translation>কাৰ্যটো আৰম্ভ হ&apos;ল কিন্তু ইয়াৰ প্ৰক্ৰিয়া আইডি জনোৱা নাই। %detail পৰীক্ষা কৰক।</translation>
     </message>
     <message>
         <source>The key</source>
@@ -82298,7 +82514,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The lines that will be written</source>
-        <translation>লিখা হ'বলগীয়া শাৰীসমূহ</translation>
+        <translation>লিখা হ&apos;বলগীয়া শাৰীসমূহ</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
@@ -82310,7 +82526,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>অগ্ৰগতি অনুসৰণ কৰিব পৰা নগ'ল। কাৰ্যটো কেনে চলি আছে চাবলৈ পৃষ্ঠাটো পুনৰ লোড কৰক।</translation>
+        <translation>অগ্ৰগতি অনুসৰণ কৰিব পৰা নগ&apos;ল। কাৰ্যটো কেনে চলি আছে চাবলৈ পৃষ্ঠাটো পুনৰ লোড কৰক।</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
@@ -82330,11 +82546,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
-        <translation>ছেটিংটো লিখিব পৰা নগ'ল: %problem</translation>
+        <translation>ছেটিংটো লিখিব পৰা নগ&apos;ল: %problem</translation>
     </message>
     <message>
         <source>The settings are valid. These lines will be written:</source>
-        <translation>ছেটিংছবোৰ বৈধ। এই শাৰীবোৰ লিখা হ'ব:</translation>
+        <translation>ছেটিংছবোৰ বৈধ। এই শাৰীবোৰ লিখা হ&apos;ব:</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -82345,20 +82561,20 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ছাইটটো সেই প্ৰকাশনৰ ফাইললৈ উভতি যায়; এতিয়াও প্ৰকাশ নোহোৱা বিল্ড প্ৰথমে প্ৰকাশ কৰিব বা পেলাই দিব লাগিব।</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>নথকা ঠিকনাৰ বাবে ছাইটৰ নিজা পৃষ্ঠা।</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
-        <translation>লক্ষ্যটো সঞ্চয় কৰিব পৰা নগ'ল: %problem</translation>
+        <translation>লক্ষ্যটো সঞ্চয় কৰিব পৰা নগ&apos;ল: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>লক্ষ্যটোৱে এতিয়াও এই কি-ৰে ছাইন ইন নকৰে: ইয়াৰ ছেটিংছত "এই লক্ষ্যৰ বাবে সৃষ্টি কৰা এটা ডিপ্লয় কি" বাছক।</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>লক্ষ্যটোৱে এতিয়াও এই কি-ৰে ছাইন ইন নকৰে: ইয়াৰ ছেটিংছত &quot;এই লক্ষ্যৰ বাবে সৃষ্টি কৰা এটা ডিপ্লয় কি&quot; বাছক।</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>লক্ষ্যসমূহ পঢ়িব পৰা নগ'ল: %problem</translation>
+        <translation>লক্ষ্যসমূহ পঢ়িব পৰা নগ&apos;ল: %problem</translation>
     </message>
     <message>
         <source>There is no build to check yet.</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>এই বিল্ডটো পেলাই দিয়ে: ফোল্ডাৰত পুনৰ শেহতীয়া প্ৰকাশনটো থাকে। লাইভ ছাইট সলনি নহয়।</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>প্ৰথমে "মই পৰিৱৰ্তনসমূহ পৰীক্ষা কৰিছো" টিক দিয়ক।</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>প্ৰথমে &quot;মই পৰিৱৰ্তনসমূহ পৰীক্ষা কৰিছো&quot; টিক দিয়ক।</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82454,11 +82670,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>কপিত নথকা বস্তুলৈ লিংকবোৰ ক'লৈ যায় (সন্ধান, লগইন)।</translation>
+        <translation>কপিত নথকা বস্তুলৈ লিংকবোৰ ক&apos;লৈ যায় (সন্ধান, লগইন)।</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
-        <translation>স্থিতিশীল কপিটো ক'ৰ পৰা পৰিৱেশন কৰা হয়।</translation>
+        <translation>স্থিতিশীল কপিটো ক&apos;ৰ পৰা পৰিৱেশন কৰা হয়।</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
@@ -82478,7 +82694,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>আপুনি সদায় ইয়াত আৰু কনচ'লত হাতেৰে বিল্ড আৰু প্ৰকাশ কৰিব পাৰে।</translation>
+        <translation>আপুনি সদায় ইয়াত আৰু কনচ&apos;লত হাতেৰে বিল্ড আৰু প্ৰকাশ কৰিব পাৰে।</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
@@ -82490,7 +82706,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>ended without a report</source>
-        <translation>প্ৰতিবেদন অবিহনে শেষ হ'ল</translation>
+        <translation>প্ৰতিবেদন অবিহনে শেষ হ&apos;ল</translation>
     </message>
     <message>
         <source>extra</source>
@@ -82534,7 +82750,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>no remote</source>
-        <translation>কোনো ৰিম'ট নাই</translation>
+        <translation>কোনো ৰিম&apos;ট নাই</translation>
     </message>
     <message>
         <source>none: commits stay in the folder</source>
@@ -82578,7 +82794,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>pushed</source>
-        <translation>পুশ্ব কৰা হ'ল</translation>
+        <translation>পুশ্ব কৰা হ&apos;ল</translation>
     </message>
     <message>
         <source>refused</source>
@@ -82594,7 +82810,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>rolled back</source>
-        <translation>উভতাই নিয়া হ'ল</translation>
+        <translation>উভতাই নিয়া হ&apos;ল</translation>
     </message>
     <message>
         <source>running</source>
@@ -82606,11 +82822,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: CNAME ফাইলত লিখা হয়। ডমেইনৰ DNS হোষ্টে বুজোৱাৰ দৰে হোষ্টলৈ নিৰ্দেশ কৰক; HTTPS আৰম্ভ হ'বলৈ কিছু সময় লাগিব পাৰে।</translation>
+        <translation>www.example.com: CNAME ফাইলত লিখা হয়। ডমেইনৰ DNS হোষ্টে বুজোৱাৰ দৰে হোষ্টলৈ নিৰ্দেশ কৰক; HTTPS আৰম্ভ হ&apos;বলৈ কিছু সময় লাগিব পাৰে।</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>হয়, এতিয়াও প্ৰকাশ কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>এটা বিল্ডে %site ৰ প্ৰতিটো পৃষ্ঠা ছাইন ইন নকৰা দৰ্শনাৰ্থীয়ে দেখাৰ দৰে আনে, লিংকবোৰ পুনৰ লিখে, ফাইলবোৰ কপি কৰে আৰু ফলাফল লক্ষ্যৰ ফোল্ডাৰত লিখে। আপুনি বিল্ড পৰীক্ষা কৰি প্ৰকাশ কৰক টিপা নহালৈকে একো প্ৰকাশ কৰা নহয়।</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>উভতাই নিয়া বিশেষজ্ঞৰ বাবে: "মই জানো ই কি সলনি কৰে" টিক দিয়ক আৰু টেগৰ নামটো পুনৰ টাইপ কৰক।</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>হোষ্টে পৰিৱেশন কৰাৰ দৰে লক্ষ্যৰ ফোল্ডাৰৰ পৰা বিল্ডটো খোলে। লিংকটো আপোনাৰ বাবে এঘণ্টা কাম কৰে।</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>তালিকাত দেখুওৱা হয়, উদাহৰণস্বৰূপে "GitHub Pages-ত ৰাজহুৱা ছাইট"।</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>নথকা ঠিকনাৰ বাবে ছাইটৰ নিজা পৃষ্ঠা।</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>লক্ষ্যটোৱে এতিয়াও এই কি-ৰে ছাইন ইন নকৰে: ইয়াৰ ছেটিংছত "এই লক্ষ্যৰ বাবে সৃষ্টি কৰা এটা ডিপ্লয় কি" বাছক।</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>প্ৰথমে "মই পৰিৱৰ্তনসমূহ পৰীক্ষা কৰিছো" টিক দিয়ক।</translation>
     </message>
     <message>
         <source>A GitHub App</source>

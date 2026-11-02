@@ -80588,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>无法启动运行。</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>记录更改</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>记录进行期间，您在管理后台或网站侧边栏中的更改会作为迁移的步骤保存：内容、类、角色和策略、分区、用户和用户组、URL 别名、设置。完成后停止记录，查看它捕获了什么，然后由它生成迁移。</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>无法读取记录：%problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>记录表尚不存在：请先运行升级 (exp:upgrade --apply)。</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini 中已关闭记录 ([RecordingSettings] Recording=disabled)。</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>我的更改</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>只记录您所做的更改，无论在哪里更改，直到您停止。</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>记录</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>自 %time 起，目前共 %count 项更改。</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>标签（可选）</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>查看捕获的内容</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>停止记录</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>开始记录我的更改</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>全站窗口</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>记录每个用户和控制台的每项更改，直到窗口关闭。打开时需要验证是您本人。</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>已打开</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>关闭窗口</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>打开全站窗口</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>记录列表</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>用户的账户（登录名、电子邮件、密码）和用户账户的字段从不记录。</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>更改数</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>全站</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name 的更改</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>已停止</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>尚无记录。</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>记录 %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>所有记录</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>将生成的迁移</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>按每个被更改的对象合并为一个步骤的更改：由此记录生成的迁移会做的事。</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>一旦此安装具有 YAML 步骤类型 %types，即可由它生成迁移。</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>有意省略：%list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>未记录任何内容。</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>捕获的内容</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count 项更改，按发生顺序排列。</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>更改</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>步骤</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>对象</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>另有 %count 项：./console exp:migration:record:show 会全部列出。</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>丢弃</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>删除记录及其捕获的内容。已更改的内容保持不变。</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>是的，丢弃此记录</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>正在记录…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>您的更改正在为迁移而记录。</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>本站的每项更改都在为迁移而记录（全站窗口）。</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>全站记录已开始：每个用户的每项更改都会被记录，直到您停止。</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>记录已开始：您的更改会被记录，直到您停止。</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>记录已停止。捕获的内容会保留，直到您丢弃它。</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>记录及其事件已删除。</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>没有记录 %id。</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>请先勾选“是的，丢弃此记录”。</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>只有进行记录的用户才能停止会话记录。</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>请选择要停止的记录。</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>此类记录已在进行中。</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>无法更改记录：%reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81399,7 +81615,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub 项目站点位于 /&lt;repository&gt;/ 之下；相对链接在那里和其他任何地方都能使用。</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>构建会以未登录访客看到的样子获取 %site 的每个页面，重写链接，复制文件，并将结果写入目标的文件夹。在您检查构建并点击“发布”之前，不会发布任何内容。</translation>
     </message>
     <message>
@@ -81447,7 +81663,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>清理后仍带有调试输出、表单令牌或会话 ID 的页面永远不会被发布。</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>回滚仅供专家使用：勾选“我知道这会更改什么”，并再次输入标签名称。</translation>
     </message>
     <message>
@@ -81959,7 +82175,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>打开预览</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>从目标的文件夹，按主机提供的方式打开构建。此链接对您有效一小时。</translation>
     </message>
     <message>
@@ -82135,7 +82351,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>设置 &gt; 机密</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>显示在列表中，例如“GitHub Pages 上的公开网站”。</translation>
     </message>
     <message>
@@ -82343,7 +82559,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>网站将恢复为该发布版本的文件；尚未发布的构建必须先发布或丢弃。</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>网站自己的“地址不存在”页面。</translation>
     </message>
     <message>
@@ -82351,7 +82567,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>无法保存目标：%problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>目标尚未使用此密钥登录：请在其设置中选择“为此目标创建的部署密钥”。</translation>
     </message>
     <message>
@@ -82387,7 +82603,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>丢弃此构建：文件夹再次保存最近一次发布。线上网站不会改变。</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>请先勾选“我已检查这些更改”。</translation>
     </message>
     <message>
@@ -82609,6 +82825,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>是，尚未发布</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>构建会以未登录访客看到的样子获取 %site 的每个页面，重写链接，复制文件，并将结果写入目标的文件夹。在您检查构建并点击“发布”之前，不会发布任何内容。</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>回滚仅供专家使用：勾选“我知道这会更改什么”，并再次输入标签名称。</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>从目标的文件夹，按主机提供的方式打开构建。此链接对您有效一小时。</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>显示在列表中，例如“GitHub Pages 上的公开网站”。</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>网站自己的“地址不存在”页面。</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>目标尚未使用此密钥登录：请在其设置中选择“为此目标创建的部署密钥”。</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>请先勾选“我已检查这些更改”。</translation>
     </message>
     <message>
         <source>A GitHub App</source>

@@ -234,7 +234,8 @@ class expMigrationCommandToolsTest extends PHPUnit\Framework\TestCase
         {
             $this->assertStringContainsString( 'symfony/yaml is not installed', $contentErrors );
         }
-        $this->assertContains( 'migrations of type .ini cannot be run yet', $byId['20261003100000_news_settings']['errors'] );
+        $this->assertSame( array(), $byId['20261003100000_news_settings']['errors'], 'an INI migration is checked like any other' );
+        $this->assertSame( array(), $byId['20261002100000_news_index']['errors'], 'an SQL migration is checked like any other' );
 
         $runnerBroken = expMigrationCheck::run( array( 'paths' => array( "$fixtures/runner-broken" ), 'root' => self::$root ) );
         $this->assertSame( 1, $runnerBroken['exit'] );

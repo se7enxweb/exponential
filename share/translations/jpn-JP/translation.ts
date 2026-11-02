@@ -80620,6 +80620,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>実行を開始できませんでした。</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>変更の記録</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>記録中は、管理画面やサイトのサイドバーで変更した内容がマイグレーションのステップとして保存されます: コンテンツ、クラス、ロールとポリシー、セクション、ユーザーとグループ、URL エイリアス、設定。終わったら停止し、記録された内容を確認して、そこからマイグレーションを生成してください。</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>記録を読み込めませんでした: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>記録のテーブルがまだありません: 先にアップグレードを実行してください (exp:upgrade --apply)。</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini で記録が無効になっています ([RecordingSettings] Recording=disabled)。</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>自分の変更</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>停止するまで、あなたが変更した内容だけを、どこで変更しても記録します。</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>記録</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time から、これまでに %count 件の変更。</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ラベル (任意)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>記録された内容を表示</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>記録を停止</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>自分の変更の記録を開始</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>サイト全体のウィンドウ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>閉じるまで、すべてのユーザーとコンソールのすべての変更を記録します。開くときには本人確認を求められます。</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>開いています</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>ウィンドウを閉じる</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>サイト全体のウィンドウを開く</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>記録一覧</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ユーザーのアカウント (ログイン名、メールアドレス、パスワード) とユーザーアカウントのフィールドは決して記録されません。</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>変更数</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>サイト全体</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name の変更</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>停止済み</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>まだ記録はありません。</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>記録 %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>すべての記録</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>生成されるマイグレーション</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>変更されたもの 1 つにつき 1 ステップにまとめた変更: この記録から生成したマイグレーションが行うこと。</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>このインストールに YAML ステップ型 %types が揃えば、ここからマイグレーションを生成できます。</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>意図的に除外: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>何も記録されていません。</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>記録された内容</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count 件の変更、行われた順。</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>変更</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ステップ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>対象</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>ほかに %count 件: ./console exp:migration:record:show ですべて表示できます。</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>破棄</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>記録とその内容を削除します。変更されたものは変更されたままです。</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>はい、この記録を破棄します</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>記録中…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>あなたの変更はマイグレーションのために記録されています。</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>このサイトのすべての変更がマイグレーションのために記録されています (サイト全体のウィンドウ)。</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>サイト全体の記録を開始しました: 停止するまで、すべてのユーザーのすべての変更が記録されます。</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>記録を開始しました: 停止するまで、あなたの変更が記録されます。</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>記録を停止しました。記録された内容は破棄するまで残ります。</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>記録とそのイベントを削除しました。</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>記録 %id はありません。</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>先に「はい、この記録を破棄します」にチェックを入れてください。</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>セッションの記録を停止できるのは、記録したユーザーだけです。</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>停止する記録を選んでください。</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>この種類の記録はすでに実行中です。</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>記録を変更できませんでした: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81431,7 +81647,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub のプロジェクトサイトは /&lt;repository&gt;/ の下に置かれます。相対リンクはそこでも他の場所でも機能します。</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>ビルドは、サインインしていない訪問者に見えるとおりに %site のすべてのページを取得し、リンクを書き換え、ファイルをコピーして、結果を公開先のフォルダーに書き込みます。ビルドを確認して「公開」を押すまで、何も公開されません。</translation>
     </message>
     <message>
@@ -81479,7 +81695,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>除去処理の後もデバッグ出力、フォームトークン、セッション ID を含むページは、決して公開されません。</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>ロールバックは上級者向けです: 「この操作で何が変わるか理解しています」にチェックを入れ、タグ名をもう一度入力してください。</translation>
     </message>
     <message>
@@ -81991,7 +82207,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>プレビューを開く</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>ホストが配信するとおりに、公開先のフォルダーからビルドを開きます。このリンクは 1 時間有効です。</translation>
     </message>
     <message>
@@ -82167,7 +82383,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>システム設定 &gt; シークレット</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>一覧に表示されます。例: 「GitHub Pages 上の公開サイト」。</translation>
     </message>
     <message>
@@ -82375,7 +82591,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>サイトはその公開のファイルに戻ります。まだ公開されていないビルドは、先に公開するか破棄する必要があります。</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>存在しないアドレス用のサイト独自のページ。</translation>
     </message>
     <message>
@@ -82383,7 +82599,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>公開先を保存できませんでした: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>公開先はまだこのキーでサインインしていません: 設定で「この公開先用に作成したデプロイキー」を選択してください。</translation>
     </message>
     <message>
@@ -82419,7 +82635,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>このビルドを破棄します: フォルダーは再び最後の公開を保持します。公開中のサイトは変わりません。</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>先に「変更点を確認しました」にチェックを入れてください。</translation>
     </message>
     <message>
@@ -82641,6 +82857,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>はい、まだ未公開</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ビルドは、サインインしていない訪問者に見えるとおりに %site のすべてのページを取得し、リンクを書き換え、ファイルをコピーして、結果を公開先のフォルダーに書き込みます。ビルドを確認して「公開」を押すまで、何も公開されません。</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>ロールバックは上級者向けです: 「この操作で何が変わるか理解しています」にチェックを入れ、タグ名をもう一度入力してください。</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>ホストが配信するとおりに、公開先のフォルダーからビルドを開きます。このリンクは 1 時間有効です。</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>一覧に表示されます。例: 「GitHub Pages 上の公開サイト」。</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>存在しないアドレス用のサイト独自のページ。</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>公開先はまだこのキーでサインインしていません: 設定で「この公開先用に作成したデプロイキー」を選択してください。</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>先に「変更点を確認しました」にチェックを入れてください。</translation>
     </message>
     <message>
         <source>A GitHub App</source>

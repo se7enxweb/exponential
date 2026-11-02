@@ -180,8 +180,8 @@ oder einem Test, der die Datei in eine Wegwerf-SQLite-Datenbank lädt
 - Eine Installation, die von Hand mit den SQL-Updatedateien aktualisiert wurde, hat keine Aufzeichnung, welche
   Anweisungen gelaufen sind; `exp:upgrade` hält jeden Schritt fest, den es anwendet, und `exp:upgrade:verify` findet
   Abweichungen.
-- Migrationen werden in 6.0.15 in PHP geschrieben; YAML-, SQL- und INI-Migrationen werden gefunden und geprüft, aber
-  noch nicht ausgeführt.
+- Migrationen werden in PHP, YAML, SQL oder INI geschrieben; eine Schemaänderung, die auf jeder Engine laufen muss, ist
+  am besten ein Schritt `schema` ([Migrationen: SQL und Einstellungen](../../anleitungen/migrationen-sql-und-einstellungen.md)).
 - Die Simulation läuft nur auf PostgreSQL und SQLite; auf MySQL/MariaDB, Oracle und MongoDB wird der Plan gelistet.
 - MariaDB und Oracle haben im Kernel-Repository keinen CI-Job.
 

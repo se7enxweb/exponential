@@ -32,6 +32,19 @@ jeden Schlüssel jedes Schritttyps nennt seine erzeugte Referenzseite
 | [`trash`](../beispiele/migrationsschritte/trash.md) | verschiebt Inhalte in den Papierkorb, stellt sie wieder her, löscht sie endgültig | move, restore, purge |
 | [`file`](../beispiele/migrationsschritte/file.md) | hängt eine Datei aus dem Migrationsordner an ein Dateiattribut | |
 | [`image`](../beispiele/migrationsschritte/image.md) | ein Bild aus dem Migrationsordner, sein Alternativtext, Fokuspunkt und Zuschnitt | |
+| [`cache`](../beispiele/migrationsschritte/cache.md) | leert Caches von ezcache nach ID oder Tag und die Ansichtscaches von Objekten | |
+| [`search`](../beispiele/migrationsschritte/search.md) | indiziert Objekte oder alle Objekte in der Suchmaschine neu | reindex, full |
+| [`autoload`](../beispiele/migrationsschritte/autoload.md) | erzeugt das Autoload-Array der Erweiterungen oder der Kernel-Überschreibungen neu | |
+| [`layout`](../beispiele/migrationsschritte/layout.md) | ein Layout von Exponential Layouts mit seinen Zonen, geteilt oder mit einem geteilten verknüpft | create, update, ensure, delete |
+| [`layout_block`](../beispiele/migrationsschritte/layout_block.md) | ein Block in einer Zone eines Layouts, mit seinen Parametern | create, update, ensure, delete |
+| [`layout_rule`](../beispiele/migrationsschritte/layout_rule.md) | eine Regel, die Seiten einem Layout zuordnet | create, update, ensure, delete |
+| [`http`](../beispiele/migrationsschritte/http.md) | eine HTTP-Anfrage an ein anderes System, Geheimnisse über ihren Namen, auf Wunsch signiert | |
+| [`mail`](../beispiele/migrationsschritte/mail.md) | eine E-Mail über den Mailtransport der Installation | |
+| [`command`](../beispiele/migrationsschritte/command.md) | ein `exp:*`-Konsolenbefehl aus der Positivliste, ohne Shell | |
+| [`schema`](../beispiele/migrationsschritte/schema.md) | eine Tabelle, eine Spalte oder ein Index auf jeder Engine ([SQL und Einstellungen](migrationen-sql-und-einstellungen.md)) | create_table, drop_table, add_column, drop_column, add_index, drop_index |
+| [`data`](../beispiele/migrationsschritte/data.md) | Zeilen einer Tabelle, die Werte von der Verbindung in Anführungszeichen gesetzt | insert, ensure, update, delete |
+| [`sql`](../beispiele/migrationsschritte/sql.md) | Anweisungen der Engine, im Schritt oder in Dateien neben der Migration | |
+| [`settings`](../beispiele/migrationsschritte/settings.md) | eine INI-Datei von `settings/override` oder eines Siteaccess, mit Sicherungskopie | |
 
 Jeder Schritt geht über die eigene API des Kernels, so wie die Administration: Ein neues Objekt entsteht über seine
 Klasse (`eZContentClass::instantiate()`), eine neue Version über `createNewVersionIn()`, und beide veröffentlicht die
@@ -263,6 +276,128 @@ Inhaltsänderung ist das eine neue Version, die über die Veröffentlichungsoper
 `in_place: true`. `focal:` und `crop:` setzen Fokuspunkt und Zuschnitt des Bildes wie der Bildeditor (Anteile von
 Breite und Höhe des Originals); `null` entfernt einen davon, und ein Schritt nur mit `focal:` oder `crop:` behält das
 Bild.
+
+## Caches, der Suchindex und Autoloads
+
+Ein Lauf leert die Caches, die seine Migrationen berührt haben, und nur diese: Jeder Schritttyp nennt die Caches, die
+seine Schritte berühren (ein Inhaltsschritt `content`, ein Klassenschritt `classid`, `content` und `sortkey`, ein
+URL-Alias `content` und `urlalias` ...; jede Referenzseite listet sie), und nach einem Lauf, der Migrationen angewendet
+hat, oder einem Zurücknehmen, das welche rückgängig gemacht hat, leert der Kernel diese Liste einmal über ezcache
+(`migration.ini [RunSettings] ClearCaches`). Der Bericht des Laufs listet die Caches (`caches`) mit dem Deploy, das
+genau sie auch auf einem Server mit PHP-FPM und Velocity leert (`deploy`):
+
+```text
+./console exp:velocity deploy --caches=classid,content,template-block,urlalias --apply
+```
+
+Auch die Objekte, die die Schritte angelegt oder geändert haben, werden nach dem Lauf neu indiziert: standardmäßig für
+den Cronjob `indexcontent` vorgemerkt (`[RunSettings] Reindex=queue`), sofort indiziert (`now`) oder nicht angefasst
+(`disabled`). Der Bericht sagt, wie viele (`reindex`).
+
+Drei Schritttypen sind für das, was die genannten Caches und das Neuindizieren nicht abdecken:
+
+```yaml
+- type: cache
+  caches: [ template-block ]        # IDs von ezcache
+  tags: [ ini ]                     # Tags von ezcache (jeder Cache mit dem Tag)
+  objects: [ "remote:home" ]        # die Inhaltsansichtscaches dieser Objekte, sofort
+  when: now                         # end (Standard): mit der Liste des Laufs nach dem Lauf
+- type: search
+  objects: [ "remote:home" ]        # ohne: die Objekte, die der Lauf bis hierher geändert hat
+  queue: false                      # sofort indizieren statt vormerken
+- type: search
+  mode: full                        # jedes veröffentlichte Objekt ...
+  classes: [ article ]              # ... dieser Klassen
+- type: autoload
+  scope: extension                  # var/autoload/ezp_extension.php; kernel-override: ezp_override.php
+```
+
+Die Caches eines `cache`-Schritts kommen in die Liste des Laufs (ein Tag als `tag:<Name>`, denn `content`, `template`
+und `ini` sind ID und Tag zugleich); mit `when: now` werden sie sofort geleert, für einen späteren Schritt, der das
+braucht. `search` indiziert Objekte neu, die ein Schritt geändert hat, ohne es zu sagen (eine PHP-Migration, eine
+SQL-Änderung), oder alles nach einem Wechsel der Suchmaschine. `autoload` startet den Autoload-Generator in einem
+eigenen Prozess und prüft die Datei, die er schreibt; PHP-FPM und Velocity laden die neuen Klassen nach
+`./console exp:velocity deploy --apply`. Das eigene Autoload-Array des Kernels gehört zum Code eines Releases und wird
+nie von einer Migration geschrieben. Alle drei nehmen sich selbst zurück: Ein Zurücknehmen leert die Caches erneut,
+braucht keine eigene Indexänderung und erzeugt das Array aus den Klassen, die da sind, neu.
+
+## Layouts
+
+`layout`, `layout_block` und `layout_rule` ändern Exponential Layouts (die Erweiterungen `explayouts` und
+`explayouts_core`) über seine Dienste, so wie der Layout-Editor: Eine Änderung geschieht im Entwurf des Layouts, und der
+Entwurf wird am Ende des Schritts veröffentlicht (`publish: false` lässt ihn der Redaktion zum Ansehen). Ohne die
+Erweiterungen scheitern die Schritte und sagen es; `missing: skip` lässt sie durch.
+
+```yaml
+- type: layout
+  mode: ensure
+  identifier: header_footer
+  name: Header / Footer
+  shared: true                         # andere Layouts können die Blöcke seiner Zonen übernehmen
+  zones: { header: {}, footer: {} }
+- type: layout
+  mode: ensure
+  identifier: landing_page
+  name: Landing page
+  layout_type: layout_2                # die Zonen des Typs werden hinzugefügt
+  zones:
+    header: { link: "header_footer/header" }   # die Blöcke der Zone header des geteilten Layouts
+    main: {}
+- type: layout_block
+  mode: ensure
+  layout: landing_page
+  zone: main
+  name: Welcome                        # wie der Schritt den Block in der Zone findet
+  definition: title
+  view_type: title
+  parameters: { title: Welcome, tag: h1 }
+- type: layout_rule
+  mode: ensure
+  layout: landing_page
+  targets: [ { type: node, value: "remote:landing" } ]   # node und subtree nehmen jeden Bezeichner eines Knotens
+  conditions: [ { type: siteaccess, value: site } ]
+  priority: 50
+```
+
+Ein Layout wird über seinen Bezeichner genannt, ein Block über seinen Namen in einer Zone (Namen in einer Zone müssen
+sich unterscheiden), eine Regel über ihr Layout und ihre Ziele. Eine Zone, die mit einem geteilten Layout verknüpft ist,
+hat keine eigenen Blöcke: Ändern Sie sie im geteilten Layout. `{ link: none }` gibt einer Zone wieder eigene Blöcke. Ein
+Anlegen jedes der drei nimmt sich beim Zurücknehmen ohne `down:` selbst zurück; die Schritte nennen die Caches `content`
+und `template-block`, und die Dienste leeren den eigenen Cache des Layout-Resolvers.
+
+## HTTP-Anfragen, E-Mails und Konsolenbefehle
+
+Drei Schritttypen reichen aus der Installation hinaus. Keiner sendet, mailt oder führt in einem Probelauf etwas aus,
+jeder wird im Prüfprotokoll festgehalten (`system.migration.http`, `system.migration.mail`, `system.migration.command`),
+und keiner lässt sich zurücknehmen: Eine Migration mit einem davon braucht `down:` (das die Anfrage senden kann, die es
+rückgängig macht) oder eine Rücknahme auf ihren Sicherungspunkt.
+
+```yaml
+- type: http
+  method: POST
+  url: https://cdn.example.com/purge
+  bearer: cdn.token                    # der Name eines Geheimnisses (Setup > Geheimnisse, oder env:VARIABLE)
+  secret_headers: { X-Api-Key: cdn.api_key }
+  json: { paths: [ "/news/*" ] }
+  sign: migration.webhook              # signiert, wie Webhooks von Exponential signiert werden
+  expect: [ 200, 202 ]
+  references: { purge_status: status } # status, body, json
+- type: mail
+  to: [ editors@example.com ]
+  subject: The news section has a teaser image now
+  body: From today on, news items have a teaser image.
+- type: command
+  command: exp:services:compile        # ein exp:*-Befehl aus [StepSettings] CommandAllowList[]
+  arguments: [ --quiet ]
+```
+
+Geheimnisse werden genannt, nie in die Migration oder ihr Protokoll geschrieben; eine URL mit Benutzer oder Passwort wird
+abgelehnt, keiner Weiterleitung wird gefolgt, und Protokoll und Prüfprotokoll zeigen die URL ohne ihre Abfrage. Eine
+E-Mail geht über den Mailtransport der Installation (`transport: file` schreibt sie stattdessen unter `var/log/mail`),
+also gelten das Mail-Gate und die Mail-Einstellungen. `command` führt nur die `exp:*`-Befehle aus
+`migration.ini [StepSettings] CommandAllowList[]` aus (ein Name, oder ein Name mit `*` am Ende für eine Gruppe), nie
+`exp:migration:*` oder `exp:upgrade*`, und übergibt Befehl und Argumente PHP als Liste: Es gibt keine Shell, also ist ein
+`;` oder ein `$` in einem Argument ein Zeichen.
 
 ## Workflows und Benachrichtigungen
 

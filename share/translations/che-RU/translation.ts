@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ДӀадахьар доло ца делира.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Хийцамаш дӀаяздар</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ДӀаяздар доллушехь, ахь администрацехь я сайтан агӀонан панелехь хийцинарг миграцин гӀулчаш санна латтадо: чулацам, классаш, рольш а политикаш а, декъаш, лелорхой а тобанаш а, URL цӀерш, нисдарш. Чекхдаьккхинчул тӀаьхьа сацае иза, хьажа цо хӀун лаьцна, цунна тӀера миграци кхолла.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ДӀаяздарш дешан ца делира: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ДӀаяздаран таблицаш хӀинца а яц: хьалха карлайаккхар лелае (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>ДӀаяздар migration.ini чохь дӀадайина ду ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Сан хийцамаш</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ахь сацаделла ца даллалц ахь хийцинарг бен дӀа ца йоззу, мичча хийцахь а.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ДӀаяздар</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time тӀера, хӀинцалц %count хийцам.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Билгало (лаахь)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Цо хӀун лаьцна гайта</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ДӀаяздар сацо</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Сан хийцамаш дӀаяздар доладан</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Ерриге сайтан кор</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ДӀакъовлуш долчу хенахь кхаччалц хӀора лелорхочун а консолан а хӀора хийцам дӀа йоззу. Схьайоьллуш хьо хьо вуйла тӀечӀагӀдан деза.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Схьаелла</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Кор дӀакъовла</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ерриге сайтан кор схьаелла</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ДӀаяздарш</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Лелорхочун аккаунт (логин, электронан пошт, пароль) а лелорхойн аккаунтийн аренаш а цкъа а дӀа ца йоззу.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Хийцамаш</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ерриге сайт</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name хийцамаш</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Сацийна</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ХӀинца а дӀаяздар дац.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ДӀаяздар %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Массо а дӀаяздарш</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Цунна тӀера хила йолу миграци</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ХӀора хийцинчу хӀуманна цхьа гӀулч чу тоьхна хийцамаш: хӀокху дӀаяздарна тӀера кхоьллинчу миграцис хӀун дийр ду.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ХӀокху дӀахӀоттамна YAML гӀулчийн тайпанаш %types хилча цунна тӀера миграци кхолла йиш хир ю.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Хуъушехь дӀатесна: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Цхьа а хӀума дӀа ца яздина.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Цо хӀун лаьцна</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count хийцам, бина рогӀаллехь.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Хийцам</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ГӀулч</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Хьокъехь</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Кхин %count: ./console exp:migration:record:show массо а гойту.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ДӀатаса</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ДӀаяздар а цо лаьцнарг а дӀаайъа. Хийцинарг хийцина латта.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ХӀаъ, хӀара дӀаяздар дӀатаса</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ДӀаяздеш ду…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Хьан хийцамаш миграцина дӀаяздеш ду.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ХӀокху сайтехь хӀора хийцам миграцина дӀаяздеш бу (ерриге сайтан кор).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Ерриге сайтан дӀаяздар доладелла: ахь сацадаллалц хӀора лелорхочун хӀора хийцам дӀаяздийр бу.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ДӀаяздар доладелла: ахь сацадаллалц хьан хийцамаш дӀаяздийр бу.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ДӀаяздар сацийна. Цо лаьцнарг ахь дӀатосаллалц латтар ду.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ДӀаяздар а цуьнан хиламаш а дӀаайина.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id дӀаяздар дац.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Хьалха «ХӀаъ, хӀара дӀаяздар дӀатаса» билгалде.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Сессин дӀаяздар дӀаяздинчу лелорхочо бен сацо ца мега.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Сацо деза дӀаяздар харжа.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ХӀокху тайпанара дӀаяздар хӀинцале а доллуш ду.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ДӀаяздар хийца ца делира: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,8 +81617,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub-ан проектан сайт /&lt;repository&gt;/ кӀел ю; релятивни хьажоргаша цигахь а, кхечу муьлххачу меттехь а болх бо.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Гулдаро %site-н хӀора агӀо чу ца велла хьаьшша гуш санна схьаэцу, хьажоргаш юха язйо, файлаш копи йо, жамӀ Ӏалашонан папке дӀаяздо. Аша гулдар таллалц а, "Арахеца" тӀетаӀийталц а цхьа а хӀума арахоьцуш дац.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Гулдаро %site-н хӀора агӀо чу ца велла хьаьшша гуш санна схьаэцу, хьажоргаш юха язйо, файлаш копи йо, жамӀ Ӏалашонан папке дӀаяздо. Аша гулдар таллалц а, &quot;Арахеца&quot; тӀетаӀийталц а цхьа а хӀума арахоьцуш дац.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ЦӀандинчул тӀаьхьа а дебаг-аракхолладар, формин токен я сессин id долу агӀо цкъа а арахоьцуш яц.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Юхадерзор говзанчашна ду: "Ас хаьа хӀокхо хӀун хуьйцу" билгалде, тегин цӀе юха язъе.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Юхадерзор говзанчашна ду: &quot;Ас хаьа хӀокхо хӀун хуьйцу&quot; билгалде, тегин цӀе юха язъе.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Хьалххе хьажар схьаделла</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Гулдар хоста лур долчу кепехь Ӏалашонан папкера схьадиллу. Хьажорг шуна цхьана сохьтана болх беш ю.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ДӀахӀоттор &gt; Къайле хӀуманаш</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>МогӀамашкахь гойту, масала "GitHub Pages чохь юкъара сайт".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>МогӀамашкахь гойту, масала &quot;GitHub Pages чохь юкъара сайт&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Сайт цу арахецаран файлашка юхаверзар ву; хӀинца а арахецна доцу гулдар хьалха арахеца я дӀатасса деза.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Йоцучу адресашна сайтан шен агӀо.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Ӏалашо Ӏалашъян ца елира: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ӏалашо хӀинца а хӀокху догӀаца чу ца гӀо: цуьнан нисдаршкахь "ХӀокху Ӏалашонна кхоьллина деплойн догӀа" харжа.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Ӏалашо хӀинца а хӀокху догӀаца чу ца гӀо: цуьнан нисдаршкахь &quot;ХӀокху Ӏалашонна кхоьллина деплойн догӀа&quot; харжа.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ХӀара гулдар дӀатосу: папкехь юха а тӀаьххьара арахецар хир ду. Болх беш болу сайт ца хийцало.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Хьалха "Ас хийцамаш талла бина" билгалде.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Хьалха &quot;Ас хийцамаш талла бина&quot; билгалде.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>хӀаъ, хӀинца а арахецна дац</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Гулдаро %site-н хӀора агӀо чу ца велла хьаьшша гуш санна схьаэцу, хьажоргаш юха язйо, файлаш копи йо, жамӀ Ӏалашонан папке дӀаяздо. Аша гулдар таллалц а, "Арахеца" тӀетаӀийталц а цхьа а хӀума арахоьцуш дац.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Юхадерзор говзанчашна ду: "Ас хаьа хӀокхо хӀун хуьйцу" билгалде, тегин цӀе юха язъе.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Гулдар хоста лур долчу кепехь Ӏалашонан папкера схьадиллу. Хьажорг шуна цхьана сохьтана болх беш ю.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>МогӀамашкахь гойту, масала "GitHub Pages чохь юкъара сайт".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Йоцучу адресашна сайтан шен агӀо.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Ӏалашо хӀинца а хӀокху догӀаца чу ца гӀо: цуьнан нисдаршкахь "ХӀокху Ӏалашонна кхоьллина деплойн догӀа" харжа.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Хьалха "Ас хийцамаш талла бина" билгалде.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

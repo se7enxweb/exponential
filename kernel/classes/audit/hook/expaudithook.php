@@ -172,7 +172,8 @@ class expAuditHook
         {
             if ( !empty( self::$muted[$name] ) || !class_exists( 'expAudit' ) )
                 return false;
-            return expAudit::isOn( $name );
+            // a recording of changes (expMigrationRecorder) needs the event even when the audit leaves it out
+            return expAudit::isOn( $name ) || expAudit::recorderWants( $name );
         }
         catch ( Throwable $e )
         {
@@ -416,6 +417,7 @@ class expAuditHook
             return null;
         $d = array( 'type' => 'node', 'id' => (int)$node->attribute( 'node_id' ),
                     'object_id' => (int)$node->attribute( 'contentobject_id' ) );
+        self::rememberRemoteId( 'node', $d['id'], function () use ( $node ) { return $node->attribute( 'remote_id' ); } );
         $name = self::safe( function () use ( $node ) { return $node->attribute( 'name' ); } );
         if ( $name === null || $name === '' )
             $name = self::safe( function () use ( $node ) { $o = $node->object(); return $o ? $o->attribute( 'name' ) : null; } );
@@ -447,6 +449,7 @@ class expAuditHook
         if ( !$object instanceof eZContentObject )
             return null;
         $d = array( 'type' => 'object', 'id' => (int)$object->attribute( 'id' ) );
+        self::rememberRemoteId( 'object', $d['id'], function () use ( $object ) { return $object->attribute( 'remote_id' ); } );
         $name = self::safe( function () use ( $object ) { return $object->attribute( 'name' ); } );
         if ( $name !== null && $name !== '' )
             $d['name'] = (string)$name;
@@ -478,6 +481,10 @@ class expAuditHook
         if ( !$user instanceof eZUser )
             return null;
         $d = array( 'type' => 'user', 'id' => (int)$user->attribute( 'contentobject_id' ), 'login' => (string)$user->attribute( 'login' ) );
+        self::rememberRemoteId( 'object', $d['id'], function () use ( $d ) {
+            $o = eZContentObject::fetch( (int)$d['id'], false );
+            return is_array( $o ) && isset( $o['remote_id'] ) ? $o['remote_id'] : null;
+        } );
         if ( $withEmail )
             $d['email'] = (string)$user->attribute( 'email' );
         return $d;
@@ -496,6 +503,7 @@ class expAuditHook
         $object = class_exists( 'eZContentObject' ) ? eZContentObject::fetch( $objectID ) : null;
         if ( $object instanceof eZContentObject )
         {
+            self::rememberRemoteId( 'object', $objectID, function () use ( $object ) { return $object->attribute( 'remote_id' ); } );
             $user = eZUser::fetch( $objectID );
             if ( $user instanceof eZUser && $user->attribute( 'login' ) !== '' )
                 $d['login'] = (string)$user->attribute( 'login' );
@@ -729,6 +737,23 @@ class expAuditHook
         {
             return null;
         }
+    }
+
+    /**
+     * Keeps the remote id of a node or an object for the recording of changes while it still exists (a removal is
+     * recorded after it): only while a recording runs, never into the audit record.
+     *
+     * @param string $kind node or object
+     * @param int $id
+     * @param callable $remoteId returns the remote id
+     */
+    protected static function rememberRemoteId( $kind, $id, $remoteId )
+    {
+        if ( !class_exists( 'expMigrationRecorder' ) || !expMigrationRecorder::isActive() )
+            return;
+        $value = self::safe( $remoteId );
+        if ( is_string( $value ) && $value !== '' )
+            expMigrationRecordingResolver::remember( $kind, (int)$id, $value );
     }
 
     protected static function failed( Throwable $e, $name )

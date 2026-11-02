@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>رن شروع نہیں کیتا جا سکیا۔</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>تبدیلیاں ریکارڈ کرنا</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>جدوں تک ریکارڈنگ چل رہی اے، تسیں انتظامیہ وچ یا سائٹ دی سائیڈ بار وچ جو بدلدے او اوہ اک منتقلی دے قدماں وانگ سانبھیا جاندا اے: مواد، کلاساں، کردار تے پالیسیاں، حصے، ورتن والے تے ٹولیاں، URL دوجے ناں، ترتیباں۔ کم پورا ہون تے اینوں روکو، ویکھو ایہنے کی پھڑیا، تے ایہدے توں اک منتقلی بناؤ۔</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ریکارڈنگاں پڑھیاں نہیں جا سکیاں: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ریکارڈنگاں دیاں جدولاں اجے نہیں: پہلاں اپ گریڈ چلاؤ (exp:upgrade --apply)۔</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini وچ ریکارڈنگ بند اے ([RecordingSettings] Recording=disabled)۔</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>میریاں تبدیلیاں</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>جدوں تک تسیں نہ روکو، صرف اوہی ریکارڈ کردی اے جو تسیں بدلدے او، جتھے وی بدلو۔</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ریکارڈنگ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time توں، ہن تک %count تبدیلیاں۔</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>لیبل (اپنی مرضی)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>وکھاؤ ایہنے کی پھڑیا</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ریکارڈنگ روکو</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>میریاں تبدیلیاں دی ریکارڈنگ شروع کرو</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>ساری سائٹ دی باری</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>بند ہون تک ہر ورتن والے تے کنسول دی ہر تبدیلی ریکارڈ کردی اے۔ کھولن ویلے تہاتھوں پکا کرن لئی کہیا جاندا اے پئی ایہہ تسیں او۔</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>کھلی</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>باری بند کرو</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>ساری سائٹ دی باری کھولو</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ریکارڈنگاں</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ورتن والے دا کھاتہ (لاگ ان، ای میل، پاس ورڈ) تے ورتن والیاں دے کھاتیاں دے خانے کدے ریکارڈ نہیں ہوندے۔</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>تبدیلیاں</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ساری سائٹ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name دیاں تبدیلیاں</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>رکی ہوئی</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>اجے کوئی ریکارڈنگ نہیں۔</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ریکارڈنگ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ساریاں ریکارڈنگاں</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ایہدے توں بنن والی منتقلی</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ہر بدلی ہوئی شے لئی اک قدم وچ کٹھیاں تبدیلیاں: ایس ریکارڈنگ توں بنی منتقلی کی کرے گی۔</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>جدوں ایس تنصیب وچ YAML قدم قسماں %types ہون گیاں تاں ایہدے توں منتقلی بنائی جا سکے گی۔</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>جان بُجھ کے چھڈیا: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>کجھ وی ریکارڈ نہیں ہویا۔</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ایہنے کی پھڑیا</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count تبدیلیاں، اوسے ترتیب وچ جیہدے وچ کیتیاں گئیاں۔</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تبدیلی</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>قدم</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>بارے</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>ہور %count: ./console exp:migration:record:show ساریاں دی لسٹ دیندا اے۔</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>سُٹو</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ریکارڈنگ تے جو ایہنے پھڑیا اوہ ہٹا دیندا اے۔ جو بدلیا اوہ بدلیا ای رہندا اے۔</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ہاں، ایہہ ریکارڈنگ سُٹو</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ریکارڈ ہو رہی اے…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>تہاڈیاں تبدیلیاں اک منتقلی لئی ریکارڈ ہو رہیاں نیں۔</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ایس سائٹ دی ہر تبدیلی اک منتقلی لئی ریکارڈ ہو رہی اے (ساری سائٹ دی باری)۔</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ساری سائٹ دی ریکارڈنگ شروع ہو گئی: جدوں تک تسیں نہ روکو، ہر ورتن والے دی ہر تبدیلی ریکارڈ ہووے گی۔</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ریکارڈنگ شروع ہو گئی: جدوں تک تسیں نہ روکو، تہاڈیاں تبدیلیاں ریکارڈ ہون گیاں۔</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ریکارڈنگ رک گئی۔ جو ایہنے پھڑیا اوہ سُٹن تک رہوے گا۔</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ریکارڈنگ تے ایہدیاں گلاں ہٹا دتیاں گئیاں۔</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>کوئی ریکارڈنگ %id نہیں۔</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>پہلاں "ہاں، ایہہ ریکارڈنگ سُٹو" تے نشان لاؤ۔</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>سیشن ریکارڈنگ صرف اوہی ورتن والا روک سکدا اے جیہنے ریکارڈ کیتی۔</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>روکن لئی ریکارڈنگ چنو۔</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ایس قسم دی ریکارڈنگ پہلاں ای چل رہی اے۔</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ریکارڈنگ بدلی نہیں جا سکی: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub پراجیکٹ سائٹ /&lt;repository&gt;/ دے تھلے رہندی اے؛ ریلیٹو لنک اوتھے تے ہر ہور تھاں کم کردے نیں۔</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>اک بلڈ %site دا ہر صفحہ اونج لیندا اے جیویں سائن اِن نہ کیتا وزیٹر اوہنوں ویکھدا اے، لنک دوبارہ لکھدا اے، فائلاں کاپی کردا اے تے نتیجہ ہدف دے فولڈر وچ لکھدا اے۔ جدوں تیک تسیں بلڈ نہ جانچو تے شائع کرو نہ دباؤ، کجھ وی شائع نہیں ہوندا۔</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>جیہڑا صفحہ صفائی توں بعد وی ڈیبگ آؤٹ پٹ، فارم ٹوکن یا سیشن id رکھدا ہووے، اوہ کدی شائع نہیں ہوندا۔</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>واپسی ماہراں لئی اے: "مینوں پتہ اے ایہ کیہ بدلدا اے" تے نشان لاؤ تے ٹیگ دا ناں فیر لکھو۔</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>واپسی ماہراں لئی اے: &quot;مینوں پتہ اے ایہ کیہ بدلدا اے&quot; تے نشان لاؤ تے ٹیگ دا ناں فیر لکھو۔</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>پیش منظر کھولو</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>بلڈ نوں ہدف دے فولڈر توں اونج کھولدا اے جیویں ہوسٹ ایہنوں دیوے گا۔ لنک تہاڈے لئی اک گھنٹہ کم کردا اے۔</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>سیٹ اپ &gt; خفیہ معلومات</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>لسٹاں وچ وکھایا جاندا اے، مثال دے طور تے "GitHub Pages تے عوامی سائٹ"۔</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>لسٹاں وچ وکھایا جاندا اے، مثال دے طور تے &quot;GitHub Pages تے عوامی سائٹ&quot;۔</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>سائٹ اوس اشاعت دیاں فائلاں ول واپس جاندی اے؛ حالے شائع نہ ہویا بلڈ پہلاں شائع کرنا یا سٹنا پوے گا۔</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>اوہناں پتیاں لئی سائٹ دا اپنا صفحہ جیہڑے موجود نہیں۔</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ہدف محفوظ نہیں کیتا جا سکیا: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ہدف حالے ایس کنجی نال سائن اِن نہیں کردا: اوہدیاں سیٹنگاں وچ "ایس ہدف لئی بنائی گئی ڈیپلائے کنجی" چنو۔</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ہدف حالے ایس کنجی نال سائن اِن نہیں کردا: اوہدیاں سیٹنگاں وچ &quot;ایس ہدف لئی بنائی گئی ڈیپلائے کنجی&quot; چنو۔</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ایہ بلڈ سٹ دیندا اے: فولڈر وچ فیر آخری اشاعت ہووے گی۔ لائیو سائٹ نہیں بدلدی۔</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>پہلاں "میں تبدیلیاں جانچ لئیاں نیں" تے نشان لاؤ۔</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>پہلاں &quot;میں تبدیلیاں جانچ لئیاں نیں&quot; تے نشان لاؤ۔</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>ہاں، حالے شائع نہیں ہویا</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>اک بلڈ %site دا ہر صفحہ اونج لیندا اے جیویں سائن اِن نہ کیتا وزیٹر اوہنوں ویکھدا اے، لنک دوبارہ لکھدا اے، فائلاں کاپی کردا اے تے نتیجہ ہدف دے فولڈر وچ لکھدا اے۔ جدوں تیک تسیں بلڈ نہ جانچو تے شائع کرو نہ دباؤ، کجھ وی شائع نہیں ہوندا۔</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>واپسی ماہراں لئی اے: "مینوں پتہ اے ایہ کیہ بدلدا اے" تے نشان لاؤ تے ٹیگ دا ناں فیر لکھو۔</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>بلڈ نوں ہدف دے فولڈر توں اونج کھولدا اے جیویں ہوسٹ ایہنوں دیوے گا۔ لنک تہاڈے لئی اک گھنٹہ کم کردا اے۔</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>لسٹاں وچ وکھایا جاندا اے، مثال دے طور تے "GitHub Pages تے عوامی سائٹ"۔</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>اوہناں پتیاں لئی سائٹ دا اپنا صفحہ جیہڑے موجود نہیں۔</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ہدف حالے ایس کنجی نال سائن اِن نہیں کردا: اوہدیاں سیٹنگاں وچ "ایس ہدف لئی بنائی گئی ڈیپلائے کنجی" چنو۔</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>پہلاں "میں تبدیلیاں جانچ لئیاں نیں" تے نشان لاؤ۔</translation>
     </message>
     <message>
         <source>A GitHub App</source>

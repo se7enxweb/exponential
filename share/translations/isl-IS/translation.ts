@@ -80620,6 +80620,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Ekki tókst að ræsa keyrsluna.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Taka upp breytingar</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Á meðan upptaka er í gangi er það sem þú breytir í stjórnborðinu eða í hliðarstiku vefsins geymt sem skref í flutningi: efni, klasar, hlutverk og reglur, hlutar, notendur og hópar, vefslóðasamheiti, stillingar. Stöðvaðu hana þegar þú ert búin(n), skoðaðu hvað hún fangaði og búðu til flutning úr henni.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ekki tókst að lesa upptökurnar: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Töflur upptakanna eru ekki til enn: keyrðu fyrst uppfærsluna (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Slökkt er á upptöku í migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Breytingarnar mínar</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Tekur aðeins upp það sem þú breytir, hvar sem þú breytir því, þar til þú stöðvar hana.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Upptaka</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>frá %time, %count breyting(ar) hingað til.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Merki (valfrjálst)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Sýna hvað hún fangaði</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Stöðva upptöku</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Hefja upptöku á breytingunum mínum</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Gluggi fyrir allan vefinn</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Tekur upp hverja breytingu hvers notanda og skipanalínunnar þar til honum er lokað. Þegar hann er opnaður ertu beðin(n) að staðfesta að þetta sért þú.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Opinn</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Loka glugganum</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Opna glugga fyrir allan vefinn</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Upptökur</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Aðgangur notanda (notandanafn, netfang, lykilorð) og reitir notendaaðganga eru aldrei teknir upp.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Breytingar</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Allur vefurinn</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Breytingar %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Stöðvuð</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Engin upptaka enn.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Upptaka %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Allar upptökur</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Flutningurinn sem hún myndi búa til</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Breytingarnar dregnar saman í eitt skref fyrir hvern breyttan hlut: það sem flutningur gerður úr þessari upptöku myndi gera.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Hægt er að búa til flutning úr henni þegar þessi uppsetning hefur YAML-skrefagerðirnar %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Sleppt viljandi: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ekkert var tekið upp.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Hvað hún fangaði</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count breyting(ar), í þeirri röð sem þær voru gerðar.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Breyting</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Skref</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Varðar</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count í viðbót: ./console exp:migration:record:show sýnir allar.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Fleygja</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Fjarlægir upptökuna og það sem hún fangaði. Það sem var breytt helst breytt.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Já, fleygja þessari upptöku</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Tekur upp…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Breytingarnar þínar eru teknar upp fyrir flutning.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Hver breyting á þessum vef er tekin upp fyrir flutning (gluggi fyrir allan vefinn).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Upptaka fyrir allan vefinn er hafin: hver breyting hvers notanda er tekin upp þar til þú stöðvar hana.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Upptaka er hafin: breytingarnar þínar eru teknar upp þar til þú stöðvar hana.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Upptaka stöðvuð. Það sem hún fangaði helst þar til þú fleygir henni.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Upptakan og atburðir hennar hafa verið fjarlægð.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Engin upptaka %id er til.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Hakaðu fyrst við „Já, fleygja þessari upptöku“.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Aðeins notandinn sem tók upp má stöðva setuupptöku.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Veldu upptökuna sem á að stöðva.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Upptaka af þessari gerð er þegar í gangi.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Ekki tókst að breyta upptökunni: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81431,7 +81647,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub-verkefnisvefur er undir /&lt;repository&gt;/; afstæðir tenglar virka þar og alls staðar annars staðar.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Smíð sækir hverja síðu %site eins og óinnskráður gestur sér hana, endurskrifar tenglana, afritar skrárnar og skrifar niðurstöðuna í möppu áfangastaðarins. Ekkert er birt fyrr en þú hefur farið yfir smíðina og ýtt á Birta.</translation>
     </message>
     <message>
@@ -81479,7 +81695,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Síða sem enn inniheldur villuleitarúttak, eyðublaðstóka eða setuauðkenni eftir hreinsun er aldrei birt.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>Afturköllun er fyrir sérfræðinga: hakaðu við „Ég veit hverju þetta breytir“ og sláðu inn heiti merkisins aftur.</translation>
     </message>
     <message>
@@ -81991,7 +82207,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Opna forskoðunina</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Opnar smíðina eins og hýsingin mun birta hana, úr möppu áfangastaðarins. Tengillinn virkar fyrir þig í klukkustund.</translation>
     </message>
     <message>
@@ -82167,7 +82383,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Uppsetning &gt; Leyndarmál</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>Sýnt í listum, til dæmis „Opinber vefur á GitHub Pages“.</translation>
     </message>
     <message>
@@ -82375,7 +82591,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Vefurinn fer aftur í skrár þeirrar birtingar; smíð sem er ekki birt enn verður fyrst að birta eða henda.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Eigin síða vefsins fyrir slóðir sem eru ekki til.</translation>
     </message>
     <message>
@@ -82383,7 +82599,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Ekki tókst að vista áfangastaðinn: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>Áfangastaðurinn skráir sig ekki enn inn með þessum lykli: veldu „Dreifingarlykill búinn til fyrir þennan áfangastað“ í stillingum hans.</translation>
     </message>
     <message>
@@ -82419,7 +82635,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Hendir þessari smíð: mappan geymir síðustu birtingu aftur. Lifandi vefurinn breytist ekki.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>Hakaðu fyrst við „Ég hef farið yfir breytingarnar“.</translation>
     </message>
     <message>
@@ -82641,6 +82857,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>já, ekki birt enn</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Smíð sækir hverja síðu %site eins og óinnskráður gestur sér hana, endurskrifar tenglana, afritar skrárnar og skrifar niðurstöðuna í möppu áfangastaðarins. Ekkert er birt fyrr en þú hefur farið yfir smíðina og ýtt á Birta.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Afturköllun er fyrir sérfræðinga: hakaðu við „Ég veit hverju þetta breytir“ og sláðu inn heiti merkisins aftur.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Opnar smíðina eins og hýsingin mun birta hana, úr möppu áfangastaðarins. Tengillinn virkar fyrir þig í klukkustund.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Sýnt í listum, til dæmis „Opinber vefur á GitHub Pages“.</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Eigin síða vefsins fyrir slóðir sem eru ekki til.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Áfangastaðurinn skráir sig ekki enn inn með þessum lykli: veldu „Dreifingarlykill búinn til fyrir þennan áfangastað“ í stillingum hans.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Hakaðu fyrst við „Ég hef farið yfir breytingarnar“.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

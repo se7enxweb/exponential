@@ -15099,7 +15099,7 @@ Nota: els paquets no es desinstal·laran.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Publica una còpia estàtica d'un lloc a GitHub Pages o a qualsevol servidor git.</translation>
+        <translation>Publica una còpia estàtica d&apos;un lloc a GitHub Pages o a qualsevol servidor git.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22115,7 +22115,7 @@ Nota: els paquets no es desinstal·laran.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>La memòria cau estàtica serveix pàgines des d'aquest servidor. Per publicar una còpia estàtica d'un lloc en un altre indret, a GitHub Pages o a qualsevol servidor git, fes servir la publicació estàtica.</translation>
+        <translation>La memòria cau estàtica serveix pàgines des d&apos;aquest servidor. Per publicar una còpia estàtica d&apos;un lloc en un altre indret, a GitHub Pages o a qualsevol servidor git, fes servir la publicació estàtica.</translation>
     </message>
 </context>
 <context>
@@ -76175,7 +76175,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Publica una còpia estàtica d'un lloc a GitHub Pages o a qualsevol servidor git.</translation>
+        <translation>Publica una còpia estàtica d&apos;un lloc a GitHub Pages o a qualsevol servidor git.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -80620,6 +80620,222 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>The run could not be started.</source>
         <translation>No s&apos;ha pogut iniciar l&apos;execució.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Enregistrar canvis</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Mentre un enregistrament està en marxa, el que canvies a l'administració o a la barra lateral del lloc es guarda com a passos d'una migració: contingut, classes, rols i polítiques, seccions, usuaris i grups, àlies d'URL, configuració. Atura'l quan acabis, mira el que ha capturat i genera'n una migració.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>No s'han pogut llegir els enregistraments: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Les taules dels enregistraments encara no existeixen: executa primer l'actualització (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>L'enregistrament està desactivat a migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Els meus canvis</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Enregistra només el que tu canvies, allà on ho canviïs, fins que l'aturis.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Enregistrament</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>des de %time, %count canvi(s) fins ara.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiqueta (opcional)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Mostra el que ha capturat</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Atura l'enregistrament</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Comença a enregistrar els meus canvis</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Finestra per a tot el lloc</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Enregistra cada canvi de cada usuari i de la consola fins que es tanqui. En obrir-la se't demana que verifiquis que ets tu.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Oberta</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Tanca la finestra</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Obre la finestra per a tot el lloc</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Enregistraments</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>El compte d'un usuari (nom d'usuari, correu electrònic, contrasenya) i els camps dels comptes d'usuari no s'enregistren mai.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Canvis</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tot el lloc</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Canvis de %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Aturat</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Encara no hi ha cap enregistrament.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Enregistrament %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Tots els enregistraments</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>La migració que en sortiria</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Els canvis agrupats en un pas per cada element canviat: el que faria una migració generada a partir d'aquest enregistrament.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Se'n podrà generar una migració quan aquesta instal·lació tingui els tipus de pas YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Omès expressament: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>No s'ha enregistrat res.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>El que ha capturat</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count canvi(s), en l'ordre en què es van fer.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Canvi</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Pas</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Afecta</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count més: ./console exp:migration:record:show els llista tots.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Descarta</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Elimina l'enregistrament i el que ha capturat. El que s'ha canviat continua canviat.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Sí, descarta aquest enregistrament</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Enregistrant…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Els teus canvis s'enregistren per a una migració.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Cada canvi en aquest lloc s'enregistra per a una migració (finestra per a tot el lloc).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>L'enregistrament de tot el lloc ha començat: cada canvi de cada usuari s'enregistra fins que l'aturis.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>L'enregistrament ha començat: els teus canvis s'enregistren fins que l'aturis.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Enregistrament aturat. El que ha capturat es manté fins que el descartis.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>S'han eliminat l'enregistrament i els seus esdeveniments.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>No hi ha cap enregistrament %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Marca primer «Sí, descarta aquest enregistrament».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Només l'usuari que ha enregistrat pot aturar un enregistrament de sessió.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Tria l'enregistrament que vols aturar.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ja hi ha un enregistrament d'aquest tipus en marxa.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>No s'ha pogut canviar l'enregistrament: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81317,7 +81533,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>No s'han pogut llegir les destinacions: %problem</translation>
+        <translation>No s&apos;han pogut llegir les destinacions: %problem</translation>
     </message>
     <message>
         <source>a job is going on</source>
@@ -81356,7 +81572,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>%count more are not listed.</source>
-        <translation>N'hi ha %count més que no es llisten.</translation>
+        <translation>N&apos;hi ha %count més que no es llisten.</translation>
     </message>
     <message>
         <source>%pages pages written</source>
@@ -81388,7 +81604,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
-        <translation>/repositori/ per a un lloc de projecte de GitHub; buit per a un domini propi o un lloc d'usuari.</translation>
+        <translation>/repositori/ per a un lloc de projecte de GitHub; buit per a un domini propi o un lloc d&apos;usuari.</translation>
     </message>
     <message>
         <source>1. The site</source>
@@ -81431,7 +81647,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <translation>Un lloc de projecte de GitHub es troba sota /&lt;repository&gt;/; els enllaços relatius hi funcionen, i a qualsevol altre lloc també.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Una compilació obté cada pàgina de %site tal com la veu un visitant que no ha iniciat sessió, reescriu els enllaços, copia els fitxers i escriu el resultat a la carpeta de la destinació. No es publica res fins que revises la compilació i prems «Publica».</translation>
     </message>
     <message>
@@ -81452,7 +81668,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
-        <translation>Una clau de desplegament accedeix per SSH: canvia l'adreça git per la de SSH (git@github.com:owner/repo.git).</translation>
+        <translation>Una clau de desplegament accedeix per SSH: canvia l&apos;adreça git per la de SSH (git@github.com:owner/repo.git).</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
@@ -81460,27 +81676,27 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Encara hi ha una tasca d'aquesta destinació en curs (%detail). Espera que acabi.</translation>
+        <translation>Encara hi ha una tasca d&apos;aquesta destinació en curs (%detail). Espera que acabi.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Encara hi ha una tasca d'aquesta destinació en curs. Espera que acabi.</translation>
+        <translation>Encara hi ha una tasca d&apos;aquesta destinació en curs. Espera que acabi.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
-        <translation>Un enllaç de la pàgina /news/ a la pàgina /about-us/team s'escriurà així:</translation>
+        <translation>Un enllaç de la pàgina /news/ a la pàgina /about-us/team s&apos;escriurà així:</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
-        <translation>S'ha creat una clau de desplegament nova. Afegeix ara la seva meitat pública al repositori.</translation>
+        <translation>S&apos;ha creat una clau de desplegament nova. Afegeix ara la seva meitat pública al repositori.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
         <translation>Una pàgina que després de la neteja encara conté sortida de depuració, un testimoni de formulari o un identificador de sessió no es publica mai.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Desfer és per a experts: marca «Sé què canvia això» i torna a escriure el nom de l'etiqueta.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Desfer és per a experts: marca «Sé què canvia això» i torna a escriure el nom de l&apos;etiqueta.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81504,7 +81720,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
-        <translation>Afegeix aquesta clau pública al repositori amb accés d'escriptura. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, marca Allow write access.</translation>
+        <translation>Afegeix aquesta clau pública al repositori amb accés d&apos;escriptura. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, marca Allow write access.</translation>
     </message>
     <message>
         <source>Added</source>
@@ -81620,7 +81836,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
-        <translation>Confirma la compilació, l'etiqueta i la puja a %remote. La pujada no es força mai; més endavant pots tornar a qualsevol publicació.</translation>
+        <translation>Confirma la compilació, l&apos;etiqueta i la puja a %remote. La pujada no es força mai; més endavant pots tornar a qualsevol publicació.</translation>
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
@@ -81640,7 +81856,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
-        <translation>La sortida de depuració, els testimonis de formulari, els identificadors de sessió i els nonces sempre s'eliminen.</translation>
+        <translation>La sortida de depuració, els testimonis de formulari, els identificadors de sessió i els nonces sempre s&apos;eliminen.</translation>
     </message>
     <message>
         <source>Deploy key</source>
@@ -81664,7 +81880,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Buit: l'adreça del lloc. Si no, una adreça interna del mateix lloc.</translation>
+        <translation>Buit: l&apos;adreça del lloc. Si no, una adreça interna del mateix lloc.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -81676,7 +81892,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>Cada publicació és una confirmació amb una etiqueta static/%id/&lt;n&gt;. Tornar enrere crea una confirmació nova amb els fitxers d'una publicació anterior: l'historial es manté, cap etiqueta no es mou i no es força res.</translation>
+        <translation>Cada publicació és una confirmació amb una etiqueta static/%id/&lt;n&gt;. Tornar enrere crea una confirmació nova amb els fitxers d&apos;una publicació anterior: l&apos;historial es manté, cap etiqueta no es mou i no es força res.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -81704,7 +81920,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Files that could not be collected</source>
-        <translation>Fitxers que no s'han pogut recollir</translation>
+        <translation>Fitxers que no s&apos;han pogut recollir</translation>
     </message>
     <message>
         <source>Fingerprint</source>
@@ -81732,7 +81948,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Free hosting from a GitHub repository.</source>
-        <translation>Allotjament gratuït des d'un repositori de GitHub.</translation>
+        <translation>Allotjament gratuït des d&apos;un repositori de GitHub.</translation>
     </message>
     <message>
         <source>From the branch</source>
@@ -81768,7 +81984,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>GitHub serves the branch as it is pushed. The default.</source>
-        <translation>GitHub serveix la branca tal com s'ha pujat. Opció per defecte.</translation>
+        <translation>GitHub serveix la branca tal com s&apos;ha pujat. Opció per defecte.</translation>
     </message>
     <message>
         <source>GitLab, Gitea, your own server: any git repository.</source>
@@ -81784,11 +82000,11 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Help with the wizard</source>
-        <translation>Ajuda amb l'assistent</translation>
+        <translation>Ajuda amb l&apos;assistent</translation>
     </message>
     <message>
         <source>Hide them</source>
-        <translation>Amaga'ls</translation>
+        <translation>Amaga&apos;ls</translation>
     </message>
     <message>
         <source>History</source>
@@ -81820,11 +82036,11 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>It is switched off: nothing can be built until it is on.</source>
-        <translation>Està desactivada: no es pot compilar res fins que s'activi.</translation>
+        <translation>Està desactivada: no es pot compilar res fins que s&apos;activi.</translation>
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>S'executa en segon pla com a %user; pots tancar aquesta pàgina.</translation>
+        <translation>S&apos;executa en segon pla com a %user; pots tancar aquesta pàgina.</translation>
     </message>
     <message>
         <source>Job %id</source>
@@ -81924,11 +82140,11 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>No key was made: %problem</source>
-        <translation>No s'ha creat cap clau: %problem</translation>
+        <translation>No s&apos;ha creat cap clau: %problem</translation>
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>No s'ha trobat cap executable de línia d'ordres de php. Defineix la ruta completa a migration.ini [AdminSettings] PhpCliPath.</translation>
+        <translation>No s&apos;ha trobat cap executable de línia d&apos;ordres de php. Defineix la ruta completa a migration.ini [AdminSettings] PhpCliPath.</translation>
     </message>
     <message>
         <source>No tag yet.</source>
@@ -81948,11 +82164,11 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Nothing was published yet.</source>
-        <translation>Encara no s'ha publicat res.</translation>
+        <translation>Encara no s&apos;ha publicat res.</translation>
     </message>
     <message>
         <source>Nothing was published yet: every file is new.</source>
-        <translation>Encara no s'ha publicat res: tots els fitxers són nous.</translation>
+        <translation>Encara no s&apos;ha publicat res: tots els fitxers són nous.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -81984,19 +82200,19 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>Només amb un testimoni. env:NAME llegeix en canvi una variable d'entorn del servidor.</translation>
+        <translation>Només amb un testimoni. env:NAME llegeix en canvi una variable d&apos;entorn del servidor.</translation>
     </message>
     <message>
         <source>Open the preview</source>
         <translation>Obre la vista prèvia</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Obre la compilació tal com la servirà el servidor, des de la carpeta de la destinació. L'enllaç et funciona durant una hora.</translation>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Obre la compilació tal com la servirà el servidor, des de la carpeta de la destinació. L&apos;enllaç et funciona durant una hora.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
-        <translation>Opcional. Buit: el que s'ha publicat.</translation>
+        <translation>Opcional. Buit: el que s&apos;ha publicat.</translation>
     </message>
     <message>
         <source>Optional. With a domain the site is served at its root.</source>
@@ -82056,7 +82272,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Publica una còpia estàtica d'un lloc a GitHub Pages o a qualsevol servidor git: compila-la, comprova els canvis, publica-la i torna a una publicació anterior quan calgui.</translation>
+        <translation>Publica una còpia estàtica d&apos;un lloc a GitHub Pages o a qualsevol servidor git: compila-la, comprova els canvis, publica-la i torna a una publicació anterior quan calgui.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -82096,7 +82312,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Replace the key: the old one stops working</source>
-        <translation>Substitueix la clau: l'antiga deixa de funcionar</translation>
+        <translation>Substitueix la clau: l&apos;antiga deixa de funcionar</translation>
     </message>
     <message>
         <source>Report</source>
@@ -82116,7 +82332,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
-        <translation>La revisió comprova cada paràmetre i mostra les línies que s'escriuran. Encara no s'ha desat res.</translation>
+        <translation>La revisió comprova cada paràmetre i mostra les línies que s&apos;escriuran. Encara no s&apos;ha desat res.</translation>
     </message>
     <message>
         <source>Roll back</source>
@@ -82167,12 +82383,12 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <translation>Configuració &gt; Secrets</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>Es mostra a les llistes, per exemple «Lloc públic a GitHub Pages».</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>L'accés amb una GitHub App arribarà amb la integració de GitHub.</translation>
+        <translation>L&apos;accés amb una GitHub App arribarà amb la integració de GitHub.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -82268,7 +82484,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
-        <translation>Es poden crear i canviar destinacions, però no es compila ni es publica res fins que s'activi.</translation>
+        <translation>Es poden crear i canviar destinacions, però no es compila ni es publica res fins que s&apos;activi.</translation>
     </message>
     <message>
         <source>Tells search engines what to read.</source>
@@ -82276,7 +82492,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>The build could not be thrown away: %problem</source>
-        <translation>No s'ha pogut descartar la compilació: %problem</translation>
+        <translation>No s&apos;ha pogut descartar la compilació: %problem</translation>
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
@@ -82284,7 +82500,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
-        <translation>S'ha descartat la compilació: la carpeta torna a contenir la darrera publicació.</translation>
+        <translation>S&apos;ha descartat la compilació: la carpeta torna a contenir la darrera publicació.</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
@@ -82300,15 +82516,15 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
-        <translation>No s'ha pogut preparar la tasca: %detail</translation>
+        <translation>No s&apos;ha pogut preparar la tasca: %detail</translation>
     </message>
     <message>
         <source>The job could not be started.</source>
-        <translation>No s'ha pogut iniciar la tasca.</translation>
+        <translation>No s&apos;ha pogut iniciar la tasca.</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>La tasca ha acabat. S'està carregant el seu informe.</translation>
+        <translation>La tasca ha acabat. S&apos;està carregant el seu informe.</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
@@ -82316,7 +82532,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
-        <translation>La tasca s'ha iniciat però no ha informat de l'identificador del procés. Comprova %detail.</translation>
+        <translation>La tasca s&apos;ha iniciat però no ha informat de l&apos;identificador del procés. Comprova %detail.</translation>
     </message>
     <message>
         <source>The key</source>
@@ -82328,19 +82544,19 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>The lines that will be written</source>
-        <translation>Les línies que s'escriuran</translation>
+        <translation>Les línies que s&apos;escriuran</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>La llista de pàgines per als motors de cerca; necessita l'adreça pública.</translation>
+        <translation>La llista de pàgines per als motors de cerca; necessita l&apos;adreça pública.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Les pàgines s'obtenen tal com les veu un visitant que no ha iniciat sessió. Els siteaccess d'administració i d'edició no s'ofereixen mai.</translation>
+        <translation>Les pàgines s&apos;obtenen tal com les veu un visitant que no ha iniciat sessió. Els siteaccess d&apos;administració i d&apos;edició no s&apos;ofereixen mai.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>No s'ha pogut seguir el progrés. Torna a carregar la pàgina per veure com va la tasca.</translation>
+        <translation>No s&apos;ha pogut seguir el progrés. Torna a carregar la pàgina per veure com va la tasca.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
@@ -82348,7 +82564,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>The root of the branch</source>
-        <translation>L'arrel de la branca</translation>
+        <translation>L&apos;arrel de la branca</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
@@ -82360,11 +82576,11 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
-        <translation>No s'ha pogut escriure el paràmetre: %problem</translation>
+        <translation>No s&apos;ha pogut escriure el paràmetre: %problem</translation>
     </message>
     <message>
         <source>The settings are valid. These lines will be written:</source>
-        <translation>La configuració és vàlida. S'escriuran aquestes línies:</translation>
+        <translation>La configuració és vàlida. S&apos;escriuran aquestes línies:</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -82372,23 +82588,23 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>El lloc torna als fitxers d'aquella publicació; abans cal publicar o descartar una compilació encara no publicada.</translation>
+        <translation>El lloc torna als fitxers d&apos;aquella publicació; abans cal publicar o descartar una compilació encara no publicada.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>La pàgina pròpia del lloc per a les adreces que no existeixen.</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
-        <translation>No s'ha pogut desar la destinació: %problem</translation>
+        <translation>No s&apos;ha pogut desar la destinació: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>La destinació encara no accedeix amb aquesta clau: tria «Una clau de desplegament creada per a aquesta destinació» a la seva configuració.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>No s'han pogut llegir les destinacions: %problem</translation>
+        <translation>No s&apos;han pogut llegir les destinacions: %problem</translation>
     </message>
     <message>
         <source>There is no build to check yet.</source>
@@ -82396,7 +82612,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
-        <translation>Aquesta instal·lació no té cap siteaccess públic. Els siteaccess d'administració i d'edició no es publiquen mai.</translation>
+        <translation>Aquesta instal·lació no té cap siteaccess públic. Els siteaccess d&apos;administració i d&apos;edició no es publiquen mai.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
@@ -82408,7 +82624,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>This target has not been built here yet.</source>
-        <translation>Aquesta destinació encara no s'ha compilat aquí.</translation>
+        <translation>Aquesta destinació encara no s&apos;ha compilat aquí.</translation>
     </message>
     <message>
         <source>This target has one.</source>
@@ -82419,7 +82635,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <translation>Descarta aquesta compilació: la carpeta torna a contenir la darrera publicació. El lloc en línia no canvia.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>Marca primer «He revisat els canvis».</translation>
     </message>
     <message>
@@ -82432,7 +82648,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Type the name of the tag again</source>
-        <translation>Torna a escriure el nom de l'etiqueta</translation>
+        <translation>Torna a escriure el nom de l&apos;etiqueta</translation>
     </message>
     <message>
         <source>Unchanged</source>
@@ -82452,7 +82668,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>What each file is; always written.</source>
-        <translation>Què és cada fitxer; s'escriu sempre.</translation>
+        <translation>Què és cada fitxer; s&apos;escriu sempre.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
@@ -82484,11 +82700,11 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>On van els enllaços a allò que la còpia no conté (la cerca, l'inici de sessió).</translation>
+        <translation>On van els enllaços a allò que la còpia no conté (la cerca, l&apos;inici de sessió).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
-        <translation>Des d'on se serveix la còpia estàtica.</translation>
+        <translation>Des d&apos;on se serveix la còpia estàtica.</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
@@ -82500,7 +82716,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Written whenever a custom domain is set.</source>
-        <translation>S'escriu sempre que hi ha un domini propi definit.</translation>
+        <translation>S&apos;escriu sempre que hi ha un domini propi definit.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -82636,11 +82852,39 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: s'escriu al fitxer CNAME. Apunta el DNS del domini al servidor tal com ho explica; HTTPS pot trigar una estona a funcionar.</translation>
+        <translation>www.example.com: s&apos;escriu al fitxer CNAME. Apunta el DNS del domini al servidor tal com ho explica; HTTPS pot trigar una estona a funcionar.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>sí, encara no publicat</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Una compilació obté cada pàgina de %site tal com la veu un visitant que no ha iniciat sessió, reescriu els enllaços, copia els fitxers i escriu el resultat a la carpeta de la destinació. No es publica res fins que revises la compilació i prems «Publica».</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Desfer és per a experts: marca «Sé què canvia això» i torna a escriure el nom de l'etiqueta.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Obre la compilació tal com la servirà el servidor, des de la carpeta de la destinació. L'enllaç et funciona durant una hora.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Es mostra a les llistes, per exemple «Lloc públic a GitHub Pages».</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>La pàgina pròpia del lloc per a les adreces que no existeixen.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>La destinació encara no accedeix amb aquesta clau: tria «Una clau de desplegament creada per a aquesta destinació» a la seva configuració.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Marca primer «He revisat els canvis».</translation>
     </message>
     <message>
         <source>A GitHub App</source>

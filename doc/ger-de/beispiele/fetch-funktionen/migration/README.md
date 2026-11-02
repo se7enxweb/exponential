@@ -14,6 +14,7 @@ Definiert in `kernel/migration/function_definition.php`. Ein mit * markierter Pa
 
 | Funktion | Parameter |
 |---|---|
+| [recording](recording.md) |  |
 | [summary](summary.md) |  |
 
 - [Alle Beispiele](../../README.md)

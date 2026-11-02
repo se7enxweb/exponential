@@ -80620,6 +80620,222 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>The run could not be started.</source>
         <translation>Níorbh fhéidir an rith a thosú.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Athruithe a thaifeadadh</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Fad is atá taifeadadh ar siúl, coinnítear a n-athraíonn tú sa riarachán nó i mbarra taoibh an tsuímh mar chéimeanna d'imirce: ábhar, ranganna, róil agus polasaithe, rannáin, úsáideoirí agus grúpaí, ailiasanna URL, socruithe. Stop é nuair atá tú réidh, féach ar a bhfuair sé agus gin imirce uaidh.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Níorbh fhéidir na taifeadtaí a léamh: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Níl táblaí na dtaifeadtaí ann fós: rith an t-uasghrádú ar dtús (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Tá taifeadadh múchta in migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>M'athruithe</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ní thaifeadann sé ach a n-athraíonn tusa, cibé áit a n-athraíonn tú é, go dtí go stopann tú é.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Taifeadadh</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ó %time, %count athrú go dtí seo.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Lipéad (roghnach)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Taispeáin a bhfuair sé</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Stop an taifeadadh</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Tosaigh ag taifeadadh m'athruithe</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fuinneog don suíomh ar fad</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Taifeadann sé gach athrú de chuid gach úsáideora agus an chonsóil go dtí go ndúntar é. Nuair a osclaítear é, iarrtar ort a dhearbhú gur tusa atá ann.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Oscailte</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Dún an fhuinneog</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Oscail an fhuinneog don suíomh ar fad</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Taifeadtaí</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ní thaifeadtar riamh cuntas úsáideora (ainm logála isteach, ríomhphost, pasfhocal) ná réimsí na gcuntas úsáideora.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Athruithe</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>An suíomh ar fad</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Athruithe de chuid %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Stoptha</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Níl aon taifeadadh ann fós.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Taifeadadh %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Gach taifeadadh</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>An imirce a thiocfadh as</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Na hathruithe cnuasaithe i gcéim amháin in aghaidh gach ruda a athraíodh: an rud a dhéanfadh imirce a ghinfí ón taifeadadh seo.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Is féidir imirce a ghiniúint uaidh nuair a bheidh na cineálacha céimeanna YAML %types ag an suiteáil seo.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Fágtha amach d'aon ghnó: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Níor taifeadadh aon rud.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>An rud a fuair sé</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count athrú, san ord inar rinneadh iad.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Athrú</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Céim</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Baineann le</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count eile: liostaíonn ./console exp:migration:record:show iad go léir.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Caith uait</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Baineann sé an taifeadadh agus a bhfuair sé. Fanann athraithe an rud a athraíodh.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Caith uait an taifeadadh seo, cinnte</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ag taifeadadh…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Tá d'athruithe á dtaifeadadh le haghaidh imirce.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Tá gach athrú ar an suíomh seo á thaifeadadh le haghaidh imirce (fuinneog don suíomh ar fad).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Thosaigh an taifeadadh don suíomh ar fad: taifeadtar gach athrú de chuid gach úsáideora go dtí go stopann tú é.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Thosaigh an taifeadadh: taifeadtar d'athruithe go dtí go stopann tú é.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Stopadh an taifeadadh. Fanann a bhfuair sé go dtí go gcaitheann tú uait é.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Baineadh an taifeadadh agus a imeachtaí.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Níl aon taifeadadh %id ann.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Cuir tic ar dtús le "Caith uait an taifeadadh seo, cinnte".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Ní féidir ach leis an úsáideoir a thaifead taifeadadh seisiúin a stopadh.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Roghnaigh an taifeadadh atá le stopadh.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Tá taifeadadh den chineál seo ar siúl cheana.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Níorbh fhéidir an taifeadadh a athrú: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81388,7 +81604,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
-        <translation>/stórlann/ do shuíomh tionscadail GitHub; folamh d'fhearann saincheaptha nó do shuíomh úsáideora.</translation>
+        <translation>/stórlann/ do shuíomh tionscadail GitHub; folamh d&apos;fhearann saincheaptha nó do shuíomh úsáideora.</translation>
     </message>
     <message>
         <source>1. The site</source>
@@ -81431,7 +81647,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Bíonn suíomh tionscadail GitHub faoi /&lt;repository&gt;/; oibríonn naisc choibhneasta ansin agus in aon áit eile.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Faigheann tógáil gach leathanach de %site mar a fheiceann cuairteoir nach bhfuil sínithe isteach é, athscríobhann sí na naisc, cóipeálann sí na comhaid agus scríobhann sí an toradh chuig fillteán na sprice. Ní fhoilsítear aon rud go dtí go seiceálann tú an tógáil agus go mbrúnn tú Foilsigh.</translation>
     </message>
     <message>
@@ -81479,12 +81695,12 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Ní fhoilsítear riamh leathanach a bhfuil aschur dífhabhtaithe, comhartha foirme nó aitheantas seisiúin fós ann tar éis an bhainte.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>Is do shaineolaithe an cealú: cuir tic le “Tá a fhios agam cad a athraíonn sé seo” agus clóscríobh ainm na clibe arís.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Féadann suíomh a bheith suas le %site, comhad amháin suas le %file, le timpeall 100 GB de thrácht sa mhí. Ar phlean saor in aisce caithfidh an stórlann a bheith poiblí. Níl GitHub Pages ceaptha do shiopaí ná d'idirbhearta tráchtála eile.</translation>
+        <translation>Féadann suíomh a bheith suas le %site, comhad amháin suas le %file, le timpeall 100 GB de thrácht sa mhí. Ar phlean saor in aisce caithfidh an stórlann a bheith poiblí. Níl GitHub Pages ceaptha do shiopaí ná d&apos;idirbhearta tráchtála eile.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
@@ -81991,7 +82207,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Oscail an réamhamharc</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Osclaíonn sé an tógáil mar a fhreastalóidh an t-óstach í, ó fhillteán na sprice. Oibríonn an nasc duit ar feadh uair an chloig.</translation>
     </message>
     <message>
@@ -82167,7 +82383,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Socrú &gt; Rúin</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>Taispeántar i liostaí é, mar shampla “Suíomh poiblí ar GitHub Pages”.</translation>
     </message>
     <message>
@@ -82272,7 +82488,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>Tells search engines what to read.</source>
-        <translation>Insíonn sé d'innill chuardaigh cad atá le léamh.</translation>
+        <translation>Insíonn sé d&apos;innill chuardaigh cad atá le léamh.</translation>
     </message>
     <message>
         <source>The build could not be thrown away: %problem</source>
@@ -82288,7 +82504,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
-        <translation>Oireann na réamhshocruithe d'fhormhór na suíomhanna.</translation>
+        <translation>Oireann na réamhshocruithe d&apos;fhormhór na suíomhanna.</translation>
     </message>
     <message>
         <source>The folder holds a build that is not published yet; a new build replaces it.</source>
@@ -82332,7 +82548,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>Liosta na leathanach d'innill chuardaigh; teastaíonn an seoladh poiblí.</translation>
+        <translation>Liosta na leathanach d&apos;innill chuardaigh; teastaíonn an seoladh poiblí.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
@@ -82375,7 +82591,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Téann an suíomh ar ais chuig comhaid an fhoilseacháin sin; caithfear tógáil nach bhfuil foilsithe fós a fhoilsiú nó a chaitheamh uait ar dtús.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Leathanach an tsuímh féin do sheoltaí nach bhfuil ann.</translation>
     </message>
     <message>
@@ -82383,7 +82599,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Níorbh fhéidir an sprioc a shábháil: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>Ní shíníonn an sprioc isteach leis an eochair seo fós: roghnaigh “Eochair imscartha a cruthaíodh don sprioc seo” ina socruithe.</translation>
     </message>
     <message>
@@ -82419,7 +82635,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Caitheann sé an tógáil seo uait: tá an foilseachán deireanach san fhillteán arís. Ní athraíonn an suíomh beo.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>Cuir tic le “Sheiceáil mé na hathruithe” ar dtús.</translation>
     </message>
     <message>
@@ -82464,7 +82680,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
-        <translation>An méid a ainmníonn na leathanaigh, agus gach íomhá d'ábhar foilsithe</translation>
+        <translation>An méid a ainmníonn na leathanaigh, agus gach íomhá d&apos;ábhar foilsithe</translation>
     </message>
     <message>
         <source>When</source>
@@ -82588,7 +82804,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>passed</source>
-        <translation>d'éirigh leis</translation>
+        <translation>d&apos;éirigh leis</translation>
     </message>
     <message>
         <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
@@ -82636,11 +82852,39 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: scríobhtar chuig an gcomhad CNAME é. Dírigh DNS an fhearainn ar an óstach mar a mhíníonn sé; d'fhéadfadh tamall a thógáil sula dtosaíonn HTTPS.</translation>
+        <translation>www.example.com: scríobhtar chuig an gcomhad CNAME é. Dírigh DNS an fhearainn ar an óstach mar a mhíníonn sé; d&apos;fhéadfadh tamall a thógáil sula dtosaíonn HTTPS.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>tá, níl sé foilsithe fós</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Faigheann tógáil gach leathanach de %site mar a fheiceann cuairteoir nach bhfuil sínithe isteach é, athscríobhann sí na naisc, cóipeálann sí na comhaid agus scríobhann sí an toradh chuig fillteán na sprice. Ní fhoilsítear aon rud go dtí go seiceálann tú an tógáil agus go mbrúnn tú Foilsigh.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Is do shaineolaithe an cealú: cuir tic le “Tá a fhios agam cad a athraíonn sé seo” agus clóscríobh ainm na clibe arís.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Osclaíonn sé an tógáil mar a fhreastalóidh an t-óstach í, ó fhillteán na sprice. Oibríonn an nasc duit ar feadh uair an chloig.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Taispeántar i liostaí é, mar shampla “Suíomh poiblí ar GitHub Pages”.</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Leathanach an tsuímh féin do sheoltaí nach bhfuil ann.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Ní shíníonn an sprioc isteach leis an eochair seo fós: roghnaigh “Eochair imscartha a cruthaíodh don sprioc seo” ina socruithe.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Cuir tic le “Sheiceáil mé na hathruithe” ar dtús.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

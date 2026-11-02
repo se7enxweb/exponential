@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Извршувањето не можеше да се започне.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Снимање промени</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Додека снимањето трае, она што го менувате во администрацијата или во страничната лента на сајтот се чува како чекори на миграција: содржина, класи, улоги и правила, секции, корисници и групи, URL алијаси, поставки. Запрете го кога ќе завршите, погледнете што забележало и од него создадете миграција.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Снимките не можеа да се прочитаат: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Табелите на снимките сè уште не постојат: прво извршете ја надградбата (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Снимањето е исклучено во migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Мои промени</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Снима само она што вие го менувате, каде и да го менувате, додека не го запрете.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Снимање</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>од %time, досега промени: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Ознака (незадолжително)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Прикажи што забележало</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Запри снимање</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Почни да ги снимаш моите промени</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Прозорец за целиот сајт</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Ја снима секоја промена на секој корисник и на конзолата додека не се затвори. При отворање треба да потврдите дека сте вие.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Отворено</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Затвори го прозорецот</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Отвори прозорец за целиот сајт</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Снимки</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Сметката на корисникот (корисничко име, е-пошта, лозинка) и полињата на корисничките сметки никогаш не се снимаат.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Промени</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Целиот сајт</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Промени на %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Запрено</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Сè уште нема снимки.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Снимка %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Сите снимки</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Миграцијата што би произлегла</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Промените споени во еден чекор по променета ставка: што би направила миграција создадена од оваа снимка.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Од неа ќе може да се создаде миграција кога оваа инсталација ќе ги има YAML типовите на чекори %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Намерно изоставено: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ништо не е снимено.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Што забележало</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Промени: %count, по редоследот по кој се направени.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Промена</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Чекор</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Се однесува на</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Уште %count: ./console exp:migration:record:show ги прикажува сите.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Отфрли</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Ја отстранува снимката и она што го забележала. Она што е променето останува променето.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Да, отфрли ја оваа снимка</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Се снима…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Вашите промени се снимаат за миграција.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Секоја промена на овој сајт се снима за миграција (прозорец за целиот сајт).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Снимањето на целиот сајт започна: секоја промена на секој корисник се снима додека не го запрете.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Снимањето започна: вашите промени се снимаат додека не го запрете.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Снимањето е запрено. Она што го забележало останува додека не го отфрлите.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Снимката и нејзините настани се отстранети.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Нема снимка %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Прво означете „Да, отфрли ја оваа снимка“.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Само корисникот што снимал може да го запре снимањето на сесијата.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Изберете го снимањето што сакате да го запрете.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Снимање од овој вид веќе трае.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Снимката не можеше да се промени: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Проектен сајт на GitHub се наоѓа под /&lt;repository&gt;/; релативните врски работат таму и каде било друго.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Изградбата ја презема секоја страница од %site како што ја гледа посетител кој не е најавен, ги препишува врските, ги копира датотеките и го запишува резултатот во папката на целта. Ништо не се објавува додека не ја проверите изградбата и не притиснете Објави.</translation>
     </message>
     <message>
@@ -81449,7 +81665,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Страница која по чистењето сè уште содржи излез за дебагирање, токен на формулар или ID на сесија никогаш не се објавува.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>Враќањето назад е за експерти: штиклирајте „Знам што менува ова“ и повторно внесете го името на ознаката.</translation>
     </message>
     <message>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Отвори го прегледот</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Ја отвора изградбата како што ќе ја служи хостот, од папката на целта. Врската работи за Вас еден час.</translation>
     </message>
     <message>
@@ -82137,7 +82353,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Конфигурација &gt; Тајни</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>Се прикажува во списоци, на пример „Јавен сајт на GitHub Pages“.</translation>
     </message>
     <message>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Сајтот се враќа на датотеките од таа објава; изградба што сè уште не е објавена мора прво да се објави или отфрли.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Сопствената страница на сајтот за адреси што не постојат.</translation>
     </message>
     <message>
@@ -82353,7 +82569,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Целта не можеше да се зачува: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>Целта сè уште не се најавува со овој клуч: изберете „Клуч за распоредување создаден за оваа цел“ во нејзините поставки.</translation>
     </message>
     <message>
@@ -82389,7 +82605,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Ја отфрла оваа изградба: папката повторно ја содржи последната објава. Живиот сајт не се менува.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>Прво штиклирајте „Ги проверив промените“.</translation>
     </message>
     <message>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>да, сè уште не е објавено</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Изградбата ја презема секоја страница од %site како што ја гледа посетител кој не е најавен, ги препишува врските, ги копира датотеките и го запишува резултатот во папката на целта. Ништо не се објавува додека не ја проверите изградбата и не притиснете Објави.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Враќањето назад е за експерти: штиклирајте „Знам што менува ова“ и повторно внесете го името на ознаката.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Ја отвора изградбата како што ќе ја служи хостот, од папката на целта. Врската работи за Вас еден час.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Се прикажува во списоци, на пример „Јавен сајт на GitHub Pages“.</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Сопствената страница на сајтот за адреси што не постојат.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Целта сè уште не се најавува со овој клуч: изберете „Клуч за распоредување создаден за оваа цел“ во нејзините поставки.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Прво штиклирајте „Ги проверив промените“.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

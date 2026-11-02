@@ -80620,6 +80620,222 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <source>The run could not be started.</source>
         <translation>Pokretanje nije moglo da se započne.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Snimanje izmena</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Dok snimanje traje, ono što menjate u administraciji ili na bočnoj traci sajta čuva se kao koraci migracije: sadržaj, klase, uloge i pravila, sekcije, korisnici i grupe, URL alijasi, podešavanja. Zaustavite ga kad završite, pogledajte šta je zabeležilo i od njega napravite migraciju.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Snimci nisu mogli da se pročitaju: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabele snimaka još ne postoje: prvo pokrenite nadogradnju (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Snimanje je isključeno u migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Moje izmene</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Snima samo ono što vi menjate, gde god da menjate, dok ga ne zaustavite.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Snimanje</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>od %time, do sada izmena: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Oznaka (neobavezno)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Prikaži šta je zabeležilo</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Zaustavi snimanje</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Počni snimanje mojih izmena</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Prozor za ceo sajt</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Snima svaku izmenu svakog korisnika i konzole dok se ne zatvori. Pri otvaranju morate potvrditi da ste to vi.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Otvoreno</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Zatvori prozor</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Otvori prozor za ceo sajt</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Snimci</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Nalog korisnika (korisničko ime, e-pošta, lozinka) i polja korisničkih naloga nikada se ne snimaju.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Izmene</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ceo sajt</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Izmene korisnika %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Zaustavljeno</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Još nema snimaka.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Snimak %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Svi snimci</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migracija koja bi iz njega nastala</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Izmene spojene u jedan korak po izmenjenoj stvari: šta bi uradila migracija napravljena od ovog snimka.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Od njega će moći da se napravi migracija kad ova instalacija bude imala YAML vrste koraka %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Namerno izostavljeno: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ništa nije snimljeno.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Šta je zabeležilo</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Izmena: %count, redom kojim su napravljene.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Izmena</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Korak</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Odnosi se na</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Još %count: ./console exp:migration:record:show ispisuje sve.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Odbaci</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Uklanja snimak i ono što je zabeležio. Ono što je izmenjeno ostaje izmenjeno.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Da, odbaci ovaj snimak</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Snimanje u toku…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Vaše izmene se snimaju za migraciju.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Svaka izmena na ovom sajtu snima se za migraciju (prozor za ceo sajt).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Snimanje celog sajta je počelo: svaka izmena svakog korisnika snima se dok ga ne zaustavite.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Snimanje je počelo: vaše izmene se snimaju dok ga ne zaustavite.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Snimanje zaustavljeno. Ono što je zabeležilo ostaje dok ga ne odbacite.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Snimak i njegovi događaji su uklonjeni.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nema snimka %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Prvo označite „Da, odbaci ovaj snimak”.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Samo korisnik koji je snimao može da zaustavi snimanje sesije.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Izaberite snimanje koje želite da zaustavite.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Snimanje ove vrste je već u toku.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Snimak nije mogao da se izmeni: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81431,7 +81647,7 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <translation>Sajt GitHub projekta nalazi se ispod /&lt;repository&gt;/; relativni linkovi rade tamo i bilo gde drugde.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Izgradnja preuzima svaku stranicu sajta %site onako kako je vidi posetilac koji nije prijavljen, prepisuje linkove, kopira datoteke i upisuje rezultat u fasciklu cilja. Ništa se ne objavljuje dok ne proverite izgradnju i ne pritisnete Objavi.</translation>
     </message>
     <message>
@@ -81479,7 +81695,7 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <translation>Stranica koja posle čišćenja i dalje sadrži izlaz za otklanjanje grešaka, token obrasca ili ID sesije nikada se ne objavljuje.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>Vraćanje je za stručnjake: označite „Znam šta ovo menja” i ponovo upišite naziv oznake.</translation>
     </message>
     <message>
@@ -81991,7 +82207,7 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <translation>Otvori pregled</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Otvara izgradnju iz fascikle cilja onako kako će je host posluživati. Link vam radi sat vremena.</translation>
     </message>
     <message>
@@ -82167,7 +82383,7 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <translation>Podešavanje &gt; Tajne</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>Prikazuje se u listama, na primer „Javni sajt na GitHub Pages”.</translation>
     </message>
     <message>
@@ -82375,7 +82591,7 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <translation>Sajt se vraća na datoteke te objave; izgradnja koja još nije objavljena mora prvo da se objavi ili odbaci.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Sopstvena stranica sajta za adrese koje ne postoje.</translation>
     </message>
     <message>
@@ -82383,7 +82599,7 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <translation>Cilj nije mogao da se sačuva: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>Cilj se još ne prijavljuje ovim ključem: izaberite „Ključ za postavljanje napravljen za ovaj cilj” u njegovim podešavanjima.</translation>
     </message>
     <message>
@@ -82419,7 +82635,7 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <translation>Odbacuje ovu izgradnju: fascikla ponovo sadrži poslednju objavu. Aktivni sajt se ne menja.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>Prvo označite „Izmene su proverene”.</translation>
     </message>
     <message>
@@ -82641,6 +82857,34 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     <message>
         <source>yes, not published yet</source>
         <translation>da, još nije objavljeno</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Izgradnja preuzima svaku stranicu sajta %site onako kako je vidi posetilac koji nije prijavljen, prepisuje linkove, kopira datoteke i upisuje rezultat u fasciklu cilja. Ništa se ne objavljuje dok ne proverite izgradnju i ne pritisnete Objavi.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Vraćanje je za stručnjake: označite „Znam šta ovo menja” i ponovo upišite naziv oznake.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Otvara izgradnju iz fascikle cilja onako kako će je host posluživati. Link vam radi sat vremena.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Prikazuje se u listama, na primer „Javni sajt na GitHub Pages”.</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Sopstvena stranica sajta za adrese koje ne postoje.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Cilj se još ne prijavljuje ovim ključem: izaberite „Ključ za postavljanje napravljen za ovaj cilj” u njegovim podešavanjima.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Prvo označite „Izmene su proverene”.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

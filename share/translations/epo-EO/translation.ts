@@ -80590,6 +80590,222 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>The run could not be started.</source>
         <translation>La rulo ne startigeblis.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Registri ŝanĝojn</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Dum registrado funkcias, kion vi ŝanĝas en la administrado aŭ en la flanka breto de la retejo estas konservata kiel paŝoj de migrado: enhavo, klasoj, roloj kaj politikoj, sekcioj, uzantoj kaj grupoj, URL-kaŝnomoj, agordoj. Haltigu ĝin kiam vi finis, rigardu kion ĝi kaptis kaj generu migradon el ĝi.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>La registraĵoj ne legeblis: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>La tabeloj de la registraĵoj ankoraŭ ne ekzistas: unue rulu la ĝisdatigon (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Registrado estas malŝaltita en migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Miaj ŝanĝoj</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Registras nur tion, kion vi ŝanĝas, kie ajn vi ŝanĝas ĝin, ĝis vi haltigas ĝin.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Registrado</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ekde %time, ĝis nun %count ŝanĝo(j).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etikedo (nedeviga)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Montri kion ĝi kaptis</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Haltigi registradon</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Komenci registri miajn ŝanĝojn</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fenestro por la tuta retejo</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Registras ĉiun ŝanĝon de ĉiu uzanto kaj de la konzolo ĝis ĝi estas fermita. Malfermante ĝin, vi devas konfirmi ke estas vi.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Malfermita</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Fermi la fenestron</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Malfermi la fenestron por la tuta retejo</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Registraĵoj</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>La konto de uzanto (salutnomo, retpoŝto, pasvorto) kaj la kampoj de uzantkontoj neniam estas registrataj.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ŝanĝoj</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tuta retejo</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ŝanĝoj de %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Haltigita</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ankoraŭ neniu registraĵo.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Registraĵo %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ĉiuj registraĵoj</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>La migrado, kiun ĝi farus</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>La ŝanĝoj kunigitaj en unu paŝon por ĉiu ŝanĝita afero: kion farus migrado generita el ĉi tiu registraĵo.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Migrado povos esti generata el ĝi, kiam ĉi tiu instalaĵo havos la YAML-paŝtipojn %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Intence ellasita: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nenio estis registrita.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Kion ĝi kaptis</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ŝanĝo(j), laŭ la ordo en kiu ili estis faritaj.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ŝanĝo</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Paŝo</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Koncernas</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Ankoraŭ %count: ./console exp:migration:record:show listigas ĉiujn.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Forĵeti</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Forigas la registraĵon kaj tion, kion ĝi kaptis. Kio estis ŝanĝita restas ŝanĝita.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Jes, forĵeti ĉi tiun registraĵon</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Registrante…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Viaj ŝanĝoj estas registrataj por migrado.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Ĉiu ŝanĝo en ĉi tiu retejo estas registrata por migrado (fenestro por la tuta retejo).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>La registrado por la tuta retejo komenciĝis: ĉiu ŝanĝo de ĉiu uzanto estas registrata ĝis vi haltigas ĝin.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>La registrado komenciĝis: viaj ŝanĝoj estas registrataj ĝis vi haltigas ĝin.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Registrado haltigita. Kion ĝi kaptis restas ĝis vi forĵetas ĝin.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>La registraĵo kaj ĝiaj eventoj estas forigitaj.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Ne ekzistas registraĵo %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Unue marku „Jes, forĵeti ĉi tiun registraĵon“.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Nur la uzanto kiu registris rajtas haltigi seancan registradon.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Elektu la registradon haltigotan.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Registrado de ĉi tiu speco jam funkcias.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>La registraĵo ne ŝanĝeblis: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <translation>Projekta retejo ĉe GitHub loĝas sub /&lt;repository&gt;/; relativaj ligiloj funkcias tie kaj ĉie ajn.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Kompilado elŝutas ĉiun paĝon de %site tiel, kiel neensalutinta vizitanto vidas ĝin, reskribas la ligilojn, kopias la dosierojn kaj skribas la rezulton al la dosierujo de la celo. Nenio estas publikigata, ĝis vi kontrolas la kompilaĵon kaj premas Publikigi.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <translation>Paĝo, kiu post la purigado ankoraŭ enhavas sencimigan eligon, formularan ĵetonon aŭ seancan identigilon, neniam estas publikigata.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Malfaro estas por spertuloj: marku "Mi scias, kion tio ŝanĝas" kaj tajpu denove la nomon de la marko.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Malfaro estas por spertuloj: marku &quot;Mi scias, kion tio ŝanĝas&quot; kaj tajpu denove la nomon de la marko.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <translation>Malfermi la antaŭrigardon</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Malfermas la kompilaĵon tiel, kiel la gastiganto servos ĝin, el la dosierujo de la celo. La ligilo funkcias por vi dum unu horo.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <translation>Agordado &gt; Sekretoj</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Montrata en listoj, ekzemple "Publika retejo ĉe GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Montrata en listoj, ekzemple &quot;Publika retejo ĉe GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <translation>La retejo reiras al la dosieroj de tiu publikigo; kompilaĵo ankoraŭ ne publikigita devas unue esti publikigita aŭ forĵetita.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>La propra paĝo de la retejo por adresoj, kiuj ne ekzistas.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <translation>La celo ne konserveblis: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>La celo ankoraŭ ne ensalutas per ĉi tiu ŝlosilo: elektu "Deploja ŝlosilo kreita por ĉi tiu celo" en ĝiaj agordoj.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>La celo ankoraŭ ne ensalutas per ĉi tiu ŝlosilo: elektu &quot;Deploja ŝlosilo kreita por ĉi tiu celo&quot; en ĝiaj agordoj.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <translation>Forĵetas ĉi tiun kompilaĵon: la dosierujo denove enhavas la lastan publikigon. La viva retejo ne ŝanĝiĝas.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Unue marku "Mi kontrolis la ŝanĝojn".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Unue marku &quot;Mi kontrolis la ŝanĝojn&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>yes, not published yet</source>
         <translation>jes, ankoraŭ ne publikigita</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Kompilado elŝutas ĉiun paĝon de %site tiel, kiel neensalutinta vizitanto vidas ĝin, reskribas la ligilojn, kopias la dosierojn kaj skribas la rezulton al la dosierujo de la celo. Nenio estas publikigata, ĝis vi kontrolas la kompilaĵon kaj premas Publikigi.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Malfaro estas por spertuloj: marku "Mi scias, kion tio ŝanĝas" kaj tajpu denove la nomon de la marko.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Malfermas la kompilaĵon tiel, kiel la gastiganto servos ĝin, el la dosierujo de la celo. La ligilo funkcias por vi dum unu horo.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Montrata en listoj, ekzemple "Publika retejo ĉe GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>La propra paĝo de la retejo por adresoj, kiuj ne ekzistas.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>La celo ankoraŭ ne ensalutas per ĉi tiu ŝlosilo: elektu "Deploja ŝlosilo kreita por ĉi tiu celo" en ĝiaj agordoj.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Unue marku "Mi kontrolis la ŝanĝojn".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

@@ -307,8 +307,9 @@ class expMigrationRunner
     }
 
     /**
-     * The migrations of definitions, in their order. PHP and YAML migrations are loaded from their files
-     * (expMigrationPhp, expMigrationYaml); the other types (sql, ini) have no runner yet and are listed in $errors.
+     * The migrations of definitions, in their order, loaded from their files (expMigrationPhp, expMigrationYaml, and
+     * expMigrationSql and expMigrationIni, which make the YAML migration of their steps); what cannot be loaded is
+     * listed in $errors.
      *
      * @param expMigrationDefinition[] $definitions
      * @param string[] $errors
@@ -332,8 +333,10 @@ class expMigrationRunner
             {
                 if ( $definition->type() === 'yml' )
                     $migrations[] = expMigrationYaml::load( $definition );
-                else if ( $definition->type() !== 'php' )
-                    throw new RuntimeException( 'migrations of type .' . $definition->type() . ' cannot be run yet' );
+                else if ( $definition->type() === 'sql' )
+                    $migrations[] = expMigrationSql::load( $definition );
+                else if ( $definition->type() === 'ini' )
+                    $migrations[] = expMigrationIni::load( $definition );
                 else
                     $migrations[] = expMigrationPhp::load( $definition );
             }
@@ -347,12 +350,27 @@ class expMigrationRunner
     }
 
     /**
-     * The plan, and with a context that writes the run.
+     * The plan, and with a context that writes the run. What the migrations change is not recorded by a recording
+     * of changes that runs at the same time (expMigrationRecorder): it is a migration already.
      *
      * @param expMigration[] $migrations in the order they run (expMigrationGraph)
      * @return array the report
      */
     public function run( array $migrations )
+    {
+        $self = $this;
+        return expMigrationRecorder::paused( function () use ( $self, $migrations ) {
+            return $self->runUnrecorded( $migrations );
+        } );
+    }
+
+    /**
+     * run() without the pause of the recording of changes.
+     *
+     * @param expMigration[] $migrations
+     * @return array the report
+     */
+    public function runUnrecorded( array $migrations )
     {
         $context = $this->context;
         $apply = $context->isApply();
@@ -585,6 +603,8 @@ class expMigrationRunner
                     $report['warnings'][] = 'kernel upgrade steps were applied: ./console exp:upgrade:finish --apply makes them live (deploy, caches, smoke check)';
                     break;
                 }
+            // the caches the applied migrations touched, and the search index of the objects they changed
+            expMigrationAfterRun::finish( $report, $byId, $this->context );
             $this->finishRun( $report );
             // the caption after the run, then the commit, tag and push of the migrations repository
             $flow = $this->flow();
@@ -616,6 +636,20 @@ class expMigrationRunner
      * @return array the report
      */
     public function rollback( array $migrations )
+    {
+        $self = $this;
+        return expMigrationRecorder::paused( function () use ( $self, $migrations ) {
+            return $self->rollbackUnrecorded( $migrations );
+        } );
+    }
+
+    /**
+     * rollback() without the pause of the recording of changes.
+     *
+     * @param expMigration[] $migrations
+     * @return array the report
+     */
+    public function rollbackUnrecorded( array $migrations )
     {
         $context = $this->context;
         $apply = $context->isApply();
@@ -730,7 +764,14 @@ class expMigrationRunner
         }
         $this->summarize( $report );
         if ( $apply && $lock )
+        {
+            // the caches the undone migrations touched, and the objects their down steps changed
+            $byId = array();
+            foreach ( $migrations as $migration )
+                $byId[(string)$migration->id()] = $migration;
+            expMigrationAfterRun::finish( $report, $byId, $context );
             $this->progress( 'end', array( 'exit' => $report['exit'], 'summary' => $report['summary'] ) );
+        }
         if ( $apply )
             $context->writeStatus();
         if ( $lock && !$heldBefore )

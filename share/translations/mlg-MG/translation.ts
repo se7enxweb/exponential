@@ -15160,7 +15160,7 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Mamoaka dika statikan'ny tranonkala amin'ny GitHub Pages na mpampiantrano git hafa.</translation>
+        <translation>Mamoaka dika statikan&apos;ny tranonkala amin&apos;ny GitHub Pages na mpampiantrano git hafa.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22168,7 +22168,7 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
     </message>
     <message>
         <source>Publish a static copy to GitHub Pages or any git host</source>
-        <translation>Avoahy amin'ny GitHub Pages na mpampiantrano git hafa ny dika statika</translation>
+        <translation>Avoahy amin&apos;ny GitHub Pages na mpampiantrano git hafa ny dika statika</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22176,7 +22176,7 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Ny tahiry vonjimaika mijanona dia manolotra pejy avy amin'ity mpizara ity. Raha hamoaka dika statikan'ny tranonkala any an-kafa, amin'ny GitHub Pages na mpampiantrano git hafa ianao, ampiasao ny famoahana statika.</translation>
+        <translation>Ny tahiry vonjimaika mijanona dia manolotra pejy avy amin&apos;ity mpizara ity. Raha hamoaka dika statikan&apos;ny tranonkala any an-kafa, amin&apos;ny GitHub Pages na mpampiantrano git hafa ianao, ampiasao ny famoahana statika.</translation>
     </message>
 </context>
 <context>
@@ -76236,7 +76236,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Mamoaka dika statikan'ny tranonkala amin'ny GitHub Pages na mpampiantrano git hafa.</translation>
+        <translation>Mamoaka dika statikan&apos;ny tranonkala amin&apos;ny GitHub Pages na mpampiantrano git hafa.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -80590,6 +80590,222 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>The run could not be started.</source>
         <translation>Tsy natomboka ny fanatanterahana.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Fandraketana ny fanovana</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Raha mandeha ny fandraketana, izay ovainao ao amin'ny fitantanana na ao amin'ny bara ilan'ny tranonkala dia tehirizina ho dingana amin'ny famindrana: votoaty, kilasy, andraikitra sy politika, fizarana, mpampiasa sy vondrona, anarana solon'ny URL, fikirana. Ajanony rehefa vita, jereo izay noraisiny, ary mamorona famindrana avy aminy.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Tsy voavaky ireo fandraketana: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tsy mbola misy ny tabilaon'ny fandraketana: ampandehano aloha ny fanavaozana (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Maty ny fandraketana ao amin'ny migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Ny fanovako</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Izay ovainao ihany no raketiny, na aiza na aiza no anovanao azy, mandra-pijanonanao azy.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Fandraketana</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>nanomboka %time, fanovana %count hatramin'izao.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Marika (tsy voatery)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Asehoy izay noraisiny</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Ajanony ny fandraketana</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Atombohy ny fandraketana ny fanovako</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Varavarankely ho an'ny tranonkala manontolo</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Raketiny ny fanovana rehetra ataon'ny mpampiasa tsirairay sy ny console mandra-panidiana azy. Rehefa sokafanao, angatahina ianao hanamarina fa ianao tokoa.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Misokatra</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Hidio ny varavarankely</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Sokafy ny varavarankely ho an'ny tranonkala manontolo</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ireo fandraketana</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Tsy raketina mihitsy ny kaontin'ny mpampiasa (anarana fidirana, mailaka, tenimiafina) sy ny saha amin'ny kaontin'ny mpampiasa.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Fanovana</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ny tranonkala manontolo</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ny fanovan'i %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Najanona</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Tsy mbola misy fandraketana.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Fandraketana %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ny fandraketana rehetra</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ny famindrana hivoaka aminy</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ny fanovana natambatra ho dingana iray isaky ny zavatra novaina: izay hataon'ny famindrana noforonina avy amin'ity fandraketana ity.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Afaka mamorona famindrana avy aminy rehefa manana ireo karazana dingana YAML %types ity fametrahana ity.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Nesorina fanahy iniana: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Tsy nisy voaraketa.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Izay noraisiny</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Fanovana %count, araka ny filaharana nanaovana azy.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Fanovana (iray)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Dingana</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Momba</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count hafa: ./console exp:migration:record:show no mitanisa azy rehetra.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Ariany</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Esoriny ny fandraketana sy izay noraisiny. Izay novaina dia mijanona ho voaova.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Eny, ario ity fandraketana ity</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Mandraketa…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Raketina ho an'ny famindrana ny fanovanao.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Raketina ho an'ny famindrana ny fanovana rehetra amin'ity tranonkala ity (varavarankely ho an'ny tranonkala manontolo).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nanomboka ny fandraketana ny tranonkala manontolo: raketina ny fanovana rehetra ataon'ny mpampiasa tsirairay mandra-pijanonanao azy.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Nanomboka ny fandraketana: raketina ny fanovanao mandra-pijanonanao azy.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Najanona ny fandraketana. Mijanona izay noraisiny mandra-panariana azy.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Voaesotra ny fandraketana sy ireo zava-nitranga taminy.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Tsy misy fandraketana %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Mariho aloha ny "Eny, ario ity fandraketana ity".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Ny mpampiasa nandraketa ihany no afaka mampijanona fandraketana fivoriana.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Fidio ny fandraketana hajanona.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Efa mandeha ny fandraketana toy izao karazany izao.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Tsy azo novaina ny fandraketana: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81267,7 +81483,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Publish a free static copy of your site on GitHub Pages:</source>
-        <translation>Avoahy maimaim-poana amin'ny GitHub Pages ny dika statikan'ny tranonkalanao:</translation>
+        <translation>Avoahy maimaim-poana amin&apos;ny GitHub Pages ny dika statikan&apos;ny tranonkalanao:</translation>
     </message>
     <message>
         <source>Stale pages</source>
@@ -81322,7 +81538,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>%bytes of %limit (%percent %)</source>
-        <translation>%bytes amin'ny %limit (%percent %)</translation>
+        <translation>%bytes amin&apos;ny %limit (%percent %)</translation>
     </message>
     <message>
         <source>%count more are not listed.</source>
@@ -81334,11 +81550,11 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
-        <translation>%size ny %path, mihoatra noho izay avelan'ny mpampiantrano ho an'ny rakitra iray.</translation>
+        <translation>%size ny %path, mihoatra noho izay avelan&apos;ny mpampiantrano ho an&apos;ny rakitra iray.</translation>
     </message>
     <message>
         <source>%percent % of the limit</source>
-        <translation>%percent % amin'ny fetra</translation>
+        <translation>%percent % amin&apos;ny fetra</translation>
     </message>
     <message>
         <source>%seconds s</source>
@@ -81346,7 +81562,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>%tag is the publish the site has now.</source>
-        <translation>%tag no famoahana ananan'ny tranonkala ankehitriny.</translation>
+        <translation>%tag no famoahana ananan&apos;ny tranonkala ankehitriny.</translation>
     </message>
     <message>
         <source>%target: job %id</source>
@@ -81358,7 +81574,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
-        <translation>/tahiry/ ho an'ny tranonkalan'ny tetikasa GitHub; foana ho an'ny sehatra manokana na tranonkalan'ny mpampiasa.</translation>
+        <translation>/tahiry/ ho an&apos;ny tranonkalan&apos;ny tetikasa GitHub; foana ho an&apos;ny sehatra manokana na tranonkalan&apos;ny mpampiasa.</translation>
     </message>
     <message>
         <source>1. The site</source>
@@ -81370,7 +81586,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>3. Signing in to the repository</source>
-        <translation>3. Fidirana ao amin'ny tahiry</translation>
+        <translation>3. Fidirana ao amin&apos;ny tahiry</translation>
     </message>
     <message>
         <source>4. The repository</source>
@@ -81386,7 +81602,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>7. What the build holds</source>
-        <translation>7. Izay ao anatin'ny fanorenana</translation>
+        <translation>7. Izay ao anatin&apos;ny fanorenana</translation>
     </message>
     <message>
         <source>8. When it is published</source>
@@ -81398,11 +81614,11 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
-        <translation>Eo ambanin'ny /&lt;repository&gt;/ no misy ny tranonkalan'ny tetikasa GitHub; mandeha any sy na aiza na aiza ny rohy mifandray.</translation>
+        <translation>Eo ambanin&apos;ny /&lt;repository&gt;/ no misy ny tranonkalan&apos;ny tetikasa GitHub; mandeha any sy na aiza na aiza ny rohy mifandray.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ny fanorenana dia maka ny pejy rehetra ao amin'ny %site araka ny hitan'ny mpitsidika tsy niditra, manoratra indray ny rohy, mandika ny rakitra ary manoratra ny vokatra ao amin'ny lahatahirin'ny tanjona. Tsy misy avoaka raha tsy efa nojerenao ny fanorenana ary notsindrianao ny Avoaky.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ny fanorenana dia maka ny pejy rehetra ao amin&apos;ny %site araka ny hitan&apos;ny mpitsidika tsy niditra, manoratra indray ny rohy, mandika ny rakitra ary manoratra ny vokatra ao amin&apos;ny lahatahirin&apos;ny tanjona. Tsy misy avoaka raha tsy efa nojerenao ny fanorenana ary notsindrianao ny Avoaky.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -81410,71 +81626,71 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>A deploy key is kept as the secret %secret.</source>
-        <translation>Tehirizina ho toy ny zava-miafina %secret ny lakilen'ny fandefasana.</translation>
+        <translation>Tehirizina ho toy ny zava-miafina %secret ny lakilen&apos;ny fandefasana.</translation>
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>Ny lakilen'ny fandefasana dia mamela ity fametrahana ity handefa amin'ny tahiry iray ihany amin'ny alalan'ny SSH fa tsy any an-kafa. Mijanona ao amin'ny Fametrahana &gt; Zava-miafina ny antsasany manokana; ny antsasany ho an'ny besinimaro ihany no aseho.</translation>
+        <translation>Ny lakilen&apos;ny fandefasana dia mamela ity fametrahana ity handefa amin&apos;ny tahiry iray ihany amin&apos;ny alalan&apos;ny SSH fa tsy any an-kafa. Mijanona ao amin&apos;ny Fametrahana &gt; Zava-miafina ny antsasany manokana; ny antsasany ho an&apos;ny besinimaro ihany no aseho.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
-        <translation>Lakilen'ny fandefasana natao ho an'ity tanjona ity</translation>
+        <translation>Lakilen&apos;ny fandefasana natao ho an&apos;ity tanjona ity</translation>
     </message>
     <message>
         <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
-        <translation>Miditra amin'ny SSH ny lakilen'ny fandefasana: ovay ho adiresy SSH ny adiresy git (git@github.com:owner/repo.git).</translation>
+        <translation>Miditra amin&apos;ny SSH ny lakilen&apos;ny fandefasana: ovay ho adiresy SSH ny adiresy git (git@github.com:owner/repo.git).</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
-        <translation>Misy asa mandeha, natombok'i %user</translation>
+        <translation>Misy asa mandeha, natombok&apos;i %user</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Mbola mandeha ny asan'ity tanjona ity (%detail). Andraso ho vita izy.</translation>
+        <translation>Mbola mandeha ny asan&apos;ity tanjona ity (%detail). Andraso ho vita izy.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Mbola mandeha ny asan'ity tanjona ity. Andraso ho vita izy.</translation>
+        <translation>Mbola mandeha ny asan&apos;ity tanjona ity. Andraso ho vita izy.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
-        <translation>Ny rohy avy amin'ny pejy /news/ mankany amin'ny pejy /about-us/team dia hosoratana hoe</translation>
+        <translation>Ny rohy avy amin&apos;ny pejy /news/ mankany amin&apos;ny pejy /about-us/team dia hosoratana hoe</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
-        <translation>Nisy lakilen'ny fandefasana vaovao natao. Ampio ao amin'ny tahiry izao ny antsasany ho an'ny besinimaro.</translation>
+        <translation>Nisy lakilen&apos;ny fandefasana vaovao natao. Ampio ao amin&apos;ny tahiry izao ny antsasany ho an&apos;ny besinimaro.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
-        <translation>Tsy avoaka mihitsy ny pejy izay mbola misy vokatra debug, token-ny taratasy fenoina na id-ny fotoam-pidirana aorian'ny fanadiovana.</translation>
+        <translation>Tsy avoaka mihitsy ny pejy izay mbola misy vokatra debug, token-ny taratasy fenoina na id-ny fotoam-pidirana aorian&apos;ny fanadiovana.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Ho an'ny manam-pahaizana ny famerenana: mariho ny "Fantatro izay ovain'ity" ary soraty indray ny anaran'ny marika.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Ho an&apos;ny manam-pahaizana ny famerenana: mariho ny &quot;Fantatro izay ovain&apos;ity&quot; ary soraty indray ny anaran&apos;ny marika.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Mety hahatratra %site ny tranonkala, %file ny rakitra iray, miaraka amin'ny fifamoivoizana 100 GB eo ho eo isam-bolana. Amin'ny drafitra maimaim-poana dia tsy maintsy ho an'ny besinimaro ny tahiry. Tsy natao ho an'ny fivarotana na fifanakalozana ara-barotra hafa ny GitHub Pages.</translation>
+        <translation>Mety hahatratra %site ny tranonkala, %file ny rakitra iray, miaraka amin&apos;ny fifamoivoizana 100 GB eo ho eo isam-bolana. Amin&apos;ny drafitra maimaim-poana dia tsy maintsy ho an&apos;ny besinimaro ny tahiry. Tsy natao ho an&apos;ny fivarotana na fifanakalozana ara-barotra hafa ny GitHub Pages.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>Ny tanjona dia tranonkala iray avoaka ao amin'ny tahiry git iray. Tsy misy aorina na avoaka eto: ny Tehirizo dia manoratra ny fikirana ao amin'ny settings/override/staticcache.ini.append.php.</translation>
+        <translation>Ny tanjona dia tranonkala iray avoaka ao amin&apos;ny tahiry git iray. Tsy misy aorina na avoaka eto: ny Tehirizo dia manoratra ny fikirana ao amin&apos;ny settings/override/staticcache.ini.append.php.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>Ny tanjona dia tranonkala iray avoaka amin'ny toerana iray, ohatra ny tranonkalanao ho an'ny besinimaro amin'ny GitHub Pages.</translation>
+        <translation>Ny tanjona dia tranonkala iray avoaka amin&apos;ny toerana iray, ohatra ny tranonkalanao ho an&apos;ny besinimaro amin&apos;ny GitHub Pages.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
-        <translation>Token avy amin'ny Fametrahana &gt; Zava-miafina</translation>
+        <translation>Token avy amin&apos;ny Fametrahana &gt; Zava-miafina</translation>
     </message>
     <message>
         <source>A workflow of the repository publishes it.</source>
-        <translation>Workflow-n'ny tahiry no mamoaka azy.</translation>
+        <translation>Workflow-n&apos;ny tahiry no mamoaka azy.</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
-        <translation>Ampio ao amin'ny tahiry miaraka amin'ny zo hanoratra ity lakile ho an'ny besinimaro ity. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, mariho ny Allow write access.</translation>
+        <translation>Ampio ao amin&apos;ny tahiry miaraka amin&apos;ny zo hanoratra ity lakile ho an&apos;ny besinimaro ity. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, mariho ny Allow write access.</translation>
     </message>
     <message>
         <source>Added</source>
@@ -81486,7 +81702,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Another process works on this target: %detail</source>
-        <translation>Misy dingana hafa miasa amin'ity tanjona ity: %detail</translation>
+        <translation>Misy dingana hafa miasa amin&apos;ity tanjona ity: %detail</translation>
     </message>
     <message>
         <source>Back</source>
@@ -81502,7 +81718,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Below a base path</source>
-        <translation>Eo ambanin'ny lalana fototra</translation>
+        <translation>Eo ambanin&apos;ny lalana fototra</translation>
     </message>
     <message>
         <source>Branch</source>
@@ -81514,7 +81730,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Broken links in the build</source>
-        <translation>Rohy tapaka ao amin'ny fanorenana</translation>
+        <translation>Rohy tapaka ao amin&apos;ny fanorenana</translation>
     </message>
     <message>
         <source>Build</source>
@@ -81522,7 +81738,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Build %id by %user</source>
-        <translation>Fanorenana %id nataon'i %user</translation>
+        <translation>Fanorenana %id nataon&apos;i %user</translation>
     </message>
     <message>
         <source>Build %name</source>
@@ -81538,7 +81754,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>By</source>
-        <translation>Nataon'i</translation>
+        <translation>Nataon&apos;i</translation>
     </message>
     <message>
         <source>By hand, here</source>
@@ -81570,7 +81786,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Check what the build changes, look at it, then publish it or throw it away.</source>
-        <translation>Jereo izay ovain'ny fanorenana, diniho, dia avoahy na ario.</translation>
+        <translation>Jereo izay ovain&apos;ny fanorenana, diniho, dia avoahy na ario.</translation>
     </message>
     <message>
         <source>Choose the publish to go back to.</source>
@@ -81578,7 +81794,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Comes with a later release.</source>
-        <translation>Ho tonga amin'ny famoahana manaraka.</translation>
+        <translation>Ho tonga amin&apos;ny famoahana manaraka.</translation>
     </message>
     <message>
         <source>Commit</source>
@@ -81590,15 +81806,15 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
-        <translation>Manamafy ny fanorenana, manisy marika azy ary mandefa azy any amin'ny %remote. Tsy terena mihitsy ny fandefasana; afaka miverina amin'ny famoahana rehetra ianao any aoriana.</translation>
+        <translation>Manamafy ny fanorenana, manisy marika azy ary mandefa azy any amin&apos;ny %remote. Tsy terena mihitsy ny fandefasana; afaka miverina amin&apos;ny famoahana rehetra ianao any aoriana.</translation>
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
-        <translation>Raha ampitahaina amin'ny lahatahiry teo aloha: %added nampiana, %changed niova, %removed nesorina, %unchanged tsy niova.</translation>
+        <translation>Raha ampitahaina amin&apos;ny lahatahiry teo aloha: %added nampiana, %changed niova, %removed nesorina, %unchanged tsy niova.</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
-        <translation>Ampitahaina amin'ny famoahana farany.</translation>
+        <translation>Ampitahaina amin&apos;ny famoahana farany.</translation>
     </message>
     <message>
         <source>Credential</source>
@@ -81614,11 +81830,11 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Deploy key</source>
-        <translation>Lakilen'ny fandefasana</translation>
+        <translation>Lakilen&apos;ny fandefasana</translation>
     </message>
     <message>
         <source>Deploy key of %name</source>
-        <translation>Lakilen'ny fandefasana an'i %name</translation>
+        <translation>Lakilen&apos;ny fandefasana an&apos;i %name</translation>
     </message>
     <message>
         <source>Discard</source>
@@ -81634,7 +81850,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Foana: ny adiresin'ny tranonkala. Raha tsy izany, adiresy anatiny amin'io tranonkala io ihany.</translation>
+        <translation>Foana: ny adiresin&apos;ny tranonkala. Raha tsy izany, adiresy anatiny amin&apos;io tranonkala io ihany.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -81642,7 +81858,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Every link starts with the base path.</source>
-        <translation>Manomboka amin'ny lalana fototra ny rohy rehetra.</translation>
+        <translation>Manomboka amin&apos;ny lalana fototra ny rohy rehetra.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
@@ -81654,7 +81870,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Fetch the pages from</source>
-        <translation>Alaivo ny pejy avy amin'ny</translation>
+        <translation>Alaivo ny pejy avy amin&apos;ny</translation>
     </message>
     <message>
         <source>File</source>
@@ -81686,15 +81902,15 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
-        <translation>Ho an'ny adiresy SSH. Atao aorian'ny fitehirizana ny lakile; ianao no manampy ny antsasany ho an'ny besinimaro ao amin'ny tahiry.</translation>
+        <translation>Ho an&apos;ny adiresy SSH. Atao aorian&apos;ny fitehirizana ny lakile; ianao no manampy ny antsasany ho an&apos;ny besinimaro ao amin&apos;ny tahiry.</translation>
     </message>
     <message>
         <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
-        <translation>Ho an'ny adiresy https://. GitHub: token fine-grained manana Contents famakiana sy fanoratana amin'ny tahiry.</translation>
+        <translation>Ho an&apos;ny adiresy https://. GitHub: token fine-grained manana Contents famakiana sy fanoratana amin&apos;ny tahiry.</translation>
     </message>
     <message>
         <source>For experts. The public site changes as soon as the push is through.</source>
-        <translation>Ho an'ny manam-pahaizana. Miova avy hatrany ny tranonkala ho an'ny besinimaro rehefa vita ny fandefasana.</translation>
+        <translation>Ho an&apos;ny manam-pahaizana. Miova avy hatrany ny tranonkala ho an&apos;ny besinimaro rehefa vita ny fandefasana.</translation>
     </message>
     <message>
         <source>Forms</source>
@@ -81702,11 +81918,11 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Free hosting from a GitHub repository.</source>
-        <translation>Fampiantranoana maimaim-poana avy amin'ny tahiry GitHub.</translation>
+        <translation>Fampiantranoana maimaim-poana avy amin&apos;ny tahiry GitHub.</translation>
     </message>
     <message>
         <source>From the branch</source>
-        <translation>Avy amin'ny sampana</translation>
+        <translation>Avy amin&apos;ny sampana</translation>
     </message>
     <message>
         <source>Git address</source>
@@ -81730,11 +81946,11 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>GitHub Pages limits</source>
-        <translation>Fetran'ny GitHub Pages</translation>
+        <translation>Fetran&apos;ny GitHub Pages</translation>
     </message>
     <message>
         <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
-        <translation>Mamoaka ny rakitra araka ny maha-izy azy ny GitHub Pages (ilaina ho an'ny rakitra manomboka amin'ny _).</translation>
+        <translation>Mamoaka ny rakitra araka ny maha-izy azy ny GitHub Pages (ilaina ho an&apos;ny rakitra manomboka amin&apos;ny _).</translation>
     </message>
     <message>
         <source>GitHub serves the branch as it is pushed. The default.</source>
@@ -81746,7 +81962,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Go back to an earlier publish</source>
-        <translation>Miverena amin'ny famoahana teo aloha</translation>
+        <translation>Miverena amin&apos;ny famoahana teo aloha</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81754,7 +81970,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Help with the wizard</source>
-        <translation>Fanampiana amin'ny mpanampy</translation>
+        <translation>Fanampiana amin&apos;ny mpanampy</translation>
     </message>
     <message>
         <source>Hide them</source>
@@ -81766,7 +81982,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>History of %name</source>
-        <translation>Tantaran'ny %name</translation>
+        <translation>Tantaran&apos;ny %name</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81774,7 +81990,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>How GitHub Pages receives the build</source>
-        <translation>Ahoana no handraisan'ny GitHub Pages ny fanorenana</translation>
+        <translation>Ahoana no handraisan&apos;ny GitHub Pages ny fanorenana</translation>
     </message>
     <message>
         <source>I have checked the changes</source>
@@ -81782,7 +81998,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>I know what this changes</source>
-        <translation>Fantatro izay ovain'ity</translation>
+        <translation>Fantatro izay ovain&apos;ity</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81794,7 +82010,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>Mandeha ao ambadika amin'ny maha-%user azy; azonao akatona ity pejy ity.</translation>
+        <translation>Mandeha ao ambadika amin&apos;ny maha-%user azy; azonao akatona ity pejy ity.</translation>
     </message>
     <message>
         <source>Job %id</source>
@@ -81854,7 +82070,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Amboary aloha ao amin'ny mpampiantrano ny tahiry; azo atao foana izy.</translation>
+        <translation>Amboary aloha ao amin&apos;ny mpampiantrano ny tahiry; azo atao foana izy.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81866,7 +82082,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Most pages</source>
-        <translation>Ny ankamaroan'ny pejy</translation>
+        <translation>Ny ankamaroan&apos;ny pejy</translation>
     </message>
     <message>
         <source>Name</source>
@@ -81874,7 +82090,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Name of the token in Setup &gt; Secrets</source>
-        <translation>Anaran'ny token ao amin'ny Fametrahana &gt; Zava-miafina</translation>
+        <translation>Anaran&apos;ny token ao amin&apos;ny Fametrahana &gt; Zava-miafina</translation>
     </message>
     <message>
         <source>New target</source>
@@ -81898,7 +82114,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>Tsy hita ny programa php ho an'ny baiko. Apetraho amin'ny lalany feno ny migration.ini [AdminSettings] PhpCliPath.</translation>
+        <translation>Tsy hita ny programa php ho an&apos;ny baiko. Apetraho amin&apos;ny lalany feno ny migration.ini [AdminSettings] PhpCliPath.</translation>
     </message>
     <message>
         <source>No tag yet.</source>
@@ -81914,7 +82130,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Not in the build.</source>
-        <translation>Tsy ao amin'ny fanorenana.</translation>
+        <translation>Tsy ao amin&apos;ny fanorenana.</translation>
     </message>
     <message>
         <source>Nothing was published yet.</source>
@@ -81934,35 +82150,35 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>On the console</source>
-        <translation>Ao amin'ny console</translation>
+        <translation>Ao amin&apos;ny console</translation>
     </message>
     <message>
         <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
-        <translation>Ao amin'ny mpizara: ./console exp:static:serve %id dia manolotra azy toy izany koa.</translation>
+        <translation>Ao amin&apos;ny mpizara: ./console exp:static:serve %id dia manolotra azy toy izany koa.</translation>
     </message>
     <message>
         <source>One path per line, * matches any part: /members/*</source>
-        <translation>Lalana iray isaky ny andalana, * mifanaraka amin'ny ampahany rehetra: /members/*</translation>
+        <translation>Lalana iray isaky ny andalana, * mifanaraka amin&apos;ny ampahany rehetra: /members/*</translation>
     </message>
     <message>
         <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
-        <translation>Anarana ihany no tehirizina miaraka amin'ny tanjona; ny token na ny lakile mihitsy dia mijanona ao amin'ny Fametrahana &gt; Zava-miafina ary tsy miseho mihitsy ao anaty diary.</translation>
+        <translation>Anarana ihany no tehirizina miaraka amin&apos;ny tanjona; ny token na ny lakile mihitsy dia mijanona ao amin&apos;ny Fametrahana &gt; Zava-miafina ary tsy miseho mihitsy ao anaty diary.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
-        <translation>Izay tononin'ny pejy ihany</translation>
+        <translation>Izay tononin&apos;ny pejy ihany</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>Miaraka amin'ny token ihany. Ny env:NAME kosa dia mamaky ny fari-piainan'ny tontolon'ny mpizara.</translation>
+        <translation>Miaraka amin&apos;ny token ihany. Ny env:NAME kosa dia mamaky ny fari-piainan&apos;ny tontolon&apos;ny mpizara.</translation>
     </message>
     <message>
         <source>Open the preview</source>
         <translation>Sokafy ny topi-maso</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Manokatra ny fanorenana araka ny hanolorana azy amin'ny mpampiantrano, avy amin'ny lahatahirin'ny tanjona. Mandeha ho anao mandritra ny adiny iray ny rohy.</translation>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Manokatra ny fanorenana araka ny hanolorana azy amin&apos;ny mpampiantrano, avy amin&apos;ny lahatahirin&apos;ny tanjona. Mandeha ho anao mandritra ny adiny iray ny rohy.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
@@ -81970,7 +82186,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Optional. With a domain the site is served at its root.</source>
-        <translation>Tsy voatery. Raha misy sehatra dia aseho eo amin'ny fotony ny tranonkala.</translation>
+        <translation>Tsy voatery. Raha misy sehatra dia aseho eo amin&apos;ny fotony ny tranonkala.</translation>
     </message>
     <message>
         <source>Output</source>
@@ -81982,7 +82198,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Pages of the target</source>
-        <translation>Pejin'ny tanjona</translation>
+        <translation>Pejin&apos;ny tanjona</translation>
     </message>
     <message>
         <source>Pages refused</source>
@@ -82014,11 +82230,11 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Public address</source>
-        <translation>Adiresy ho an'ny besinimaro</translation>
+        <translation>Adiresy ho an&apos;ny besinimaro</translation>
     </message>
     <message>
         <source>Public key</source>
-        <translation>Lakile ho an'ny besinimaro</translation>
+        <translation>Lakile ho an&apos;ny besinimaro</translation>
     </message>
     <message>
         <source>Publish</source>
@@ -82026,7 +82242,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Mamoaka dika statikan'ny tranonkala amin'ny GitHub Pages na mpampiantrano git hafa: aorino, jereo ny fiovana, avoahy, ary miverena amin'ny famoahana teo aloha rehefa ilainao.</translation>
+        <translation>Mamoaka dika statikan&apos;ny tranonkala amin&apos;ny GitHub Pages na mpampiantrano git hafa: aorino, jereo ny fiovana, avoahy, ary miverena amin&apos;ny famoahana teo aloha rehefa ilainao.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -82110,11 +82326,11 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Section ids, separated by commas.</source>
-        <translation>Id-n'ny fizarana, sarahan'ny faingo.</translation>
+        <translation>Id-n&apos;ny fizarana, sarahan&apos;ny faingo.</translation>
     </message>
     <message>
         <source>Send them to the live site</source>
-        <translation>Alefaso any amin'ny tranonkala velona izy ireo</translation>
+        <translation>Alefaso any amin&apos;ny tranonkala velona izy ireo</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -82126,7 +82342,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Settings of %name</source>
-        <translation>Fikiran'ny %name</translation>
+        <translation>Fikiran&apos;ny %name</translation>
     </message>
     <message>
         <source>Setup</source>
@@ -82137,12 +82353,12 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <translation>Fametrahana &gt; Zava-miafina</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Aseho ao anaty lisitra, ohatra "Tranonkala ho an'ny besinimaro amin'ny GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Aseho ao anaty lisitra, ohatra &quot;Tranonkala ho an&apos;ny besinimaro amin&apos;ny GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>Ho tonga miaraka amin'ny fampifandraisana amin'ny GitHub ny fidirana amin'ny GitHub App.</translation>
+        <translation>Ho tonga miaraka amin&apos;ny fampifandraisana amin&apos;ny GitHub ny fidirana amin&apos;ny GitHub App.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -82162,7 +82378,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Size of the build</source>
-        <translation>Haben'ny fanorenana</translation>
+        <translation>Haben&apos;ny fanorenana</translation>
     </message>
     <message>
         <source>Stale pages</source>
@@ -82174,7 +82390,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Started by %user at %time.</source>
-        <translation>Natombok'i %user tamin'ny %time.</translation>
+        <translation>Natombok&apos;i %user tamin&apos;ny %time.</translation>
     </message>
     <message>
         <source>State</source>
@@ -82194,7 +82410,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
-        <translation>Maty ny famoahana statika. Velomy aloha ao amin'ny Fametrahana &gt; Famoahana statika.</translation>
+        <translation>Maty ny famoahana statika. Velomy aloha ao amin&apos;ny Fametrahana &gt; Famoahana statika.</translation>
     </message>
     <message>
         <source>Static publishing is switched on.</source>
@@ -82202,7 +82418,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Step %step of %total</source>
-        <translation>Dingana %step amin'ny %total</translation>
+        <translation>Dingana %step amin&apos;ny %total</translation>
     </message>
     <message>
         <source>Steps</source>
@@ -82242,7 +82458,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Tells search engines what to read.</source>
-        <translation>Milaza amin'ny motera fikarohana izay hovakiana.</translation>
+        <translation>Milaza amin&apos;ny motera fikarohana izay hovakiana.</translation>
     </message>
     <message>
         <source>The build could not be thrown away: %problem</source>
@@ -82250,23 +82466,23 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
-        <translation>Mitovy amin'ny famoahana farany ny fanorenana: tsy misy havoaka.</translation>
+        <translation>Mitovy amin&apos;ny famoahana farany ny fanorenana: tsy misy havoaka.</translation>
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
-        <translation>Voaario ny fanorenana: ny famoahana farany indray no ao amin'ny lahatahiry.</translation>
+        <translation>Voaario ny fanorenana: ny famoahana farany indray no ao amin&apos;ny lahatahiry.</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
-        <translation>Mety amin'ny ankamaroan'ny tranonkala ny sanda mahazatra.</translation>
+        <translation>Mety amin&apos;ny ankamaroan&apos;ny tranonkala ny sanda mahazatra.</translation>
     </message>
     <message>
         <source>The folder holds a build that is not published yet; a new build replaces it.</source>
-        <translation>Misy fanorenana mbola tsy navoaka ao amin'ny lahatahiry; ny fanorenana vaovao no hisolo azy.</translation>
+        <translation>Misy fanorenana mbola tsy navoaka ao amin&apos;ny lahatahiry; ny fanorenana vaovao no hisolo azy.</translation>
     </message>
     <message>
         <source>The folder of the jobs cannot be written: %detail</source>
-        <translation>Tsy azo soratana ny lahatahirin'ny asa: %detail</translation>
+        <translation>Tsy azo soratana ny lahatahirin&apos;ny asa: %detail</translation>
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
@@ -82302,23 +82518,23 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>Lisitry ny pejy ho an'ny motera fikarohana; mila ny adiresy ho an'ny besinimaro.</translation>
+        <translation>Lisitry ny pejy ho an&apos;ny motera fikarohana; mila ny adiresy ho an&apos;ny besinimaro.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Alaina araka ny hitan'ny mpitsidika tsy niditra ny pejy. Tsy atolotra mihitsy ny fidirana amin'ny fitantanana sy fanovana.</translation>
+        <translation>Alaina araka ny hitan&apos;ny mpitsidika tsy niditra ny pejy. Tsy atolotra mihitsy ny fidirana amin&apos;ny fitantanana sy fanovana.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>Tsy voaarakaraka ny fandrosoana. Ampidiro indray ny pejy mba hahitanao ny fandehan'ny asa.</translation>
+        <translation>Tsy voaarakaraka ny fandrosoana. Ampidiro indray ny pejy mba hahitanao ny fandehan&apos;ny asa.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
-        <translation>Ny antsasaky ny lakile ho an'ny besinimaro:</translation>
+        <translation>Ny antsasaky ny lakile ho an&apos;ny besinimaro:</translation>
     </message>
     <message>
         <source>The root of the branch</source>
-        <translation>Ny foton'ny sampana</translation>
+        <translation>Ny foton&apos;ny sampana</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
@@ -82326,7 +82542,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
-        <translation>Miditra irery ny mpizara (amin'ny lakile SSH-ny na credential helper), na ao amin'ity mpizara ity ny tahiry.</translation>
+        <translation>Miditra irery ny mpizara (amin&apos;ny lakile SSH-ny na credential helper), na ao amin&apos;ity mpizara ity ny tahiry.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
@@ -82342,19 +82558,19 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>Miverina amin'ny rakitr'io famoahana io ny tranonkala; ny fanorenana mbola tsy navoaka dia tsy maintsy avoaka na ariana aloha.</translation>
+        <translation>Miverina amin&apos;ny rakitr&apos;io famoahana io ny tranonkala; ny fanorenana mbola tsy navoaka dia tsy maintsy avoaka na ariana aloha.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Ny pejin'ny tranonkala ho an'ny adiresy tsy misy.</translation>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Ny pejin&apos;ny tranonkala ho an&apos;ny adiresy tsy misy.</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
         <translation>Tsy voatahiry ny tanjona: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Mbola tsy miditra amin'ity lakile ity ny tanjona: safidio ny "Lakilen'ny fandefasana natao ho an'ity tanjona ity" ao amin'ny fikirany.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Mbola tsy miditra amin&apos;ity lakile ity ny tanjona: safidio ny &quot;Lakilen&apos;ny fandefasana natao ho an&apos;ity tanjona ity&quot; ao amin&apos;ny fikirany.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82366,7 +82582,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
-        <translation>Tsy manana fidirana amin'ny tranonkala ho an'ny besinimaro ity fametrahana ity. Tsy avoaka mihitsy ny fidirana amin'ny fitantanana sy fanovana.</translation>
+        <translation>Tsy manana fidirana amin&apos;ny tranonkala ho an&apos;ny besinimaro ity fametrahana ity. Tsy avoaka mihitsy ny fidirana amin&apos;ny fitantanana sy fanovana.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
@@ -82374,7 +82590,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>This target has no deploy key yet.</source>
-        <translation>Mbola tsy manana lakilen'ny fandefasana ity tanjona ity.</translation>
+        <translation>Mbola tsy manana lakilen&apos;ny fandefasana ity tanjona ity.</translation>
     </message>
     <message>
         <source>This target has not been built here yet.</source>
@@ -82386,11 +82602,11 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
-        <translation>Manary ity fanorenana ity: ny famoahana farany indray no ao amin'ny lahatahiry. Tsy miova ny tranonkala velona.</translation>
+        <translation>Manary ity fanorenana ity: ny famoahana farany indray no ao amin&apos;ny lahatahiry. Tsy miova ny tranonkala velona.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Mariho aloha ny "Efa nojereko ny fiovana".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Mariho aloha ny &quot;Efa nojereko ny fiovana&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82402,7 +82618,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Type the name of the tag again</source>
-        <translation>Soraty indray ny anaran'ny marika</translation>
+        <translation>Soraty indray ny anaran&apos;ny marika</translation>
     </message>
     <message>
         <source>Unchanged</source>
@@ -82426,15 +82642,15 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Izay nataon'ny asa sy ny firaketany. Mitohy ao ambadika ny asa natomboka teto rehefa mikatona ity pejy ity.</translation>
+        <translation>Izay nataon&apos;ny asa sy ny firaketany. Mitohy ao ambadika ny asa natomboka teto rehefa mikatona ity pejy ity.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
-        <translation>Izay natonta ho hadisoana nataon'ny asa</translation>
+        <translation>Izay natonta ho hadisoana nataon&apos;ny asa</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
-        <translation>Izay tononin'ny pejy, sy ny sary rehetra amin'ny votoaty navoaka</translation>
+        <translation>Izay tononin&apos;ny pejy, sy ny sary rehetra amin&apos;ny votoaty navoaka</translation>
     </message>
     <message>
         <source>When</source>
@@ -82454,7 +82670,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>Ho aiza ny rohy mankany amin'izay tsy ao amin'ny dika (ny fikarohana, ny fidirana).</translation>
+        <translation>Ho aiza ny rohy mankany amin&apos;izay tsy ao amin&apos;ny dika (ny fikarohana, ny fidirana).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
@@ -82462,11 +82678,11 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>Iza no tranonkala avoaka, ary iza no anaran'ny tanjona.</translation>
+        <translation>Iza no tranonkala avoaka, ary iza no anaran&apos;ny tanjona.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
-        <translation>Mandeha eo ambanin'ny lalana rehetra. Ny mahazatra.</translation>
+        <translation>Mandeha eo ambanin&apos;ny lalana rehetra. Ny mahazatra.</translation>
     </message>
     <message>
         <source>Written whenever a custom domain is set.</source>
@@ -82478,15 +82694,15 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>Afaka manorina sy mamoaka amin'ny tanana foana ianao eto sy ao amin'ny console.</translation>
+        <translation>Afaka manorina sy mamoaka amin&apos;ny tanana foana ianao eto sy ao amin&apos;ny console.</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
-        <translation>anarana ihany; mijanona ao amin'ny Fametrahana &gt; Zava-miafina ny sanda</translation>
+        <translation>anarana ihany; mijanona ao amin&apos;ny Fametrahana &gt; Zava-miafina ny sanda</translation>
     </message>
     <message>
         <source>below %path</source>
-        <translation>eo ambanin'ny %path</translation>
+        <translation>eo ambanin&apos;ny %path</translation>
     </message>
     <message>
         <source>ended without a report</source>
@@ -82506,7 +82722,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>gh-pages, or main with the folder docs.</source>
-        <translation>gh-pages, na main miaraka amin'ny lahatahiry docs.</translation>
+        <translation>gh-pages, na main miaraka amin&apos;ny lahatahiry docs.</translation>
     </message>
     <message>
         <source>git host</source>
@@ -82514,11 +82730,11 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
-        <translation>https://github.com/owner/repo.git (miaraka amin'ny token) na git@github.com:owner/repo.git (miaraka amin'ny lakilen'ny fandefasana); tsy misy tenimiafina na token ao anatiny mihitsy.</translation>
+        <translation>https://github.com/owner/repo.git (miaraka amin&apos;ny token) na git@github.com:owner/repo.git (miaraka amin&apos;ny lakilen&apos;ny fandefasana); tsy misy tenimiafina na token ao anatiny mihitsy.</translation>
     </message>
     <message>
         <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
-        <translation>https://owner.github.io/repository/, ho an'ny sarintanin'ny tranonkala sy ny rohy kanonika.</translation>
+        <translation>https://owner.github.io/repository/, ho an&apos;ny sarintanin&apos;ny tranonkala sy ny rohy kanonika.</translation>
     </message>
     <message>
         <source>image</source>
@@ -82538,7 +82754,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>none: commits stay in the folder</source>
-        <translation>tsy misy: mijanona ao amin'ny lahatahiry ny fanamafisana</translation>
+        <translation>tsy misy: mijanona ao amin&apos;ny lahatahiry ny fanamafisana</translation>
     </message>
     <message>
         <source>none: nothing changed</source>
@@ -82562,7 +82778,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
-        <translation>Tsy mandeha ny proc_open, ka tsy azo atomboka eto ny asa. Ampiasao ./console exp:static:build ao amin'ny mpizara.</translation>
+        <translation>Tsy mandeha ny proc_open, ka tsy azo atomboka eto ny asa. Ampiasao ./console exp:static:build ao amin&apos;ny mpizara.</translation>
     </message>
     <message>
         <source>publish</source>
@@ -82606,11 +82822,39 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: soratana ao amin'ny rakitra CNAME. Atondroy any amin'ny mpampiantrano ny DNS-n'ny sehatra araka ny hazavainy; mety haharitra kely vao manomboka ny HTTPS.</translation>
+        <translation>www.example.com: soratana ao amin&apos;ny rakitra CNAME. Atondroy any amin&apos;ny mpampiantrano ny DNS-n&apos;ny sehatra araka ny hazavainy; mety haharitra kely vao manomboka ny HTTPS.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>eny, mbola tsy navoaka</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ny fanorenana dia maka ny pejy rehetra ao amin'ny %site araka ny hitan'ny mpitsidika tsy niditra, manoratra indray ny rohy, mandika ny rakitra ary manoratra ny vokatra ao amin'ny lahatahirin'ny tanjona. Tsy misy avoaka raha tsy efa nojerenao ny fanorenana ary notsindrianao ny Avoaky.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Ho an'ny manam-pahaizana ny famerenana: mariho ny "Fantatro izay ovain'ity" ary soraty indray ny anaran'ny marika.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Manokatra ny fanorenana araka ny hanolorana azy amin'ny mpampiantrano, avy amin'ny lahatahirin'ny tanjona. Mandeha ho anao mandritra ny adiny iray ny rohy.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Aseho ao anaty lisitra, ohatra "Tranonkala ho an'ny besinimaro amin'ny GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Ny pejin'ny tranonkala ho an'ny adiresy tsy misy.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Mbola tsy miditra amin'ity lakile ity ny tanjona: safidio ny "Lakilen'ny fandefasana natao ho an'ity tanjona ity" ao amin'ny fikirany.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Mariho aloha ny "Efa nojereko ny fiovana".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

@@ -80588,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ରନ୍ ଆରମ୍ଭ ହୋଇପାରିଲା ନାହିଁ।</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ପରିବର୍ତ୍ତନ ରେକର୍ଡିଂ</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ରେକର୍ଡିଂ ଚାଲୁଥିବା ବେଳେ ଆପଣ ପ୍ରଶାସନରେ କିମ୍ବା ସାଇଟର ସାଇଡବାରରେ ଯାହା ବଦଳାନ୍ତି ତାହା ଏକ ସ୍ଥାନାନ୍ତରଣର ପଦକ୍ଷେପ ଭାବେ ରଖାଯାଏ: ବିଷୟବସ୍ତୁ, ଶ୍ରେଣୀ, ଭୂମିକା ଓ ନୀତି, ବିଭାଗ, ଉପଯୋଗକର୍ତ୍ତା ଓ ଗୋଷ୍ଠୀ, URL ଉପନାମ, ସେଟିଂସ। କାମ ସରିଲେ ଏହାକୁ ବନ୍ଦ କରନ୍ତୁ, ଏହା କ'ଣ ଧରିଛି ଦେଖନ୍ତୁ ଏବଂ ଏଥିରୁ ଏକ ସ୍ଥାନାନ୍ତରଣ ତିଆରି କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ରେକର୍ଡିଂଗୁଡ଼ିକ ପଢ଼ାଯାଇପାରିଲା ନାହିଁ: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ରେକର୍ଡିଂର ସାରଣୀଗୁଡ଼ିକ ଏପର୍ଯ୍ୟନ୍ତ ନାହିଁ: ପ୍ରଥମେ ଅପଗ୍ରେଡ ଚଲାନ୍ତୁ (exp:upgrade --apply)।</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini ରେ ରେକର୍ଡିଂ ବନ୍ଦ ଅଛି ([RecordingSettings] Recording=disabled)।</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>ମୋ ପରିବର୍ତ୍ତନ</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ଆପଣ ବନ୍ଦ ନକରିବା ପର୍ଯ୍ୟନ୍ତ କେବଳ ଆପଣ ଯାହା ବଦଳାନ୍ତି, ଯେଉଁଠି ବି ହେଉ, ତାହା ରେକର୍ଡ କରେ।</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ରେକର୍ଡିଂ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time ଠାରୁ, ଏପର୍ଯ୍ୟନ୍ତ %count ପରିବର୍ତ୍ତନ।</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ଲେବେଲ (ଇଚ୍ଛାଧୀନ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ଏହା କ'ଣ ଧରିଛି ଦେଖାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ରେକର୍ଡିଂ ବନ୍ଦ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ମୋ ପରିବର୍ତ୍ତନର ରେକର୍ଡିଂ ଆରମ୍ଭ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>ସମଗ୍ର ସାଇଟର ୱିଣ୍ଡୋ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ବନ୍ଦ ହେବା ପର୍ଯ୍ୟନ୍ତ ପ୍ରତ୍ୟେକ ଉପଯୋଗକର୍ତ୍ତା ଓ କନସୋଲର ପ୍ରତ୍ୟେକ ପରିବର୍ତ୍ତନ ରେକର୍ଡ କରେ। ଖୋଲିବା ବେଳେ ଏହା ଆପଣ ବୋଲି ଯାଞ୍ଚ କରିବାକୁ କୁହାଯାଏ।</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ଖୋଲା</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>ୱିଣ୍ଡୋ ବନ୍ଦ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>ସମଗ୍ର ସାଇଟର ୱିଣ୍ଡୋ ଖୋଲନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ରେକର୍ଡିଂଗୁଡ଼ିକ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ଉପଯୋଗକର୍ତ୍ତାଙ୍କ ଆକାଉଣ୍ଟ (ଲଗଇନ, ଇ-ମେଲ, ପାସୱାର୍ଡ) ଏବଂ ଉପଯୋଗକର୍ତ୍ତା ଆକାଉଣ୍ଟର ଫିଲ୍ଡ କେବେ ରେକର୍ଡ ହୁଏ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ପରିବର୍ତ୍ତନଗୁଡ଼ିକ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ସମଗ୍ର ସାଇଟ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ଙ୍କ ପରିବର୍ତ୍ତନ</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ବନ୍ଦ</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ରେକର୍ଡିଂ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ରେକର୍ଡିଂ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ସମସ୍ତ ରେକର୍ଡିଂ</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ଏଥିରୁ ହେବାକୁ ଥିବା ସ୍ଥାନାନ୍ତରଣ</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ପ୍ରତ୍ୟେକ ବଦଳିଥିବା ଜିନିଷ ପାଇଁ ଏକ ପଦକ୍ଷେପରେ ଏକାଠି କରାଯାଇଥିବା ପରିବର୍ତ୍ତନ: ଏହି ରେକର୍ଡିଂରୁ ତିଆରି ସ୍ଥାନାନ୍ତରଣ କ'ଣ କରିବ।</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ଏହି ସଂସ୍ଥାପନରେ YAML ପଦକ୍ଷେପ ପ୍ରକାର %types ଆସିଲେ ଏଥିରୁ ସ୍ଥାନାନ୍ତରଣ ତିଆରି କରାଯାଇପାରିବ।</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ଜାଣିଶୁଣି ବାଦ୍ ଦିଆଯାଇଛି: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>କିଛି ରେକର୍ଡ ହୋଇନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ଏହା କ'ଣ ଧରିଛି</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ପରିବର୍ତ୍ତନ, ଯେଉଁ କ୍ରମରେ କରାଯାଇଥିଲା।</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ପରିବର୍ତ୍ତନ</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ପଦକ୍ଷେପ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>ସମ୍ବନ୍ଧିତ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>ଆଉ %count: ./console exp:migration:record:show ସବୁର ତାଲିକା ଦିଏ।</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ପରିତ୍ୟାଗ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ରେକର୍ଡିଂ ଓ ଏହା ଯାହା ଧରିଛି ତାହା ହଟାଏ। ଯାହା ବଦଳିଛି ତାହା ବଦଳି ରହେ।</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ହଁ, ଏହି ରେକର୍ଡିଂ ପରିତ୍ୟାଗ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ରେକର୍ଡ ହେଉଛି…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ଆପଣଙ୍କ ପରିବର୍ତ୍ତନ ଏକ ସ୍ଥାନାନ୍ତରଣ ପାଇଁ ରେକର୍ଡ ହେଉଛି।</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ଏହି ସାଇଟର ପ୍ରତ୍ୟେକ ପରିବର୍ତ୍ତନ ଏକ ସ୍ଥାନାନ୍ତରଣ ପାଇଁ ରେକର୍ଡ ହେଉଛି (ସମଗ୍ର ସାଇଟର ୱିଣ୍ଡୋ)।</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ସମଗ୍ର ସାଇଟର ରେକର୍ଡିଂ ଆରମ୍ଭ ହେଲା: ଆପଣ ବନ୍ଦ ନକରିବା ପର୍ଯ୍ୟନ୍ତ ପ୍ରତ୍ୟେକ ଉପଯୋଗକର୍ତ୍ତାଙ୍କ ପ୍ରତ୍ୟେକ ପରିବର୍ତ୍ତନ ରେକର୍ଡ ହେବ।</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ରେକର୍ଡିଂ ଆରମ୍ଭ ହେଲା: ଆପଣ ବନ୍ଦ ନକରିବା ପର୍ଯ୍ୟନ୍ତ ଆପଣଙ୍କ ପରିବର୍ତ୍ତନ ରେକର୍ଡ ହେବ।</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ରେକର୍ଡିଂ ବନ୍ଦ ହେଲା। ଏହା ଯାହା ଧରିଛି ଆପଣ ପରିତ୍ୟାଗ ନକରିବା ପର୍ଯ୍ୟନ୍ତ ରହିବ।</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ରେକର୍ଡିଂ ଓ ଏହାର ଘଟଣା ହଟାଯାଇଛି।</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>କୌଣସି ରେକର୍ଡିଂ %id ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ପ୍ରଥମେ "ହଁ, ଏହି ରେକର୍ଡିଂ ପରିତ୍ୟାଗ କରନ୍ତୁ" ଚିହ୍ନିତ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ସେସନ ରେକର୍ଡିଂ କେବଳ ରେକର୍ଡ କରିଥିବା ଉପଯୋଗକର୍ତ୍ତା ବନ୍ଦ କରିପାରିବେ।</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ବନ୍ଦ କରିବାକୁ ରେକର୍ଡିଂ ବାଛନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ଏହି ପ୍ରକାରର ରେକର୍ଡିଂ ପୂର୍ବରୁ ଚାଲୁଛି।</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ରେକର୍ଡିଂ ବଦଳାଯାଇପାରିଲା ନାହିଁ: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81384,7 +81600,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>7. What the build holds</source>
-        <translation>7. ବିଲ୍ଡରେ କ'ଣ ଥାଏ</translation>
+        <translation>7. ବିଲ୍ଡରେ କ&apos;ଣ ଥାଏ</translation>
     </message>
     <message>
         <source>8. When it is published</source>
@@ -81399,7 +81615,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub ପ୍ରୋଜେକ୍ଟ ସାଇଟ୍ /&lt;repository&gt;/ ତଳେ ରହେ; ଆପେକ୍ଷିକ ଲିଙ୍କ ସେଠାରେ ଓ ଅନ୍ୟ ଯେକୌଣସି ସ୍ଥାନରେ କାମ କରେ।</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>ଏକ ବିଲ୍ଡ %site ର ପ୍ରତ୍ୟେକ ପୃଷ୍ଠା ସାଇନ୍ ଇନ୍ କରିନଥିବା ଜଣେ ଦର୍ଶକ ଯେପରି ଦେଖେ ସେହିପରି ଆଣେ, ଲିଙ୍କଗୁଡ଼ିକ ପୁନର୍ବାର ଲେଖେ, ଫାଇଲ୍ କପି କରେ ଓ ଫଳାଫଳ ଲକ୍ଷ୍ୟସ୍ଥଳର ଫୋଲ୍ଡର୍‌ରେ ଲେଖେ। ଆପଣ ବିଲ୍ଡ ଯାଞ୍ଚ କରି ପ୍ରକାଶ କରନ୍ତୁ ଦବାଇବା ପର୍ଯ୍ୟନ୍ତ କିଛି ପ୍ରକାଶିତ ହୁଏ ନାହିଁ।</translation>
     </message>
     <message>
@@ -81447,8 +81663,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ସଫା କରିବା ପରେ ବି ଡିବଗ୍ ଆଉଟପୁଟ୍, ଫର୍ମ ଟୋକେନ୍ କିମ୍ବା ସେସନ୍ ID ଥିବା ପୃଷ୍ଠା କେବେ ପ୍ରକାଶିତ ହୁଏ ନାହିଁ।</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ପ୍ରତ୍ୟାବର୍ତ୍ତନ ବିଶେଷଜ୍ଞଙ୍କ ପାଇଁ: "ଏହା କ'ଣ ବଦଳାଏ ମୁଁ ଜାଣେ" ରେ ଟିକ୍ ଦିଅନ୍ତୁ ଏବଂ ଟ୍ୟାଗ୍‌ର ନାମ ପୁଣି ଟାଇପ୍ କରନ୍ତୁ।</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ପ୍ରତ୍ୟାବର୍ତ୍ତନ ବିଶେଷଜ୍ଞଙ୍କ ପାଇଁ: &quot;ଏହା କ&apos;ଣ ବଦଳାଏ ମୁଁ ଜାଣେ&quot; ରେ ଟିକ୍ ଦିଅନ୍ତୁ ଏବଂ ଟ୍ୟାଗ୍‌ର ନାମ ପୁଣି ଟାଇପ୍ କରନ୍ତୁ।</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81568,7 +81784,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Check what the build changes, look at it, then publish it or throw it away.</source>
-        <translation>ବିଲ୍ଡ କ'ଣ ବଦଳାଏ ଯାଞ୍ଚ କରନ୍ତୁ, ଏହାକୁ ଦେଖନ୍ତୁ, ତା'ପରେ ପ୍ରକାଶ କରନ୍ତୁ କିମ୍ବା ଫିଙ୍ଗିଦିଅନ୍ତୁ।</translation>
+        <translation>ବିଲ୍ଡ କ&apos;ଣ ବଦଳାଏ ଯାଞ୍ଚ କରନ୍ତୁ, ଏହାକୁ ଦେଖନ୍ତୁ, ତା&apos;ପରେ ପ୍ରକାଶ କରନ୍ତୁ କିମ୍ବା ଫିଙ୍ଗିଦିଅନ୍ତୁ।</translation>
     </message>
     <message>
         <source>Choose the publish to go back to.</source>
@@ -81780,7 +81996,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>I know what this changes</source>
-        <translation>ଏହା କ'ଣ ବଦଳାଏ ମୁଁ ଜାଣେ</translation>
+        <translation>ଏହା କ&apos;ଣ ବଦଳାଏ ମୁଁ ଜାଣେ</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81959,7 +82175,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ପୂର୍ବାବଲୋକନ ଖୋଲନ୍ତୁ</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>ବିଲ୍ଡକୁ ଲକ୍ଷ୍ୟସ୍ଥଳର ଫୋଲ୍ଡର୍‌ରୁ ହୋଷ୍ଟ ଯେପରି ପରିବେଷଣ କରିବ ସେପରି ଖୋଲେ। ଲିଙ୍କଟି ଆପଣଙ୍କ ପାଇଁ ଏକ ଘଣ୍ଟା କାମ କରେ।</translation>
     </message>
     <message>
@@ -82135,8 +82351,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ସେଟଅପ୍ &gt; ଗୋପନୀୟ ତଥ୍ୟ</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>ତାଲିକାରେ ଦେଖାଯାଏ, ଉଦାହରଣ ସ୍ୱରୂପ "GitHub Pages ରେ ସାର୍ବଜନୀନ ସାଇଟ୍"।</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ତାଲିକାରେ ଦେଖାଯାଏ, ଉଦାହରଣ ସ୍ୱରୂପ &quot;GitHub Pages ରେ ସାର୍ବଜନୀନ ସାଇଟ୍&quot;।</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82240,7 +82456,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Tells search engines what to read.</source>
-        <translation>ସନ୍ଧାନ ଇଞ୍ଜିନ୍‌କୁ କ'ଣ ପଢ଼ିବେ ତାହା କହେ।</translation>
+        <translation>ସନ୍ଧାନ ଇଞ୍ଜିନ୍‌କୁ କ&apos;ଣ ପଢ଼ିବେ ତାହା କହେ।</translation>
     </message>
     <message>
         <source>The build could not be thrown away: %problem</source>
@@ -82343,7 +82559,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ସାଇଟ୍ ସେହି ପ୍ରକାଶନର ଫାଇଲ୍‌କୁ ଫେରେ; ଏପର୍ଯ୍ୟନ୍ତ ପ୍ରକାଶିତ ହୋଇନଥିବା ବିଲ୍ଡକୁ ପ୍ରଥମେ ପ୍ରକାଶ କିମ୍ବା ପରିତ୍ୟାଗ କରିବା ଆବଶ୍ୟକ।</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>ନଥିବା ଠିକଣା ପାଇଁ ସାଇଟ୍‌ର ନିଜ ପୃଷ୍ଠା।</translation>
     </message>
     <message>
@@ -82351,8 +82567,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ଲକ୍ଷ୍ୟସ୍ଥଳ ସଞ୍ଚୟ କରାଯାଇପାରିଲା ନାହିଁ: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ଲକ୍ଷ୍ୟସ୍ଥଳ ଏପର୍ଯ୍ୟନ୍ତ ଏହି କି ସହ ସାଇନ୍ ଇନ୍ କରେ ନାହିଁ: ଏହାର ସେଟିଂସ୍‌ରେ "ଏହି ଲକ୍ଷ୍ୟସ୍ଥଳ ପାଇଁ ତିଆରି ଏକ ଡିପ୍ଲୟ କି" ବାଛନ୍ତୁ।</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ଲକ୍ଷ୍ୟସ୍ଥଳ ଏପର୍ଯ୍ୟନ୍ତ ଏହି କି ସହ ସାଇନ୍ ଇନ୍ କରେ ନାହିଁ: ଏହାର ସେଟିଂସ୍‌ରେ &quot;ଏହି ଲକ୍ଷ୍ୟସ୍ଥଳ ପାଇଁ ତିଆରି ଏକ ଡିପ୍ଲୟ କି&quot; ବାଛନ୍ତୁ।</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82387,8 +82603,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ଏହି ବିଲ୍ଡକୁ ପରିତ୍ୟାଗ କରେ: ଫୋଲ୍ଡର୍‌ରେ ପୁଣି ଶେଷ ପ୍ରକାଶନ ରହେ। ଲାଇଭ୍ ସାଇଟ୍ ବଦଳେ ନାହିଁ।</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ପ୍ରଥମେ "ମୁଁ ପରିବର୍ତ୍ତନଗୁଡ଼ିକ ଯାଞ୍ଚ କରିଛି" ରେ ଟିକ୍ ଦିଅନ୍ତୁ।</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ପ୍ରଥମେ &quot;ମୁଁ ପରିବର୍ତ୍ତନଗୁଡ଼ିକ ଯାଞ୍ଚ କରିଛି&quot; ରେ ଟିକ୍ ଦିଅନ୍ତୁ।</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82412,23 +82628,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>What</source>
-        <translation>କ'ଣ</translation>
+        <translation>କ&apos;ଣ</translation>
     </message>
     <message>
         <source>What changes</source>
-        <translation>କ'ଣ ବଦଳେ</translation>
+        <translation>କ&apos;ଣ ବଦଳେ</translation>
     </message>
     <message>
         <source>What each file is; always written.</source>
-        <translation>ପ୍ରତ୍ୟେକ ଫାଇଲ୍ କ'ଣ; ସବୁବେଳେ ଲେଖାଯାଏ।</translation>
+        <translation>ପ୍ରତ୍ୟେକ ଫାଇଲ୍ କ&apos;ଣ; ସବୁବେଳେ ଲେଖାଯାଏ।</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>କାର୍ଯ୍ୟ କ'ଣ କଲା ଓ ଏହାର ରେକର୍ଡ। ଏଠାରେ ଆରମ୍ଭ ହୋଇଥିବା କାର୍ଯ୍ୟ ଏହି ପୃଷ୍ଠା ବନ୍ଦ ହେଲେ ପୃଷ୍ଠଭୂମିରେ ଜାରି ରହେ।</translation>
+        <translation>କାର୍ଯ୍ୟ କ&apos;ଣ କଲା ଓ ଏହାର ରେକର୍ଡ। ଏଠାରେ ଆରମ୍ଭ ହୋଇଥିବା କାର୍ଯ୍ୟ ଏହି ପୃଷ୍ଠା ବନ୍ଦ ହେଲେ ପୃଷ୍ଠଭୂମିରେ ଜାରି ରହେ।</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
-        <translation>କାର୍ଯ୍ୟ ତ୍ରୁଟି ଭାବରେ କ'ଣ ପ୍ରିଣ୍ଟ କଲା</translation>
+        <translation>କାର୍ଯ୍ୟ ତ୍ରୁଟି ଭାବରେ କ&apos;ଣ ପ୍ରିଣ୍ଟ କଲା</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
@@ -82460,7 +82676,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>କେଉଁ ସାଇଟ୍ ପ୍ରକାଶିତ ହୁଏ, ଏବଂ ଲକ୍ଷ୍ୟସ୍ଥଳର ନାମ କ'ଣ।</translation>
+        <translation>କେଉଁ ସାଇଟ୍ ପ୍ରକାଶିତ ହୁଏ, ଏବଂ ଲକ୍ଷ୍ୟସ୍ଥଳର ନାମ କ&apos;ଣ।</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
@@ -82609,6 +82825,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>ହଁ, ଏପର୍ଯ୍ୟନ୍ତ ପ୍ରକାଶିତ ନୁହେଁ</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ଏକ ବିଲ୍ଡ %site ର ପ୍ରତ୍ୟେକ ପୃଷ୍ଠା ସାଇନ୍ ଇନ୍ କରିନଥିବା ଜଣେ ଦର୍ଶକ ଯେପରି ଦେଖେ ସେହିପରି ଆଣେ, ଲିଙ୍କଗୁଡ଼ିକ ପୁନର୍ବାର ଲେଖେ, ଫାଇଲ୍ କପି କରେ ଓ ଫଳାଫଳ ଲକ୍ଷ୍ୟସ୍ଥଳର ଫୋଲ୍ଡର୍‌ରେ ଲେଖେ। ଆପଣ ବିଲ୍ଡ ଯାଞ୍ଚ କରି ପ୍ରକାଶ କରନ୍ତୁ ଦବାଇବା ପର୍ଯ୍ୟନ୍ତ କିଛି ପ୍ରକାଶିତ ହୁଏ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>ପ୍ରତ୍ୟାବର୍ତ୍ତନ ବିଶେଷଜ୍ଞଙ୍କ ପାଇଁ: "ଏହା କ'ଣ ବଦଳାଏ ମୁଁ ଜାଣେ" ରେ ଟିକ୍ ଦିଅନ୍ତୁ ଏବଂ ଟ୍ୟାଗ୍‌ର ନାମ ପୁଣି ଟାଇପ୍ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>ବିଲ୍ଡକୁ ଲକ୍ଷ୍ୟସ୍ଥଳର ଫୋଲ୍ଡର୍‌ରୁ ହୋଷ୍ଟ ଯେପରି ପରିବେଷଣ କରିବ ସେପରି ଖୋଲେ। ଲିଙ୍କଟି ଆପଣଙ୍କ ପାଇଁ ଏକ ଘଣ୍ଟା କାମ କରେ।</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>ତାଲିକାରେ ଦେଖାଯାଏ, ଉଦାହରଣ ସ୍ୱରୂପ "GitHub Pages ରେ ସାର୍ବଜନୀନ ସାଇଟ୍"।</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>ନଥିବା ଠିକଣା ପାଇଁ ସାଇଟ୍‌ର ନିଜ ପୃଷ୍ଠା।</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ଲକ୍ଷ୍ୟସ୍ଥଳ ଏପର୍ଯ୍ୟନ୍ତ ଏହି କି ସହ ସାଇନ୍ ଇନ୍ କରେ ନାହିଁ: ଏହାର ସେଟିଂସ୍‌ରେ "ଏହି ଲକ୍ଷ୍ୟସ୍ଥଳ ପାଇଁ ତିଆରି ଏକ ଡିପ୍ଲୟ କି" ବାଛନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>ପ୍ରଥମେ "ମୁଁ ପରିବର୍ତ୍ତନଗୁଡ଼ିକ ଯାଞ୍ଚ କରିଛି" ରେ ଟିକ୍ ଦିଅନ୍ତୁ।</translation>
     </message>
     <message>
         <source>A GitHub App</source>

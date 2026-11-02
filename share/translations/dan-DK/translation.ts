@@ -81270,6 +81270,222 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>The run could not be started.</source>
         <translation>Kørslen kunne ikke startes.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Optag ændringer</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Mens en optagelse kører, gemmes det, du ændrer i administrationen eller i webstedets sidepanel, som trin i en migrering: indhold, klasser, roller og politikker, sektioner, brugere og grupper, URL-aliasser, indstillinger. Stop den, når du er færdig, se hvad den har fanget, og generér en migrering ud fra den.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Optagelserne kunne ikke læses: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Optagelsernes tabeller findes ikke endnu: kør først opgraderingen (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Optagelse er slået fra i migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mine ændringer</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Optager kun det, du ændrer, hvor du end ændrer det, indtil du stopper den.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Optagelse</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>siden %time, indtil videre %count ændring(er).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiket (valgfri)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Vis hvad den har fanget</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Stop optagelsen</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Start optagelse af mine ændringer</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Vindue for hele webstedet</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Optager hver ændring fra hver bruger og fra konsollen, indtil det lukkes. Når du åbner det, bliver du bedt om at bekræfte, at det er dig.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Åbent</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Luk vinduet</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Åbn vinduet for hele webstedet</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Optagelser</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>En brugers konto (login, e-mail, adgangskode) og felterne i brugerkonti bliver aldrig optaget.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ændringer</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Hele webstedet</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ændringer af %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Stoppet</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ingen optagelse endnu.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Optagelse %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Alle optagelser</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Den migrering, den ville give</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ændringerne samlet i ét trin pr. ændret ting: hvad en migrering genereret ud fra denne optagelse ville gøre.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Der kan genereres en migrering ud fra den, når denne installation har YAML-trintyperne %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Udeladt med vilje: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Intet blev optaget.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Hvad den har fanget</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ændring(er), i den rækkefølge de blev lavet.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ændring</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Trin</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Vedrører</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count mere: ./console exp:migration:record:show viser dem alle.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Kassér</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Fjerner optagelsen og det, den har fanget. Det, der er ændret, forbliver ændret.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ja, kassér denne optagelse</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Optager…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Dine ændringer optages til en migrering.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Hver ændring på dette websted optages til en migrering (vindue for hele webstedet).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Optagelsen for hele webstedet er startet: hver ændring fra hver bruger optages, indtil du stopper den.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Optagelsen er startet: dine ændringer optages, indtil du stopper den.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Optagelsen er stoppet. Det, den har fanget, bliver, indtil du kasserer den.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Optagelsen og dens hændelser er fjernet.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Der findes ingen optagelse %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Sæt først flueben ved »Ja, kassér denne optagelse«.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Kun den bruger, der optog, må stoppe en sessionsoptagelse.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Vælg den optagelse, der skal stoppes.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>En optagelse af denne slags kører allerede.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Optagelsen kunne ikke ændres: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -82081,7 +82297,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Et GitHub-projektsite ligger under /&lt;repository&gt;/; relative links virker dér og alle andre steder.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Et build henter hver side af %site, som en besøgende, der ikke er logget ind, ser den, omskriver linkene, kopierer filerne og skriver resultatet til målets mappe. Intet publiceres, før du har kontrolleret buildet og trykket på Publicer.</translation>
     </message>
     <message>
@@ -82129,8 +82345,8 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>En side, der stadig indeholder fejlsøgningsoutput, en formular-token eller et sessions-id efter rensningen, publiceres aldrig.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>En tilbagerulning er for eksperter: sæt flueben ved "Jeg ved, hvad dette ændrer", og skriv mærkets navn igen.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>En tilbagerulning er for eksperter: sæt flueben ved &quot;Jeg ved, hvad dette ændrer&quot;, og skriv mærkets navn igen.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -82290,7 +82506,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
-        <translation>Fejlsøgningsoutput, formular-tokens, sessions-id'er og nonces fjernes altid.</translation>
+        <translation>Fejlsøgningsoutput, formular-tokens, sessions-id&apos;er og nonces fjernes altid.</translation>
     </message>
     <message>
         <source>Deploy key</source>
@@ -82641,7 +82857,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Åbn forhåndsvisningen</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Åbner buildet, som værten vil levere det, fra målets mappe. Linket virker for dig i en time.</translation>
     </message>
     <message>
@@ -82790,7 +83006,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Section ids, separated by commas.</source>
-        <translation>Sektions-id'er adskilt af kommaer.</translation>
+        <translation>Sektions-id&apos;er adskilt af kommaer.</translation>
     </message>
     <message>
         <source>Send them to the live site</source>
@@ -82817,8 +83033,8 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Opsætning &gt; Hemmeligheder</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Vises i lister, for eksempel "Offentligt site på GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Vises i lister, for eksempel &quot;Offentligt site på GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -83025,7 +83241,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Sitet går tilbage til filerne fra den publicering; et build, der ikke er publiceret endnu, skal først publiceres eller kasseres.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Sitets egen side for adresser, der ikke findes.</translation>
     </message>
     <message>
@@ -83033,8 +83249,8 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Målet kunne ikke gemmes: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Målet logger endnu ikke ind med denne nøgle: vælg "En udrulningsnøgle oprettet til dette mål" i dets indstillinger.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Målet logger endnu ikke ind med denne nøgle: vælg &quot;En udrulningsnøgle oprettet til dette mål&quot; i dets indstillinger.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -83069,8 +83285,8 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Kasserer dette build: mappen indeholder igen den seneste publicering. Live-sitet ændres ikke.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Sæt først flueben ved "Jeg har kontrolleret ændringerne".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Sæt først flueben ved &quot;Jeg har kontrolleret ændringerne&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -83291,6 +83507,34 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>yes, not published yet</source>
         <translation>ja, ikke publiceret endnu</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Et build henter hver side af %site, som en besøgende, der ikke er logget ind, ser den, omskriver linkene, kopierer filerne og skriver resultatet til målets mappe. Intet publiceres, før du har kontrolleret buildet og trykket på Publicer.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>En tilbagerulning er for eksperter: sæt flueben ved "Jeg ved, hvad dette ændrer", og skriv mærkets navn igen.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Åbner buildet, som værten vil levere det, fra målets mappe. Linket virker for dig i en time.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Vises i lister, for eksempel "Offentligt site på GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Sitets egen side for adresser, der ikke findes.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Målet logger endnu ikke ind med denne nøgle: vælg "En udrulningsnøgle oprettet til dette mål" i dets indstillinger.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Sæt først flueben ved "Jeg har kontrolleret ændringerne".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

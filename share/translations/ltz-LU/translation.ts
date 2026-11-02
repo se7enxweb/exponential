@@ -80590,6 +80590,222 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>The run could not be started.</source>
         <translation>De Laf konnt net gestart ginn.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Ännerungen ophuelen</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Soulaang eng Opnam leeft, gëtt dat, wat Dir an der Administratioun oder an der Säiteläischt vum Site ännert, als Schrëtt vun enger Migratioun gehalen: Inhalt, Klassen, Rollen a Richtlinnen, Sektiounen, Benotzer a Gruppen, URL-Aliasen, Astellungen. Stoppt se, wann Dir fäerdeg sidd, kuckt, wat se festgehalen huet, a generéiert eng Migratioun doraus.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>D'Opname konnten net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>D'Tabelle vun den Opnamen ginn et nach net: Lancéiert fir d'éischt den Upgrade (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>D'Ophuelen ass a migration.ini ausgeschalt ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Meng Ännerungen</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Hëlt just dat op, wat Dir ännert, egal wou, bis Dir se stoppt.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Opnam</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>zënter %time, bis elo %count Ännerung(en).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etikett (fakultativ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Weisen, wat se festgehalen huet</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Opnam stoppen</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Ufänken, meng Ännerungen opzehuelen</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fënster fir de ganze Site</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Hëlt all Ännerung vun all Benotzer a vun der Konsol op, bis se zougemaach gëtt. Beim Opmaache musst Dir bestätegen, datt Dir et sidd.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Op</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Fënster zoumaachen</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Fënster fir de ganze Site opmaachen</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Opnamen</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>De Kont vun engem Benotzer (Login, E-Mail, Passwuert) an d'Felder vu Benotzerkonten ginn ni opgeholl.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ännerungen</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ganze Site</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ännerunge vum %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Gestoppt</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Nach keng Opnam.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Opnam %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>All Opnamen</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>D'Migratioun, déi doraus géif entstoen</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>D'Ännerungen zesummegefaasst an ee Schrëtt pro geännert Saach: wat eng aus dëser Opnam generéiert Migratioun géif maachen.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Eng Migratioun kann doraus generéiert ginn, soubal dës Installatioun d'YAML-Schrëtttypen %types huet.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Bewosst ewechgelooss: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Näischt gouf opgeholl.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Wat se festgehalen huet</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count Ännerung(en), an der Reiefolleg, an där se gemaach goufen.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ännerung</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Schrëtt</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Betrëfft</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Nach %count: ./console exp:migration:record:show weist se all.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Verwerfen</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Läscht d'Opnam an dat, wat se festgehalen huet. Wat geännert gouf, bleift geännert.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Jo, dës Opnam verwerfen</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Hëlt op…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Är Ännerunge ginn fir eng Migratioun opgeholl.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>All Ännerung op dësem Site gëtt fir eng Migratioun opgeholl (Fënster fir de ganze Site).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>D'Opnam fir de ganze Site huet ugefaangen: all Ännerung vun all Benotzer gëtt opgeholl, bis Dir se stoppt.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>D'Opnam huet ugefaangen: Är Ännerunge ginn opgeholl, bis Dir se stoppt.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Opnam gestoppt. Wat se festgehalen huet, bleift, bis Dir se verwerft.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>D'Opnam an hir Evenementer goufe geläscht.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Et gëtt keng Opnam %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Kräizt fir d'éischt „Jo, dës Opnam verwerfen“ un.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Just de Benotzer, deen opgeholl huet, däerf eng Sessiounsopnam stoppen.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Wielt d'Opnam, déi gestoppt soll ginn.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Eng Opnam vun dëser Zort leeft schonn.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>D'Opnam konnt net geännert ginn: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81287,7 +81503,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>D'Ziler konnten net gelies ginn: %problem</translation>
+        <translation>D&apos;Ziler konnten net gelies ginn: %problem</translation>
     </message>
     <message>
         <source>a job is going on</source>
@@ -81346,7 +81562,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>%tag is the publish the site has now.</source>
-        <translation>%tag ass d'Publikatioun, déi de Site elo huet.</translation>
+        <translation>%tag ass d&apos;Publikatioun, déi de Site elo huet.</translation>
     </message>
     <message>
         <source>%target: job %id</source>
@@ -81401,8 +81617,8 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>E GitHub-Projetssite läit ënner /&lt;repository&gt;/; relativ Linke funktionéieren do an iwwerall soss.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>E Build rifft all Säit vun %site of, esou wéi e Besucher, deen net ugemellt ass, se gesäit, schreift d'Linken ëm, kopéiert d'Fichieren a schreift d'Resultat an den Dossier vum Zil. Näischt gëtt publizéiert, ier Dir de Build kontrolléiert an op Publizéieren dréckt.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>E Build rifft all Säit vun %site of, esou wéi e Besucher, deen net ugemellt ass, se gesäit, schreift d&apos;Linken ëm, kopéiert d&apos;Fichieren a schreift d&apos;Resultat an den Dossier vum Zil. Näischt gëtt publizéiert, ier Dir de Build kontrolléiert an op Publizéieren dréckt.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -81422,7 +81638,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
-        <translation>En Deploy-Key mellt sech iwwer SSH un: ännert d'git-Adress op déi SSH-Adress (git@github.com:owner/repo.git).</translation>
+        <translation>En Deploy-Key mellt sech iwwer SSH un: ännert d&apos;git-Adress op déi SSH-Adress (git@github.com:owner/repo.git).</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
@@ -81438,7 +81654,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
-        <translation>E Link vun der Säit /news/ op d'Säit /about-us/team gëtt esou geschriwwen</translation>
+        <translation>E Link vun der Säit /news/ op d&apos;Säit /about-us/team gëtt esou geschriwwen</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
@@ -81449,7 +81665,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>Eng Säit, déi nom Botzen nach Debug-Ausgab, e Formulaire-Token oder eng Sessiouns-ID dréit, gëtt ni publizéiert.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>Eng Zréckrollung ass fir Experten: kräizt „Ech weess, wat dat ännert“ un a tippt den Numm vum Tag nach eng Kéier.</translation>
     </message>
     <message>
@@ -81458,7 +81674,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>En Zil ass ee Site, deen an een git-Depot publizéiert gëtt. Hei gëtt näischt gebaut oder publizéiert: Späicheren schreift d'Astellungen an settings/override/staticcache.ini.append.php.</translation>
+        <translation>En Zil ass ee Site, deen an een git-Depot publizéiert gëtt. Hei gëtt näischt gebaut oder publizéiert: Späicheren schreift d&apos;Astellungen an settings/override/staticcache.ini.append.php.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
@@ -81562,7 +81778,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Check it first</source>
-        <translation>Fir d'éischt kontrolléieren</translation>
+        <translation>Fir d&apos;éischt kontrolléieren</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81574,7 +81790,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Choose the publish to go back to.</source>
-        <translation>Wielt d'Publikatioun, op déi zréckgaange gëtt.</translation>
+        <translation>Wielt d&apos;Publikatioun, op déi zréckgaange gëtt.</translation>
     </message>
     <message>
         <source>Comes with a later release.</source>
@@ -81634,7 +81850,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Eidel: d'Adress vum Site. Soss eng intern Adress vum selwechte Site.</translation>
+        <translation>Eidel: d&apos;Adress vum Site. Soss eng intern Adress vum selwechte Site.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -81646,7 +81862,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>All Publikatioun ass e Commit mat engem Tag static/%id/&lt;n&gt;. Zréckgoen mécht en neie Commit mat de Fichiere vun enger fréierer Publikatioun: d'Geschicht bleift, keen Tag gëtt verréckelt an näischt gëtt forcéiert.</translation>
+        <translation>All Publikatioun ass e Commit mat engem Tag static/%id/&lt;n&gt;. Zréckgoen mécht en neie Commit mat de Fichiere vun enger fréierer Publikatioun: d&apos;Geschicht bleift, keen Tag gëtt verréckelt an näischt gëtt forcéiert.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -81654,7 +81870,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Fetch the pages from</source>
-        <translation>D'Säiten ofruffe vun</translation>
+        <translation>D&apos;Säiten ofruffe vun</translation>
     </message>
     <message>
         <source>File</source>
@@ -81734,7 +81950,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
-        <translation>GitHub Pages publizéiert d'Fichieren esou wéi se sinn (néideg fir Fichieren, déi mat _ ufänken).</translation>
+        <translation>GitHub Pages publizéiert d&apos;Fichieren esou wéi se sinn (néideg fir Fichieren, déi mat _ ufänken).</translation>
     </message>
     <message>
         <source>GitHub serves the branch as it is pushed. The default.</source>
@@ -81778,7 +81994,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>I have checked the changes</source>
-        <translation>Ech hunn d'Ännerunge kontrolléiert</translation>
+        <translation>Ech hunn d&apos;Ännerunge kontrolléiert</translation>
     </message>
     <message>
         <source>I know what this changes</source>
@@ -81838,7 +82054,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
-        <translation>Klengbuschtawen, Zifferen, _ an -, zum Beispill github-public. Et benennt den Dossier an d'Tags (static/&lt;id&gt;/&lt;n&gt;) a kann duerno net méi geännert ginn.</translation>
+        <translation>Klengbuschtawen, Zifferen, _ an -, zum Beispill github-public. Et benennt den Dossier an d&apos;Tags (static/&lt;id&gt;/&lt;n&gt;) a kann duerno net méi geännert ginn.</translation>
     </message>
     <message>
         <source>Make a new key</source>
@@ -81854,7 +82070,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Maacht den Depot fir d'éischt um Host; en eidelen ass an der Rei.</translation>
+        <translation>Maacht den Depot fir d&apos;éischt um Host; en eidelen ass an der Rei.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81950,7 +82166,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
-        <translation>Nëmmen dat, wat d'Säiten nennen</translation>
+        <translation>Nëmmen dat, wat d&apos;Säiten nennen</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
@@ -81958,10 +82174,10 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Open the preview</source>
-        <translation>D'Virschau opmaachen</translation>
+        <translation>D&apos;Virschau opmaachen</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Mécht de Build op, esou wéi den Host en servéiere wäert, aus dem Dossier vum Zil. De Link funktionéiert fir Iech eng Stonn laang.</translation>
     </message>
     <message>
@@ -82026,7 +82242,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Eng statesch Kopie vun engem Site op GitHub Pages oder all anere git-Host publizéieren: en bauen, d'Ännerunge kontrolléieren, publizéieren an op eng fréier Publikatioun zréckgoen, wann et néideg ass.</translation>
+        <translation>Eng statesch Kopie vun engem Site op GitHub Pages oder all anere git-Host publizéieren: en bauen, d&apos;Ännerunge kontrolléieren, publizéieren an op eng fréier Publikatioun zréckgoen, wann et néideg ass.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -82086,7 +82302,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
-        <translation>D'Iwwerpréiwung kontrolléiert all Astellung a weist d'Zeilen, déi geschriwwe ginn. Nach näischt ass gespäichert.</translation>
+        <translation>D&apos;Iwwerpréiwung kontrolléiert all Astellung a weist d&apos;Zeilen, déi geschriwwe ginn. Nach näischt ass gespäichert.</translation>
     </message>
     <message>
         <source>Roll back</source>
@@ -82137,12 +82353,12 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>Konfiguratioun &gt; Geheimnisser</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>An de Lëschte gewisen, zum Beispill „Ëffentleche Site op GitHub Pages“.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>D'Umeldung mat enger GitHub App kënnt mat der GitHub-Integratioun.</translation>
+        <translation>D&apos;Umeldung mat enger GitHub App kënnt mat der GitHub-Integratioun.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -82194,7 +82410,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
-        <translation>Statescht Publizéieren ass ausgeschalt. Schalt et fir d'éischt an Konfiguratioun &gt; Statescht Publizéieren un.</translation>
+        <translation>Statescht Publizéieren ass ausgeschalt. Schalt et fir d&apos;éischt an Konfiguratioun &gt; Statescht Publizéieren un.</translation>
     </message>
     <message>
         <source>Static publishing is switched on.</source>
@@ -82258,7 +82474,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
-        <translation>D'Standardastellunge passe fir déi meescht Siten.</translation>
+        <translation>D&apos;Standardastellunge passe fir déi meescht Siten.</translation>
     </message>
     <message>
         <source>The folder holds a build that is not published yet; a new build replaces it.</source>
@@ -82270,23 +82486,23 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
-        <translation>D'Aufgab konnt net virbereet ginn: %detail</translation>
+        <translation>D&apos;Aufgab konnt net virbereet ginn: %detail</translation>
     </message>
     <message>
         <source>The job could not be started.</source>
-        <translation>D'Aufgab konnt net gestart ginn.</translation>
+        <translation>D&apos;Aufgab konnt net gestart ginn.</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>D'Aufgab ass fäerdeg. Hire Rapport gëtt gelueden.</translation>
+        <translation>D&apos;Aufgab ass fäerdeg. Hire Rapport gëtt gelueden.</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
-        <translation>D'Aufgab brauch en ugemellte Benotzer.</translation>
+        <translation>D&apos;Aufgab brauch en ugemellte Benotzer.</translation>
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
-        <translation>D'Aufgab gouf gestart, mee huet hir Prozess-ID net gemellt. Kontrolléiert %detail.</translation>
+        <translation>D&apos;Aufgab gouf gestart, mee huet hir Prozess-ID net gemellt. Kontrolléiert %detail.</translation>
     </message>
     <message>
         <source>The key</source>
@@ -82298,19 +82514,19 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The lines that will be written</source>
-        <translation>D'Zeilen, déi geschriwwe ginn</translation>
+        <translation>D&apos;Zeilen, déi geschriwwe ginn</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>D'Lëscht vun de Säite fir Sichmaschinnen; brauch d'ëffentlech Adress.</translation>
+        <translation>D&apos;Lëscht vun de Säite fir Sichmaschinnen; brauch d&apos;ëffentlech Adress.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>D'Säite ginn esou ofgeruff, wéi e Besucher, deen net ugemellt ass, se gesäit. Administratiouns- a Redaktiouns-Siteaccesse ginn ni ugebueden.</translation>
+        <translation>D&apos;Säite ginn esou ofgeruff, wéi e Besucher, deen net ugemellt ass, se gesäit. Administratiouns- a Redaktiouns-Siteaccesse ginn ni ugebueden.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>De Fortschrëtt konnt net verfollegt ginn. Luet d'Säit nei, fir ze gesinn, wéi d'Aufgab virugeet.</translation>
+        <translation>De Fortschrëtt konnt net verfollegt ginn. Luet d&apos;Säit nei, fir ze gesinn, wéi d&apos;Aufgab virugeet.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
@@ -82318,7 +82534,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The root of the branch</source>
-        <translation>D'Wuerzel vum Zweig</translation>
+        <translation>D&apos;Wuerzel vum Zweig</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
@@ -82330,35 +82546,35 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
-        <translation>D'Astellung konnt net geschriwwe ginn: %problem</translation>
+        <translation>D&apos;Astellung konnt net geschriwwe ginn: %problem</translation>
     </message>
     <message>
         <source>The settings are valid. These lines will be written:</source>
-        <translation>D'Astellunge si gülteg. Dës Zeile ginn geschriwwen:</translation>
+        <translation>D&apos;Astellunge si gülteg. Dës Zeile ginn geschriwwen:</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
-        <translation>D'Astellungsdatei ka net gelies ginn: %problem</translation>
+        <translation>D&apos;Astellungsdatei ka net gelies ginn: %problem</translation>
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>De Site geet zréck op d'Fichiere vun där Publikatioun; e Build, deen nach net publizéiert ass, muss fir d'éischt publizéiert oder verworf ginn.</translation>
+        <translation>De Site geet zréck op d&apos;Fichiere vun där Publikatioun; e Build, deen nach net publizéiert ass, muss fir d&apos;éischt publizéiert oder verworf ginn.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Déi eege Säit vum Site fir Adressen, déi net existéieren.</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
-        <translation>D'Zil konnt net gespäichert ginn: %problem</translation>
+        <translation>D&apos;Zil konnt net gespäichert ginn: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>D'Zil mellt sech nach net mat dësem Schlëssel un: wielt „En Deploy-Key, dee fir dëst Zil gemaach gouf“ a sengen Astellungen.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>D&apos;Zil mellt sech nach net mat dësem Schlëssel un: wielt „En Deploy-Key, dee fir dëst Zil gemaach gouf“ a sengen Astellungen.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>D'Ziler konnten net gelies ginn: %problem</translation>
+        <translation>D&apos;Ziler konnten net gelies ginn: %problem</translation>
     </message>
     <message>
         <source>There is no build to check yet.</source>
@@ -82370,7 +82586,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
-        <translation>Dës Säit verfollegt d'Aufgab, während se leeft; se leeft am Hannergrond weider, wann d'Säit zougemaach gëtt.</translation>
+        <translation>Dës Säit verfollegt d&apos;Aufgab, während se leeft; se leeft am Hannergrond weider, wann d&apos;Säit zougemaach gëtt.</translation>
     </message>
     <message>
         <source>This target has no deploy key yet.</source>
@@ -82389,8 +82605,8 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>Geheit dëse Build ewech: den Dossier enthält erëm déi lescht Publikatioun. De Live-Site ännert sech net.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Kräizt fir d'éischt „Ech hunn d'Ännerunge kontrolléiert“ un.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Kräizt fir d&apos;éischt „Ech hunn d&apos;Ännerunge kontrolléiert“ un.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82426,15 +82642,15 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Wat d'Aufgab gemaach huet an hire Protokoll. Eng Aufgab, déi hei gestart gouf, leeft am Hannergrond weider, wann dës Säit zougemaach gëtt.</translation>
+        <translation>Wat d&apos;Aufgab gemaach huet an hire Protokoll. Eng Aufgab, déi hei gestart gouf, leeft am Hannergrond weider, wann dës Säit zougemaach gëtt.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
-        <translation>Wat d'Aufgab als Feeler ausginn huet</translation>
+        <translation>Wat d&apos;Aufgab als Feeler ausginn huet</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
-        <translation>Wat d'Säiten nennen, an all Bild vum publizéierten Inhalt</translation>
+        <translation>Wat d&apos;Säiten nennen, an all Bild vum publizéierten Inhalt</translation>
     </message>
     <message>
         <source>When</source>
@@ -82454,7 +82670,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>Wouhi Linke féieren, déi op eppes weisen, wat d'Kopie net enthält (d'Sich, d'Umeldung).</translation>
+        <translation>Wouhi Linke féieren, déi op eppes weisen, wat d&apos;Kopie net enthält (d&apos;Sich, d&apos;Umeldung).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
@@ -82462,7 +82678,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>Wéi ee Site publizéiert gëtt, a wéi d'Zil heescht.</translation>
+        <translation>Wéi ee Site publizéiert gëtt, a wéi d&apos;Zil heescht.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
@@ -82518,7 +82734,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
-        <translation>https://owner.github.io/repository/, fir d'Sitemap an d'kanonesch Linken.</translation>
+        <translation>https://owner.github.io/repository/, fir d&apos;Sitemap an d&apos;kanonesch Linken.</translation>
     </message>
     <message>
         <source>image</source>
@@ -82538,7 +82754,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>none: commits stay in the folder</source>
-        <translation>keen: d'Commits bleiwen am Dossier</translation>
+        <translation>keen: d&apos;Commits bleiwen am Dossier</translation>
     </message>
     <message>
         <source>none: nothing changed</source>
@@ -82611,6 +82827,34 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>yes, not published yet</source>
         <translation>jo, nach net publizéiert</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>E Build rifft all Säit vun %site of, esou wéi e Besucher, deen net ugemellt ass, se gesäit, schreift d'Linken ëm, kopéiert d'Fichieren a schreift d'Resultat an den Dossier vum Zil. Näischt gëtt publizéiert, ier Dir de Build kontrolléiert an op Publizéieren dréckt.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Eng Zréckrollung ass fir Experten: kräizt „Ech weess, wat dat ännert“ un a tippt den Numm vum Tag nach eng Kéier.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Mécht de Build op, esou wéi den Host en servéiere wäert, aus dem Dossier vum Zil. De Link funktionéiert fir Iech eng Stonn laang.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>An de Lëschte gewisen, zum Beispill „Ëffentleche Site op GitHub Pages“.</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Déi eege Säit vum Site fir Adressen, déi net existéieren.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>D'Zil mellt sech nach net mat dësem Schlëssel un: wielt „En Deploy-Key, dee fir dëst Zil gemaach gouf“ a sengen Astellungen.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Kräizt fir d'éischt „Ech hunn d'Ännerunge kontrolléiert“ un.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

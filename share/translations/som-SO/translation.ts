@@ -80588,6 +80588,222 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>The run could not be started.</source>
         <translation>Ordida lama bilaabi karin.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Duubista isbeddellada</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Inta duubis socdo, waxaad ku beddesho maamulka ama barta dhinaca ee goobta waxaa loo kaydiyaa sidii tallaabooyin guuritaan: nuxurka, fasallada, doorarka iyo siyaasadaha, qaybaha, isticmaalayaasha iyo kooxaha, magacyada kale ee URL, dejimaha. Jooji marka aad dhammayso, eeg waxa uu qabtay, kadibna ka samee guuritaan.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Duubabka lama akhriyi karin: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Shaxaha duubabka weli ma jiraan: marka hore samee cusboonaysiinta (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Duubistu waa ka xiran tahay migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Isbeddelladayda</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Wuxuu duubaa oo keliya waxa aad beddesho, meel kasta oo aad ku beddesho, ilaa aad joojiso.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Duub</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>tan iyo %time, isbeddello %count ilaa hadda.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Calaamad (ikhtiyaari)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Muuji waxa uu qabtay</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Jooji duubista</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Bilow duubista isbeddelladayda</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Daaqadda goobta oo dhan</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Wuxuu duubaa isbeddel kasta oo isticmaale kasta iyo kan konsolka ilaa la xiro. Marka aad furto, waxaa lagaa codsanayaa inaad xaqiijiso inaad adigu tahay.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Furan</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Xir daaqadda</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Fur daaqadda goobta oo dhan</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Duubabka</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Akoonka isticmaalaha (magaca gelitaanka, iimaylka, furaha sirta) iyo goobaha akoonnada isticmaalayaasha weligood lama duubo.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Isbeddellada</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Goobta oo dhan</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Isbeddellada %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>La joojiyay</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Weli ma jiro duub.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Duub %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Dhammaan duubabka</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Guuritaanka uu samayn lahaa</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Isbeddellada la isugu geeyay hal tallaabo shay kasta oo la beddelay: waxa uu samayn lahaa guuritaan laga sameeyay duubkan.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Waxaa laga samayn karaa guuritaan marka rakibkan uu leeyahay noocyada tallaabooyinka YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Si ula kac ah looga tagay: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Waxba lama duubin.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Waxa uu qabtay</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Isbeddello %count, sida ay u kala horreeyeen.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Isbeddel</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Tallaabo</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Ku saabsan</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count kale: ./console exp:migration:record:show wuu liis gareeyaa dhammaan.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Tuur</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Wuxuu tirtiraa duubka iyo waxa uu qabtay. Waxa la beddelay wuu ahaanayaa la beddelay.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Haa, tuur duubkan</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Waa la duubayaa…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Isbeddelladaada waa loo duubayaa guuritaan.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Isbeddel kasta oo goobtan ka dhaca waa loo duubayaa guuritaan (daaqadda goobta oo dhan).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Duubista goobta oo dhan way bilaabatay: isbeddel kasta oo isticmaale kasta waa la duubayaa ilaa aad joojiso.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Duubistu way bilaabatay: isbeddelladaada waa la duubayaa ilaa aad joojiso.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Duubista waa la joojiyay. Waxa uu qabtay wuu sii jirayaa ilaa aad tuurto.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Duubka iyo dhacdooyinkiisa waa la tirtiray.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Ma jiro duub %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Marka hore calaamadee "Haa, tuur duubkan".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Isticmaalaha duubay oo keliya ayaa joojin kara duubka fadhiga.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Dooro duubka la joojinayo.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Duub noocan ah ayaa horeba u socda.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Duubka lama beddeli karin: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81399,7 +81615,7 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <translation>Goob mashruuc GitHub ah waxay ku taal /&lt;repository&gt;/ hoostiisa; xiriirinnada qaraabada ah way ka shaqeeyaan halkaas iyo meel kasta oo kale.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Dhismuhu wuxuu soo qaadaa bog kasta oo %site ah sida uu u arko booqde aan soo gelin, wuxuu dib u qoraa xiriirinnada, wuxuu nuqulaa faylasha wuxuuna natiijada ku qoraa galka bartilmaameedka. Waxba lama daabaco ilaa aad hubiso dhismaha oo aad riixdo Daabac.</translation>
     </message>
     <message>
@@ -81447,8 +81663,8 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <translation>Bog weli xambaarsan wax-soo-saarka cilad-baarista, token foom ama aqoonsiga fadhiga kadib nadiifinta weligii lama daabaco.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Dib-u-celintu waxay u tahay khubarada: calaamadee "Waan ogahay waxa tani beddesho" oo mar kale qor magaca calaamadda.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Dib-u-celintu waxay u tahay khubarada: calaamadee &quot;Waan ogahay waxa tani beddesho&quot; oo mar kale qor magaca calaamadda.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81959,7 +82175,7 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <translation>Fur horu-eegga</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Wuxuu u furaa dhismaha sida martigeliyuhu u bixin doono, galka bartilmaameedka. Xiriirintu adiga ayay kuu shaqaynaysaa hal saac.</translation>
     </message>
     <message>
@@ -82135,8 +82351,8 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <translation>Habeyn &gt; Sirta</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Waxaa lagu muujiyaa liisaska, tusaale ahaan "Goobta dadweynaha ee GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Waxaa lagu muujiyaa liisaska, tusaale ahaan &quot;Goobta dadweynaha ee GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82343,7 +82559,7 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <translation>Goobtu waxay ku noqonaysaa faylasha daabacaaddaas; dhisme aan weli la daabicin waa in marka hore la daabacaa ama la tuuraa.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Bogga goobta ee cinwaannada aan jirin.</translation>
     </message>
     <message>
@@ -82351,8 +82567,8 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <translation>Bartilmaameedka lama kaydin karin: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Bartilmaameedku weli kuma soo galo furahan: dejintiisa ka dooro "Furaha dejinta ee loo sameeyay bartilmaameedkan".</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Bartilmaameedku weli kuma soo galo furahan: dejintiisa ka dooro &quot;Furaha dejinta ee loo sameeyay bartilmaameedkan&quot;.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82387,8 +82603,8 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <translation>Wuxuu tuuraa dhismahan: galku mar kale wuxuu hayaa daabacaaddii ugu dambaysay. Goobta tooska ahi isma beddesho.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Marka hore calaamadee "Waan hubiyay isbeddellada".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Marka hore calaamadee &quot;Waan hubiyay isbeddellada&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82488,7 +82704,7 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     </message>
     <message>
         <source>ended without a report</source>
-        <translation>wuu dhammaaday warbixin la'aan</translation>
+        <translation>wuu dhammaaday warbixin la&apos;aan</translation>
     </message>
     <message>
         <source>extra</source>
@@ -82609,6 +82825,34 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>yes, not published yet</source>
         <translation>haa, weli lama daabicin</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Dhismuhu wuxuu soo qaadaa bog kasta oo %site ah sida uu u arko booqde aan soo gelin, wuxuu dib u qoraa xiriirinnada, wuxuu nuqulaa faylasha wuxuuna natiijada ku qoraa galka bartilmaameedka. Waxba lama daabaco ilaa aad hubiso dhismaha oo aad riixdo Daabac.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Dib-u-celintu waxay u tahay khubarada: calaamadee "Waan ogahay waxa tani beddesho" oo mar kale qor magaca calaamadda.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Wuxuu u furaa dhismaha sida martigeliyuhu u bixin doono, galka bartilmaameedka. Xiriirintu adiga ayay kuu shaqaynaysaa hal saac.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Waxaa lagu muujiyaa liisaska, tusaale ahaan "Goobta dadweynaha ee GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Bogga goobta ee cinwaannada aan jirin.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Bartilmaameedku weli kuma soo galo furahan: dejintiisa ka dooro "Furaha dejinta ee loo sameeyay bartilmaameedkan".</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Marka hore calaamadee "Waan hubiyay isbeddellada".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

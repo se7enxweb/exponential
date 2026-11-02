@@ -26,6 +26,8 @@
  *   no-mirror    true: no status mirror and no run log are written
  *   backup-dir   the folder of captions made without git_manager (expUpgradeCaption)
  *   storage-dir  the var/ storage the caption reuse check compares (eZSys::storageDirectory() when not given)
+ *   no-cache-clear  true: the caches the migrations touched are not cleared after the run ([RunSettings] ClearCaches)
+ *   reindex      queue, now or disabled: what happens to the objects a run touched ([RunSettings] Reindex)
  *
  * @since 6.0.15
  * @package kernel
@@ -56,6 +58,12 @@ class expMigrationContext extends expUpgradeContext
 
     /** @var array|null the user and session before becomeUser() */
     protected $previousUser;
+
+    /** @var array object id => true: the content objects the steps of the run created or changed */
+    protected $touchedObjects = array();
+
+    /** @var string[] the caches steps asked to be cleared after the run (the step type cache, when: end) */
+    protected $deferredCaches = array();
 
     /** @var expMigrationLock|null */
     protected $lock;
@@ -225,6 +233,45 @@ class expMigrationContext extends expUpgradeContext
     public function references()
     {
         return $this->references;
+    }
+
+    // ---- what the run touched -----------------------------------------------------------------------------------
+
+    /**
+     * Notes a content object a step created or changed: after the run it is reindexed (expMigrationAfterRun), and
+     * the step type search reindexes the objects noted so far when it names none.
+     *
+     * @param int|int[] $objectIds
+     */
+    public function touchObject( $objectIds )
+    {
+        foreach ( (array)$objectIds as $id )
+            if ( is_numeric( $id ) && (int)$id > 0 )
+                $this->touchedObjects[(int)$id] = true;
+    }
+
+    /** @return int[] the objects the steps of the run created or changed, in the order they were first touched */
+    public function touchedObjects()
+    {
+        return array_keys( $this->touchedObjects );
+    }
+
+    /**
+     * Notes caches to clear after the run, with those the steps of the migrations declare.
+     *
+     * @param string[] $caches ids or tags of ezcache (content, template-block, ini ...)
+     */
+    public function deferCaches( array $caches )
+    {
+        foreach ( $caches as $cache )
+            if ( is_scalar( $cache ) && trim( (string)$cache ) !== '' && !in_array( trim( (string)$cache ), $this->deferredCaches, true ) )
+                $this->deferredCaches[] = trim( (string)$cache );
+    }
+
+    /** @return string[] the caches steps asked to be cleared after the run */
+    public function deferredCaches()
+    {
+        return $this->deferredCaches;
     }
 
     // ---- the record --------------------------------------------------------------------------------------------

@@ -119,11 +119,15 @@
             <file>tests/tests/lib/ezdb/mongodb/expMigrationUpgradeSourceMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationCaptionMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationCommandMongoDBTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMigrationRecordingMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationYamlMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationContentStepsMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationStructureStepsMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expModerationMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationTagAliasTrashFileStepsMongoDBTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMigrationCacheSearchAutoloadStepsMongoDBTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMigrationLayoutHttpMailCommandStepsMongoDBTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMigrationSqlSettingsStepsMongoDBTest.php</file>
         </testsuite>
 
         <!--

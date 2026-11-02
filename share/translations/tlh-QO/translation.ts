@@ -15102,11 +15102,11 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>choHbe'bogh yoS velqa' yI'ang GitHub Pages Daq pagh git jabwI' Daq.</translation>
+        <translation>choHbe&apos;bogh yoS velqa&apos; yI&apos;ang GitHub Pages Daq pagh git jabwI&apos; Daq.</translation>
     </message>
     <message>
         <source>Static publishing</source>
-        <translation>choHbe'bogh HochvaD 'angghach</translation>
+        <translation>choHbe&apos;bogh HochvaD &apos;angghach</translation>
     </message>
 </context>
 <context>
@@ -22110,15 +22110,15 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     </message>
     <message>
         <source>Publish a static copy to GitHub Pages or any git host</source>
-        <translation>choHbe'bogh velqa' yI'ang GitHub Pages Daq pagh git jabwI' Daq</translation>
+        <translation>choHbe&apos;bogh velqa&apos; yI&apos;ang GitHub Pages Daq pagh git jabwI&apos; Daq</translation>
     </message>
     <message>
         <source>Static publishing</source>
-        <translation>choHbe'bogh HochvaD 'angghach</translation>
+        <translation>choHbe&apos;bogh HochvaD &apos;angghach</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>choHbe'bogh De' polwI' navmey jab De'wI' jabwI'vam. yoS choHbe'bogh velqa' latlh DaqDaq 'anglu'meH, GitHub Pages Daq pagh git jabwI' Daq, choHbe'bogh HochvaD 'angghach yIlo'.</translation>
+        <translation>choHbe&apos;bogh De&apos; polwI&apos; navmey jab De&apos;wI&apos; jabwI&apos;vam. yoS choHbe&apos;bogh velqa&apos; latlh DaqDaq &apos;anglu&apos;meH, GitHub Pages Daq pagh git jabwI&apos; Daq, choHbe&apos;bogh HochvaD &apos;angghach yIlo&apos;.</translation>
     </message>
 </context>
 <context>
@@ -74509,11 +74509,11 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>choHbe'bogh yoS velqa' yI'ang GitHub Pages Daq pagh git jabwI' Daq.</translation>
+        <translation>choHbe&apos;bogh yoS velqa&apos; yI&apos;ang GitHub Pages Daq pagh git jabwI&apos; Daq.</translation>
     </message>
     <message>
         <source>Static publishing</source>
-        <translation>choHbe'bogh HochvaD 'angghach</translation>
+        <translation>choHbe&apos;bogh HochvaD &apos;angghach</translation>
     </message>
 </context>
 <context>
@@ -80623,6 +80623,222 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>The run could not be started.</source>
         <translation>QapmoHghach taghlaHbe&apos;lu&apos;.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>choHmeyvaD qon</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>qon Qap'taHvIS, loHwI' 'ay'Daq pagh Daq tlhop SorDaq DachoHbogh Dochmey vaj HeghmoHvaD mIwmey ta'lu': ghItlh, buvmey, Qu'mey chutmey je, 'ay'mey, lo'wI'pu' ghommey je, URL pongmey, SeHlawmey. DarInDI' yImev, nuq qonta' yIlegh, 'ej vo' Dochvetlh HeghmoH yIchenmoH.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>qonmey laDlaHbe'lu': %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>qonmey vaj raSmey tu'lu'be' wej: wa'DIch DuSaQ yImIgh (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini Daq qon chu'Ha'lu' ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>choHmeywIj</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>DachoHbogh neH qon, Dachoh 'ej Daq, Damevpa'.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>qon</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time vo', DaH %count choHmey.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>per (DaneHchugh)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>nuq qonta' yI'ang</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>qon yImev</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>choHmeywIj qon yItaghmoH</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Hoch Daqvaj Qorwagh</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>lo'wI' Hoch Hoch choH 'ej SeHwI' choH qon, SoQmoHlu'pa'. poSmoHtaHvIS SoH 'oH 'e' DatobnIS.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>poS</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Qorwagh yISoQmoH</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Hoch Daqvaj Qorwagh yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>qonmey Hoch</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>lo'wI' mI' ('elmeH pong, QIn, ngoDHom) 'ej lo'wI' mI'mey bIDmey not qonlu'.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>choHmey</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Hoch Daq</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name choHmey</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>mevlu'</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>wej qon tu'lu'.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>qon %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Hoch qonmey</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>chenbogh HeghmoH</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>choHlu'bogh Doch wa' mIw Daq tay'moHlu'bogh choHmey: qonvam vo' chenmoHlu'bogh HeghmoH ta'.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>jom'a'vam YAML mIw Segh %types ghajDI' vo' Dochvam HeghmoH chenmoHlaHlu'.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ngoDmo' chellu': %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>pagh qonlu'.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>nuq qonta'</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count choHmey, ta'lu'bogh mIwmeyDaq.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>choH</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>mIw</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Dochvetlh</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>latlh %count: ./console exp:migration:record:show Hoch tetlh.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>yIwoD</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>qon 'ej qonta'bogh Dochmey teq. choHlu'bogh choHtaH.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>HIja', qonvam yIwoD</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>qontaH…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>HeghmoHvaD choHmeylIj qonlu'taH.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Daqvam choH Hoch HeghmoHvaD qonlu'taH (Hoch Daqvaj Qorwagh).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Hoch Daq qon taghta': lo'wI' Hoch choH Hoch qonlu', Damevpa'.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>qon taghta': choHmeylIj qonlu', Damevpa'.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>qon mevta'. qonta'bogh ratlh, DawoDpa'.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>qon wanI'mey je teqlu'ta'.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>qon %id tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>wa'DIch "HIja', qonvam yIwoD" yIghItlh.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>qonta'bogh lo'wI' neH ghom qon mevmoHlaH.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>mevmoHmeH qon yIwIv.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Seghvam qon Qap'taH DaH.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>qon choHlaHbe'lu': %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81296,23 +81512,23 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Last publish</source>
-        <translation>HochvaD 'angghach Qav</translation>
+        <translation>HochvaD &apos;angghach Qav</translation>
     </message>
     <message>
         <source>Publish a free static copy of your site on GitHub Pages:</source>
-        <translation>GitHub Pages Daq yoSlIj choHbe'bogh velqa' yI'ang, Dun'a'chugh pagh:</translation>
+        <translation>GitHub Pages Daq yoSlIj choHbe&apos;bogh velqa&apos; yI&apos;ang, Dun&apos;a&apos;chugh pagh:</translation>
     </message>
     <message>
         <source>Stale pages</source>
-        <translation>ngo'choHbogh navmey</translation>
+        <translation>ngo&apos;choHbogh navmey</translation>
     </message>
     <message>
         <source>Static publishing</source>
-        <translation>choHbe'bogh HochvaD 'angghach</translation>
+        <translation>choHbe&apos;bogh HochvaD &apos;angghach</translation>
     </message>
     <message>
         <source>Static publishing is switched off.</source>
-        <translation>choHbe'bogh HochvaD 'angghach chu'Ha'lu'.</translation>
+        <translation>choHbe&apos;bogh HochvaD &apos;angghach chu&apos;Ha&apos;lu&apos;.</translation>
     </message>
     <message>
         <source>Target</source>
@@ -81320,11 +81536,11 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>ghochmey laDlaHbe'lu': %problem</translation>
+        <translation>ghochmey laDlaHbe&apos;lu&apos;: %problem</translation>
     </message>
     <message>
         <source>a job is going on</source>
-        <translation>Qu' ruch</translation>
+        <translation>Qu&apos; ruch</translation>
     </message>
     <message>
         <source>build to check</source>
@@ -81332,7 +81548,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>hide this</source>
-        <translation>'e' yIso'</translation>
+        <translation>&apos;e&apos; yIso&apos;</translation>
     </message>
     <message>
         <source>make a target</source>
@@ -81355,19 +81571,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>%bytes of %limit (%percent %)</source>
-        <translation>%bytes, %limit vo' (%percent %)</translation>
+        <translation>%bytes, %limit vo&apos; (%percent %)</translation>
     </message>
     <message>
         <source>%count more are not listed.</source>
-        <translation>latlh %count tetlhlu'be'.</translation>
+        <translation>latlh %count tetlhlu&apos;be&apos;.</translation>
     </message>
     <message>
         <source>%pages pages written</source>
-        <translation>%pages nav ghItlhlu'</translation>
+        <translation>%pages nav ghItlhlu&apos;</translation>
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
-        <translation>%path juv %size, jabwI' wa' ghItlh chaw'bogh juv tlhoy Dung.</translation>
+        <translation>%path juv %size, jabwI&apos; wa&apos; ghItlh chaw&apos;bogh juv tlhoy Dung.</translation>
     </message>
     <message>
         <source>%percent % of the limit</source>
@@ -81379,11 +81595,11 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>%tag is the publish the site has now.</source>
-        <translation>%tag 'oH DaH yoS ghajbogh HochvaD 'angghach'e'.</translation>
+        <translation>%tag &apos;oH DaH yoS ghajbogh HochvaD &apos;angghach&apos;e&apos;.</translation>
     </message>
     <message>
         <source>%target: job %id</source>
-        <translation>%target: Qu' %id</translation>
+        <translation>%target: Qu&apos; %id</translation>
     </message>
     <message>
         <source>+%added ~%changed -%removed</source>
@@ -81391,7 +81607,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
-        <translation>/'aplo'qach/ GitHub jInmol yoSvaD; Hoch DaqvaD pagh lo'wI' yoSvaD chIm.</translation>
+        <translation>/&apos;aplo&apos;qach/ GitHub jInmol yoSvaD; Hoch DaqvaD pagh lo&apos;wI&apos; yoSvaD chIm.</translation>
     </message>
     <message>
         <source>1. The site</source>
@@ -81399,23 +81615,23 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>2. The host</source>
-        <translation>2. jabwI'</translation>
+        <translation>2. jabwI&apos;</translation>
     </message>
     <message>
         <source>3. Signing in to the repository</source>
-        <translation>3. 'aplo' qachDaq 'el</translation>
+        <translation>3. &apos;aplo&apos; qachDaq &apos;el</translation>
     </message>
     <message>
         <source>4. The repository</source>
-        <translation>4. 'aplo' qach</translation>
+        <translation>4. &apos;aplo&apos; qach</translation>
     </message>
     <message>
         <source>5. Links and base path</source>
-        <translation>5. rarwI'mey bu' He je</translation>
+        <translation>5. rarwI&apos;mey bu&apos; He je</translation>
     </message>
     <message>
         <source>6. Your own domain</source>
-        <translation>6. Hoch'e' DaqlIj</translation>
+        <translation>6. Hoch&apos;e&apos; DaqlIj</translation>
     </message>
     <message>
         <source>7. What the build holds</source>
@@ -81423,23 +81639,23 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>8. When it is published</source>
-        <translation>8. ghorgh 'anglu'</translation>
+        <translation>8. ghorgh &apos;anglu&apos;</translation>
     </message>
     <message>
         <source>9. Review and save</source>
-        <translation>9. yInuD 'ej yIpol</translation>
+        <translation>9. yInuD &apos;ej yIpol</translation>
     </message>
     <message>
         <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
-        <translation>GitHub jInmol yoS tu'lu' /&lt;repository&gt;/ bIngDaq; pa' latlh Daq je Qap rarwI'mey ghotlhbogh.</translation>
+        <translation>GitHub jInmol yoS tu&apos;lu&apos; /&lt;repository&gt;/ bIngDaq; pa&apos; latlh Daq je Qap rarwI&apos;mey ghotlhbogh.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>chenmoHghach %site Hoch nav suq, 'elbe'bogh SuchwI' leghbogh rur, rarwI'mey ghItlhqa', ghItlhmey velqa'moH, ghoch ghItlh pa'Daq ghItlh. chenmoHghach DanuDpa' 'ej HochvaD yI'ang DaghoDpa' pagh 'anglu'.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>chenmoHghach %site Hoch nav suq, &apos;elbe&apos;bogh SuchwI&apos; leghbogh rur, rarwI&apos;mey ghItlhqa&apos;, ghItlhmey velqa&apos;moH, ghoch ghItlh pa&apos;Daq ghItlh. chenmoHghach DanuDpa&apos; &apos;ej HochvaD yI&apos;ang DaghoDpa&apos; pagh &apos;anglu&apos;.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
-        <translation>cron mu'tlhegh, mu'tlhegh rur: 0 3 * * *</translation>
+        <translation>cron mu&apos;tlhegh, mu&apos;tlhegh rur: 0 3 * * *</translation>
     </message>
     <message>
         <source>A deploy key is kept as the secret %secret.</source>
@@ -81447,75 +81663,75 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>lab ngoQ SSH lo'taHvIS wa' 'aplo' qachDaq neH lablaH jom'e'vam, latlh Daq ghobe'. pegh bID'e' SeHlaw &gt; peghmey Daq ratlh; Hoch bID neH 'anglu'.</translation>
+        <translation>lab ngoQ SSH lo&apos;taHvIS wa&apos; &apos;aplo&apos; qachDaq neH lablaH jom&apos;e&apos;vam, latlh Daq ghobe&apos;. pegh bID&apos;e&apos; SeHlaw &gt; peghmey Daq ratlh; Hoch bID neH &apos;anglu&apos;.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
-        <translation>ghochvaD chenmoHlu'pu'bogh lab ngoQ</translation>
+        <translation>ghochvaD chenmoHlu&apos;pu&apos;bogh lab ngoQ</translation>
     </message>
     <message>
         <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
-        <translation>lab ngoQ SSH lo' 'elmeH: git SoQ yIchoH, SSH SoQ yIlo' (git@github.com:owner/repo.git).</translation>
+        <translation>lab ngoQ SSH lo&apos; &apos;elmeH: git SoQ yIchoH, SSH SoQ yIlo&apos; (git@github.com:owner/repo.git).</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
-        <translation>Qu' ruch, %user taghpu'</translation>
+        <translation>Qu&apos; ruch, %user taghpu&apos;</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>ghochvam Qu' ruchtaH (%detail). rInpa' yIloS.</translation>
+        <translation>ghochvam Qu&apos; ruchtaH (%detail). rInpa&apos; yIloS.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>ghochvam Qu' ruchtaH. rInpa' yIloS.</translation>
+        <translation>ghochvam Qu&apos; ruchtaH. rInpa&apos; yIloS.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
-        <translation>nav /news/ vo' nav /about-us/team rarwI' ghItlhlu'taH ghIq</translation>
+        <translation>nav /news/ vo&apos; nav /about-us/team rarwI&apos; ghItlhlu&apos;taH ghIq</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
-        <translation>lab ngoQ chu' chenmoHlu'. DaH 'aplo' qachDaq Hoch bIDDaj yIchel.</translation>
+        <translation>lab ngoQ chu&apos; chenmoHlu&apos;. DaH &apos;aplo&apos; qachDaq Hoch bIDDaj yIchel.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
-        <translation>Say'moHghach ghIq Qagh 'aghbogh De', tlhegh ngoQ, pagh DIS ngoQ ngaSbogh nav not 'anglu'.</translation>
+        <translation>Say&apos;moHghach ghIq Qagh &apos;aghbogh De&apos;, tlhegh ngoQ, pagh DIS ngoQ ngaSbogh nav not &apos;anglu&apos;.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>cheghmoHghach po'wI'pu'vaD: "vam choHmey vISov" yIwIv 'ej per pong yIghItlhqa'.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>cheghmoHghach po&apos;wI&apos;pu&apos;vaD: &quot;vam choHmey vISov&quot; yIwIv &apos;ej per pong yIghItlhqa&apos;.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>yoS juv: %site, wa' ghItlh juv: %file, jar wa'DIch 100 GB lengwI' je. Dun'a'chugh nab, Hoch'e'vaD 'aplo' qach poQlu'. GitHub Pages QaHbe' Suy Daqmey pagh latlh Suy vangghachmey.</translation>
+        <translation>yoS juv: %site, wa&apos; ghItlh juv: %file, jar wa&apos;DIch 100 GB lengwI&apos; je. Dun&apos;a&apos;chugh nab, Hoch&apos;e&apos;vaD &apos;aplo&apos; qach poQlu&apos;. GitHub Pages QaHbe&apos; Suy Daqmey pagh latlh Suy vangghachmey.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>ghoch 'oH wa' yoS'e', wa' git 'aplo' qachDaq 'anglu'bogh. naDev pagh chenmoHlu' pagh 'anglu': yIpol DuHmey ghItlh settings/override/staticcache.ini.append.php Daq.</translation>
+        <translation>ghoch &apos;oH wa&apos; yoS&apos;e&apos;, wa&apos; git &apos;aplo&apos; qachDaq &apos;anglu&apos;bogh. naDev pagh chenmoHlu&apos; pagh &apos;anglu&apos;: yIpol DuHmey ghItlh settings/override/staticcache.ini.append.php Daq.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>ghoch 'oH wa' yoS'e', wa' DaqDaq 'anglu'bogh, ghoch rur Hoch yoSlIj GitHub Pages Daq.</translation>
+        <translation>ghoch &apos;oH wa&apos; yoS&apos;e&apos;, wa&apos; DaqDaq &apos;anglu&apos;bogh, ghoch rur Hoch yoSlIj GitHub Pages Daq.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
-        <translation>SeHlaw &gt; peghmey vo' token</translation>
+        <translation>SeHlaw &gt; peghmey vo&apos; token</translation>
     </message>
     <message>
         <source>A workflow of the repository publishes it.</source>
-        <translation>'aplo' qach Qu' mIw 'anglu'.</translation>
+        <translation>&apos;aplo&apos; qach Qu&apos; mIw &apos;anglu&apos;.</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
-        <translation>Hoch ngoQvam yIchel 'aplo' qachDaq, ghItlhmeH chaw' je. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access yIwIv.</translation>
+        <translation>Hoch ngoQvam yIchel &apos;aplo&apos; qachDaq, ghItlhmeH chaw&apos; je. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access yIwIv.</translation>
     </message>
     <message>
         <source>Added</source>
-        <translation>chellu'</translation>
+        <translation>chellu&apos;</translation>
     </message>
     <message>
         <source>Another git host</source>
-        <translation>latlh git jabwI'</translation>
+        <translation>latlh git jabwI&apos;</translation>
     </message>
     <message>
         <source>Another process works on this target: %detail</source>
@@ -81527,7 +81743,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Base path</source>
-        <translation>bu' He</translation>
+        <translation>bu&apos; He</translation>
     </message>
     <message>
         <source>Before</source>
@@ -81535,19 +81751,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Below a base path</source>
-        <translation>bu' He bIngDaq</translation>
+        <translation>bu&apos; He bIngDaq</translation>
     </message>
     <message>
         <source>Branch</source>
-        <translation>Sor 'ay'</translation>
+        <translation>Sor &apos;ay&apos;</translation>
     </message>
     <message>
         <source>Broken links</source>
-        <translation>ghorlu'bogh rarwI'mey</translation>
+        <translation>ghorlu&apos;bogh rarwI&apos;mey</translation>
     </message>
     <message>
         <source>Broken links in the build</source>
-        <translation>chenmoHghachDaq ghorlu'bogh rarwI'mey</translation>
+        <translation>chenmoHghachDaq ghorlu&apos;bogh rarwI&apos;mey</translation>
     </message>
     <message>
         <source>Build</source>
@@ -81571,7 +81787,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>By</source>
-        <translation>vangwI'</translation>
+        <translation>vangwI&apos;</translation>
     </message>
     <message>
         <source>By hand, here</source>
@@ -81587,7 +81803,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Changed</source>
-        <translation>choHlu'</translation>
+        <translation>choHlu&apos;</translation>
     </message>
     <message>
         <source>Changes</source>
@@ -81595,7 +81811,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Check it first</source>
-        <translation>wa'DIch yInuD</translation>
+        <translation>wa&apos;DIch yInuD</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81603,15 +81819,15 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Check what the build changes, look at it, then publish it or throw it away.</source>
-        <translation>chenmoHghach choHbogh yInuD, yIlegh, ghIq yI'ang pagh yIwoD.</translation>
+        <translation>chenmoHghach choHbogh yInuD, yIlegh, ghIq yI&apos;ang pagh yIwoD.</translation>
     </message>
     <message>
         <source>Choose the publish to go back to.</source>
-        <translation>cheghmeH HochvaD 'angghach yIwIv.</translation>
+        <translation>cheghmeH HochvaD &apos;angghach yIwIv.</translation>
     </message>
     <message>
         <source>Comes with a later release.</source>
-        <translation>ghIq 'aghlu'meH jaS.</translation>
+        <translation>ghIq &apos;aghlu&apos;meH jaS.</translation>
     </message>
     <message>
         <source>Commit</source>
@@ -81623,27 +81839,27 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
-        <translation>chenmoHghach commit ghItlh, per, %remote Daq lab je. not labmoHlu'; ghIq HochvaD 'angghach DaneHbogh DacheghlaH.</translation>
+        <translation>chenmoHghach commit ghItlh, per, %remote Daq lab je. not labmoHlu&apos;; ghIq HochvaD &apos;angghach DaneHbogh DacheghlaH.</translation>
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
-        <translation>ghItlh pa' nIteb tlhIjlu'chugh: %added chel, %changed choH, %removed teq, %unchanged choHbe'.</translation>
+        <translation>ghItlh pa&apos; nIteb tlhIjlu&apos;chugh: %added chel, %changed choH, %removed teq, %unchanged choHbe&apos;.</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
-        <translation>HochvaD 'angghach Qav tlhIjlu'.</translation>
+        <translation>HochvaD &apos;angghach Qav tlhIjlu&apos;.</translation>
     </message>
     <message>
         <source>Credential</source>
-        <translation>'elmeH De'</translation>
+        <translation>&apos;elmeH De&apos;</translation>
     </message>
     <message>
         <source>Custom domain</source>
-        <translation>Hoch'e' Daq</translation>
+        <translation>Hoch&apos;e&apos; Daq</translation>
     </message>
     <message>
         <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
-        <translation>Qagh 'aghbogh De', tlhegh ngoQmey, DIS ngoQmey, nonce je reH teqlu'.</translation>
+        <translation>Qagh &apos;aghbogh De&apos;, tlhegh ngoQmey, DIS ngoQmey, nonce je reH teqlu&apos;.</translation>
     </message>
     <message>
         <source>Deploy key</source>
@@ -81671,15 +81887,15 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Ended</source>
-        <translation>rInlu'</translation>
+        <translation>rInlu&apos;</translation>
     </message>
     <message>
         <source>Every link starts with the base path.</source>
-        <translation>Hoch rarwI' bu' He tagh.</translation>
+        <translation>Hoch rarwI&apos; bu&apos; He tagh.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>Hoch HochvaD 'angghach 'oH commit ghItlh'e', per static/%id/&lt;n&gt; ghajbogh. cheghlu'chugh commit ghItlh chu' chenmoHlu', HochvaD 'angghach nIteb ghItlhmeyDaj ghaj: qun ratlh, per vIHbe', pagh labmoHlu'.</translation>
+        <translation>Hoch HochvaD &apos;angghach &apos;oH commit ghItlh&apos;e&apos;, per static/%id/&lt;n&gt; ghajbogh. cheghlu&apos;chugh commit ghItlh chu&apos; chenmoHlu&apos;, HochvaD &apos;angghach nIteb ghItlhmeyDaj ghaj: qun ratlh, per vIHbe&apos;, pagh labmoHlu&apos;.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -81687,7 +81903,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Fetch the pages from</source>
-        <translation>navmey Suq vo'</translation>
+        <translation>navmey Suq vo&apos;</translation>
     </message>
     <message>
         <source>File</source>
@@ -81699,7 +81915,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Files missing</source>
-        <translation>ghItlhmey Dachlu'</translation>
+        <translation>ghItlhmey Dachlu&apos;</translation>
     </message>
     <message>
         <source>Files of</source>
@@ -81707,39 +81923,39 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Files that could not be collected</source>
-        <translation>boSlaHbe'lu'bogh ghItlhmey</translation>
+        <translation>boSlaHbe&apos;lu&apos;bogh ghItlhmey</translation>
     </message>
     <message>
         <source>Fingerprint</source>
-        <translation>ghop ngu'wI'</translation>
+        <translation>ghop ngu&apos;wI&apos;</translation>
     </message>
     <message>
         <source>Folder</source>
-        <translation>ghItlh pa'</translation>
+        <translation>ghItlh pa&apos;</translation>
     </message>
     <message>
         <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
-        <translation>SSH SoQvaD. polpu'DI' ngoQ chenmoHlu'; 'aplo' qachDaq Hoch bIDDaj Dachel.</translation>
+        <translation>SSH SoQvaD. polpu&apos;DI&apos; ngoQ chenmoHlu&apos;; &apos;aplo&apos; qachDaq Hoch bIDDaj Dachel.</translation>
     </message>
     <message>
         <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
-        <translation>https:// SoQvaD. GitHub: fine-grained token, 'aplo' qachDaq Contents laD ghItlh je chaw' ghajbogh.</translation>
+        <translation>https:// SoQvaD. GitHub: fine-grained token, &apos;aplo&apos; qachDaq Contents laD ghItlh je chaw&apos; ghajbogh.</translation>
     </message>
     <message>
         <source>For experts. The public site changes as soon as the push is through.</source>
-        <translation>po'wI'pu'vaD. labghach rInDI' Hoch yoS choH.</translation>
+        <translation>po&apos;wI&apos;pu&apos;vaD. labghach rInDI&apos; Hoch yoS choH.</translation>
     </message>
     <message>
         <source>Forms</source>
-        <translation>chu'wI' mIwmey</translation>
+        <translation>chu&apos;wI&apos; mIwmey</translation>
     </message>
     <message>
         <source>Free hosting from a GitHub repository.</source>
-        <translation>GitHub 'aplo' qach vo' Dun'a'chugh jabwI'.</translation>
+        <translation>GitHub &apos;aplo&apos; qach vo&apos; Dun&apos;a&apos;chugh jabwI&apos;.</translation>
     </message>
     <message>
         <source>From the branch</source>
-        <translation>Sor 'ay' vo'</translation>
+        <translation>Sor &apos;ay&apos; vo&apos;</translation>
     </message>
     <message>
         <source>Git address</source>
@@ -81759,7 +81975,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>GitHub Pages allows a site of %site and a file of %file.</source>
-        <translation>GitHub Pages chaw': yoS juv %site, ghItlh juv %file.</translation>
+        <translation>GitHub Pages chaw&apos;: yoS juv %site, ghItlh juv %file.</translation>
     </message>
     <message>
         <source>GitHub Pages limits</source>
@@ -81767,19 +81983,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
-        <translation>GitHub Pages ghItlhmey 'ang, motlh rur (_ taghbogh ghItlhmeyvaD poQlu').</translation>
+        <translation>GitHub Pages ghItlhmey &apos;ang, motlh rur (_ taghbogh ghItlhmeyvaD poQlu&apos;).</translation>
     </message>
     <message>
         <source>GitHub serves the branch as it is pushed. The default.</source>
-        <translation>GitHub Sor 'ay' jab, lablu'pu'bogh rur. motlh.</translation>
+        <translation>GitHub Sor &apos;ay&apos; jab, lablu&apos;pu&apos;bogh rur. motlh.</translation>
     </message>
     <message>
         <source>GitLab, Gitea, your own server: any git repository.</source>
-        <translation>GitLab, Gitea, De'wI' jabwI'lIj: git 'aplo' qach Hoch.</translation>
+        <translation>GitLab, Gitea, De&apos;wI&apos; jabwI&apos;lIj: git &apos;aplo&apos; qach Hoch.</translation>
     </message>
     <message>
         <source>Go back to an earlier publish</source>
-        <translation>HochvaD 'angghach nIteb yIchegh</translation>
+        <translation>HochvaD &apos;angghach nIteb yIchegh</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81787,11 +82003,11 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Help with the wizard</source>
-        <translation>QaHwI' mIwvaD QaH</translation>
+        <translation>QaHwI&apos; mIwvaD QaH</translation>
     </message>
     <message>
         <source>Hide them</source>
-        <translation>yIso'</translation>
+        <translation>yIso&apos;</translation>
     </message>
     <message>
         <source>History</source>
@@ -81803,15 +82019,15 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Host</source>
-        <translation>jabwI'</translation>
+        <translation>jabwI&apos;</translation>
     </message>
     <message>
         <source>How GitHub Pages receives the build</source>
-        <translation>chenmoHghach GitHub Pages Hev chay'</translation>
+        <translation>chenmoHghach GitHub Pages Hev chay&apos;</translation>
     </message>
     <message>
         <source>I have checked the changes</source>
-        <translation>choHmey vInuDpu'</translation>
+        <translation>choHmey vInuDpu&apos;</translation>
     </message>
     <message>
         <source>I know what this changes</source>
@@ -81819,19 +82035,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Id</source>
-        <translation>ngu'meH mI'</translation>
+        <translation>ngu&apos;meH mI&apos;</translation>
     </message>
     <message>
         <source>It is switched off: nothing can be built until it is on.</source>
-        <translation>chu'Ha'lu': chu'lu'pa' pagh chenmoHlaHlu'.</translation>
+        <translation>chu&apos;Ha&apos;lu&apos;: chu&apos;lu&apos;pa&apos; pagh chenmoHlaHlu&apos;.</translation>
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>%user rur Qap 'em; navvam DaSoQmoHlaH.</translation>
+        <translation>%user rur Qap &apos;em; navvam DaSoQmoHlaH.</translation>
     </message>
     <message>
         <source>Job %id</source>
-        <translation>Qu' %id</translation>
+        <translation>Qu&apos; %id</translation>
     </message>
     <message>
         <source>Kept as the secret %secret.</source>
@@ -81843,23 +82059,23 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Last publish</source>
-        <translation>HochvaD 'angghach Qav</translation>
+        <translation>HochvaD &apos;angghach Qav</translation>
     </message>
     <message>
         <source>Leave out these pages</source>
-        <translation>navmeyvam yIchelQo'</translation>
+        <translation>navmeyvam yIchelQo&apos;</translation>
     </message>
     <message>
         <source>Leave out these sections</source>
-        <translation>tlhoSmeyvam yIchelQo'</translation>
+        <translation>tlhoSmeyvam yIchelQo&apos;</translation>
     </message>
     <message>
         <source>Links</source>
-        <translation>rarwI'mey</translation>
+        <translation>rarwI&apos;mey</translation>
     </message>
     <message>
         <source>Links rewritten</source>
-        <translation>ghItlhqa'lu'bogh rarwI'mey</translation>
+        <translation>ghItlhqa&apos;lu&apos;bogh rarwI&apos;mey</translation>
     </message>
     <message>
         <source>Live site</source>
@@ -81871,11 +82087,11 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
-        <translation>mach ghItlhmey, mI'mey, _ - je, ghoch rur github-public. ghItlh pa' perwI'mey je (static/&lt;id&gt;/&lt;n&gt;) ponglu', ghIq choHlaHbe'lu'.</translation>
+        <translation>mach ghItlhmey, mI&apos;mey, _ - je, ghoch rur github-public. ghItlh pa&apos; perwI&apos;mey je (static/&lt;id&gt;/&lt;n&gt;) ponglu&apos;, ghIq choHlaHbe&apos;lu&apos;.</translation>
     </message>
     <message>
         <source>Make a new key</source>
-        <translation>ngoQ chu' yIchenmoH</translation>
+        <translation>ngoQ chu&apos; yIchenmoH</translation>
     </message>
     <message>
         <source>Make a target</source>
@@ -81887,7 +82103,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>wa'DIch jabwI'Daq 'aplo' qach yIchenmoH; chIm 'aplo' qach Qapchu'.</translation>
+        <translation>wa&apos;DIch jabwI&apos;Daq &apos;aplo&apos; qach yIchenmoH; chIm &apos;aplo&apos; qach Qapchu&apos;.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81899,7 +82115,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Most pages</source>
-        <translation>navmey law'</translation>
+        <translation>navmey law&apos;</translation>
     </message>
     <message>
         <source>Name</source>
@@ -81911,7 +82127,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>New target</source>
-        <translation>ghoch chu'</translation>
+        <translation>ghoch chu&apos;</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81919,27 +82135,27 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>ghobe'</translation>
+        <translation>ghobe&apos;</translation>
     </message>
     <message>
         <source>No commit yet.</source>
-        <translation>commit ghItlh tu'lu'be' 'ach.</translation>
+        <translation>commit ghItlh tu&apos;lu&apos;be&apos; &apos;ach.</translation>
     </message>
     <message>
         <source>No key was made: %problem</source>
-        <translation>ngoQ chenmoHlu'be': %problem</translation>
+        <translation>ngoQ chenmoHlu&apos;be&apos;: %problem</translation>
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>php ra'meH tlhegh ghun tu'lu'be'. migration.ini [AdminSettings] PhpCliPath yIwIv, He naQ yIlo'.</translation>
+        <translation>php ra&apos;meH tlhegh ghun tu&apos;lu&apos;be&apos;. migration.ini [AdminSettings] PhpCliPath yIwIv, He naQ yIlo&apos;.</translation>
     </message>
     <message>
         <source>No tag yet.</source>
-        <translation>per tu'lu'be' 'ach.</translation>
+        <translation>per tu&apos;lu&apos;be&apos; &apos;ach.</translation>
     </message>
     <message>
         <source>No target yet.</source>
-        <translation>ghoch tu'lu'be' 'ach.</translation>
+        <translation>ghoch tu&apos;lu&apos;be&apos; &apos;ach.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81947,15 +82163,15 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Not in the build.</source>
-        <translation>chenmoHghachDaq ngaSbe'.</translation>
+        <translation>chenmoHghachDaq ngaSbe&apos;.</translation>
     </message>
     <message>
         <source>Nothing was published yet.</source>
-        <translation>pagh 'anglu'pu' 'ach.</translation>
+        <translation>pagh &apos;anglu&apos;pu&apos; &apos;ach.</translation>
     </message>
     <message>
         <source>Nothing was published yet: every file is new.</source>
-        <translation>pagh 'anglu'pu' 'ach: Hoch ghItlh chu'.</translation>
+        <translation>pagh &apos;anglu&apos;pu&apos; &apos;ach: Hoch ghItlh chu&apos;.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -81967,47 +82183,47 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>On the console</source>
-        <translation>ra'wI' SeHlaw Daq</translation>
+        <translation>ra&apos;wI&apos; SeHlaw Daq</translation>
     </message>
     <message>
         <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
-        <translation>De'wI' jabwI'Daq: ./console exp:static:serve %id rur jab.</translation>
+        <translation>De&apos;wI&apos; jabwI&apos;Daq: ./console exp:static:serve %id rur jab.</translation>
     </message>
     <message>
         <source>One path per line, * matches any part: /members/*</source>
-        <translation>Hoch tlheghDaq wa' He, * Hoch 'ay' rap: /members/*</translation>
+        <translation>Hoch tlheghDaq wa&apos; He, * Hoch &apos;ay&apos; rap: /members/*</translation>
     </message>
     <message>
         <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
-        <translation>ghoch pong neH pollu'; token ngoQ joq SeHlaw &gt; peghmey Daq ratlh, 'ej not ta Daq 'anglu'.</translation>
+        <translation>ghoch pong neH pollu&apos;; token ngoQ joq SeHlaw &gt; peghmey Daq ratlh, &apos;ej not ta Daq &apos;anglu&apos;.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
-        <translation>navmey ponglu'bogh neH</translation>
+        <translation>navmey ponglu&apos;bogh neH</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>token neH. env:NAME De'wI' jabwI' Dotlh lIng laD.</translation>
+        <translation>token neH. env:NAME De&apos;wI&apos; jabwI&apos; Dotlh lIng laD.</translation>
     </message>
     <message>
         <source>Open the preview</source>
-        <translation>wa'DIch legh yIpoSmoH</translation>
+        <translation>wa&apos;DIch legh yIpoSmoH</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>jabwI' jabbogh rur chenmoHghach poSmoH, ghoch ghItlh pa' vo'. wa' rep rarwI' Qap SoHvaD.</translation>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>jabwI&apos; jabbogh rur chenmoHghach poSmoH, ghoch ghItlh pa&apos; vo&apos;. wa&apos; rep rarwI&apos; Qap SoHvaD.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
-        <translation>poQbe'lu'. chIm: 'anglu'pu'bogh.</translation>
+        <translation>poQbe&apos;lu&apos;. chIm: &apos;anglu&apos;pu&apos;bogh.</translation>
     </message>
     <message>
         <source>Optional. With a domain the site is served at its root.</source>
-        <translation>poQbe'lu'. Daq ghajlu'chugh, yoS jablu' ghuvDaq.</translation>
+        <translation>poQbe&apos;lu&apos;. Daq ghajlu&apos;chugh, yoS jablu&apos; ghuvDaq.</translation>
     </message>
     <message>
         <source>Output</source>
-        <translation>'aghbogh De'</translation>
+        <translation>&apos;aghbogh De&apos;</translation>
     </message>
     <message>
         <source>Pages</source>
@@ -82019,7 +82235,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Pages refused</source>
-        <translation>lajQo'lu'bogh navmey</translation>
+        <translation>lajQo&apos;lu&apos;bogh navmey</translation>
     </message>
     <message>
         <source>Post-processing</source>
@@ -82031,15 +82247,15 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Preview and publish</source>
-        <translation>wa'DIch yIlegh 'ej yI'ang</translation>
+        <translation>wa&apos;DIch yIlegh &apos;ej yI&apos;ang</translation>
     </message>
     <message>
         <source>Preview and publish %name</source>
-        <translation>%name wa'DIch yIlegh 'ej yI'ang</translation>
+        <translation>%name wa&apos;DIch yIlegh &apos;ej yI&apos;ang</translation>
     </message>
     <message>
         <source>Preview the build</source>
-        <translation>chenmoHghach wa'DIch yIlegh</translation>
+        <translation>chenmoHghach wa&apos;DIch yIlegh</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -82055,19 +82271,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Publish</source>
-        <translation>HochvaD yI'ang</translation>
+        <translation>HochvaD yI&apos;ang</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>choHbe'bogh yoS velqa' yI'ang GitHub Pages Daq pagh git jabwI' Daq: yIchenmoH, choHmey yInuD, yI'ang, 'ej DaneHDI' HochvaD 'angghach nIteb yIchegh.</translation>
+        <translation>choHbe&apos;bogh yoS velqa&apos; yI&apos;ang GitHub Pages Daq pagh git jabwI&apos; Daq: yIchenmoH, choHmey yInuD, yI&apos;ang, &apos;ej DaneHDI&apos; HochvaD &apos;angghach nIteb yIchegh.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
-        <translation>cheghmeH HochvaD 'angghach</translation>
+        <translation>cheghmeH HochvaD &apos;angghach</translation>
     </message>
     <message>
         <source>Publishes</source>
-        <translation>HochvaD 'angghachmey</translation>
+        <translation>HochvaD &apos;angghachmey</translation>
     </message>
     <message>
         <source>Push</source>
@@ -82083,7 +82299,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Refused</source>
-        <translation>lajQo'lu'</translation>
+        <translation>lajQo&apos;lu&apos;</translation>
     </message>
     <message>
         <source>Relative</source>
@@ -82091,27 +82307,27 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation>yIlI'qa'</translation>
+        <translation>yIlI&apos;qa&apos;</translation>
     </message>
     <message>
         <source>Removed</source>
-        <translation>teqlu'</translation>
+        <translation>teqlu&apos;</translation>
     </message>
     <message>
         <source>Replace the key: the old one stops working</source>
-        <translation>ngoQ yIchoH: ngoQ ngo' Qapbe'choH</translation>
+        <translation>ngoQ yIchoH: ngoQ ngo&apos; Qapbe&apos;choH</translation>
     </message>
     <message>
         <source>Report</source>
-        <translation>ja'</translation>
+        <translation>ja&apos;</translation>
     </message>
     <message>
         <source>Report of the build</source>
-        <translation>chenmoHghach ja'</translation>
+        <translation>chenmoHghach ja&apos;</translation>
     </message>
     <message>
         <source>Repository</source>
-        <translation>'aplo' qach</translation>
+        <translation>&apos;aplo&apos; qach</translation>
     </message>
     <message>
         <source>Review</source>
@@ -82119,7 +82335,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
-        <translation>nuDghach Hoch DuH nuD 'ej ghItlhlu'taHbogh tlheghmey 'ang. pagh pollu' 'ach.</translation>
+        <translation>nuDghach Hoch DuH nuD &apos;ej ghItlhlu&apos;taHbogh tlheghmey &apos;ang. pagh pollu&apos; &apos;ach.</translation>
     </message>
     <message>
         <source>Roll back</source>
@@ -82143,7 +82359,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Section ids, separated by commas.</source>
-        <translation>tlhoS ngu'meH mI'mey, mI'mey ghoS rIn'eQ.</translation>
+        <translation>tlhoS ngu&apos;meH mI&apos;mey, mI&apos;mey ghoS rIn&apos;eQ.</translation>
     </message>
     <message>
         <source>Send them to the live site</source>
@@ -82170,12 +82386,12 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>SeHlaw &gt; peghmey</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>tetlhmeyDaq 'anglu', ghoch rur "GitHub Pages Daq Hoch yoS".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>tetlhmeyDaq &apos;anglu&apos;, ghoch rur &quot;GitHub Pages Daq Hoch yoS&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>GitHub App lo'taHvIS 'el, GitHub muvghach jaSDI' Qap.</translation>
+        <translation>GitHub App lo&apos;taHvIS &apos;el, GitHub muvghach jaSDI&apos; Qap.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -82183,7 +82399,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Site to publish</source>
-        <translation>'anglu'meH yoS</translation>
+        <translation>&apos;anglu&apos;meH yoS</translation>
     </message>
     <message>
         <source>Size</source>
@@ -82199,11 +82415,11 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Stale pages</source>
-        <translation>ngo'choHbogh navmey</translation>
+        <translation>ngo&apos;choHbogh navmey</translation>
     </message>
     <message>
         <source>Started</source>
-        <translation>taghlu'</translation>
+        <translation>taghlu&apos;</translation>
     </message>
     <message>
         <source>Started by %user at %time.</source>
@@ -82215,47 +82431,47 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Static publishing</source>
-        <translation>choHbe'bogh HochvaD 'angghach</translation>
+        <translation>choHbe&apos;bogh HochvaD &apos;angghach</translation>
     </message>
     <message>
         <source>Static publishing is switched off</source>
-        <translation>choHbe'bogh HochvaD 'angghach chu'Ha'lu'</translation>
+        <translation>choHbe&apos;bogh HochvaD &apos;angghach chu&apos;Ha&apos;lu&apos;</translation>
     </message>
     <message>
         <source>Static publishing is switched off.</source>
-        <translation>choHbe'bogh HochvaD 'angghach chu'Ha'lu'.</translation>
+        <translation>choHbe&apos;bogh HochvaD &apos;angghach chu&apos;Ha&apos;lu&apos;.</translation>
     </message>
     <message>
         <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
-        <translation>choHbe'bogh HochvaD 'angghach chu'Ha'lu'. wa'DIch SeHlaw &gt; choHbe'bogh HochvaD 'angghach Daq yIchu'.</translation>
+        <translation>choHbe&apos;bogh HochvaD &apos;angghach chu&apos;Ha&apos;lu&apos;. wa&apos;DIch SeHlaw &gt; choHbe&apos;bogh HochvaD &apos;angghach Daq yIchu&apos;.</translation>
     </message>
     <message>
         <source>Static publishing is switched on.</source>
-        <translation>choHbe'bogh HochvaD 'angghach chu'lu'.</translation>
+        <translation>choHbe&apos;bogh HochvaD &apos;angghach chu&apos;lu&apos;.</translation>
     </message>
     <message>
         <source>Step %step of %total</source>
-        <translation>mIw 'ay' %step, %total vo'</translation>
+        <translation>mIw &apos;ay&apos; %step, %total vo&apos;</translation>
     </message>
     <message>
         <source>Steps</source>
-        <translation>mIw 'ay'mey</translation>
+        <translation>mIw &apos;ay&apos;mey</translation>
     </message>
     <message>
         <source>Strip</source>
-        <translation>Say'moHghach</translation>
+        <translation>Say&apos;moHghach</translation>
     </message>
     <message>
         <source>Switch off</source>
-        <translation>yIchu'Ha'</translation>
+        <translation>yIchu&apos;Ha&apos;</translation>
     </message>
     <message>
         <source>Switch on</source>
-        <translation>yIchu'</translation>
+        <translation>yIchu&apos;</translation>
     </message>
     <message>
         <source>Switch static publishing on</source>
-        <translation>choHbe'bogh HochvaD 'angghach yIchu'</translation>
+        <translation>choHbe&apos;bogh HochvaD &apos;angghach yIchu&apos;</translation>
     </message>
     <message>
         <source>Tag</source>
@@ -82263,7 +82479,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Tags</source>
-        <translation>perwI'mey</translation>
+        <translation>perwI&apos;mey</translation>
     </message>
     <message>
         <source>Target</source>
@@ -82271,55 +82487,55 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
-        <translation>ghochmey chenmoHlaHlu' choHlaHlu' je, 'ach chu'lu'pa' pagh chenmoHlu' pagh 'anglu'.</translation>
+        <translation>ghochmey chenmoHlaHlu&apos; choHlaHlu&apos; je, &apos;ach chu&apos;lu&apos;pa&apos; pagh chenmoHlu&apos; pagh &apos;anglu&apos;.</translation>
     </message>
     <message>
         <source>Tells search engines what to read.</source>
-        <translation>nejwI' jo'mey ja', nuq laD.</translation>
+        <translation>nejwI&apos; jo&apos;mey ja&apos;, nuq laD.</translation>
     </message>
     <message>
         <source>The build could not be thrown away: %problem</source>
-        <translation>chenmoHghach woDlaHbe'lu': %problem</translation>
+        <translation>chenmoHghach woDlaHbe&apos;lu&apos;: %problem</translation>
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
-        <translation>chenmoHghach rap HochvaD 'angghach Qav: 'anglu'meH pagh tu'lu'.</translation>
+        <translation>chenmoHghach rap HochvaD &apos;angghach Qav: &apos;anglu&apos;meH pagh tu&apos;lu&apos;.</translation>
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
-        <translation>chenmoHghach woDlu': ghItlh pa' HochvaD 'angghach Qav ngaSqa'.</translation>
+        <translation>chenmoHghach woDlu&apos;: ghItlh pa&apos; HochvaD &apos;angghach Qav ngaSqa&apos;.</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
-        <translation>motlh DuHmey law' yoSmey yIQ.</translation>
+        <translation>motlh DuHmey law&apos; yoSmey yIQ.</translation>
     </message>
     <message>
         <source>The folder holds a build that is not published yet; a new build replaces it.</source>
-        <translation>'anglu'be'bogh chenmoHghach ngaS ghItlh pa'; chenmoHghach chu' Qa'.</translation>
+        <translation>&apos;anglu&apos;be&apos;bogh chenmoHghach ngaS ghItlh pa&apos;; chenmoHghach chu&apos; Qa&apos;.</translation>
     </message>
     <message>
         <source>The folder of the jobs cannot be written: %detail</source>
-        <translation>Qu'mey ghItlh pa' ghItlhlaHbe'lu': %detail</translation>
+        <translation>Qu&apos;mey ghItlh pa&apos; ghItlhlaHbe&apos;lu&apos;: %detail</translation>
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
-        <translation>Qu' ghuHmoHlaHbe'lu': %detail</translation>
+        <translation>Qu&apos; ghuHmoHlaHbe&apos;lu&apos;: %detail</translation>
     </message>
     <message>
         <source>The job could not be started.</source>
-        <translation>Qu' taghlaHbe'lu'.</translation>
+        <translation>Qu&apos; taghlaHbe&apos;lu&apos;.</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>Qu' rIn. ja'Daj lI'lu'taH.</translation>
+        <translation>Qu&apos; rIn. ja&apos;Daj lI&apos;lu&apos;taH.</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
-        <translation>'elpu'bogh lo'wI' poQ Qu'.</translation>
+        <translation>&apos;elpu&apos;bogh lo&apos;wI&apos; poQ Qu&apos;.</translation>
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
-        <translation>Qu' taghlu' 'ach mIw ngu'meH mI'Daj ja'be'. %detail yInuD.</translation>
+        <translation>Qu&apos; taghlu&apos; &apos;ach mIw ngu&apos;meH mI&apos;Daj ja&apos;be&apos;. %detail yInuD.</translation>
     </message>
     <message>
         <source>The key</source>
@@ -82327,23 +82543,23 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>The largest file: %path, %size.</source>
-        <translation>ghItlh tIn law': %path, %size.</translation>
+        <translation>ghItlh tIn law&apos;: %path, %size.</translation>
     </message>
     <message>
         <source>The lines that will be written</source>
-        <translation>ghItlhlu'taHbogh tlheghmey</translation>
+        <translation>ghItlhlu&apos;taHbogh tlheghmey</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>nejwI' jo'meyvaD navmey tetlh; Hoch SoQ poQ.</translation>
+        <translation>nejwI&apos; jo&apos;meyvaD navmey tetlh; Hoch SoQ poQ.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>'elbe'bogh SuchwI' leghbogh rur navmey suqlu'. not loHmeH choHmeH je siteaccess nobHa'lu'.</translation>
+        <translation>&apos;elbe&apos;bogh SuchwI&apos; leghbogh rur navmey suqlu&apos;. not loHmeH choHmeH je siteaccess nobHa&apos;lu&apos;.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>ghoSghach tlha'laHbe'lu'. Qu' Dotlh DaleghmeH nav yIlI'qa'.</translation>
+        <translation>ghoSghach tlha&apos;laHbe&apos;lu&apos;. Qu&apos; Dotlh DaleghmeH nav yIlI&apos;qa&apos;.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
@@ -82351,79 +82567,79 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>The root of the branch</source>
-        <translation>Sor 'ay' ghuv</translation>
+        <translation>Sor &apos;ay&apos; ghuv</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>pegh pol ghun 'ach (./console exp:upgrade --apply raSDaj chenmoH), vaj ngoQ pollaHbe'lu'.</translation>
+        <translation>pegh pol ghun &apos;ach (./console exp:upgrade --apply raSDaj chenmoH), vaj ngoQ pollaHbe&apos;lu&apos;.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
-        <translation>De'wI' jabwI' 'el nIteb (SSH ngoQDaj pagh 'elmeH De' QaHwI'Daj lo'), pagh De'wI' jabwI'vamDaq 'aplo' qach tu'lu'.</translation>
+        <translation>De&apos;wI&apos; jabwI&apos; &apos;el nIteb (SSH ngoQDaj pagh &apos;elmeH De&apos; QaHwI&apos;Daj lo&apos;), pagh De&apos;wI&apos; jabwI&apos;vamDaq &apos;aplo&apos; qach tu&apos;lu&apos;.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
-        <translation>DuH ghItlhlaHbe'lu': %problem</translation>
+        <translation>DuH ghItlhlaHbe&apos;lu&apos;: %problem</translation>
     </message>
     <message>
         <source>The settings are valid. These lines will be written:</source>
-        <translation>DuHmey lugh. tlheghmeyvam ghItlhlu'taH:</translation>
+        <translation>DuHmey lugh. tlheghmeyvam ghItlhlu&apos;taH:</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
-        <translation>DuHmey ghItlh laDlaHbe'lu': %problem</translation>
+        <translation>DuHmey ghItlh laDlaHbe&apos;lu&apos;: %problem</translation>
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>yoS HochvaD 'angghach'e' ghItlhmeyDaq chegh; chenmoHghach 'anglu'be'bogh wa'DIch 'anglu'nIS pagh woDlu'nIS.</translation>
+        <translation>yoS HochvaD &apos;angghach&apos;e&apos; ghItlhmeyDaq chegh; chenmoHghach &apos;anglu&apos;be&apos;bogh wa&apos;DIch &apos;anglu&apos;nIS pagh woDlu&apos;nIS.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>yoS nav'e', SoQmey tu'lu'be'bogh.</translation>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>yoS nav&apos;e&apos;, SoQmey tu&apos;lu&apos;be&apos;bogh.</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
-        <translation>ghoch pollaHbe'lu': %problem</translation>
+        <translation>ghoch pollaHbe&apos;lu&apos;: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ngoQvam lo'taHvIS ghoch 'elbe' 'ach: DuHmeyDaj Daq "ghochvaD chenmoHlu'pu'bogh lab ngoQ" yIwIv.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ngoQvam lo&apos;taHvIS ghoch &apos;elbe&apos; &apos;ach: DuHmeyDaj Daq &quot;ghochvaD chenmoHlu&apos;pu&apos;bogh lab ngoQ&quot; yIwIv.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>ghochmey laDlaHbe'lu': %problem</translation>
+        <translation>ghochmey laDlaHbe&apos;lu&apos;: %problem</translation>
     </message>
     <message>
         <source>There is no build to check yet.</source>
-        <translation>nuDmeH chenmoHghach tu'lu'be' 'ach.</translation>
+        <translation>nuDmeH chenmoHghach tu&apos;lu&apos;be&apos; &apos;ach.</translation>
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
-        <translation>jom'e'vam Dung siteaccess ghajbe'. not 'anglu' loHmeH choHmeH je siteaccess.</translation>
+        <translation>jom&apos;e&apos;vam Dung siteaccess ghajbe&apos;. not &apos;anglu&apos; loHmeH choHmeH je siteaccess.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
-        <translation>Qu' ruchtaHvIS navvam tlha'; navvam SoQmoHlu'DI' Qap 'em taH.</translation>
+        <translation>Qu&apos; ruchtaHvIS navvam tlha&apos;; navvam SoQmoHlu&apos;DI&apos; Qap &apos;em taH.</translation>
     </message>
     <message>
         <source>This target has no deploy key yet.</source>
-        <translation>lab ngoQ ghajbe' ghochvam 'ach.</translation>
+        <translation>lab ngoQ ghajbe&apos; ghochvam &apos;ach.</translation>
     </message>
     <message>
         <source>This target has not been built here yet.</source>
-        <translation>naDev chenmoHlu'be' ghochvam 'ach.</translation>
+        <translation>naDev chenmoHlu&apos;be&apos; ghochvam &apos;ach.</translation>
     </message>
     <message>
         <source>This target has one.</source>
-        <translation>wa' ghaj ghochvam.</translation>
+        <translation>wa&apos; ghaj ghochvam.</translation>
     </message>
     <message>
         <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
-        <translation>chenmoHghachvam woD: ghItlh pa' HochvaD 'angghach Qav ngaSqa'. yInbogh yoS choHbe'.</translation>
+        <translation>chenmoHghachvam woD: ghItlh pa&apos; HochvaD &apos;angghach Qav ngaSqa&apos;. yInbogh yoS choHbe&apos;.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>wa'DIch "choHmey vInuDpu'" yIwIv.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>wa&apos;DIch &quot;choHmey vInuDpu&apos;&quot; yIwIv.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82431,19 +82647,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Triggers</source>
-        <translation>taghmoHwI'mey</translation>
+        <translation>taghmoHwI&apos;mey</translation>
     </message>
     <message>
         <source>Type the name of the tag again</source>
-        <translation>per pong yIghItlhqa'</translation>
+        <translation>per pong yIghItlhqa&apos;</translation>
     </message>
     <message>
         <source>Unchanged</source>
-        <translation>choHbe'</translation>
+        <translation>choHbe&apos;</translation>
     </message>
     <message>
         <source>Webhook</source>
-        <translation>QIn ngeHmeH rarwI'</translation>
+        <translation>QIn ngeHmeH rarwI&apos;</translation>
     </message>
     <message>
         <source>What</source>
@@ -82455,19 +82671,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>What each file is; always written.</source>
-        <translation>ghItlh Hoch Segh; reH ghItlhlu'.</translation>
+        <translation>ghItlh Hoch Segh; reH ghItlhlu&apos;.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Qu' vangpu'bogh ta'Daj je. naDev taghlu'bogh Qu' navvam SoQmoHlu'DI' Qap 'em taH.</translation>
+        <translation>Qu&apos; vangpu&apos;bogh ta&apos;Daj je. naDev taghlu&apos;bogh Qu&apos; navvam SoQmoHlu&apos;DI&apos; Qap &apos;em taH.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
-        <translation>Qu' QaghmeyDaj ghItlhpu'bogh</translation>
+        <translation>Qu&apos; QaghmeyDaj ghItlhpu&apos;bogh</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
-        <translation>navmey ponglu'bogh, 'anglu'pu'bogh ghItlhmey Hoch mIllogh je</translation>
+        <translation>navmey ponglu&apos;bogh, &apos;anglu&apos;pu&apos;bogh ghItlhmey Hoch mIllogh je</translation>
     </message>
     <message>
         <source>When</source>
@@ -82475,27 +82691,27 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>When a publish fails</source>
-        <translation>HochvaD 'angghach Qapbe'DI'</translation>
+        <translation>HochvaD &apos;angghach Qapbe&apos;DI&apos;</translation>
     </message>
     <message>
         <source>When a publish succeeds</source>
-        <translation>HochvaD 'angghach QapDI'</translation>
+        <translation>HochvaD &apos;angghach QapDI&apos;</translation>
     </message>
     <message>
         <source>When content is published</source>
-        <translation>ghItlhmey 'anglu'DI'</translation>
+        <translation>ghItlhmey &apos;anglu&apos;DI&apos;</translation>
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>velqa' ngaSbe'bogh De'vaD rarwI'mey nuqDaq ghoS (nejghach, 'elghach).</translation>
+        <translation>velqa&apos; ngaSbe&apos;bogh De&apos;vaD rarwI&apos;mey nuqDaq ghoS (nejghach, &apos;elghach).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
-        <translation>choHbe'bogh velqa' jablu'meH Daq.</translation>
+        <translation>choHbe&apos;bogh velqa&apos; jablu&apos;meH Daq.</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>yoS 'anglu'bogh, ghoch pong je.</translation>
+        <translation>yoS &apos;anglu&apos;bogh, ghoch pong je.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
@@ -82503,7 +82719,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Written whenever a custom domain is set.</source>
-        <translation>Hoch'e' Daq DuHlu'DI' ghItlhlu'.</translation>
+        <translation>Hoch&apos;e&apos; Daq DuHlu&apos;DI&apos; ghItlhlu&apos;.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -82511,11 +82727,11 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>reH naDev ra'wI' SeHlaw Daq je ghopvaD DachenmoHlaH Da'anglaH je.</translation>
+        <translation>reH naDev ra&apos;wI&apos; SeHlaw Daq je ghopvaD DachenmoHlaH Da&apos;anglaH je.</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
-        <translation>pong neH; lo'laHghach SeHlaw &gt; peghmey Daq ratlh</translation>
+        <translation>pong neH; lo&apos;laHghach SeHlaw &gt; peghmey Daq ratlh</translation>
     </message>
     <message>
         <source>below %path</source>
@@ -82523,7 +82739,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>ended without a report</source>
-        <translation>ja' Hutlh, rIn</translation>
+        <translation>ja&apos; Hutlh, rIn</translation>
     </message>
     <message>
         <source>extra</source>
@@ -82531,7 +82747,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>failed</source>
-        <translation>Qapbe'</translation>
+        <translation>Qapbe&apos;</translation>
     </message>
     <message>
         <source>file</source>
@@ -82539,19 +82755,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>gh-pages, or main with the folder docs.</source>
-        <translation>gh-pages, pagh main ghItlh pa' docs je.</translation>
+        <translation>gh-pages, pagh main ghItlh pa&apos; docs je.</translation>
     </message>
     <message>
         <source>git host</source>
-        <translation>git jabwI'</translation>
+        <translation>git jabwI&apos;</translation>
     </message>
     <message>
         <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
-        <translation>https://github.com/owner/repo.git (token lo') pagh git@github.com:owner/repo.git (lab ngoQ lo'); not ngoQHom pagh token ngaS.</translation>
+        <translation>https://github.com/owner/repo.git (token lo&apos;) pagh git@github.com:owner/repo.git (lab ngoQ lo&apos;); not ngoQHom pagh token ngaS.</translation>
     </message>
     <message>
         <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
-        <translation>https://owner.github.io/repository/, yoS pu'jIn canonical rarwI'mey je.</translation>
+        <translation>https://owner.github.io/repository/, yoS pu&apos;jIn canonical rarwI&apos;mey je.</translation>
     </message>
     <message>
         <source>image</source>
@@ -82563,27 +82779,27 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>no</source>
-        <translation>ghobe'</translation>
+        <translation>ghobe&apos;</translation>
     </message>
     <message>
         <source>no remote</source>
-        <translation>Hop 'aplo' qach tu'lu'be'</translation>
+        <translation>Hop &apos;aplo&apos; qach tu&apos;lu&apos;be&apos;</translation>
     </message>
     <message>
         <source>none: commits stay in the folder</source>
-        <translation>pagh: ghItlh pa'Daq commit ghItlhmey ratlh</translation>
+        <translation>pagh: ghItlh pa&apos;Daq commit ghItlhmey ratlh</translation>
     </message>
     <message>
         <source>none: nothing changed</source>
-        <translation>pagh: pagh choHlu'</translation>
+        <translation>pagh: pagh choHlu&apos;</translation>
     </message>
     <message>
         <source>not pushed</source>
-        <translation>lablu'be'</translation>
+        <translation>lablu&apos;be&apos;</translation>
     </message>
     <message>
         <source>nothing changed</source>
-        <translation>pagh choHlu'</translation>
+        <translation>pagh choHlu&apos;</translation>
     </message>
     <message>
         <source>page</source>
@@ -82595,15 +82811,15 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
-        <translation>proc_open chu'Ha'lu', vaj naDev Qu' taghlaHbe'lu'. De'wI' jabwI'Daq ./console exp:static:build yIlo'.</translation>
+        <translation>proc_open chu&apos;Ha&apos;lu&apos;, vaj naDev Qu&apos; taghlaHbe&apos;lu&apos;. De&apos;wI&apos; jabwI&apos;Daq ./console exp:static:build yIlo&apos;.</translation>
     </message>
     <message>
         <source>publish</source>
-        <translation>HochvaD 'angghach</translation>
+        <translation>HochvaD &apos;angghach</translation>
     </message>
     <message>
         <source>published</source>
-        <translation>'anglu'pu'</translation>
+        <translation>&apos;anglu&apos;pu&apos;</translation>
     </message>
     <message>
         <source>push pending</source>
@@ -82611,11 +82827,11 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>pushed</source>
-        <translation>lablu'pu'</translation>
+        <translation>lablu&apos;pu&apos;</translation>
     </message>
     <message>
         <source>refused</source>
-        <translation>lajQo'lu'</translation>
+        <translation>lajQo&apos;lu&apos;</translation>
     </message>
     <message>
         <source>relative</source>
@@ -82627,7 +82843,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>rolled back</source>
-        <translation>cheghmoHlu'pu'</translation>
+        <translation>cheghmoHlu&apos;pu&apos;</translation>
     </message>
     <message>
         <source>running</source>
@@ -82635,15 +82851,43 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>the folder only</source>
-        <translation>ghItlh pa' neH</translation>
+        <translation>ghItlh pa&apos; neH</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: ghItlh CNAME Daq ghItlhlu'. jabwI' QIjbogh rur Daq DNS jabwI'Daq yIwIv; HTTPS taghmeH poH nI' poQlaH.</translation>
+        <translation>www.example.com: ghItlh CNAME Daq ghItlhlu&apos;. jabwI&apos; QIjbogh rur Daq DNS jabwI&apos;Daq yIwIv; HTTPS taghmeH poH nI&apos; poQlaH.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
-        <translation>HISlaH, 'anglu'be' 'ach</translation>
+        <translation>HISlaH, &apos;anglu&apos;be&apos; &apos;ach</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>chenmoHghach %site Hoch nav suq, 'elbe'bogh SuchwI' leghbogh rur, rarwI'mey ghItlhqa', ghItlhmey velqa'moH, ghoch ghItlh pa'Daq ghItlh. chenmoHghach DanuDpa' 'ej HochvaD yI'ang DaghoDpa' pagh 'anglu'.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>cheghmoHghach po'wI'pu'vaD: "vam choHmey vISov" yIwIv 'ej per pong yIghItlhqa'.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>jabwI' jabbogh rur chenmoHghach poSmoH, ghoch ghItlh pa' vo'. wa' rep rarwI' Qap SoHvaD.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>tetlhmeyDaq 'anglu', ghoch rur "GitHub Pages Daq Hoch yoS".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>yoS nav'e', SoQmey tu'lu'be'bogh.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ngoQvam lo'taHvIS ghoch 'elbe' 'ach: DuHmeyDaj Daq "ghochvaD chenmoHlu'pu'bogh lab ngoQ" yIwIv.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>wa'DIch "choHmey vInuDpu'" yIwIv.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

@@ -22,7 +22,8 @@
  *   YAML         the file is YAML (symfony/yaml), its document and every step are valid: a registered step type,
  *                its mode and keys against the type's schema, conditions, loops, references and placeholders
  *                (expMigrationYaml); a migration without steps is a warning
- *   types        .sql and .ini migrations cannot be run yet: an error, as the runner refuses them
+ *   SQL, INI     every file of an SQL migration reads (statements, a "-- down" part, the JSON of MongoDB), every block
+ *                of an INI migration names its file and every line is a setting (expMigrationSql, expMigrationIni)
  *
  * The report (exp-migration/1, mode "check"): checked (count), migrations (id, source, type, files, ok, errors,
  * warnings), errors, warnings, exit (0 when nothing is wrong, 1 otherwise).
@@ -107,10 +108,8 @@ class expMigrationCheck
                 $entry['errors'][] = self::relative( $error, $root );
             if ( trim( (string)$definition->description() ) === '' )
                 $entry['warnings'][] = 'no description in the header';
-            if ( $definition->type() === 'yml' )
+            if ( in_array( $definition->type(), array( 'yml', 'sql', 'ini' ), true ) )
                 self::checkYaml( $definition, $entry, isset( $options['registry'] ) ? $options['registry'] : null );
-            else if ( $definition->type() !== 'php' )
-                $entry['errors'][] = 'migrations of type .' . $definition->type() . ' cannot be run yet';
             else
                 self::checkPhp( $definition, $entry, $classes );
             $entry['ok'] = !$entry['errors'];
@@ -192,7 +191,9 @@ class expMigrationCheck
     {
         $errors = array();
         $warnings = array();
-        expMigrationYaml::read( $definition, $registry, $errors, $warnings );
+        // SQL and INI migrations are read as the YAML migration of their steps
+        $reader = array( 'yml' => 'expMigrationYaml', 'sql' => 'expMigrationSql', 'ini' => 'expMigrationIni' )[$definition->type()];
+        $reader::read( $definition, $registry, $errors, $warnings );
         foreach ( $errors as $error )
             $entry['errors'][] = $error;
         foreach ( $warnings as $warning )

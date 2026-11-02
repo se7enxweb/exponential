@@ -131,6 +131,7 @@ Website-Seitenleiste ein Panel, das nur liest.
 - [Stand und Verlauf](status-und-verlauf.md)
 - [Ausführen, Probelauf und Rücknahme](ausfuehren-probelauf-und-rueckgaengig.md)
 - [Migrationen in der Website-Seitenleiste](expwt-panel.md)
+- [Änderungen aufzeichnen](aufzeichnung.md): die eigenen Änderungen oder in einem websiteweiten Fenster jede Änderung als Schritte einer Migration aufzeichnen
 
 ## Referenz
 
@@ -165,11 +166,11 @@ sich auch als YAML-Schritte schreiben, wo ein Schritttyp es abdeckt.
 
 | In 6.0.15 | Noch nicht |
 |---|---|
-| PHP- und YAML-Migrationen in der Site, in aktiven Erweiterungen und in installierten Paketen | SQL- und INI-Migrationen (gefunden und geprüft, vom Runner abgelehnt); die YAML-Schritte für Caches, den Suchindex und Layouts |
+| PHP-, YAML-, SQL- und INI-Migrationen in der Site, in aktiven Erweiterungen und in installierten Paketen | |
 | der Probelauf und die Simulation mit Diff auf PostgreSQL und SQLite | eine Simulation auf MySQL/MariaDB, Oracle und MongoDB (der Plan wird gelistet) |
 | Sicherungspunkte, die automatische Wiederherstellung, die Rücknahme eines Laufs, einer Migration und jedes Sicherungspunkts | Generatoren außer dem Gerüst, ein Editor in der Administration |
 | Commit, Tag und Push der Aufzeichnung jedes Laufs; der Cronjob-Teil `migrationpush` | `exp:velocity deploy --migrate` |
-| Setup > Migrationen, Läufe im Hintergrund, der Dashboard-Block und das Panel der Seitenleiste | die Richtlinie `migration/edit` ist vorgesehen; noch nutzt sie keine Seite |
+| Setup > Migrationen, Läufe im Hintergrund, der Dashboard-Block und das Panel der Seitenleiste | das Schreiben und Erzeugen von Migrationen in der Administration (`migration/edit` nutzt bisher nur die Aufzeichnung) |
 | die Upgrade-Schritte des Kernels unter den Migrationen gelistet und ausgeführt (Stufen `database` und `scripts`) | die Stufen `code`, `libraries` und `finish` bleiben bei `exp:upgrade` |
 
 ## Verwandte Seiten

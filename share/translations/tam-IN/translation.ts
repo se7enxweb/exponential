@@ -80588,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>இயக்கத்தைத் தொடங்க முடியவில்லை.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>மாற்றங்களைப் பதிவுசெய்தல்</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>பதிவு நடக்கும்போது நிர்வாகத்திலோ தளத்தின் பக்கப்பட்டியிலோ நீங்கள் மாற்றுவது ஒரு இடம்பெயர்வின் படிகளாக வைக்கப்படும்: உள்ளடக்கம், வகுப்புகள், பாத்திரங்களும் கொள்கைகளும், பிரிவுகள், பயனர்களும் குழுக்களும், URL மாற்றுப்பெயர்கள், அமைப்புகள். முடிந்ததும் நிறுத்தி, அது என்ன பிடித்தது எனப் பார்த்து, அதிலிருந்து ஒரு இடம்பெயர்வை உருவாக்குங்கள்.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>பதிவுகளைப் படிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>பதிவுகளின் அட்டவணைகள் இன்னும் இல்லை: முதலில் மேம்படுத்தலை இயக்குங்கள் (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini இல் பதிவு அணைக்கப்பட்டுள்ளது ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>என் மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>நீங்கள் நிறுத்தும் வரை, நீங்கள் மாற்றுவதை மட்டும், எங்கு மாற்றினாலும், பதிவுசெய்கிறது.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>பதிவு</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time முதல், இதுவரை %count மாற்றங்கள்.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>லேபிள் (விருப்பம்)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>அது என்ன பிடித்தது எனக் காட்டு</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>பதிவை நிறுத்து</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>என் மாற்றங்களைப் பதிவுசெய்யத் தொடங்கு</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>முழுத் தளத்துக்கான சாளரம்</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>மூடப்படும் வரை ஒவ்வொரு பயனரின் மற்றும் கன்சோலின் ஒவ்வொரு மாற்றத்தையும் பதிவுசெய்கிறது. திறக்கும்போது நீங்கள்தான் என உறுதிசெய்யக் கேட்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>திறந்துள்ளது</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>சாளரத்தை மூடு</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>முழுத் தளத்துக்கான சாளரத்தைத் திற</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>பதிவுகள்</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>பயனரின் கணக்கு (உள்நுழைவுப் பெயர், மின்னஞ்சல், கடவுச்சொல்) மற்றும் பயனர் கணக்குகளின் புலங்கள் ஒருபோதும் பதிவுசெய்யப்படுவதில்லை.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>முழுத் தளம்</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name இன் மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>நிறுத்தப்பட்டது</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>இன்னும் பதிவு இல்லை.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>பதிவு %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>எல்லாப் பதிவுகளும்</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>இதிலிருந்து உருவாகும் இடம்பெயர்வு</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>மாற்றப்பட்ட ஒவ்வொன்றுக்கும் ஒரு படியாகத் தொகுக்கப்பட்ட மாற்றங்கள்: இந்தப் பதிவிலிருந்து உருவாக்கப்படும் இடம்பெயர்வு செய்வது.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>இந்த நிறுவலில் YAML படி வகைகள் %types இருக்கும்போது இதிலிருந்து இடம்பெயர்வை உருவாக்கலாம்.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>வேண்டுமென்றே விடப்பட்டது: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>எதுவும் பதிவுசெய்யப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>அது என்ன பிடித்தது</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count மாற்றங்கள், செய்யப்பட்ட வரிசையில்.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>மாற்றம்</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>படி</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>தொடர்புடையது</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>மேலும் %count: ./console exp:migration:record:show அனைத்தையும் பட்டியலிடும்.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>நிராகரி</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>பதிவையும் அது பிடித்ததையும் நீக்குகிறது. மாற்றப்பட்டது மாற்றப்பட்டதாகவே இருக்கும்.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ஆம், இந்தப் பதிவை நிராகரி</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>பதிவுசெய்கிறது…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>உங்கள் மாற்றங்கள் ஒரு இடம்பெயர்வுக்காகப் பதிவுசெய்யப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>இந்தத் தளத்தின் ஒவ்வொரு மாற்றமும் ஒரு இடம்பெயர்வுக்காகப் பதிவுசெய்யப்படுகிறது (முழுத் தளத்துக்கான சாளரம்).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>முழுத் தளப் பதிவு தொடங்கியது: நீங்கள் நிறுத்தும் வரை ஒவ்வொரு பயனரின் ஒவ்வொரு மாற்றமும் பதிவுசெய்யப்படும்.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>பதிவு தொடங்கியது: நீங்கள் நிறுத்தும் வரை உங்கள் மாற்றங்கள் பதிவுசெய்யப்படும்.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>பதிவு நிறுத்தப்பட்டது. அது பிடித்தது நீங்கள் நிராகரிக்கும் வரை இருக்கும்.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>பதிவும் அதன் நிகழ்வுகளும் நீக்கப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>பதிவு %id இல்லை.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>முதலில் "ஆம், இந்தப் பதிவை நிராகரி" என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>அமர்வுப் பதிவைப் பதிவுசெய்த பயனர் மட்டுமே நிறுத்தலாம்.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>நிறுத்த வேண்டிய பதிவைத் தேர்ந்தெடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>இந்த வகைப் பதிவு ஏற்கனவே நடக்கிறது.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>பதிவை மாற்ற முடியவில்லை: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81399,7 +81615,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub திட்டத் தளம் /&lt;repository&gt;/ இன் கீழ் இருக்கும்; சார்பு இணைப்புகள் அங்கும் வேறு எங்கும் வேலை செய்யும்.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>ஓர் உருவாக்கம் %site இன் ஒவ்வொரு பக்கத்தையும் உள்நுழையாத பார்வையாளர் பார்ப்பது போலவே பெற்று, இணைப்புகளை மாற்றி எழுதி, கோப்புகளை நகலெடுத்து, முடிவை இலக்கின் கோப்புறையில் எழுதுகிறது. நீங்கள் உருவாக்கத்தைச் சரிபார்த்து வெளியிடு என்பதை அழுத்தும் வரை எதுவும் வெளியிடப்படாது.</translation>
     </message>
     <message>
@@ -81447,8 +81663,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>அகற்றுதலுக்குப் பிறகும் பிழைத்திருத்த வெளியீடு, படிவ டோக்கன் அல்லது அமர்வு அடையாளம் கொண்ட பக்கம் ஒருபோதும் வெளியிடப்படாது.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>திரும்பப்பெறுதல் நிபுணர்களுக்கானது: "இது என்ன மாற்றும் என்று எனக்குத் தெரியும்" என்பதைத் தேர்வுசெய்து குறிச்சொல்லின் பெயரை மீண்டும் தட்டச்சு செய்யுங்கள்.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>திரும்பப்பெறுதல் நிபுணர்களுக்கானது: &quot;இது என்ன மாற்றும் என்று எனக்குத் தெரியும்&quot; என்பதைத் தேர்வுசெய்து குறிச்சொல்லின் பெயரை மீண்டும் தட்டச்சு செய்யுங்கள்.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81959,7 +82175,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>முன்னோட்டத்தைத் திற</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>இலக்கின் கோப்புறையிலிருந்து, வழங்கி வழங்குவது போலவே உருவாக்கத்தைத் திறக்கிறது. இணைப்பு உங்களுக்கு ஒரு மணி நேரம் வேலை செய்யும்.</translation>
     </message>
     <message>
@@ -82135,8 +82351,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>அமைவு &gt; ரகசியங்கள்</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>பட்டியல்களில் காட்டப்படும், எடுத்துக்காட்டாக "GitHub Pages இல் உள்ள பொதுத் தளம்".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>பட்டியல்களில் காட்டப்படும், எடுத்துக்காட்டாக &quot;GitHub Pages இல் உள்ள பொதுத் தளம்&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82343,7 +82559,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>தளம் அந்த வெளியீட்டின் கோப்புகளுக்குத் திரும்பும்; இன்னும் வெளியிடப்படாத உருவாக்கத்தை முதலில் வெளியிட வேண்டும் அல்லது நிராகரிக்க வேண்டும்.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>இல்லாத முகவரிகளுக்கான தளத்தின் சொந்தப் பக்கம்.</translation>
     </message>
     <message>
@@ -82351,8 +82567,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>இலக்கைச் சேமிக்க முடியவில்லை: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>இலக்கு இன்னும் இந்த விசையுடன் உள்நுழையவில்லை: அதன் அமைப்புகளில் "இந்த இலக்குக்காக உருவாக்கப்பட்ட வரிசைப்படுத்தல் விசை" என்பதைத் தேர்ந்தெடுங்கள்.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>இலக்கு இன்னும் இந்த விசையுடன் உள்நுழையவில்லை: அதன் அமைப்புகளில் &quot;இந்த இலக்குக்காக உருவாக்கப்பட்ட வரிசைப்படுத்தல் விசை&quot; என்பதைத் தேர்ந்தெடுங்கள்.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82387,8 +82603,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>இந்த உருவாக்கத்தை நிராகரிக்கிறது: கோப்புறையில் மீண்டும் கடைசி வெளியீடு இருக்கும். நேரடித் தளம் மாறாது.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>முதலில் "மாற்றங்களைச் சரிபார்த்துவிட்டேன்" என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>முதலில் &quot;மாற்றங்களைச் சரிபார்த்துவிட்டேன்&quot; என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82609,6 +82825,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>ஆம், இன்னும் வெளியிடப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ஓர் உருவாக்கம் %site இன் ஒவ்வொரு பக்கத்தையும் உள்நுழையாத பார்வையாளர் பார்ப்பது போலவே பெற்று, இணைப்புகளை மாற்றி எழுதி, கோப்புகளை நகலெடுத்து, முடிவை இலக்கின் கோப்புறையில் எழுதுகிறது. நீங்கள் உருவாக்கத்தைச் சரிபார்த்து வெளியிடு என்பதை அழுத்தும் வரை எதுவும் வெளியிடப்படாது.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>திரும்பப்பெறுதல் நிபுணர்களுக்கானது: "இது என்ன மாற்றும் என்று எனக்குத் தெரியும்" என்பதைத் தேர்வுசெய்து குறிச்சொல்லின் பெயரை மீண்டும் தட்டச்சு செய்யுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>இலக்கின் கோப்புறையிலிருந்து, வழங்கி வழங்குவது போலவே உருவாக்கத்தைத் திறக்கிறது. இணைப்பு உங்களுக்கு ஒரு மணி நேரம் வேலை செய்யும்.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>பட்டியல்களில் காட்டப்படும், எடுத்துக்காட்டாக "GitHub Pages இல் உள்ள பொதுத் தளம்".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>இல்லாத முகவரிகளுக்கான தளத்தின் சொந்தப் பக்கம்.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>இலக்கு இன்னும் இந்த விசையுடன் உள்நுழையவில்லை: அதன் அமைப்புகளில் "இந்த இலக்குக்காக உருவாக்கப்பட்ட வரிசைப்படுத்தல் விசை" என்பதைத் தேர்ந்தெடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>முதலில் "மாற்றங்களைச் சரிபார்த்துவிட்டேன்" என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

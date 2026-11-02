@@ -55,8 +55,14 @@ zweite Datei um.
 `--only` oder `--path` hat eine Migration ausgewählt, deren Anforderung noch nicht gelaufen ist. Nehmen Sie die
 Anforderung in die Auswahl auf oder führen Sie den Lauf ohne Auswahl aus.
 
-**`migrations of type .yml cannot be run yet`** (auch `.sql`, `.ini`)
-In 6.0.15 wird eine Migration in PHP geschrieben. Schreiben Sie die Änderung als PHP-Migration.
+**`no statements for <engine>; missing: skip lets the step pass`**
+Eine SQL-Migration oder ein Schritt `sql` hat nichts für die Engine dieser Installation: Ergänzen Sie die Datei
+(`<id>.<engine>.sql`, `<id>.mongodb.json`) oder den Schlüssel der Engine, oder `missing: skip`, wenn dort nichts zu tun
+ist ([SQL und Einstellungen](migrationen-sql-und-einstellungen.md)).
+
+**INI: `line N: [Block] does not name its file`**
+Ein Block einer INI-Migration nennt die Datei, die er ändert: `[site.ini/Block]` oder
+`[siteaccess:<name> site.ini/Block]` ([SQL und Einstellungen](migrationen-sql-und-einstellungen.md#einstellungen-ini-migrationen-und-der-schritttyp-settings)).
 
 **PHP: `no class: a PHP migration declares one class that extends expMigrationPhp`, `more than one class extends expMigrationPhp`, `the class ... is declared by ... too`, `PHP syntax: ...`**
 Jede PHP-Datei deklariert genau eine nicht abstrakte Klasse, die `\expMigrationPhp` erweitert, mit einem Namen, den

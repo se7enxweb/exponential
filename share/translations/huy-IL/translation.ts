@@ -80599,6 +80599,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ריהטא לא יכל למשרי.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Ktava d-šuxlape</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Ma d-ktava kula, ay-d at šaxlit go idara aw go d-sedra d-ṣela d-ʾatra kmaṭre ʾax pasʿe d-mubarta: hawala, sinfe, šuġle u-qanune, pilge, mupalxane u-kenše, šimme xrene d-URL, tartibe. Mutwa-la ma d-xlislux, xzi ʾay mindi doqla, u-ʿwid minna mubarta.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Le-mṣelan qrela ktave: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Ṭablawe d-ktave lētun hel ʾatta: qamta dwuq tazawta (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Ktava ṭpiya-la go migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Šuxlapi</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Kkatwa bas ay-d at šaxlit, kul ʾeka d-šaxlit, hal d-mutwit-la.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ktava</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>mən %time, hal ʾatta %count šuxlape.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Nišana (ʾixtiyari)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Mux ʾay mindi doqla</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Mutu ktava</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Šure ktava d-šuxlapi</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Paṭora ta kulle ʾatra</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Kkatwa kul šuxlapa d-kul mupalxana u-d-konsol hal d-sakri-le. Ma d-ptixlux, kšayli minnux d-msahdit d-at-iwit.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ptixa</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Skur paṭora</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ptux paṭora ta kulle ʾatra</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ktave</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ḥsaba d-mupalxana (šəmma d-ʿwara, e-mail, xabra d-xila) u-dukane d-ḥsabe d-mupalxane čuʾ ga le-kkatwi.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Šuxlape</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Kulle ʾatra</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Šuxlape d-%name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Mutya</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Lēt ktava hel ʾatta.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ktava %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Kulle ktave</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Mubarta d-paya minna</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Šuxlape kniše go xa pasʿa ta kul mindi d-šxilpa: ʾay-d mubarta d-ʿwida mən d-ay ktava gbe ʿawda.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Mṣe-la paya mubarta minna ma d-ay tanṣib hawe-le gnise d-pasʿe d-YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Šwiqa b-ʾirada: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Čuʾ mindi le-ktiwa.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ʾAy mindi doqla</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count šuxlape, b-tartib d-ʿwide.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Šuxlapa</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Pasʿa</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Ta</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Xrene %count: ./console exp:migration:record:show kmaxwe kulle.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Šdi</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Kmašqla ktava u-ʾay mindi doqla. ʾAy-d šxilpa kpayəš šxilpa.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Hē, šdi ay ktava</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Kkatwa…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Šuxlapux kkatwi ta mubarta.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Kul šuxlapa go ay ʾatra kkatwa ta mubarta (paṭora ta kulle ʾatra).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Ktava d-kulle ʾatra šrela: kul šuxlapa d-kul mupalxana kkatwa hal d-mutwit-la.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ktava šrela: šuxlapux kkatwi hal d-mutwit-la.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Ktava mutyala. ʾAy mindi doqla kpayəš hal d-šadit-la.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Ktava u-hawadise šqilun.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Lēt ktava %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Qamta nšun "Hē, šdi ay ktava".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Bas mupalxana d-ktula mṣe mutwa ktava d-majlis.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Gbi ktava d-mutya.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ktava mən ay gnisa qamta kula.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Le-mṣelan šaxlexla ktava: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81410,7 +81626,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>אתרא דפרויקט GitHub שרי לתחות /&lt;repository&gt;/; אסוריא דסמיכין עבדין תמן ובכל דוכתא אחריתא.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>בניינא מייתי כל דפא דְ%site היכדין דחזי ליה מבקרא דלא עאל, כתב תוב אסוריא, מעתיק פנקייתא וכתב פלטא לתיקא דנישא. מדעם לא מתפרס עד דבדקת בניינא ודחקת פרסא.</translation>
     </message>
     <message>
@@ -81458,7 +81674,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>דפא דבתר דכיותא עד כען טעין מפקנא דבדיקא, טוקנא דטופסא או סימנא דמושבא לעלם לא מתפרס.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>אהדרתא לחכימי היא: סמן “ידע אנא מה דהדא משניא” וכתוב שמא דסימנא תוב.</translation>
     </message>
     <message>
@@ -81970,7 +82186,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>פתח חזיא קדמיא</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>פתח בניינא היכדין דמתחמא ישמש ליה, מן תיקא דנישא. אסורא עביד לך שעתא חדא.</translation>
     </message>
     <message>
@@ -82146,7 +82362,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>טויבא &gt; ארזא</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>מתחזי ברשימתא, למשל “אתרא גליא ב־GitHub Pages”.</translation>
     </message>
     <message>
@@ -82354,7 +82570,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>אתרא הדר לפנקייתא דההוא פרסומא; בניינא דעד כען לא אתפרס צריך קדמאה למתפרס או למשתדי.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>דפא דאתרא גופיה למונעי דליתנון.</translation>
     </message>
     <message>
@@ -82362,7 +82578,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>נישא לא אתנטר: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>נישא עד כען לא עאל בהדין קלידא: בחר “קלידא דשדרא דאתעביד להדין נישא” בטויבוהי.</translation>
     </message>
     <message>
@@ -82398,7 +82614,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>שדי הדין בניינא: תיקא אחיד תוב פרסומא בתראה. אתרא חיא לא משתני.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>סמן “בדקית שנויין” קדמאה.</translation>
     </message>
     <message>
@@ -82620,6 +82836,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>אין, עד כען לא אתפרס</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>בניינא מייתי כל דפא דְ%site היכדין דחזי ליה מבקרא דלא עאל, כתב תוב אסוריא, מעתיק פנקייתא וכתב פלטא לתיקא דנישא. מדעם לא מתפרס עד דבדקת בניינא ודחקת פרסא.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>אהדרתא לחכימי היא: סמן “ידע אנא מה דהדא משניא” וכתוב שמא דסימנא תוב.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>פתח בניינא היכדין דמתחמא ישמש ליה, מן תיקא דנישא. אסורא עביד לך שעתא חדא.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>מתחזי ברשימתא, למשל “אתרא גליא ב־GitHub Pages”.</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>דפא דאתרא גופיה למונעי דליתנון.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>נישא עד כען לא עאל בהדין קלידא: בחר “קלידא דשדרא דאתעביד להדין נישא” בטויבוהי.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>סמן “בדקית שנויין” קדמאה.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

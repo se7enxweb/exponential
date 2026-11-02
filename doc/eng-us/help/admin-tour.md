@@ -58,9 +58,8 @@ The left column changes with the tab:
   [Migrations](migrations/README.md)). Next to **Cache** in the same group, **Static publishing** publishes a static
   copy of a site to GitHub Pages or any other host of repositories: a target made with a wizard, a build in the
   background, the changes checked before **Publish**, and every publish kept to go back to
-  ([Static publishing](static-publishing/README.md)).
-  Another is **Recent content** in the group **Content model**: the newest
-  content of the whole site, what is held for review, who submitted it, and actions on a selection
+  ([Static publishing](static-publishing/README.md)). Another is **Recent content** in the group **Content model**:
+  the newest content of the whole site, what is held for review, who submitted it, and actions on a selection
   ([Recent content](recent-content.md)).
 
 ![The menu of an item in the tree](images/context-menu.webp)
@@ -101,13 +100,12 @@ The dashboard is the first page after signing in. From the top:
 Administrators also see blocks about the system, updates and security events, and the **Migrations** block: how
 many migrations are pending or failed, the orphans (recorded, their file gone), the last run with its state, a note
 while a run is going on, and **All migrations**, a link to Setup > Migrations. The block shows only to users who may
-see the migrations ([The dashboard block](migrations/status-and-history.md#the-dashboard-block)).
+see the migrations ([The dashboard block](migrations/status-and-history.md#the-dashboard-block)). Moderators see the
+**Recent content** block: how many items are held for review and how many were created today, each a link to the
+list filtered on them.
 The **Static publishing** block lists each target with its stale pages and its last publish; before the first
 target it is one line with links to the wizard and the tutorial, and **hide this** removes it for you
 ([Static publishing](static-publishing/README.md)).
-Moderators see the
-**Recent content** block: how many items are held for review and how many were created today, each a link to the
-list filtered on them.
 
 ![My bookmarks: the items you bookmarked with Add to bookmarks, to open them again in one click](images/accounts/my-bookmarks.webp)
 

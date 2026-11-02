@@ -80620,6 +80620,222 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>The run could not be started.</source>
         <translation>Ekzekutimi nuk u nis dot.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Regjistrimi i ndryshimeve</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Ndërsa një regjistrim është në vazhdim, ajo që ndryshoni në administrim ose në shiritin anësor të sajtit ruhet si hapa të një migrimi: përmbajtje, klasa, role dhe politika, seksione, përdorues dhe grupe, pseudonime URL, cilësime. Ndalojeni kur të keni mbaruar, shikoni çfarë kapi dhe krijoni prej tij një migrim.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Regjistrimet nuk mund të lexoheshin: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabelat e regjistrimeve nuk ekzistojnë ende: ekzekutoni fillimisht përditësimin (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Regjistrimi është i çaktivizuar në migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Ndryshimet e mia</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Regjistron vetëm atë që ndryshoni ju, kudo që ta ndryshoni, derisa ta ndaloni.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Regjistrim</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>që nga %time, deri tani %count ndryshim(e).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiketë (opsionale)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Shfaq çfarë kapi</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Ndalo regjistrimin</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Fillo regjistrimin e ndryshimeve të mia</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Dritare për të gjithë sajtin</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Regjistron çdo ndryshim të çdo përdoruesi dhe të konsolës derisa të mbyllet. Kur e hapni, ju kërkohet të verifikoni se jeni ju.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>E hapur</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Mbyll dritaren</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Hap dritaren për të gjithë sajtin</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Regjistrimet</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Llogaria e një përdoruesi (emri i hyrjes, e-maili, fjalëkalimi) dhe fushat e llogarive të përdoruesve nuk regjistrohen kurrë.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ndryshime</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>I gjithë sajti</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ndryshimet e %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>I ndaluar</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ende asnjë regjistrim.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Regjistrimi %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Të gjitha regjistrimet</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migrimi që do të dilte</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ndryshimet të bashkuara në një hap për çdo gjë të ndryshuar: çfarë do të bënte një migrim i krijuar nga ky regjistrim.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Prej tij mund të krijohet një migrim kur ky instalim të ketë llojet e hapave YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Lënë jashtë qëllimisht: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Asgjë nuk u regjistrua.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Çfarë kapi</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ndryshim(e), sipas radhës kur u bënë.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ndryshim</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Hap</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Ka të bëjë me</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Edhe %count: ./console exp:migration:record:show i liston të gjitha.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Hidh poshtë</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Heq regjistrimin dhe atë që kapi. Ajo që u ndryshua mbetet e ndryshuar.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Po, hidhe poshtë këtë regjistrim</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Po regjistrohet…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Ndryshimet tuaja regjistrohen për një migrim.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Çdo ndryshim në këtë sajt regjistrohet për një migrim (dritare për të gjithë sajtin).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Regjistrimi i të gjithë sajtit filloi: çdo ndryshim i çdo përdoruesi regjistrohet derisa ta ndaloni.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Regjistrimi filloi: ndryshimet tuaja regjistrohen derisa ta ndaloni.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Regjistrimi u ndal. Ajo që kapi mbetet derisa ta hidhni poshtë.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Regjistrimi dhe ngjarjet e tij u hoqën.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nuk ka regjistrim %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Shënoni fillimisht «Po, hidhe poshtë këtë regjistrim».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Vetëm përdoruesi që regjistroi mund të ndalojë një regjistrim sesioni.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Zgjidhni regjistrimin që do të ndalohet.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Një regjistrim i këtij lloji është tashmë në vazhdim.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Regjistrimi nuk mund të ndryshohej: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81325,7 +81541,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     </message>
     <message>
         <source>build to check</source>
-        <translation>ndërtim për t'u kontrolluar</translation>
+        <translation>ndërtim për t&apos;u kontrolluar</translation>
     </message>
     <message>
         <source>hide this</source>
@@ -81431,7 +81647,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Një sajt projekti GitHub ndodhet nën /&lt;repository&gt;/; lidhjet relative funksionojnë atje dhe kudo tjetër.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Një ndërtim merr çdo faqe të %site ashtu siç e sheh një vizitor që nuk ka hyrë, rishkruan lidhjet, kopjon skedarët dhe e shkruan rezultatin në dosjen e destinacionit. Asgjë nuk publikohet derisa ta kontrolloni ndërtimin dhe të shtypni Publiko.</translation>
     </message>
     <message>
@@ -81479,7 +81695,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Një faqe që pas pastrimit ende përmban dalje korrigjimi, një token formulari ose një identifikues sesioni nuk publikohet kurrë.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>Kthimi mbrapsht është për ekspertë: shënoni „E di çfarë ndryshon kjo“ dhe shkruani sërish emrin e etiketës.</translation>
     </message>
     <message>
@@ -81564,7 +81780,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     </message>
     <message>
         <source>Build to check</source>
-        <translation>Ndërtim për t'u kontrolluar</translation>
+        <translation>Ndërtim për t&apos;u kontrolluar</translation>
     </message>
     <message>
         <source>By</source>
@@ -81991,7 +82207,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Hap pamjen paraprake</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Hap ndërtimin ashtu siç do ta shërbejë hosti, nga dosja e destinacionit. Lidhja funksionon për ju për një orë.</translation>
     </message>
     <message>
@@ -82167,7 +82383,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Konfigurimi &gt; Sekretet</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>Shfaqet në lista, për shembull „Sajti publik në GitHub Pages“.</translation>
     </message>
     <message>
@@ -82180,7 +82396,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     </message>
     <message>
         <source>Site to publish</source>
-        <translation>Sajti për t'u publikuar</translation>
+        <translation>Sajti për t&apos;u publikuar</translation>
     </message>
     <message>
         <source>Size</source>
@@ -82375,7 +82591,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Sajti kthehet te skedarët e atij publikimi; një ndërtim ende i papublikuar duhet fillimisht të publikohet ose të hidhet poshtë.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Faqja e vetë sajtit për adresat që nuk ekzistojnë.</translation>
     </message>
     <message>
@@ -82383,7 +82599,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Destinacioni nuk mund të ruhej: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>Destinacioni ende nuk hyn me këtë çelës: zgjidhni „Një çelës vendosjeje i krijuar për këtë destinacion“ te cilësimet e tij.</translation>
     </message>
     <message>
@@ -82392,7 +82608,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     </message>
     <message>
         <source>There is no build to check yet.</source>
-        <translation>Ende nuk ka asnjë ndërtim për t'u kontrolluar.</translation>
+        <translation>Ende nuk ka asnjë ndërtim për t&apos;u kontrolluar.</translation>
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
@@ -82419,7 +82635,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>E hedh poshtë këtë ndërtim: dosja përmban sërish publikimin e fundit. Sajti i drejtpërdrejtë nuk ndryshon.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>Shënoni fillimisht „I kam kontrolluar ndryshimet“.</translation>
     </message>
     <message>
@@ -82636,11 +82852,39 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: shkruhet në skedarin CNAME. Drejtojeni DNS-në e domenit te hosti siç e shpjegon ai; HTTPS mund të kërkojë pak kohë për t'u nisur.</translation>
+        <translation>www.example.com: shkruhet në skedarin CNAME. Drejtojeni DNS-në e domenit te hosti siç e shpjegon ai; HTTPS mund të kërkojë pak kohë për t&apos;u nisur.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>po, ende i papublikuar</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Një ndërtim merr çdo faqe të %site ashtu siç e sheh një vizitor që nuk ka hyrë, rishkruan lidhjet, kopjon skedarët dhe e shkruan rezultatin në dosjen e destinacionit. Asgjë nuk publikohet derisa ta kontrolloni ndërtimin dhe të shtypni Publiko.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Kthimi mbrapsht është për ekspertë: shënoni „E di çfarë ndryshon kjo“ dhe shkruani sërish emrin e etiketës.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Hap ndërtimin ashtu siç do ta shërbejë hosti, nga dosja e destinacionit. Lidhja funksionon për ju për një orë.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Shfaqet në lista, për shembull „Sajti publik në GitHub Pages“.</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Faqja e vetë sajtit për adresat që nuk ekzistojnë.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Destinacioni ende nuk hyn me këtë çelës: zgjidhni „Një çelës vendosjeje i krijuar për këtë destinacion“ te cilësimet e tij.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Shënoni fillimisht „I kam kontrolluar ndryshimet“.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

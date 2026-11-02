@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ไม่สามารถเริ่มการเรียกใช้ได้</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>บันทึกการเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ขณะที่การบันทึกทำงานอยู่ สิ่งที่คุณเปลี่ยนในส่วนผู้ดูแลหรือในแถบด้านข้างของเว็บไซต์จะถูกเก็บเป็นขั้นตอนของการย้ายข้อมูล: เนื้อหา คลาส บทบาทและนโยบาย ส่วน ผู้ใช้และกลุ่ม นามแฝง URL การตั้งค่า เมื่อเสร็จแล้วให้หยุด ดูว่ามันเก็บอะไรไว้ แล้วสร้างการย้ายข้อมูลจากมัน</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>อ่านการบันทึกไม่ได้: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ยังไม่มีตารางของการบันทึก: ให้รันการอัปเกรดก่อน (exp:upgrade --apply)</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>การบันทึกถูกปิดใน migration.ini ([RecordingSettings] Recording=disabled)</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>การเปลี่ยนแปลงของฉัน</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>บันทึกเฉพาะสิ่งที่คุณเปลี่ยน ไม่ว่าจะเปลี่ยนที่ใด จนกว่าคุณจะหยุด</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>การบันทึก</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ตั้งแต่ %time จนถึงตอนนี้ %count การเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ป้ายกำกับ (ไม่บังคับ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>แสดงสิ่งที่เก็บไว้</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>หยุดการบันทึก</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>เริ่มบันทึกการเปลี่ยนแปลงของฉัน</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>หน้าต่างสำหรับทั้งเว็บไซต์</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>บันทึกทุกการเปลี่ยนแปลงของผู้ใช้ทุกคนและของคอนโซลจนกว่าจะปิด เมื่อเปิดจะขอให้คุณยืนยันว่าเป็นคุณ</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>เปิดอยู่</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>ปิดหน้าต่าง</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>เปิดหน้าต่างสำหรับทั้งเว็บไซต์</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>รายการบันทึก</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>บัญชีของผู้ใช้ (ชื่อเข้าระบบ อีเมล รหัสผ่าน) และฟิลด์ของบัญชีผู้ใช้จะไม่ถูกบันทึกเลย</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>จำนวนการเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ทั้งเว็บไซต์</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>การเปลี่ยนแปลงของ %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>หยุดแล้ว</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ยังไม่มีการบันทึก</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>การบันทึก %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>การบันทึกทั้งหมด</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>การย้ายข้อมูลที่จะได้</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>การเปลี่ยนแปลงที่รวมเป็นหนึ่งขั้นตอนต่อสิ่งที่ถูกเปลี่ยน: สิ่งที่การย้ายข้อมูลที่สร้างจากการบันทึกนี้จะทำ</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>จะสร้างการย้ายข้อมูลจากมันได้เมื่อการติดตั้งนี้มีชนิดขั้นตอน YAML %types</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ละไว้โดยเจตนา: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ไม่มีสิ่งใดถูกบันทึก</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>สิ่งที่เก็บไว้</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count การเปลี่ยนแปลง ตามลำดับที่ทำ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>การเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ขั้นตอน</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>เกี่ยวกับ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>อีก %count รายการ: ./console exp:migration:record:show แสดงทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ทิ้ง</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ลบการบันทึกและสิ่งที่มันเก็บไว้ สิ่งที่ถูกเปลี่ยนยังคงถูกเปลี่ยน</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ใช่ ทิ้งการบันทึกนี้</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>กำลังบันทึก…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>การเปลี่ยนแปลงของคุณกำลังถูกบันทึกเพื่อการย้ายข้อมูล</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ทุกการเปลี่ยนแปลงบนเว็บไซต์นี้กำลังถูกบันทึกเพื่อการย้ายข้อมูล (หน้าต่างสำหรับทั้งเว็บไซต์)</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>การบันทึกทั้งเว็บไซต์เริ่มแล้ว: ทุกการเปลี่ยนแปลงของผู้ใช้ทุกคนจะถูกบันทึกจนกว่าคุณจะหยุด</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>การบันทึกเริ่มแล้ว: การเปลี่ยนแปลงของคุณจะถูกบันทึกจนกว่าคุณจะหยุด</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>หยุดการบันทึกแล้ว สิ่งที่เก็บไว้จะยังอยู่จนกว่าคุณจะทิ้ง</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ลบการบันทึกและเหตุการณ์ของมันแล้ว</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ไม่มีการบันทึก %id</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>เลือก "ใช่ ทิ้งการบันทึกนี้" ก่อน</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>เฉพาะผู้ใช้ที่บันทึกเท่านั้นที่หยุดการบันทึกเซสชันได้</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>เลือกการบันทึกที่จะหยุด</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>การบันทึกชนิดนี้ทำงานอยู่แล้ว</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>เปลี่ยนการบันทึกไม่ได้: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ไซต์โปรเจกต์ GitHub อยู่ใต้ /&lt;repository&gt;/ ลิงก์แบบสัมพัทธ์ใช้งานได้ทั้งที่นั่นและที่อื่น</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>บิลด์จะดึงทุกหน้าของ %site ตามที่ผู้เยี่ยมชมที่ไม่ได้ลงชื่อเข้าใช้เห็น เขียนลิงก์ใหม่ คัดลอกไฟล์ และเขียนผลลัพธ์ลงในโฟลเดอร์ของเป้าหมาย จะไม่มีสิ่งใดถูกเผยแพร่จนกว่าคุณจะตรวจสอบบิลด์และกด เผยแพร่</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>หน้าที่ยังมีเอาต์พุตดีบัก โทเค็นฟอร์ม หรือรหัสเซสชันหลงเหลืออยู่หลังการตัดออก จะไม่ถูกเผยแพร่เลย</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>การย้อนกลับเหมาะสำหรับผู้เชี่ยวชาญ: ทำเครื่องหมาย "ฉันรู้ว่าสิ่งนี้เปลี่ยนอะไร" และพิมพ์ชื่อของแท็กอีกครั้ง</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>การย้อนกลับเหมาะสำหรับผู้เชี่ยวชาญ: ทำเครื่องหมาย &quot;ฉันรู้ว่าสิ่งนี้เปลี่ยนอะไร&quot; และพิมพ์ชื่อของแท็กอีกครั้ง</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>เปิดตัวอย่าง</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>เปิดบิลด์ตามที่โฮสต์จะให้บริการ จากโฟลเดอร์ของเป้าหมาย ลิงก์ใช้ได้สำหรับคุณเป็นเวลาหนึ่งชั่วโมง</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ตั้งค่าระบบ &gt; ข้อมูลลับ</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>แสดงในรายการ เช่น "ไซต์สาธารณะบน GitHub Pages"</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>แสดงในรายการ เช่น &quot;ไซต์สาธารณะบน GitHub Pages&quot;</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ไซต์จะกลับไปใช้ไฟล์ของการเผยแพร่นั้น บิลด์ที่ยังไม่ได้เผยแพร่ต้องถูกเผยแพร่หรือทิ้งก่อน</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>หน้าของไซต์เองสำหรับที่อยู่ที่ไม่มีอยู่</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ไม่สามารถบันทึกเป้าหมายได้: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>เป้าหมายยังไม่ลงชื่อเข้าใช้ด้วยคีย์นี้: เลือก "คีย์ดีพลอยที่สร้างสำหรับเป้าหมายนี้" ในการตั้งค่าของเป้าหมาย</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>เป้าหมายยังไม่ลงชื่อเข้าใช้ด้วยคีย์นี้: เลือก &quot;คีย์ดีพลอยที่สร้างสำหรับเป้าหมายนี้&quot; ในการตั้งค่าของเป้าหมาย</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ทิ้งบิลด์นี้: โฟลเดอร์กลับมามีการเผยแพร่ล่าสุดอีกครั้ง ไซต์จริงจะไม่เปลี่ยน</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ทำเครื่องหมาย "ฉันตรวจสอบการเปลี่ยนแปลงแล้ว" ก่อน</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ทำเครื่องหมาย &quot;ฉันตรวจสอบการเปลี่ยนแปลงแล้ว&quot; ก่อน</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>ใช่ ยังไม่ได้เผยแพร่</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>บิลด์จะดึงทุกหน้าของ %site ตามที่ผู้เยี่ยมชมที่ไม่ได้ลงชื่อเข้าใช้เห็น เขียนลิงก์ใหม่ คัดลอกไฟล์ และเขียนผลลัพธ์ลงในโฟลเดอร์ของเป้าหมาย จะไม่มีสิ่งใดถูกเผยแพร่จนกว่าคุณจะตรวจสอบบิลด์และกด เผยแพร่</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>การย้อนกลับเหมาะสำหรับผู้เชี่ยวชาญ: ทำเครื่องหมาย "ฉันรู้ว่าสิ่งนี้เปลี่ยนอะไร" และพิมพ์ชื่อของแท็กอีกครั้ง</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>เปิดบิลด์ตามที่โฮสต์จะให้บริการ จากโฟลเดอร์ของเป้าหมาย ลิงก์ใช้ได้สำหรับคุณเป็นเวลาหนึ่งชั่วโมง</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>แสดงในรายการ เช่น "ไซต์สาธารณะบน GitHub Pages"</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>หน้าของไซต์เองสำหรับที่อยู่ที่ไม่มีอยู่</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>เป้าหมายยังไม่ลงชื่อเข้าใช้ด้วยคีย์นี้: เลือก "คีย์ดีพลอยที่สร้างสำหรับเป้าหมายนี้" ในการตั้งค่าของเป้าหมาย</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>ทำเครื่องหมาย "ฉันตรวจสอบการเปลี่ยนแปลงแล้ว" ก่อน</translation>
     </message>
     <message>
         <source>A GitHub App</source>

@@ -2336,8 +2336,21 @@ class expHelpExamplesGenerator
                 foreach ( (array)$type->caches( $mode === null ? array() : array( 'mode' => $mode ) ) as $cache )
                     $caches[] = (string)$cache;
             $caches = array_values( array_unique( $caches ) );
-            $md[] = $caches ? $this->t( 'Caches it touches (cleared after the run): {list}.', array( 'list' => implode( ', ', array_map( function ( $c ) { return '`' . $c . '`'; }, $caches ) ) ) )
-                            : $this->t( 'It touches no cache.' );
+            // a type whose caches are the ones a step names (cache): those of its example
+            $exampleCaches = array();
+            if ( !$caches && isset( $schema['example'] ) && expMigrationYamlParser::available() )
+            {
+                $parsed = expMigrationYamlParser::parse( (string)$schema['example'] );
+                if ( is_array( $parsed ) && isset( $parsed[0] ) && is_array( $parsed[0] ) )
+                    $exampleCaches = array_values( array_unique( array_map( 'strval', (array)$type->caches( expMigrationStepSchema::withDefaults( $schema, $parsed[0] ) ) ) ) );
+            }
+            $quote = function ( array $list ) { return implode( ', ', array_map( function ( $c ) { return '`' . $c . '`'; }, $list ) ); };
+            if ( $caches )
+                $md[] = $this->t( 'Caches it touches (cleared after the run): {list}.', array( 'list' => $quote( $caches ) ) );
+            elseif ( $exampleCaches )
+                $md[] = $this->t( 'The caches it touches are the ones a step names (cleared after the run); those of the example: {list}.', array( 'list' => $quote( $exampleCaches ) ) );
+            else
+                $md[] = $this->t( 'It touches no cache.' );
             $md[] = '';
             if ( isset( $schema['example'] ) && trim( (string)$schema['example'] ) !== '' )
             {

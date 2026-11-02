@@ -80598,6 +80598,222 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>The run could not be started.</source>
         <translation>Eksekusi ora bisa diwiwiti.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Ngrekam owah-owahan</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Salawasé rekaman mlaku, apa sing panjenengan owahi ing administrasi utawa ing bilah pinggir situs disimpen minangka langkah-langkah migrasi: isi, kelas, peran lan kabijakan, seksi, panganggo lan grup, alias URL, setelan. Mandhegaké yèn wis rampung, delengen apa sing dicekel, banjur gawé migrasi saka iku.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Rekaman ora bisa diwaca: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabel rekaman durung ana: lakokna nganyari dhisik (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Ngrekam dipatèni ing migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Owah-owahanku</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Mung ngrekam apa sing panjenengan owahi, ing ngendi waé, nganti panjenengan mandhegaké.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Rekaman</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>wiwit %time, nganti saiki %count owah-owahan.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Label (opsional)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Tuduhna apa sing dicekel</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Mandhegaké rekaman</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Wiwiti ngrekam owah-owahanku</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Jendhéla kanggo kabèh situs</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Ngrekam saben owah-owahan saka saben panganggo lan konsol nganti ditutup. Nalika mbukak, panjenengan dijaluk konfirmasi yèn iku panjenengan.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Kabukak</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Tutup jendhéla</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Bukak jendhéla kanggo kabèh situs</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Dhaptar rekaman</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Akun panganggo (jeneng mlebu, email, tembung sandhi) lan kolom akun panganggo ora tau direkam.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Owah-owahan</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Kabèh situs</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Owah-owahan saka %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Mandheg</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Durung ana rekaman.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Rekaman %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Kabèh rekaman</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migrasi sing bakal diasilaké</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Owah-owahan sing digabung dadi siji langkah kanggo saben barang sing diowahi: apa sing bakal ditindakaké migrasi sing digawé saka rekaman iki.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Migrasi bisa digawé saka iku yèn instalasi iki wis nduwèni jinis langkah YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Sengaja ditinggal: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ora ana sing direkam.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Apa sing dicekel</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count owah-owahan, miturut urutan digawé.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Owah-owahan (siji)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Langkah</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Prakara</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count manèh: ./console exp:migration:record:show nampilaké kabèh.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Buang</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Mbusak rekaman lan apa sing dicekel. Sing wis diowahi tetep owah.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Iya, buang rekaman iki</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Lagi ngrekam…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Owah-owahan panjenengan lagi direkam kanggo migrasi.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Saben owah-owahan ing situs iki lagi direkam kanggo migrasi (jendhéla kanggo kabèh situs).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Rekaman kabèh situs wis diwiwiti: saben owah-owahan saka saben panganggo direkam nganti panjenengan mandhegaké.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Rekaman wis diwiwiti: owah-owahan panjenengan direkam nganti panjenengan mandhegaké.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Rekaman mandheg. Apa sing dicekel tetep ana nganti panjenengan buang.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Rekaman lan prastawané wis dibusak.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Ora ana rekaman %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Centhang dhisik "Iya, buang rekaman iki".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Mung panganggo sing ngrekam sing olèh mandhegaké rekaman sesi.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Pilih rekaman sing arep dimandhegaké.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Rekaman jinis iki wis mlaku.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Rekaman ora bisa diowahi: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81409,7 +81625,7 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <translation>Situs proyek GitHub ana ing sangisore /&lt;repository&gt;/; pranala relatif bisa mlaku ing kana lan ing ngendi wae.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Sawijining build njupuk saben kaca %site kaya sing dideleng dening pengunjung sing durung mlebu, nulis ulang pranala, nyalin berkas lan nulis asile menyang folder tujuan. Ora ana sing diterbitake nganti panjenengan mriksa build lan mencet Terbitake.</translation>
     </message>
     <message>
@@ -81457,8 +81673,8 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <translation>Kaca sing isih ngemot output debug, token formulir utawa id sesi sawise diresiki ora bakal diterbitake.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Pambalekan iku kanggo ahli: centhang "Aku ngerti apa sing diowahi" lan ketik jeneng tag maneh.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Pambalekan iku kanggo ahli: centhang &quot;Aku ngerti apa sing diowahi&quot; lan ketik jeneng tag maneh.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81969,7 +82185,7 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <translation>Bukak pratinjau</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Mbukak build kaya sing bakal disajekake host, saka folder tujuan. Pranala iki mlaku kanggo panjenengan sajrone sejam.</translation>
     </message>
     <message>
@@ -82145,8 +82361,8 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <translation>Panyiapan &gt; Rahasia</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Ditampilake ing dhaptar, contone "Situs publik ing GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Ditampilake ing dhaptar, contone &quot;Situs publik ing GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82353,7 +82569,7 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <translation>Situs bali menyang berkas saka terbitan kasebut; build sing durung diterbitake kudu diterbitake utawa dibuang dhisik.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Kaca situs dhewe kanggo alamat sing ora ana.</translation>
     </message>
     <message>
@@ -82361,8 +82577,8 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <translation>Tujuan ora bisa disimpen: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Tujuan durung mlebu nganggo kunci iki: pilih "Kunci deploy sing digawe kanggo tujuan iki" ing setelane.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Tujuan durung mlebu nganggo kunci iki: pilih &quot;Kunci deploy sing digawe kanggo tujuan iki&quot; ing setelane.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82397,8 +82613,8 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <translation>Mbuang build iki: folder isine terbitan pungkasan maneh. Situs langsung ora owah.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Centhang "Aku wis mriksa owah-owahane" dhisik.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Centhang &quot;Aku wis mriksa owah-owahane&quot; dhisik.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82619,6 +82835,34 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>yes, not published yet</source>
         <translation>ya, durung diterbitake</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Sawijining build njupuk saben kaca %site kaya sing dideleng dening pengunjung sing durung mlebu, nulis ulang pranala, nyalin berkas lan nulis asile menyang folder tujuan. Ora ana sing diterbitake nganti panjenengan mriksa build lan mencet Terbitake.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Pambalekan iku kanggo ahli: centhang "Aku ngerti apa sing diowahi" lan ketik jeneng tag maneh.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Mbukak build kaya sing bakal disajekake host, saka folder tujuan. Pranala iki mlaku kanggo panjenengan sajrone sejam.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Ditampilake ing dhaptar, contone "Situs publik ing GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Kaca situs dhewe kanggo alamat sing ora ana.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Tujuan durung mlebu nganggo kunci iki: pilih "Kunci deploy sing digawe kanggo tujuan iki" ing setelane.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Centhang "Aku wis mriksa owah-owahane" dhisik.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

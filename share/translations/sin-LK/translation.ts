@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ධාවනය ආරම්භ කළ නොහැකි විය.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>වෙනස්කම් පටිගත කිරීම</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>පටිගත කිරීමක් ක්‍රියාත්මක වන අතරතුර ඔබ පරිපාලනයේ හෝ අඩවියේ පැති තීරුවේ වෙනස් කරන දේ සංක්‍රමණයක පියවර ලෙස තබා ගනී: අන්තර්ගතය, පන්ති, භූමිකා සහ ප්‍රතිපත්ති, කොටස්, පරිශීලකයින් සහ කණ්ඩායම්, URL අන්වර්ථ, සැකසුම්. අවසන් වූ විට එය නවත්වන්න, එය අල්ලාගත් දේ බලන්න, එයින් සංක්‍රමණයක් සාදන්න.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>පටිගත කිරීම් කියවිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>පටිගත කිරීම්වල වගු තවම නැත: පළමුව උත්ශ්‍රේණි කිරීම ධාවනය කරන්න (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini හි පටිගත කිරීම අක්‍රිය කර ඇත ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>මගේ වෙනස්කම්</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ඔබ නවත්වන තුරු ඔබ වෙනස් කරන දේ පමණක්, ඕනෑම තැනක, පටිගත කරයි.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>පටිගත කිරීම</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time සිට, මෙතෙක් වෙනස්කම් %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ලේබලය (විකල්ප)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>එය අල්ලාගත් දේ පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>පටිගත කිරීම නවත්වන්න</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>මගේ වෙනස්කම් පටිගත කිරීම අරඹන්න</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>මුළු අඩවියේ කවුළුව</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>වසන තුරු සෑම පරිශීලකයෙකුගේම සහ කොන්සෝලයේ සෑම වෙනස්කමක්ම පටිගත කරයි. විවෘත කිරීමේදී එය ඔබ බව තහවුරු කිරීමට ඉල්ලා සිටී.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>විවෘතයි</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>කවුළුව වසන්න</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>මුළු අඩවියේ කවුළුව විවෘත කරන්න</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>පටිගත කිරීම් ලැයිස්තුව</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>පරිශීලකයෙකුගේ ගිණුම (පිවිසුම් නාමය, ඊ-තැපෑල, මුරපදය) සහ පරිශීලක ගිණුම්වල ක්ෂේත්‍ර කිසි විටෙකත් පටිගත නොකෙරේ.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>වෙනස්කම්</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>මුළු අඩවිය</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ගේ වෙනස්කම්</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>නවතා ඇත</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>තවම පටිගත කිරීමක් නැත.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>පටිගත කිරීම %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>සියලු පටිගත කිරීම්</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>එයින් ඇති වන සංක්‍රමණය</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>වෙනස් වූ සෑම දෙයකටම එක් පියවරකට එකතු කළ වෙනස්කම්: මෙම පටිගත කිරීමෙන් සාදන සංක්‍රමණයක් කරන දේ.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>මෙම ස්ථාපනයට YAML පියවර වර්ග %types ලැබුණු විට එයින් සංක්‍රමණයක් සෑදිය හැක.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>හිතාමතාම ඉවත් කළා: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>කිසිවක් පටිගත නොවීය.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>එය අල්ලාගත් දේ</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>වෙනස්කම් %count, කළ අනුපිළිවෙළින්.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>වෙනස</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>පියවර</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>අදාළ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>තවත් %count: ./console exp:migration:record:show සියල්ල ලැයිස්තු කරයි.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ඉවත ලන්න</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>පටිගත කිරීම සහ එය අල්ලාගත් දේ ඉවත් කරයි. වෙනස් වූ දේ වෙනස් ලෙසම පවතී.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ඔව්, මෙම පටිගත කිරීම ඉවත ලන්න</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>පටිගත වෙමින්…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ඔබේ වෙනස්කම් සංක්‍රමණයක් සඳහා පටිගත වෙමින් පවතී.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>මෙම අඩවියේ සෑම වෙනස්කමක්ම සංක්‍රමණයක් සඳහා පටිගත වෙමින් පවතී (මුළු අඩවියේ කවුළුව).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>මුළු අඩවියේ පටිගත කිරීම ආරම්භ විය: ඔබ නවත්වන තුරු සෑම පරිශීලකයෙකුගේම සෑම වෙනස්කමක්ම පටිගත වේ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>පටිගත කිරීම ආරම්භ විය: ඔබ නවත්වන තුරු ඔබේ වෙනස්කම් පටිගත වේ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>පටිගත කිරීම නැවතිණි. එය අල්ලාගත් දේ ඔබ ඉවත ලන තුරු පවතී.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>පටිගත කිරීම සහ එහි සිදුවීම් ඉවත් කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>පටිගත කිරීමක් %id නැත.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>පළමුව "ඔව්, මෙම පටිගත කිරීම ඉවත ලන්න" සලකුණු කරන්න.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>සැසි පටිගත කිරීමක් නැවැත්විය හැක්කේ පටිගත කළ පරිශීලකයාට පමණි.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>නැවැත්විය යුතු පටිගත කිරීම තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>මේ වර්ගයේ පටිගත කිරීමක් දැනටමත් ක්‍රියාත්මකයි.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>පටිගත කිරීම වෙනස් කළ නොහැකි විය: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,8 +81617,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub ව්‍යාපෘති අඩවියක් /&lt;repository&gt;/ යටතේ පවතී; සාපේක්ෂ සබැඳි එහි සහ වෙනත් ඕනෑම තැනක ක්‍රියා කරයි.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ගොඩනැගීමක් %site හි සෑම පිටුවක්ම පිවිසී නොමැති අමුත්තෙකු දකින ආකාරයට ලබා ගනී, සබැඳි නැවත ලියයි, ගොනු පිටපත් කරයි සහ ප්‍රතිඵලය ඉලක්කයේ ෆෝල්ඩරයට ලියයි. ඔබ ගොඩනැගීම පරීක්ෂා කර "ප්‍රකාශනය කරන්න" ඔබන තෙක් කිසිවක් ප්‍රකාශනය නොවේ.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ගොඩනැගීමක් %site හි සෑම පිටුවක්ම පිවිසී නොමැති අමුත්තෙකු දකින ආකාරයට ලබා ගනී, සබැඳි නැවත ලියයි, ගොනු පිටපත් කරයි සහ ප්‍රතිඵලය ඉලක්කයේ ෆෝල්ඩරයට ලියයි. ඔබ ගොඩනැගීම පරීක්ෂා කර &quot;ප්‍රකාශනය කරන්න&quot; ඔබන තෙක් කිසිවක් ප්‍රකාශනය නොවේ.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>පිරිසිදු කිරීමෙන් පසුවත් දෝෂ නිරාකරණ ප්‍රතිදානය, ආකෘති ටෝකනයක් හෝ සැසි හැඳුනුම්කාරකයක් ඇති පිටුවක් කිසිදා ප්‍රකාශනය නොවේ.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ආපසු හැරවීම ප්‍රවීණයන් සඳහා ය: "මෙය වෙනස් කරන දේ මම දනිමි" සලකුණු කර ටැගයේ නම නැවත ටයිප් කරන්න.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ආපසු හැරවීම ප්‍රවීණයන් සඳහා ය: &quot;මෙය වෙනස් කරන දේ මම දනිමි&quot; සලකුණු කර ටැගයේ නම නැවත ටයිප් කරන්න.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81458,7 +81674,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>ඉලක්කයක් යනු එක් git ගබඩාවකට ප්‍රකාශනය කරන එක් අඩවියකි. මෙහි කිසිවක් ගොඩනඟන්නේ හෝ ප්‍රකාශනය කරන්නේ නැත: "සුරකින්න" සැකසුම් settings/override/staticcache.ini.append.php වෙත ලියයි.</translation>
+        <translation>ඉලක්කයක් යනු එක් git ගබඩාවකට ප්‍රකාශනය කරන එක් අඩවියකි. මෙහි කිසිවක් ගොඩනඟන්නේ හෝ ප්‍රකාශනය කරන්නේ නැත: &quot;සුරකින්න&quot; සැකසුම් settings/override/staticcache.ini.append.php වෙත ලියයි.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>පෙරදසුන විවෘත කරන්න</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>සත්කාරකය සපයන ආකාරයටම ඉලක්කයේ ෆෝල්ඩරයෙන් ගොඩනැගීම විවෘත කරයි. සබැඳිය ඔබට පැයක් ක්‍රියා කරයි.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>පිහිටුවීම &gt; රහස්</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>ලැයිස්තුවල පෙන්වයි, උදාහරණයක් ලෙස "GitHub Pages හි පොදු අඩවිය".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ලැයිස්තුවල පෙන්වයි, උදාහරණයක් ලෙස &quot;GitHub Pages හි පොදු අඩවිය&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>අඩවිය එම ප්‍රකාශනයේ ගොනු වෙත ආපසු යයි; තවම ප්‍රකාශනය නොකළ ගොඩනැගීමක් පළමුව ප්‍රකාශනය කිරීම හෝ ඉවත දැමීම කළ යුතුය.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>නොපවතින ලිපින සඳහා අඩවියේම පිටුව.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ඉලක්කය සුරැකිය නොහැකි විය: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ඉලක්කය තවම මෙම යතුරෙන් පිවිසෙන්නේ නැත: එහි සැකසුම්වල "මෙම ඉලක්කය සඳහා සාදන ලද යෙදවුම් යතුරක්" තෝරන්න.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ඉලක්කය තවම මෙම යතුරෙන් පිවිසෙන්නේ නැත: එහි සැකසුම්වල &quot;මෙම ඉලක්කය සඳහා සාදන ලද යෙදවුම් යතුරක්&quot; තෝරන්න.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>මෙම ගොඩනැගීම ඉවත දමයි: ෆෝල්ඩරයේ නැවතත් අවසන් ප්‍රකාශනය ඇත. සජීවී අඩවිය වෙනස් නොවේ.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>පළමුව "මම වෙනස්කම් පරීක්ෂා කළෙමි" සලකුණු කරන්න.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>පළමුව &quot;මම වෙනස්කම් පරීක්ෂා කළෙමි&quot; සලකුණු කරන්න.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>ඔව්, තවම ප්‍රකාශනය කර නැත</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ගොඩනැගීමක් %site හි සෑම පිටුවක්ම පිවිසී නොමැති අමුත්තෙකු දකින ආකාරයට ලබා ගනී, සබැඳි නැවත ලියයි, ගොනු පිටපත් කරයි සහ ප්‍රතිඵලය ඉලක්කයේ ෆෝල්ඩරයට ලියයි. ඔබ ගොඩනැගීම පරීක්ෂා කර "ප්‍රකාශනය කරන්න" ඔබන තෙක් කිසිවක් ප්‍රකාශනය නොවේ.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>ආපසු හැරවීම ප්‍රවීණයන් සඳහා ය: "මෙය වෙනස් කරන දේ මම දනිමි" සලකුණු කර ටැගයේ නම නැවත ටයිප් කරන්න.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>සත්කාරකය සපයන ආකාරයටම ඉලක්කයේ ෆෝල්ඩරයෙන් ගොඩනැගීම විවෘත කරයි. සබැඳිය ඔබට පැයක් ක්‍රියා කරයි.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>ලැයිස්තුවල පෙන්වයි, උදාහරණයක් ලෙස "GitHub Pages හි පොදු අඩවිය".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>නොපවතින ලිපින සඳහා අඩවියේම පිටුව.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ඉලක්කය තවම මෙම යතුරෙන් පිවිසෙන්නේ නැත: එහි සැකසුම්වල "මෙම ඉලක්කය සඳහා සාදන ලද යෙදවුම් යතුරක්" තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>පළමුව "මම වෙනස්කම් පරීක්ෂා කළෙමි" සලකුණු කරන්න.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

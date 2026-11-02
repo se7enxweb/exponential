@@ -80590,6 +80590,222 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>The run could not be started.</source>
         <translation>Eksekusi tidak dapat dimulai.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Merekam perubahan</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Selama perekaman berjalan, apa yang Anda ubah di administrasi atau di bilah samping situs disimpan sebagai langkah-langkah migrasi: konten, kelas, peran dan kebijakan, seksi, pengguna dan grup, alias URL, pengaturan. Hentikan saat Anda selesai, lihat apa yang ditangkapnya, lalu buat migrasi darinya.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Rekaman tidak dapat dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabel rekaman belum ada: jalankan pembaruan terlebih dahulu (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Perekaman dimatikan di migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Perubahan saya</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Hanya merekam apa yang Anda ubah, di mana pun Anda mengubahnya, sampai Anda menghentikannya.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Rekaman</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>sejak %time, sejauh ini %count perubahan.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Label (opsional)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Tampilkan apa yang ditangkap</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Hentikan perekaman</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Mulai merekam perubahan saya</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Jendela untuk seluruh situs</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Merekam setiap perubahan dari setiap pengguna dan konsol sampai ditutup. Saat membukanya, Anda diminta memverifikasi bahwa itu Anda.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Terbuka</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Tutup jendela</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Buka jendela untuk seluruh situs</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Daftar rekaman</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Akun pengguna (nama login, email, kata sandi) dan bidang akun pengguna tidak pernah direkam.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Perubahan</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Seluruh situs</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Perubahan oleh %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Dihentikan</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Belum ada rekaman.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Rekaman %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Semua rekaman</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migrasi yang akan dihasilkannya</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Perubahan yang digabung menjadi satu langkah per hal yang diubah: apa yang akan dilakukan migrasi yang dibuat dari rekaman ini.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Migrasi dapat dibuat darinya setelah instalasi ini memiliki jenis langkah YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Sengaja dikecualikan: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Tidak ada yang direkam.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Yang ditangkap</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count perubahan, sesuai urutan dibuatnya.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Perubahan (satu)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Langkah</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Tentang</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count lagi: ./console exp:migration:record:show mencantumkan semuanya.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Buang</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Menghapus rekaman dan apa yang ditangkapnya. Yang sudah diubah tetap berubah.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ya, buang rekaman ini</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Merekam…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Perubahan Anda direkam untuk sebuah migrasi.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Setiap perubahan di situs ini direkam untuk sebuah migrasi (jendela untuk seluruh situs).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Perekaman seluruh situs dimulai: setiap perubahan dari setiap pengguna direkam sampai Anda menghentikannya.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Perekaman dimulai: perubahan Anda direkam sampai Anda menghentikannya.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Perekaman dihentikan. Apa yang ditangkapnya tetap ada sampai Anda membuangnya.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Rekaman dan peristiwanya telah dihapus.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Tidak ada rekaman %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Centang dulu "Ya, buang rekaman ini".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Hanya pengguna yang merekam yang boleh menghentikan rekaman sesi.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Pilih rekaman yang akan dihentikan.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Rekaman jenis ini sudah berjalan.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Rekaman tidak dapat diubah: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <translation>Situs proyek GitHub berada di bawah /&lt;repository&gt;/; tautan relatif berfungsi di sana dan di mana pun.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Sebuah build mengambil setiap halaman %site sebagaimana dilihat oleh pengunjung yang belum masuk, menulis ulang tautan, menyalin berkas, dan menulis hasilnya ke folder tujuan. Tidak ada yang diterbitkan sampai Anda memeriksa build dan menekan Terbitkan.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <translation>Halaman yang masih memuat keluaran debug, token formulir, atau id sesi setelah pembersihan tidak pernah diterbitkan.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Pengembalian ditujukan untuk ahli: centang "Saya tahu apa yang diubahnya" dan ketik nama tag lagi.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Pengembalian ditujukan untuk ahli: centang &quot;Saya tahu apa yang diubahnya&quot; dan ketik nama tag lagi.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <translation>Buka pratinjau</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Membuka build sebagaimana host akan menyajikannya, dari folder tujuan. Tautan berfungsi untuk Anda selama satu jam.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <translation>Penyiapan &gt; Rahasia</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Ditampilkan dalam daftar, misalnya "Situs publik di GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Ditampilkan dalam daftar, misalnya &quot;Situs publik di GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <translation>Situs kembali ke berkas dari terbitan tersebut; build yang belum diterbitkan harus diterbitkan atau dibuang terlebih dahulu.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Halaman situs sendiri untuk alamat yang tidak ada.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <translation>Tujuan tidak dapat disimpan: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Tujuan belum masuk dengan kunci ini: pilih "Kunci deploy yang dibuat untuk tujuan ini" di pengaturannya.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Tujuan belum masuk dengan kunci ini: pilih &quot;Kunci deploy yang dibuat untuk tujuan ini&quot; di pengaturannya.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <translation>Membuang build ini: folder kembali berisi terbitan terakhir. Situs langsung tidak berubah.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Centang "Saya sudah memeriksa perubahannya" terlebih dahulu.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Centang &quot;Saya sudah memeriksa perubahannya&quot; terlebih dahulu.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
     <message>
         <source>yes, not published yet</source>
         <translation>ya, belum diterbitkan</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Sebuah build mengambil setiap halaman %site sebagaimana dilihat oleh pengunjung yang belum masuk, menulis ulang tautan, menyalin berkas, dan menulis hasilnya ke folder tujuan. Tidak ada yang diterbitkan sampai Anda memeriksa build dan menekan Terbitkan.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Pengembalian ditujukan untuk ahli: centang "Saya tahu apa yang diubahnya" dan ketik nama tag lagi.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Membuka build sebagaimana host akan menyajikannya, dari folder tujuan. Tautan berfungsi untuk Anda selama satu jam.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Ditampilkan dalam daftar, misalnya "Situs publik di GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Halaman situs sendiri untuk alamat yang tidak ada.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Tujuan belum masuk dengan kunci ini: pilih "Kunci deploy yang dibuat untuk tujuan ini" di pengaturannya.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Centang "Saya sudah memeriksa perubahannya" terlebih dahulu.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

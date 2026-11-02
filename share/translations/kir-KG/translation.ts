@@ -15160,7 +15160,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Сайттын статикалык көчүрмөсүн GitHub Pages'ке же каалаган git хостуна жарыялоо.</translation>
+        <translation>Сайттын статикалык көчүрмөсүн GitHub Pages&apos;ке же каалаган git хостуна жарыялоо.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22168,7 +22168,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Publish a static copy to GitHub Pages or any git host</source>
-        <translation>Статикалык көчүрмөнү GitHub Pages'ке же каалаган git хостуна жарыялоо</translation>
+        <translation>Статикалык көчүрмөнү GitHub Pages&apos;ке же каалаган git хостуна жарыялоо</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22176,7 +22176,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Статикалык кэш беттерди ушул серверден берет. Сайттын статикалык көчүрмөсүн башка жерге, GitHub Pages'ке же каалаган git хостуна жарыялоо үчүн статикалык жарыялоону колдонуңуз.</translation>
+        <translation>Статикалык кэш беттерди ушул серверден берет. Сайттын статикалык көчүрмөсүн башка жерге, GitHub Pages&apos;ке же каалаган git хостуна жарыялоо үчүн статикалык жарыялоону колдонуңуз.</translation>
     </message>
 </context>
 <context>
@@ -76236,7 +76236,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Сайттын статикалык көчүрмөсүн GitHub Pages'ке же каалаган git хостуна жарыялоо.</translation>
+        <translation>Сайттын статикалык көчүрмөсүн GitHub Pages&apos;ке же каалаган git хостуна жарыялоо.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Аткарууну баштоо мүмкүн болгон жок.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Өзгөрүүлөрдү жазуу</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Жазуу жүрүп жатканда администрацияда же сайттын каптал панелинде өзгөрткөнүңүз көчүрүүнүн кадамдары катары сакталат: мазмун, класстар, ролдор жана саясаттар, бөлүмдөр, колдонуучулар жана топтор, URL лакап аттары, жөндөөлөр. Бүткөндө аны токтотуңуз, эмнени кармаганын караңыз жана андан көчүрүү түзүңүз.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Жазууларды окуу мүмкүн болгон жок: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Жазуулардын таблицалары азырынча жок: адегенде жаңыртууну иштетиңиз (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Жазуу migration.ini ичинде өчүрүлгөн ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Менин өзгөрүүлөрүм</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Сиз токтотмоюнча сиз өзгөрткөндү гана, кайда өзгөртсөңүз да, жазат.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Жазуу</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time тартып, азырынча %count өзгөрүү.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Белги (милдеттүү эмес)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Эмнени кармаганын көрсөтүү</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Жазууну токтотуу</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Менин өзгөрүүлөрүмдү жазууну баштоо</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Бүт сайттын терезеси</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Жабылганга чейин ар бир колдонуучунун жана консолдун ар бир өзгөрүүсүн жазат. Ачканда өзүңүз экениңизди ырастоо суралат.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ачык</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Терезени жабуу</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Бүт сайттын терезесин ачуу</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Жазуулар</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Колдонуучунун эсеби (логин, эл. почта, сырсөз) жана колдонуучу эсептеринин талаалары эч качан жазылбайт.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Өзгөрүүлөр</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Бүт сайт</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name өзгөрүүлөрү</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Токтотулган</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Азырынча жазуу жок.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Жазуу %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Бардык жазуулар</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Андан чыга турган көчүрүү</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ар бир өзгөргөн нерсе үчүн бир кадамга бириктирилген өзгөрүүлөр: бул жазуудан түзүлгөн көчүрүү эмне кыларын.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Бул орнотууда YAML кадам түрлөрү %types болгондо андан көчүрүү түзүүгө болот.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Атайын калтырылды: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Эч нерсе жазылган жок.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Эмнени кармаганы</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count өзгөрүү, жасалган тартибинде.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Өзгөрүү</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Кадам</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Тиешелүү</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Дагы %count: ./console exp:migration:record:show баарын тизмелейт.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Баш тартуу</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Жазууну жана ал кармаганды өчүрөт. Өзгөргөнү өзгөргөн бойдон калат.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ооба, бул жазуудан баш тартуу</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Жазылууда…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Өзгөрүүлөрүңүз көчүрүү үчүн жазылууда.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Бул сайттагы ар бир өзгөрүү көчүрүү үчүн жазылууда (бүт сайттын терезеси).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Бүт сайтты жазуу башталды: сиз токтотмоюнча ар бир колдонуучунун ар бир өзгөрүүсү жазылат.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Жазуу башталды: сиз токтотмоюнча өзгөрүүлөрүңүз жазылат.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Жазуу токтотулду. Кармаганы сиз баш тартмайынча калат.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Жазуу жана анын окуялары өчүрүлдү.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id жазуусу жок.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Адегенде «Ооба, бул жазуудан баш тартуу» белгилеңиз.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Сеанс жазуусун жазган колдонуучу гана токтото алат.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Токтотула турган жазууну тандаңыз.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Бул түрдөгү жазуу буга чейин жүрүп жатат.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Жазууну өзгөртүү мүмкүн болгон жок: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81267,7 +81483,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Publish a free static copy of your site on GitHub Pages:</source>
-        <translation>Сайтыңыздын акысыз статикалык көчүрмөсүн GitHub Pages'те жарыялаңыз:</translation>
+        <translation>Сайтыңыздын акысыз статикалык көчүрмөсүн GitHub Pages&apos;те жарыялаңыз:</translation>
     </message>
     <message>
         <source>Stale pages</source>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub долбоор сайты /&lt;repository&gt;/ астында жайгашат; салыштырмалуу шилтемелер ал жерде да, башка бардык жерде да иштейт.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Жыйноо %site сайтынын ар бир бетин кирбеген конок көргөндөй алып келет, шилтемелерди кайра жазат, файлдарды көчүрөт жана натыйжаны бутанын папкасына жазат. Жыйноону текшерип, Жарыялоо баскычын баспаганча эч нерсе жарыяланбайт.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Тазалоодон кийин да мүчүлүштүк чыгарылышын, форма токенин же сессия идентификаторун камтыган бет эч качан жарыяланбайт.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Артка кайтаруу адистер үчүн: "Бул эмнени өзгөртөрүн билем" белгилеп, тегдин атын кайра териңиз.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Артка кайтаруу адистер үчүн: &quot;Бул эмнени өзгөртөрүн билем&quot; белгилеп, тегдин атын кайра териңиз.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81462,7 +81678,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>Бута — бир жерге жарыяланган бир сайт, мисалы GitHub Pages'теги ачык сайтыңыз.</translation>
+        <translation>Бута — бир жерге жарыяланган бир сайт, мисалы GitHub Pages&apos;теги ачык сайтыңыз.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Алдын ала көрүүнү ачуу</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Жыйноону хост бере тургандай, бутанын папкасынан ачат. Шилтеме сиз үчүн бир саат иштейт.</translation>
     </message>
     <message>
@@ -82026,7 +82242,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Сайттын статикалык көчүрмөсүн GitHub Pages'ке же каалаган git хостуна жарыялаңыз: жыйнаңыз, өзгөртүүлөрдү текшериңиз, жарыялаңыз жана керек болгондо мурунку жарыялоого кайтыңыз.</translation>
+        <translation>Сайттын статикалык көчүрмөсүн GitHub Pages&apos;ке же каалаган git хостуна жарыялаңыз: жыйнаңыз, өзгөртүүлөрдү текшериңиз, жарыялаңыз жана керек болгондо мурунку жарыялоого кайтыңыз.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Жөндөө &gt; Купуя маалыматтар</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Тизмелерде көрсөтүлөт, мисалы "GitHub Pages'теги ачык сайт".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Тизмелерде көрсөтүлөт, мисалы &quot;GitHub Pages&apos;теги ачык сайт&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82306,7 +82522,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Беттер кирбеген конок көргөндөй алынат. Башкаруу жана түзөтүү siteaccess'тери эч качан сунушталбайт.</translation>
+        <translation>Беттер кирбеген конок көргөндөй алынат. Башкаруу жана түзөтүү siteaccess&apos;тери эч качан сунушталбайт.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Сайт ошол жарыялоонун файлдарына кайтат; азырынча жарыялана элек жыйноо адегенде жарыяланышы же ташталышы керек.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Жок даректер үчүн сайттын өз бети.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Бутаны сактоо мүмкүн болгон жок: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Бута азырынча бул ачкыч менен кирбейт: анын жөндөөлөрүндө "Бул бута үчүн түзүлгөн жайгаштыруу ачкычы" тандаңыз.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Бута азырынча бул ачкыч менен кирбейт: анын жөндөөлөрүндө &quot;Бул бута үчүн түзүлгөн жайгаштыруу ачкычы&quot; тандаңыз.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82366,7 +82582,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
-        <translation>Бул орнотууда алдыңкы siteaccess жок. Башкаруу жана түзөтүү siteaccess'тери эч качан жарыяланбайт.</translation>
+        <translation>Бул орнотууда алдыңкы siteaccess жок. Башкаруу жана түзөтүү siteaccess&apos;тери эч качан жарыяланбайт.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Бул жыйноону таштайт: папкада кайрадан акыркы жарыялоо турат. Иштеп жаткан сайт өзгөрбөйт.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Адегенде "Өзгөртүүлөрдү текшердим" белгилеңиз.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Адегенде &quot;Өзгөртүүлөрдү текшердим&quot; белгилеңиз.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82606,11 +82822,39 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: CNAME файлына жазылат. Доменинин DNS'ин хост түшүндүргөндөй хостко багыттаңыз; HTTPS иштей баштаганга бир аз убакыт кетиши мүмкүн.</translation>
+        <translation>www.example.com: CNAME файлына жазылат. Доменинин DNS&apos;ин хост түшүндүргөндөй хостко багыттаңыз; HTTPS иштей баштаганга бир аз убакыт кетиши мүмкүн.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>ооба, азырынча жарыялана элек</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Жыйноо %site сайтынын ар бир бетин кирбеген конок көргөндөй алып келет, шилтемелерди кайра жазат, файлдарды көчүрөт жана натыйжаны бутанын папкасына жазат. Жыйноону текшерип, Жарыялоо баскычын баспаганча эч нерсе жарыяланбайт.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Артка кайтаруу адистер үчүн: "Бул эмнени өзгөртөрүн билем" белгилеп, тегдин атын кайра териңиз.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Жыйноону хост бере тургандай, бутанын папкасынан ачат. Шилтеме сиз үчүн бир саат иштейт.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Тизмелерде көрсөтүлөт, мисалы "GitHub Pages'теги ачык сайт".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Жок даректер үчүн сайттын өз бети.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Бута азырынча бул ачкыч менен кирбейт: анын жөндөөлөрүндө "Бул бута үчүн түзүлгөн жайгаштыруу ачкычы" тандаңыз.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Адегенде "Өзгөртүүлөрдү текшердим" белгилеңиз.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

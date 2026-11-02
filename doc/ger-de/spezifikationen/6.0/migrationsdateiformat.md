@@ -2,9 +2,8 @@
 
 Diese Seite ist die verbindliche Beschreibung einer Migrationsdatei von Exponential 6.0.15: der Dateiname, der Kopf, die
 PHP-Klasse, das YAML-Dokument mit seinen Schritten, Platzhaltern, Bedingungen und Schleifen, die ID-Zuordnung, die
-Prüfsumme und die Formate der Aufzeichnungsdateien, die ein Lauf schreibt (die Statusdatei und das Laufprotokoll). Sie
-deckt ab, was der Kernel von 6.0.15 liest und schreibt; SQL- und INI-Migrationen kommen hinzu, sobald es sie gibt. Die
-Anleitung ist [Migrationen](../../anleitungen/migrationen.md).
+Prüfsumme, die Formate der Aufzeichnungsdateien, die ein Lauf schreibt (die Statusdatei und das Laufprotokoll), und die
+SQL- und INI-Migrationsdateien. Sie deckt ab, was der Kernel von 6.0.15 liest und schreibt. Die Anleitung ist [Migrationen](../../anleitungen/migrationen.md).
 
 Version dieser Spezifikation: 1 (exp-migration/1, exp-migration-status/1, exp-migration-idmap/1).
 
@@ -13,6 +12,7 @@ Version dieser Spezifikation: 1 (exp-migration/1, exp-migration-status/1, exp-mi
 ```text
 YYYYMMDDHHMMSS_<name>.<type>
 YYYYMMDDHHMMSS_<name>.<engine>.sql
+YYYYMMDDHHMMSS_<name>.mongodb.json
 ```
 
 | Teil | Regel |
@@ -20,7 +20,7 @@ YYYYMMDDHHMMSS_<name>.<engine>.sql
 | `YYYYMMDDHHMMSS` | ein gültiges Datum mit Uhrzeit (als Kalenderdatum geprüft) |
 | `<name>` | Buchstaben, Ziffern, `_` und `-` |
 | `<type>` | `php`, `yml`, `sql` oder `ini` |
-| `<engine>` | nur vor `.sql`: `mysql`, `postgresql`, `sqlite`, `oracle` oder `mongodb` |
+| `<engine>` | nur vor `.sql`: `mysql`, `postgresql` (oder `pgsql`), `sqlite` oder `oracle`; die Datei für MongoDB ist `.mongodb.json` |
 
 - Die **ID** ist der Dateiname ohne `.<type>` (und ohne `.<engine>`): `20261031120000_add_news_class`.
 - Dateien einer ID, die sich nur in der Engine unterscheiden (`..._index.mysql.sql`, `..._index.postgresql.sql` und
@@ -30,7 +30,9 @@ YYYYMMDDHHMMSS_<name>.<engine>.sql
 - Eine Datei, deren Name nicht mit 14 Ziffern und `_` beginnt, ist keine Migration und wird übersprungen (eine README,
   eine `.gitkeep`); eine, die so beginnt, aber eine Regel oben verletzt, ist ein Fehler.
 - Nur die Dateien direkt in einem Migrationsordner werden gelesen; Unterordner nicht.
-- In 6.0.15 laufen `php` und `yml`; `sql` und `ini` werden gefunden, geordnet und geprüft und vom Runner abgelehnt.
+- Jeder Typ läuft: `sql`- und `ini`-Dateien laufen als YAML-Migration ihrer Schritte ([die SQL-Migration](#die-sql-migration),
+  [die INI-Migration](#die-ini-migration)). Eine portable `.sql`-Datei gilt für die SQL-Engines: Ohne `.mongodb.json`
+  (oder `engines` im Kopf) läuft die Migration nicht auf MongoDB.
 
 ## Der Kopf
 
@@ -55,6 +57,7 @@ Der Kopf endet an der ersten Zeile, die kein Kommentar ist. Innerhalb davon ist 
 | `engines` | eine Liste aus `mysql`, `postgresql`, `sqlite`, `oracle`, `mongodb` | jede Engine |
 | `maintenance` | `yes` oder `no` | `no` |
 | `author` | eine Zeile Text | leer |
+| `transactional` | `yes` oder `no`: `no` führt die Migration ohne Transaktion aus | `yes` |
 
 - Listen sind durch Kommas getrennt; ein Listenschlüssel darf sich wiederholen, und die Werte addieren sich.
 - Ein Schlüssel, der nicht in der Tabelle steht, ist ein Fehler (damit ein vertippter nicht still durchgeht); ein
@@ -237,14 +240,20 @@ fehlende Datei ist eine leere Zuordnung; eine Datei, die keine ist, lässt jede 
 
 Der Kernel registriert `reference` (`set:` eine Zuordnung von Referenzen), `assert` (`that:` eine Bedingung,
 `message:` der Text des Fehlers), `content`, `location`, `content_version`, `content_class`, `content_class_group`,
-`user`, `user_group`, `role`, `section`, `language`, `object_state_group`, `tag`, `url_alias`, `trash`, `file` und
-`image`; jeden Schlüssel jedes Typs nennt seine erzeugte Seite ([die Schritttypen](../../beispiele/migrationsschritte/README.md)).
+`user`, `user_group`, `role`, `section`, `language`, `object_state_group`, `tag`, `url_alias`, `trash`, `file`, `image`,
+`cache`, `search`, `autoload`, `layout`, `layout_block`, `layout_rule`, `http`, `mail` und
+`command`; jeden Schlüssel jedes Typs nennt seine erzeugte Seite ([die Schritttypen](../../beispiele/migrationsschritte/README.md)).
 Ein Bezeichner-Schlüssel nennt seine Art: `node`, `object`, `class`, `section`, `language`, `user`, `role`, `state`,
 `class_group`, `state_group`, `tag` oder `url_alias`; alle außer `node`, `object` und `tag` nehmen auch einen Namen
 (Bezeichner einer Klasse oder Sektion, eine Locale, ein Login, ein Rollenname, `<gruppe>/<zustand>`, der Name einer
 Klassengruppe, der Bezeichner einer Zustandsgruppe, die Adresse eines URL-Alias ab der Wurzel). Ein Tag wird über seine
 ID, `remote:<Remote-ID>` oder `path:<Schlagwortpfad>` genannt, und nur dort, wo die Erweiterung eztags installiert
-ist. Die Schritte `file` und `image` lesen ihre `file:` unterhalb des Ordners der Migrationsdatei.
+ist. Die Schritte `file` und `image` lesen ihre `file:` unterhalb des Ordners der Migrationsdatei. Die Caches, die
+jeder Schritt nennt, werden nach dem Lauf einmal geleert, und die Objekte, die die Schritte geändert haben, neu indiziert
+([Caches und der Suchindex](../../anleitungen/migrationen-yaml-schritte.md#caches-der-suchindex-und-autoloads)).
+Die Layout-Schritte arbeiten nur, wo Exponential Layouts installiert ist; `http`, `mail` und `command` senden und starten
+in einem Probelauf nichts, und `command` führt nur die `exp:*`-Befehle der Positivliste aus
+([HTTP-Anfragen, E-Mails und Konsolenbefehle](../../anleitungen/migrationen-yaml-schritte.md#http-anfragen-e-mails-und-konsolenbefehle)).
 Eine Erweiterung registriert ihre eigenen Schritttypen in ihrer `migration.ini.append.php`:
 
 ```ini
@@ -267,6 +276,29 @@ Schema hat, wird nicht registriert und ist ein Fehler jeder geprüften YAML-Migr
   Schritts `expMigrationRevertibleStepType` implementiert und keiner eine Schleife ist: Dann läuft `revert()` jedes
   Schritts, der letzte zuerst, mit den Referenzen des Laufs, der zurücknimmt. `reference` und `assert` nehmen nichts
   zurück.
+
+## Die SQL-Migration
+
+Die Dateien einer ID (`.sql`, `.<engine>.sql`, `.mongodb.json`) sind eine Migration. Auf einer Engine läuft ihre eigene
+Datei, sonst die portable `.sql` (nur auf den SQL-Engines). Eine SQL-Datei besteht aus Anweisungen, die mit `;` am
+Zeilenende enden; Zeilen, die mit `--` beginnen, sind Kommentare; eine Zeile `-- down` (auch `-- down:`, gleich in
+welcher Schreibung) beendet die Anweisungen, die die Migration ausführen, und beginnt die, die sie zurücknehmen. Eine
+`.mongodb.json`-Datei ist eine JSON-Liste von Befehlen oder ein Objekt mit den Listen `up` und `down` (und
+`description`); ein Befehl ist ein Objekt mit einem von `insert` (`documents`), `update` (`filter`, `set`, `unset`),
+`delete` (`filter`), `create_collection`, `drop_collection`, `create_index` (`keys`, `name`, `unique`) und
+`drop_index` (`name`), dessen Wert die Collection ist. Die Migration ist die YAML-Migration
+`steps: [ { type: sql, file: <id>.sql } ]`, mit `down: [ { type: sql, file: <id>.sql, part: down } ]`, wenn eine
+Datei einen Down-Teil hat, und `transactional` aus dem Kopf. Die Prüfsumme ist die der Datei der Engine.
+
+## Die INI-Migration
+
+Eine INI-Datei, deren Blöcke ihre Datei nennen: `[<file>.ini/<Block>]` für `settings/override/<file>.ini.append.php`,
+`[siteaccess:<name> <file>.ini/<Block>]` für `settings/siteaccess/<name>/<file>.ini.append.php` (`override` oder
+`global` vor dem Dateinamen ist dasselbe wie nichts). In einem Block: `Var=value` setzt, `Var[]` gefolgt von Zeilen
+`Var[]=value` macht das Array zu diesen Werten, `Var[]=value` ohne `Var[]` davor fügt einen Wert hinzu,
+`Var[key]=value` setzt einen Schlüssel, und `-Var`, `-Var[key]`, `-Var[]=value` entfernen. Zeilen, die mit `#` oder `;`
+beginnen, sind Kommentare. Die Migration ist die YAML-Migration aus einem Schritt `settings` je Datei, in der
+Reihenfolge, in der die Dateien zuerst vorkommen; sie hat kein `down:`.
 
 ## Die Prüfsumme
 
@@ -345,6 +377,65 @@ Jeder Befehl `exp:migration:*` mit `--format=json` gibt ein JSON-Objekt aus mit 
 `messages`, `duration_ms`, `record`, `checksum`, `changed`, ...), `summary`, `captions`, `restore`, `repository`,
 `runs`, `orphans`, `pushes`, `lock`. In späteren Versionen können Schlüssel hinzukommen; innerhalb von
 `exp-migration/1` wird keiner umbenannt oder entfernt.
+
+## Aufgezeichnete Ereignisse (exp-migration-recording-event/1)
+
+Eine Aufzeichnung von Änderungen ([die Anleitung](../../anleitungen/migrationen-erzeugen-und-aufzeichnen.md)) hält
+jede Änderung als ein Ereignis fest, den Inhalt einer Zeile von `exp_migration_recording_event`: ein JSON-Objekt in
+der Form des YAML-Schritts, für den es steht, so dass ein Generator den Schritt schreibt, ohne die Installation noch
+einmal zu lesen.
+
+| Schlüssel | Bedeutung |
+|---|---|
+| `v` | `1` |
+| `audit` | der Name des Audit-Ereignisses aus der Taxonomie des Kernels (`content.object.publish` ...) |
+| `subject` | worum es geht, in stabilen Namen: `object remote:<id>`, `location remote:<id>`, `class <bezeichner>`, `role <name>`, `section <bezeichner>`, `state_group <bezeichner>`, `user remote:<id>`, `url_alias <pfad>`, `setting <datei> [<block>] <variable>`, `workflow_trigger <schlüssel>` |
+| `step` | der Schritt: `type`, `mode` und die Schlüssel dieses Schritts (unten), jede ID in stabiler Form: Knoten und Objekte als `remote:<remote id>` (siehe [Bezeichner und die ID-Zuordnung](#bezeichner-und-die-id-zuordnung)), Klassen, Sektionen und Objektzustände über ihren Bezeichner, Rollen über ihren Namen, Sprachen über ihr Locale; die Werte sind der Stand nach der Änderung |
+| `omitted` | was absichtlich weggelassen wurde: das Konto und die persönlichen Felder von Benutzern, der Wert einer geheimen Einstellung |
+| `notes` | was ein Generator wissen muss: ein Wert, wie der Kernel ihn speichert, die Sprachen, die eine Übersetzung hinzugefügt hat |
+
+Das Ereignis nennt nie, wer die Änderung gemacht hat; die Zeile hält die Benutzer-ID (`actor_id`) nur für die
+Installation. Die Zeilen einer Aufzeichnung sortieren nach `event_id` (die Millisekunde, eine Folgenummer des
+Prozesses, fünf zufällige Hex-Ziffern) in der Reihenfolge der Änderungen.
+
+Die Audit-Ereignisse, der Schritt, der aus jedem wird, und seine Schlüssel:
+
+| Audit-Ereignis | `type` / `mode` | Schlüssel |
+|---|---|---|
+| `content.object.create` | `content` / `create` | `class`, `parent`, `remote_id`, `section`, `always_available`, `initial_language`, `states`, `fields`, `locations` |
+| `content.object.publish`, `.translate`, `.translation.remove`, `.always_available`, `.initial_language`, `.state` | `content` / `update` | `match`, `section`, `always_available`, `initial_language`, `states`, `fields`, `locations`; `changed` (publish), `remove_translations` (Übersetzung entfernt) |
+| `content.object.remove`, `content.object.purge` | `content` / `delete` | `match` |
+| `content.object.restore` | `trash` / `restore` | `object`, `parent` |
+| `content.node.add` | `location` / `create` | `object`, `parent`, `remote_id` |
+| `content.node.move` | `location` / `move` | `match`, `parent` |
+| `content.node.copy` | `content` / `copy` | `node`, `parent`, `remote_id`, `location_remote_id`, `subtree` |
+| `content.node.hide`, `content.node.reveal` | `location` / `hide`, `reveal` | `match` |
+| `content.node.sort`, `.priority`, `.main` | `location` / `update` | `match`; `sort_field`, `sort_order` / `child_priorities` / `main` |
+| `content.node.swap` | `location` / `swap` | `match`, `with` |
+| `content.node.remove` | `location` / `delete` | `match` |
+| `content.node.remove.trash` | `trash` / `move` | `match` |
+| `content.node.section` | `section` / `assign` | `match`, `subtree` |
+| `content.class.create`, `content.class.copy` | `class` / `create` | `identifier`, `names`, `descriptions`, `contentobject_name`, `url_alias_name`, `is_container`, `always_available`, `sort_field`, `sort_order`, `groups`, `remote_id`, `attributes` |
+| `content.class.change` | `class` / `update` | `match` und die Schlüssel von create außer `identifier` |
+| `content.class.remove` | `class` / `delete` | `match` |
+| `content.section.change` | `section` / `ensure` | `match`, `identifier`, `name`, `navigation_part` |
+| `content.section.remove` | `section` / `delete` | `match` |
+| `content.state.change` | `object_state_group` / `ensure` | `match`, `identifier`, `names`, `states`, `default_language` |
+| `content.state.remove` | `object_state_group` / `delete` | `match` |
+| `content.urlalias.change` | `url_alias` / `ensure` (hinzugefügt), `delete` (entfernt) | `path`, `node` / `match`, `which` |
+| `access.role.create`, `access.role.copy` | `role` / `create` | `name`, `policies` |
+| `access.role.change`, `access.policy.add`, `access.policy.remove` | `role` / `update` | `match`, `policies` |
+| `access.role.remove` | `role` / `delete` | `match` |
+| `access.role.assign`, `access.role.unassign` | `role` / `assign`, `unassign` | `match`, `user` oder `group`, `limitation` |
+| `access.user.create` | `user` / `create` | `remote_id`, `class`, `groups`, `enabled`, `fields` (nur `[RecordingSettings] UserKeepAttributeList[]`) |
+| `access.user.change`, `.move`, `.activate`, `.lock`, `.unlock` | `user` / `update` | `match`, `class`, `groups`, `enabled`, `fields` |
+| `access.user.remove` | `user` / `delete` | `match` |
+| `system.setting.write` | `ini` / `set`, `remove` | `file`, `scope`, `block`, `variable`, `value` oder `secret` |
+| `system.workflow.trigger.change` | `workflow_trigger` / `ensure` | `triggers` |
+
+Ein Inhaltsobjekt einer Benutzerklasse wird als Schritt `user` aufgezeichnet. `[RecordingSettings] EventList[]` kann
+die Liste verkleinern, nie vergrößern. Innerhalb von `exp-migration-recording-event/1` können Ereignisse und Schlüssel
+hinzukommen; keiner wird umbenannt oder entfernt.
 
 ## Verwandte Seiten
 

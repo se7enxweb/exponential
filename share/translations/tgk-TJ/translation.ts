@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Иҷроро оғоз кардан нашуд.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Сабти тағйирот</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>То вақте ки сабт идома дорад, он чи шумо дар идоракунӣ ё дар панели паҳлуии сомона тағйир медиҳед, ҳамчун қадамҳои муҳоҷират нигоҳ дошта мешавад: мундариҷа, синфҳо, нақшҳо ва сиёсатҳо, бахшҳо, корбарон ва гурӯҳҳо, тахаллусҳои URL, танзимот. Вақте ки тамом кардед, онро боздоред, бинед чӣ гирифтааст ва аз он муҳоҷират созед.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Сабтҳоро хондан имконнопазир шуд: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Ҷадвалҳои сабтҳо ҳанӯз вуҷуд надоранд: аввал навсозиро иҷро кунед (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Сабт дар migration.ini хомӯш аст ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Тағйироти ман</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>То он даме ки шумо онро боздоред, танҳо он чиро, ки шумо тағйир медиҳед, дар куҷое ки набошад, сабт мекунад.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Сабт</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>аз %time, то ҳол %count тағйирот.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Нишона (ихтиёрӣ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Нишон додани он чи гирифтааст</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Боздоштани сабт</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Оғози сабти тағйироти ман</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Тирезаи тамоми сомона</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>То пӯшида шуданаш ҳар тағйироти ҳар корбар ва консолро сабт мекунад. Ҳангоми кушодан тасдиқ пурсида мешавад, ки ин шумо ҳастед.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Кушода</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Пӯшидани тиреза</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Кушодани тирезаи тамоми сомона</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Сабтҳо</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ҳисоби корбар (номи вуруд, почтаи электронӣ, парол) ва майдонҳои ҳисобҳои корбарон ҳеҷ гоҳ сабт намешаванд.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Тағйирот</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Тамоми сомона</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Тағйироти %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Боздошташуда</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ҳанӯз сабт нест.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Сабти %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ҳамаи сабтҳо</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Муҳоҷирате, ки аз он ба вуҷуд меояд</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Тағйироте, ки барои ҳар чизи тағйирёфта дар як қадам ҷамъ шудаанд: он чи муҳоҷирати аз ин сабт сохташуда мекунад.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Вақте ки ин насб навъҳои қадами YAML %types дошта бошад, аз он муҳоҷират сохтан мумкин аст.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Қасдан партофта шуд: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ҳеҷ чиз сабт нашуд.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Он чи гирифтааст</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count тағйирот, бо тартиби иҷрошуда.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Тағйир</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Қадам</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Марбут ба</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Боз %count: ./console exp:migration:record:show ҳамаро рӯйхат мекунад.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Рад кардан</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Сабт ва он чи гирифтаастро нест мекунад. Чизи тағйирёфта тағйирёфта мемонад.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ҳа, ин сабтро рад кунед</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Сабт мешавад…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Тағйироти шумо барои муҳоҷират сабт мешавад.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Ҳар тағйирот дар ин сомона барои муҳоҷират сабт мешавад (тирезаи тамоми сомона).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Сабти тамоми сомона оғоз шуд: то шумо боздоред, ҳар тағйироти ҳар корбар сабт мешавад.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Сабт оғоз шуд: то шумо боздоред, тағйироти шумо сабт мешавад.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Сабт боздошта шуд. Он чи гирифтааст, то шумо рад накунед, мемонад.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Сабт ва ҳодисаҳои он нест карда шуданд.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Сабти %id вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Аввал «Ҳа, ин сабтро рад кунед»-ро қайд кунед.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Сабти ҷаласаро танҳо корбаре, ки сабт кардааст, боздошта метавонад.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Сабтеро, ки бояд боздошта шавад, интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Сабти ин навъ аллакай идома дорад.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Сабтро тағйир додан имконнопазир шуд: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Сомонаи лоиҳаи GitHub дар зери /&lt;repository&gt;/ ҷойгир аст; пайвандҳои нисбӣ дар он ҷо ва дар ҳама ҷои дигар кор мекунанд.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Сохт ҳар саҳифаи %site-ро тавре мегирад, ки меҳмони вориднашуда мебинад, пайвандҳоро аз нав менависад, файлҳоро нусхабардорӣ мекунад ва натиҷаро ба ҷузвдони ҳадаф менависад. То он даме, ки шумо сохтро насанҷед ва Нашр кардан-ро пахш накунед, ҳеҷ чиз нашр намешавад.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Саҳифае, ки пас аз тозакунӣ ҳанӯз натиҷаи ислоҳ, токени шакл ё рақами ҷаласа дорад, ҳеҷ гоҳ нашр намешавад.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Бозгардонӣ барои мутахассисон аст: "Ман медонам, ки ин чиро тағйир медиҳад"-ро қайд кунед ва номи нишонаро боз нависед.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Бозгардонӣ барои мутахассисон аст: &quot;Ман медонам, ки ин чиро тағйир медиҳад&quot;-ро қайд кунед ва номи нишонаро боз нависед.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Пешнамоишро кушодан</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Сохтро тавре мекушояд, ки мизбон онро аз ҷузвдони ҳадаф медиҳад. Пайванд барои шумо як соат кор мекунад.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Насб &gt; Рамзҳо</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Дар рӯйхатҳо нишон дода мешавад, масалан "Сомонаи оммавӣ дар GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Дар рӯйхатҳо нишон дода мешавад, масалан &quot;Сомонаи оммавӣ дар GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Сомона ба файлҳои он нашр бармегардад; сохте, ки ҳоло нашр нашудааст, бояд аввал нашр ё партофта шавад.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Саҳифаи худи сомона барои суроғаҳое, ки вуҷуд надоранд.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Ҳадафро захира кардан нашуд: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ҳадаф ҳоло бо ин калид ворид намешавад: дар танзимоти он "Калиди ҷойгиркунӣ, ки барои ин ҳадаф сохта шудааст"-ро интихоб кунед.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Ҳадаф ҳоло бо ин калид ворид намешавад: дар танзимоти он &quot;Калиди ҷойгиркунӣ, ки барои ин ҳадаф сохта шудааст&quot;-ро интихоб кунед.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Ин сохтро мепартояд: ҷузвдон боз нашри охиринро дорад. Сомонаи зинда тағйир намеёбад.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Аввал "Ман тағйиротро санҷидам"-ро қайд кунед.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Аввал &quot;Ман тағйиротро санҷидам&quot;-ро қайд кунед.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>ҳа, ҳоло нашр нашудааст</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Сохт ҳар саҳифаи %site-ро тавре мегирад, ки меҳмони вориднашуда мебинад, пайвандҳоро аз нав менависад, файлҳоро нусхабардорӣ мекунад ва натиҷаро ба ҷузвдони ҳадаф менависад. То он даме, ки шумо сохтро насанҷед ва Нашр кардан-ро пахш накунед, ҳеҷ чиз нашр намешавад.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Бозгардонӣ барои мутахассисон аст: "Ман медонам, ки ин чиро тағйир медиҳад"-ро қайд кунед ва номи нишонаро боз нависед.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Сохтро тавре мекушояд, ки мизбон онро аз ҷузвдони ҳадаф медиҳад. Пайванд барои шумо як соат кор мекунад.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Дар рӯйхатҳо нишон дода мешавад, масалан "Сомонаи оммавӣ дар GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Саҳифаи худи сомона барои суроғаҳое, ки вуҷуд надоранд.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Ҳадаф ҳоло бо ин калид ворид намешавад: дар танзимоти он "Калиди ҷойгиркунӣ, ки барои ин ҳадаф сохта шудааст"-ро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Аввал "Ман тағйиротро санҷидам"-ро қайд кунед.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

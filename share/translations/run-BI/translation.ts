@@ -15160,7 +15160,7 @@ Ikitonderwa: Amapaki ntazokurwamwo.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Gusohora kopi idahinduka y'urubuga kuri GitHub Pages canke ku mutanzi uwo ari we wese wa git.</translation>
+        <translation>Gusohora kopi idahinduka y&apos;urubuga kuri GitHub Pages canke ku mutanzi uwo ari we wese wa git.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22176,7 +22176,7 @@ Ikitonderwa: Amapaki ntazokurwamwo.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Ububiko bw'igihe gito butahinduka butanga amapapuro biva kuri iyi seriveri. Kugira musohore kopi idahinduka y'urubuga ahandi, kuri GitHub Pages canke ku mutanzi uwo ari we wese wa git, mukoreshe isohora ridahinduka.</translation>
+        <translation>Ububiko bw&apos;igihe gito butahinduka butanga amapapuro biva kuri iyi seriveri. Kugira musohore kopi idahinduka y&apos;urubuga ahandi, kuri GitHub Pages canke ku mutanzi uwo ari we wese wa git, mukoreshe isohora ridahinduka.</translation>
     </message>
 </context>
 <context>
@@ -76236,7 +76236,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Gusohora kopi idahinduka y'urubuga kuri GitHub Pages canke ku mutanzi uwo ari we wese wa git.</translation>
+        <translation>Gusohora kopi idahinduka y&apos;urubuga kuri GitHub Pages canke ku mutanzi uwo ari we wese wa git.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -80590,6 +80590,222 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>The run could not be started.</source>
         <translation>Ikorwa ntiryashoboye gutangura.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Gufata ivyahindutse</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Igihe ifata ririko riraba, ivyo uhindura mu buyobozi canke ku mwanya wo ku ruhande rw'urubuga bibikwa nk'intambwe z'iyimurwa: ibirimwo, amasomo, ibikorwa n'amabwiriza, ibice, abakoresha n'imigwi, amazina asubirira ya URL, ingene vyateguwe. Urihagarike urangije, urabe ivyo ryafashe, maze uryakuremwo iyimurwa.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ivyafashwe ntivyashoboye gusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Imbonerahamwe z'ivyafashwe ntiziraboneka: banza ukoreshe ivugurura (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Gufata kwahagaritswe muri migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Ivyo nahinduye</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Rifata gusa ivyo uhindura, aho woba ubihindura hose, gushika urihagaritse.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ifata</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>kuva %time, ivyahindutse %count gushika ubu.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Ikimenyetso (si ngombwa)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Erekana ivyo ryafashe</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Hagarika gufata</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Tangura gufata ivyo nahinduye</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Idirisha ry'urubuga rwose</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Rifata ihinduka ryose ry'umukoresha wese n'irya konsole gushika rifunzwe. Uriguruye, usabwa kwemeza ko ari wewe.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ryuguruye</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Ugara idirisha</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ugurura idirisha ry'urubuga rwose</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ivyafashwe</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Konti y'umukoresha (izina ryo kwinjira, imeyili, ijambo ry'ibanga) n'ibibanza vya konti z'abakoresha ntibifatwa na rimwe.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ivyahindutse</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Urubuga rwose</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ivyo %name yahinduye</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Vyahagaritswe</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Nta fata rirabaho.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ifata %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ivyafashwe vyose</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Iyimurwa ryovamwo</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ivyahindutse bihurijwe mu ntambwe imwe kuri kimwe cose cahinduwe: ivyo iyimurwa rikuwe muri iri fata ryokora.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Iyimurwa rishobora gukurwa muri ryo iki gishirwamwo nikimara kugira ubwoko bw'intambwe za YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Vyasizwe nkana: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nta na kimwe cafashwe.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ivyo ryafashe</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Ivyahindutse %count, uko vyagiye birakorwa.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ihinduka</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Intambwe</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Vyerekeye</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Ibindi %count: ./console exp:migration:record:show birerekana vyose.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Ta</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Ikuraho ifata n'ivyo ryafashe. Ivyahinduwe bigumana guhinduka.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ego, ta iri fata</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Birafatwa…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Ivyo uhindura birafatwa ku bw'iyimurwa.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Ihinduka ryose kuri uru rubuga rirafatwa ku bw'iyimurwa (idirisha ry'urubuga rwose).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Ifata ry'urubuga rwose ryatanguye: ihinduka ryose ry'umukoresha wese rirafatwa gushika urihagaritse.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ifata ryatanguye: ivyo uhindura birafatwa gushika urihagaritse.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Ifata ryahagaritswe. Ivyo ryafashe bigumaho gushika urita.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Ifata n'ivyabaye vyaryo vyakuweho.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nta fata %id rihari.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Banza uhitemwo "Ego, ta iri fata".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Umukoresha yafashe wenyene ni we ashobora guhagarika ifata ry'ikiringo.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Hitamwo ifata rikwiye guhagarikwa.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ifata ry'ubu bwoko risanzwe ririko riraba.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Ifata ntiryashoboye guhindurwa: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81267,7 +81483,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Publish a free static copy of your site on GitHub Pages:</source>
-        <translation>Musohore ku buntu kopi idahinduka y'urubuga rwanyu kuri GitHub Pages:</translation>
+        <translation>Musohore ku buntu kopi idahinduka y&apos;urubuga rwanyu kuri GitHub Pages:</translation>
     </message>
     <message>
         <source>Stale pages</source>
@@ -81338,7 +81554,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>%percent % of the limit</source>
-        <translation>%percent % y'urugero ntarengwa</translation>
+        <translation>%percent % y&apos;urugero ntarengwa</translation>
     </message>
     <message>
         <source>%seconds s</source>
@@ -81358,7 +81574,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
-        <translation>/ububiko/ ku rubuga rw'umugambi wa GitHub; ubusa ku domeni yanyu bwite canke ku rubuga rw'umukoresha.</translation>
+        <translation>/ububiko/ ku rubuga rw&apos;umugambi wa GitHub; ubusa ku domeni yanyu bwite canke ku rubuga rw&apos;umukoresha.</translation>
     </message>
     <message>
         <source>1. The site</source>
@@ -81378,7 +81594,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>5. Links and base path</source>
-        <translation>5. Imihuza n'inzira fatizo</translation>
+        <translation>5. Imihuza n&apos;inzira fatizo</translation>
     </message>
     <message>
         <source>6. Your own domain</source>
@@ -81398,23 +81614,23 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
-        <translation>Urubuga rw'umugambi wa GitHub ruba musi ya /&lt;repository&gt;/; imihuza ifatiye ku kibanza ikora ngaho n'ahandi hose.</translation>
+        <translation>Urubuga rw&apos;umugambi wa GitHub ruba musi ya /&lt;repository&gt;/; imihuza ifatiye ku kibanza ikora ngaho n&apos;ahandi hose.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Iyubakwa rizana urupapuro rwose rwa %site nk'uko umugenzi atinjiye arubona, rikandika bushasha imihuza, rigakopora amadosiye kandi rikandika umusaruro mu kabiko k'intumbero. Nta kintu gisohorwa imbere y'uko musuzuma iyubakwa hanyuma mugakanda Gusohora.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Iyubakwa rizana urupapuro rwose rwa %site nk&apos;uko umugenzi atinjiye arubona, rikandika bushasha imihuza, rigakopora amadosiye kandi rikandika umusaruro mu kabiko k&apos;intumbero. Nta kintu gisohorwa imbere y&apos;uko musuzuma iyubakwa hanyuma mugakanda Gusohora.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
-        <translation>Imvugo ya cron, nk'akarorero 0 3 * * *</translation>
+        <translation>Imvugo ya cron, nk&apos;akarorero 0 3 * * *</translation>
     </message>
     <message>
         <source>A deploy key is kept as the secret %secret.</source>
-        <translation>Urufunguzo rwo gushiramwo rubikwa nk'ibanga %secret.</translation>
+        <translation>Urufunguzo rwo gushiramwo rubikwa nk&apos;ibanga %secret.</translation>
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>Urufunguzo rwo gushiramwo rwemerera iri shirwaho kurungika mu bubiko bumwe gusa biciye kuri SSH, ntiruje ahandi. Igice carwo c'ibanga kiguma muri Gutunganya &gt; Ibanga; igice c'icese ni co conyene cerekanwa.</translation>
+        <translation>Urufunguzo rwo gushiramwo rwemerera iri shirwaho kurungika mu bubiko bumwe gusa biciye kuri SSH, ntiruje ahandi. Igice carwo c&apos;ibanga kiguma muri Gutunganya &gt; Ibanga; igice c&apos;icese ni co conyene cerekanwa.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
@@ -81430,31 +81646,31 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Igikorwa c'iyi ntumbero kiracariko kirakorwa (%detail). Murindire kirangire.</translation>
+        <translation>Igikorwa c&apos;iyi ntumbero kiracariko kirakorwa (%detail). Murindire kirangire.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Igikorwa c'iyi ntumbero kiracariko kirakorwa. Murindire kirangire.</translation>
+        <translation>Igikorwa c&apos;iyi ntumbero kiracariko kirakorwa. Murindire kirangire.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
-        <translation>Umuhuza uva ku rupapuro /news/ uja ku rupapuro /about-us/team uzokwandikwa nk'uku</translation>
+        <translation>Umuhuza uva ku rupapuro /news/ uja ku rupapuro /about-us/team uzokwandikwa nk&apos;uku</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
-        <translation>Urufunguzo rushasha rwo gushiramwo rwakozwe. Mwongere ubu igice carwo c'icese mu bubiko.</translation>
+        <translation>Urufunguzo rushasha rwo gushiramwo rwakozwe. Mwongere ubu igice carwo c&apos;icese mu bubiko.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
-        <translation>Urupapuro rukibitse ibisohoka vy'isuzuma (debug), token y'urupapuro rw'ibibazo canke id y'ikiringo inyuma yo gusukura ntirusohorwa na rimwe.</translation>
+        <translation>Urupapuro rukibitse ibisohoka vy&apos;isuzuma (debug), token y&apos;urupapuro rw&apos;ibibazo canke id y&apos;ikiringo inyuma yo gusukura ntirusohorwa na rimwe.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Ugusubiza inyuma ni ukw'abahinga: muhitemwo "Ndazi ico ibi bihindura" hanyuma mwongere mwandike izina ry'akarango.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Ugusubiza inyuma ni ukw&apos;abahinga: muhitemwo &quot;Ndazi ico ibi bihindura&quot; hanyuma mwongere mwandike izina ry&apos;akarango.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Urubuga rushobora gushika kuri %site, idosiye imwe gushika kuri %file, hamwe n'urujya n'uruza nka 100 GB ku kwezi. Ku mugambi w'ubuntu, ububiko butegerezwa kuba bwa bose. GitHub Pages ntiyagenewe amaduka canke ibindi bikorwa vy'ubudandaji.</translation>
+        <translation>Urubuga rushobora gushika kuri %site, idosiye imwe gushika kuri %file, hamwe n&apos;urujya n&apos;uruza nka 100 GB ku kwezi. Ku mugambi w&apos;ubuntu, ububiko butegerezwa kuba bwa bose. GitHub Pages ntiyagenewe amaduka canke ibindi bikorwa vy&apos;ubudandaji.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
@@ -81462,7 +81678,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>Intumbero ni urubuga rumwe rusohorwa ahantu hamwe, nk'akarorero urubuga rwanyu rwa bose kuri GitHub Pages.</translation>
+        <translation>Intumbero ni urubuga rumwe rusohorwa ahantu hamwe, nk&apos;akarorero urubuga rwanyu rwa bose kuri GitHub Pages.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
@@ -81470,11 +81686,11 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>A workflow of the repository publishes it.</source>
-        <translation>Umugenderanyo w'ibikorwa (workflow) w'ububiko ni wo urisohora.</translation>
+        <translation>Umugenderanyo w&apos;ibikorwa (workflow) w&apos;ububiko ni wo urisohora.</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
-        <translation>Mwongere uru rufunguzo rw'icese mu bubiko hamwe n'uburenganzira bwo kwandika. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, muhitemwo Allow write access.</translation>
+        <translation>Mwongere uru rufunguzo rw&apos;icese mu bubiko hamwe n&apos;uburenganzira bwo kwandika. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, muhitemwo Allow write access.</translation>
     </message>
     <message>
         <source>Added</source>
@@ -81502,7 +81718,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Below a base path</source>
-        <translation>Musi y'inzira fatizo</translation>
+        <translation>Musi y&apos;inzira fatizo</translation>
     </message>
     <message>
         <source>Branch</source>
@@ -81542,7 +81758,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>By hand, here</source>
-        <translation>N'amaboko, ngaha</translation>
+        <translation>N&apos;amaboko, ngaha</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -81594,11 +81810,11 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
-        <translation>Bigereranijwe n'akabiko ka mbere: %added vyongerewe, %changed vyahinduwe, %removed vyakuweho, %unchanged bitahindutse.</translation>
+        <translation>Bigereranijwe n&apos;akabiko ka mbere: %added vyongerewe, %changed vyahinduwe, %removed vyakuweho, %unchanged bitahindutse.</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
-        <translation>Bigereranijwe n'isohorwa riheruka.</translation>
+        <translation>Bigereranijwe n&apos;isohorwa riheruka.</translation>
     </message>
     <message>
         <source>Credential</source>
@@ -81610,7 +81826,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
-        <translation>Ibisohoka vy'isuzuma, token z'impapuro z'ibibazo, id z'ikiringo na nonce bikurwaho imisi yose.</translation>
+        <translation>Ibisohoka vy&apos;isuzuma, token z&apos;impapuro z&apos;ibibazo, id z&apos;ikiringo na nonce bikurwaho imisi yose.</translation>
     </message>
     <message>
         <source>Deploy key</source>
@@ -81634,7 +81850,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Ubusa: aderese y'urubuga. Ahandi ho, aderese y'imbere y'urwo rubuga nyene.</translation>
+        <translation>Ubusa: aderese y&apos;urubuga. Ahandi ho, aderese y&apos;imbere y&apos;urwo rubuga nyene.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -81642,11 +81858,11 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Every link starts with the base path.</source>
-        <translation>Umuhuza wose utangurwa n'inzira fatizo.</translation>
+        <translation>Umuhuza wose utangurwa n&apos;inzira fatizo.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>Isohorwa ryose ni ukwemeza (commit) gufise akarango static/%id/&lt;n&gt;. Gusubira inyuma bikora ukwemeza gushasha n'amadosiye y'isohorwa rya kera: kahise kaguma, nta karango kimurwa kandi nta kintu gishirwako agahato.</translation>
+        <translation>Isohorwa ryose ni ukwemeza (commit) gufise akarango static/%id/&lt;n&gt;. Gusubira inyuma bikora ukwemeza gushasha n&apos;amadosiye y&apos;isohorwa rya kera: kahise kaguma, nta karango kimurwa kandi nta kintu gishirwako agahato.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -81686,7 +81902,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
-        <translation>Ku aderese ya SSH. Urufunguzo rukorwa inyuma yo kubika; mwongera igice carwo c'icese mu bubiko.</translation>
+        <translation>Ku aderese ya SSH. Urufunguzo rukorwa inyuma yo kubika; mwongera igice carwo c&apos;icese mu bubiko.</translation>
     </message>
     <message>
         <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
@@ -81698,11 +81914,11 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Forms</source>
-        <translation>Impapuro z'ibibazo</translation>
+        <translation>Impapuro z&apos;ibibazo</translation>
     </message>
     <message>
         <source>Free hosting from a GitHub repository.</source>
-        <translation>Uburaro bw'ubuntu buva mu bubiko bwa GitHub.</translation>
+        <translation>Uburaro bw&apos;ubuntu buva mu bubiko bwa GitHub.</translation>
     </message>
     <message>
         <source>From the branch</source>
@@ -81726,7 +81942,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>GitHub Pages allows a site of %site and a file of %file.</source>
-        <translation>GitHub Pages yemera urubuga rwa %site n'idosiye ya %file.</translation>
+        <translation>GitHub Pages yemera urubuga rwa %site n&apos;idosiye ya %file.</translation>
     </message>
     <message>
         <source>GitHub Pages limits</source>
@@ -81754,7 +81970,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Help with the wizard</source>
-        <translation>Imfashanyo y'umuyobozi w'intambwe</translation>
+        <translation>Imfashanyo y&apos;umuyobozi w&apos;intambwe</translation>
     </message>
     <message>
         <source>Hide them</source>
@@ -81790,11 +82006,11 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>It is switched off: nothing can be built until it is on.</source>
-        <translation>Ryazimijwe: nta kintu gishobora kwubakwa imbere y'uko ryatswa.</translation>
+        <translation>Ryazimijwe: nta kintu gishobora kwubakwa imbere y&apos;uko ryatswa.</translation>
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>Rikora inyuma y'urupapuro nka %user; murashobora kwugara uru rupapuro.</translation>
+        <translation>Rikora inyuma y&apos;urupapuro nka %user; murashobora kwugara uru rupapuro.</translation>
     </message>
     <message>
         <source>Job %id</source>
@@ -81802,7 +82018,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Kept as the secret %secret.</source>
-        <translation>Kibitswe nk'ibanga %secret.</translation>
+        <translation>Kibitswe nk&apos;ibanga %secret.</translation>
     </message>
     <message>
         <source>Kind</source>
@@ -81838,7 +82054,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
-        <translation>Indome ntoya, ibiharuro, _ na -, nk'akarorero github-public. Ryita akabiko n'uturango (static/&lt;id&gt;/&lt;n&gt;) kandi ntirishobora guhindurwa mu nyuma.</translation>
+        <translation>Indome ntoya, ibiharuro, _ na -, nk&apos;akarorero github-public. Ryita akabiko n&apos;uturango (static/&lt;id&gt;/&lt;n&gt;) kandi ntirishobora guhindurwa mu nyuma.</translation>
     </message>
     <message>
         <source>Make a new key</source>
@@ -81858,7 +82074,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Manifest</source>
-        <translation>Urutonde rw'amadosiye</translation>
+        <translation>Urutonde rw&apos;amadosiye</translation>
     </message>
     <message>
         <source>Message</source>
@@ -81898,7 +82114,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>Nta porogarama ya php y'umurongo w'amabwirizwa yabonetse. Mushireho migration.ini [AdminSettings] PhpCliPath n'inzira yayo yuzuye.</translation>
+        <translation>Nta porogarama ya php y&apos;umurongo w&apos;amabwirizwa yabonetse. Mushireho migration.ini [AdminSettings] PhpCliPath n&apos;inzira yayo yuzuye.</translation>
     </message>
     <message>
         <source>No tag yet.</source>
@@ -81942,11 +82158,11 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>One path per line, * matches any part: /members/*</source>
-        <translation>Inzira imwe ku murongo, * ihuye n'igice icarico cose: /members/*</translation>
+        <translation>Inzira imwe ku murongo, * ihuye n&apos;igice icarico cose: /members/*</translation>
     </message>
     <message>
         <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
-        <translation>Izina gusa ni ryo ribikwa hamwe n'intumbero; token canke urufunguzo nyene biguma muri Gutunganya &gt; Ibanga kandi ntibigaragara na rimwe mu gitabo c'ibikorwa.</translation>
+        <translation>Izina gusa ni ryo ribikwa hamwe n&apos;intumbero; token canke urufunguzo nyene biguma muri Gutunganya &gt; Ibanga kandi ntibigaragara na rimwe mu gitabo c&apos;ibikorwa.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
@@ -81954,15 +82170,15 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>Hamwe na token gusa. env:NAME isoma ahubwo impinduka y'ibidukikije ya seriveri.</translation>
+        <translation>Hamwe na token gusa. env:NAME isoma ahubwo impinduka y&apos;ibidukikije ya seriveri.</translation>
     </message>
     <message>
         <source>Open the preview</source>
         <translation>Kwugurura ukubanza kuraba</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Ryugurura iyubakwa nk'uko umutanzi azoritanga, rivuye mu kabiko k'intumbero. Umuhuza ubakorera isaha imwe.</translation>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Ryugurura iyubakwa nk&apos;uko umutanzi azoritanga, rivuye mu kabiko k&apos;intumbero. Umuhuza ubakorera isaha imwe.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
@@ -81982,7 +82198,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Pages of the target</source>
-        <translation>Amapapuro y'intumbero</translation>
+        <translation>Amapapuro y&apos;intumbero</translation>
     </message>
     <message>
         <source>Pages refused</source>
@@ -82018,7 +82234,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Public key</source>
-        <translation>Urufunguzo rw'icese</translation>
+        <translation>Urufunguzo rw&apos;icese</translation>
     </message>
     <message>
         <source>Publish</source>
@@ -82026,7 +82242,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Gusohora kopi idahinduka y'urubuga kuri GitHub Pages canke ku mutanzi uwo ari we wese wa git: kuyubaka, gusuzuma amahinduka, gusohora, no gusubira ku isohorwa rya kera igihe bikenewe.</translation>
+        <translation>Gusohora kopi idahinduka y&apos;urubuga kuri GitHub Pages canke ku mutanzi uwo ari we wese wa git: kuyubaka, gusuzuma amahinduka, gusohora, no gusubira ku isohorwa rya kera igihe bikenewe.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -82046,7 +82262,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Record</source>
-        <translation>Igitabo c'ibikorwa</translation>
+        <translation>Igitabo c&apos;ibikorwa</translation>
     </message>
     <message>
         <source>Refused</source>
@@ -82074,7 +82290,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Report of the build</source>
-        <translation>Raporo y'iyubakwa</translation>
+        <translation>Raporo y&apos;iyubakwa</translation>
     </message>
     <message>
         <source>Repository</source>
@@ -82102,7 +82318,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Gahunda y'igihe</translation>
+        <translation>Gahunda y&apos;igihe</translation>
     </message>
     <message>
         <source>Search page</source>
@@ -82110,7 +82326,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Section ids, separated by commas.</source>
-        <translation>Inomero z'ibihimba, zitandukanijwe n'utwatuzo.</translation>
+        <translation>Inomero z&apos;ibihimba, zitandukanijwe n&apos;utwatuzo.</translation>
     </message>
     <message>
         <source>Send them to the live site</source>
@@ -82137,12 +82353,12 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <translation>Gutunganya &gt; Ibanga</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Vyerekanwa mu nonde, nk'akarorero "Urubuga rwa bose kuri GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Vyerekanwa mu nonde, nk&apos;akarorero &quot;Urubuga rwa bose kuri GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>Kwinjira hamwe na GitHub App bizozana n'uguhuzwa na GitHub.</translation>
+        <translation>Kwinjira hamwe na GitHub App bizozana n&apos;uguhuzwa na GitHub.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -82158,11 +82374,11 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Size and limits</source>
-        <translation>Ingano n'imbibe</translation>
+        <translation>Ingano n&apos;imbibe</translation>
     </message>
     <message>
         <source>Size of the build</source>
-        <translation>Ingano y'iyubakwa</translation>
+        <translation>Ingano y&apos;iyubakwa</translation>
     </message>
     <message>
         <source>Stale pages</source>
@@ -82238,7 +82454,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
-        <translation>Intumbero zirashobora kuremwa no guhindurwa, ariko nta kintu cubakwa canke gisohorwa imbere y'uko ryatswa.</translation>
+        <translation>Intumbero zirashobora kuremwa no guhindurwa, ariko nta kintu cubakwa canke gisohorwa imbere y&apos;uko ryatswa.</translation>
     </message>
     <message>
         <source>Tells search engines what to read.</source>
@@ -82250,7 +82466,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
-        <translation>Iyubakwa ni kimwe n'isohorwa riheruka: nta kintu co gusohora.</translation>
+        <translation>Iyubakwa ni kimwe n&apos;isohorwa riheruka: nta kintu co gusohora.</translation>
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
@@ -82266,7 +82482,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>The folder of the jobs cannot be written: %detail</source>
-        <translation>Akabiko k'ibikorwa ntigashobora kwandikwamwo: %detail</translation>
+        <translation>Akabiko k&apos;ibikorwa ntigashobora kwandikwamwo: %detail</translation>
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
@@ -82302,11 +82518,11 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>Urutonde rw'amapapuro ku moteri zirondera; rukeneye aderese ya bose.</translation>
+        <translation>Urutonde rw&apos;amapapuro ku moteri zirondera; rukeneye aderese ya bose.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Amapapuro azanwa nk'uko umugenzi atinjiye ayabona. Siteaccess z'ubuyobozi n'izo gutunganya ibirimwo ntizitangwa na rimwe.</translation>
+        <translation>Amapapuro azanwa nk&apos;uko umugenzi atinjiye ayabona. Siteaccess z&apos;ubuyobozi n&apos;izo gutunganya ibirimwo ntizitangwa na rimwe.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
@@ -82314,19 +82530,19 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>The public half of the key:</source>
-        <translation>Igice c'icese c'urufunguzo:</translation>
+        <translation>Igice c&apos;icese c&apos;urufunguzo:</translation>
     </message>
     <message>
         <source>The root of the branch</source>
-        <translation>Umuzi w'ishami</translation>
+        <translation>Umuzi w&apos;ishami</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>Ububiko bw'amabanga ntiburategurwa (./console exp:upgrade --apply ni yo irema imbonerahamwe yabwo), ni co gituma nta rufunguzo rushobora kubikwa.</translation>
+        <translation>Ububiko bw&apos;amabanga ntiburategurwa (./console exp:upgrade --apply ni yo irema imbonerahamwe yabwo), ni co gituma nta rufunguzo rushobora kubikwa.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
-        <translation>Seriveri yinjira yonyene (n'urufunguzo rwayo bwite rwa SSH canke credential helper), canke ububiko buri kuri iyi seriveri.</translation>
+        <translation>Seriveri yinjira yonyene (n&apos;urufunguzo rwayo bwite rwa SSH canke credential helper), canke ububiko buri kuri iyi seriveri.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
@@ -82338,23 +82554,23 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
-        <translation>Idosiye y'ingene vyateguwe ntishobora gusomwa: %problem</translation>
+        <translation>Idosiye y&apos;ingene vyateguwe ntishobora gusomwa: %problem</translation>
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>Urubuga rusubira ku madosiye y'iryo sohorwa; iyubakwa ritarasohorwa ritegerezwa kubanza gusohorwa canke gutabwa.</translation>
+        <translation>Urubuga rusubira ku madosiye y&apos;iryo sohorwa; iyubakwa ritarasohorwa ritegerezwa kubanza gusohorwa canke gutabwa.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Urupapuro rw'urubuga nyene rw'amaderese atabaho.</translation>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Urupapuro rw&apos;urubuga nyene rw&apos;amaderese atabaho.</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
         <translation>Intumbero ntiyashoboye kubikwa: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Intumbero ntirinjira n'uru rufunguzo: muhitemwo "Urufunguzo rwo gushiramwo rwakorewe iyi ntumbero" mu ngene vyayo vyateguwe.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Intumbero ntirinjira n&apos;uru rufunguzo: muhitemwo &quot;Urufunguzo rwo gushiramwo rwakorewe iyi ntumbero&quot; mu ngene vyayo vyateguwe.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82366,7 +82582,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
-        <translation>Iri shirwaho ntirifise siteaccess y'imbere. Siteaccess z'ubuyobozi n'izo gutunganya ibirimwo ntizisohorwa na rimwe.</translation>
+        <translation>Iri shirwaho ntirifise siteaccess y&apos;imbere. Siteaccess z&apos;ubuyobozi n&apos;izo gutunganya ibirimwo ntizisohorwa na rimwe.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
@@ -82389,8 +82605,8 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <translation>Rita iri yubakwa: akabiko kongeye gufise isohorwa riheruka. Urubuga ruriho ntiruhinduka.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Mubanze muhitemwo "Narasuzumye amahinduka".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Mubanze muhitemwo &quot;Narasuzumye amahinduka&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82402,7 +82618,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Type the name of the tag again</source>
-        <translation>Mwongere mwandike izina ry'akarango</translation>
+        <translation>Mwongere mwandike izina ry&apos;akarango</translation>
     </message>
     <message>
         <source>Unchanged</source>
@@ -82426,15 +82642,15 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Ivyo igikorwa cakoze n'igitabo caco c'ibikorwa. Igikorwa gitanguriwe ngaha kibandanya inyuma igihe uru rupapuro rwugawe.</translation>
+        <translation>Ivyo igikorwa cakoze n&apos;igitabo caco c&apos;ibikorwa. Igikorwa gitanguriwe ngaha kibandanya inyuma igihe uru rupapuro rwugawe.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
-        <translation>Ivyo igikorwa canditse nk'amakosa</translation>
+        <translation>Ivyo igikorwa canditse nk&apos;amakosa</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
-        <translation>Ivyo amapapuro avuga, n'ishusho yose y'ibirimwo vyasohowe</translation>
+        <translation>Ivyo amapapuro avuga, n&apos;ishusho yose y&apos;ibirimwo vyasohowe</translation>
     </message>
     <message>
         <source>When</source>
@@ -82462,11 +82678,11 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>Urubuga rusohorwa, n'izina ry'intumbero.</translation>
+        <translation>Urubuga rusohorwa, n&apos;izina ry&apos;intumbero.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
-        <translation>Ikora musi y'inzira iyo ari yo yose. Ivyo bisanzwe.</translation>
+        <translation>Ikora musi y&apos;inzira iyo ari yo yose. Ivyo bisanzwe.</translation>
     </message>
     <message>
         <source>Written whenever a custom domain is set.</source>
@@ -82478,7 +82694,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>Murashobora imisi yose kwubaka no gusohora n'amaboko ngaha no kuri konsole.</translation>
+        <translation>Murashobora imisi yose kwubaka no gusohora n&apos;amaboko ngaha no kuri konsole.</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
@@ -82506,7 +82722,7 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>gh-pages, or main with the folder docs.</source>
-        <translation>gh-pages, canke main hamwe n'akabiko docs.</translation>
+        <translation>gh-pages, canke main hamwe n&apos;akabiko docs.</translation>
     </message>
     <message>
         <source>git host</source>
@@ -82514,11 +82730,11 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
-        <translation>https://github.com/owner/repo.git (hamwe na token) canke git@github.com:owner/repo.git (hamwe n'urufunguzo rwo gushiramwo); nta jambo ry'ibanga canke token na rimwe muri yo.</translation>
+        <translation>https://github.com/owner/repo.git (hamwe na token) canke git@github.com:owner/repo.git (hamwe n&apos;urufunguzo rwo gushiramwo); nta jambo ry&apos;ibanga canke token na rimwe muri yo.</translation>
     </message>
     <message>
         <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
-        <translation>https://owner.github.io/repository/, ku gishushanyo c'urubuga n'imihuza nyamukuru (canonical).</translation>
+        <translation>https://owner.github.io/repository/, ku gishushanyo c&apos;urubuga n&apos;imihuza nyamukuru (canonical).</translation>
     </message>
     <message>
         <source>image</source>
@@ -82606,11 +82822,39 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: vyandikwa mu idosiye CNAME. Muyobore DNS ya domeni ku mutanzi nk'uko abisigura; HTTPS irashobora gufata akanya kugira itangure.</translation>
+        <translation>www.example.com: vyandikwa mu idosiye CNAME. Muyobore DNS ya domeni ku mutanzi nk&apos;uko abisigura; HTTPS irashobora gufata akanya kugira itangure.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>ego, ntivyari vyasohorwa</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Iyubakwa rizana urupapuro rwose rwa %site nk'uko umugenzi atinjiye arubona, rikandika bushasha imihuza, rigakopora amadosiye kandi rikandika umusaruro mu kabiko k'intumbero. Nta kintu gisohorwa imbere y'uko musuzuma iyubakwa hanyuma mugakanda Gusohora.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Ugusubiza inyuma ni ukw'abahinga: muhitemwo "Ndazi ico ibi bihindura" hanyuma mwongere mwandike izina ry'akarango.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Ryugurura iyubakwa nk'uko umutanzi azoritanga, rivuye mu kabiko k'intumbero. Umuhuza ubakorera isaha imwe.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Vyerekanwa mu nonde, nk'akarorero "Urubuga rwa bose kuri GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Urupapuro rw'urubuga nyene rw'amaderese atabaho.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Intumbero ntirinjira n'uru rufunguzo: muhitemwo "Urufunguzo rwo gushiramwo rwakorewe iyi ntumbero" mu ngene vyayo vyateguwe.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Mubanze muhitemwo "Narasuzumye amahinduka".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

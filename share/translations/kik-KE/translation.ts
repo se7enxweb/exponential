@@ -80590,6 +80590,222 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>The run could not be started.</source>
         <translation>Mũtengerio ndũngĩambĩrĩirio.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Kũandĩka mũgarũrũko</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Rĩrĩa kwandĩka gũgũthiĩ na mbere, kĩrĩa ũgarũra kũrĩ ũrũgamĩrĩri kana harĩ bara ya mũthia ya website gĩikagwo ta makinya ma gũthamia: maũndũ, kĩrathi, mawĩra na mawatho, icunjĩ, atũmĩri na ikundi, marĩĩtwa mangĩ ma URL, mabango. Gĩtigithia warĩkia, rora kĩrĩa kĩnyitĩte, na ũthondeke ũthamia kuuma harĩkĩo.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Maandĩko matiahotire gũthomwo: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Metha cia maandĩko itirĩ kuo: ambĩrĩria ũhũthĩre kũgarũrũra (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Kwandĩka nĩ gũtirĩ kũhingũrĩtwo thĩinĩ wa migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mũgarũrũko wakwa</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Kĩandĩkaga o kĩrĩa ũgarũra, kũndũ o guothe ũkĩgarũrĩra, nginya ũkĩgitigithie.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Kwandĩka</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>kuuma %time, mũgarũrũko %count nginya rĩu.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Kĩmenyithia (ti ya bata)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Onania kĩrĩa kĩnyitĩte</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Tigithia kwandĩka</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Ambĩrĩria kwandĩka mũgarũrũko wakwa</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Ndirica ya website yothe</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Kĩandĩkaga mũgarũrũko o wothe wa mũtũmĩri o wothe na wa console nginya ĩhingwo. Ũkĩmĩhingũra, ũkũũrio wĩtĩkĩrie atĩ nĩwe.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ĩhingũre</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Hinga ndirica</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Hingũra ndirica ya website yothe</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Maandĩko</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Akaunti ya mũtũmĩri (rĩĩtwa rĩa gũtonya, email, kiugo kĩa hitho) na kũndũ gwa akaunti cia atũmĩri itiandĩkagwo o na rĩ.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Mĩgarũrũko</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Website yothe</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Mĩgarũrũko ya %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Gĩtigithĩtio</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Gũtirĩ maandĩko o na rĩmwe.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Kwandĩka %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Maandĩko mothe</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ũthamia ũrĩa ũngĩuma</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Mĩgarũrũko ĩnyitanĩte ĩgĩtuĩka ikinya rĩmwe harĩ kĩndũ o gĩothe kĩgarũrĩtwo: kĩrĩa ũthamia ũthondekeirwo kuuma maandĩko-inĩ maya ũngĩĩka.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Ũthamia no ũthondekwo kuuma harĩkĩo rĩrĩa ũhandi ũyũ ũgaakorwo na mĩthemba ya makinya ma YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Gũtigwo na kĩĩmenyo: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Gũtirĩ kĩandĩkĩtwo.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Kĩrĩa kĩnyitĩte</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Mĩgarũrũko %count, kũringana na ũrĩa yekĩtwo.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Mũgarũrũko</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Ikinya</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Ũhoro wa</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Ingĩ %count: ./console exp:migration:record:show nĩ ĩgũtaarĩria ciothe.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Ikia</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Nĩĩrutaga maandĩko na kĩrĩa kĩnyitĩte. Kĩrĩa kĩgarũrĩtwo gĩtigaraga kĩgarũrĩtwo.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ĩĩ, ikia maandĩko maya</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Nĩkũrandĩka…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Mĩgarũrũko yaku nĩĩrandĩkwo nĩ ũndũ wa ũthamia.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Mũgarũrũko o wothe website-inĩ ĩno nĩũrandĩkwo nĩ ũndũ wa ũthamia (ndirica ya website yothe).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Kwandĩka kwa website yothe nĩkwambĩrĩria: mũgarũrũko o wothe wa mũtũmĩri o wothe nĩũrandĩkwo nginya ũgĩtigithie.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Kwandĩka nĩkwambĩrĩria: mĩgarũrũko yaku nĩĩrandĩkwo nginya ũgĩtigithie.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Kwandĩka nĩgũtigithĩtio. Kĩrĩa kĩnyitĩte nĩgĩgũtigara nginya ũgĩikie.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Maandĩko na maũndũ macio nĩmarutĩtwo.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Gũtirĩ maandĩko %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Ambĩrĩria ũrute "Ĩĩ, ikia maandĩko maya".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>No mũtũmĩri ũrĩa wandĩkire wiki ũngĩtigithia kwandĩka kwa session.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Thuura kwandĩka gũgũtigithio.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Kwandĩka gwa mũthemba ũyũ nĩ gũkũthiĩ na mbere.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Maandĩko matiahotire kũgarũrwo: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Saiti ya mũrimo wa GitHub ĩikaraga rungu rwa /&lt;repository&gt;/; ikĩgwatanio cia gũtwarana nĩ irutaga wĩra kũu na handũ hangĩ o hothe.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Mwako nĩ ũrehaga o karatathi ka %site o ta ũrĩa mũgeni ũtatoonyete akonaga, ũkandĩka ikĩgwatanio rĩngĩ, ũkoya kobi ya faili na ũkandĩka maumĩrĩra foda-inĩ ya kĩrorirwo. Gũtirĩ kĩndũ gĩgũcabithio nginya ũthuthurie mwako na ũhihinyie Cabithia.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Karatathi karĩ na maandĩko ma debug, token ya fomu kana id ya session o na thuutha wa gũthambio gatirĩ hĩndĩ gacabithagio.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Gũcookia nĩ kwa ataalamu: ĩkĩra kĩmenyithia "Nĩ njũĩ kĩrĩa ũndũ ũyũ ũgũcenjia" na wandĩke rĩĩtwa rĩa kĩmenyithia rĩngĩ.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Gũcookia nĩ kwa ataalamu: ĩkĩra kĩmenyithia &quot;Nĩ njũĩ kĩrĩa ũndũ ũyũ ũgũcenjia&quot; na wandĩke rĩĩtwa rĩa kĩmenyithia rĩngĩ.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Hingũra kũrora mbere</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Ĩhingũraga mwako o ta ũrĩa host ĩkaũheana, kuuma foda ya kĩrorirwo. Kĩgwatanio nĩ kĩrutaga wĩra nĩ ũndũ waku ihinda rĩa ithaa rĩmwe.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Mwambĩrĩria &gt; Matumbĩ</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Ĩonanagio thĩinĩ wa mĩrongo, ta "Saiti ya andũ othe kũrĩ GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Ĩonanagio thĩinĩ wa mĩrongo, ta &quot;Saiti ya andũ othe kũrĩ GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Saiti nĩ ĩcookaga faili-inĩ cia gũcabithia kũu; mwako ũtarĩ mũcabithie no nginya ũcabithio kana ũtewo mbere.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Karatathi ka saiti kene nĩ ũndũ wa address iria itarĩ ho.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Kĩrorirwo gĩtingĩaigirwo: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Kĩrorirwo gĩtirĩ gĩgĩtoonya na kĩhingũro gĩkĩ rĩu: thuura "Kĩhingũro kĩa gũtũma gĩthondekeirwo kĩrorirwo gĩkĩ" mĩtaratara-inĩ yakĩo.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Kĩrorirwo gĩtirĩ gĩgĩtoonya na kĩhingũro gĩkĩ rĩu: thuura &quot;Kĩhingũro kĩa gũtũma gĩthondekeirwo kĩrorirwo gĩkĩ&quot; mĩtaratara-inĩ yakĩo.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Nĩ ĩtaga mwako ũyũ: foda nĩ ĩrĩ na gũcabithia kwa mũthia rĩngĩ. Saiti ĩrĩa ĩrĩ muoyo ndĩcenjagia.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Ĩkĩra kĩmenyithia "Nĩ ndathuthuria mĩgarũrũko" mbere.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Ĩkĩra kĩmenyithia &quot;Nĩ ndathuthuria mĩgarũrũko&quot; mbere.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>yes, not published yet</source>
         <translation>ĩĩ, ndĩrĩ ĩcabithio rĩu</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Mwako nĩ ũrehaga o karatathi ka %site o ta ũrĩa mũgeni ũtatoonyete akonaga, ũkandĩka ikĩgwatanio rĩngĩ, ũkoya kobi ya faili na ũkandĩka maumĩrĩra foda-inĩ ya kĩrorirwo. Gũtirĩ kĩndũ gĩgũcabithio nginya ũthuthurie mwako na ũhihinyie Cabithia.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Gũcookia nĩ kwa ataalamu: ĩkĩra kĩmenyithia "Nĩ njũĩ kĩrĩa ũndũ ũyũ ũgũcenjia" na wandĩke rĩĩtwa rĩa kĩmenyithia rĩngĩ.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Ĩhingũraga mwako o ta ũrĩa host ĩkaũheana, kuuma foda ya kĩrorirwo. Kĩgwatanio nĩ kĩrutaga wĩra nĩ ũndũ waku ihinda rĩa ithaa rĩmwe.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Ĩonanagio thĩinĩ wa mĩrongo, ta "Saiti ya andũ othe kũrĩ GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Karatathi ka saiti kene nĩ ũndũ wa address iria itarĩ ho.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Kĩrorirwo gĩtirĩ gĩgĩtoonya na kĩhingũro gĩkĩ rĩu: thuura "Kĩhingũro kĩa gũtũma gĩthondekeirwo kĩrorirwo gĩkĩ" mĩtaratara-inĩ yakĩo.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Ĩkĩra kĩmenyithia "Nĩ ndathuthuria mĩgarũrũko" mbere.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

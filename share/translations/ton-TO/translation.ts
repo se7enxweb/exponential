@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Naʻe ʻikai lava ʻo kamataʻi ʻa e fakalele.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Lekooti ʻo e ngaahi liliu</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Lolotonga ʻoku lele ha lekooti, ko e meʻa ʻoku ke liliu ʻi he puleʻanga pe ʻi he paʻa tafaʻaki ʻo e uepisaití ʻoku tauhi ia ko e ngaahi sitepu ʻo ha hiki: ngaahi meʻa ʻi loto, ngaahi kalasi, ngaahi fatongia mo e ngaahi tuʻutuʻuni, ngaahi konga, ngaahi tokotaha ngāue mo e ngaahi kulupu, ngaahi hingoa kehe URL, ngaahi fokotuʻutuʻu. Taʻofi ia ʻi hoʻo ʻosi, sio ki he meʻa naʻe puke, pea fakatupu mei ai ha hiki.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Naʻe ʻikai lava ke lau ʻa e ngaahi lekooti: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ʻOku teʻeki ai ke ʻi ai ʻa e ngaahi tēpile ʻo e lekootí: fakalele ʻuluaki ʻa e fakaleleiʻi (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Kuo tāmateʻi ʻa e lekootí ʻi he migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Ko ʻeku ngaahi liliu</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ʻOku lekooti pē ʻa e meʻa ʻoku ke liliu, ʻi ha feituʻu pē, kae ʻoua ke ke taʻofi ia.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Lekooti</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>talu mei he %time, ngaahi liliu ʻe %count ki he taimí ni.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Leipolo (fili pē)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Fakahā ʻa e meʻa naʻe puke</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Taʻofi ʻa e lekootí</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Kamata lekooti ʻeku ngaahi liliu</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Matapā sioʻata ki he uepisaiti kotoa</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ʻOku lekooti ʻa e liliu kotoa pē ʻa e tokotaha ngāue kotoa pē mo e konisolo kae ʻoua ke tāpuni. ʻI hono fakaava, ʻe kole atu ke fakapapauʻi ko koe pē ia.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ava</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Tāpuni ʻa e matapā sioʻatá</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Fakaava ʻa e matapā sioʻata ki he uepisaiti kotoa</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ngaahi lekooti</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ʻOku ʻikai ʻaupito lekooti ʻa e ʻakauni ʻo ha tokotaha ngāue (hingoa hū, ʻīmeili, lea fufū) mo e ngaahi feituʻu ʻo e ngaahi ʻakauni tokotaha ngāue.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ngaahi liliu</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Uepisaiti kotoa</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ngaahi liliu ʻa %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Kuo taʻofi</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ʻOku teʻeki ai ha lekooti.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Lekooti %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ngaahi lekooti kotoa</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ko e hiki ʻe tupu mei ai</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ko e ngaahi liliu kuo fakatahaʻi ki ha sitepu ʻe taha ki he meʻa takitaha naʻe liliu: ko e meʻa ʻe fai ʻe ha hiki naʻe fakatupu mei he lekooti ko ʻení.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ʻE lava ke fakatupu ha hiki mei ai ʻo ka maʻu ʻe he fokotuʻu ko ʻení ʻa e ngaahi faʻahinga sitepu YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Tuku ʻi tuʻa fakataumuʻa: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Naʻe ʻikai ha meʻa naʻe lekooti.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ko e meʻa naʻe puke</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Ngaahi liliu ʻe %count, ʻo fakatatau ki he hokohoko naʻe fai ai.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Liliu</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Sitepu</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Fekauʻaki mo</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Toe %count: ʻoku fakahokohoko kotoa ʻe he ./console exp:migration:record:show.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Liʻaki</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ʻOku toʻo ʻa e lekootí mo e meʻa naʻe puke. Ko e meʻa naʻe liliu ʻoku nofo liliu pē.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ʻIo, liʻaki ʻa e lekooti ko ʻení</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ʻOku lekooti…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ʻOku lekooti hoʻo ngaahi liliu ki ha hiki.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ʻOku lekooti ʻa e liliu kotoa pē ʻi he uepisaiti ko ʻení ki ha hiki (matapā sioʻata ki he uepisaiti kotoa).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Kuo kamata ʻa e lekooti ʻo e uepisaiti kotoa: ʻe lekooti ʻa e liliu kotoa pē ʻa e tokotaha ngāue kotoa pē kae ʻoua ke ke taʻofi ia.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Kuo kamata ʻa e lekootí: ʻe lekooti hoʻo ngaahi liliu kae ʻoua ke ke taʻofi ia.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Kuo taʻofi ʻa e lekootí. ʻE nofo ʻa e meʻa naʻe puke kae ʻoua ke ke liʻaki ia.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Kuo toʻo ʻa e lekootí mo hono ngaahi meʻa naʻe hoko.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ʻOku ʻikai ha lekooti %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Fakaʻilongaʻi ʻuluaki ʻa e "ʻIo, liʻaki ʻa e lekooti ko ʻení".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Ko e tokotaha ngāue pē naʻá ne lekooti ʻe lava ke taʻofi ha lekooti ʻo ha fakataha.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Fili ʻa e lekooti ke taʻofi.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ʻOku lolotonga lele ha lekooti ʻo e faʻahinga ko ʻení.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Naʻe ʻikai lava ke liliu ʻa e lekootí: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ʻOku nofo ha uepisaiti poloseki GitHub ʻi lalo ʻi he /&lt;repository&gt;/; ʻoku ngāue ʻa e ngaahi hokotaki fakafekauʻaki ʻi ai pea mo ha feituʻu kehe pē.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>ʻOku toʻo ʻe ha langa ʻa e peesi kotoa ʻo e %site ʻo hangē ko ia ʻoku sio ki ai ha taha ʻaʻahi ʻoku ʻikai hū ki loto, toe tohi ʻa e ngaahi hokotaki, hiki tatau ʻa e ngaahi faile pea tohi ʻa e olá ki he folota ʻo e taumuʻá. ʻOku ʻikai pulusi ha meʻa kae ʻoua kuo ke siviʻi ʻa e langá pea lomiʻi ʻa e Pulusi.</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Ko ha peesi ʻoku kei ʻi ai ha ola debug, tōkeni foomu pe fika seseni hili hono tafi, ʻe ʻikai ʻaupito pulusi ia.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Ko e fakafoki ki he kau mataotao: fakaʻilongaʻi ʻa e "ʻOku ou ʻilo ʻa e meʻa ʻoku liliu ʻe he meʻá ni" pea toe tohi ʻa e hingoa ʻo e fakaʻilongá.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Ko e fakafoki ki he kau mataotao: fakaʻilongaʻi ʻa e &quot;ʻOku ou ʻilo ʻa e meʻa ʻoku liliu ʻe he meʻá ni&quot; pea toe tohi ʻa e hingoa ʻo e fakaʻilongá.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Fakaava ʻa e vakai muʻa</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>ʻOku fakaava ʻa e langá ʻo hangē ko ia ʻe tufaki ʻe he hōsí, mei he folota ʻo e taumuʻá. ʻOku ngāue ʻa e hokotakí kiate koe ʻi ha houa ʻe taha.</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Fokotuʻu &gt; Ngaahi fufū</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Fakahā ʻi he ngaahi lisi, hangē ko e "Uepisaiti fakapuleʻanga ʻi he GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Fakahā ʻi he ngaahi lisi, hangē ko e &quot;Uepisaiti fakapuleʻanga ʻi he GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ʻOku foki ʻa e uepisaití ki he ngaahi faile ʻo e pulusi ko iá; kuo pau ke pulusi pe liʻaki ʻuluaki ha langa ʻoku teʻeki pulusi.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Ko e peesi pē ʻa e uepisaití ki he ngaahi tuʻasila ʻoku ʻikai ʻi ai.</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Naʻe ʻikai lava ʻo tauhi ʻa e taumuʻá: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ʻOku teʻeki hū ʻa e taumuʻá ʻaki ʻa e kī ko ʻeni: fili ʻa e "Ko ha kī fakamafola naʻe faʻu ki he taumuʻa ko ʻeni" ʻi hono ngaahi fokotuʻutuʻu.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ʻOku teʻeki hū ʻa e taumuʻá ʻaki ʻa e kī ko ʻeni: fili ʻa e &quot;Ko ha kī fakamafola naʻe faʻu ki he taumuʻa ko ʻeni&quot; ʻi hono ngaahi fokotuʻutuʻu.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ʻOku liʻaki ʻa e langa ko ʻeni: ʻoku toe maʻu ʻe he folotá ʻa e pulusi fakamuimui. ʻOku ʻikai liliu ʻa e uepisaiti moʻuí.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Fakaʻilongaʻi ʻuluaki ʻa e "Kuó u siviʻi ʻa e ngaahi liliu".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Fakaʻilongaʻi ʻuluaki ʻa e &quot;Kuó u siviʻi ʻa e ngaahi liliu&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>ʻio, teʻeki pulusi</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ʻOku toʻo ʻe ha langa ʻa e peesi kotoa ʻo e %site ʻo hangē ko ia ʻoku sio ki ai ha taha ʻaʻahi ʻoku ʻikai hū ki loto, toe tohi ʻa e ngaahi hokotaki, hiki tatau ʻa e ngaahi faile pea tohi ʻa e olá ki he folota ʻo e taumuʻá. ʻOku ʻikai pulusi ha meʻa kae ʻoua kuo ke siviʻi ʻa e langá pea lomiʻi ʻa e Pulusi.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Ko e fakafoki ki he kau mataotao: fakaʻilongaʻi ʻa e "ʻOku ou ʻilo ʻa e meʻa ʻoku liliu ʻe he meʻá ni" pea toe tohi ʻa e hingoa ʻo e fakaʻilongá.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>ʻOku fakaava ʻa e langá ʻo hangē ko ia ʻe tufaki ʻe he hōsí, mei he folota ʻo e taumuʻá. ʻOku ngāue ʻa e hokotakí kiate koe ʻi ha houa ʻe taha.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Fakahā ʻi he ngaahi lisi, hangē ko e "Uepisaiti fakapuleʻanga ʻi he GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Ko e peesi pē ʻa e uepisaití ki he ngaahi tuʻasila ʻoku ʻikai ʻi ai.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ʻOku teʻeki hū ʻa e taumuʻá ʻaki ʻa e kī ko ʻeni: fili ʻa e "Ko ha kī fakamafola naʻe faʻu ki he taumuʻa ko ʻeni" ʻi hono ngaahi fokotuʻutuʻu.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Fakaʻilongaʻi ʻuluaki ʻa e "Kuó u siviʻi ʻa e ngaahi liliu".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

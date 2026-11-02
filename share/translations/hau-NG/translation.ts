@@ -22174,7 +22174,7 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Ma'ajiyar ɗan lokaci ta tsaye tana ba da shafuka daga wannan sabar. Don wallafa kwafin shafi na tsaye a wani wuri, a GitHub Pages ko kowane masaukin git, yi amfani da wallafawa ta tsaye.</translation>
+        <translation>Ma&apos;ajiyar ɗan lokaci ta tsaye tana ba da shafuka daga wannan sabar. Don wallafa kwafin shafi na tsaye a wani wuri, a GitHub Pages ko kowane masaukin git, yi amfani da wallafawa ta tsaye.</translation>
     </message>
 </context>
 <context>
@@ -80588,6 +80588,222 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>The run could not be started.</source>
         <translation>Ba a iya fara aikin ba.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Naɗar canje-canje</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Yayin da naɗa ke gudana, abin da kuka canza a gudanarwa ko a sandar gefe ta shafin ana adana shi a matsayin matakan ƙaura: abun ciki, aji, ayyuka da manufofi, sassa, masu amfani da ƙungiyoyi, sunayen laƙabi na URL, saituna. Ku dakatar da shi idan kun gama, ku duba abin da ya kama, sannan ku ƙirƙiri ƙaura daga gare shi.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ba a iya karanta naɗaɗɗun ba: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Teburan naɗaɗɗu ba su wanzu ba tukuna: ku fara gudanar da haɓakawa (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>An kashe naɗa a migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Canje-canjena</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Yana naɗar abin da kuka canza kawai, duk inda kuka canza shi, har sai kun dakatar da shi.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Naɗa</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>tun %time, canje-canje %count har yanzu.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Lakabi (na zaɓi)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Nuna abin da ya kama</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Dakatar da naɗa</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Fara naɗar canje-canjena</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Taga ga dukan shafin</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Yana naɗar kowane canji na kowane mai amfani da na na'urar umarni har sai an rufe shi. Lokacin buɗe shi, za a nemi ku tabbatar cewa ku ne.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>A buɗe</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Rufe taga</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Buɗe taga ga dukan shafin</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Naɗaɗɗu</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ba a taɓa naɗar asusun mai amfani (sunan shiga, imel, kalmar sirri) da filayen asusun masu amfani ba.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Canje-canje</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Dukan shafin</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Canje-canjen %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>An dakatar</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Babu naɗa tukuna.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Naɗa %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Dukan naɗaɗɗu</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ƙaurar da zai samar</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Canje-canjen da aka haɗa zuwa mataki ɗaya ga kowane abin da aka canza: abin da ƙaurar da aka ƙirƙira daga wannan naɗa za ta yi.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Ana iya ƙirƙirar ƙaura daga gare shi da zarar wannan shigarwar ta sami nau'ikan matakan YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>An bar shi da gangan: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ba a naɗi komai ba.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Abin da ya kama</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Canje-canje %count, bisa tsarin da aka yi su.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Canji</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Mataki</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Game da</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Ƙarin %count: ./console exp:migration:record:show yana jera dukansu.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Yar da</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Yana cire naɗa da abin da ya kama. Abin da aka canza yana nan a canje.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ee, yar da wannan naɗa</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ana naɗa…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Ana naɗar canje-canjenku don ƙaura.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Ana naɗar kowane canji a wannan shafin don ƙaura (taga ga dukan shafin).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Naɗar dukan shafin ya fara: ana naɗar kowane canji na kowane mai amfani har sai kun dakatar da shi.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Naɗa ya fara: ana naɗar canje-canjenku har sai kun dakatar da shi.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>An dakatar da naɗa. Abin da ya kama zai ci gaba da kasancewa har sai kun yar da shi.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>An cire naɗa da abubuwan da suka faru nasa.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Babu naɗa %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Ku fara yi wa "Ee, yar da wannan naɗa" alama.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Mai amfani da ya naɗa ne kaɗai zai iya dakatar da naɗar zama.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Zaɓi naɗar da za a dakatar.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Naɗa irin wannan yana gudana tuni.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Ba a iya canza naɗa ba: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81368,11 +81584,11 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>3. Signing in to the repository</source>
-        <translation>3. Shiga ma'ajiyar</translation>
+        <translation>3. Shiga ma&apos;ajiyar</translation>
     </message>
     <message>
         <source>4. The repository</source>
-        <translation>4. Ma'ajiyar</translation>
+        <translation>4. Ma&apos;ajiyar</translation>
     </message>
     <message>
         <source>5. Links and base path</source>
@@ -81396,10 +81612,10 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
-        <translation>Shafin aikin GitHub yana ƙarƙashin /&lt;repository&gt;/; hanyoyin haɗi masu dangantaka suna aiki a can da ko'ina.</translation>
+        <translation>Shafin aikin GitHub yana ƙarƙashin /&lt;repository&gt;/; hanyoyin haɗi masu dangantaka suna aiki a can da ko&apos;ina.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Gini yana ɗauko kowane shafi na %site kamar yadda baƙo wanda bai shiga ba yake ganinsa, yana sake rubuta hanyoyin haɗi, yana kwafin fayiloli kuma yana rubuta sakamakon zuwa babban fayil na maƙasudin. Ba a wallafa komai ba sai ka duba ginin ka danna Wallafa.</translation>
     </message>
     <message>
@@ -81412,7 +81628,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>Maɓallin turawa yana bari wannan shigarwa ta tura zuwa ma'ajiya ɗaya ta SSH ba wani wuri ba. Rabinsa na sirri yana zama a Saitin farko &gt; Sirrika; rabin jama'a kawai ake nunawa.</translation>
+        <translation>Maɓallin turawa yana bari wannan shigarwa ta tura zuwa ma&apos;ajiya ɗaya ta SSH ba wani wuri ba. Rabinsa na sirri yana zama a Saitin farko &gt; Sirrika; rabin jama&apos;a kawai ake nunawa.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
@@ -81440,27 +81656,27 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
-        <translation>An ƙirƙiri sabon maɓallin turawa. Ƙara rabinsa na jama'a zuwa ma'ajiyar yanzu.</translation>
+        <translation>An ƙirƙiri sabon maɓallin turawa. Ƙara rabinsa na jama&apos;a zuwa ma&apos;ajiyar yanzu.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
         <translation>Shafin da har yanzu yake ɗauke da fitarwar gyara kurakurai, token na fom ko id na zama bayan tsaftacewa ba a taɓa wallafa shi ba.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Janyewa na ƙwararru ne: duba "Na san abin da wannan ke canzawa" kuma sake rubuta sunan alamar.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Janyewa na ƙwararru ne: duba &quot;Na san abin da wannan ke canzawa&quot; kuma sake rubuta sunan alamar.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Shafi zai iya kai %site, fayil ɗaya %file, tare da kusan 100 GB na zirga-zirga a wata. A tsarin kyauta dole ma'ajiyar ta zama ta jama'a. GitHub Pages ba don shaguna ko wasu cinikayya ba ne.</translation>
+        <translation>Shafi zai iya kai %site, fayil ɗaya %file, tare da kusan 100 GB na zirga-zirga a wata. A tsarin kyauta dole ma&apos;ajiyar ta zama ta jama&apos;a. GitHub Pages ba don shaguna ko wasu cinikayya ba ne.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>Maƙasudi shafi ɗaya ne da ake wallafawa zuwa ma'ajiyar git ɗaya. Ba a gina ko wallafa komai a nan: Ajiye yana rubuta saitunan zuwa settings/override/staticcache.ini.append.php.</translation>
+        <translation>Maƙasudi shafi ɗaya ne da ake wallafawa zuwa ma&apos;ajiyar git ɗaya. Ba a gina ko wallafa komai a nan: Ajiye yana rubuta saitunan zuwa settings/override/staticcache.ini.append.php.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>Maƙasudi shafi ɗaya ne da ake wallafawa zuwa wuri ɗaya, misali shafinka na jama'a a GitHub Pages.</translation>
+        <translation>Maƙasudi shafi ɗaya ne da ake wallafawa zuwa wuri ɗaya, misali shafinka na jama&apos;a a GitHub Pages.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
@@ -81468,11 +81684,11 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>A workflow of the repository publishes it.</source>
-        <translation>Wani tsarin aiki na ma'ajiyar yana wallafa shi.</translation>
+        <translation>Wani tsarin aiki na ma&apos;ajiyar yana wallafa shi.</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
-        <translation>Ƙara wannan maɓallin jama'a zuwa ma'ajiyar tare da izinin rubutu. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, duba Allow write access.</translation>
+        <translation>Ƙara wannan maɓallin jama&apos;a zuwa ma&apos;ajiyar tare da izinin rubutu. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, duba Allow write access.</translation>
     </message>
     <message>
         <source>Added</source>
@@ -81684,15 +81900,15 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
-        <translation>Don adireshin SSH. Ana ƙirƙirar maɓallin bayan ajiyewa; kai ne za ka ƙara rabinsa na jama'a zuwa ma'ajiyar.</translation>
+        <translation>Don adireshin SSH. Ana ƙirƙirar maɓallin bayan ajiyewa; kai ne za ka ƙara rabinsa na jama&apos;a zuwa ma&apos;ajiyar.</translation>
     </message>
     <message>
         <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
-        <translation>Don adireshin https://. GitHub: token mai cikakken iko (fine-grained) tare da Contents na karatu da rubutu a kan ma'ajiyar.</translation>
+        <translation>Don adireshin https://. GitHub: token mai cikakken iko (fine-grained) tare da Contents na karatu da rubutu a kan ma&apos;ajiyar.</translation>
     </message>
     <message>
         <source>For experts. The public site changes as soon as the push is through.</source>
-        <translation>Na ƙwararru. Shafin jama'a yana canzawa da zarar turawar ta kammala.</translation>
+        <translation>Na ƙwararru. Shafin jama&apos;a yana canzawa da zarar turawar ta kammala.</translation>
     </message>
     <message>
         <source>Forms</source>
@@ -81700,7 +81916,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Free hosting from a GitHub repository.</source>
-        <translation>Masauki kyauta daga ma'ajiyar GitHub.</translation>
+        <translation>Masauki kyauta daga ma&apos;ajiyar GitHub.</translation>
     </message>
     <message>
         <source>From the branch</source>
@@ -81740,7 +81956,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>GitLab, Gitea, your own server: any git repository.</source>
-        <translation>GitLab, Gitea, sabarka ta kanka: kowace ma'ajiyar git.</translation>
+        <translation>GitLab, Gitea, sabarka ta kanka: kowace ma&apos;ajiyar git.</translation>
     </message>
     <message>
         <source>Go back to an earlier publish</source>
@@ -81852,7 +82068,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Ƙirƙiri ma'ajiyar a masaukin da farko; mara komai ma ya yi.</translation>
+        <translation>Ƙirƙiri ma&apos;ajiyar a masaukin da farko; mara komai ma ya yi.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81884,7 +82100,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>A'a</translation>
+        <translation>A&apos;a</translation>
     </message>
     <message>
         <source>No commit yet.</source>
@@ -81932,7 +82148,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>On the console</source>
-        <translation>A kan na'ura mai kwakwalwa</translation>
+        <translation>A kan na&apos;ura mai kwakwalwa</translation>
     </message>
     <message>
         <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
@@ -81959,7 +82175,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Buɗe samfoti</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Yana buɗe ginin kamar yadda masaukin zai ba da shi, daga babban fayil na maƙasudin. Hanyar haɗin tana aiki a gare ka na awa ɗaya.</translation>
     </message>
     <message>
@@ -82012,11 +82228,11 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Public address</source>
-        <translation>Adireshin jama'a</translation>
+        <translation>Adireshin jama&apos;a</translation>
     </message>
     <message>
         <source>Public key</source>
-        <translation>Maɓallin jama'a</translation>
+        <translation>Maɓallin jama&apos;a</translation>
     </message>
     <message>
         <source>Publish</source>
@@ -82076,7 +82292,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Repository</source>
-        <translation>Ma'ajiya</translation>
+        <translation>Ma&apos;ajiya</translation>
     </message>
     <message>
         <source>Review</source>
@@ -82135,8 +82351,8 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Saitin farko &gt; Sirrika</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Ana nunawa a cikin jeri, misali "Shafin jama'a a GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Ana nunawa a cikin jeri, misali &quot;Shafin jama&apos;a a GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82300,7 +82516,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>Jerin shafuka don injunan bincike; yana buƙatar adireshin jama'a.</translation>
+        <translation>Jerin shafuka don injunan bincike; yana buƙatar adireshin jama&apos;a.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
@@ -82312,7 +82528,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
-        <translation>Rabin jama'a na maɓallin:</translation>
+        <translation>Rabin jama&apos;a na maɓallin:</translation>
     </message>
     <message>
         <source>The root of the branch</source>
@@ -82320,11 +82536,11 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>Ba a saita ma'ajiyar sirrika ba tukuna (./console exp:upgrade --apply yana ƙirƙirar teburinta), don haka ba za a iya ajiye maɓalli ba.</translation>
+        <translation>Ba a saita ma&apos;ajiyar sirrika ba tukuna (./console exp:upgrade --apply yana ƙirƙirar teburinta), don haka ba za a iya ajiye maɓalli ba.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
-        <translation>Sabar tana shiga da kanta (maɓallin SSH nata ko mai taimakon shaidar shiga), ko ma'ajiyar tana kan wannan sabar.</translation>
+        <translation>Sabar tana shiga da kanta (maɓallin SSH nata ko mai taimakon shaidar shiga), ko ma&apos;ajiyar tana kan wannan sabar.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
@@ -82343,7 +82559,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Shafin yana komawa fayilolin waccan wallafawa; dole a wallafa ko a watsar da ginin da ba a wallafa ba tukuna da farko.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Shafin shafin na kansa don adiresoshin da babu su.</translation>
     </message>
     <message>
@@ -82351,8 +82567,8 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Ba a iya ajiye maƙasudin ba: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Maƙasudin bai fara shiga da wannan maɓalli ba tukuna: zaɓi "Maɓallin turawa da aka ƙirƙira don wannan maƙasudi" a cikin saitunansa.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Maƙasudin bai fara shiga da wannan maɓalli ba tukuna: zaɓi &quot;Maɓallin turawa da aka ƙirƙira don wannan maƙasudi&quot; a cikin saitunansa.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82387,8 +82603,8 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Yana watsar da wannan gini: babban fayil ɗin ya sake ɗauke da wallafawa ta ƙarshe. Shafin kai tsaye ba ya canzawa.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Duba "Na duba canje-canjen" da farko.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Duba &quot;Na duba canje-canjen&quot; da farko.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82476,7 +82692,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>Koyaushe za ka iya gini da wallafawa da hannu a nan da kuma a na'ura mai kwakwalwa.</translation>
+        <translation>Koyaushe za ka iya gini da wallafawa da hannu a nan da kuma a na&apos;ura mai kwakwalwa.</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
@@ -82528,7 +82744,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>no</source>
-        <translation>a'a</translation>
+        <translation>a&apos;a</translation>
     </message>
     <message>
         <source>no remote</source>
@@ -82609,6 +82825,34 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>yes, not published yet</source>
         <translation>ee, ba a wallafa ba tukuna</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Gini yana ɗauko kowane shafi na %site kamar yadda baƙo wanda bai shiga ba yake ganinsa, yana sake rubuta hanyoyin haɗi, yana kwafin fayiloli kuma yana rubuta sakamakon zuwa babban fayil na maƙasudin. Ba a wallafa komai ba sai ka duba ginin ka danna Wallafa.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Janyewa na ƙwararru ne: duba "Na san abin da wannan ke canzawa" kuma sake rubuta sunan alamar.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Yana buɗe ginin kamar yadda masaukin zai ba da shi, daga babban fayil na maƙasudin. Hanyar haɗin tana aiki a gare ka na awa ɗaya.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Ana nunawa a cikin jeri, misali "Shafin jama'a a GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Shafin shafin na kansa don adiresoshin da babu su.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Maƙasudin bai fara shiga da wannan maɓalli ba tukuna: zaɓi "Maɓallin turawa da aka ƙirƙira don wannan maƙasudi" a cikin saitunansa.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Duba "Na duba canje-canjen" da farko.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

@@ -15160,7 +15160,7 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Fulumya kopi etakyuka ey'omukutu ku GitHub Pages oba ku host yonna eya git.</translation>
+        <translation>Fulumya kopi etakyuka ey&apos;omukutu ku GitHub Pages oba ku host yonna eya git.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22176,7 +22176,7 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Kaasi etakyuka eweereza empapula okuva ku seva eno. Okufulumya kopi etakyuka ey'omukutu awalala, ku GitHub Pages oba ku host yonna eya git, kozesa okufulumya okutakyuka.</translation>
+        <translation>Kaasi etakyuka eweereza empapula okuva ku seva eno. Okufulumya kopi etakyuka ey&apos;omukutu awalala, ku GitHub Pages oba ku host yonna eya git, kozesa okufulumya okutakyuka.</translation>
     </message>
 </context>
 <context>
@@ -76236,7 +76236,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Fulumya kopi etakyuka ey'omukutu ku GitHub Pages oba ku host yonna eya git.</translation>
+        <translation>Fulumya kopi etakyuka ey&apos;omukutu ku GitHub Pages oba ku host yonna eya git.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -80590,6 +80590,222 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>The run could not be started.</source>
         <translation>Okuddukanya tekusobodde kutandikibwa.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Okukwata enkyukakyuka</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Ng'okukwata kugenda mu maaso, by'okyusa mu bukulembeze oba ku bbaala ey'ebbali ey'omukutu bikuumibwa ng'emitendera gy'okusenguka: ebirimu, ebibinja, emirimu n'enkola, ebitundu, abakozesa n'ebibinja byabwe, amannya amalala aga URL, entegeka. Kuyimirize ng'omaze, laba kye kwakutte, olyoke okolemu okusenguka.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ebyakwatibwa tebyasobola kusomebwa: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Emmeeza z'ebyakwatibwa tezinnabaawo: sooka okole okulongoosa (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Okukwata kuggaddwa mu migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Enkyukakyuka zange</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Kukwata kyokka ky'okyusa, wonna w'okikyusa, okutuusa lw'okuyimiriza.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Okukwata</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>okuva %time, enkyukakyuka %count okutuusa kati.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Akabonero (si kya buwaze)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Laga kye kwakutte</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Yimiriza okukwata</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Tandika okukwata enkyukakyuka zange</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Eddirisa ly'omukutu gwonna</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Kukwata buli nkyukakyuka ya buli mukozesa ne ya konsolo okutuusa lw'liggalwa. Bw'oliggulawo, osabibwa okukakasa nti ggwe.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Liggule</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Ggalawo eddirisa</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ggulawo eddirisa ly'omukutu gwonna</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ebyakwatibwa</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Akawunti y'omukozesa (erinnya ery'okuyingira, email, ekigambo ekikusike) n'ebifo by'akawunti z'abakozesa tebikwatibwa n'akatono.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Enkyukakyuka</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Omukutu gwonna</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Enkyukakyuka za %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Kuyimiriziddwa</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Tewannabaawo kukwata.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Okukwata %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ebyakwatibwa byonna</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Okusenguka kwe kwandivuddemu</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Enkyukakyuka ezigattiddwa mu mutendera gumu ku buli kintu ekyakyusibwa: okusenguka okukoleddwa mu kukwata kuno kwe kwandikoze.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Okusenguka kuyinza okukolebwa mu kwo ng'enteekateeka eno erina ebika by'emitendera gya YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Kirekeddwa bugenderevu: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Tewali kyakwatibwa.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Kye kwakutte</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Enkyukakyuka %count, mu nsengeka gye zaakolebwamu.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Enkyukakyuka (emu)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Omutendera</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Ekikwatako</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Endala %count: ./console exp:migration:record:show ziraga zonna.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Suula</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Kuggyawo okukwata n'ebyo bye kwakutte. Ekyakyusibwa kisigala nga kikyusiddwa.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Yee, suula okukwata kuno</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Kukwata…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Enkyukakyuka zo zikwatibwa olw'okusenguka.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Buli nkyukakyuka ku mukutu guno ekwatibwa olw'okusenguka (eddirisa ly'omukutu gwonna).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Okukwata kw'omukutu gwonna kutandise: buli nkyukakyuka ya buli mukozesa ekwatibwa okutuusa lw'okuyimiriza.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Okukwata kutandise: enkyukakyuka zo zikwatibwa okutuusa lw'okuyimiriza.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Okukwata kuyimiriziddwa. Bye kwakutte bisigalawo okutuusa lw'okusuula.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Okukwata n'ebibaddewo byakwo biggiddwawo.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Tewali kukwata %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Sooka olonde "Yee, suula okukwata kuno".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Omukozesa eyakwata yekka y'ayinza okuyimiriza okukwata kw'olutuula.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Londa okukwata okw'okuyimiriza.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Okukwata okw'ekika kino kugenda mu maaso dda.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Okukwata tekwasobola kukyusibwa: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81267,7 +81483,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Publish a free static copy of your site on GitHub Pages:</source>
-        <translation>Fulumya kopi etakyuka ey'omukutu gwo ku GitHub Pages ku bwereere:</translation>
+        <translation>Fulumya kopi etakyuka ey&apos;omukutu gwo ku GitHub Pages ku bwereere:</translation>
     </message>
     <message>
         <source>Stale pages</source>
@@ -81295,7 +81511,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>build to check</source>
-        <translation>ekizimbe eky'okukebera</translation>
+        <translation>ekizimbe eky&apos;okukebera</translation>
     </message>
     <message>
         <source>hide this</source>
@@ -81311,7 +81527,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>read the tutorial</source>
-        <translation>soma eky'okuyiga</translation>
+        <translation>soma eky&apos;okuyiga</translation>
     </message>
 </context>
 <context>
@@ -81334,7 +81550,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
-        <translation>%path erina %size, okusinga host ky'ekkiriza fayiro emu.</translation>
+        <translation>%path erina %size, okusinga host ky&apos;ekkiriza fayiro emu.</translation>
     </message>
     <message>
         <source>%percent % of the limit</source>
@@ -81358,7 +81574,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
-        <translation>/etterekero/ ku mukutu gwa pulojekiti ya GitHub; kireke nga kyereere ku domeeni yo oba omukutu gw'omukozesa.</translation>
+        <translation>/etterekero/ ku mukutu gwa pulojekiti ya GitHub; kireke nga kyereere ku domeeni yo oba omukutu gw&apos;omukozesa.</translation>
     </message>
     <message>
         <source>1. The site</source>
@@ -81378,7 +81594,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>5. Links and base path</source>
-        <translation>5. Linki n'ekkubo ery'omusingi</translation>
+        <translation>5. Linki n&apos;ekkubo ery&apos;omusingi</translation>
     </message>
     <message>
         <source>6. Your own domain</source>
@@ -81401,8 +81617,8 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <translation>Omukutu gwa pulojekiti ya GitHub guli wansi wa /&lt;repository&gt;/; linki ezeekuusa zikola eyo ne awalala wonna.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ekizimbe kiggyayo buli lupapula lwa %site nga omugenyi atayingidde bw'alulaba, kiddamu okuwandiika linki, kikoppa fayiro era kiwandiika ekivuddemu mu ffolda y'ekigendererwa. Tewali kifulumizibwa okutuusa lw'okebera ekizimbe n'onyiga Fulumya.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ekizimbe kiggyayo buli lupapula lwa %site nga omugenyi atayingidde bw&apos;alulaba, kiddamu okuwandiika linki, kikoppa fayiro era kiwandiika ekivuddemu mu ffolda y&apos;ekigendererwa. Tewali kifulumizibwa okutuusa lw&apos;okebera ekizimbe n&apos;onyiga Fulumya.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -81410,11 +81626,11 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>A deploy key is kept as the secret %secret.</source>
-        <translation>Ekisumuluzo kya deploy kikuumibwa ng'ekyama %secret.</translation>
+        <translation>Ekisumuluzo kya deploy kikuumibwa ng&apos;ekyama %secret.</translation>
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>Ekisumuluzo kya deploy kikkiriza ekifo kino okusindika mu tterekero limu lyokka nga kiyita mu SSH, so si walala. Ekitundu kyakyo eky'ekyama kisigala mu Okuteekateeka &gt; Ebyama; ekitundu eky'olukale kyokka kye kirabibwa.</translation>
+        <translation>Ekisumuluzo kya deploy kikkiriza ekifo kino okusindika mu tterekero limu lyokka nga kiyita mu SSH, so si walala. Ekitundu kyakyo eky&apos;ekyama kisigala mu Okuteekateeka &gt; Ebyama; ekitundu eky&apos;olukale kyokka kye kirabibwa.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
@@ -81430,11 +81646,11 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Omulimu gw'ekigendererwa kino gukyakolebwa (%detail). Linda guggwe.</translation>
+        <translation>Omulimu gw&apos;ekigendererwa kino gukyakolebwa (%detail). Linda guggwe.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Omulimu gw'ekigendererwa kino gukyakolebwa. Linda guggwe.</translation>
+        <translation>Omulimu gw&apos;ekigendererwa kino gukyakolebwa. Linda guggwe.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
@@ -81442,19 +81658,19 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
-        <translation>Ekisumuluzo kya deploy ekipya kikoleddwa. Kaakano yongera ekitundu kyakyo eky'olukale mu tterekero.</translation>
+        <translation>Ekisumuluzo kya deploy ekipya kikoleddwa. Kaakano yongera ekitundu kyakyo eky&apos;olukale mu tterekero.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
-        <translation>Olupapula olukyalina ebya debug, tokeni ya foomu oba ennamba ya session oluvannyuma lw'okulongoosebwa terufulumizibwa n'akatono.</translation>
+        <translation>Olupapula olukyalina ebya debug, tokeni ya foomu oba ennamba ya session oluvannyuma lw&apos;okulongoosebwa terufulumizibwa n&apos;akatono.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Okuzzaayo kwa bakugu: londa "Mmanyi kino kye kikyusa" era wandiika erinnya lya tagi omulundi omulala.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Okuzzaayo kwa bakugu: londa &quot;Mmanyi kino kye kikyusa&quot; era wandiika erinnya lya tagi omulundi omulala.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Omukutu guyinza okutuuka ku %site, fayiro emu ku %file, ne traffic nga 100 GB buli mwezi. Ku nteekateeka ey'obwereere etterekero lirina okuba ery'olukale. GitHub Pages tekoleddwa ku madduuka oba ku nkolagana endala ez'obusuubuzi.</translation>
+        <translation>Omukutu guyinza okutuuka ku %site, fayiro emu ku %file, ne traffic nga 100 GB buli mwezi. Ku nteekateeka ey&apos;obwereere etterekero lirina okuba ery&apos;olukale. GitHub Pages tekoleddwa ku madduuka oba ku nkolagana endala ez&apos;obusuubuzi.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
@@ -81462,7 +81678,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>Ekigendererwa gwe mukutu gumu ogufulumizibwa mu kifo kimu, okugeza omukutu gwo ogw'olukale ku GitHub Pages.</translation>
+        <translation>Ekigendererwa gwe mukutu gumu ogufulumizibwa mu kifo kimu, okugeza omukutu gwo ogw&apos;olukale ku GitHub Pages.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
@@ -81470,11 +81686,11 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>A workflow of the repository publishes it.</source>
-        <translation>Workflow y'etterekero ye egifulumya.</translation>
+        <translation>Workflow y&apos;etterekero ye egifulumya.</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
-        <translation>Yongera ekisumuluzo kino eky'olukale mu tterekero n'olukusa lw'okuwandiika. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, londa Allow write access.</translation>
+        <translation>Yongera ekisumuluzo kino eky&apos;olukale mu tterekero n&apos;olukusa lw&apos;okuwandiika. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, londa Allow write access.</translation>
     </message>
     <message>
         <source>Added</source>
@@ -81494,7 +81710,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Base path</source>
-        <translation>Ekkubo ery'omusingi</translation>
+        <translation>Ekkubo ery&apos;omusingi</translation>
     </message>
     <message>
         <source>Before</source>
@@ -81502,7 +81718,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Below a base path</source>
-        <translation>Wansi w'ekkubo ery'omusingi</translation>
+        <translation>Wansi w&apos;ekkubo ery&apos;omusingi</translation>
     </message>
     <message>
         <source>Branch</source>
@@ -81534,11 +81750,11 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Build to check</source>
-        <translation>Ekizimbe eky'okukebera</translation>
+        <translation>Ekizimbe eky&apos;okukebera</translation>
     </message>
     <message>
         <source>By</source>
-        <translation>Ow'okukola</translation>
+        <translation>Ow&apos;okukola</translation>
     </message>
     <message>
         <source>By hand, here</source>
@@ -81574,7 +81790,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Choose the publish to go back to.</source>
-        <translation>Londa ekifulumiziddwa eky'okuddako.</translation>
+        <translation>Londa ekifulumiziddwa eky&apos;okuddako.</translation>
     </message>
     <message>
         <source>Comes with a later release.</source>
@@ -81594,15 +81810,15 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
-        <translation>Bw'ogeraageranya ne ffolda eyasooka: %added zongeddwako, %changed zikyusiddwa, %removed ziggyiddwawo, %unchanged tezikyusiddwa.</translation>
+        <translation>Bw&apos;ogeraageranya ne ffolda eyasooka: %added zongeddwako, %changed zikyusiddwa, %removed ziggyiddwawo, %unchanged tezikyusiddwa.</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
-        <translation>Bw'ogeraageranya n'ekyasembyeyo okufulumizibwa.</translation>
+        <translation>Bw&apos;ogeraageranya n&apos;ekyasembyeyo okufulumizibwa.</translation>
     </message>
     <message>
         <source>Credential</source>
-        <translation>Obukakafu bw'okuyingira</translation>
+        <translation>Obukakafu bw&apos;okuyingira</translation>
     </message>
     <message>
         <source>Custom domain</source>
@@ -81634,7 +81850,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Kyereere: endagiriro y'omukutu. Bwe kitaba bwe kityo, endagiriro ey'omunda ey'omukutu gwe gumu.</translation>
+        <translation>Kyereere: endagiriro y&apos;omukutu. Bwe kitaba bwe kityo, endagiriro ey&apos;omunda ey&apos;omukutu gwe gumu.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -81642,11 +81858,11 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Every link starts with the base path.</source>
-        <translation>Buli linki etandika n'ekkubo ery'omusingi.</translation>
+        <translation>Buli linki etandika n&apos;ekkubo ery&apos;omusingi.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>Buli kifulumiziddwa kiba commit erina tagi static/%id/&lt;n&gt;. Okuddayo kukola commit empya ne fayiro z'ekifulumiziddwa eky'edda: ebyafaayo bisigalawo, tewali tagi ekyusibwa era tewali kikakibwa.</translation>
+        <translation>Buli kifulumiziddwa kiba commit erina tagi static/%id/&lt;n&gt;. Okuddayo kukola commit empya ne fayiro z&apos;ekifulumiziddwa eky&apos;edda: ebyafaayo bisigalawo, tewali tagi ekyusibwa era tewali kikakibwa.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -81674,11 +81890,11 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Files that could not be collected</source>
-        <translation>Fayiro ezitasobodde kukung'aanyizibwa</translation>
+        <translation>Fayiro ezitasobodde kukung&apos;aanyizibwa</translation>
     </message>
     <message>
         <source>Fingerprint</source>
-        <translation>Akabonero ak'enjawulo</translation>
+        <translation>Akabonero ak&apos;enjawulo</translation>
     </message>
     <message>
         <source>Folder</source>
@@ -81686,15 +81902,15 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
-        <translation>Ku ndagiriro ya SSH. Ekisumuluzo kikolebwa ng'omaze okutereka; ggwe oyongera ekitundu kyakyo eky'olukale mu tterekero.</translation>
+        <translation>Ku ndagiriro ya SSH. Ekisumuluzo kikolebwa ng&apos;omaze okutereka; ggwe oyongera ekitundu kyakyo eky&apos;olukale mu tterekero.</translation>
     </message>
     <message>
         <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
-        <translation>Ku ndagiriro ya https://. GitHub: tokeni ya fine-grained erina Contents okusoma n'okuwandiika ku tterekero.</translation>
+        <translation>Ku ndagiriro ya https://. GitHub: tokeni ya fine-grained erina Contents okusoma n&apos;okuwandiika ku tterekero.</translation>
     </message>
     <message>
         <source>For experts. The public site changes as soon as the push is through.</source>
-        <translation>Kya bakugu. Omukutu ogw'olukale gukyuka amangu ddala okusindika bwe kuggwa.</translation>
+        <translation>Kya bakugu. Omukutu ogw&apos;olukale gukyuka amangu ddala okusindika bwe kuggwa.</translation>
     </message>
     <message>
         <source>Forms</source>
@@ -81746,7 +81962,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Go back to an earlier publish</source>
-        <translation>Ddayo ku kifulumiziddwa eky'edda</translation>
+        <translation>Ddayo ku kifulumiziddwa eky&apos;edda</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81774,7 +81990,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>How GitHub Pages receives the build</source>
-        <translation>GitHub Pages bw'efuna ekizimbe</translation>
+        <translation>GitHub Pages bw&apos;efuna ekizimbe</translation>
     </message>
     <message>
         <source>I have checked the changes</source>
@@ -81802,7 +82018,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Kept as the secret %secret.</source>
-        <translation>Kikuumibwa ng'ekyama %secret.</translation>
+        <translation>Kikuumibwa ng&apos;ekyama %secret.</translation>
     </message>
     <message>
         <source>Kind</source>
@@ -81854,7 +82070,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Sooka okole etterekero ku host; ery'obwereere teririna buzibu.</translation>
+        <translation>Sooka okole etterekero ku host; ery&apos;obwereere teririna buzibu.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81898,7 +82114,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>Tewali pulogulaamu ya php ey'omu command line yazuuliddwa. Teeka migration.ini [AdminSettings] PhpCliPath ku kkubo lyayo eddamba.</translation>
+        <translation>Tewali pulogulaamu ya php ey&apos;omu command line yazuuliddwa. Teeka migration.ini [AdminSettings] PhpCliPath ku kkubo lyayo eddamba.</translation>
     </message>
     <message>
         <source>No tag yet.</source>
@@ -81930,7 +82146,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>On a schedule</source>
-        <translation>Ku nteekateeka y'ebiseera</translation>
+        <translation>Ku nteekateeka y&apos;ebiseera</translation>
     </message>
     <message>
         <source>On the console</source>
@@ -81938,15 +82154,15 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
-        <translation>Ku seva: ./console exp:static:serve %id kikiweereza mu ngeri y'emu.</translation>
+        <translation>Ku seva: ./console exp:static:serve %id kikiweereza mu ngeri y&apos;emu.</translation>
     </message>
     <message>
         <source>One path per line, * matches any part: /members/*</source>
-        <translation>Ekkubo limu ku buli lunyiriri, * likwatagana n'ekitundu kyonna: /members/*</translation>
+        <translation>Ekkubo limu ku buli lunyiriri, * likwatagana n&apos;ekitundu kyonna: /members/*</translation>
     </message>
     <message>
         <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
-        <translation>Erinnya lyokka lye literekebwa n'ekigendererwa; tokeni oba ekisumuluzo kyennyini kisigala mu Okuteekateeka &gt; Ebyama era tekirabikira mu log.</translation>
+        <translation>Erinnya lyokka lye literekebwa n&apos;ekigendererwa; tokeni oba ekisumuluzo kyennyini kisigala mu Okuteekateeka &gt; Ebyama era tekirabikira mu log.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
@@ -81954,15 +82170,15 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>Ne tokeni yokka. env:NAME esoma environment variable ya seva mu kifo ky'ekyo.</translation>
+        <translation>Ne tokeni yokka. env:NAME esoma environment variable ya seva mu kifo ky&apos;ekyo.</translation>
     </message>
     <message>
         <source>Open the preview</source>
         <translation>Ggulawo okusooka okulaba</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Kiggulawo ekizimbe nga host bw'egenda okukiweereza, okuva mu ffolda y'ekigendererwa. Linki ekukolera essaawa emu.</translation>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Kiggulawo ekizimbe nga host bw&apos;egenda okukiweereza, okuva mu ffolda y&apos;ekigendererwa. Linki ekukolera essaawa emu.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
@@ -81970,7 +82186,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Optional. With a domain the site is served at its root.</source>
-        <translation>Si kya buwaze. Ng'olina domeeni, omukutu guweerezebwa ku kikolo kyayo.</translation>
+        <translation>Si kya buwaze. Ng&apos;olina domeeni, omukutu guweerezebwa ku kikolo kyayo.</translation>
     </message>
     <message>
         <source>Output</source>
@@ -81982,7 +82198,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Pages of the target</source>
-        <translation>Empapula z'ekigendererwa</translation>
+        <translation>Empapula z&apos;ekigendererwa</translation>
     </message>
     <message>
         <source>Pages refused</source>
@@ -82014,11 +82230,11 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Public address</source>
-        <translation>Endagiriro ey'olukale</translation>
+        <translation>Endagiriro ey&apos;olukale</translation>
     </message>
     <message>
         <source>Public key</source>
-        <translation>Ekisumuluzo eky'olukale</translation>
+        <translation>Ekisumuluzo eky&apos;olukale</translation>
     </message>
     <message>
         <source>Publish</source>
@@ -82026,11 +82242,11 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Fulumya kopi etakyuka ey'omukutu ku GitHub Pages oba ku host yonna eya git: kizimbe, kebera enkyukakyuka, fulumya, era ddayo ku kifulumiziddwa eky'edda bw'oba ng'okyetaaga.</translation>
+        <translation>Fulumya kopi etakyuka ey&apos;omukutu ku GitHub Pages oba ku host yonna eya git: kizimbe, kebera enkyukakyuka, fulumya, era ddayo ku kifulumiziddwa eky&apos;edda bw&apos;oba ng&apos;okyetaaga.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
-        <translation>Ekifulumiziddwa eky'okuddako</translation>
+        <translation>Ekifulumiziddwa eky&apos;okuddako</translation>
     </message>
     <message>
         <source>Publishes</source>
@@ -82042,11 +82258,11 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Read the tutorial</source>
-        <translation>Soma eky'okuyiga</translation>
+        <translation>Soma eky&apos;okuyiga</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>Ebiwandiiko by'omulimu</translation>
+        <translation>Ebiwandiiko by&apos;omulimu</translation>
     </message>
     <message>
         <source>Refused</source>
@@ -82074,7 +82290,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Report of the build</source>
-        <translation>Lipoota y'ekizimbe</translation>
+        <translation>Lipoota y&apos;ekizimbe</translation>
     </message>
     <message>
         <source>Repository</source>
@@ -82102,15 +82318,15 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Enteekateeka y'ebiseera</translation>
+        <translation>Enteekateeka y&apos;ebiseera</translation>
     </message>
     <message>
         <source>Search page</source>
-        <translation>Olupapula lw'okunoonya</translation>
+        <translation>Olupapula lw&apos;okunoonya</translation>
     </message>
     <message>
         <source>Section ids, separated by commas.</source>
-        <translation>Ennamba z'ebitundu, ziyawuddwamu koma.</translation>
+        <translation>Ennamba z&apos;ebitundu, ziyawuddwamu koma.</translation>
     </message>
     <message>
         <source>Send them to the live site</source>
@@ -82137,12 +82353,12 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <translation>Okuteekateeka &gt; Ebyama</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Kirabikira ku nkalala, okugeza "Omukutu ogw'olukale ku GitHub Pages".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Kirabikira ku nkalala, okugeza &quot;Omukutu ogw&apos;olukale ku GitHub Pages&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>Okuyingira ne GitHub App kujja kujja n'okugatta GitHub.</translation>
+        <translation>Okuyingira ne GitHub App kujja kujja n&apos;okugatta GitHub.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -82150,7 +82366,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Site to publish</source>
-        <translation>Omukutu ogw'okufulumya</translation>
+        <translation>Omukutu ogw&apos;okufulumya</translation>
     </message>
     <message>
         <source>Size</source>
@@ -82158,11 +82374,11 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Size and limits</source>
-        <translation>Obunene n'ekkomo</translation>
+        <translation>Obunene n&apos;ekkomo</translation>
     </message>
     <message>
         <source>Size of the build</source>
-        <translation>Obunene bw'ekizimbe</translation>
+        <translation>Obunene bw&apos;ekizimbe</translation>
     </message>
     <message>
         <source>Stale pages</source>
@@ -82238,7 +82454,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
-        <translation>Ebigendererwa bisobola okukolebwa n'okukyusibwa, naye tewali kizimbibwa wadde okufulumizibwa okutuusa lwe kinaaggulwa.</translation>
+        <translation>Ebigendererwa bisobola okukolebwa n&apos;okukyusibwa, naye tewali kizimbibwa wadde okufulumizibwa okutuusa lwe kinaaggulwa.</translation>
     </message>
     <message>
         <source>Tells search engines what to read.</source>
@@ -82250,7 +82466,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
-        <translation>Ekizimbe kye kimu n'ekyasembyeyo okufulumizibwa: tewali kya kufulumya.</translation>
+        <translation>Ekizimbe kye kimu n&apos;ekyasembyeyo okufulumizibwa: tewali kya kufulumya.</translation>
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
@@ -82258,7 +82474,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>The defaults suit most sites.</source>
-        <translation>Ebisookerwako bituukana n'emikutu egisinga.</translation>
+        <translation>Ebisookerwako bituukana n&apos;emikutu egisinga.</translation>
     </message>
     <message>
         <source>The folder holds a build that is not published yet; a new build replaces it.</source>
@@ -82266,7 +82482,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>The folder of the jobs cannot be written: %detail</source>
-        <translation>Ffolda y'emirimu tesobola kuwandiikibwamu: %detail</translation>
+        <translation>Ffolda y&apos;emirimu tesobola kuwandiikibwamu: %detail</translation>
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
@@ -82302,11 +82518,11 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>Olukalala lw'empapula olwa search engine; lwetaaga endagiriro ey'olukale.</translation>
+        <translation>Olukalala lw&apos;empapula olwa search engine; lwetaaga endagiriro ey&apos;olukale.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Empapula ziggyibwayo nga omugenyi atayingidde bw'aziraba. Siteaccess ez'okuddukanya n'okulongoosa teziweebwayo n'akatono.</translation>
+        <translation>Empapula ziggyibwayo nga omugenyi atayingidde bw&apos;aziraba. Siteaccess ez&apos;okuddukanya n&apos;okulongoosa teziweebwayo n&apos;akatono.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
@@ -82314,19 +82530,19 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>The public half of the key:</source>
-        <translation>Ekitundu eky'olukale eky'ekisumuluzo:</translation>
+        <translation>Ekitundu eky&apos;olukale eky&apos;ekisumuluzo:</translation>
     </message>
     <message>
         <source>The root of the branch</source>
-        <translation>Ekikolo ky'ettabi</translation>
+        <translation>Ekikolo ky&apos;ettabi</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>Etterekero ly'ebyama terinnateekebwateekebwa (./console exp:upgrade --apply ekola emmeeza yaalyo), n'olwekyo tewali kisumuluzo kisobola kukuumibwa.</translation>
+        <translation>Etterekero ly&apos;ebyama terinnateekebwateekebwa (./console exp:upgrade --apply ekola emmeeza yaalyo), n&apos;olwekyo tewali kisumuluzo kisobola kukuumibwa.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
-        <translation>Seva eyingira yokka (n'ekisumuluzo kyayo ekya SSH oba credential helper), oba etterekero liri ku seva eno.</translation>
+        <translation>Seva eyingira yokka (n&apos;ekisumuluzo kyayo ekya SSH oba credential helper), oba etterekero liri ku seva eno.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
@@ -82338,23 +82554,23 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
-        <translation>Fayiro y'entegeka tesobola kusomebwa: %problem</translation>
+        <translation>Fayiro y&apos;entegeka tesobola kusomebwa: %problem</translation>
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>Omukutu guddayo ku fayiro z'ekifulumiziddwa ekyo; ekizimbe ekitannafulumizibwa kirina okusooka okufulumizibwa oba okusuulibwa.</translation>
+        <translation>Omukutu guddayo ku fayiro z&apos;ekifulumiziddwa ekyo; ekizimbe ekitannafulumizibwa kirina okusooka okufulumizibwa oba okusuulibwa.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Olupapula lw'omukutu lwennyini olw'endagiriro ezitaliiwo.</translation>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Olupapula lw&apos;omukutu lwennyini olw&apos;endagiriro ezitaliiwo.</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
         <translation>Ekigendererwa tekisobodde kuterekebwa: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ekigendererwa tekinnayingira na kisumuluzo kino: londa "Ekisumuluzo kya deploy ekyakolebwa ku kigendererwa kino" mu ntegeka zaakyo.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Ekigendererwa tekinnayingira na kisumuluzo kino: londa &quot;Ekisumuluzo kya deploy ekyakolebwa ku kigendererwa kino&quot; mu ntegeka zaakyo.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82366,11 +82582,11 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
-        <translation>Ekifo kino tekirina siteaccess ey'omu maaso. Siteaccess ez'okuddukanya n'okulongoosa tezifulumizibwa n'akatono.</translation>
+        <translation>Ekifo kino tekirina siteaccess ey&apos;omu maaso. Siteaccess ez&apos;okuddukanya n&apos;okulongoosa tezifulumizibwa n&apos;akatono.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
-        <translation>Olupapula luno lugoberera omulimu nga bwe gukolebwa; gugenda mu maaso mu kyama ng'olupapula luggaddwa.</translation>
+        <translation>Olupapula luno lugoberera omulimu nga bwe gukolebwa; gugenda mu maaso mu kyama ng&apos;olupapula luggaddwa.</translation>
     </message>
     <message>
         <source>This target has no deploy key yet.</source>
@@ -82389,8 +82605,8 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <translation>Kisuula ekizimbe kino: ffolda ddamu erimu ekyasembyeyo okufulumizibwa. Omukutu ogukola tegukyuka.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Sooka olonde "Nkebedde enkyukakyuka".</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Sooka olonde &quot;Nkebedde enkyukakyuka&quot;.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82426,15 +82642,15 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Omulimu kye gwakola n'ebiwandiiko byagwo. Omulimu ogutandikiddwa wano gugenda mu maaso mu kyama ng'olupapula luno luggaddwa.</translation>
+        <translation>Omulimu kye gwakola n&apos;ebiwandiiko byagwo. Omulimu ogutandikiddwa wano gugenda mu maaso mu kyama ng&apos;olupapula luno luggaddwa.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
-        <translation>Omulimu kye gwawandiika ng'ensobi</translation>
+        <translation>Omulimu kye gwawandiika ng&apos;ensobi</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
-        <translation>Empapula bye zoogerako, ne buli kifaananyi ky'ebirimu ebifulumiziddwa</translation>
+        <translation>Empapula bye zoogerako, ne buli kifaananyi ky&apos;ebirimu ebifulumiziddwa</translation>
     </message>
     <message>
         <source>When</source>
@@ -82454,19 +82670,19 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>Linki ez'ebitali mu kopi gye zigenda (okunoonya, okuyingira).</translation>
+        <translation>Linki ez&apos;ebitali mu kopi gye zigenda (okunoonya, okuyingira).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
-        <translation>Kopi etakyuka gy'eweerezebwa okuva.</translation>
+        <translation>Kopi etakyuka gy&apos;eweerezebwa okuva.</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>Omukutu ki ogufulumizibwa, n'ekigendererwa kye kiyitibwa.</translation>
+        <translation>Omukutu ki ogufulumizibwa, n&apos;ekigendererwa kye kiyitibwa.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
-        <translation>Kikola wansi w'ekkubo lyonna. Ekisookerwako.</translation>
+        <translation>Kikola wansi w&apos;ekkubo lyonna. Ekisookerwako.</translation>
     </message>
     <message>
         <source>Written whenever a custom domain is set.</source>
@@ -82478,7 +82694,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>Bulijjo osobola okuzimba n'okufulumya mu ngalo wano ne ku console.</translation>
+        <translation>Bulijjo osobola okuzimba n&apos;okufulumya mu ngalo wano ne ku console.</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
@@ -82494,7 +82710,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>extra</source>
-        <translation>eky'okwongerako</translation>
+        <translation>eky&apos;okwongerako</translation>
     </message>
     <message>
         <source>failed</source>
@@ -82514,7 +82730,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
-        <translation>https://github.com/owner/repo.git (ne tokeni) oba git@github.com:owner/repo.git (n'ekisumuluzo kya deploy); tekirimu kigambo kya kuyingira wadde tokeni.</translation>
+        <translation>https://github.com/owner/repo.git (ne tokeni) oba git@github.com:owner/repo.git (n&apos;ekisumuluzo kya deploy); tekirimu kigambo kya kuyingira wadde tokeni.</translation>
     </message>
     <message>
         <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
@@ -82562,7 +82778,7 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
-        <translation>proc_open kiggaddwa, n'olwekyo omulimu tegusobola kutandikibwa wano. Kozesa ./console exp:static:build ku seva.</translation>
+        <translation>proc_open kiggaddwa, n&apos;olwekyo omulimu tegusobola kutandikibwa wano. Kozesa ./console exp:static:build ku seva.</translation>
     </message>
     <message>
         <source>publish</source>
@@ -82606,11 +82822,39 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: kiwandiikibwa mu fayiro CNAME. Teeka DNS ya domeeni etunuulire host nga bw'enyonnyola; HTTPS eyinza okulwawo okutandika.</translation>
+        <translation>www.example.com: kiwandiikibwa mu fayiro CNAME. Teeka DNS ya domeeni etunuulire host nga bw&apos;enyonnyola; HTTPS eyinza okulwawo okutandika.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>
         <translation>yee, tekinnafulumizibwa</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ekizimbe kiggyayo buli lupapula lwa %site nga omugenyi atayingidde bw'alulaba, kiddamu okuwandiika linki, kikoppa fayiro era kiwandiika ekivuddemu mu ffolda y'ekigendererwa. Tewali kifulumizibwa okutuusa lw'okebera ekizimbe n'onyiga Fulumya.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Okuzzaayo kwa bakugu: londa "Mmanyi kino kye kikyusa" era wandiika erinnya lya tagi omulundi omulala.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Kiggulawo ekizimbe nga host bw'egenda okukiweereza, okuva mu ffolda y'ekigendererwa. Linki ekukolera essaawa emu.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Kirabikira ku nkalala, okugeza "Omukutu ogw'olukale ku GitHub Pages".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Olupapula lw'omukutu lwennyini olw'endagiriro ezitaliiwo.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Ekigendererwa tekinnayingira na kisumuluzo kino: londa "Ekisumuluzo kya deploy ekyakolebwa ku kigendererwa kino" mu ntegeka zaakyo.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Sooka olonde "Nkebedde enkyukakyuka".</translation>
     </message>
     <message>
         <source>A GitHub App</source>

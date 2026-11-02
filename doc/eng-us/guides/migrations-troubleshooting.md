@@ -51,8 +51,14 @@ before packages). Nothing runs while one is there. Remove the cycle, or rename t
 `--only` or `--path` picked a migration whose requirement has not run. Add the requirement to the selection, or run
 without one.
 
-**`migrations of type .yml cannot be run yet`** (also `.sql`, `.ini`)
-In 6.0.15 a migration is written in PHP. Write the change as a PHP migration.
+**`no statements for <engine>; missing: skip lets the step pass`**
+An SQL migration or `sql` step has nothing for the engine of this installation: add the engine's file
+(`<id>.<engine>.sql`, `<id>.mongodb.json`) or key, or `missing: skip` when nothing is to be done there
+([SQL and settings](migrations-sql-and-settings.md)).
+
+**INI: `line N: [Block] does not name its file`**
+A block of an INI migration names the file it changes: `[site.ini/Block]`, or `[siteaccess:<name> site.ini/Block]`
+([SQL and settings](migrations-sql-and-settings.md#settings-ini-migrations-and-the-step-type-settings)).
 
 **PHP: `no class: a PHP migration declares one class that extends expMigrationPhp`, `more than one class extends expMigrationPhp`, `the class ... is declared by ... too`, `PHP syntax: ...`**
 Each PHP file declares exactly one non-abstract class that extends `\expMigrationPhp`, with a name no other file

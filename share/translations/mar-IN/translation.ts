@@ -80588,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>रन सुरू करता आला नाही.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>बदलांचे रेकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>रेकॉर्डिंग चालू असताना तुम्ही प्रशासनात किंवा साइटच्या साइडबारमध्ये जे बदलता ते एका स्थलांतराच्या पायऱ्या म्हणून ठेवले जाते: मजकूर, वर्ग, भूमिका आणि धोरणे, विभाग, वापरकर्ते आणि गट, URL उपनावे, सेटिंग्ज. काम झाल्यावर ते थांबवा, त्याने काय पकडले ते पाहा आणि त्यातून स्थलांतर तयार करा.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>रेकॉर्डिंग वाचता आली नाहीत: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>रेकॉर्डिंगची तक्ते अजून अस्तित्वात नाहीत: आधी अपग्रेड चालवा (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini मध्ये रेकॉर्डिंग बंद आहे ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>माझे बदल</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>तुम्ही थांबवेपर्यंत फक्त तुम्ही जे बदलता तेच, कुठेही बदला, रेकॉर्ड करते.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>रेकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time पासून, आतापर्यंत %count बदल.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>लेबल (ऐच्छिक)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>त्याने काय पकडले ते दाखवा</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>रेकॉर्डिंग थांबवा</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>माझ्या बदलांचे रेकॉर्डिंग सुरू करा</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>संपूर्ण साइटची खिडकी</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>बंद होईपर्यंत प्रत्येक वापरकर्त्याचा आणि कन्सोलचा प्रत्येक बदल रेकॉर्ड करते. उघडताना तुम्हीच आहात याची पडताळणी मागितली जाते.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>उघडी</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>खिडकी बंद करा</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>संपूर्ण साइटची खिडकी उघडा</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>रेकॉर्डिंग यादी</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>वापरकर्त्याचे खाते (लॉगिन, ई-मेल, पासवर्ड) आणि वापरकर्ता खात्यांची फील्ड कधीही रेकॉर्ड होत नाहीत.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>बदल</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>संपूर्ण साइट</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name यांचे बदल</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>थांबवलेले</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>अजून कोणतेही रेकॉर्डिंग नाही.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>रेकॉर्डिंग %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>सर्व रेकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>यातून होणारे स्थलांतर</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>प्रत्येक बदललेल्या गोष्टीसाठी एका पायरीत एकत्र केलेले बदल: या रेकॉर्डिंगमधून तयार केलेले स्थलांतर काय करेल.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>या स्थापनेत YAML पायरी प्रकार %types आले की यातून स्थलांतर तयार करता येईल.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>हेतुपुरस्सर वगळले: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>काहीही रेकॉर्ड झाले नाही.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>त्याने काय पकडले</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count बदल, ज्या क्रमाने केले त्या क्रमाने.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>बदल (एक)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>पायरी</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>संबंधित</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>आणखी %count: ./console exp:migration:record:show सर्वांची यादी देते.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>टाकून द्या</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>रेकॉर्डिंग आणि त्याने पकडलेले काढून टाकते. जे बदलले ते बदललेलेच राहते.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>होय, हे रेकॉर्डिंग टाकून द्या</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>रेकॉर्डिंग चालू आहे…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>तुमचे बदल एका स्थलांतरासाठी रेकॉर्ड होत आहेत.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>या साइटवरील प्रत्येक बदल एका स्थलांतरासाठी रेकॉर्ड होत आहे (संपूर्ण साइटची खिडकी).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>संपूर्ण साइटचे रेकॉर्डिंग सुरू झाले: तुम्ही थांबवेपर्यंत प्रत्येक वापरकर्त्याचा प्रत्येक बदल रेकॉर्ड होईल.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>रेकॉर्डिंग सुरू झाले: तुम्ही थांबवेपर्यंत तुमचे बदल रेकॉर्ड होतील.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>रेकॉर्डिंग थांबले. त्याने पकडलेले तुम्ही टाकून देईपर्यंत राहील.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>रेकॉर्डिंग आणि त्याच्या घटना काढून टाकल्या.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>रेकॉर्डिंग %id अस्तित्वात नाही.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>आधी "होय, हे रेकॉर्डिंग टाकून द्या" वर खूण करा.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>सत्र रेकॉर्डिंग फक्त रेकॉर्ड करणारा वापरकर्ताच थांबवू शकतो.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>थांबवायचे रेकॉर्डिंग निवडा.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>या प्रकारचे रेकॉर्डिंग आधीच चालू आहे.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>रेकॉर्डिंग बदलता आले नाही: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81399,7 +81615,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub प्रोजेक्ट साइट /&lt;repository&gt;/ खाली असते; सापेक्ष लिंक तेथे आणि इतर कोठेही चालतात.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>बिल्ड %site चे प्रत्येक पृष्ठ साइन इन न केलेल्या अभ्यागताला दिसते तसे आणतो, लिंक पुन्हा लिहितो, फाइल्स कॉपी करतो आणि निकाल लक्ष्याच्या फोल्डरमध्ये लिहितो. आपण बिल्ड तपासून प्रकाशित करा दाबेपर्यंत काहीही प्रकाशित होत नाही.</translation>
     </message>
     <message>
@@ -81447,8 +81663,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>साफसफाईनंतरही डीबग आउटपुट, फॉर्म टोकन किंवा सेशन आयडी असलेले पृष्ठ कधीच प्रकाशित होत नाही.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>रोलबॅक तज्ज्ञांसाठी आहे: "हे काय बदलते ते मला माहीत आहे" वर खूण करा आणि टॅगचे नाव पुन्हा टाइप करा.</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>रोलबॅक तज्ज्ञांसाठी आहे: &quot;हे काय बदलते ते मला माहीत आहे&quot; वर खूण करा आणि टॅगचे नाव पुन्हा टाइप करा.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81959,7 +82175,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>पूर्वावलोकन उघडा</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>होस्ट जसा देईल तसा बिल्ड लक्ष्याच्या फोल्डरमधून उघडतो. ही लिंक आपल्यासाठी एक तास चालते.</translation>
     </message>
     <message>
@@ -82135,8 +82351,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>सेटअप &gt; गुपिते</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>सूचींमध्ये दाखवले जाते, उदाहरणार्थ "GitHub Pages वरील सार्वजनिक साइट".</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>सूचींमध्ये दाखवले जाते, उदाहरणार्थ &quot;GitHub Pages वरील सार्वजनिक साइट&quot;.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82343,7 +82559,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>साइट त्या प्रकाशनाच्या फाइल्सकडे परत जाते; अजून प्रकाशित न झालेला बिल्ड आधी प्रकाशित करणे किंवा टाकून देणे आवश्यक आहे.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>अस्तित्वात नसलेल्या पत्त्यांसाठी साइटचे स्वतःचे पृष्ठ.</translation>
     </message>
     <message>
@@ -82351,8 +82567,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>लक्ष्य जतन करता आले नाही: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>लक्ष्य अजून या कीने साइन इन करत नाही: त्याच्या सेटिंग्जमध्ये "या लक्ष्यासाठी तयार केलेली डिप्लॉय की" निवडा.</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>लक्ष्य अजून या कीने साइन इन करत नाही: त्याच्या सेटिंग्जमध्ये &quot;या लक्ष्यासाठी तयार केलेली डिप्लॉय की&quot; निवडा.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82387,8 +82603,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>हा बिल्ड टाकून देते: फोल्डरमध्ये पुन्हा शेवटचे प्रकाशन येते. लाइव्ह साइट बदलत नाही.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>आधी "मी बदल तपासले आहेत" वर खूण करा.</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>आधी &quot;मी बदल तपासले आहेत&quot; वर खूण करा.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82609,6 +82825,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>होय, अजून प्रकाशित नाही</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>बिल्ड %site चे प्रत्येक पृष्ठ साइन इन न केलेल्या अभ्यागताला दिसते तसे आणतो, लिंक पुन्हा लिहितो, फाइल्स कॉपी करतो आणि निकाल लक्ष्याच्या फोल्डरमध्ये लिहितो. आपण बिल्ड तपासून प्रकाशित करा दाबेपर्यंत काहीही प्रकाशित होत नाही.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>रोलबॅक तज्ज्ञांसाठी आहे: "हे काय बदलते ते मला माहीत आहे" वर खूण करा आणि टॅगचे नाव पुन्हा टाइप करा.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>होस्ट जसा देईल तसा बिल्ड लक्ष्याच्या फोल्डरमधून उघडतो. ही लिंक आपल्यासाठी एक तास चालते.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>सूचींमध्ये दाखवले जाते, उदाहरणार्थ "GitHub Pages वरील सार्वजनिक साइट".</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>अस्तित्वात नसलेल्या पत्त्यांसाठी साइटचे स्वतःचे पृष्ठ.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>लक्ष्य अजून या कीने साइन इन करत नाही: त्याच्या सेटिंग्जमध्ये "या लक्ष्यासाठी तयार केलेली डिप्लॉय की" निवडा.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>आधी "मी बदल तपासले आहेत" वर खूण करा.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

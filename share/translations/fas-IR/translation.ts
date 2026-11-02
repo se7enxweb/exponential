@@ -80588,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>اجرا آغاز نشد.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ضبط تغییرات</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>تا وقتی ضبط در جریان است، آنچه در مدیریت یا نوار کناری سایت تغییر می‌دهید به‌صورت گام‌های یک مهاجرت نگه داشته می‌شود: محتوا، کلاس‌ها، نقش‌ها و سیاست‌ها، بخش‌ها، کاربران و گروه‌ها، نام‌های مستعار URL، تنظیمات. وقتی کارتان تمام شد آن را متوقف کنید، ببینید چه چیزی ثبت کرده و از آن یک مهاجرت بسازید.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ضبط‌ها خوانده نشد: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>جدول‌های ضبط هنوز وجود ندارند: ابتدا ارتقا را اجرا کنید (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>ضبط در migration.ini خاموش است ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>تغییرات من</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>فقط آنچه شما تغییر می‌دهید، هر جا که تغییر دهید، ضبط می‌کند تا وقتی متوقفش کنید.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ضبط</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>از %time، تاکنون %count تغییر.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>برچسب (اختیاری)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>نمایش آنچه ثبت کرده</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>توقف ضبط</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>شروع ضبط تغییرات من</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>پنجره برای کل سایت</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>هر تغییر هر کاربر و کنسول را تا بسته شدن ضبط می‌کند. هنگام باز کردن از شما خواسته می‌شود هویت خود را تأیید کنید.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>باز</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>بستن پنجره</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>باز کردن پنجره برای کل سایت</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ضبط‌ها</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>حساب یک کاربر (نام ورود، ایمیل، گذرواژه) و فیلدهای حساب‌های کاربری هرگز ضبط نمی‌شوند.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>تغییرات</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>کل سایت</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>تغییرات %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>متوقف‌شده</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>هنوز ضبطی نیست.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ضبط %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>همه ضبط‌ها</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>مهاجرتی که از آن ساخته می‌شود</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>تغییرات به یک گام برای هر چیز تغییرکرده تجمیع شده‌اند: آنچه مهاجرتِ ساخته‌شده از این ضبط انجام می‌دهد.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>وقتی این نصب انواع گام YAML %types را داشته باشد، می‌توان از آن مهاجرت ساخت.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>عمداً کنار گذاشته شد: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>چیزی ضبط نشد.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>آنچه ثبت کرده</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count تغییر، به ترتیبی که انجام شدند.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تغییر</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>گام</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>مربوط به</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count مورد دیگر: ./console exp:migration:record:show همه را فهرست می‌کند.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>دور انداختن</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ضبط و آنچه ثبت کرده را حذف می‌کند. آنچه تغییر کرده تغییریافته می‌ماند.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>بله، این ضبط را دور بینداز</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>در حال ضبط…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>تغییرات شما برای یک مهاجرت ضبط می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>هر تغییر در این سایت برای یک مهاجرت ضبط می‌شود (پنجره برای کل سایت).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ضبط کل سایت آغاز شد: هر تغییر هر کاربر تا وقتی متوقفش کنید ضبط می‌شود.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ضبط آغاز شد: تغییرات شما تا وقتی متوقفش کنید ضبط می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ضبط متوقف شد. آنچه ثبت کرده تا وقتی دورش بیندازید باقی می‌ماند.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ضبط و رویدادهایش حذف شدند.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ضبط %id وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ابتدا «بله، این ضبط را دور بینداز» را علامت بزنید.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>فقط کاربری که ضبط کرده می‌تواند ضبط نشست را متوقف کند.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ضبطی را که باید متوقف شود انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ضبطی از این نوع هم‌اکنون در جریان است.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ضبط تغییر داده نشد: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81399,7 +81615,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>سایت پروژهٔ GitHub زیر /&lt;repository&gt;/ قرار دارد؛ پیوندهای نسبی آنجا و هر جای دیگر کار می‌کنند.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>یک ساخت هر صفحهٔ %site را همان‌گونه که بازدیدکنندهٔ واردنشده می‌بیند دریافت می‌کند، پیوندها را بازنویسی می‌کند، فایل‌ها را کپی می‌کند و نتیجه را در پوشهٔ مقصد می‌نویسد. تا وقتی ساخت را بررسی نکنید و «انتشار» را نزنید، چیزی منتشر نمی‌شود.</translation>
     </message>
     <message>
@@ -81447,7 +81663,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>صفحه‌ای که پس از پاک‌سازی هنوز خروجی اشکال‌زدایی، توکن فرم یا شناسهٔ نشست دارد، هرگز منتشر نمی‌شود.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>بازگردانی برای کاربران متخصص است: گزینهٔ «می‌دانم این چه چیزی را تغییر می‌دهد» را علامت بزنید و نام برچسب را دوباره وارد کنید.</translation>
     </message>
     <message>
@@ -81959,7 +82175,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>باز کردن پیش‌نمایش</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>ساخت را همان‌گونه که میزبان ارائه خواهد کرد، از پوشهٔ مقصد باز می‌کند. پیوند برای شما یک ساعت کار می‌کند.</translation>
     </message>
     <message>
@@ -82135,7 +82351,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>راه‌اندازی &gt; مقادیر محرمانه</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>در فهرست‌ها نمایش داده می‌شود، برای نمونه «سایت عمومی در GitHub Pages».</translation>
     </message>
     <message>
@@ -82343,7 +82559,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>سایت به فایل‌های آن انتشار برمی‌گردد؛ ساختی که هنوز منتشر نشده باید اول منتشر یا کنار گذاشته شود.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>صفحهٔ خود سایت برای نشانی‌هایی که وجود ندارند.</translation>
     </message>
     <message>
@@ -82351,7 +82567,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>مقصد ذخیره نشد: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>مقصد هنوز با این کلید وارد نمی‌شود: در تنظیمات آن «کلید استقراری که برای این مقصد ساخته شده» را انتخاب کنید.</translation>
     </message>
     <message>
@@ -82387,7 +82603,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>این ساخت را کنار می‌گذارد: پوشه دوباره آخرین انتشار را در خود دارد. سایت زنده تغییر نمی‌کند.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>اول گزینهٔ «تغییرات را بررسی کرده‌ام» را علامت بزنید.</translation>
     </message>
     <message>
@@ -82609,6 +82825,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>بله، هنوز منتشر نشده</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>یک ساخت هر صفحهٔ %site را همان‌گونه که بازدیدکنندهٔ واردنشده می‌بیند دریافت می‌کند، پیوندها را بازنویسی می‌کند، فایل‌ها را کپی می‌کند و نتیجه را در پوشهٔ مقصد می‌نویسد. تا وقتی ساخت را بررسی نکنید و «انتشار» را نزنید، چیزی منتشر نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>بازگردانی برای کاربران متخصص است: گزینهٔ «می‌دانم این چه چیزی را تغییر می‌دهد» را علامت بزنید و نام برچسب را دوباره وارد کنید.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>ساخت را همان‌گونه که میزبان ارائه خواهد کرد، از پوشهٔ مقصد باز می‌کند. پیوند برای شما یک ساعت کار می‌کند.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>در فهرست‌ها نمایش داده می‌شود، برای نمونه «سایت عمومی در GitHub Pages».</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>صفحهٔ خود سایت برای نشانی‌هایی که وجود ندارند.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>مقصد هنوز با این کلید وارد نمی‌شود: در تنظیمات آن «کلید استقراری که برای این مقصد ساخته شده» را انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>اول گزینهٔ «تغییرات را بررسی کرده‌ام» را علامت بزنید.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

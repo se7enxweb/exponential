@@ -80620,6 +80620,222 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>The run could not be started.</source>
         <translation>Nepavyko pradėti vykdymo.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Pakeitimų įrašymas</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Kol vyksta įrašymas, tai, ką keičiate administravime ar svetainės šoninėje juostoje, išsaugoma kaip migracijos žingsniai: turinys, klasės, vaidmenys ir politikos, sekcijos, naudotojai ir grupės, URL slapyvardžiai, nustatymai. Baigę jį sustabdykite, pažiūrėkite, ką jis užfiksavo, ir sukurkite iš jo migraciją.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Nepavyko perskaityti įrašų: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Įrašų lentelių dar nėra: pirmiausia paleiskite atnaujinimą (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Įrašymas išjungtas faile migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mano pakeitimai</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Įrašo tik tai, ką keičiate jūs, kad ir kur keistumėte, kol jo nesustabdysite.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Įrašymas</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>nuo %time, iki šiol pakeitimų: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Žymė (nebūtina)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Rodyti, ką užfiksavo</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Sustabdyti įrašymą</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Pradėti įrašyti mano pakeitimus</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Visos svetainės langas</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Įrašo kiekvieną kiekvieno naudotojo ir konsolės pakeitimą, kol langas uždaromas. Atidarant reikės patvirtinti, kad tai jūs.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Atidarytas</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Uždaryti langą</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Atidaryti visos svetainės langą</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Įrašai</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Naudotojo paskyra (prisijungimo vardas, el. paštas, slaptažodis) ir naudotojų paskyrų laukai niekada neįrašomi.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Pakeitimai</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Visa svetainė</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Naudotojo %name pakeitimai</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Sustabdytas</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Įrašų dar nėra.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Įrašas %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Visi įrašai</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migracija, kuri iš jo susidarytų</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Pakeitimai, sujungti į vieną žingsnį kiekvienam pakeistam dalykui: ką padarytų iš šio įrašo sukurta migracija.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Iš jo bus galima sukurti migraciją, kai ši diegtis turės YAML žingsnių tipus %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Praleista tyčia: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nieko neįrašyta.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ką užfiksavo</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Pakeitimų: %count, tokia tvarka, kokia jie buvo atlikti.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Pakeitimas</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Žingsnis</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Susiję su</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Dar %count: ./console exp:migration:record:show išvardija visus.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Atmesti</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Pašalina įrašą ir tai, ką jis užfiksavo. Tai, kas pakeista, lieka pakeista.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Taip, atmesti šį įrašą</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Įrašoma…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Jūsų pakeitimai įrašomi migracijai.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Kiekvienas pakeitimas šioje svetainėje įrašomas migracijai (visos svetainės langas).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Visos svetainės įrašymas pradėtas: kiekvienas kiekvieno naudotojo pakeitimas įrašomas, kol jo nesustabdysite.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Įrašymas pradėtas: jūsų pakeitimai įrašomi, kol jo nesustabdysite.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Įrašymas sustabdytas. Tai, ką jis užfiksavo, lieka, kol jo neatmesite.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Įrašas ir jo įvykiai pašalinti.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Įrašo %id nėra.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Pirmiausia pažymėkite „Taip, atmesti šį įrašą“.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Sesijos įrašymą gali sustabdyti tik jį vykdęs naudotojas.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Pasirinkite įrašymą, kurį norite sustabdyti.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Tokios rūšies įrašymas jau vyksta.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Nepavyko pakeisti įrašo: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81431,7 +81647,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>GitHub projekto svetainė yra po /&lt;repository&gt;/; santykinės nuorodos veikia ten ir bet kur kitur.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Rinkinys gauna kiekvieną %site puslapį taip, kaip jį mato neprisijungęs lankytojas, perrašo nuorodas, nukopijuoja failus ir įrašo rezultatą į paskirties aplanką. Niekas nepublikuojama, kol nepatikrinate rinkinio ir nespustelite „Publikuoti“.</translation>
     </message>
     <message>
@@ -81479,7 +81695,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>Puslapis, kuriame po valymo vis dar yra derinimo išvesties, formos žetono ar seanso ID, niekada nepublikuojamas.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
         <translation>Atšaukimas skirtas ekspertams: pažymėkite „Žinau, ką tai pakeičia“ ir dar kartą įveskite žymos pavadinimą.</translation>
     </message>
     <message>
@@ -81991,7 +82207,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>Atverti peržiūrą</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>Atveria rinkinį taip, kaip jį pateiks serveris, iš paskirties aplanko. Nuoroda jums veikia vieną valandą.</translation>
     </message>
     <message>
@@ -82167,7 +82383,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>Sąranka &gt; Slaptieji duomenys</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
         <translation>Rodoma sąrašuose, pavyzdžiui, „Vieša svetainė GitHub Pages“.</translation>
     </message>
     <message>
@@ -82375,7 +82591,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>Svetainė grįžta prie to publikavimo failų; dar nepublikuotas rinkinys pirmiausia turi būti publikuotas arba atmestas.</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>Svetainės puslapis neegzistuojantiems adresams.</translation>
     </message>
     <message>
@@ -82383,7 +82599,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>Paskirties nepavyko įrašyti: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
         <translation>Paskirtis dar neprisijungia šiuo raktu: jos nustatymuose pasirinkite „Šiai paskirčiai sukurtas diegimo raktas“.</translation>
     </message>
     <message>
@@ -82419,7 +82635,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>Atmeta šį rinkinį: aplanke vėl yra paskutinis publikavimas. Veikianti svetainė nesikeičia.</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
         <translation>Pirmiausia pažymėkite „Patikrinau pakeitimus“.</translation>
     </message>
     <message>
@@ -82641,6 +82857,34 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>yes, not published yet</source>
         <translation>taip, dar nepublikuota</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Rinkinys gauna kiekvieną %site puslapį taip, kaip jį mato neprisijungęs lankytojas, perrašo nuorodas, nukopijuoja failus ir įrašo rezultatą į paskirties aplanką. Niekas nepublikuojama, kol nepatikrinate rinkinio ir nespustelite „Publikuoti“.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Atšaukimas skirtas ekspertams: pažymėkite „Žinau, ką tai pakeičia“ ir dar kartą įveskite žymos pavadinimą.</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Atveria rinkinį taip, kaip jį pateiks serveris, iš paskirties aplanko. Nuoroda jums veikia vieną valandą.</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Rodoma sąrašuose, pavyzdžiui, „Vieša svetainė GitHub Pages“.</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>Svetainės puslapis neegzistuojantiems adresams.</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Paskirtis dar neprisijungia šiuo raktu: jos nustatymuose pasirinkite „Šiai paskirčiai sukurtas diegimo raktas“.</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Pirmiausia pažymėkite „Patikrinau pakeitimus“.</translation>
     </message>
     <message>
         <source>A GitHub App</source>

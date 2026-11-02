@@ -127,6 +127,9 @@ class expVelocityDeploy
         // extension's templates are not found.
         foreach ( array( 'template', 'template-override', 'translation', 'design_base' ) as $id )
             $steps[] = $this->planned( $this->cacheStep( $id ), $plan[$id] );
+        // --caches: the other caches a migration run touched (image, user_info_cache ...), by id or tag of ezcache
+        foreach ( $this->extraCacheSteps() as $step )
+            $steps[] = $step;
 
         $steps[] = $this->archiveStep();
         $steps[] = $this->fpmStep();
@@ -290,7 +293,7 @@ class expVelocityDeploy
                 return array( true, 'cleared: ' . $reason );
             return array( false, 'kept: no ' . $keptWhat . ' changed since the last deploy (' . $since . ')' );
         };
-        return array(
+        $plan = array(
             'ini'               => $decide( array( 'settings' ), 'settings', array( 'kernel' => '--kernel (a class added or renamed)' ) ),
             'template'          => $decide( array( 'templates', 'template code' ), 'template or template engine code' ),
             'template-override' => $decide( array( 'templates', 'settings' ), 'template or settings' ),
@@ -299,6 +302,36 @@ class expVelocityDeploy
             'rendered'          => $decide( array( 'templates', 'settings', 'translations' ), 'template, design file, settings or translation',
                                             array( 'clear-content' => '--clear-content' ) ),
         );
+        // --caches: the caches a migration run touched (expMigrationAfterRun), cleared whatever files changed
+        $asked = self::cacheList( isset( $options['caches'] ) ? $options['caches'] : array() );
+        $groups = array( 'ini' => array( 'ini', 'global_ini', 'tag:ini' ), 'template' => array( 'template' ), 'template-override' => array( 'template-override' ),
+                         'translation' => array( 'translation' ), 'design_base' => array( 'design_base' ),
+                         'rendered' => array( 'content', 'exphttpcache', 'template-block' ) );
+        foreach ( $groups as $key => $names )
+        {
+            $hit = array_values( array_intersect( $names, $asked ) );
+            if ( $hit && !$plan[$key][0] )
+                $plan[$key] = array( true, 'cleared: --caches (' . implode( ', ', $hit ) . ')' );
+        }
+        return $plan;
+    }
+
+    /**
+     * The names of --caches: a comma-separated text or a list, trimmed, each once. Pure.
+     *
+     * @param string|string[] $caches
+     * @return string[]
+     */
+    public static function cacheList( $caches )
+    {
+        $list = array();
+        foreach ( is_array( $caches ) ? $caches : explode( ',', (string)$caches ) as $name )
+        {
+            $name = trim( (string)$name );
+            if ( $name !== '' && !in_array( $name, $list, true ) )
+                $list[] = $name;
+        }
+        return $list;
     }
 
     /**
@@ -600,6 +633,35 @@ class expVelocityDeploy
                 return array( true, $tail );
             },
         );
+    }
+
+    /** The caches the deploy has steps of its own for (cachePlan() decides them; --caches only adds a reason). */
+    const PLANNED_CACHES = array( 'ini', 'global_ini', 'tag:ini', 'template', 'template-override', 'translation', 'design_base', 'content', 'exphttpcache',
+                                  'template-block', 'ezjscore-packer' );
+
+    /**
+     * A step for each cache of --caches the deploy has no step for: --clear-id when it is an id of ezcache,
+     * --clear-tag when it is a tag (or written tag:<name>); a name that is neither fails the step.
+     *
+     * @return array
+     */
+    protected function extraCacheSteps()
+    {
+        $steps = array();
+        $names = array_diff( self::cacheList( isset( $this->options['caches'] ) ? $this->options['caches'] : array() ), self::PLANNED_CACHES );
+        if ( !$names )
+            return $steps;
+        $cacheList = eZCache::fetchList();
+        $ids = eZCache::fetchIDList( $cacheList );
+        foreach ( $names as $name )
+        {
+            $tag = strpos( $name, 'tag:' ) === 0 ? substr( $name, 4 ) : null;
+            $arg = $tag !== null ? '--clear-tag=' . $tag : ( in_array( $name, $ids, true ) ? '--clear-id=' : '--clear-tag=' ) . $name;
+            $step = $this->commandStep( 'cache-' . str_replace( ':', '-', $name ), $name . ' cache', array( 'bin/php/ezcache.php', $arg, '--allow-root-user' ) );
+            $step['dry'] = function () { return 'cleared: --caches'; };
+            $steps[] = $step;
+        }
+        return $steps;
     }
 
     /**

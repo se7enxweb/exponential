@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>እቲ ምክያድ ክጅመር ኣይከኣለን።</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ለውጥታት ምቕዳሕ</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ቕዳሕ ኣብ ዝካየደሉ እዋን፡ ኣብ ምሕደራ ወይ ኣብ ናይ ጎኒ ባር ናይቲ ወብሳይት ዝቕይሮ ከም ስጉምትታት ፍልሰት ይዕቀብ፦ ትሕዝቶ፡ ክፍልታት፡ ተራታትን ፖሊሲታትን፡ ክፍልታት ወብሳይት፡ ተጠቀምትን ጉጅለታትን፡ ናይ URL ካልእ ኣስማት፡ ቅጥዕታት። ምስ ወዳእካ ኣቋርጾ፡ እንታይ ከም ዝሓዘ ርአ፡ ካብኡ ድማ ፍልሰት ፍጠር።</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ቅዳሓት ክንበቡ ኣይከኣሉን፦ %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ሰንጠረዣት ቅዳሓት ገና የለዉን፦ ቅድም ምምሕያሽ ኣካይድ (exp:upgrade --apply)።</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>ምቕዳሕ ኣብ migration.ini ጠፊኡ ኣሎ ([RecordingSettings] Recording=disabled)።</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>ናተይ ለውጥታት</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ክሳብ ዘቋርጾ፡ ንስኻ ዝቕይሮ ጥራይ፡ ኣበይ ትቕይሮ ብዘየገድስ፡ ይቐድሕ።</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ቕዳሕ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ካብ %time ጀሚሩ፡ ክሳብ ሕጂ %count ለውጥታት።</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>መለለዪ (ኣማራጺ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ዝሓዞ ኣርኢ</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ምቕዳሕ ኣቋርጽ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ለውጥታተይ ምቕዳሕ ጀምር</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>መስኮት ንምሉእ ወብሳይት</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ክሳብ ዝዕጾ ነፍሲ ወከፍ ለውጢ ናይ ነፍሲ ወከፍ ተጠቃሚን ናይ ኮንሶልን ይቐድሕ። ክትከፍቶ ከለኻ ንስኻ ምዃንካ ከተረጋግጽ ትሕተት።</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ክፉት</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>መስኮት ዕጾ</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>መስኮት ንምሉእ ወብሳይት ክፈት</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ቅዳሓት</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ሕሳብ ተጠቃሚ (ሽም ምእታው፡ ኢመይል፡ መሕለፊ ቃል) ከምኡውን ዓውድታት ሕሳባት ተጠቀምቲ ፈጺሞም ኣይቕድሑን።</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ለውጥታት</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ምሉእ ወብሳይት</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>ለውጥታት %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ተቋሪጹ</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ገና ቕዳሕ የለን።</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ቕዳሕ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ኩሎም ቅዳሓት</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ዝፈጥሮ ፍልሰት</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ንነፍሲ ወከፍ ዝተቐየረ ነገር ናብ ሓደ ስጉምቲ ዝተጠርነፉ ለውጥታት፦ ካብዚ ቕዳሕ ዝተፈጥረ ፍልሰት ዝገብሮ።</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>እዚ ምትካል ዓይነታት ስጉምቲ YAML %types ምስ ዝህልዎ ካብኡ ፍልሰት ክፍጠር ይኽእል።</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ብፍላጥ ዝተገደፈ፦ %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ዋላ ሓንቲ ኣይተቐድሐን።</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ዝሓዞ</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ለውጥታት፡ ብዝተገብርሉ ስርዓት።</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ለውጢ</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ስጉምቲ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>ዝምልከቶ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>ተወሳኺ %count፦ ./console exp:migration:record:show ኩሎም ይዝርዝር።</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ደርብዮ</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ቕዳሕን ዝሓዞን የወግድ። ዝተቐየረ ተቐይሩ ይተርፍ።</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>እወ፡ ነዚ ቕዳሕ ደርብዮ</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ይቕዳሕ ኣሎ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ለውጥታትካ ንፍልሰት ይቕዳሑ ኣለዉ።</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ኣብዚ ወብሳይት ነፍሲ ወከፍ ለውጢ ንፍልሰት ይቕዳሕ ኣሎ (መስኮት ንምሉእ ወብሳይት)።</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ቕዳሕ ምሉእ ወብሳይት ጀሚሩ፦ ክሳብ ተቋርጾ ነፍሲ ወከፍ ለውጢ ናይ ነፍሲ ወከፍ ተጠቃሚ ይቕዳሕ።</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ቕዳሕ ጀሚሩ፦ ክሳብ ተቋርጾ ለውጥታትካ ይቕዳሑ።</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ቕዳሕ ተቋሪጹ። ዝሓዞ ክሳብ ትድርብዮ ይጸንሕ።</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ቕዳሕን ፍጻመታቱን ተወጊዶም።</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ቕዳሕ %id የለን።</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ቅድም «እወ፡ ነዚ ቕዳሕ ደርብዮ» ምልክት ግበር።</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ቕዳሕ ክፍለ ግዜ ዘቋርጾ እቲ ዝቐደሐ ተጠቃሚ ጥራይ እዩ።</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ዝቋረጽ ቕዳሕ ምረጽ።</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ቕዳሕ ናይዚ ዓይነት ድሮ ይካየድ ኣሎ።</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ቕዳሕ ክቕየር ኣይከኣለን፦ %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81401,7 +81617,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>መርበብ ፕሮጀክት GitHub ኣብ ትሕቲ /&lt;repository&gt;/ ይርከብ፤ ተዛማዲ መላግብቲ ኣብኡን ኣብ ካልእ ቦታን ይሰርሑ።</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
         <translation>ምህናጽ ነፍሲ ወከፍ ገጽ ናይ %site ከምቲ ዘይኣተወ በጻሒ ዝርእዮ ይወስድ፡ መላግብቲ ዳግማይ ይጽሕፍ፡ ፋይላት ይቕዳሕ፡ ውጽኢቱ ድማ ናብ ፎልደር ናይቲ ዕላማ ይጽሕፍ። ነቲ ምህናጽ ክሳብ ትምርምሩን ኣሕትም ትጥውቑን ዋላ ሓንቲ ኣይሕተምን።</translation>
     </message>
     <message>
@@ -81449,8 +81665,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ድሕሪ ምጽራይ ገና ናይ debug ውጽኢት፡ ቶከን ቅጥዒ ወይ መለለዪ ክፍለ-ግዜ ዝሓዘ ገጽ ፈጺሙ ኣይሕተምን።</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ምምላስ ንኽኢላታት እዩ: "እዚ እንታይ ከም ዝቕይር ይፈልጥ እየ" ምልክት ግበሩ፡ ስም ናይቲ ታግ ድማ ደጊምኩም ጽሓፉ።</translation>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ምምላስ ንኽኢላታት እዩ: &quot;እዚ እንታይ ከም ዝቕይር ይፈልጥ እየ&quot; ምልክት ግበሩ፡ ስም ናይቲ ታግ ድማ ደጊምኩም ጽሓፉ።</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81961,7 +82177,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ቅድመ ርእይቶ ክፈት</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
         <translation>ነቲ ምህናጽ ከምቲ ሆስት ዘቕርቦ ካብ ፎልደር ናይቲ ዕላማ ይኸፍቶ። እቲ መላግቦ ንዓኹም ንሓደ ሰዓት ይሰርሕ።</translation>
     </message>
     <message>
@@ -82137,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ምድላው &gt; ምስጢራት</translation>
     </message>
     <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>ኣብ ዝርዝራት ይርአ፡ ንኣብነት "ህዝባዊ መርበብ ኣብ GitHub Pages"።</translation>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ኣብ ዝርዝራት ይርአ፡ ንኣብነት &quot;ህዝባዊ መርበብ ኣብ GitHub Pages&quot;።</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82345,7 +82561,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>እቲ መርበብ ናብ ፋይላት ናይቲ ሕትመት ይምለስ፤ ገና ዘይተሓተመ ምህናጽ ቅድም ክሕተም ወይ ክድርበ ኣለዎ።</translation>
     </message>
     <message>
-        <source>The site's own page for addresses that do not exist.</source>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
         <translation>ናይ ገዛእ ርእሱ ገጽ ናይቲ መርበብ ንዘየለዉ ኣድራሻታት።</translation>
     </message>
     <message>
@@ -82353,8 +82569,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>እቲ ዕላማ ክቕመጥ ኣይከኣለን: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>እቲ ዕላማ ገና ብዚ መፍትሕ ኣይኣቱን: ኣብ ቅጥዕታቱ "ነዚ ዕላማ ዝተፈጥረ መፍትሕ ምዝርጋሕ" ምረጹ።</translation>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>እቲ ዕላማ ገና ብዚ መፍትሕ ኣይኣቱን: ኣብ ቅጥዕታቱ &quot;ነዚ ዕላማ ዝተፈጥረ መፍትሕ ምዝርጋሕ&quot; ምረጹ።</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82389,8 +82605,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ነዚ ምህናጽ ይድርብዮ: እቲ ፎልደር ደጊሙ ናይ መወዳእታ ሕትመት ይሕዝ። እቲ ህያው መርበብ ኣይቕየርን።</translation>
     </message>
     <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ቅድም "ነቲ ለውጥታት መርሚረዮ እየ" ምልክት ግበሩ።</translation>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ቅድም &quot;ነቲ ለውጥታት መርሚረዮ እየ&quot; ምልክት ግበሩ።</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82611,6 +82827,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>yes, not published yet</source>
         <translation>እወ፡ ገና ኣይተሓተመን</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ምህናጽ ነፍሲ ወከፍ ገጽ ናይ %site ከምቲ ዘይኣተወ በጻሒ ዝርእዮ ይወስድ፡ መላግብቲ ዳግማይ ይጽሕፍ፡ ፋይላት ይቕዳሕ፡ ውጽኢቱ ድማ ናብ ፎልደር ናይቲ ዕላማ ይጽሕፍ። ነቲ ምህናጽ ክሳብ ትምርምሩን ኣሕትም ትጥውቑን ዋላ ሓንቲ ኣይሕተምን።</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>ምምላስ ንኽኢላታት እዩ: "እዚ እንታይ ከም ዝቕይር ይፈልጥ እየ" ምልክት ግበሩ፡ ስም ናይቲ ታግ ድማ ደጊምኩም ጽሓፉ።</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>ነቲ ምህናጽ ከምቲ ሆስት ዘቕርቦ ካብ ፎልደር ናይቲ ዕላማ ይኸፍቶ። እቲ መላግቦ ንዓኹም ንሓደ ሰዓት ይሰርሕ።</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>ኣብ ዝርዝራት ይርአ፡ ንኣብነት "ህዝባዊ መርበብ ኣብ GitHub Pages"።</translation>
+    </message>
+    <message>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>ናይ ገዛእ ርእሱ ገጽ ናይቲ መርበብ ንዘየለዉ ኣድራሻታት።</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>እቲ ዕላማ ገና ብዚ መፍትሕ ኣይኣቱን: ኣብ ቅጥዕታቱ "ነዚ ዕላማ ዝተፈጥረ መፍትሕ ምዝርጋሕ" ምረጹ።</translation>
+    </message>
+    <message>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>ቅድም "ነቲ ለውጥታት መርሚረዮ እየ" ምልክት ግበሩ።</translation>
     </message>
     <message>
         <source>A GitHub App</source>
