@@ -82092,6 +82092,22 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Nahrávku nelze změnit: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Vygenerovat migraci</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Název migrace (nepovinné)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migrace %file byla zapsána. Změny, které žádný krok nedokáže provést, jsou uvedeny na začátku souboru a je třeba je provést ručně.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Žádná migrace nebyla zapsána: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

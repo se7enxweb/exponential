@@ -80806,6 +80806,22 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Bokangi ekoki kobongwana te: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Salá bobongoli</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Nkómbó ya bobongoli (soki olingi)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Bobongoli %file ekomami. Mbongwana oyo etape moko te ekoki kosala ekomami na likoló ya fisyé, esengeli kosala yango na mabɔ́kɔ.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Bobongoli moko te ekomamaki: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

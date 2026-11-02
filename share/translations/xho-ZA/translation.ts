@@ -80804,6 +80804,22 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>The recording could not be changed: %reason</source>
         <translation>Irekhodi alinakutshintshwa: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Yenza ufuduko</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Igama lofuduko (ukhetho)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Ufuduko %file lubhaliwe. Iinguqu ekungekho nyathelo linokuzenza zikhankanywe phezulu kwefayile, ukuze zenziwe ngesandla.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Akukho fuduko lubhaliweyo: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

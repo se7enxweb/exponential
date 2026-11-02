@@ -80806,6 +80806,22 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>The recording could not be changed: %reason</source>
         <translation>Okukwata tekwasobola kukyusibwa: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Kola okusenguka</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Erinnya ly'okusenguka (si kya buwaze)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Okusenguka %file kuwandiikiddwa. Enkyukakyuka ezitayinza kukolebwa mutendera gwonna zimenyeddwa waggulu mu fayiro, zikolebwe n'emikono.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Tewali kusenguka kwawandiikiddwa: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

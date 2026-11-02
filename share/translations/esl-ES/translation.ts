@@ -82288,6 +82288,22 @@ Gracias por tu feedback</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>No se ha podido cambiar la grabación: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Generar migración</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Nombre de la migración (opcional)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Se ha escrito la migración %file. Los cambios que ningún paso puede hacer se nombran al principio del archivo, para hacerlos a mano.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>No se ha escrito ninguna migración: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -80814,6 +80814,22 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Rékaman teu tiasa dirobih: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Jieun migrasi</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Ngaran migrasi (pilihan)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migrasi %file geus ditulis. Parobahan anu teu bisa dilakukeun ku léngkah mana waé disebutkeun di luhureun berkas, pikeun dilakukeun ku leungeun.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Teu aya migrasi anu ditulis: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

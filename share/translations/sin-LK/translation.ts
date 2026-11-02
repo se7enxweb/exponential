@@ -80806,6 +80806,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>පටිගත කිරීම වෙනස් කළ නොහැකි විය: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>සංක්‍රමණය ජනනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>සංක්‍රමණයේ නම (අත්‍යවශ්‍ය නොවේ)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>සංක්‍රමණය %file ලියන ලදී. කිසිදු පියවරකට කළ නොහැකි වෙනස්කම් ගොනුවේ ඉහළින් සඳහන් කර ඇත, අතින් කළ යුතුය.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>කිසිදු සංක්‍රමණයක් ලියා නැත: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

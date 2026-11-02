@@ -80806,6 +80806,22 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Báddehusa ii sáhttán rievdadit: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Ráhkat sirdima</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Sirdima namma (eaktodáhtolaš)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Sirdin %file lea čállojuvvon. Rievdadusat maid ii oktage lávki sáhte dahkat, leat namuhuvvon fiilla álggus, dahkkojuvvot gieđain.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Ii oktage sirdin čállojuvvon: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

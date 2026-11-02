@@ -80836,6 +80836,22 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>The recording could not be changed: %reason</source>
         <translation>Não foi possível alterar a gravação: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Gerar migração</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Nome da migração (opcional)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>A migração %file foi escrita. As alterações que nenhum passo consegue fazer estão indicadas no início do ficheiro, para serem feitas à mão.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Nenhuma migração foi escrita: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

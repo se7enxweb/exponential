@@ -80836,6 +80836,22 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Posnetka ni bilo mogoče spremeniti: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Ustvari migracijo</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Ime migracije (neobvezno)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migracija %file je zapisana. Spremembe, ki jih noben korak ne more narediti, so navedene na vrhu datoteke in jih je treba narediti ročno.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Nobena migracija ni bila zapisana: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

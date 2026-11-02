@@ -80806,6 +80806,22 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>The recording could not be changed: %reason</source>
         <translation>Kāore i taea te panoni i te hopunga: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Waihanga hekenga</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Ingoa o te hekenga (kōwhiringa)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Kua tuhia te hekenga %file. Ko ngā panonitanga e kore e taea e tētahi hātepe, kua whakaingoatia ki te tīmatanga o te kōnae, hei mahi ā-ringa.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Kāore he hekenga i tuhia: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

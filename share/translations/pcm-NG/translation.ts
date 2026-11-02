@@ -80814,6 +80814,22 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>We no fit change di recording: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Make migration</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Name of di migration (if you want)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Di migration %file don write. Changes wey no step fit make dey named for top of di file, make you do dem with hand.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>No migration write: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

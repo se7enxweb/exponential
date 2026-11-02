@@ -80836,6 +80836,22 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Ir-reġistrazzjoni ma setgħetx tinbidel: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Iġġenera migrazzjoni</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Isem il-migrazzjoni (mhux obbligatorju)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Il-migrazzjoni %file inkitbet. Il-bidliet li l-ebda pass ma jista' jagħmel huma msemmija fil-quċċata tal-fajl, biex isiru bl-idejn.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Ma nkitbet l-ebda migrazzjoni: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

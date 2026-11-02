@@ -80804,6 +80804,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>রেকর্ডিং পরিবর্তন করা যায়নি: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>মাইগ্রেশন তৈরি করুন</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>মাইগ্রেশনের নাম (ঐচ্ছিক)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>মাইগ্রেশন %file লেখা হয়েছে। যে পরিবর্তনগুলো কোনো ধাপ করতে পারে না, সেগুলো ফাইলের শুরুতে উল্লেখ করা আছে, হাতে করতে হবে।</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>কোনো মাইগ্রেশন লেখা হয়নি: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

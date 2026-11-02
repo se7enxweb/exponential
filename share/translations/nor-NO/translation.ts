@@ -82064,6 +82064,22 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Opptaket kunne ikke endres: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Generer migrering</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Navnet på migreringen (valgfritt)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migreringen %file er skrevet. Endringer som ingen steg kan gjøre, er nevnt øverst i filen og må gjøres for hånd.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Ingen migrering ble skrevet: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

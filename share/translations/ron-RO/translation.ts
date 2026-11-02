@@ -80836,6 +80836,22 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>The recording could not be changed: %reason</source>
         <translation>Înregistrarea nu a putut fi modificată: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Generează migrarea</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Numele migrării (opțional)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migrarea %file a fost scrisă. Modificările pe care niciun pas nu le poate face sunt numite la începutul fișierului, pentru a fi făcute manual.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Nu a fost scrisă nicio migrare: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

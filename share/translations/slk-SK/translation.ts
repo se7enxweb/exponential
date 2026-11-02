@@ -80836,6 +80836,22 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Nahrávku sa nepodarilo zmeniť: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Vygenerovať migráciu</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Názov migrácie (nepovinné)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migrácia %file bola zapísaná. Zmeny, ktoré žiadny krok nedokáže urobiť, sú uvedené na začiatku súboru a treba ich urobiť ručne.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Žiadna migrácia nebola zapísaná: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

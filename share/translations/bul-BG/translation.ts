@@ -80836,6 +80836,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>Записът не можа да бъде променен: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Генериране на миграция</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Име на миграцията (по желание)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Миграцията %file е записана. Промените, които никоя стъпка не може да направи, са изброени в началото на файла, за да се направят ръчно.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Не е записана миграция: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

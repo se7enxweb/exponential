@@ -82031,6 +82031,22 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>De opname kon niet worden gewijzigd: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Migratie genereren</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Naam van de migratie (optioneel)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>De migratie %file is geschreven. Wijzigingen die geen stap kan maken, staan bovenaan het bestand, om met de hand te doen.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Er is geen migratie geschreven: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

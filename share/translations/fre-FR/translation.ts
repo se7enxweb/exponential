@@ -82246,6 +82246,22 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>The recording could not be changed: %reason</source>
         <translation>L'enregistrement n'a pas pu être modifié : %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Générer la migration</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Nom de la migration (facultatif)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>La migration %file a été écrite. Les changements qu'aucune étape ne peut faire sont nommés en tête du fichier, à faire à la main.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Aucune migration n'a été écrite : %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
