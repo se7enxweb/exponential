@@ -2225,6 +2225,9 @@
     "kernel/classes/debugbar/exprenderstats.php": [
       "tests/tests/lib/smarty/expSmartyDebugBarTest.php"
     ],
+    "kernel/classes/debugbar/expdebugbaruser.php": [
+      "tests/tests/kernel/classes/debugbar/expDebugBarUserTest.php"
+    ],
     "lib/twig/classes/exptwigrenderer.php": [
       "tests/tests/lib/twig/expTwigTemplateRenderTest.php",
       "tests/tests/lib/twig/expTwigOperatorParityTest.php",
