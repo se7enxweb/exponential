@@ -24759,7 +24759,7 @@ f91fe6aa39ca39fba9157c3bffc757c5  kernel/classes/upgrade/expupgradecatalog.php
 b0b3a1228db9f3321a057b6c6e7b1352  kernel/classes/upgrade/expupgradelock.php
 73a657270220d087d8628c1394da806e  kernel/classes/upgrade/expupgraderecord.php
 592334ca70a9d88447f7394d12ce433e  kernel/classes/upgrade/expupgraderegistry.php
-929869a21b65716f34744b8a50e8ec5b  kernel/classes/upgrade/expupgraderollback.php
+adc9ef2daefeda3817e54f6214647e20  kernel/classes/upgrade/expupgraderollback.php
 72a04b971ccb701ae0feb2e6abf797d8  kernel/classes/upgrade/expupgradeschemastep.php
 54d31dc79a5c6149193597e3b9cace46  kernel/classes/upgrade/expupgradescriptstep.php
 f849e9b7c4f5813bbcff0bc3262fffdf  kernel/classes/upgrade/expupgradestep.php
@@ -28607,7 +28607,7 @@ dae073739b2efda3166ede7d0d00293f  tests/tests/kernel/classes/migration/expMigrat
 cc4738f42a4e507b507690ced983d0aa  tests/tests/kernel/classes/migration/expMigrationCaptionEngineChecks.php
 df2891775fbe7ed2454048f98673e152  tests/tests/kernel/classes/migration/expMigrationCaptionFakes.php
 73d1596bcf3555216d9f028f3da14351  tests/tests/kernel/classes/migration/expMigrationCaptionSqliteTest.php
-f617f2f7957aa9bc8dc7d9e73bc47f02  tests/tests/kernel/classes/migration/expMigrationCaptionTest.php
+8679a4519b9ba76c21c92964a1ed90a3  tests/tests/kernel/classes/migration/expMigrationCaptionTest.php
 aa8bbd6981ff0787907d613910d980e8  tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php
 f317c6c5599454cb669cdb72f76edb25  tests/tests/kernel/classes/migration/expMigrationCommandDatabaseTest.php
 af7cfd6fdaccf80222488af9083577ec  tests/tests/kernel/classes/migration/expMigrationCommandEngineChecks.php

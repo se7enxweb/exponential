@@ -312,6 +312,10 @@ class expMigrationCaptionTest extends PHPUnit\Framework\TestCase
         // without a server: the service name as the connect identifier
         $db->Server = '';
         $this->assertStringContainsString( 'impdp expo@EXPPDB ', implode( "\n", expUpgradeRollback::manualSteps( 'oracle', $db ) ) );
+        // a database that already is a connect string (the driver connects to it) is kept, with or without a server
+        $db->Server = 'db.example.com';
+        $db->DB = '//db.example.com:1522/EXPPDB';
+        $this->assertStringContainsString( 'impdp expo@//db.example.com:1522/EXPPDB SCHEMAS=EXPO ', implode( "\n", expUpgradeRollback::manualSteps( 'oracle', $db ) ) );
         $this->assertSame( array( 'sqlite', 'mysql', 'postgresql', 'mongodb' ), expUpgradeRollback::RESTORE_ENGINES );
     }
 
