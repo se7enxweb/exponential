@@ -339,15 +339,11 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
                                  array( 'text' => \ezpI18n::tr( 'kernel/content', 'Advanced' ),
                                         'url' => false ) );
 
-        $searchData = false;
-        if ( !$useSearchCode )
-        {
-            if ( $tpl->hasVariable( "search_data" ) )
-            {
-                $searchData = $tpl->variable( "search_data" );
-            }
-        }
-        else
+        // The statistics count what the page showed: a template that searches itself (the administration's
+        // filtered search page) leaves its result in search_data, also with SearchViewHandling=default, where the
+        // view's own, unfiltered search would give another count.
+        $searchData = $tpl->hasVariable( "search_data" ) ? $tpl->variable( "search_data" ) : false;
+        if ( $useSearchCode && !is_array( $searchData ) )
         {
             $searchData = $searchResult;
         }

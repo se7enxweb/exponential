@@ -1,6 +1,7 @@
 {def $search_node_id = first_set( $search_subtree_array[0], $module_result.path[0].node_id, 1 )
      $search_title = "Search in all content"|i18n( 'design/admin/pagelayout' )
-     $section_id = -1}
+     $section_id = -1
+     $search_suggest = and( ezini( 'SearchSuggestSettings', 'Enabled', 'admininterface.ini' )|eq( 'true' ), $ui_context|ne( 'browse' ), fetch( 'user', 'can_open', hash( 'uri', 'content/suggest' ) ) )}
 {if ezhttp_hasvariable( 'SectionID', 'get' )}
     {set $section_id = ezhttp( 'SectionID', 'get' )}
 {/if}
@@ -17,15 +18,16 @@
         {/if}
         <div id="searchtextwrapper">
             <label for="searchtext" class="a4-sr-only">{$search_title|wash}</label>
-            <input id="searchtext" name="SearchText" type="text" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" title="{$search_title|wash}" />
+            <input id="searchtext" name="SearchText" type="text" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" title="{$search_title|wash}"{if $search_suggest} role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="searchsuggest-list" aria-keyshortcuts="Control+/ Meta+/" autocomplete="off" data-suggest-url={'content/suggest'|ezurl} data-suggest-min="{ezini( 'SearchSuggestSettings', 'MinLength', 'admininterface.ini' )|int}"{/if} />
         </div>
+        {if $search_suggest}{include uri='design:parts/search_suggest.tpl' suggest_id='searchsuggest'}{/if}
         <input id="searchbutton" class="button hide" name="SearchButton" type="submit" value="{'Search'|i18n( 'design/admin/pagelayout' )}" />
         {if eq( $ui_context, 'browse' ) }
             <input name="Mode" type="hidden" value="browse" />
             <input name="BrowsePageLimit" type="hidden" value="{min( ezpreference( 'admin_list_limit' ), 3)|choose( 10, 10, 25, 50 )}" />
             <p class="advanced hide"><span class="disabled">{'Advanced'|i18n( 'design/admin/pagelayout' )}</span></p>
         {else}
-            <p class="advanced hide"><a href={'/content/advancedsearch'|ezurl} title="{'Advanced search.'|i18n( 'design/admin/pagelayout' )}">{'Advanced'|i18n( 'design/admin/pagelayout' )}</a></p>
+            <p class="advanced hide"><a href="{'/content/search'|ezurl( 'no' )}#search-filters" title="{'Advanced search.'|i18n( 'design/admin/pagelayout' )}">{'Advanced'|i18n( 'design/admin/pagelayout' )}</a></p>
         {/if}
         <div class="searchbuttonfield" id="searchbuttonfield"></div>
         <div class="searchscope" id="searchscope"></div>
@@ -107,4 +109,8 @@
 })( jQuery );
 {/literal}
 </script>
-{undef $search_node_id $section_id}
+{* the suggestions while typing (parts/search_suggest.tpl, content/suggest; admininterface.ini [SearchSuggestSettings]) *}
+{if $search_suggest}
+{ezscript( array( 'page/search_suggest.js' ) )}
+{/if}
+{undef $search_node_id $section_id $search_suggest}
