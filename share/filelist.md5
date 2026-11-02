@@ -7059,7 +7059,7 @@ db841cc634480c49b7b618fd04db8d69  doc/eng-us/guides/static-publishing-custom-dom
 3dfbe72d89e3a5d0568d38ef7072098f  doc/eng-us/guides/static-publishing-limits-and-github-terms.md
 28d6a7e65e9e714330db33e1ce69888b  doc/eng-us/guides/static-publishing-on-windows-and-clusters.md
 34c91503bdd48e027a50cf933c5be222  doc/eng-us/guides/static-publishing-targets-and-credentials.md
-c82022a00372a73ec4a7d47d73b6bca5  doc/eng-us/guides/static-publishing-troubleshooting.md
+dfb64fc5418d95245091bf5cfa35e1e9  doc/eng-us/guides/static-publishing-troubleshooting.md
 c8c423b5cf4afb376cf4ea6209f73f6d  doc/eng-us/guides/static-publishing.md
 0e616e641c81de1e6783d78293e100f6  doc/eng-us/guides/system-information.md
 d035e16cb63dcde8ecc14a1d2866bd78  doc/eng-us/guides/template-conversion.md
@@ -13009,7 +13009,7 @@ acf80981b12ccd8ca2d672ee2d1c1ec0  doc/eng-us/specifications/6.0/runnable-command
 7cfa35396e92191dbe2408004e86d416  doc/eng-us/specifications/6.0/security-hardening-2026-08.md
 8e5d88b3a7f5bd9ec543ac03aa7463ec  doc/eng-us/specifications/6.0/security-hardening-6.0.13.md
 26d18bdf558a01bafff2ac715a841d66  doc/eng-us/specifications/6.0/sqlite3-database-driver.md
-43b5345b7169ffff3bb61c4985dfe978  doc/eng-us/specifications/6.0/static-publishing-build-format.md
+83fa4b2ca4955ae99098c484d77dcc0d  doc/eng-us/specifications/6.0/static-publishing-build-format.md
 c267a0550b900807dfed443c52266c85  doc/eng-us/specifications/6.0/static-publishing-form-endpoint.md
 b452d0a629e4af725d82380f64c0b4b2  doc/eng-us/specifications/6.0/static-publishing-manifest.md
 b118225dc0e1ae32082c94ca48138d4c  doc/eng-us/specifications/6.0/syndication.md
@@ -13385,7 +13385,7 @@ c590935b1f626e2e359961b631936dc2  doc/ger-de/anleitungen/statische-websites-auf-
 22181fd2efb68afb99149172011da890  doc/ger-de/anleitungen/statisches-veroeffentlichen-deploy-keys.md
 a69dd29dbd1ecd48baf7206358e184cb  doc/ger-de/anleitungen/statisches-veroeffentlichen-dynamische-funktionen.md
 f0ef4c3d685e2b6f79525c13e55cdd1b  doc/ger-de/anleitungen/statisches-veroeffentlichen-eigene-domains-und-dns.md
-d0b74ddc24db81815a5321202bcf7ca9  doc/ger-de/anleitungen/statisches-veroeffentlichen-fehlerbehebung.md
+3ad61ff8d74d45488ad28c6e7152ba19  doc/ger-de/anleitungen/statisches-veroeffentlichen-fehlerbehebung.md
 e21c432bbcc6381c6df5764db88b963f  doc/ger-de/anleitungen/statisches-veroeffentlichen-fuer-multisite-installationen.md
 2675b8089e0a723fdb4b3c8648500aef  doc/ger-de/anleitungen/statisches-veroeffentlichen-grenzen-und-github-bedingungen.md
 8a1f7f299f2773a102a3f53329f39ade  doc/ger-de/anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md
@@ -22388,7 +22388,7 @@ da71ae2edb8e08a7c2003f78957321a1  doc/ger-de/spezifikationen/6.0/mail-einstellun
 c83d971494616e6050d2ac9fad29ff2f  doc/ger-de/spezifikationen/6.0/sicherheitshaertung-6.0.13.md
 e74b59965ce8bdb608a720100c84692b  doc/ger-de/spezifikationen/6.0/sicherheitsvorgaben-2026-09.md
 876a7f3c2cc819436930c0fa5235088c  doc/ger-de/spezifikationen/6.0/sqlite3-datenbanktreiber.md
-eec10b122eb34db2e2e8e3a855c8a9d9  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-build-format.md
+4d23eee3b28510c060cf705c35de033c  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-build-format.md
 3b4c9352f7670bd3c487fd1b31af9f28  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-formular-endpunkt.md
 f443531cf0ddf1ae2f5ca3f0028045b9  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-manifest.md
 f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
@@ -24588,7 +24588,7 @@ a4256533dc1c0a8afd51c4fe5de6c60d  kernel/classes/role/exprolepolicysentence.php
 a6942c619908de9aff2835601b137d63  kernel/classes/shopaccounthandlers/ezusershopaccounthandler.php
 ee07bebf65ac9238807f87dc4446ae79  kernel/classes/staticpublish/expstaticadmin.php
 4c27e245a401bd764beda0c02e40fe82  kernel/classes/staticpublish/expstaticassetcollector.php
-369d4b99b5aa6cb05a199ec929cf5f20  kernel/classes/staticpublish/expstaticbuild.php
+9eccc914718a907fadf2e89c85f540aa  kernel/classes/staticpublish/expstaticbuild.php
 13c0d019fcf1b1e28ba7168160ffbee5  kernel/classes/staticpublish/expstaticbuildsignature.php
 b0efb84f30b72643059fb90b0ee57f1b  kernel/classes/staticpublish/expstaticcredentials.php
 5caf5b859cdeaad7021ddafc4a2427db  kernel/classes/staticpublish/expstaticdegrader.php
@@ -24607,7 +24607,7 @@ e4af3364468ad9469593250767cd8ce8  kernel/classes/staticpublish/expstaticgithub.p
 dc0ae2c44d17b0a4794af4fc85e90ec3  kernel/classes/staticpublish/expstaticprogress.php
 08a3047d5c95e895e1a47d85cadaf5a1  kernel/classes/staticpublish/expstaticpublisher.php
 b52dab83854efdfa227012910914a7ce  kernel/classes/staticpublish/expstaticpublishqueue.php
-023905b173350737664a76dd0cf4a06c  kernel/classes/staticpublish/expstaticredirects.php
+70ea14e60cf10202f14140294c7a71a6  kernel/classes/staticpublish/expstaticredirects.php
 17bc4727d62fea39fce8e18b7367577b  kernel/classes/staticpublish/expstaticrepository.php
 763c03bddfc298061737832461b87657  kernel/classes/staticpublish/expstaticschedule.php
 90eaa06663c1bddb5ac8adb6d34db873  kernel/classes/staticpublish/expstaticsearchindex.php
@@ -25806,12 +25806,12 @@ c7045d0c22f47072c8975b1ecee2ac3c  kernel/setup/expmoduleextensionwizard.php
 114efe5bd4e12ee2fc78eb8fdc954927  kernel/setup/expmoduletablecode.php
 5864c5af0348b4fcbaaa12e023be5d02  kernel/setup/expmoduletablewizard.php
 21ff0b47c3f299c1a6c40410d2558ec2  kernel/setup/expmodulewizard.php
-fc63a5476c77930eebbd41ce92d0f7e7  kernel/setup/exppreloadrunner.php
+4ad6e22be53f1ee5109bfc394c688477  kernel/setup/exppreloadrunner.php
 435230ba42366c90bbbd00054307379d  kernel/setup/expradcatalogue.php
 66a21bc7971ea7600781fb8cf16c5721  kernel/setup/expradhealth.php
 e252a971d11cb988083cb74b7d84ea4d  kernel/setup/expradsurvey.php
 17b73e50227c1658255eeb447c6d4803  kernel/setup/expsettingsextensionwizard.php
-9a243c6820fa1cc632abd83b6eb99f18  kernel/setup/expstaticcacherunner.php
+35a8cf4c47af197cc5229a3e2e703b4b  kernel/setup/expstaticcacherunner.php
 7782c84d4cd1a0a62c0367f2bd5b817e  kernel/setup/exptemplateextensionwizard.php
 13c042d6012feee20b845cbf0f31989d  kernel/setup/expworkfloweventwizard.php
 e7dd40035f8255acf4da37434c542374  kernel/setup/extensions.php
@@ -28772,7 +28772,7 @@ c243bf1708e51415584c6fd64a5a11d0  tests/tests/kernel/classes/shopprices/eZShopRe
 8c0728b2f967cd40690522b1d6c5fdb0  tests/tests/kernel/classes/sslzones/eZSSLZoneTest.php
 74a4912024d32aaf4b9a78fd2b48bf24  tests/tests/kernel/classes/staticpublish/expStaticAdminTest.php
 5308a09f559711bbe3015f6481fa8e93  tests/tests/kernel/classes/staticpublish/expStaticBuildSignatureTest.php
-0731ee6ff20d236d247dc6846a934b9d  tests/tests/kernel/classes/staticpublish/expStaticBuildSqliteTest.php
+779079cc3c9b7e558f72630a98a1e37e  tests/tests/kernel/classes/staticpublish/expStaticBuildSqliteTest.php
 e02245c806ec11dee72b57b7e4d1ece0  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
 4e13e1ff07af6f32c6f45064b5640365  tests/tests/kernel/classes/staticpublish/expStaticCredentialsTest.php
 3979bc5a303fe7d2b1e227585e8944ec  tests/tests/kernel/classes/staticpublish/expStaticDegraderTest.php
@@ -28785,7 +28785,7 @@ ee068eb421875f971f1aae84fec35885  tests/tests/kernel/classes/staticpublish/expSt
 becdcf1fcf91ed96ca9c0728953c0a58  tests/tests/kernel/classes/staticpublish/expStaticNotifierTest.php
 0aec10f8a2bd835fd1ab673abb4f4a8c  tests/tests/kernel/classes/staticpublish/expStaticPostProcessorTest.php
 e509294f8d2cc6e9e9595ee8ffd911a0  tests/tests/kernel/classes/staticpublish/expStaticPublishSqliteTest.php
-2805ee4d882c63a3c779128c63066c5a  tests/tests/kernel/classes/staticpublish/expStaticRedirectsTest.php
+304d3bcc97b4440f88358d9ce79ed4ef  tests/tests/kernel/classes/staticpublish/expStaticRedirectsTest.php
 b34f4973d7f792b39f06887cb6785369  tests/tests/kernel/classes/staticpublish/expStaticScheduleTest.php
 428973ac81ebd8eddfeabbd1663f927c  tests/tests/kernel/classes/staticpublish/expStaticSearchIndexTest.php
 d1808405ac31f5912840ac6e79c4756b  tests/tests/kernel/classes/staticpublish/expStaticStatusDatabaseTest.php
