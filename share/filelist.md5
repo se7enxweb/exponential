@@ -436,7 +436,7 @@ e4286f3980c415c880cdb413793a0eea  design/admin/stylesheets/ezinfo.css
 65e9b661cec374cadda7ed770581d25f  design/admin/stylesheets/modules/content.css
 fa525b8493ecf251124f284860ac7749  design/admin/stylesheets/modules/help.css
 b371e41cc093bf4cf1ea006576c67d35  design/admin/stylesheets/modules/people.css
-dd2c1acec6e181b516ffebabe3a05bc0  design/admin/stylesheets/modules/setup.css
+c20144b49f9eaa6bc589e15490a657de  design/admin/stylesheets/modules/setup.css
 b8a9bc23a795b8d48a9dcf70d4dcead9  design/admin/stylesheets/modules/structure.css
 3f6cb52db7363b1107114a1554b38a99  design/admin/stylesheets/modules/workflow.css
 f6736900d8e33587c384e14e7705af9d  design/admin/stylesheets/packagecompare.css
@@ -915,7 +915,7 @@ e924bd63036012dc73222cda54185c3c  design/admin/templates/staticpublish/parts/rep
 ed64c38c12b1ec0e98a4ce752732d8e3  design/admin/templates/staticpublish/parts/siteaccesses.tpl
 860c46f4da8aac42d1883d0cfd9c0313  design/admin/templates/staticpublish/parts/tabs.tpl
 10b4a4217ea8cbb6c1e16e30a5189c7f  design/admin/templates/staticpublish/preview.tpl
-d8eb4e4e1c71db37fa3a18ae7f1c9079  design/admin/templates/staticpublish/target.tpl
+01cd10dfc4ab4bf3f1db5a1e018da687  design/admin/templates/staticpublish/target.tpl
 afe77d6ca1128176cf8b6899858c0049  design/admin/templates/tabs/audit/node.tpl
 a28d02058dcaceb3f0bd665a92aff6b9  design/admin/templates/tabs/audit/node_header.tpl
 e6208f1e6735de4da01e80e1b20fe589  design/admin/templates/tabs/datatable/node.tpl
@@ -1241,7 +1241,7 @@ e26094514c3dac416b5fb6be0a9d9e21  design/admin4/stylesheets/ezinfo.css
 65e9b661cec374cadda7ed770581d25f  design/admin4/stylesheets/modules/content.css
 fa525b8493ecf251124f284860ac7749  design/admin4/stylesheets/modules/help.css
 b371e41cc093bf4cf1ea006576c67d35  design/admin4/stylesheets/modules/people.css
-dd2c1acec6e181b516ffebabe3a05bc0  design/admin4/stylesheets/modules/setup.css
+c20144b49f9eaa6bc589e15490a657de  design/admin4/stylesheets/modules/setup.css
 b8a9bc23a795b8d48a9dcf70d4dcead9  design/admin4/stylesheets/modules/structure.css
 3f6cb52db7363b1107114a1554b38a99  design/admin4/stylesheets/modules/workflow.css
 62655eab02017f2ff9eac6379e50922d  design/admin4/stylesheets/packagecompare.css
@@ -1768,7 +1768,7 @@ e924bd63036012dc73222cda54185c3c  design/admin4/templates/staticpublish/parts/re
 ed64c38c12b1ec0e98a4ce752732d8e3  design/admin4/templates/staticpublish/parts/siteaccesses.tpl
 860c46f4da8aac42d1883d0cfd9c0313  design/admin4/templates/staticpublish/parts/tabs.tpl
 10b4a4217ea8cbb6c1e16e30a5189c7f  design/admin4/templates/staticpublish/preview.tpl
-d8eb4e4e1c71db37fa3a18ae7f1c9079  design/admin4/templates/staticpublish/target.tpl
+01cd10dfc4ab4bf3f1db5a1e018da687  design/admin4/templates/staticpublish/target.tpl
 242e73b25fef0e05cbc075c78c692e72  design/admin4/templates/tabs/audit/node.tpl
 a28d02058dcaceb3f0bd665a92aff6b9  design/admin4/templates/tabs/audit/node_header.tpl
 e6208f1e6735de4da01e80e1b20fe589  design/admin4/templates/tabs/datatable/node.tpl
@@ -3772,7 +3772,7 @@ ba55e70293d605cab6d60fea3682d5e8  doc/eng-us/examples/commands/expmigrationrepos
 9b59b46ce8c2f6d0b27dd5c309082a99  doc/eng-us/examples/commands/expmigrationstatus.md
 72277384d4d27ff6ee5753275edda0d9  doc/eng-us/examples/commands/exppatterncatalogue.md
 9e435392f7116c7d5176b7a8bb93901b  doc/eng-us/examples/commands/exprepair.md
-f5f787ff99bf9b46405aad8526824372  doc/eng-us/examples/commands/expstaticbuild.md
+a57956dc17df10e9c927eafbadeb10eb  doc/eng-us/examples/commands/expstaticbuild.md
 d16d8a2f908a6c14f85ec2b2679bc842  doc/eng-us/examples/commands/expstaticdiff.md
 433015da4258b3e8ab0310efb6270f92  doc/eng-us/examples/commands/expstaticdns.md
 e6fe1fb5a564c7afe4dee94b2e24c0b5  doc/eng-us/examples/commands/expstaticgithub.md
@@ -7070,7 +7070,7 @@ cacbe6383326b6771b72d2dbf36ba63a  doc/eng-us/guides/smarty-templates-troubleshoo
 db841cc634480c49b7b618fd04db8d69  doc/eng-us/guides/static-publishing-custom-domains-and-dns.md
 569d6daa6eee147300e288b42a976f3a  doc/eng-us/guides/static-publishing-deploy-keys.md
 558fe0f5a25f69322510c7ee71b86554  doc/eng-us/guides/static-publishing-dynamic-features.md
-d8202b47695130741dbd9566418edd00  doc/eng-us/guides/static-publishing-for-multisite-installations.md
+0f896f431d091a770dc80753682d3626  doc/eng-us/guides/static-publishing-for-multisite-installations.md
 8a5e11b6f4abd5001f29ba202f81274b  doc/eng-us/guides/static-publishing-history-and-rollback.md
 3dfbe72d89e3a5d0568d38ef7072098f  doc/eng-us/guides/static-publishing-limits-and-github-terms.md
 28d6a7e65e9e714330db33e1ce69888b  doc/eng-us/guides/static-publishing-on-windows-and-clusters.md
@@ -13408,7 +13408,7 @@ c590935b1f626e2e359961b631936dc2  doc/ger-de/anleitungen/statische-websites-auf-
 a69dd29dbd1ecd48baf7206358e184cb  doc/ger-de/anleitungen/statisches-veroeffentlichen-dynamische-funktionen.md
 f0ef4c3d685e2b6f79525c13e55cdd1b  doc/ger-de/anleitungen/statisches-veroeffentlichen-eigene-domains-und-dns.md
 3ad61ff8d74d45488ad28c6e7152ba19  doc/ger-de/anleitungen/statisches-veroeffentlichen-fehlerbehebung.md
-000ce4475e10b3d31dbdc672749cdd4c  doc/ger-de/anleitungen/statisches-veroeffentlichen-fuer-multisite-installationen.md
+15d7ac6ce5c93aaae9f941e2ddbc0c89  doc/ger-de/anleitungen/statisches-veroeffentlichen-fuer-multisite-installationen.md
 2675b8089e0a723fdb4b3c8648500aef  doc/ger-de/anleitungen/statisches-veroeffentlichen-grenzen-und-github-bedingungen.md
 8a1f7f299f2773a102a3f53329f39ade  doc/ger-de/anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md
 b3db2a43f8417b62277a7baeaf96114c  doc/ger-de/anleitungen/statisches-veroeffentlichen-unter-windows-und-in-clustern.md
@@ -13631,7 +13631,7 @@ c6ae12322470cf8abd025f2595c8666d  doc/ger-de/beispiele/befehle/expmigrationrollb
 903242079d58b9a6899d0ecdce5fe5d3  doc/ger-de/beispiele/befehle/expmigrationstatus.md
 16fe7df54dc979294b4408ba544d1b42  doc/ger-de/beispiele/befehle/exppatterncatalogue.md
 26d0f974b931b2d2925b580ec98f1fce  doc/ger-de/beispiele/befehle/exprepair.md
-f7b3d572ec9ee914b98f88f0e4fff9e3  doc/ger-de/beispiele/befehle/expstaticbuild.md
+def4a56e1c9742003c82ccaa8620a77a  doc/ger-de/beispiele/befehle/expstaticbuild.md
 d3610361e8f5f816ca6d51ca0d3d08c8  doc/ger-de/beispiele/befehle/expstaticdiff.md
 1de63fecf7d3ddb43106761a4719df48  doc/ger-de/beispiele/befehle/expstaticdns.md
 f69595f8597568a3dbd3c9f9f46d7b4f  doc/ger-de/beispiele/befehle/expstaticgithub.md
@@ -25120,8 +25120,8 @@ c8ad3ac193b65f8afbb97e6a35973440  kernel/private/classes/commands/expmigrationre
 2279feb83c974bb395e833e347fc72ba  kernel/private/classes/commands/expmigrationresume.php
 9c156aa9bf248209f4c361d0455eec7c  kernel/private/classes/commands/expmigrationrollback.php
 c22b8f05181328d28e0b44a498863941  kernel/private/classes/commands/expmigrationstatus.php
-bbb88f30845fe20cc2ef8a9ad8616811  kernel/private/classes/commands/expstaticbase.php
-867f7d4818a0763a145a9afbdc74c841  kernel/private/classes/commands/expstaticbuild.php
+2701ebb01e830f00b043fe3ed5505e30  kernel/private/classes/commands/expstaticbase.php
+5fc6f5555dca3d2a11f5bb8e13876a50  kernel/private/classes/commands/expstaticbuild.php
 3575ea0c498f5d1b43b9bbe9f4e37c09  kernel/private/classes/commands/expstaticdiff.php
 7af493693e54a73bf598e5269f2ee1f8  kernel/private/classes/commands/expstaticdns.php
 a73fa01f0fe7d9632eeebcdb532f6816  kernel/private/classes/commands/expstaticgithub.php
@@ -28824,7 +28824,7 @@ b1d378be0b0853fcbb3bc90b87263740  tests/tests/kernel/classes/staticpublish/expSt
 de7286bfe7b0c3200dc0ab42518781f0  tests/tests/kernel/classes/staticpublish/expStaticBuildMultiSiteSqliteTest.php
 5308a09f559711bbe3015f6481fa8e93  tests/tests/kernel/classes/staticpublish/expStaticBuildSignatureTest.php
 779079cc3c9b7e558f72630a98a1e37e  tests/tests/kernel/classes/staticpublish/expStaticBuildSqliteTest.php
-2305993dc9cfb72cdfe922e7bc872c40  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
+0442110bd2c0f3b432346b054e17a7bb  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
 4e13e1ff07af6f32c6f45064b5640365  tests/tests/kernel/classes/staticpublish/expStaticCredentialsTest.php
 3979bc5a303fe7d2b1e227585e8944ec  tests/tests/kernel/classes/staticpublish/expStaticDegraderTest.php
 0ac14314c5e2bc01199792dd2b25ddef  tests/tests/kernel/classes/staticpublish/expStaticExtrasTest.php

@@ -30,7 +30,7 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
     {
         return array(
             'exp:static:targets' => '[format:][export:]',
-            'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging][login:][run-id:][progress:][siteaccess:]',
+            'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging][login:][run-id:][progress:][only-siteaccess:]',
             'exp:static:diff' => '[format:][verify][check-links][mount:*]',
             'exp:static:serve' => '[port:][host:][base-path:][format:]',
             'exp:static:publish' => '[build][nodes:*][message:][no-push][format:][login:][run-id:][progress:]',
@@ -104,7 +104,7 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
             'login' => 'Run as this user (the administration starts its jobs so); recorded as who ran it',
             'run-id' => 'The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job\'s id)',
             'progress' => 'Also append the progress, one JSON object per line, to this file (the administration follows it)',
-            'siteaccess' => 'Build only this one of the target\'s siteaccesses (a target of several, SiteAccessList[]); the others\' pages of the last build stay',
+            'only-siteaccess' => 'Build only this one of the target\'s siteaccesses (a target of several, SiteAccessList[]); the others\' pages of the last build stay',
         );
     }
 

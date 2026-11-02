@@ -58,8 +58,9 @@ CustomDomain=www.example.com
   jedes Siteaccess.
 - Eine Inhaltsveröffentlichung markiert die Seiten des Knotens in jedem Siteaccess der Kopie als veraltet; `--nodes`
   baut die Seite eines Knotens in jedem von ihnen.
-- Nur einen davon bauen: `./console exp:static:build sites --siteaccess=bold_ger`, ein Teil-Build; die Seiten der
-  anderen bleiben, wie der letzte Build sie hinterließ. `--paths` nimmt Pfade der Kopie (`/bold_ger/team`).
+- Nur einen davon bauen: `./console exp:static:build sites --only-siteaccess=bold_ger`, ein Teil-Build; die Seiten
+  der anderen bleiben, wie der letzte Build sie hinterließ. (`--siteaccess` bleibt die Skriptoption, die bestimmt,
+  wessen Einstellungen gelesen werden.) `--paths` nimmt Pfade der Kopie (`/bold_ger/team`).
 
 Im Assistenten listet Schritt 1 die Front-Siteaccesses mit ihrem Ordner: haken Sie die zu veröffentlichenden an und
 wählen Sie den im Stamm (oder keinen). Ein einzelner angehakter Siteaccess wird wie bisher als `SiteAccess=`

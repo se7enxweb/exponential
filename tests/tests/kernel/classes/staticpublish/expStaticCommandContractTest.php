@@ -16,6 +16,8 @@
  *  SC-08 the publish report keys, push and run states, tag names, tables, the shipped Push and Commit* settings, the
  *        cronjob part staticpublish, the upgrade step and the audit events
  *  SC-09 the text output of a publish report (gitLines())
+ *  SC-10 a job started from the administration (--siteaccess=admin, the script option: whose settings are read) is
+ *        accepted: no exp:static command declares --siteaccess itself, and every option a job passes is declared
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -28,7 +30,7 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
     /** The snapshot. Add, never change or remove. */
     const COMMANDS = array(
         'exp:static:targets' => '[format:][export:]',
-        'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging][login:][run-id:][progress:][siteaccess:]',
+        'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging][login:][run-id:][progress:][only-siteaccess:]',
         'exp:static:diff' => '[format:][verify][check-links][mount:*]',
         'exp:static:serve' => '[port:][host:][base-path:][format:]',
         'exp:static:publish' => '[build][nodes:*][message:][no-push][format:][login:][run-id:][progress:]',
@@ -268,5 +270,28 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'Static publishing: publish of github-public, branch gh-pages in var/site/static-publish/github-public', $text );
         $this->assertStringContainsString( 'Commit: aaaaaaaaaaaa, tag static/github-public/2', $text );
         $this->assertStringContainsString( 'Push:   pending (https://github.com/owner/site.git, credential token:pages_token)', $text );
+    }
+
+    /** SC-10 */
+    public function testJobFromTheAdministrationKeepsTheScriptSiteaccess()
+    {
+        $contract = \Exponential\Command\Kernel\ExpstaticBase::contract();
+        foreach ( $contract as $command => $config )
+            $this->assertArrayNotHasKey( 'siteaccess:', self::options( $config ), "$command must not take over the script option --siteaccess" );
+        $this->assertArrayHasKey( 'only-siteaccess:', self::options( $contract['exp:static:build'] ) );
+        $standard = array( 'siteaccess' => true, 'allow-root-user' => true );
+        foreach ( array( 'build' => array(), 'publish' => array( expStaticJob::NODES => array( 57 ), 'message' => 'm' ), 'rollback' => array( 'to' => '2' ) ) as $kind => $options )
+        {
+            $arguments = expStaticJob::arguments( $kind, '20261102-120000-a1b2c3', 'demo-site-static', $options, 'editor', 'admin', 'p', true );
+            $this->assertContains( '--siteaccess=admin', $arguments );
+            $declared = self::options( $contract['exp:static:' . $kind] );
+            foreach ( $arguments as $argument )
+            {
+                if ( !preg_match( '/^--([a-z-]+)(=|$)/', $argument, $m ) || isset( $standard[$m[1]] ) )
+                    continue;
+                $this->assertTrue( isset( $declared[$m[1]] ) || isset( $declared[$m[1] . ':'] ) || isset( $declared[$m[1] . ':*'] ),
+                                   "exp:static:$kind declares --{$m[1]}, which a job passes" );
+            }
+        }
     }
 }

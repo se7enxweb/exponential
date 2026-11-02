@@ -54,8 +54,9 @@ CustomDomain=www.example.com
   siteaccess; staleness, history and the "Publish this page" panel work on the page paths of every siteaccess.
 - A content publish marks the node's pages stale in every siteaccess of the copy; `--nodes` builds a node's page in
   each of them.
-- Build one of them only with `./console exp:static:build sites --siteaccess=bold_ger`: a partial build, the pages of
-  the others stay as the last build left them. `--paths` takes paths of the copy (`/bold_ger/team`).
+- Build one of them only with `./console exp:static:build sites --only-siteaccess=bold_ger`: a partial build, the
+  pages of the others stay as the last build left them. (`--siteaccess` stays the script option that chooses whose
+  settings are read.) `--paths` takes paths of the copy (`/bold_ger/team`).
 
 In the wizard, step 1 lists the front siteaccesses with their folder: tick the ones to publish and choose the one at
 the root (or none). One ticked siteaccess is saved as `SiteAccess=` as before.
