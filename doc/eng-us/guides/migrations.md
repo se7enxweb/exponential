@@ -291,6 +291,7 @@ and design files, and a site-wide recording window are planned and not part of t
   [Frequently asked questions](../help/migrations/faq.md)
 - [The tutorial](migrations-tutorial.md), [PHP migrations](migrations-php.md),
   [Packages, deploys and long runs](migrations-packages-deploy-and-long-runs.md),
+  [Deploying to remote installations](migrations-remote-deploy.md),
   [Rollback and captions](migrations-rollback-and-captions.md),
   [The migrations repository](migrations-repositories.md)
 - [In the administration](../help/migrations/in-the-administration.md), [Commands](../help/migrations/commands.md),

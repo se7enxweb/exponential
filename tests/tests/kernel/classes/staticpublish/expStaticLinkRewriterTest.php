@@ -17,12 +17,13 @@
  *  LR-12 dot segments and base path normalisation
  *  LR-13 links to other hosts that carry an address of the site in their query (share links) get the public
  *        address there, or the live one; never the crawl address
- *  LR-14 OutsideLinks=unlink: a link to a page the export does not hold (relative, absolute, with a query) becomes
- *        its text, a class kept on a <span>; held pages, fragments, files, srcset, images, forms and other hosts
- *        untouched; counted
+ *  LR-14 OutsideLinks=unlink: a link to a page the export does not hold (relative, absolute, with a query) becomes a
+ *        placeholder <a> (no href, target, rel or handlers; its classes plus exp-static-unavailable, aria-disabled),
+ *        the style sheet linked in the <head> of a page that has one (relative or below the base path); held pages,
+ *        fragments, files, srcset, images, forms and other hosts untouched; counted
  *  LR-15 AdminLinks=unlink: links into an administration siteaccess (with or without a site path, on the live
- *        address too) become text, /administrators is no admin path; each setting alone; navigation <link>s dropped,
- *        style sheets kept; the admin paths a build derives (expStaticBuild::adminPaths())
+ *        address too) become placeholders, /administrators is no admin path; each setting alone; navigation <link>s
+ *        dropped, style sheets kept; the admin paths a build derives (expStaticBuild::adminPaths())
  *  LR-16 keep (the default) changes nothing: the output is byte for byte the one without the settings
  *  LR-17 a site served at the root of its SiteURL host (origin_site_paths): its pages there are the site's below either
  *        path, so a canonical link names the public address and links to held pages are never taken out
@@ -275,7 +276,7 @@ class expStaticLinkRewriterTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'var/site/storage/images/x.png' => '/var/site/storage/images/x.png', 'files/r.pdf' => '/site/files/r.pdf' ), $r->foundFiles() );
         $r->reset();
         $this->assertSame( array(), $r->foundFiles() );
-        $this->assertSame( array( 'rewritten' => 0, 'live' => 0, 'external' => 0, 'removed_outside' => 0, 'removed_admin' => 0 ), $r->counts() );
+        $this->assertSame( array( 'rewritten' => 0, 'live' => 0, 'external' => 0, 'removed_outside' => 0, 'removed_admin' => 0, 'unavailable' => 0 ), $r->counts() );
     }
 
     /** LR-12 */
@@ -343,29 +344,59 @@ class expStaticLinkRewriterTest extends PHPUnit\Framework\TestCase
               . ' <img src="/site/content/view/image/1" srcset="/site/x/y 2x" />'
               . ' <form action="/site/content/search"><input name="SearchText" /></form></p>';
         $out = $r->rewriteHtml( $html, '/site/about', 'about/index.html' );
-        $this->assertStringContainsString( '<p><span class="nav-link login">Log in</span>', $out, 'a class stays on a <span>' );
+        $u = ' aria-disabled="true">';
+        $this->assertStringContainsString( '<p><a class="nav-link login exp-static-unavailable"' . $u . 'Log in</a>', $out, 'a placeholder <a> keeps its classes' );
         $this->assertStringNotContainsString( 'nofollow', $out );
-        $this->assertStringContainsString( ' Basket ', $out, 'relative, no class: only the text' );
-        $this->assertStringContainsString( "<span class='more'>More <b>news</b></span>", $out, 'absolute with a query' );
-        $this->assertStringContainsString( ' English ', $out, 'another siteaccess on the live address' );
-        $this->assertStringContainsString( ' Query ', $out, 'a held page with a query is not held' );
+        $this->assertStringNotContainsString( '_blank', $out );
+        $this->assertStringContainsString( ' <a class="exp-static-unavailable"' . $u . 'Basket</a> ', $out, 'relative, no class: the class alone' );
+        $this->assertStringContainsString( '<a class="more exp-static-unavailable"' . $u . 'More <b>news</b></a>', $out, 'absolute with a query' );
+        $this->assertStringContainsString( ' <a class="exp-static-unavailable"' . $u . 'English</a> ', $out, 'another siteaccess on the live address' );
+        $this->assertStringContainsString( ' <a class="exp-static-unavailable"' . $u . 'Query</a> ', $out, 'a held page with a query is not held' );
         $this->assertStringContainsString( '<a href="./#team" class="in">Team</a>', $out, 'a held page stays a link' );
         $this->assertStringContainsString( '<a href="#top">Top</a>', $out );
         $this->assertStringContainsString( '<a href="https://other.example.org/site/user/login">Other</a>', $out, 'other hosts untouched' );
         $this->assertStringContainsString( '<a href="../var/site/storage/a.pdf">PDF</a>', $out, 'files are files' );
         $this->assertStringContainsString( 'src="https://www.example.com/site/content/view/image/1" srcset="https://www.example.com/site/x/y 2x"', $out, 'images untouched' );
         $this->assertStringContainsString( '<form action="https://www.example.com/site/content/search">', $out, 'forms are the degrader\'s' );
-        $this->assertSame( 0, substr_count( $out, '</a>' ) - 4, 'every closing tag of a removed link is gone' );
+        $this->assertSame( 9, substr_count( $out, '</a>' ), 'every closing tag stays' );
+        $this->assertStringNotContainsString( 'exp-static.css', $out, 'no style sheet without unavailable_css' );
         $counts = $r->counts();
         $this->assertSame( 5, $counts['removed_outside'] );
         $this->assertSame( 0, $counts['removed_admin'] );
+        $this->assertSame( 5, $counts['unavailable'] );
 
         $noLive = self::unlinker( array( 'outside_links' => 'unlink', 'live_url' => '' ) );
-        $this->assertSame( 'Log in', $noLive->rewriteHtml( '<a href="/site/user/login">Log in</a>', '/site', 'index.html' ), 'without a live site too' );
-        $this->assertSame( 'a<span class="x">b</span><a href="./">c</a>', $r->rewriteHtml( 'a<a class="x" href="/site/user">b<a href="/site/">c</a>', '/site', 'index.html' ),
-                           'an <a> ends the one before it' );
-        $this->assertSame( '<span class="x">a<!-- c -->b</span>', $r->rewriteHtml( '<a class="x" href="/site/user">a<!-- c -->b</a>', '/site', 'index.html' ),
+        $this->assertSame( '<a class="exp-static-unavailable"' . $u . 'Log in</a>', $noLive->rewriteHtml( '<a href="/site/user/login">Log in</a>', '/site', 'index.html' ),
+                           'without a live site too' );
+        $this->assertSame( 'a<a class="x exp-static-unavailable"' . $u . 'b<a href="./">c</a>', $r->rewriteHtml( 'a<a class="x" href="/site/user">b<a href="/site/">c</a>', '/site', 'index.html' ),
+                           'nested markup is left as it was' );
+        $this->assertSame( '<a class="x exp-static-unavailable"' . $u . 'a<!-- c -->b</a>', $r->rewriteHtml( '<a class="x" href="/site/user">a<!-- c -->b</a>', '/site', 'index.html' ),
                            'across a comment' );
+        $this->assertSame( '<a id="m" class="menu-item exp-static-unavailable" data-x="/site/user" title="Basket" role="menuitem"' . $u . 'Basket</a>',
+                           $r->rewriteHtml( '<a id="m" href="/site/shop/basket" class=menu-item onclick="go()" data-x="/site/user" download ping="/p" hreflang="en" '
+                                            . 'title="Basket" role="menuitem" aria-disabled="false">Basket</a>', '/site', 'index.html' ),
+                           'link-only attributes and handlers go, the others stay; an unquoted class is merged' );
+        $this->assertSame( '<a class="exp-static-unavailable a"' . $u . 'x</a>', $r->rewriteHtml( '<a href="/site/user" class="exp-static-unavailable a">x</a>', '/site', 'index.html' ),
+                           'the class is not added twice' );
+
+        // the style sheet: linked once at the end of the <head> of a page with a placeholder link, as any link
+        $page = '<html><head><title>t</title></head><body><a href="/site/user/login">a</a><a href="/site/x">b</a></body></html>';
+        $css = self::unlinker( array( 'outside_links' => 'unlink', 'unavailable_css' => expStaticLinkRewriter::UNAVAILABLE_CSS ) );
+        $out = $css->rewriteHtml( $page, '/site/about', 'about/index.html' );
+        $this->assertStringContainsString( '<title>t</title><link rel="stylesheet" href="../exp-static.css" />' . "\n" . '</head>', $out );
+        $this->assertSame( 1, substr_count( $out, 'exp-static.css' ) );
+        $based = self::unlinker( array( 'outside_links' => 'unlink', 'unavailable_css' => 'exp-static.css', 'mode' => expStaticLinkRewriter::MODE_BASE_PATH,
+                                        'base_path' => '/repo/' ) );
+        $this->assertStringContainsString( '<link rel="stylesheet" href="/repo/exp-static.css" />', $based->rewriteHtml( $page, '/site/about', 'about/index.html' ) );
+        $plainPage = '<html><head></head><body><a href="/site/about">a</a></body></html>';
+        $this->assertSame( '<html><head></head><body><a href="about/">a</a></body></html>', $css->rewriteHtml( $plainPage, '/site', 'index.html' ),
+                           'a page without a placeholder link does not link it' );
+        $this->assertArrayNotHasKey( 'exp-static.css', $css->foundFiles(), 'the build writes it; it is not collected from the site' );
+
+        $sheet = expStaticLinkRewriter::unavailableStyleSheet();
+        $this->assertStringContainsString( '.exp-static-unavailable{opacity:.5;cursor:not-allowed;text-decoration:none;pointer-events:none}', $sheet );
+        $this->assertStringContainsString( '.exp-static-unavailable:hover', $sheet );
+        $this->assertDoesNotMatchRegularExpression( '/color|\#[0-9a-f]{3}|rgb|background|font/i', $sheet, 'no color, font or background of its own' );
     }
 
     /** LR-15 */
@@ -377,7 +408,8 @@ class expStaticLinkRewriterTest extends PHPUnit\Framework\TestCase
               . '<link rel="stylesheet" href="/site/user/style" /><link rel="search" href="/admin/search" />';
         $r = self::unlinker( array( 'admin_links' => 'unlink' ) );
         $out = $r->rewriteHtml( $html, '/site', 'index.html' );
-        $this->assertStringStartsWith( '<span class="edit">Edit</span> Admin <a href="https://www.example.com/administrators">People</a>'
+        $this->assertStringStartsWith( '<a class="edit exp-static-unavailable" aria-disabled="true">Edit</a> <a class="exp-static-unavailable" aria-disabled="true">Admin</a>'
+                                       . ' <a href="https://www.example.com/administrators">People</a>'
                                        . ' <a href="https://www.example.com/site/user/login">Log in</a>', $out );
         $this->assertStringContainsString( '<link rel="alternate" type="application/rss+xml" href="https://www.example.com/site/rss/feed/news" />', $out, 'outside kept' );
         $this->assertStringNotContainsString( 'rel="search"', $out, 'a navigation <link> into the administration is dropped' );
@@ -385,14 +417,14 @@ class expStaticLinkRewriterTest extends PHPUnit\Framework\TestCase
 
         $both = self::unlinker( array( 'admin_links' => 'unlink', 'outside_links' => 'unlink' ) );
         $out = $both->rewriteHtml( $html, '/site', 'index.html' );
-        $this->assertStringContainsString( ' Log in', $out );
+        $this->assertStringContainsString( ' <a class="exp-static-unavailable" aria-disabled="true">Log in</a>', $out );
         $this->assertStringNotContainsString( 'rel="alternate"', $out, 'a feed the copy does not hold' );
         $this->assertStringContainsString( '<link rel="stylesheet" href="https://www.example.com/site/user/style" />', $out, 'a style sheet is never dropped' );
         $this->assertSame( 3, $both->counts()['removed_admin'] );
         $this->assertSame( 3, $both->counts()['removed_outside'] );
 
         $root = self::unlinker( array( 'site_path' => '', 'admin_links' => 'unlink', 'pages' => null ) );
-        $this->assertSame( 'Edit <a href="about/">About</a>', $root->rewriteHtml( '<a href="/admin/x">Edit</a> <a href="/about">About</a>', '/', 'index.html' ),
+        $this->assertSame( '<a class="exp-static-unavailable" aria-disabled="true">Edit</a> <a href="about/">About</a>', $root->rewriteHtml( '<a href="/admin/x">Edit</a> <a href="/about">About</a>', '/', 'index.html' ),
                            'a site at the root: /admin is not one of its pages' );
 
         $this->assertTrue( $r->isAdminPath( '/admin' ) );
@@ -428,8 +460,9 @@ class expStaticLinkRewriterTest extends PHPUnit\Framework\TestCase
               . ' <a href="http://127.0.0.1:18308/about">crawl</a> <a href="https://www.example.com:8080/about">port</a>';
         $out = $r->rewriteHtml( $html, '/site/about', 'about/index.html' );
         $this->assertStringContainsString( '<link rel="canonical" href="https://owner.github.io/repo/about/" />', $out, 'the canonical of a page the copy holds' );
-        $this->assertStringContainsString( '<a href="./">root</a> <a href="./">prefixed</a> login admin', $out, 'below either path on the SiteURL host' );
-        $this->assertStringContainsString( ' crawl ', $out, 'on the crawl origin the site path stays /site' );
+        $this->assertStringContainsString( '<a href="./">root</a> <a href="./">prefixed</a> <a class="exp-static-unavailable" aria-disabled="true">login</a> '
+                                                . '<a class="exp-static-unavailable" aria-disabled="true">admin</a>', $out, 'below either path on the SiteURL host' );
+        $this->assertStringContainsString( ' aria-disabled="true">crawl</a> ', $out, 'on the crawl origin the site path stays /site' );
         $this->assertStringContainsString( '<a href="https://www.example.com:8080/about">port</a>', $out, 'another port is another host' );
         $this->assertSame( array( 2, 1 ), array( $r->counts()['removed_outside'], $r->counts()['removed_admin'] ) );
     }

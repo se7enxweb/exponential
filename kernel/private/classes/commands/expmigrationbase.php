@@ -59,6 +59,9 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'exp:migration:record:list' => '[format:][count:]',
             'exp:migration:record:show' => '[format:][plan]',
             'exp:migration:record:discard' => '[apply][dry-run][format:]',
+            'exp:migration:deploy' => '[remotes:*][apply][dry-run][transfer-only][only:*][format:][parallel:][timeout:][retries:]',
+            'exp:migration:remote:list' => '[remotes:*][format:]',
+            'exp:migration:remote:status' => '[remotes:*][format:][parallel:][timeout:][history:]',
         );
     }
 
@@ -137,6 +140,12 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'max-time' => 'Start no further migration after this many seconds; the rest stay pending for the next run (default [RunSettings] MaxTime)',
             'throttle' => 'Pause this many seconds between two migrations and between the batches of a long migration (default [RunSettings] Throttle)',
             'nice' => 'Run at this lower priority, 1 to 19 as nice(1) (default [RunSettings] Nice)',
+            'remotes' => 'The remotes: ids or group names of [RemoteSettings] RemoteList[] in migration.ini, or all (a comma list or repeated)',
+            'transfer-only' => 'Send and verify the migration files, but do not run them (with --apply; the only mode for FTP remotes)',
+            'parallel' => 'How many remotes are worked on at the same time (default [RemoteSettings] Parallel)',
+            'timeout' => 'Seconds each remote may take for one phase (default [RemoteSettings] Timeout)',
+            'retries' => 'How often a connection failure is tried again (default [RemoteSettings] Retries)',
+            'history' => 'How many of the latest deploys to list (default 10, 0 for none)',
         );
     }
 
