@@ -15474,9 +15474,6 @@ be5e2d8fc4279277446834eaf953ef61  doc/ger-de/beispiele/kochbuch/template-overrid
 6230d01ca1dd137fb5819c57a926cc28  doc/ger-de/beispiele/kochbuch/uebersetzungen.md
 3eedf94c42fa493f5f9bd97a7bbf172f  doc/ger-de/beispiele/kochbuch/velocity-deployment.md
 06755c41bd376823daece917056df30c  doc/ger-de/beispiele/kochbuch/workflow-ereignis.md
-95bc89ffb5a5d6597810b7e847d142bc  doc/ger-de/beispiele/migration-steps/README.md
-bfee6ad9705a0fdc43c7acb1bec0b5b0  doc/ger-de/beispiele/migration-steps/assert.md
-b4507bfb4dbdc12cb36091c18d65ec3e  doc/ger-de/beispiele/migration-steps/reference.md
 eb577a105556256ac9918078b301de71  doc/ger-de/beispiele/migrationsschritte/README.md
 a8857393b86ee3b79f1183cc5bba821b  doc/ger-de/beispiele/migrationsschritte/assert.md
 66fc652ba6d62a9a48bf70dfa4236846  doc/ger-de/beispiele/migrationsschritte/autoload.md
