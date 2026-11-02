@@ -472,4 +472,44 @@ class expStaticTarget
     {
         return array( 'id' => $this->id, 'name' => $this->name() ) + $this->settings();
     }
+
+    /**
+     * Targets as an INI migration (expMigrationIni: a file YYYYMMDDHHMMSS_<name>.ini of a migrations folder or a
+     * site package), so they travel to another installation: each [Target_<id>] block in full and the id added to
+     * TargetList[]. Credentials travel as their names (token:<secret>, sshkey:<secret>, app:<installation>); a value
+     * never does: the receiving installation stores its own in Setup > Secrets. Static publishing itself is not
+     * switched on. Pure.
+     *
+     * @param expStaticTarget[] $targets
+     * @param string $description
+     * @return string
+     */
+    public static function migrationIni( array $targets, $description = '' )
+    {
+        $ids = array();
+        foreach ( $targets as $target )
+            $ids[] = $target->id();
+        $text = "#?ini charset=\"utf-8\"?\n# description: " . ( $description !== '' ? str_replace( array( "\r", "\n" ), ' ', (string)$description )
+                                                                                   : 'Static publishing targets: ' . implode( ', ', $ids ) ) . "\n"
+              . "# The credentials are names only: store their values in Setup > Secrets of this installation.\n\n"
+              . "[staticcache.ini/StaticPublishSettings]\n";
+        foreach ( $ids as $id )
+            $text .= "TargetList[]=$id\n";
+        foreach ( $targets as $target )
+        {
+            $text .= "\n[staticcache.ini/Target_" . $target->id() . "]\n";
+            foreach ( $target->settings() as $name => $value )
+            {
+                if ( is_array( $value ) )
+                {
+                    $text .= $name . "[]\n";
+                    foreach ( $value as $item )
+                        $text .= $name . '[]=' . str_replace( array( "\r", "\n" ), ' ', (string)$item ) . "\n";
+                }
+                else
+                    $text .= $name . '=' . str_replace( array( "\r", "\n" ), ' ', (string)$value ) . "\n";
+            }
+        }
+        return $text;
+    }
 }

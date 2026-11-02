@@ -83004,5 +83004,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>тодорхойгүй</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages хуудаснаас %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Текст файл бүрийн хажууд .gz (болон .br), тэдгээрийг үйлчилдэг хостуудад зориулав.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Хуудасны хуучин хаяг, өөр нэр бүрд зориулсан жижиг хуудас, ингэснээр хуучин холбоосууд ажилласаар байна.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions сайтыг хүргэх бүрд үргэлж бичигдэнэ.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 гэх мэт SPDX ID, эсвэл текст өөрөө.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Сагс</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Сервер рүү хийх дуудлага</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Сэтгэгдэл</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Мэдээлэл цуглуулдаг маягтууд</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions ажлын урсгал</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Хуудсанд хоосон зай цөөн, сэтгэгдэлгүй.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Агуулгын лиценз</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Нэвтрэх</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Багасгах</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Бусад маягтууд</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Урьдчилан шахах</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Чиглүүлэх хуудаснууд</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Чиглүүлэх хуудаснууд: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Хайх</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Хайлтын индекс: %languages хэлээр %pages хуудас.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Агуулгынх нь хэшээр нэрлэсэн стиль болон скриптүүд, ингэснээр хөтчүүд тэдгээрийг хадгалж болно.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Өөрчлөгдсөн хуудаснууд, сүүлийн өөрчлөлтөөс хойш хэдэн минутын дараа (cronjob хэсэг staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Агуулгын лиценз, доорх талбараас.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Бүх сайт, хуваарийн цагуудад (cronjob хэсэг staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Хуудасны эдгээр хэсэгт сервер хэрэгтэй; тус бүр нөөц шийдэлтэй. Нийтлэхийн өмнө шалгана уу.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Статикаар юу ажиллахгүй вэ</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Репозитори гэж юу вэ, түүнийг хост дээр нээж буй хүнд зориулав.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>орхигдуулсан</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>нөөц текст</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>амьд сайтын маягтын төгсгөлийн цэг</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>амьд сайт</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>хуулбарын хайлтын хуудас</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Маягтыг илгээж чадсангүй.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Баярлалаа: маягтыг илгээлээ.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Маягтыг хүлээн аваагүй: оруулсан зүйлээ шалгаад дахин илгээнэ үү.</translation>
+    </message>
 </context>
 </TS>

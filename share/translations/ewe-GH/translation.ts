@@ -83004,5 +83004,145 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>unknown</source>
         <translation>menya o</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count le axa %pages dzi:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>.gz (kple .br) le nuŋɔŋlɔ ɖe sia ɖe xa, na dɔdzikpɔla siwo naa wo.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Axa sue aɖe na adrese xoxo kple ŋkɔ bubu sia ɖe sia si axa aɖe si, ale be kadodo xoxowo age ɖe edɔ wɔm.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Wɔ ŋɔŋlɔ ɣesiaɣi ne GitHub Actions kplɔ saitia vɛ.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id abe CC-BY-4.0 ene, alo nuŋɔŋlɔ ŋutɔ.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Agbadzɔ</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Yɔyɔ ɖe serva ŋu</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Nyaɖeɖefia</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Nuŋɔŋlɔgbalẽwo si ƒoa nyatakaka nu ƒu</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Teƒe gbadza sue kple nyaɖeɖefia manɔmee le axawo me.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Nuŋɔŋlɔ ƒe lisensi</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Ge ɖe eme</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Ɖe sue</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Nuŋɔŋlɔgbalẽ bubuwo</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Tia nu ŋgɔ</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Axa siwo dzoa</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Axa siwo dzoa: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Didi</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Didi ƒe ɖoɖo: axa %pages le %languages me.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Nɔnɔme ƒe agbalẽwo kple dɔwɔnuwo siwo wotsɔ woƒe nu ƒe hash ŋlɔ ŋkɔ na, ale be browser-wo nate ŋu axɔ wo ɖe te.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Axa siwo trɔ, miniti ʋɛ aɖewo le trɔtrɔ mamlɛa megbe (cronjob ƒe akpa staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Nuŋɔŋlɔ ƒe lisensi, tso teƒe si le afi gɔme.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Saita blibo, le ɣeyiɣi ɖoɖo ƒe ɣeyiɣiwo me (cronjob ƒe akpa staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Axa ƒe akpa siawo hiã serva; wotsɔ nu bubu na wo ɖe sia ɖe. Dzro wo ƒe nu ŋgɔ na wò ate ŋu aɖe ɖe dutoƒo.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Nu si mewɔa dɔ le teƒe ɖeka o</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Nu si repository nye, na ame si le egbe ʋuam le host dzi.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>woɖe ɖa</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>nuŋɔŋlɔ si ɖo teƒe</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>nuŋɔŋlɔgbalẽ ƒe nuɖoɖo si le dɔ wɔm</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>nyatakakaɖoƒe si le dɔ wɔm</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>kɔpi ƒe didi ƒe axa</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Womete ŋu ɖo nuŋɔŋlɔgbalẽa o.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Akpe: wɔɖo nuŋɔŋlɔgbalẽa.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Womexɔ nuŋɔŋlɔgbalẽa o: dzro nu si ŋlɔ ɖe eme eye nàɖo egbɔ.</translation>
+    </message>
 </context>
 </TS>

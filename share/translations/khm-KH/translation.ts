@@ -83004,5 +83004,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>មិនស្គាល់</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ក្នុង %pages ទំព័រ៖</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>.gz (និង .br) នៅជាប់ឯកសារអត្ថបទនីមួយៗ សម្រាប់ម៉ាស៊ីនដែលបម្រើវា។</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>ទំព័រតូចមួយសម្រាប់អាសយដ្ឋានចាស់ និងឈ្មោះក្លែងក្លាយនីមួយៗនៃទំព័រ ដើម្បីឱ្យតំណចាស់បន្តដំណើរការ។</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>ត្រូវបានសរសេរជានិច្ច នៅពេល GitHub Actions ដឹកជញ្ជូនគេហទំព័រ។</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id ដូចជា CC-BY-4.0 ឬអត្ថបទខ្លួនឯង។</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>កន្ត្រក</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>ការហៅទៅម៉ាស៊ីនមេ</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>មតិយោបល់</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>ទម្រង់ដែលប្រមូលព័ត៌មាន</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>ចន្លោះទទេតិចជាង និងគ្មានមតិយោបល់ក្នុងទំព័រ។</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>អាជ្ញាប័ណ្ណនៃមាតិកា</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ចូល</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>បង្រួម</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>ទម្រង់ផ្សេងទៀត</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>បង្ហាប់ជាមុន</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ទំព័របញ្ជូនបន្ត</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ទំព័របញ្ជូនបន្ត៖ %count។</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ស្វែងរក</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>លិបិក្រមស្វែងរក៖ %pages ទំព័រក្នុង %languages។</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>សន្លឹករចនាបថ និងស្គ្រីប ដែលដាក់ឈ្មោះតាមតម្លៃហាសនៃមាតិការបស់វា ដើម្បីឱ្យកម្មវិធីរុករកអាចរក្សាទុកបាន។</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>ទំព័រដែលបានផ្លាស់ប្ដូរ ប៉ុន្មាននាទីបន្ទាប់ពីការផ្លាស់ប្ដូរចុងក្រោយ (ផ្នែក cronjob staticpublish)។</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>អាជ្ញាប័ណ្ណនៃមាតិកា ពីវាលខាងក្រោម។</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>គេហទំព័រទាំងមូល តាមពេលវេលានៃកាលវិភាគ (ផ្នែក cronjob staticpublish)។</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>ផ្នែកទាំងនេះនៃទំព័រត្រូវការម៉ាស៊ីនមេ; នីមួយៗមានជម្រើសបម្រុង។ សូមពិនិត្យវាមុនពេលបោះពុម្ពផ្សាយ។</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>អ្វីដែលមិនដំណើរការជាឋិតិវន្ត</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ឃ្លាំងគឺជាអ្វី សម្រាប់អ្នកដែលបើកវានៅលើម៉ាស៊ីនបម្រើ។</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ដកចេញ</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>អត្ថបទបម្រុង</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ចំណុចបញ្ចប់ទម្រង់នៃគេហទំព័រផ្ទាល់</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>គេហទំព័រផ្ទាល់</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ទំព័រស្វែងរកនៃច្បាប់ចម្លង</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>មិនអាចផ្ញើទម្រង់បានទេ។</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>សូមអរគុណ៖ ទម្រង់ត្រូវបានផ្ញើ។</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ទម្រង់មិនត្រូវបានទទួលយកទេ៖ សូមពិនិត្យអ្វីដែលអ្នកបានបញ្ចូល ហើយផ្ញើម្ដងទៀត។</translation>
+    </message>
 </context>
 </TS>

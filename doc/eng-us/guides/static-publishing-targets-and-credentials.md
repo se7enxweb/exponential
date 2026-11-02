@@ -202,6 +202,14 @@ that belongs to another user is refused, since files git wrote as that user woul
 the commands run as they are: git is started without a shell, paths use `/`, and the deploy key file is written with
 the rights of the current user.
 
+## Take targets to another installation
+
+`./console exp:static:targets --export=all` (or `--export=github-public,docs`) prints the targets as an INI
+migration: their `[Target_<id>]` blocks and `TargetList[]`. Save it in the migrations folder of the other
+installation (`YYYYMMDDHHMMSS_static_targets.ini`) or in a site package, and run it there. A credential travels as
+its secret name (`token:github_pages_token`), never as its value: store the value in Setup > Secrets of the other
+installation. The migration does not switch static publishing on.
+
 ## Troubleshooting
 
 | Symptom | Cause and fix |

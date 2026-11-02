@@ -84290,5 +84290,145 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>unknown</source>
         <translation>neznámý</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count na %pages stránce/stránkách:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Soubor .gz (a .br) vedle každého textového souboru, pro hostitele, kteří je poskytují.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Malá stránka pro každou starou adresu a alias stránky, aby staré odkazy dál fungovaly.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Zapisuje se vždy, když web doručuje GitHub Actions.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Identifikátor SPDX, například CC-BY-4.0, nebo samotný text.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Košík</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Volání serveru</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Komentáře</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formuláře, které shromažďují informace</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Pracovní postup GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Méně prázdného místa a žádné komentáře ve stránkách.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Licence obsahu</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Přihlášení</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minifikovat</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Další formuláře</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Předkomprimovat</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Přesměrovací stránky</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Přesměrovací stránky: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hledat</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Index vyhledávání: %pages stránek v jazycích: %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Styly a skripty pojmenované podle hashe jejich obsahu, aby je prohlížeče mohly uchovávat.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Změněné stránky, několik minut po poslední změně (část cronjobu staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Licence obsahu z pole níže.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Celý web v časech plánu (část cronjobu staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Tyto části stránek potřebují server; každá dostala náhradní řešení. Před publikováním je zkontrolujte.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Co staticky nefunguje</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Co je repozitář, pro toho, kdo ho otevře na hostiteli.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>vynecháno</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>náhradní text</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>koncový bod formulářů živého webu</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>živý web</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>stránka vyhledávání kopie</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formulář se nepodařilo odeslat.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Děkujeme: formulář byl odeslán.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formulář nebyl přijat: zkontrolujte, co jste zadali, a odešlete ho znovu.</translation>
+    </message>
 </context>
 </TS>

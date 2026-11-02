@@ -83002,5 +83002,145 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>unknown</source>
         <translation>haijulikani</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count kwenye kurasa %pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Faili ya .gz (na .br) kando ya kila faili la maandishi, kwa wapangishi wanaozitoa.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Ukurasa mdogo kwa kila anwani ya zamani na jina mbadala la ukurasa, ili viungo vya zamani viendelee kufanya kazi.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Huandikwa kila wakati GitHub Actions inapowasilisha tovuti.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Kitambulisho cha SPDX kama CC-BY-4.0, au maandishi yenyewe.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Kapu</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Miito kwa seva</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Maoni</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Fomu zinazokusanya taarifa</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Mtiririko wa kazi wa GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Nafasi tupu chache na bila maoni kwenye kurasa.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Leseni ya maudhui</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Ingia</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Fomu nyingine</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Kurasa za uelekezaji</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Kurasa za uelekezaji: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Tafuta</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Faharasa ya utafutaji: kurasa %pages katika %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Laha za mtindo na hati zilizopewa majina kwa hash ya maudhui yake, ili vivinjari viweze kuzihifadhi.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Kurasa zilizobadilika, dakika chache baada ya mabadiliko ya mwisho (sehemu ya cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Leseni ya maudhui, kutoka sehemu ya chini.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Tovuti nzima, kwa nyakati za ratiba (sehemu ya cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Sehemu hizi za kurasa zinahitaji seva; kila moja imepewa mbadala. Zikague kabla ya kuchapisha.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Kisichofanya kazi kwa njia tuli</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Hazina ni nini, kwa yeyote anayeifungua kwenye mpangishi.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>imeachwa</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>maandishi mbadala</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>kituo cha fomu cha tovuti hai</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>tovuti hai</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ukurasa wa utafutaji wa nakala</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Fomu haikuweza kutumwa.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Asante: fomu imetumwa.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Fomu haikukubaliwa: angalia ulichoweka kisha uitume tena.</translation>
+    </message>
 </context>
 </TS>

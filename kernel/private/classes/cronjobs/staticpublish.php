@@ -92,7 +92,7 @@ class Staticpublish extends \Exponential\Runnable\CronjobPart
             // remembered before the run: a failed run waits for the next time of the schedule
             $state[$id] = time();
             if ( !is_dir( dirname( $stateFile ) ) )
-                mkdir( dirname( $stateFile ), 0775, true );
+                \eZDir::mkdir( dirname( $stateFile ), false, true );
             file_put_contents( $stateFile, json_encode( $state ), LOCK_EX );
             $report = $publisher->publish( array( 'build' => true ) );
             if ( !$report['errors'] )

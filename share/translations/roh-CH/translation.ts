@@ -83004,5 +83004,145 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>unknown</source>
         <translation>nunenconuschent</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count sin %pages pagina(s):</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>In .gz (ed .br) sper mintga datoteca da text, per ils hosts che als servan.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Ina pitschna pagina per mintga adressa veglia ed alias d'ina pagina, uschè ch'ils colliaments vegls funcziunan vinavant.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Vegn adina scrit cura che GitHub Actions furnescha la website.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>In id SPDX sco CC-BY-4.0, u il text sez.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Chaussa</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Clomadas al server</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Commentaris</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulars che rimnan infurmaziuns</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Workflow da GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Main spazi vid e nagins commentaris en las paginas.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Licenza dal cuntegn</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minimar</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Auters formulars</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Cumprimer ordavant</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Paginas da transferiment</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Paginas da transferiment: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Tschertga</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Index da tschertga: %pages pagina(s) en %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Fegls da stil e scripts numnads suenter il hash da lur cuntegn, uschè che ils navigaturs als pon tegnair.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Las paginas midadas, in pèr minutas suenter l'ultima midada (la part cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>La licenza dal cuntegn, our dal champ sutvart.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>L'entira website, a las uras dal plan (la part cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Questas parts da las paginas dovran in server; mintgina ha survegnì ina alternativa. Controllai las avant che publitgar.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Tge che na funcziuna betg static</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Tge ch'il repository è, per quel che l'avra sin il host.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>bandunà</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>il text da remplazzament</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>il punct final dals formulars da la website activa</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>la website activa</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>la pagina da tschertga da la copia</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Il formular n'ha betg pudì vegnir trametti.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Grazia: il formular è vegnì trametti.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Il formular n'è betg vegnì acceptà: controllai tge che vus avais endatà e trametteit il danovamain.</translation>
+    </message>
 </context>
 </TS>

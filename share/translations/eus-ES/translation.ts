@@ -83004,5 +83004,145 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>unknown</source>
         <translation>ezezaguna</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count %pages orritan:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>.gz (eta .br) fitxategi bakoitzaren ondoan, hauek zerbitzatzen dituzten ostalarientzat.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Orri bakoitzaren helbide eta alias zahar guztietarako orri txiki bat, esteka zaharrek funtzionatzen jarrai dezaten.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Beti idazten da GitHub Actions-ek gunea entregatzen duenean.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 bezalako SPDX id bat, edo testua bera.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Saskia</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Zerbitzarirako deiak</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Iruzkinak</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Informazioa biltzen duten inprimakiak</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow-a</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Zuriune gutxiago eta iruzkinik gabe orrietan.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Edukiaren lizentzia</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Saioa hasi</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Txikitu</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Beste inprimaki batzuk</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Aurrekonprimitu</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Birbideratze-orriak</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Birbideratze-orriak: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Bilatu</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Bilaketa-indizea: %pages orri %languages hizkuntzatan.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Edukiaren hasharen izena duten estilo-orriak eta scriptak, nabigatzaileek gorde ditzaten.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Aldatutako orriak, azken aldaketaren ondoren minutu batzuetara (staticpublish cronjob zatia).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Edukiaren lizentzia, beheko eremutik.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Gune osoa, egutegiaren orduetan (staticpublish cronjob zatia).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Orrien zati hauek zerbitzari bat behar dute; bakoitzak ordezko bat jaso du. Egiaztatu argitaratu aurretik.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Zer ez dabil estatikoki</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Zer den biltegia, ostalarian irekitzen duenarentzat.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>kanpoan utzita</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ordezko testua</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>zuzeneko gunearen inprimaki-amaiera</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>zuzeneko gunea</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>kopiaren bilaketa-orria</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Ezin izan da inprimakia bidali.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Eskerrik asko: inprimakia bidali da.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Inprimakia ez da onartu: egiaztatu sartutakoa eta bidali berriro.</translation>
+    </message>
 </context>
 </TS>

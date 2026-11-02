@@ -83034,5 +83034,145 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>unknown</source>
         <translation>e panjohur</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count në %pages faqe:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Një .gz (dhe .br) pranë çdo skedari teksti, për hostet që i shërbejnë.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Një faqe e vogël për çdo adresë të vjetër dhe pseudonim të një faqeje, që lidhjet e vjetra të vazhdojnë të funksionojnë.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Shkruhet gjithmonë kur GitHub Actions e dorëzon sajtin.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Një id SPDX si CC-BY-4.0, ose vetë teksti.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Shporta</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Thirrjet te serveri</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Komentet</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formularë që mbledhin informacion</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Rrjedha e punës GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Më pak hapësira të bardha dhe pa komente në faqe.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Licenca e përmbajtjes</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Hyrje</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minifiko</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Formularë të tjerë</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Parangjesho</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Faqe ridrejtimi</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Faqe ridrejtimi: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Kërko</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Indeksi i kërkimit: %pages faqe në %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Stile dhe skripte të emërtuara sipas hash-it të përmbajtjes, që shfletuesit t'i ruajnë.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Faqet e ndryshuara, disa minuta pas ndryshimit të fundit (pjesa cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Licenca e përmbajtjes, nga fusha më poshtë.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>I gjithë sajti, në kohët e orarit (pjesa cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Këto pjesë të faqeve kanë nevojë për server; secila ka marrë një zëvendësim. Kontrolloji përpara se të publikosh.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Çfarë nuk funksionon statikisht</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Çfarë është depoja, për këdo që e hap në host.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>lënë jashtë</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>teksti zëvendësues</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>pika e formularëve e sajtit të drejtpërdrejtë</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>sajti i drejtpërdrejtë</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>faqja e kërkimit e kopjes</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formulari nuk mund të dërgohej.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Faleminderit: formulari u dërgua.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formulari nuk u pranua: kontrollo çfarë shkruajte dhe dërgoje përsëri.</translation>
+    </message>
 </context>
 </TS>

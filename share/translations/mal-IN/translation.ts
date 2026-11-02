@@ -83002,5 +83002,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>അജ്ഞാതം</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages പേജുകളിൽ %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ഓരോ ടെക്സ്റ്റ് ഫയലിനും അരികെ ഒരു .gz (ഒപ്പം .br), അവ നൽകുന്ന ഹോസ്റ്റുകൾക്കായി.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>ഒരു പേജിന്റെ ഓരോ പഴയ വിലാസത്തിനും അപരനാമത്തിനും ഒരു ചെറിയ പേജ്, പഴയ ലിങ്കുകൾ പ്രവർത്തിക്കാൻ.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions സൈറ്റ് എത്തിക്കുമ്പോൾ എപ്പോഴും എഴുതപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 പോലുള്ള ഒരു SPDX ഐഡി, അല്ലെങ്കിൽ ടെക്സ്റ്റ് തന്നെ.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>കൊട്ട</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>സെർവറിലേക്കുള്ള വിളികൾ</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>അഭിപ്രായങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>വിവരങ്ങൾ ശേഖരിക്കുന്ന ഫോമുകൾ</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions വർക്ക്ഫ്ലോ</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>പേജുകളിൽ കുറച്ച് ഒഴിഞ്ഞ സ്ഥലവും അഭിപ്രായങ്ങളില്ലാതെയും.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>ഉള്ളടക്കത്തിന്റെ ലൈസൻസ്</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ലോഗിൻ</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>മിനിഫൈ</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>മറ്റു ഫോമുകൾ</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>മുൻകൂട്ടി കംപ്രസ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>റീഡയറക്ട് പേജുകൾ</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>റീഡയറക്ട് പേജുകൾ: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>തിരയുക</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>തിരയൽ സൂചിക: %languages ഭാഷകളിൽ %pages പേജുകൾ.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>ഉള്ളടക്കത്തിന്റെ ഹാഷ് പേരായി നൽകിയ സ്റ്റൈൽ ഷീറ്റുകളും സ്ക്രിപ്റ്റുകളും, ബ്രൗസറുകൾക്ക് അവ സൂക്ഷിക്കാൻ കഴിയും.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>മാറ്റം വന്ന പേജുകൾ, അവസാന മാറ്റത്തിന് ചില മിനിറ്റുകൾക്ക് ശേഷം (ക്രോൺജോബ് ഭാഗം staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>ഉള്ളടക്കത്തിന്റെ ലൈസൻസ്, താഴെയുള്ള ഫീൽഡിൽ നിന്ന്.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>മുഴുവൻ സൈറ്റ്, ഷെഡ്യൂളിലെ സമയങ്ങളിൽ (ക്രോൺജോബ് ഭാഗം staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>പേജുകളുടെ ഈ ഭാഗങ്ങൾക്ക് ഒരു സെർവർ വേണം; ഓരോന്നിനും ഒരു ബദൽ ലഭിച്ചു. പ്രസിദ്ധീകരിക്കുന്നതിന് മുമ്പ് അവ പരിശോധിക്കുക.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>സ്റ്റാറ്റിക് ആയി പ്രവർത്തിക്കാത്തത്</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>റിപ്പോസിറ്ററി എന്താണെന്ന്, ഹോസ്റ്റിൽ അത് തുറക്കുന്നവർക്കായി.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ഒഴിവാക്കിയത്</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ബദൽ ടെക്സ്റ്റ്</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ലൈവ് സൈറ്റിന്റെ ഫോം എൻഡ്‌പോയിന്റ്</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ലൈവ് സൈറ്റ്</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>പകർപ്പിന്റെ തിരയൽ പേജ്</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ഫോം അയയ്ക്കാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>നന്ദി: ഫോം അയച്ചു.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ഫോം സ്വീകരിച്ചില്ല: നൽകിയത് പരിശോധിച്ച് വീണ്ടും അയയ്ക്കുക.</translation>
+    </message>
 </context>
 </TS>

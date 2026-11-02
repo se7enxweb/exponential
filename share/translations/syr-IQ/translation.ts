@@ -83012,5 +83012,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>ܠܐ ܝܕܝܥܐ</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ܒ%pages ܦܐܬ݂ܐ:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ܠܦܦܐ .gz (ܘ .br) ܩܪܝܒ ܠܟܠ ܠܦܦܐ ܕܟܬܒܐ, ܠܡܘܕܝܐ ܕܡܦܩܕܝܢ ܠܗܘܢ.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>ܦܐܬܐ ܙܥܘܪܬܐ ܠܟܠ ܟܬܒܬܐ ܥܬܝܩܬܐ ܘܫܡܐ ܕܦܐܬܐ، ܕܐܣܘܪܐ ܥܬܝܩܐ ܢܗܘܘܢ ܥܒܕܝܢ.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>ܡܬܟܬܒܐ ܒܟܠ ܙܒܢ ܕGitHub Actions ܡܦܩܕ ܠܐܬܪܐ.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>ܡܘܕܥܢܐ ܕSPDX ܐܝܟ CC-BY-4.0، ܐܘ ܢܝܫܐ ܠܚܘܕܗ.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ܣܠܐ</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>ܩܪܝܬ݂ܐ ܠܡܫܡܫܢܐ</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>ܬܘܒ݂ܐ</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>ܛܘ̈ܦܣܐ ܕܟܢܫܝܢ ܝܕܥܬܐ</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>ܬܪܥܐ ܕܥܒܕܐ ܕGitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>ܙܥܘܪ ܛܠܝܘܬܐ ܘܠܐ ܬܘܒ݂ܐ ܒܦܐܬ݂ܐ.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>ܪܫܝܘܬܐ ܕܡܚܘܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ܥܠܡܐ</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>ܙܥܘܪܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>ܛܘ̈ܦܣܐ ܐܚܪ̈ܢܐ</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>ܕܘܚܣܐ ܩܕܡܝܐ</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ܦܐ̈ܬܐ ܕܡܦܢܝܢ</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ܦܐ̈ܬܐ ܕܡܦܢܝܢ: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ܒܨܝܐ</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>ܪܫܡܐ ܕܒܨܝܐ: %pages ܦܐ̈ܬܐ ܒ%languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>ܛܘܦܣܐ ܕܫܘܝܐ ܘܟܬܒܐ ܕܡܬܩܪܝܢ ܒܗܐܫ ܕܡܚܘܝܬܗܘܢ، ܕܡܦܢܝܐ ܢܕܟܪܘܢ ܠܗܘܢ.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>ܦܐ̈ܬܐ ܕܐܫܬܚܠܦܘ، ܚܕ̈ܐ ܕܩܝܩܐ ܒܬܪ ܫܘܚܠܦܐ ܐܚܪܝܐ (ܡܢܬܐ ܕcronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>ܪܫܝܘܬܐ ܕܡܚܘܝܬܐ، ܡܢ ܚܩܠܐ ܕܬܚܬ.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>ܟܠܗ ܐܬܪܐ، ܒܙܒܢܐ ܕܬܘܪܨܐ (ܡܢܬܐ ܕcronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>ܗܠܝܢ ܡܢܘ̈ܬܐ ܕܦܐ̈ܬܐ ܨܒܝܢ ܡܫܡܫܢܐ; ܠܟܠ ܚܕ ܐܬܝܗܒ ܚܠܦܐ. ܒܣܝܡܘ ܠܗܘܢ ܩܕܡ ܕܬܦܪܣܘܢ.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>ܡܕܡ ܕܠܐ ܦܠܚ ܡܬܬܪܨܢܐܝܬ</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ܡܢܐ ܗܘ ܡܟܣܢܬܐ، ܠܡܢ ܕܦܬܚ ܠܗ ܒܡܘܕܥܢܐ.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ܐܫܬܒܩ</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ܢܝܫܐ ܚܠܦܝܐ</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ܢܩܘܛܬܐ ܕܡܩܒܠܢܐ ܕܛܘ̈ܦܣܐ ܕܐܬܪܐ ܚܝܐ</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ܐܬܪܐ ܚܝܐ</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ܦܐܬܐ ܕܒܨܝܐ ܕܡܦܠܘܬܐ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ܡܘܦܣܐ ܠܐ ܐܫܬܕܪ.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>ܬܘܕܝ: ܛܘܦܣܐ ܐܫܬܕܪ.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ܛܘܦܣܐ ܠܐ ܐܬܩܒܠ: ܒܣܘܡ ܡܐ ܕܟܬܒܬ ܘܫܕܪܘ ܬܘܒ.</translation>
+    </message>
 </context>
 </TS>

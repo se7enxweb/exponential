@@ -83034,5 +83034,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>неизвестно</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count на %pages стр.:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Файл .gz (и .br) рядом с каждым текстовым файлом, для хостов, которые их отдают.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Небольшая страница для каждого старого адреса и псевдонима страницы, чтобы старые ссылки продолжали работать.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Записывается всегда, когда сайт доставляется через GitHub Actions.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Идентификатор SPDX, например CC-BY-4.0, или сам текст.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Корзина</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Обращения к серверу</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Комментарии</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Формы, собирающие информацию</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Рабочий процесс GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Меньше пробелов и никаких комментариев на страницах.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Лицензия на содержимое</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Вход</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Минификация</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Другие формы</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Предварительное сжатие</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Страницы перенаправления</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Страницы перенаправления: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Поиск</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Поисковый индекс: %pages стр. на языках: %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Таблицы стилей и скрипты, названные по хешу их содержимого, чтобы браузеры могли их хранить.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Изменённые страницы, через несколько минут после последнего изменения (часть cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Лицензия на содержимое, из поля ниже.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Весь сайт, по времени расписания (часть cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Этим частям страниц нужен сервер; для каждой задан запасной вариант. Проверьте их перед публикацией.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Что не работает статически</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Что представляет собой репозиторий, для тех, кто открывает его на хосте.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>пропущено</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>запасной текст</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>адрес приёма форм рабочего сайта</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>рабочий сайт</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>страница поиска копии</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Не удалось отправить форму.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Спасибо: форма отправлена.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Форма не принята: проверьте введённое и отправьте её снова.</translation>
+    </message>
 </context>
 </TS>

@@ -29,6 +29,10 @@ exit 1 when a target has an error.
 
 ./console exp:static:targets
 ./console exp:static:targets --format=json
+./console exp:static:targets --export=all > migrations/20261101120000_static_targets.ini
+
+--export prints targets as an INI migration (also for a site package): their [Target_<id>] blocks and
+TargetList[]. Credentials travel as their secret names, never their values.
 ```
 
 ## Options
@@ -36,6 +40,7 @@ exit 1 when a target has an error.
 | Option | Value | Help |
 |---|---|---|
 | `--format` | required | text (default) or json (the machine output exp-static/1) |
+| `--export` | required | print these targets (ids separated by commas, or all) as an INI migration and change nothing |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

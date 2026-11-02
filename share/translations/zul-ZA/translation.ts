@@ -83002,5 +83002,145 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>unknown</source>
         <translation>akwaziwa</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count emakhasini angu-%pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>I-.gz (ne-.br) eduze kwefayela ngalinye lombhalo, kumasevisi ahlinzeka ngayo.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Ikhasi elincane ekheli ngalinye elidala nesiteketiso sekhasi, ukuze izixhumanisi ezidala ziqhubeke zisebenza.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Ihlala ibhalwa uma i-GitHub Actions ilethela isayithi.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>I-id ye-SPDX efana ne-CC-BY-4.0, noma umbhalo uqobo.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Ubhasikidi</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Izingcingo eziya kuseva</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Amazwana</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Amafomu aqoqa ulwazi</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Ukuhamba komsebenzi we-GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Isikhala esincane futhi akukho amazwana emakhasini.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Ilayisense yokuqukethwe</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Ngena ngemvume</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Amanye amafomu</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Amakhasi okuqondisa kabusha</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Amakhasi okuqondisa kabusha: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sesha</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Inkomba yosesho: amakhasi angu-%pages ku-%languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Amashidi esitayela nezikripthi ezibizwa ngehash yokuqukethwe kwazo, ukuze amabhrawuza awagcine.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Amakhasi eshintshile, ngemizuzu embalwa ngemuva koshintsho lokugcina (ingxenye ye-cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Ilayisense yokuqukethwe, ensimini engezansi.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Yonke isayithi, ngezikhathi zeshejuli (ingxenye ye-cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Lezi zingxenye zamakhasi zidinga iseva; ngayinye ithole enye esikhundleni. Zihlole ngaphambi kokushicilela.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Okungasebenzi ngokungaguquki</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Ukuthi inqolobane iyini, kunoma ubani ayivula kumsingathi.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>kushiywe</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>umbhalo wesikhashana</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>iphoyinti lamafomu esayithi ebukhoma</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>isayithi ebukhoma</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ikhasi losesho lekhophi</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Ifomu ayikwazanga ukuthunyelwa.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Ngiyabonga: ifomu ithunyelwe.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Ifomu ayemukelwanga: hlola ofake bese uyithumela futhi.</translation>
+    </message>
 </context>
 </TS>

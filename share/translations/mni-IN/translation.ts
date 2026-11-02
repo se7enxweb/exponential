@@ -83004,5 +83004,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>খঙদবা</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>পেজ %pages অসিদা %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>টেক্সট ফাইল অমা অমগী মনাকতা .gz (অমসুং .br), মখোয়দু পীবা হোস্টশিংগী মতomতা।</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>পেজ অমগী মীকপ ঠিকানা অমসুং অলিয়াস পুম্নমকতা পেজ ক্লৈবা অমা, মীকপ লিংকশিং কাইরকপদা।</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions সাইট থোকহল্লবদা ইমুন-ইমুন ইনবা য়াই।</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 অসি তৌবা SPDX আইডি অমা, নত্রগা টেক্সট মতম্দু।</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>বাস্কেট</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>সার্ভরগা কল</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>কমেন্টশিং</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>ইনফরমেশন লৌনবা ফোর্মশিং</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions ওয়ার্কফ্লো</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>পেজশিংদা ফাঙ্গবা মফম খুদিংমক অমসুং কমেন্ট মফম নত্তে।</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>কন্টেন্টকী লাইসেন্স</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>লগইন</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>মিনিফাই</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>অতোপ্পা ফোর্মশিং</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>মথক্তা কম্প্রেস তৌবা</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>রিডাইরেক্ট পেজশিং</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>রিডাইরেক্ট পেজশিং: %count।</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>সর্চ</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>সর্চ ইন্ডেক্স: %languages দা পেজ %pages।</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>কন্টেন্টকী হ্যাশ্তা মমিং পীবা স্টাইল শীট অমসুং স্ক্রিপ্টশিং, ব্রাউজরশিংনা মখোয়দু ফোংদোকপা য়াবনি।</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>ঙাক্লবা পেজশিং, মতৌ মখা ঙাক্লবগী মমিং মনিট কয়া ফাওনা (ক্রোনজব অংশ staticpublish)।</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>কন্টেন্টকী লাইসেন্স, মখাদগী ফিল্দগী।</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>সাইট পুম্নমক, শিডিউলকী মতমদা (ক্রোনজব অংশ staticpublish)।</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>পেজশিংগী অংশ অসিদা সার্ভর য়েংনি; অমা অমদা বিকল্প অমা পীরি। প্রকাশ তৌবগী মমাংদা মখোয়দু যেংবীয়ু।</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>স্ট্যাটিকতা কাইদে</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>রিপজিটরী করিনো, হোস্টতা মখোয়দু ঘৌরকপদা।</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>লোইরবা</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>বিকল্প টেক্সট</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>লাইভ সাইটকী ফোর্ম এন্ডপয়েন্ট</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>লাইভ সাইট</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>কপীগী সর্চ পেজ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ফোর্মদু থাদোকপা ঙমদ্রে।</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>থাগৎচরি: ফোর্মদু থাদোকলে।</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ফোর্মদু লৈখি তৌদ্রে: নখোয়না ইনবা অসি যেংবীয়ু অমসুং অমুক থাবীয়ু।</translation>
+    </message>
 </context>
 </TS>

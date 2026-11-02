@@ -1,4 +1,8 @@
 {
+    "command:expstatictargets --export": {
+        "de": "diese Ziele (IDs durch Kommas getrennt, oder all) als INI-Migration ausgeben und nichts ändern",
+        "en": "print these targets (ids separated by commas, or all) as an INI migration and change nothing"
+    },
     "ini:settings/staticcache.ini [StaticPublishSettings] FormEndpoint": {
         "de": "Der Formular-Endpunkt (staticpublish/form): Die Informationssammler der\nZiele mit Forms=endpoint senden an diese Installation, die sie an die\nnormale Informationssammlung übergibt. Angenommen werden nur Posts von der\nPublicURL oder CustomDomain eines Ziels mit einem von einem Build signierten\nToken. enabled oder disabled (die Kopien zeigen dann den Ersatztext).",
         "en": "The form endpoint (staticpublish/form): the information collectors of the\ntargets with Forms=endpoint post to this installation, which hands them to\nthe normal information collection. Only posts from a target's PublicURL or\nCustomDomain with a token signed by a build are taken. enabled or disabled\n(the copies show the fallback text instead)."

@@ -83004,5 +83004,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>ไม่ทราบ</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ใน %pages หน้า:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ไฟล์ .gz (และ .br) ข้างไฟล์ข้อความทุกไฟล์ สำหรับโฮสต์ที่ให้บริการไฟล์เหล่านี้</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>หน้าเล็ก ๆ สำหรับทุกที่อยู่เก่าและนามแฝงของหน้า เพื่อให้ลิงก์เก่ายังใช้งานได้</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>เขียนเสมอเมื่อ GitHub Actions ส่งมอบไซต์</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>รหัส SPDX เช่น CC-BY-4.0 หรือข้อความเอง</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ตะกร้า</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>การเรียกไปยังเซิร์ฟเวอร์</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>ความคิดเห็น</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>ฟอร์มที่เก็บข้อมูล</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>เวิร์กโฟลว์ GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>ช่องว่างน้อยลงและไม่มีความคิดเห็นในหน้า</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>สัญญาอนุญาตของเนื้อหา</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>เข้าสู่ระบบ</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>ฟอร์มอื่น ๆ</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>หน้าเปลี่ยนเส้นทาง</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>หน้าเปลี่ยนเส้นทาง: %count</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ค้นหา</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>ดัชนีค้นหา: %pages หน้าใน %languages</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>สไตล์ชีตและสคริปต์ที่ตั้งชื่อตามแฮชของเนื้อหา เพื่อให้เบราว์เซอร์เก็บไว้ได้</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>หน้าที่เปลี่ยนแปลง ไม่กี่นาทีหลังการเปลี่ยนแปลงครั้งล่าสุด (ส่วน cronjob staticpublish)</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>สัญญาอนุญาตของเนื้อหา จากช่องด้านล่าง</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>ทั้งไซต์ ตามเวลาของตารางเวลา (ส่วน cronjob staticpublish)</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>ส่วนเหล่านี้ของหน้าต้องใช้เซิร์ฟเวอร์ แต่ละส่วนมีทางเลือกสำรอง ตรวจสอบก่อนเผยแพร่</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>สิ่งที่ใช้งานแบบสถิตไม่ได้</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ที่เก็บคืออะไร สำหรับผู้ที่เปิดบนโฮสต์</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ข้ามไป</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ข้อความสำรอง</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ปลายทางฟอร์มของไซต์จริง</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ไซต์จริง</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>หน้าค้นหาของสำเนา</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ไม่สามารถส่งฟอร์มได้</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>ขอบคุณ: ส่งฟอร์มแล้ว</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ฟอร์มไม่ได้รับการยอมรับ: ตรวจสอบสิ่งที่คุณกรอกแล้วส่งอีกครั้ง</translation>
+    </message>
 </context>
 </TS>

@@ -89974,5 +89974,145 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>unknown</source>
         <translation>unbekannt</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count auf %pages Seite(n):</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Eine .gz- (und .br-)Datei neben jeder Textdatei, für Hosts, die sie ausliefern.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Eine kleine Seite für jede alte Adresse und jeden Alias einer Seite, damit alte Links weiter funktionieren.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Wird immer geschrieben, wenn GitHub Actions die Website ausliefert.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Eine SPDX-ID wie CC-BY-4.0 oder der Text selbst.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Warenkorb</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Aufrufe an den Server</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Kommentare</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulare, die Informationen erfassen</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions Workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Weniger Leerraum und keine Kommentare in den Seiten.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lizenz des Inhalts</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Anmeldung</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minimieren</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Weitere Formulare</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Vorab komprimieren</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Weiterleitungsseiten</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Weiterleitungsseiten: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suche</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Suchindex: %pages Seite(n) in %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Stylesheets und Skripte, benannt nach dem Hash ihres Inhalts, damit Browser sie behalten dürfen.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Die geänderten Seiten, einige Minuten nach der letzten Änderung (der Cronjob-Teil staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Die Lizenz des Inhalts, aus dem Feld darunter.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Die ganze Website, zu den Zeiten des Zeitplans (der Cronjob-Teil staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Diese Teile der Seiten benötigen einen Server; jeder erhielt einen Ersatz. Prüfen Sie sie vor dem Veröffentlichen.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Was statisch nicht funktioniert</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Was das Repository ist, für alle, die es auf dem Host öffnen.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ausgelassen</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>der Ersatztext</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>der Formular-Endpunkt der Live-Website</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>die Live-Website</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>die Suchseite der Kopie</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Das Formular konnte nicht gesendet werden.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Danke: Das Formular wurde gesendet.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Das Formular wurde nicht akzeptiert: Prüfen Sie Ihre Eingaben und senden Sie es erneut.</translation>
+    </message>
 </context>
 </TS>

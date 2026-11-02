@@ -83004,5 +83004,145 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>unknown</source>
         <translation>onbekannt</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count op %pages Säit(en):</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>E .gz (an .br) niewent all Textdatei, fir Hosten déi se ausliwweren.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Eng kleng Säit fir all aal Adress an Alias vun enger Säit, sou datt al Linken weider funktionéieren.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Gëtt ëmmer geschriwwen, wann GitHub Actions de Site liwwert.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Eng SPDX-ID wéi CC-BY-4.0, oder den Text selwer.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Kuerf</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Opruff un de Server</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Kommentaren</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulairen déi Informatioune sammelen</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub-Actions-Workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Manner Leerplaz a keng Kommentarer an de Säiten.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lizenz vum Inhalt</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minifizéieren</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Aner Formulairen</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Viraus kompriméieren</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Viruleedungssäiten</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Viruleedungssäiten: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sichen</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Sichindex: %pages Säit(en) a(n) %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Stylesheets a Skripter, benannt no dem Hash vun hirem Inhalt, sou datt Browser se kënne behalen.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Déi geännert Säiten, e puer Minutten no der leschter Ännerung (de Cronjob-Deel staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>D'Lizenz vum Inhalt, aus dem Feld hei drënner.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>De ganze Site, zu de Zäite vum Zäitplang (de Cronjob-Deel staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Dës Deeler vun de Säite brauchen e Server; jiddereen huet en Ersatz kritt. Kontrolléiert se virun dem Publizéieren.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Wat statesch net fonktionéiert</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Wat de Repository ass, fir wien en um Host opmécht.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ewechgelooss</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>den Ersatztext</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>den Formulaire-Endpunkt vun der Live-Site</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>d'Live-Site</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>d'Sichsäit vun der Kopie</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>De Formulaire konnt net geschéckt ginn.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Merci: de Formulaire gouf geschéckt.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>De Formulaire gouf net ugeholl: kontrolléiert, wat Dir aginn hutt, a schéckt en nach eng Kéier.</translation>
+    </message>
 </context>
 </TS>

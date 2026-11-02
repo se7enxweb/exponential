@@ -11,6 +11,8 @@
  *        .nojekyll on GitHub Pages, custom domain with a base path
  *  TG-07 base path, public address, folders (Windows separators, absolute work directory)
  *  TG-08 ExcludePaths patterns
+ *  TG-09 the S5 checks: Schedule, Webhook, License, Forms=endpoint without a public address
+ *  TG-10 targets as an INI migration: every setting, lists as Var[] then values, credentials as names only
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -155,5 +157,41 @@ class expStaticTargetTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $t->excludesPath( '/shop/item' ) );
         $this->assertTrue( $t->excludesPath( '/drafts-2026' ) );
         $this->assertFalse( $t->excludesPath( '/about' ) );
+    }
+
+    /** TG-09 */
+    public function testExtrasChecks()
+    {
+        $context = array( 'siteaccesses' => array( 'site' ), 'admin' => array(), 'urls' => array( 'site' => 'www.example.com' ) );
+        $bad = new expStaticTarget( 'pub', array( 'SiteAccess' => 'site', 'Schedule' => '0 25 * * *', 'Webhook' => 'http://hooks.example.com/x' ) );
+        $errors = implode( "\n", $bad->validate( $context )['errors'] );
+        $this->assertStringContainsString( 'Schedule=0 25 * * * is not a cron expression', $errors );
+        $this->assertStringContainsString( 'must be an https address', $errors );
+        $warn = new expStaticTarget( 'pub', array( 'SiteAccess' => 'site', 'Triggers' => array( 'schedule' ), 'Extras' => array( 'nojekyll', 'license' ),
+                                                   'Forms' => 'endpoint' ) );
+        $check = $warn->validate( $context );
+        $this->assertSame( array(), $check['errors'] );
+        $warnings = implode( "\n", $check['warnings'] );
+        foreach ( array( 'Triggers[]=schedule needs a Schedule', 'Extras[]=license needs License', 'Forms=endpoint needs PublicURL' ) as $w )
+            $this->assertStringContainsString( $w, $warnings );
+        $good = new expStaticTarget( 'pub', array( 'SiteAccess' => 'site', 'Triggers' => array( 'schedule' ), 'Schedule' => '@daily', 'Webhook' => 'https://h.example.com/x',
+                                                   'Extras' => array( 'nojekyll', 'license' ), 'License' => 'CC-BY-4.0' ) );
+        $this->assertSame( array(), $good->validate( $context )['errors'] );
+    }
+
+    /** TG-10 */
+    public function testMigrationIni()
+    {
+        $ini = expStaticTarget::migrationIni( array(
+            new expStaticTarget( 'pub', array( 'Name' => "Public\nsite", 'SiteAccess' => 'site', 'Credential' => 'token:github_pages_token', 'Extras' => array( 'nojekyll', '404' ) ) ),
+            new expStaticTarget( 'docs', array( 'SiteAccess' => 'docs', 'ExcludePaths' => array() ) ) ) );
+        $this->assertStringStartsWith( "#?ini charset=\"utf-8\"?\n# description: Static publishing targets: pub, docs\n", $ini );
+        $this->assertStringContainsString( "[staticcache.ini/StaticPublishSettings]\nTargetList[]=pub\nTargetList[]=docs\n", $ini );
+        $this->assertStringContainsString( "[staticcache.ini/Target_pub]\nName=Public site\nSiteAccess=site\n", $ini );
+        $this->assertStringContainsString( "Credential=token:github_pages_token\n", $ini );
+        $this->assertStringContainsString( "Extras[]\nExtras[]=nojekyll\nExtras[]=404\n", $ini );
+        $this->assertStringContainsString( "[staticcache.ini/Target_docs]\n", $ini );
+        $this->assertStringContainsString( "ExcludePaths[]\nExcludeSections[]\n", $ini );
+        $this->assertStringNotContainsString( 'Enabled=', $ini, 'static publishing is not switched on by a migration' );
     }
 }

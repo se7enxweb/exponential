@@ -83004,5 +83004,145 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>unknown</source>
         <translation>wala mahibaloi</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count sa %pages ka panid:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Usa ka .gz (ug .br) tapad sa matag text file, alang sa mga host nga nag-alagad niini.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Usa ka gamay nga panid alang sa matag karaang adres ug alias sa panid, aron magpadayon ang paggana sa karaang mga link.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Kanunayng gisulat kung ang GitHub Actions maghatod sa site.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Usa ka SPDX id sama sa CC-BY-4.0, o ang mismong teksto.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Basket</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Mga tawag sa server</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Mga komento</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Mga porma nga nagtigom og impormasyon</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Mas gamay nga white space ug walay komento sa mga panid.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lisensya sa sulod</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Uban pang mga porma</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>I-precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Mga panid sa redirect</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Mga panid sa redirect: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Pangitaa</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Search index: %pages ka panid sa %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Mga style sheet ug script nga ginganlan sumala sa hash sa ilang sulod, aron makatipig ang mga browser niini.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Ang mga giusab nga panid, pipila ka minuto human sa katapusang pagbag-o (ang cronjob nga bahin nga staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Ang lisensya sa sulod, gikan sa uma sa ubos.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Ang tibuok site, sa mga oras sa iskedyul (ang cronjob nga bahin nga staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Kini nga mga bahin sa mga panid nagkinahanglan og server; ang matag usa adunay fallback. Susiha kini sa dili pa ka-publish.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Unsay dili molihok nga static</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Unsa ang repository, alang sa mag-abli niini sa host.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>gibiyaan</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ang fallback nga teksto</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ang form endpoint sa live nga site</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ang live nga site</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ang search page sa kopya</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Dili mapadala ang porma.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Salamat: napadala na ang porma.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Wala madawat ang porma: susiha ang imong gisulod ug ipadala pag-usab.</translation>
+    </message>
 </context>
 </TS>

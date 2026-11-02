@@ -83002,5 +83002,145 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>unknown</source>
         <translation>aan la aqoon</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count bogagga %pages ah:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Fayl .gz (iyo .br) oo ku xiga fayl kasta oo qoraal ah, martigeliyayaasha bixiya.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Bog yar oo cinwaan kasta oo hore iyo naanaysta bog, si isku-xirayaasha hore ay u shaqeeyaan.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Had iyo jeer waa la qoraa marka GitHub Actions uu bixiyo goobta.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id sida CC-BY-4.0, ama qoraalka laftiisa.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Dambiil</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Wicitaannada server-ka</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Faallooyin</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Foomamka ururiya macluumaadka</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Meel bannaan yar iyo faallo la'aan bogagga.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Shatiga nuxurka</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Gal</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Foomamka kale</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Bogagga u jeedinta</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Bogagga u jeedinta: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Raadi</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Tusmada raadinta: %pages bog oo ku jira %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Xaashiyaha qaabka iyo scripts-ka loo magacaabay hash-ka nuxurkooda, si baraawsarradu u hayaan.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Bogagga isbeddelay, dhawr daqiiqo ka dib isbeddelkii ugu dambeeyay (qaybta cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Shatiga nuxurka, ee goobta hoose.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Goobta oo dhan, waqtiyada jadwalka (qaybta cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Qaybahan bogagga waxay u baahan yihiin server; mid kastaa wuxuu helay beddel. Hubi ka hor intaadan daabicin.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Waxa aan statically u shaqayn</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Waxa kaydku yahay, qofka ku furaya martigeliyaha.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>laga tagay</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>qoraalka beddelka</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>meesha foomamka laga helo ee goobta tooska ah</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>goobta tooska ah</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>bogga raadinta ee nuqulka</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Foomka lama dirin karin.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Mahadsanid: foomka waa la diray.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Foomka lama aqbalin: hubi wixii aad gelisay oo mar kale dir.</translation>
+    </message>
 </context>
 </TS>

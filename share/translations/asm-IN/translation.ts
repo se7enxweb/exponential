@@ -83004,5 +83004,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>অজ্ঞাত</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count টা, %pages টা পৃষ্ঠাত:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>প্ৰতিটো লিখনী ফাইলৰ কাষত এটা .gz (আৰু .br) ফাইল, সেইবোৰ প্ৰদান কৰা হোষ্টৰ বাবে।</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>এখন পৃষ্ঠাৰ প্ৰতিটো পুৰণি ঠিকনা আৰু এলিয়াছৰ বাবে এখন সৰু পৃষ্ঠা, যাতে পুৰণি লিংকবোৰ কাম কৰি থাকে।</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions-এ ছাইট বিতৰণ কৰোঁতে সদায় লিখা হয়।</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 ৰ দৰে এটা SPDX id, বা লিখনীটোৱেই।</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>বাস্কেট</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>ছাৰ্ভাৰলৈ কল</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>মন্তব্য</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>তথ্য সংগ্ৰহ কৰা ফৰ্ম</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>পৃষ্ঠাবোৰত কম খালী ঠাই আৰু কোনো মন্তব্য নাই।</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>বিষয়বস্তুৰ লাইচেন্স</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>লগইন</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>মিনিফাই</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>অন্য ফৰ্ম</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>আগতীয়াকৈ সংকুচিত কৰক</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ৰিডাইৰেক্ট পৃষ্ঠা</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ৰিডাইৰেক্ট পৃষ্ঠা: %count।</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>সন্ধান</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>সন্ধান সূচী: %languages ত %pages টা পৃষ্ঠা।</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>বিষয়বস্তুৰ হেশৰ নামেৰে নামকৰণ কৰা ষ্টাইল শ্বীট আৰু স্ক্ৰিপ্ট, যাতে ব্ৰাউজাৰে সেইবোৰ ৰাখিব পাৰে।</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>সলনি হোৱা পৃষ্ঠাবোৰ, শেষ সলনিৰ কেইমিনিটমান পিছত (cronjob অংশ staticpublish)।</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>বিষয়বস্তুৰ লাইচেন্স, তলৰ ক্ষেত্ৰৰ পৰা।</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>গোটেই ছাইটখন, সময়সূচীৰ সময়ত (cronjob অংশ staticpublish)।</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>পৃষ্ঠাৰ এই অংশবোৰৰ বাবে এটা ছাৰ্ভাৰ লাগে; প্ৰতিটোৱে এটা বিকল্প পাইছে। প্ৰকাশ কৰাৰ আগতে সেইবোৰ পৰীক্ষা কৰক।</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>যি স্থিৰভাৱে কাম নকৰে</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ৰিপজিটৰীটো কি, হোষ্টত সেইটো খোলাজনৰ বাবে।</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>বাদ দিয়া হৈছে</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>বিকল্প লিখনী</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>লাইভ ছাইটৰ ফৰ্ম এণ্ডপইণ্ট</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>লাইভ ছাইট</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>কপিৰ সন্ধান পৃষ্ঠা</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ফৰ্মখন পঠিওৱা নগ'ল।</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>ধন্যবাদ: ফৰ্মখন পঠিওৱা হ'ল।</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ফৰ্মখন গ্ৰহণ কৰা নহ'ল: আপুনি যি দিছিল সেইয়া পৰীক্ষা কৰি পুনৰ পঠিয়াওক।</translation>
+    </message>
 </context>
 </TS>

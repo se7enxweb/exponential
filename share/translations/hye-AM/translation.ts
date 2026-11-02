@@ -83004,5 +83004,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>անհայտ</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages էջից %count՝</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>.gz (և .br) յուրաքանչյուր տեքստային ֆայլի կողքին՝ դրանք սպասարկող հոսթերի համար։</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Փոքր էջ էջի յուրաքանչյուր հին հասցեի և կեղծանվան համար, որպեսզի հին հղումները շարունակեն աշխատել։</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Միշտ գրվում է, երբ GitHub Actions-ը տրամադրում է կայքը։</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id, օրինակ՝ CC-BY-4.0, կամ հենց տեքստը։</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Զամբյուղ</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Կանչեր սերվերին</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Մեկնաբանություններ</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Տեղեկատվություն հավաքող ձևեր</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Ավելի քիչ բացատներ և առանց մեկնաբանությունների էջերում։</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Բովանդակության արտոնագիր</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Մուտք</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Փոքրացնել</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Այլ ձևեր</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Նախապես սեղմել</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Վերահղման էջեր</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Վերահղման էջեր՝ %count։</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Որոնում</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Որոնման ինդեքս՝ %pages էջ %languages լեզուներով։</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Ոճաթերթեր և սկրիպտներ, անվանված իրենց բովանդակության հեշով, որպեսզի զննիչները կարողանան պահել դրանք։</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Փոփոխված էջերը՝ վերջին փոփոխությունից մի քանի րոպե անց (cronjob-ի staticpublish մասը)։</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Բովանդակության արտոնագիրը՝ ստորև դաշտից։</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Ամբողջ կայքը՝ ժամանակացույցի ժամերին (cronjob-ի staticpublish մասը)։</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Էջերի այս մասերին սերվեր է պետք. յուրաքանչյուրը ստացել է պահուստային տարբերակ։ Ստուգեք դրանք հրապարակելուց առաջ։</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ինչը չի աշխատում ստատիկ կերպով</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Ինչ է պահոցը՝ նրա համար, ով բացում է այն հոսթի վրա։</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>բաց թողնված</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>պահուստային տեքստը</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>գործող կայքի ձևի վերջնակետը</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>գործող կայքը</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>պատճենի որոնման էջը</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Ձևը չհաջողվեց ուղարկել։</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Շնորհակալություն՝ ձևն ուղարկվեց։</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Ձևը չընդունվեց՝ ստուգեք մուտքագրածը և նորից ուղարկեք։</translation>
+    </message>
 </context>
 </TS>

@@ -83004,5 +83004,145 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>unknown</source>
         <translation>hazvizivikanwe</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count pamapeji e%pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Faira .gz (ne .br) pedyo nefaira rega rerunyoro, kuma host anozvipa.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Peji diki yeadhiresi yega yekare nezita rega repeji, kuti zvinongedzo zvekare zvirambe zvichishanda.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Inogara yakanyorwa kana GitHub Actions ichiendesa saiti.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id senge CC-BY-4.0, kana chinyorwa pachacho.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Basikiti</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Kudaidza server</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Mashoko</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Mafomu anounganidza ruzivo</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Nzvimbo shoma dzisina chinhu uye pasina mashoko mumapeji.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Rezinesi yezviri mukati</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Pinda</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Mamwe mafomu</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Mapeji ekuendesa</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Mapeji ekuendesa: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Tsvaga</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Rondedzero yekutsvaga: mapeji e%pages mu%languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Mafaira estaera nemascript akatumidzwa nehash yezviri mukati, kuti mabrowser ashandise kuchengetedza.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Mapeji akachinjwa, maminitsi mashoma mushure mekuchinja kwekupedzisira (chikamu checronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Rezinesi yezviri mukati, kubva mubhokisi riri pazasi.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Saiti yese, panguva dzechirongwa (chikamu checronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Zvikamu izvi zvemapeji zvinoda server; chimwe nechimwe chakapiwa chimwe chinotsiva. Zviongororei musati maburitsa.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Zvisingashande zvakaita sezvakamira</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Repository chii, kuna ani naani anoivhura pahost.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>kusiyiwa</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>chinyorwa chinotsiva</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>nzvimbo yekugamuchira mafomu esaiti iri kushanda</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>saiti iri kushanda</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>peji rekutsvaga rekopi</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Fomu haina kutumirwa.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Ndatenda: fomu yatumirwa.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Fomu haina kugamuchirwa: tarirai zvamakanyora mutumire zvakare.</translation>
+    </message>
 </context>
 </TS>

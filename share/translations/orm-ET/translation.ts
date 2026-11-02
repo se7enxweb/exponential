@@ -83004,5 +83004,145 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>unknown</source>
         <translation>hin beekamu</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>fuulota %pages keessaa %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Faayilii barreeffamaa hundaa bira .gz (fi .br), hoostiiwwan isaan tajaajilaniif.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Teessoo duraanii fi maqaa dabalataa fuula tokkoo hundaaf fuula xiqqoo, hidhatoonni duraanii hojjechuu itti fufaniif.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Yeroo GitHub Actions marsariitii geessu yeroo hundaa barreeffama.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>ID SPDX akka CC-BY-4.0, ykn barreeffama ofii.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Kuusaa</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Waamicha gara tajaajilaatti</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Yaada</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Unkaawwan odeeffannoo walitti qabatan</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Sirna hojii GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Iddoo duwwaa xiqqaa fi yaadni hin jiru fuulota keessatti.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Hayyama qabiyyee</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Seeni</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Xiqqeessi</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Unkaawwan biroo</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Duraan dhiphisi</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Fuulota geeddaruu</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Fuulota geeddaruu: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Barbaadi</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Eeyyama barbaaduu: fuulota %pages afaan %languages keessatti.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Fuula bifaa fi iskiriiptiiwwan maqaa hash qabiyyee isaanii jedhamaniin moggaafaman, burawuzaroonni akka eeggataniif.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Fuulota jijjiiraman, daqiiqaa muraasa booda jijjiirama dhumaa (kutaa cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Hayyama qabiyyee, bakka armaan gaditti.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Marsariitii guutuu, yeroo sagantaa (kutaa cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Kutaaleen fuulotaa kunneen tajaajila barbaadu; tokkoon tokkoon isaanii mala bu'aa argate. Osoo hin maxxansin duraan sakatta'i.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Wanti akka dhaabbataatti hin hojjenne</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Kuusaan maali, nama hoosticha irratti banuuf.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ka'e</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>barreeffama bu'aa</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>xumura unkaa marsariitii jiraataa</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>marsariitii jiraataa</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>fuula barbaachaa kopii</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Unkaan ergamuu hin dandeenye.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Galatoomi: unkaan ergameera.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Unkaan hin fudhatamne: waan galchite sakatta'iitii irra deebi'ii ergi.</translation>
+    </message>
 </context>
 </TS>

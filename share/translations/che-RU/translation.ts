@@ -83004,5 +83004,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>ца хаьа</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count %pages агӀон чохь:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Текстийн дәл тӀехьа .gz (а, .br а) файл, церан хьалха ерзо хостийн тӀера.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>АгӀонан хиллачу адрессийн а, цуьнан кхин цӀерийн а хӀора агӀо, хиллачу кепашна болх бан кхин.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>ХӀора хан а, GitHub Actions сайт дӀакхачо, йазйо.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id, масала CC-BY-4.0, я йозуш йолу текст шех.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Пхьегӏа</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Серверана кхайкхамаш</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Комментарешш</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Хаамаш гулдеш йолу формаш</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions болх</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Агӏонаш чохь бос йоцу меттиг а, комментарешш а кӀезиг.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Чулацаман бакъо</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Чугӏо</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Жима дан</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Кхин формаш</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Хьалха юкъайоккху</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Кхин дӏаайа агӀонаш</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Кхин дӏаайа агӀонаш: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Леха</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Лехаман индекс: %languages чохь %pages агӀо.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Чулацаман хеш хилла цӀераш йолу стилан листаш а, скрипташ а, браузерша церан кхача ларйан.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Хийцина агӀонаш, тӀаьхьарчу хийцамал тӀаьхьа масех минот даьлча (cronjob дакъа staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Чулацаман бакъо, лахахь йолчу аренгара.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Берриг сайт, графикан хенашка (cronjob дакъа staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Хӏара агӏонийн дакъош серверана оьшу; хӏорга шен резервни хилла. Хьалха хьажа, арахеца хьалха.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Статикан болх бацаран</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Репозиторий хӏун ю, хостехь иза схьайоьллучунна.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>дӏахӏоттийна</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>резервни текст</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>болх беш болчу сайтан формийн эхь</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>болх беш болу сайт</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>копин лехаман агӀо</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Форма дӀасаяхь йиш яц.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Баркалла: форма дӀаяхьа.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Форма схьаяцна яц: хьажа ахь язйинчуьнга а, юха дӀаяхьа.</translation>
+    </message>
 </context>
 </TS>

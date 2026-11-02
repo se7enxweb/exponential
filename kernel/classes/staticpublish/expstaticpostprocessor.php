@@ -189,7 +189,7 @@ class expStaticPostProcessor
 
     /**
      * PostProcess[]=fingerprint: the name of a style sheet or script with the hash of its content (site.css becomes
-     * site.3f2a9c1b.css), so a host may let browsers keep it forever; never a ?v= query. Pure.
+     * site.3f2a9c1b.css), so a host may let browsers keep it forever; never a version query. Pure.
      *
      * @param string $path
      * @param string $content

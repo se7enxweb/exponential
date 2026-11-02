@@ -83004,5 +83004,145 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>unknown</source>
         <translation>dianav</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count war %pages pajenn(où):</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Ur restr .gz (ha .br) e-kichen pep restr testenn, evit an ostiz o servijo anezho.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Ur bajenn vihan evit pep chomlec'h kozh hag alias eus ur bajenn, evit ma chomo al liammoù kozh o labourat.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Skrivet bepred pa vez kaset al lec'hienn gant GitHub Actions.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Un id SPDX evel CC-BY-4.0, pe an destenn he-unan.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Paner</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Galvoù d'ar servijer</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Evezhiadennoù</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Furmskridoù a zastum titouroù</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Befenn labour GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Nebeutoc'h a egor goulo ha n'eus evezhiadenn ebet er pajennoù.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Aotre an endalc'hadoù</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Kevreañ</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Bihanaat</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Furmskridoù all</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Gwaskañ da gentañ</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Pajennoù adkas</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Pajennoù adkas: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Klask</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Meneg klask: %pages pajenn(où) e %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Teulennoù stil ha skriptoù anvet diwar hash o endalc'had, evit ma c'hallo ar merdeerioù o mirout.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Ar pajennoù cheñchet, un nebeud munutennoù goude ar cheñchamant diwezhañ (ar rann cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Aotre an endalc'hadoù, diwar ar park a-is.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Al lec'hienn a-bezh, d'an eurioù eus ar steuñv (ar rann cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Ezhomm o deus ar rannoù-se eus ar pajennoù eus ur servijer; pep hini he deus un diskoulm eus he c'hostez. Gwiriit anezho a-raok embann.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ar pezh ne laka ket da labourat e doare stadek</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Petra eo ar c'havlec'h, evit an hini a zigor anezhañ war an ostiz.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>laosket</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>an destenn eus he c'hostez</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>pal ar furmskridoù eus al lec'hienn war-eeun</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>al lec'hienn war-eeun</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>pajenn glask ar eilad</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>N'eo ket bet posupl kas ar furmskrid.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Trugarez: kaset eo bet ar furmskrid.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>N'eo ket bet degemeret ar furmskrid: gwiriit ar pezh hoc'h eus lakaet ha kasit en-dro.</translation>
+    </message>
 </context>
 </TS>

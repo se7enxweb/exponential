@@ -83034,5 +83034,145 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>unknown</source>
         <translation>mhux magħruf</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count fuq %pages paġna/i:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Fajl .gz (u .br) maġenb kull fajl tat-test, għal hosts li jservuhom.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Paġna żgħira għal kull indirizz antik u alias ta' paġna, biex il-links qodma jibqgħu jaħdmu.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Dejjem miktub meta GitHub Actions iwassal is-sit.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Id SPDX bħal CC-BY-4.0, jew it-test innifsu.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Basket</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Sejħiet lis-server</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Kummenti</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formoli li jiġbru informazzjoni</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Workflow ta' GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Inqas spazju vojt u l-ebda kummenti fil-paġni.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Liċenzja tal-kontenut</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minimizza</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Formoli oħra</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Ippressa minn qabel</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Paġni ta' rindirizzar</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Paġni ta' rindirizzar: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Fittex</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Indiċi tat-tfittxija: %pages paġna/i f'%languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Style sheets u skripts imsemmija bl-hash tal-kontenut tagħhom, biex il-browsers ikunu jistgħu jżommuhom.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Il-paġni mibdula, ftit minuti wara l-aħħar bidla (il-parti cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Il-liċenzja tal-kontenut, mill-qasam hawn taħt.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Is-sit kollu, fil-ħinijiet tal-iskeda (il-parti cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Dawn il-partijiet tal-paġni jeħtieġu server; kull wieħed ingħata alternattiva. Iċċekkjahom qabel tippubblika.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>X'ma jaħdimx b'mod statiku</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>X'inhu r-repository, għal min jiftħu fuq il-host.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>imħolli barra</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>it-test alternattiv</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>il-punt tal-formoli tas-sit ħaj</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>is-sit ħaj</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>il-paġna tat-tfittxija tal-kopja</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Il-formola ma setgħetx tintbagħat.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Grazzi: il-formola ntbagħtet.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Il-formola ma ntqablitx: iċċekkja dak li dħalt u ibgħatha mill-ġdid.</translation>
+    </message>
 </context>
 </TS>

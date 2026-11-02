@@ -27,7 +27,7 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
 
     /** The snapshot. Add, never change or remove. */
     const COMMANDS = array(
-        'exp:static:targets' => '[format:]',
+        'exp:static:targets' => '[format:][export:]',
         'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging][login:][run-id:][progress:]',
         'exp:static:diff' => '[format:][verify][check-links][mount:*]',
         'exp:static:serve' => '[port:][host:][base-path:][format:]',
