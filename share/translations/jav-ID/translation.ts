@@ -68636,6 +68636,226 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Panjaluk iki: disuguhake saka cache kaca sajrone %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Panganggo</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID panganggo</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profil cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Tampilan iki</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Cache tampilan</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>saben pangguna (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profil cache pangguna: pangguna kanthi profil sing padha nganggo bebarengan berkas cache tampilan</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ya</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ora</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Jeneng login</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Mlebu</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesi</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Perangan kunci cache tampilan konten sing gumantung marang pangguna, persis kaya sing dijupuk kunci, miturut ViewCacheTweaks kaca iki. Pangguna kanthi profil sing padha nganggo bebarengan berkas cache tampilan, kajaba perangan tampilan dhewe beda (preferensi, kunci listener): iku duwe profil dhewe, mung kanggo kaca iki.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Tampilan iki (node %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: saben pangguna sing mlebu duwe berkas cache dhewe.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks sing aktif: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Bagean</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ora ana perangan sing gumantung marang pangguna (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>tampilan iki</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Salin minangka teks</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Peran</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Ora ana penugasan peran sing bisa diwaca.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID peran</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Peran</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Watesan</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Ditugasake marang</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>pangguna</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grup %name (obyek %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Wis disalin</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Ora bisa nyalin.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>ditinggalake dening listener</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Pengunjung anonim</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>padha karo duweke sampeyan</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>beda</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profil sing ditampa pengunjung anonim miturut ViewCacheTweaks sing padha, kanthi preferensi gawan, tanpa perangan tampilan: listener sing maca sesi ora bisa ditakoni babagan iku.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Preferensi</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Ora ana mode tampilan sing gumantung marang preferensi pangguna (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Preferensi sing dadi gumantungan tampilan saka mode tampilan iki (CachedViewPreferences), kanthi nilai pangguna utawa gawan. Kabeh ana ing profil minangka userpreferences, saka kabeh mode tampilan bebarengan.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Mode tampilan</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Pilihan</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Gawan</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Kawicaksanan</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Tampilake kawicaksanan peran (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Kawicaksanan dimuat saka server nalika bagean iki dibukak, sakaca-sakaca, lan bisa disaring miturut modul lan fungsi.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Fungsi</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Kabeh modul</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Kabeh fungsi</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Watesan</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Tampilake luwih akeh</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Peran iki ora duwe kawicaksanan.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Ora ana kawicaksanan sing cocog karo saringan.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown saka %matching kawicaksanan (%total sakabehe)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

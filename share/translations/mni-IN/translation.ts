@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>রিকোয়েস্ট অসি: পেজ কেশদগী %ms ms দা পীখ্রে.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>ইউজর</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ইউজর ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>কেশ প্রোফাইল</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>ভিউ অসি</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>ভিউ কেশ</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ইউজর মমা মমাগী (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>ইউজরগী কেশ প্রোফাইল: প্রোফাইল মান্নবা ইউজরশিংনা ভিউ কেশ ফাইলশিং শেয়র তৌই</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>অমুক</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>মতোক</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>লগইন মমিং</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>লগইন তৌরে</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>সেসন</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>লমায় অসিগী ViewCacheTweaks মখাদা, কন্টেন্ট ভিউ কেশ কী-গী ইউজরদা মখা পোনবা শরুকশিং, কী-না লৌবগুম্না। প্রোফাইল মান্নবা ইউজরশিংনা ভিউশিংগী কেশ ফাইলশিং শেয়র তৌই, ভিউ মশাগী শরুকশিং তোঙান্নদ্রবদি (পাম্বশিং, লিসনরশিংগী কী): মখোয়গী মশাগী প্রোফাইল লৈ, লমায় অসিগীদমক্তা।</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>প্রোফাইল</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>ভিউ অসি (নোড %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: লগইন তৌরবা ইউজর খুদিংমক্না মশাগী কেশ ফাইলশিং লৈ।</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>চলিরিবা ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>অংশ</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>মান</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>ইউজরদা মখা পোনবা শরুক অমত্তা লৈতে (ViewCacheTweaks)।</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ভিউ অসি</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>টেক্সট ওইনা কোপি তৌবা</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>ভূমিকাশিং</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>রোল পীবগী ওইবা অমত্তা পাবা ঙমদ্রে।</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>রোল ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>ভূমিকা</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>চাঙ্গোয়বা</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>পীখ্রবা</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ইউজর</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>গ্রুপ %name (অবজেক্ট %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>কপি তৌরে</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>কোপি তৌবা ঙমদ্রে।</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>লিসনর অমনা থাদোকখ্রে</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>মমিং ফংদবা ভিজিটরশিং</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>নহাক্কীগা মান্নই</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>তোঙান্নই</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>মমিং খংদবা লাকপশিংনা ViewCacheTweaks অদুগী মখাদা ফংবা প্রোফাইল, দিফোল্ট পাম্বশিংগা লোয়ননা, ভিউগী শরুকশিং য়াওদনা: সেসন পাবা লিসনরদা মখোয়গী মরমদা হংবা ঙমদে।</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>পাম্বশিং</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>ভিউ মোড অমত্তা ইউজরগী পাম্বশিংদা মখা পোনদে (site.ini [ContentSettings] CachedViewPreferences)।</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>ভিউ মোড অসিশিংগী ভিউশিংনা মখা পোনবা পাম্বশিং (CachedViewPreferences), ইউজরগী ভেল্যু নত্রগা দিফোল্টকা লোয়ননা। মখোয় প্রোফাইলদা userpreferences ওইনা লৈ, ভিউ মোড পুম্নমকগী পুনশিনদুনা।</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>ভিউ মোদ</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>পাম্বা</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>ডিফল্ট</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>পলিসিশিং</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>রোলশিংগী পোলিসিশিং উৎলু (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>শরুক অসি হাংদোকপা মতমদা পোলিসিশিং সর্ভরদগী লোড তৌই, অমা অমা লমায়, অমসুং মোড্যুল অমসুং ফঙ্কসন্না ফিল্টর তৌবা য়াই।</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>ফাংকসন</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>মডিউল খুদিংমক</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>ফঙ্কসন পুম্নমক</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>চাঙ্গোয়বাশিং</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>হেন্না উৎলু</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>রোল অসিশিংদা পোলিসি অমত্তা লৈতে।</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>ফিল্টরগা মান্নবা পোলিসি অমত্তা লৈতে।</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%matching পোলিসিগী মনুংদা %shown (পুম্নমক %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

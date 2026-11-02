@@ -68628,6 +68628,226 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>An t-iarrtas seo: air a lìbhrigeadh à tasgadan nan duilleagan ann an %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Cleachdaiche</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID a' chleachdaiche</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Pròifil tasgadain</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>An sealladh seo</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Tasgadan sealladh</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>do gach cleachdaiche (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Pròifil tasgadain a' chleachdaiche: bidh cleachdaichean leis an aon phròifil a' co-roinneadh faidhlichean tasgadain nan seallaidhean</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>tha</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>chan eil</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Ainm-cleachdaiche</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Air a chlàradh a-steach</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Seisean</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Na pàirtean de dh'iuchair tasgadain seallaidhean na susbainte a tha an urra ris a' chleachdaiche, dìreach mar a ghabhas an iuchair iad, fo ViewCacheTweaks na duilleige seo. Bidh cleachdaichean leis an aon phròifil a' co-roinneadh faidhlichean tasgadain nan seallaidhean, ach ma tha pàirtean seallaidh fhèin eadar-dhealaichte (roghainnean, iuchraichean nan èisteachdairean): tha pròifil aca fhèin, airson na duilleige seo a-mhàin.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Pròifil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>An sealladh seo (nòd %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: tha faidhlichean tasgadain fhèin aig gach cleachdaiche a chlàraich a-steach.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks an sàs: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Pàirt</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Luach</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Chan eil pàirt sam bith an urra ris a' chleachdaiche (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>an sealladh seo</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Dèan lethbhreac mar theacsa</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Dreuchdan</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Cha b' urrainn dhuinn sònrachaidhean dhreuchdan a leughadh.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID na dreuchd</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Dreuchd</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Cuingeachadh</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Air a shònrachadh do</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>an cleachdaiche</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>buidheann %name (oibseact %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Lethbhreac air a dhèanamh</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Cha b' urrainn dhuinn lethbhreac a dhèanamh.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>air fhàgail às le èisteachdair</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Tadhalaichean gun ainm</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>co-ionann ris a' phròifil agad</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>eadar-dhealaichte</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>A' phròifil a gheibh aoighean gun ainm fon aon ViewCacheTweaks, leis na roghainnean bunaiteach, às aonais pàirtean an t-seallaidh: chan urrainnear faighneachd dhiubh do dh'èisteachdair a leughas an seisean.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Roghainnean</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Chan eil modh seallaidh sam bith an urra ri roghainnean a' chleachdaiche (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Na roghainnean air a bheil seallaidhean nam modhan seallaidh seo an urra (CachedViewPreferences), le luach a' chleachdaiche no am bun-roghainn. Tha iad sa phròifil mar userpreferences, an fheadhainn aig gach modh seallaidh còmhla.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Modh seallaidh</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Roghainn</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Bunaiteach</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Poileasaidhean</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Seall poileasaidhean nan dreuchdan (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Thèid na poileasaidhean a luchdadh on fhrithealaiche nuair a thèid an earrann seo fhosgladh, duilleag aig an aon àm, agus gabhaidh an criathradh a-rèir mòideil is foincsein.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Foincsean</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Gach mòideal</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>A h-uile foincsean</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Cuingeachaidhean</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Seall barrachd</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Chan eil poileasaidh sam bith aig na dreuchdan seo.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Chan eil poileasaidh sam bith a' freagairt ris a' chriathrag.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown à %matching poileasaidhean (%total uile gu lèir)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

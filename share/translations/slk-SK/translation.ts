@@ -68567,6 +68567,226 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Táto požiadavka: obslúžené z vyrovnávacej pamäte stránok za %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Používateľ</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID používateľa</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profil vyrovnávacej pamäte</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Toto zobrazenie</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Vyrovnávacia pamäť zobrazení</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>pre každého používateľa (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profil vyrovnávacej pamäte používateľa: používatelia s rovnakým profilom zdieľajú súbory vyrovnávacej pamäte zobrazení</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>áno</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nie</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Prihlasovacie meno</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Prihlásený</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Relácia</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Časti kľúča vyrovnávacej pamäte zobrazení obsahu, ktoré závisia od používateľa, presne tak, ako ich kľúč preberá, podľa ViewCacheTweaks tejto stránky. Používatelia s rovnakým profilom zdieľajú súbory vyrovnávacej pamäte zobrazení, pokiaľ sa nelíšia časti samotného zobrazenia (predvoľby, kľúče poslucháčov): tie majú vlastný profil, len pre túto stránku.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Toto zobrazenie (uzol %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: každý prihlásený používateľ má vlastné súbory vyrovnávacej pamäte.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Platné ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Časť</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Hodnota</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Žiadna časť nezávisí od používateľa (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>toto zobrazenie</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopírovať ako text</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Roly</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Priradenia rolí sa nepodarilo načítať.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID roly</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rola</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Obmedzenie</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Priradené</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>používateľovi</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>skupina %name (objekt %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Skopírované</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Kopírovanie zlyhalo.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>vynechané poslucháčom</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonymní návštevníci</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>rovnaký ako váš</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>odlišný</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profil, ktorý dostanú anonymní návštevníci pri rovnakých ViewCacheTweaks, s predvolenými predvoľbami, bez častí zobrazenia: poslucháča, ktorý číta reláciu, sa na ne nemožno opýtať.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Predvoľby</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Žiadny režim zobrazenia nezávisí od predvolieb používateľa (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Predvoľby, od ktorých závisia zobrazenia týchto režimov zobrazenia (CachedViewPreferences), s hodnotou používateľa alebo predvolenou. V profile sú ako userpreferences, spolu pre všetky režimy zobrazenia.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Režim zobrazenia</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Predvoľba</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Predvolené</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Politiky</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Zobraziť politiky rolí (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Politiky sa načítajú zo servera pri otvorení tejto sekcie, po stránkach, a možno ich filtrovať podľa modulu a funkcie.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funkcia</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Všetky moduly</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Všetky funkcie</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Obmedzenia</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Zobraziť viac</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Tieto roly nemajú žiadne politiky.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Filtru nezodpovedá žiadna politika.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown z %matching politík (spolu %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

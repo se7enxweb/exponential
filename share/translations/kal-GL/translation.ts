@@ -68567,6 +68567,226 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Qinnut una: quppernerit cache-iannit %ms ms-imi tunniunneqarpoq.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Atuisoq</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Atuisup ID-ia</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Cache-imi profili</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Isikkivik una</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Takutitsinermut cache</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>atuisumut ataatsimut (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Atuisup cache-imi profilia: atuisut profilimik assigiimmik atuisut isikkiviup cache-imi fiilii avitseqatigiissutigaat</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>aap</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>naamik</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Atuisup aqqa</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Iserfigisimavoq</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Isersimaneq</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Imarisap isikkiviata cache-imi nalunaarutaata ilai atuisumut attuumassuteqartut, nalunaarutip tigusarisaattut, quppernerup matuma ViewCacheTweaks aalajangersagai naapertorlugit. Atuisut profilimik assigiimmik atuisut isikkivinnut cache-imi fiilinik avitseqatigiipput, isikkiviup nammineq ilai assigiinngikkunik (piumasat, tusarnaartut nalunaarutaat): taakku nammineq profiliqarput, quppernermut matumannaaq.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profili</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Isikkivik una (knude %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: atuisut iserfigisimasut tamarmik nammineq cache-imi fiiliqarput.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks atuuttut: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Ilaa</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Naleq</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ilaannaalluunniit atuisumut attuumassuteqanngilaq (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>isikkivik una</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Allagaatut assiliuk</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Atuuffiit</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Atorfinnut inissiinerit atuarneqarsinnaanngillat.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Atorfiup ID-ia</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Atuuffik</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Killilersuut</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Inissinneqarfia</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>atuisoq</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>gruppi %name (objekti %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Assilineqarpoq</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Assilineqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>tusarnaartumit peerneqarpoq</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Tikeraat ilisimaneqanngitsut</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>illittut assigaa</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>assigiinngitsoq</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profili tikeraat ateqanngitsut ViewCacheTweaks assigiit naapertorlugit pisartagaat, piumasat aalajangersimasut atorlugit, isikkiviup ilai ilanngunnagit: tusarnaartoq sessionimik atuartoq taakkuninnga apeqqutigineqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Piumasat</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Isikkivimmi ilusissaq atuisup piumasaanut attuumassuteqanngilaq (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Piumasat isikkivimmi ilusissat makku isikkiviisa attuumassuteqarfigisaat (CachedViewPreferences), atuisup naleqartitaa imaluunniit aalajangersimasoq atorlugu. Profilimiipput userpreferences taaguutigalugu, isikkivimmi ilusissat tamarmik peqatigiillutik.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Takutitsinerup suussusaa</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Piumasaq</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Aallaavittut</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Maleruagassat</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Atorfiit politikkii takutikkit (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Politikkit immikkoortoq una ammarneqartillugu serverimit aallerneqartarput, quppernerit ataasiakkaarlugit, aamma modulit funktionillu naapertorlugit sillisiivigineqarsinnaapput.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Atortussaq</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Modulit tamarmik</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Funktionit tamarmik</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Killilersuutit</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Amerlanerusut takutikkit</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Atorfiit makku politikkeqanngillat.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Politikki sillisiivimmut naapertuuttoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching politikkit (katillugit %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

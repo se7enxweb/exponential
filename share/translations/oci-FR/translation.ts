@@ -68628,6 +68628,226 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Aquesta requèsta: servida dempuèi l'escondedor de paginas en %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Utilizaire</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID de l'utilizaire</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Perfil de cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Aquesta vista</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Escondedor de vistas</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>per utilizaire (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Perfil de cache de l'utilizaire: los utilizaires amb lo meteis perfil partejan los fichièrs del cache de las vistas</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>òc</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>non</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Nom d'utilizaire</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Connectat</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesilha</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Las partidas de la clau del cache de las vistas de contengut que dependon de l'utilizaire, exactament coma la clau las pren, jos los ViewCacheTweaks d'aquesta pagina. Los utilizaires amb lo meteis perfil partejan los fichièrs de cache de las vistas, levat se las partidas d'una vista meteissa son diferentas (preferéncias, claus dels escotaires): aquelas an un perfil pròpri, sonque per aquesta pagina.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Perfil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Aquesta vista (nòde %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: cada utilizaire connectat a sos pròpris fichièrs de cache.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks actius: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Partida</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Cap de partida depend pas de l'utilizaire (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>aquesta vista</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Copiar coma tèxte</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Ròtles</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Cap d'assignacion de ròtle a pas pogut èsser legida.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID del ròtle</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Ròtle</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Limitacion</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Assignat a</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>l'utilizaire</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grop %name (objècte %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copiat</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Copia impossibla.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>escartada per un escotaire</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Visitaires anonims</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>parièr que lo vòstre</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>diferent</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Lo perfil que los visitaires anonims obtenon jos los meteisses ViewCacheTweaks, amb las preferéncias per defaut, sens las partidas de la vista: un escotaire que legís la sesilha pòt pas èsser interrogat per elas.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Preferéncias</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Cap de mòde de vista depend pas de las preferéncias de l'utilizaire (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Las preferéncias de las qualas dependon las vistas d'aqueles mòdes de vista (CachedViewPreferences), amb la valor de l'utilizaire o la valor per defaut. Son dins lo perfil coma userpreferences, las de totes los mòdes de vista ensems.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Mòde de visualizacion</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Preferéncia</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Per defaut</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Politicas</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Afichar las politicas dels ròtles (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Las politicas son cargadas dempuèi lo servidor quand aquesta seccion es dobèrta, una pagina a l'encòp, e se pòdon filtrar per modul e foncion.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Foncion</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Totes los moduls</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Totas las foncions</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Limitacions</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Ne veire mai</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Aqueles ròtles an pas cap de politica.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Cap de politica correspond pas al filtre.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown de %matching politicas (%total en tot)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

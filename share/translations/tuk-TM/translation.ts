@@ -68628,6 +68628,226 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Bu haýyş: sahypa keşinden %ms ms içinde hyzmat edildi.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Ulanyjy</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Ulanyjy ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Keş profili</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Bu görnüş</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Görnüş keşi</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>her ulanyjy üçin (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Ulanyjynyň keş profili: birmeňzeş profilli ulanyjylar görnüş keşiniň faýllaryny paýlaşýarlar</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>hawa</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ýok</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Ulanyjy ady</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Ulgama giren</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sessiýa</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Mazmun görnüşiniň keş açarynyň ulanyja bagly bölekleri, açaryň olary alşy ýaly, bu sahypanyň ViewCacheTweaks sazlamalaryna görä. Birmeňzeş profilli ulanyjylar görnüşleriň keş faýllaryny paýlaşýarlar, eger görnüşiň öz bölekleri (saýlawlar, listener açarlary) tapawutlanmasa: olaryň diňe bu sahypa üçin öz profili bar.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Bu görnüş (düwün %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ulgama giren her ulanyjynyň öz keş faýllary bar.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Hereketdäki ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Bölek</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Baha</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Hiç bir bölek ulanyja bagly däl (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>bu görnüş</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Tekst hökmünde göçür</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rollar</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Hiç bir rol bellenişi okalyp bilinmedi.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Rol ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rol</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Çäklendirme</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Bellenen</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ulanyja</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>topar %name (obýekt %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Göçürildi</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Göçürip bolmady.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>listener tarapyndan aýrylan</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonim myhmanlar</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>siziňki bilen birmeňzeş</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>tapawutly</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Näbelli myhmanlaryň şol bir ViewCacheTweaks bilen, deslapky saýlawlar bilen, görnüşiň bölekleri bolmazdan alýan profili: sessiýany okaýan listener-den olary soramak bolmaýar.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Saýlawlar</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Hiç bir görnüş tertibi ulanyjynyň saýlawlaryna bagly däl (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Bu görnüş tertipleriniň görnüşleriniň bagly bolan saýlawlary (CachedViewPreferences), ulanyjynyň bahasy ýa-da deslapky baha bilen. Olar profilde userpreferences hökmünde, ähli görnüş tertipleriňki bilelikde bar.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Görkeziş tertibi</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Saýlaw</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Deslapky</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Syýasatlar</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Rollaryň syýasatlaryny görkez (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Syýasatlar bu bölüm açylanda serwerden sahypa-sahypa ýüklenýär we modul hem funksiýa boýunça süzülip bilner.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funksiýa</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Ähli modullar</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Ähli funksiýalar</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Çäklendirmeler</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Köpräk görkez</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Bu rollaryň syýasaty ýok.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Süzgüje gabat gelýän syýasat ýok.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching syýasat (jemi %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68628,6 +68628,226 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Ang request na ito: inihain mula sa cache ng pahina sa loob ng %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Gumagamit</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID ng user</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profile ng cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Ang view na ito</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Cache ng view</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>bawat user (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profile ng cache ng user: ang mga user na may parehong profile ay naghahati sa mga file ng view cache</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>oo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hindi</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Mag-log in</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Naka-log in</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesyon</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Ang mga bahagi ng cache key ng content view na nakadepende sa user, eksakto kung paano kinukuha ng key, sa ilalim ng ViewCacheTweaks ng pahinang ito. Ang mga user na may parehong profile ay naghahati sa mga cache file ng mga view, maliban kung magkaiba ang mga bahagi ng isang view mismo (mga kagustuhan, mga key ng listener): may sariling profile ang mga iyon, para lamang sa pahinang ito.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Propayl</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Ang view na ito (node %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: bawat naka-log in na user ay may sariling mga cache file.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Umiiral na ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Bahagi</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Halaga</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Walang bahaging nakadepende sa user (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ang view na ito</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopyahin bilang teksto</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Mga tungkulin</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Walang mabasang pagtatalaga ng role.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID ng role</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Tungkulin</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Limitasyon</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Itinalaga sa</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ang user</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grupo %name (object %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Nakopya</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Hindi makopya.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>inalis ng isang listener</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Mga anonymous na bisita</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>kapareho ng sa iyo</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>iba</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Ang profile na nakukuha ng mga anonymous na bisita sa ilalim ng parehong ViewCacheTweaks, gamit ang mga default na kagustuhan, nang walang mga bahagi ng view: hindi maaaring tanungin tungkol dito ang listener na nagbabasa ng session.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Mga kagustuhan</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Walang view mode na nakadepende sa mga kagustuhan ng user (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Ang mga kagustuhang dinedependehan ng mga view ng mga view mode na ito (CachedViewPreferences), kasama ang halaga ng user o ang default. Nasa profile ang mga ito bilang userpreferences, ang sa lahat ng view mode nang magkakasama.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Mode ng view</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Kagustuhan</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Nakatakda</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Mga patakaran</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Ipakita ang mga policy ng mga role (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Nilo-load ang mga policy mula sa server kapag binuksan ang seksyong ito, isang pahina sa bawat pagkakataon, at maaaring i-filter ayon sa module at punsiyon.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Punsiyon</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Lahat ng module</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Lahat ng punsiyon</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Mga limitasyon</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Magpakita pa</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Walang policy ang mga role na ito.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Walang policy na tumutugma sa filter.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown sa %matching na policy (%total lahat)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

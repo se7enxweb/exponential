@@ -68628,6 +68628,226 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Tute naprašowanje: za %ms ms z pufrowaka stronow dodate.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Wužiwar</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID wužiwarja</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profil pufrowaka</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Tutón napohlad</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Pufrowak napohladow</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>na wužiwarja (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profil pufrowaka wužiwarja: wužiwarjo ze samsnym profilom dźěla sej dataje pufrowaka napohladow</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>haj</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ně</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Wužiwarske mjeno</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Přizjewjeny</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Posedźenje</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Dźěle kluča pufrowaka napohladow wobsaha, kotrež wot wužiwarja wotwisuja, runje tak, kaž je kluč bjerje, po ViewCacheTweaks tuteje strony. Wužiwarjo ze samsnym profilom dźěla sej dataje pufrowaka napohladow, chibazo so dźěle samoho napohlada rozeznawaja (preferency, kluče listenerow): te maja swój profil, jenož za tutu stronu.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Tutón napohlad (suk %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: kóždy přizjewjeny wužiwar ma swójske dataje pufrowaka.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Płaćiwe ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Dźěl</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Hódnota</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Žadyn dźěl njewotwisuje wot wužiwarja (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>tutón napohlad</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Jako tekst kopěrować</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Róle</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Přirjadowanja rolow njedachu so čitać.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID role</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Róla</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Wobmjezowanje</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Přirjadowany</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>wužiwarjej</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>skupina %name (objekt %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopěrowane</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Kopěrowanje njeje so poradźiło.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>wot listenera wuwostajeny</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonymni wopytowarjo</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>kaž waš</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>hinaši</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profil, kotryž anonymni wopytowarjo pod samsnymi ViewCacheTweaks dóstanu, ze standardnymi preferencami, bjez dźělow napohlada: listenera, kiž posedźenje čita, njemóže so za nimi prašeć.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Preferency</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Žadyn napohladowy modus njewotwisuje wot preferencow wužiwarja (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Preferency, wot kotrychž napohlady tutych napohladowych modusow wotwisuja (CachedViewPreferences), z hódnotu wužiwarja abo ze standardom. W profilu su jako userpreferences, te wšěch napohladowych modusow hromadźe.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Modus napohlada</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Preferenca</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Zasady</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Prawidła rolow pokazać (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Prawidła so ze serwera začitaja, hdyž so tutón wotrězk wočini, stronu po stronje, a dadźa so po modulu a funkciji filtrować.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funkcija</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Wšě moduly</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Wšě funkcije</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Wobmjezowanja</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Wjace pokazać</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Tute role nimaja prawidła.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Žane prawidło filtrej njewotpowěduje.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown z %matching prawidłow (dohromady %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

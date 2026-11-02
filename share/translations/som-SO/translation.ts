@@ -68626,6 +68626,226 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Codsigan: waxaa laga bixiyay cache-ka bogga %ms ms gudahood.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Isticmaale</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID-ga isticmaalaha</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Astaanta kaydka</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Muuqaalkan</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Cache-ka aragga</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>isticmaale kasta (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Astaanta kaydka isticmaalaha: isticmaalayaasha astaanta isku mid ah leh waxay wadaagaan faylasha kaydka muuqaalka</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>haa</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>maya</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Gal</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Soo galay</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Fadhi</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Qaybaha furaha kaydka muuqaalka nuxurka ee ku xiran isticmaalaha, sida saxda ah ee furuhu u qaato, iyadoo la raacayo ViewCacheTweaks ee boggan. Isticmaalayaasha astaanta isku mid ah leh waxay wadaagaan faylasha kaydka muuqaallada, haddii aysan kala duwanayn qaybaha muuqaalka laftiisa (doorbidyada, furayaasha dhegaystayaasha): kuwaasi waxay leeyihiin astaan u gaar ah, boggan oo keliya.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Astaan</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Muuqaalkan (noodhka %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: isticmaale kasta oo soo galay wuxuu leeyahay faylal kayd oo u gaar ah.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks shaqeynaya: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Qayb</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Qiimo</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Qayb kuma xirna isticmaalaha (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>muuqaalkan</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>U koobiyee qoraal ahaan</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Doorar</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Lama akhrin karin wax magacaabis door ah.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Aqoonsiga doorka</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Doorka</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Xaddidaad</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Loo xilsaaray</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>isticmaalaha</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>kooxda %name (shayga %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Waa la koobiyeeyay</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Lama koobiyeyn karin.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>dhegayste ayaa ka saaray</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Booqdayaasha aan la aqoon</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>la mid ah kaaga</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>ka duwan</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Astaanta ay booqdayaasha aan la aqoon helaan iyadoo la raacayo isla ViewCacheTweaks, doorbidyada caadiga ah, iyadoo aan qaybaha muuqaalka la raacin: dhegayste akhriya fadhiga laguma weydiin karo.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Doorbidyada</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Hab muuqaal kuma xirna doorbidyada isticmaalaha (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Doorbidyada ay ku xiran yihiin muuqaallada hababkan muuqaalka (CachedViewPreferences), qiimaha isticmaalaha ama kan caadiga ah. Waxay astaanta ugu jiraan sida userpreferences, kuwa dhammaan hababka muuqaalka oo wada jira.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Habka muuqaalka</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Doorbid</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Caadi</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Siyaasado</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Muuji siyaasadaha doorarka (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Siyaasadaha waxaa laga soo raraa server-ka marka qaybtan la furo, hal bog mar kasta, waxaana lagu shaandheyn karaa moodal iyo hawl.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Shaqo</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Dhammaan module-yada</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Dhammaan hawlaha</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Xadidaado</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Muuji wax badan</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Doorarkan ma laha siyaasado.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Siyaasad la jaanqaada shaandhada ma jirto.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown ka mid ah %matching siyaasadood (wadar ahaan %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

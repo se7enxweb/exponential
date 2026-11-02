@@ -63010,6 +63010,50 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Default</source>
         <translation>Default</translation>
     </message>
+    <message>
+        <source>Policies</source>
+        <translation>Policies</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Show the policies of the roles (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Function</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>All modules</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>All functions</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Limitations</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Show more</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>These roles have no policies.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>No policy matches the filter.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown of %matching policies (%total in all)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

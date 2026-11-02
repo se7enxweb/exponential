@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>이 요청: 페지 캐시에서 %ms ms 만에 제공되였습니다.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>사용자</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>사용자 ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>캐쉬 프로필</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>이 보기</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>보기 캐시</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>리용자별 (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>리용자의 캐쉬 프로필: 프로필이 같은 리용자들은 보기 캐쉬 파일을 공유합니다</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>예</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>아니요</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>사용자이름</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>가입중</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>세션</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>이 페지의 ViewCacheTweaks 에 따라 열쇠가 취하는 그대로, 내용 보기 캐쉬 열쇠에서 리용자에 따라 달라지는 부분들입니다. 프로필이 같은 리용자들은 보기의 캐쉬 파일을 공유합니다. 다만 보기 자체의 부분(설정, 리스너의 열쇠)이 다른 경우에는 이 페지에 한하여 자체 프로필을 가집니다.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>프로필</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>이 보기 (마디 %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: 가입한 리용자마다 자체 캐쉬 파일을 가집니다.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>적용중인 ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>부분</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>값</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>리용자에 따라 달라지는 부분이 없습니다 (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>이 보기</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>본문으로 복사</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>역할</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>역할 할당을 읽을수 없었습니다.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>역할 ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>역할</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>제한</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>할당 대상</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>리용자</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>그루빠 %name (객체 %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>복사됨</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>복사할수 없었습니다.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>리스너가 제외함</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>익명 방문자</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>당신과 같음</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>다름</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>익명 방문자가 같은 ViewCacheTweaks 에서 기본 설정으로, 보기의 부분없이 받는 프로필: 세션을 읽는 리스너에게는 그것들을 요청할수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>설정</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>리용자 설정에 의존하는 보기 방식이 없습니다 (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>이 보기 방식들의 보기가 의존하는 설정 (CachedViewPreferences), 리용자의 값 또는 기본값. 프로필에는 userpreferences 로서 모든 보기 방식의 것이 함께 들어있습니다.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>보기 모드</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>설정항목</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>기본값</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>정책</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>역할의 정책 보기 (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>정책은 이 부분을 열 때 봉사기에서 한 페지씩 읽어들이며 모듈과 기능별로 걸러볼수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>기능</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>모든 모듈</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>모든 기능</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>제한</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>더 보기</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>이 역할들에는 정책이 없습니다.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>려과조건에 맞는 정책이 없습니다.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching 개 정책 (전체 %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

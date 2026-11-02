@@ -68628,6 +68628,226 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Permintaan ini: disajikan daripada cache halaman dalam %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Pengguna</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID pengguna</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profil cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Paparan ini</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Cache paparan</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>setiap pengguna (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profil cache pengguna: pengguna dengan profil yang sama berkongsi fail cache paparan</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ya</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>tidak</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Nama pengguna</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Log masuk</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesi</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Bahagian kunci cache paparan kandungan yang bergantung pada pengguna, tepat seperti yang diambil oleh kunci, di bawah ViewCacheTweaks halaman ini. Pengguna dengan profil yang sama berkongsi fail cache paparan, melainkan bahagian paparan itu sendiri berbeza (keutamaan, kunci pendengar): bahagian itu mempunyai profil sendiri, untuk halaman ini sahaja.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Paparan ini (nod %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: setiap pengguna yang log masuk mempunyai fail cache sendiri.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks yang berkuat kuasa: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Bahagian</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Tiada bahagian bergantung pada pengguna (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>paparan ini</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Salin sebagai teks</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Peranan</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Tiada tugasan peranan dapat dibaca.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID peranan</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Peranan</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Had</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Ditugaskan kepada</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>pengguna</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>kumpulan %name (objek %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Disalin</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Tidak dapat menyalin.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>diketepikan oleh pendengar</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Pelawat tanpa nama</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>sama seperti anda</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>berbeza</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profil yang diterima pelawat tanpa nama di bawah ViewCacheTweaks yang sama, dengan keutamaan lalai, tanpa bahagian paparan: pendengar yang membaca sesi tidak boleh ditanya tentangnya.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Keutamaan pengguna</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Tiada mod paparan bergantung pada keutamaan pengguna (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Keutamaan yang menjadi sandaran paparan mod paparan ini (CachedViewPreferences), dengan nilai pengguna atau nilai lalai. Ia terdapat dalam profil sebagai userpreferences, bagi semua mod paparan bersama.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Mod paparan</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Keutamaan</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Lalai</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Dasar</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Tunjukkan polisi peranan (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Polisi dimuatkan daripada pelayan apabila bahagian ini dibuka, satu halaman pada satu masa, dan boleh ditapis mengikut modul dan fungsi.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Fungsi</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Semua modul</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Semua fungsi</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Had</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Tunjukkan lagi</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Peranan ini tiada polisi.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Tiada polisi sepadan dengan penapis.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown daripada %matching polisi (%total kesemuanya)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

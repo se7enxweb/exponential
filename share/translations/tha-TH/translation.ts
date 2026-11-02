@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>คำขอนี้: ส่งจากแคชหน้าใน %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>ผู้ใช้</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID ผู้ใช้</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>โปรไฟล์แคช</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>มุมมองนี้</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>แคชมุมมอง</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ต่อผู้ใช้ (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>โปรไฟล์แคชของผู้ใช้: ผู้ใช้ที่มีโปรไฟล์เดียวกันใช้ไฟล์แคชมุมมองร่วมกัน</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ใช่</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ไม่ใช่</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ชื่อเข้าสู่ระบบ</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>เข้าสู่ระบบแล้ว</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>เซสชัน</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>ส่วนของคีย์แคชมุมมองเนื้อหาที่ขึ้นอยู่กับผู้ใช้ ตรงตามที่คีย์ใช้ ภายใต้ ViewCacheTweaks ของหน้านี้ ผู้ใช้ที่มีโปรไฟล์เดียวกันใช้ไฟล์แคชของมุมมองร่วมกัน เว้นแต่ส่วนของมุมมองเองจะต่างกัน (การตั้งค่าส่วนตัว, คีย์ของลิสเทนเนอร์): มุมมองเหล่านั้นมีโปรไฟล์ของตัวเอง สำหรับหน้านี้เท่านั้น</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>โปรไฟล์</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>มุมมองนี้ (โหนด %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ผู้ใช้ที่เข้าสู่ระบบแต่ละคนมีไฟล์แคชของตัวเอง</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks ที่มีผล: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ส่วน</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ค่า</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>ไม่มีส่วนใดขึ้นอยู่กับผู้ใช้ (ViewCacheTweaks)</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>มุมมองนี้</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>คัดลอกเป็นข้อความ</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>บทบาท</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>ไม่สามารถอ่านการกำหนดบทบาทได้</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>รหัสบทบาท</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>บทบาท</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>ข้อจำกัด</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>กำหนดให้</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ผู้ใช้</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>กลุ่ม %name (ออบเจ็กต์ %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>คัดลอกแล้ว</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>คัดลอกไม่ได้</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>ถูกละไว้โดยลิสเทนเนอร์</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>ผู้เยี่ยมชมนิรนาม</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>เหมือนของคุณ</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>แตกต่าง</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>โปรไฟล์ที่ผู้เยี่ยมชมนิรนามได้รับภายใต้ ViewCacheTweaks เดียวกัน พร้อมการตั้งค่าส่วนตัวเริ่มต้น ไม่รวมส่วนของมุมมอง: ไม่สามารถถามลิสเทนเนอร์ที่อ่านเซสชันเกี่ยวกับส่วนเหล่านั้นได้</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>การตั้งค่าส่วนตัว</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>ไม่มีโหมดมุมมองใดขึ้นอยู่กับการตั้งค่าส่วนตัวของผู้ใช้ (site.ini [ContentSettings] CachedViewPreferences)</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>การตั้งค่าส่วนตัวที่มุมมองของโหมดมุมมองเหล่านี้ขึ้นอยู่ด้วย (CachedViewPreferences) พร้อมค่าของผู้ใช้หรือค่าเริ่มต้น ค่าเหล่านี้อยู่ในโปรไฟล์ในชื่อ userpreferences ของทุกโหมดมุมมองรวมกัน</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>โหมดมุมมอง</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>การตั้งค่า</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>ค่าเริ่มต้น</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>นโยบาย</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>แสดงนโยบายของบทบาท (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>นโยบายจะโหลดจากเซิร์ฟเวอร์เมื่อเปิดส่วนนี้ ทีละหน้า และกรองตามโมดูลและฟังก์ชันได้</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>ฟังก์ชัน</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>ทุกโมดูล</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>ทุกฟังก์ชัน</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>ข้อจำกัด</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>แสดงเพิ่มเติม</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>บทบาทเหล่านี้ไม่มีนโยบาย</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>ไม่มีนโยบายที่ตรงกับตัวกรอง</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown จาก %matching นโยบาย (ทั้งหมด %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68628,6 +68628,226 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Nin delili: a dira ka bɔ ɲɛ kasi la %ms ms kɔnɔ.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Baarakɛla</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Baarakɛla ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Kasi profili</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Nin lajɛ</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Lajɛ kasi</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>baarakɛla kelen-kelen bɛɛ ye (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Baarakɛla ka kasi profili: baarakɛla minnu ka profili ye kelen ye, olu bɛ lajɛ kasi dosiyew tila ɲɔgɔn na</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ɔwɔ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ayi</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Baarakɛla tɔgɔ</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Donna</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesiyɔn</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Kɔnɔkow lajɛ kasi kile yɔrɔ minnu bɛ baarakɛla sɔrɔ, i n'a fɔ kile b'u ta cogo min na, nin ɲɛ in ka ViewCacheTweaks kɔrɔ. Baarakɛla minnu ka profili ye kelen ye, olu bɛ lajɛw ka kasi dosiyew tila ɲɔgɔn na, ni lajɛ yɛrɛ ka yɔrɔw ma danfara (sugandiliw, lamɛnbagaw ka kilew): olu ta profili bɛ u yɛrɛ ye, nin ɲɛ in dɔrɔn na.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profili</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Nin lajɛ (nɔdi %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: baarakɛla o baarakɛla min donna, kasi dosiyew b'a yɛrɛ ye.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks minnu bɛ baara la: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Fan</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Hakɛ</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Yɔrɔ si tɛ baarakɛla sɔrɔ (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>nin lajɛ</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>A ladege i n'a fɔ sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Jɔyɔrɔw</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Jɔyɔrɔ dili si ma se ka kalan.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Jɔyɔrɔ ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Jɔyɔrɔ</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Dancɛ</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Dira min ma</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>baarakɛla</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>jɛkulu %name (fɛn %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopi kɛra</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>A ma se ka ladege.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>lamɛnbaga dɔ y'a bila kɛrɛ fɛ</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Lajɛbaga tɔgɔbaliw</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>i ta bɔlen</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>danfaralen</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profili min bɛ sɔrɔ taamaden tɔgɔbaliw fɛ ViewCacheTweaks kelen kɔrɔ, ni sugandili ɲɛfɔlenw ye, lajɛ yɔrɔw tɛ min na: lamɛnbaga min bɛ sesiyɔn kalan, o tɛ se ka ɲininka u ko la.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Sugandiliw</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Lajɛ cogo si tɛ baarakɛla ka sugandiliw sɔrɔ (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Sugandili minnu na nin lajɛ cogow ka lajɛw bɛ sɔrɔ (CachedViewPreferences), ni baarakɛla ka hakɛ ye walima ɲɛfɔlen. U bɛ profili kɔnɔ i n'a fɔ userpreferences, lajɛ cogo bɛɛ ta ɲɔgɔn fɛ.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Lajɛ cogo</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Sugandili</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Sariyalen</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Sariyaw</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Jɔyɔrɔw ka sariyaw jira (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Sariyaw bɛ ta sɛriwɛri la ni nin yɔrɔ in dayɛlɛla, ɲɛ kelen kelen, ka se ka sɛgɛsɛgɛ ni modili ni baara ye.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Baarakɛcogo</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Modili bɛɛ</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Baara bɛɛ</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Dancɛw</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>A caman jira</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Sariya si tɛ nin jɔyɔrɔw la.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Sariya si tɛ bɛn sɛgɛsɛgɛli ma.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown %matching sariyaw la (%total bɛɛ lajɛlen)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -67117,6 +67117,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Цей запит: віддано з кешу сторінок за %ms мс.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Користувач</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID користувача</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Профіль кешу</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Цей перегляд</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Кеш переглядів</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>для кожного користувача (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Профіль кешу користувача: користувачі з однаковим профілем спільно використовують файли кешу переглядів</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>так</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ні</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Логін</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Увійшов</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Сеанс</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Частини ключа кешу переглядів вмісту, що залежать від користувача, саме так, як їх бере ключ, за ViewCacheTweaks цієї сторінки. Користувачі з однаковим профілем спільно використовують файли кешу переглядів, якщо не відрізняються частини самого перегляду (налаштування, ключі слухачів): вони мають власний профіль, лише для цієї сторінки.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Профіль</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Цей перегляд (вузол %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: кожен користувач, що увійшов, має власні файли кешу.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Чинні ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Частина</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значення</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Жодна частина не залежить від користувача (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>цей перегляд</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Копіювати як текст</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Ролі</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Не вдалося прочитати призначення ролей.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID ролі</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Роль</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Обмеження</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Призначено</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>користувачеві</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>група %name (об'єкт %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Скопійовано</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Не вдалося скопіювати.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>пропущено слухачем</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Анонімні відвідувачі</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>такий самий, як ваш</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>інший</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Профіль, який отримують анонімні відвідувачі за тих самих ViewCacheTweaks, з типовими налаштуваннями, без частин перегляду: слухача, що читає сесію, не можна про них запитати.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Жоден режим перегляду не залежить від налаштувань користувача (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Налаштування, від яких залежать перегляди цих режимів перегляду (CachedViewPreferences), зі значенням користувача або типовим. У профілі вони є як userpreferences, усіх режимів перегляду разом.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Режим перегляду</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Параметр</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Типово</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Політики</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Показати політики ролей (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Політики завантажуються з сервера під час відкриття цього розділу, по одній сторінці, і їх можна фільтрувати за модулем і функцією.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Функція</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Усі модулі</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Усі функції</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Обмеження</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Показати більше</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Ці ролі не мають політик.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Жодна політика не відповідає фільтру.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown з %matching політик (усього %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

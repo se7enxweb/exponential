@@ -67176,6 +67176,226 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Ev daxwaz: di %ms ms de ji cache ya rûpelan hate pêşkêşkirin.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Bikarhêner</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Nasnameya bikarhêner</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profîla cacheyê</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Ev dîmen</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Cache ya dîtinan</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ji bo her bikarhênerî (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profîla cacheyê ya bikarhêner: bikarhênerên bi heman profîlê pelên cacheya dîmenan parve dikin</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>erê</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>na</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Têketin</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Têketî</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Danişîn</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Beşên mifteya cacheya dîmena naverokê yên bi bikarhêner ve girêdayî, tam wekî ku mifte wan digire, di bin ViewCacheTweaks ên vê rûpelê de. Bikarhênerên bi heman profîlê pelên cacheya dîmenan parve dikin, heya ku beşên dîmenekê bi xwe cuda nebin (tercîh, mifteyên guhdaran): profîla wan a xwe heye, tenê ji bo vê rûpelê.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profîl</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Ev dîmen (girêk %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: her bikarhênerê têketî pelên cacheyê yên xwe hene.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks ên derbasdar: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Parçe</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nirx</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Tu beş bi bikarhêner ve girêdayî nîne (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ev dîmen</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Wekî nivîs kopî bike</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rol</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Tu diyarkirina rolê nehat xwendin.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Nasnameya rolê</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rol</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Sînorkirin</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Diyarkirî ji bo</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>bikarhêner</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>kom %name (tişt %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Hate kopîkirin</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Nehat kopîkirin.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>ji aliyê guhdarekî ve hat derxistin</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Mêvanên nenas</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>wekî ya te</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>cuda</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profîla ku mêvanên nenas di bin heman ViewCacheTweaks de distînin, bi tercîhên pêşwext, bê beşên dîmenê: guhdarekî ku danişînê dixwîne nikare li ser wan were pirsîn.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Tercîh</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Tu moda dîmenê bi tercîhên bikarhêner ve girêdayî nîne (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Tercîhên ku dîmenên van modên dîmenê bi wan ve girêdayî ne (CachedViewPreferences), bi nirxa bikarhêner an a pêşwext. Ew di profîlê de wekî userpreferences in, yên hemû modên dîmenê bi hev re.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Moda dîtinê</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Tercîh</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Polîtîka</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Polîtîkayên rolan nîşan bide (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Polîtîka dema ku ev beş tê vekirin ji serverê têne barkirin, her carê rûpelek, û dikarin li gorî modul û fonksiyonê werin parzûnkirin.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Fonksiyon</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Hemû modul</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Hemû fonksiyon</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Sînorkirin</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Zêdetir nîşan bide</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Polîtîkayên van rolan tune ne.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Tu polîtîka li parzûnê nayê.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown ji %matching polîtîkayan (bi giştî %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

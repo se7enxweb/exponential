@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>ဤတောင်းဆိုမှု: စာမျက်နှာ ကက်ရှ်မှ %ms ms အတွင်း ပေးပို့ခဲ့သည်။</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>အသုံးပြုသူ</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>အသုံးပြုသူ ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>ကက်ရှ် ပရိုဖိုင်</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>ဤမြင်ကွင်း</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>မြင်ကွင်း ကက်ရှ်</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>အသုံးပြုသူတစ်ဦးချင်း (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>အသုံးပြုသူ၏ ကက်ရှ် ပရိုဖိုင်: တူညီသော ပရိုဖိုင်ရှိသည့် အသုံးပြုသူများသည် မြင်ကွင်း ကက်ရှ်ဖိုင်များကို မျှဝေသုံးစွဲသည်</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ဟုတ်ကဲ့</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>မဟုတ်ပါ</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ဝင်ရောက်အမည်</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>ဝင်ရောက်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>ဆက်ရှင်</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>ဤစာမျက်နှာ၏ ViewCacheTweaks အောက်တွင် အသုံးပြုသူအပေါ် မူတည်သော အကြောင်းအရာ မြင်ကွင်း ကက်ရှ်ကီး၏ အစိတ်အပိုင်းများ၊ ကီးက ယူသည့်အတိုင်း အတိအကျ။ တူညီသော ပရိုဖိုင်ရှိသည့် အသုံးပြုသူများသည် မြင်ကွင်းများ၏ ကက်ရှ်ဖိုင်များကို မျှဝေသုံးစွဲသည်။ မြင်ကွင်းတစ်ခု၏ ကိုယ်ပိုင် အစိတ်အပိုင်းများ ကွဲပြားပါက (ဦးစားပေးချက်များ၊ listener ကီးများ) ထိုမြင်ကွင်းများတွင် ဤစာမျက်နှာအတွက်သာ ကိုယ်ပိုင် ပရိုဖိုင် ရှိသည်။</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>ပရိုဖိုင်</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>ဤမြင်ကွင်း (နုဒ် %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ဝင်ရောက်ထားသော အသုံးပြုသူတိုင်းတွင် ကိုယ်ပိုင် ကက်ရှ်ဖိုင်များ ရှိသည်။</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>သက်ရောက်နေသော ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>အစိတ်အပိုင်း</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>တန်ဖိုး</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>အသုံးပြုသူအပေါ် မူတည်သော အစိတ်အပိုင်း မရှိပါ (ViewCacheTweaks)။</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ဤမြင်ကွင်း</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>စာသားအဖြစ် ကူးယူရန်</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>အခန်းကဏ္ဍများ</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>အခန်းကဏ္ဍ သတ်မှတ်ချက်များကို ဖတ်၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>အခန်းကဏ္ဍ ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>အခန်းကဏ္ဍ</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>ကန့်သတ်ချက်</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>ပေးအပ်ထားရာ</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>အသုံးပြုသူ</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>အုပ်စု %name (အရာဝတ္ထု %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>ကူးယူပြီး</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>ကူးယူ၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>listener တစ်ခုက ချန်လှပ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>အမည်မသိ ဧည့်သည်များ</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>သင့်ဟာနှင့် တူသည်</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>ကွဲပြားသည်</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>တူညီသော ViewCacheTweaks အောက်တွင် အမည်မသိ ဧည့်သည်များ ရရှိသော ပရိုဖိုင်၊ မူလ ဦးစားပေးချက်များဖြင့်၊ မြင်ကွင်း၏ အစိတ်အပိုင်းများ မပါဘဲ: ဆက်ရှင်ကို ဖတ်သော listener ကို ၎င်းတို့အကြောင်း မေး၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>ဦးစားပေးချက်များ</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>မည်သည့် မြင်ကွင်းမုဒ်မှ အသုံးပြုသူ ဦးစားပေးချက်များအပေါ် မမူတည်ပါ (site.ini [ContentSettings] CachedViewPreferences)။</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>ဤမြင်ကွင်းမုဒ်များ၏ မြင်ကွင်းများ မူတည်သော ဦးစားပေးချက်များ (CachedViewPreferences)၊ အသုံးပြုသူ၏ တန်ဖိုး သို့မဟုတ် မူလတန်ဖိုးဖြင့်။ ၎င်းတို့ကို ပရိုဖိုင်တွင် userpreferences အဖြစ် မြင်ကွင်းမုဒ်အားလုံး၏ ဦးစားပေးချက်များနှင့်အတူ ထည့်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>ကြည့်ရှုမုဒ်</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>ဦးစားပေးချက်</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>မူလ</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>မူဝါဒများ</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>အခန်းကဏ္ဍများ၏ မူဝါဒများကို ပြရန် (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>ဤကဏ္ဍကို ဖွင့်သောအခါ မူဝါဒများကို ဆာဗာမှ တစ်ကြိမ်လျှင် စာမျက်နှာတစ်ခုစီ ဖွင့်ယူပြီး မော်ဂျူးနှင့် လုပ်ဆောင်ချက်အလိုက် စစ်ထုတ်နိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>လုပ်ဆောင်ချက်</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>မော်ဂျူးအားလုံး</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>လုပ်ဆောင်ချက်အားလုံး</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>ကန့်သတ်ချက်များ</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>ပိုမိုပြရန်</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>ဤအခန်းကဏ္ဍများတွင် မူဝါဒ မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>စစ်ထုတ်မှုနှင့် ကိုက်ညီသော မူဝါဒ မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>မူဝါဒ %matching ခုအနက် %shown ခု (စုစုပေါင်း %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

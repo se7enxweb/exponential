@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>बे अनुरोधआ: फोथा क्यासनिफ्राय %ms ms आव होनाय.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>बेबहार खालामग्रा</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>बेबहार खालामग्रा ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>केस प्रफाइल</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>बे नुथाय</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>भिउ क्यास</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>बायदि बाहायगिरि (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>बाहायगिरिनि केस प्रफाइल: रोखोम प्रफाइल थानाय बाहायगिरिफोरा नुथाय केस फाइलफोरखौ रानसायो</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>होय</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>नङा</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>लगइन मुं</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>लगइन खालामनाय</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>सेसन</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>बाहायगिरिनि सायाव थाखानाय आयदा नुथाय केस कि-नि बाहागोफोर, कि-आ लानाय बादिनो, बे बिलाइनि ViewCacheTweaks नि सिङाव। रोखोम प्रफाइल थानाय बाहायगिरिफोरा नुथायफोरनि केस फाइलफोरखौ रानसायो, नुथाय गावनि बाहागोफोरा गुबुन जायोब्ला (गोसोजाथाय, लिसनारफोरनि कि): बेफोरनि गावनि प्रफाइल थायो, बे बिलाइनि थाखाय थारथि।</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>प्रोफाइल</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>बे नुथाय (नड %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: लगइन खालामनाय बायदि बाहायगिरियावनो गावनि केस फाइल दं।</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>थाखानाय ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>फाला</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>मान</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>जेबो बाहागोआ बाहायगिरिनि सायाव थाखाया (ViewCacheTweaks)।</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>बे नुथाय</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>लिरनाय बादि कपि खालाम</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>बाहागो</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>जेबो बाहागो होनायखौ फरायनो हाया।</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>बाहागो ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>बाहागो</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>सिमा</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>होनाय</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>बाहायगिरि</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>दल %name (मुवा %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>कपि खालामनाय जादों</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>कपि खालामनो हाया।</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>लिसनारजों बाद होनाय</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>मुं मावग्रा नायग्राफोर</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>नोंथांनि बादिनो</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>गुबुन</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>मुं गैयि सावरायग्राफोरा रोखोम ViewCacheTweaks नि सिङाव मोननाय प्रफाइल, गाहाय गोसोजाथायजों, नुथायनि बाहागोफोर गैयि: सेसन फरायग्रा लिसनारखौ बेफोरनि बागै सुंनो हाया।</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>गोसोजाथायफोर</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>जेबो नुथाय मोडआ बाहायगिरिनि गोसोजाथायनि सायाव थाखाया (site.ini [ContentSettings] CachedViewPreferences)।</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>बे नुथाय मोडफोरनि नुथायफोरा जाय गोसोजाथायफोरनि सायाव थाखायो (CachedViewPreferences), बाहायगिरिनि बेसेनजों एबा गाहाय बेसेनजों। बेफोरा प्रफाइलाव userpreferences बादि दं, गासै नुथाय मोडफोरनि लोगोसे।</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>भिउ मोड</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>गोसोजाथाय</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>डिफल्ट</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>निति</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>बाहागोफोरनि नितिफोर दिन्थि (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>बे खोन्दोखौ खेवब्ला नितिफोरखौ सार्भारनिफ्राय लड खालामो, सानैथिङाव मोनसे बिलाइ, आरो मडिउल आरो फङ्सन फारियै फिल्टार खालामनो हायो।</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>फङ्सन</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>जोबोद मडुल</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>गासै फङ्सन</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>सिमाफोर</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>बांसिन दिन्थि</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>बे बाहागोफोरनि जेबो निति गैया।</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>जेबो नितिआ फिल्टारजों मिलाया।</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%matching निति निफ्राय %shown (गासै %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

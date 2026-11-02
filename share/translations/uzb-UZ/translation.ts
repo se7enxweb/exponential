@@ -68628,6 +68628,226 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Bu soʻrov: sahifa keshidan %ms ms ichida xizmat koʻrsatildi.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Foydalanuvchi</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Foydalanuvchi ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Kesh profili</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Ushbu ko‘rinish</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Koʻrinish keshi</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>har bir foydalanuvchi uchun (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Foydalanuvchining kesh profili: bir xil profilga ega foydalanuvchilar ko‘rinish kesh fayllarini birgalikda ishlatadi</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ha</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>yoʻq</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login nomi</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Tizimga kirgan</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Seans</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Kontent ko‘rinishi kesh kalitining foydalanuvchiga bog‘liq qismlari, kalit ularni qanday olsa, aynan shunday, ushbu sahifaning ViewCacheTweaks sozlamalari ostida. Bir xil profilga ega foydalanuvchilar ko‘rinishlarning kesh fayllarini birgalikda ishlatadi, ko‘rinishning o‘z qismlari farq qiladigan holatlar bundan mustasno (afzalliklar, tinglovchilar kalitlari): ularning faqat shu sahifa uchun o‘z profili bor.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Ushbu ko‘rinish (tugun %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: tizimga kirgan har bir foydalanuvchining o‘z kesh fayllari bor.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Amaldagi ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Qism</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Qiymat</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Hech bir qism foydalanuvchiga bog‘liq emas (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ushbu ko‘rinish</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Matn sifatida nusxalash</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rollar</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Rol tayinlovlarini o‘qib bo‘lmadi.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Rol ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rol</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Cheklov</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Tayinlangan</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>foydalanuvchi</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>guruh %name (obyekt %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Nusxalandi</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Nusxalab bo‘lmadi.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>tinglovchi tomonidan chiqarib tashlangan</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonim tashrif buyuruvchilar</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>siznikidek</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>boshqacha</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Anonim tashrifchilar bir xil ViewCacheTweaks ostida, standart afzalliklar bilan, ko‘rinish qismlarisiz oladigan profil: seansni o‘qiydigan tinglovchidan ular haqida so‘rab bo‘lmaydi.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Afzalliklar</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Hech bir ko‘rinish rejimi foydalanuvchi afzalliklariga bog‘liq emas (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Ushbu ko‘rinish rejimlarining ko‘rinishlari bog‘liq bo‘lgan afzalliklar (CachedViewPreferences), foydalanuvchi qiymati yoki standart qiymat bilan. Ular profilda userpreferences sifatida, barcha ko‘rinish rejimlariniki birgalikda.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Koʻrish rejimi</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Afzallik</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standart</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Siyosatlar</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Rollarning siyosatlarini ko‘rsatish (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Siyosatlar ushbu bo‘lim ochilganda serverdan sahifama-sahifa yuklanadi va ularni modul va funksiya bo‘yicha filtrlash mumkin.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funksiya</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Barcha modullar</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Barcha funksiyalar</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Cheklovlar</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Ko‘proq ko‘rsatish</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Bu rollarda siyosatlar yo‘q.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Filtrga mos siyosat yo‘q.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%matching ta siyosatdan %shown ta (jami %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

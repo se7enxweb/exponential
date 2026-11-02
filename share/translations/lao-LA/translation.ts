@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>ຄຳຮ້ອງຂໍນີ້: ສົ່ງຈາກແຄຊໜ້າໃນ %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>ຜູ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID ຜູ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>ໂປຣໄຟລ໌ແຄຊ</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>ມຸມມອງນີ້</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>ແຄຊມຸມມອງ</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ຕໍ່ຜູ້ໃຊ້ (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>ໂປຣໄຟລ໌ແຄຊຂອງຜູ້ໃຊ້: ຜູ້ໃຊ້ທີ່ມີໂປຣໄຟລ໌ດຽວກັນໃຊ້ໄຟລ໌ແຄຊມຸມມອງຮ່ວມກັນ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ແມ່ນ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ບໍ່</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ຊື່ເຂົ້າສູ່ລະບົບ</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>ເຂົ້າສູ່ລະບົບແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>ເຊສຊັນ</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>ສ່ວນຂອງກະແຈແຄຊມຸມມອງເນື້ອຫາທີ່ຂຶ້ນກັບຜູ້ໃຊ້ ຕາມທີ່ກະແຈນຳໃຊ້ພໍດີ ພາຍໃຕ້ ViewCacheTweaks ຂອງໜ້ານີ້. ຜູ້ໃຊ້ທີ່ມີໂປຣໄຟລ໌ດຽວກັນໃຊ້ໄຟລ໌ແຄຊຂອງມຸມມອງຮ່ວມກັນ ເວັ້ນເສຍແຕ່ສ່ວນຂອງມຸມມອງເອງແຕກຕ່າງກັນ (ຄ່າທີ່ມັກ, ກະແຈຂອງ listener): ສ່ວນເຫຼົ່ານັ້ນມີໂປຣໄຟລ໌ຂອງຕົນເອງ ສະເພາະໜ້ານີ້ເທົ່ານັ້ນ.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>ໂປຣໄຟລ໌</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>ມຸມມອງນີ້ (ໂນດ %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ຜູ້ໃຊ້ທຸກຄົນທີ່ເຂົ້າສູ່ລະບົບມີໄຟລ໌ແຄຊຂອງຕົນເອງ.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks ທີ່ມີຜົນ: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ສ່ວນ</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ຄ່າ</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>ບໍ່ມີສ່ວນໃດຂຶ້ນກັບຜູ້ໃຊ້ (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ມຸມມອງນີ້</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>ສຳເນົາເປັນຂໍ້ຄວາມ</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>ບົດບາດ</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>ບໍ່ສາມາດອ່ານການມອບໝາຍບົດບາດໄດ້.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID ບົດບາດ</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>ບົດບາດ</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>ຂໍ້ຈຳກັດ</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>ມອບໝາຍໃຫ້</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ຜູ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>ກຸ່ມ %name (ວັດຖຸ %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>ສຳເນົາແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>ບໍ່ສາມາດສຳເນົາໄດ້.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>ຖືກ listener ລະເວັ້ນ</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>ຜູ້ເຂົ້າຊົມບໍ່ລະບຸຊື່</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>ຄືກັບຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>ແຕກຕ່າງ</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>ໂປຣໄຟລ໌ທີ່ຜູ້ເຂົ້າຊົມນິລະນາມໄດ້ຮັບພາຍໃຕ້ ViewCacheTweaks ດຽວກັນ ດ້ວຍຄ່າທີ່ມັກເລີ່ມຕົ້ນ ໂດຍບໍ່ມີສ່ວນຂອງມຸມມອງ: ບໍ່ສາມາດຖາມ listener ທີ່ອ່ານເຊດຊັນເພື່ອຂໍສ່ວນເຫຼົ່ານັ້ນໄດ້.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>ການຕັ້ງຄ່າທີ່ມັກ</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>ບໍ່ມີໂໝດມຸມມອງໃດຂຶ້ນກັບຄ່າທີ່ມັກຂອງຜູ້ໃຊ້ (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>ຄ່າທີ່ມັກທີ່ມຸມມອງຂອງໂໝດມຸມມອງເຫຼົ່ານີ້ຂຶ້ນກັບ (CachedViewPreferences) ພ້ອມຄ່າຂອງຜູ້ໃຊ້ ຫຼື ຄ່າເລີ່ມຕົ້ນ. ພວກມັນຢູ່ໃນໂປຣໄຟລ໌ເປັນ userpreferences ຂອງທຸກໂໝດມຸມມອງລວມກັນ.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>ໂໝດການສະແດງ</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>ຄ່າທີ່ມັກ</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>ຄ່າເລີ່ມຕົ້ນ</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>ນະໂຍບາຍ</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>ສະແດງນະໂຍບາຍຂອງບົດບາດ (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>ນະໂຍບາຍຈະຖືກໂຫຼດຈາກເຊີບເວີເມື່ອເປີດພາກນີ້ ເທື່ອລະໜ້າ ແລະ ສາມາດກັ່ນຕອງຕາມໂມດູນ ແລະ ຟັງຊັນໄດ້.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>ຟັງຊັນ</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>ທຸກໂມດູນ</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>ຟັງຊັນທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>ຂໍ້ຈຳກັດ</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>ສະແດງເພີ່ມເຕີມ</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>ບົດບາດເຫຼົ່ານີ້ບໍ່ມີນະໂຍບາຍ.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>ບໍ່ມີນະໂຍບາຍໃດກົງກັບຕົວກັ່ນຕອງ.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown ຈາກ %matching ນະໂຍບາຍ (ທັງໝົດ %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

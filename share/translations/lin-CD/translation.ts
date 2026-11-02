@@ -68628,6 +68628,226 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Requête oyo: epesami uta na cache ya mikasa na %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Mosaleli</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID ya mosaleli</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profil ya cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Emoniseli oyo</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Cache ya botali</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>mpo na mosaleli moko moko (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profil ya cache ya mosaleli: basaleli oyo bazali na profil moko bakabolaka bafisye ya cache ya bimoniseli</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ɛɛ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>te</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Nkómbó ya kokɔta</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Akoti</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesyo</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Biteni ya fungola ya cache ya bimoniseli ya makambo oyo etaleli mosaleli, ndenge fungola ezwaka yango mpenza, na nse ya ViewCacheTweaks ya lokasa oyo. Basaleli oyo bazali na profil moko bakabolaka bafisye ya cache ya bimoniseli, longola soki biteni ya emoniseli yango moko ekeseni (malingi, bafungola ya bayoki): yango ezali na profil na yango moko, mpo na lokasa oyo kaka.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Emoniseli oyo (esika %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: mosaleli nyonso oyo akoti azali na bafisye ya cache na ye moko.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks oyo ezali kosala: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Eteni</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Motuya</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Eteni moko te etaleli mosaleli (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>emoniseli oyo</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kokopia lokola makomi</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Bokumba</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Kopesama ya mikumba ekokaki kotangama te.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID ya mokumba</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Mokumba</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Ndelo</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Epesami na</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>mosaleli</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>etuluku %name (eloko %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Ekopami</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Ekokaki kokopiama te.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>etikami na moyoki moko</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Basaleli ayebani te</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>ndenge moko na oyo ya yo</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>ekeseni</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profil oyo bapaya oyo bayebani te bazwaka na nse ya ViewCacheTweaks yango moko, na malingi ya ebandeli, kozanga biteni ya emoniseli: moyoki oyo atangaka sesyo akoki kotunama yango te.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Malingi</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Lolenge moko te ya emoniseli etaleli malingi ya mosaleli (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Malingi oyo bimoniseli ya mitindo oyo ya emoniseli etaleli (CachedViewPreferences), na motuya ya mosaleli to oyo ya ebandeli. Ezali na profil lokola userpreferences, oyo ya mitindo nyonso ya emoniseli esangani.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Mode ya botali</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Lilingi</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Ya libela</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Mibeko</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Lakisa mibeko ya mikumba (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Mibeko ekotisamaka uta na serveur ntango eteni oyo efungwami, lokasa moko na moko, mpe ekoki kopongolama na kolanda module mpe mosala.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Mosala</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Ba-module nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Misala nyonso</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Ndelo</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Lakisa mingi</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Mikumba oyo ezali na mibeko te.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Mobeko moko te eyokani na filtre.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown na kati ya mibeko %matching (%total nyonso)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

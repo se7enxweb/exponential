@@ -68224,6 +68224,226 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Ovaj zahtjev: posluženo iz predmemorije stranica za %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Korisnik</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID korisnika</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profil predmemorije</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Ovaj prikaz</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Predmemorija prikaza</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>po korisniku (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profil predmemorije korisnika: korisnici s istim profilom dijele datoteke predmemorije prikaza</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>da</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Korisničko ime</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Prijavljen</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesija</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Dijelovi ključa predmemorije prikaza sadržaja koji ovise o korisniku, točno kako ih ključ uzima, prema ViewCacheTweaks ove stranice. Korisnici s istim profilom dijele datoteke predmemorije prikaza, osim ako se razlikuju dijelovi samog prikaza (postavke, ključevi slušatelja): oni imaju vlastiti profil, samo za ovu stranicu.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Ovaj prikaz (čvor %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: svaki prijavljeni korisnik ima vlastite datoteke predmemorije.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Aktivni ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Dio</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vrijednost</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Nijedan dio ne ovisi o korisniku (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ovaj prikaz</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopiraj kao tekst</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Uloge</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Dodjele uloga nije moguće pročitati.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID uloge</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Uloga</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Ograničenje</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Dodijeljeno</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>korisniku</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grupa %name (objekt %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopirano</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Kopiranje nije uspjelo.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>izostavio slušatelj</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonimni posjetitelji</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>isto kao vaš</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>različit</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profil koji dobivaju anonimni posjetitelji uz iste ViewCacheTweaks, sa zadanim postavkama, bez dijelova prikaza: slušatelja koji čita sesiju ne može se pitati za njih.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Postavke</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Nijedan način prikaza ne ovisi o korisničkim postavkama (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Postavke o kojima ovise prikazi ovih načina prikaza (CachedViewPreferences), s vrijednošću korisnika ili zadanom. U profilu su kao userpreferences, zajedno za sve načine prikaza.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Način prikaza</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Postavka</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Zadano</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Pravila</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Prikaži pravila uloga (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Pravila se učitavaju s poslužitelja kada se ovaj odjeljak otvori, stranicu po stranicu, i mogu se filtrirati po modulu i funkciji.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funkcija</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Svi moduli</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Sve funkcije</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Ograničenja</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Prikaži više</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Ove uloge nemaju pravila.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Nijedno pravilo ne odgovara filtru.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown od %matching pravila (ukupno %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

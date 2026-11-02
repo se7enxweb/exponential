@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Այս հարցումը: մատուցվել է էջերի քեշից %ms ms ընթացքում։</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Օգտատեր</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Օգտատիրոջ ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Քեշի պրոֆիլ</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Այս դիտումը</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Դիտման քեշ</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ըստ օգտատիրոջ (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Օգտատիրոջ քեշի պրոֆիլ. նույն պրոֆիլով օգտատերերը կիսում են դիտումների քեշի ֆայլերը</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>այո</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ոչ</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Մուտքանուն</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Մուտք գործած</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Աշխատաշրջան</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Բովանդակության դիտումների քեշի բանալու այն մասերը, որոնք կախված են օգտատիրոջից, ճիշտ այնպես, ինչպես բանալին է դրանք վերցնում, այս էջի ViewCacheTweaks կարգավորումների ներքո։ Նույն պրոֆիլով օգտատերերը կիսում են դիտումների քեշի ֆայլերը, եթե միայն դիտման սեփական մասերը չեն տարբերվում (նախընտրություններ, լսիչների բանալիներ). դրանք ունեն իրենց սեփական պրոֆիլը՝ միայն այս էջի համար։</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Պրոֆիլ</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Այս դիտումը (հանգույց %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: մուտք գործած յուրաքանչյուր օգտատեր ունի իր սեփական քեշի ֆայլերը։</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Գործող ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Մաս</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Արժեք</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ոչ մի մաս կախված չէ օգտատիրոջից (ViewCacheTweaks)։</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>այս դիտումը</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Պատճենել որպես տեքստ</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Դերեր</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Դերերի նշանակումները հնարավոր չեղավ կարդալ։</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Դերի ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Դեր</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Սահմանափակում</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Նշանակված է</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>օգտատիրոջը</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>խումբ %name (օբյեկտ %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Պատճենվեց</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Չհաջողվեց պատճենել։</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>բաց է թողնվել լսիչի կողմից</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Անանուն այցելուներ</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>նույնն է, ինչ ձերը</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>տարբեր</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Պրոֆիլը, որը ստանում են անանուն այցելուները նույն ViewCacheTweaks կարգավորումներով, լռելյայն նախընտրություններով, առանց դիտման մասերի. սեսիան կարդացող լսիչից դրանք հնարավոր չէ պահանջել։</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Նախընտրություններ</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Ոչ մի դիտման ռեժիմ կախված չէ օգտատիրոջ նախընտրություններից (site.ini [ContentSettings] CachedViewPreferences)։</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Նախընտրությունները, որոնցից կախված են այս դիտման ռեժիմների դիտումները (CachedViewPreferences), օգտատիրոջ արժեքով կամ լռելյայնով։ Դրանք պրոֆիլում են որպես userpreferences, բոլոր դիտման ռեժիմներինը միասին։</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Դիտման ռեժիմ</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Նախընտրություն</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Լռելյայն</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Քաղաքականություններ</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Ցուցադրել դերերի քաղաքականությունները (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Քաղաքականությունները բեռնվում են սերվերից այս բաժինը բացելիս, մեկական էջով, և կարող են զտվել ըստ մոդուլի և ֆունկցիայի։</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Ֆունկցիա</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Բոլոր մոդուլները</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Բոլոր ֆունկցիաները</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Սահմանափակումներ</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Ցուցադրել ավելին</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Այս դերերը քաղաքականություններ չունեն։</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Ոչ մի քաղաքականություն չի համապատասխանում զտիչին։</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching քաղաքականություն (ընդամենը %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

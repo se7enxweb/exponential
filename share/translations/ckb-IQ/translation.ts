@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>ئەم داواکارییە: لە %ms ms لە کاشی پەڕەوە خزمەت کرا.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>بەکارهێنەر</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID ی بەکارهێنەر</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>پرۆفایلی کاش</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>ئەم پیشاندانە</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>کاشی بینین</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>بۆ هەر بەکارهێنەرێک (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>پرۆفایلی کاشی بەکارهێنەر: بەکارهێنەرانی خاوەن هەمان پرۆفایل فایلەکانی کاشی پیشاندان هاوبەش دەکەن</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>بەڵێ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نەخێر</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ناوی چوونەژوورەوە</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>چووەتە ژوورەوە</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>دانیشتن</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>ئەو بەشانەی کلیلی کاشی پیشاندانی ناوەڕۆک کە پەیوەستن بە بەکارهێنەرەوە، ڕێک وەک کلیلەکە وەریان دەگرێت، بەپێی ViewCacheTweaks ی ئەم پەڕەیە. بەکارهێنەرانی خاوەن هەمان پرۆفایل فایلەکانی کاشی پیشاندانەکان هاوبەش دەکەن، مەگەر بەشەکانی خودی پیشاندانێک جیاواز بن (هەڵبژاردەکان، کلیلەکانی گوێگرەکان): ئەوانە پرۆفایلی خۆیان هەیە، تەنها بۆ ئەم پەڕەیە.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>پرۆفایل</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>ئەم پیشاندانە (گرێی %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: هەر بەکارهێنەرێکی چووەژوورەوە فایلی کاشی تایبەتی خۆی هەیە.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks ی چالاک: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>بەش</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>بەها</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>هیچ بەشێک پەیوەست نییە بە بەکارهێنەرەوە (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ئەم پیشاندانە</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>لەبەرگرتنەوە وەک دەق</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>ڕۆڵەکان</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>هیچ دیاریکردنێکی ڕۆڵ نەخوێندرایەوە.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ناسنامەی ڕۆڵ</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>ڕۆڵ</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>سنووردارکردن</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>دیاریکراوە بۆ</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>بەکارهێنەر</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>گرووپی %name (ئۆبجێکتی %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>لەبەر گیرایەوە</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>لەبەرگرتنەوە سەرکەوتوو نەبوو.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>لەلایەن گوێگرێکەوە لابراوە</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>سەردانیکەرە نەناسراوەکان</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>وەک هی تۆ</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>جیاواز</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>ئەو پرۆفایلەی میوانە نەناسراوەکان بەپێی هەمان ViewCacheTweaks وەری دەگرن، بە هەڵبژاردە بنەڕەتییەکان، بەبێ بەشەکانی پیشاندان: ناتوانرێت لە گوێگرێک کە دانیشتنەکە دەخوێنێتەوە داوایان بکرێت.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>هەڵبژاردەکان</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>هیچ شێوازێکی پیشاندان پەیوەست نییە بە هەڵبژاردەکانی بەکارهێنەرەوە (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>ئەو هەڵبژاردانەی پیشاندانەکانی ئەم شێوازانەی پیشاندان پشتیان پێ دەبەستن (CachedViewPreferences)، بە بەهای بەکارهێنەر یان بەهای بنەڕەتی. لە پرۆفایلەکەدا وەک userpreferences هەن، هی هەموو شێوازەکانی پیشاندان پێکەوە.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>دۆخی پیشاندان</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>هەڵبژاردە</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>بنەڕەت</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>سیاسەتەکان</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>پیشاندانی سیاسەتەکانی ڕۆڵەکان (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>سیاسەتەکان کاتێک ئەم بەشە دەکرێتەوە لە ڕاژەکارەوە بار دەکرێن، پەڕە بە پەڕە، و دەتوانرێت بەپێی مۆدیوول و فەنکشن پاڵێو بکرێن.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>فەنکشن</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>هەموو مۆدیولەکان</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>هەموو فەنکشنەکان</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>سنووردارکردنەکان</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>زیاتر پیشان بدە</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>ئەم ڕۆڵانە هیچ سیاسەتێکیان نییە.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>هیچ سیاسەتێک لەگەڵ پاڵێوەرەکە ناگونجێت.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown لە %matching سیاسەت (کۆی گشتی %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

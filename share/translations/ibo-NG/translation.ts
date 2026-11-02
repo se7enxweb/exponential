@@ -68626,6 +68626,226 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Arịrịọ a: e si na cache ibe nye ya n'ime %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Onye ọrụ</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID onye ọrụ</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profaịlụ cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Nlele a</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Cache nlele</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>maka onye ọrụ ọ bụla (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profaịlụ cache nke onye ọrụ: ndị ọrụ nwere otu profaịlụ na-ekerịta faịlụ cache nlele</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ee</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>mba</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Banye</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Abanyela</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Akụkụ nke igodo cache nlele ọdịnaya ndị dabere na onye ọrụ, kpọmkwem dị ka igodo si were ha, n'okpuru ViewCacheTweaks nke ibe a. Ndị ọrụ nwere otu profaịlụ na-ekerịta faịlụ cache nke nlele, belụsọ ma akụkụ nke nlele n'onwe ya dị iche (mmasị, igodo nke ndị na-ege ntị): ndị ahụ nwere profaịlụ nke ha, maka naanị ibe a.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profaịlụ</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Nlele a (node %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: onye ọrụ ọ bụla abanyela nwere faịlụ cache nke ya.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks na-arụ ọrụ: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Akụkụ</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Uru</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ọ dịghị akụkụ dabere na onye ọrụ (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>nlele a</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Detuo dị ka ederede</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Ọrụ</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Enweghị ike ịgụ nkenye ọkwa ọ bụla.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID ọkwa</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Ọrụ</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Oke</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Ekenyere</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>onye ọrụ ahụ</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>otu %name (ihe %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Edetuola</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Enweghị ike idetuo.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>onye na-ege ntị wepụrụ ya</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Ndị ọbịa amaghị aha</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>otu ihe ahụ dị ka nke gị</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>dị iche</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profaịlụ ndị ọbịa na-amaghị aha na-enweta n'okpuru otu ViewCacheTweaks ahụ, ya na mmasị ndabara, na-enweghị akụkụ nke nlele: a pụghị ịjụ onye na-ege ntị na-agụ nnọkọ maka ha.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Mmasị</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Ọ dịghị ụdị nlele dabere na mmasị onye ọrụ (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Mmasị ndị nlele nke ụdị nlele ndị a dabere na ha (CachedViewPreferences), ya na uru onye ọrụ ma ọ bụ ndabara. Ha dị na profaịlụ dị ka userpreferences, nke ụdị nlele niile ọnụ.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Ọnọdụ ọhụụ</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Otu mmasị</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Ndabara</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Iwu</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Gosi iwu nke ọkwa (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>A na-ebudata iwu ndị ahụ site na sava mgbe e meghere ngalaba a, otu ibe n'otu oge, a pụkwara ịhazi ha site na modul na ọrụ.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Ọrụ</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Modul niile</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Ọrụ niile</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Oke</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Gosi ọzọ</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Ọkwa ndị a enweghị iwu ọ bụla.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Ọ dịghị iwu kwekọrọ na nzacha.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown n'ime %matching iwu (%total na ngụkọta)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

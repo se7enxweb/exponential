@@ -68626,6 +68626,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>ही विनंती: पृष्ठ कॅशेमधून %ms ms मध्ये दिली.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>वापरकर्ता</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>वापरकर्ता ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>कॅशे प्रोफाइल</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>हे दृश्य</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>व्ह्यू कॅशे</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>प्रति वापरकर्ता (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>वापरकर्त्याचे कॅशे प्रोफाइल: समान प्रोफाइल असलेले वापरकर्ते दृश्य कॅशे फाइल्स सामायिक करतात</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>होय</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>नाही</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>लॉग इन</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>लॉग इन केलेले</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>सत्र</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>सामग्री दृश्य कॅशे कीचे जे भाग वापरकर्त्यावर अवलंबून असतात, की ते जसे घेते तसेच, या पृष्ठाच्या ViewCacheTweaks नुसार. समान प्रोफाइल असलेले वापरकर्ते दृश्यांच्या कॅशे फाइल्स सामायिक करतात, जोपर्यंत एखाद्या दृश्याचे स्वतःचे भाग वेगळे नसतात (प्राधान्ये, लिसनर्सच्या की): त्यांचे स्वतःचे प्रोफाइल असते, फक्त या पृष्ठासाठी.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>प्रोफाइल</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>हे दृश्य (नोड %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: लॉग इन केलेल्या प्रत्येक वापरकर्त्याच्या स्वतःच्या कॅशे फाइल्स असतात.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>लागू ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>भाग</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>मूल्य</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>कोणताही भाग वापरकर्त्यावर अवलंबून नाही (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>हे दृश्य</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>मजकूर म्हणून कॉपी करा</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>भूमिका</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>कोणतीही भूमिका नियुक्ती वाचता आली नाही.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>भूमिका ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>भूमिका</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>मर्यादा</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>नियुक्त</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>वापरकर्त्याला</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>गट %name (ऑब्जेक्ट %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>कॉपी केले</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>कॉपी करता आले नाही.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>लिसनरने वगळले</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>अनामिक अभ्यागत</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>तुमच्यासारखेच</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>वेगळे</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>त्याच ViewCacheTweaks नुसार अनामिक अभ्यागतांना मिळणारे प्रोफाइल, डीफॉल्ट प्राधान्यांसह, दृश्याच्या भागांशिवाय: सत्र वाचणाऱ्या लिसनरकडे ते मागता येत नाहीत.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>प्राधान्ये</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>कोणताही दृश्य मोड वापरकर्त्याच्या प्राधान्यांवर अवलंबून नाही (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>या दृश्य मोडमधील दृश्ये ज्या प्राधान्यांवर अवलंबून असतात ती (CachedViewPreferences), वापरकर्त्याच्या मूल्यासह किंवा डीफॉल्टसह. ती प्रोफाइलमध्ये userpreferences म्हणून असतात, सर्व दृश्य मोडची एकत्र.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>दृश्य मोड</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>प्राधान्य</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>डीफॉल्ट</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>धोरणे</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>भूमिकांची धोरणे दाखवा (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>हा विभाग उघडल्यावर धोरणे सर्व्हरवरून एका वेळी एक पृष्ठ लोड होतात आणि मॉड्यूल व फंक्शननुसार फिल्टर करता येतात.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>फंक्शन</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>सर्व मॉड्यूल</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>सर्व फंक्शन्स</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>मर्यादा</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>आणखी दाखवा</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>या भूमिकांना कोणतीही धोरणे नाहीत.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>कोणतेही धोरण फिल्टरशी जुळत नाही.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%matching पैकी %shown धोरणे (एकूण %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

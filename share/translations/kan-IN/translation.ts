@@ -68626,6 +68626,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>ಈ ವಿನಂತಿ: ಪುಟ ಕ್ಯಾಷ್‌ನಿಂದ %ms ms ನಲ್ಲಿ ಒದಗಿಸಲಾಗಿದೆ.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>ಬಳಕೆದಾರ</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ಬಳಕೆದಾರ ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>ಕ್ಯಾಶ್ ಪ್ರೊಫೈಲ್</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>ಈ ವೀಕ್ಷಣೆ</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>ವೀಕ್ಷಣೆ ಕ್ಯಾಷ್</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ಪ್ರತಿ ಬಳಕೆದಾರ (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>ಬಳಕೆದಾರರ ಕ್ಯಾಶ್ ಪ್ರೊಫೈಲ್: ಒಂದೇ ಪ್ರೊಫೈಲ್ ಹೊಂದಿರುವ ಬಳಕೆದಾರರು ವೀಕ್ಷಣೆ ಕ್ಯಾಶ್ ಫೈಲ್‌ಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ಹೌದು</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ಲಾಗ್ ಇನ್</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>ಲಾಗಿನ್ ಆಗಿದ್ದಾರೆ</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>ಸೆಷನ್</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>ಈ ಪುಟದ ViewCacheTweaks ಅಡಿಯಲ್ಲಿ, ಬಳಕೆದಾರರನ್ನು ಅವಲಂಬಿಸಿರುವ ವಿಷಯ ವೀಕ್ಷಣೆ ಕ್ಯಾಶ್ ಕೀಲಿಯ ಭಾಗಗಳು, ಕೀಲಿ ಅವುಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳುವಂತೆಯೇ. ಒಂದೇ ಪ್ರೊಫೈಲ್ ಹೊಂದಿರುವ ಬಳಕೆದಾರರು ವೀಕ್ಷಣೆಗಳ ಕ್ಯಾಶ್ ಫೈಲ್‌ಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ, ವೀಕ್ಷಣೆಯ ಸ್ವಂತ ಭಾಗಗಳು (ಆದ್ಯತೆಗಳು, ಲಿಸನರ್‌ಗಳ ಕೀಲಿಗಳು) ಭಿನ್ನವಾಗಿರದಿದ್ದರೆ: ಅವುಗಳಿಗೆ ಈ ಪುಟಕ್ಕೆ ಮಾತ್ರ ತಮ್ಮದೇ ಪ್ರೊಫೈಲ್ ಇರುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>ಪ್ರೊಫೈಲ್</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>ಈ ವೀಕ್ಷಣೆ (ನೋಡ್ %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ಲಾಗಿನ್ ಆದ ಪ್ರತಿ ಬಳಕೆದಾರರಿಗೂ ತಮ್ಮದೇ ಕ್ಯಾಶ್ ಫೈಲ್‌ಗಳಿವೆ.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ಜಾರಿಯಲ್ಲಿರುವ ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ಭಾಗ</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ಮೌಲ್ಯ</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>ಯಾವುದೇ ಭಾಗ ಬಳಕೆದಾರರನ್ನು ಅವಲಂಬಿಸಿಲ್ಲ (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ಈ ವೀಕ್ಷಣೆ</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>ಪಠ್ಯವಾಗಿ ನಕಲಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>ಪಾತ್ರಗಳು</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>ಯಾವುದೇ ಪಾತ್ರ ನಿಯೋಜನೆಗಳನ್ನು ಓದಲಾಗಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ಪಾತ್ರ ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>ಪಾತ್ರ</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>ಮಿತಿ</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>ನಿಯೋಜಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ಬಳಕೆದಾರ</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>ಗುಂಪು %name (ಆಬ್ಜೆಕ್ಟ್ %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>ನಕಲಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>ನಕಲಿಸಲಾಗಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>ಲಿಸನರ್ ಹೊರಗಿಟ್ಟಿದೆ</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>ಅನಾಮಧೇಯ ಸಂದರ್ಶಕರು</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>ನಿಮ್ಮದರಂತೆಯೇ</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>ಭಿನ್ನ</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>ಅನಾಮಧೇಯ ಸಂದರ್ಶಕರು ಅದೇ ViewCacheTweaks ಅಡಿಯಲ್ಲಿ, ಡೀಫಾಲ್ಟ್ ಆದ್ಯತೆಗಳೊಂದಿಗೆ, ವೀಕ್ಷಣೆಯ ಭಾಗಗಳಿಲ್ಲದೆ ಪಡೆಯುವ ಪ್ರೊಫೈಲ್: ಸೆಷನ್ ಓದುವ ಲಿಸನರ್‌ನಿಂದ ಅವುಗಳನ್ನು ಕೇಳಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>ಆದ್ಯತೆಗಳು</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>ಯಾವುದೇ ವೀಕ್ಷಣೆ ಮೋಡ್ ಬಳಕೆದಾರ ಆದ್ಯತೆಗಳನ್ನು ಅವಲಂಬಿಸಿಲ್ಲ (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>ಈ ವೀಕ್ಷಣೆ ಮೋಡ್‌ಗಳ ವೀಕ್ಷಣೆಗಳು ಅವಲಂಬಿಸಿರುವ ಆದ್ಯತೆಗಳು (CachedViewPreferences), ಬಳಕೆದಾರರ ಮೌಲ್ಯ ಅಥವಾ ಡೀಫಾಲ್ಟ್‌ನೊಂದಿಗೆ. ಅವು ಪ್ರೊಫೈಲ್‌ನಲ್ಲಿ userpreferences ಆಗಿ, ಎಲ್ಲಾ ವೀಕ್ಷಣೆ ಮೋಡ್‌ಗಳದ್ದೂ ಒಟ್ಟಿಗೆ ಇರುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>ವೀಕ್ಷಣೆ ಮೋಡ್</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>ಆದ್ಯತೆ</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>ಡೀಫಾಲ್ಟ್</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>ನೀತಿಗಳು</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>ಪಾತ್ರಗಳ ನೀತಿಗಳನ್ನು ತೋರಿಸಿ (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>ಈ ವಿಭಾಗವನ್ನು ತೆರೆದಾಗ ನೀತಿಗಳನ್ನು ಸರ್ವರ್‌ನಿಂದ ಒಂದೊಂದು ಪುಟವಾಗಿ ಲೋಡ್ ಮಾಡಲಾಗುತ್ತದೆ, ಮತ್ತು ಅವುಗಳನ್ನು ಮಾಡ್ಯೂಲ್ ಮತ್ತು ಫಂಕ್ಷನ್ ಮೂಲಕ ಫಿಲ್ಟರ್ ಮಾಡಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>ಫಂಕ್ಷನ್</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>ಎಲ್ಲಾ ಮಾಡ್ಯೂಲ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>ಎಲ್ಲಾ ಫಂಕ್ಷನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>ಮಿತಿಗಳು</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>ಇನ್ನಷ್ಟು ತೋರಿಸಿ</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>ಈ ಪಾತ್ರಗಳಿಗೆ ಯಾವುದೇ ನೀತಿಗಳಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>ಯಾವುದೇ ನೀತಿ ಫಿಲ್ಟರ್‌ಗೆ ಹೊಂದಿಕೆಯಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%matching ರಲ್ಲಿ %shown ನೀತಿಗಳು (ಒಟ್ಟು %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

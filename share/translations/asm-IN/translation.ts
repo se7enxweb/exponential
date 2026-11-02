@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>এই অনুৰোধ: পৃষ্ঠা কেচৰ পৰা %ms ms ত প্ৰদান কৰা হৈছে।</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>ব্যৱহাৰকাৰী</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ব্যৱহাৰকাৰীৰ ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>কেশ্ব প্ৰফাইল</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>এই ভিউ</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>দৰ্শন কেচ</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>প্ৰতিজন ব্যৱহাৰকাৰীৰ বাবে (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>ব্যৱহাৰকাৰীৰ কেশ্ব প্ৰফাইল: একে প্ৰফাইলৰ ব্যৱহাৰকাৰীসকলে ভিউ কেশ্ব ফাইলসমূহ ভাগ-বতৰা কৰে</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>হয়</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>নহয়</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>লগইন নাম</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>লগ ইন কৰা হৈছে</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>ছেছন</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>এই পৃষ্ঠাৰ ViewCacheTweaks অনুসৰি, কনটেণ্ট ভিউ কেশ্ব কীৰ ব্যৱহাৰকাৰীৰ ওপৰত নিৰ্ভৰশীল অংশসমূহ, কীয়ে যেনেকৈ লয় ঠিক তেনেকৈ। একে প্ৰফাইলৰ ব্যৱহাৰকাৰীসকলে ভিউসমূহৰ কেশ্ব ফাইল ভাগ-বতৰা কৰে, যদিহে কোনো ভিউৰ নিজৰ অংশ (পছন্দ, লিচেনাৰৰ কী) পৃথক নহয়: সেইবোৰৰ নিজা প্ৰফাইল থাকে, কেৱল এই পৃষ্ঠাৰ বাবে।</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>প্ৰফাইল</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>এই ভিউ (ন'ড %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: প্ৰতিজন লগ ইন কৰা ব্যৱহাৰকাৰীৰ নিজা কেশ্ব ফাইল থাকে।</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>সক্ৰিয় ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>অংশ</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>মান</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>কোনো অংশ ব্যৱহাৰকাৰীৰ ওপৰত নিৰ্ভৰশীল নহয় (ViewCacheTweaks)।</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>এই ভিউ</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>পাঠ হিচাপে কপি কৰক</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>ভূমিকা</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>কোনো ভূমিকা নিযুক্তি পঢ়িব পৰা নগ'ল।</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ভূমিকা ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>ভূমিকা</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>সীমাবদ্ধতা</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>নিযুক্ত কৰা হৈছে</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ব্যৱহাৰকাৰী</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>গোট %name (অবজেক্ট %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>কপি কৰা হ'ল</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>কপি কৰিব পৰা নগ'ল।</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>এটা লিচেনাৰে বাদ দিছে</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>বেনামী দৰ্শক</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>আপোনাৰ সৈতে একে</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>পৃথক</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>একে ViewCacheTweaks থকা অৱস্থাত বেনামী দৰ্শকসকলে পোৱা প্ৰফাইল, ডিফ'ল্ট পছন্দসহ, ভিউৰ অংশসমূহ নোহোৱাকৈ: ছেচন পঢ়া লিচেনাৰক সেইবোৰৰ বাবে সোধা নাযায়।</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>পছন্দসমূহ</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>কোনো ভিউ মোড ব্যৱহাৰকাৰীৰ পছন্দৰ ওপৰত নিৰ্ভৰশীল নহয় (site.ini [ContentSettings] CachedViewPreferences)।</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>এই ভিউ মোডসমূহৰ ভিউবোৰ যি পছন্দৰ ওপৰত নিৰ্ভৰশীল (CachedViewPreferences), ব্যৱহাৰকাৰীৰ মান বা ডিফ'ল্টসহ। প্ৰফাইলত সেইবোৰ userpreferences হিচাপে থাকে, সকলো ভিউ মোডৰ একেলগে।</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>দৰ্শন ম'ড</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>পছন্দ</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>ডিফল্ট</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>নীতি</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>ভূমিকাসমূহৰ নীতি দেখুৱাওক (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>এই অংশ খোলাৰ সময়ত নীতিসমূহ চাৰ্ভাৰৰ পৰা এবাৰত এটা পৃষ্ঠাকৈ লোড হয়, আৰু মডিউল আৰু ফাংচন অনুসৰি ফিল্টাৰ কৰিব পাৰি।</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>ফাংচন</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>সকলো মডিউল</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>সকলো ফাংচন</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>সীমাবদ্ধতা</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>আৰু দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>এই ভূমিকাসমূহৰ কোনো নীতি নাই।</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>কোনো নীতি ফিল্টাৰৰ সৈতে নিমিলে।</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching নীতি (মুঠ %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68628,6 +68628,226 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Y cais hwn: gweinwyd o'r storfa tudalennau mewn %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Defnyddiwr</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID defnyddiwr</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Proffil storfa</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Yr olwg hon</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Storfa golygon</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>fesul defnyddiwr (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Proffil storfa'r defnyddiwr: mae defnyddwyr â'r un proffil yn rhannu ffeiliau storfa'r golwg</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ie</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>na</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Enw mewngofnodi</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Wedi mewngofnodi</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesiwn</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Rhannau allwedd storfa golwg y cynnwys sy'n dibynnu ar y defnyddiwr, yn union fel y mae'r allwedd yn eu cymryd, o dan ViewCacheTweaks y dudalen hon. Mae defnyddwyr â'r un proffil yn rhannu ffeiliau storfa'r golygon, oni bai bod rhannau golwg ei hun yn wahanol (dewisiadau, allweddi gwrandawyr): mae gan y rheini eu proffil eu hunain, ar gyfer y dudalen hon yn unig.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Proffil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Yr olwg hon (nod %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: mae gan bob defnyddiwr sydd wedi mewngofnodi ei ffeiliau storfa ei hun.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks mewn grym: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Rhan</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Gwerth</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Nid oes rhan yn dibynnu ar y defnyddiwr (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>yr olwg hon</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Copïo fel testun</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rolau</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Nid oedd modd darllen unrhyw aseiniadau rôl.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID rôl</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rôl</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Cyfyngiad</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Wedi'i aseinio i</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>y defnyddiwr</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grŵp %name (gwrthrych %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copïwyd</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Methu copïo.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>wedi'i hepgor gan wrandawr</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Ymwelwyr dienw</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>yr un fath â'ch un chi</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>gwahanol</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Y proffil a gaiff ymwelwyr dienw o dan yr un ViewCacheTweaks, gyda'r dewisiadau rhagosodedig, heb rannau'r golwg: ni ellir gofyn amdanynt i wrandawr sy'n darllen y sesiwn.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Dewisiadau</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Nid oes modd golwg yn dibynnu ar ddewisiadau'r defnyddiwr (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Y dewisiadau y mae golygon y moddau golwg hyn yn dibynnu arnynt (CachedViewPreferences), gyda gwerth y defnyddiwr neu'r rhagosodiad. Maent yn y proffil fel userpreferences, rhai pob modd golwg gyda'i gilydd.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Modd gweld</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Dewis</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Rhagosodedig</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Polisïau</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Dangos polisïau'r rolau (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Caiff y polisïau eu llwytho o'r gweinydd pan agorir yr adran hon, fesul tudalen, a gellir eu hidlo yn ôl modiwl a swyddogaeth.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Swyddogaeth</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Pob modiwl</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Pob swyddogaeth</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Cyfyngiadau</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Dangos mwy</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Nid oes gan y rolau hyn bolisïau.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Nid oes polisi'n cyfateb i'r hidlydd.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown o %matching polisi (%total i gyd)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

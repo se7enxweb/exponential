@@ -71683,7 +71683,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>same as yours</source>
-        <translation>gleich wie deins</translation>
+        <translation>gleich wie Ihres</translation>
     </message>
     <message>
         <source>different</source>
@@ -71716,6 +71716,50 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Default</source>
         <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Richtlinien</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Richtlinien der Rollen anzeigen (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Die Richtlinien werden beim Öffnen dieses Abschnitts vom Server geladen, jeweils eine Seite, und lassen sich nach Modul und Funktion filtern.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funktion</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Alle Module</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Alle Funktionen</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Einschränkungen</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Mehr anzeigen</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Diese Rollen haben keine Richtlinien.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Keine Richtlinie passt zum Filter.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown von %matching Richtlinien (%total insgesamt)</translation>
     </message>
 </context>
 <context>

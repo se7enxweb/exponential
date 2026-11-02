@@ -68628,6 +68628,226 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Laaj bii: kaasu xët bi moo ko jëlal ci %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Jëfandikukat</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID bu jëfandikukat</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profilu kaasu</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Xool bii</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Kaasu xool</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ci jëfandikukat bu nekk (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profilu kaasu jëfandikukat bi: jëfandikukat yi am benn profil dañuy bokk ci fiseu kaasu xool yi</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>waaw</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>déedéet</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Turu jëfandikukat</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Dugg na</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesiyoŋ</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Pàcc yi ci caabiy kaasu xoolu ëmbit yi aju ci jëfandikukat bi, ni caabi bi leen jële, ci suufu ViewCacheTweaks yu xët wii. Jëfandikukat yi am benn profil dañuy bokk ci fiseu kaasu xool yi, ndare pàcc yu xool bi ci boppam wuute (tànneef yi, caabiy déglukat yi): yooyu am nañu seen profil, ngir xët wii rekk.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Xool bii (nodd %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: jëfandikukat bu nekk bu dugg am na fiseu kaasu yu boppam.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks yiy dox: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Pàcc</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Njëg</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Amul benn pàcc bu aju ci jëfandikukat bi (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>xool bii</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Duppi ni mbind</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Wàll yi</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Mënuñu a jàng benn joxeefu sas.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID bu sas</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Wàll</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Dig</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Joxe nañu ko</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>jëfandikukat bi</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>mbooloo %name (lëf %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Sotti nañu ko</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Mënul a duppi.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>benn déglukat moo ko bàyyi</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Ñéeg yu ñu xamul</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>niki sa bos</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>wuute na</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profil bi gan yu amul tur di am ci suufu ViewCacheTweaks yu mel noonu, ak tànneef yu ñu taxawal, te amul pàcci xool bi: déglukat buy jàng sesiyoŋ bi mënuñu ko laaj ci seen mbir.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Tànneef yi</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Amul benn anamu xool bu aju ci tànneefu jëfandikukat (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Tànneef yi xooli anam yii aju ci (CachedViewPreferences), ak njëgu jëfandikukat bi walla bi ñu taxawal. Ñu ngi ci profil bi ni userpreferences, yu anami xool yépp ñoo bokk.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Anamu wone</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Tànneef</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Li nekk ci suuf</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Politig yi</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Wone politig yu sas yi (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Politig yi dañu leen di yeb ci serwëer bi bu ñu ubbee xaaj bii, benn xët ci benn yoon, te mën nañu leen tànn ci modil ak fonksiyoŋ.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Fonksiyoŋ</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Modil yépp</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Fonksiyoŋ yépp</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Dig yi</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Wone yeneen</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Sas yii amuñu benn politig.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Amul benn politig bu dëppoo ak seetukaay bi.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown ci %matching politig (%total lépp)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

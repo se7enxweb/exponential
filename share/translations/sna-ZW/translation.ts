@@ -68628,6 +68628,226 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Chikumbiro ichi: yakapihwa kubva mucache yemapeji mu %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Mushandisi</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID yemushandisi</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Purofaira yecache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Onero iri</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Cache yeonero</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>pamushandisi mumwe nemumwe (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Purofaira yecache yemushandisi: vashandisi vane purofaira imwe chete vanogovana mafaira ecache yeonero</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>hongu</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>kwete</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Zita remushandisi</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Apinda</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesheni</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Zvikamu zvekiyi yecache yeonero yezvinyorwa zvinoenderana nemushandisi, sezvazvinotorwa nekiyi chaizvo, zvichienderana ne ViewCacheTweaks yepeji rino. Vashandisi vane purofaira imwe chete vanogovana mafaira ecache eonero, kunze kwekunge zvikamu zveonero pachayo zvakasiyana (zvido, makiyi evateereri): izvo zvine purofaira yazvo, yepeji rino chete.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Purofaira</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Onero iri (nodhi %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: mushandisi wese apinda ane mafaira ake ecache.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks inoshanda: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Chikamu</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Kukosha</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Hapana chikamu chinoenderana nemushandisi (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>onero iri</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopa sechinyorwa</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Zvinzvimbo</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Hapana kupihwa kwebasa kwakwanisa kuverengwa.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID yebasa</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Chinzvimbo</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Muganhu</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Yakapihwa ku</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>mushandisi</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>boka %name (chinhu %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Zvakopwa</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Hazvina kukwanisa kukopwa.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>yakasiiwa nemuteereri</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Vaenzi vasingazivikanwi</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>yakafanana neyako</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>yakasiyana</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Purofaira inowanikwa nevashanyi vasingazivikanwe zvichienderana ne ViewCacheTweaks imwe chete, nezvido zvakatarwa, pasina zvikamu zveonero: muteereri anoverenga sesheni haagoni kubvunzwa nezvazvo.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Zvido</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Hapana modhi yeonero inoenderana nezvido zvemushandisi (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Zvido zvinoenderana nazvo maonero emamodhi aya (CachedViewPreferences), nekukosha kwemushandisi kana kwakatarwa. Zviri mupurofaira se userpreferences, zvemamodhi ose eonero pamwe chete.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Nzira yekuona</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Chido</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Zvakajairwa</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Mitemo</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Ratidza mitemo yemabasa (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Mitemo inotorwa kubva kusevha kana chikamu ichi chavhurwa, peji rimwe panguva, uye inogona kusefwa nemodhuru nefangishoni.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Fanikishoni</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Modhiyuru dzose</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Mafangishoni ese</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Miganhu</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Ratidza zvimwe</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Mabasa aya haana mitemo.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Hapana mutemo unoenderana nesefa.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown pa %matching mitemo (%total pamwe chete)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

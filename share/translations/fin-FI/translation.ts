@@ -68567,6 +68567,226 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Tämä pyyntö: toimitettu sivuvälimuistista ajassa %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Käyttäjä</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Käyttäjän tunnus</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Välimuistiprofiili</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Tämä näkymä</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Näkymävälimuisti</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>käyttäjäkohtainen (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Käyttäjän välimuistiprofiili: saman profiilin käyttäjät jakavat näkymävälimuistin tiedostot</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>kyllä</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ei</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Käyttäjätunnus</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Kirjautunut</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Istunto</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Sisältönäkymän välimuistiavaimen käyttäjästä riippuvat osat, juuri niin kuin avain ne ottaa, tämän sivun ViewCacheTweaks-asetusten mukaan. Saman profiilin käyttäjät jakavat näkymien välimuistitiedostot, ellei itse näkymän osat eroa (asetukset, kuuntelijoiden avaimet): niillä on oma profiilinsa, vain tällä sivulla.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profiili</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Tämä näkymä (solmu %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: jokaisella kirjautuneella käyttäjällä on omat välimuistitiedostonsa.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Voimassa olevat ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Osa</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Arvo</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Mikään osa ei riipu käyttäjästä (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>tämä näkymä</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopioi tekstinä</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Roolit</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Roolimäärityksiä ei voitu lukea.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Roolin ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rooli</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Rajoitus</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Määritetty</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>käyttäjälle</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>ryhmä %name (objekti %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopioitu</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Kopiointi epäonnistui.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>kuuntelija jätti pois</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonyymit vierailijat</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>sama kuin sinun</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>eri</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profiili, jonka anonyymit vierailijat saavat samoilla ViewCacheTweaks-asetuksilla, oletusasetuksin, ilman näkymän osia: istuntoa lukevalta kuuntelijalta ei voi kysyä niitä.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Asetukset</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Mikään näkymätila ei riipu käyttäjän asetuksista (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Asetukset, joista näiden näkymätilojen näkymät riippuvat (CachedViewPreferences), käyttäjän arvolla tai oletuksella. Ne ovat profiilissa nimellä userpreferences, kaikkien näkymätilojen yhdessä.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Näyttötila</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Asetus</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Oletus</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Käytännöt</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Näytä roolien käytännöt (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Käytännöt ladataan palvelimelta, kun tämä osio avataan, sivu kerrallaan, ja niitä voi suodattaa moduulin ja funktion mukaan.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Toiminto</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Kaikki moduulit</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Kaikki funktiot</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Rajoitukset</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Näytä lisää</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Näillä rooleilla ei ole käytäntöjä.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Mikään käytäntö ei vastaa suodatinta.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching käytäntöä (yhteensä %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

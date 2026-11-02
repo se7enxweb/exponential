@@ -68474,6 +68474,226 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Den här förfrågan: levererad från sidcachen på %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Användare</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Användar-ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Cacheprofil</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Den här vyn</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Vycache</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>per användare (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Användarens cacheprofil: användare med samma profil delar vycachefilerna</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nej</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Logga in</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Inloggad</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Session</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>De delar av innehållsvyns cachenyckel som beror på användaren, exakt som nyckeln tar dem, under sidans ViewCacheTweaks. Användare med samma profil delar vyernas cachefiler, om inte delarna i själva vyn skiljer sig (inställningar, lyssnarnas nycklar): de har en egen profil, bara för den här sidan.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Den här vyn (nod %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: varje inloggad användare har egna cachefiler.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Gällande ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Värde</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ingen del beror på användaren (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>den här vyn</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopiera som text</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Roller</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Inga rolltilldelningar kunde läsas.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Roll-ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Roll</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Begränsning</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Tilldelad till</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>användaren</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grupp %name (objekt %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopierat</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Kunde inte kopiera.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>utelämnad av en lyssnare</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonyma besökare</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>samma som din</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>annorlunda</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profilen som anonyma besökare får under samma ViewCacheTweaks, med standardinställningarna, utan vyns delar: en lyssnare som läser sessionen kan inte tillfrågas om dem.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Inställningar</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Inget vyläge beror på användarinställningar (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Inställningarna som vyerna i dessa vylägen beror på (CachedViewPreferences), med användarens värde eller standardvärdet. De ingår i profilen som userpreferences, alla vylägens tillsammans.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Visningsläge</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Inställning</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Förvald</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Policyer</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Visa rollernas policyer (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Policyerna läses in från servern när det här avsnittet öppnas, en sida i taget, och kan filtreras efter modul och funktion.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funktion</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Alla moduler</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Alla funktioner</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Begränsningar</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Visa fler</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>De här rollerna har inga policyer.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Ingen policy matchar filtret.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown av %matching policyer (%total totalt)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68634,6 +68634,50 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

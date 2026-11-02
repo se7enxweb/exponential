@@ -68626,6 +68626,226 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Ombi hili: limehudumiwa kutoka kwenye akiba ya kurasa kwa %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Mtumiaji</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Kitambulisho cha mtumiaji</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Wasifu wa akiba</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Mwonekano huu</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Akiba ya mwonekano</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>kwa kila mtumiaji (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Wasifu wa akiba wa mtumiaji: watumiaji wenye wasifu sawa hushiriki faili za akiba ya mwonekano</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ndiyo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hapana</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Jina la kuingia</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Ameingia</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Kipindi</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Sehemu za ufunguo wa akiba ya mwonekano wa maudhui zinazotegemea mtumiaji, kama ufunguo unavyozichukua hasa, chini ya ViewCacheTweaks za ukurasa huu. Watumiaji wenye wasifu sawa hushiriki faili za akiba za mionekano, isipokuwa sehemu za mwonekano wenyewe zikitofautiana (mapendeleo, funguo za wasikilizaji): hizo zina wasifu wao wenyewe, kwa ukurasa huu tu.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Wasifu</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Mwonekano huu (nodi %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: kila mtumiaji aliyeingia ana faili zake za akiba.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks zinazotumika: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Sehemu</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Thamani</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Hakuna sehemu inayotegemea mtumiaji (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>mwonekano huu</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Nakili kama maandishi</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Majukumu</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Hakuna ugawaji wa majukumu ulioweza kusomwa.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Kitambulisho cha jukumu</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Jukumu</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Kizuizi</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Imegawiwa kwa</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>mtumiaji</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>kikundi %name (kitu %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Imenakiliwa</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Imeshindwa kunakili.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>imeachwa na msikilizaji</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Wageni wasiojulikana</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>sawa na yako</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>tofauti</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Wasifu wanaopata wageni wasiojulikana chini ya ViewCacheTweaks hizo hizo, wakiwa na mapendeleo chaguomsingi, bila sehemu za mwonekano: msikilizaji anayesoma kipindi hawezi kuulizwa kuzihusu.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Mapendeleo</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Hakuna hali ya mwonekano inayotegemea mapendeleo ya mtumiaji (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Mapendeleo ambayo mionekano ya hali hizi za mwonekano inategemea (CachedViewPreferences), pamoja na thamani ya mtumiaji au chaguomsingi. Yamo katika wasifu kama userpreferences, ya hali zote za mwonekano kwa pamoja.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Hali ya mwonekano</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Pendeleo</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Chaguomsingi</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Sera</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Onyesha sera za majukumu (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Sera hupakiwa kutoka kwa seva sehemu hii inapofunguliwa, ukurasa mmoja kwa wakati, na zinaweza kuchujwa kwa moduli na kitendakazi.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Kitendakazi</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Moduli zote</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Vitendakazi vyote</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Vizuizi</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Onyesha zaidi</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Majukumu haya hayana sera.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Hakuna sera inayolingana na kichujio.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown kati ya sera %matching (%total kwa jumla)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

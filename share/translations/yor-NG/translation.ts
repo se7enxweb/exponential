@@ -68626,6 +68626,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Ìbéèrè yìí: a pèsè rẹ̀ láti inú kásẹ̀ ojú ìwé ní %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Olùlò</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID olùlò</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profaili cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Ìwò yìí</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Wo kásẹ̀</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>fún olùlò kọ̀ọ̀kan (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profaili cache ti olùlò: àwọn olùlò tí wọ́n ní profaili kan náà ń pín àwọn fáìlì cache ìwò</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>bẹ́ẹ̀ ni</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>rárá</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Wọlé</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Ti wọlé</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Ìgbà ìwọlé</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Àwọn apá kọ́kọ́rọ́ cache ìwò àkóónú tí ó gbára lé olùlò, gẹ́gẹ́ bí kọ́kọ́rọ́ ṣe gbà wọ́n gan-an, lábẹ́ ViewCacheTweaks ojú-ewé yìí. Àwọn olùlò tí wọ́n ní profaili kan náà ń pín àwọn fáìlì cache ti àwọn ìwò, àyàfi tí àwọn apá ìwò fúnra rẹ̀ bá yàtọ̀ (àwọn àyànfẹ́, kọ́kọ́rọ́ àwọn olùgbọ́): àwọn wọ̀nyí ní profaili tiwọn, fún ojú-ewé yìí nìkan.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Àkọsílẹ̀ ara ẹni</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Ìwò yìí (ìkóríta %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: olùlò kọ̀ọ̀kan tí ó wọlé ní àwọn fáìlì cache tirẹ̀.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks tí ó ń ṣiṣẹ́: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Apá</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Iye</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Kò sí apá tí ó gbára lé olùlò (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ìwò yìí</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Ṣàdàkọ bí ọ̀rọ̀</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Àwọn ipa</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Kò ṣeé ṣe láti ka ìyànsípò ipa kankan.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID ipa</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Ipa</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Ìdínkù</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Yàn fún</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>olùlò náà</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>ẹgbẹ́ %name (ohun %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>A ti ṣe ẹ̀dà</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Kò ṣeé ṣàdàkọ.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>olùgbọ́ kan fi sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Àwọn àlejò aláìlórúkọ</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>bákan náà pẹ̀lú tìrẹ</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>yàtọ̀</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profaili tí àwọn àlejò àìlórúkọ ń gbà lábẹ́ ViewCacheTweaks kan náà, pẹ̀lú àwọn àyànfẹ́ àtilẹ̀wá, láìsí àwọn apá ìwò: a kò lè béèrè wọn lọ́wọ́ olùgbọ́ tí ń ka ìgbà-ìṣe.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Àwọn àyànfẹ́</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Kò sí ipò ìwò tí ó gbára lé àyànfẹ́ olùlò (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Àwọn àyànfẹ́ tí àwọn ìwò ti àwọn ipò ìwò wọ̀nyí gbára lé (CachedViewPreferences), pẹ̀lú iye olùlò tàbí àtilẹ̀wá. Wọ́n wà nínú profaili gẹ́gẹ́ bí userpreferences, ti gbogbo ipò ìwò papọ̀.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Ọ̀nà ìwòran</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Àyànfẹ́</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Àìyípadà</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Àwọn ìlànà</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Fi àwọn ìlànà àwọn ipa hàn (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>A ń gbé àwọn ìlànà wá láti olupin nígbà tí a bá ṣí abala yìí, ojú-ewé kan lẹ́ẹ̀kan, a sì lè ṣàlẹ̀mọ́ wọn nípa módù àti iṣẹ́.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Iṣẹ́</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Gbogbo mọ́dùùlù</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Gbogbo iṣẹ́</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Àwọn ìkálọ́wọ́kò</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Fi púpọ̀ sí i hàn</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Àwọn ipa wọ̀nyí kò ní ìlànà kankan.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Kò sí ìlànà tí ó bá àlẹ̀mọ́ mu.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown nínú %matching ìlànà (%total lápapọ̀)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

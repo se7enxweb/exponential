@@ -68628,6 +68628,226 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Tēnei tono: i tukuna mai i te keteroki whārangi i roto i te %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Kōtaha keteroki</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Tēnei tirohanga</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Keteroki tirohanga</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>mō ia kaiwhakamahi (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Te kōtaha keteroki o te kaiwhakamahi: ko ngā kaiwhakamahi he ōrite te kōtaha ka tiri i ngā kōnae keteroki tirohanga</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>āe</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>kāo</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Ingoa kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Kua takiuru</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Wātū</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Ko ngā wāhanga o te kī keteroki tirohanga ihirangi e whakawhirinaki ana ki te kaiwhakamahi, kia rite tonu ki tā te kī e tango ai, i raro i ngā ViewCacheTweaks o tēnei whārangi. Ka tiri ngā kaiwhakamahi he ōrite te kōtaha i ngā kōnae keteroki o ngā tirohanga, ki te kore e rerekē ngā wāhanga o tētahi tirohanga ake (ngā manakohanga, ngā kī o ngā kaiwhakarongo): he kōtaha anō ō aua mea, mō tēnei whārangi anake.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Kōtaha</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Tēnei tirohanga (kōpuku %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: he kōnae keteroki motuhake tō ia kaiwhakamahi kua takiuru.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks e whai mana ana: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Wāhanga</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Uara</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Kāore he wāhanga e whakawhirinaki ana ki te kaiwhakamahi (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>tēnei tirohanga</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Tāruatia hei kuputuhi</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Ngā tūranga</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Kāore i taea te pānui i ngā tautapanga tūranga.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID tūranga</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Tūranga</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Herenga</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Kua tautapatia ki</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>te kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>rōpū %name (ahanoa %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kua tāruatia</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Kāore i taea te tārua.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>i whakarērea e tētahi kaiwhakarongo</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Ngā manuhiri ingoamuna</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>ōrite ki tōu</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>rerekē</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Te kōtaha ka whiwhi ngā manuhiri muna i raro i ngā ViewCacheTweaks ōrite, me ngā manakohanga taunoa, kāore he wāhanga o te tirohanga: e kore e taea te pātai ki tētahi kaiwhakarongo e pānui ana i te wātū mō aua mea.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Ngā manakohanga</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Kāore he aratau tirohanga e whakawhirinaki ana ki ngā manakohanga kaiwhakamahi (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Ngā manakohanga e whakawhirinaki ai ngā tirohanga o ēnei aratau tirohanga (CachedViewPreferences), me te uara o te kaiwhakamahi, te taunoa rānei. Kei roto i te kōtaha hei userpreferences, ērā o ngā aratau tirohanga katoa i te taha o tētahi ki tētahi.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Aratau tirohanga</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Manakohanga</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Taunoa</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Ngā kaupapahere</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Whakaatuhia ngā kaupapahere o ngā tūranga (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Ka utaina ngā kaupapahere mai i te tūmau ina huakina tēnei wāhanga, kotahi whārangi i te wā, ā, ka taea te tātari mā te kōwae me te taumahi.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Taumahi</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Ngā kōwae katoa</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Ngā taumahi katoa</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Ngā herenga</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Whakaatu atu anō</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Kāore he kaupapahere o ēnei tūranga.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Kāore he kaupapahere e hāngai ana ki te tātari.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown o ngā kaupapahere %matching (%total katoa)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

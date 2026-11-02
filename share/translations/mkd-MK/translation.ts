@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Ова барање: услужено од кешот на страници за %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Корисник</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID на корисникот</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Профил на кешот</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Овој приказ</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Кеш на прикази</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>по корисник (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Профил на кешот на корисникот: корисниците со ист профил ги делат датотеките од кешот на прикази</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>да</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Корисничко име</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Најавен</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Сесија</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Деловите од клучот на кешот на прикази на содржина што зависат од корисникот, точно како што ги зема клучот, според ViewCacheTweaks на оваа страница. Корисниците со ист профил ги делат датотеките од кешот на приказите, освен ако не се разликуваат деловите на самиот приказ (поставки, клучеви на слушатели): тие имаат сопствен профил, само за оваа страница.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Профил</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Овој приказ (јазол %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: секој најавен корисник има сопствени датотеки во кешот.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Активни ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Дел</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Вредност</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ниеден дел не зависи од корисникот (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>овој приказ</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Копирај како текст</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Улоги</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Доделувањата на улоги не можеа да се прочитаат.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID на улога</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Улога</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Ограничување</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Доделено на</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>корисникот</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>група %name (објект %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Копирано</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Не можеше да се копира.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>изоставено од слушател</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Анонимни посетители</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>исто како вашиот</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>различно</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Профилот што го добиваат анонимните посетители под истите ViewCacheTweaks, со стандардните поставки, без деловите на приказот: слушател што ја чита сесијата не може да се праша за нив.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Поставки</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Ниеден режим на приказ не зависи од корисничките поставки (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Поставките од кои зависат приказите на овие режими на приказ (CachedViewPreferences), со вредноста на корисникот или стандардната. Во профилот се како userpreferences, оние на сите режими на приказ заедно.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Режим на приказ</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Поставка</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Стандардно</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Политики</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Прикажи ги политиките на улогите (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Политиките се вчитуваат од серверот кога ќе се отвори овој дел, страница по страница, и може да се филтрираат по модул и функција.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Функција</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Сите модули</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Сите функции</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Ограничувања</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Прикажи повеќе</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Овие улоги немаат политики.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Ниедна политика не одговара на филтерот.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown од %matching политики (вкупно %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

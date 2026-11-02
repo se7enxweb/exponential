@@ -68626,6 +68626,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>ఈ అభ్యర్థన: పేజీ కాష్ నుండి %ms ms లో అందించబడింది.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>వినియోగదారు</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>వినియోగదారు ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>కాష్ ప్రొఫైల్</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>ఈ వీక్షణ</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>వీక్షణ కాష్</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ప్రతి వినియోగదారుకు (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>వినియోగదారు కాష్ ప్రొఫైల్: ఒకే ప్రొఫైల్ ఉన్న వినియోగదారులు వీక్షణ కాష్ ఫైళ్లను పంచుకుంటారు</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>అవును</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>కాదు</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>లాగిన్</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>లాగిన్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>సెషన్</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>ఈ పేజీ ViewCacheTweaks ప్రకారం, వినియోగదారుపై ఆధారపడే కంటెంట్ వీక్షణ కాష్ కీ భాగాలు, కీ వాటిని తీసుకునే విధంగానే. ఒకే ప్రొఫైల్ ఉన్న వినియోగదారులు వీక్షణల కాష్ ఫైళ్లను పంచుకుంటారు, వీక్షణ స్వంత భాగాలు (ప్రాధాన్యతలు, listener కీలు) భిన్నంగా ఉంటే తప్ప: వాటికి ఈ పేజీకి మాత్రమే సొంత ప్రొఫైల్ ఉంటుంది.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>ప్రొఫైల్</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>ఈ వీక్షణ (నోడ్ %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: లాగిన్ అయిన ప్రతి వినియోగదారుకు సొంత కాష్ ఫైళ్లు ఉంటాయి.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>అమలులో ఉన్న ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>భాగం</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>విలువ</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>ఏ భాగమూ వినియోగదారుపై ఆధారపడదు (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ఈ వీక్షణ</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>టెక్స్ట్‌గా కాపీ చేయండి</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>పాత్రలు</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>పాత్ర కేటాయింపులు ఏవీ చదవలేకపోయాము.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>పాత్ర ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>పాత్ర</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>పరిమితి</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>కేటాయించబడింది</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>వినియోగదారు</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>సమూహం %name (ఆబ్జెక్ట్ %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>కాపీ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>కాపీ చేయలేకపోయాము.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>listener వదిలివేసింది</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>అజ్ఞాత సందర్శకులు</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>మీదే లాగా</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>భిన్నం</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>అనామక సందర్శకులు అదే ViewCacheTweaks కింద, డిఫాల్ట్ ప్రాధాన్యతలతో, వీక్షణ భాగాలు లేకుండా పొందే ప్రొఫైల్: సెషన్‌ను చదివే listener ను వాటి కోసం అడగలేము.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>ప్రాధాన్యతలు</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>ఏ వీక్షణ మోడ్ కూడా వినియోగదారు ప్రాధాన్యతలపై ఆధారపడదు (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>ఈ వీక్షణ మోడ్‌ల వీక్షణలు ఆధారపడే ప్రాధాన్యతలు (CachedViewPreferences), వినియోగదారు విలువ లేదా డిఫాల్ట్‌తో. అవి ప్రొఫైల్‌లో userpreferences గా, అన్ని వీక్షణ మోడ్‌లవి కలిపి ఉంటాయి.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>వీక్షణ మోడ్</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>ప్రాధాన్యత</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>డిఫాల్ట్</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>విధానాలు</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>పాత్రల విధానాలను చూపించు (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>ఈ విభాగాన్ని తెరిచినప్పుడు విధానాలు సర్వర్ నుండి ఒక్కో పేజీగా లోడ్ అవుతాయి, మరియు మాడ్యూల్ మరియు ఫంక్షన్ ద్వారా ఫిల్టర్ చేయవచ్చు.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>ఫంక్షన్</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>అన్ని మాడ్యూల్‌లు</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>అన్ని ఫంక్షన్‌లు</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>పరిమితులు</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>మరిన్ని చూపించు</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>ఈ పాత్రలకు విధానాలు లేవు.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>ఏ విధానమూ ఫిల్టర్‌కు సరిపోలదు.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%matching లో %shown విధానాలు (మొత్తం %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

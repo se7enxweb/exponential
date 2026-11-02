@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>ეს მოთხოვნა: მოწოდებულია გვერდების ქეშიდან, დრო: %ms მწმ.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>მომხმარებელი</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>მომხმარებლის ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>ქეშის პროფილი</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>ეს ხედი</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>ხედის ქეში</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>თითო მომხმარებელზე (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>მომხმარებლის ქეშის პროფილი: ერთნაირი პროფილის მქონე მომხმარებლები ხედების ქეშის ფაილებს იზიარებენ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>დიახ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>არა</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>მომხმარებლის სახელი</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>შესულია</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>სესია</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>შიგთავსის ხედის ქეშის გასაღების ნაწილები, რომლებიც მომხმარებელზეა დამოკიდებული, ზუსტად ისე, როგორც გასაღები იღებს მათ, ამ გვერდის ViewCacheTweaks პარამეტრით. ერთნაირი პროფილის მქონე მომხმარებლები ხედების ქეშის ფაილებს იზიარებენ, თუ თავად ხედის ნაწილები არ განსხვავდება (პარამეტრები, მსმენელების გასაღებები): მათ საკუთარი პროფილი აქვთ, მხოლოდ ამ გვერდისთვის.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>პროფილი</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>ეს ხედი (კვანძი %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ყველა შესულ მომხმარებელს საკუთარი ქეშის ფაილები აქვს.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>მოქმედი ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ნაწილი</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>მნიშვნელობა</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>არცერთი ნაწილი არ არის დამოკიდებული მომხმარებელზე (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ეს ხედი</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>ტექსტად კოპირება</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>როლები</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>როლების მინიჭებების წაკითხვა ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>როლის ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>როლი</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>შეზღუდვა</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>მინიჭებულია</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>მომხმარებელს</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>ჯგუფი %name (ობიექტი %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>დაკოპირდა</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>კოპირება ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>გამოტოვებულია მსმენელის მიერ</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>ანონიმური ვიზიტორები</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>იგივეა, რაც თქვენი</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>განსხვავებული</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>პროფილი, რომელსაც ანონიმური ვიზიტორები იღებენ იმავე ViewCacheTweaks პარამეტრით, ნაგულისხმევი პარამეტრებით, ხედის ნაწილების გარეშე: სესიის წამკითხველ მსმენელს მათზე ვერ ვკითხავთ.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>პარამეტრები</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>არცერთი ხედის რეჟიმი არ არის დამოკიდებული მომხმარებლის პარამეტრებზე (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>პარამეტრები, რომლებზეც ამ ხედის რეჟიმების ხედებია დამოკიდებული (CachedViewPreferences), მომხმარებლის მნიშვნელობით ან ნაგულისხმევით. ისინი პროფილშია როგორც userpreferences, ყველა ხედის რეჟიმისა ერთად.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>ჩვენების რეჟიმი</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>პარამეტრი</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>ნაგულისხმევი</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>პოლიტიკები</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>როლების პოლიტიკების ჩვენება (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>პოლიტიკები სერვერიდან იტვირთება ამ განყოფილების გახსნისას, თითო გვერდი, და შეიძლება გაიფილტროს მოდულისა და ფუნქციის მიხედვით.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>ფუნქცია</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>ყველა მოდული</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>ყველა ფუნქცია</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>შეზღუდვები</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>მეტის ჩვენება</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>ამ როლებს პოლიტიკები არ აქვთ.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>არცერთი პოლიტიკა არ შეესაბამება ფილტრს.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching პოლიტიკიდან (სულ %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

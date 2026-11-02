@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>די בקשה: באַדינט פֿונעם בלאַט־קאַש אין %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>באַניצער</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>באַניצער־ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>קעש־פּראָפֿיל</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>די דאָזיקע אָנזיכט</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>אָנבליק־קאַש</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>פֿאַר יעדן באַניצער (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>קעש־פּראָפֿיל פֿונעם באַניצער: באַניצער מיטן זעלביקן פּראָפֿיל טיילן זיך מיט די טעקעס פֿונעם אָנזיכט־קעש</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>יאָ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ניין</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>באַניצער־נאָמען</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>אַרײַנלאָגירט</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>סעסיע</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>די טיילן פֿונעם שליסל פֿונעם אינהאַלט־אָנזיכט־קעש וואָס הענגען אָפּ פֿונעם באַניצער, פּונקט ווי דער שליסל נעמט זיי, אונטער די ViewCacheTweaks פֿון דעם דאָזיקן בלאַט. באַניצער מיטן זעלביקן פּראָפֿיל טיילן זיך מיט די קעש־טעקעס פֿון די אָנזיכטן, סײַדן די טיילן פֿון אַן אָנזיכט אַליין זענען אַנדערש (פּרעפֿערענצן, שליסלען פֿון ליסנערס): יענע האָבן אַן אייגענעם פּראָפֿיל, נאָר פֿאַר דעם דאָזיקן בלאַט.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>פּראָפֿיל</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>די דאָזיקע אָנזיכט (קנופּ %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: יעדער אַרײַנלאָגירטער באַניצער האָט אייגענע קעש־טעקעס.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks אין קראַפֿט: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>טייל</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ווערט</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>קיין טייל הענגט ניט אָפּ פֿונעם באַניצער (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>די דאָזיקע אָנזיכט</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>קאָפּירן ווי טעקסט</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>ראָלעס</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>מע האָט ניט געקענט לייענען קיין ראָלע־צוטיילונגען.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID פֿון דער ראָלע</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>ראָלע</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>באַגרענעצונג</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>צוגעטיילט צו</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>דעם באַניצער</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>גרופּע %name (אָביעקט %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>קאָפּירט</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>מע האָט ניט געקענט קאָפּירן.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>אויסגעלאָזט דורך אַ ליסנער</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>אַנאָנימע באַזוכער</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>דאָס זעלבע ווי אײַערס</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>אַנדערש</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>דער פּראָפֿיל וואָס אַנאָנימע באַזוכער באַקומען אונטער די זעלבע ViewCacheTweaks, מיט די פֿאָרגעשטעלטע פּרעפֿערענצן, אָן די טיילן פֿון דער אָנזיכט: מע קען ניט פֿרעגן אַ ליסנער וואָס לייענט די סעסיע וועגן זיי.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>פּרעפֿערענצן</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>קיין אָנזיכט־מאָדע הענגט ניט אָפּ פֿון באַניצער־פּרעפֿערענצן (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>די פּרעפֿערענצן פֿון וועלכע די אָנזיכטן פֿון די דאָזיקע אָנזיכט־מאָדעס הענגען אָפּ (CachedViewPreferences), מיטן באַניצערס ווערט אָדער דעם פֿאָרגעשטעלטן. זיי זענען אינעם פּראָפֿיל ווי userpreferences, די פֿון אַלע אָנזיכט־מאָדעס צוזאַמען.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>אָנבליק־מאָדע</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>פּרעפֿערענץ</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>סטאַנדאַרט</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>פּאָליטיקן</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>ווײַזן די פּאָליסיס פֿון די ראָלעס (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>די פּאָליסיס ווערן אָנגעלאָדן פֿונעם סערווער ווען מע עפֿנט די דאָזיקע אָפּטיילונג, איין בלאַט אויף אַ מאָל, און מע קען זיי פֿילטרירן לויט מאָדול און פֿונקציע.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>פֿונקציע</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>אַלע מאָדולן</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>אַלע פֿונקציעס</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>באַגרענעצונגען</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>ווײַזן מער</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>די דאָזיקע ראָלעס האָבן ניט קיין פּאָליסיס.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>קיין פּאָליסי שטימט ניט מיטן פֿילטער.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown פֿון %matching פּאָליסיס (%total אין גאַנצן)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68567,6 +68567,226 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Ez a kérés: kiszolgálva az oldal-gyorsítótárból %ms ms alatt.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Felhasználó</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Felhasználóazonosító</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Gyorsítótár-profil</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Ez a nézet</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Nézet-gyorsítótár</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>felhasználónként (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>A felhasználó gyorsítótár-profilja: az azonos profilú felhasználók közösen használják a nézet-gyorsítótár fájljait</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>igen</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nem</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Bejelentkezési név</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Bejelentkezve</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Munkamenet</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>A tartalomnézet-gyorsítótár kulcsának felhasználótól függő részei, pontosan úgy, ahogy a kulcs felveszi őket, az oldal ViewCacheTweaks beállításai mellett. Az azonos profilú felhasználók közösen használják a nézetek gyorsítótár-fájljait, kivéve ha maga a nézet részei eltérnek (beállítások, figyelők kulcsai): ezeknek saját profiljuk van, csak erre az oldalra.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Ez a nézet (csomópont: %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: minden bejelentkezett felhasználónak saját gyorsítótár-fájljai vannak.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Érvényes ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Rész</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Érték</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Egyik rész sem függ a felhasználótól (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ez a nézet</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Másolás szövegként</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Szerepkörök</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Egyetlen szerepkör-hozzárendelés sem olvasható.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Szerepkör-azonosító</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Szerepkör</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Korlátozás</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Hozzárendelve</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>a felhasználóhoz</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>csoport: %name (objektum: %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Másolva</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>A másolás nem sikerült.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>egy figyelő kihagyta</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Névtelen látogatók</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>megegyezik az önével</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>eltérő</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Az a profil, amelyet a névtelen látogatók kapnak ugyanazon ViewCacheTweaks mellett, alapértelmezett beállításokkal, a nézet részei nélkül: a munkamenetet olvasó figyelő ezekről nem kérdezhető.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Beállítások</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Egyik nézetmód sem függ a felhasználói beállításoktól (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Azok a beállítások, amelyektől e nézetmódok nézetei függenek (CachedViewPreferences), a felhasználó értékével vagy az alapértelmezettel. A profilban userpreferences néven szerepelnek, az összes nézetmódé együtt.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Megtekintési mód</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Beállítás</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Alapértelmezett</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Házirendek</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>A szerepkörök házirendjeinek megjelenítése (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>A házirendek a szakasz megnyitásakor töltődnek be a szerverről, oldalanként, és modul és funkció szerint szűrhetők.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funkció</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Minden modul</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Minden funkció</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Korlátozások</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Továbbiak</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Ezeknek a szerepköröknek nincs házirendjük.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Egyetlen házirend sem felel meg a szűrőnek.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching házirend (összesen %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

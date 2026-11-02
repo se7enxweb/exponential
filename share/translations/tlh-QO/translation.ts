@@ -67120,6 +67120,226 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>tlhobghachvam: %ms ms poHDaq nav jab nav De' polwI'.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>lo'wI'</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>lo'wI' ngu'meH mI'</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>De' pol mI'</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>HaSta vam</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Qorwagh De' polwI'</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>Hoch lo'wI'vaD (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>lo'wI' De' pol mI': rap mI' ghajbogh lo'wI'pu' HaSta De' pol teywI'mey lo'chuq</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>HISlaH</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ghobe'</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>'elmeH pong</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>'elta'</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>poH</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>lo'wI' qelbogh HaSta De' pol ngoq 'ay'mey, ngoq lajbogh rur, nav vam ViewCacheTweaks bIngDaq. rap mI' ghajbogh lo'wI'pu' HaSta De' pol teywI'mey lo'chuq, HaSta 'ay'mey pIm net Sovbe'chugh (parHa'ghachmey, 'IjwI' ngoqmey): pIm'a'chugh, nav vamvaD neH mI' ghaj chaH.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>lo'wI' Delghach</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>HaSta vam (Dop %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: Hoch lo'wI' 'elta'bogh De' pol teywI'mey ghaj.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks Qap: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>'ay'</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ngoD</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>lo'wI' qelbe' 'ay' (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>HaSta vam</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>ghItlh rur yIqonqa'</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>patlhmey</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>patlh nobmey laDlaHbe'.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>patlh ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>patlh</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>veH</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>nobta'</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>lo'wI'</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>ghom %name (Doch %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>qonqa'lu'ta'</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>qonqa'laHbe'.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>'IjwI' teqta'</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>pong Hutlhbogh SuchwI'pu'</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>lIj rap</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>pIm</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>rap ViewCacheTweaks bIngDaq pongHa' tlhejwI'pu' Suqbogh mI', parHa'ghachmey motlh, HaSta 'ay'mey Hutlh: Quj laDbogh 'IjwI' tlhoblaHbe'lu'.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>parHa'ghachmey</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>lo'wI' parHa'ghachmey qelbe' HaSta lo'ghach (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>HaSta lo'ghachmey vam HaStamey qelbogh parHa'ghachmey (CachedViewPreferences), lo'wI' lo'laHghach pagh motlh. mI'Daq userpreferences rur chaH, Hoch HaSta lo'ghach tay'.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Qorwagh Segh</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>parHa'ghach</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>motlh</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>chaw' chutmey</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>patlhmey chutmey yI'ang (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>chutmey jabwI'vo' lI'lu' 'ay' vam poSmoHlu'DI', wa' nav wa'logh, 'ej bobcho' Qu' je luwIvlaH.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>vangghach</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Hoch ngoq 'ay'mey</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Hoch Qu'mey</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>veHmey</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>latlh yI'ang</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>chutmey ghajbe' patlhmey vam.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>wIvwI' rurbe' chut.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching chutmey (%total Hoch)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
