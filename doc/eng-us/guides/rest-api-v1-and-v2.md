@@ -42,6 +42,7 @@ Host names, identifiers and secrets are replaced by documentation values (`examp
 6. [Migrating from ezprestapiprovider](#6-migrating-from-ezprestapiprovider)
 7. [Activation combinations, before and since](#7-activation-combinations-before-and-since)
 8. [Known issue: listAtom](#8-known-issue-listatom)
+9. [Migrations](#9-migrations)
 
 ---
 
@@ -306,8 +307,31 @@ until it is fixed.
 
 **Demo mode.** On a public demo (environment variable `EXP_DEMO_MODE=1`) the web services refuse to change or reset the password of an administrator: `expaccount.reset`, `expaccount.changePassword` and `expuser.setPassword` answer HTTP 403 with the reason, and `expaccount.forgotRequest` sends no key and gives the same answer as for any address. [Demo mode](../bc/6.0/demo-mode.md).
 
+## 9. Migrations
+
+The state of the migrations and their runs, read only, under `/api/migration/v1` (the kernel's
+`expMigrationRestProvider`, `rest.ini [ApiProvider] ProviderClass[migration]`):
+
+| Method | Path | What it answers |
+|---|---|---|
+| `GET` | `/api/migration/v1/status` | `summary` (pending, failed, orphans, total, ready), `environment`, `engine`, `lock`, every migration with its state (`migrations`), `orphans`, `warnings`, `errors` |
+| `GET` | `/api/migration/v1/runs?limit=20&offset=0` | the latest runs, newest first (at most 100 at once) |
+| `GET` | `/api/migration/v1/runs/<run id>` | one run and the migrations it wrote; `404` for an unknown run |
+
+The user needs the policy `migration/read` (`403 access_denied` without it). A personal API key needs the scope
+`migration:read` ("Read the state of the migrations"); an OAuth token reads as its user. The answers are never kept
+in the REST application cache. Nothing runs or is undone through the API: a run and a rollback stay with
+`./console exp:migration:migrate` and Setup > Migrations. The same data is in GraphQL as `migrationStatus`,
+`migrations`, `migrationRuns` and `migrationRun` ([the GraphQL API](../features/6.0/graphql.md#migrations)).
+
+```bash
+curl -s -H "Authorization: Bearer expk_..." https://www.example.com/api/migration/v1/status
+curl -s -H "Authorization: Bearer expk_..." "https://www.example.com/api/migration/v1/runs?limit=5"
+```
+
 ## Related pages
 
+- [Migrations](migrations.md): writing and running them
 - [Personal API keys](api-keys.md): making, using and revoking a key; the permission table of the REST interface
 - [ezprestapi](../features/6.0/extensions/ezprestapi.md) and its [release notes](../../changelogs/extensions/ezprestapi.md)
 - [ezprestapiprovider](../features/6.0/extensions/ezprestapiprovider.md) and its [release notes](../../changelogs/extensions/ezprestapiprovider.md)

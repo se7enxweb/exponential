@@ -42,6 +42,7 @@ Hostnamen, Kennungen und Geheimnisse sind durch Dokumentationswerte ersetzt (`ex
 6. [Migration von ezprestapiprovider](#6-migration-von-ezprestapiprovider)
 7. [Aktivierungskombinationen, vorher und seitdem](#7-aktivierungskombinationen-vorher-und-seitdem)
 8. [Bekanntes Problem: listAtom](#8-bekanntes-problem-listatom)
+9. [Migrationen](#9-migrationen)
 
 ---
 
@@ -308,8 +309,32 @@ bis das behoben ist.
 
 **Demo-Modus.** Auf einer öffentlichen Demo (Umgebungsvariable `EXP_DEMO_MODE=1`) weigern sich die Webdienste, das Passwort eines Administrators zu ändern oder zurückzusetzen: `expaccount.reset`, `expaccount.changePassword` und `expuser.setPassword` antworten mit HTTP 403 und dem Grund, und `expaccount.forgotRequest` sendet keinen Schlüssel und gibt dieselbe Antwort wie für jede andere Adresse. [Demo-Modus](../bc/6.0/demomodus.md).
 
+## 9. Migrationen
+
+Der Zustand der Migrationen und ihre Läufe, nur lesend, unter `/api/migration/v1` (der `expMigrationRestProvider` des
+Kernels, `rest.ini [ApiProvider] ProviderClass[migration]`):
+
+| Methode | Pfad | Was er antwortet |
+|---|---|---|
+| `GET` | `/api/migration/v1/status` | `summary` (pending, failed, orphans, total, ready), `environment`, `engine`, `lock`, jede Migration mit ihrem Zustand (`migrations`), `orphans`, `warnings`, `errors` |
+| `GET` | `/api/migration/v1/runs?limit=20&offset=0` | die letzten Läufe, die neuesten zuerst (höchstens 100 auf einmal) |
+| `GET` | `/api/migration/v1/runs/<Lauf-ID>` | ein Lauf und die Migrationen, die er geschrieben hat; `404` für einen unbekannten Lauf |
+
+Der Benutzer braucht die Richtlinie `migration/read` (ohne sie `403 access_denied`). Ein persönlicher API-Schlüssel
+braucht die Berechtigung `migration:read` („Read the state of the migrations"); ein OAuth-Token liest als sein
+Benutzer. Die Antworten werden nie im Anwendungs-Cache von REST gehalten. Über die API wird nichts ausgeführt oder
+zurückgenommen: Ein Lauf und eine Rücknahme bleiben bei `./console exp:migration:migrate` und Setup > Migrationen.
+Dieselben Daten liefert GraphQL als `migrationStatus`, `migrations`, `migrationRuns` und `migrationRun`
+([die GraphQL-API](../funktionen/6.0/graphql.md#migrationen)).
+
+```bash
+curl -s -H "Authorization: Bearer expk_..." https://www.example.com/api/migration/v1/status
+curl -s -H "Authorization: Bearer expk_..." "https://www.example.com/api/migration/v1/runs?limit=5"
+```
+
 ## Verwandte Seiten
 
+- [Migrationen](migrationen.md): sie schreiben und ausführen
 - [API-Schlüssel](api-schluessel.md): einen Schlüssel erstellen, verwenden und widerrufen; die Berechtigungstabelle der REST-Schnittstelle
 - [ezprestapi](../funktionen/6.0/erweiterungen/ezprestapi.md) und seine [Release Notes](../../changelogs/extensions/ezprestapi.md)
 - [ezprestapiprovider](../funktionen/6.0/erweiterungen/ezprestapiprovider.md) und seine [Release Notes](../../changelogs/extensions/ezprestapiprovider.md)

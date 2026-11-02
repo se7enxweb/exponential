@@ -17,7 +17,7 @@ Keine Ansicht des Moduls nennt sie; Code prüft sie (`eZUser::hasAccessTo( 'apik
 
 | Einschränkung | Werte stammen aus |
 |---|---|
-| Scope | fest: Read content (read), Create and publish content (publish), Edit content (edit), Remove content (remove), Read context help (help), Read content through GraphQL (graphql:read), Change content through GraphQL (graphql:write) |
+| Scope | fest: Read content (read), Create and publish content (publish), Edit content (edit), Remove content (remove), Read context help (help), Read content through GraphQL (graphql:read), Change content through GraphQL (graphql:write), Read the state of the migrations (migration:read) |
 
 ```php
 // Einer Rolle die Richtlinie geben (eZRole::appendPolicy( $module, $function, $limitations ))

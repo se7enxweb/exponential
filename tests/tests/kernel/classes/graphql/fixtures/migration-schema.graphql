@@ -1,0 +1,100 @@
+"The state of the migrations of the installation, as ./console exp:migration:status tells it."
+type MigrationStatus {
+  "Migrations that wait to be applied."
+  pending: Int!
+
+  failed: Int!
+
+  "Records whose migration file is gone."
+  orphans: Int!
+
+  total: Int!
+
+  "The tables of the migrations exist."
+  ready: Boolean!
+
+  environment: String
+
+  "The database engine: mysql, postgresql, sqlite, oracle, mongodb."
+  engine: String
+
+  "Who holds the lock of the installation (empty: nobody)."
+  lock: String
+
+  warnings: [String!]!
+  errors: [String!]!
+}
+
+"A migration (or an upgrade step of the kernel) and its state."
+type Migration {
+  id: String!
+
+  "kernel, site, or the extension it comes from."
+  source: String!
+
+  description: String
+  stage: String
+
+  "The file, relative to the root of the installation."
+  file: String
+
+  "done, pending, not-needed, failed or unknown."
+  state: String!
+
+  detail: String
+
+  "The file changed after it was applied."
+  changed: Boolean!
+
+  "The run that recorded it last."
+  runId: String
+
+  "When that run finished it (ISO 8601)."
+  finishedAt: String
+}
+
+"A run of migrations (or a rollback)."
+type MigrationRun {
+  id: String!
+  state: String!
+  startedAt: String
+  finishedAt: String
+
+  "Who ran it: cli or web, and the system user."
+  runBy: String
+
+  environment: String
+
+  "The caption taken before the run."
+  captionBefore: String
+
+  captionAfter: String
+  commitId: String
+  tagName: String
+  pushState: String
+  message: String
+
+  "The migrations the run wrote (only when one run is asked for: migrationRun)."
+  migrations: [MigrationRunEntry!]!
+}
+
+"A migration as a run recorded it."
+type MigrationRunEntry {
+  id: String!
+  source: String!
+  state: String!
+  file: String
+  startedAt: String
+  finishedAt: String
+  durationMs: Int
+  runBy: String
+  engine: String
+  message: String
+}
+
+extend type Query {
+  migrationStatus: MigrationStatus
+  migrations(state: String, source: String): [Migration!]!
+  migrationRuns(limit: Int = 20, offset: Int = 0): [MigrationRun!]!
+  migrationRun(id: String!): MigrationRun
+}

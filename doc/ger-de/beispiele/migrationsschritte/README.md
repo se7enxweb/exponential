@@ -45,6 +45,7 @@ Jeder Schritttyp von YAML-Migrationen, den der Kernel in `settings/migration.ini
 | [data](data.md) | insert, ensure, update, delete | Fügt Zeilen einer Tabelle auf jeder Engine ein, ändert oder löscht sie; die Werte setzt die Verbindung in Anführungszeichen |
 | [sql](sql.md) |  | Führt Anweisungen der Engine aus, auf der die Installation läuft, im Schritt geschrieben oder in Dateien neben der Migration |
 | [settings](settings.md) |  | Ändert eine INI-Datei von settings/override oder settings/siteaccess/<name> über den INI-Editor, mit Sicherungskopie |
+| [graphql](graphql.md) |  | Führt eine Abfrage oder Mutation der GraphQL-API im Prozess als Benutzer des Laufs aus und behält ihre Antwort für Referenzen |
 
 - [Alle Beispiele](../README.md)
 

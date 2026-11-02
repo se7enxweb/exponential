@@ -1,0 +1,46 @@
+{
+    "ini:settings/rest.ini [expMigrationRestController_CacheSettings]": {
+        "en": "Nor the state of the migrations: it changes with every run",
+        "de": "Auch nicht der Zustand der Migrationen: Er ändert sich mit jedem Lauf"
+    },
+    "step:graphql": {
+        "en": "Runs a query or mutation of the GraphQL API in process as the run's user, and keeps its answer for references",
+        "de": "Führt eine Abfrage oder Mutation der GraphQL-API im Prozess als Benutzer des Laufs aus und behält ihre Antwort für Referenzen"
+    },
+    "step:graphql allow_errors": {
+        "en": "true: an answer with errors passes when it has data",
+        "de": "true: Eine Antwort mit Fehlern gilt als bestanden, wenn sie Daten hat"
+    },
+    "step:graphql file": {
+        "en": "a .graphql file next to the migration",
+        "de": "eine .graphql-Datei neben der Migration"
+    },
+    "step:graphql operation": {
+        "en": "the operation to run when the text has several",
+        "de": "die auszuführende Operation, wenn der Text mehrere hat"
+    },
+    "step:graphql persisted": {
+        "en": "a persisted query: its name or its SHA-256",
+        "de": "eine gespeicherte Abfrage: ihr Name oder ihr SHA-256"
+    },
+    "step:graphql query": {
+        "en": "the text of the query or mutation",
+        "de": "der Text der Abfrage oder Mutation"
+    },
+    "step:graphql value data": {
+        "en": "the data of the answer (a map of the root fields)",
+        "de": "die Daten der Antwort (eine Zuordnung der Wurzelfelder)"
+    },
+    "step:graphql value errors": {
+        "en": "the messages of the errors (a list, empty when there were none)",
+        "de": "die Meldungen der Fehler (eine Liste, leer, wenn es keine gab)"
+    },
+    "step:graphql value result": {
+        "en": "the value of the first root field of the answer",
+        "de": "der Wert des ersten Wurzelfelds der Antwort"
+    },
+    "step:graphql variables": {
+        "en": "the variables, name => value (references allowed)",
+        "de": "die Variablen, Name => Wert (Referenzen erlaubt)"
+    }
+}

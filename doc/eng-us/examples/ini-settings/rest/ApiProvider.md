@@ -22,8 +22,10 @@ Never edit `settings/rest.ini` itself: an update replaces it. Put the settings y
 > Context help of help maintained as content for clients with a token (an OAuth token or a personal API key with  
 > the scope help): /api/help/v1/topic/<help\_id>, /api/help/v1/manual/<remote\_id> (doc/eng-us/features/6.0/help-content.md)  
 > The GraphQL API, /api/graphql (settings/graphql.ini, off until enabled; doc/eng-us/features/6.0/graphql.md)  
+> The migrations, read only, for users with migration/read (an OAuth token or a personal API key with the scope  
+> migration:read): /api/migration/v1/status, /api/migration/v1/runs, /api/migration/v1/runs/<run id>  
 
-Default: a hash of 3: `auth=ezpRestAuthProvider`, `help=expHelpRestProvider`, `graphql=expGraphQLRestProvider`.
+Default: a hash of 4: `auth=ezpRestAuthProvider`, `help=expHelpRestProvider`, `graphql=expGraphQLRestProvider`, `migration=expMigrationRestProvider`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -34,6 +36,7 @@ ProviderClass[]
 ProviderClass[auth]=ezpRestAuthProvider
 ProviderClass[help]=expHelpRestProvider
 ProviderClass[graphql]=expGraphQLRestProvider
+ProviderClass[migration]=expMigrationRestProvider
 */ ?>
 ```
 

@@ -34,7 +34,7 @@ class expGraphQLNaming
                                   'CurrencyPrice', 'EnumValue', 'SearchResult', 'SearchFacet', 'SearchFacetValue', 'Tag', 'Layout',
                                   'LayoutZone', 'LayoutBlock', 'LayoutBlockParameter',
                                   'Upload', 'FieldInput', 'FieldFormat', 'MutationStatus', 'ContentPayload', 'PreviewToken',
-                                  'ContentEvent', 'ContentEventKind' );
+                                  'ContentEvent', 'ContentEventKind', 'Migration', 'MigrationStatus', 'MigrationRun', 'MigrationRunEntry' );
 
     /** The fields every content type has (the interface Content): an attribute of the same name gets _field. */
     const CONTENT_FIELDS = array( 'id', 'remoteId', 'name', 'classIdentifier', 'className', 'published', 'modified', 'language',

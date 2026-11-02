@@ -19,6 +19,12 @@
  * Notes only when there is somebody to tell: the API is switched on (graphql.ini [GraphQLSettings] Enabled, in any
  * siteaccess) and subscriptions are on or a webhook is configured (active()).
  *
+ * While a migration runs (beginMigration() ... endMigration(), called by expMigrationRunner around each migration),
+ * its header events: decides what its changes become: each (the default) every change an event of its own with the
+ * field migration (its id); summary no event per change, one at the end (a mutation event "migration" with the
+ * objectIds and nodeIds it changed); none nothing. The notes of a migration that failed and was rolled back are
+ * dropped, when they were not written yet.
+ *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
@@ -40,6 +46,56 @@ class expGraphQLEventListener
 
     /** @var bool|null overrides active() (tests) */
     public static $forceActive = null;
+
+    /** @var array|null the migration running: id, mode (each, summary, none), start (the notes before it), objectIds, nodeIds */
+    protected static $migration = null;
+
+    /** The most objects and nodes a summary event lists. */
+    const SUMMARY_MAX_IDS = 1000;
+
+    /**
+     * A migration starts: its content changes are tagged with it, summed up or left out (its header events:).
+     *
+     * @param string $migrationId
+     * @param string $mode each, summary or none
+     */
+    public static function beginMigration( $migrationId, $mode = 'each' )
+    {
+        self::$migration = array( 'id' => (string)$migrationId, 'mode' => in_array( $mode, array( 'each', 'summary', 'none' ), true ) ? $mode : 'each',
+                                  'start' => count( self::$pending ), 'objectIds' => array(), 'nodeIds' => array() );
+    }
+
+    /**
+     * A migration ends. Applied: a summary migration notes its one event. Failed and rolled back ($kept false): the
+     * notes it made and that were not written yet are dropped.
+     *
+     * @param bool $kept its changes stay
+     */
+    public static function endMigration( $kept = true )
+    {
+        $migration = self::$migration;
+        self::$migration = null;
+        if ( $migration === null )
+            return;
+        if ( !$kept )
+        {
+            if ( count( self::$pending ) > $migration['start'] )
+                array_splice( self::$pending, $migration['start'] );
+            return;
+        }
+        if ( $migration['mode'] === 'summary' && ( $migration['objectIds'] || $migration['nodeIds'] ) )
+            self::note( array( 'event' => expGraphQLEvents::MUTATION, 'mutation' => 'migration', 'migration' => $migration['id'],
+                               'objectIds' => array_slice( array_keys( $migration['objectIds'] ), 0, self::SUMMARY_MAX_IDS ),
+                               'nodeIds' => array_slice( array_keys( $migration['nodeIds'] ), 0, self::SUMMARY_MAX_IDS ) ) );
+    }
+
+    /**
+     * @return array|null the migration running (id, mode), null when none (tests)
+     */
+    public static function migration()
+    {
+        return self::$migration === null ? null : array( 'id' => self::$migration['id'], 'mode' => self::$migration['mode'] );
+    }
 
     /**
      * The publish operation: a version of an object was published.
@@ -161,6 +217,7 @@ class expGraphQLEventListener
     public static function reset()
     {
         self::$pending = array();
+        self::$migration = null;
         self::$active = null;
         self::$request = '';
     }
@@ -212,6 +269,20 @@ class expGraphQLEventListener
             return;
         if ( !self::active() )
             return;
+        if ( self::$migration !== null && !isset( $data['migration'] ) )
+        {
+            if ( self::$migration['mode'] === 'none' )
+                return;
+            if ( self::$migration['mode'] === 'summary' )
+            {
+                if ( !empty( $data['objectId'] ) )
+                    self::$migration['objectIds'][(int)$data['objectId']] = true;
+                foreach ( isset( $data['nodeIds'] ) ? (array)$data['nodeIds'] : array() as $nodeId )
+                    self::$migration['nodeIds'][(int)$nodeId] = true;
+                return;
+            }
+            $data['migration'] = self::$migration['id'];
+        }
         $data['time'] = microtime( true );
         $data['id'] = expGraphQLEvents::newId( $data['time'] );
         self::$pending[] = $data;

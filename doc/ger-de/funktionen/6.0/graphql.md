@@ -575,6 +575,34 @@ Seitenbaukastens, seine Zonen und deren Blöcke, damit ein Frontend eine Seite s
 - Die Parameter und die Sammlungen der Blöcke einer Ebene kommen in je einem Stapel, die Einträge einer Sammlung mit
   einer Abfrage.
 
+### Migrationen
+
+Die Schema-Erweiterung der Migrationen (`expMigrationGraphQLExtension`, standardmäßig in `SchemaExtensionList[]`)
+fügt vier Abfragen der Wurzel hinzu, die lesen, was `./console exp:migration:status` und Setup > Migrationen zeigen.
+Sie antworten nur Benutzern mit der Richtlinie `migration/read` (allen anderen null oder eine leere Liste), und nichts
+in der API führt eine Migration aus oder nimmt sie zurück: Das bleibt bei der Konsole und der Administration, wo
+„Bestätigen Sie, dass Sie es sind" gefragt wird.
+
+```graphql
+{
+  migrationStatus { pending failed orphans total ready environment engine lock warnings errors }
+  pending: migrations(state: "pending") { id source description file }
+  migrations(source: "site") { id state changed runId finishedAt }
+  migrationRuns(limit: 5) { id state startedAt finishedAt runBy captionBefore commitId pushState }
+  migrationRun(id: "20261108-100000-ab12cd") { id state migrations { id state durationMs engine message } }
+}
+```
+
+- `MigrationStatus`: die Zählungen, die Umgebung, die Datenbank-Engine, wer die Sperre hält, die Warnungen und Fehler.
+- `Migration`: `id`, `source` (`kernel`, `site` oder eine Erweiterung), `description`, `stage`, `file`, `state`
+  (`done`, `pending`, `not-needed`, `failed`, `unknown`), `detail`, `changed` (die Datei hat sich nach dem Anwenden
+  geändert) und `runId` / `finishedAt` des Laufs, der sie aufgezeichnet hat.
+- `MigrationRun`: ein Lauf oder eine Rücknahme, seine Sicherungspunkte, Commit, Tag und Push; `migrations` nennt, was
+  er geschrieben hat, nur in `migrationRun`.
+- Dieselben Daten liefert REST unter `/api/migration/v1/status`, `/runs` und `/runs/<id>`
+  ([REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md#9-migrationen)). Ein API-Schlüssel braucht `graphql:read`
+  für die GraphQL-Abfragen oder `migration:read` für die REST-Routen, sein Eigentümer `migration/read`.
+
 ### Sprachen
 
 Ohne `language` werden die Felder in der Übersetzung gelesen, die der Siteaccess zeigt (die erste seiner Sprachen, die
@@ -846,6 +874,21 @@ geschrieben, solange die API eingeschaltet ist und jemand zuhört (Subscriptions
 Datei wächst bis `[GraphQLEvents] JournalMaxBytes` (5 MB), dann beginnt die nächste, und die neuesten `JournalKeep` (3)
 Dateien bleiben. Dateien statt einer Tabelle: Eine Subscription folgt dem Journal ohne Datenbankverbindung, jeder
 PHP-FPM- und Velocity-Worker sieht dieselben Ereignisse, und ein Schreiber hängt unter einer exklusiven Sperre an.
+
+**Migrationen.** Die Inhalte, die eine Migration ändert, stehen im Journal wie die Änderung eines Redakteurs, mit dem
+Feld `migration` (der ID der Migration) an jedem Ereignis, auch in der Nutzlast eines Webhooks und in einer
+Subscription (`ContentEvent.migration`). Eine Migration, die Tausende Objekte ändert, sagt in ihrem Kopf, was aus ihren
+Änderungen wird ([das Dateiformat](../../spezifikationen/6.0/migrationsdateiformat.md#der-kopf)):
+
+| `events:` | Was das Journal erhält |
+|---|---|
+| `each` (Standard) | jede Änderung als eigenes Ereignis, mit der Migration gekennzeichnet |
+| `summary` | kein Ereignis je Änderung; am Ende ein `mutation`-Ereignis mit `mutation: "migration"`, `migration` und den geänderten `objectIds` und `nodeIds` (je höchstens 1000) |
+| `none` | nichts |
+
+Eine Migration, die scheitert und zurückgerollt wird, hinterlässt keines ihrer Ereignisse (keines, das noch nicht
+geschrieben war: ein Befehl schreibt alle 50). Ein Lauf von Migrationen selbst erreicht andere Systeme über das
+Audit-Protokoll (`system.migration.*`, die Webhook-Senke von `audit.ini`), nicht über das Journal.
 
 ### Webhooks
 

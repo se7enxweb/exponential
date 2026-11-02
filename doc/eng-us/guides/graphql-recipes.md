@@ -15,6 +15,7 @@ the schema uses your admin's identifiers, so read yours from `./console exp:grap
 3. [A static build](#3-a-static-build)
 4. [An AI agent reading content through GraphQL](#4-an-ai-agent-reading-content-through-graphql)
 5. [Live updates: a webhook for the shop, a live list in the browser](#5-live-updates-a-webhook-for-the-shop-a-live-list-in-the-browser)
+6. [Migrations: content through GraphQL, and their state for a deploy pipeline](#6-migrations-content-through-graphql-and-their-state-for-a-deploy-pipeline)
 
 ## 1. A blog or news front end
 
@@ -304,6 +305,38 @@ For a public page without a key, switch on `AnonymousSubscriptions=enabled` on t
 `MaxSubscriptionsPerAddress` low; every open page holds one PHP process (or Velocity worker), so size
 `MaxSubscriptions` to what the server leaves for pages. The stream ends every 280 seconds and the client reopens it
 where it stopped, so a proxy in front must allow a request to stay open that long and must not buffer it.
+
+## 6. Migrations: content through GraphQL, and their state for a deploy pipeline
+
+A migration can use the same queries and mutations as a front end, with the step type `graphql`, run in process as
+the run's user ([YAML migration steps](migrations-yaml-steps.md#graphql-queries-and-mutations)). A large import keeps
+the webhooks quiet with one summary event:
+
+```yaml
+# description: The news folders of the new site
+# events: summary
+steps:
+    - type: graphql
+      file: graphql/news-folders.graphql     # next to the migration
+      variables: { parent: 2 }
+      references: { folders: data }
+```
+
+A webhook end point then gets one `mutation` event with `mutation: "migration"`, the migration's id and the
+`objectIds` it changed, instead of one per object. With `events: each` every event carries `migration`, so the
+receiver can tell a migration's changes from an editor's.
+
+A deploy pipeline asks whether anything is pending before it switches traffic, with a key that has
+`graphql:read` and a user with `migration/read`:
+
+```bash
+curl -s -H "Authorization: Bearer expk_..." -H "Content-Type: application/json" \
+     -d '{"query":"{ migrationStatus { pending failed lock } migrationRuns(limit: 1) { id state } }"}' \
+     https://www.example.com/api/graphql
+```
+
+`pending` and `failed` at 0 and an empty `lock` mean the site is migrated. The same is in REST at
+`/api/migration/v1/status` ([REST API, section 9](rest-api-v1-and-v2.md#9-migrations)).
 
 ## Related pages
 

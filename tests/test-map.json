@@ -2344,7 +2344,9 @@
     "kernel/classes/graphql/*": [
       "tests/tests/kernel/classes/graphql/expGraphQLSchemaTest.php",
       "tests/tests/kernel/classes/graphql/expGraphQLRestTest.php",
-      "tests/tests/kernel/private/classes/commands/expGraphQLCommandContractTest.php"
+      "tests/tests/kernel/private/classes/commands/expGraphQLCommandContractTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationGraphqlIntegrationTest.php",
+      "tests/tests/kernel/classes/graphql/expMigrationGraphQLExtensionTest.php"
     ],
     "kernel/private/classes/commands/expgraphql*": [
       "tests/tests/kernel/private/classes/commands/expGraphQLCommandContractTest.php"
@@ -2353,7 +2355,9 @@
       "tests/tests/kernel/private/classes/commands/expGraphQLCommandContractTest.php"
     ],
     "settings/graphql.ini": [
-      "tests/tests/kernel/classes/graphql/expGraphQLSchemaTest.php"
+      "tests/tests/kernel/classes/graphql/expGraphQLSchemaTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationGraphqlIntegrationTest.php",
+      "tests/tests/kernel/classes/graphql/expMigrationGraphQLExtensionTest.php"
     ],
     "kernel/private/rest/classes/auth/auth_configuration.php": [
       "tests/tests/kernel/classes/graphql/expGraphQLRestTest.php",
@@ -2499,7 +2503,8 @@
       "tests/tests/kernel/classes/migration/expMigrationYamlTest.php",
       "tests/tests/kernel/classes/migration/expMigrationContentStepsTest.php",
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsTest.php",
-      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsTest.php"
+      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationGraphqlIntegrationTest.php"
     ],
     "kernel/classes/migration/steps/*": [
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsTest.php",
@@ -2529,7 +2534,9 @@
       "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsTest.php",
       "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationSqlSettingsStepsMongoDBTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMigrationSqlSettingsStepsMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationGraphqlIntegrationTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationGraphqlSqliteTest.php"
     ],
     "tests/tests/kernel/classes/migration/expMigrationStructureStepsEngineChecks.php": [
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsSqliteTest.php",
@@ -2606,7 +2613,10 @@
       "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceDatabaseTest.php",
       "tests/tests/lib/ezdb/mongodb/expMigrationUpgradeSourceMongoDBTest.php",
-      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsTest.php"
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationGraphqlIntegrationTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationGraphqlSqliteTest.php",
+      "tests/tests/kernel/classes/graphql/expMigrationGraphQLExtensionTest.php"
     ],
     "kernel/classes/upgrade/*": [
       "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceTest.php",
@@ -2794,6 +2804,9 @@
       "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsDatabaseTest.php",
       "tests/tests/lib/ezdb/mongodb/expMigrationSqlSettingsStepsMongoDBTest.php"
+    ],
+    "settings/rest.ini": [
+      "tests/tests/kernel/classes/migration/expMigrationGraphqlIntegrationTest.php"
     ]
   },
   "generated": {

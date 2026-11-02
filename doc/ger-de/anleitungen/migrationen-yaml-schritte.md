@@ -45,6 +45,7 @@ jeden Schlüssel jedes Schritttyps nennt seine erzeugte Referenzseite
 | [`data`](../beispiele/migrationsschritte/data.md) | Zeilen einer Tabelle, die Werte von der Verbindung in Anführungszeichen gesetzt | insert, ensure, update, delete |
 | [`sql`](../beispiele/migrationsschritte/sql.md) | Anweisungen der Engine, im Schritt oder in Dateien neben der Migration | |
 | [`settings`](../beispiele/migrationsschritte/settings.md) | eine INI-Datei von `settings/override` oder eines Siteaccess, mit Sicherungskopie | |
+| [`graphql`](../beispiele/migrationsschritte/graphql.md) | eine Abfrage oder Mutation der GraphQL-API, im Prozess als Benutzer des Laufs | |
 
 Jeder Schritt geht über die eigene API des Kernels, so wie die Administration: Ein neues Objekt entsteht über seine
 Klasse (`eZContentClass::instantiate()`), eine neue Version über `createNewVersionIn()`, und beide veröffentlicht die
@@ -398,6 +399,36 @@ also gelten das Mail-Gate und die Mail-Einstellungen. `command` führt nur die `
 `migration.ini [StepSettings] CommandAllowList[]` aus (ein Name, oder ein Name mit `*` am Ende für eine Gruppe), nie
 `exp:migration:*` oder `exp:upgrade*`, und übergibt Befehl und Argumente PHP als Liste: Es gibt keine Shell, also ist ein
 `;` oder ein `$` in einem Argument ein Zeichen.
+
+## GraphQL-Abfragen und -Mutationen
+
+`graphql` führt eine Abfrage oder Mutation der [GraphQL-API](../funktionen/6.0/graphql.md) der Installation im Prozess
+aus, als der Benutzer, als der die Migration läuft: keine HTTP-Anfrage, kein Token, kein Netz. Geben Sie genau eines von
+`persisted` (eine gespeicherte Abfrage über Name oder SHA-256), `query` (der Text) oder `file` (eine `.graphql`-Datei
+neben der Migration) an. Ihre Antwort bleibt für Referenzen: `data`, `result` (der Wert des ersten Wurzelfelds) und
+`errors`.
+
+```yaml
+- type: graphql
+  persisted: news-root                 # gespeichert mit ./console exp:graphql:persist
+  variables: { id: 2 }
+  references: { root: result }
+- type: graphql
+  query: |
+    mutation New($parent: Int!, $name: String) {
+      createContent(parentId: $parent, classIdentifier: "folder", fields: [ { identifier: "name", value: $name } ]) { contentId nodeId }
+    }
+  variables: { parent: 2, name: "Below ${ref.root.name}" }
+  references: { folder: result }       # ${ref.folder.nodeId}
+```
+
+Eine Antwort mit Fehlern lässt den Schritt scheitern (`allow_errors: true` lässt ihn bestehen, wenn sie Daten hat).
+Eine Mutation braucht `graphql.ini [GraphQLSettings] MutationsEnabled=enabled` und prüft die Rechte des Benutzers wie
+für jeden Client; ihre Änderungen gehören zur Transaktion der Migration und werden von `down:` oder der Rücknahme zum
+Sicherungspunkt zurückgenommen, nie vom Schritt selbst. In einem Probelauf läuft nichts. Ohne `webonyx/graphql-php`
+scheitert der Schritt und sagt es. Die Inhaltsereignisse einer Migration gehen mit ihr gekennzeichnet in das
+Ereignisjournal; der Kopf `events:` (`each`, `summary`, `none`) entscheidet, wie viele
+([das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md#der-kopf)).
 
 ## Workflows und Benachrichtigungen
 

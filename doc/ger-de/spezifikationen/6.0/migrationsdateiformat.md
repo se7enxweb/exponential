@@ -58,6 +58,7 @@ Der Kopf endet an der ersten Zeile, die kein Kommentar ist. Innerhalb davon ist 
 | `maintenance` | `yes` oder `no` | `no` |
 | `author` | eine Zeile Text | leer |
 | `transactional` | `yes` oder `no`: `no` führt die Migration ohne Transaktion aus | `yes` |
+| `events` | was ihre Inhaltsänderungen in das Ereignisjournal der GraphQL-API (Webhooks, Subscriptions) schreiben: `each` (jede Änderung, mit der Migration gekennzeichnet), `summary` (ein Ereignis am Ende), `none` ([das Ereignisjournal](../../funktionen/6.0/graphql.md#das-ereignisjournal)) | `each` |
 
 - Listen sind durch Kommas getrennt; ein Listenschlüssel darf sich wiederholen, und die Werte addieren sich.
 - Ein Schlüssel, der nicht in der Tabelle steht, ist ein Fehler (damit ein vertippter nicht still durchgeht); ein

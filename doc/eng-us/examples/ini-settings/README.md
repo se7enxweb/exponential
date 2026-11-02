@@ -75,7 +75,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [rad.ini](rad/README.md) | kernel | 4 |
 | [requestclassifier.ini](requestclassifier/README.md) | kernel | 7 |
 | [requestrules.ini](requestrules/README.md) | kernel | 4 |
-| [rest.ini](rest/README.md) | kernel | 18 |
+| [rest.ini](rest/README.md) | kernel | 19 |
 | [secrets.ini](secrets/README.md) | kernel | 1 |
 | [setup.ini](setup/README.md) | kernel | 24 |
 | [shop.ini](shop/README.md) | kernel | 10 |

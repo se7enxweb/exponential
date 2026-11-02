@@ -22,8 +22,10 @@ Bearbeiten Sie `settings/rest.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 > Kontexthilfe der als Inhalt gepflegten Hilfe für Clients mit Token (ein OAuth-Token oder ein persönlicher API-Schlüssel mit  
 > der Berechtigung help): /api/help/v1/topic/<help\_id>, /api/help/v1/manual/<remote\_id> (doc/eng-us/features/6.0/help-content.md)  
 > Die GraphQL-API, /api/graphql (settings/graphql.ini, aus, bis sie eingeschaltet wird; doc/eng-us/features/6.0/graphql.md)  
+> Die Migrationen, nur lesend, für Benutzer mit migration/read (ein OAuth-Token oder ein persönlicher API-Schlüssel mit der  
+> Berechtigung migration:read): /api/migration/v1/status, /api/migration/v1/runs, /api/migration/v1/runs/<Lauf-ID>  
 
-Standard: ein Hash mit 3: `auth=ezpRestAuthProvider`, `help=expHelpRestProvider`, `graphql=expGraphQLRestProvider`.
+Standard: ein Hash mit 4: `auth=ezpRestAuthProvider`, `help=expHelpRestProvider`, `graphql=expGraphQLRestProvider`, `migration=expMigrationRestProvider`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -34,6 +36,7 @@ ProviderClass[]
 ProviderClass[auth]=ezpRestAuthProvider
 ProviderClass[help]=expHelpRestProvider
 ProviderClass[graphql]=expGraphQLRestProvider
+ProviderClass[migration]=expMigrationRestProvider
 */ ?>
 ```
 
