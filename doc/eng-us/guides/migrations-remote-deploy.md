@@ -147,6 +147,33 @@ Every deploy that sends or runs something keeps its report (`exp-migration-deplo
 `var/<site>/migration/deploy/reports/<deploy id>.json`, and the audit log records it (`system.migration.deploy`;
 `system.migration.deploy.rollback` when remotes were taken back).
 
+## Staged deploys, gates and rollback
+
+`--staged` (with `--apply`) puts the selected remotes in stages by their `Environment`, in the order of
+`[RemoteSettings] StageOrder[]` (alpha, dev, test, stage, beta, production, post, arch; an environment that is not
+listed comes last). The preflight still runs on every remote first. Then the first stage is transferred, verified and
+switched, all or nothing within the stage, and the deploy ends in the state `gated`: the later remotes are `waiting`.
+
+```bash
+./console exp:migration:deploy --remotes=all --staged --apply
+./console exp:migration:deploy --continue=20261102-120000-a1b2c3 --apply     # approve the gate: the next stage
+./console exp:migration:deploy --rollback=20261102-120000-a1b2c3 --apply     # take back every remote that applied it
+```
+
+`--continue=<deploy id>` approves the gate: the next stage is prepared and preflighted again (time has passed) and
+switched the same way; the report records who approved each gate. When a later stage fails, it is taken back and the
+stages before it stay deployed (the report says the remotes are not in sync). `--rollback=<deploy id>` takes back
+every remote that applied a deploy (`exp:migration:rollback <deploy id> --apply` on each, all at once), staged or not.
+
+With the upgrade step `6.0.15-migration-deploy-tables`, every stored report is also written to the tables
+`exp_migration_deploy` (one row per deploy) and `exp_migration_deploy_host` (one row per remote). A deploy that fails
+and a staged deploy that waits at a gate send a plain-text notice by e-mail to `[RemoteSettings] NotifyEmail` (empty:
+site.ini `[MailSettings] AdminEmail`); `Notify[]` names the kinds (`failure`, `gate`, `success`).
+
+All of this is also in the administration: [Setup > Migrations > Remotes and Deploys](../help/migrations/remotes-and-deploys.md)
+(the wizard of a remote, Test connection, a deploy with live progress per remote, the history, the gate and the
+rollback).
+
 ## Recipes
 
 **Deploy beta's migrations to production.** On beta: `./console exp:migration:deploy --remotes=production` (the dry
@@ -172,6 +199,6 @@ check `./console exp:migration:remote:status` afterwards: "In sync: yes".
 
 ## Not yet available
 
-The administration screens (Setup > Migrations > Remotes and Deploys), a staged deploy with a gate between
-environments, the signed trigger endpoint that would run migrations on FTP-only hosts, and the automatic repair of a
-stale lock or file modes are planned; until then, use the commands above.
+The signed trigger endpoint that would run migrations on FTP-only hosts, and the automatic repair of a stale lock,
+file modes or caches (self-healing) are planned; until then, run the migrations of an FTP-only host there by hand
+after a `--transfer-only` deploy.

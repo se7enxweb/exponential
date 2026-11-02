@@ -1,0 +1,30 @@
+{
+    "command:expmigrationdeploy --continue": {
+        "en": "Approve the gate of a staged deploy and deploy its next stage (the deploy id; with --apply)",
+        "de": "Das Tor eines Deploys in Stufen freigeben und seine nächste Stufe ausliefern (die Deploy-ID; mit --apply)"
+    },
+    "command:expmigrationdeploy --rollback": {
+        "en": "Take back every remote that applied this deploy (the deploy id; with --apply)",
+        "de": "Jede Gegenstelle zurücknehmen, die diesen Deploy angewendet hat (die Deploy-ID; mit --apply)"
+    },
+    "command:expmigrationdeploy --staged": {
+        "en": "Deploy stage by stage ([RemoteSettings] StageOrder[] by environment): the first stage now, a gate before each next one (with --apply)",
+        "de": "Stufe für Stufe ausliefern ([RemoteSettings] StageOrder[] nach Umgebung): die erste Stufe jetzt, vor jeder weiteren ein Tor (mit --apply)"
+    },
+    "ini:settings/migration.ini [RemoteSettings] Notify": {
+        "en": "Notices by e-mail about a deploy: failure (refused, failed, taken back, out of sync), gate (a staged deploy waits\nfor approval), success (deployed or transferred). Plain text, mail category admin.",
+        "de": "Hinweise per E-Mail zu einem Deploy: failure (abgelehnt, fehlgeschlagen, zurückgenommen, nicht im Gleichstand), gate (ein Deploy\nin Stufen wartet auf Freigabe), success (ausgeliefert oder übertragen). Reiner Text, Mail-Kategorie admin."
+    },
+    "ini:settings/migration.ini [RemoteSettings] NotifyEmail": {
+        "en": "Where the notices go; empty: site.ini [MailSettings] AdminEmail.",
+        "de": "Wohin die Hinweise gehen; leer: site.ini [MailSettings] AdminEmail."
+    },
+    "ini:settings/migration.ini [RemoteSettings] StageOrder": {
+        "en": "A staged deploy (--staged, the administration's \"Staged\") puts the remotes in stages by their Environment, in\nthis order (an environment that is not listed comes last); each stage is switched all or nothing, and a gate\nwaits for someone to approve the next one (--continue=<deploy id>, or Approve on the deploy's page).",
+        "de": "Ein Deploy in Stufen (--staged, „In Stufen“ in der Administration) teilt die Gegenstellen nach ihrer Environment in\nStufen ein, in dieser Reihenfolge (eine Umgebung, die nicht aufgeführt ist, kommt zuletzt); jede Stufe wird ganz oder gar\nnicht umgeschaltet, und ein Tor wartet, bis jemand die nächste freigibt (--continue=<Deploy-ID> oder Freigeben auf der\nSeite des Deploys)."
+    },
+    "ini:settings/site.ini [ReauthGroup_system] Rules": {
+        "en": "Migrations: a run, a resume or a simulation, a rollback, and (later) the editor and the generators; seeing them\n(status, history, log, the dry run) is never asked\nRemotes and deploys: saving or removing a remote, a deploy (not its preflight), approving the next stage of a\nstaged deploy, rolling a deploy back; the lists and Test connection are never asked\na site-wide recording window (every user's changes); a user's own recording is not asked\nStatic publishing: a publish, a rollback, saving a target, the deploy key and the switch; seeing, building and the\npreview are never asked",
+        "de": "Migrationen: ein Lauf, eine Fortsetzung oder eine Simulation, eine Rücknahme und (später) der Editor und die Generatoren;\nfürs Ansehen (Status, Verlauf, Log, Probelauf) wird nie gefragt\nGegenstellen und Deploys: das Speichern oder Entfernen einer Gegenstelle, ein Deploy (nicht sein Preflight), das Freigeben\nder nächsten Stufe eines Deploys in Stufen, das Zurücknehmen eines Deploys; für die Listen und Verbindung testen wird nie gefragt\nein websiteweites Aufzeichnungsfenster (die Änderungen aller Benutzer); die eigene Aufzeichnung eines Benutzers wird nicht abgefragt\nStatisches Veröffentlichen: eine Veröffentlichung, eine Rücknahme, das Speichern eines Ziels, der Deploy-Key und der\nSchalter; fürs Ansehen, Bauen und die Vorschau wird nie gefragt"
+    }
+}

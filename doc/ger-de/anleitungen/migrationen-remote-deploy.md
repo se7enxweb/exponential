@@ -154,6 +154,36 @@ Jeder Deploy, der etwas sendet oder ausführt, behält seinen Bericht (`exp-migr
 `var/<site>/migration/deploy/reports/<Deploy-ID>.json`, und das Audit-Protokoll verzeichnet ihn
 (`system.migration.deploy`; `system.migration.deploy.rollback`, wenn Gegenstellen zurückgesetzt wurden).
 
+## Deploys in Stufen, Tore und Rücknahme
+
+`--staged` (mit `--apply`) teilt die ausgewählten Gegenstellen nach ihrer `Environment` in Stufen ein, in der
+Reihenfolge von `[RemoteSettings] StageOrder[]` (alpha, dev, test, stage, beta, production, post, arch; eine Umgebung,
+die nicht aufgeführt ist, kommt zuletzt). Der Preflight läuft trotzdem zuerst auf jeder Gegenstelle. Dann wird die
+erste Stufe übertragen, geprüft und umgeschaltet, alles oder nichts innerhalb der Stufe, und der Deploy endet im Stand
+`gated`: Die späteren Gegenstellen sind `waiting`.
+
+```bash
+./console exp:migration:deploy --remotes=all --staged --apply
+./console exp:migration:deploy --continue=20261102-120000-a1b2c3 --apply     # das Tor freigeben: die nächste Stufe
+./console exp:migration:deploy --rollback=20261102-120000-a1b2c3 --apply     # jede Gegenstelle zurücknehmen, die ihn angewendet hat
+```
+
+`--continue=<Deploy-ID>` gibt das Tor frei: Die nächste Stufe wird erneut vorbereitet und geprüft (es ist Zeit
+vergangen) und genauso umgeschaltet; der Bericht hält fest, wer jedes Tor freigegeben hat. Scheitert eine spätere
+Stufe, wird sie zurückgenommen, und die Stufen davor bleiben ausgeliefert (der Bericht sagt, dass die Gegenstellen
+nicht im Gleichstand sind). `--rollback=<Deploy-ID>` nimmt jede Gegenstelle zurück, die einen Deploy angewendet hat
+(`exp:migration:rollback <Deploy-ID> --apply` auf jeder, alle gleichzeitig), ob in Stufen oder nicht.
+
+Mit dem Aktualisierungsschritt `6.0.15-migration-deploy-tables` wird jeder gespeicherte Bericht auch in die Tabellen
+`exp_migration_deploy` (eine Zeile je Deploy) und `exp_migration_deploy_host` (eine Zeile je Gegenstelle) geschrieben.
+Ein Deploy, der scheitert, und ein Deploy in Stufen, der an einem Tor wartet, senden einen Hinweis als reinen Text per
+E-Mail an `[RemoteSettings] NotifyEmail` (leer: site.ini `[MailSettings] AdminEmail`); `Notify[]` nennt die Arten
+(`failure`, `gate`, `success`).
+
+All das gibt es auch in der Administration: [Setup > Migrationen > Gegenstellen und Deploys](../hilfe/migrationen/gegenstellen-und-deploys.md)
+(der Assistent einer Gegenstelle, Verbindung testen, ein Deploy mit Fortschritt live je Gegenstelle, der Verlauf, das
+Tor und die Rücknahme).
+
 ## Rezepte
 
 **Die Migrationen von beta auf production bringen.** Auf beta: `./console exp:migration:deploy --remotes=production`
@@ -179,6 +209,6 @@ Jeder Deploy, der etwas sendet oder ausführt, behält seinen Bericht (`exp-migr
 
 ## Noch nicht verfügbar
 
-Die Verwaltungsseiten (Setup > Migrations > Remotes und Deploys), ein gestufter Deploy mit einer Freigabe zwischen den
-Umgebungen, der signierte Auslöse-Endpunkt, der Migrationen auf reinen FTP-Hosts ausführen würde, und die automatische
-Reparatur einer verwaisten Sperre oder von Dateirechten sind geplant; bis dahin verwenden Sie die Befehle oben.
+Der signierte Auslöse-Endpunkt, der Migrationen auf reinen FTP-Hosts ausführen würde, und die automatische Reparatur
+einer verwaisten Sperre, von Dateirechten oder Caches (Selbstheilung) sind geplant; bis dahin führen Sie die Migrationen
+eines reinen FTP-Hosts nach einem Deploy mit `--transfer-only` dort von Hand aus.

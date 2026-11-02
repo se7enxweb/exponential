@@ -2,7 +2,7 @@
 title: Policies of the migration module
 audience: developer, admin
 category: examples
-summary: The policy functions of the migration module (4) and their limitations.
+summary: The policy functions of the migration module (6) and their limitations.
 keywords: migration, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -10,6 +10,24 @@ generated: exp:help:examples
 # Policies of the migration module
 
 The policy functions of `migration` and their limitations, from `$FunctionList` in `kernel/migration/module.php`. In the administration they are chosen under Roles and policies; a policy on `migration/*` grants every function.
+
+## deploy
+
+No view of the module names it; code checks it (`eZUser::hasAccessTo( 'migration', 'deploy' )` or the `user/has_access_to` fetch).
+
+No limitations: the policy is all or nothing.
+
+```php
+// Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'migration', 'deploy' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'migration', 'function', 'deploy' ) )}
+    ...
+{/if}
+```
 
 ## edit
 
@@ -31,7 +49,7 @@ $role->appendPolicy( 'migration', 'edit' );
 
 ## read
 
-Checked by the views: [dryrun](../module-views/migration/dryrun.md), [history](../module-views/migration/history.md), [log](../module-views/migration/log.md), [status](../module-views/migration/status.md), [stream](../module-views/migration/stream.md).
+Checked by the views: [deploy](../module-views/migration/deploy.md), [deployment](../module-views/migration/deployment.md), [dryrun](../module-views/migration/dryrun.md), [history](../module-views/migration/history.md), [log](../module-views/migration/log.md), [remotes](../module-views/migration/remotes.md), [status](../module-views/migration/status.md), [stream](../module-views/migration/stream.md).
 
 No limitations: the policy is all or nothing.
 
@@ -43,6 +61,24 @@ $role->appendPolicy( 'migration', 'read' );
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'migration', 'function', 'read' ) )}
+    ...
+{/if}
+```
+
+## remotes
+
+Checked by the views: [remote](../module-views/migration/remote.md).
+
+No limitations: the policy is all or nothing.
+
+```php
+// Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'migration', 'remotes' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'migration', 'function', 'remotes' ) )}
     ...
 {/if}
 ```

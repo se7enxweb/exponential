@@ -33,7 +33,7 @@ Every module's policy functions and the limitations each can carry, from `$Funct
 | [infocollector](infocollector.md) | `read` |
 | [layout](layout.md) | (none: `layout/*`) |
 | [mailpreferences](mailpreferences.md) | `administrate`, `export` |
-| [migration](migration.md) | `edit`, `read`, `rollback`, `run` |
+| [migration](migration.md) | `deploy`, `edit`, `read`, `remotes`, `rollback`, `run` |
 | [moderation](moderation.md) | `act`, `personaldata`, `read` |
 | [notification](notification.md) | `administrate`, `use` |
 | [oauth](oauth.md) | `authorize` |

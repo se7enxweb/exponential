@@ -30,6 +30,8 @@ Audit-Ereignisse, die er schreibt.
 | `migration/run` | Ausführen, Fortsetzen und **Simulieren** im Probelauf | der Ansicht `run`, und `dryrun` für die Simulation |
 | `migration/rollback` | einen Lauf, eine Migration oder einen früheren Sicherungspunkt zurücknehmen | der Ansicht `rollback` |
 | `migration/edit` | Änderungen aufzeichnen (Setup > Migrationen > Aufzeichnung, siehe [Änderungen aufzeichnen](aufzeichnung.md)), Migrationen daraus erzeugen und YAML-Migrationen im Editor schreiben und ändern (Setup > Migrationen > Editor) | den Ansichten `recording` und `editor` |
+| `migration/remotes` | Gegenstellen anlegen, ändern und entfernen, Verbindung testen ([Gegenstellen und Deploys](gegenstellen-und-deploys.md)) | der Ansicht `remote`, und `remotes` für Verbindung testen |
+| `migration/deploy` | ein Preflight, ein Deploy, ein Tor freigeben, einen Deploy zurücknehmen | den Ansichten `deploy` und `deployment` für ihre Schaltflächen |
 
 Keine von ihnen hat Einschränkungen: Jede gilt ganz oder gar nicht. In einer neuen Installation hat sie nur die Rolle
 Administrator. Ausführen, Fortsetzen, Simulieren und Zurücknehmen fragen zuerst nach „Identität bestätigen“
@@ -58,6 +60,10 @@ Erzeugte Referenz: [Richtlinien des Moduls migration](../../beispiele/richtlinie
 | [dryrun](../../beispiele/modulansichten/migration/dryrun.md) | `/migration/dryrun` | read (run zum Simulieren) | den Plan und die Simulation | [Probelauf](ausfuehren-probelauf-und-rueckgaengig.md#probelauf) |
 | [run](../../beispiele/modulansichten/migration/run.md) | `/migration/run` | run | die ausstehenden Migrationen, die Schalter, den Start des Laufs | [Ausführen](ausfuehren-probelauf-und-rueckgaengig.md#ausführen) |
 | [rollback](../../beispiele/modulansichten/migration/rollback.md) | `/migration/rollback/<target>` | rollback | einen Lauf, eine Migration oder einen Sicherungspunkt zum Wiederherstellen | [Zurücknehmen](ausfuehren-probelauf-und-rueckgaengig.md#zurücknehmen) |
+| [remotes](../../beispiele/modulansichten/migration/remotes.md) | `/migration/remotes` | read (remotes zum Testen) | die Gegenstellen, Verbindung testen | [Gegenstellen](gegenstellen-und-deploys.md#gegenstellen) |
+| [remote](../../beispiele/modulansichten/migration/remote.md) | `/migration/remote/<id>` | remotes | der Assistent einer Gegenstelle (neu oder gespeichert) | [Der Assistent](gegenstellen-und-deploys.md#der-assistent) |
+| [deploy](../../beispiele/modulansichten/migration/deploy.md) | `/migration/deploy` | read (deploy, um einen zu starten) | das Formular eines Deploys und der Verlauf | [Deploys](gegenstellen-und-deploys.md#deploys) |
+| [deployment](../../beispiele/modulansichten/migration/deployment.md) | `/migration/deployment/<deploy-id>` | read (deploy für ein Tor oder eine Rücknahme) | ein Deploy, live je Gegenstelle, sein Bericht, Tor und Rücknahme | [Die Seite eines Deploys](gegenstellen-und-deploys.md#die-seite-eines-deploys) |
 
 Das Modul ist `Setup > Migrationen` im Menü (`menu.ini`, gezeigt für Benutzer mit `migration/read`). Erzeugte Referenz:
 [Das Modul migration](../../beispiele/modulansichten/migration/README.md). Die Hilfe-Schaltfläche jeder Ansicht öffnet

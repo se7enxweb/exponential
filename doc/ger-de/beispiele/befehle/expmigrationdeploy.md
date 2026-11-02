@@ -37,6 +37,14 @@ a dry run: the preflight and the plan, nothing is sent or changed.
 ./console exp:migration:deploy --remotes=production --apply
 ./console exp:migration:deploy --remotes=all --transfer-only --apply
 ./console exp:migration:deploy --remotes=beta --only=20261102090000_add_news_class --apply --format=json
+
+Staged: --staged puts the remotes in stages by their environment ([RemoteSettings] StageOrder[]); the
+first stage is switched, then the deploy waits at a gate until --continue=<deploy id> switches the
+next one. --rollback=<deploy id> takes back every remote that applied a deploy.
+
+./console exp:migration:deploy --remotes=all --staged --apply
+./console exp:migration:deploy --continue=20261102-120000-a1b2c3 --apply
+./console exp:migration:deploy --rollback=20261102-120000-a1b2c3 --apply
 ```
 
 ## Optionen
@@ -52,6 +60,12 @@ a dry run: the preflight and the plan, nothing is sent or changed.
 | `--parallel` | erforderlich | An wie vielen Gegenstellen gleichzeitig gearbeitet wird (Vorgabe [RemoteSettings] Parallel) |
 | `--timeout` | erforderlich | Sekunden, die jede Gegenstelle für eine Phase brauchen darf (Vorgabe [RemoteSettings] Timeout) |
 | `--retries` | erforderlich | Wie oft ein Verbindungsfehler erneut versucht wird (Vorgabe [RemoteSettings] Retries) |
+| `--staged` |  | Stufe für Stufe ausliefern ([RemoteSettings] StageOrder[] nach Umgebung): die erste Stufe jetzt, vor jeder weiteren ein Tor (mit --apply) |
+| `--continue` | erforderlich | Das Tor eines Deploys in Stufen freigeben und seine nächste Stufe ausliefern (die Deploy-ID; mit --apply) |
+| `--rollback` | erforderlich | Jede Gegenstelle zurücknehmen, die diesen Deploy angewendet hat (die Deploy-ID; mit --apply) |
+| `--login` | erforderlich | Als dieser Benutzer ausführen (Standard: [RunSettings] RunAsUser in migration.ini) |
+| `--run-id` | erforderlich | Die Kennung des zu startenden Laufs (Standard eine neue: <Datum>-<Uhrzeit>-<6 Hex-Ziffern>); die Administration vergibt sie, bevor sie den Lauf startet |
+| `--progress` | erforderlich | Den Fortschritt des Laufs an diese Datei anhängen, ein JSON-Objekt pro Zeile (was die Administration zeigt, während der Lauf vor sich geht) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

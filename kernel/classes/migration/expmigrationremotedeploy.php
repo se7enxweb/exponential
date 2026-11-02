@@ -28,9 +28,21 @@
  *                  the run (exp:migration:rollback <deploy id> --apply); the failed remote restored itself. A remote
  *                  that cannot be taken back is reported and the deploy is marked out-of-sync with every remote's state.
  *
- * The report (exp-migration-deploy/1) is kept in var/<site>/migration/deploys/<deploy id>.json and audited
- * (system.migration.deploy; system.migration.deploy.rollback when remotes were taken back). Only one deploy runs at a
- * time on the source (a lock file). Secrets never appear in a report: every output is redacted.
+ * Staged (the option staged, exp:migration:deploy --staged, the administration's "Staged"): the remotes are put in
+ * stages by their environment ([RemoteSettings] StageOrder[]: dev before stage before beta before production ...).
+ * The preflight still runs on every remote first; then the first stage is transferred, verified and switched (all
+ * or nothing within the stage) and the deploy stops at a gate (state gated). Someone approves the next stage
+ * (continueStaged(), --continue=<deploy id>), which is preflighted again and switched the same way, until the last
+ * stage is deployed. A stage that fails is taken back; the stages before it stay deployed (rollbackDeploy() takes
+ * them back too).
+ *
+ * The report (exp-migration-deploy/1) is kept in var/<site>/migration/deploy/reports/<deploy id>.json, and in the
+ * tables exp_migration_deploy and exp_migration_deploy_host when the option db names a connection that has them
+ * (expMigrationDeployRecord). It is audited (system.migration.deploy; system.migration.deploy.rollback when remotes
+ * were taken back), and the option notify is called with it at the end (expMigrationDeployNotifier: a notice by
+ * e-mail on a failure or a gate). The option progress is called with the events of the administration's live page
+ * (expMigrationProgress: run, phase, host, step-done, end). Only one deploy runs at a time on the source (a lock
+ * file). Secrets never appear in a report: every output is redacted.
  *
  * @since 6.0.15
  * @package kernel
@@ -56,8 +68,23 @@ class expMigrationRemoteDeploy
     /** @var expMigrationRemoteTransport[] */
     protected $transports = array();
 
+    /** The order of the stages of a staged deploy when [RemoteSettings] StageOrder[] is empty */
+    const STAGE_ORDER = array( 'alpha', 'dev', 'test', 'stage', 'beta', 'production', 'post', 'arch' );
+
+    /** The states a deploy ends in that are failures (a notice by e-mail) */
+    const FAILED_STATES = array( 'refused', 'failed', 'rolled-back', 'out-of-sync' );
+
     /** @var array the report being built */
     protected $report;
+
+    /** @var string the stage the phases run for ('' when the deploy is not staged), as the report's phase keys show it */
+    protected $stageLabel = '';
+
+    /** @var int how many phases have ended (the progress) */
+    protected $phasesDone = 0;
+
+    /** @var bool the deploy is being taken back on request (rollbackDeploy()): rolled-back is its success */
+    protected $takingBack = false;
 
     /**
      * @param expMigrationRemote[] $remotes id => remote (the selection)
@@ -65,14 +92,17 @@ class expMigrationRemoteDeploy
      *        (the source's root), work_dir (var/<site>/migration/deploy), local (the source's migrations, as
      *        localDefinitions() returns them), version (the source's kernel version), deploy_id, lookup (credential
      *        lookup, tests), store (bool), audit (callable( name, data ), default expUpgrade::audit), say (callable(
-     *        line ) for progress), user (who deploys, for the audit)
+     *        line ) for progress), user (who deploys, for the audit), staged (bool), stage_order (environments),
+     *        progress (callable( event, data ), expMigrationProgress::writer()), notify (callable( report ) at the
+     *        end), db (a connection for expMigrationDeployRecord, null for none)
      */
     public function __construct( array $remotes, array $options = array() )
     {
         $this->remotes = $remotes;
         $this->options = $options + array( 'apply' => false, 'transfer_only' => false, 'only' => array(), 'parallel' => 4, 'timeout' => 900,
                                            'retries' => 2, 'root' => getcwd(), 'work_dir' => null, 'local' => null, 'version' => '',
-                                           'deploy_id' => null, 'lookup' => null, 'store' => true, 'audit' => null, 'say' => null, 'user' => '' );
+                                           'deploy_id' => null, 'lookup' => null, 'store' => true, 'audit' => null, 'say' => null, 'user' => '',
+                                           'staged' => false, 'stage_order' => self::STAGE_ORDER, 'progress' => null, 'notify' => null, 'db' => null );
         $this->options['root'] = rtrim( str_replace( '\\', '/', (string)$this->options['root'] ), '/' );
         if ( $this->options['work_dir'] === null )
             $this->options['work_dir'] = self::workDirectory();
@@ -140,6 +170,91 @@ class expMigrationRemoteDeploy
             call_user_func( $this->options['say'], $line );
     }
 
+    /** An event of the live progress (expMigrationProgress). */
+    protected function emit( $event, array $data = array() )
+    {
+        if ( is_callable( $this->options['progress'] ) )
+            call_user_func( $this->options['progress'], $event, $data );
+    }
+
+    /** The live progress of every remote of the selection: its state, the phase it is in, how many problems it has. */
+    protected function emitHosts( $phase )
+    {
+        foreach ( array_keys( $this->remotes ) as $id )
+            $this->emit( 'host', array( 'remote' => (string)$id, 'state' => $this->report['remotes'][$id]['state'], 'phase' => (string)$phase,
+                                        'problems' => count( $this->report['remotes'][$id]['problems'] ) ) );
+    }
+
+    /**
+     * The stages of a staged deploy: the remotes grouped by environment, in the order of $order (an environment that
+     * is not in it comes after, in the order of the selection). Pure.
+     *
+     * @param expMigrationRemote[] $remotes id => remote
+     * @param string[] $order environments
+     * @return array[] each a list of remote ids
+     */
+    public static function stagesOf( array $remotes, array $order )
+    {
+        $rank = array();
+        foreach ( array_values( $order ) as $i => $environment )
+            if ( ( $environment = strtolower( trim( (string)$environment ) ) ) !== '' && !isset( $rank[$environment] ) )
+                $rank[$environment] = $i;
+        $groups = array();
+        $first = array();
+        foreach ( $remotes as $id => $remote )
+        {
+            $environment = strtolower( $remote->environment() );
+            if ( !isset( $groups[$environment] ) )
+                $first[$environment] = count( $first );
+            $groups[$environment][] = (string)$id;
+        }
+        $keys = array_keys( $groups );
+        usort( $keys, function ( $a, $b ) use ( $rank, $first ) {
+            $ra = isset( $rank[$a] ) ? $rank[$a] : PHP_INT_MAX;
+            $rb = isset( $rank[$b] ) ? $rank[$b] : PHP_INT_MAX;
+            return $ra <=> $rb ?: $first[$a] <=> $first[$b];
+        } );
+        $stages = array();
+        foreach ( $keys as $key )
+            $stages[] = $groups[$key];
+        return $stages;
+    }
+
+    /**
+     * A stored report.
+     *
+     * @param string $deployId
+     * @param string|null $workDir
+     * @return array|null
+     */
+    public static function load( $deployId, $workDir = null )
+    {
+        if ( !expMigrationRecord::validRunId( (string)$deployId ) )
+            return null;
+        $file = ( $workDir !== null ? rtrim( (string)$workDir, '/' ) : self::workDirectory() ) . '/reports/' . $deployId . '.json';
+        $data = is_file( $file ) ? json_decode( (string)file_get_contents( $file ), true ) : null;
+        return is_array( $data ) && isset( $data['schema'], $data['deploy_id'] ) && $data['schema'] === self::REPORT && $data['deploy_id'] === $deployId ? $data : null;
+    }
+
+    /**
+     * What a stored deploy allows now. Pure.
+     *
+     * @param array $report
+     * @return array continue (bool: a gate waits for the next stage), rollback (bool: remotes applied it), next_stage
+     *               (index, null), next (the remote ids of the next stage), applied (the remote ids that applied it)
+     */
+    public static function actions( array $report )
+    {
+        $applied = array();
+        foreach ( isset( $report['remotes'] ) ? (array)$report['remotes'] : array() as $id => $remote )
+            if ( isset( $remote['state'] ) && $remote['state'] === 'applied' && !empty( $remote['applied'] ) )
+                $applied[] = (string)$id;
+        $next = isset( $report['next_stage'] ) && $report['next_stage'] !== null ? (int)$report['next_stage'] : null;
+        $gated = isset( $report['state'] ) && $report['state'] === 'gated' && $next !== null && isset( $report['stages'][$next] );
+        return array( 'continue' => $gated, 'rollback' => (bool)$applied, 'next_stage' => $gated ? $next : null,
+                      'next' => $gated ? array_values( (array)$report['stages'][$next] ) : array(), 'applied' => $applied );
+    }
+
     /** @return array an empty report */
     protected function emptyReport( $mode )
     {
@@ -150,7 +265,8 @@ class expMigrationRemoteDeploy
                                    'migrations' => array( 'done' => 0, 'pending' => 0, 'failed' => 0 ), 'lock' => null, 'last_run' => null );
         return array( 'schema' => self::REPORT, 'deploy_id' => $this->deployId(), 'mode' => $mode, 'state' => '', 'in_sync' => null,
                       'started_at' => date( 'c' ), 'finished_at' => null, 'user' => (string)$this->options['user'], 'version' => (string)$this->options['version'],
-                      'remotes' => $remotes, 'phases' => array(), 'errors' => array(), 'warnings' => array(), 'exit' => expUpgrade::EXIT_OK );
+                      'remotes' => $remotes, 'phases' => array(), 'errors' => array(), 'warnings' => array(), 'exit' => expUpgrade::EXIT_OK,
+                      'stages' => array(), 'next_stage' => null, 'gates' => array() );
     }
 
     /**
@@ -162,6 +278,11 @@ class expMigrationRemoteDeploy
     {
         $mode = $this->options['transfer_only'] ? 'transfer-only' : ( $this->options['apply'] ? 'apply' : 'dry-run' );
         $this->report = $this->emptyReport( $mode );
+        $stages = $this->options['staged'] && $mode === 'apply' ? self::stagesOf( $this->remotes, (array)$this->options['stage_order'] ) : array();
+        if ( count( $stages ) > 1 )
+            $this->report['stages'] = $stages;
+        $this->emit( 'run', array( 'mode' => 'deploy', 'total' => $mode === 'dry-run' ? 2 : ( $mode === 'transfer-only' ? 4 : 5 ),
+                                   'remotes' => array_map( 'strval', array_keys( $this->remotes ) ), 'stages' => count( $this->report['stages'] ) ) );
         if ( !$this->remotes )
             return $this->end( 'refused', 'no remote selected' );
         $lock = $this->lock();
@@ -176,6 +297,56 @@ class expMigrationRemoteDeploy
                 return $this->end( 'refused', 'the preflight failed on a remote; nothing was changed' );
             if ( $mode === 'dry-run' )
                 return $this->end( 'planned' );
+            if ( !$this->report['stages'] )
+                return $this->stage( null, $local );
+            // staged: the first stage now, the others wait at the gate
+            foreach ( $this->report['stages'] as $index => $ids )
+                if ( $index > 0 )
+                    foreach ( $ids as $id )
+                        $this->report['remotes'][$id]['state'] = 'waiting';
+            $this->emitHosts( '' );
+            return $this->stage( 0, $local );
+        }
+        finally
+        {
+            $this->cleanup( $lock );
+        }
+    }
+
+    /** Removes the key files and releases the lock. */
+    protected function cleanup( $lock )
+    {
+        foreach ( $this->credentials as $credential )
+            $credential->cleanup();
+        $this->credentials = array();
+        if ( $lock )
+        {
+            flock( $lock, LOCK_UN );
+            fclose( $lock );
+        }
+    }
+
+    /**
+     * Transfer, verify and switch the remotes of a stage (all of the selection when $index is null), all or nothing
+     * within them.
+     *
+     * @param int|null $index the stage
+     * @param array[] $local
+     * @return array the report
+     */
+    protected function stage( $index, array $local )
+    {
+        $all = $this->remotes;
+        if ( $index !== null )
+        {
+            $this->remotes = array_intersect_key( $all, array_flip( $this->report['stages'][$index] ) );
+            $this->stageLabel = 'stage' . ( $index + 1 );
+            $this->report['next_stage'] = null;
+            $this->say( '-- stage ' . ( $index + 1 ) . ' of ' . count( $this->report['stages'] ) . ': ' . implode( ', ', array_keys( $this->remotes ) ) );
+        }
+        try
+        {
+            $mode = $this->report['mode'];
             if ( !$this->phase( 'transfer', function () use ( $local ) { return $this->transfer( $local ); } ) )
                 return $this->end( 'failed', 'the transfer failed; no remote was switched (the files sent stay pending there)' );
             if ( !$this->phase( 'verify', function () use ( $local ) { return $this->verify( $local ); } ) )
@@ -183,17 +354,147 @@ class expMigrationRemoteDeploy
             if ( $mode === 'transfer-only' )
                 return $this->end( 'transferred' );
             if ( $this->phase( 'switch', function () { return $this->switchAll(); } ) )
+            {
+                if ( $index !== null && isset( $this->report['stages'][$index + 1] ) )
+                {
+                    $this->report['next_stage'] = $index + 1;
+                    return $this->end( 'gated' );
+                }
                 return $this->end( 'deployed' );
+            }
             $back = $this->phase( 'rollback', function () { return $this->rollbackAll(); } );
             return $this->end( $back ? 'rolled-back' : 'out-of-sync', $back ? 'a remote failed; every remote is back where it was before the deploy'
                                                                              : 'a remote failed and not every remote could be taken back: the remotes are OUT OF SYNC' );
         }
         finally
         {
-            foreach ( $this->credentials as $credential )
-                $credential->cleanup();
-            flock( $lock, LOCK_UN );
-            fclose( $lock );
+            $this->remotes = $all;
+            $this->stageLabel = '';
+        }
+    }
+
+    /**
+     * The next stage of a staged deploy that waits at its gate: its remotes are prepared and preflighted again (time
+     * has passed), then transferred, verified and switched like the first stage. The remotes the deploy was made
+     * with are given to the constructor (the stage's are taken from them).
+     *
+     * @param array $report the stored report (load()), state gated
+     * @return array the report; not stored when the gate cannot be passed (errors say why)
+     */
+    public function continueStaged( array $report )
+    {
+        $actions = self::actions( $report );
+        $refuse = function ( $why ) use ( $report ) {
+            $report['errors'] = array( $why );
+            $report['exit'] = expUpgrade::EXIT_FAILED;
+            return $report;
+        };
+        if ( !$actions['continue'] )
+            return $refuse( 'the deploy ' . ( isset( $report['deploy_id'] ) ? $report['deploy_id'] : '' ) . ' does not wait at a gate' );
+        if ( (string)$report['deploy_id'] !== $this->deployId() )
+            return $refuse( 'the deploy id is not the report\'s' );
+        $missing = array_diff( $actions['next'], array_map( 'strval', array_keys( $this->remotes ) ) );
+        if ( $missing )
+            return $refuse( 'the remotes ' . implode( ', ', $missing ) . ' of the next stage are no longer in [RemoteSettings] RemoteList[]' );
+        $index = $actions['next_stage'];
+        $this->remotes = array_intersect_key( $this->remotes, array_flip( $actions['next'] ) );
+        $this->report = $report;
+        $this->report['errors'] = array();
+        $this->report['warnings'] = array();
+        $this->report['finished_at'] = null;
+        $this->report['gates'][] = array( 'stage' => $index + 1, 'by' => (string)$this->options['user'], 'at' => date( 'c' ) );
+        foreach ( $this->remotes as $id => $remote )
+        {
+            $this->report['remotes'][$id] = array( 'remote' => $remote->toArray(), 'state' => 'selected', 'problems' => array(), 'version' => '', 'pending' => array(),
+                                                   'send' => array(), 'applied' => array(), 'caption' => '', 'restore' => '', 'attempts' => array(), 'fixes' => array(),
+                                                   'migrations' => array( 'done' => 0, 'pending' => 0, 'failed' => 0 ), 'lock' => null, 'last_run' => null );
+        }
+        $this->emit( 'run', array( 'mode' => 'deploy', 'total' => 5, 'remotes' => array_map( 'strval', array_keys( $this->remotes ) ), 'stage' => $index + 1 ) );
+        $lock = $this->lock();
+        if ( $lock === null )
+            return $refuse( 'another deploy runs on this installation (' . $this->options['work_dir'] . '/deploy.lock)' );
+        try
+        {
+            $this->stageLabel = 'stage' . ( $index + 1 );
+            if ( !$this->phase( 'prepare', function () { return $this->prepare( true ); } )
+                 || !$this->phase( 'preflight', function () { return $this->preflight( $this->local() ); } ) )
+            {
+                // nothing changed: the gate still waits
+                $this->report['next_stage'] = $index;
+                foreach ( $this->remotes as $id => $remote )
+                    if ( in_array( $this->report['remotes'][$id]['state'], array( 'prepared', 'ready', 'selected' ), true ) )
+                        $this->report['remotes'][$id]['state'] = 'waiting';
+                return $this->end( 'gated', 'the preflight of stage ' . ( $index + 1 ) . ' failed; nothing was changed, the gate still waits' );
+            }
+            $this->stageLabel = '';
+            return $this->stage( $index, $this->local() );
+        }
+        finally
+        {
+            $this->stageLabel = '';
+            $this->cleanup( $lock );
+        }
+    }
+
+    /**
+     * Takes a stored deploy back: every remote that applied it (state applied) runs exp:migration:rollback <deploy id>
+     * --apply and so returns to the caption taken before the run. The remotes the deploy was made with are given to
+     * the constructor.
+     *
+     * @param array $report the stored report (load())
+     * @return array the report (state rolled-back or out-of-sync); not stored when nothing could be taken back
+     */
+    public function rollbackDeploy( array $report )
+    {
+        $actions = self::actions( $report );
+        $refuse = function ( $why ) use ( $report ) {
+            $report['errors'] = array( $why );
+            $report['exit'] = expUpgrade::EXIT_FAILED;
+            return $report;
+        };
+        if ( !$actions['rollback'] )
+            return $refuse( 'no remote applied the deploy ' . ( isset( $report['deploy_id'] ) ? $report['deploy_id'] : '' ) . ': there is nothing to take back' );
+        if ( (string)$report['deploy_id'] !== $this->deployId() )
+            return $refuse( 'the deploy id is not the report\'s' );
+        $missing = array_diff( $actions['applied'], array_map( 'strval', array_keys( $this->remotes ) ) );
+        if ( $missing )
+            return $refuse( 'the remotes ' . implode( ', ', $missing ) . ' are no longer in [RemoteSettings] RemoteList[]; take them back on the remote (exp:migration:rollback ' . $report['deploy_id'] . ' --apply)' );
+        $this->remotes = array_intersect_key( $this->remotes, array_flip( $actions['applied'] ) );
+        $this->report = $report;
+        $this->report['errors'] = array();
+        $this->report['warnings'] = array();
+        $this->report['next_stage'] = null;
+        $this->report['rollback'] = array( 'by' => (string)$this->options['user'], 'at' => date( 'c' ) );
+        $this->takingBack = true;
+        $this->emit( 'run', array( 'mode' => 'deploy-rollback', 'total' => 2, 'remotes' => $actions['applied'] ) );
+        $lock = $this->lock();
+        if ( $lock === null )
+            return $refuse( 'another deploy runs on this installation (' . $this->options['work_dir'] . '/deploy.lock)' );
+        try
+        {
+            foreach ( $this->remotes as $id => $remote )
+            {
+                $this->report['remotes'][$id]['state'] = 'selected';
+                $this->report['remotes'][$id]['problems'] = array();
+            }
+            $prepared = $this->phase( 'prepare-rollback', function () { return $this->prepare( true ); } );
+            foreach ( $this->remotes as $id => $remote )
+                $this->report['remotes'][$id]['state'] = 'applied';
+            if ( !$prepared )
+            {
+                $this->report['errors'] = array( 'a remote cannot be used; nothing was taken back' );
+                foreach ( $this->remotes as $id => $remote )
+                    foreach ( $this->report['remotes'][$id]['problems'] as $problem )
+                        $this->report['errors'][] = "$id: $problem";
+                $this->report['exit'] = expUpgrade::EXIT_FAILED;
+                return $this->report;
+            }
+            $back = $this->phase( 'rollback', function () { return $this->rollbackAll(); } );
+            return $this->end( $back ? 'rolled-back' : 'out-of-sync', $back ? '' : 'not every remote could be taken back: the remotes are OUT OF SYNC' );
+        }
+        finally
+        {
+            $this->cleanup( $lock );
         }
     }
 
@@ -242,9 +543,14 @@ class expMigrationRemoteDeploy
     protected function phase( $name, callable $work )
     {
         $this->say( "-- $name" );
+        $this->emit( 'phase', array( 'name' => $name, 'stage' => $this->stageLabel ) );
+        $this->emitHosts( $name );
         $started = microtime( true );
         $ok = (bool)$work();
-        $this->report['phases'][$name] = array( 'ok' => $ok, 'duration_ms' => (int)round( ( microtime( true ) - $started ) * 1000 ) );
+        $key = $this->stageLabel !== '' ? $this->stageLabel . '-' . $name : $name;
+        $this->report['phases'][$key] = array( 'ok' => $ok, 'duration_ms' => (int)round( ( microtime( true ) - $started ) * 1000 ) );
+        $this->emitHosts( '' );
+        $this->emit( 'step-done', array( 'index' => ++$this->phasesDone, 'id' => $key, 'action' => $ok ? 'done' : 'failed' ) );
         return $ok;
     }
 
@@ -853,8 +1159,29 @@ class expMigrationRemoteDeploy
         $report['finished_at'] = date( 'c' );
         if ( $error !== '' )
             $report['errors'][] = $error;
-        if ( $report['in_sync'] === null && $state !== 'status' )
-            $report['in_sync'] = in_array( $state, array( 'deployed', 'rolled-back' ), true ) ? true : ( $state === 'out-of-sync' ? false : null );
+        if ( $state !== 'status' )
+        {
+            // the remotes of earlier stages that stay deployed while a later stage was taken back or waits
+            $applied = 0;
+            foreach ( $report['remotes'] as &$remote )
+            {
+                if ( $remote['state'] === 'applied' )
+                    $applied++;
+                // a later stage that will not be deployed now
+                if ( $remote['state'] === 'waiting' && $state !== 'gated' )
+                    $remote['state'] = 'skipped';
+            }
+            unset( $remote );
+            if ( $state === 'gated' )
+                $report['in_sync'] = null;
+            else if ( $state === 'rolled-back' && $applied > 0 )
+            {
+                $report['in_sync'] = false;
+                $report['warnings'][] = 'the remotes of the earlier stages stay deployed; roll the deploy back to take them back too';
+            }
+            else
+                $report['in_sync'] = in_array( $state, array( 'deployed', 'rolled-back' ), true ) ? true : ( $state === 'out-of-sync' ? false : null );
+        }
         foreach ( $report['remotes'] as $id => &$remote )
         {
             unset( $remote['states'] );
@@ -863,24 +1190,54 @@ class expMigrationRemoteDeploy
         }
         unset( $remote );
         $report['errors'] = array_values( array_unique( $report['errors'] ) );
-        $report['exit'] = in_array( $state, array( 'planned', 'transferred', 'deployed' ), true ) || ( $state === 'status' && !$report['errors'] )
+        $report['warnings'] = array_values( array_unique( $report['warnings'] ) );
+        $report['exit'] = in_array( $state, array( 'planned', 'transferred', 'deployed' ), true ) || ( in_array( $state, array( 'status', 'gated' ), true ) && !$report['errors'] )
+                        || ( $state === 'rolled-back' && $this->takingBack && !$report['errors'] )
                         ? expUpgrade::EXIT_OK : expUpgrade::EXIT_FAILED;
+        $this->emit( 'end', array( 'exit' => $report['exit'], 'state' => $state ) );
         if ( $state !== 'status' )
         {
             if ( $report['mode'] !== 'dry-run' && $this->options['store'] )
                 $this->store( $report );
             $this->audit( 'system.migration.deploy', array( 'verb' => $report['mode'] ) );
+            if ( $report['mode'] !== 'dry-run' && is_callable( $this->options['notify'] ) )
+            {
+                try
+                {
+                    call_user_func( $this->options['notify'], $report );
+                }
+                catch ( Throwable $e )
+                {
+                    // a notice that cannot be sent is never an error of the deploy
+                    $report['warnings'][] = 'the notice could not be sent: ' . $e->getMessage();
+                }
+            }
         }
         return $report;
     }
 
-    /** Writes the report to var/<site>/migration/deploy/reports/<deploy id>.json. */
+    /**
+     * Writes the report to var/<site>/migration/deploy/reports/<deploy id>.json, and its rows to the tables when the
+     * option db names a connection that has them.
+     */
     protected function store( array $report )
     {
         $dir = $this->options['work_dir'] . '/reports';
         if ( !is_dir( $dir ) )
             @mkdir( $dir, eZDir::dirMode( 0775 ), true );
         @file_put_contents( $dir . '/' . $this->deployId() . '.json', json_encode( $report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . "\n" );
+        if ( $this->options['db'] )
+        {
+            try
+            {
+                expMigrationDeployRecord::write( $this->options['db'], $report );
+            }
+            catch ( Throwable $e )
+            {
+                if ( class_exists( 'eZDebug' ) )
+                    eZDebug::writeWarning( 'The deploy record could not be written: ' . $e->getMessage(), __METHOD__ );
+            }
+        }
     }
 
     /**
@@ -905,7 +1262,10 @@ class expMigrationRemoteDeploy
             foreach ( (array)$data['remotes'] as $id => $remote )
                 $remotes[$id] = $remote['state'];
             $list[] = array( 'deploy_id' => $data['deploy_id'], 'mode' => $data['mode'], 'state' => $data['state'], 'in_sync' => $data['in_sync'],
-                             'started_at' => $data['started_at'], 'remotes' => $remotes );
+                             'started_at' => $data['started_at'], 'remotes' => $remotes,
+                             'finished_at' => isset( $data['finished_at'] ) ? $data['finished_at'] : null, 'user' => isset( $data['user'] ) ? (string)$data['user'] : '',
+                             'stages' => isset( $data['stages'] ) ? count( (array)$data['stages'] ) : 0,
+                             'next_stage' => isset( $data['next_stage'] ) ? $data['next_stage'] : null );
         }
         return $list;
     }
@@ -917,7 +1277,7 @@ class expMigrationRemoteDeploy
         foreach ( $this->report['remotes'] as $id => $remote )
             $states[$id] = $remote['state'];
         $ok = $name === 'system.migration.deploy.rollback' ? $this->report['state'] === 'rolled-back'
-                                                          : in_array( $this->report['state'], array( 'planned', 'transferred', 'deployed' ), true );
+                                                          : in_array( $this->report['state'], array( 'planned', 'transferred', 'deployed', 'gated' ), true );
         $data += array( 'object' => array( 'type' => 'migration_deploy', 'id' => $this->deployId() ), 'result' => $ok ? 'success' : 'failure',
                         'x' => array( 'state' => $this->report['state'], 'remotes' => $states ) );
         if ( is_callable( $this->options['audit'] ) )

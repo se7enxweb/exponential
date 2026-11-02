@@ -30,7 +30,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 > Statisches Veröffentlichen: eine Veröffentlichung (auch ein erneut versuchter Push), ein Zurücknehmen, ein erzeugter  
 > Deploy-Key, ein gespeichertes Ziel, ein Build, ein Post an den Formular-Endpunkt.  
 
-Standard: eine Liste mit 51: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.migration.http`, `system.migration.mail`, `system.migration.command`, `system.migration.record` ....
+Standard: eine Liste mit 52: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.migration.http`, `system.migration.mail`, `system.migration.command`, `system.migration.record` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -52,13 +52,13 @@ Enabled[]=system.migration.command
 Enabled[]=system.migration.record
 Enabled[]=system.migration.deploy
 Enabled[]=system.migration.deploy.rollback
+Enabled[]=system.migration.remote
 Enabled[]=system.staticpublish.publish
 Enabled[]=system.staticpublish.rollback
 Enabled[]=system.staticpublish.credential
 Enabled[]=system.staticpublish.target
 Enabled[]=system.staticpublish.build
-Enabled[]=system.staticpublish.form
-# ... 31 weitere in der ausgelieferten Datei
+# ... 32 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

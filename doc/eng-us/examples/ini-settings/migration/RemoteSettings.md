@@ -2,14 +2,14 @@
 title: migration.ini [RemoteSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [RemoteSettings] in migration.ini: RemoteList, Parallel, Timeout, Retries, StoreReports"
-keywords: migration.ini, RemoteSettings, INI, setting, RemoteList, Parallel, Timeout, Retries, StoreReports
+summary: "The settings of [RemoteSettings] in migration.ini: RemoteList, Parallel, Timeout, Retries, StoreReports, StageOrder, Notify, NotifyEmail"
+keywords: migration.ini, RemoteSettings, INI, setting, RemoteList, Parallel, Timeout, Retries, StoreReports, StageOrder, Notify, NotifyEmail
 type: generated
 generated: exp:help:examples
 ---
 # migration.ini [RemoteSettings]
 
-The block `[RemoteSettings]` of `settings/migration.ini`, with 5 setting(s).
+The block `[RemoteSettings]` of `settings/migration.ini`, with 8 setting(s).
 
 Never edit `settings/migration.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -101,6 +101,63 @@ Default: `enabled`.
 # settings/override/migration.ini.append.php
 [RemoteSettings]
 StoreReports=enabled
+*/ ?>
+```
+
+## StageOrder
+
+> A staged deploy (--staged, the administration's "Staged") puts the remotes in stages by their Environment, in  
+> this order (an environment that is not listed comes last); each stage is switched all or nothing, and a gate  
+> waits for someone to approve the next one (--continue=<deploy id>, or Approve on the deploy's page).  
+
+Default: a list of 8: `alpha`, `dev`, `test`, `stage`, `beta`, `production`, `post`, `arch`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RemoteSettings]
+# an empty "StageOrder[]" first replaces the shipped list; without it the items are added
+StageOrder[]
+StageOrder[]=alpha
+StageOrder[]=dev
+StageOrder[]=test
+StageOrder[]=stage
+StageOrder[]=beta
+StageOrder[]=production
+StageOrder[]=post
+StageOrder[]=arch
+*/ ?>
+```
+
+## Notify
+
+> Notices by e-mail about a deploy: failure (refused, failed, taken back, out of sync), gate (a staged deploy waits  
+> for approval), success (deployed or transferred). Plain text, mail category admin.  
+
+Default: a list of 2: `failure`, `gate`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RemoteSettings]
+# an empty "Notify[]" first replaces the shipped list; without it the items are added
+Notify[]
+Notify[]=failure
+Notify[]=gate
+*/ ?>
+```
+
+## NotifyEmail
+
+> Where the notices go; empty: site.ini \[MailSettings\] AdminEmail.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RemoteSettings]
+NotifyEmail=
 */ ?>
 ```
 

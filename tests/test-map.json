@@ -2864,11 +2864,26 @@
     ],
     "kernel/classes/migration/expmigrationremote*.php": [
       "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployStagedTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRemoteDeployIntegrationTest.php"
+    ],
+    "kernel/classes/migration/expmigrationdeploy{record,notifier}.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployStagedTest.php"
+    ],
+    "kernel/classes/upgrade/steps/expupgradestepmigrationdeploytables.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployStagedTest.php"
+    ],
+    "kernel/private/classes/views/migration/{remotes,remote,deploy,deployment}.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployStagedTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationJobTest.php"
+    ],
+    "design/standard/templates/migration/deploy_notice_mail.tpl": [
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployStagedTest.php"
     ],
     "kernel/private/classes/commands/expmigrationdeploy.php": [
       "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php",
-      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTest.php"
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployStagedTest.php"
     ],
     "kernel/private/classes/commands/expmigrationremote*.php": [
       "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php",

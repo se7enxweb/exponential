@@ -29,6 +29,8 @@ the module `migration`, its views, the dashboard block, the events a run sends a
 | `migration/run` | run, resume, and **Simulate** in the dry run | the view `run`, and `dryrun` for the simulation |
 | `migration/rollback` | take back a run, one migration or an earlier caption | the view `rollback` |
 | `migration/edit` | record changes (Setup > Migrations > Recording, see [Recording changes](recording.md)), generate migrations from them, and write and change YAML migrations in the editor (Setup > Migrations > Editor) | the views `recording` and `editor` |
+| `migration/remotes` | add, change and remove remotes, Test connection ([Remotes and deploys](remotes-and-deploys.md)) | the view `remote`, and `remotes` for Test connection |
+| `migration/deploy` | a preflight, a deploy, approving a gate, rolling a deploy back | the views `deploy` and `deployment` for their buttons |
 
 None of them has limitations: each is all or nothing. Only the Administrator role has them in a new installation.
 Run, resume, simulate and rollback ask "Verify it's you" first (`site.ini [ReauthGroup_system]`,
@@ -56,6 +58,10 @@ Generated reference: [Policies of the migration module](../../examples/policies/
 | [dryrun](../../examples/module-views/migration/dryrun.md) | `/migration/dryrun` | read (run to simulate) | the plan, and the simulation | [Dry run](run-dry-run-and-rollback.md#dry-run) |
 | [run](../../examples/module-views/migration/run.md) | `/migration/run` | run | the pending migrations, the switches, starting the run | [Run](run-dry-run-and-rollback.md#run) |
 | [rollback](../../examples/module-views/migration/rollback.md) | `/migration/rollback/<target>` | rollback | a run, one migration or a caption to restore | [Roll back](run-dry-run-and-rollback.md#roll-back) |
+| [remotes](../../examples/module-views/migration/remotes.md) | `/migration/remotes` | read (remotes to test) | the remotes, Test connection | [Remotes](remotes-and-deploys.md#remotes) |
+| [remote](../../examples/module-views/migration/remote.md) | `/migration/remote/<id>` | remotes | the wizard of a remote (new or saved) | [The wizard](remotes-and-deploys.md#the-wizard) |
+| [deploy](../../examples/module-views/migration/deploy.md) | `/migration/deploy` | read (deploy to start one) | the deploy form and the history | [Deploys](remotes-and-deploys.md#deploys) |
+| [deployment](../../examples/module-views/migration/deployment.md) | `/migration/deployment/<deploy-id>` | read (deploy for a gate or a rollback) | one deploy, live per remote, its report, gate and rollback | [A deploy's page](remotes-and-deploys.md#a-deploys-page) |
 
 The module is `Setup > Migrations` in the menu (`menu.ini`, shown to users with `migration/read`). Generated
 reference: [The migration module](../../examples/module-views/migration/README.md). The help button of each view

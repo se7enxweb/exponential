@@ -2767,6 +2767,36 @@ CREATE TABLE exp_static_run (
 
 
 
+CREATE TABLE exp_migration_deploy (
+    deploy_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    finished_at integer DEFAULT 0 NOT NULL,
+    in_sync integer DEFAULT 0 NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    mode character varying(20) DEFAULT ''::character varying NOT NULL,
+    next_stage integer DEFAULT 0 NOT NULL,
+    run_by character varying(150) DEFAULT ''::character varying NOT NULL,
+    stages integer DEFAULT 0 NOT NULL,
+    started_at integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL
+);
+
+
+
+CREATE TABLE exp_migration_deploy_host (
+    address character varying(255) DEFAULT ''::character varying NOT NULL,
+    applied integer DEFAULT 0 NOT NULL,
+    caption character varying(150) DEFAULT ''::character varying NOT NULL,
+    deploy_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    environment character varying(50) DEFAULT ''::character varying NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    remote_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    stage integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    transport character varying(20) DEFAULT ''::character varying NOT NULL
+);
+
+
+
 CREATE TABLE exp_migration_run (
     caption_post character varying(150) DEFAULT ''::character varying NOT NULL,
     caption_pre character varying(150) DEFAULT ''::character varying NOT NULL,
@@ -4396,6 +4426,14 @@ CREATE INDEX exp_migration_run_started ON exp_migration_run USING btree (started
 
 
 
+CREATE INDEX exp_migration_deploy_started ON exp_migration_deploy USING btree (started_at);
+
+
+
+CREATE INDEX exp_migration_deploy_host_remote ON exp_migration_deploy_host USING btree (remote_id);
+
+
+
 CREATE INDEX exp_migration_recording_state ON exp_migration_recording USING btree (state);
 
 
@@ -5521,6 +5559,16 @@ ALTER TABLE ONLY exp_static_run
 
 ALTER TABLE ONLY exp_migration_run
     ADD CONSTRAINT exp_migration_run_pkey PRIMARY KEY (run_id);
+
+
+
+ALTER TABLE ONLY exp_migration_deploy
+    ADD CONSTRAINT exp_migration_deploy_pkey PRIMARY KEY (deploy_id);
+
+
+
+ALTER TABLE ONLY exp_migration_deploy_host
+    ADD CONSTRAINT exp_migration_deploy_host_pkey PRIMARY KEY (deploy_id, remote_id);
 
 
 

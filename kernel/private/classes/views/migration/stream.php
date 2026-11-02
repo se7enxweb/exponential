@@ -33,7 +33,8 @@ class Stream extends \Exponential\Runnable\ModuleView
             return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
         $offset = max( 0, (int)\expViewParameters::get( $Params, 'offset', 'Offset' ) );
         $logOffset = max( 0, (int)\expViewParameters::get( $Params, 'log', 'LogOffset' ) );
-        $logFile = $job['kind'] !== 'rollback' ? \expMigrationAdmin::runLogFile( $runId ) : '';
+        // a rollback and a deploy write no run log here (a deploy's runs log on the remotes)
+        $logFile = !in_array( $job['kind'], array( 'rollback', 'deploy' ), true ) ? \expMigrationAdmin::runLogFile( $runId ) : '';
 
         // not a loop on ob_get_level(): a persistent worker's own buffer cannot be removed (eZExecution::discardOutputBuffers())
         if ( method_exists( '\eZExecution', 'discardOutputBuffers' ) )

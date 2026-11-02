@@ -2,14 +2,14 @@
 title: migration.ini [RemoteSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [RemoteSettings] in migration.ini: RemoteList, Parallel, Timeout, Retries, StoreReports"
-keywords: Einstellung, migration.ini, RemoteSettings, INI, setting, RemoteList, Parallel, Timeout, Retries, StoreReports
+summary: "Die Einstellungen von [RemoteSettings] in migration.ini: RemoteList, Parallel, Timeout, Retries, StoreReports, StageOrder, Notify, NotifyEmail"
+keywords: Einstellung, migration.ini, RemoteSettings, INI, setting, RemoteList, Parallel, Timeout, Retries, StoreReports, StageOrder, Notify, NotifyEmail
 type: generated
 generated: exp:help:examples
 ---
 # migration.ini [RemoteSettings]
 
-Der Block `[RemoteSettings]` von `settings/migration.ini`, mit 5 Einstellung(en).
+Der Block `[RemoteSettings]` von `settings/migration.ini`, mit 8 Einstellung(en).
 
 Bearbeiten Sie `settings/migration.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -101,6 +101,64 @@ Standard: `enabled`.
 # settings/override/migration.ini.append.php
 [RemoteSettings]
 StoreReports=enabled
+*/ ?>
+```
+
+## StageOrder
+
+> Ein Deploy in Stufen (--staged, „In Stufen“ in der Administration) teilt die Gegenstellen nach ihrer Environment in  
+> Stufen ein, in dieser Reihenfolge (eine Umgebung, die nicht aufgeführt ist, kommt zuletzt); jede Stufe wird ganz oder gar  
+> nicht umgeschaltet, und ein Tor wartet, bis jemand die nächste freigibt (--continue=<Deploy-ID> oder Freigeben auf der  
+> Seite des Deploys).  
+
+Standard: eine Liste mit 8: `alpha`, `dev`, `test`, `stage`, `beta`, `production`, `post`, `arch`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RemoteSettings]
+# ein leeres "StageOrder[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+StageOrder[]
+StageOrder[]=alpha
+StageOrder[]=dev
+StageOrder[]=test
+StageOrder[]=stage
+StageOrder[]=beta
+StageOrder[]=production
+StageOrder[]=post
+StageOrder[]=arch
+*/ ?>
+```
+
+## Notify
+
+> Hinweise per E-Mail zu einem Deploy: failure (abgelehnt, fehlgeschlagen, zurückgenommen, nicht im Gleichstand), gate (ein Deploy  
+> in Stufen wartet auf Freigabe), success (ausgeliefert oder übertragen). Reiner Text, Mail-Kategorie admin.  
+
+Standard: eine Liste mit 2: `failure`, `gate`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RemoteSettings]
+# ein leeres "Notify[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+Notify[]
+Notify[]=failure
+Notify[]=gate
+*/ ?>
+```
+
+## NotifyEmail
+
+> Wohin die Hinweise gehen; leer: site.ini \[MailSettings\] AdminEmail.  
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RemoteSettings]
+NotifyEmail=
 */ ?>
 ```
 

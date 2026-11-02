@@ -32,6 +32,8 @@ Website-Seitenleiste.
 | Probelauf | `/migration/dryrun` | was ein Lauf ändern würde; **Simulieren** führt ihn in einer Transaktion aus, die zurückgerollt wird | [Probelauf](ausfuehren-probelauf-und-rueckgaengig.md#probelauf) |
 | Ausführen | `/migration/run` | die ausstehenden Migrationen ausführen, einzeln ausgewählt | [Ausführen](ausfuehren-probelauf-und-rueckgaengig.md#ausführen) |
 | Rücknahme | `/migration/rollback/<target>` | einen Lauf, eine Migration oder einen früheren Sicherungspunkt zurücknehmen | [Zurücknehmen](ausfuehren-probelauf-und-rueckgaengig.md#zurücknehmen) |
+| Gegenstellen | `/migration/remotes`, `/migration/remote/<id>` | die Installationen, an die diese ihre Migrationen ausliefert: der Assistent, Verbindung testen | [Gegenstellen und Deploys](gegenstellen-und-deploys.md#gegenstellen) |
+| Deploys | `/migration/deploy`, `/migration/deployment/<deploy-id>` | an Gegenstellen ausliefern, gleichzeitig oder Stufe für Stufe, jede Gegenstelle live verfolgen, der Verlauf, ein Tor, eine Rücknahme | [Gegenstellen und Deploys](gegenstellen-und-deploys.md#deploys) |
 | Dashboard-Block | das Dashboard | ausstehend, fehlgeschlagen, verwaist, der laufende und der letzte Lauf | [Der Dashboard-Block](status-und-verlauf.md#der-dashboard-block) |
 | Website-Seitenleiste | die Seiten der Site | derselbe Stand, nur lesend | [Migrationen in der Website-Seitenleiste](expwt-panel.md) |
 
@@ -47,6 +49,8 @@ die ausstehenden der Stufen `database` und `scripts` vor den Migrationen der Sit
 | `migration/run` | Ausführen, Fortsetzen und das Simulieren im Probelauf |
 | `migration/rollback` | einen Lauf, eine Migration oder einen früheren Sicherungspunkt zurücknehmen |
 | `migration/edit` | vorgesehen für das Schreiben und Erzeugen von Migrationen in der Administration; in 6.0.15 nutzt sie keine Seite |
+| `migration/remotes` | die Gegenstellen anlegen, ändern und entfernen, an die Deploys gehen, und ihre Verbindung testen |
+| `migration/deploy` | an Gegenstellen ausliefern, das Tor eines Deploys in Stufen freigeben, einen Deploy zurücknehmen |
 
 In einer neuen Installation hat sie nur die Rolle Administrator. Ausführen, Fortsetzen, Simulieren und Zurücknehmen
 fragen zuerst nach [„Identität bestätigen“](../../anleitungen/identitaet-bestaetigen.md). Die Richtlinien im Einzelnen:

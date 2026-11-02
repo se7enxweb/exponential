@@ -962,6 +962,31 @@ CREATE TABLE `exp_static_run` (
 ,  `tag_name` varchar(150) NOT NULL DEFAULT ''
 ,  `target` varchar(50) NOT NULL DEFAULT ''
 );
+CREATE TABLE `exp_migration_deploy` (
+  `deploy_id` varchar(64) NOT NULL DEFAULT '' PRIMARY KEY
+,  `finished_at` integer NOT NULL DEFAULT '0'
+,  `in_sync` integer NOT NULL DEFAULT '0'
+,  `message` varchar(1000) NOT NULL DEFAULT ''
+,  `mode` varchar(20) NOT NULL DEFAULT ''
+,  `next_stage` integer NOT NULL DEFAULT '0'
+,  `run_by` varchar(150) NOT NULL DEFAULT ''
+,  `stages` integer NOT NULL DEFAULT '0'
+,  `started_at` integer NOT NULL DEFAULT '0'
+,  `state` varchar(20) NOT NULL DEFAULT ''
+);
+CREATE TABLE `exp_migration_deploy_host` (
+  `address` varchar(255) NOT NULL DEFAULT ''
+,  `applied` integer NOT NULL DEFAULT '0'
+,  `caption` varchar(150) NOT NULL DEFAULT ''
+,  `deploy_id` varchar(64) NOT NULL DEFAULT ''
+,  `environment` varchar(50) NOT NULL DEFAULT ''
+,  `message` varchar(1000) NOT NULL DEFAULT ''
+,  `remote_id` varchar(64) NOT NULL DEFAULT ''
+,  `stage` integer NOT NULL DEFAULT '0'
+,  `state` varchar(20) NOT NULL DEFAULT ''
+,  `transport` varchar(20) NOT NULL DEFAULT ''
+,  PRIMARY KEY (`deploy_id`,`remote_id`)
+);
 CREATE TABLE `exp_migration_run` (
   `caption_post` varchar(150) NOT NULL DEFAULT ''
 ,  `caption_pre` varchar(150) NOT NULL DEFAULT ''
@@ -1564,6 +1589,8 @@ CREATE INDEX exp_migration_run_id ON exp_migration ( run_id );
 CREATE INDEX exp_static_page_node ON exp_static_page ( node_id );
 CREATE INDEX exp_static_run_target ON exp_static_run ( target, started_at );
 CREATE INDEX exp_migration_run_started ON exp_migration_run ( started_at );
+CREATE INDEX exp_migration_deploy_started ON exp_migration_deploy ( started_at );
+CREATE INDEX exp_migration_deploy_host_remote ON exp_migration_deploy_host ( remote_id );
 CREATE INDEX exp_migration_recording_state ON exp_migration_recording ( state );
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_mod" ON "ezorder_status_history" (`modified`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_oid" ON "ezorder_status_history" (`order_id`);

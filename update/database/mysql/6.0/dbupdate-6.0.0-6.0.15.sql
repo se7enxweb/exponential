@@ -1003,3 +1003,36 @@ CREATE TABLE IF NOT EXISTS exp_migration_recording_event (
   subject varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY ( recording_id, event_id )
 ) ENGINE=InnoDB;
+
+-- exp_migration_deploy and exp_migration_deploy_host: the record of the deploys of migrations to remotes (one row
+-- per deploy, one per remote of it; exp:migration:deploy and Setup > Migrations > Deploys). The upgrade step
+-- 6.0.15-migration-deploy-tables makes them the same way.
+CREATE TABLE IF NOT EXISTS exp_migration_deploy (
+  deploy_id varchar(64) NOT NULL DEFAULT '',
+  finished_at int(11) NOT NULL DEFAULT '0',
+  in_sync int(11) NOT NULL DEFAULT '0',
+  message varchar(1000) NOT NULL DEFAULT '',
+  mode varchar(20) NOT NULL DEFAULT '',
+  next_stage int(11) NOT NULL DEFAULT '0',
+  run_by varchar(150) NOT NULL DEFAULT '',
+  stages int(11) NOT NULL DEFAULT '0',
+  started_at int(11) NOT NULL DEFAULT '0',
+  state varchar(20) NOT NULL DEFAULT '',
+  PRIMARY KEY ( deploy_id ),
+  KEY exp_migration_deploy_started ( started_at )
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS exp_migration_deploy_host (
+  address varchar(255) NOT NULL DEFAULT '',
+  applied int(11) NOT NULL DEFAULT '0',
+  caption varchar(150) NOT NULL DEFAULT '',
+  deploy_id varchar(64) NOT NULL DEFAULT '',
+  environment varchar(50) NOT NULL DEFAULT '',
+  message varchar(1000) NOT NULL DEFAULT '',
+  remote_id varchar(64) NOT NULL DEFAULT '',
+  stage int(11) NOT NULL DEFAULT '0',
+  state varchar(20) NOT NULL DEFAULT '',
+  transport varchar(20) NOT NULL DEFAULT '',
+  PRIMARY KEY ( deploy_id, remote_id ),
+  KEY exp_migration_deploy_host_remote ( remote_id )
+) ENGINE=InnoDB;

@@ -35,9 +35,17 @@ class Expmigrationdeploy extends ExpmigrationBase
                              "./console exp:migration:deploy --remotes=stage,production\n" .
                              "./console exp:migration:deploy --remotes=production --apply\n" .
                              "./console exp:migration:deploy --remotes=all --transfer-only --apply\n" .
-                             "./console exp:migration:deploy --remotes=beta --only=20261102090000_add_news_class --apply --format=json",
+                             "./console exp:migration:deploy --remotes=beta --only=20261102090000_add_news_class --apply --format=json\n" .
+                             "\n" .
+                             "Staged: --staged puts the remotes in stages by their environment ([RemoteSettings] StageOrder[]); the\n" .
+                             "first stage is switched, then the deploy waits at a gate until --continue=<deploy id> switches the\n" .
+                             "next one. --rollback=<deploy id> takes back every remote that applied a deploy.\n" .
+                             "\n" .
+                             "./console exp:migration:deploy --remotes=all --staged --apply\n" .
+                             "./console exp:migration:deploy --continue=20261102-120000-a1b2c3 --apply\n" .
+                             "./console exp:migration:deploy --rollback=20261102-120000-a1b2c3 --apply",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[remotes:*][apply][dry-run][transfer-only][only:*][format:][parallel:][timeout:][retries:]', '', array(
+        return (array)$this->startup( '[remotes:*][apply][dry-run][transfer-only][only:*][format:][parallel:][timeout:][retries:][staged][continue:][rollback:][login:][run-id:][progress:]', '', array(
             'remotes' => 'The remotes: ids or group names of [RemoteSettings] RemoteList[] in migration.ini, or all (a comma list or repeated)',
             'apply' => 'Make the changes (the default is a dry run that lists them and changes nothing)',
             'dry-run' => 'The default, accepted for scripts that pass it: list what would change, change nothing',
@@ -47,6 +55,12 @@ class Expmigrationdeploy extends ExpmigrationBase
             'parallel' => 'How many remotes are worked on at the same time (default [RemoteSettings] Parallel)',
             'timeout' => 'Seconds each remote may take for one phase (default [RemoteSettings] Timeout)',
             'retries' => 'How often a connection failure is tried again (default [RemoteSettings] Retries)',
+            'staged' => 'Deploy stage by stage ([RemoteSettings] StageOrder[] by environment): the first stage now, a gate before each next one (with --apply)',
+            'continue' => 'Approve the gate of a staged deploy and deploy its next stage (the deploy id; with --apply)',
+            'rollback' => 'Take back every remote that applied this deploy (the deploy id; with --apply)',
+            'login' => 'Run as this user (default: [RunSettings] RunAsUser of migration.ini)',
+            'run-id' => 'The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run',
+            'progress' => 'Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)',
         ) );
     }
 
@@ -55,32 +69,93 @@ class Expmigrationdeploy extends ExpmigrationBase
         $options = $this->begin();
         $format = $this->format( $options );
         $apply = $this->apply( $options );
+        $continue = $this->deployIdOption( $options, 'continue' );
+        $rollback = $this->deployIdOption( $options, 'rollback' );
+        if ( $continue !== '' && $rollback !== '' )
+            $this->usage( '--continue and --rollback cannot be combined' );
+        if ( ( $continue !== '' || $rollback !== '' ) && !empty( $options['remotes'] ) )
+            $this->usage( '--continue and --rollback take the remotes of the deploy; leave --remotes out' );
+        if ( ( $continue !== '' || $rollback !== '' ) && !$apply )
+            $this->usage( ( $continue !== '' ? '--continue' : '--rollback' ) . ' changes remotes: add --apply' );
         if ( !empty( $options['transfer-only'] ) && !$apply )
             $this->usage( '--transfer-only sends files: add --apply (without it the dry run shows the plan)' );
+        if ( !empty( $options['staged'] ) && ( !$apply || !empty( $options['transfer-only'] ) ) )
+            $this->usage( '--staged switches stage by stage: add --apply (and leave --transfer-only out)' );
+        $progress = $this->progress( $options );
         $settings = \expMigrationRemote::settings();
-        $remotes = $this->remotes( $options, true );
         $only = array();
         foreach ( isset( $options['only'] ) && $options['only'] ? (array)$options['only'] : array() as $value )
             foreach ( explode( ',', (string)$value ) as $id )
                 if ( ( $id = trim( $id ) ) !== '' )
                     $only[] = $id;
         $user = \eZUser::currentUser();
+        $login = $user && $user->isRegistered() ? (string)$user->attribute( 'login' ) : '';
+        if ( isset( $options['login'] ) && $options['login'] !== false && $options['login'] !== '' )
+        {
+            if ( !\expMigrationContext::resolveUser( (string)$options['login'] ) )
+                $this->usage( '--login names no user: ' . $options['login'] );
+            $login = (string)$options['login'];
+        }
+        $stored = null;
+        if ( $continue !== '' || $rollback !== '' )
+        {
+            $stored = \expMigrationRemoteDeploy::load( $continue !== '' ? $continue : $rollback );
+            if ( $stored === null )
+                $this->usage( 'no stored report of the deploy ' . ( $continue !== '' ? $continue : $rollback ) . ' (var/<site>/migration/deploy/reports/)' );
+            $remotes = \expMigrationRemote::all();
+        }
+        else
+            $remotes = $this->remotes( $options, true );
+        $db = null;
+        try
+        {
+            $db = \eZDB::instance();
+            if ( !$db || !$db->isConnected() )
+                $db = null;
+        }
+        catch ( \Throwable $e )
+        {
+            $db = null;
+        }
+        $notifier = new \expMigrationDeployNotifier();
         $deploy = new \expMigrationRemoteDeploy( $remotes, array(
             'apply' => $apply,
             'transfer_only' => !empty( $options['transfer-only'] ),
-            'only' => $only,
+            'staged' => !empty( $options['staged'] ),
+            'stage_order' => $settings['stage_order'],
+            'only' => $stored !== null ? array() : $only,
             'parallel' => $this->number( $options, 'parallel', $settings['parallel'], 1 ),
             'timeout' => $this->number( $options, 'timeout', $settings['timeout'], 10 ),
             'retries' => $this->number( $options, 'retries', $settings['retries'], 0 ),
             'root' => \eZSys::rootDir(),
             'version' => class_exists( 'ExponentialSDK' ) ? (string)\ExponentialSDK::version() : '',
             'store' => $settings['store'],
-            'user' => $user ? (string)$user->attribute( 'login' ) : '',
+            'user' => $login,
+            'deploy_id' => $stored !== null ? (string)$stored['deploy_id'] : ( isset( $progress['run-id'] ) ? $progress['run-id'] : null ),
+            'progress' => isset( $progress['progress'] ) ? $progress['progress'] : null,
+            'notify' => function ( array $report ) use ( $notifier ) { $notifier->notify( $report ); },
+            'db' => $db,
             'say' => $format === 'text' ? function ( $line ) { $this->output( $line ); } : null,
         ) );
-        $report = $deploy->run();
+        if ( $continue !== '' )
+            $report = $deploy->continueStaged( $stored );
+        else if ( $rollback !== '' )
+            $report = $deploy->rollbackDeploy( $stored );
+        else
+            $report = $deploy->run();
         $this->finish( array( 'mode' => 'deploy', 'deploy' => $report, 'errors' => $report['errors'], 'warnings' => $report['warnings'],
                               'exit' => $report['exit'] ), $format );
+    }
+
+    /** A deploy id option (--continue, --rollback), checked; '' when not given. */
+    protected function deployIdOption( array $options, $name )
+    {
+        if ( !isset( $options[$name] ) || $options[$name] === false || $options[$name] === '' || $options[$name] === true )
+            return '';
+        $id = trim( (string)$options[$name] );
+        if ( !\expMigrationRecord::validRunId( $id ) )
+            $this->usage( "--$name must be a deploy id (<date>-<time>-<6 hex digits>), not $id" );
+        return $id;
     }
 
     /**

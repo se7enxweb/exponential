@@ -37,7 +37,7 @@ class expMigrationCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:migration:record:list' => '[format:][count:]',
         'exp:migration:record:show' => '[format:][plan]',
         'exp:migration:record:discard' => '[apply][dry-run][format:]',
-        'exp:migration:deploy' => '[remotes:*][apply][dry-run][transfer-only][only:*][format:][parallel:][timeout:][retries:]',
+        'exp:migration:deploy' => '[remotes:*][apply][dry-run][transfer-only][only:*][format:][parallel:][timeout:][retries:][staged][continue:][rollback:][login:][run-id:][progress:]',
         'exp:migration:remote:list' => '[remotes:*][format:]',
         'exp:migration:remote:status' => '[remotes:*][format:][parallel:][timeout:][history:]',
         'exp:migration:convert' => '[apply][dry-run][format:][source:][author:]',

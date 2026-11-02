@@ -33,7 +33,7 @@ Die Richtlinienfunktionen jedes Moduls und die Einschränkungen, die jede tragen
 | [infocollector](infocollector.md) | `read` |
 | [layout](layout.md) | (keine: `layout/*`) |
 | [mailpreferences](mailpreferences.md) | `administrate`, `export` |
-| [migration](migration.md) | `edit`, `read`, `rollback`, `run` |
+| [migration](migration.md) | `deploy`, `edit`, `read`, `remotes`, `rollback`, `run` |
 | [moderation](moderation.md) | `act`, `personaldata`, `read` |
 | [notification](notification.md) | `administrate`, `use` |
 | [oauth](oauth.md) | `authorize` |
