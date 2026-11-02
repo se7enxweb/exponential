@@ -136,6 +136,10 @@ class expPreloadRunner
             // fetch() answers (status, ms, bytes, type, body, error, cookies). Static publishing passes one in its
             // tests; null is curl.
             'fetcher'    => null,
+            // Request header lines ("Name: value") sent with every request, or a callable ( $url ) that returns
+            // them for each request: static publishing signs each request it makes (expStaticBuildSignature).
+            // A fetcher gets them as its third argument.
+            'headers'    => array(),
             // Other addresses of the same site (scheme://host[:port], or a bare host as SiteURL holds it). A page
             // fetched from another address than its own (a CrawlURL such as http://127.0.0.1:8080, a sandbox) may
             // still link to its own SiteURL in full (https://example.com/about-us); such a link is the site's page
@@ -265,10 +269,12 @@ class expPreloadRunner
     /** One request. Returns status, timing, size and body. */
     private function fetch( $url, $headOnly = false )
     {
+        $headers = $this->options['headers'];
+        $headers = is_callable( $headers ) ? (array)call_user_func( $headers, $url ) : (array)$headers;
         if ( $this->options['fetcher'] !== null )
-            return (array)call_user_func( $this->options['fetcher'], $url, $headOnly )
-                 + array( 'status' => 0, 'ms' => 0, 'bytes' => 0, 'type' => '', 'body' => '', 'error' => '', 'cookies' => array() );
-        return self::request( $url, $headOnly, (int)$this->options['timeout'] );
+            return (array)call_user_func( $this->options['fetcher'], $url, $headOnly, $headers )
+                 + array( 'status' => 0, 'ms' => 0, 'bytes' => 0, 'type' => '', 'body' => '', 'error' => '', 'cookies' => array(), 'headers' => array() );
+        return self::request( $url, $headOnly, (int)$this->options['timeout'], 'Exponential preloader', $headers );
     }
 
     /**
@@ -279,13 +285,18 @@ class expPreloadRunner
      * @param bool $headOnly a HEAD request
      * @param int $timeout seconds
      * @param string $userAgent
-     * @return array status, ms, bytes, type, body, error, cookies (the names of the cookies the response set)
+     * @param string[] $headers request header lines ("Name: value") sent as well
+     * @return array status, ms, bytes, type, body, error, cookies (the names of the cookies the response set),
+     *               headers (the names of the response headers, lower case)
      */
-    public static function request( $url, $headOnly = false, $timeout = 20, $userAgent = 'Exponential preloader' )
+    public static function request( $url, $headOnly = false, $timeout = 20, $userAgent = 'Exponential preloader', array $headers = array() )
     {
         $started = microtime( true );
         $cookies = array();
+        $names = array();
         $ch = curl_init();
+        if ( $headers )
+            curl_setopt( $ch, CURLOPT_HTTPHEADER, array_values( array_map( 'strval', $headers ) ) );
         curl_setopt_array( $ch, array(
             CURLOPT_URL            => $url,
             CURLOPT_RETURNTRANSFER => true,
@@ -298,10 +309,12 @@ class expPreloadRunner
             CURLOPT_ENCODING       => '',
             CURLOPT_NOBODY         => (bool)$headOnly,
             // the cookies a response sets: a page that starts a session for an anonymous visitor is that visitor's
-            CURLOPT_HEADERFUNCTION => function ( $handle, $line ) use ( &$cookies )
+            CURLOPT_HEADERFUNCTION => function ( $handle, $line ) use ( &$cookies, &$names )
             {
                 if ( preg_match( '#^set-cookie:\s*([^=;\s]+)=#i', $line, $m ) )
                     $cookies[] = $m[1];
+                if ( preg_match( '#^([A-Za-z0-9!\#$%&\'*+.^_`|~-]+):#', $line, $m ) )
+                    $names[] = strtolower( $m[1] );
                 return strlen( $line );
             },
         ) );
@@ -319,6 +332,7 @@ class expPreloadRunner
             'body'    => is_string( $body ) ? $body : '',
             'error'   => $error,
             'cookies' => array_values( array_unique( $cookies ) ),
+            'headers' => array_values( array_unique( $names ) ),
         );
     }
 
@@ -820,7 +834,8 @@ class expPreloadRunner
         if ( $this->storeCallback )
             call_user_func( $this->storeCallback, $url, $path, $result['body'],
                             array( 'status' => $result['status'], 'type' => $result['type'],
-                                   'cookies' => isset( $result['cookies'] ) ? (array)$result['cookies'] : array() ) );
+                                   'cookies' => isset( $result['cookies'] ) ? (array)$result['cookies'] : array(),
+                                   'headers' => isset( $result['headers'] ) ? (array)$result['headers'] : array() ) );
 
         if ( $this->options['images'] )
         {

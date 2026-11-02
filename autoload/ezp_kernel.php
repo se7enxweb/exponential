@@ -1701,6 +1701,7 @@ return array(
       'expStaticAdmin'                                               => 'kernel/classes/staticpublish/expstaticadmin.php',
       'expStaticAssetCollector'                                      => 'kernel/classes/staticpublish/expstaticassetcollector.php',
       'expStaticBuild'                                               => 'kernel/classes/staticpublish/expstaticbuild.php',
+      'expStaticBuildSignature'                                      => 'kernel/classes/staticpublish/expstaticbuildsignature.php',
       'expStaticCacheRunner'                                         => 'kernel/setup/expstaticcacherunner.php',
       'expStaticCredentials'                                         => 'kernel/classes/staticpublish/expstaticcredentials.php',
       'expStaticDegrader'                                            => 'kernel/classes/staticpublish/expstaticdegrader.php',

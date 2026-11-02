@@ -95,6 +95,29 @@ class expStaticPostProcessor
         return array( 'html' => (string)$html, 'removed' => $removed );
     }
 
+    /** The marks of debug output in a page: the debug report, the debug bar, the template debug comments */
+    const DEBUG_PATTERN = '#<div\s+id=(["\'])debug\1|id=(["\'])debug-end\2|<!--\s*START: including template|id=(["\'])exp-debug-summary\3|<!--/?exp-debug-bar-->|data-exp-debug-bar=#i';
+
+    /**
+     * The debug output a page came with, before strip(): what of it is in the html, and the response headers whose
+     * name speaks of debugging (X-Debug-Token, X-Exp-Debug-...). A build that signed its requests
+     * (expStaticBuildSignature) gets none from this server; when it still does, the page is refused, not stripped.
+     *
+     * @param string $html the page as the server sent it
+     * @param string[] $headerNames the names of the response headers
+     * @return string[] empty when there is none
+     */
+    public static function debugOutput( $html, array $headerNames = array() )
+    {
+        $found = array();
+        if ( preg_match( self::DEBUG_PATTERN, (string)$html, $m ) )
+            $found[] = trim( $m[0] );
+        foreach ( $headerNames as $name )
+            if ( stripos( (string)$name, 'debug' ) !== false )
+                $found[] = 'the header ' . $name;
+        return $found;
+    }
+
     /**
      * Why a page cannot be published, after strip(); empty when it can.
      *
@@ -114,7 +137,7 @@ class expStaticPostProcessor
                     $reasons[] = 'the response set the session cookie ' . $cookie;
                     break;
                 }
-        if ( preg_match( '#<div\s+id=(["\'])debug\1|id=(["\'])debug-end\2|<!--\s*START: including template|id=(["\'])exp-debug-summary\3|<!--/?exp-debug-bar-->|data-exp-debug-bar=#i', $html ) )
+        if ( preg_match( self::DEBUG_PATTERN, $html ) )
             $reasons[] = 'debug output';
         $field = preg_quote( self::TOKEN_FIELD, '#' );
         if ( preg_match( '#<input\b[^>]*\bname=(["\'])' . $field . '\1|<meta\b[^>]*\bname=(["\'])csrf-token|\bid=(["\'])' . $field . '[a-z_]*_js\3[^>]*\btitle=#i', $html ) )
