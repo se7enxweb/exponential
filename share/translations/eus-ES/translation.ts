@@ -68628,6 +68628,226 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Eskaera hau: orri-cachetik zerbitzatua, %ms ms-tan.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Erabiltzailea</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Erabiltzailearen IDa</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Cache profila</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Ikuspegi hau</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Ikuspegi-cachea</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>erabiltzaile bakoitzeko (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Erabiltzailearen cache profila: profil bera duten erabiltzaileek ikuspegi-cachearen fitxategiak partekatzen dituzte</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>bai</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ez</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Hasi saioa</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Saioa hasita</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Saioa</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Edukiaren ikuspegi-cachearen gakoaren zati erabiltzailearen araberakoak, gakoak hartzen dituen bezala, orri honen ViewCacheTweaks arabera. Profil bera duten erabiltzaileek ikuspegien cache-fitxategiak partekatzen dituzte, ikuspegiaren beraren zatiak desberdinak ez badira (hobespenak, entzuleen gakoak): horiek beren profila dute, orri honetarako soilik.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profila</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Ikuspegi hau (%node nodoa)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: saioa hasitako erabiltzaile bakoitzak bere cache-fitxategiak ditu.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Indarrean dauden ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Zatia</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Balioa</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ez dago erabiltzailearen menpeko zatirik (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ikuspegi hau</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopiatu testu gisa</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rolak</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Ezin izan da rol-esleipenik irakurri.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Rolaren IDa</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rola</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Muga</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Esleituta</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>erabiltzaileari</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>%name taldea (%id objektua)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopiatuta</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Ezin izan da kopiatu.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>entzule batek kanpoan utzia</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Bisitari anonimoak</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>zurearen berdina</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>desberdina</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Bisitari anonimoek ViewCacheTweaks berberekin, hobespen lehenetsiekin, ikuspegiaren zatirik gabe jasotzen duten profila: saioa irakurtzen duen entzuleari ezin zaizkio eskatu.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Hobespenak</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Ez dago erabiltzailearen hobespenen menpeko ikuspegi-modurik (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Ikuspegi-modu hauen ikuspegiak menpe dauden hobespenak (CachedViewPreferences), erabiltzailearen balioarekin edo lehenetsiarekin. Profilean userpreferences gisa daude, ikuspegi-modu guztienak batera.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Ikusteko modua</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Hobespena</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Lehenetsia</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Gidalerroak</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Erakutsi rolen politikak (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Politikak zerbitzaritik kargatzen dira atal hau irekitzean, orrialdez orrialde, eta moduluaren eta funtzioaren arabera iragazi daitezke.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funtzioa</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Modulu guztiak</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Funtzio guztiak</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Mugak</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Erakutsi gehiago</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Rol hauek ez dute politikarik.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Ez dago iragazkiarekin bat datorren politikarik.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching politika (guztira %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

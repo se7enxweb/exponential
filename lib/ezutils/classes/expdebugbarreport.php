@@ -193,6 +193,11 @@ class expDebugBarReport
             '%count rows match', 'Clear filter',
             'All', 'Errors', 'Warnings', 'Notices', 'Debug', 'Timing points', 'Strict',
             'Show messages', 'Copied 1 message', 'Copied %count messages','No messages to copy.', 'Could not copy the messages.', 'Sort by time', 'Sort by order', 'Slowest first',
+            // the User tab's copy button
+            'Copied', 'Could not copy.',
+            // the User tab's role policies
+            'Module', 'Function', 'All modules', 'All functions', 'Role', 'Limitations', 'Show more',
+            'These roles have no policies.', 'No policy matches the filter.', '%shown of %matching policies (%total in all)',
             'Loading...', 'Could not load: %error', 'Retry',
             'Sign in with a user who may change settings (setup/setup) to change them here.', 'Sign in with setup access to change debug settings', 'Sign in with cache access to manage caches',
             'The settings service is not available yet. The classic controls below still work.',
@@ -370,6 +375,16 @@ class expDebugBarReport
         // cache key carries the user's role and limitation ids
         $rendering = $userInfo['can_setup'] ? self::renderingData() : null;
         $summary['rendering'] = $rendering === null ? null : self::renderingChips( $rendering );
+        // The user's roles and cache profile (User tab and its chip): for setup/setup, as the Rendering tab, and for an
+        // anonymous visitor who gets the debug output, whose ids are those of every anonymous visitor
+        $userProfile = null;
+        // (the report is only rendered for a request that gets the debug output)
+        if ( class_exists( 'expDebugBarUser' ) && expDebugBarUser::mayView( $userInfo['can_setup'], $userInfo['logged_in'], true ) )
+        {
+            $viewCache = $rendering !== null ? $rendering['view_cache'] : ( class_exists( 'expRenderStats' ) ? expRenderStats::viewCache() : null );
+            $userProfile = expDebugBarUser::data( $viewCache );
+        }
+        $summary['user'] = $userProfile === null ? null : self::userChip( $userProfile );
 
         // the chips of the extensions' panels (collected before the messages, see above)
         $summary['panels'] = array();
@@ -387,6 +402,7 @@ class expDebugBarReport
             'sql'       => self::t( 'SQL' ),
             'templates' => self::t( 'Templates' ),
             'rendering' => self::t( 'Rendering' ),
+            'user'      => self::t( 'User' ),
             'includes'  => self::t( 'Included files' ),
             'memory'    => self::t( 'Memory' ),
         );
@@ -397,6 +413,8 @@ class expDebugBarReport
 
         if ( $rendering === null )
             unset( $tabs['rendering'] );
+        if ( $userProfile === null )
+            unset( $tabs['user'] );
         if ( $otherReports !== '' )
             $tabs['other'] = self::t( 'Other' );
         $badges = array(
@@ -511,6 +529,14 @@ class expDebugBarReport
         {
             self::panelStart( 'rendering', $tabs, $metrics );
             echo self::renderingHtml( $rendering );
+            self::panelEnd();
+        }
+
+        // --- User
+        if ( $userProfile !== null )
+        {
+            self::panelStart( 'user', $tabs, $metrics );
+            echo self::userHtml( $userProfile );
             self::panelEnd();
         }
 
@@ -901,6 +927,8 @@ class expDebugBarReport
             foreach ( $s['rendering'] as $chip )
                 $chips[] = $chip;
         }
+        if ( !empty( $s['user'] ) )
+            $chips[] = $s['user'];
         // PHP deprecations: only their number, the messages are in deprecated.log (site.ini DeprecatedLog)
         $deprecations = isset( $s['deprecations'] ) ? (int)$s['deprecations'] : 0;
         // the three message blocks show the same counts in their popups
@@ -1513,6 +1541,149 @@ class expDebugBarReport
                           self::t( '%compiled templates compiled in this request, %executed runs of compiled templates',
                                    array( '%compiled' => $compiled, '%executed' => (int)$r['templates']['executed'] ) ) );
         return $chips;
+    }
+
+    /**
+     * The chip of the User tab: the user's cache profile, and the profile of this page's view when it has parts of its
+     * own (preferences, keys of listeners). Users with the same chip share the view cache files.
+     *
+     * @param array $u expDebugBarUser::data()
+     * @return array a chip as summaryHtml() takes it
+     */
+    public static function userChip( array $u )
+    {
+        $text = self::t( 'VC %profile', array( '%profile' => $u['profile'] ) );
+        if ( $u['view_profile'] !== null )
+            $text .= ' · ' . $u['view_profile'];
+        if ( $u['per_user'] )
+            $text .= ' · pr_user';
+        $rows = array( self::t( 'User ID' ) => (string)$u['id'], self::t( 'Cache profile' ) => $u['profile'] );
+        if ( $u['view_profile'] !== null )
+            $rows[self::t( 'This view' )] = $u['view_profile'];
+        if ( $u['per_user'] )
+            $rows[self::t( 'View cache' )] = self::t( 'per user (pr_user)' );
+        return array( 'user', 'userprofile', 'ok', $text,
+                      self::t( 'Cache profile of the user: users with the same profile share the view cache files' ), 'rows' => $rows );
+    }
+
+    /**
+     * The User tab: who the user is, their cache profile with every part as the view cache key takes it, and their
+     * role assignments with where each comes from.
+     *
+     * @param array $u expDebugBarUser::data()
+     * @return string HTML
+     */
+    public static function userHtml( array $u )
+    {
+        $yes = function ( $value ) { return self::h( $value ? 'yes' : 'no' ); };
+        $html = '<table class="exp-debug-facts exp-debug-user">';
+        $html .= '<tr><th>' . self::h( 'User ID' ) . '</th><td>' . (int)$u['id'] . '</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Login' ) . '</th><td>' . self::renderingValue( $u['login'] ) . '</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Logged in' ) . '</th><td>' . $yes( $u['logged_in'] ) . '</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Siteaccess' ) . '</th><td>' . self::renderingValue( $u['siteaccess'] ) . '</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Session' ) . '</th><td>' . $yes( $u['session'] ) . '</td></tr>';
+        $html .= '</table>';
+
+        $html .= '<h3>' . self::h( 'Cache profile' ) . '</h3>';
+        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.' ) . '</p>';
+        $html .= '<p class="exp-debug-user-profile">' . self::h( 'Profile' ) . ' <code>' . self::a( $u['profile'] ) . '</code>';
+        if ( $u['view_profile'] !== null )
+            $html .= ' · ' . self::h( 'This view (node %node)', array( '%node' => (int)$u['node_id'] ) ) . ' <code>' . self::a( $u['view_profile'] ) . '</code>';
+        $html .= '</p>';
+        if ( isset( $u['anonymous_profile'] ) && $u['anonymous_profile'] !== null )
+        {
+            $same = $u['anonymous_profile'] === $u['profile'];
+            $html .= '<p class="exp-debug-user-profile">' . self::h( 'Anonymous visitors' ) . ' <code>' . self::a( $u['anonymous_profile'] ) . '</code> '
+                   . '<span class="exp-debug-badge" data-level="' . ( $same ? 'ok' : 'warn' ) . '">' . self::h( $same ? 'same as yours' : 'different' ) . '</span></p>';
+            $html .= '<p class="exp-debug-hint">' . self::h( 'The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.' ) . '</p>';
+        }
+        if ( $u['per_user'] )
+            $html .= '<p class="exp-debug-hint">' . self::h( 'ViewCacheTweaks pr_user: every logged-in user has cache files of their own.' ) . '</p>';
+        if ( $u['tweak'] !== '' )
+            $html .= '<p class="exp-debug-hint">' . self::h( 'ViewCacheTweaks in effect: %tweaks', array( '%tweaks' => $u['tweak'] ) ) . '</p>';
+
+        $html .= '<table class="exp-debug-facts exp-debug-user-keys"><tr><th>' . self::h( 'Part' ) . '</th><th>' . self::h( 'Value' ) . '</th></tr>';
+        $row = function ( $name, $value, $mark = '' ) {
+            $shown = (string)$value;
+            return '<tr><th>' . self::a( $name ) . $mark . '</th><td>' . ( $shown === '' ? '<em>' . self::h( 'empty' ) . '</em>' : self::renderingValue( $shown ) ) . '</td></tr>';
+        };
+        $listenerBadge = ' <span class="exp-debug-badge" title="' . self::h( 'Added or changed by a content/view/cachekeys listener' ) . '">' . self::h( 'listener' ) . '</span>';
+        $removed = isset( $u['removed'] ) ? $u['removed'] : array();
+        $changed = isset( $u['changed'] ) ? $u['changed'] : array();
+        if ( !$u['keys'] && !$removed && !$u['per_user'] )
+            $html .= '<tr><td colspan="2"><em>' . self::h( 'No part depends on the user (ViewCacheTweaks).' ) . '</em></td></tr>';
+        foreach ( $u['keys'] as $name => $value )
+            $html .= $row( $name, $value, in_array( $name, $changed, true ) ? $listenerBadge : '' );
+        if ( $u['per_user'] )
+            $html .= $row( 'pr_user', $u['id'] );
+        foreach ( $removed as $name )
+            $html .= '<tr><th>' . self::a( $name ) . $listenerBadge . '</th><td><em>' . self::h( 'left out by a listener' ) . '</em></td></tr>';
+        foreach ( $u['view_keys'] as $name => $value )
+        {
+            $mark = in_array( $name, $u['from_listeners'], true ) ? $listenerBadge : ' <span class="exp-debug-badge">' . self::h( 'this view' ) . '</span>';
+            $html .= $row( $name, $value, $mark );
+        }
+        $html .= '</table>';
+        $html .= '<p><button type="button" class="exp-debug-button exp-debug-copy-profile" data-exp-debug-copy="' . self::a( expDebugBarUser::text( $u ) ) . '" hidden>'
+               . self::h( 'Copy as text' ) . '</button> <span class="exp-debug-copy-status exp-debug-copy-profile-status" role="status" aria-live="polite"></span></p>';
+
+        $html .= '<h3>' . self::h( 'Preferences' ) . '</h3>';
+        $preferenceRows = isset( $u['preferences'] ) ? $u['preferences'] : array();
+        if ( !$preferenceRows )
+            $html .= '<p class="exp-debug-hint">' . self::h( 'No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).' ) . '</p>';
+        else
+        {
+            $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'The preferences the views of these view modes depend on (CachedViewPreferences), with the user\'s value or the default. They are in the profile as userpreferences, those of every view mode together.' ) . '</p>';
+            $html .= '<table class="exp-debug-facts exp-debug-user-preferences"><tr><th>' . self::h( 'View mode' ) . '</th><th>' . self::h( 'Preference' ) . '</th><th>'
+                   . self::h( 'Value' ) . '</th><th>' . self::h( 'Default' ) . '</th></tr>';
+            foreach ( $preferenceRows as $p )
+            {
+                $value = $p['set'] ? self::renderingValue( $p['value'] ) : '<em>' . self::h( 'not set' ) . '</em>';
+                $default = $p['default'] === null ? '<em>' . self::h( 'none' ) . '</em>' : self::renderingValue( $p['default'] );
+                $html .= '<tr><td>' . self::renderingValue( $p['view_mode'] ) . '</td><td>' . self::renderingValue( $p['name'] ) . '</td><td>' . $value . '</td><td>' . $default . '</td></tr>';
+            }
+            $html .= '</table>';
+        }
+
+        $html .= '<h3>' . self::h( 'Roles' ) . '</h3>';
+        if ( !$u['assignments'] )
+            $html .= '<p class="exp-debug-hint">' . self::h( 'No role assignments could be read.' ) . '</p>';
+        else
+        {
+            $html .= '<table class="exp-debug-facts exp-debug-user-roles"><tr><th>' . self::h( 'Role ID' ) . '</th><th>' . self::h( 'Role' ) . '</th><th>'
+                   . self::h( 'Limitation' ) . '</th><th>' . self::h( 'Assigned to' ) . '</th></tr>';
+            foreach ( $u['assignments'] as $a )
+            {
+                $limit = $a['limit_identifier'] === '' ? '<em>' . self::h( 'none' ) . '</em>' : self::renderingValue( $a['limit_identifier'] . ' ' . $a['limit_value'] );
+                $from = $a['direct'] ? self::h( 'the user' )
+                                     : self::h( 'group %name (object %id)', array( '%name' => $a['from_name'], '%id' => $a['from_id'] ) );
+                $html .= '<tr><td>' . (int)$a['role_id'] . '</td><td>' . self::renderingValue( $a['role'] ) . '</td><td>' . $limit . '</td><td>' . $from . '</td></tr>';
+            }
+            $html .= '</table>';
+            $html .= self::userPoliciesHtml( $u['assignments'] );
+        }
+        return $html;
+    }
+
+    /**
+     * The Policies section of the User tab: closed, and filled by the script from expdebugbar::policies only when it
+     * is opened, a page at a time and filtered by module and function, so a user with hundreds of roles costs nothing
+     * until somebody asks.
+     *
+     * @param array $assignments expDebugBarUser::assignments()
+     * @return string HTML
+     */
+    public static function userPoliciesHtml( array $assignments )
+    {
+        $roles = array();
+        foreach ( $assignments as $a )
+            $roles[(int)$a['role_id']] = true;
+        return '<h3>' . self::h( 'Policies' ) . '</h3>'
+             . '<details class="exp-debug-user-policies" data-exp-debug-policies="' . count( $roles ) . '"><summary>'
+             . self::h( 'Show the policies of the roles (%count)', array( '%count' => count( $roles ) ) ) . '</summary>'
+             . '<div class="exp-debug-user-policies-box"><p class="exp-debug-hint">'
+             . self::h( 'The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.' )
+             . '</p></div></details>';
     }
 
     /** The content view cache's state as a sentence, with its reason. */

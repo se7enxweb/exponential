@@ -12,7 +12,9 @@ publishing to GitHub comes with a later part of static publishing; the feature p
 
 [Guides](README.md) · Related: [Static publishing](../features/6.0/static-publishing.md),
 [The build format](../specifications/6.0/static-publishing-build-format.md),
-[Static cache generator](../features/6.0/static-cache-generator.md)
+[Static cache generator](../features/6.0/static-cache-generator.md),
+[Overview for administrators](static-publishing.md), [CI and GitHub Actions](static-publishing-ci-and-github-actions.md),
+[Troubleshooting](static-publishing-troubleshooting.md)
 
 ## What you get
 

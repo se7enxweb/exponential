@@ -68429,6 +68429,226 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Denne forespørselen: levert fra sidecachen på %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Bruker</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Bruker-ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Hurtigbufferprofil</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Denne visningen</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Visningscache</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>per bruker (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Brukerens hurtigbufferprofil: brukere med samme profil deler visningsbufferfilene</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Logg inn</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Pålogget</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Økt</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Delene av innholdsvisningens hurtigbuffernøkkel som avhenger av brukeren, nøyaktig slik nøkkelen tar dem, under ViewCacheTweaks for denne siden. Brukere med samme profil deler visningenes hurtigbufferfiler, med mindre delene av selve visningen er forskjellige (preferanser, nøkler fra lyttere): de har en egen profil, kun for denne siden.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Denne visningen (node %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: hver pålogget bruker har egne hurtigbufferfiler.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Gjeldende ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Verdi</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ingen del avhenger av brukeren (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>denne visningen</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopier som tekst</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Roller</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Ingen rolletildelinger kunne leses.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Rolle-ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rolle</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Begrensning</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Tildelt</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>brukeren</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>gruppe %name (objekt %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopiert</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Kunne ikke kopiere.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>utelatt av en lytter</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonyme besøkende</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>lik din</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>forskjellig</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profilen anonyme besøkende får under samme ViewCacheTweaks, med standardpreferansene, uten visningens deler: en lytter som leser økten, kan ikke spørres om dem.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Preferanser</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Ingen visningsmodus avhenger av brukerpreferanser (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Preferansene som visningene i disse visningsmodusene avhenger av (CachedViewPreferences), med brukerens verdi eller standardverdien. De ligger i profilen som userpreferences, for alle visningsmoduser samlet.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Visningsmodus</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Preferanse</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Tilgangsregler</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Vis rollenes policyer (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Policyene lastes fra serveren når denne delen åpnes, én side om gangen, og kan filtreres etter modul og funksjon.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funksjon</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Alle moduler</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Alle funksjoner</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Begrensninger</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Vis flere</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Disse rollene har ingen policyer.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Ingen policy samsvarer med filteret.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown av %matching policyer (%total totalt)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

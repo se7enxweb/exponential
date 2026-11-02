@@ -3,8 +3,8 @@ title: Die Debug-Leiste für PHP-Entwickler
 audience: php-developer, developer
 category: php-development
 order: 380
-summary: Die Exp Debug-Leiste als PHP-Entwickler nutzen - die Reiter (Meldungen, Einstellungen, Cache, Zeiten, SQL, Templates, Eingebundene Dateien, Speicher, Rendering, Server), die Schwellenwerte der Zusammenfassung, das Ändern von Debug-Einstellungen mit Rückgängig und ein eigenes Panel mit expDebugBarPanelInterface.
-keywords: Debug-Leiste, Reiter, Schwellenwerte, Panel, Rückgängig, debug bar, Exp Debug bar, expDebugBarReport, expDebugBarSummary, debugbar.ini, tabs, SQL tab, Timing tab, Rendering tab, Server tab, thresholds, expDebugBarPanelInterface, Panels, settings undo, debugbar.log, setup/setup
+summary: Die Exp Debug-Leiste als PHP-Entwickler nutzen - die Reiter (Meldungen, Einstellungen, Cache, Zeiten, SQL, Templates, Eingebundene Dateien, Speicher, Rendering, Benutzer, Server), die Schwellenwerte der Zusammenfassung, das Ändern von Debug-Einstellungen mit Rückgängig und ein eigenes Panel mit expDebugBarPanelInterface.
+keywords: Debug-Leiste, Reiter, Cache-Profil, Richtlinien, Schwellenwerte, Panel, Rückgängig, debug bar, Exp Debug bar, expDebugBarReport, expDebugBarSummary, debugbar.ini, tabs, SQL tab, Timing tab, Rendering tab, User tab, Server tab, thresholds, expDebugBarPanelInterface, Panels, settings undo, debugbar.log, setup/setup
 type: help
 ---
 # Die Debug-Leiste für PHP-Entwickler
@@ -53,6 +53,7 @@ Performance-Problem.
 | Eingebundene Dateien | die eingebundenen PHP-Dateien (`DisplayIncludedFiles`) |
 | Speicher | aktueller Speicher, Spitze, Limit und die Schritte, die am meisten verbraucht haben |
 | Rendering | der Controller, der View-Cache für Inhalte und sein Schlüssel, die kompilierten Templates (für `setup/setup`) |
+| Benutzer | das Cache-Profil des Benutzers (ob zwei Benutzer sich die gecachten Ansichten teilen), Präferenzen, Rollenzuweisungen und auf Anfrage die Richtlinien dieser Rollen, nach Modul und Funktion filterbar (für `setup/setup` und einen anonymen Besucher, der die Debug-Ausgabe erhält) |
 | Server | wo die Anfrage eingegangen ist und welcher Prozess sie gerendert hat (Velocity, PHP-FPM, mod_php, die Kommandozeile), OPcache-Status, der Antwort-Cache von Velocity |
 
 Das Filterfeld über den Reitern filtert die Zeilen aller Reiter zugleich.

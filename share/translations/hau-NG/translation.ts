@@ -68626,6 +68626,226 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Wannan buƙata: an kawo daga ma'ajiyar ɗan lokaci ta shafi cikin %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Mai amfani</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID na mai amfani</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Furofayil na cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Wannan duba</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Ma'ajiyar ɗan lokaci ta duba</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>kowane mai amfani (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Furofayil na cache na mai amfani: masu amfani da furofayil iri ɗaya suna raba fayilolin cache na duba</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>eh</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>a'a</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Shiga</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>An shiga</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Zaman aiki</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Sassan maɓallin cache na duban abun ciki da suka dogara ga mai amfani, daidai yadda maɓallin ke ɗaukar su, ƙarƙashin ViewCacheTweaks na wannan shafi. Masu amfani da furofayil iri ɗaya suna raba fayilolin cache na dubai, sai dai idan sassan duba kanta sun bambanta (zaɓuɓɓuka, maɓallan masu saurare): waɗannan suna da furofayil nasu, don wannan shafi kaɗai.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Bayanin martaba</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Wannan duba (kumburi %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: kowane mai amfani da ya shiga yana da fayilolin cache nasa.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks masu aiki: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Ɓangare</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Daraja</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Babu sashin da ya dogara ga mai amfani (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>wannan duba</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kwafa a matsayin rubutu</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Ayyuka</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Ba a iya karanta sanya matsayi ba.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID na matsayi</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Aiki</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Iyakancewa</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>An sanya wa</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>mai amfani</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>rukuni %name (abu %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>An kwafa</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Ba a iya kwafa ba.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>mai saurare ya cire</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Baƙi marasa suna</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>daidai da naka</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>daban</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Furofayil da baƙi marasa suna ke samu ƙarƙashin ViewCacheTweaks iri ɗaya, tare da tsoffin zaɓuɓɓuka, ba tare da sassan duba ba: ba za a iya tambayar mai saurare da ke karanta zama game da su ba.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Zaɓuɓɓuka</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Babu yanayin duba da ya dogara ga zaɓuɓɓukan mai amfani (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Zaɓuɓɓukan da dubai na waɗannan yanayin duba suka dogara a kai (CachedViewPreferences), tare da ƙimar mai amfani ko tsoho. Suna cikin furofayil a matsayin userpreferences, na dukkan yanayin duba tare.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Yanayin kallo</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Zaɓi</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Tsoho</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Manufofi</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Nuna manufofin matsayi (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Ana loda manufofi daga sabar idan aka buɗe wannan sashe, shafi ɗaya a lokaci guda, kuma ana iya tace su ta module da aiki.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Aiki</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Duka tsarin sashe</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Duk ayyuka</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Iyakoki</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Nuna ƙari</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Waɗannan matsayi ba su da manufofi.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Babu manufar da ta dace da tacewa.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown cikin %matching manufofi (%total gaba ɗaya)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

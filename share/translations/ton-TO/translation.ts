@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Kole ni: naʻe tokoni mei he kēsi peesi ʻi he %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Tokotaha fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID ʻo e tokotaha fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Polōfaila ʻo e cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Vīiu ko ʻeni</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Kēsi vakai</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ki he tokotaha ngāue taki taha (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Polōfaila ʻo e cache ʻa e tokotaha ngāue: ko e kau ngāue ʻoku tatau honau polōfaila ʻoku nau vahevahe ʻa e ngaahi faile cache ʻo e vīiu</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ʻio</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ʻikai</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Hingoa fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Kuo hū ki loto</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sēsini</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Ko e ngaahi konga ʻo e kī cache ʻo e vīiu ʻo e fakamatala ʻoku fakatuʻunga ʻi he tokotaha ngāue, ʻo hangē tofu pē ko hono toʻo ʻe he kī, ʻi lalo ʻi he ViewCacheTweaks ʻo e peesi ko ʻeni. Ko e kau ngāue ʻoku tatau honau polōfaila ʻoku nau vahevahe ʻa e ngaahi faile cache ʻo e ngaahi vīiu, tukukehe kapau ʻoku kehe ʻa e ngaahi konga ʻo ha vīiu (ngaahi manako, ngaahi kī ʻo e kau fanongo): ʻoku ʻi ai honau polōfaila pē ʻonautolu, ki he peesi ko ʻeni pē.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Tohi fakamatala</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Vīiu ko ʻeni (poini %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ʻoku ʻi ai ʻa e ngaahi faile cache pē ʻa e tokotaha ngāue kotoa pē kuo hū ki loto.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks ʻoku ngāue: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Konga</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Mahuʻinga</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>ʻOku ʻikai ha konga ʻoku fakatuʻunga ʻi he tokotaha ngāue (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>vīiu ko ʻeni</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopi ko e tohi</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Ngaahi fatongia</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Naʻe ʻikai lava ke lau ha vahe ʻo ha fatongia.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID ʻo e fatongia</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Fatongia</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Fakangatangata</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Vahe ki he</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>tokotaha ngāue</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>kulupu %name (meʻa %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kuo kopi</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Naʻe ʻikai lava ke kopi.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>tuku ki tuʻa ʻe ha fanongo</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Kau ʻaʻahi taʻehingoa</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>tatau mo hoʻo</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>kehe</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Ko e polōfaila ʻoku maʻu ʻe he kau ʻaʻahi taʻehingoa ʻi lalo ʻi he ViewCacheTweaks tatau, mo e ngaahi manako tuʻumaʻu, taʻe kau ai ʻa e ngaahi konga ʻo e vīiu: ʻoku ʻikai lava ke kole ia ki ha fanongo ʻoku ne lau ʻa e seseni.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Ngaahi manako</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>ʻOku ʻikai ha founga vīiu ʻoku fakatuʻunga ʻi he ngaahi manako ʻa e tokotaha ngāue (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Ko e ngaahi manako ʻoku fakatuʻunga ai ʻa e ngaahi vīiu ʻo e ngaahi founga vīiu ko ʻeni (CachedViewPreferences), mo e mahuʻinga ʻa e tokotaha ngāue pe ko e tuʻumaʻu. ʻOku nau ʻi he polōfaila ko e userpreferences, ʻa e ngaahi founga vīiu kotoa fakataha.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Founga vakai</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Manako</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Tuʻumaʻu</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Ngaahi tuʻutuʻuni</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Fakahā ʻa e ngaahi tuʻutuʻuni ʻo e ngaahi fatongia (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>ʻOku hiki mai ʻa e ngaahi tuʻutuʻuni mei he sēvea ʻi hono fakaava ʻo e konga ko ʻeni, peesi ʻe taha ʻi he taimi, pea ʻe lava ke sivi ʻo fakatatau ki he mōtule mo e ngāue.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Fanisoni</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Ngaahi mōtiule kotoa</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Ngāue kotoa</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Ngaahi fakangatangata</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Fakahā ha toe</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>ʻOku ʻikai ha tuʻutuʻuni ʻa e ngaahi fatongia ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>ʻOku ʻikai ha tuʻutuʻuni ʻoku hoa mo e sivi.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown ʻo e %matching tuʻutuʻuni (%total kotoa)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

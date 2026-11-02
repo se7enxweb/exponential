@@ -68567,6 +68567,226 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Din it-talba: moqdija mill-cache tal-paġni fi %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Utent</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID tal-utent</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profil tal-cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Din il-veduta</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Cache tal-veduti</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>għal kull utent (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profil tal-cache tal-utent: utenti bl-istess profil jaqsmu l-fajls tal-cache tal-vedute</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>iva</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>le</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Isem tal-utent</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Illoggjat</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sessjoni</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Il-partijiet taċ-ċavetta tal-cache tal-vedute tal-kontenut li jiddependu mill-utent, eżattament kif iċ-ċavetta teħodhom, taħt il-ViewCacheTweaks ta' din il-paġna. Utenti bl-istess profil jaqsmu l-fajls tal-cache tal-vedute, sakemm il-partijiet tal-veduta nfisha ma jvarjawx (preferenzi, ċwievet tal-listeners): dawk għandhom profil tagħhom, għal din il-paġna biss.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Din il-veduta (nodu %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: kull utent illoggjat għandu l-fajls tal-cache tiegħu.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks fis-seħħ: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Parti</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valur</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>L-ebda parti ma tiddependi mill-utent (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>din il-veduta</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Ikkopja bħala test</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rwoli</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Ma setgħet tinqara l-ebda assenjazzjoni ta' rwol.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID tar-rwol</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rwol</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Limitazzjoni</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Assenjat lil</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>l-utent</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grupp %name (oġġett %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Ikkupjat</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Ma setax jiġi kkupjat.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>imħolli barra minn listener</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Viżitaturi anonimi</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>l-istess bħal tiegħek</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>differenti</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Il-profil li jieħdu l-viżitaturi anonimi taħt l-istess ViewCacheTweaks, bil-preferenzi predefiniti, mingħajr il-partijiet tal-veduta: listener li jaqra s-sessjoni ma jistax jintalab għalihom.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Preferenzi</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>L-ebda mod ta' veduta ma jiddependi mill-preferenzi tal-utent (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Il-preferenzi li jiddependu minnhom il-vedute ta' dawn il-modi ta' veduta (CachedViewPreferences), bil-valur tal-utent jew dak predefinit. Jinsabu fil-profil bħala userpreferences, dawk tal-modi kollha flimkien.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Modalità tal-veduta</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Preferenza</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Predefinit</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Politiki</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Uri l-politiki tar-rwoli (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Il-politiki jitgħabbew mis-server meta tinfetaħ din it-taqsima, paġna kull darba, u jistgħu jiġu ffiltrati skont il-modulu u l-funzjoni.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funzjoni</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Il-moduli kollha</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Il-funzjonijiet kollha</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Limitazzjonijiet</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Uri aktar</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Dawn ir-rwoli m'għandhomx politiki.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>L-ebda politika ma taqbel mal-filtru.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown minn %matching politika (%total b'kollox)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

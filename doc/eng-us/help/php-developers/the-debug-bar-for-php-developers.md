@@ -3,8 +3,8 @@ title: The debug bar for PHP developers
 audience: php-developer, developer
 category: php-development
 order: 380
-summary: Using the Exp Debug bar as a PHP developer - the tabs (Messages, Settings, Cache, Timing, SQL, Templates, Included files, Memory, Rendering, Server), the summary thresholds, changing debug settings with undo, and adding a panel of your own with expDebugBarPanelInterface.
-keywords: debug bar, Exp Debug bar, expDebugBarReport, expDebugBarSummary, debugbar.ini, tabs, SQL tab, Timing tab, Rendering tab, Server tab, thresholds, expDebugBarPanelInterface, Panels, settings undo, debugbar.log, setup/setup
+summary: Using the Exp Debug bar as a PHP developer - the tabs (Messages, Settings, Cache, Timing, SQL, Templates, Included files, Memory, Rendering, User, Server), the summary thresholds, changing debug settings with undo, and adding a panel of your own with expDebugBarPanelInterface.
+keywords: debug bar, Exp Debug bar, expDebugBarReport, expDebugBarSummary, debugbar.ini, tabs, SQL tab, Timing tab, Rendering tab, User tab, cache profile, policies, Server tab, thresholds, expDebugBarPanelInterface, Panels, settings undo, debugbar.log, setup/setup
 type: help
 ---
 # The debug bar for PHP developers
@@ -50,6 +50,7 @@ the first hint of a performance problem.
 | Included files | the PHP files included (`DisplayIncludedFiles`) |
 | Memory | memory now, peak, limit, and the steps that took the most |
 | Rendering | the controller, the content view cache and its key, the compiled templates (for `setup/setup`) |
+| User | the user's cache profile (whether two users share the cached views), preferences, role assignments, and on demand the policies of those roles, filterable by module and function (for `setup/setup`, and an anonymous visitor who gets the debug output) |
 | Server | where the request entered and which process rendered it (Velocity, PHP-FPM, mod_php, the command line), OPcache status, Velocity's response cache |
 
 The filter box above the tabs filters the rows of every tab at once.

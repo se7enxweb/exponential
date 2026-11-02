@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>بۇ تەلەپ: بەت غەملىكىدىن %ms ms ئىچىدە مۇلازىمەت قىلىندى.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>ئىشلەتكۈچى</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ئىشلەتكۈچى ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>غەملەك ئارخىپى</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>بۇ كۆرۈنۈش</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>كۆرۈنۈش غەملىكى</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ھەر بىر ئىشلەتكۈچى (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>ئىشلەتكۈچىنىڭ غەملەك ئارخىپى: ئوخشاش ئارخىپتىكى ئىشلەتكۈچىلەر كۆرۈنۈش غەملەك ھۆججەتلىرىنى ئورتاق ئىشلىتىدۇ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ھەئە</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ياق</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>كىرىش ئىسمى</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>كىرگەن</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>سۆزلىشىش</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>مەزمۇن كۆرۈنۈش غەملەك ئاچقۇچىنىڭ ئىشلەتكۈچىگە باغلىق قىسىملىرى، ئاچقۇچ ئۇلارنى قانداق ئالسا شۇنداق، بۇ بەتنىڭ ViewCacheTweaks تەڭشىكى ئاستىدا. ئوخشاش ئارخىپتىكى ئىشلەتكۈچىلەر كۆرۈنۈشلەرنىڭ غەملەك ھۆججەتلىرىنى ئورتاق ئىشلىتىدۇ، كۆرۈنۈشنىڭ ئۆز قىسىملىرى پەرقلىق بولمىسىلا (مايىللىقلار، ئاڭلىغۇچىلارنىڭ ئاچقۇچلىرى): ئۇلارنىڭ ئۆز ئارخىپى بار، پەقەت بۇ بەت ئۈچۈنلا.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>ئارخىپ</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>بۇ كۆرۈنۈش (تۈگۈن %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: كىرگەن ھەر بىر ئىشلەتكۈچىنىڭ ئۆز غەملەك ھۆججەتلىرى بار.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>كۈچكە ئىگە ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>قىسىم</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>قىممەت</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>ھېچقانداق قىسىم ئىشلەتكۈچىگە باغلىق ئەمەس (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>بۇ كۆرۈنۈش</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>تېكىست سۈپىتىدە كۆچۈرۈش</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>روللار</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>رول تەقسىماتلىرىنى ئوقۇغىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>رول ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>رول</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>چەكلىمە</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>تەقسىم قىلىنغان</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ئىشلەتكۈچى</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>گۇرۇپپا %name (ئوبيېكت %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>كۆچۈرۈلدى</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>كۆچۈرگىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>ئاڭلىغۇچى چىقىرىۋەتكەن</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>نامسىز زىيارەتچىلەر</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>سىزنىڭكى بىلەن ئوخشاش</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>پەرقلىق</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>نامسىز زىيارەتچىلەر ئوخشاش ViewCacheTweaks ئاستىدا، كۆڭۈلدىكى مايىللىقلار بىلەن، كۆرۈنۈش قىسىملىرىسىز ئالىدىغان ئارخىپ: سۆزلىشىشنى ئوقۇيدىغان ئاڭلىغۇچىدىن ئۇلار ھەققىدە سورىغىلى بولمايدۇ.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>مايىللىقلار</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>ھېچقانداق كۆرۈنۈش ھالىتى ئىشلەتكۈچى مايىللىقلىرىغا باغلىق ئەمەس (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>بۇ كۆرۈنۈش ھالەتلىرىدىكى كۆرۈنۈشلەر باغلىق بولغان مايىللىقلار (CachedViewPreferences)، ئىشلەتكۈچىنىڭ قىممىتى ياكى كۆڭۈلدىكى قىممەت بىلەن. ئۇلار ئارخىپتا userpreferences سۈپىتىدە، بارلىق كۆرۈنۈش ھالەتلىرىنىڭكى بىرلىكتە بار.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>كۆرۈنۈش ھالىتى</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>مايىللىق</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>كۆڭۈلدىكى</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>سىياسەتلەر</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>روللارنىڭ سىياسەتلىرىنى كۆرسىتىش (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>بۇ بۆلەك ئېچىلغاندا سىياسەتلەر مۇلازىمېتىردىن بىر قېتىمدا بىر بەت يۈكلىنىدۇ، ھەمدە مودۇل ۋە ئىقتىدار بويىچە سۈزگىلى بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>فۇنكسىيە</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>بارلىق مودۇللار</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>بارلىق ئىقتىدارلار</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>چەكلىمىلەر</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>تېخىمۇ كۆپ كۆرسىتىش</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>بۇ روللارنىڭ سىياسىتى يوق.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>سۈزگۈچكە ماس كېلىدىغان سىياسەت يوق.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%matching سىياسەتتىن %shown (جەمئىي %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

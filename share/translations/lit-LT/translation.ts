@@ -68567,6 +68567,226 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Ši užklausa: pateikta iš puslapių talpyklos per %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Naudotojas</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Naudotojo ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Podėlio profilis</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Šis rodinys</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Rodinio talpykla</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>kiekvienam naudotojui (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Naudotojo podėlio profilis: to paties profilio naudotojai dalijasi rodinių podėlio failais</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>taip</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Prisijungimo vardas</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Prisijungęs</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Seansas</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Turinio rodinio podėlio rakto dalys, priklausančios nuo naudotojo, tiksliai tokios, kokias jas ima raktas, pagal šio puslapio ViewCacheTweaks. To paties profilio naudotojai dalijasi rodinių podėlio failais, nebent skiriasi paties rodinio dalys (nuostatos, klausytojų raktai): jie turi savo profilį, tik šiam puslapiui.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profilis</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Šis rodinys (mazgas %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: kiekvienas prisijungęs naudotojas turi savo podėlio failus.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Galiojantys ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Dalis</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Reikšmė</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Jokia dalis nepriklauso nuo naudotojo (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>šis rodinys</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopijuoti kaip tekstą</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Vaidmenys</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Nepavyko nuskaityti vaidmenų priskyrimų.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Vaidmens ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Vaidmuo</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Apribojimas</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Priskirta</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>naudotojui</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grupė %name (objektas %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Nukopijuota</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Nepavyko nukopijuoti.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>praleido klausytojas</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anoniminiai lankytojai</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>toks pat kaip jūsų</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>skirtingas</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profilis, kurį anoniminiai lankytojai gauna su tais pačiais ViewCacheTweaks, su numatytosiomis nuostatomis, be rodinio dalių: sesiją skaitančio klausytojo jų paklausti negalima.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Nuostatos</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Joks rodinio režimas nepriklauso nuo naudotojo nuostatų (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Nuostatos, nuo kurių priklauso šių rodinio režimų rodiniai (CachedViewPreferences), su naudotojo reikšme arba numatytąja. Profilyje jos yra kaip userpreferences, visų rodinio režimų kartu.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Rodymo režimas</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Nuostata</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Numatytasis</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Politikos</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Rodyti vaidmenų politikas (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Politikos įkeliamos iš serverio atidarius šį skyrių, po vieną puslapį, ir jas galima filtruoti pagal modulį ir funkciją.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funkcija</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Visi moduliai</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Visos funkcijos</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Apribojimai</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Rodyti daugiau</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Šie vaidmenys neturi politikų.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Jokia politika neatitinka filtro.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown iš %matching politikų (iš viso %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -51,7 +51,7 @@ policies before you publish: they apply to your site, not to Exponential.
 
 A site whose content must not be public belongs in a private repository on a paid plan, or on another host: a free
 plan serves only public repositories, and their files are public on GitHub too. See
-[Keep private content private](../../features/6.0/static-publishing.md#privacy).
+[Keep private content private](keep-private-content-private.md).
 
 ## Next step
 

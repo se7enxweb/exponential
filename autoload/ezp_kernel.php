@@ -1272,6 +1272,7 @@ return array(
       'expDebugBarServerFunctions'                                   => 'kernel/classes/debugbar/expdebugbarserverfunctions.php',
       'expDebugBarSettings'                                          => 'kernel/classes/debugbar/expdebugbarsettings.php',
       'expDebugBarSummary'                                           => 'kernel/classes/debugbar/expdebugbarsummary.php',
+      'expDebugBarUser'                                              => 'kernel/classes/debugbar/expdebugbaruser.php',
       'expDemoMode'                                                  => 'kernel/classes/expdemomode.php',
       'expDemoModeOperator'                                          => 'kernel/common/expdemomodeoperator.php',
       'expDependencyOrder'                                           => 'kernel/classes/expdependencyorder.php',

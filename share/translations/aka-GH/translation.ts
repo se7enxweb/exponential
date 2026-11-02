@@ -68628,6 +68628,226 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Asɛmpɛ yi: wɔfi krataafa ntɛmkora mu de maa wɔ %ms ms mu.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Ɔdefoɔ</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Ɔdefoɔ ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Cache profaele</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Saa nhwɛe yi</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Nhwɛeɛ ntɛmkora</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ɔdefoɔ biara (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Ɔdefoɔ no cache profaele: wɔn a wɔwɔ profaele koro no kyɛ nhwɛe cache fael ahodoɔ no</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>aane</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>daabi</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Din a wode bɛhyɛne</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Wakɔ mu</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sɛhyen</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Content nhwɛe cache safe no afã a ɛgyina ɔdefoɔ no so, sɛnea safe no fa wɔn pɛpɛɛpɛ, wɔ saa krataafa yi ViewCacheTweaks ase. Wɔn a wɔwɔ profaele koro no kyɛ nhwɛe no cache fael ahodoɔ, gye sɛ nhwɛe no ankasa afã nsɛ (nea wɔpɛ, listeners safe): ɛno wɔ wɔn ankasa profaele, saa krataafa yi nko ara.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Nsɛm a ɛfa ho</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Saa nhwɛe yi (node %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ɔdefoɔ biara a wakɔ mu wɔ n'ankasa cache fael ahodoɔ.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks a ɛreyɛ adwuma: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Fa</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Bo</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Afã biara nnyina ɔdefoɔ no so (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>saa nhwɛe yi</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kɔpi sɛ nkyerɛwee</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Dwumadie</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Wɔantumi ankenkan dwumadie a wɔde ama biara.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Dwumadie ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Dwumadie</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Anohyetoɔ</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Wɔde ama</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ɔdefoɔ no</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>kuo %name (adeɛ %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Wɔayɛ bi</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Wɔantumi ankɔpi.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>listener bi agyaw no</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Ahwɛfoɔ a wonnim wɔn</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>ɛne wo deɛ yɛ pɛ</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>ɛnsɛ</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profaele a ahɔhoɔ a wɔnnim wɔn nya wɔ ViewCacheTweaks koro no ase, a mfitiaseɛ nea wɔpɛ ka ho, a nhwɛe no afã nka ho: wɔntumi mmisa listener a ɔkenkan session no.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Nea wɔpɛ</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Nhwɛe kwan biara nnyina ɔdefoɔ nea ɔpɛ so (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Nea wɔpɛ a saa nhwɛe akwan yi nhwɛe gyina so (CachedViewPreferences), a ɔdefoɔ no bo anaa mfitiaseɛ deɛ. Ɛwɔ profaele no mu sɛ userpreferences, nhwɛe akwan nyinaa deɛ bom.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Nhwɛeɛ kwan</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Ade a wɔpɛ</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Deɛ ɛwɔ hɔ dada</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Nhyehyɛeɛ mmara</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Kyerɛ dwumadie no mmara (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Wɔfiri server no so de mmara no ba bere a wobue saa ɔfa yi, krataafa baako baako, na wobɛtumi de module ne function apaw mu.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Dwumadie</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Modul nyinaa</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Function nyinaa</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Anohyetoɔ</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Kyerɛ pii</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Saa dwumadie yi nni mmara biara.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Mmara biara mfa filter no.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown firi %matching mmara mu (%total nyinaa)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

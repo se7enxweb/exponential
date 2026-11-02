@@ -68628,6 +68628,226 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Kēia noi: ua hāʻawi ʻia mai ke ahu ʻaoʻao mai i loko o %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Mea hoʻohana</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID mea hoʻohana</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Kōʻike waihona hūnā</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Kēia nānaina</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Ahu nānā</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>no kēlā me kēia mea hoʻohana (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Ke kōʻike waihona hūnā o ka mea hoʻohana: kaʻana like nā mea hoʻohana me ke kōʻike like i nā faila waihona hūnā o nā nānaina</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ʻae</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ʻaʻole</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Inoa ʻeʻe</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Ua komo</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Hālāwai</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Nā ʻāpana o ke kī waihona hūnā o nā nānaina maʻiʻo e pili ana i ka mea hoʻohana, e like pono me ka lawe ʻana a ke kī iā lākou, ma lalo o nā ViewCacheTweaks o kēia ʻaoʻao. Kaʻana like nā mea hoʻohana me ke kōʻike like i nā faila waihona hūnā o nā nānaina, ke ʻokoʻa ʻole nā ʻāpana o ka nānaina ponoʻī (nā makemake, nā kī o nā mea hoʻolohe): he kōʻike ponoʻī ko lākou, no kēia ʻaoʻao wale nō.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Wehewehe pilikino</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Kēia nānaina (piko %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: he mau faila waihona hūnā ponoʻī ko kēlā me kēia mea hoʻohana i komo.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Nā ViewCacheTweaks e hoʻohana ʻia nei: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ʻĀpana</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Waiwai</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>ʻAʻohe ʻāpana e pili ana i ka mea hoʻohana (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>kēia nānaina</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kope ma ke ʻano he kikokikona</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Nā kuleana</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>ʻAʻole hiki ke heluhelu i nā hoʻonohona kuleana.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Helu ID o ke kuleana</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Kuleana</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Palena</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Hāʻawi ʻia iā</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ka mea hoʻohana</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>pūʻulu %name (mea %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Ua kope ʻia</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>ʻAʻole hiki ke kope.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>haʻalele ʻia e kekahi mea hoʻolohe</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Nā mea kipa inoa ʻole</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>like me kou</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>ʻokoʻa</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Ke kōʻike i loaʻa i nā malihini inoa ʻole ma lalo o nā ViewCacheTweaks like, me nā makemake paʻamau, me ka ʻole o nā ʻāpana o ka nānaina: ʻaʻole hiki ke nīnau i kekahi mea hoʻolohe e heluhelu ana i ka hālāwai no lākou.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Nā makemake</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>ʻAʻohe ʻano nānaina e pili ana i nā makemake o ka mea hoʻohana (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Nā makemake e pili ai nā nānaina o kēia mau ʻano nānaina (CachedViewPreferences), me ka waiwai o ka mea hoʻohana a i ʻole ka paʻamau. Aia lākou i ke kōʻike ma ke ʻano he userpreferences, nā mea o nā ʻano nānaina a pau i hui pū ʻia.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Ke ʻano nānā</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Makemake</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Paʻamau</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Nā kulekele</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Hōʻike i nā kulekele o nā kuleana (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Hoʻouka ʻia nā kulekele mai ka server mai ke wehe ʻia kēia māhele, hoʻokahi ʻaoʻao i ka manawa, a hiki ke kānana ʻia ma ka mōkule a me ka hana.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Hana</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Nā mōkule a pau</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Nā hana a pau</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Nā palena</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Hōʻike hou aku</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>ʻAʻohe kulekele o kēia mau kuleana.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>ʻAʻohe kulekele i kūlike me ke kānana.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown o %matching kulekele (%total a pau)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

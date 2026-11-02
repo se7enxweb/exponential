@@ -68628,6 +68628,226 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Tuttra-a: tettwasuffeɣ-d seg tazarkatut n yisebtar deg %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Aseqdac</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID n useqdac</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Amaɣnu n tkatut tuffirt</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Askan-a</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Tazarkatut n timeẓri</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>i yal aseqdac (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Amaɣnu n tkatut tuffirt n useqdac: iseqdacen s yiwen n umaɣnu ttbeṭṭun ifuyla n tkatut tuffirt n yiskanen</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ih</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ala</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Isem n useqdac</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Yeqqen</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Tiɣimit</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Iḥricen n tsarut n tkatut tuffirt n yiskanen n ugbur i icudden ɣer useqdac, akken i ten-tettaṭṭaf tsarut, ddaw ViewCacheTweaks n usebter-a. Iseqdacen s yiwen n umaɣnu ttbeṭṭun ifuyla n tkatut tuffirt n yiskanen, ala ma mgaraden yiḥricen n uskan s yiman-is (ismenyifen, tisura n yimesfladen): wigi sɛan amaɣnu-nsen, i usebter-a kan.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Amaɣnu</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Askan-a (tikli %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: yal aseqdac yeqqnen ɣur-s ifuyla-s n tkatut tuffirt.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks yettwasnasen: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Aḥric</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Azal</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ulac aḥric icudden ɣer useqdac (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>askan-a</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Nɣel d aḍris</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Timlilin</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Ulac asegzi n yidwiren i yettwaɣran.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Asulay n udwir</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Tamlilt</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Talast</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Yettunefk i</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>aseqdac</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>agraw %name (taɣawsa %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Yettwanɣel</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Ur yezmir ara ad yettwanɣel.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>yeǧǧa-t umesflid</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Imdanen udrigen</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>am winna-k</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>yemgarad</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Amaɣnu i d-ttawin yinebgawen udrigen ddaw yiwen ViewCacheTweaks, s yismenyifen imezwar, war iḥricen n uskan: amesflid i yeqqaren tiɣimit ur yezmir ara ad ten-id-yefk.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Ismenyifen</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Ulac askar n uskan icudden ɣer yismenyifen n useqdac (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Ismenyifen ɣef ttekkalen yiskanen n yiskaren-a n uskan (CachedViewPreferences), s wazal n useqdac neɣ amezwer. Llan deg umaɣnu am userpreferences, wid n yal askar n uskan akk.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Askar n tmeẓri</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Asmenyif</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Amezwer</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Tisertiyin</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Sken tisertiyin n yidwiren (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Tisertiyin ttwasalayent-d seg uqeddac mi ara yeldi uḥric-a, yiwen usebter yal tikkelt, yezmer ad ttwasizdgent s umuddu d twuri.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Tawuri</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Imudilen akk</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Akk tiwuriwin</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Tilisin</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Sken ugar</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Idwiren-a ulac ɣur-sen tisertiyin.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Ulac tasertit yemsasan d imsizdeg.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown seg %matching tisertiyin (%total s umata)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

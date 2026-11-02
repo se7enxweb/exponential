@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>សំណើនេះ: បានបម្រើពីឃ្លាំងសម្ងាត់ទំព័រក្នុងរយៈពេល %ms ms។</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>អ្នកប្រើ</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID អ្នកប្រើ</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>ប្រវត្តិរូបឃ្លាំងសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>ទិដ្ឋភាពនេះ</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>ឃ្លាំងសម្ងាត់ទិដ្ឋភាព</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>តាមអ្នកប្រើនីមួយៗ (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>ប្រវត្តិរូបឃ្លាំងសម្ងាត់របស់អ្នកប្រើ៖ អ្នកប្រើដែលមានប្រវត្តិរូបដូចគ្នាចែករំលែកឯកសារឃ្លាំងសម្ងាត់ទិដ្ឋភាព</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>បាទ/ចាស</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ទេ</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ឈ្មោះចូល</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>បានចូល</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>វគ្គ</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>ផ្នែកនៃកូនសោឃ្លាំងសម្ងាត់ទិដ្ឋភាពមាតិកាដែលអាស្រ័យលើអ្នកប្រើ ដូចដែលកូនសោយកវាពិតប្រាកដ ក្រោម ViewCacheTweaks នៃទំព័រនេះ។ អ្នកប្រើដែលមានប្រវត្តិរូបដូចគ្នាចែករំលែកឯកសារឃ្លាំងសម្ងាត់នៃទិដ្ឋភាព លុះត្រាតែផ្នែកនៃទិដ្ឋភាពខ្លួនឯងខុសគ្នា (ចំណូលចិត្ត កូនសោរបស់អ្នកស្ដាប់)៖ ផ្នែកទាំងនោះមានប្រវត្តិរូបផ្ទាល់ខ្លួន សម្រាប់តែទំព័រនេះ។</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>ប្រវត្តិរូប</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>ទិដ្ឋភាពនេះ (ថ្នាំង %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: អ្នកប្រើដែលបានចូលម្នាក់ៗមានឯកសារឃ្លាំងសម្ងាត់ផ្ទាល់ខ្លួន។</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks ដែលកំពុងអនុវត្ត: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ផ្នែក</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>តម្លៃ</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>គ្មានផ្នែកណាអាស្រ័យលើអ្នកប្រើទេ (ViewCacheTweaks)។</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ទិដ្ឋភាពនេះ</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>ចម្លងជាអត្ថបទ</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>តួនាទី</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>មិនអាចអានការចាត់តួនាទីបានទេ។</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>លេខសម្គាល់តួនាទី</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>តួនាទី</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>ការកំណត់ព្រំដែន</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>បានចាត់ឱ្យ</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>អ្នកប្រើ</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>ក្រុម %name (វត្ថុ %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>បានចម្លង</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>មិនអាចចម្លងបានទេ។</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>ត្រូវបានលុបចោលដោយអ្នកស្ដាប់</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>អ្នកទស្សនាអនាមិក</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>ដូចរបស់អ្នក</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>ខុសគ្នា</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>ប្រវត្តិរូបដែលអ្នកទស្សនាអនាមិកទទួលបានក្រោម ViewCacheTweaks ដូចគ្នា ជាមួយចំណូលចិត្តលំនាំដើម ដោយគ្មានផ្នែកនៃទិដ្ឋភាព៖ មិនអាចសួរអ្នកស្ដាប់ដែលអានសម័យសម្រាប់ពួកវាបានទេ។</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>ចំណូលចិត្តទាំងឡាយ</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>គ្មានរបៀបទិដ្ឋភាពណាអាស្រ័យលើចំណូលចិត្តអ្នកប្រើទេ (site.ini [ContentSettings] CachedViewPreferences)។</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>ចំណូលចិត្តដែលទិដ្ឋភាពនៃរបៀបទិដ្ឋភាពទាំងនេះអាស្រ័យលើ (CachedViewPreferences) ជាមួយតម្លៃរបស់អ្នកប្រើ ឬលំនាំដើម។ ពួកវាស្ថិតក្នុងប្រវត្តិរូបជា userpreferences របស់របៀបទិដ្ឋភាពទាំងអស់រួមគ្នា។</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>របៀបមើល</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>ចំណូលចិត្ត</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>លំនាំដើម</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>គោលការណ៍</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>បង្ហាញគោលការណ៍នៃតួនាទី (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>គោលការណ៍ត្រូវបានផ្ទុកពីម៉ាស៊ីនមេនៅពេលបើកផ្នែកនេះ ម្ដងមួយទំព័រ ហើយអាចត្រងតាមម៉ូឌុល និងមុខងារ។</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>មុខងារ</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>គ្រប់ម៉ូឌុល</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>មុខងារទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>ការកំណត់ព្រំដែន</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>បង្ហាញបន្ថែម</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>តួនាទីទាំងនេះគ្មានគោលការណ៍ទេ។</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>គ្មានគោលការណ៍ណាត្រូវនឹងតម្រងទេ។</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown ក្នុងចំណោម %matching គោលការណ៍ (សរុប %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

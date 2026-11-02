@@ -251,6 +251,7 @@ eigene Rückfall der Leiste bauen die Zahlen beide mit `expDebugBarReport::query
 | `log[::<limit>]` | GET | setup/setup |
 | `summary` | GET | Debug-Ausgabe für die Anfrage (der Bericht selbst; ein Besucher erhält darin keinen Eintrag der IP-Liste) |
 | `panelheight` | POST `height` (Pixel, `0` für den Standard) | ein angemeldeter Benutzer (nie ein anonymer Besucher) mit Debug-Ausgabe für die Anfrage: speichert die Benutzereinstellung `expdebugbar_panel_height` (siehe [Die Höhe des Panels](#die-höhe-des-panels)) |
+| `policies[::<module>[::<function>[::<offset>]]]` | GET; der Filter im Pfad, `-` für alle (`expdebugbar::policies::content::read::0`) | setup/setup, oder ein anonymer Besucher mit Debug-Ausgabe für die Anfrage: eine Seite der Richtlinien der Rollen des Benutzers (siehe [Benutzer: Richtlinien](#richtlinien)) |
 
 Jeder POST muss das Formular-Token mitbringen (`ezxform_token` oder den Header `X-CSRF-Token`); die Antwort von
 `settings` enthält es. Wer nur den Debug-Bericht sieht, erhält die Einstellungen ohne die IP- und Benutzerlisten, das
@@ -305,6 +306,8 @@ php vendor/bin/phpunit tests/tests/kernel/classes/debugbar/
 | `expDebugBarIPListTest` | Adressen und CIDR beider Familien, IPv4-gemappte Clients, Einträge mit Beschriftungen und Abläufen, das Schreiben von Einträgen, der Abgleich, die Warnungen, die Vorschläge. Braucht keinen Kernel |
 | `expDebugBarSettingsTest` | die Registry und das Auffinden, die wirksamen Werte gegenüber `expIniLocator::where()`, Schreibvorgänge jedes Typs und jeder op mit Protokoll und Rückgängigmachen, Probeläufe, Ablehnungen, ein Siteaccess als Geltungsbereich, Voreinstellungen als Gruppe, die Prüfungen auf Aussperren und Öffnen, die IP-Prüfung von eZDebug und ihr Rückfall, die Übersicht, die Server-Funktionen (Registrierung, Antworten, POST, Token und Richtlinie, was ein Besucher ohne Richtlinie sieht) |
 | `RadSurveyDebugBarTest` | die zwei Registries, die Gesamtzahl, die Zahlen der Leiste, die neuen Problemarten |
+| `expDebugBarUserTest` | die Registerkarte Benutzer: die Teile des Schlüssels im Ansichts-Cache, die vom Benutzer abhängen, und jeder ignore-Tweak, der Schlüssel der Präferenzen gegenüber dem Code, den er ersetzt hat, die Präferenzen jedes Ansichtsmodus (ein Name mit zwei Standardwerten), der Fingerabdruck, das Profil aus dem Schlüssel einer Ansicht (Teile, die ein Listener weggelassen oder geändert hat, pr_user), anonyme Besucher, der Chip, die maskierte Registerkarte, der Text zum Kopieren. Ohne Datenbank |
+| `expDebugBarUserPoliciesTest` | die Richtlinien der Registerkarte Benutzer: wer sie sehen darf, eine Seite sortiert nach Rolle, Modul und Funktion, der Filter mit Richtlinien jedes Moduls oder jeder Funktion (*), 600 Richtlinien von 300 Rollen in Seiten, der geschlossene Abschnitt in der Registerkarte, die Argumente im Pfad, die Anfrage des Skripts und seine Wörter. Ohne Datenbank |
 
 `expDebugBarSettingsTest` startet den Kernel einmal im Siteaccess admin mit der eigenen Datenbank der Installation, wie
 es die Tests der Spalten der Unterelemente tun; es wird keine Testdatenbank angelegt. Seine Schreibvorgänge gehen in
@@ -497,6 +500,7 @@ die eigenen Standardwerte des Berichts.
 | Eingebundene Dateien | die eingebundenen PHP-Dateien (`DisplayIncludedFiles`), oder ihre Zahl und wie man sie auflistet |
 | Speicher | die klassische Tabelle „Main resources“, Speicher jetzt, Höchstwert, Limit und Anteil und die fünf Schritte, die am meisten brauchten |
 | Rendering | wie die Seite gerendert wurde: der Controller, der Ansichts-Cache von Inhalten und sein Schlüssel, die kompilierten Templates (siehe [unten](#rendering-controller-ansichts-cache-von-inhalten-und-kompilierte-templates)); nur für `setup/setup` |
+| Benutzer | der Benutzer, sein Cache-Profil (die Teile des Schlüssels im Ansichts-Cache von Inhalten, die von ihm abhängen), seine Präferenzen, Rollenzuweisungen und auf Anfrage die Richtlinien dieser Rollen (siehe [unten](#benutzer-rollen-und-cache-profil)); für `setup/setup` und für einen anonymen Besucher, der die Debug-Ausgabe erhält |
 | (Erweiterungen) | eine Registerkarte pro Panel, das eine Erweiterung registriert, nach Speicher (siehe [Panels von Erweiterungen](#panels-von-erweiterungen)) |
 | Server | wo die Anfrage einging und welcher Prozess den Bericht gerendert hat (Exponential Velocity, PHP-FPM, mod_php, die Kommandozeile ...), in einem Satz (siehe [unten](#server-wo-die-anfrage-einging-und-was-sie-gerendert-hat)), die Fakten dahinter, der Status von OPcache und der Antwort-Cache von Velocity; bis zum 16. Oktober 2026 hieß sie Velocity, ihre Abschnitts-ID ist weiterhin `exp-debug-panel-velocity` |
 | Sonstiges | Berichte, die Erweiterungen mit `eZDebug::appendBottomReport()` anhängen und die zu keiner Registerkarte gehören (nur wenn es welche gibt) |
@@ -608,6 +612,67 @@ an `eZTemplateCacheBlock::handle()` (neue optionale Parameter `$placement` und `
 bisher aufruft, funktioniert weiter.
 
 Tests: `expRenderStatsTest`, `expRenderStatsCacheBlockTest` und `expRenderStatsTreeTest` (ohne Datenbank).
+
+### Benutzer: Rollen und Cache-Profil
+
+Ob zwei Benutzer dieselben Dateien im Ansichts-Cache von Inhalten erhalten, und wenn nicht, warum. Der Chip
+**`VC 3f9ac21e`** in der Statusleiste ist das **Cache-Profil** des Benutzers: ein Fingerabdruck (8 Hexadezimalziffern)
+der Teile des Schlüssels im Ansichts-Cache, die vom Benutzer abhängen. Zwei Benutzer mit demselben Profil teilen sich
+die Cache-Dateien der Ansichten unter denselben ViewCacheTweaks; vergleichen Sie die Chips zweier Browser, oder kopieren
+Sie beide Profile als Text. Ein zweiter Fingerabdruck dahinter (`VC 3f9ac21e · 7b0d12aa`) deckt die Schlüssel ab, die
+ein Listener von `content/view/cachekeys` für die Ansicht dieser Seite hinzugefügt hat; ` · pr_user` sagt, dass jeder
+angemeldete Benutzer eigene Dateien hat.
+
+Die Teile, wie `eZNodeviewfunctions::generateViewCacheFile()` sie in den Schlüssel aufnimmt, aus denselben Funktionen:
+
+| Teil | Aus |
+|---|---|
+| `userroles` | die Rollen-IDs des Benutzers und seiner Gruppen (`eZNodeviewfunctions::userCacheKeys()`) |
+| `userlimitedlist` | die Werte eingeschränkter Zuweisungen (Teilbäume, Sektionen) |
+| `discountlist` | die Rabattregeln des Benutzers |
+| `uiswitch` | eine Oberfläche, die der angemeldete Benutzer gewählt hat (expUISwitch) |
+| `userpreferences` | die Präferenzen aus `site.ini [ContentSettings] CachedViewPreferences[]`, jedes Ansichtsmodus: pro Ansichtsmodus der Teil, den sein Schlüssel aufnimmt (`eZNodeviewfunctions::userPreferencesKey()`), sodass dasselbe Profil in jedem Ansichtsmodus denselben Teil bedeutet |
+| `pr_user` | die Benutzer-ID, mit dem Tweak `pr_user` (sie steht im Dateinamen) |
+
+Ein Eintrag in `ViewCacheTweaks` (`ignore_userroles`, `ignore_userlimitedlist`, `ignore_discountlist`,
+`ignore_userpreferences`) lässt seinen Teil weg: die Tweaks des Knotens dieser Seite, auf einer Seite ohne Ansicht eines
+Inhalts die globalen. Mit einer Ansicht eines Inhalts auf der Seite entscheidet deren Schlüssel: Ein Teil, den ein
+Listener weggelassen hat, wird als solcher gezeigt und nicht mitgezählt, ein Teil, den er geändert hat, zählt mit dem
+Wert des Schlüssels, markiert mit *Listener*.
+
+Die Registerkarte zeigt den Benutzer (ID, Login, angemeldet, Siteaccess, Sitzung), das Profil mit jedem Teil, eine
+Schaltfläche, die es als Text kopiert (`name=value` pro Zeile), die Präferenzen pro Ansichtsmodus mit dem Wert des
+Benutzers und dem Standardwert, und die Rollenzuweisungen: Rollen-ID und Name, die Einschränkung der Zuweisung und ob sie
+dem Benutzer oder einer Gruppe zugewiesen ist (mit Name und Objekt-ID). Ein angemeldeter Benutzer sieht außerdem das
+Profil **anonymer Besucher**, *gleich wie Ihres* oder *anders*: die Teile des anonymen Benutzers unter denselben Tweaks,
+mit den Standardpräferenzen (die eines anonymen Besuchers liegen in seiner Sitzung), ohne die Schlüssel von Listenern,
+die die Sitzung lesen können und dafür nicht gefragt werden können.
+
+Für `setup/setup`, wie die Registerkarte Rendering, da die Teile Rollen- und Einschränkungs-IDs tragen; und für einen
+anonymen Besucher, der die Debug-Ausgabe erhält (`DebugByIP` ...), dessen IDs die jedes anonymen Besuchers sind: Er
+sieht die Rollen, Gruppen und Einschränkungswerte des anonymen Benutzers und auf einer Seite mit einer Ansicht eines
+Inhalts die Werte der Schlüssel von Listenern. Die Registerkarte Rendering bleibt nur für `setup/setup`. Die Daten kommen
+aus `expDebugBarUser` (`kernel/classes/debugbar/expdebugbaruser.php`); es liest die Rollenzuweisungen mit einer Abfrage
+und die Präferenzen mit `eZPreferences::values()`, nur wenn die Leiste für einen solchen Benutzer gerendert wird.
+
+#### Richtlinien
+
+Unter den Rollenzuweisungen führt der geschlossene Abschnitt **Richtlinien** die Richtlinien dieser Rollen auf: Rolle,
+Modul, Funktion und die Einschränkungen der Richtlinie mit ihren Werten (`Subtree: /1/2/42/; Class: 1, 16`). Er kostet
+nichts, bis er geöffnet wird: Erst dann fragt das Skript `expdebugbar::policies` (siehe
+[Server-Funktionen](#server-funktionen)), jeweils eine Seite mit 100 Richtlinien, sortiert nach Rolle, Modul und
+Funktion; **Mehr anzeigen** holt die nächste Seite. Zwei Auswahllisten filtern nach Modul und nach Funktion; eine
+Richtlinie für jedes Modul oder jede Funktion (`*`) bleibt in jedem Filter, da sie auch das gewährt. Filter und Seite
+stehen im Pfad (`expdebugbar::policies::content::read::100`, `-` für alle), nicht in der Query. Das Filterfeld der
+Leiste findet Zeilen in der geladenen Liste wie in jeder anderen Tabelle.
+
+Der Server liest die Richtlinien der Rollen aus den Zuweisungen über die persistenten Objekte von `ezpolicy`,
+`ezpolicy_limitation` und `ezpolicy_limitation_value`, drei Abfragen pro 500 IDs, sodass ein Benutzer mit Hunderten von
+Rollen auf jeder Datenbank funktioniert. Fragen dürfen dieselben, die die Registerkarte Benutzer sehen
+(`expDebugBarUser::mayView()`): ein Benutzer mit `setup/setup` oder ein anonymer Besucher, der die Debug-Ausgabe für die
+Anfrage erhält; jeder andere erhält einen Fehler, auch ein angemeldeter Benutzer ohne `setup/setup` mit `DebugByUser`.
+
+Tests: `expDebugBarUserTest` und `expDebugBarUserPoliciesTest` (ohne Datenbank).
 
 ### Panels von Erweiterungen
 

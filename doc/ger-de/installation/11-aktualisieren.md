@@ -464,6 +464,8 @@ Die Änderungen, auf die man beim Erreichen von 6.0.15 am häufigsten stößt:
 - **Legacy-Extensions** wurden zwischen dem 22. September und dem 2. Oktober 2026 auf einen gemeinsamen Standard
   gebracht: [Verhaltensänderungen der Legacy-Extensions](../bc/6.0/verhaltensaenderungen-von-erweiterungen.md).
 - **Die Standardwerte des Static Cache** haben sich geändert: [Standardwerte des Static Cache](../bc/6.0/standardwerte-des-statischen-caches.md).
+- **Statisches Veröffentlichen** ist neu (November 2026): ausgeschaltet, bis Sie es einschalten; der Upgrade-Schritt
+  `6.0.15-static-publish-tables` legt die Tabellen `exp_static_run` und `exp_static_page` an. [Statisches Veröffentlichen](../bc/6.0/statisches-veroeffentlichen.md).
 - **Velocity**, falls Sie ihn betreiben: [Upgrade-Hinweise zur Velocity-Engine](../bc/6.0/velocity-engine-upgrade-hinweise.md)
   und [Verzeichnisstruktur auf der Festplatte](../bc/6.0/velocity-verzeichnisstruktur.md).
 

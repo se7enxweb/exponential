@@ -28,7 +28,7 @@ at the bottom.
   have taken about 286 ms without the cache); the SQL count beside it counts only what reached the database. Each value opens its tab. The title "Exp Debug" and the logo sit at the right end, the
   page summary on the left.
 - **The panel** above the bar (60% of the window by default, scrolling on its own) has the tabs Messages, Settings,
-  Cache, Timing, SQL, Templates, Included files, Memory and Velocity. Every section of the classic report is still
+  Cache, Timing, SQL, Templates, Included files, Memory, Rendering, User and Server. Every section of the classic report is still
   there with its old id.
 - **Resize the panel**: drag the strip on the panel's top edge (mouse, pen or touch), or focus it and use the arrow
   keys (16 px, with Shift 64 px; Home and End for the lowest and highest). A double-click gives the default height
@@ -57,6 +57,12 @@ the debug conditions of `debug.ini` are discovered automatically.
 
 The **Cache** tab lists the caches and clears them through the cache manager, showing when each was last cleared
 (or "never").
+
+The **User** tab (chip `VC <profile>`) shows the user's cache profile, the fingerprint of the parts of the content view
+cache key that depend on the user, so two users can tell whether they share the cached views; their preferences and
+role assignments; and, in a section loaded only when it is opened, the policies of those roles, a page at a time and
+filtered by module and function. For `setup/setup`, and for an anonymous visitor who gets the debug output
+([details](../../bc/6.0/debug-bar.md#user-roles-and-cache-profile)).
 
 ## Who may use it
 

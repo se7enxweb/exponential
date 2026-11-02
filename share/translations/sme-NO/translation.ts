@@ -68628,6 +68628,226 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Dát bivdda: fállan siidugaskavuorkkás, %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Geavaheaddji</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Geavaheaddji-ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Cache-profiila</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Dát čájeheapmi</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Oaidnogaskavuorká</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>juohke geavaheaddjái (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Geavaheaddji cache-profiila: geavaheaddjit geain lea seamma profiila juogadit čájehusa cache-fiillaid</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>juo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ii</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Geavaheaddjinamma</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Sisačálihan</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sešuvdna</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Sisdoalločájehusa cache-čoavdaga oasit mat gullet geavaheaddjái, dego čoavdda daid váldá, dán siiddu ViewCacheTweaks mielde. Geavaheaddjit geain lea seamma profiila juogadit čájehusaid cache-fiillaid, jus čájehusa iežas oasit (válljemat, listeneriid čoavddat) eai leat earáláganat: dain lea iežaset profiila, dušše dán siidui.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profiila</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Dát čájeheapmi (čuolbma %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: juohke sisačálihan geavaheaddjis leat iežas cache-fiillat.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Doaibmi ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Oassi</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Árvu</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ii oktage oassi gula geavaheaddjái (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>dát čájeheapmi</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Máŋge teakstan</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rollat</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Rolla-mearrideamit eai sáhttán lohkkojuvvot.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Rolla ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rolla</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Ráddjen</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Mearriduvvon</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>geavaheaddjái</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>joavku %name (objeakta %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Máŋgejuvvon</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Ii sáhttán máŋget.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>listener guođii olggobeallái</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonyma oaidnit</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>seamma go du</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>earálágan</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profiila maid namahis guossit ožžot seamma ViewCacheTweaks vuolde, standárdaválljemiiguin, čájehusa osiid haga: listeneris mii lohká sešuvnna ii sáhte daid jearrat.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Válljemat</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Ii oktage čájehusvuohki gula geavaheaddji válljemiidda (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Válljemat maidda dáid čájehusvugiid čájehusat gullet (CachedViewPreferences), geavaheaddji árvvuin dahje standárdaárvvuin. Dat leat profiilas userpreferences namas, buot čájehusvugiid oktan.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Čájehanvuohki</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Válljen</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standárda</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Njuolggadusat</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Čájet rollaid njuolggadusaid (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Njuolggadusat vižžojuvvojit serveris go dát oassi rahpasa, siidu hávális, ja daid sáhttá silla modula ja funkšuvnna mielde.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Doaibma</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Buot moduvllat</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Buot funkšuvnnat</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Ráddjemat</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Čájet eanet</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Dáin rollain eai leat njuolggadusat.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Ii oktage njuolggadus heive sillii.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching njuolggadusa (oktiibuot %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
