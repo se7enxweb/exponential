@@ -131,7 +131,8 @@ YAML
                                                         array( 'contentclass_id' => (int)eZContentClass::classIDByIdentifier( 'folder' ), 'status' => eZContentObject::STATUS_PUBLISHED ),
                                                         null, null, false );
         $this->assertNotEmpty( $folders );
-        $this->assertContains( 'queued ' . count( $folders ) . ' for the search index: every published object of the classes folder', $report['migrations'][0]['messages'] );
+        $this->assertContains( 'queued ' . count( $folders ) . ' for the search index: every published object of the classes folder', $report['migrations'][0]['messages'],
+                               json_encode( $report['migrations'][0]['messages'] ) );
         foreach ( $folders as $row )
             $this->assertSame( 1, self::wp10dQueued( $db, $row['id'] ) );
 

@@ -398,6 +398,69 @@ class eZPersistentObject
      * @return void
      */
     /**
+     * A value of a condition for the MongoDB branch of fetchObjectList(), cast as the field's datatype says.
+     *
+     * @param mixed $value
+     * @param string|null $dtype
+     * @return mixed
+     */
+    protected static function mongoValue( $value, $dtype )
+    {
+        if ( $value !== null && !is_array( $value ) && ( $dtype === 'integer' || $dtype === 'int' ) )
+            return (int)$value;
+        if ( $value !== null && !is_array( $value ) && ( $dtype === 'float' || $dtype === 'double' ) )
+            return (float)$value;
+        return $value;
+    }
+
+    /**
+     * An array condition of fetchObjectList() as a MongoDB filter of one field, as conditionText() writes it for SQL:
+     * array( array( 1, 3 ) ) is IN ( 1, 3 ), array( false, array( 1, 9 ) ) is BETWEEN 1 AND 9, array( '>', 5 ) the
+     * operator (>=, <=, <, >, =, <>, !=, like). Anything else (a filter written for MongoDB) is kept as it is.
+     *
+     * @param array $value
+     * @param string|null $dtype
+     * @return mixed
+     */
+    protected static function mongoCondition( array $value, $dtype )
+    {
+        if ( !array_key_exists( 0, $value ) )
+            return $value;
+        if ( is_array( $value[0] ) )
+        {
+            $list = array();
+            foreach ( $value[0] as $item )
+                $list[] = self::mongoValue( $item, $dtype );
+            return array( '$in' => $list );
+        }
+        if ( array_key_exists( 1, $value ) && is_array( $value[1] ) && count( $value[1] ) >= 2 )
+        {
+            $range = array_values( $value[1] );
+            return array( '$gte' => self::mongoValue( $range[0], $dtype ), '$lte' => self::mongoValue( $range[1], $dtype ) );
+        }
+        if ( is_string( $value[0] ) && array_key_exists( 1, $value ) && !is_array( $value[1] ) )
+        {
+            $compared = self::mongoValue( $value[1], $dtype );
+            switch ( strtolower( $value[0] ) )
+            {
+                case '=':  return $compared;
+                case '<>':
+                case '!=': return array( '$ne' => $compared );
+                case '<':  return array( '$lt' => $compared );
+                case '<=': return array( '$lte' => $compared );
+                case '>':  return array( '$gt' => $compared );
+                case '>=': return array( '$gte' => $compared );
+                case 'like':
+                    $pattern = '';
+                    foreach ( preg_split( '/(%|_)/', (string)$value[1], -1, PREG_SPLIT_DELIM_CAPTURE ) as $part )
+                        $pattern .= $part === '%' ? '.*' : ( $part === '_' ? '.' : preg_quote( $part, '/' ) );
+                    return array( '$regex' => '^' . $pattern . '$', '$options' => 'i' );
+            }
+        }
+        return $value;
+    }
+
+    /**
      * A short call trace for the MongoDB write guards, so a refused write
      * names whoever asked for it rather than just the store method.
      */
@@ -1182,23 +1245,14 @@ class eZPersistentObject
                                                            (string)$value ] ];
                         continue;
                     }
+                    // Cast values to the correct type based on the field definition
+                    $dtype = isset( $fields[$field] )
+                        ? ( is_array( $fields[$field] ) ? ( isset( $fields[$field]['datatype'] ) ? $fields[$field]['datatype'] : null ) : $fields[$field] )
+                        : null;
                     if ( is_array( $value ) )
-                    {
-                        $mongoFilter[$field] = $value;
-                    }
+                        $mongoFilter[$field] = self::mongoCondition( $value, $dtype );
                     else
-                    {
-                        // Cast scalar values to the correct type based on the field definition
-                        $dtype = isset( $fields[$field] )
-                            ? ( is_array( $fields[$field] ) ? ( isset( $fields[$field]['datatype'] ) ? $fields[$field]['datatype'] : null ) : $fields[$field] )
-                            : null;
-                        if ( $value !== null && ( $dtype === 'integer' || $dtype === 'int' ) )
-                            $mongoFilter[$field] = (int)$value;
-                        elseif ( $value !== null && ( $dtype === 'float' || $dtype === 'double' ) )
-                            $mongoFilter[$field] = (float)$value;
-                        else
-                            $mongoFilter[$field] = $value;
-                    }
+                        $mongoFilter[$field] = self::mongoValue( $value, $dtype );
                 }
             }
             if ( $mongoExpressions )

@@ -10,7 +10,7 @@ a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 615b46b2d4c1115974bae173147c099f  .github/scripts/ci_health_report.py
 67b401e57b0a4810a357a89f9be50f6e  .github/workflows/ci-health.yml
 378597fd0fc9177b823abe4038ae1d7b  .github/workflows/performance.yml
-85341ae9ec76908de6896d5089357f3b  .github/workflows/phpunit.yml
+9596b0ea64cb19c8a77508f7fdfd7632  .github/workflows/phpunit.yml
 09157718f04a33993f564a2a79c1233c  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
 a02b026231759460d414688412edd1dd  .htaccess_root
@@ -3451,7 +3451,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-22a7828244d9fad9bc80ce96bcd8c980  doc/changelogs/6.0/6.0.15.md
+cec4a7ca5ca0a25ca9d25cfc4ad1fdb4  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6934,7 +6934,7 @@ e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-co
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
 3e7ec8a6e94f07b8109ffff887640b40  doc/eng-us/glossary.md
 e3e117bf283a09a375595e52cb21f59d  doc/eng-us/goals.md
-0f56e7f78251554cb24957ca9c74da81  doc/eng-us/guides/README.md
+3c1ace2715c4ffc1e9fb990935614a26  doc/eng-us/guides/README.md
 c3cd4759e8cbd9569458f6ad5c01021a  doc/eng-us/guides/a-static-blog-with-exponential.md
 cb328df2d889368b2297e4864f4c9c19  doc/eng-us/guides/a-static-documentation-site.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
@@ -7019,7 +7019,7 @@ a835408dd1e034404e4130c286077410  doc/eng-us/guides/migrations-rollback-and-capt
 227e24b58a3d5c9e4001b020a01367c3  doc/eng-us/guides/migrations-troubleshooting.md
 d30b0ccef46c35f44f6750f1e60a0fc0  doc/eng-us/guides/migrations-tutorial.md
 d78d76d6f51c0edadc69d2f459540896  doc/eng-us/guides/migrations-yaml-steps.md
-61c1a1a9e5677ede35462344b5959e49  doc/eng-us/guides/migrations.md
+a72d0facc00c8e56404ea28960972672  doc/eng-us/guides/migrations.md
 e565fb4c364a70e397ad6e26fb0e18c3  doc/eng-us/guides/missing-files.md
 c16f7bb9ba5be0218ef063840c48580c  doc/eng-us/guides/notifications-administrator.md
 c1af1e57aab428c892c4e04cfe7c6cb4  doc/eng-us/guides/notifications-developer.md
@@ -13274,12 +13274,12 @@ db696363ebcfa07c8e1201f27628a7fe  doc/ger-de/.examples/descriptions/31-migration
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-d1066275440bd76dad2d97ce41acd3e5  doc/ger-de/.paths.json
+75932d3fc185f4f2ec77512f54224527  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
-59e79049a790ab6a3d9ee6036891571c  doc/ger-de/anleitungen/README.md
+d88e965070e101eaa9bbd9091ae64318  doc/ger-de/anleitungen/README.md
 6fdd11bb18b8d79973c0a1a8fd5e3748  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 277fc76f4ca9f5a9a7987b4c7c862311  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
@@ -13365,7 +13365,7 @@ bb60c3e2c793e9b30a9768ec74cce73b  doc/ger-de/anleitungen/migrationen-php.md
 21c27f1bba7e8291896297e5c3f5f213  doc/ger-de/anleitungen/migrationen-sql-und-einstellungen.md
 821b6e4a47e36c8fa269b0dd1b394c16  doc/ger-de/anleitungen/migrationen-tutorial.md
 b8e1ffc2b3e5df264e18eb007d289e48  doc/ger-de/anleitungen/migrationen-yaml-schritte.md
-f7a6566dfef4b08437639d0c8ebb7f2f  doc/ger-de/anleitungen/migrationen.md
+2eb88dcffb140f07ea7bc0072f7df1fa  doc/ger-de/anleitungen/migrationen.md
 465336715cb5f76e2f9ecd9aaca6024a  doc/ger-de/anleitungen/neue-redakteurskonten-freigeben.md
 a0976fe58065ceb997a8d1fac6b00996  doc/ger-de/anleitungen/objektzustaende.md
 fb6880b3d82b28215fb0d664ecf3f351  doc/ger-de/anleitungen/oeffentlich-entwickeln-kostenlos-veroeffentlichen.md
@@ -24184,7 +24184,7 @@ ba78dc96e133f23cd5c57d245d3f98d3  kernel/classes/ezpackageuploadinspector.php
 50948f33c9b79caaada74f24d101e93d  kernel/classes/ezpathelement.php
 aaeeda8026fb49f47008f2bad5fe07ed  kernel/classes/ezpdfexport.php
 9a7a26f0243dbd89adfb7575e9258407  kernel/classes/ezpendingactions.php
-ff79ccc31351dac34458c9ba91a704d4  kernel/classes/ezpersistentobject.php
+92508189921ab7c5ca4428a04fa6bcf3  kernel/classes/ezpersistentobject.php
 4f6b381df30c44c4d3c9e7dccd03a1c3  kernel/classes/ezpolicy.php
 9d00d37866395ec2415afa03f3d1775d  kernel/classes/ezpolicylimitation.php
 e8866d91d2bb5f5724954b03b8766800  kernel/classes/ezpolicylimitationvalue.php
@@ -26308,7 +26308,7 @@ f3406d358a85c7b506f590f3979d7cde  lib/twig/classes/exptwigtostringvisitor.php
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
 d75f9c86a66f0ee1b7d3208547666681  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
-a08374a25cbc9ffbfa2628479b951197  phpunit.xml
+3b62ebf8fdb780c61f45936c2680a368  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 242b474556fa73a01c4a1cc2b0348abb  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -27715,7 +27715,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-3f7afcec34a8737ab1ffb8b34f9e7292  tests/test-map.json
+b36114f9f6cddf09511b6c64f3d64f33  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -28220,6 +28220,7 @@ cc2cbca84920c76d61b6369d3f4878b4  tests/tests/kernel/classes/eZPHP8RemovedFuncti
 5fa36ce66b85e5d317814b8ef9a4b02e  tests/tests/kernel/classes/eZPackageLicenseTest.php
 13c0f6dc12b84bd8fbecb1ce22527b93  tests/tests/kernel/classes/eZPackageVersionTest.php
 663a8e8160bd47aec694a19e78c3a61a  tests/tests/kernel/classes/eZPendingActionsTest.php
+bbf72a41489f21b720c2fbe7863257bd  tests/tests/kernel/classes/eZPersistentObjectMongoConditionTest.php
 dc1d60272c8b814e7e24021b02e9e628  tests/tests/kernel/classes/eZPersistentObjectShortNameTest.php
 8157c83dc10d2f23704223a548b967b6  tests/tests/kernel/classes/eZPhp85NoEffectCallsTest.php
 18d1522b330e8ed6f4a98703cf5ea712  tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php
@@ -28517,7 +28518,7 @@ d2b791059f44637db1e31999f7272737  tests/tests/kernel/classes/mailpreferences/fix
 6d92b09c5030f6b28f986d8f94dcb3fb  tests/tests/kernel/classes/mailpreferences/fixtures/listeners/dsn-hard-listener.eml
 fa2880c02db43fdfac79048ad61cba89  tests/tests/kernel/classes/mailpreferences/fixtures/listeners/plain-subscribe.eml
 ee7a54395a9fc5b6c7a06cc2ffd42461  tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsDatabaseTest.php
-809d251a99f0dfcbba5538f9657a2a13  tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsEngineChecks.php
+0a6bd01026874dfe32ecac793513abda  tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsEngineChecks.php
 bb283a68a175abca48963561fdda7f16  tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsSqliteTest.php
 dae073739b2efda3166ede7d0d00293f  tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsTest.php
 70eab23bf54f0f0f014a67515dcfb1e6  tests/tests/kernel/classes/migration/expMigrationCaptionDatabaseTest.php
@@ -28537,7 +28538,7 @@ ddc36a1d2b6a8564e354c233db2dfddf  tests/tests/kernel/classes/migration/expMigrat
 081ac6800e88df89dc2fce1d8752013e  tests/tests/kernel/classes/migration/expMigrationDefinitionTest.php
 193be194e88bf16fddcad31b94bd52b3  tests/tests/kernel/classes/migration/expMigrationGeneratorTest.php
 f2e97f0af2c5b35dcbd80445cd2a3d6f  tests/tests/kernel/classes/migration/expMigrationGraphqlIntegrationTest.php
-9449b1f90755fe8df7344d5d905c9104  tests/tests/kernel/classes/migration/expMigrationGraphqlSqliteTest.php
+78fe88cb1c98a71b9b54c626f207cbc3  tests/tests/kernel/classes/migration/expMigrationGraphqlSqliteTest.php
 7ef3abd09335c51ad8230b18ccf5ca7f  tests/tests/kernel/classes/migration/expMigrationJobTest.php
 0c11bacfaa04f75d917037d427ea4b1a  tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsDatabaseTest.php
 1f9614ea01738edf4264571d430cd6f8  tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsEngineChecks.php
