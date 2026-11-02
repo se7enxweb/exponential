@@ -101,7 +101,7 @@
             {/if}
         </div>
         <div class="a4-actions">
-            <a class="a4-btn a4-btn-small" href={concat( $module.functions.workflowlist.uri, '/', $group.id )|ezurl} aria-describedby="{$card_id}-title">{'Open'|i18n( 'design/admin/workflow/grouplist' )}</a>
+            <a class="a4-btn a4-btn-small" href={concat( $module.functions.workflowlist.uri, '/', $group.id )|ezurl} aria-describedby="{$card_id}-title" title="{'Open'|i18n( 'design/admin/workflow/grouplist' )|wash}">{'Open'|i18n( 'design/admin/workflow/grouplist' )}</a>
             <a class="a4-btn a4-btn-small" href={concat( $module.functions.groupedit.uri, '/', $group.id )|ezurl} aria-describedby="{$card_id}-title" title="{'Edit the <%workflow_group_name> workflow group.'|i18n( 'design/admin/workflow/grouplist',, hash( '%workflow_group_name', $group.name ) )|wash}">{'Edit'|i18n( 'design/admin/workflow/grouplist' )}</a>
         </div>
     </div>

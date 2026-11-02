@@ -199,7 +199,7 @@
             {if first_set( $session.is_anonymous, false() )|not}
                 {def $user_object = fetch( content, object, hash( 'object_id', $session.user_id ) )}
                 {if and( $user_object, $user_object.main_node_id )}
-            <a class="a4-btn a4-btn-small" href={concat( 'content/view/full/', $user_object.main_node_id )|ezurl}>{'User'|i18n( 'design/admin/setup/session' )}</a>
+            <a class="a4-btn a4-btn-small" href={concat( 'content/view/full/', $user_object.main_node_id )|ezurl} title="{'User'|i18n( 'design/admin/setup/session' )|wash}">{'User'|i18n( 'design/admin/setup/session' )}</a>
                 {/if}
                 {undef $user_object}
             {/if}

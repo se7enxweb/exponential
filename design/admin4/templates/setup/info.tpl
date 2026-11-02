@@ -309,7 +309,7 @@
                 {if $sa.readable|not}<p class="a4-help">{'The settings of this siteaccess could not be read.'|i18n( 'design/admin/setup/info' )}</p>{/if}
                 <p class="a4-actions">
                     {if $sa.url}<a class="a4-btn a4-btn-small" href="{$sa.url|wash}" aria-label="{'Open %siteaccess'|i18n( 'design/admin/setup/info',, hash( '%siteaccess', $sa.name ) )|wash}">{'Open'|i18n( 'design/admin/setup/info' )}</a>{/if}
-                    {if $sa.settings_path}<a class="a4-btn a4-btn-small" href={concat( '/', $sa.settings_path )|ezurl} aria-label="{'Settings of %siteaccess'|i18n( 'design/admin/setup/info',, hash( '%siteaccess', $sa.name ) )|wash}">{'site.ini settings'|i18n( 'design/admin/setup/info' )}</a>{/if}
+                    {if $sa.settings_path}<a class="a4-btn a4-btn-small" href={concat( '/', $sa.settings_path )|ezurl} aria-label="{'Settings of %siteaccess'|i18n( 'design/admin/setup/info',, hash( '%siteaccess', $sa.name ) )|wash}" title="{'Settings of %siteaccess'|i18n( 'design/admin/setup/info',, hash( '%siteaccess', $sa.name ) )|wash}">{'site.ini settings'|i18n( 'design/admin/setup/info' )}</a>{/if}
                 </p>
                 {if $sa.url}<p class="a4-help a4-setup-sa-url"><code>{$sa.url|wash}</code></p>{/if}
             </li>

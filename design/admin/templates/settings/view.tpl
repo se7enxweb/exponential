@@ -248,7 +248,7 @@
     <h3 class="a4-h3" id="{$b.anchor|wash}-h">[{$b.name|wash}]</h3>
     <div class="a4-actions">
         <span class="a4-muted">{if ne( $b.settings|count, $b.total )}{'%shown of %total settings'|i18n( 'design/admin/settings',, hash( '%shown', $b.settings|count, '%total', $b.total ) )|wash}{else}{'%total settings'|i18n( 'design/admin/settings',, hash( '%total', $b.total ) )|wash}{/if}</span>
-        {if and( $can_edit, is_set( $settings[$b.name] ), $settings[$b.name].editable )}<a class="a4-btn a4-btn-small" href={concat( 'settings/edit/', $current_siteaccess, '/', $ini_file, '/', $b.name )|ezurl}>{'Add setting'|i18n( 'design/admin/settings' )}</a>{/if}
+        {if and( $can_edit, is_set( $settings[$b.name] ), $settings[$b.name].editable )}<a class="a4-btn a4-btn-small" href={concat( 'settings/edit/', $current_siteaccess, '/', $ini_file, '/', $b.name )|ezurl} title="{'Add setting'|i18n( 'design/admin/settings' )|wash}">{'Add setting'|i18n( 'design/admin/settings' )}</a>{/if}
     </div>
 </div>
 <ul class="a4-plain">
@@ -317,7 +317,7 @@
     </div>
     <div class="a4-settings-set-side">
         {if and( ne( $row.kind, 'plain' ), $row.sources )}<span class="a4-muted a4-settings-set-from">{'from'|i18n( 'design/admin/settings' )}</span>{foreach $row.sources as $source}{include uri='design:settings/exp_origin.tpl' origin=$source}{/foreach}{else}{include uri='design:settings/exp_origin.tpl' origin=$row.origin}{/if}
-        {if and( $can_edit, $row.editable )}<a class="a4-btn a4-btn-small" href={concat( 'settings/edit/', $current_siteaccess, '/', $ini_file, '/', $b.name, '/', $row.name, '/', $row.edit_placement )|ezurl} aria-label="{'Edit %setting'|i18n( 'design/admin/settings',, hash( '%setting', $row.name ) )|wash}">{'Edit'|i18n( 'design/admin/settings' )}</a>{/if}
+        {if and( $can_edit, $row.editable )}<a class="a4-btn a4-btn-small" href={concat( 'settings/edit/', $current_siteaccess, '/', $ini_file, '/', $b.name, '/', $row.name, '/', $row.edit_placement )|ezurl} aria-label="{'Edit %setting'|i18n( 'design/admin/settings',, hash( '%setting', $row.name ) )|wash}" title="{'Edit %setting'|i18n( 'design/admin/settings',, hash( '%setting', $row.name ) )|wash}">{'Edit'|i18n( 'design/admin/settings' )}</a>{/if}
     </div>
 </li>
 {/foreach}

@@ -107,7 +107,7 @@
         {if $others|count}{foreach $others as $link}<a href={concat( '/class/classlist/', $link.group_id )|ezurl}>{$link.group_name|wash}</a>{delimiter}, {/delimiter}{/foreach}{else}<span class="a4-muted">{'only here'|i18n( 'design/admin/class/classlist' )}</span>{/if}{undef $others}</td>
     <td>{$class.modified|l10n( shortdatetime )}{if $class.modifier.contentobject}<span class="a4-meta">{$class.modifier.contentobject.name|wash}</span>{/if}</td>
     <td><div class="a4-actions">
-        <a class="a4-btn a4-btn-small" href={concat( '/class/view/', $class.id )|ezurl}>{'View'|i18n( 'design/admin/class/classlist' )}</a>
+        <a class="a4-btn a4-btn-small" href={concat( '/class/view/', $class.id )|ezurl} title="{'View'|i18n( 'design/admin/class/classlist' )|wash}">{'View'|i18n( 'design/admin/class/classlist' )}</a>
         <a class="a4-btn a4-btn-small" href={concat( 'class/edit/', $class.id, '/(language)/', $class.top_priority_language_locale )|ezurl} title="{'Edit the <%class_name> class.'|i18n( 'design/admin/class/classlist',, hash( '%class_name', $class.name ) )|wash}">{'Edit'|i18n( 'design/admin/class/classlist' )}</a>
         <button class="a4-btn a4-btn-small" type="submit" formaction={concat( 'class/copy/', $class.id )|ezurl} name="CopyClassButton" value="{$class.id}" title="{'Create a copy of the <%class_name> class.'|i18n( 'design/admin/class/classlist',, hash( '%class_name', $class.name ) )|wash}">{'Copy'|i18n( 'design/admin/class/classlist' )}</button>
     </div></td>
