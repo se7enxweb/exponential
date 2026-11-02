@@ -276,7 +276,14 @@ class expStaticBuild
             $origins[] = $siteUrl;
         $liveUrl = (string)$target->setting( 'LiveURL' );
         if ( $liveUrl === '' && $siteUrl !== '' )
-            $liveUrl = 'https://' . (string)parse_url( 'http://' . preg_replace( '#^[a-z]+://#i', '', $siteUrl ), PHP_URL_HOST );
+        {
+            $siteHost = (string)parse_url( 'http://' . preg_replace( '#^[a-z]+://#i', '', $siteUrl ), PHP_URL_HOST );
+            // a site that only answers on this computer (a build server, a CI job) is no live site for visitors
+            if ( self::isLocalHost( $siteHost ) )
+                $this->warning( "The SiteURL of the siteaccess is $siteHost, which visitors cannot reach: links to what the copy does not hold are left as they are. Set LiveURL to a live site to send them there." );
+            else
+                $liveUrl = 'https://' . $siteHost;
+        }
         if ( $liveUrl !== '' )
         {
             $origins[] = $liveUrl;
@@ -1072,5 +1079,22 @@ class expStaticBuild
         if ( $bytes < 1073741824 )
             return round( $bytes / 1048576, 1 ) . 'M';
         return round( $bytes / 1073741824, 2 ) . 'G';
+    }
+
+    /**
+     * Whether a host name only answers on this computer: localhost (and *.localhost), the loopback addresses
+     * 127.0.0.0/8 and ::1, and 0.0.0.0. Pure.
+     *
+     * @param string $host
+     * @return bool
+     */
+    public static function isLocalHost( $host )
+    {
+        $host = strtolower( trim( (string)$host, " \t[]." ) );
+        if ( $host === '' )
+            return false;
+        if ( $host === 'localhost' || substr( $host, -10 ) === '.localhost' || $host === '::1' || $host === '0.0.0.0' )
+            return true;
+        return (bool)preg_match( '#^127(?:\.\d{1,3}){3}$#', $host );
     }
 }

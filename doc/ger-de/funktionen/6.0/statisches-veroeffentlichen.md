@@ -77,7 +77,7 @@ Linkprüfung dieses Builds fand unter 18.534 Links und Dateien keinen defekten, 
 | Die Startseite | `./` oder `../../`, oder `/meine-site/` |
 | Eine Datei (`/var/site/storage/images/...`, `/design/...`, `/extension/x/design/...`) | ihr Pfad in der Kopie, relativ oder unterhalb des Basispfads; der Query-String einer Datei (`?x=1`) bleibt |
 | Ein Fragment (`#top`), `mailto:`, `tel:`, `data:`, ein anderer Host | unverändert |
-| Eine Seite oder Datei, die die Kopie nicht enthält (die Suche, die Anmeldung, die Aktion eines Formulars, eine Seite mit Query-String, ein Download, den die Website verweigert hat) | die Live-Website: `LiveURL`, standardmäßig `https://` und der Host der `SiteURL` des Siteaccess |
+| Eine Seite oder Datei, die die Kopie nicht enthält (die Suche, die Anmeldung, die Aktion eines Formulars, eine Seite mit Query-String, ein Download, den die Website verweigert hat) | die Live-Website: `LiveURL`, standardmäßig `https://` und der Host der `SiteURL` des Siteaccess (nicht, wenn dieser Host `localhost` oder eine Loopback-Adresse wie `127.0.0.1` ist, wie auf einem Build-Server oder in CI: dann bleibt der Link, wie er ist, und der Build warnt) |
 | Canonical, `hreflang`-Alternativen, `og:url`, `og:image`, `twitter:image`, die Adressen strukturierter Daten (`application/ld+json`) | absolut, unterhalb von `PublicURL`, wenn es gesetzt ist |
 
 Relative Links funktionieren überall, wo der Ordner ausgeliefert wird, unter `/` und unterhalb jedes Pfads.
@@ -119,7 +119,7 @@ gebaut):
 | `PublicURL` | leer | Die öffentliche Adresse, für die Sitemap, `robots.txt` und absolute Canonical- und Social-Card-Links |
 | `CustomDomain` | leer | Wird in `CNAME` geschrieben; damit wird die Website an der Wurzel der Domain ausgeliefert |
 | `CrawlURL` | leer | Die Seiten von dieser Adresse statt von `SiteURL` abrufen |
-| `LiveURL` | leer | Wohin Links auf das gehen, was die Kopie nicht enthält; leer: `https://` und der Host der `SiteURL` |
+| `LiveURL` | leer | Wohin Links auf das gehen, was die Kopie nicht enthält; leer: `https://` und der Host der `SiteURL`, außer dieser Host ist `localhost` oder eine Loopback-Adresse (dann bleiben sie, wie sie sind) |
 | `MaxPages` | `10000` | Die meisten Seiten, die ein Build durchläuft (1 bis 20000) |
 | `MaxDepth` | leer | Wie viele Links von der Startseite entfernt das Durchlaufen geht; leer: `[CacheSettings] MaxCacheDepth` |
 | `Assets` | `referenced-and-storage` | `referenced`, oder zusätzlich jedes Speicherbild von Inhalten, die der anonyme Benutzer sehen darf |

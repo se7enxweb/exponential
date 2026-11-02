@@ -70,7 +70,7 @@ found no broken link or file among 18,534, at the root and below `/<repository>/
 | The front page | `./` or `../../`, or `/my-site/` |
 | A file (`/var/site/storage/images/...`, `/design/...`, `/extension/x/design/...`) | its path in the copy, relative or below the base path; the query of a file (`?x=1`) is kept |
 | A fragment (`#top`), `mailto:`, `tel:`, `data:`, another host | unchanged |
-| A page or file the copy does not hold (the search, the login, a form's action, a page with a query, a download the site refused) | the live site: `LiveURL`, by default `https://` and the host of the siteaccess's `SiteURL` |
+| A page or file the copy does not hold (the search, the login, a form's action, a page with a query, a download the site refused) | the live site: `LiveURL`, by default `https://` and the host of the siteaccess's `SiteURL` (not when that host is `localhost` or a loopback address such as `127.0.0.1`, as on a build server or in CI: then the link stays as it is and the build warns) |
 | Canonical, `hreflang` alternates, `og:url`, `og:image`, `twitter:image`, the addresses in structured data (`application/ld+json`) | absolute, below `PublicURL`, when it is set |
 
 Relative links work wherever the folder is served, at `/` and below any path. `Links=base-path` writes every link
@@ -110,7 +110,7 @@ All settings are in `staticcache.ini`, next to the static cache's `[CacheSetting
 | `PublicURL` | empty | The public address, for the sitemap, `robots.txt` and absolute canonical and social card links |
 | `CustomDomain` | empty | Written to `CNAME`; with it the site is served at the root of the domain |
 | `CrawlURL` | empty | Fetch the pages from this address instead of `SiteURL` |
-| `LiveURL` | empty | Where links to what the copy does not hold go; empty: `https://` and the host of `SiteURL` |
+| `LiveURL` | empty | Where links to what the copy does not hold go; empty: `https://` and the host of `SiteURL`, unless that host is `localhost` or a loopback address (then they stay as they are) |
 | `MaxPages` | `10000` | The most pages one build crawls (1 to 20000) |
 | `MaxDepth` | empty | How many links away from the front page the crawl goes; empty: `[CacheSettings] MaxCacheDepth` |
 | `Assets` | `referenced-and-storage` | `referenced`, or also every storage image of content the anonymous user may see |

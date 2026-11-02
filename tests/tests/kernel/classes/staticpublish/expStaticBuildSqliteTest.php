@@ -17,6 +17,8 @@
  *  SB-08 the extras: the degradation report (search page, form endpoint with a signed token, login removed), the search
  *        index and page, redirect stubs from URL aliases, README and LICENSE, minify, fingerprint and precompress; the link
  *        check finds nothing broken; the build is an audit event
+ *  SB-09 a SiteURL that only answers on the build computer (localhost, 127.0.0.1) is not the live site: links to
+ *        what the copy does not hold stay as they are, with a warning; never https://127.0.0.1
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -424,5 +426,24 @@ class expStaticBuildSqliteTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'extra', expStaticManifest::load( $dir )->get( 'about-us/index.html.gz' )['kind'] );
 
         $this->assertSame( 0, $report['link_check']['broken_count'], json_encode( $report['link_check']['broken'] ) );
+    }
+
+    /** SB-09 */
+    public function testALocalSiteUrlIsNoLiveSite()
+    {
+        foreach ( array( 'localhost', '127.0.0.1', '127.1.2.3', '::1', '[::1]', 'site.localhost', '0.0.0.0' ) as $host )
+            $this->assertTrue( expStaticBuild::isLocalHost( $host ), $host );
+        foreach ( array( '', 'www.example.com', '10.0.0.1', '128.0.0.1', 'localhost.example.com', '127.0.0.1.example.com' ) as $host )
+            $this->assertFalse( expStaticBuild::isLocalHost( $host ), $host );
+
+        $this->site();
+        $context = self::CONTEXT;
+        $context['urls']['site'] = '127.0.0.1:8080/site';
+        list( $report, $dir ) = $this->build( array( 'Assets' => 'referenced' ), array( 'context' => $context ) );
+        $this->assertSame( 0, $report['exit'], json_encode( $report['errors'] ) );
+        $this->assertStringContainsString( 'visitors cannot reach', implode( ' ', $report['warnings'] ) );
+        $home = file_get_contents( "$dir/index.html" );
+        $this->assertStringNotContainsString( 'https://127.0.0.1', $home );
+        $this->assertStringContainsString( '<a href="/news?page=2">Older</a>', $home, 'not held, no live site: left as it is' );
     }
 }

@@ -6885,7 +6885,7 @@ fe1c6abb641c7c1556cdce16bb86142c  doc/eng-us/features/6.0/smarty-templates.md
 784cbc15d1de89c345943913993e388c  doc/eng-us/features/6.0/soap-client-tls.md
 a46d405f5296bc36483dd00721014cbc  doc/eng-us/features/6.0/sqlite-database.md
 935ec6788e61b1717356146c44579111  doc/eng-us/features/6.0/static-cache-generator.md
-0da902cf73f4ee8eb82323ba0f35ec1d  doc/eng-us/features/6.0/static-publishing.md
+09a0aba53fa83945945ff8bb5b383dd3  doc/eng-us/features/6.0/static-publishing.md
 afd23090dc06207591ccdb4eb6b91806  doc/eng-us/features/6.0/store-dashboard.md
 9f9bea9c87ecaffffafb0e1ac4361b00  doc/eng-us/features/6.0/string-template-operators.md
 e0fe70a6b6d52d4ec6f29e9cee750368  doc/eng-us/features/6.0/subitems-copy-selected.md
@@ -16430,7 +16430,7 @@ c622d935f4e14bd1f509b16f2c08c311  doc/ger-de/funktionen/6.0/sortierung-der-beste
 0b01e6dac291a44099f8820396143b1e  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
 1c981d8a54aac59d03d7a8849d066c38  doc/ger-de/funktionen/6.0/standard-extension-auslieferung.md
 a4b2787b5f4888427cd0d4441ac16470  doc/ger-de/funktionen/6.0/standardwerte-einer-sauberen-installation.md
-28631b0f99df0a35dc6dea5007ef093b  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
+58f178278a65a3b8187a8924a17a2286  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
 e3f9f4f40efea9ae4d8d4382d03600b1  doc/ger-de/funktionen/6.0/systemkarte.md
 fec92c66d4f001c693d6267a7591471f  doc/ger-de/funktionen/6.0/template-editor-ueberschreibungen.md
 1e6bfbed65344611a4fb28e0213bf0e1  doc/ger-de/funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md
@@ -24469,7 +24469,7 @@ a4256533dc1c0a8afd51c4fe5de6c60d  kernel/classes/role/exprolepolicysentence.php
 a6942c619908de9aff2835601b137d63  kernel/classes/shopaccounthandlers/ezusershopaccounthandler.php
 7af29097f651386d19e3ac947695cf8a  kernel/classes/staticpublish/expstaticadmin.php
 4c27e245a401bd764beda0c02e40fe82  kernel/classes/staticpublish/expstaticassetcollector.php
-7841664a40a70e3b4d1e9b61dea7c1ee  kernel/classes/staticpublish/expstaticbuild.php
+4623b0eae14c4cbb5a38ce74c02e5fa0  kernel/classes/staticpublish/expstaticbuild.php
 b0efb84f30b72643059fb90b0ee57f1b  kernel/classes/staticpublish/expstaticcredentials.php
 d0ff0cbe939677e04c1ea1c242db0095  kernel/classes/staticpublish/expstaticdegrader.php
 2d4317b2d941b0221ee344c4000a7e64  kernel/classes/staticpublish/expstaticdnscheck.php
@@ -28640,7 +28640,7 @@ c243bf1708e51415584c6fd64a5a11d0  tests/tests/kernel/classes/shopprices/eZShopRe
 6ff327ab616500ef1a0e2f54fb092cca  tests/tests/kernel/classes/siteaccessmatch/eZSiteAccessMatchTest.php
 8c0728b2f967cd40690522b1d6c5fdb0  tests/tests/kernel/classes/sslzones/eZSSLZoneTest.php
 c043add0dcb7a14de3d5d610b5c45115  tests/tests/kernel/classes/staticpublish/expStaticAdminTest.php
-30e5ffe5a727d51b6fa15c965da42d7e  tests/tests/kernel/classes/staticpublish/expStaticBuildSqliteTest.php
+303af967ab566ab8e00b50bfcab086e3  tests/tests/kernel/classes/staticpublish/expStaticBuildSqliteTest.php
 441420e6a206d0cd4421c32e77ccf793  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
 4e13e1ff07af6f32c6f45064b5640365  tests/tests/kernel/classes/staticpublish/expStaticCredentialsTest.php
 3979bc5a303fe7d2b1e227585e8944ec  tests/tests/kernel/classes/staticpublish/expStaticDegraderTest.php
