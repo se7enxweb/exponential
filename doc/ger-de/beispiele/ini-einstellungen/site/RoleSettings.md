@@ -183,13 +183,15 @@ PermissionSQLOptimization=enabled
 > Ablehnung für sein Skript ein bloßes 403 statt einer Seite ist.  
 > Die Berichte der Content Security Policy kommen von Browsern, angemeldet oder nicht; csp/report schützt sich selbst  
 > (Inhaltstypen, Größe, Ratenbegrenzung, maskierte Logzeilen).  
+> Der signierte HTTP-Trigger eines Deploys über FTP: Signatur, Quelladresse und Nonce sind die Berechtigung  
+> (expMigrationTrigger, migration.ini \[TriggerSettings\]).  
 > Die Vorschau eines Entwurfs über einen Freigabelink: Das signierte, ablaufende Token ist die Berechtigung  
 > (expContentPreviewLink); ohne gültiges sagt die Seite, dass der Link nicht funktioniert.  
 > Der Formular-Endpunkt des statischen Veröffentlichens: Die Besucher einer statischen Kopie senden ihre Formulare  
 > hierher, angemeldet oder nicht; staticpublish/form prüft Ursprung, das beim Build signierte Token und die Rate selbst  
 > (expStaticFormEndpoint).  
 
-Standard: eine Liste mit 25: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
+Standard: eine Liste mit 26: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -217,7 +219,7 @@ PolicyOmitList[]=mailpreferences/unsubscribe
 PolicyOmitList[]=mailpreferences/confirm
 PolicyOmitList[]=mailpreferences/request
 PolicyOmitList[]=mailpreferences/export
-# ... 5 weitere in der ausgelieferten Datei
+# ... 6 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

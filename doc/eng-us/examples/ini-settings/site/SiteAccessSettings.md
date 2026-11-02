@@ -98,8 +98,10 @@ RelatedSiteAccessList[]
 > sign-in, the siteaccess and the tab on its own (see PolicyOmitList\[\] below).  
 > Browsers send the reports of the Content Security Policy without signing in; csp/report takes them on every  
 > siteaccess, the administration included (doc/eng-us/features/6.0/content-security-policy.md, "Reports").  
+> A deploy over FTP runs the migrations through migration/trigger without signing in: the view takes only signed  
+> requests from migration.ini \[TriggerSettings\] AllowedAddresses\[\], and nothing while Trigger=disabled.  
 
-Default: a list of 6: `user/register`, `user/success`, `user/activate`, `user/forgotpassword`, `user/megamenu`, `csp/report`.
+Default: a list of 7: `user/register`, `user/success`, `user/activate`, `user/forgotpassword`, `user/megamenu`, `csp/report`, `migration/trigger`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -113,6 +115,7 @@ AnonymousAccessList[]=user/activate
 AnonymousAccessList[]=user/forgotpassword
 AnonymousAccessList[]=user/megamenu
 AnonymousAccessList[]=csp/report
+AnonymousAccessList[]=migration/trigger
 */ ?>
 ```
 

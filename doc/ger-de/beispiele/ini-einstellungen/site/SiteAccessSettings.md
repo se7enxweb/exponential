@@ -98,8 +98,10 @@ RelatedSiteAccessList[]
 > Anmeldung, den Siteaccess und den Reiter selbst (siehe PolicyOmitList\[\] unten).  
 > Browser senden die Berichte der Content Security Policy ohne Anmeldung; csp/report nimmt sie in jedem  
 > Siteaccess an, die Administration eingeschlossen (doc/eng-us/features/6.0/content-security-policy.md, "Reports").  
+> Ein Deploy über FTP führt die Migrationen über migration/trigger ohne Anmeldung aus: Die Ansicht nimmt nur signierte  
+> Anfragen von migration.ini \[TriggerSettings\] AllowedAddresses\[\] an, und nichts bei Trigger=disabled.  
 
-Standard: eine Liste mit 6: `user/register`, `user/success`, `user/activate`, `user/forgotpassword`, `user/megamenu`, `csp/report`.
+Standard: eine Liste mit 7: `user/register`, `user/success`, `user/activate`, `user/forgotpassword`, `user/megamenu`, `csp/report`, `migration/trigger`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -113,6 +115,7 @@ AnonymousAccessList[]=user/activate
 AnonymousAccessList[]=user/forgotpassword
 AnonymousAccessList[]=user/megamenu
 AnonymousAccessList[]=csp/report
+AnonymousAccessList[]=migration/trigger
 */ ?>
 ```
 

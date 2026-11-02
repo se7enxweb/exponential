@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # The migration module
 
-Name `Migrations`, defined in `kernel/migration/module.php`. 13 views.
+Name `Migrations`, defined in `kernel/migration/module.php`. 14 views.
 
 | View | Address | Policy functions |
 |---|---|---|
@@ -27,6 +27,7 @@ Name `Migrations`, defined in `kernel/migration/module.php`. 13 views.
 | [run](run.md) | `/migration/run` | run |
 | [status](status.md) | `/migration/status` | read |
 | [stream](stream.md) | `/migration/stream/<RunID>` | read |
+| [trigger](trigger.md) | `/migration/trigger` | (module) |
 
 - [The policies of this module](../../policies/migration.md)
 

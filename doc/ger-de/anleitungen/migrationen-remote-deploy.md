@@ -15,9 +15,9 @@ ausgewählten Gegenstellen parallel, und eine Phase beginnt erst, wenn die vorig
 | Phase | Auf jeder Gegenstelle | Wenn sie scheitert |
 |---|---|---|
 | prepare | Die Einstellungen der Gegenstelle und ihre Zugangsdaten werden geprüft (noch keine Verbindung). | Nichts wurde angesprochen. |
-| preflight | Dort wird `exp:migration:status --format=json` gelesen: erreichbar, die Laufsperre frei, keine gescheiterte Migration, dieselbe Kernel-Version wie hier, keine Migration nach dem Ausführen dort geändert. Die zu sendenden Dateien werden geplant. | Nirgends wurde etwas geändert. |
+| preflight | Zuerst die Korrekturen aus `SelfHeal[]` (siehe „Selbstheilung“), dann wird dort `exp:migration:status --format=json` gelesen: erreichbar, die Laufsperre frei, keine gescheiterte Migration, dieselbe Kernel-Version wie hier, PHP- und Erweiterungsversionen, genug freier Plattenplatz, keine Migration nach dem Ausführen dort geändert. Die zu sendenden Dateien werden geplant. | Nirgends wurde etwas geändert. |
 | transfer | Die geplanten Migrationsdateien werden gesendet. | Keine Gegenstelle wurde umgeschaltet; die gesendeten Dateien bleiben dort ausstehend. |
-| verify | Ein Probelauf von `exp:migration:migrate` dort muss jede gesendete Datei mit der Prüfsumme dieser Installation sehen, und Sicherungspunkte müssen eingeschaltet sein. FTP: Jede Datei wird zurückgelesen und verglichen. | Keine Gegenstelle wurde umgeschaltet. |
+| verify | Ein Probelauf von `exp:migration:migrate` dort muss jede gesendete Datei mit der Prüfsumme dieser Installation sehen, und Sicherungspunkte müssen eingeschaltet sein, wo etwas auszuführen ist. FTP ohne Trigger: Jede Datei wird zurückgelesen und verglichen. | Keine Gegenstelle wurde umgeschaltet. |
 | switch | `exp:migration:migrate --apply --run-id=<Deploy-ID>` auf allen Gegenstellen gleichzeitig, mit einer gemeinsamen Lauf-ID. | Siehe „Alles oder nichts“. |
 
 Ohne `--apply` ist der Deploy ein Probelauf: Er endet nach dem Preflight und listet je Gegenstelle die Dateien, die er
@@ -130,14 +130,104 @@ Jede Ausgabe, die ein Bericht behält oder die angezeigt wird, ist geschwärzt: 
 
 ## FTP-Gegenstellen
 
-FTP kann keine Befehle ausführen; ein Deploy auf eine FTP-Gegenstelle sendet und prüft daher nur die Dateien:
+FTP kann keine Befehle ausführen. Ohne Weiteres sendet und prüft ein Deploy auf eine FTP-Gegenstelle daher nur die
+Dateien:
 
 ```
 ./console exp:migration:deploy --remotes=webspace --transfer-only --apply
 ```
 
 Jede ausgewählte Migration wird gesendet (der Stand der Gegenstelle lässt sich über FTP nicht lesen) und zurückgelesen,
-um zu prüfen, dass sie unverändert ankam. Führen Sie die Migrationen dort mit den eigenen Mitteln der Gegenstelle aus.
+um zu prüfen, dass sie unverändert ankam.
+
+### FTP-Gegenstellen mit dem HTTP-Trigger
+
+Bietet die entfernte Installation ihren signierten HTTP-Trigger an, wird eine FTP-Gegenstelle wie jede andere
+bespielt: Ihr Stand wird gelesen, die Dateien gehen über FTP, ein Probelauf dort prüft sie, das Umschalten führt sie
+aus, und ein Fehler irgendwo setzt sie zurück. Die Quelle schickt jeden Befehl als signiertes `POST` an die Ansicht
+`migration/trigger` der Gegenstelle; diese führt dort das Konsolenskript aus (`exp:migration:status`, `migrate`,
+`rollback`, `heal`) und antwortet mit dessen JSON-Bericht.
+
+Auf der **Gegenstelle** (der Installation, die per FTP erreicht wird), in `settings/override/migration.ini.append.php`:
+
+```ini
+[TriggerSettings]
+Trigger=enabled
+Secret=migration_trigger             # ein Geheimnis aus Einrichtung > Geheimnisse (oder env:VARIABLE), mindestens 16 Zeichen
+AllowedAddresses[]
+AllowedAddresses[]=203.0.113.10      # die Adresse, von der die Quelle verbindet (auch CIDR-Bereiche)
+Php=/usr/bin/php8.4                  # das PHP-CLI, das dort die Konsolenskripte ausführt
+```
+
+Auf der **Quelle** nennt der Abschnitt der Gegenstelle die Adresse und dasselbe Geheimnis beim Namen:
+
+```ini
+[Remote_webspace]
+Transport=ftps
+Host=ftp.example.com
+User=web
+Path=/htdocs
+Credential=password:webspace_ftp
+Trigger=https://www.example.com/migration/trigger
+TriggerSecret=migration_trigger
+```
+
+Was der Trigger annimmt:
+
+| Prüfung | Antwort, wenn sie fehlschlägt |
+|---|---|
+| Nur `POST` | 405 |
+| `Trigger=enabled` | 404 |
+| Die Adresse der Verbindung (`REMOTE_ADDR`, nie ein weitergereichter Header) steht in `AllowedAddresses[]`; eine leere Liste nimmt nichts an | 403 |
+| Das Geheimnis ist gesetzt und mindestens 16 Zeichen lang | 503 |
+| `X-Exp-Migration-Trigger: v1.<Zeit>.<Nonce>.<HMAC-SHA256>` über die Zeit, die Nonce und den SHA-256 des Inhalts, höchstens `Lifetime` Sekunden alt (300) | 401 |
+| Höchstens `MaxRequestsPerMinute` Anfragen pro Minute (30) | 429 |
+| Die Nonce wurde noch nicht verwendet (keine Wiederholung) | 409 |
+| Der Inhalt ist eine bekannte Anfrage: eine Aktion (`status`, `dry-run`, `apply`, `rollback`, `heal`) mit gültiger Lauf-ID, Migrations-IDs oder Korrekturen; nie eine Befehlszeile | 400 |
+
+Jede Anfrage wird neu signiert, auch wenn sie nach einem Verbindungsfehler wiederholt wird. Das Geheimnis wird nie
+übertragen, es signiert nur. Jede Anfrage, die bis zu den Prüfungen kommt, steht im Audit-Protokoll der Gegenstelle
+(`system.migration.deploy`, Verb `trigger-<Aktion>`). Die Ansicht braucht keine Anmeldung (`site.ini
+[SiteAccessSettings] AnonymousAccessList[]` und `[RoleSettings] PolicyOmitList[]` nennen `migration/trigger`); mit
+`Trigger=disabled`, der Vorgabe, nimmt sie nichts an.
+
+## Selbstheilung und die Prüfungen des Preflights
+
+Die **Selbstheilung** ist aus, bis `[RemoteSettings] SelfHeal[]` auf der Quelle die Korrekturen nennt, die ein Deploy
+auf einer Gegenstelle vornehmen darf. Jede läuft dort als `./console exp:migration:heal --fix=... --apply`, und jede
+Korrektur steht in den `fixes` der Gegenstelle im Bericht (die Seite des Deploys zeigt sie unter der Gegenstelle):
+
+| Korrektur | Wann | Was sie tut |
+|---|---|---|
+| `stale-lock` | vor dem Preflight | Entfernt die Halter-Datei eines beendeten Laufs. Eine noch gehaltene Sperre wird nur beiseitegelegt, wenn ihr Halter auf diesem Host lief, sein Prozess beendet ist (ein Kindprozess, der die Sperre geerbt hat, kann sie noch halten), sie älter als `StaleLockAge` (7200 s) ist und die Sperrdatei demselben Benutzer gehört. Alles andere wird nur gemeldet. |
+| `paths` | vor dem Preflight | Legt einen fehlenden Migrationsordner der Website und `var/<site>/migration` an. |
+| `modes` | vor dem Preflight | Ergänzt den Ordnern und Dateien der Migrationsordner und von `var/<site>/migration` die Rechte aus `site.ini [FileSettings]`, die ihnen fehlen (nimmt nie Rechte weg; Dateien eines anderen Benutzers werden gemeldet). |
+| `caches` | nach dem Umschalten | Leert dort die Caches mit dem Tag `ini` und den Cache der Template-Overrides. |
+
+```ini
+[RemoteSettings]
+SelfHeal[]
+SelfHeal[]=stale-lock
+SelfHeal[]=modes
+SelfHeal[]=caches
+```
+
+Auf der Gegenstelle selbst zeigt `./console exp:migration:heal --fix=stale-lock,paths,modes`, was es tun würde;
+mit `--apply` tut es das.
+
+Nie korrigiert, nur gemeldet: eine abweichende PHP- oder Erweiterungsversion, ein Fehler der Migration selbst, eine
+Prüfsumme, die der Schutz ablehnt.
+
+**Die Prüfungen des Preflights** lesen den Stand der Gegenstelle (er nennt ihre PHP-Version, ihre Erweiterungen mit
+Versionen und den freien Platz ihres Dateisystems) und halten den Deploy an, bevor etwas gesendet wird:
+
+| Einstellung in `[RemoteSettings]` | Vorgabe | Was den Deploy anhält |
+|---|---|---|
+| `DiskMargin` | `50M` | Weniger freier Platz dort als die gesendeten Dateien plus der Reserve |
+| `PhpCheck` | `major` | Eine andere Hauptversion von PHP dort (`minor`: eine andere Haupt- und Nebenversion; `warn`: nur eine Warnung; `off`) |
+| `ExtensionCheck` | `migrations` | Eine Erweiterung, deren Migrationen gesendet werden, ist dort nicht aktiv oder hat eine andere Version (`all`: jede aktive Erweiterung; `warn`: nur Warnungen; `off`) |
+
+Eine Gegenstelle mit älterem Kernel, die das nicht meldet, wird nicht geprüft; der Bericht sagt es in einer Warnung.
 
 ## Status und Verlauf
 
@@ -206,9 +296,8 @@ Tor und die Rücknahme).
 | `was applied there from a file that differs` | Die Migration wurde geändert, nachdem sie dort ausgeführt wurde. Gleichen Sie die Dateien an oder akzeptieren Sie sie dort mit `exp:migration:migrate --force --reason`. |
 | `captions are off there` | Schalten Sie in `[CaptionSettings]` der Gegenstelle die Sicherungspunkte ein; ein Deploy braucht sie, um eine Gegenstelle zurückzusetzen. |
 | Zustand `out-of-sync` | Lesen Sie den Stand jeder Gegenstelle im Bericht und bereinigen Sie die, die nicht zurückgesetzt werden konnte, von Hand. |
-
-## Noch nicht verfügbar
-
-Der signierte Auslöse-Endpunkt, der Migrationen auf reinen FTP-Hosts ausführen würde, und die automatische Reparatur
-einer verwaisten Sperre, von Dateirechten oder Caches (Selbstheilung) sind geplant; bis dahin führen Sie die Migrationen
-eines reinen FTP-Hosts nach einem Deploy mit `--transfer-only` dort von Hand aus.
+| `an FTP remote cannot run the migrations` | Geben Sie ihr den HTTP-Trigger (`Trigger`, `TriggerSecret` und dort `[TriggerSettings]`), oder übertragen Sie mit `--transfer-only`. |
+| `not reachable or no migration status` mit `"status":403` oder `401` darin | Der Trigger hat die Anfrage abgelehnt: Die Adresse der Quelle steht nicht in `AllowedAddresses[]`, die Geheimnisse unterscheiden sich, oder die Uhren liegen mehr als `Lifetime` Sekunden auseinander. |
+| `only ... MB free there` | Schaffen Sie Platz auf der Gegenstelle oder senken Sie `DiskMargin`. |
+| `PHP there is ...` / `the extension ... there` | Bringen Sie die Gegenstelle auf dieselben Versionen oder lockern Sie `PhpCheck` / `ExtensionCheck`. |
+| `stale-lock: the lock is held ... and left alone` | Die Selbstheilung fand eine Sperre, die sie nicht nehmen darf: Ihr Prozess läuft noch, sie ist jünger als `StaleLockAge`, oder sie wird auf einem anderen Host gehalten. Prüfen Sie sie dort. |

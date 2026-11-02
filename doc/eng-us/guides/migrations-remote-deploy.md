@@ -15,9 +15,9 @@ in parallel, and a phase only starts when the one before it passed on every remo
 | Phase | On every remote | When it fails |
 |---|---|---|
 | prepare | The remote's settings and its credential are checked (no connection yet). | Nothing was contacted. |
-| preflight | `exp:migration:status --format=json` is read there: reachable, the run lock free, no failed migration, the same kernel version as here, no migration changed after it was applied there. The files to send are planned. | Nothing was changed anywhere. |
+| preflight | The fixes of `SelfHeal[]` first (see "Self-healing"), then `exp:migration:status --format=json` is read there: reachable, the run lock free, no failed migration, the same kernel version as here, PHP and extension versions, enough free disk space, no migration changed after it was applied there. The files to send are planned. | Nothing was changed anywhere. |
 | transfer | The planned migration files are sent. | No remote was switched; the files sent stay pending there. |
-| verify | A dry run of `exp:migration:migrate` there must see every sent file with this installation's checksum, and captions must be on. FTP: every file is read back and compared. | No remote was switched. |
+| verify | A dry run of `exp:migration:migrate` there must see every sent file with this installation's checksum, and captions must be on where something is to run. FTP without a trigger: every file is read back and compared. | No remote was switched. |
 | switch | `exp:migration:migrate --apply --run-id=<deploy id>` on all remotes at once, with one shared run id. | See "All or nothing". |
 
 Without `--apply` the deploy is a dry run: it ends after the preflight and lists, per remote, the files it would send
@@ -123,14 +123,102 @@ Every output kept in a report or shown is redacted: the secret's value is replac
 
 ## FTP remotes
 
-FTP cannot run commands, so a deploy to an FTP remote only sends and verifies the files:
+FTP cannot run commands. Without more, a deploy to an FTP remote only sends and verifies the files:
 
 ```
 ./console exp:migration:deploy --remotes=webspace --transfer-only --apply
 ```
 
 Every selected migration is sent (the remote's state cannot be read over FTP) and read back to check it arrived
-unchanged. Run the migrations there with the remote's own means.
+unchanged.
+
+### FTP remotes with the HTTP trigger
+
+When the remote installation offers its signed HTTP trigger, an FTP remote is deployed like any other: its status is
+read, the files are sent over FTP, a dry run there verifies them, the switch runs them, and a failure anywhere takes
+it back. The source sends each command as a signed `POST` to the view `migration/trigger` of the remote, which runs
+the console script there (`exp:migration:status`, `migrate`, `rollback`, `heal`) and answers with its JSON report.
+
+On the **remote** (the installation that is reached by FTP), in `settings/override/migration.ini.append.php`:
+
+```ini
+[TriggerSettings]
+Trigger=enabled
+Secret=migration_trigger             # a secret of Setup > Secrets (or env:VARIABLE), at least 16 characters
+AllowedAddresses[]
+AllowedAddresses[]=203.0.113.10      # the address the source connects from (CIDR ranges too)
+Php=/usr/bin/php8.4                  # the PHP CLI that runs the console scripts there
+```
+
+On the **source**, the remote's section names the address and the same secret by name:
+
+```ini
+[Remote_webspace]
+Transport=ftps
+Host=ftp.example.com
+User=web
+Path=/htdocs
+Credential=password:webspace_ftp
+Trigger=https://www.example.com/migration/trigger
+TriggerSecret=migration_trigger
+```
+
+What the trigger takes:
+
+| Check | Answer when it fails |
+|---|---|
+| `POST` only | 405 |
+| `Trigger=enabled` | 404 |
+| The connection's address (`REMOTE_ADDR`, never a forwarded header) is in `AllowedAddresses[]`; an empty list takes nothing | 403 |
+| The secret is set and at least 16 characters long | 503 |
+| `X-Exp-Migration-Trigger: v1.<time>.<nonce>.<HMAC-SHA256>` over the time, the nonce and the SHA-256 of the body, issued at most `Lifetime` seconds ago (300) | 401 |
+| At most `MaxRequestsPerMinute` requests a minute (30) | 429 |
+| The nonce was not used before (a replay) | 409 |
+| The body is a request it knows: an action (`status`, `dry-run`, `apply`, `rollback`, `heal`) with a valid run id, migration ids or fixes; never a command line | 400 |
+
+Each request is signed afresh, also when it is tried again after a connection failure. The secret never travels:
+it only signs. Each request that reaches the checks is written to the audit log of the remote
+(`system.migration.deploy`, verb `trigger-<action>`). The view needs no sign-in (`site.ini [SiteAccessSettings]
+AnonymousAccessList[]` and `[RoleSettings] PolicyOmitList[]` name `migration/trigger`); with `Trigger=disabled`, the
+default, it takes nothing.
+
+## Self-healing and the checks of the preflight
+
+**Self-healing** is off until `[RemoteSettings] SelfHeal[]` on the source names the fixes a deploy may make on a
+remote. Each runs there as `./console exp:migration:heal --fix=... --apply`, and each fix is written to the remote's
+`fixes` in the report (the deploy's page shows them under the remote):
+
+| Fix | When | What it does |
+|---|---|---|
+| `stale-lock` | before the preflight | Removes the holder file of a run that has ended. A lock that is still held is moved aside only when its holder ran on that host, its process is gone (a child that inherited the lock may still hold it), it is older than `StaleLockAge` (7200 s) and the lock file belongs to the same user. Anything else is only reported. |
+| `paths` | before the preflight | Makes a missing migration folder of the site and `var/<site>/migration`. |
+| `modes` | before the preflight | Adds the permissions of `site.ini [FileSettings]` to the folders and files of the migration folders and `var/<site>/migration` that lack them (never takes permissions away; another user's files are reported). |
+| `caches` | after the switch | Clears the caches tagged `ini` and the template override cache there. |
+
+```ini
+[RemoteSettings]
+SelfHeal[]
+SelfHeal[]=stale-lock
+SelfHeal[]=modes
+SelfHeal[]=caches
+```
+
+On the remote itself, `./console exp:migration:heal --fix=stale-lock,paths,modes` lists what it would do; add
+`--apply` to do it.
+
+Never fixed, only reported: a PHP or extension version that differs, a migration's own error, a checksum the guard
+refuses.
+
+**The checks of the preflight** read the remote's status (it reports its PHP version, its extensions with their
+versions and the free disk space of its file system) and stop the deploy before anything is sent:
+
+| Setting of `[RemoteSettings]` | Default | What stops the deploy |
+|---|---|---|
+| `DiskMargin` | `50M` | Less free space there than the files sent plus the margin |
+| `PhpCheck` | `major` | Another major version of PHP there (`minor`: another major.minor; `warn`: only a warning; `off`) |
+| `ExtensionCheck` | `migrations` | An extension whose migrations are sent is not active there or has another version (`all`: every active extension; `warn`: only warnings; `off`) |
+
+A remote with an older kernel that does not report these is not checked; the report says so in a warning.
 
 ## Status and history
 
@@ -196,9 +284,9 @@ check `./console exp:migration:remote:status` afterwards: "In sync: yes".
 | `was applied there from a file that differs` | The migration was changed after it was applied there. Make the files equal, or accept it there with `exp:migration:migrate --force --reason`. |
 | `captions are off there` | Turn captions on in the remote's `[CaptionSettings]`; a deploy needs them to take a remote back. |
 | State `out-of-sync` | Read every remote's state in the report and resolve the one that could not be taken back by hand. |
+| `an FTP remote cannot run the migrations` | Give it the HTTP trigger (`Trigger`, `TriggerSecret`, and `[TriggerSettings]` there), or deploy with `--transfer-only`. |
+| `not reachable or no migration status` with `"status":403` or `401` in it | The trigger refused the request: the source's address is not in `AllowedAddresses[]`, or the secrets differ, or the clocks are more than `Lifetime` seconds apart. |
+| `only ... MB free there` | Free space on the remote, or lower `DiskMargin`. |
+| `PHP there is ...` / `the extension ... there` | Bring the remote to the same versions, or relax `PhpCheck` / `ExtensionCheck`. |
+| `stale-lock: the lock is held ... and left alone` | The self-healing found a lock it may not take: its process still runs, it is younger than `StaleLockAge`, or it is held on another host. Check it there. |
 
-## Not yet available
-
-The signed trigger endpoint that would run migrations on FTP-only hosts, and the automatic repair of a stale lock,
-file modes or caches (self-healing) are planned; until then, run the migrations of an FTP-only host there by hand
-after a `--transfer-only` deploy.

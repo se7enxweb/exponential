@@ -183,12 +183,14 @@ PermissionSQLOptimization=enabled
 > refusal is a bare 403 for its script instead of a page.  
 > The reports of the Content Security Policy come from browsers, signed in or not; csp/report protects itself  
 > (content types, size, rate limits, masked log lines).  
+> The signed HTTP trigger of a deploy over FTP: the signature, the source address and the nonce are the permission  
+> (expMigrationTrigger, migration.ini \[TriggerSettings\]).  
 > The preview of a draft through a share link: the signed, expiring token is the permission  
 > (expContentPreviewLink); without a valid one the page says the link does not work.  
 > The form endpoint of static publishing: the visitors of a static copy post its forms here, signed in or not;  
 > staticpublish/form checks the origin, the token signed at build time and the rate itself (expStaticFormEndpoint).  
 
-Default: a list of 25: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
+Default: a list of 26: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -216,7 +218,7 @@ PolicyOmitList[]=mailpreferences/unsubscribe
 PolicyOmitList[]=mailpreferences/confirm
 PolicyOmitList[]=mailpreferences/request
 PolicyOmitList[]=mailpreferences/export
-# ... 5 more in the shipped file
+# ... 6 more in the shipped file
 */ ?>
 ```
 

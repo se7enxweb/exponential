@@ -27,7 +27,11 @@ dem, was falsch ist.
 **Verbindung testen** erreicht die Gegenstelle einmal und ändert nichts: Bei SSH, sftp, rsync und local liest es den
 Migrationsstand der Gegenstelle (ihre Kernel-Version, wie viele Migrationen erledigt, ausstehend und gescheitert sind,
 ob ein Lauf ihre Sperre hält); bei FTP meldet es sich an und liest `index.php` zurück, weil der Migrationsstand einer
-FTP-Gegenstelle nicht gelesen werden kann.
+FTP-Gegenstelle nicht gelesen werden kann (eine FTP-Gegenstelle mit dem HTTP-Trigger wird wie eine SSH-Gegenstelle
+gelesen). Der Trigger (`Trigger`, `TriggerSecret`) wird in `settings/override/migration.ini.append.php` gesetzt; der
+Assistent behält ihn beim Speichern der Gegenstelle. Siehe die Anleitung
+[Migrationen: Deploy auf entfernte Installationen](../../anleitungen/migrationen-remote-deploy.md), „FTP-Gegenstellen
+mit dem HTTP-Trigger“.
 
 ### Der Assistent
 
@@ -59,7 +63,9 @@ oder ausgeführt hat, den neuesten zuerst, mit seinem Stand, dem Stand jeder Geg
    - **Senden und ausführen**: Die Migrationen werden auf jede Gegenstelle gesendet, geprüft und mit einer gemeinsamen
      Lauf-ID ausgeführt.
    - **Nur übertragen**: Die Dateien werden gesendet und geprüft, nichts wird ausgeführt (der einzige Weg für eine
-     FTP-Gegenstelle).
+     FTP-Gegenstelle ohne HTTP-Trigger).
+   Die Korrekturen aus `[RemoteSettings] SelfHeal[]` (eine verwaiste Laufsperre, fehlende Ordner, Dateirechte, Caches)
+   werden dabei auf jeder Gegenstelle vorgenommen, und die Seite des Deploys führt sie unter der Gegenstelle auf.
    - **In Stufen**: Stufe für Stufe, siehe unten.
    - **Nur diese Migrationen**: optional Migrations-IDs; leer heißt jede Migration der Site und ihrer Erweiterungen.
 

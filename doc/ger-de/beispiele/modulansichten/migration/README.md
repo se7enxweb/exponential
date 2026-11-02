@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # Das Modul migration
 
-Name `Migrations`, definiert in `kernel/migration/module.php`. 13 Ansichten.
+Name `Migrations`, definiert in `kernel/migration/module.php`. 14 Ansichten.
 
 | Ansicht | Adresse | Richtlinienfunktionen |
 |---|---|---|
@@ -27,6 +27,7 @@ Name `Migrations`, definiert in `kernel/migration/module.php`. 13 Ansichten.
 | [run](run.md) | `/migration/run` | run |
 | [status](status.md) | `/migration/status` | read |
 | [stream](stream.md) | `/migration/stream/<RunID>` | read |
+| [trigger](trigger.md) | `/migration/trigger` | (Modul) |
 
 - [Die Richtlinien dieses Moduls](../../richtlinien/migration.md)
 

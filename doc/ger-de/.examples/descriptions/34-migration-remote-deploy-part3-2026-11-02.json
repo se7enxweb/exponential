@@ -1,0 +1,62 @@
+{
+    "command:expmigrationheal": {
+        "en": "Self-healing before a migration run: a stale run lock, missing migration folders, file modes, caches (what a deploy may fix on a remote)",
+        "de": "Selbstheilung vor einem Migrationslauf: eine verwaiste Laufsperre, fehlende Migrationsordner, Dateirechte, Caches (was ein Deploy auf einer Gegenstelle korrigieren darf)"
+    },
+    "command:expmigrationheal --fix": {
+        "en": "The fixes: stale-lock, paths, modes, caches (a comma list or repeated)",
+        "de": "Die Korrekturen: stale-lock, paths, modes, caches (durch Kommas getrennt oder wiederholt)"
+    },
+    "command:expmigrationheal --stale-lock-age": {
+        "en": "Seconds from which a held run lock whose process is gone counts as stale (default 7200)",
+        "de": "Sekunden, ab denen eine gehaltene Laufsperre, deren Prozess beendet ist, als verwaist gilt (Vorgabe 7200)"
+    },
+    "ini:settings/migration.ini [RemoteSettings] DiskMargin": {
+        "en": "The free disk space a remote must have beyond the size of the files a deploy sends to it (bytes, or with K, M, G).",
+        "de": "Der freie Plattenplatz, den eine Gegenstelle über die Größe der Dateien hinaus haben muss, die ein Deploy ihr sendet (Bytes, oder mit K, M, G)."
+    },
+    "ini:settings/migration.ini [RemoteSettings] ExtensionCheck": {
+        "en": "The extensions of a remote against this installation's: migrations (every extension whose migrations are sent is\nactive there with the same version, else the deploy stops; other differences are warnings), all (every active\nextension), warn (differences are only warnings), off.",
+        "de": "Die Erweiterungen einer Gegenstelle im Vergleich zu denen dieser Installation: migrations (jede Erweiterung, deren\nMigrationen gesendet werden, ist dort mit derselben Version aktiv, sonst hält der Deploy an; andere Unterschiede sind\nWarnungen), all (jede aktive Erweiterung), warn (Unterschiede sind nur Warnungen), off."
+    },
+    "ini:settings/migration.ini [RemoteSettings] PhpCheck": {
+        "en": "The PHP version of a remote against this installation's: major (the same major version, else the deploy stops),\nminor (the same major.minor), warn (a difference is only a warning), off.",
+        "de": "Die PHP-Version einer Gegenstelle im Vergleich zu der dieser Installation: major (dieselbe Hauptversion, sonst hält\nder Deploy an), minor (dieselbe Haupt- und Nebenversion), warn (ein Unterschied ist nur eine Warnung), off."
+    },
+    "ini:settings/migration.ini [RemoteSettings] SelfHeal": {
+        "en": "Self-healing: the fixes a deploy may make on a remote (./console exp:migration:heal there), each only when listed,\neach written to the remote's fixes in the report. Before the preflight: stale-lock (a run lock whose process is\ngone, older than StaleLockAge, held on that host by the same user), paths (missing migration folders), modes (the\npermissions of [FileSettings] on the migration folders and var/<site>/migration, only added); after the switch:\ncaches (ini and template-override). Never fixed, only reported: PHP or extension versions, a migration's own error.",
+        "de": "Selbstheilung: die Korrekturen, die ein Deploy auf einer Gegenstelle vornehmen darf (./console exp:migration:heal\ndort), jede nur, wenn sie aufgeführt ist, und jede in den fixes der Gegenstelle im Bericht vermerkt. Vor dem Preflight:\nstale-lock (eine Laufsperre, deren Prozess beendet ist, älter als StaleLockAge, auf jenem Host vom selben Benutzer\ngehalten), paths (fehlende Migrationsordner), modes (die Rechte aus [FileSettings] für die Migrationsordner und\nvar/<site>/migration, nur ergänzt); nach dem Umschalten: caches (ini und template-override). Nie korrigiert, nur\ngemeldet: PHP- oder Erweiterungsversionen, ein Fehler der Migration selbst."
+    },
+    "ini:settings/migration.ini [RemoteSettings] StaleLockAge": {
+        "en": "Seconds from which a held run lock whose process is gone counts as stale (SelfHeal[]=stale-lock).",
+        "de": "Sekunden, ab denen eine gehaltene Laufsperre, deren Prozess beendet ist, als verwaist gilt (SelfHeal[]=stale-lock)."
+    },
+    "ini:settings/migration.ini [TriggerSettings] AllowRootUser": {
+        "en": "enabled: the console scripts run with --allow-root-user (only when the web server's PHP runs as root).",
+        "de": "enabled: Die Konsolenskripte laufen mit --allow-root-user (nur, wenn das PHP des Webservers als root läuft)."
+    },
+    "ini:settings/migration.ini [TriggerSettings] AllowedAddresses": {
+        "en": "The addresses (or CIDR ranges, 192.0.2.0/24, 2001:db8::/32) the source connects from. Empty: no request is taken.",
+        "de": "Die Adressen (oder CIDR-Bereiche, 192.0.2.0/24, 2001:db8::/32), von denen die Quelle verbindet. Leer: Keine Anfrage wird angenommen."
+    },
+    "ini:settings/migration.ini [TriggerSettings] Lifetime": {
+        "en": "Seconds a signature is valid after it was issued.",
+        "de": "Sekunden, die eine Signatur nach ihrer Ausstellung gültig ist."
+    },
+    "ini:settings/migration.ini [TriggerSettings] MaxRequestsPerMinute": {
+        "en": "At most this many requests a minute (429 above).",
+        "de": "Höchstens so viele Anfragen pro Minute (darüber 429)."
+    },
+    "ini:settings/migration.ini [TriggerSettings] Php": {
+        "en": "The PHP CLI that runs the console scripts, and how many seconds one may take.",
+        "de": "Das PHP-CLI, das die Konsolenskripte ausführt, und wie viele Sekunden eines dauern darf."
+    },
+    "ini:settings/migration.ini [TriggerSettings] Secret": {
+        "en": "The secret the requests are signed with: a name of the secret store (Setup > Secrets) or env:VARIABLE, at least 16\ncharacters; the source's TriggerSecret holds the same value. Never the secret itself.",
+        "de": "Das Geheimnis, mit dem die Anfragen signiert werden: ein Name aus dem Geheimnisspeicher (Einrichtung > Geheimnisse) oder\nenv:VARIABLE, mindestens 16 Zeichen; TriggerSecret der Quelle enthält denselben Wert. Nie das Geheimnis selbst."
+    },
+    "ini:settings/migration.ini [TriggerSettings] Trigger": {
+        "en": "The signed HTTP trigger: a source installation that reaches this one by FTP only runs the migrations here through\nthe view migration/trigger (POST, JSON). Each request is signed with HMAC-SHA256 with the secret Secret names, used\nonce (its nonce), valid for Lifetime seconds, and only taken from AllowedAddresses[]. Guide:\ndoc/eng-us/guides/migrations-remote-deploy.md (\"FTP remotes with the HTTP trigger\")",
+        "de": "Der signierte HTTP-Trigger: Eine Quellinstallation, die diese nur per FTP erreicht, führt die Migrationen hier über die\nAnsicht migration/trigger aus (POST, JSON). Jede Anfrage ist mit HMAC-SHA256 mit dem Geheimnis signiert, das Secret\nnennt, wird einmal verwendet (ihre Nonce), ist Lifetime Sekunden gültig und wird nur von AllowedAddresses[]\nangenommen. Anleitung: doc/ger-de/anleitungen/migrationen-remote-deploy.md („FTP-Gegenstellen mit dem HTTP-Trigger“)"
+    }
+}

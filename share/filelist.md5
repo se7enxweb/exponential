@@ -3774,6 +3774,7 @@ d191449b755d7b9d60da9ad09107af4a  doc/eng-us/examples/commands/expmigrationconve
 171c1e01657495bf83e575e3e4c342eb  doc/eng-us/examples/commands/expmigrationdeploy.md
 4ec07d5eab0c580a049d7fd9b2a9056d  doc/eng-us/examples/commands/expmigrationdryrun.md
 47a39f37c40f855eed5f160cc983551d  doc/eng-us/examples/commands/expmigrationgenerate.md
+cd80dbece5d46b1d4b4ed69bf39775cb  doc/eng-us/examples/commands/expmigrationheal.md
 b29488d86676a67549a1e760db0b86a9  doc/eng-us/examples/commands/expmigrationmigrate.md
 fe8029a581c530b848866f3caf04ac77  doc/eng-us/examples/commands/expmigrationpush.md
 80a8c55394eeadbfb2a263ac804068f5  doc/eng-us/examples/commands/expmigrationrecorddiscard.md
@@ -5056,6 +5057,7 @@ df5ba32a59a905d18b707164940472cc  doc/eng-us/examples/ini-settings/migration/Rem
 94959f62b9cb34961c632d17697e39b5  doc/eng-us/examples/ini-settings/migration/RepositorySettings.md
 864086ebb289d2b505175174e943efda  doc/eng-us/examples/ini-settings/migration/RunSettings.md
 5f46798912e6872578b02339ab9a86ad  doc/eng-us/examples/ini-settings/migration/StepSettings.md
+522c372caf993a87b878341eda313831  doc/eng-us/examples/ini-settings/migration/TriggerSettings.md
 7cf8352bfd4737f1a944cee7eaef3bce  doc/eng-us/examples/ini-settings/migration/YamlSettings.md
 24a4935a5de1d9d2fb967602213c5c5b  doc/eng-us/examples/ini-settings/mime/3gp.md
 3fef90ee97702e67cf845c520aec316e  doc/eng-us/examples/ini-settings/mime/README.md
@@ -5968,6 +5970,7 @@ c5d9cf72d2c6cebc6eb2e3c98f4e5258  doc/eng-us/examples/module-views/migration/rem
 f02e500717a9d13f06b51dc682dbbb1b  doc/eng-us/examples/module-views/migration/run.md
 26725bf6645d89e29a73c1f2dc94beee  doc/eng-us/examples/module-views/migration/status.md
 9061cb50652b6f75ad79e6b9dc6aca8c  doc/eng-us/examples/module-views/migration/stream.md
+3c20b57012aa49d27610d98f949e5687  doc/eng-us/examples/module-views/migration/trigger.md
 935e43f3a7aee78e453cf356de4e924c  doc/eng-us/examples/module-views/moderation/README.md
 f4eb7b98a54db4746c6bd8a90845a95c  doc/eng-us/examples/module-views/moderation/action.md
 655c035cc11a10101219b4fea08adde1  doc/eng-us/examples/module-views/moderation/recent.md
@@ -13316,6 +13319,7 @@ e877bec75852cba6107371661f58b064  doc/ger-de/.examples/descriptions/31-migration
 b8f2793235dc711a4414d2586363d371  doc/ger-de/.examples/descriptions/32-migration-remote-deploy-part2-2026-11-10.json
 f3b5d80ee09ab898084c12c09f95ac08  doc/ger-de/.examples/descriptions/32-static-publishing-siteaccesses-2026-11-02.json
 9bd7cfb9220679a7eb4466426ac90edc  doc/ger-de/.examples/descriptions/33-migration-editor-convert-split-2026-11-02.json
+8d1419735c866a444da349c8cf9f480f  doc/ger-de/.examples/descriptions/34-migration-remote-deploy-part3-2026-11-02.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
@@ -13639,6 +13643,7 @@ cfae99e30e49125b83c0ec01171d96a8  doc/ger-de/beispiele/befehle/exphelpcontent.md
 f0e6e4c766e1f10274a08c9d1c007973  doc/ger-de/beispiele/befehle/expmigrationdeploy.md
 78ae3ae8ddafd12ddc720900b76db1f9  doc/ger-de/beispiele/befehle/expmigrationdryrun.md
 449059a6ca9f81b0ef8b27dfc55c682e  doc/ger-de/beispiele/befehle/expmigrationgenerate.md
+39bc2cf9249baec4074d531809d3ea80  doc/ger-de/beispiele/befehle/expmigrationheal.md
 1c519461e0d1c24366332bdfa8200f12  doc/ger-de/beispiele/befehle/expmigrationmigrate.md
 92dd1af54aa80bf64dc6a4f7506e6a9b  doc/ger-de/beispiele/befehle/expmigrationpush.md
 bbdf95c2d59a7202463e9d86a7bf6472  doc/ger-de/beispiele/befehle/expmigrationrecorddiscard.md
@@ -14894,6 +14899,7 @@ da198fc2db7f44228528e0d13d35d77f  doc/ger-de/beispiele/ini-einstellungen/migrati
 be0ce85e507e5f9f239e46615b470d30  doc/ger-de/beispiele/ini-einstellungen/migration/RepositorySettings.md
 669cd428a2807229a2c4ff9a81652911  doc/ger-de/beispiele/ini-einstellungen/migration/RunSettings.md
 bd5410dff48941e30a763ff26ecfa018  doc/ger-de/beispiele/ini-einstellungen/migration/StepSettings.md
+b68d6fe496c9cb39bec1f6184b0144fe  doc/ger-de/beispiele/ini-einstellungen/migration/TriggerSettings.md
 1de800b79215dfcb7d46b17df5b95a06  doc/ger-de/beispiele/ini-einstellungen/migration/YamlSettings.md
 30fe2f095376055cda0fe90980eebd75  doc/ger-de/beispiele/ini-einstellungen/mime/3gp.md
 2c95b1c25bf0721b16dc9af0d086a7f9  doc/ger-de/beispiele/ini-einstellungen/mime/README.md
@@ -15821,6 +15827,7 @@ a79e88828e17e7b537146e6da2e1aa34  doc/ger-de/beispiele/modulansichten/migration/
 4385c11a980ccd6fefe3e2c9590d5119  doc/ger-de/beispiele/modulansichten/migration/run.md
 9234be3b6a7ed18aa00ef4d3980944bd  doc/ger-de/beispiele/modulansichten/migration/status.md
 b0626b9f6b44f46e05eb8ce90ad7b17f  doc/ger-de/beispiele/modulansichten/migration/stream.md
+188dc8c427159ac144cf0cf8e373d6fa  doc/ger-de/beispiele/modulansichten/migration/trigger.md
 7a55e425d167a4439ba093825120686a  doc/ger-de/beispiele/modulansichten/moderation/README.md
 1ecf6fd53eab17126820db78c2e75a01  doc/ger-de/beispiele/modulansichten/moderation/action.md
 95612aba73da661f9e4cde1c0ffee867  doc/ger-de/beispiele/modulansichten/moderation/recent.md
