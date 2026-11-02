@@ -166,7 +166,7 @@
     return Promise.resolve(copyByTextarea(text));
   };
   const copyButton = root.querySelector('.exp-debug-copy-messages');
-  const copyStatus = root.querySelector('.exp-debug-copy-status');
+  const copyStatus = root.querySelector('.exp-debug-copy-status:not(.exp-debug-copy-profile-status)');
   if (copyButton) {
     let statusTimer = null;
     const say = (text, level) => {
@@ -186,6 +186,19 @@
       });
     });
   }
+
+  // the User tab: the cache profile as text, to set two users' side by side
+  root.querySelectorAll('.exp-debug-copy-profile').forEach((button) => {
+    const status = button.parentNode ? button.parentNode.querySelector('.exp-debug-copy-profile-status') : null;
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      copyText(button.getAttribute('data-exp-debug-copy') || '').then((ok) => {
+        if (!status) return;
+        status.textContent = ok ? t('Copied') : t('Could not copy.');
+        status.className = 'exp-debug-copy-status exp-debug-copy-profile-status exp-debug-' + (ok ? 'ok' : 'high');
+      });
+    });
+  });
 
   /* ---------------------------------------------------------------- summary chips */
   root.querySelectorAll('.exp-debug-chip').forEach((chip) => {
