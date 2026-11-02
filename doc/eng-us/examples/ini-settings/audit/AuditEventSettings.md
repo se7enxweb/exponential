@@ -30,7 +30,7 @@ Never edit `settings/audit.ini` itself: an update replaces it. Put the settings 
 > Static publishing: a publish (also a push tried again), a rollback, a deploy key made, a target saved, a build,  
 > a post to the form endpoint.  
 
-Default: a list of 49: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.migration.http`, `system.migration.mail`, `system.migration.command`, `system.migration.record` ....
+Default: a list of 51: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.migration.http`, `system.migration.mail`, `system.migration.command`, `system.migration.record` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -50,15 +50,15 @@ Enabled[]=system.migration.http
 Enabled[]=system.migration.mail
 Enabled[]=system.migration.command
 Enabled[]=system.migration.record
+Enabled[]=system.migration.deploy
+Enabled[]=system.migration.deploy.rollback
 Enabled[]=system.staticpublish.publish
 Enabled[]=system.staticpublish.rollback
 Enabled[]=system.staticpublish.credential
 Enabled[]=system.staticpublish.target
 Enabled[]=system.staticpublish.build
 Enabled[]=system.staticpublish.form
-Enabled[]=content.node.move
-Enabled[]=content.node.remove.*
-# ... 29 more in the shipped file
+# ... 31 more in the shipped file
 */ ?>
 ```
 
