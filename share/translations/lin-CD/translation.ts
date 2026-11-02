@@ -83441,6 +83441,10 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <translation>Makomi na yango etikalaka. Bilili, mikanda ya kotondisa mpe ba lien ya ba site mosusu elongolamaka soki moke te.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Ba-siteaccess oyo ekobimisama</translation>
     </message>

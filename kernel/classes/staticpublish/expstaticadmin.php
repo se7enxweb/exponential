@@ -171,7 +171,7 @@ class expStaticAdmin
         foreach ( expStaticStatus::pages( $db, $target->id() ) as $page )
             if ( !empty( $page['stale'] ) )
                 $stale++;
-        $state = array( 'repository' => false, 'uncommitted' => 0, 'last_tag' => '', 'unpushed' => null );
+        $state = array( 'repository' => false, 'uncommitted' => 0, 'last_tag' => '', 'last_tag_commit' => '', 'unpushed' => null );
         try
         {
             $state = $publisher->repository()->state() + $state;
@@ -196,6 +196,11 @@ class expStaticAdmin
             'stale' => $stale,
             'pending_build' => (int)$state['uncommitted'] > 0 || ( empty( $state['repository'] ) && $built !== null ),
             'last_tag' => (string)$state['last_tag'],
+            'version' => self::versionNumber( (string)$state['last_tag'], $target->id() ),
+            'commit' => (string)$state['last_tag_commit'],
+            'commit_short' => self::shortHash( (string)$state['last_tag_commit'] ),
+            'commit_url' => self::commitUrl( (string)$target->setting( 'Remote' ) ),
+            'deploy' => self::deployState( $runs ? $runs[0] : null ),
             'unpushed' => $state['unpushed'],
             'bytes' => $built !== null ? $built->bytes() : 0,
             'pages' => $built !== null ? $built->count( 'page' ) : 0,
@@ -242,6 +247,92 @@ class expStaticAdmin
     public static function percent( $part, $whole )
     {
         return $whole > 0 ? (int)min( 100, floor( max( 0, $part ) * 100 / $whole ) ) : 0;
+    }
+
+    /**
+     * The version number of a publish: the n of its tag static/<target>/<n>. Pure.
+     *
+     * @param string $tagName
+     * @param string $targetId
+     * @return int 0 when there is no tag or it is not one of the target's
+     */
+    public static function versionNumber( $tagName, $targetId )
+    {
+        $tagName = trim( (string)$tagName );
+        if ( $tagName === '' || ctype_digit( $tagName ) )
+            return 0;
+        return expStaticRepository::tagNumber( $tagName, (string)$targetId );
+    }
+
+    /**
+     * The short form of a commit id, as git and GitHub show it. Pure.
+     *
+     * @param string $commit
+     * @param int $length
+     * @return string the first $length hex digits in lower case, '' for something that is no commit id
+     */
+    public static function shortHash( $commit, $length = 7 )
+    {
+        $commit = trim( (string)$commit );
+        if ( !preg_match( '/^[0-9a-f]{4,64}$/i', $commit ) )
+            return '';
+        return strtolower( substr( $commit, 0, max( 4, (int)$length ) ) );
+    }
+
+    /**
+     * The address of a commit on the host, for a remote on GitHub ('' for another host). Pure.
+     *
+     * @param string $remote
+     * @return string https://github.com/<owner>/<repo>/commit/ (the commit id goes after it), or ''
+     */
+    public static function commitUrl( $remote )
+    {
+        if ( preg_match( '#^(?:https://github\.com/|git@github\.com:|ssh://git@github\.com/)([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+?)(?:\.git)?/?$#', (string)$remote, $m ) )
+            return 'https://github.com/' . $m[1] . '/' . $m[2] . '/commit/';
+        return '';
+    }
+
+    /**
+     * The deploy state of a run (a row of exp_static_run) in one word, for the dashboard. Pure.
+     *
+     * @param array|null $run
+     * @return array state (none: no run; failed: the run failed; pushed; pending: the push is to be tried again;
+     *         unchanged: nothing to publish; not-pushed: no push, or no remote), time (when it ended, else began),
+     *         run_id
+     */
+    public static function deployState( $run )
+    {
+        if ( !is_array( $run ) || !isset( $run['run_id'] ) )
+            return array( 'state' => 'none', 'time' => 0, 'run_id' => '' );
+        $state = isset( $run['state'] ) ? (string)$run['state'] : '';
+        $push = isset( $run['push_state'] ) ? (string)$run['push_state'] : '';
+        if ( $state === expStaticStatus::FAILED )
+            $out = 'failed';
+        else if ( $push === expStaticRepository::PUSHED )
+            $out = 'pushed';
+        else if ( $push === expStaticRepository::PENDING )
+            $out = 'pending';
+        else if ( $state === expStaticStatus::UNCHANGED )
+            $out = 'unchanged';
+        else
+            $out = 'not-pushed';
+        $time = !empty( $run['finished_at'] ) ? (int)$run['finished_at'] : ( isset( $run['started_at'] ) ? (int)$run['started_at'] : 0 );
+        return array( 'state' => $out, 'time' => $time, 'run_id' => (string)$run['run_id'] );
+    }
+
+    /**
+     * A run as the history shows it: the row with its version number (the n of its tag, 0 without one) and the
+     * short commit id. Pure.
+     *
+     * @param array $run a row of exp_static_run
+     * @param string $targetId
+     * @return array the row with version and commit_short
+     */
+    public static function runView( array $run, $targetId )
+    {
+        $run['version'] = self::versionNumber( isset( $run['tag_name'] ) ? $run['tag_name'] : '', $targetId );
+        $run['commit_short'] = self::shortHash( isset( $run['commit_id'] ) ? $run['commit_id'] : '' );
+        return $run;
     }
 
     /**

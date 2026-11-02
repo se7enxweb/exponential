@@ -83441,6 +83441,10 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <translation>O zestenn a chom. Ar skeudennoù, ar furmskridoù hag al liammoù d'al lec'hiennoù all n'int biken lamet.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Handelv</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Haeziñ al lec'hienn da embann</translation>
     </message>

@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>دەقەکەیان دەمێنێتەوە. وێنە، فۆرم و بەستەر بۆ ماڵپەڕەکانی تر هەرگیز لانابرێن.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>وەشان</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>دەستگەیشتنەکانی ماڵپەڕ بۆ بڵاوکردنەوە</translation>
     </message>

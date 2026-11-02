@@ -83441,6 +83441,10 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>Văn bản của chúng vẫn giữ nguyên. Hình ảnh, biểu mẫu và liên kết đến trang khác không bao giờ bị gỡ.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Phiên bản</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Điểm truy cập trang cần xuất bản</translation>
     </message>

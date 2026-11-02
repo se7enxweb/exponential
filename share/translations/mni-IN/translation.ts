@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>মখোয়গী তেক্সত লৈরি। মফম, ফোর্ম অমসুং অতোপ্পা সাইতকী লিংকশিং কদাইদসু লৌথোকদে।</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>ভর্সন</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>পাউথোকপা সাইট একসেসশিং</translation>
     </message>

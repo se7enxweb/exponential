@@ -83441,6 +83441,10 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <translation>Nananatili ang kanilang teksto. Hindi kailanman inaalis ang mga larawan, form at link sa ibang site.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Bersyon</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Mga siteaccess na ilalathala</translation>
     </message>

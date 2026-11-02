@@ -83439,6 +83439,10 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>Maandishi yake yanabaki. Picha, fomu na viungo vya tovuti nyingine haviondolewi kamwe.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Toleo</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Siteaccess za kuchapisha</translation>
     </message>

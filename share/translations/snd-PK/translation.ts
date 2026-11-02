@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>انهن جو متن رهي ٿو. تصويرون، فارم ۽ ٻين سائيٽن جا لنڪ ڪڏهن به نه هٽايا ويندا آهن.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>ورزن</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>ڇپائڻ لاءِ سائيٽ رسائيون</translation>
     </message>

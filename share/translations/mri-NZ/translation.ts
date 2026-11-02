@@ -83441,6 +83441,10 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <translation>Ka noho tonu tō rātou kuputuhi. Kāore rawa e tangohia ngā whakaahua, ngā puka me ngā hononga ki ētahi atu pae.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Putanga</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Ngā urunga pae hei whakaputa</translation>
     </message>

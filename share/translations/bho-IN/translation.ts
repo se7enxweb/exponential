@@ -83449,6 +83449,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ओकर पाठ रह जाला। फोटो, फॉर्म आ दोसर साइट के लिंक कबो ना हटावल जाला।</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>संस्करण</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>प्रकाशित करे खातिर साइट एक्सेस</translation>
     </message>

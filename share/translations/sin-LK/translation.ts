@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ඒවායේ පාඨය ඉතිරි වේ. රූප, පෝරම සහ වෙනත් අඩවිවලට යන සබැඳි කිසිදා ඉවත් නොකෙරේ.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>අනුවාදය</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>ප්‍රකාශ කළ යුතු අඩවි ප්‍රවේශ</translation>
     </message>

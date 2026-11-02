@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>მათი ტექსტი რჩება. სურათები, ფორმები და ბმულები სხვა საიტებზე არასოდეს იშლება.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>ვერსია</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>გამოსაქვეყნებელი საიტზე წვდომები</translation>
     </message>

@@ -83439,6 +83439,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>তাদের লেখা থেকে যায়। ছবি, ফর্ম এবং অন্য সাইটের লিংক কখনো সরানো হয় না।</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>সংস্করণ</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>প্রকাশ করার সাইটঅ্যাক্সেস</translation>
     </message>

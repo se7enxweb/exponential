@@ -83471,6 +83471,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>يبقى نصها. لا تُزال الصور والنماذج والروابط إلى المواقع الأخرى أبدًا.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>الإصدار</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>siteaccess المراد نشرها</translation>
     </message>

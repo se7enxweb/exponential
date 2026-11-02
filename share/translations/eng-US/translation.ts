@@ -83443,6 +83443,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Their text stays. Images, forms and links to other sites are never removed.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Siteaccesses to publish</translation>
     </message>

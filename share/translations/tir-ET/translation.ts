@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ጽሑፎም ይተርፍ። ስእልታት፣ ቅጥዕታትን ናብ ካልኦት መርበባት ዝወስዱ መላግቦታትን ፈጺሞም ኣይእለዩን።</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>ሕታም</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>ዝሕተማ ምእታዋት መርበብ</translation>
     </message>

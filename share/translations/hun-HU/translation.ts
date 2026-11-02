@@ -83471,6 +83471,10 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>A szövegük megmarad. A képek, űrlapok és más webhelyekre mutató hivatkozások soha nem kerülnek eltávolításra.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Verzió</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Közzéteendő webhely-hozzáférések</translation>
     </message>

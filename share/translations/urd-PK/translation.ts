@@ -83439,6 +83439,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ان کا متن باقی رہتا ہے۔ تصاویر، فارم اور دوسری سائٹوں کے لنک کبھی نہیں ہٹائے جاتے۔</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>ورژن</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>شائع کرنے کے لیے سائٹ ایکسیسز</translation>
     </message>

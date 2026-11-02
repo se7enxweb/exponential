@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>متن آن‌ها باقی می‌ماند. تصویرها، فورمه‌ها و پیوندها به سایت‌های دیگر هرگز حذف نمی‌شوند.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>نسخه</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>دسترسی‌های سایت برای نشر</translation>
     </message>

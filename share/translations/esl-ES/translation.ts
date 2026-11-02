@@ -84923,6 +84923,10 @@ Gracias por tu feedback</translation>
         <translation>Su texto se mantiene. Las imágenes, los formularios y los enlaces a otros sitios nunca se quitan.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versión</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Accesos al sitio que publicar</translation>
     </message>

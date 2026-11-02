@@ -83439,6 +83439,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>അവയുടെ വാചകം നിലനിൽക്കും. ചിത്രങ്ങൾ, ഫോമുകൾ, മറ്റ് സൈറ്റുകളിലേക്കുള്ള ലിങ്കുകൾ ഒരിക്കലും നീക്കില്ല.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>പതിപ്പ്</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>പ്രസിദ്ധീകരിക്കേണ്ട സൈറ്റ് ആക്സസുകൾ</translation>
     </message>

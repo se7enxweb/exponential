@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>련결글은 남습니다. 화상, 서식, 다른 싸이트로 가는 련결은 삭제되지 않습니다.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>판</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>공개할 싸이트접근</translation>
     </message>

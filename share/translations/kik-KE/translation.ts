@@ -83441,6 +83441,10 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Ndeto ciacio itigaraga. Mbica, fomu na ngwatanio cia thaiti ingĩ itiheragwo.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Ũrutwo</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Njĩra cia saiti cia gũcabwo</translation>
     </message>

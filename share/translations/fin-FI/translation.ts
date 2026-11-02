@@ -83471,6 +83471,10 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <translation>Niiden teksti säilyy. Kuvia, lomakkeita ja linkkejä muille sivustoille ei koskaan poisteta.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versio</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Julkaistavat sivustoyhteydet</translation>
     </message>

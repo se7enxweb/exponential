@@ -83439,6 +83439,10 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Rubutunsu yana nan. Ba a taɓa cire hotuna, fom da mahaɗa zuwa wasu shafuka ba.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Sigar</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Hanyoyin shiga shafi da za a wallafa</translation>
     </message>

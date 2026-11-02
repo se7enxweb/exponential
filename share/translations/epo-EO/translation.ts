@@ -83441,6 +83441,10 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <translation>Ilia teksto restas. Bildoj, formularoj kaj ligiloj al aliaj retejoj neniam estas forigataj.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versio</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Retejaliroj publikigotaj</translation>
     </message>

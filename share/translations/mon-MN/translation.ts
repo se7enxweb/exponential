@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Тэдний бичвэр үлдэнэ. Зураг, маягт болон бусад сайт руу хөтлөх холбоосыг хэзээ ч устгахгүй.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Хувилбар</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Нийтлэх сайтын хандалтууд</translation>
     </message>

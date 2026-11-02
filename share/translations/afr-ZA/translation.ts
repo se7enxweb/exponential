@@ -83471,6 +83471,10 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <translation>Hul teks bly. Beelde, vorms en skakels na ander werwe word nooit verwyder nie.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Weergawe</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Werftoegange om te publiseer</translation>
     </message>

@@ -83474,6 +83474,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Textus eorum manet. Imagines, formulae et nexus ad alias sedes numquam removentur.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versio</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Aditus situs edendi</translation>
     </message>

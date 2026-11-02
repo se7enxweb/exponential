@@ -83439,6 +83439,10 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Nivîsa wan dimîne. Wêne, form û girêdanên ber bi malperên din tu carî nayên rakirin.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Guherto</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Gihîştinên malperê yên ku bên weşandin</translation>
     </message>

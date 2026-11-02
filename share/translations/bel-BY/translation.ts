@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Іх тэкст застаецца. Выявы, формы і спасылкі на іншыя сайты ніколі не выдаляюцца.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Версія</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Доступы да сайта для публікацыі</translation>
     </message>

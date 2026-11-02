@@ -83471,6 +83471,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Το κείμενό τους παραμένει. Εικόνες, φόρμες και σύνδεσμοι προς άλλους ιστότοπους δεν αφαιρούνται ποτέ.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Έκδοση</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Προσβάσεις ιστότοπου προς δημοσίευση</translation>
     </message>

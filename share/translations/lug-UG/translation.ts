@@ -83441,6 +83441,10 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <translation>Ebiwandiiko byazo bisigalawo. Ebifaananyi, foomu n'enkolagana ezigenda ku mikutu emirala tebiggyibwawo n'akatono.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Enkyusa</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Emiryango gy'omukutu egy'okufulumya</translation>
     </message>

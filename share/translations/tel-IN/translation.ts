@@ -83439,6 +83439,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>వాటి పాఠ్యం అలాగే ఉంటుంది. చిత్రాలు, ఫారమ్‌లు మరియు ఇతర సైట్‌లకు లింకులు ఎప్పుడూ తీసివేయబడవు.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>వెర్షన్</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>ప్రచురించాల్సిన సైట్‌యాక్సెస్‌లు</translation>
     </message>

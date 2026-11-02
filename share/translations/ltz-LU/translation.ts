@@ -83441,6 +83441,10 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>Hiren Text bleift stoen. Biller, Formulairen a Linken op aner Websäite ginn ni ewechgeholl.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versioun</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Site-Zougäng fir ze publizéieren</translation>
     </message>

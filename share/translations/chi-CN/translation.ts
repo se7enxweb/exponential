@@ -83439,6 +83439,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>链接文字保留。图片、表单和指向其他网站的链接从不删除。</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>版本</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>要发布的站点访问</translation>
     </message>

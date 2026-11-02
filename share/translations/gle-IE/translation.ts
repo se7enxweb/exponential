@@ -83471,6 +83471,10 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Fanann a dtéacs. Ní bhaintear íomhánna, foirmeacha ná naisc chuig suíomhanna eile choíche.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Leagan</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Rochtainí suímh le foilsiú</translation>
     </message>

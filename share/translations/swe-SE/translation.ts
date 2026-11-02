@@ -84744,6 +84744,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Deras text står kvar. Bilder, formulär och länkar till andra webbplatser tas aldrig bort.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Webbplatsingångar att publicera</translation>
     </message>

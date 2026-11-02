@@ -83471,6 +83471,10 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <translation>To teksts paliek. Attēli, veidlapas un saites uz citām vietnēm nekad netiek noņemtas.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versija</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Publicējamās vietnes piekļuves</translation>
     </message>

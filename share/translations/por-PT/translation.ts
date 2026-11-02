@@ -83471,6 +83471,10 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <translation>O texto mantém-se. Imagens, formulários e ligações para outros sites nunca são removidos.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versão</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Acessos ao site a publicar</translation>
     </message>

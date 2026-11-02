@@ -84699,6 +84699,10 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Teksten deres blir stående. Bilder, skjemaer og lenker til andre nettsteder fjernes aldri.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versjon</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Nettstedstilganger som skal publiseres</translation>
     </message>

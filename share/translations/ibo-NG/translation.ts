@@ -83439,6 +83439,10 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <translation>Ederede ha na-anọgide. A naghị ewepụ foto, fọm na njikọ na saịtị ndị ọzọ ma ọlị.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Ụdị</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Nnweta saịtị a ga-ebipụta</translation>
     </message>

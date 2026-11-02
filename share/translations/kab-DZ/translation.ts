@@ -83441,6 +83441,10 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <translation>Aḍris-nsen ad yeqqim. Tugniwin, tiferkiwin d yiseɣwan ɣer yismal nniḍen ur ttwakksen ara akk.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Lqem</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Inekcumen ɣer usmel ara d-yettwasuffɣen</translation>
     </message>

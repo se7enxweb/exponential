@@ -83441,6 +83441,10 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Noho mau ko lākou kikokikona. ʻAʻole loa e wehe ʻia nā kiʻi, nā palapala a me nā loulou i nā pūnaewele ʻē aʻe.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Mana</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Nā siteaccess e hoʻopuka ʻia</translation>
     </message>

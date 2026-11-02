@@ -83439,6 +83439,10 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <translation>Umbhalo wazo uyahlala. Izithombe, amafomu nezixhumanisi eziya kwamanye amasayithi azisuswa neze.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Inguqulo</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Ukufinyelela kwesayithi okuzoshicilelwa</translation>
     </message>

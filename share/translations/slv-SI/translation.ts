@@ -83471,6 +83471,10 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <translation>Njihovo besedilo ostane. Slike, obrazci in povezave na druga spletišča se nikoli ne odstranijo.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Različica</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Dostopi do spletnega mesta za objavo</translation>
     </message>

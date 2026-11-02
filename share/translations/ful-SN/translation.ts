@@ -83441,6 +83441,10 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <translation>Binndi maɓɓe ina heddoo. Nate, formulaaruuji e jokkorɗe yahooje e lowe goɗɗe momtataake abada.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Yamre</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Siteaccess yaltinteeɗi</translation>
     </message>

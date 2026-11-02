@@ -83441,6 +83441,10 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <translation>Sin teaksta báhcá. Govat, skovit ja liŋkkat eará neahttabáikkiide eai goassige sihkkojuvvo.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Veršuvdna</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Almmuhuvvon neahttabáikebeassamat</translation>
     </message>

@@ -83441,6 +83441,10 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>Magpabilin ang ilang teksto. Ang mga hulagway, porma ug link sa ubang site dili gyud kuhaon.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Bersyon</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Mga siteaccess nga imantala</translation>
     </message>

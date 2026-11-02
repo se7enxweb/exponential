@@ -83441,6 +83441,10 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Teirra tekstur verður verandi. Myndir, formar og leinkjur til aðrar heimasíður verða ongantíð strikaðar.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Útgáva</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Atgongdir til vevstað at útgeva</translation>
     </message>

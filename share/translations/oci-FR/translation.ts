@@ -83441,6 +83441,10 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>Lor tèxte demòra. Los imatges, los formularis e los ligams cap a d'autres sites son pas jamai levats.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Accèsses al site de publicar</translation>
     </message>

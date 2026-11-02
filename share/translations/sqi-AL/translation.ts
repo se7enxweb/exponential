@@ -83471,6 +83471,10 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Teksti i tyre mbetet. Figurat, formularët dhe lidhjet drejt sajteve të tjera nuk hiqen kurrë.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versioni</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Qasjet në sajt për botim</translation>
     </message>

@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>तांचो मजकूर उरता. चित्रां, फॉर्म आनी हेर सायटींचे दुवे केन्नाच काडनात.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>आवृत्ती</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>उजवाडावपाचे साइटअॅक्सेस</translation>
     </message>

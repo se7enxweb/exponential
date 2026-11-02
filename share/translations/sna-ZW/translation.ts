@@ -83441,6 +83441,10 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <translation>Mavara azvo anosara. Mifananidzo, mafomu nezvinongedzo zvinoenda kune dzimwe saiti hazvimbobviswi.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Vhezheni</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Nzira dzekupinda pasaiti dzinoburitswa</translation>
     </message>

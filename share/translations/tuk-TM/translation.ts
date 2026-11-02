@@ -83441,6 +83441,10 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <translation>Olaryň teksti galýar. Suratlar, formalar we beýleki saýtlara salgylar hiç haçan aýrylmaýar.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Wersiýa</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Neşir ediljek saýta giriş nokatlary</translation>
     </message>

@@ -23,7 +23,10 @@
  *        you" for publish, rollback, save, the key and the switch and never for seeing or building, the dashboard
  *        block and its fetch function, the context help of every view, the two designs' templates and scripts the
  *        same, the link box on Setup > Cache, the manual
- *  SA-08 several siteaccesses in the wizard: the ticked ones into SiteAccess (one) or SiteAccessList[] with
+ *  SA-08 the dashboard and the history: the version number from the tag static/<target>/<n> (0 without one), the
+ *        short commit id, the commit link on GitHub, the deploy state of the last run (pushed, pending, failed,
+ *        unchanged, not pushed) and a run as the history shows it
+ *  SA-09 several siteaccesses in the wizard: the ticked ones into SiteAccess (one) or SiteAccessList[] with
  *        DefaultSiteAccess (several), the review form posted back keeps them, the lines written, the list shown
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -188,6 +191,41 @@ class expStaticAdminTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( expStaticAdmin::allows( $limited, null ), 'some target' );
         $limited['policies']['p2'] = array();
         $this->assertTrue( expStaticAdmin::allows( $limited, 'two' ), 'a policy without the limitation allows every target' );
+    }
+
+    /** SA-08: the version number, the short commit and the deploy state of the dashboard and the history */
+    public function testVersionHashAndDeployState()
+    {
+        $this->assertSame( 3, expStaticAdmin::versionNumber( 'static/demo-site-static/3', 'demo-site-static' ) );
+        $this->assertSame( 12, expStaticAdmin::versionNumber( ' static/one/12 ', 'one' ) );
+        $this->assertSame( 0, expStaticAdmin::versionNumber( 'static/other/3', 'one' ), 'a tag of another target' );
+        $this->assertSame( 0, expStaticAdmin::versionNumber( 'static/one/x', 'one' ) );
+        $this->assertSame( 0, expStaticAdmin::versionNumber( '', 'one' ), 'a run without a tag' );
+        $this->assertSame( 0, expStaticAdmin::versionNumber( '3', 'one' ), 'a bare number is no tag' );
+
+        $this->assertSame( '0aa2c3f', expStaticAdmin::shortHash( '0AA2C3F9b1d2e3f4a5b6c7d8e9f00112233445566' ) );
+        $this->assertSame( '0aa2c3f9b1', expStaticAdmin::shortHash( '0aa2c3f9b1d2e3f4a5b6c7d8e9f00112233445566', 10 ) );
+        $this->assertSame( '', expStaticAdmin::shortHash( '' ) );
+        $this->assertSame( '', expStaticAdmin::shortHash( 'not-a-commit' ) );
+
+        $this->assertSame( 'https://github.com/owner/site/commit/', expStaticAdmin::commitUrl( 'ssh://git@github.com/owner/site.git' ) );
+        $this->assertSame( '', expStaticAdmin::commitUrl( 'https://gitlab.com/owner/site.git' ) );
+
+        $this->assertSame( array( 'state' => 'none', 'time' => 0, 'run_id' => '' ), expStaticAdmin::deployState( null ) );
+        $run = array( 'run_id' => 'r1', 'kind' => 'publish', 'state' => 'done', 'push_state' => 'pushed', 'started_at' => 100, 'finished_at' => 160 );
+        $this->assertSame( array( 'state' => 'pushed', 'time' => 160, 'run_id' => 'r1' ), expStaticAdmin::deployState( $run ) );
+        $this->assertSame( 'pending', expStaticAdmin::deployState( array( 'push_state' => 'pending' ) + $run )['state'] );
+        $this->assertSame( 'failed', expStaticAdmin::deployState( array( 'state' => 'failed', 'push_state' => 'pending' ) + $run )['state'], 'a failed run is failed' );
+        $this->assertSame( 'unchanged', expStaticAdmin::deployState( array( 'state' => 'unchanged', 'push_state' => 'none' ) + $run )['state'] );
+        foreach ( array( 'disabled', 'no-remote', 'none', '' ) as $push )
+            $this->assertSame( 'not-pushed', expStaticAdmin::deployState( array( 'push_state' => $push ) + $run )['state'], "push state '$push'" );
+        $this->assertSame( 100, expStaticAdmin::deployState( array( 'finished_at' => 0 ) + $run )['time'], 'a run not ended: when it began' );
+
+        $view = expStaticAdmin::runView( array( 'tag_name' => 'static/one/4', 'commit_id' => 'ABCDEF0123456789' ) + $run, 'one' );
+        $this->assertSame( 4, $view['version'] );
+        $this->assertSame( 'abcdef0', $view['commit_short'] );
+        $view = expStaticAdmin::runView( array( 'tag_name' => '', 'commit_id' => '' ) + $run, 'one' );
+        $this->assertSame( array( 0, '' ), array( $view['version'], $view['commit_short'] ) );
     }
 
     /** SA-05 */
@@ -386,7 +424,7 @@ class expStaticAdminTest extends PHPUnit\Framework\TestCase
         return $lines;
     }
 
-    /** SA-08 */
+    /** SA-09 */
     public function testSeveralSiteAccessesInTheWizard()
     {
         // one ticked: written as SiteAccess, as a target of one always was

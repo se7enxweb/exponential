@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Դրանց տեքստը մնում է։ Պատկերները, ձևերը և այլ կայքերի հղումները երբեք չեն հեռացվում։</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Տարբերակ</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Հրապարակվող կայքի մուտքի կետեր</translation>
     </message>

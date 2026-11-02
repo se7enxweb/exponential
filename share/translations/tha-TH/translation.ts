@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ข้อความของลิงก์ยังอยู่ รูปภาพ แบบฟอร์ม และลิงก์ไปยังไซต์อื่นจะไม่ถูกลบ</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>เวอร์ชัน</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>การเข้าถึงไซต์ที่จะเผยแพร่</translation>
     </message>

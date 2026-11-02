@@ -83441,6 +83441,10 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <translation>Mae eu testun yn aros. Ni chaiff delweddau, ffurflenni na dolenni i wefannau eraill byth eu tynnu.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Fersiwn</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Mynediadau i'r wefan i'w cyhoeddi</translation>
     </message>

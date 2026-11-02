@@ -20,6 +20,12 @@ Sie tun es unter **Setup > Statisches Veröffentlichen**: Legen Sie einmal mit d
 Sie, prüfen, was sich ändert, und veröffentlichen. Jede Veröffentlichung wird aufbewahrt, sodass Sie immer zu einer
 früheren zurückkehren können.
 
+Jedes Ziel auf der Seite zeigt seine veröffentlichte **Version** (die Nummer `n` seines neuesten Tags
+`static/<ziel>/<n>`), die kurze **Commit**-Kennung dieser Version (ein Link auf den Commit bei GitHub, wenn das
+Repository dort liegt) und seine **letzte Veröffentlichung** mit dem Zustand des Pushs: gepusht, Push ausstehend,
+fehlgeschlagen, nichts geändert oder nicht gepusht; der Zeitpunkt öffnet die Seite des Laufs. Den Zustand des Builds
+von GitHub Pages zeigt die Seite **Verlauf**, die GitHub danach fragt.
+
 ![Setup > Statisches Veröffentlichen: ein Ziel mit seiner letzten Veröffentlichung, seinen veralteten Seiten und den Schaltflächen Build, Vorschau, Verlauf und Einstellungen](../bilder/statisches-veroeffentlichen/dashboard-light.webp)
 
 ## Inhalt

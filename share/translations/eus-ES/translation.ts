@@ -83441,6 +83441,10 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <translation>Haien testua geratzen da. Irudiak, inprimakiak eta beste guneetarako estekak ez dira inoiz kentzen.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Bertsioa</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Argitaratzeko gune-sarbideak</translation>
     </message>

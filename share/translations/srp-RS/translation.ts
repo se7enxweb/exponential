@@ -83471,6 +83471,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Њихов текст остаје. Слике, обрасци и линкови ка другим сајтовима никада се не уклањају.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Верзија</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Приступи сајту за објављивање</translation>
     </message>

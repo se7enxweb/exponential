@@ -83439,6 +83439,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ጽሑፋቸው ይቀራል። ምስሎች፣ ቅጾች እና ወደ ሌሎች ጣቢያዎች የሚወስዱ አገናኞች በፍጹም አይወገዱም።</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>ስሪት</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>የሚታተሙ የጣቢያ መዳረሻዎች</translation>
     </message>

@@ -84653,6 +84653,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Ich tekst pozostaje. Obrazy, formularze i linki do innych witryn nigdy nie są usuwane.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Wersja</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Dostępy do witryny do opublikowania</translation>
     </message>

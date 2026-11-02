@@ -83474,6 +83474,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>ghItlhchaj ratlh. mIllogh, mu'tlhegh, latlh Daqmey rarwI' je not teqlu'.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>chovnatlh</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>yoS lojmItmey nanejbogh</translation>
     </message>

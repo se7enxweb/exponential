@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>সেইবোৰৰ পাঠ থাকি যায়। ছবি, ফৰ্ম আৰু অন্য ছাইটলৈ যোৱা লিংক কেতিয়াও আঁতৰোৱা নহয়।</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>সংস্কৰণ</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>প্ৰকাশ কৰিবলগীয়া ছাইট প্ৰৱেশসমূহ</translation>
     </message>

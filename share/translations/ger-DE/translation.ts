@@ -90411,6 +90411,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Ihr Text bleibt stehen. Bilder, Formulare und Links auf andere Websites werden nie entfernt.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Zu veröffentlichende Siteaccesses</translation>
     </message>

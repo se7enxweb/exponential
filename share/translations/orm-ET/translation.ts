@@ -83441,6 +83441,10 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <translation>Barreeffamni isaanii ni hafa. Suuraaleen, unkaaleen fi hidhoonni marsariitii biraatti geessan gonkumaa hin haqaman.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Fooyya'iinsa</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Seensawwan marsariitii maxxanfaman</translation>
     </message>

@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>၎င်းတို့၏ စာသား ကျန်ရှိသည်။ ပုံများ၊ ဖောင်များနှင့် အခြားဆိုက်များသို့ လင့်ခ်များကို ဘယ်တော့မှ မဖယ်ရှားပါ။</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>ဗားရှင်း</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>ထုတ်ဝေမည့် ဆိုက်ဝင်ရောက်မှုများ</translation>
     </message>

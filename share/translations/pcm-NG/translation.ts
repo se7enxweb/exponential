@@ -83449,6 +83449,10 @@ You go need change di class of di node wit di swap functionality.</translation>
         <translation>Dia text go remain. Picture, form and link wey dey go oda site, we no dey ever comot dem.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Siteaccesses wey we go publish</translation>
     </message>

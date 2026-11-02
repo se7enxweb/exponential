@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>तेषां पाठः तिष्ठति। चित्राणि, प्रपत्राणि अन्यजालस्थानानां सम्पर्काः च कदापि न अपनीयन्ते।</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>संस्करणम्</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>प्रकाशनीयाः जालस्थलप्रवेशाः</translation>
     </message>

@@ -83441,6 +83441,10 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <translation>Onların mətni qalır. Şəkillər, formalar və digər saytlara keçidlər heç vaxt silinmir.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versiya</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Dərc ediləcək sayt girişləri</translation>
     </message>

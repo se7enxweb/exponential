@@ -83471,6 +83471,10 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>Jų tekstas lieka. Paveikslėliai, formos ir nuorodos į kitas svetaines niekada nešalinami.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versija</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Skelbiamos svetainės prieigos</translation>
     </message>

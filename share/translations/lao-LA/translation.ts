@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ຂໍ້ຄວາມຂອງມັນຍັງຢູ່. ຮູບພາບ, ແບບຟອມ ແລະ ລິ້ງໄປຫາເວັບໄຊອື່ນ ບໍ່ເຄີຍຖືກລຶບ.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>ເວີຊັນ</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>ການເຂົ້າເຖິງໄຊທີ່ຈະເຜີຍແຜ່</translation>
     </message>

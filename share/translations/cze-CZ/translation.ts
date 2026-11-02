@@ -84727,6 +84727,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Jejich text zůstane. Obrázky, formuláře a odkazy na jiné weby se nikdy neodstraňují.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Verze</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Přístupy k webu k publikování</translation>
     </message>

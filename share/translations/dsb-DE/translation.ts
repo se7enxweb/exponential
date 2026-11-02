@@ -83471,6 +83471,10 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <translation>Jich tekst wóstanjo. Wobraze, formulary a wótkazy na druge sedła se nigda njewótwónoźuju.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Wersija</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Pśistupy k sedłu za wózjawjenje</translation>
     </message>

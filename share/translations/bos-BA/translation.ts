@@ -83471,6 +83471,10 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Njihov tekst ostaje. Slike, obrasci i linkovi na druge stranice nikad se ne uklanjaju.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Verzija</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Pristupi web-stranici za objavu</translation>
     </message>

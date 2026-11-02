@@ -83441,6 +83441,10 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <translation>Lur text resta. Maletgs, formulars e colliaziuns ad autras websites na vegnan mai allontanads.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versiun</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Access a la website da publitgar</translation>
     </message>

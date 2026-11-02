@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>اوہناں دی لکھت رہندی اے۔ تصویراں، فارم تے دوجیاں سائٹاں دے لنک کدی نئیں ہٹائے جاندے۔</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>ورژن</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>چھاپن لئی سائٹ رسائیاں</translation>
     </message>

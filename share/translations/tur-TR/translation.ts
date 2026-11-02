@@ -83446,6 +83446,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Metinleri kalır. Görseller, formlar ve diğer sitelere giden bağlantılar asla kaldırılmaz.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Sürüm</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Yayımlanacak site erişimleri</translation>
     </message>

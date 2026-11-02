@@ -83450,6 +83450,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ܟܬܒܬܐ ܕܝܗܘܢ ܦܝܫܐ. ܨܘܪܐ، ܛܘܦܣܐ ܘܐܣܘܪܐ ܠܕܘܟܐ ܐܚܪܢܐ ܠܐ ܦܝܫܝ ܫܩܝܠܐ ܡܢ ܡܬܘܡ.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>מפקתא</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>מעלנא דאתרא למפרסם</translation>
     </message>

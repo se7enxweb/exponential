@@ -83441,6 +83441,10 @@ Tugunning sinfini almashtirish funksiyasi yordamida o ªzgartirishingiz kerak bo 
         <translation>Ularning matni qoladi. Rasmlar, shakllar va boshqa saytlarga havolalar hech qachon olib tashlanmaydi.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versiya</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Nashr qilinadigan sayt kirish nuqtalari</translation>
     </message>

@@ -83471,6 +83471,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Texti þeirra stendur eftir. Myndir, eyðublöð og tenglar á aðra vefi eru aldrei fjarlægð.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Útgáfa</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Vefaðgangar til að birta</translation>
     </message>

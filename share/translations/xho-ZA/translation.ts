@@ -83439,6 +83439,10 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <translation>Isicatshulwa sawo siyahlala. Imifanekiso, iifomu namakhonkco aya kwezinye iisayithi akaze asuswe.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Inguqulo</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Ukufikelela kwisayithi okuza kupapashwa</translation>
     </message>

@@ -83441,6 +83441,10 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <translation>Teksnya tetap ada. Gambar, formulir, dan tautan ke situs lain tidak pernah dihapus.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versi</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Akses situs yang diterbitkan</translation>
     </message>

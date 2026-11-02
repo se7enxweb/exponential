@@ -83471,6 +83471,10 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <translation>Nende tekst jääb alles. Pilte, vorme ja linke teistele saitidele ei eemaldata kunagi.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versioon</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Avaldatavad saidi juurdepääsud</translation>
     </message>

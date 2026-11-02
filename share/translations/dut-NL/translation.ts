@@ -84666,6 +84666,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Hun tekst blijft staan. Afbeeldingen, formulieren en links naar andere sites worden nooit verwijderd.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versie</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Siteaccessen om te publiceren</translation>
     </message>

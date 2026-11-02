@@ -84848,6 +84848,10 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Il loro testo resta. Immagini, moduli e link ad altri siti non vengono mai rimossi.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versione</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Siteaccess da pubblicare</translation>
     </message>

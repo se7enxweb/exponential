@@ -83441,6 +83441,10 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <translation>Fanaidh an teacsa aca. Cha tèid dealbhan, foirmean is ceanglaichean gu làraichean eile a thoirt air falbh idir.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Tionndadh</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Inntrigidhean làraich ri fhoillseachadh</translation>
     </message>

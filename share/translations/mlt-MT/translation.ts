@@ -83471,6 +83471,10 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <translation>It-test tagħhom jibqa'. Stampi, formoli u links għal siti oħra qatt ma jitneħħew.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Verżjoni</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Aċċessi għas-sit li jiġu ppubblikati</translation>
     </message>

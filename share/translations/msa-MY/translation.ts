@@ -83441,6 +83441,10 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <translation>Teksnya kekal. Imej, borang dan pautan ke laman lain tidak sekali-kali dibuang.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versi</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Akses laman untuk diterbitkan</translation>
     </message>

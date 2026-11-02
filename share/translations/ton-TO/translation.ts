@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ʻOku nofo pē honau tohi. ʻOku ʻikai teitei toʻo ʻa e ngaahi ʻata, foomu mo e fehokotaki ki he ngaahi uepisaiti kehe.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Vēsiona</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Ngaahi hūʻanga uepisaiti ke pulusi</translation>
     </message>

@@ -83441,6 +83441,10 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <translation>Wɔn nsɛm no bɛtena hɔ. Wɔnnyi mfoni, krataa a wɔhyɛ ma ne link a ɛkɔ beaeɛ foforɔ da.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Nsakraeɛ</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Wɛbsaet kwan a wɔbɛtintim</translation>
     </message>

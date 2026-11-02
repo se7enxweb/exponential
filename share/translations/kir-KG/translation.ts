@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Алардын тексти калат. Сүрөттөр, формалар жана башка сайттарга шилтемелер эч качан өчүрүлбөйт.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Версия</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Жарыялана турган сайтка кирүү чекиттери</translation>
     </message>

@@ -83441,6 +83441,10 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <translation>Jich tekst wostanje. Wobrazy, formulary a wotkazy na druhe sydła so ženje njewotstronjeja.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Wersija</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Přistupy k sydłu za wozjewjenje</translation>
     </message>

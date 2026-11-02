@@ -84881,6 +84881,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Leur texte est conservé. Les images, les formulaires et les liens vers d'autres sites ne sont jamais retirés.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Siteaccess à publier</translation>
     </message>

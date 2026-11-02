@@ -83473,6 +83473,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>הטקסט שלהם נשאר. תמונות, טפסים וקישורים לאתרים אחרים לעולם אינם מוסרים.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>גרסה</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>גישות אתר לפרסום</translation>
     </message>

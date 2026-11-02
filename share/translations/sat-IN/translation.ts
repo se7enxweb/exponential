@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ᱚᱱᱟ ᱠᱚᱨᱟᱜ ᱚᱞ ᱛᱟᱦᱮᱸᱱᱟ ᱾ ᱪᱤᱛᱟᱹᱨ, ᱯᱷᱚᱨᱚᱢ ᱟᱨ ᱮᱴᱟᱜ ᱥᱟᱭᱤᱴ ᱠᱚᱨᱟᱜ ᱞᱤᱝᱠ ᱫᱚ ᱡᱟᱦᱟᱸ ᱦᱚᱸ ᱵᱟᱝ ᱚᱪᱚᱜᱚᱜᱼᱟ ᱾</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>ᱵᱷᱟᱨᱥᱚᱱ</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>ᱪᱷᱟᱯᱟ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱭᱤᱴ ᱥᱟᱵᱷᱤᱥ ᱠᱚ</translation>
     </message>

@@ -83441,6 +83441,10 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <translation>Woƒe nuŋɔŋlɔ susɔna. Womeɖea nɔnɔmetatawo, nuŋlɔɖiwo kple kadodo siwo yi nyatakakadzraɖoƒe bubuwo ɖa gbeɖe o.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>ʋɛsiɔn</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Nyatakakaɖoƒe ƒe mɔnu siwo woata</translation>
     </message>

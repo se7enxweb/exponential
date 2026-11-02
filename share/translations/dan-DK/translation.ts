@@ -84121,6 +84121,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Deres tekst bliver stående. Billeder, formularer og links til andre websteder fjernes aldrig.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Siteaccesses der skal udgives</translation>
     </message>

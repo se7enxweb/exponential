@@ -83441,6 +83441,10 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <translation>Harren tekst bliuwt stean. Ofbyldings, formulieren en keppelings nei oare siden wurde nea fuortsmiten.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Ferzje</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Websidetagongen om te publisearjen</translation>
     </message>

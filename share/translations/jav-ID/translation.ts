@@ -83449,6 +83449,10 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <translation>Teksé tetep ana. Gambar, formulir lan pranala menyang situs liya ora tau dibusak.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versi</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Akses situs sing arep diterbitake</translation>
     </message>

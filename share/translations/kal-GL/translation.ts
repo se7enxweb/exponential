@@ -83471,6 +83471,10 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Allagaat qimaannarneqassapput. Assit, immersugassat nittartakkanullu allanut innersuussutit peerneqarneq ajorput.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versioni</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Nittartakkamut isaariaatit saqqummersitassat</translation>
     </message>

@@ -83449,6 +83449,10 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <translation>Téksna tetep aya. Gambar, formulir jeung tutumbu ka situs séjén henteu pernah dihapus.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Vérsi</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Aksés situs anu rék dipedalkeun</translation>
     </message>

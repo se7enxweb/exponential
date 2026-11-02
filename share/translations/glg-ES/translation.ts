@@ -83441,6 +83441,10 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <translation>O seu texto mantense. As imaxes, os formularios e as ligazóns a outros sitios nunca se quitan.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versión</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Accesos ao sitio para publicar</translation>
     </message>

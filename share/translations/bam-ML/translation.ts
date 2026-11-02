@@ -83441,6 +83441,10 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <translation>U ka sɛbɛn bɛ to yen. Jaw, fɔrimiw ani jɛɲɔgɔnya minnu bɛ taa siti wɛrɛw la, olu tɛ bɔ abada.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Wɛrisiyɔn</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Siti dondaw minnu bɛ bɔ</translation>
     </message>

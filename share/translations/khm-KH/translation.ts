@@ -83441,6 +83441,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>អត្ថបទរបស់វានៅដដែល។ រូបភាព ទម្រង់ និងតំណទៅគេហទំព័រផ្សេងទៀត មិនដែលត្រូវលុបទេ។</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>កំណែ</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>ការចូលគេហទំព័រដែលត្រូវបោះពុម្ព</translation>
     </message>

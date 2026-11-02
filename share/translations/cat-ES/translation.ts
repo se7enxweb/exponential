@@ -83471,6 +83471,10 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <translation>El seu text es manté. Les imatges, els formularis i els enllaços a altres llocs no es treuen mai.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versió</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Accessos al lloc per publicar</translation>
     </message>

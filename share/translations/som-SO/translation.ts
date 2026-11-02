@@ -83439,6 +83439,10 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <translation>Qoraalkoodu wuu harayaa. Sawirada, foomamka iyo xiriirada goobaha kale weligood lama saaro.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Nooc</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Gelitaannada goobta ee la daabacayo</translation>
     </message>

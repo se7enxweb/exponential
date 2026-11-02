@@ -83441,6 +83441,10 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
         <translation>Inyandiko yayo isigara. Amashusho, amafishi n'amahuza ajya ku zindi mbuga ntibikurwaho na rimwe.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Verisiyo</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Uburyo bwo kugera ku rubuga buzatangazwa</translation>
     </message>

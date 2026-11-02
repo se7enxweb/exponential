@@ -83439,6 +83439,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ସେଗୁଡ଼ିକର ପାଠ୍ୟ ରହିଥାଏ। ଚିତ୍ର, ଫର୍ମ ଓ ଅନ୍ୟ ସାଇଟର ଲିଙ୍କ କେବେ ହଟାଯାଏ ନାହିଁ।</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>ସଂସ୍କରଣ</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>ପ୍ରକାଶ କରିବାକୁ ଥିବା ସାଇଟ୍ ଆକ୍ସେସ୍</translation>
     </message>

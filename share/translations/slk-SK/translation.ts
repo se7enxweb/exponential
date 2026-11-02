@@ -83471,6 +83471,10 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <translation>Ich text zostane. Obrázky, formuláre a odkazy na iné weby sa nikdy neodstraňujú.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Verzia</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Prístupy k lokalite na publikovanie</translation>
     </message>

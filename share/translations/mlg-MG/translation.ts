@@ -83441,6 +83441,10 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <translation>Mijanona ny lahatsorany. Tsy esorina mihitsy ny sary, ny taratasy fenoina ary ny rohy mankany amin'ny tranonkala hafa.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Dikan-teny</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Fidirana amin'ny tranonkala havoaka</translation>
     </message>

@@ -85437,6 +85437,10 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <translation>O texto deles permanece. Imagens, formulários e links para outros sites nunca são removidos.</translation>
     </message>
     <message>
+        <source>Version</source>
+        <translation>Versão</translation>
+    </message>
+    <message>
         <source>Siteaccesses to publish</source>
         <translation>Acessos ao site a publicar</translation>
     </message>
