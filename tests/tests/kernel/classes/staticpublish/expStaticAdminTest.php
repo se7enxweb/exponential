@@ -74,7 +74,12 @@ class expStaticAdminTest extends PHPUnit\Framework\TestCase
                                   '--run-id=' . self::ID, '--progress=p' ),
                            expStaticJob::arguments( 'rollback', self::ID, 'github-public', array( 'to' => 'static/github-public/2' ), 'editor', '', 'p' ) );
         $this->assertContains( '2', expStaticJob::arguments( 'rollback', self::ID, 't', array( 'to' => '2' ), 'editor', '', 'p' ) );
-        foreach ( array( array( 'deploy', self::ID, 't', array() ), array( 'build', 'not-an-id', 't', array() ), array( 'build', self::ID, '--all', array() ),
+        // a publish of some nodes (the website sidebar's "Publish this page"): an incremental build of them first
+        $this->assertSame( array( 'bin/php/expstaticpublish.php', 't', '--build', '--nodes=57,2', '--format=json', '--login=editor', '--run-id=' . self::ID, '--progress=p' ),
+                           expStaticJob::arguments( 'publish', self::ID, 't', array( expStaticJob::NODES => array( '57', 2, 57 ) ), 'editor', '', 'p' ) );
+        $this->assertNotContains( '--nodes=57', expStaticJob::arguments( 'build', self::ID, 't', array( expStaticJob::NODES => array( 57 ) ), 'editor', '', 'p' ) );
+        foreach ( array( array( 'deploy', self::ID, 't', array() ), array( 'publish', self::ID, 't', array( 'nodes' => array( '1;rm' ) ) ),
+                         array( 'publish', self::ID, 't', array( 'nodes' => array( 0 ) ) ),array( 'build', 'not-an-id', 't', array() ), array( 'build', self::ID, '--all', array() ),
                          array( 'build', self::ID, 'Bad Id', array() ), array( 'rollback', self::ID, 't', array() ),
                          array( 'rollback', self::ID, 't', array( 'to' => '--force' ) ), array( 'rollback', self::ID, 't', array( 'to' => 'v1.0' ) ) ) as $case )
         {

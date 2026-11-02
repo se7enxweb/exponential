@@ -89,6 +89,8 @@ Jede Seite hat eine Schaltfläche **Hilfe**, die die Seite dieses Handbuchs dazu
   [Formular-Endpunkt](../../spezifikationen/6.0/statisches-veroeffentlichen-formular-endpunkt.md).
 - Ohne Knopfdruck: [Automatisch veröffentlichen](automatisch-veroeffentlichen.md) und
   [Benachrichtigungen und Webhooks](benachrichtigungen-und-webhooks.md).
+- Von der Seite selbst: [Der Bereich in der Website-Seitenleiste](der-bereich-in-der-website-seitenleiste.md) zeigt,
+  ob eine Seite veraltet ist, und veröffentlicht nur diese Seite.
 
 ## Nächster Schritt
 

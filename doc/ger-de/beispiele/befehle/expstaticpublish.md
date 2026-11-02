@@ -32,6 +32,7 @@ key, or none). A push is never forced; a push that fails stays local and exp:sta
 cronjob part staticpublish tries again. Every publish is a row of exp_static_run.
 
 ./console exp:static:publish github-public --build
+./console exp:static:publish github-public --nodes=2,57             build these nodes' pages, then publish
 ./console exp:static:publish github-public --message="New opening hours"
 ./console exp:static:publish github-public --no-push                commit and tag only
 ```
@@ -41,6 +42,7 @@ cronjob part staticpublish tries again. Every publish is a row of exp_static_run
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--build` |  | Das Ziel zuerst bauen (wie exp:static:build); wird der Build nicht fertig, wird nichts committet |
+| `--nodes` | erforderlich | Zuerst nur die Seiten dieser Knoten bauen (Knoten-IDs; eine Liste mit Kommas oder wiederholt), in den letzten Build, dann veröffentlichen |
 | `--message` | erforderlich | Die Commit-Nachricht (Standard: was veröffentlicht wurde, oder welche Veröffentlichung wiederhergestellt wird) |
 | `--no-push` |  | Committen und taggen, aber nicht pushen (exp:static:push pusht später) |
 | `--format` | erforderlich | text (Standard) oder json (die Maschinenausgabe exp-static/1) |

@@ -3757,7 +3757,7 @@ d16d8a2f908a6c14f85ec2b2679bc842  doc/eng-us/examples/commands/expstaticdiff.md
 433015da4258b3e8ab0310efb6270f92  doc/eng-us/examples/commands/expstaticdns.md
 e6fe1fb5a564c7afe4dee94b2e24c0b5  doc/eng-us/examples/commands/expstaticgithub.md
 c6b4292726f1abf11a30c88b5b72cbcc  doc/eng-us/examples/commands/expstatickeys.md
-a41dc1828c73ac62d9153d3826701e03  doc/eng-us/examples/commands/expstaticpublish.md
+1c4afff87386e911d0c428c008e20ad7  doc/eng-us/examples/commands/expstaticpublish.md
 7d89909d53fe920434afe7e8fa665006  doc/eng-us/examples/commands/expstaticpush.md
 a40dbe16af2516850802a1314519a273  doc/eng-us/examples/commands/expstaticrollback.md
 1dbd8bcdb391e030b1d3ef96d5ba0b96  doc/eng-us/examples/commands/expstaticserve.md
@@ -10430,6 +10430,7 @@ ff9571a5f8d8f3c6a6784a7aea304c80  doc/eng-us/help/images/static-publishing/on-gi
 cdd27f90543aa5f2218bc8f60f2ffcee  doc/eng-us/help/images/static-publishing/preview-light.webp
 cbd01a1f321599ad1b6362923fbf6c04  doc/eng-us/help/images/static-publishing/report-light.webp
 f6caf882172e3dea09f000ed8f711e99  doc/eng-us/help/images/static-publishing/review-light.webp
+a559477d4084af4ad4ae17a55ee0b1d6  doc/eng-us/help/images/static-publishing/sidebar-panel-light.webp
 ae51e9237abd1f2d0fcdd0f4c2d3e535  doc/eng-us/help/images/static-publishing/triggers-light.webp
 46661d89a99276aef8976a776e00f6f8  doc/eng-us/help/images/static-publishing/wizard-light.webp
 91e13ad7f14cb4131408285abd1ec761  doc/eng-us/help/images/tour-edit-draft-info.webp
@@ -11669,7 +11670,7 @@ fc23d60d728e81d272031605c23d84a3  doc/eng-us/help/sqli-import/README.md
 7f4dc9243ab6deb0ed1d81bf1851b8b0  doc/eng-us/help/sqli-import/schedules-and-cron.md
 d573b991b0d68701551d0a1541af5eec  doc/eng-us/help/sqli-import/the-import-editor.md
 31561f92b58b4db7a20db82581154906  doc/eng-us/help/sqli-import/upgrading-from-1x.md
-74c0054625ef48b4f6e4936d8b0d456d  doc/eng-us/help/static-publishing/README.md
+1c5f775d120df569ab6078560d13666b  doc/eng-us/help/static-publishing/README.md
 be48efb890664a903b7df285511f74dc  doc/eng-us/help/static-publishing/build-preview-and-publish.md
 0d795daa0fa3f5b47b4edd3e2257f069  doc/eng-us/help/static-publishing/choose-branch-or-github-actions.md
 f95eacdd60f486d6e20ce8ddf4e58f73  doc/eng-us/help/static-publishing/connect-to-github-token-key-or-app.md
@@ -11681,6 +11682,7 @@ b37ba9198888aebcff387ed09d7ee69d  doc/eng-us/help/static-publishing/notification
 8b46c0568318c26af90ce1c27704a05c  doc/eng-us/help/static-publishing/search-forms-and-comments-on-a-static-site.md
 9746ef9f57cbc6190dce2efefff12165  doc/eng-us/help/static-publishing/seo-on-a-static-site.md
 57442f5a7e70269424248494ff567c11  doc/eng-us/help/static-publishing/the-setup-wizard.md
+c239a2e93d7ecf4b244fd20ab605a0a3  doc/eng-us/help/static-publishing/the-website-sidebar-panel.md
 94271000257e23bc268f59d9be6fb3c9  doc/eng-us/help/static-publishing/use-your-own-domain.md
 0e3787840fe0e35f6540a85ea68d8a0d  doc/eng-us/help/static-publishing/who-may-publish-roles-and-policies.md
 0a15a3cdf80e301b1531867ca2882cb8  doc/eng-us/help/students/asking-for-help-and-study-groups.md
@@ -13205,7 +13207,7 @@ f070af430a26abc5390d222deec82c54  doc/ger-de/.examples/descriptions/23-migration
 f2c092945c9c55368f20d63e5890d59d  doc/ger-de/.examples/descriptions/23-static-publishing-2026-11-01.json
 d194eb016db44534c8c8be9b3b874206  doc/ger-de/.examples/descriptions/24-migration-recording-2026-11-01.json
 ef666b3ee71630e84153acebec27299a  doc/ger-de/.examples/descriptions/24-migration-yaml-steps-2026-11-02.json
-9929d7de22a5b4f6e38d241ea5148c88  doc/ger-de/.examples/descriptions/24-static-publishing-git-2026-11-01.json
+43cb1de6f0637773dc385e117cbfefe6  doc/ger-de/.examples/descriptions/24-static-publishing-git-2026-11-01.json
 74d60d05ce1c3d96f28e8adc0b20d531  doc/ger-de/.examples/descriptions/25-migration-structure-steps-2026-11-03.json
 086b0b0ba9d683190c53d9b95f9af7bf  doc/ger-de/.examples/descriptions/25-static-publishing-github-2026-11-01.json
 205eb4e7bca68824938917c424c553bd  doc/ger-de/.examples/descriptions/26-migration-tag-alias-trash-file-steps-2026-11-04.json
@@ -13217,7 +13219,7 @@ af366e64a9465d3110503cab5c8d899a  doc/ger-de/.examples/descriptions/30-migration
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-c404618558066c24ff2b86724f90997a  doc/ger-de/.paths.json
+fb02aa872d224083b3e10cbe37c713a1  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -13537,7 +13539,7 @@ d3610361e8f5f816ca6d51ca0d3d08c8  doc/ger-de/beispiele/befehle/expstaticdiff.md
 1de63fecf7d3ddb43106761a4719df48  doc/ger-de/beispiele/befehle/expstaticdns.md
 f69595f8597568a3dbd3c9f9f46d7b4f  doc/ger-de/beispiele/befehle/expstaticgithub.md
 03859ffcf71fc91c9debdcbcd0ad91c3  doc/ger-de/beispiele/befehle/expstatickeys.md
-00a0359f63aa442511b98ae9ec024fc4  doc/ger-de/beispiele/befehle/expstaticpublish.md
+8796b6024d7d40a3babfe89bcbc35942  doc/ger-de/beispiele/befehle/expstaticpublish.md
 77113325b63f48b609b920f071a3247e  doc/ger-de/beispiele/befehle/expstaticpush.md
 830cf7686e41679dfc87637ae8b5fb22  doc/ger-de/beispiele/befehle/expstaticrollback.md
 a0548d51b39154b0e276f7c1b1e99d8d  doc/ger-de/beispiele/befehle/expstaticserve.md
@@ -17191,6 +17193,7 @@ a0aea7c477908650d698cf15a09e04d5  doc/ger-de/hilfe/bilder/statisches-veroeffentl
 a04254a0bcbe22ca7758f0315c8ee8d0  doc/ger-de/hilfe/bilder/statisches-veroeffentlichen/preview-light.webp
 6ac6c5038480ddb5f6d11619b8577471  doc/ger-de/hilfe/bilder/statisches-veroeffentlichen/report-light.webp
 3a4d4d766c6a2e643afa6253ac2608b3  doc/ger-de/hilfe/bilder/statisches-veroeffentlichen/review-light.webp
+256b8710287c9cb554e21a2ad63544be  doc/ger-de/hilfe/bilder/statisches-veroeffentlichen/sidebar-panel-light.webp
 731e770366371cc5e22440367d8d793e  doc/ger-de/hilfe/bilder/statisches-veroeffentlichen/triggers-light.webp
 f0c5e3838c2342337d940392931fe150  doc/ger-de/hilfe/bilder/statisches-veroeffentlichen/wizard-light.webp
 a01e7d587d868875a3a868437f07d5e8  doc/ger-de/hilfe/bilder/tour-edit-draft-info.webp
@@ -19999,11 +20002,12 @@ d5b3cedb5adc84c82b4ea67b02ec1cfd  doc/ger-de/hilfe/sqli-import/aktualisierung-vo
 d229868061c504d4a7675593302ac931  doc/ger-de/hilfe/sqli-import/importe-und-laeufe.md
 038a380a22e33db9548b4cb0d168eae3  doc/ger-de/hilfe/sqli-import/zeitplaene-und-cron.md
 6b37ffe4b4ca1e11f721159fad23bd48  doc/ger-de/hilfe/standard-administratorpasswort.md
-a4308d34ab40240fa9d27501cf89a79e  doc/ger-de/hilfe/statisches-veroeffentlichen/README.md
+b322e687f4b7e1fe4657a7b7666f779e  doc/ger-de/hilfe/statisches-veroeffentlichen/README.md
 e53602a8a2c71d5d309e7368f93bb80a  doc/ger-de/hilfe/statisches-veroeffentlichen/automatisch-veroeffentlichen.md
 2a6cdd08a2282f2a9f0b2b527e9f47a0  doc/ger-de/hilfe/statisches-veroeffentlichen/benachrichtigungen-und-webhooks.md
 a0ba55a3953fa1abe2dc3eaa6a5c5062  doc/ger-de/hilfe/statisches-veroeffentlichen/branch-oder-github-actions-waehlen.md
 1dcd36f08b79444d7a5a774223eb680f  doc/ger-de/hilfe/statisches-veroeffentlichen/build-vorschau-und-veroeffentlichen.md
+c3017b0c20a79874a63517331be0724e  doc/ger-de/hilfe/statisches-veroeffentlichen/der-bereich-in-der-website-seitenleiste.md
 0d86814ec41eab27dfb203bd72773598  doc/ger-de/hilfe/statisches-veroeffentlichen/der-einrichtungsassistent.md
 70b3d5f986ea5f6fab3a7b1db4c32174  doc/ger-de/hilfe/statisches-veroeffentlichen/eigene-domain-verwenden.md
 e7144d401f59ec42479bbdc9805808d5  doc/ger-de/hilfe/statisches-veroeffentlichen/grenzen-und-bedingungen-von-github-pages.md
@@ -24477,7 +24481,7 @@ d2a209c210d20f86e5763a64ef73e08f  kernel/classes/staticpublish/expstaticextras.p
 71bde045bcd3dc5e0d23a11f1cf2acfd  kernel/classes/staticpublish/expstaticformendpoint.php
 12a7fdf5eae919aa2707d2ac7d60d1f2  kernel/classes/staticpublish/expstaticformtoken.php
 e4af3364468ad9469593250767cd8ce8  kernel/classes/staticpublish/expstaticgithub.php
-31fb0a784e250e5c1ec396b53df5a21f  kernel/classes/staticpublish/expstaticjob.php
+7658656108a2c5362271bf49745bbc63  kernel/classes/staticpublish/expstaticjob.php
 7f2d293dedb7a328f2321f3a7535d4fe  kernel/classes/staticpublish/expstaticlinkchecker.php
 989efd874fa7a50dcbead52880194f60  kernel/classes/staticpublish/expstaticlinkrewriter.php
 20e9c4c0d6946b224498ff039be5d02a  kernel/classes/staticpublish/expstaticlock.php
@@ -24965,7 +24969,7 @@ c7004590b386f44cb53c2f632b82260e  kernel/private/classes/commands/expstaticbuild
 7af493693e54a73bf598e5269f2ee1f8  kernel/private/classes/commands/expstaticdns.php
 a73fa01f0fe7d9632eeebcdb532f6816  kernel/private/classes/commands/expstaticgithub.php
 9050c471774f26f38413231b3dafd3a5  kernel/private/classes/commands/expstatickeys.php
-2e60ec05c95ceef8b99dd749ba7777ab  kernel/private/classes/commands/expstaticpublish.php
+312de71a19d3ef9f18919e2e3093a7e3  kernel/private/classes/commands/expstaticpublish.php
 e9e177f5f74fd093a7d29c09a8e79be0  kernel/private/classes/commands/expstaticpush.php
 0f3d0d369aa67e8c69e9ccf9f18209fa  kernel/private/classes/commands/expstaticrollback.php
 9e5cc1b845eeaadc7528791962171a01  kernel/private/classes/commands/expstaticserve.php
@@ -28639,7 +28643,7 @@ bd5f77156bbd94e89ce00b7912f80a0a  tests/tests/kernel/classes/shopprices/eZPaymen
 c243bf1708e51415584c6fd64a5a11d0  tests/tests/kernel/classes/shopprices/eZShopReceiptTokenTest.php
 6ff327ab616500ef1a0e2f54fb092cca  tests/tests/kernel/classes/siteaccessmatch/eZSiteAccessMatchTest.php
 8c0728b2f967cd40690522b1d6c5fdb0  tests/tests/kernel/classes/sslzones/eZSSLZoneTest.php
-c043add0dcb7a14de3d5d610b5c45115  tests/tests/kernel/classes/staticpublish/expStaticAdminTest.php
+74a4912024d32aaf4b9a78fd2b48bf24  tests/tests/kernel/classes/staticpublish/expStaticAdminTest.php
 30e5ffe5a727d51b6fa15c965da42d7e  tests/tests/kernel/classes/staticpublish/expStaticBuildSqliteTest.php
 441420e6a206d0cd4421c32e77ccf793  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
 4e13e1ff07af6f32c6f45064b5640365  tests/tests/kernel/classes/staticpublish/expStaticCredentialsTest.php
