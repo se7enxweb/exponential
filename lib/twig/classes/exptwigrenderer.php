@@ -476,9 +476,7 @@ class expTwigRenderer
     {
         if ( eZINI::instance()->variable( 'TemplateSettings', 'TemplateCache' ) != 'enabled' )
             return array( false, null );
-        $accessName = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : false;
-        if ( !empty( $GLOBALS['expUISwitchVariantKey'] ) )
-            $accessName .= '-' . $GLOBALS['expUISwitchVariantKey'];
+        $accessName = eZTemplateCacheBlock::accessKey();
         $placement = 'twig:' . $templateName . ':' . $id;
         $keys = isset( $params['keys'] ) ? expTemplateValues::unwrap( $params['keys'] ) : null;
         $keyArray = $keys === null ? array( $placement, $accessName ) : array( $keys, $placement, $accessName );
