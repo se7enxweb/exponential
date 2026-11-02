@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>가이드, 검색 및 오유 보고 방법입니다.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>최근 내용</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>최신 내용, 검토를 위해 보류된것, 선택 항목에 대한 조작.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>양식을 읽을수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>대시보드</translation>
     </message>
 </context>
 <context>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup > Recent content (the module moderation) without a database: the filters, the page sizes and the paging, the
+ * Dashboard > Recent content (the module moderation) without a database: the filters, the page sizes and the paging, the
  * conditions and the order of the query, the status of a row, the submission from the audit, the actions and their
  * form, the module, its settings and its templates.
  *
@@ -216,7 +216,7 @@ class expModerationTest extends PHPUnit\Framework\TestCase
         foreach ( $ViewList as $name => $view )
         {
             $this->assertFileExists( self::root() . '/kernel/moderation/' . $view['script'] );
-            $this->assertSame( 'ezsetupnavigationpart', $view['default_navigation_part'], $name );
+            $this->assertSame( 'ezmynavigationpart', $view['default_navigation_part'], $name );
         }
         $this->assertSame( 'Confirm', $ViewList['action']['single_post_actions']['ConfirmDestructiveButton'] );
         $FunctionList = null;
@@ -226,9 +226,13 @@ class expModerationTest extends PHPUnit\Framework\TestCase
         $module = file_get_contents( self::root() . '/settings/module.ini' );
         $this->assertMatchesRegularExpression( '/^ModuleList\[\]=moderation$/m', $module );
         $menu = file_get_contents( self::root() . '/settings/menu.ini' );
-        $this->assertMatchesRegularExpression( '/^GroupLinks_content_model\[\]=recent_content$/m', $menu );
+        $this->assertMatchesRegularExpression( '/\[Leftmenu_my\]\nName=dashboard\nLinks\[\]\nLinkNames\[\]\nLinks\[dashboard\]=content\/dashboard\nPolicyList_dashboard\[\]=content\/dashboard\n\n(#[^\n]*\n)*Links\[recent_content\]=moderation\/recent\n/', $menu );
         $this->assertMatchesRegularExpression( '/^Links\[recent_content\]=moderation\/recent$/m', $menu );
         $this->assertMatchesRegularExpression( '/^PolicyList_recent_content\[\]=moderation\/read$/m', $menu );
+        // the Dashboard menu's second link, in the plain left menu and in admin4's mega menu; no longer in Setup
+        $this->assertDoesNotMatchRegularExpression( '/^GroupLinks_[a-z_]+\[\]=recent_content$/m', $menu );
+        $this->assertSame( 1, substr_count( $menu, 'Links[recent_content]=' ) );
+        $this->assertMatchesRegularExpression( '/^MegaMenuLinks\[\]=overview-dashboard\nMegaMenuLinks\[\]=overview-recent_content$/m', $menu );
         $dashboard = file_get_contents( self::root() . '/settings/dashboard.ini' );
         $this->assertMatchesRegularExpression( '/^DashboardBlocks\[\]=moderation$/m', $dashboard );
         $this->assertMatchesRegularExpression( '/\[DashboardBlock_moderation\][^\[]*PolicyList\[\]=moderation\/read/', $dashboard );

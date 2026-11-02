@@ -1,4 +1,4 @@
-{* The result of an action of Setup > Recent content: per item done, refused or failed, and why. Shown by
+{* The result of an action of Dashboard > Recent content: per item done, refused or failed, and why. Shown by
    moderation/action (an action run in the request, or a form that could not be read: errors) and moderation/report
    (an action run as the content job 'moderation': job).
 

@@ -14677,6 +14677,14 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Gvidiloj, serĉo kaj kiel raporti eraron.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Lastatempa enhavo</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>La plej nova enhavo, kio estas retenita por revizio, kaj agoj pri elekto.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>La formularo ne legeblis.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Panelo</translation>
     </message>
 </context>
 <context>

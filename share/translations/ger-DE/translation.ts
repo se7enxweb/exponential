@@ -17406,6 +17406,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Anleitungen, Suche und wie Sie einen Fehler melden.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Neue Inhalte</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Die neuesten Inhalte, was zur Prüfung zurückgehalten ist, und Aktionen für eine Auswahl.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -88234,6 +88242,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Das Formular konnte nicht gelesen werden.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
     </message>
 </context>
 <context>

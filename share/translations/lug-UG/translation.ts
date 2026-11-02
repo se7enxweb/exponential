@@ -14677,6 +14677,14 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ebiragiro, okunoonya n'engeri y'okutegeeza ensobi.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ebirimu ebipya</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ebirimu ebisinga obupya, ebikwatiddwa okwekenneenyezebwa, n'ebikolwa ku birondeddwa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>The form could not be read.</source>
         <translation>Foomu teyasobose kusomebwa.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Olubaawo lw'okulondoola</translation>
     </message>
 </context>
 <context>

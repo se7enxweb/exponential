@@ -14616,6 +14616,14 @@ Nota: os pacotes não serão desinstalados.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guias, pesquisa e como comunicar um erro.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Conteúdo recente</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>O conteúdo mais novo, o que está retido para revisão e ações sobre uma seleção.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81294,6 +81302,10 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
     <message>
         <source>The form could not be read.</source>
         <translation>Não foi possível ler o formulário.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Painel de controlo</translation>
     </message>
 </context>
 <context>

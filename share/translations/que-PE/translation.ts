@@ -14677,6 +14677,14 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Pusaqkuna, maskay chaymanta pantayta imayna willanaykipaq.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Musuq willakuykuna</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Aswan musuq willakuykuna, qhawarinapaq hark'asqa, akllasqapaq ruwaykunapas.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Formularioqa mana ñawinchakuyta atikurqanchu.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Llamk'ana panqa</translation>
     </message>
 </context>
 <context>

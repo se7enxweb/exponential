@@ -14677,6 +14677,14 @@ Nyabiala: Womaɖe agbawo ɖa le ɖoɖoɖi me o.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Mɔfiafiawo, didi kple alesi nàgblɔ vodada ŋu.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nyatakaka yeyewo</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nyatakaka yeyetɔwo, nu siwo wolé ɖi hena dzodzro, kple dɔwɔwɔwo le esiwo wotia ŋu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <message>
         <source>The form could not be read.</source>
         <translation>Womete ŋu xlẽ nuŋɔŋlɔgbalẽ la o.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dɔwɔƒe</translation>
     </message>
 </context>
 <context>

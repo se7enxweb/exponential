@@ -14677,6 +14677,14 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ũtongoria, ũcaria na ũrĩa ũngĩtũma ũhoro wa mahĩtia.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ũhoro mwerũ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ũhoro mwerũ mũno, ũrĩa ũnyiitĩtwo nĩ ũndũ wa gũthimwo, na mawĩra harĩ iria ithuurĩtwo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>The form could not be read.</source>
         <translation>Fomu ndĩngĩathomekire.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Ũthiũ wa wĩra</translation>
     </message>
 </context>
 <context>

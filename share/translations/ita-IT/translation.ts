@@ -15180,6 +15180,14 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guide, ricerca e come segnalare un errore.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contenuti recenti</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>I contenuti più recenti, ciò che è trattenuto per revisione e azioni su una selezione.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -82671,6 +82679,10 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Impossibile leggere il modulo.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
     </message>
 </context>
 <context>

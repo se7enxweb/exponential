@@ -1,4 +1,4 @@
-{* The confirmation of a destructive action of Setup > Recent content (moderation/action): moving to the trash or
+{* The confirmation of a destructive action of Dashboard > Recent content (moderation/action): moving to the trash or
    deleting the selected items. Confirm asks "Verify it's you" (site.ini [ReauthGroup_delete]) and then runs it.
 
    Variables: form (expModerationAction::validate()), action_name, objects (id, name), background (it runs as a job),

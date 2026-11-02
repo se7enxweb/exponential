@@ -14616,6 +14616,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>ガイド、検索、エラーの報告方法。</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>最新のコンテンツ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>最新のコンテンツ、レビューのため保留中のもの、選択した項目への操作。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81294,6 +81302,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>フォームを読み込めませんでした。</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ダッシュボード</translation>
     </message>
 </context>
 <context>

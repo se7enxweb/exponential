@@ -14616,6 +14616,14 @@ Poznámka: Balíky sa neodinštalujú.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Príručky, vyhľadávanie a ako nahlásiť chybu.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nový obsah</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Najnovší obsah, čo je zadržané na kontrolu, a akcie s výberom.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81294,6 +81302,10 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Formulár sa nepodarilo načítať.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Nástenka</translation>
     </message>
 </context>
 <context>

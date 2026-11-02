@@ -14677,6 +14677,14 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Pituduh, pamaluruhan, sareng kumaha cara ngalaporkeun kasalahan.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Eusi panganyarna</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Eusi panganyarna, naon nu ditahan pikeun dipariksa, jeung aksi dina pilihan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81272,6 +81280,10 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Formulirna teu bisa dibaca.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dasbor</translation>
     </message>
 </context>
 <context>

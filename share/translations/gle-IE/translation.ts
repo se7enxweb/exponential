@@ -14616,6 +14616,14 @@ Nóta: Ní dhíshuiteálfar na pacáistí.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Treoracha, cuardach agus conas earráid a thuairisciú.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ábhar nua</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>An t-ábhar is nuaí, an méid atá coinnithe le haghaidh athbhreithnithe, agus gníomhartha ar rogha.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81294,6 +81302,10 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Níorbh fhéidir an fhoirm a léamh.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Deais</translation>
     </message>
 </context>
 <context>

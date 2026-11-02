@@ -14677,6 +14677,14 @@ Xamal ne: paket yi dootuñu ñu dindi samp.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ndigal yi, seet ak naka nga di yëgle njuumte.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ëmbit yu bees</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ëmbit yi gëna bees, li ñu téye ngir saytu, ak jëf yi ci yi ñu tànn.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Mënuñu woon a jàng formileer bi.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tabalu saytu</translation>
     </message>
 </context>
 <context>

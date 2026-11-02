@@ -14616,6 +14616,14 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ceļveži, meklēšana un kā ziņot par kļūdu.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Jaunākais saturs</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Jaunākais saturs, pārskatīšanai aizturētais un darbības ar atlasi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81294,6 +81302,10 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Veidlapu nevarēja nolasīt.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Informācijas panelis</translation>
     </message>
 </context>
 <context>

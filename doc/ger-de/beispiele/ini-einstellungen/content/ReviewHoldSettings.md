@@ -23,7 +23,7 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 > publication of an object of a class in AutoHoldClassList\[\], made by a user who is not exempt (ExemptPolicyList\[\]),  
 > is put into the review hold (review\_hold/held) and its locations are hidden, in the publish operation itself (the  
 > step auto-review-hold, right before the content edit handlers, the view cache and the search index), so visitors  
-> never see it. A reviewer releases it in Setup > Recent content (moderation/recent) or in the website sidebar:  
+> never see it. A reviewer releases it in Dashboard > Recent content (moderation/recent) or in the website sidebar:  
 > the hold is released and the locations hidden by the auto-hold are revealed. Recorded in the audit as  
 > content.object.hold.auto. Needs the state group of the review hold (the upgrade step 6.0.15-review-hold); without  
 > it nothing is held. Read in the siteaccess the content is published in.  
@@ -61,7 +61,7 @@ AutoHoldClassList[]=comment
 > Who is never auto-held: a user who has any of these (module/function). Three are read in detail:  
 >   state/assign   may place the held state on the object (the state/assign policy with its limitations)  
 >   content/hide   may hide (and so reveal) the object's location  
->   moderation/act may run the actions of Setup > Recent content  
+>   moderation/act may run the actions of Dashboard > Recent content  
 > any other module/function counts when the user has it at all.  
 
 Standard: eine Liste mit 2: `state/assign`, `moderation/act`.

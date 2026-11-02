@@ -197,7 +197,7 @@ PhpBinary=
 > The help's manuals built from the Markdown help in the background (a new installation queues it), doc/eng-us/features/6.0/help-content.md  
 > A background run of an import or export tool (Export, CIE ...) when there is no job queue,  
 > doc/eng-us/features/6.0/transfer-runs.md (transfer.ini)  
-> A mass action of Setup > Recent content on more than \[ModerationSettings\] JobThreshold objects, doc/eng-us/features/6.0/moderation.md  
+> A mass action of Dashboard > Recent content on more than \[ModerationSettings\] JobThreshold objects, doc/eng-us/features/6.0/moderation.md  
 
 Standard: ein Hash mit 14: `remove=expContentJobRemoveSubtree`, `copy=expContentJobCopySubtree`, `move=expContentJobMoveSubtree`, `hide=expContentJobHideSubtree`, `reveal=expContentJobRevealSubtree`, `section=expContentJobSectionSubtree`, `state=expContentJobStateSubtree`, `addlocation=expContentJobAddLocation`, `removelocation=expContentJobRemoveLocation`, `packageinstall=expContentJobPackageInstall`, `auditexport=expContentJobAuditExport`, `helpmanuals=expContentJobHelpManuals` ....
 

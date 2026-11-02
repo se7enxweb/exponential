@@ -165,7 +165,7 @@ ItemsPerPageList_setup_session[]=100
 
 ## ItemsPerPageList_moderation_recent
 
-> Setup > Recent content (moderation/recent): the objects shown at once. The first size is the default; the viewer's  
+> Dashboard > Recent content (moderation/recent): the objects shown at once. The first size is the default; the viewer's  
 > choice is remembered (the preference admin\_moderation\_limit). At most 1000 are shown whatever is set here.  
 
 Standard: eine Liste mit 5: `25`, `100`, `300`, `700`, `1000`.

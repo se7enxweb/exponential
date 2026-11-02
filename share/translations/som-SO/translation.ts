@@ -14675,6 +14675,14 @@ Fiiro gaar ah: Xirmooyinka lama saari doono rakibaaddooda.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Hagayaal, raadin iyo sida loo soo sheego khalad.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nuxurka cusub</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nuxurka ugu cusub, waxa loo hayo dib-u-eegis, iyo ficillada xulashada.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81262,6 +81270,10 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>The form could not be read.</source>
         <translation>Foomka lama akhrin karin.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
     </message>
 </context>
 <context>

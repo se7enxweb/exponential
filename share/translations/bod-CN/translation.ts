@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>ལམ་སྟོན། འཚོལ་བཤེར་དང་ནོར་འཁྲུལ་ཇི་ལྟར་སྙན་སྐུལ་བྱེད་པ།</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ཉེ་ཆར་གྱི་ནང་དོན།</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ནང་དོན་གསར་ཤོས། ཞིབ་བཤེར་ཆེད་འཇོག་ཉར་བྱས་པ། འདེམས་ཟིན་པའི་བྱ་སྤྱོད།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>རེའུ་མིག་ཀློག་མ་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ལས་ཀའི་ངོས་ལེབ།</translation>
     </message>
 </context>
 <context>

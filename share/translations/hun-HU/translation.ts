@@ -14616,6 +14616,14 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Útmutatók, keresés és hibabejelentés módja.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Friss tartalom</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>A legújabb tartalom, az ellenőrzésre visszatartott tartalom és műveletek a kijelölésen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81294,6 +81302,10 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Az űrlap nem olvasható be.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Irányítópult</translation>
     </message>
 </context>
 <context>

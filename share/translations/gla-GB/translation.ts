@@ -14677,6 +14677,14 @@ An aire: Cha tèid na pacaidean a dhì-stàladh.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Stiùiridhean, lorg agus mar a nì sibh aithris air mearachd.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Susbaint o chionn ghoirid</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>An t-susbaint as ùire, na tha ga chumail airson lèirmheas, agus gnìomhan air taghadh.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Cha b' urrainn dhuinn am foirm a leughadh.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Deas-bhòrd</translation>
     </message>
 </context>
 <context>

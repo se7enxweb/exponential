@@ -14677,6 +14677,14 @@ Chenjerai: Mapakeji acho haazobviswi pakuiswa.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Nzira dzekutungamira, kutsvaga nekuzivisa kukanganisa.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Zvirimo zvitsva</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Zvirimo zvitsva-tsva, zvakabatwa kuti zviongororwe, uye zviito pane zvakasarudzwa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Fomu haina kugona kuverengwa.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dhashibhodhi</translation>
     </message>
 </context>
 <context>

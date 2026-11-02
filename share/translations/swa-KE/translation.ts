@@ -14675,6 +14675,14 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Miongozo, utafutaji na jinsi ya kuripoti hitilafu.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Maudhui mapya</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Maudhui mapya kabisa, yale yaliyozuiliwa kwa ukaguzi, na vitendo kwa uteuzi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81262,6 +81270,10 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>The form could not be read.</source>
         <translation>Fomu haikuweza kusomwa.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashibodi</translation>
     </message>
 </context>
 <context>

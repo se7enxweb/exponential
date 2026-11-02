@@ -104,7 +104,7 @@ objects unreadable would mean adding the review hold limitation to every `conten
 and would also hide pages an editor holds on purpose while visitors should keep seeing the published version. So a
 hold by itself never hides; the auto-hold hides what it holds, and remembers which locations it hid.
 
-**Releasing** (Setup > Recent content, *Release the hold*, or the website sidebar's Page panel) sets `not_held` and
+**Releasing** (Dashboard > Recent content, *Release the hold*, or the website sidebar's Page panel) sets `not_held` and
 reveals exactly the locations the auto-hold hid, when the releasing user may hide them (`content/hide`); otherwise the
 result says it stays hidden. A location an editor hid themselves is never revealed by a release. The kept data (who,
 when, why, which locations) is in `ezsite_data` as `review_hold_<object id>` while the hold lasts.
@@ -114,7 +114,7 @@ when, why, which locations) is in `ezsite_data` as `review_hold_<object id>` whi
 The website sidebar has its own pre-moderation of comments, expwt.ini `[Comments] HideNew`: a new comment by someone
 who may not hide it is hidden (not held), and the sidebar's *Approve* reveals it. When both are on, the auto-hold runs
 first; HideNew sees the comment hidden already and leaves it, and *Approve* in the sidebar also releases the hold. We
-recommend the auto-hold: it works for any class, for every way of publishing, without the sidebar, it shows in Setup >
+recommend the auto-hold: it works for any class, for every way of publishing, without the sidebar, it shows in Dashboard >
 Recent content with the submitter's address, and a held comment cannot be edited or republished by its author until a
 moderator releases it. Keep HideNew only on installations that do not run the review hold yet.
 

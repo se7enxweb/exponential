@@ -14616,6 +14616,14 @@ Athugaðu: uppsetning pakkanna verður ekki fjarlægð.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Leiðbeiningar, leit og hvernig á að tilkynna villu.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nýlegt efni</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nýjasta efnið, það sem er haldið til yfirferðar og aðgerðir á vali.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81294,6 +81302,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>Ekki tókst að lesa eyðublaðið.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Mælaborð</translation>
     </message>
 </context>
 <context>

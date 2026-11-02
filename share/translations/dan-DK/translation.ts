@@ -14885,6 +14885,14 @@ Navigeringsdel</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Vejledninger, søgning og hvordan du rapporterer en fejl.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nyt indhold</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Det nyeste indhold, hvad der er tilbageholdt til gennemsyn, og handlinger på et udvalg.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81944,6 +81952,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Formularen kunne ikke læses.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
     </message>
 </context>
 <context>

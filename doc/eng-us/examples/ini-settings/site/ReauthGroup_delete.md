@@ -35,7 +35,7 @@ Enabled=true
 
 ## Rules
 
-> Setup > Recent content: moving the selected items to the trash or deleting them (the confirmation's button)  
+> Dashboard > Recent content: moving the selected items to the trash or deleting them (the confirmation's button)  
 
 Default: a list of 3: `content/trash EmptyButton RemoveButton`, `content/removeobject * bulk`, `moderation/action ConfirmDestructiveButton`.
 

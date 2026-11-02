@@ -14616,6 +14616,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>Водичи, претрага и како пријавити грешку.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Нови садржај</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Најновији садржај, оно што је задржано ради прегледа, и радње над избором.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81294,6 +81302,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>Образац није могуће прочитати.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Контролна табла</translation>
     </message>
 </context>
 <context>

@@ -14677,6 +14677,14 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Dornlevrioù, klask ha penaos danevellañ ur fazi.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Endalc'had nevez</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>An endalc'had nevesañ, ar pezh a zo dalc'het evit bezañ gwiriet, hag oberoù war un diuzad.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>N'eus ket bet gallet lenn ar furmskrid.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Taolenn-stur</translation>
     </message>
 </context>
 <context>

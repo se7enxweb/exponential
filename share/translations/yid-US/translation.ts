@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>וועגווייַזערס, זוכן און ווי צו מעלדן אַ טעות.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>לעצטער אינהאַלט</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>דער נייַסטער אינהאַלט, וואָס ווערט אָפּגעהאַלטן צו דורכקוקן, און אַקציעס אויף אַן אויסקלייַב.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>מען האָט ניט געקענט לייענען דעם פֿאָרמולאַר.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>קאָנטראָל־ברעט</translation>
     </message>
 </context>
 <context>

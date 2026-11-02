@@ -14677,6 +14677,14 @@ Qeyd: Paketlərin quraşdırılması silinməyəcək.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Təlimatlar, axtarış və xətanın necə bildiriləcəyi.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Son məzmun</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ən yeni məzmun, yoxlama üçün saxlanılanlar və seçim üzərində əməliyyatlar.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>The form could not be read.</source>
         <translation>Forma oxuna bilmədi.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>İdarə paneli</translation>
     </message>
 </context>
 <context>

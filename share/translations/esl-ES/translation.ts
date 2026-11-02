@@ -15292,6 +15292,14 @@ Nota: los paquetes no serán desinstalados.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guías, búsqueda y cómo informar de un error.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contenido reciente</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>El contenido más nuevo, lo que está retenido para revisión y acciones sobre una selección.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -82746,6 +82754,10 @@ Gracias por tu feedback</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>No se ha podido leer el formulario.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Escritorio</translation>
     </message>
 </context>
 <context>

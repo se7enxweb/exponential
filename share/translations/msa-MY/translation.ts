@@ -14677,6 +14677,14 @@ Nota: Pakej tersebut tidak akan dinyahpasang.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Panduan, carian dan cara melaporkan ralat.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Kandungan terkini</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Kandungan terbaharu, yang ditahan untuk semakan, dan tindakan pada pilihan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>The form could not be read.</source>
         <translation>Borang tidak dapat dibaca.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Papan pemuka</translation>
     </message>
 </context>
 <context>

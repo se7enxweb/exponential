@@ -14677,6 +14677,14 @@ Nota: os paquetes non se desinstalarán.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guías, busca e como informar dun erro.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contido recente</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>O contido máis novo, o que está retido para revisión e accións sobre unha selección.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Non se puido ler o formulario.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Panel</translation>
     </message>
 </context>
 <context>

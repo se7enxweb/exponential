@@ -14616,6 +14616,14 @@ Shënim: paketat nuk do të çinstalohen.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Udhëzues, kërkim dhe si të raportoni një gabim.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Përmbajtja e fundit</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Përmbajtja më e re, çfarë mbahet për shqyrtim dhe veprime mbi një përzgjedhje.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81294,6 +81302,10 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>The form could not be read.</source>
         <translation>Formulari nuk mund të lexohej.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Paneli</translation>
     </message>
 </context>
 <context>

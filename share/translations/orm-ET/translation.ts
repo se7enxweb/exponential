@@ -14677,6 +14677,14 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Qajeelfamoota, barbaacha fi dogoggora akkamitti akka gabaasan.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Qabiyyee haaraa</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Qabiyyee haaraa, wanta sakatta'iinsaaf qabame, fi tarkaanfiiwwan filannoo irratti.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Unkaan dubbifamuu hin dandeenye.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Gabatee to'annoo</translation>
     </message>
 </context>
 <context>

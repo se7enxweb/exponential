@@ -14675,6 +14675,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>指南、搜索以及如何报告错误。</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>最新内容</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>最新的内容、暂扣待审的内容，以及对所选内容的操作。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81262,6 +81270,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>无法读取表单。</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>仪表板</translation>
     </message>
 </context>
 <context>

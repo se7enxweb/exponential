@@ -14677,6 +14677,14 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Canllawiau, chwilio a sut i adrodd am wall.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Cynnwys diweddar</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Y cynnwys mwyaf newydd, yr hyn sy'n cael ei ddal i'w adolygu, a gweithredoedd ar ddetholiad.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>The form could not be read.</source>
         <translation>Nid oedd modd darllen y ffurflen.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dangosfwrdd</translation>
     </message>
 </context>
 <context>

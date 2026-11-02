@@ -14677,6 +14677,14 @@ Catatan: Paket tidak akan dicopot.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Panduan, pencarian, dan cara melaporkan galat.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Konten terbaru</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Konten terbaru, yang ditahan untuk ditinjau, dan tindakan pada pilihan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
     <message>
         <source>The form could not be read.</source>
         <translation>Formulir tidak dapat dibaca.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dasbor</translation>
     </message>
 </context>
 <context>

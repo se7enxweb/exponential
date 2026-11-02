@@ -14616,6 +14616,14 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Vadovai, paieška ir kaip pranešti apie klaidą.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Naujausias turinys</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Naujausias turinys, peržiūrai sulaikytas turinys ir veiksmai su pažymėtais.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81294,6 +81302,10 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Nepavyko nuskaityti formos.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Valdymo skydelis</translation>
     </message>
 </context>
 <context>

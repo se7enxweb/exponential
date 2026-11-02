@@ -14677,6 +14677,14 @@ Paalala: Hindi ia-uninstall ang mga package.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Mga gabay, paghahanap at kung paano mag-ulat ng error.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Bagong nilalaman</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ang pinakabagong nilalaman, ang pinipigil para sa pagsusuri, at mga aksyon sa isang pinili.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>The form could not be read.</source>
         <translation>Hindi mabasa ang form.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
     </message>
 </context>
 <context>

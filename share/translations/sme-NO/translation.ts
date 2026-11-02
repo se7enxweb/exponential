@@ -14677,6 +14677,14 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Oahpuid, ohcan ja mo dieđát meattáhusa.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ođđa sisdoallu</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ođđaseamos sisdoallu, mii lea doallojuvvon guorahallama várás, ja doaimmat válljemiin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Skovi ii sáhttán lohkat.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dieđáhusbeavdi</translation>
     </message>
 </context>
 <context>

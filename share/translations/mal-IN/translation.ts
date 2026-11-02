@@ -14675,6 +14675,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>ഗൈഡുകൾ, തിരയൽ, പിശക് റിപ്പോർട്ട് ചെയ്യേണ്ട വിധം.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>സമീപകാല ഉള്ളടക്കം</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ഏറ്റവും പുതിയ ഉള്ളടക്കം, അവലോകനത്തിനായി തടഞ്ഞുവച്ചത്, ഒരു തിരഞ്ഞെടുപ്പിലെ പ്രവർത്തനങ്ങൾ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81262,6 +81270,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>ഫോം വായിക്കാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ഡാഷ്ബോർഡ്</translation>
     </message>
 </context>
 <context>

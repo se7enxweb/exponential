@@ -14616,6 +14616,14 @@ Let wel: Die pakkette sal nie gedeïnstalleer word nie.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Gidse, soektog en hoe om &apos;n fout te rapporteer.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Onlangse inhoud</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Die nuutste inhoud, wat vir hersiening teruggehou word, en aksies op &apos;n keuse.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81294,6 +81302,10 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Die vorm kon nie gelees word nie.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Kontroleskerm</translation>
     </message>
 </context>
 <context>

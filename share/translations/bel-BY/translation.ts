@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>Кіраўніцтвы, пошук і спосаб паведаміць пра памылку.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Новыя матэрыялы</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Найноўшыя матэрыялы, тое, што затрымана на праверку, і дзеянні з выбранымі элементамі.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>Не ўдалося прачытаць форму.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Панэль кіравання</translation>
     </message>
 </context>
 <context>

@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>මාර්ගෝපදේශ, සෙවීම සහ දෝෂයක් වාර්තා කරන ආකාරය.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>මෑත අන්තර්ගතය</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>අලුත්ම අන්තර්ගතය, සමාලෝචනය සඳහා රඳවා ඇති දේ, සහ තේරීමක් මත ක්‍රියා.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>පෝරමය කියවිය නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>උපකරණ පුවරුව</translation>
     </message>
 </context>
 <context>

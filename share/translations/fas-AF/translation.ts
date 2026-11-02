@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>راهنماها، جستجو و چگونگی گزارش یک خطا.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>محتوای اخیر</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>جدیدترین محتوا، آنچه برای بازبینی نگه داشته شده و اقدام‌ها روی یک انتخاب.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>فرم خوانده نشد.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>پیشخوان</translation>
     </message>
 </context>
 <context>

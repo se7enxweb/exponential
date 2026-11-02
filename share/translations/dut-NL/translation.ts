@@ -15111,6 +15111,14 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Handleidingen, zoeken en hoe je een fout meldt.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Recente inhoud</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>De nieuwste inhoud, wat voor controle is tegengehouden, en acties op een selectie.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -82489,6 +82497,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Het formulier kon niet worden gelezen.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
     </message>
 </context>
 <context>

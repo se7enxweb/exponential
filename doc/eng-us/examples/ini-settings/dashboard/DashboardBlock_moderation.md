@@ -12,7 +12,7 @@ generated: exp:help:examples
 The block `[DashboardBlock_moderation]` of `settings/dashboard.ini`, with 3 setting(s).
 
 > Recent content: how many objects are held for review and how many were created today, with links to  
-> Setup > Recent content (moderation/recent) filtered on them.  
+> Dashboard > Recent content (moderation/recent) filtered on them.  
 
 Never edit `settings/dashboard.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 

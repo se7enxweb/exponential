@@ -99,7 +99,7 @@ MenuLinks[git]=install/03-getting-the-code.md#b-git-clone-and-composer-install
 > Content model  
 > Users and access  
 > Setup  
-> Setup > Recent content (module moderation)  
+> Dashboard > Recent content (module moderation)  
 > Setup > Migrations (module migration)  
 > Setup > Static publishing (module staticpublish)  
 > admin4l: the administration drawn by admin layouts  

@@ -14677,6 +14677,14 @@ Cathetan: Paket ora bakal dicopot pasangane.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Pandhuan, panggolekan, lan carane nglaporake kasalahan.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Konten anyar</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Konten paling anyar, sing ditahan kanggo dipriksa, lan tumindak ing pilihan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81272,6 +81280,10 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>The form could not be read.</source>
         <translation>Formulir ora bisa diwaca.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dasbor</translation>
     </message>
 </context>
 <context>

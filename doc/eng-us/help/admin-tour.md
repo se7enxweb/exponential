@@ -48,7 +48,9 @@ The left column changes with the tab:
   create here, add to bookmarks and more). **Trash** is at the bottom of the tree.
 - Below the tree, the **Content finder** opens an item from its number (ID), its path or its address on the site:
   type it and press **Find**.
-- On the dashboard it lists your own pages: **My pending items**, **My drafts**, **My bookmarks**,
+- On the dashboard it lists your own pages: **Recent content** (second, after **Dashboard**, for moderators: the
+  newest content of the whole site, what is held for review, who submitted it, and actions on a selection;
+  [Recent content](recent-content.md)), **My pending items**, **My drafts**, **My bookmarks**,
   **My e-mail preferences**, **My notification settings**, **Change password**, **Edit profile** and more.
 - In **Setup** it lists the pages of the setup in groups, each shown only to roles that may open it. One of them is
   **Migrations** in the group **System**: the migrations of the installation, their runs, a run or a rollback
@@ -58,9 +60,7 @@ The left column changes with the tab:
   [Migrations](migrations/README.md)). Next to **Cache** in the same group, **Static publishing** publishes a static
   copy of a site to GitHub Pages or any other host of repositories: a target made with a wizard, a build in the
   background, the changes checked before **Publish**, and every publish kept to go back to
-  ([Static publishing](static-publishing/README.md)). Another is **Recent content** in the group **Content model**:
-  the newest content of the whole site, what is held for review, who submitted it, and actions on a selection
-  ([Recent content](recent-content.md)).
+  ([Static publishing](static-publishing/README.md)).
 
 ![The menu of an item in the tree](images/context-menu.webp)
 

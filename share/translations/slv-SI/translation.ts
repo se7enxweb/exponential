@@ -14616,6 +14616,14 @@ Opomba: namestitev paketov ne bo odstranjena.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Vodniki, iskanje in kako prijaviti napako.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nova vsebina</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Najnovejša vsebina, kar je zadržano v pregled, in dejanja na izboru.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81294,6 +81302,10 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Obrazca ni bilo mogoče prebrati.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Nadzorna plošča</translation>
     </message>
 </context>
 <context>

@@ -14677,6 +14677,14 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Torolalana, fikarohana ary ny fomba fitaterana hadisoana.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Votoaty vaovao</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ny votoaty vaovao indrindra, izay tazonina hodinihina, ary asa amin'ny voafidy.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81264,6 +81272,10 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>The form could not be read.</source>
         <translation>Tsy voavaky ny taratasy fenoina.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tabilao fanaraha-maso</translation>
     </message>
 </context>
 <context>

@@ -14675,6 +14675,14 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ndezi aka, nchọ na otu esi akọ akụkọ Njehie.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ọdịnaya ọhụrụ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ọdịnaya kachasị ọhụrụ, ihe e jidere maka nyocha, na omume na ihe ndị a họọrọ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81262,6 +81270,10 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>The form could not be read.</source>
         <translation>Enweghị ike ịgụ fọm ahụ.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
     </message>
 </context>
 <context>
