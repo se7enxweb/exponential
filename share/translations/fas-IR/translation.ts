@@ -81084,6 +81084,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>هیچ مهاجرتی نوشته نشد: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>اجرای طولانی در چند بخش</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>فیلدهای خالی تنظیمات migration.ini [RunSettings] را حفظ می‌کنند.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>حداکثر این تعداد مهاجرت</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>پس از این هیچ مهاجرت دیگری نیست (ثانیه)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>مکث بین مهاجرت‌ها (ثانیه)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>اولویت پایین‌تر (1 تا 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>فیلد اجرای طولانی یک عدد صحیح از 1 است (مکث: ثانیه از 0 تا 60، اولویت: 1 تا 19) یا خالی.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>در ساعت %time خودش بسته می‌شود.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>پس از این مدت خودش بسته شود (دقیقه، اختیاری)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>دقیقه‌ها یک عدد صحیح از 1 تا 44640 (31 روز) است یا خالی.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

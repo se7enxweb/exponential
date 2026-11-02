@@ -81094,6 +81094,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>कोनो माइग्रेशन नहि लिखल गेल: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>हिस्सा सभमे एक लंबा रन</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>खाली फील्ड migration.ini [RunSettings] केर सेटिंग राखैत अछि।</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>बेसीसँ बेसी एतेक माइग्रेशन</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>एकरा बाद आर माइग्रेशन नहि (सेकंड)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>माइग्रेशन सभक बीच विराम (सेकंड)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>कम प्राथमिकता (1 सँ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>लंबा रनक फील्ड 1 सँ शुरू पूर्ण संख्या अछि (विराम: 0 सँ 60 सेकंड, प्राथमिकता: 1 सँ 19), वा खाली।</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ई %time पर अपनहि बंद भ' जाइत अछि।</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>एकरा बाद अपनहि बंद करू (मिनट, वैकल्पिक)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>मिनट 1 सँ 44640 (31 दिन) धरिक पूर्ण संख्या अछि, वा खाली।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

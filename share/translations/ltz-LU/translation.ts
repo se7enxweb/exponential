@@ -81086,6 +81086,46 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>No migration was written: %reason</source>
         <translation>Et gouf keng Migratioun geschriwwen: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Een laange Llet a Portiounen</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Eidel Felder behalen d'Astellunge vu migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Héichstens esou vill Migratiounen</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Keng weider Migratioun no (Sekonnen)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Paus tëscht Migratiounen (Sekonnen)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Méi niddreg Prioritéit (1 bis 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>E Feld fir de laange Lauf ass eng ganz Zuel ab 1 (d'Paus: Sekonnen vun 0 bis 60, d'Prioritéit: 1 bis 19) oder eidel.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Et mécht sech vu selwer um %time zou.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Vu selwer zoumaachen no (Minutten, optional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>D'Minutte sinn eng ganz Zuel vun 1 bis 44640 (31 Deeg) oder eidel.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

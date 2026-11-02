@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>कोई माइग्रेशन नेईं लिखी गेई: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>हिस्सें च इक लम्मा रन</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>खाली खेतर migration.ini [RunSettings] दियां सैटिंगां रखदे न।</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>जादा थमां जादा इन्नियां माइग्रेशनां</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>इसदे बाद होर माइग्रेशन नेईं (सकिंट)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>माइग्रेशनें दे बीच ठैहराव (सकिंट)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>निक्की प्राथमिकता (1 थमां 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>लम्मे रन दा खेतर 1 थमां पूरी संख्या ऐ (ठैहराव: 0 थमां 60 सकिंट, प्राथमिकता: 1 थमां 19), जां खाली।</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>एह् %time पर अपने आप बंद होंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>इसदे बाद अपने आप बंद करो (मिंट, ऐच्छिक)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>मिंट 1 थमां 44640 (31 दिन) तक्कर पूरी संख्या न, जां खाली।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

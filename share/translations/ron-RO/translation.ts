@@ -81116,6 +81116,46 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>No migration was written: %reason</source>
         <translation>Nu a fost scrisă nicio migrare: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>O rulare lungă în părți</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Câmpurile goale păstrează setările din migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Cel mult atâtea migrări</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Nicio altă migrare după (secunde)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pauză între migrări (secunde)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioritate mai mică (1 până la 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Un câmp de rulare lungă este un număr întreg de la 1 (pauza: secunde de la 0 la 60, prioritatea: 1 până la 19) sau gol.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Se închide singură la %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Se închide singură după (minute, opțional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minutele sunt un număr întreg de la 1 la 44640 (31 de zile) sau gol.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

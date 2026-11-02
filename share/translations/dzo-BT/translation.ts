@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>གནས་སྤོ་ག་ནི་ཡང་མ་འབྲི་བས། %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>ཆ་ཤས་ཐོག་ལུ་ རིང་པོའི་ གཡོག་བཀོལ།</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>སྟོངམ་གྱི་ས་ཁོངས་ཚུ་གིས་ migration.ini [RunSettings] གི་སྒྲིག་བཀོད་ཚུ་ བཞག་དོ།</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>སྤོ་སྒྱུར་འདི་ཅམ་ལས་ མི་ལྷག།</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>དེའི་ཤུལ་ལུ་ སྤོ་སྒྱུར་ཅི་ཡང་མིན་འདུག (སྐར་ཆ།)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>སྤོ་སྒྱུར་ཚུ་གི་བར་ན་ ངལ་གསོ། (སྐར་ཆ།)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>གཙོ་རིམ་དམའ་བ། (1 ལས་ 19 ཚུན།)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>རིང་པོའི་གཡོག་བཀོལ་ས་ཁོངས་འདི་ 1 ལས་འགོ་བཙུགས་པའི་ཨང་གྲངས་ཨིན། (ངལ་གསོ: སྐར་ཆ་ 0 ལས་ 60 ཚུན། གཙོ་རིམ: 1 ལས་ 19 ཚུན།) ཡང་ན་ སྟོངམ།</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>དེ་ %time ལུ་ རང་བཞིན་གྱིས་ སྒོ་བསྡམ་འོང་།</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>འདི་ཅམ་གྱི་ཤུལ་ལུ་ རང་བཞིན་གྱིས་སྒོ་བསྡམས། (སྐར་མ། གདམ་ཁ།)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>སྐར་མ་འདི་ 1 ལས་ 44640 (ཉིནམ་ 31) ཚུན་གྱི་ཨང་གྲངས་ཨིན། ཡང་ན་ སྟོངམ།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

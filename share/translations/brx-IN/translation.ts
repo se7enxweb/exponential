@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>जेबो माइग्रेसन लिरनाय जायाखै: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>गोजाम-गोजामजों दावनो रन</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>गोजोम फिल्डफोरखौ migration.ini [RunSettings] आरो सेटिं जिउगासिनो।</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>बांसिन मेकानिजों माइग्रेसनफोर</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>बेनिफ्राय आर माइग्रेसन गैयि (सेकेन्ड)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>माइग्रेसनफोरनि गेजेर नाजा (सेकेन्ड)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>गोजोन अग्रधिकार (1 निफ्राय 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>दावनो रननि फिल्ड 1 निफ्राय गासै जोनोम संख्या (नाजा: 0 निफ्राय 60 सेकेन्ड, अग्रधिकार: 1 निफ्राय 19), नाथाय खालि।</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>बे %time-आ नौजेबो बन्द जायो।</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>बेनिफ्राय नौजेबो बन्द खालाम (मिनिट, फारसेबो)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>मिनिटफोर 1 निफ्राय 44640 (31 सान) सोमोन्दै जोनोम संख्या, नाथाय खालि।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>هیچ مهاجرتی نوشته نشد: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>اجرای طولانی در بخش‌ها</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>فیلدهای خالی تنظیمات migration.ini [RunSettings] را نگه می‌دارند.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>حداکثر این تعداد مهاجرت</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>پس از این هیچ مهاجرتی نیست (ثانیه)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>وقفه بین مهاجرت‌ها (ثانیه)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>اولویت پایین‌تر (۱ تا ۱۹)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>فیلد اجرای طولانی عدد صحیح از 1 است (وقفه: ثانیه از 0 تا 60، اولویت: 1 تا 19) یا خالی.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>در ساعت %time خودش بسته می‌شود.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>پس از این خودش بسته شود (دقیقه، اختیاری)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>دقیقه‌ها عدد صحیح از 1 تا 44640 (31 روز) است یا خالی.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

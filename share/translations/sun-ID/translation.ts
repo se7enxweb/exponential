@@ -81094,6 +81094,46 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>No migration was written: %reason</source>
         <translation>Teu aya migrasi anu ditulis: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Ngajalankeun panjang sacara bagian-bagian</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Widang kosong ngajaga setélan migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Pangpangna sabaraha migrasi ieu</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Teu aya migrasi deui saatos (detik)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Jeda antawis migrasi (detik)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioritas leuwih handap (1 nepi ka 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Widang ngajalankeun panjang nyaéta wilangan bulat ti 1 (jeda: detik ti 0 nepi ka 60, prioritas: 1 nepi ka 19), atawa kosong.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Nutup sorangan dina %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Nutup sorangan saatos (menit, opsional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Menit nyaéta wilangan bulat ti 1 nepi ka 44640 (31 poé), atawa kosong.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -81086,6 +81086,46 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>No migration was written: %reason</source>
         <translation>Gũtirĩ ũthamio wandĩkirwo: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Kuhanda kwa ihinda ria ndũrũ na ciĩgana</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ithimi iri ciĩrĩ mũhuro ihuthĩrĩte mathimo ma migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Migration nyingĩ makĩria ĩno</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Gũtirĩ migration ĩngĩ thutha wa (sekondi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Ũkĩa gatagatĩ ka migration (sekondi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Ũrĩa ũhoro-inĩ nĩ wa gĩkio (1 nginya 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ithimi rĩa kuhanda kũrĩa kũraihu nĩ namba yothe kuuma 1 (ũkĩa: sekondi kuuma 0 nginya 60, ũhoro-inĩ: 1 nginya 19), kana mũhuro.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Nĩ ĩkĩngĩrĩra yoyo ngĩ %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Ngĩrĩra yoyo thutha wa (ithaa, ĩrĩa wendaga)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Ithaa nĩ namba yothe kuuma 1 nginya 44640 (matukũ 31), kana mũhuro.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

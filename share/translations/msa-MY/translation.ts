@@ -81086,6 +81086,46 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>No migration was written: %reason</source>
         <translation>Tiada migrasi ditulis: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Larian panjang secara berperingkat</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Medan kosong mengekalkan tetapan migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Paling banyak sebanyak ini migrasi</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Tiada migrasi lagi selepas (saat)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Jeda antara migrasi (saat)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Keutamaan lebih rendah (1 hingga 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Medan larian panjang ialah nombor bulat dari 1 (jeda: saat dari 0 hingga 60, keutamaan: 1 hingga 19), atau kosong.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ia menutup sendiri pada %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Tutup sendiri selepas (minit, pilihan)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minit ialah nombor bulat dari 1 hingga 44640 (31 hari), atau kosong.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

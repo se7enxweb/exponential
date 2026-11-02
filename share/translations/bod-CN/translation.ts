@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>གནས་སྤོར་གང་ཡང་མ་བྲིས། %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>ཆ་ཤས་ལ་བགོས་པའི་རིང་པོའི་ལས་འཁོར།</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ཡིག་འབྲུ་སྟོང་པས་ migration.ini [RunSettings] ཀྱི་སྒྲིག་འགོད་རྒྱུན་སྐྱོང་བྱེད།</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>སྤོ་སྒྱུར་འདི་ཙམ་ལས་མི་ལྷག</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>དེའི་རྗེས་སུ་སྤོ་སྒྱུར་མེད། (སྐར་ཆ།)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>སྤོ་སྒྱུར་བར་གྱི་མཚམས་འཇོག (སྐར་ཆ།)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>གཙོ་རིམ་དམའ་བ། (1 ནས་ 19 བར།)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ལས་འཁོར་རིང་པོའི་ཡིག་འབྲུ་ནི་ 1 ནས་འགོ་བརྩམས་པའི་ཨང་གངས་ཡིན། (མཚམས་འཇོག: སྐར་ཆ་ 0 ནས་ 60 བར། གཙོ་རིམ: 1 ནས་ 19 བར།) ཡང་ན་སྟོང་པ།</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>དེ་ %time ལ་རང་འགུལ་གྱིས་སྒོ་འགྲིག་གི།</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>འདི་ཙམ་གྱི་རྗེས་སུ་རང་འགུལ་གྱིས་སྒོ་རྒྱག (སྐར་མ། གདམ་ག)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>སྐར་མ་ནི་ 1 ནས་ 44640 (ཉིན་ 31) བར་གྱི་ཨང་གངས་ཡིན། ཡང་ན་སྟོང་པ།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

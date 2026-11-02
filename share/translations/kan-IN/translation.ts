@@ -81084,6 +81084,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>ಯಾವುದೇ ವಲಸೆ ಬರೆಯಲಾಗಿಲ್ಲ: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>ಭಾಗಗಳಲ್ಲಿ ಒಂದು ದೀರ್ಘ ರನ್</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ಖಾಲಿ ಕ್ಷೇತ್ರಗಳು migration.ini [RunSettings] ನ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಉಳಿಸಿಕೊಳ್ಳುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ಗರಿಷ್ಠ ಇಷ್ಟು ಮೈಗ್ರೇಶನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ಇದರ ನಂತರ ಮತ್ತೆ ಮೈಗ್ರೇಶನ್ ಇಲ್ಲ (ಸೆಕೆಂಡುಗಳು)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>ಮೈಗ್ರೇಶನ್‌ಗಳ ನಡುವೆ ವಿರಾಮ (ಸೆಕೆಂಡುಗಳು)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ಕಡಿಮೆ ಆದ್ಯತೆ (1 ರಿಂದ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ದೀರ್ಘ ರನ್ ಕ್ಷೇತ್ರವು 1 ರಿಂದ ಪ್ರಾರಂಭವಾಗುವ ಪೂರ್ಣಾಂಕ (ವಿರಾಮ: 0 ರಿಂದ 60 ಸೆಕೆಂಡುಗಳು, ಆದ್ಯತೆ: 1 ರಿಂದ 19), ಅಥವಾ ಖಾಲಿ.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ಇದು %time ಕ್ಕೆ ತಾನಾಗಿಯೇ ಮುಚ್ಚುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ಇದರ ನಂತರ ತಾನಾಗಿಯೇ ಮುಚ್ಚಿ (ನಿಮಿಷಗಳು, ಐಚ್ಛಿಕ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>ನಿಮಿಷಗಳು 1 ರಿಂದ 44640 (31 ದಿನಗಳು) ವರೆಗಿನ ಪೂರ್ಣಾಂಕ, ಅಥವಾ ಖಾಲಿ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

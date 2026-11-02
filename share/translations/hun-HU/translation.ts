@@ -81116,6 +81116,46 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>No migration was written: %reason</source>
         <translation>Nem készült migráció: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Hosszú futtatás részletekben</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Az üres mezők megtartják a migration.ini [RunSettings] beállításait.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Legfeljebb ennyi migráció</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Nincs további migráció ennyi idő után (másodperc)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Szünet a migrációk között (másodperc)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Alacsonyabb prioritás (1–19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>A hosszú futtatás mezője 1-től induló egész szám (a szünet: 0–60 másodperc, a prioritás: 1–19), vagy üres.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Magától bezárul ekkor: %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Magától bezár ennyi idő után (perc, nem kötelező)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>A percek 1 és 44640 (31 nap) közötti egész számok, vagy üres.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

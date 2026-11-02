@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>קיין מיגראַציע איז נישט געשריבן: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>א לאנגער לויף אין טיילן</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ליידיקע פעלדער האלטן די סעטינגס פון migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>העכסטנס אזוי פיל מיגראציעס</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>קיין ווײַטערדיקע מיגראציע נאך (סעקונדעס)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>פויזע צווישן מיגראציעס (סעקונדעס)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>נידעריקערע פרייאריטעט (1 ביז 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>א פעלד פאר א לאנגן לויף איז א גאנצע צאל פון 1 (די פויזע: סעקונדעס פון 0 ביז 60, די פרייאריטעט: 1 ביז 19), אדער ליידיק.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>עס פארמאכט זיך אליין ביי %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>פארמאכן זיך אליין נאך (מינוטן, אפציאנעל)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>די מינוטן זענען א גאנצע צאל פון 1 ביז 44640 (31 טעג), אדער ליידיק.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

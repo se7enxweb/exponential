@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>Миграция жазылган жок: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Бөлүктөр менен узун иштетүү</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Бош талааларда migration.ini [RunSettings] жөндөөлөрү сакталат.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Эң көп дегенде ушунча миграция</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Мындан кийин миграция жок (секунд)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Миграциялардын ортосундагы тыныгуу (секунд)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Төмөнкү артыкчылык (1ден 19го чейин)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Узун иштетүү талаасы - 1ден баштап бүтүн сан (тыныгуу: 0дөн 60 секундга чейин, артыкчылык: 1ден 19го чейин) же бош.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ал %time убагында өзү жабылат.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Мындан кийин өзү жабылсын (мүнөт, милдеттүү эмес)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Мүнөттөр - 1ден 44640ка чейинки (31 күн) бүтүн сан же бош.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

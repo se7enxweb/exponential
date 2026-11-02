@@ -81086,6 +81086,46 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>No migration was written: %reason</source>
         <translation>Tsy nisy fifindrana voasoratra: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Fampandehanana lava amin'ny ampahany</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ny saha foana dia mitazona ny fandrindrana ao amin'ny migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Farafahabetsany ity isan'ny fifindra-monina ity</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Tsy misy fifindra-monina intsony aorian'ny (segondra)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Fiatoana eo anelanelan'ny fifindra-monina (segondra)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Laharam-pahamehana ambany kokoa (1 ka 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ny saha fampandehanana lava dia isa manontolo manomboka amin'ny 1 (ny fiatoana: segondra 0 ka 60, ny laharam-pahamehana: 1 ka 19), na foana.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Mikatona ho azy amin'ny %time izy.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Akatony ho azy aorian'ny (minitra, tsy voatery)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Ny minitra dia isa manontolo manomboka amin'ny 1 ka 44640 (andro 31), na foana.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

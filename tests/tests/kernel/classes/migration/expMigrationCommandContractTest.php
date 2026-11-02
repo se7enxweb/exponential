@@ -31,7 +31,7 @@ class expMigrationCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:migration:push' => '[apply][dry-run][format:][limit:]',
         'exp:migration:check' => '[path:*][environment:][format:]',
         'exp:migration:generate' => '[skeleton][source:][description:][author:][type:][apply][dry-run][format:][from-recording:][engine:][from-content:][depth:][max-objects:][from-class:][from-role:][from-section:][from-settings:][siteaccess:]',
-        'exp:migration:record:start' => '[apply][dry-run][format:][site-wide][label:][user:]',
+        'exp:migration:record:start' => '[apply][dry-run][format:][site-wide][label:][user:][for:][until:]',
         'exp:migration:record:stop' => '[apply][dry-run][format:][site-wide][user:]',
         'exp:migration:record:status' => '[format:][user:]',
         'exp:migration:record:list' => '[format:][count:]',

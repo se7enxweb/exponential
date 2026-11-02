@@ -31,11 +31,15 @@ keeps the changes of one user (--user, by login; in the administration: the sign
 anywhere: the administration, the website sidebar, or a command run as that user. --site-wide opens
 the site-wide window instead: every change of every user and of the console. One session recording
 per user and one site-wide window at a time. The account of a user (login, e-mail, password) and the
-fields of user objects are never recorded. Without --apply it says what it would start.
+fields of user objects are never recorded. --for=<minutes> or --until=<time> gives the recording a
+window: it stops by itself when the window ends (at most 31 days). Without --apply it says what it
+would start.
 
 ./console exp:migration:record:start --label="news section" --apply
 ./console exp:migration:record:start --user=editor --apply
 ./console exp:migration:record:start --site-wide --label="release 2.4 setup" --apply
+./console exp:migration:record:start --site-wide --for=120 --label="editors' afternoon" --apply
+./console exp:migration:record:start --site-wide --until="2026-11-20 18:00" --apply
 ```
 
 ## Options
@@ -48,6 +52,8 @@ fields of user objects are never recorded. Without --apply it says what it would
 | `--site-wide` |  | The site-wide recording: every change of every user and of the console (without it: one user's own changes) |
 | `--label` | required | The label of the caption or of the recording (a caption without one: "manual caption" with the time) |
 | `--user` | required | The user, by login, whose own changes a session recording keeps (default: [RunSettings] RunAsUser of migration.ini) |
+| `--for` | required | A window of this many minutes: the recording stops by itself when it ends |
+| `--until` | required | A window until this time (2026-11-20 18:00, the server's time zone): the recording stops by itself then |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

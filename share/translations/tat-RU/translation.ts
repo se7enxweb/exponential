@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>Бер миграция дә язылмады: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Өлешләп озын эшләтү</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Буш кырлар migration.ini [RunSettings] көйләүләрен саклый.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Иң күбе шулкадәр миграция</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Моннан соң миграция юк (секунд)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Миграцияләр арасында тукталыш (секунд)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Түбәнрәк өстенлек (1 дән 19 га кадәр)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Озын эшләтү кыры - 1 дән башлап бөтен сан (тукталыш: 0 дән 60 секундка кадәр, өстенлек: 1 дән 19 га кадәр) яки буш.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ул %time вакытында үзе ябыла.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Моннан соң үзе ябылсын (минут, мәҗбүри түгел)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Минутлар - 1 дән 44640 ка кадәр (31 көн) бөтен сан яки буш.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

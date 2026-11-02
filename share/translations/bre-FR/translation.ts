@@ -81086,6 +81086,46 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>No migration was written: %reason</source>
         <translation>N'eus bet skrivet migradur ebet: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Ur redadenn hir e rannoù</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ar maesoù goullo a ziwall arventennoù migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Da bellañ ez eus kement a fiñvadurioù</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Fiñvadur ebet ken goude (eilennoù)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Ehan etre ar fiñvadurioù (eilennoù)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Dreistmerzh izeloc'h (1 da 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ur maes redadenn hir zo un niver anterin adalek 1 (an ehan: eilennoù eus 0 da 60, an dreistmerzh: 1 da 19), pe goullo.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Serriñ a ra e-unan da %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Serriñ e-unan goude (munutennoù, diret)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Ar munutennoù zo un niver anterin eus 1 da 44640 (31 devezh), pe goullo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

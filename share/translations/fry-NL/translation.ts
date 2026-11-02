@@ -81086,6 +81086,46 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>No migration was written: %reason</source>
         <translation>Der is gjin migraasje skreaun: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>In lange run yn dielen</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Lege fjilden hâlde de ynstellingen fan migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Op syn heechst safolle migraasjes</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Gjin fierdere migraasje nei (sekonden)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Skoft tusken migraasjes (sekonden)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Legere prioriteit (1 oant 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>In fjild foar de lange run is in hiel getal fan 1 ôf (it skoft: sekonden fan 0 oant 60, de prioriteit: 1 oant 19), of leech.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>It slút himsels om %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Slút himsels nei (minuten, opsjoneel)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>De minuten binne in hiel getal fan 1 oant 44640 (31 dagen), of leech.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

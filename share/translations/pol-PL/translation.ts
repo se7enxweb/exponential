@@ -82298,6 +82298,46 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>No migration was written: %reason</source>
         <translation>Nie zapisano żadnej migracji: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Długie uruchomienie w częściach</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Puste pola zachowują ustawienia z migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Co najwyżej tyle migracji</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Żadnych kolejnych migracji po (sekundach)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Przerwa między migracjami (sekundy)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Niższy priorytet (od 1 do 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Pole długiego uruchomienia to liczba całkowita od 1 (przerwa: sekundy od 0 do 60, priorytet: od 1 do 19) lub puste.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Zamknie się samo o %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Zamknij samo po (minutach, opcjonalnie)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minuty to liczba całkowita od 1 do 44640 (31 dni) lub puste.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -81086,6 +81086,46 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>No migration was written: %reason</source>
         <translation>Nun s'escribió nenguna migración: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Una execución llarga per partes</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Los campos baleros caltienen los axustes de migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Como máximo estes migraciones</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Ninguna migración más dempués de (segundos)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Posa ente migraciones (segundos)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioridá más baxa (1 a 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Un campu d'execución llarga ye un númberu enteru dende 1 (la posa: segundos de 0 a 60, la prioridá: 1 a 19), o baleru.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Zárrase por sigo a les %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Zarrar por sigo dempués de (minutos, opcional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Los minutos son un númberu enteru de 1 a 44640 (31 díes), o baleru.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

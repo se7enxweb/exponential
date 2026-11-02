@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>هیچ کۆچێک نەنووسرا: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>ڕاکردنێکی درێژ بە بەشەکان</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>خانە بەتاڵەکان ڕێکخستنەکانی migration.ini [RunSettings] دەپارێزن.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>زۆرترین ئەم ژمارە گواستنەوەیە</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>دوای ئەمە هیچ گواستنەوەیەک نییە (چرکە)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>وچان لە نێوان گواستنەوەکان (چرکە)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>پێشینەی نزمتر (1 بۆ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>خانەی ڕاکردنی درێژ ژمارەیەکی تەواوە لە 1 ەوە (وچان: چرکە لە 0 بۆ 60، پێشینە: 1 بۆ 19)، یان بەتاڵ.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>لە %time خۆی دادەخرێت.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>دوای ئەمە خۆی دابخرێت (خولەک، ئارەزوومەندانە)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>خولەکەکان ژمارەیەکی تەواون لە 1 بۆ 44640 (31 ڕۆژ)، یان بەتاڵ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

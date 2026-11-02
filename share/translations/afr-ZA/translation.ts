@@ -81116,6 +81116,46 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>No migration was written: %reason</source>
         <translation>Geen migrasie is geskryf nie: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>'n Lang lopie in dele</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Leë velde behou die instellings van migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Hoogstens soveel migrasies</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Geen verdere migrasie na (sekondes)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pouse tussen migrasies (sekondes)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Laer prioriteit (1 tot 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>'n Langlopie-veld is 'n heelgetal vanaf 1 (die pouse: sekondes van 0 tot 60, die prioriteit: 1 tot 19), of leeg.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Dit sluit vanself om %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Sluit vanself na (minute, opsioneel)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Die minute is 'n heelgetal van 1 tot 44640 (31 dae), of leeg.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

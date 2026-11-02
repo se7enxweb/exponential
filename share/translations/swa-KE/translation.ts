@@ -81084,6 +81084,46 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>No migration was written: %reason</source>
         <translation>Hakuna uhamishaji ulioandikwa: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Uendeshaji mrefu kwa sehemu</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Sehemu tupu huhifadhi mipangilio ya migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Uhamishaji usiozidi idadi hii</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Hakuna uhamishaji zaidi baada ya (sekunde)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Mapumziko kati ya uhamishaji (sekunde)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Kipaumbele cha chini (1 hadi 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Sehemu ya uendeshaji mrefu ni nambari kamili kuanzia 1 (mapumziko: sekunde kutoka 0 hadi 60, kipaumbele: 1 hadi 19), au tupu.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Hujifunga yenyewe saa %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Jifunge yenyewe baada ya (dakika, si lazima)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Dakika ni nambari kamili kutoka 1 hadi 44640 (siku 31), au tupu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

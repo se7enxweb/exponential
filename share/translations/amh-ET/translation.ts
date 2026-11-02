@@ -81084,6 +81084,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>ምንም ፍልሰት አልተጻፈም፦ %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>በክፍሎች የተከፈለ ረጅም ሂደት</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ባዶ መስኮች የmigration.ini [RunSettings] ቅንብሮችን ይጠብቃሉ።</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ቢበዛ ይህን ያህል ፍልሰቶች</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ከዚህ በኋላ ተጨማሪ ፍልሰት የለም (ሰከንዶች)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>በፍልሰቶች መካከል እረፍት (ሰከንዶች)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ዝቅተኛ ቅድሚያ (ከ1 እስከ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>የረጅም ሂደት መስክ ከ1 ጀምሮ ሙሉ ቁጥር ነው (እረፍት፦ ከ0 እስከ 60 ሰከንዶች፣ ቅድሚያ፦ ከ1 እስከ 19) ወይም ባዶ።</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>በ%time በራሱ ይዘጋል።</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ከዚህ በኋላ በራሱ ይዘጋ (ደቂቃዎች፣ አማራጭ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>ደቂቃዎቹ ከ1 እስከ 44640 (31 ቀናት) ሙሉ ቁጥር ናቸው ወይም ባዶ።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

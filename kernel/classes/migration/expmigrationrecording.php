@@ -17,6 +17,10 @@
  *            website sidebar, or a console command run as that user); one per user at a time
  *   site     every change of every user and of the console while the window is open; one at a time
  *
+ * Either kind can be started for a window of time (start() with $until): it stops by itself when the window ends.
+ * While a recording runs, its stopped_at is the end of its window (0: none, it runs until it is stopped); the
+ * recorder keeps nothing after it, and closeEnded() stops it, its stopped_at staying the end of the window.
+ *
  * Tables exp_migration_recording (one row per recording) and exp_migration_recording_event (one row per recorded
  * change, its payload the event as JSON), plain SQL like expMigrationRecord, on every engine. Until the tables exist
  * (upgrade step 6.0.15-migration-recording-tables) nothing can be started.
@@ -74,6 +78,9 @@ class expMigrationRecording
         'payload' => array( 'text', 0 ),
     );
 
+    /** The longest window, in seconds (31 days). */
+    const MAX_WINDOW = 2678400;
+
     /** The file that says which recordings run (relative to the var directory). */
     const ACTIVE_FILE = 'migration/recording/active.json';
 
@@ -110,11 +117,12 @@ class expMigrationRecording
      * @param int $userId the user who starts it (session: whose changes are recorded)
      * @param string $label
      * @param string[] $errors set to the reasons it was not started
+     * @param int $until the end of the window (a time), 0: until it is stopped
      * @return array|null the recording's row
      */
-    public static function start( $db, $mode, $userId, $label = '', &$errors = array() )
+    public static function start( $db, $mode, $userId, $label = '', &$errors = array(), $until = 0 )
     {
-        $errors = self::startProblems( $mode, $userId, $label );
+        $errors = self::startProblems( $mode, $userId, $label, $until );
         if ( $errors )
             return null;
         if ( self::tablesExist( $db ) !== true )
@@ -122,6 +130,7 @@ class expMigrationRecording
             $errors[] = 'the recording tables do not exist yet: ./console exp:upgrade --apply makes them (upgrade step 6.0.15-migration-recording-tables)';
             return null;
         }
+        self::closeEnded( $db );
         foreach ( self::running( $db ) as $row )
         {
             if ( $mode === self::MODE_SITE && $row['kind'] === self::MODE_SITE )
@@ -132,7 +141,8 @@ class expMigrationRecording
         if ( $errors )
             return null;
         $row = self::normalize( array( 'recording_id' => self::newId(), 'kind' => $mode, 'label' => trim( (string)$label ), 'state' => self::RECORDING,
-                                       'user_id' => (int)$userId, 'started_at' => time(), 'environment' => expMigrationRecord::environment() ),
+                                       'user_id' => (int)$userId, 'started_at' => time(), 'stopped_at' => (int)$until,
+                                       'environment' => expMigrationRecord::environment() ),
                                 self::COLUMNS );
         $db->query( self::insertSql( $db, self::TABLE, $row ) );
         self::sync( $db );
@@ -146,11 +156,18 @@ class expMigrationRecording
      * @param string $mode
      * @param int $userId
      * @param string $label
+     * @param int $until the end of the window, 0: none
+     * @param int|null $now
      * @return string[]
      */
-    public static function startProblems( $mode, $userId, $label )
+    public static function startProblems( $mode, $userId, $label, $until = 0, $now = null )
     {
         $errors = array();
+        $now = $now === null ? time() : (int)$now;
+        if ( (int)$until !== 0 && (int)$until <= $now )
+            $errors[] = 'the end of the window is not in the future';
+        else if ( (int)$until > $now + self::MAX_WINDOW )
+            $errors[] = 'a window is at most ' . ( self::MAX_WINDOW / 86400 ) . ' days long';
         if ( !in_array( $mode, self::MODES, true ) )
             $errors[] = "the kind of recording is session or site, not $mode";
         if ( $mode === self::MODE_SESSION && (int)$userId <= 0 )
@@ -190,6 +207,47 @@ class expMigrationRecording
         self::sync( $db );
         self::audit( 'stop', $row );
         return $row;
+    }
+
+    /**
+     * Stops the recordings whose window has ended: their stopped_at stays the end of the window. start() and the
+     * recorder call it; exp:migration:record:status too.
+     *
+     * @param eZDBInterface $db
+     * @param int|null $now
+     * @return array[] the rows stopped
+     */
+    public static function closeEnded( $db, $now = null )
+    {
+        $now = $now === null ? time() : (int)$now;
+        $closed = array();
+        foreach ( self::running( $db ) as $row )
+        {
+            if ( !self::ended( $row, $now ) )
+                continue;
+            $row['state'] = self::STOPPED;
+            $row['event_count'] = self::countEvents( $db, $row['recording_id'] );
+            $db->query( 'UPDATE ' . self::TABLE . " SET state = '" . self::STOPPED . "', event_count = " . (int)$row['event_count']
+                        . ' WHERE ' . self::idWhere( $db, $row['recording_id'] ) . " AND state = '" . self::RECORDING . "'" );
+            self::audit( 'stop', $row );
+            $closed[] = $row;
+        }
+        if ( $closed )
+            self::sync( $db );
+        return $closed;
+    }
+
+    /**
+     * Whether the window of a running recording has ended (a row, or an entry of active()). Pure.
+     *
+     * @param array $recording
+     * @param int $now
+     * @return bool
+     */
+    public static function ended( array $recording, $now )
+    {
+        $until = isset( $recording['until'] ) ? (int)$recording['until'] : ( isset( $recording['stopped_at'] ) ? (int)$recording['stopped_at'] : 0 );
+        return $until > 0 && (int)$now >= $until;
     }
 
     /**
@@ -423,7 +481,7 @@ class expMigrationRecording
         $list = array();
         foreach ( self::running( $db ) as $row )
             $list[] = array( 'recording_id' => $row['recording_id'], 'kind' => $row['kind'], 'user_id' => (int)$row['user_id'],
-                             'started_at' => (int)$row['started_at'] );
+                             'started_at' => (int)$row['started_at'], 'until' => (int)$row['stopped_at'] );
         $written = self::writeActive( self::activeFile(), $list );
         if ( class_exists( 'expMigrationRecorder' ) )
             expMigrationRecorder::forget();
@@ -473,7 +531,8 @@ class expMigrationRecording
         foreach ( is_array( $data ) && isset( $data['recordings'] ) ? (array)$data['recordings'] : array() as $r )
             if ( is_array( $r ) && isset( $r['recording_id'], $r['kind'] ) && self::validId( $r['recording_id'] ) && in_array( $r['kind'], self::MODES, true ) )
                 $out[] = array( 'recording_id' => (string)$r['recording_id'], 'kind' => (string)$r['kind'],
-                                'user_id' => isset( $r['user_id'] ) ? (int)$r['user_id'] : 0, 'started_at' => isset( $r['started_at'] ) ? (int)$r['started_at'] : 0 );
+                                'user_id' => isset( $r['user_id'] ) ? (int)$r['user_id'] : 0, 'started_at' => isset( $r['started_at'] ) ? (int)$r['started_at'] : 0,
+                                'until' => isset( $r['until'] ) ? (int)$r['until'] : 0 );
         return $out;
     }
 
@@ -483,13 +542,17 @@ class expMigrationRecording
      *
      * @param array[] $active active()
      * @param int $userId
+     * @param int|null $now a window that has ended records nothing more
      * @return array[]
      */
-    public static function matching( array $active, $userId )
+    public static function matching( array $active, $userId, $now = null )
     {
+        $now = $now === null ? time() : (int)$now;
         $out = array();
         foreach ( $active as $r )
-            if ( $r['kind'] === self::MODE_SITE || ( $r['kind'] === self::MODE_SESSION && (int)$r['user_id'] === (int)$userId && (int)$userId > 0 ) )
+            if ( self::ended( $r, $now ) )
+                continue;
+            else if ( $r['kind'] === self::MODE_SITE || ( $r['kind'] === self::MODE_SESSION && (int)$r['user_id'] === (int)$userId && (int)$userId > 0 ) )
                 $out[] = $r;
         return $out;
     }
@@ -505,8 +568,11 @@ class expMigrationRecording
     public static function forUser( $userId, $file = null )
     {
         $out = array( 'mine' => null, 'site' => null );
+        $now = time();
         foreach ( self::active( $file ) as $r )
         {
+            if ( self::ended( $r, $now ) )
+                continue;
             if ( $r['kind'] === self::MODE_SITE )
                 $out['site'] = $r;
             else if ( (int)$r['user_id'] === (int)$userId && (int)$userId > 0 )

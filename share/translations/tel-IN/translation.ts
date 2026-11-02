@@ -81084,6 +81084,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>ఏ మైగ్రేషన్ వ్రాయబడలేదు: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>భాగాలుగా ఒక సుదీర్ఘ రన్</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ఖాళీ ఫీల్డ్‌లు migration.ini [RunSettings] సెట్టింగ్‌లను ఉంచుతాయి.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>గరిష్టంగా ఇన్ని మైగ్రేషన్‌లు</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>దీని తర్వాత మరిన్ని మైగ్రేషన్‌లు లేవు (సెకన్లు)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>మైగ్రేషన్‌ల మధ్య విరామం (సెకన్లు)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>తక్కువ ప్రాధాన్యత (1 నుండి 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>సుదీర్ఘ రన్ ఫీల్డ్ 1 నుండి మొదలయ్యే పూర్ణ సంఖ్య (విరామం: 0 నుండి 60 సెకన్లు, ప్రాధాన్యత: 1 నుండి 19), లేదా ఖాళీ.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ఇది %time కి దానంతట అదే మూసుకుంటుంది.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>దీని తర్వాత దానంతట అదే మూసివేయి (నిమిషాలు, ఐచ్ఛికం)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>నిమిషాలు 1 నుండి 44640 (31 రోజులు) వరకు పూర్ణ సంఖ్య, లేదా ఖాళీ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

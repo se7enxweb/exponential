@@ -81084,6 +81084,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>कोणतेही स्थलांतर लिहिले नाही: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>भागांमध्ये एक दीर्घ रन</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>रिकामी फील्ड migration.ini [RunSettings] मधील सेटिंग्ज कायम ठेवतात.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>जास्तीत जास्त इतके मायग्रेशन</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>यानंतर आणखी मायग्रेशन नाही (सेकंद)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>मायग्रेशनमधील विराम (सेकंद)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>कमी प्राधान्य (1 ते 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>दीर्घ रनचे फील्ड 1 पासून सुरू होणारी पूर्ण संख्या आहे (विराम: 0 ते 60 सेकंद, प्राधान्य: 1 ते 19), किंवा रिकामे.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ते %time वाजता आपोआप बंद होते.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>यानंतर आपोआप बंद करा (मिनिटे, ऐच्छिक)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>मिनिटे 1 ते 44640 (31 दिवस) पर्यंतची पूर्ण संख्या आहे, किंवा रिकामी.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

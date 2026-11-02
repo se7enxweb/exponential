@@ -2,8 +2,9 @@
 
 This page is the guide to migrations that run without anybody starting them by hand, and to runs that take long:
 the migrations a package ships, which run when it is installed; the run of the kickstarter; the run of a deploy
-(`exp:velocity deploy --migrate`); and runs in parts, paced, in the background, and PHP migrations that work through
-many items in batches and go on where they stopped.
+(`exp:velocity deploy --migrate`); runs in parts, paced, in the background, and PHP migrations that work through
+many items in batches and go on where they stopped; the step that writes code and design files; and a site-wide
+recording for a window of time.
 
 [Guides](README.md) · [Migrations](migrations.md) · Related: [PHP migrations](migrations-php.md),
 [Rollback and captions](migrations-rollback-and-captions.md), [The migrations repository](migrations-repositories.md)
@@ -169,13 +170,73 @@ takes it, the run counts as running, so a second one is refused. When expqueue i
 installed, the job type is missing or no worker runs, the run starts as a process as before. A run that fails fails
 the queue job for good: a migration run is never repeated by itself.
 
-## Not in this part
+### In the administration
 
-Several migrations at once in parallel workers, the steps that change code and design files, and a site-wide
-recording window come with a later release.
+The run form of Setup > Migrations > Run has the four long-run options as fields, in the card "A long run in parts":
+"At most this many migrations", "No further migration after (seconds)", "Pause between migrations (seconds)" and
+"Lower priority (1 to 19)". An empty field keeps the setting of `[RunSettings]`, shown as the field's placeholder; a
+value is checked as the command checks it and passed to the background run (`--max-migrations`, `--max-time`,
+`--throttle`, `--nice`). A run that stops at a limit ends without an error, and the migrations it left stay pending for
+the next run or a resume.
+
+## Code and design files
+
+Migrations change data, settings and the files of `var/storage`; code and design files go through git (the caption
+takes the code trees). When a migration has to write such a file itself, for example a template an extension
+overrides, the step type [`code_file`](../examples/migration-steps/code_file.md) does it:
+
+```yaml
+- type: code_file
+  mode: update                     # create, update, ensure (the default) or delete
+  path: design/mysite/templates/page_footer.tpl
+  source: files/page_footer.tpl    # next to the migration; or content: "..."
+  expect: 9a0b...                  # the SHA-256 the file must have before (absent: it must not exist)
+  checksum: 3f1c...                # the SHA-256 the new content must have
+```
+
+- Only below the folders of `migration.ini [FileStepSettings] AllowedRootList[]` (`design` and `extension` by default),
+  never a folder itself, never `..`, an absolute path, a URL, a `.git` folder, `settings/override`, `var` or `vendor`,
+  and never through a link that leads out of the folder. An empty list switches the step type off.
+- The file as it was is copied first to `var/backup/migration/files/<migration id>/<path>` (readable by its owner
+  only), and the change is listed in `var/backup/migration/files/<migration id>.json`: whether the file existed, its
+  SHA-256 before and after, its mode. The write is atomic and keeps the mode of the file it replaces.
+- When a later step of the same migration fails, the runner puts the files back (the transaction does not undo them);
+  the run's messages say which.
+- The step undoes itself: `exp:migration:rollback` of the migration puts the old file back, or removes the file the
+  migration made, but only while the file is still the one the migration wrote. A file edited since is left alone and
+  the rollback says so.
+- The caches the file affects are cleared after the run: templates for `.tpl`, the INI cache for `.ini` and
+  `.ini.append.php`, the packed stylesheets and scripts for `.css` and `.js`. A new PHP class needs an `autoload` step.
+
+## A recording window of time
+
+A site-wide recording ([Generating and recording](migrations-generators-and-recording.md)) can be opened for a window
+of time: it closes by itself when the window ends, so a recording of an afternoon of editors' work is not left open.
+
+```
+./console exp:migration:record:start --site-wide --for=120 --label="editors' afternoon" --apply
+./console exp:migration:record:start --site-wide --until="2026-11-20 18:00" --apply
+```
+
+Setup > Migrations > Recording has the field "Close by itself after (minutes, optional)" on the site-wide window. A
+window is at most 31 days long. Nothing is recorded after its end; the next change, the next start, the recording page
+or `exp:migration:record:status` stops it, and its end stays the time it stopped. `--for` and `--until` work for a
+session recording too.
+
+## Not part of it
+
+- **Parallel workers.** Every run holds the one lock of the installation, the caption and the restore cover the whole
+  run, and a migration's transaction and schema changes (MySQL and Oracle commit DDL at once) cannot be shared by two
+  processes. Two workers would either wait for each other or break the way back, so runs stay one at a time; long runs
+  are split with the limits above instead.
+- **Package removal.** Removing a package does not roll its migrations back. The data they made usually outlives the
+  package (content, classes, roles), and a rollback that removes it is a decision to take by hand:
+  `./console exp:migration:rollback <migration id> --apply` for each, or the caption taken before the package was
+  installed.
 
 ## Related pages
 
 - [Migrations](migrations.md), [PHP migrations](migrations-php.md), [Rollback and captions](migrations-rollback-and-captions.md)
-- [exp:migration:migrate](../examples/commands/expmigrationmigrate.md), [exp:migration:resume](../examples/commands/expmigrationresume.md)
+- [exp:migration:migrate](../examples/commands/expmigrationmigrate.md), [exp:migration:resume](../examples/commands/expmigrationresume.md),
+  [exp:migration:record:start](../examples/commands/expmigrationrecordstart.md), [The step type code_file](../examples/migration-steps/code_file.md)
 - [migration.ini](../examples/ini-settings/migration/README.md)

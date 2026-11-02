@@ -81116,6 +81116,46 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>No migration was written: %reason</source>
         <translation>Žiadna migrácia nebola zapísaná: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Dlhé spustenie po častiach</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Prázdne polia ponechajú nastavenia z migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Najviac toľko migrácií</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Žiadna ďalšia migrácia po (sekundách)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pauza medzi migráciami (sekundy)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Nižšia priorita (1 až 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Pole dlhého spustenia je celé číslo od 1 (pauza: sekundy od 0 do 60, priorita: 1 až 19) alebo prázdne.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Zatvorí sa samo o %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Zatvoriť samo po (minútach, voliteľné)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minúty sú celé číslo od 1 do 44640 (31 dní) alebo prázdne.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -81116,6 +81116,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>Міграцію не записано: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Тривалий запуск частинами</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Порожні поля зберігають налаштування з migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Не більше ніж стільки міграцій</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Жодних міграцій після (секунд)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Пауза між міграціями (секунд)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Нижчий пріоритет (від 1 до 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Поле тривалого запуску - ціле число від 1 (пауза: секунди від 0 до 60, пріоритет: від 1 до 19) або порожнє.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Воно закриється саме о %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Закрити само через (хвилин, необов'язково)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Хвилини - ціле число від 1 до 44640 (31 день) або порожнє.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

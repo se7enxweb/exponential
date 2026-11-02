@@ -65,6 +65,9 @@ class expMigrationContext extends expUpgradeContext
     /** @var string[] the caches steps asked to be cleared after the run (the step type cache, when: end) */
     protected $deferredCaches = array();
 
+    /** @var array[] the code and design files the steps of the migration that runs now wrote (code_file) */
+    protected $fileChanges = array();
+
     /** @var expMigrationLock|null */
     protected $lock;
 
@@ -272,6 +275,30 @@ class expMigrationContext extends expUpgradeContext
     public function deferredCaches()
     {
         return $this->deferredCaches;
+    }
+
+    /**
+     * Notes a code or design file a step of the migration that runs now wrote (expMigrationFiles::write()): when the
+     * migration fails, the runner puts it back.
+     *
+     * @param array $change expMigrationFiles::write()
+     */
+    public function addFileChange( array $change )
+    {
+        $this->fileChanges[] = $change;
+    }
+
+    /**
+     * The files the migration that ran last wrote, the last first, and forgets them (the runner, before and after
+     * each migration).
+     *
+     * @return array[]
+     */
+    public function takeFileChanges()
+    {
+        $changes = array_reverse( $this->fileChanges );
+        $this->fileChanges = array();
+        return $changes;
     }
 
     // ---- the record --------------------------------------------------------------------------------------------
