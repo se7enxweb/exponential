@@ -24945,7 +24945,7 @@ d23d7cff446dc7c1dc750eeb692332af  kernel/private/classes/commands/expmigrationre
 180ff4f1bb02469aa440dc45a57033af  kernel/private/classes/commands/expmigrationresume.php
 9c156aa9bf248209f4c361d0455eec7c  kernel/private/classes/commands/expmigrationrollback.php
 c22b8f05181328d28e0b44a498863941  kernel/private/classes/commands/expmigrationstatus.php
-d2309791fed8419ca4f561c051ae9838  kernel/private/classes/commands/expstaticbase.php
+ef5e1928972e7f0b9a277df54099a0d5  kernel/private/classes/commands/expstaticbase.php
 c7004590b386f44cb53c2f632b82260e  kernel/private/classes/commands/expstaticbuild.php
 3575ea0c498f5d1b43b9bbe9f4e37c09  kernel/private/classes/commands/expstaticdiff.php
 7af493693e54a73bf598e5269f2ee1f8  kernel/private/classes/commands/expstaticdns.php

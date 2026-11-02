@@ -69,6 +69,7 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
     {
         return array(
             'format' => 'text (default) or json (the machine output exp-static/1)',
+            'export' => 'print these targets (ids separated by commas, or all) as an INI migration and change nothing',
             'full' => 'Crawl the whole site (the default without --paths or --nodes); not with --paths or --nodes',
             'paths' => 'Build only these pages, by their path in the site (/about-us; a comma list or repeated); the rest of the last build stays',
             'nodes' => 'Build only the pages of these nodes (node ids; a comma list or repeated); the rest of the last build stays',
