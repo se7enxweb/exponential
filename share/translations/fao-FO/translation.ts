@@ -80814,6 +80814,22 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Upptøkan kundi ikki broytast: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Ger flyting</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Navn á flytingini (valfrítt)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Flytingin %file er skrivað. Broytingar, sum einki stig kann gera, eru nevndar ovast í fíluni, at gera við hond.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Eingin flyting varð skrivað: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -26,11 +26,18 @@
  * an account that exists alone. A create undoes itself (the user is removed again); a delete removes the user for
  * good, with the role assignments of the account.
  *
+ * secrets: names the login, the e-mail address and the password by secrets instead (a name of the secret store,
+ * Setup > Secrets, or env:<variable>), read when the step runs: a migration generated from a recording or from content
+ * names an account this way and never carries its personal data (open question 16, answer a).
+ *
  * @since 6.0.15
  * @package kernel
  */
 class expMigrationStepUser extends expMigrationStepContent
 {
+    /** The account values secrets: can name. */
+    const SECRET_KEYS = array( 'login', 'email', 'password' );
+
     /** @return string */
     public function name()
     {
@@ -56,6 +63,8 @@ class expMigrationStepUser extends expMigrationStepContent
                                           'description' => 'a password hash to store as it is (instead of password:)' ),
                 'password_hash_type' => array( 'type' => 'string', 'modes' => array( 'create', 'update', 'ensure' ),
                                                'description' => 'the type of password_hash: (md5_password, md5_user, md5_site, plaintext, password_hash ...)' ),
+                'secrets' => array( 'type' => 'map', 'modes' => $writing,
+                                    'description' => 'login, email or password => the name of a secret (Setup > Secrets, or env:<variable>) the value is read from when the step runs, instead of login:, email: or password:' ),
                 'enabled' => array( 'type' => 'bool', 'modes' => $writing, 'description' => 'whether the account can sign in (default for a new user: true)' ),
                 'groups' => array( 'type' => 'list', 'modes' => $writing,
                                    'description' => 'the nodes of the user groups the user is in (the first is its main location); update and ensure add the user to those it is not in' ),
@@ -93,10 +102,22 @@ class expMigrationStepUser extends expMigrationStepContent
     {
         $mode = isset( $step['mode'] ) ? $step['mode'] : null;
         $errors = array();
+        $secrets = isset( $step['secrets'] ) && is_array( $step['secrets'] ) ? $step['secrets'] : array();
+        foreach ( $secrets as $key => $name )
+        {
+            if ( !in_array( $key, self::SECRET_KEYS, true ) )
+                $errors[] = "secrets.$key: secrets names " . implode( ', ', self::SECRET_KEYS );
+            else if ( isset( $step[$key] ) )
+                $errors[] = "secrets.$key and $key: exclude each other";
+            if ( !is_string( $name ) || ( !expMigrationReferences::contains( $name ) && !expSecrets::validName( $name ) ) )
+                $errors[] = "secrets.$key: not the name of a secret";
+        }
+        if ( isset( $secrets['password'] ) && isset( $step['password_hash'] ) )
+            $errors[] = 'secrets.password and password_hash: exclude each other';
         if ( in_array( $mode, array( 'create', 'ensure' ), true ) )
         {
             foreach ( array( 'login', 'email' ) as $key )
-                if ( !isset( $step[$key] ) || trim( (string)$step[$key] ) === '' )
+                if ( ( !isset( $step[$key] ) || trim( (string)$step[$key] ) === '' ) && !isset( $secrets[$key] ) )
                     $errors[] = "$key is missing (mode $mode)";
             if ( empty( $step['groups'] ) )
                 $errors[] = "groups is missing: a user is in at least one user group (mode $mode)";
@@ -121,7 +142,7 @@ class expMigrationStepUser extends expMigrationStepContent
         if ( isset( $step['language'] ) && !expMigrationReferences::contains( $step['language'] )
              && ( $problem = expMigrationIdentifier::problem( 'language', $step['language'] ) ) !== null )
             $errors[] = "language: $problem";
-        if ( $mode === 'update' && !array_intersect( array_keys( $step ), array( 'email', 'password', 'password_hash', 'enabled', 'groups', 'remove_groups', 'fields' ) ) )
+        if ( $mode === 'update' && !array_intersect( array_keys( $step ), array( 'email', 'password', 'password_hash', 'secrets', 'enabled', 'groups', 'remove_groups', 'fields' ) ) )
             $errors[] = 'nothing to update';
         return $errors;
     }
@@ -154,18 +175,20 @@ class expMigrationStepUser extends expMigrationStepContent
         $groups = isset( $step['groups'] ) && is_array( $step['groups'] ) ? implode( ', ', array_map( array( 'expMigrationStepSchema', 'show' ), $step['groups'] ) ) : '';
         $what = array();
         foreach ( array( 'email', 'enabled' ) as $key )
-            if ( isset( $step[$key] ) )
+            if ( isset( $step[$key] ) || isset( $step['secrets'][$key] ) )
                 $what[] = $key;
-        if ( isset( $step['password'] ) || isset( $step['password_hash'] ) )
+        if ( isset( $step['password'] ) || isset( $step['password_hash'] ) || isset( $step['secrets']['password'] ) )
             $what[] = 'the password';
+        $login = isset( $step['login'] ) ? (string)$step['login']
+               : ( isset( $step['secrets']['login'] ) ? 'of the secret ' . $step['secrets']['login'] : '' );
         if ( isset( $step['fields'] ) && is_array( $step['fields'] ) )
             $what[] = implode( ', ', array_keys( $step['fields'] ) );
         switch ( $step['mode'] )
         {
             case 'create':
-                return array( 'create the user ' . $step['login'] . " in the group(s) $groups" );
+                return array( "create the user $login in the group(s) $groups" );
             case 'ensure':
-                return array( 'ensure the user ' . $step['login'] . " in the group(s) $groups: create it when missing, change what differs" );
+                return array( "ensure the user $login in the group(s) $groups: create it when missing, change what differs" );
             case 'update':
                 $lines = array();
                 $target = 'the user ' . expMigrationStepSchema::show( $step['user'] );
@@ -189,6 +212,7 @@ class expMigrationStepUser extends expMigrationStepContent
      */
     public function apply( array $step, $context )
     {
+        $step = self::withSecrets( $step );
         switch ( $step['mode'] )
         {
             case 'create':
@@ -232,12 +256,31 @@ class expMigrationStepUser extends expMigrationStepContent
     {
         if ( !$this->revertible( $step ) )
             throw new RuntimeException( 'only a create can be undone by itself; give the migration a down:' );
+        $step = self::withSecrets( $step );
         $user = eZUser::fetchByName( (string)$step['login'] );
         if ( !$user instanceof eZUser )
             return array( 'the user ' . $step['login'] . ' is not there: nothing to undo' );
         $object = eZContentObject::fetch( (int)$user->attribute( 'contentobject_id' ) );
         $this->delete( $object, array( 'trash' => false ) + $step );
         return array( 'removed the user ' . $step['login'] . ' (' . $user->attribute( 'contentobject_id' ) . ')' );
+    }
+
+    /**
+     * A step with the values secrets: names read from the secret store (login, email, password).
+     *
+     * @param array $step
+     * @return array
+     * @throws RuntimeException naming the secret (never a value) when it is missing
+     */
+    public static function withSecrets( array $step )
+    {
+        if ( !isset( $step['secrets'] ) || !is_array( $step['secrets'] ) )
+            return $step;
+        foreach ( $step['secrets'] as $key => $name )
+            if ( in_array( $key, self::SECRET_KEYS, true ) && !isset( $step[$key] ) )
+                $step[$key] = expSecrets::required( (string)$name, "secrets.$key of a user step" );
+        unset( $step['secrets'] );
+        return $step;
     }
 
     // ---- the modes ---------------------------------------------------------------------------------------------

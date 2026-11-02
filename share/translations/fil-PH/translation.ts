@@ -80814,6 +80814,22 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>The recording could not be changed: %reason</source>
         <translation>Hindi mabago ang recording: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Bumuo ng migration</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Pangalan ng migration (opsyonal)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Naisulat ang migration na %file. Ang mga pagbabagong hindi kayang gawin ng anumang hakbang ay nakalista sa itaas ng file, para gawin nang mano-mano.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Walang naisulat na migration: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

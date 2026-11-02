@@ -80814,6 +80814,22 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>The recording could not be changed: %reason</source>
         <translation>Ýazgyny üýtgedip bolmady: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Göçürmäni döret</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Göçürmäniň ady (hökmany däl)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>%file göçürmesi ýazyldy. Hiç bir ädimiň edip bilmeýän üýtgeşmeleri faýlyň başynda agzalýar, olary el bilen etmeli.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Hiç bir göçürme ýazylmady: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -80844,6 +80844,22 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>The recording could not be changed: %reason</source>
         <translation>Regjistrimi nuk mund të ndryshohej: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Gjenero migrimin</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Emri i migrimit (opsional)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migrimi %file u shkrua. Ndryshimet që asnjë hap nuk mund t'i bëjë përmenden në krye të skedarit, për t'u bërë me dorë.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Nuk u shkrua asnjë migrim: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

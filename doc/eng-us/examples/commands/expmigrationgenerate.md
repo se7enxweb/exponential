@@ -2,14 +2,14 @@
 title: exp:expmigrationgenerate
 audience: developer, admin
 category: examples
-summary: "Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; --from-recording turns a recording of changes into a YAML migration; a dry run unless --apply."
+summary: "Write a new migration file: --skeleton writes an empty migration (PHP, or with --type=yml, sql, ini or graphql that kind); --from-recording turns a recording of changes into a YAML migration; --from-content, --from-class, --from-role, --from-section and --from-settings turn what ..."
 keywords: exp:expmigrationgenerate, expmigrationgenerate, console, command, CLI, expmigrationgenerate.php, exp:migration:generate
 type: generated
 generated: exp:help:examples
 ---
 # exp:expmigrationgenerate
 
-Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; --from-recording turns a recording of changes into a YAML migration; a dry run unless --apply.
+Write a new migration file: --skeleton writes an empty migration (PHP, or with --type=yml, sql, ini or graphql that kind); --from-recording turns a recording of changes into a YAML migration; --from-content, --from-class, --from-role, --from-section and --from-settings turn what the installation has into one; a dry run unless --apply.
 
 Script `bin/php/expmigrationgenerate.php`, code in `kernel/private/classes/commands/expmigrationgenerate.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -27,34 +27,53 @@ Write a new migration
 with the header (description, author), plan(), up() and down(), in the site's migrations directory
 (the first [MigrationSettings] DirectoryList entry) or, with --source=extension:<name>, in the
 extension's. The class is named after the name and the time, in the namespace Site\Migrations or
-Extension\<Name>\Migrations. With --type=yml it writes YYYYMMDDHHMMSS_<name>.yml instead: the header
-and an empty list of steps. Without --apply it shows the file and writes nothing; an existing file is
-never replaced.
+Extension\<Name>\Migrations. --type=yml writes YYYYMMDDHHMMSS_<name>.yml instead (the header and an
+empty list of steps), --type=graphql the same with an example of the step graphql, --type=ini an INI
+migration and --type=sql an SQL migration (with --engine=mysql, pgsql, sqlite or oracle the file of one
+engine, with --engine=mongodb the .mongodb.json file). Without --apply it shows the file and writes
+nothing; an existing file is never replaced.
 --from-recording=<id> turns a recording of changes (exp:migration:record:start) into a YAML
-migration: its events folded into one step per thing changed. It needs the YAML step types the
-recording uses (content, location, class, role, user ...); until the installation has them it lists
-the steps and the step types missing, and writes nothing.
+migration: its events folded into one step per thing changed, checked as exp:migration:check checks
+a file. What no step type repeats is listed, and named in the file, to be done by hand.
+--from-content=<node>[,<node>...] (with --depth=<levels below> and --max-objects=<n>), --from-class,
+--from-role, --from-section (identifiers or names, comma-separated) and --from-settings=<file>[,...]
+(of settings/override, or with --siteaccess=<name> of that siteaccess) write a YAML migration that
+makes those things as they are now (mode ensure). Personal data stays out: a user is named by
+secrets, and secret settings are left to be set by hand.
 
 ./console exp:migration:generate --skeleton add_news_class
 ./console exp:migration:generate --skeleton news_folder --type=yml --apply
+./console exp:migration:generate --skeleton news_index --type=sql --engine=pgsql --apply
+./console exp:migration:generate --skeleton news_settings --type=ini --apply
 ./console exp:migration:generate --skeleton add_news_class --description="The news class" --apply
 ./console exp:migration:generate --skeleton news_folder --source=extension:expnews --apply
-./console exp:migration:generate --from-recording=20261101-120000-a1b2c3 news_section
+./console exp:migration:generate --from-recording=20261101-120000-a1b2c3 news_section --apply
+./console exp:migration:generate --from-class=news_article --from-role="News editor" news_setup
+./console exp:migration:generate --from-content=path:news --depth=1 news_tree --apply
 ```
 
 ## Options
 
 | Option | Value | Help |
 |---|---|---|
-| `--skeleton` |  | An empty migration with its header: PHP with plan(), up() and down(), or YAML without steps |
+| `--skeleton` |  | An empty migration with its header: PHP with plan(), up() and down(), or the kind --type names |
 | `--source` | required | The source: site or extension:<name> (generate: where the file goes; rollback: which migration, when two sources have its id) |
 | `--description` | required | The description in the header of the new migration |
 | `--author` | required | The author in the header of the new migration |
-| `--type` | required | The type of the new migration: php (the default) or yml |
+| `--type` | required | The type of the new migration: php (the default), yml, sql, ini or graphql (a YAML migration with a graphql step to fill in) |
 | `--apply` |  | Make the changes (the default is a dry run that lists them and changes nothing) |
 | `--dry-run` |  | The default, accepted for scripts that pass it: list what would change, change nothing |
 | `--format` | required | text (default) or json (the machine output exp-migration/1) |
-| `--from-recording` | required | Generate a YAML migration from a recording of changes (its id); it needs the YAML step types the recording uses |
+| `--from-recording` | required | Generate a YAML migration from a recording of changes (its id) |
+| `--engine` | required | With --type=sql: the file of one engine (mysql, pgsql, sqlite, oracle, mongodb) instead of the portable one |
+| `--from-content` | required | Generate a YAML migration of content: the nodes (id, remote:<remote id>, path:<url path>), comma-separated |
+| `--depth` | required | With --from-content: the levels below each node that go in too (default 0: the node alone) |
+| `--max-objects` | required | With --from-content: at most this many objects (default 500) |
+| `--from-class` | required | Generate a YAML migration of content classes (identifiers, comma-separated) |
+| `--from-role` | required | Generate a YAML migration of roles with their policies (names, comma-separated) |
+| `--from-section` | required | Generate a YAML migration of sections (identifiers, comma-separated) |
+| `--from-settings` | required | Generate a YAML migration of settings files of settings/override (site.ini ..., comma-separated) |
+| `--siteaccess` | required | With --from-settings: the files of this siteaccess instead of settings/override |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

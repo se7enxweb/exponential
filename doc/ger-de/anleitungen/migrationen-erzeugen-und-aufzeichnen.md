@@ -6,10 +6,11 @@ als Schritt einer YAML-Migration festgehalten: Inhalt veröffentlicht, eine Klas
 eine Einstellung geschrieben. Danach sehen Sie sich an, was sie erfasst hat, erzeugen daraus eine Migration und führen
 diese auf Staging und Produktion aus.
 
-Diese Seite erklärt die Aufzeichnung, die in Exponential 6.0.15 enthalten ist, und den Generator, der aus einer
-Aufzeichnung eine Migrationsdatei macht; er kommt mit den YAML-Schritttypen (siehe
-[Eine Migration erzeugen](#eine-migration-aus-einer-aufzeichnung-erzeugen)). Die anderen Generatoren (aus Inhalten,
-aus einem Vergleich, der Konverter) folgen später. Die Ausgaben unten entstanden am 1. November 2026 auf SQLite.
+Diese Seite erklärt die Aufzeichnung und die Generatoren von Exponential 6.0.15: den, der aus einer Aufzeichnung eine
+Migrationsdatei macht, den, der eine Migration dessen schreibt, was eine Installation jetzt hat (Inhalte, Klassen,
+Rollen, Sektionen, Einstellungen), und die Gerüste jeder Art von Migrationsdatei. Das Erzeugen aus einem Vergleich und
+der Konverter aus dem YAML des Referenz-Bundles folgen später. Die Ausgaben unten entstanden am 1. November 2026 auf
+SQLite.
 
 [Anleitungen](README.md) · [Migrationen](migrationen.md) · Verwandt: [PHP-Migrationen](migrationen-php.md),
 [Rücknahme und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md), [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md#aufgezeichnete-ereignisse-exp-migration-recording-event1),
@@ -23,7 +24,10 @@ aus einem Vergleich, der Konverter) folgen später. Die Ausgaben unten entstande
 ./console exp:migration:record:stop --apply                           # beenden
 ./console exp:migration:record:show <id>                              # was sie erfasst hat
 ./console exp:migration:record:show <id> --plan                       # die Schritte, die eine Migration daraus hätte
-./console exp:migration:generate --from-recording=<id> news_section   # die Migration (braucht die YAML-Schritttypen)
+./console exp:migration:generate --from-recording=<id> news_section   # die Migration daraus, ein Probelauf
+./console exp:migration:generate --from-recording=<id> news_section --apply   # nach migrations/ geschrieben
+./console exp:migration:generate --from-class=news_article --from-role="News editor" news_setup   # aus dem, was da ist
+./console exp:migration:generate --skeleton news_index --type=sql --apply      # eine leere SQL-Migration
 ```
 
 Dasselbe in der Administration: **Setup > Migrationen > Aufzeichnung**, mit einem Balken „Aufzeichnung…“ auf jeder
@@ -240,7 +244,8 @@ Die Optionen jedes Befehls: [exp:migration:record:start](../beispiele/befehle/ex
 
 **Setup > Migrationen > Aufzeichnung** (die Ansicht `migration/recording`, Richtlinie `migration/edit`) startet und
 beendet die Aufzeichnung Ihrer eigenen Änderungen, öffnet und schließt das websiteweite Fenster, listet jede
-Aufzeichnung und zeigt, was sie erfasst hat, die Schritte, die eine Migration daraus hätte, und einen Knopf zum
+Aufzeichnung und zeigt, was sie erfasst hat, die Schritte, die eine Migration daraus hätte, einen Knopf
+**Migration erzeugen**, der diese Migration in das Migrationsverzeichnis der Site schreibt, und einen Knopf zum
 Verwerfen. Solange Ihre Änderungen aufgezeichnet werden, zeigt jede Seite der Administration einen roten Balken
 **Aufzeichnung…** mit **Zeigen** und **Aufzeichnung beenden**. Die Website-Seitenleiste hat Start und Stopp für Ihre
 eigene Aufzeichnung in ihrem Bereich Migrationen. Die Seite im Einzelnen:
@@ -267,8 +272,9 @@ Beenden und Verwerfen stehen im Prüfprotokoll als `system.migration.record` (da
 
 ## Die Ereignisse und die Schritte, die daraus werden
 
-Die Tabelle ist der Vertrag zwischen der Aufzeichnung und den YAML-Schritttypen des Arbeitspakets 10 (die Schritte
-v1). Schritttypen, die es in dieser Version noch nicht gibt, sind so genannt, wie dieses Arbeitspaket sie nennen wird.
+Die Tabelle zeigt, was eine Aufzeichnung zu jedem Ereignis festhält: den aufgezeichneten Schritt, im Format der
+Aufzeichnung (`exp-migration-recording-event/1`). Der Generator macht aus jedem aufgezeichneten Schritt den Schritt
+eines YAML-Schritttyps ([unten](#vom-aufgezeichneten-schritt-zum-migrationsschritt)).
 
 | Audit-Ereignis | Schritttyp / Modus | Die Schlüssel des Schritts |
 |---|---|---|
@@ -332,27 +338,167 @@ Eine Aufzeichnung hält jedes Ereignis fest; eine Migration braucht einen Schrit
 
 ## Eine Migration aus einer Aufzeichnung erzeugen
 
-`./console exp:migration:generate --from-recording=<id> [name]` macht aus einer Aufzeichnung eine YAML-Migration. Dafür
-braucht es die YAML-Schritttypen, die die Aufzeichnung verwendet (content, location, class, role, user, section ...),
-die mit den YAML-Schritten v1 kommen. Bis die Installation sie hat, listet der Befehl die Schritte und was fehlt,
-schreibt nichts und endet mit Exit 1:
+`./console exp:migration:generate --from-recording=<id> [name]` macht aus einer Aufzeichnung eine YAML-Migration: die
+Ereignisse zu Schritten zusammengefasst (oben), jeder in der Form des Schritttyps, der ihn wiederholt, geprüft, wie
+`exp:migration:check` eine Datei prüft, und mit `--apply` als `migrations/YYYYMMDDHHMMSS_<name>.yml` geschrieben (ohne
+zeigt der Befehl die Datei und schreibt nichts; eine vorhandene Datei wird nie ersetzt). Ohne Namen benennt die
+Bezeichnung der Aufzeichnung sie. In der Administration hat die Seite der Aufzeichnung dasselbe als Knopf
+**Migration erzeugen**.
 
 ```text
 $ ./console exp:migration:generate --from-recording=20261101-124707-de8bac news_section
-Exponential migrations: generate from a recording
-  20261101-124707-de8bac stopped   session     5 event(s)  2026-11-01 12:47  user #14  "news section"
+Exponential migrations: generate from a recording, dry run (--apply writes the file)
+  20261101-124707-de8bac stopped   session     8 event(s)  2026-11-01 12:47  user #14  "news section"
     1  section/ensure section news
     2  content/create object remote:news-folder
     3  location/update location remote:89e19c337bfb26c11d3d7a34a71a6618
     4  role/assign role Editor
-    5  location/hide location remote:89e19c337bfb26c11d3d7a34a71a6618
-Step types missing: content, location, role, section
-FAIL: needs the YAML step types content, location, role, section (the YAML steps v1 of work package 10): nothing is written until this installation has them
-FAIL (exit 1)
+    5  user/create user remote:a8a1fb4f3c2c41d6b0a9c5b37c3e6a51
+    6  location/hide location remote:89e19c337bfb26c11d3d7a34a71a6618
+    7  location/swap location remote:89e19c337bfb26c11d3d7a34a71a6618
+Left out on purpose: first_name, last_name, signature, image, login, email, password
+Not generated, to be done by hand:
+  - location/swap location remote:89e19c337bfb26c11d3d7a34a71a6618: a swap of two locations has no step: swap remote:89e19c337bfb26c11d3d7a34a71a6618 and remote:2c5e7b3f0d1e4a6b8c9d0e1f2a3b4c5d by hand
+File migrations/20261101125500_news_section.yml
 ```
 
-Das Erzeugen aus Inhalten, aus einem Vergleich und der Konverter aus dem YAML des Referenz-Bundles folgen in einer
-späteren Version.
+Die Datei, die er schreibt:
+
+```yaml
+# description: Recording 20261101-124707-de8bac: news section
+#
+# Generated from the recording 20261101-124707-de8bac (8 events).
+# Check it before the run: ./console exp:migration:check and ./console exp:migration:dry-run
+#
+# Not generated, to be done by hand:
+# - location/swap location remote:89e19c337bfb26c11d3d7a34a71a6618: a swap of two locations has no step: swap remote:89e19c337bfb26c11d3d7a34a71a6618 and remote:2c5e7b3f0d1e4a6b8c9d0e1f2a3b4c5d by hand
+steps:
+    - type: section
+      mode: ensure
+      identifier: news
+      name: News
+      navigation_part: ezcontentnavigationpart
+    - type: content
+      mode: create
+      class: folder
+      parent: "remote:f3e90596361e31d496d4026eb624c983"
+      remote_id: news-folder
+      section: news
+      always_available: true
+      language: eng-GB
+      fields: { name: News, short_description: "<p>What is new</p>" }
+      translations: { ger-DE: { name: Nachrichten } }
+      comment: "translations added: ger-DE"
+    - type: location
+      mode: update
+      node: "remote:89e19c337bfb26c11d3d7a34a71a6618"
+      sort_field: published
+      sort_order: desc
+    - type: role
+      mode: assign
+      role: Editor
+      groups: [ "remote:3c160cca19fb135f83bd02d911f04db2" ]
+      subtree: "remote:89e19c337bfb26c11d3d7a34a71a6618"
+    - type: user
+      mode: create
+      secrets:
+          login: user_a8a1fb4f3c2c_login
+          email: user_a8a1fb4f3c2c_email
+          password: user_a8a1fb4f3c2c_password
+      remote_id: a8a1fb4f3c2c41d6b0a9c5b37c3e6a51
+      groups: [ "remote:3c160cca19fb135f83bd02d911f04db2" ]
+      enabled: true
+      comment: "personal data left out: a generated migration names the account by secret references; set the secrets user_a8a1fb4f3c2c_login, user_a8a1fb4f3c2c_email, user_a8a1fb4f3c2c_password (Setup > Secrets, or env:<variable>) before the run; left out: first_name, last_name, signature, image, login, email, password"
+    - type: location
+      mode: hide
+      node: "remote:89e19c337bfb26c11d3d7a34a71a6618"
+```
+
+Lesen Sie sie, machen Sie die Änderungen, die als „to be done by hand“ genannt sind (oder ergänzen Sie die Schritte
+selbst), führen Sie `./console exp:migration:check` und `./console exp:migration:dry-run` aus und committen Sie sie wie
+jede Migration. Ist eine Erweiterung, die einen Schritttyp mitbringt, nicht aktiv, nennt der Generator die fehlenden
+Schritttypen und schreibt nichts.
+
+### Vom aufgezeichneten Schritt zum Migrationsschritt
+
+| Aufgezeichnet | Migrationsschritt |
+|---|---|
+| `content` / `create`, `update` | `content` / `create` oder `update` (`object:` die Remote-ID); die Felder der Ausgangssprache als `fields`, die anderen Sprachen als `translations`; weitere Orte als Schritte `location` / `create` (mit eigenen Remote-IDs) |
+| `content` / `delete` | `content` / `delete` |
+| `content` / `copy` | `location` / `copy` (das Objekt des Knotens; die Kopie bekommt eigene Remote-IDs) |
+| `location` / `create`, `move`, `hide`, `delete` | `location` mit demselben Modus (`node:` der Ort) |
+| `location` / `reveal` | `location` / `unhide` |
+| `location` / `update` | `location` / `update` mit `sort_field`, `sort_order`, `main`; für `child_priorities` je Kind ein `location` / `update` mit `priority` |
+| `trash` / `move`, `restore` | `trash` mit demselben Modus |
+| `class` / `create` | `content_class` / `create`, die Attribute als Liste (`type` ist der Datentyp) |
+| `class` / `update` | `content_class` / `ensure` mit der ganzen Definition (fügt Attribute hinzu und ändert sie, entfernt keine) |
+| `role` / `create`, `update` | `role` / `create` oder `ensure` mit den Richtlinien (ensure fügt fehlende hinzu, entfernt keine) |
+| `role` / `assign`, `unassign` | `role` mit `users` oder `groups` und `subtree` oder `section` |
+| `user` / `create` | `user` / `create` mit `secrets` für Login, E-Mail-Adresse und Passwort ([unten](#personenbezogene-daten-und-geheimnisse)) |
+| `user` / `update`, `delete` | `user` / `update` oder `delete` (`user:` die Remote-ID) |
+| `section`, `object_state_group` | derselbe Schritttyp, Modus `ensure` (oder `assign`, `delete`) |
+| `url_alias` / `ensure` | `url_alias` / `ensure` mit `path` und `node`; das Entfernen aller eigenen Adressen eines Orts als `delete` mit `which: all` |
+| `ini` / `set`, `remove` | `settings` mit `set` oder `remove` (`siteaccess` für die Datei eines Siteaccess) |
+
+Nicht erzeugt und stattdessen oben in der Datei genannt: das Vertauschen zweier Orte, Workflow-Auslöser (Workflows
+haben noch keinen Bezeichner), Einstellungen einer Erweiterung (Migrationen schreiben nur `settings/override` und
+`settings/siteaccess/<name>`), geheime Einstellungen (sie kommen nie in eine Migration), das Entfernen einzelner
+URL-Aliase, die der Kernel nicht nennt, und Objektzustände von Inhalten (kein Schritttyp setzt sie; der Kommentar des
+Schritts nennt sie). Was ein Schritt nicht tragen kann, steht in seinem `comment`. Ein Text, der `${` enthält, wird als
+`$${` geschrieben, damit die Engine ihn nicht für einen Platzhalter hält.
+
+### Personenbezogene Daten und Geheimnisse
+
+Eine Aufzeichnung hält nie das Konto eines Benutzers fest (Login, E-Mail-Adresse, Passwort) und auch nicht die Felder
+von Benutzerobjekten, die `[RecordingSettings] UserKeepAttributeList[]` nicht nennt. Ein erzeugter Benutzerschritt
+nennt das Konto stattdessen über Geheimnisse, die der Schritt liest, wenn er läuft:
+
+```yaml
+    - type: user
+      mode: create
+      secrets: { login: user_a8a1fb4f3c2c_login, email: user_a8a1fb4f3c2c_email, password: user_a8a1fb4f3c2c_password }
+      groups: [ "remote:3c160cca19fb135f83bd02d911f04db2" ]
+```
+
+Jeder Name ist ein Geheimnis unter **Setup > Geheimnisse** oder `env:<VARIABLE>` für eine Umgebungsvariable des Laufs.
+Legen Sie sie auf jeder Installation vor dem Lauf an; fehlt eines, schlägt der Schritt mit seinem Namen fehl, nie mit
+einem Wert. Der Schlüssel `secrets` funktioniert auch in von Hand geschriebenen Benutzerschritten.
+
+## Eine Migration dessen erzeugen, was da ist
+
+Derselbe Generator schreibt eine Migration dessen, was eine Installation jetzt hat, um es auf einer anderen zu
+wiederholen:
+
+| Option | Erzeugt |
+|---|---|
+| `--from-content=<Knoten>[,...]` | die Objekte der Knoten (`2`, `remote:<Remote-ID>`, `path:<URL-Pfad>`); `--depth=<n>` nimmt die Ebenen darunter hinzu, `--max-objects=<n>` hört nach so vielen Objekten auf (Standard 500), Eltern zuerst |
+| `--from-class=<Bezeichner>[,...]` | Inhaltsklassen mit ihren Attributen |
+| `--from-role=<Name>[,...]` | Rollen mit ihren Richtlinien und Einschränkungen in stabilen Formen |
+| `--from-section=<Bezeichner>[,...]` | Sektionen |
+| `--from-settings=<Datei>[,...]` | die Einstellungen von `settings/override/<Datei>.append.php`; mit `--siteaccess=<Name>` die dieses Siteaccess |
+
+Die Optionen lassen sich kombinieren; die Schritte verwenden den Modus `ensure`, wo der Schritttyp ihn hat (Inhalte,
+Klassen, Rollen, Sektionen), so dass die Migration auch dort läuft, wo ein Teil schon da ist. Es gelten dieselben
+Regeln wie für eine Aufzeichnung: stabile Bezeichner, Benutzer über Geheimnisse, geheime Einstellungen ausgelassen.
+
+```text
+$ ./console exp:migration:generate --from-class=news_article --from-role="News editor" --from-section=news news_setup --apply
+```
+
+## Gerüste
+
+`--skeleton <name>` schreibt eine leere Migration zum Ausfüllen, von der Art, die `--type` nennt:
+
+| `--type` | Datei | Inhalt |
+|---|---|---|
+| `php` (Standard) | `<id>.php` | eine Klasse mit `plan()`, `up()` und `down()` |
+| `yml` | `<id>.yml` | der Kopf und `steps: []`, ein Beispiel in Kommentaren |
+| `graphql` | `<id>.yml` | dasselbe mit einem Beispiel des Schritts `graphql` |
+| `ini` | `<id>.ini` | eine INI-Migration mit Beispielen von Blöcken in Kommentaren |
+| `sql` | `<id>.sql` | eine SQL-Migration für jede SQL-Engine, mit `-- down` |
+| `sql --engine=<Engine>` | `<id>.mysql.sql`, `<id>.pgsql.sql`, `<id>.sqlite.sql`, `<id>.oracle.sql`, `<id>.mongodb.json` | die Datei einer Engine |
+
+Die Formate: [SQL und Einstellungen](migrationen-sql-und-einstellungen.md), [GraphQL](graphql-rezepte.md).
 
 ## Verwandte Seiten
 

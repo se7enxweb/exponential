@@ -80812,6 +80812,22 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Ba a iya canza naɗa ba: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Ƙirƙiri ƙaura</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Sunan ƙaurar (na zaɓi)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>An rubuta ƙaura %file. Canje-canjen da babu wani mataki da zai iya yi an ambace su a saman fayil ɗin, don a yi su da hannu.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Ba a rubuta wata ƙaura ba: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

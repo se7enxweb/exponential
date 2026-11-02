@@ -80814,6 +80814,22 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Cha b' urrainn dhuinn an clàradh atharrachadh: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Gin imrich</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Ainm na h-imrich (roghainneil)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Chaidh an imrich %file a sgrìobhadh. Tha atharrachaidhean nach urrainn do cheum sam bith a dhèanamh air an ainmeachadh aig mullach an fhaidhle, rin dèanamh le làimh.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Cha deach imrich sam bith a sgrìobhadh: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

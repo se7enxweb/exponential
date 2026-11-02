@@ -80814,6 +80814,22 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>The recording could not be changed: %reason</source>
         <translation>Dili mausab ang rekording: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Paghimo og migration</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Ngalan sa migration (opsyonal)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Nasulat na ang migration %file. Ang mga kausaban nga dili mahimo sa bisan unsang lakang gihinganlan sa ibabaw sa file, aron buhaton sa kamot.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Walay migration nga nasulat: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

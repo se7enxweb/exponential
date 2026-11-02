@@ -2776,7 +2776,8 @@
       "tests/tests/kernel/classes/migration/expMigrationRecordingTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRecordingSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRecordingDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationRecordingMongoDBTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMigrationRecordingMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationGeneratorTest.php"
     ],
     "kernel/classes/upgrade/steps/expupgradestepmigrationrecordingtables.php": [
       "tests/tests/kernel/classes/migration/expMigrationRecordingSqliteTest.php",
@@ -2789,7 +2790,8 @@
       "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php"
     ],
     "kernel/private/classes/views/migration/recording.php": [
-      "tests/tests/kernel/classes/migration/expMigrationRecordingTest.php"
+      "tests/tests/kernel/classes/migration/expMigrationRecordingTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRecordingSqliteTest.php"
     ],
     "kernel/migration/recording.php": [
       "tests/tests/kernel/classes/migration/expMigrationRecordingTest.php"
@@ -2835,6 +2837,20 @@
     ],
     "settings/rest.ini": [
       "tests/tests/kernel/classes/migration/expMigrationGraphqlIntegrationTest.php"
+    ],
+    "kernel/classes/migration/expmigrationyamlwriter.php": [
+      "tests/tests/kernel/classes/migration/expMigrationGeneratorTest.php"
+    ],
+    "kernel/classes/migration/expmigrationgenerator.php": [
+      "tests/tests/kernel/classes/migration/expMigrationGeneratorTest.php"
+    ],
+    "kernel/classes/migration/steps/expmigrationstepuser.php": [
+      "tests/tests/kernel/classes/migration/expMigrationGeneratorTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationStructureStepsSqliteTest.php"
+    ],
+    "kernel/private/classes/commands/expmigrationgenerate.php": [
+      "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationGeneratorTest.php"
     ]
   },
   "generated": {

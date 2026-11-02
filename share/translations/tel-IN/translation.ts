@@ -80812,6 +80812,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>రికార్డింగ్‌ను మార్చలేకపోయాము: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>మైగ్రేషన్ సృష్టించు</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>మైగ్రేషన్ పేరు (ఐచ్ఛికం)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>మైగ్రేషన్ %file వ్రాయబడింది. ఏ దశా చేయలేని మార్పులు ఫైల్ పైభాగంలో పేర్కొనబడ్డాయి, వాటిని చేతితో చేయాలి.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>ఏ మైగ్రేషన్ వ్రాయబడలేదు: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

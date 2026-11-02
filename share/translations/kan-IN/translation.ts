@@ -80812,6 +80812,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>ದಾಖಲೆಯನ್ನು ಬದಲಿಸಲಾಗಲಿಲ್ಲ: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>ವಲಸೆ ರಚಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>ವಲಸೆಯ ಹೆಸರು (ಐಚ್ಛಿಕ)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>ವಲಸೆ %file ಬರೆಯಲಾಗಿದೆ. ಯಾವುದೇ ಹಂತ ಮಾಡಲಾಗದ ಬದಲಾವಣೆಗಳನ್ನು ಕಡತದ ಮೇಲ್ಭಾಗದಲ್ಲಿ ಹೆಸರಿಸಲಾಗಿದೆ, ಕೈಯಾರೆ ಮಾಡಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>ಯಾವುದೇ ವಲಸೆ ಬರೆಯಲಾಗಿಲ್ಲ: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

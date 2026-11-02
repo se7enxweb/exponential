@@ -80812,6 +80812,22 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>The recording could not be changed: %reason</source>
         <translation>Tomar nehat guhertin: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Koçberiyê çêke</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Navê koçberiyê (vebijarkî)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Koçberiya %file hat nivîsandin. Guhertinên ku tu gav nikare bike li serê pelê hatine binavkirin, da ku bi destan bên kirin.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Tu koçberî nehat nivîsandin: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -80822,6 +80822,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>ܟܬܝܒܘܬܐ ܠܐ ܐܫܟܚܬ ܠܡܫܬܚܠܦܘ: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>ܒܪܝ ܫܘܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>ܫܡܐ ܕܫܘܢܝܐ (ܓܒܝܐ)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>ܐܬܟܬܒ ܫܘܢܝܐ %file. ܫܘܚܠܦܐ ܕܠܐ ܡܨܝܐ ܦܣܥܬܐ ܡܕܡ ܠܡܥܒܕ ܐܢܘܢ ܡܬܟܪܝܢ ܒܪܝܫ ܟܢܫܐ، ܠܡܬܥܒܕܘ ܒܐܝܕܐ.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>ܠܐ ܐܬܟܬܒ ܫܘܢܝܐ: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

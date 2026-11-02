@@ -5,10 +5,10 @@ you make in the administration, in the website sidebar or with a command is kept
 content published, a class stored, a role assigned, a setting written. Afterwards you look at what it captured and
 generate a migration from it, then run that migration on staging and production.
 
-This page explains the recording, which is in Exponential 6.0.15, and the generator that turns a recording into a
-migration file, which comes with the YAML step types (see [Generating a migration](#generating-a-migration-from-a-recording)).
-The other generators (from content, from a diff, the converter) follow later. The output below was produced on
-SQLite on 1 November 2026.
+This page explains the recording and the generators of Exponential 6.0.15: the one that turns a recording into a
+migration file, the one that writes a migration of what an installation has now (content, classes, roles, sections,
+settings), and the skeletons of every kind of migration file. Generating from a diff and the converter from the
+reference bundle's YAML follow later. The output below was produced on SQLite on 1 November 2026.
 
 [Guides](README.md) · [Migrations](migrations.md) · Related: [PHP migrations](migrations-php.md),
 [Rollback and captions](migrations-rollback-and-captions.md), [The file format](../specifications/6.0/migration-file-format.md#recorded-events-exp-migration-recording-event1),
@@ -22,7 +22,10 @@ SQLite on 1 November 2026.
 ./console exp:migration:record:stop --apply                           # stop
 ./console exp:migration:record:show <id>                              # what it captured
 ./console exp:migration:record:show <id> --plan                       # the steps a migration of it would have
-./console exp:migration:generate --from-recording=<id> news_section   # the migration (needs the YAML step types)
+./console exp:migration:generate --from-recording=<id> news_section   # the migration of it, a dry run
+./console exp:migration:generate --from-recording=<id> news_section --apply   # written to migrations/
+./console exp:migration:generate --from-class=news_article --from-role="News editor" news_setup   # of what is there
+./console exp:migration:generate --skeleton news_index --type=sql --apply      # an empty SQL migration
 ```
 
 The same in the administration: **Setup > Migrations > Recording**, with a "Recording…" bar on every page while your
@@ -231,7 +234,8 @@ Every command's options: [exp:migration:record:start](../examples/commands/expmi
 
 **Setup > Migrations > Recording** (the view `migration/recording`, policy `migration/edit`) starts and stops the
 recording of your own changes, opens and closes the site-wide window, lists every recording and shows what each
-captured, the steps a migration of it would have, and a Discard button. While your changes are recorded, every page of
+captured, the steps a migration of it would have, a **Generate migration** button that writes that migration to the
+site's migrations directory, and a Discard button. While your changes are recorded, every page of
 the administration shows a red **Recording…** bar with **Show** and **Stop recording**. The website sidebar has Start
 and Stop for your own recording in its Migrations panel. The page in detail:
 [Recording changes in the administration](../help/migrations/recording.md).
@@ -257,8 +261,9 @@ recorded in the audit log as `system.migration.record` (the verb says which).
 
 ## The events and the steps they become
 
-The table is the contract between the recording and the YAML step types of the work package 10 (the steps v1). Step
-types that do not exist in this release are named as that work package will name them.
+The table is what a recording keeps for each event: the recorded step, in the format of the recording
+(`exp-migration-recording-event/1`). The generator turns each recorded step into the step of a YAML step type
+([below](#from-the-recorded-step-to-the-migration-step)).
 
 | Audit event | Step type / mode | The keys of the step |
 |---|---|---|
@@ -321,25 +326,164 @@ A recording keeps every event; a migration needs one step per thing. The generat
 
 ## Generating a migration from a recording
 
-`./console exp:migration:generate --from-recording=<id> [name]` turns a recording into a YAML migration. It needs the
-YAML step types the recording uses (content, location, class, role, user, section ...), which come with the YAML
-steps v1. Until the installation has them, it lists the steps and what is missing, writes nothing and ends with exit 1:
+`./console exp:migration:generate --from-recording=<id> [name]` turns a recording into a YAML migration: the events
+folded into steps (above), each in the form of the step type that repeats it, checked as `exp:migration:check` checks
+a file, and written as `migrations/YYYYMMDDHHMMSS_<name>.yml` with `--apply` (without it, the command shows the file
+and writes nothing; an existing file is never replaced). Without a name the recording's label names it. In the
+administration the recording's page has the same as a **Generate migration** button.
 
 ```text
 $ ./console exp:migration:generate --from-recording=20261101-124707-de8bac news_section
-Exponential migrations: generate from a recording
-  20261101-124707-de8bac stopped   session     5 event(s)  2026-11-01 12:47  user #14  "news section"
+Exponential migrations: generate from a recording, dry run (--apply writes the file)
+  20261101-124707-de8bac stopped   session     8 event(s)  2026-11-01 12:47  user #14  "news section"
     1  section/ensure section news
     2  content/create object remote:news-folder
     3  location/update location remote:89e19c337bfb26c11d3d7a34a71a6618
     4  role/assign role Editor
-    5  location/hide location remote:89e19c337bfb26c11d3d7a34a71a6618
-Step types missing: content, location, role, section
-FAIL: needs the YAML step types content, location, role, section (the YAML steps v1 of work package 10): nothing is written until this installation has them
-FAIL (exit 1)
+    5  user/create user remote:a8a1fb4f3c2c41d6b0a9c5b37c3e6a51
+    6  location/hide location remote:89e19c337bfb26c11d3d7a34a71a6618
+    7  location/swap location remote:89e19c337bfb26c11d3d7a34a71a6618
+Left out on purpose: first_name, last_name, signature, image, login, email, password
+Not generated, to be done by hand:
+  - location/swap location remote:89e19c337bfb26c11d3d7a34a71a6618: a swap of two locations has no step: swap remote:89e19c337bfb26c11d3d7a34a71a6618 and remote:2c5e7b3f0d1e4a6b8c9d0e1f2a3b4c5d by hand
+File migrations/20261101125500_news_section.yml
 ```
 
-Generating from content, from a diff and the converter from the reference bundle's YAML follow in a later release.
+The file it writes:
+
+```yaml
+# description: Recording 20261101-124707-de8bac: news section
+#
+# Generated from the recording 20261101-124707-de8bac (8 events).
+# Check it before the run: ./console exp:migration:check and ./console exp:migration:dry-run
+#
+# Not generated, to be done by hand:
+# - location/swap location remote:89e19c337bfb26c11d3d7a34a71a6618: a swap of two locations has no step: swap remote:89e19c337bfb26c11d3d7a34a71a6618 and remote:2c5e7b3f0d1e4a6b8c9d0e1f2a3b4c5d by hand
+steps:
+    - type: section
+      mode: ensure
+      identifier: news
+      name: News
+      navigation_part: ezcontentnavigationpart
+    - type: content
+      mode: create
+      class: folder
+      parent: "remote:f3e90596361e31d496d4026eb624c983"
+      remote_id: news-folder
+      section: news
+      always_available: true
+      language: eng-GB
+      fields: { name: News, short_description: "<p>What is new</p>" }
+      translations: { ger-DE: { name: Nachrichten } }
+      comment: "translations added: ger-DE"
+    - type: location
+      mode: update
+      node: "remote:89e19c337bfb26c11d3d7a34a71a6618"
+      sort_field: published
+      sort_order: desc
+    - type: role
+      mode: assign
+      role: Editor
+      groups: [ "remote:3c160cca19fb135f83bd02d911f04db2" ]
+      subtree: "remote:89e19c337bfb26c11d3d7a34a71a6618"
+    - type: user
+      mode: create
+      secrets:
+          login: user_a8a1fb4f3c2c_login
+          email: user_a8a1fb4f3c2c_email
+          password: user_a8a1fb4f3c2c_password
+      remote_id: a8a1fb4f3c2c41d6b0a9c5b37c3e6a51
+      groups: [ "remote:3c160cca19fb135f83bd02d911f04db2" ]
+      enabled: true
+      comment: "personal data left out: a generated migration names the account by secret references; set the secrets user_a8a1fb4f3c2c_login, user_a8a1fb4f3c2c_email, user_a8a1fb4f3c2c_password (Setup > Secrets, or env:<variable>) before the run; left out: first_name, last_name, signature, image, login, email, password"
+    - type: location
+      mode: hide
+      node: "remote:89e19c337bfb26c11d3d7a34a71a6618"
+```
+
+Read it, make the changes listed as "to be done by hand" (or add the steps yourself), run
+`./console exp:migration:check` and `./console exp:migration:dry-run`, and commit it like any migration. When an
+extension that gives a step type is not active, the generator names the step types missing and writes nothing.
+
+### From the recorded step to the migration step
+
+| Recorded | Migration step |
+|---|---|
+| `content` / `create`, `update` | `content` / `create` or `update` (`object:` the remote id); the fields of the initial language as `fields`, the other languages as `translations`; further locations as `location` / `create` steps (with remote ids of their own) |
+| `content` / `delete` | `content` / `delete` |
+| `content` / `copy` | `location` / `copy` (the object of the node; the copy gets remote ids of its own) |
+| `location` / `create`, `move`, `hide`, `delete` | `location` with the same mode (`node:` the location) |
+| `location` / `reveal` | `location` / `unhide` |
+| `location` / `update` | `location` / `update` with `sort_field`, `sort_order`, `main`; one `location` / `update` with `priority` per child for `child_priorities` |
+| `trash` / `move`, `restore` | `trash` with the same mode |
+| `class` / `create` | `content_class` / `create`, the attributes as a list (`type` is the datatype) |
+| `class` / `update` | `content_class` / `ensure` with the whole definition (it adds and changes attributes, removes none) |
+| `role` / `create`, `update` | `role` / `create` or `ensure` with the policies (ensure adds those the role lacks, removes none) |
+| `role` / `assign`, `unassign` | `role` with `users` or `groups` and `subtree` or `section` |
+| `user` / `create` | `user` / `create` with `secrets` for login, e-mail and password ([below](#personal-data-and-secrets)) |
+| `user` / `update`, `delete` | `user` / `update` or `delete` (`user:` the remote id) |
+| `section`, `object_state_group` | the same step type, mode `ensure` (or `assign`, `delete`) |
+| `url_alias` / `ensure` | `url_alias` / `ensure` with `path` and `node`; a removal of every custom address of a location as `delete` with `which: all` |
+| `ini` / `set`, `remove` | `settings` with `set` or `remove` (`siteaccess` for a siteaccess's file) |
+
+Not generated, and named at the top of the file instead: a swap of two locations, workflow triggers (workflows have
+no identifier yet), settings of an extension (migrations write only `settings/override` and
+`settings/siteaccess/<name>`), secret settings (they never go into a migration), the removal of single URL aliases
+the kernel does not name, and object states of content (no step type sets them; the step's comment names them).
+What a step cannot carry is in its `comment`. A text that contains `${` is written as `$${`, so the engine does not
+take it for a placeholder.
+
+### Personal data and secrets
+
+A recording never keeps the account of a user (login, e-mail address, password) nor the fields of user objects that
+`[RecordingSettings] UserKeepAttributeList[]` does not name. A generated user step names the account by secrets
+instead, which the step reads when it runs:
+
+```yaml
+    - type: user
+      mode: create
+      secrets: { login: user_a8a1fb4f3c2c_login, email: user_a8a1fb4f3c2c_email, password: user_a8a1fb4f3c2c_password }
+      groups: [ "remote:3c160cca19fb135f83bd02d911f04db2" ]
+```
+
+Each name is a secret of **Setup > Secrets**, or `env:<VARIABLE>` for an environment variable of the run. Set them on
+each installation before the run; a missing secret fails the step with its name, never a value. The key `secrets`
+works in hand-written user steps too.
+
+## Generating a migration of what is there
+
+The same generator writes a migration of what an installation has now, to repeat it on another one:
+
+| Option | Generates |
+|---|---|
+| `--from-content=<node>[,...]` | the objects of the nodes (`2`, `remote:<remote id>`, `path:<url path>`); `--depth=<n>` adds the levels below, `--max-objects=<n>` stops after that many objects (default 500), parents first |
+| `--from-class=<identifier>[,...]` | content classes with their attributes |
+| `--from-role=<name>[,...]` | roles with their policies and limitations in stable forms |
+| `--from-section=<identifier>[,...]` | sections |
+| `--from-settings=<file>[,...]` | the settings of `settings/override/<file>.append.php`; with `--siteaccess=<name>` of that siteaccess |
+
+The options combine; the steps use mode `ensure` where the step type has it (content, classes, roles, sections), so
+the migration also runs where some of it exists already. The same rules apply as for a recording: stable
+identifiers, users by secrets, secret settings left out.
+
+```text
+$ ./console exp:migration:generate --from-class=news_article --from-role="News editor" --from-section=news news_setup --apply
+```
+
+## Skeletons
+
+`--skeleton <name>` writes an empty migration to fill in, of the kind `--type` names:
+
+| `--type` | File | Content |
+|---|---|---|
+| `php` (default) | `<id>.php` | a class with `plan()`, `up()` and `down()` |
+| `yml` | `<id>.yml` | the header and `steps: []`, an example in comments |
+| `graphql` | `<id>.yml` | the same with an example of the step `graphql` |
+| `ini` | `<id>.ini` | an INI migration with examples of blocks in comments |
+| `sql` | `<id>.sql` | an SQL migration for every SQL engine, with `-- down` |
+| `sql --engine=<engine>` | `<id>.mysql.sql`, `<id>.pgsql.sql`, `<id>.sqlite.sql`, `<id>.oracle.sql`, `<id>.mongodb.json` | the file of one engine |
+
+The formats: [SQL and settings](migrations-sql-and-settings.md), [GraphQL](graphql-recipes.md).
 
 ## Related pages
 

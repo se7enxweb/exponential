@@ -80814,6 +80814,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>မှတ်တမ်းကို ပြောင်း၍မရပါ- %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>ရွှေ့ပြောင်းမှု ဖန်တီးရန်</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>ရွှေ့ပြောင်းမှု၏ အမည် (ရွေးချယ်နိုင်)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>ရွှေ့ပြောင်းမှု %file ကို ရေးပြီးပါပြီ။ မည်သည့်အဆင့်မှ မလုပ်နိုင်သော ပြောင်းလဲမှုများကို ဖိုင်၏ထိပ်တွင် ဖော်ပြထားပြီး လက်ဖြင့် လုပ်ရမည်။</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>ရွှေ့ပြောင်းမှု မရေးရပါ- %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -80844,6 +80844,22 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Snimak nije mogao da se izmeni: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Generiši migraciju</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Naziv migracije (neobavezno)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migracija %file je zapisana. Promene koje nijedan korak ne može da napravi navedene su na vrhu datoteke, treba ih uraditi ručno.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Nijedna migracija nije zapisana: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

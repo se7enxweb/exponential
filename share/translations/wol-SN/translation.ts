@@ -80814,6 +80814,22 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Mënuñu a soppi bind bi: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Sos migration</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Turu migration bi (bu la neexee)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migration %file bind nañu ko. Coppite yi benn jéego mënul def, ñu tudd leen ci kaw dosiye bi, ngir def leen ak loxo.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Benn migration bindeesu ko: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -80814,6 +80814,22 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>The recording could not be changed: %reason</source>
         <translation>Không thể thay đổi bản ghi: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Tạo bản chuyển đổi</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Tên bản chuyển đổi (tùy chọn)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Đã ghi bản chuyển đổi %file. Những thay đổi mà không bước nào thực hiện được được nêu ở đầu tệp, cần làm thủ công.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Không có bản chuyển đổi nào được ghi: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -80812,6 +80812,22 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>The recording could not be changed: %reason</source>
         <translation>Rekodi haikuweza kubadilishwa: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Tengeneza uhamishaji</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Jina la uhamishaji (si lazima)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Uhamishaji %file umeandikwa. Mabadiliko ambayo hakuna hatua inayoweza kufanya yametajwa juu ya faili, yafanywe kwa mkono.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Hakuna uhamishaji ulioandikwa: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -80844,6 +80844,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>Ekki tókst að breyta upptökunni: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Búa til flutning</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Heiti flutningsins (valfrjálst)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Flutningurinn %file var skrifaður. Breytingar sem ekkert skref getur gert eru nefndar efst í skránni, til að gera í höndunum.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Enginn flutningur var skrifaður: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

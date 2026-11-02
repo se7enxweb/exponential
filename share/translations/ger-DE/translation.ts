@@ -87784,6 +87784,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Die Aufzeichnung konnte nicht geändert werden: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Migration erzeugen</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Name der Migration (optional)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Die Migration %file ist geschrieben. Änderungen, die kein Schritt machen kann, stehen oben in der Datei und sind von Hand zu machen.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Es wurde keine Migration geschrieben: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

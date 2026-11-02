@@ -80814,6 +80814,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>מע האָט נישט געקענט ענדערן די רעקאָרדירונג: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>שאַפֿן אַ מיגראַציע</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>נאָמען פֿון דער מיגראַציע (אויף ברירה)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>די מיגראַציע %file איז געשריבן. ענדערונגען וואָס קיין שריט קען נישט מאַכן זענען דערמאָנט אויבן אין דער טעקע, צו מאַכן מיט דער האַנט.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>קיין מיגראַציע איז נישט געשריבן: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

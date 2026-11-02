@@ -80814,6 +80814,22 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Winndugol waylaaki: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Sos migration</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Innde migration (so a yiɗii)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migration %file winndaama. Waylooji ɗi taaɓal alaa waawi waɗde ina innditii e dow fiilde nde, ngam waɗde ɗi junngo.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Alaa migration winndaa: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

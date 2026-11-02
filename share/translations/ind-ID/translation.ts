@@ -80814,6 +80814,22 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>The recording could not be changed: %reason</source>
         <translation>Rekaman tidak dapat diubah: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Buat migrasi</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Nama migrasi (opsional)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migrasi %file telah ditulis. Perubahan yang tidak dapat dilakukan oleh langkah mana pun disebutkan di bagian atas berkas, untuk dilakukan secara manual.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Tidak ada migrasi yang ditulis: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

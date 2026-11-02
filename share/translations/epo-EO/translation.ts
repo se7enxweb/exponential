@@ -80814,6 +80814,22 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>La registraĵo ne ŝanĝeblis: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Generi migradon</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Nomo de la migrado (laŭvola)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>La migrado %file estas skribita. Ŝanĝoj, kiujn neniu paŝo povas fari, estas nomitaj supre en la dosiero, por fari ilin permane.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Neniu migrado estis skribita: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

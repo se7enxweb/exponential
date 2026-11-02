@@ -336,7 +336,7 @@ class expMigrationCommandToolsTest extends PHPUnit\Framework\TestCase
         $this->assertInstanceOf( 'Site\\Migrations\\ToolsTestSkeleton20261031120000', $migration );
         $this->assertTrue( $migration->reversible() );
 
-        foreach ( array( array( '', array() ), array( 'x', array( 'type' => 'ini' ) ), array( 'x', array( 'source' => 'package:demo' ) ) ) as $bad )
+        foreach ( array( array( '', array() ), array( 'x', array( 'type' => 'xml' ) ), array( 'x', array( 'source' => 'package:demo' ) ) ) as $bad )
         {
             $result = expMigrationGenerator::skeleton( $bad[0], $bad[1] + array( 'directory' => $dir, 'root' => self::$root ) );
             $this->assertFalse( $result['ok'] );

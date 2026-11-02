@@ -80814,6 +80814,22 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>De opname koe net feroare wurde: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Migraasje generearje</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Namme fan de migraasje (opsjoneel)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>De migraasje %file is skreaun. Wizigingen dy't gjin stap meitsje kin, steane boppe-oan it bestân, om mei de hân te dwaan.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Der is gjin migraasje skreaun: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

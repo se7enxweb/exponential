@@ -82026,6 +82026,22 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Nie udało się zmienić nagrania: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Wygeneruj migrację</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Nazwa migracji (opcjonalnie)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migracja %file została zapisana. Zmiany, których żaden krok nie może wykonać, są wymienione na początku pliku i trzeba je wykonać ręcznie.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Nie zapisano żadnej migracji: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

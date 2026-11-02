@@ -80814,6 +80814,22 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>N'haller ket kemmañ an enrolladenn: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Genel ur migradur</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Anv ar migradur (diret)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Skrivet eo bet ar migradur %file. Ar c'hemmoù na c'hall pazenn ebet ober a vez envelet e penn ar restr, d'ober gant an dorn.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>N'eus bet skrivet migradur ebet: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

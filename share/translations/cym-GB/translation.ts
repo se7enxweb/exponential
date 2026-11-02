@@ -80814,6 +80814,22 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>The recording could not be changed: %reason</source>
         <translation>Nid oedd modd newid y recordiad: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Cynhyrchu mudo</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Enw'r mudo (dewisol)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Mae'r mudo %file wedi'i ysgrifennu. Mae newidiadau na all unrhyw gam eu gwneud wedi'u henwi ar frig y ffeil, i'w gwneud â llaw.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Ni ysgrifennwyd unrhyw fudo: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

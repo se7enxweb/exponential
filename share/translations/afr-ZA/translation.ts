@@ -80844,6 +80844,22 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Die opname kon nie verander word nie: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Genereer migrasie</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Naam van die migrasie (opsioneel)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Die migrasie %file is geskryf. Veranderinge wat geen stap kan maak nie, word bo-aan die lêer genoem, om met die hand te doen.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Geen migrasie is geskryf nie: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

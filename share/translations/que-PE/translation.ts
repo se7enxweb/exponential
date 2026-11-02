@@ -80814,6 +80814,22 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Qillqasqata mana tikrayta atikurqanchu: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Astakuyta paqarichiy</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Astakuypa sutin (munaspa)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Astakuy %file qillqasqañam. Mana ima puriypas ruwayta atisqan tikraykunaqa willakuypa hawanpim sutichasqa, makiwan ruwanapaq.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Manam ima astakuypas qillqasqachu: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

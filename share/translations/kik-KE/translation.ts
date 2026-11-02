@@ -80814,6 +80814,22 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>The recording could not be changed: %reason</source>
         <translation>Maandĩko matiahotire kũgarũrwo: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Thondeka ũthamio</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Rĩĩtwa rĩa ũthamio (wĩyendeire)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Ũthamio %file nĩũandĩkĩtwo. Mũgarũrũko ũrĩa gũtarĩ ikinya rĩngĩhota gwĩka ũgwetetwo igũrũ rĩa faĩlo, wĩkwo na guoko.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Gũtirĩ ũthamio wandĩkirwo: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

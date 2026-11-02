@@ -80812,6 +80812,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>റെക്കോർഡിംഗ് മാറ്റാനായില്ല: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>മൈഗ്രേഷൻ സൃഷ്ടിക്കുക</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>മൈഗ്രേഷന്റെ പേര് (ഐച്ഛികം)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>മൈഗ്രേഷൻ %file എഴുതി. ഒരു ഘട്ടത്തിനും ചെയ്യാനാകാത്ത മാറ്റങ്ങൾ ഫയലിന്റെ മുകളിൽ നൽകിയിട്ടുണ്ട്, കൈകൊണ്ട് ചെയ്യണം.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>മൈഗ്രേഷനൊന്നും എഴുതിയില്ല: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

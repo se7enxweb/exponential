@@ -80844,6 +80844,22 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Ierakstu neizdevās mainīt: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Ģenerēt migrāciju</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Migrācijas nosaukums (nav obligāts)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migrācija %file ir uzrakstīta. Izmaiņas, ko neviens solis nevar veikt, ir nosauktas faila sākumā, un tās jāveic ar roku.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Neviena migrācija netika uzrakstīta: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

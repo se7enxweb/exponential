@@ -80814,6 +80814,22 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>D'Opnam konnt net geännert ginn: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Migratioun generéieren</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Numm vun der Migratioun (fakultativ)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>D'Migratioun %file ass geschriwwen. Ännerungen, déi kee Schrëtt maache kann, stinn uewen am Fichier a mussen vun Hand gemaach ginn.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Et gouf keng Migratioun geschriwwen: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

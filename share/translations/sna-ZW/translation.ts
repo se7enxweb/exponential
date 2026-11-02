@@ -80814,6 +80814,22 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Rekodhingi haina kugona kushandurwa: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Gadzira kutama</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Zita rekutama (sarudzo)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Kutama %file kwanyorwa. Shanduko dzisingaitwe nedanho ripi neripi dzakataurwa pamusoro pefaira, kuti dziitwe nemaoko.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Hapana kutama kwakanyorwa: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

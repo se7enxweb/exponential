@@ -80844,6 +80844,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>記録を変更できませんでした: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>マイグレーションを生成</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>マイグレーションの名前(任意)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>マイグレーション %file を書き込みました。どのステップでも行えない変更はファイルの先頭に記載されています。手作業で行ってください。</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>マイグレーションは書き込まれませんでした: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

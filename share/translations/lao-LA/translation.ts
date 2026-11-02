@@ -80814,6 +80814,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>ບໍ່ສາມາດປ່ຽນການບັນທຶກໄດ້: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>ສ້າງການຍ້າຍ</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>ຊື່ຂອງການຍ້າຍ (ທາງເລືອກ)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>ຂຽນການຍ້າຍ %file ແລ້ວ. ການປ່ຽນແປງທີ່ບໍ່ມີຂັ້ນຕອນໃດເຮັດໄດ້ ຖືກລະບຸໄວ້ເທິງສຸດຂອງໄຟລ໌ ເພື່ອເຮັດດ້ວຍມື.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>ບໍ່ໄດ້ຂຽນການຍ້າຍ: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

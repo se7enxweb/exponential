@@ -80814,6 +80814,22 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Wɔantumi ansesa nkyerɛwee no: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Yɛ migration</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Migration no din (wopɛ a)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Wɔakyerɛw migration %file. Nsakrae a anammɔn biara ntumi nyɛ no, wɔabobɔ din wɔ fael no atifi, sɛ wode wo nsa bɛyɛ.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Wɔankyerɛw migration biara: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

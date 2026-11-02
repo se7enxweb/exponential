@@ -80844,6 +80844,22 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Salvestust ei õnnestunud muuta: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Genereeri migratsioon</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Migratsiooni nimi (valikuline)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migratsioon %file on kirjutatud. Muudatused, mida ükski samm teha ei saa, on nimetatud faili alguses ja need tuleb teha käsitsi.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Ühtegi migratsiooni ei kirjutatud: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

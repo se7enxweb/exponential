@@ -82117,6 +82117,22 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Inspelningen kunde inte ändras: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Generera migrering</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Migreringens namn (valfritt)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migreringen %file har skrivits. Ändringar som inget steg kan göra nämns överst i filen och ska göras för hand.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Ingen migrering skrevs: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

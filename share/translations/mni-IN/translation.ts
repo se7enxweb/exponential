@@ -80814,6 +80814,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ ꯍꯣꯡꯗꯣꯛꯄ ꯉꯃꯈꯤꯗꯦ: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>মাইগ্রেসন শেম্মু</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>মাইগ্রেসনগী মিং (পাম্লবদি)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>মাইগ্রেসন %file ইরে। খোঙথাং অমত্তনা তৌবা ঙমদবা হোংলকপশিং ফাইলগী মথক্তা মিং থোনখ্রে, খুৎনা তৌগদবনি।</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>মাইগ্রেসন অমত্তা ইদ্রে: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

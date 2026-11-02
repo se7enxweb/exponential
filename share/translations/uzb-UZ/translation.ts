@@ -80814,6 +80814,22 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>The recording could not be changed: %reason</source>
         <translation>Yozuvni oʻzgartirib boʻlmadi: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Migratsiya yaratish</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Migratsiya nomi (ixtiyoriy)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>%file migratsiyasi yozildi. Hech bir qadam qila olmaydigan o'zgarishlar faylning boshida ko'rsatilgan, ularni qo'lda qilish kerak.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Hech qanday migratsiya yozilmadi: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

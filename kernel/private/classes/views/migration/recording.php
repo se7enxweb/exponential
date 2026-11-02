@@ -81,6 +81,17 @@ class Recording extends \Exponential\Runnable\ModuleView
                     $redirect = '/migration/recording';
                 }
             }
+            else if ( $http->hasPostVariable( 'GenerateButton' ) && $recordingId !== '' )
+            {
+                $name = trim( (string)$http->postVariable( 'MigrationName', '' ) );
+                $report = \expMigrationRecordingGenerator::fromRecording( $db, $recordingId, array( 'name' => $name, 'apply' => true ) );
+                if ( !empty( $report['written'] ) )
+                    $done = \ezpI18n::tr( 'design/admin/migration', 'Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.',
+                                          null, array( '%file' => $report['generated']['path'] ) );
+                else
+                    foreach ( $report['errors'] as $error )
+                        $messages[] = array( 'kind' => 'bad', 'text' => \ezpI18n::tr( 'design/admin/migration', 'No migration was written: %reason', null, array( '%reason' => $error ) ) );
+            }
             if ( $done !== null && $redirect !== '' )
             {
                 $http->setSessionVariable( 'ExpMigrationRecordingMessage', $done );

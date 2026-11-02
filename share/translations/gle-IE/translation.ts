@@ -80844,6 +80844,22 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Níorbh fhéidir an taifeadadh a athrú: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Gin imirce</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Ainm na himirce (roghnach)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Scríobhadh an imirce %file. Tá athruithe nach féidir le céim ar bith a dhéanamh ainmnithe ag barr an chomhaid, le déanamh de láimh.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Níor scríobhadh imirce ar bith: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

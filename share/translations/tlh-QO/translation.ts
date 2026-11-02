@@ -80847,6 +80847,22 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>qon choHlaHbe'lu': %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>ghoS chenmoH</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>ghoS pong (DaneHchugh)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>ghoS %file ghItlhlu'pu'. choHmey'e' chenmoHlaHbe'bogh mIw Hoch, De'wI' bey'e' nachDaq ponglu'pu', ghopvaD chenmoHlu'.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>ghoS ghItlhlu'be': %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

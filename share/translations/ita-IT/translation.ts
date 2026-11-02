@@ -82221,6 +82221,22 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Non è stato possibile modificare la registrazione: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Genera migrazione</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Nome della migrazione (facoltativo)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>La migrazione %file è stata scritta. Le modifiche che nessun passo può fare sono indicate all'inizio del file, da fare a mano.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Nessuna migrazione è stata scritta: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

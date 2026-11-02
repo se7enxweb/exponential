@@ -80844,6 +80844,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>Снимак није могао да се измени: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Генериши миграцију</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Назив миграције (необавезно)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Миграција %file је записана. Промене које ниједан корак не може да направи наведене су на врху датотеке, треба их урадити ручно.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Ниједна миграција није записана: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

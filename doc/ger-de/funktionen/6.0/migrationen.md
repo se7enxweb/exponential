@@ -79,11 +79,13 @@ die von `exp:upgrade` (0, 1 gescheitert, 2 Bedienung, 3 Datenbank nicht erreichb
   geschrieben ([Migrationen: SQL und Einstellungen](../../anleitungen/migrationen-sql-und-einstellungen.md)).
 - Ein Migrationslauf führt von den Upgrade-Schritten des Kernels nur die der Stufen `database` und `scripts` aus; die
   Stufen `code`, `libraries` und `finish` bleiben bei `exp:upgrade` (sie werden als `deferred` gelistet).
-- Setup > Migrationen zeigt Migrationen an, führt sie aus, nimmt sie zurück und zeichnet Änderungen auf (die
-  Richtlinie `migration/edit`); das Schreiben und Erzeugen von Migrationen und die Einstellungen des
-  Migrations-Repositorys geschehen in Dateien und auf der Konsole.
-- Eine Aufzeichnung wird festgehalten, aber eine Migration wird daraus erst erzeugt, wenn es die YAML-Schritttypen
-  gibt, die sie verwendet: `exp:migration:generate --from-recording` listet sie bis dahin und schreibt nichts.
+- Setup > Migrationen zeigt Migrationen an, führt sie aus, nimmt sie zurück, zeichnet Änderungen auf und erzeugt eine
+  Migration aus einer Aufzeichnung (die Richtlinie `migration/edit`); das Schreiben von Migrationen, die anderen
+  Generatoren und die Einstellungen des Migrations-Repositorys geschehen in Dateien und auf der Konsole.
+- Eine Migration, die aus einer Aufzeichnung oder aus dem Vorhandenen erzeugt wird, lässt aus, was kein Schritttyp
+  wiederholt (das Vertauschen zweier Orte, Workflow-Auslöser, Einstellungen von Erweiterungen, geheime Einstellungen),
+  und nennt es oben in der Datei; das Erzeugen aus einem Vergleich und der Konverter für das YAML des
+  Referenz-Bundles gibt es noch nicht.
 - Ein in der Administration gestarteter Lauf braucht `proc_open` und ein PHP-Kommandozeilenprogramm
   (`migration.ini [AdminSettings] PhpCliPath`); fehlen sie, sagt die Seite das, und die Konsole führt ihn aus.
 - Commits, Tags und Pushes brauchen git_manager; ohne ihn sagt ein Lauf das und committet nichts.

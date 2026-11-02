@@ -80822,6 +80822,22 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>The recording could not be changed: %reason</source>
         <translation>Rekaman ora bisa diowahi: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Gawe migrasi</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Jeneng migrasi (pilihan)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migrasi %file wis ditulis. Owah-owahan sing ora bisa ditindakake langkah apa wae disebutake ing ndhuwur berkas, kanggo ditindakake kanthi tangan.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Ora ana migrasi sing ditulis: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

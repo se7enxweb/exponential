@@ -80814,6 +80814,22 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>L'enregistrament se pòt pas modificar: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Generar la migracion</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Nom de la migracion (opcional)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>La migracion %file es estada escricha. Los cambiaments que cap d'etapa pòt pas far son nomenats en cap del fichièr, de far a la man.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Cap de migracion es pas estada escricha : %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

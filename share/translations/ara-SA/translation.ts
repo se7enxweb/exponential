@@ -80844,6 +80844,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>تعذّر تغيير التسجيل: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>إنشاء ترحيل</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>اسم الترحيل (اختياري)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>تمت كتابة الترحيل %file. التغييرات التي لا تستطيع أي خطوة إجراءها مذكورة في أعلى الملف، لتُجرى يدويًا.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>لم تتم كتابة أي ترحيل: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
