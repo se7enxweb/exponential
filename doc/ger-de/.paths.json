@@ -39,6 +39,7 @@
     "anleitungen/lesezeichen.md": "guides/bookmarks.md",
     "anleitungen/mail-einstellungen-administrator.md": "guides/mail-preferences-administrator.md",
     "anleitungen/mail-einstellungen-entwickler.md": "guides/mail-preferences-developer.md",
+    "anleitungen/migrationen-engines-und-leistung.md": "guides/migrations-engines-and-performance.md",
     "anleitungen/migrationen-erzeugen-und-aufzeichnen.md": "guides/migrations-generators-and-recording.md",
     "anleitungen/migrationen-fehlerbehebung.md": "guides/migrations-troubleshooting.md",
     "anleitungen/migrationen-pakete-deploy-und-lange-laeufe.md": "guides/migrations-packages-deploy-and-long-runs.md",
