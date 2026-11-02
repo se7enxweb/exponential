@@ -81116,6 +81116,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>Enginn flutningur var skrifaður: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Löng keyrsla í hlutum</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Tóma reiti halda stillingum migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Í mesta lagi svona margar tilfærslur</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Engin frekari tilfærsla eftir (sekúndur)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Hlé milli tilfærslna (sekúndur)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Lægri forgangur (1 til 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Reitur fyrir langa keyrslu er heiltala frá 1 (hléið: sekúndur frá 0 til 60, forgangurinn: 1 til 19) eða tómur.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Hún lokast sjálf kl. %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Loka sjálf eftir (mínútur, valfrjálst)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Mínúturnar eru heiltala frá 1 til 44640 (31 dagur) eða tómar.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83473,6 +83513,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>Útgáfa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Vefaðgangar til að birta</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Vefaðgangur</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Í rótinni</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Enginn vefaðgangur í rótinni: hver er í sinni möppu og rótin tengir í þá</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Vefaðgangar</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Hakaðu við einn vefaðgang, eða fleiri sem deila einum hýsli með URI-forskeyti sínu. Sá í rótinni er birtur þar, hinir í möppu forskeytis síns (/ger/); tenglar milli þeirra haldast í afritinu. Stjórnunarvefaðgangar eru aldrei í boði.</translation>
     </message>
 </context>
 <context>

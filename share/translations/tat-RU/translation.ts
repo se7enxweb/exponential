@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>Бер миграция дә язылмады: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Өлешләп озын эшләтү</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Буш кырлар migration.ini [RunSettings] көйләүләрен саклый.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Иң күбе шулкадәр миграция</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Моннан соң миграция юк (секунд)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Миграцияләр арасында тукталыш (секунд)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Түбәнрәк өстенлек (1 дән 19 га кадәр)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Озын эшләтү кыры - 1 дән башлап бөтен сан (тукталыш: 0 дән 60 секундка кадәр, өстенлек: 1 дән 19 га кадәр) яки буш.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ул %time вакытында үзе ябыла.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Моннан соң үзе ябылсын (минут, мәҗбүри түгел)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Минутлар - 1 дән 44640 ка кадәр (31 көн) бөтен сан яки буш.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>Версия</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Бастырыла торган сайтка керү нокталары</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайтка керү ноктасы</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Тамырда</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Тамырда сайтка керү ноктасы юк: һәрберсе үз папкасында, ә тамыр аларга сылтама бирә</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Сайтка керү нокталары</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Бер керү ноктасын яки URI-префикслары аша бер хостны бүлешкән берничәсен билгеләгез. Тамырдагысы шунда бирелә, калганнары үз префиксы папкасында (/ger/); алар арасындагы сылтамалар күчермәдә кала. Идарә керү нокталары беркайчан да тәкъдим ителми.</translation>
     </message>
 </context>
 <context>

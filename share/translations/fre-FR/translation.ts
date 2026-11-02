@@ -82526,6 +82526,46 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>No migration was written: %reason</source>
         <translation>Aucune migration n'a été écrite : %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Une longue exécution en plusieurs parties</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Les champs vides conservent les réglages de migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Au plus ce nombre de migrations</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Plus aucune migration après (secondes)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pause entre les migrations (secondes)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Priorité plus basse (1 à 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Un champ d'exécution longue est un nombre entier à partir de 1 (la pause : secondes de 0 à 60, la priorité : 1 à 19), ou vide.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Elle se ferme d'elle-même à %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Fermer d'elle-même après (minutes, facultatif)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Les minutes sont un nombre entier de 1 à 44640 (31 jours), ou vide.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -84883,6 +84923,30 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Version</source>
         <translation>Version</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Siteaccess à publier</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>À la racine</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Aucun siteaccess à la racine : chacun est dans son dossier, et la racine renvoie vers eux</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Cochez un siteaccess, ou plusieurs qui partagent un hôte par leur préfixe d'URI. Celui à la racine y est servi, les autres dans le dossier de leur préfixe (/ger/) ; les liens entre eux restent dans la copie. Les siteaccess d'administration ne sont jamais proposés.</translation>
     </message>
 </context>
 <context>

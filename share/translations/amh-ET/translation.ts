@@ -81084,6 +81084,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>ምንም ፍልሰት አልተጻፈም፦ %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>በክፍሎች የተከፈለ ረጅም ሂደት</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ባዶ መስኮች የmigration.ini [RunSettings] ቅንብሮችን ይጠብቃሉ።</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ቢበዛ ይህን ያህል ፍልሰቶች</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ከዚህ በኋላ ተጨማሪ ፍልሰት የለም (ሰከንዶች)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>በፍልሰቶች መካከል እረፍት (ሰከንዶች)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ዝቅተኛ ቅድሚያ (ከ1 እስከ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>የረጅም ሂደት መስክ ከ1 ጀምሮ ሙሉ ቁጥር ነው (እረፍት፦ ከ0 እስከ 60 ሰከንዶች፣ ቅድሚያ፦ ከ1 እስከ 19) ወይም ባዶ።</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>በ%time በራሱ ይዘጋል።</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ከዚህ በኋላ በራሱ ይዘጋ (ደቂቃዎች፣ አማራጭ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>ደቂቃዎቹ ከ1 እስከ 44640 (31 ቀናት) ሙሉ ቁጥር ናቸው ወይም ባዶ።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83441,6 +83481,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>ስሪት</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>የሚታተሙ የጣቢያ መዳረሻዎች</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>የጣቢያ መዳረሻ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>በስሩ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>በስሩ ምንም የጣቢያ መዳረሻ የለም፤ እያንዳንዱ በአቃፊው ውስጥ ነው፣ ስሩም ወደ እነሱ ያገናኛል</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>የጣቢያ መዳረሻዎች</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>አንድ የጣቢያ መዳረሻ ወይም በURI ቅድመ ቅጥያቸው አንድ አስተናጋጅ የሚጋሩ ብዙዎችን ምልክት ያድርጉ። በስሩ ያለው እዚያ ይቀርባል፣ ሌሎቹ በቅድመ ቅጥያቸው አቃፊ (/ger/) ውስጥ፤ በመካከላቸው ያሉ አገናኞች በቅጂው ውስጥ ይቆያሉ። የአስተዳደር የጣቢያ መዳረሻዎች በፍጹም አይቀርቡም።</translation>
     </message>
 </context>
 <context>

@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>Ешбір көшіру жазылмады: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Бөліктермен ұзақ орындау</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Бос өрістер migration.ini [RunSettings] параметрлерін сақтайды.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Ең көбі осынша миграция</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Бұдан кейін миграция жоқ (секунд)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Миграциялар арасындағы үзіліс (секунд)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Төмен басымдық (1-ден 19-ға дейін)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ұзақ орындау өрісі - 1-ден бастап бүтін сан (үзіліс: 0-ден 60 секундқа дейін, басымдық: 1-ден 19-ға дейін) немесе бос.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ол %time уақытында өзі жабылады.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Мынадан кейін өзі жабылсын (минут, міндетті емес)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Минуттар - 1-ден 44640-қа дейінгі (31 күн) бүтін сан немесе бос.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>Нұсқа</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Жариялайтын сайтқа кіру нүктелері</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайтқа кіру нүктесі</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Түбірде</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Түбірде сайтқа кіру нүктесі жоқ: әрқайсысы өз қалтасында, ал түбір оларға сілтеме береді</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Сайтқа кіру нүктелері</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Бір кіру нүктесін немесе URI префиксі арқылы бір хостты бөлісетін бірнешеуін белгілеңіз. Түбірдегісі сонда беріледі, қалғандары өз префиксінің қалтасында (/ger/); олардың арасындағы сілтемелер көшірмеде қалады. Әкімшілік кіру нүктелері ешқашан ұсынылмайды.</translation>
     </message>
 </context>
 <context>

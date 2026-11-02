@@ -33,11 +33,15 @@ keeps the changes of one user (--user, by login; in the administration: the sign
 anywhere: the administration, the website sidebar, or a command run as that user. --site-wide opens
 the site-wide window instead: every change of every user and of the console. One session recording
 per user and one site-wide window at a time. The account of a user (login, e-mail, password) and the
-fields of user objects are never recorded. Without --apply it says what it would start.
+fields of user objects are never recorded. --for=<minutes> or --until=<time> gives the recording a
+window: it stops by itself when the window ends (at most 31 days). Without --apply it says what it
+would start.
 
 ./console exp:migration:record:start --label="news section" --apply
 ./console exp:migration:record:start --user=editor --apply
 ./console exp:migration:record:start --site-wide --label="release 2.4 setup" --apply
+./console exp:migration:record:start --site-wide --for=120 --label="editors' afternoon" --apply
+./console exp:migration:record:start --site-wide --until="2026-11-20 18:00" --apply
 ```
 
 ## Optionen
@@ -50,6 +54,8 @@ fields of user objects are never recorded. Without --apply it says what it would
 | `--site-wide` |  | Die websiteweite Aufzeichnung: jede Änderung jedes Benutzers und der Konsole (ohne: die eigenen Änderungen eines Benutzers) |
 | `--label` | erforderlich | Die Bezeichnung des Sicherungspunkts oder der Aufzeichnung (ein Sicherungspunkt ohne eine: "manual caption" mit der Uhrzeit) |
 | `--user` | erforderlich | Der Benutzer, nach Login, dessen eigene Änderungen eine Sitzungsaufzeichnung festhält (Standard: [RunSettings] RunAsUser der migration.ini) |
+| `--for` | erforderlich | A window of this many minutes: the recording stops by itself when it ends |
+| `--until` | erforderlich | A window until this time (2026-11-20 18:00, the server's time zone): the recording stops by itself then |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

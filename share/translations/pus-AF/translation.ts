@@ -81084,6 +81084,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>هېڅ کډوال ونه لیکل شو: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>په برخو کې اوږد چلول</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>تش ساحې د migration.ini [RunSettings] ترتیبات ساتي.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>تر ټولو ډېر دومره مهاجرتونه</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>له دې وروسته نور مهاجرت نشته (ثانیې)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>د مهاجرتونو ترمنځ وقفه (ثانیې)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ټيټه لومړیتوب (له 1 څخه تر 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>د اوږد چلولو ساحه له 1 څخه بشپړ عدد دی (وقفه: له 0 څخه تر 60 ثانیې، لومړیتوب: له 1 څخه تر 19)، یا تش.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>دا په %time کې پخپله تړل کېږي.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>له دې وروسته پخپله وتړه (دقیقې، اختیاري)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>دقیقې له 1 څخه تر 44640 (31 ورځې) بشپړ عدد دی، یا تش.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83441,6 +83481,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>نسخه</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>د خپرولو لپاره د سایټ لاسرسي</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>د سایټ لاسرسی</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>په ریښه کې</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>په ریښه کې هېڅ سایټ لاسرسی نشته: هر یو په خپل فولډر کې دی، او ریښه هغوی ته لینک ورکوي</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>د سایټ لاسرسي</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>یو سایټ لاسرسی، یا څو چې د خپل URI مختاړي له لارې یو کوربه شریکوي وټاکئ. هغه چې په ریښه کې دی هلته وړاندې کېږي، نور د خپل مختاړي په فولډر کې (/ger/)؛ د هغوی ترمنځ لینکونه په کاپي کې پاتې کېږي. د ادارې لاسرسي هېڅکله نه وړاندې کېږي.</translation>
     </message>
 </context>
 <context>

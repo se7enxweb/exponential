@@ -81084,6 +81084,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>മൈഗ്രേഷനൊന്നും എഴുതിയില്ല: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>ഭാഗങ്ങളായി ഒരു ദൈർഘ്യമേറിയ റൺ</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ശൂന്യമായ ഫീൽഡുകൾ migration.ini [RunSettings] ന്റെ ക്രമീകരണങ്ങൾ നിലനിർത്തുന്നു.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>പരമാവധി ഇത്രയും മൈഗ്രേഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ഇതിനുശേഷം കൂടുതൽ മൈഗ്രേഷൻ ഇല്ല (സെക്കൻഡ്)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>മൈഗ്രേഷനുകൾക്കിടയിലെ ഇടവേള (സെക്കൻഡ്)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>കുറഞ്ഞ മുൻഗണന (1 മുതൽ 19 വരെ)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ദൈർഘ്യമേറിയ റൺ ഫീൽഡ് 1 മുതലുള്ള പൂർണ്ണസംഖ്യയാണ് (ഇടവേള: 0 മുതൽ 60 സെക്കൻഡ്, മുൻഗണന: 1 മുതൽ 19 വരെ), അല്ലെങ്കിൽ ശൂന്യം.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ഇത് %time ന് സ്വയം അടയുന്നു.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ഇതിനുശേഷം സ്വയം അടയ്ക്കുക (മിനിറ്റ്, ഓപ്ഷണൽ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>മിനിറ്റ് 1 മുതൽ 44640 (31 ദിവസം) വരെയുള്ള പൂർണ്ണസംഖ്യയാണ്, അല്ലെങ്കിൽ ശൂന്യം.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83441,6 +83481,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>പതിപ്പ്</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>പ്രസിദ്ധീകരിക്കേണ്ട സൈറ്റ് ആക്സസുകൾ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>സൈറ്റ്ആക്സസ്</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>റൂട്ടിൽ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>റൂട്ടിൽ സൈറ്റ്ആക്സസ് ഇല്ല: ഓരോന്നും അതിന്റെ ഫോൾഡറിലാണ്, റൂട്ട് അവയിലേക്ക് ലിങ്ക് നൽകുന്നു</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>സൈറ്റ് ആക്സസുകൾ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ഒരു സൈറ്റ്ആക്സസ്, അല്ലെങ്കിൽ URI പ്രിഫിക്സ് വഴി ഒരു ഹോസ്റ്റ് പങ്കിടുന്ന പലതും തിരഞ്ഞെടുക്കുക. റൂട്ടിലുള്ളത് അവിടെ നൽകും, മറ്റുള്ളവ അവയുടെ പ്രിഫിക്സിന്റെ ഫോൾഡറിൽ (/ger/); അവയ്ക്കിടയിലെ ലിങ്കുകൾ പകർപ്പിൽ തന്നെ തുടരും. അഡ്മിനിസ്ട്രേഷൻ സൈറ്റ്ആക്സസുകൾ ഒരിക്കലും നൽകില്ല.</translation>
     </message>
 </context>
 <context>

@@ -81094,6 +81094,46 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>No migration was written: %reason</source>
         <translation>Teu aya migrasi anu ditulis: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Ngajalankeun panjang sacara bagian-bagian</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Widang kosong ngajaga setélan migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Pangpangna sabaraha migrasi ieu</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Teu aya migrasi deui saatos (detik)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Jeda antawis migrasi (detik)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioritas leuwih handap (1 nepi ka 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Widang ngajalankeun panjang nyaéta wilangan bulat ti 1 (jeda: detik ti 0 nepi ka 60, prioritas: 1 nepi ka 19), atawa kosong.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Nutup sorangan dina %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Nutup sorangan saatos (menit, opsional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Menit nyaéta wilangan bulat ti 1 nepi ka 44640 (31 poé), atawa kosong.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83451,6 +83491,30 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>Version</source>
         <translation>Vérsi</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Aksés situs anu rék dipedalkeun</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aksés situs</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Di akar</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Teu aya aksés situs di akar: unggal hiji aya dina poléderna, jeung akar numbu ka sadayana</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Aksés situs</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Centang hiji aksés situs, atawa sababaraha anu babagi hiji host ngaliwatan awalan URI-na. Anu di akar disayogikeun di dinya, nu séjén dina poléder awalanana (/ger/); tutumbu di antarana tetep dina salinan. Aksés situs administrasi teu pernah ditawarkeun.</translation>
     </message>
 </context>
 <context>

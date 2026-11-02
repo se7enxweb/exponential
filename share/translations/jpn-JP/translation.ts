@@ -81116,6 +81116,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>マイグレーションは書き込まれませんでした: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>分割して行う長い実行</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>空のフィールドは migration.ini [RunSettings] の設定を維持します。</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>最大このマイグレーション数</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>この秒数を過ぎたらマイグレーションを開始しない（秒）</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>マイグレーション間の待機（秒）</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>低い優先度（1〜19）</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>長時間実行のフィールドは 1 以上の整数です（待機：0〜60 秒、優先度：1〜19）。空欄も可。</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>%time に自動的に閉じます。</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>この時間後に自動的に閉じる（分、任意）</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>分数は 1〜44640（31 日）の整数です。空欄も可。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83473,6 +83513,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>バージョン</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>公開するサイトアクセス</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>サイトアクセス</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ルートに</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ルートにサイトアクセスなし: それぞれ自分のフォルダーにあり、ルートからそれぞれにリンクします</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>サイトアクセス</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>サイトアクセスを1つ、または URI プレフィックスで1つのホストを共有する複数を選びます。ルートのものはルートで配信され、ほかはそのプレフィックスのフォルダー (/ger/) に置かれます。相互のリンクはコピー内にとどまります。管理用のサイトアクセスは表示されません。</translation>
     </message>
 </context>
 <context>

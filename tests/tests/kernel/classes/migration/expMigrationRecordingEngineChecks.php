@@ -17,6 +17,8 @@
  *       migration names the account by secrets
  *  RC-4 a migration of what is there (a class, a role, a section, content to a depth) passes the check; unknown
  *       things are named
+ *  RC-5 a site-wide window of time: its end kept while it runs, nothing matched after it, stopped by closeEnded()
+ *       with the end as its stop, a new window may start; an end in the past is refused
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -201,6 +203,42 @@ trait expMigrationRecordingEngineChecks
         $this->assertTrue( expMigrationRecording::discard( $db, $site['recording_id'], $errors ) );
         $this->assertSame( array(), expMigrationRecording::events( $db, $rec['recording_id'] ) );
         $this->assertSame( array(), expMigrationRecording::all( $db ) );
+    }
+
+    /** RC-5 */
+    protected function checkRecordingWindow( $db )
+    {
+        $this->checkRecordingTables( $db );
+        $errors = array();
+        $until = time() + 600;
+        $site = expMigrationRecording::start( $db, expMigrationRecording::MODE_SITE, self::$admin, 'window', $errors, $until );
+        $this->assertNotNull( $site, implode( '; ', $errors ) );
+        $this->assertSame( $until, expMigrationRecording::get( $db, $site['recording_id'] )['stopped_at'], 'a running window keeps its end in stopped_at' );
+        $this->assertSame( expMigrationRecording::RECORDING, expMigrationRecording::get( $db, $site['recording_id'] )['state'] );
+        $active = expMigrationRecording::active();
+        $this->assertSame( $until, $active[0]['until'] );
+        $this->assertCount( 1, expMigrationRecording::matching( $active, self::$anonymous ) );
+        $this->assertSame( array(), expMigrationRecording::matching( $active, self::$anonymous, $until ), 'nothing is kept once the window ends' );
+        $this->assertSame( array(), expMigrationRecording::closeEnded( $db, $until - 1 ), 'not yet' );
+
+        $closed = expMigrationRecording::closeEnded( $db, $until );
+        $this->assertSame( array( $site['recording_id'] ), array_column( $closed, 'recording_id' ) );
+        $row = expMigrationRecording::get( $db, $site['recording_id'] );
+        $this->assertSame( expMigrationRecording::STOPPED, $row['state'] );
+        $this->assertSame( $until, $row['stopped_at'], 'the end of the window stays its stop' );
+        $this->assertSame( array(), expMigrationRecording::active() );
+        $this->assertSame( array(), expMigrationRecording::closeEnded( $db, $until + 1 ) );
+
+        // a window that has ended does not block a new one
+        $again = expMigrationRecording::start( $db, expMigrationRecording::MODE_SITE, self::$admin, '', $errors, time() + 60 );
+        $this->assertNotNull( $again, implode( '; ', $errors ) );
+        $this->assertNull( expMigrationRecording::start( $db, expMigrationRecording::MODE_SITE, self::$admin, '', $errors ) );
+        $this->assertNull( expMigrationRecording::start( $db, expMigrationRecording::MODE_SITE, self::$admin, '', $errors, time() - 1 ) );
+        $this->assertSame( array( 'the end of the window is not in the future' ), $errors );
+        expMigrationRecording::stop( $db, $again['recording_id'], $errors );
+        $this->assertGreaterThan( 0, expMigrationRecording::get( $db, $again['recording_id'] )['stopped_at'] );
+        $this->assertTrue( expMigrationRecording::discard( $db, $site['recording_id'], $errors ) );
+        $this->assertTrue( expMigrationRecording::discard( $db, $again['recording_id'], $errors ) );
     }
 
     /** RC-3 */

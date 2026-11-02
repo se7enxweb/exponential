@@ -23,7 +23,7 @@ php bin/php/expstaticbuild.php --help
 
 ```text
 Build a static copy of a site
-Crawls the target's siteaccess as the anonymous user, strips debug output, form tokens and
+Crawls the target's siteaccesses as the anonymous user, strips debug output, form tokens and
 session ids, refuses pages that still carry one, rewrites the links (relative, or below the base
 path), collects the files the pages name (and the storage's images with Assets=referenced-and-storage),
 writes .nojekyll, 404.html, robots.txt, sitemap.xml and the manifest, checks the links and replaces the
@@ -32,6 +32,7 @@ content of var/<site>/static-publish/<target>/. Targets are staticcache.ini [Tar
 ./console exp:static:build github-public
 ./console exp:static:build github-public --dry-run          report what would change
 ./console exp:static:build github-public --paths=/about-us  only this page
+./console exp:static:build github-public --siteaccess=ger    only the siteaccess ger of a target of several
 ./console exp:static:build github-public --format=json --report=var/log/static.json
 ```
 
@@ -40,8 +41,8 @@ content of var/<site>/static-publish/<target>/. Targets are staticcache.ini [Tar
 | Option | Value | Help |
 |---|---|---|
 | `--full` |  | Crawl the whole site (the default without --paths or --nodes); not with --paths or --nodes |
-| `--paths` | required | Build only these pages, by their path in the site (/about-us; a comma list or repeated); the rest of the last build stays |
-| `--nodes` | required | Build only the pages of these nodes (node ids; a comma list or repeated); the rest of the last build stays |
+| `--paths` | required | Build only these pages, by their path in the copy (/about-us, /ger/about-us for a siteaccess in a folder; a comma list or repeated); the rest of the last build stays |
+| `--nodes` | required | Build only the pages of these nodes (node ids; a comma list or repeated), in each siteaccess of the target; the rest of the last build stays |
 | `--dry-run` |  | Build into the staging folder, report what would change and leave the target folder as it is |
 | `--report` | required | Also write the report (exp-static/1, JSON) to this file |
 | `--format` | required | text (default) or json (the machine output exp-static/1) |
@@ -51,6 +52,7 @@ content of var/<site>/static-publish/<target>/. Targets are staticcache.ini [Tar
 | `--login` | required | Run as this user (the administration starts its jobs so); recorded as who ran it |
 | `--run-id` | required | The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job's id) |
 | `--progress` | required | Also append the progress, one JSON object per line, to this file (the administration follows it) |
+| `--siteaccess` | required | Build only this one of the target's siteaccesses (a target of several, SiteAccessList[]); the others' pages of the last build stay |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

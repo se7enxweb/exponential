@@ -81086,6 +81086,46 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>No migration was written: %reason</source>
         <translation>Bobongoli moko te ekomamaki: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Mosala molai na biteni</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Bisika ya pamba ebombi bibongisi bya migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Migration ebele mingi ndenge oyo</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Migration mosusu te nsima ya (sekonde)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Kopema kati na migration (sekonde)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Libosoliso moke (1 tii 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Esika ya mosala molai ezali motango mobimba uta na 1 (kopema: sekonde uta na 0 tii 60, libosoliso: 1 tii 19), to pamba.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Etiami yango moko na %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Tia yango moko nsima ya (miniti, soki olingi)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Miniti ezali motango mobimba uta na 1 tii 44640 (mikolo 31), to pamba.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>Version</source>
         <translation>Version</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Ba-siteaccess oyo ekobimisama</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Na mosisa</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Siteaccess moko te na mosisa: moko na moko ezali na dosie na yango, mpe mosisa ezali kokangisa yango</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Ba-siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Pona siteaccess moko, to mingi oyo ekabolaka host moko na nzela ya prefix na bango ya URI. Oyo ezali na mosisa epesamaka kuna, mosusu na dosie ya prefix na yango (/ger/); bikangisi kati na bango etikalaka na kopi. Ba-siteaccess ya boyangeli epesamaka ata mokolo moko te.</translation>
     </message>
 </context>
 <context>

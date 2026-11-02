@@ -81086,6 +81086,46 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>No migration was written: %reason</source>
         <translation>Manam ima astakuypas qillqasqachu: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Hatun puriy rakisqa</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ch'usaq kikinkuna migration.ini [RunSettings] churaykunata waqaychanku.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Aswan achka kay hina astaykuna</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Chaymanta qhipa astay mana kanchu (sikundu)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Astaykuna chawpipi samay (sikundu)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Aswan pisi allin (1 manta 19 kama)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Hatun puriy kikin 1 manta qallariq lliw yupay (samay: 0 manta 60 sikundu, allin: 1 manta 19), icha ch'usaq.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>%time pachapi kikin wisq'akun.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Chaymanta qhipa kikin wisq'ay (minutu, munaspa)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minutukuna 1 manta 44640 kama (31 punchaw) lliw yupay, icha ch'usaq.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>Version</source>
         <translation>Versiyun</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Web yaykunakuna willakunapaq</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Web yaykuna</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Saphipi</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Mana web yaykuna saphipiqa kanchu: sapakama carpetanpi kachkan, saphitaq paykunaman t'inkin</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Web yaykunakuna</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Huk web yaykunata akllay, utaq URI qallariyninwan huk host-ta rakinakuqkunata. Saphipi kaqqa chaypi qusqa kanqa, wakinkunataq qallariyninpa carpetanpi (/ger/); paykuna chawpi t'inkikunaqa copiapi qhipakun. Kamachiy yaykunakunaqa manam hayk'appas qusqachu.</translation>
     </message>
 </context>
 <context>

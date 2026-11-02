@@ -37,7 +37,7 @@ class Expstaticpublish extends ExpstaticBase
         ) + self::SCRIPT );
         return (array)$this->startup( '[build][nodes:*][message:][no-push][format:][login:][run-id:][progress:]', '[target]', array(
             'build' => 'Build the target first (as exp:static:build); nothing is committed when the build does not finish',
-            'nodes' => 'Build only the pages of these nodes (node ids; a comma list or repeated); the rest of the last build stays',
+            'nodes' => 'Build only the pages of these nodes (node ids; a comma list or repeated), in each siteaccess of the target; the rest of the last build stays',
             'message' => 'The commit message (default: what was published, or which publish is restored)',
             'no-push' => 'Commit and tag, but do not push (exp:static:push pushes later)',
             'format' => 'text (default) or json (the machine output exp-static/1)',

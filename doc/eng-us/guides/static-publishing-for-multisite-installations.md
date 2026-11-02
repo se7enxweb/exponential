@@ -8,12 +8,61 @@ one database. It shows how to give each its own target, keep them apart and publ
 
 ## What you'll have at the end
 
-One target per public siteaccess, each with its own repository or branch, public address and policies, all listed
-and built from one installation.
+Either one target per public siteaccess, each with its own repository or branch, public address and policies, or one
+target that publishes several siteaccesses sharing one host by their URI prefix (`/`, `/bold/`, `/bold_ger/`) into
+one copy, all listed and built from one installation.
+
+## Several siteaccesses in one copy
+
+When several sites or languages live on one host and are told apart by the first part of the address (site.ini
+`[SiteAccessSettings] MatchOrder` with `uri`, `URIMatchType=element` or `map`, or `host_uri` with a URI), one target
+can publish them together, so the copy keeps the same addresses as the live host:
+
+```ini
+[Target_sites]
+Name=All sites on www.example.com
+SiteAccessList[]
+SiteAccessList[]=site
+SiteAccessList[]=bold
+SiteAccessList[]=bold_ger
+DefaultSiteAccess=site
+Remote=https://github.com/example/sites.git
+PublicURL=https://www.example.com/
+CustomDomain=www.example.com
+```
+
+- The `DefaultSiteAccess` is served at the root of the copy (`/`, `/about-us/`); every other siteaccess is in the
+  folder of its URI prefix (`/bold/`, `/bold_ger/team/`), exactly where the live host serves it.
+- Without a `DefaultSiteAccess` every siteaccess is in its folder (`/site/` too), and the root of the copy is a small
+  page that links to each of them. A target of one siteaccess always has it at the root.
+- `SiteAccess=` still works as the form of one; when `SiteAccessList[]` names any, `SiteAccess` is not read.
+- The checks: only front siteaccesses (never an administration or editing one); every siteaccess but the default must
+  be selected by a URI prefix, or it has no folder in a copy shared with others on one host (a siteaccess matched by
+  its host alone can be the `DefaultSiteAccess`, or a target of its own); two siteaccesses cannot share a folder.
+- Links between the siteaccesses of the copy stay in the copy (relative, or below the base path): the language
+  switcher from `/about-us/` to `/bold_ger/` works offline. A link to a siteaccess the target does not publish
+  (`/classic/...`) is a link outside the copy, and `OutsideLinks` decides it: to the live site, or taken out.
+- The language switcher (`/bold/switchlanguage/to/bold_ger/careers`) goes to the same page in the other siteaccess of
+  the copy (`/bold_ger/karriere/`), or to its front page when the copy holds no page of that node there.
+- `hreflang` alternates between them are written as absolute addresses below `PublicURL`.
+- One `sitemap.xml` lists the pages of all of them, one `robots.txt` points at it, and `404.html` is the default
+  siteaccess's 404 page (the first siteaccess's without a default). Redirect pages are written per siteaccess, in its
+  folder.
+- The search index is kept per language as before; each entry names its siteaccess, and the search page offers "All
+  sites" or one of them (`search.html?site=bold_ger`).
+- `MaxPages` counts per siteaccess. The manifest names the siteaccesses and their folders, and each page's
+  siteaccess; staleness, history and the "Publish this page" panel work on the page paths of every siteaccess.
+- A content publish marks the node's pages stale in every siteaccess of the copy; `--nodes` builds a node's page in
+  each of them.
+- Build one of them only with `./console exp:static:build sites --siteaccess=bold_ger`: a partial build, the pages of
+  the others stay as the last build left them. `--paths` takes paths of the copy (`/bold_ger/team`).
+
+In the wizard, step 1 lists the front siteaccesses with their folder: tick the ones to publish and choose the one at
+the root (or none). One ticked siteaccess is saved as `SiteAccess=` as before.
 
 ## One target per siteaccess
 
-A target publishes exactly one front siteaccess. Its pages, languages, design and address scheme are that
+A target can also publish exactly one front siteaccess. Its pages, languages, design and address scheme are that
 siteaccess's. An installation with the sites `site`, `shop_eng` and `blog` and a German `site_ger` has one target for
 each that should have a public copy:
 

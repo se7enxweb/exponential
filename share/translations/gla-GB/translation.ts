@@ -81086,6 +81086,46 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>No migration was written: %reason</source>
         <translation>Cha deach imrich sam bith a sgrìobhadh: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Ruith fhada ann am pàirtean</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Bidh na raointean falamh a' cumail roghainnean migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Cho mòr ri an uiread seo de ghluasadan imrich</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Gun imrich eile às dèidh (diogan)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Stad eadar imrichean (diogan)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prìomhachas nas ìsle (1 gu 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Tha raon ruith fhada na àireamh slàn bho 1 (an stad: diogan bho 0 gu 60, am prìomhachas: 1 gu 19), no falamh.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Dùinidh e fhèin aig %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Dùin e fhèin an dèidh (mionaidean, roghainneil)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Tha na mionaidean nan àireamh slàn bho 1 gu 44640 (31 latha), no falamh.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>Version</source>
         <translation>Tionndadh</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Inntrigidhean làraich ri fhoillseachadh</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Inntrigeadh làraich</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Aig a' bhun</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Chan eil inntrigeadh sam bith aig a' bhun: tha gach fear na phasgan fhèin, agus tha am bun a' ceangal riutha</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Inntrigidhean làraich</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Cuir strìochag ri aon inntrigeadh làraich, no grunn a tha a' co-roinn aon òstair tron ro-leasachan URI aca. Thèid am fear aig a' bhun a fhrithealadh an sin, càch ann am pasgan an ro-leasachain (/ger/); fanaidh na ceanglaichean eatarra san lethbhreac. Cha tèid inntrigidhean rianachd a thairgsinn gu bràth.</translation>
     </message>
 </context>
 <context>

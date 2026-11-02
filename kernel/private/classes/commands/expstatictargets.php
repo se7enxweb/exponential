@@ -71,6 +71,7 @@ class Expstatictargets extends ExpstaticBase
             $manifest = \expStaticManifest::load( $directory );
             $meta = $manifest !== null ? $manifest->meta() : array();
             $report['targets'][] = $target->toArray() + array(
+                'siteaccesses' => \expStaticAdmin::memberList( $target, $context ),
                 'directory' => $directory,
                 'built_at' => isset( $meta['built_at'] ) ? $meta['built_at'] : null,
                 'pages' => $manifest !== null ? $manifest->count( 'page' ) : 0,
@@ -95,7 +96,11 @@ class Expstatictargets extends ExpstaticBase
         {
             $lines[] = '';
             $lines[] = sprintf( '  %-20s %s', $t['id'], $t['name'] );
-            $lines[] = sprintf( '    siteaccess %s, %s, links %s%s', $t['SiteAccess'] !== '' ? $t['SiteAccess'] : '(none)', $t['Kind'], $t['Links'],
+            $siteaccesses = array();
+            foreach ( $t['siteaccesses'] as $sa )
+                $siteaccesses[] = $sa['name'] . ( count( $t['siteaccesses'] ) > 1 ? ' ' . $sa['folder'] : '' );
+            $lines[] = sprintf( '    %s %s, %s, links %s%s', count( $siteaccesses ) > 1 ? 'siteaccesses' : 'siteaccess',
+                                $siteaccesses ? implode( ', ', $siteaccesses ) : '(none)', $t['Kind'], $t['Links'],
                                 $t['Links'] === 'base-path' ? ' below ' . \expStaticLinkRewriter::normaliseBasePath( $t['BasePath'] ) : '' );
             if ( $t['PublicURL'] !== '' || $t['CustomDomain'] !== '' )
                 $lines[] = '    public at ' . ( $t['PublicURL'] !== '' ? $t['PublicURL'] : 'https://' . $t['CustomDomain'] . '/' );

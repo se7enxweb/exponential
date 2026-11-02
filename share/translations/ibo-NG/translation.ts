@@ -81084,6 +81084,46 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>No migration was written: %reason</source>
         <translation>Ọ dịghị mbugharị e dere: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Ọsọ ogologo n'akụkụ</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ebe efu na-ejide ntọala migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Ọtụtụ kachasị ọtụtụ migration ndị a</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Enweghị migration ọzọ mgbe (sekọnd) gasịrị</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Ezumike n'etiti migration (sekọnd)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Mkpa dị ala (1 ruo 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ebe ọsọ ogologo bụ ọnụọgụ zuru ezu site na 1 (ezumike: sekọnd site na 0 ruo 60, mkpa: 1 ruo 19), ma ọ bụ efu.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ọ na-emechi onwe ya na %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Mechie onwe ya mgbe (nkeji, nhọrọ) gasịrị</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Nkeji bụ ọnụọgụ zuru ezu site na 1 ruo 44640 (ụbọchị 31), ma ọ bụ efu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83441,6 +83481,30 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>Version</source>
         <translation>Ụdị</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Nnweta saịtị a ga-ebipụta</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nnweta saịtị</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Na mgbọrọgwụ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Enweghị nnweta saịtị na mgbọrọgwụ: nke ọ bụla dị na nchekwa ya, mgbọrọgwụ na-ejikọ ha</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nnweta saịtị</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Kaa otu nnweta saịtị, ma ọ bụ ọtụtụ ndị na-ekerịta otu ọbịa site na prefix URI ha. A na-enye nke dị na mgbọrọgwụ ebe ahụ, ndị ọzọ na nchekwa prefix ha (/ger/); njikọ dị n'etiti ha na-anọ na mbipụta ahụ. A naghị enye nnweta nchịkwa ma ọlị.</translation>
     </message>
 </context>
 <context>

@@ -2,9 +2,9 @@
 
 Diese Seite ist die Anleitung zu Migrationen, die laufen, ohne dass jemand sie von Hand startet, und zu Läufen, die
 lange dauern: die Migrationen, die ein Paket mitbringt und die bei seiner Installation laufen; der Lauf des
-Kickstarters; der Lauf eines Deploys (`exp:velocity deploy --migrate`); und Läufe in Teilen, gedrosselt, im
+Kickstarters; der Lauf eines Deploys (`exp:velocity deploy --migrate`); Läufe in Teilen, gedrosselt, im
 Hintergrund, sowie PHP-Migrationen, die viele Einträge in Stapeln abarbeiten und dort weitermachen, wo sie aufgehört
-haben.
+haben; der Schritt, der Code- und Designdateien schreibt; und eine websiteweite Aufzeichnung für ein Zeitfenster.
 
 [Anleitungen](README.md) · [Migrationen](migrationen.md) · Siehe auch: [PHP-Migrationen](migrationen-php.md),
 [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md), [Das Migrations-Repository](migrationen-repositories.md)
@@ -176,13 +176,76 @@ sind seine Tabellen nicht installiert, fehlt der Auftragstyp oder läuft kein Wo
 Prozess. Ein fehlgeschlagener Lauf lässt den Auftrag der Warteschlange endgültig fehlschlagen: Ein Migrationslauf wird
 nie von selbst wiederholt.
 
-## Nicht in diesem Teil
+### In der Administration
 
-Mehrere Migrationen gleichzeitig in parallelen Workern, die Schritte, die Code- und Designdateien ändern, und ein
-websiteweites Aufzeichnungsfenster kommen mit einem späteren Release.
+Das Formular von Setup > Migrationen > Ausführen hat die vier Optionen für lange Läufe als Felder, in der Karte „Ein
+langer Lauf in Teilen“: höchstens so viele Migrationen, keine weitere Migration nach (Sekunden), Pause zwischen
+Migrationen (Sekunden) und niedrigere Priorität (1 bis 19). Ein leeres Feld behält die Einstellung aus
+`[RunSettings]`, die als Platzhalter im Feld steht; ein Wert wird geprüft wie vom Befehl und an den Lauf im Hintergrund
+weitergegeben (`--max-migrations`, `--max-time`, `--throttle`, `--nice`). Ein Lauf, der an einer Grenze anhält, endet
+ohne Fehler, und die Migrationen, die er übrig lässt, bleiben ausstehend für den nächsten Lauf oder ein Fortsetzen.
+
+## Code- und Designdateien
+
+Migrationen ändern Daten, Einstellungen und die Dateien von `var/storage`; Code- und Designdateien gehen über git (der
+Sicherungspunkt nimmt die Codebäume mit). Muss eine Migration eine solche Datei selbst schreiben, etwa ein Template,
+das eine Erweiterung überschreibt, tut es der Schritttyp [`code_file`](../beispiele/migrationsschritte/code_file.md):
+
+```yaml
+- type: code_file
+  mode: update                     # create, update, ensure (Vorgabe) oder delete
+  path: design/mysite/templates/page_footer.tpl
+  source: files/page_footer.tpl    # neben der Migration; oder content: "..."
+  expect: 9a0b...                  # das SHA-256, das die Datei vorher haben muss (absent: sie darf nicht existieren)
+  checksum: 3f1c...                # das SHA-256, das der neue Inhalt haben muss
+```
+
+- Nur unterhalb der Ordner von `migration.ini [FileStepSettings] AllowedRootList[]` (`design` und `extension` als
+  Vorgabe), nie ein Ordner selbst, nie `..`, ein absoluter Pfad, eine URL, ein `.git`-Ordner, `settings/override`,
+  `var` oder `vendor`, und nie über einen Link, der aus dem Ordner hinausführt. Eine leere Liste schaltet den Schritttyp
+  ab.
+- Die Datei, wie sie war, wird zuerst nach `var/backup/migration/files/<Migrations-ID>/<Pfad>` kopiert (nur für ihren
+  Eigentümer lesbar), und die Änderung steht in `var/backup/migration/files/<Migrations-ID>.json`: ob die Datei
+  existierte, ihr SHA-256 vorher und nachher, ihr Modus. Geschrieben wird atomar, mit dem Modus der ersetzten Datei.
+- Schlägt ein späterer Schritt derselben Migration fehl, legt der Runner die Dateien zurück (die Transaktion nimmt sie
+  nicht zurück); die Meldungen des Laufs nennen sie.
+- Der Schritt nimmt sich selbst zurück: `exp:migration:rollback` der Migration legt die alte Datei zurück oder entfernt
+  die Datei, die die Migration angelegt hat, aber nur, solange die Datei noch die ist, die die Migration geschrieben
+  hat. Eine seither bearbeitete Datei bleibt unberührt, und das Zurücknehmen sagt es.
+- Die Caches, die die Datei betrifft, werden nach dem Lauf geleert: Templates bei `.tpl`, der INI-Cache bei `.ini` und
+  `.ini.append.php`, die gepackten Stylesheets und Skripte bei `.css` und `.js`. Eine neue PHP-Klasse braucht einen
+  `autoload`-Schritt.
+
+## Ein Aufzeichnungsfenster auf Zeit
+
+Eine websiteweite Aufzeichnung ([Erzeugen und aufzeichnen](migrationen-erzeugen-und-aufzeichnen.md)) lässt sich für ein
+Zeitfenster öffnen: Sie schließt sich selbst, wenn das Fenster endet, so bleibt die Aufzeichnung eines Nachmittags
+Redaktionsarbeit nicht offen.
+
+```
+./console exp:migration:record:start --site-wide --for=120 --label="Nachmittag der Redaktion" --apply
+./console exp:migration:record:start --site-wide --until="2026-11-20 18:00" --apply
+```
+
+Setup > Migrationen > Aufzeichnung hat beim websiteweiten Fenster das Feld „Schließt sich selbst nach (Minuten,
+optional)“. Ein Fenster ist höchstens 31 Tage lang. Nach seinem Ende wird nichts mehr aufgezeichnet; die nächste
+Änderung, der nächste Start, die Seite der Aufzeichnung oder `exp:migration:record:status` beendet es, und sein Ende
+bleibt die Zeit, zu der es endete. `--for` und `--until` gelten auch für eine Sitzungsaufzeichnung.
+
+## Nicht dabei
+
+- **Parallele Worker.** Jeder Lauf hält die eine Sperre der Installation, Sicherungspunkt und Wiederherstellung decken
+  den ganzen Lauf ab, und die Transaktion und die Schemaänderungen einer Migration (MySQL und Oracle schreiben DDL sofort
+  fest) lassen sich nicht auf zwei Prozesse verteilen. Zwei Worker würden aufeinander warten oder den Weg zurück
+  zerstören; Läufe bleiben deshalb einer nach dem anderen, lange Läufe werden mit den Grenzen oben aufgeteilt.
+- **Pakete entfernen.** Das Entfernen eines Pakets nimmt seine Migrationen nicht zurück. Was sie angelegt haben, lebt
+  meist länger als das Paket (Inhalte, Klassen, Rollen), und ein Zurücknehmen, das es entfernt, ist eine Entscheidung
+  von Hand: `./console exp:migration:rollback <Migrations-ID> --apply` für jede, oder der Sicherungspunkt von vor der
+  Installation des Pakets.
 
 ## Verwandte Seiten
 
 - [Migrationen](migrationen.md), [PHP-Migrationen](migrationen-php.md), [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md)
-- [exp:migration:migrate](../beispiele/befehle/expmigrationmigrate.md), [exp:migration:resume](../beispiele/befehle/expmigrationresume.md)
+- [exp:migration:migrate](../beispiele/befehle/expmigrationmigrate.md), [exp:migration:resume](../beispiele/befehle/expmigrationresume.md),
+  [exp:migration:record:start](../beispiele/befehle/expmigrationrecordstart.md), [Der Schritttyp code_file](../beispiele/migrationsschritte/code_file.md)
 - [migration.ini](../beispiele/ini-einstellungen/migration/README.md)

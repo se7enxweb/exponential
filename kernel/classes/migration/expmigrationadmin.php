@@ -20,6 +20,9 @@ class expMigrationAdmin
     /** The flags of the run form (POST RunFlag[<name>]=1), as exp:migration:migrate names them. */
     const RUN_FLAGS = array( 'no-caption', 'no-restore', 'include-uncommitted', 'no-commit', 'no-push', 'no-tag' );
 
+    /** The long-run fields of the run form (POST LongRun[<name>]), as exp:migration:migrate names them. */
+    const LONG_RUN_FIELDS = array( 'max-migrations', 'max-time', 'throttle', 'nice' );
+
     /** The parts of a caption a rollback of a run may restore. */
     const RESTORE_PARTS = array( 'database', 'storage', 'settings' );
 
@@ -113,6 +116,7 @@ class expMigrationAdmin
         foreach ( self::RUN_FLAGS as $flag )
             if ( !empty( $flags[$flag] ) )
                 $options[$flag] = true;
+        $options += self::longRunOptions( isset( $post['LongRun'] ) && is_array( $post['LongRun'] ) ? $post['LongRun'] : array(), $errors );
         if ( !empty( $post['ForceChanged'] ) )
         {
             $reason = trim( preg_replace( '/\s+/', ' ', isset( $post['ForceReason'] ) ? (string)$post['ForceReason'] : '' ) );
@@ -127,6 +131,55 @@ class expMigrationAdmin
             }
         }
         return $options;
+    }
+
+    /**
+     * The long-run options of a run from the run form, as the command checks them (--max-migrations, --max-time,
+     * --throttle, --nice); an empty field leaves the setting of [RunSettings]. Pure.
+     *
+     * @param array $fields LongRun[<option>] of the form
+     * @param string[] $errors problems are added here (codes: the option's name)
+     * @return array option => value
+     */
+    public static function longRunOptions( array $fields, array &$errors = array() )
+    {
+        $options = array();
+        foreach ( self::LONG_RUN_FIELDS as $name )
+        {
+            $value = isset( $fields[$name] ) && is_scalar( $fields[$name] ) ? trim( (string)$fields[$name] ) : '';
+            if ( $value === '' )
+                continue;
+            if ( $name === 'throttle' )
+            {
+                if ( !is_numeric( $value ) || (float)$value < 0 || (float)$value > 60 )
+                    $errors[] = $name;
+                else
+                    $options[$name] = (string)(float)$value;
+                continue;
+            }
+            $max = $name === 'nice' ? 19 : PHP_INT_MAX;
+            if ( !ctype_digit( $value ) || (int)$value < 1 || (int)$value > $max )
+                $errors[] = $name;
+            else
+                $options[$name] = (string)(int)$value;
+        }
+        return $options;
+    }
+
+    /**
+     * The values of [RunSettings] the long-run fields leave in place, for the form's placeholders: option => text,
+     * '' where the setting is empty.
+     *
+     * @param eZINI|null $ini
+     * @return string[]
+     */
+    public static function longRunDefaults( $ini = null )
+    {
+        $ini = $ini === null ? eZINI::instance( 'migration.ini' ) : $ini;
+        $out = array();
+        foreach ( array( 'max-migrations' => 'MaxMigrations', 'max-time' => 'MaxTime', 'throttle' => 'Throttle', 'nice' => 'Nice' ) as $option => $setting )
+            $out[$option] = $ini->hasVariable( 'RunSettings', $setting ) ? trim( (string)$ini->variable( 'RunSettings', $setting ) ) : '';
+        return $out;
     }
 
     /**

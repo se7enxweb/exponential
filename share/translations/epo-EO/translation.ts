@@ -81086,6 +81086,46 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>No migration was written: %reason</source>
         <translation>Neniu migrado estis skribita: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Longa ruldo en partoj</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Malplenaj kampoj konservas la agordojn de migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Maksimume tiom da migradoj</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Neniu plia migrado post (sekundoj)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Paŭzo inter migradoj (sekundoj)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Pli malalta prioritato (1 ĝis 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Kampo de longa ruldo estas entjero ekde 1 (la paŭzo: sekundoj de 0 ĝis 60, la prioritato: 1 ĝis 19), aŭ malplena.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ĝi fermiĝas mem je %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Fermiĝu mem post (minutoj, laŭvole)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>La minutoj estas entjero de 1 ĝis 44640 (31 tagoj), aŭ malplena.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>Version</source>
         <translation>Versio</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Retejaliroj publikigotaj</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Retejaliro</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ĉe la radiko</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Neniu retejaliro ĉe la radiko: ĉiu estas en sia dosierujo, kaj la radiko ligas al ili</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Retejaliroj</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marku unu retejaliron, aŭ plurajn, kiuj dividas unu gastiganton per sia URI-prefikso. Tiu ĉe la radiko estas servata tie, la aliaj en la dosierujo de sia prefikso (/ger/); ligiloj inter ili restas en la kopio. Administraj retejaliroj neniam estas proponataj.</translation>
     </message>
 </context>
 <context>

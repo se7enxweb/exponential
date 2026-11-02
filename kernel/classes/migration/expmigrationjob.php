@@ -61,8 +61,8 @@ class expMigrationJob
 
     /** The options with a value the administration may pass on, per kind. */
     const VALUES = array(
-        'migrate' => array( 'only', 'reason', 'environment', 'max-migrations', 'max-time', 'throttle' ),
-        'resume' => array( 'reason', 'environment', 'max-migrations', 'max-time', 'throttle' ),
+        'migrate' => array( 'only', 'reason', 'environment', 'max-migrations', 'max-time', 'throttle', 'nice' ),
+        'resume' => array( 'reason', 'environment', 'max-migrations', 'max-time', 'throttle', 'nice' ),
         'rollback' => array( 'confirm', 'parts', 'source', 'environment' ),
     );
 

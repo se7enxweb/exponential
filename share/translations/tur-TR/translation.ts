@@ -81091,6 +81091,46 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>No migration was written: %reason</source>
         <translation>Hiçbir taşıma yazılmadı: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Parçalar halinde uzun bir çalıştırma</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Boş alanlar migration.ini [RunSettings] ayarlarını korur.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>En fazla bu kadar geçiş</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Şundan sonra başka geçiş yok (saniye)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Geçişler arasında duraklama (saniye)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Daha düşük öncelik (1 ile 19 arası)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Uzun çalıştırma alanı 1'den başlayan bir tam sayıdır (duraklama: 0 ile 60 saniye arası, öncelik: 1 ile 19 arası) ya da boştur.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>%time saatinde kendiliğinden kapanır.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Şundan sonra kendiliğinden kapan (dakika, isteğe bağlı)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Dakika, 1 ile 44640 (31 gün) arasında bir tam sayıdır ya da boştur.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83448,6 +83488,30 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Version</source>
         <translation>Sürüm</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Yayımlanacak site erişimleri</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Site erişimi</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Kökte</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Kökte site erişimi yok: her biri kendi klasöründe, kök de onlara bağlantı verir</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Site erişimleri</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Bir site erişimini ya da URI önekleriyle bir sunucuyu paylaşan birkaçını işaretleyin. Kökteki orada sunulur, diğerleri öneklerinin klasöründe (/ger/); aralarındaki bağlantılar kopyada kalır. Yönetim site erişimleri asla sunulmaz.</translation>
     </message>
 </context>
 <context>

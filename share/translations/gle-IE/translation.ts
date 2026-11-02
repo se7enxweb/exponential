@@ -81116,6 +81116,46 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>No migration was written: %reason</source>
         <translation>Níor scríobhadh imirce ar bith: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Rith fada i gcodanna</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Coinníonn réimsí folmha socruithe migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>An líon seo imirce ar a mhéad</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Gan imirce eile tar éis (soicindí)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Sos idir imirce (soicindí)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Tosaíocht níos ísle (1 go 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Is slánuimhir ó 1 í réimse rith fada (an sos: soicindí ó 0 go 60, an tosaíocht: 1 go 19), nó folamh.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Dúnann sé de féin ag %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Dún de féin tar éis (nóiméad, roghnach)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Is slánuimhir ó 1 go 44640 (31 lá) iad na nóiméid, nó folamh.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83473,6 +83513,30 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>Version</source>
         <translation>Leagan</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Rochtainí suímh le foilsiú</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Rochtain suímh</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ag an bhfréamh</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Níl rochtain ar bith ag an bhfréamh: tá gach ceann ina fhillteán féin, agus nascann an fhréamh leo</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Rochtainí suímh</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Cuir tic le rochtain suímh amháin, nó le roinnt a roinneann óstach amháin trína réimír URI. Freastalaítear an ceann ag an bhfréamh ansin, na cinn eile i bhfillteán a réimíre (/ger/); fanann na naisc eatarthu sa chóip. Ní thairgtear rochtainí riaracháin riamh.</translation>
     </message>
 </context>
 <context>

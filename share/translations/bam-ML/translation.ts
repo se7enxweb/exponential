@@ -81086,6 +81086,46 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>No migration was written: %reason</source>
         <translation>Migration si ma sɛbɛn: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Baara jan min tilalen bɛ cɛ</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Yɔrɔ lankolonnen na migration.ini [RunSettings] sigidaw lakana.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Migrasiyɔn caman fɔlɔ ka dɔgɔ</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Migrasiyɔn wɛrɛ tɛ kɔ (sekɔndi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Lafiɲɛ migrasiyɔnw cɛ (sekɔndi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Kɔrɔbɔ ɲɛnabɔ (1 ka se 19 ma)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Baara jan yɔrɔ ye jatiw bɛnnen ye ka bɔ 1 la (lafiɲɛ: sekɔndi 0 ka se 60 ma, ɲɛnabɔ: 1 ka se 19 ma), walima lankolon.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>A b'a yɛrɛ datugu %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>A yɛrɛ datugu kɔ (miniti, sugandi)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minitiw ye jatiw bɛnnen ye 1 ka se 44640 ma (don 31), walima lankolon.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>Version</source>
         <translation>Wɛrisiyɔn</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Siti dondaw minnu bɛ bɔ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siti donda</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ju la</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Siti donda si tɛ ju la: kelen-kelen bɛɛ bɛ a ka kɛsu kɔnɔ, ju bɛ u lajɛ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siti dondaw</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Siti donda kelen sugandi, walima caman minnu bɛ jatigi kelen tila u ka URI daminɛ fɛ. Min bɛ ju la, o bɛ di yen, tɔw bɛ u ka daminɛ kɛsu kɔnɔ (/ger/); u cɛ siriw bɛ to kopi kɔnɔ. Ɲɛmɔgɔya siti dondaw tɛ jira abada.</translation>
     </message>
 </context>
 <context>

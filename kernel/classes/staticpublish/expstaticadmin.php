@@ -31,7 +31,7 @@ class expStaticAdmin
     const GITHUB_FILE_BYTES = 100000000;
 
     /** The settings the wizard writes, in the order of its steps */
-    const WIZARD_SETTINGS = array( 'Name', 'SiteAccess', 'Kind', 'Credential', 'Remote', 'Branch', 'Folder', 'Delivery', 'Links', 'BasePath',
+    const WIZARD_SETTINGS = array( 'Name', 'SiteAccess', 'SiteAccessList', 'DefaultSiteAccess', 'Kind', 'Credential', 'Remote', 'Branch', 'Folder', 'Delivery', 'Links', 'BasePath',
                                    'PublicURL', 'CustomDomain', 'Assets', 'Extras', 'PostProcess', 'Search', 'Forms', 'ExcludePaths',
                                    'ExcludeSections', 'CrawlURL', 'LiveURL', 'OutsideLinks', 'AdminLinks', 'MaxPages', 'Triggers', 'Schedule', 'Notify', 'Webhook', 'License' );
 
@@ -180,11 +180,13 @@ class expStaticAdmin
         {
         }
         $built = expStaticManifest::load( rtrim( $publisher->checkoutDirectory() . '/' . $target->folder(), '/' ) );
-        $validation = $target->validate( expStaticTarget::siteAccessContext() );
+        $context = expStaticTarget::siteAccessContext();
+        $validation = $target->validate( $context );
         return array(
             'id' => $target->id(),
             'name' => $target->name() !== '' ? $target->name() : $target->id(),
             'siteaccess' => $target->siteAccess(),
+            'siteaccesses' => self::memberList( $target, $context ),
             'kind' => (string)$target->setting( 'Kind' ),
             'remote' => (string)$target->setting( 'Remote' ),
             'branch' => (string)$target->setting( 'Branch' ),
@@ -208,6 +210,23 @@ class expStaticAdmin
             'warnings' => $validation['warnings'],
             'permissions' => self::permissions( $target->id() ),
         );
+    }
+
+    /**
+     * The siteaccesses of a target as the administration lists them: each with its folder in the copy and whether it
+     * is the one at the root. Pure.
+     *
+     * @param expStaticTarget $target
+     * @param array $context expStaticTarget::siteAccessContext()
+     * @return array[] name, folder ('/' for the root, else /ger/), default (bool)
+     */
+    public static function memberList( expStaticTarget $target, array $context )
+    {
+        $out = array();
+        foreach ( $target->members( $context ) as $member )
+            $out[] = array( 'name' => $member['siteaccess'], 'folder' => $member['prefix'] === '' ? '/' : '/' . $member['prefix'] . '/',
+                            'default' => (bool)$member['default'] );
+        return $out;
     }
 
     /** @return int MaxSiteBytes */
@@ -421,7 +440,27 @@ class expStaticAdmin
             $out['Credential'] = 'none';
         if ( isset( $out['Links'], $out['BasePath'] ) && $out['Links'] === 'relative' && $out['BasePath'] === '/' )
             $out['BasePath'] = '';
+        if ( array_key_exists( 'SiteAccessList', $out ) )
+            $out = self::siteAccessSettings( expStaticTarget::siteAccessesOf( $out ), isset( $out['DefaultSiteAccess'] ) ? $out['DefaultSiteAccess'] : '' ) + $out;
         return $out;
+    }
+
+    /**
+     * The settings of the siteaccesses ticked in the wizard, in the form that is written: one siteaccess as SiteAccess
+     * alone (as a target of one has always been written), several as SiteAccessList[] with DefaultSiteAccess (empty
+     * when the default chosen is not one of them). Pure.
+     *
+     * @param string[] $names the siteaccesses ticked
+     * @param string $default the one chosen for the root of the copy
+     * @return array SiteAccess, SiteAccessList, DefaultSiteAccess
+     */
+    public static function siteAccessSettings( array $names, $default = '' )
+    {
+        $names = expStaticTarget::siteAccessesOf( array( 'SiteAccessList' => $names ) );
+        $default = (string)$default;
+        if ( count( $names ) <= 1 )
+            return array( 'SiteAccess' => $names ? $names[0] : '', 'SiteAccessList' => array(), 'DefaultSiteAccess' => '' );
+        return array( 'SiteAccess' => '', 'SiteAccessList' => $names, 'DefaultSiteAccess' => in_array( $default, $names, true ) ? $default : '' );
     }
 
     /**
@@ -526,9 +565,15 @@ class expStaticAdmin
     {
         $editor = new expIniEditor( $scope ?: expIniEditor::scope( 'global' ), 'staticcache' );
         $block = 'Target_' . $id;
+        $ini = eZINI::instance( 'staticcache.ini' );
         foreach ( self::WIZARD_SETTINGS as $name )
         {
             if ( !array_key_exists( $name, $settings ) )
+                continue;
+            // a target of one siteaccess is written as it always was (SiteAccess alone): the settings of several are
+            // only written when they hold something or there is something of them to clear
+            if ( ( $name === 'SiteAccessList' || $name === 'DefaultSiteAccess' ) && ( $settings[$name] === array() || $settings[$name] === '' )
+                 && !$ini->hasVariable( $block, $name ) )
                 continue;
             if ( in_array( $name, expStaticTarget::LIST_SETTINGS, true ) )
             {
@@ -539,7 +584,6 @@ class expStaticAdmin
             else
                 $editor->set( $block, $name, (string)$settings[$name] );
         }
-        $ini = eZINI::instance( 'staticcache.ini' );
         $listed = $ini->hasVariable( 'StaticPublishSettings', 'TargetList' ) ? (array)$ini->variable( 'StaticPublishSettings', 'TargetList' ) : array();
         if ( !in_array( $id, $listed, true ) )
             $editor->add( 'StaticPublishSettings', 'TargetList', $id );
@@ -574,7 +618,7 @@ class expStaticAdmin
         self::settingsChanged();
         expStaticPublisher::audit( 'system.staticpublish.target', array( 'object' => array( 'type' => 'static_target', 'id' => $id ),
                                    'verb' => $isNew ? 'create' : 'update', 'result' => 'success',
-                                   'x' => array( 'siteaccess' => $settings['SiteAccess'], 'kind' => $settings['Kind'], 'remote' => $settings['Remote'],
+                                   'x' => array( 'siteaccess' => implode( ',', expStaticTarget::siteAccessesOf( $settings ) ), 'kind' => $settings['Kind'], 'remote' => $settings['Remote'],
                                                  'credential' => $settings['Credential'], 'enabled' => (bool)$enable ) ) );
         return '';
     }

@@ -8,6 +8,7 @@
  *       site-wide window, stop, plan and discard
  *  RG-2 RC-3 a user published as content: no personal data recorded
  *  RG-3 RC-4 a migration generated from what is there
+ *  RG-4 RC-5 a site-wide window of time that closes by itself
  *
  * Needs a MongoDB server: EXP_TEST_MONGO_URI (a mongodb:// connection string); skipped without.
  * Run: php vendor/bin/phpunit --testsuite mongodb-live
@@ -115,5 +116,11 @@ class expMigrationRecordingMongoDBTest extends PHPUnit\Framework\TestCase
     public function testGenerateFromExisting()
     {
         $this->checkGenerateFromExisting( $this->db );
+    }
+
+    /** RG-4 */
+    public function testRecordingWindow()
+    {
+        $this->checkRecordingWindow( $this->db );
     }
 }

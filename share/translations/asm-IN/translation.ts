@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>কোনো মাইগ্ৰেচন লিখা নহ'ল: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>খণ্ডে খণ্ডে এটা দীঘলীয়া ৰান</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>খালী ক্ষেত্ৰই migration.ini [RunSettings]-ৰ ছেটিংছ ৰাখে।</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>সৰ্বোচ্চ ইমানখিনি মাইগ্ৰেচন</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ইয়াৰ পাছত আন মাইগ্ৰেচন নহয় (ছেকেণ্ড)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>মাইগ্ৰেচনৰ মাজত বিৰতি (ছেকেণ্ড)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>কম অগ্ৰাধিকাৰ (1 ৰ পৰা 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>দীঘলীয়া ৰানৰ ক্ষেত্ৰ 1 ৰ পৰা এটা পূৰ্ণ সংখ্যা (বিৰতি: 0 ৰ পৰা 60 ছেকেণ্ড, অগ্ৰাধিকাৰ: 1 ৰ পৰা 19), বা খালী।</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ই %time ত নিজেই বন্ধ হ'ব।</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ইমান পাছত নিজেই বন্ধ হওক (মিনিট, ঐচ্ছিক)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>মিনিট 1 ৰ পৰা 44640 (31 দিন) লৈ এটা পূৰ্ণ সংখ্যা, বা খালী।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>সংস্কৰণ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>প্ৰকাশ কৰিবলগীয়া ছাইট প্ৰৱেশসমূহ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ছাইট প্ৰৱেশ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>মূলত</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>মূলত কোনো ছাইট প্ৰৱেশ নাই: প্ৰতিটো নিজৰ ফ'ল্ডাৰত, আৰু মূলে সেইবোৰলৈ লিংক কৰে</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ছাইট প্ৰৱেশসমূহ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>এটা ছাইট প্ৰৱেশ, বা URI উপসৰ্গৰ দ্বাৰা এটা হ'ষ্ট ভাগ কৰা কেইবাটাও বাছক। মূলত থকাটো তাতেই পৰিবেশন কৰা হয়, আনবোৰ সিহঁতৰ উপসৰ্গৰ ফ'ল্ডাৰত (/ger/); সিহঁতৰ মাজৰ লিংকসমূহ কপিটোতে থাকে। প্ৰশাসনৰ ছাইট প্ৰৱেশ কেতিয়াও দেখুওৱা নহয়।</translation>
     </message>
 </context>
 <context>

@@ -81084,6 +81084,46 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>No migration was written: %reason</source>
         <translation>Akukho kufuduka okubhaliwe: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Ukusebenza okude ngezingxenye</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Izinkambu ezingenalutho zigcina izilungiselelo ze-migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Kuze kube yile nombolo yokufuduswa</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Akukho okunye ukufuduswa ngemva kwe (amasekhondi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Ikhefu phakathi kokufuduswa (amasekhondi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Okuthandwayo okuphansi (1 kuya ku-19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Inkambu yokusebenza okude inombolo ephelele kusuka ku-1 (ikhefu: amasekhondi kusuka ku-0 kuya ku-60, okuthandwayo: 1 kuya ku-19), noma ingenalutho.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ivala yodwa ngo-%time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Vala yodwa ngemva kwe (amaminithi, ukukhetha)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Amaminithi inombolo ephelele kusuka ku-1 kuya ku-44640 (izinsuku ezingu-31), noma ingenalutho.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83441,6 +83481,30 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
     <message>
         <source>Version</source>
         <translation>Inguqulo</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Ukufinyelela kwesayithi okuzoshicilelwa</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Ukufinyelela isayithi</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Empandeni</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Akukho ukufinyelela empandeni: ngakunye kusefolda yakho, impande ixhumanisa nakho</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Ukufinyelela kwesayithi</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Maka ukufinyelela kwesayithi okukodwa, noma okuningi okwabelana ngomsingathi oyedwa ngesiqalo sakho se-URI. Okusempandeni kunikezwa lapho, okunye kufolda yesiqalo sakho (/ger/); izixhumanisi phakathi kwakho zihlala ekhophini. Ukufinyelela kokuphatha akukaze kunikezwe.</translation>
     </message>
 </context>
 <context>

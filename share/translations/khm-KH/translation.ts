@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>មិនបានសរសេរការផ្ទេរទេ៖ %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>ការដំណើរការវែងជាផ្នែកៗ</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>វាលទទេរក្សាការកំណត់របស់ migration.ini [RunSettings]។</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ការធ្វើចំណាកស្រុកច្រើនបំផុតប៉ុណ្ណេះ</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>គ្មានការធ្វើចំណាកស្រុកទៀតបន្ទាប់ពី (វិនាទី)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>ការផ្អាករវាងការធ្វើចំណាកស្រុក (វិនាទី)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>អាទិភាពទាបជាង (1 ដល់ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>វាលដំណើរការវែងជាចំនួនគត់ចាប់ពី 1 (ការផ្អាក៖ វិនាទីពី 0 ដល់ 60, អាទិភាព៖ 1 ដល់ 19) ឬទទេ។</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>វាបិទដោយខ្លួនឯងនៅម៉ោង %time។</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>បិទដោយខ្លួនឯងបន្ទាប់ពី (នាទី, ស្រេចចិត្ត)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>នាទីជាចំនួនគត់ពី 1 ដល់ 44640 (31 ថ្ងៃ) ឬទទេ។</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>កំណែ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ការចូលគេហទំព័រដែលត្រូវបោះពុម្ព</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ការចូលគេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>នៅឫស</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>គ្មានការចូលគេហទំព័រនៅឫសទេ៖ នីមួយៗនៅក្នុងថតរបស់វា ហើយឫសភ្ជាប់ទៅពួកវា</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ការចូលគេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>គូសការចូលគេហទំព័រមួយ ឬច្រើនដែលចែករំលែកម៉ាស៊ីនមេមួយតាមបុព្វបទ URI របស់វា។ មួយនៅឫសត្រូវបានផ្តល់នៅទីនោះ ផ្សេងទៀតនៅក្នុងថតនៃបុព្វបទរបស់វា (/ger/); តំណរវាងពួកវានៅក្នុងច្បាប់ចម្លង។ ការចូលគ្រប់គ្រងមិនដែលត្រូវបានផ្តល់ទេ។</translation>
     </message>
 </context>
 <context>

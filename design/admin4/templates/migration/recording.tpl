@@ -59,12 +59,17 @@
         {if $site}
         <p><span class="a4-status is-running"><span class="a4-dot" aria-hidden="true"></span>{'Open'|i18n( 'design/admin/migration' )}</span>
            {'since %time, %count change(s) so far.'|i18n( 'design/admin/migration',, hash( '%time', $site.started_at|l10n( 'shortdatetime' ), '%count', $site.event_count ) )|wash}</p>
+        {if $site.stopped_at}<p>{'It closes by itself at %time.'|i18n( 'design/admin/migration',, hash( '%time', $site.stopped_at|l10n( 'shortdatetime' ) ) )|wash}</p>{/if}
         {if $site.label}<p class="a4-meta">{$site.label|wash}</p>{/if}
         <input type="hidden" name="StopRecordingID" value="{$site.recording_id|wash}" />
         {else}
         <div class="a4-field a4-field-wide">
             <label class="a4-label" for="migration-recording-site-label">{'Label (optional)'|i18n( 'design/admin/migration' )}</label>
             <input class="a4-input" id="migration-recording-site-label" name="RecordingLabel" maxlength="255" value="" />
+        </div>
+        <div class="a4-field">
+            <label class="a4-label" for="migration-recording-site-minutes">{'Close by itself after (minutes, optional)'|i18n( 'design/admin/migration' )}</label>
+            <input class="a4-input" id="migration-recording-site-minutes" name="RecordingMinutes" type="number" min="1" max="44640" step="1" inputmode="numeric" value="" />
         </div>
         {/if}
     </div>

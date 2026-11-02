@@ -81116,6 +81116,46 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>No migration was written: %reason</source>
         <translation>Nijedna migracija nije zapisana: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Dugo izvođenje u dijelovima</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Prazna polja zadržavaju postavke iz migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Najviše ovoliko migracija</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Nema daljnjih migracija nakon (sekundi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pauza između migracija (sekundi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Niži prioritet (1 do 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Polje dugog izvođenja je cijeli broj od 1 (pauza: sekunde od 0 do 60, prioritet: 1 do 19) ili prazno.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Zatvara se samo u %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Zatvori samo nakon (minuta, neobavezno)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minute su cijeli broj od 1 do 44640 (31 dan) ili prazno.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83473,6 +83513,30 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>Version</source>
         <translation>Verzija</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Pristupi web-stranici za objavu</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Pristup web-stranici</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>U korijenu</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nijedan pristup u korijenu: svaki je u svojoj mapi, a korijen vodi na njih</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Pristupi web-stranici</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Označite jedan pristup web-stranici ili više njih koji dijele jedan host prema URI prefiksu. Onaj u korijenu se tamo poslužuje, ostali u mapi svog prefiksa (/ger/); linkovi među njima ostaju u kopiji. Administratorski pristupi se nikad ne nude.</translation>
     </message>
 </context>
 <context>

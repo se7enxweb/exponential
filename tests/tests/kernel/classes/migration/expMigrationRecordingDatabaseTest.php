@@ -8,6 +8,7 @@
  *       site-wide window, stop, plan and discard
  *  RD-2 RC-3 a user published as content: no personal data recorded
  *  RD-3 RC-4 a migration generated from what is there
+ *  RD-4 RC-5 a site-wide window of time that closes by itself
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -53,5 +54,11 @@ class expMigrationRecordingDatabaseTest extends ezpDatabaseTestCase
     public function testGenerateFromExisting()
     {
         $this->checkGenerateFromExisting( eZDB::instance() );
+    }
+
+    /** RD-4 */
+    public function testRecordingWindow()
+    {
+        $this->checkRecordingWindow( eZDB::instance() );
     }
 }

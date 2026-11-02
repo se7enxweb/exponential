@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>އެއްވެސް މައިގްރޭޝަނެއް ނުލިޔުނު: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>ބައިބަޔަށް ބަހާލެވިފައިވާ ދިގު ރަން</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ހުސް ފީލްޑްތަކުން migration.ini [RunSettings] ގެ ސެޓިންގްސް ބަހައްޓައެވެ.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>އެންމެ ގިނައިން މިވަރުގެ މައިގްރޭޝަންތައް</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>މީގެ ފަހުން އިތުރު މައިގްރޭޝަނެއް ނުކުރެވޭ (ސިކުންތު)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>މައިގްރޭޝަންތަކުގެ ދެމެދު ހުއްޓުން (ސިކުންތު)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ދަށު ޕްރައިއޮރިޓީ (1 އިން 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ދިގު ރަންގެ ފީލްޑަކީ 1 އިން ފެށޭ ޖުމްލަ ނަންބަރެކެވެ (ހުއްޓުން: 0 އިން 60 ސިކުންތު، ޕްރައިއޮރިޓީ: 1 އިން 19)، ނުވަތަ ހުސް.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>އެ %time ގައި އަމިއްލައަށް ބަންދުވެއެވެ.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>މީގެ ފަހުން އަމިއްލައަށް ބަންދުކުރޭ (މިނިޓު، އިޚްތިޔާރީ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>މިނިޓަކީ 1 އިން 44640 (31 ދުވަސް) އަށް ޖުމްލަ ނަންބަރެކެވެ، ނުވަތަ ހުސް.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>ވާޖަން</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ޝާއިޢުކުރާނެ ސައިޓްއެކްސެސްތައް</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ސައިޓްއެކްސެސް</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ރޫޓުގައި</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ރޫޓުގައި އެއްވެސް ސައިޓްއެކްސެސްއެއް ނެތް: ކޮންމެ އެއްޗެއް އޭގެ ފޯލްޑަރުގައި، އަދި ރޫޓުން އެތަކެއްޗަށް ލިންކްކުރޭ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ސައިޓްއެކްސެސްތައް</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>އެއް ސައިޓްއެކްސެސް، ނުވަތަ URI ޕްރިފިކްސްއިން އެއް ހޮސްޓް ހިއްސާކުރާ ގިނަ ސައިޓްއެކްސެސްތައް ނިޝާންކުރޭ. ރޫޓުގައިވާ އެއްޗެއް އެތަނުގައި ދެވޭ، އެހެންތައް އެމީހުންގެ ޕްރިފިކްސްގެ ފޯލްޑަރުގައި (/ger/)؛ އެތަކެއްޗާ ދެމެދުގެ ލިންކްތައް ކޮޕީގައި ހުރޭ. އިދާރީ ސައިޓްއެކްސެސްތައް ދުވަހަކުވެސް ހުށަނާޅާ.</translation>
     </message>
 </context>
 <context>

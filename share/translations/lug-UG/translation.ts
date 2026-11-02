@@ -81086,6 +81086,46 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>No migration was written: %reason</source>
         <translation>Tewali kusenguka kwawandiikiddwa: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Okudduka okuwanvu mu bitundu</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ebifo ebiwerevu bikuuma ensengeka za migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Migration ez'ennyini nga zino ze zisinga obungi</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Tewali migration ndala oluvannyuma lwa (sekonda)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Okuwummula wakati wa migration (sekonda)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Obukulu obutono (1 okutuuka ku 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ekifo ky'okudduka okuwanvu ye nnamba enzijuvu okuva ku 1 (okuwummula: sekonda okuva ku 0 okutuuka ku 60, obukulu: 1 okutuuka ku 19), oba kiwerevu.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Kyekoma lwakyo ku %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Kyekome lwakyo oluvannyuma lwa (eddakiika, si kya buvunaanyizibwa)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Eddakiika nnamba enzijuvu okuva ku 1 okutuuka ku 44640 (ennaku 31), oba kiwerevu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>Version</source>
         <translation>Enkyusa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Emiryango gy'omukutu egy'okufulumya</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Omulyango gw'omukutu</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ku kikolo</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Tewali mulyango ku kikolo: buli gumu guli mu fayiro yaagwo, ekikolo ne kigiyunga</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Emiryango gy'omukutu</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Londa omulyango gumu, oba egisinga egigabana omukyaza omu okuyita mu URI prefix yaagyo. Ogwo oguli ku kikolo guweebwa eyo, egirala mu fayiro ya prefix yaagyo (/ger/); enkolagana wakati waagyo esigala mu kkopi. Emiryango gy'obukulembeze tegiweebwa n'akatono.</translation>
     </message>
 </context>
 <context>

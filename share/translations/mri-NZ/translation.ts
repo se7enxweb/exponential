@@ -81086,6 +81086,46 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>No migration was written: %reason</source>
         <translation>Kāore he hekenga i tuhia: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>He rere roa i ngā wāhanga</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ka puritia e ngā āpure kau ngā tautuhinga o migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Te nui rawa o ēnei hekenga</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Kāore he hekenga atu i muri i (hēkona)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Okiokinga i waenga i ngā hekenga (hēkona)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Te whakaarotau iti iho (1 ki te 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>He tau tōpū te āpure rere roa mai i te 1 (te okiokinga: hēkona mai i te 0 ki te 60, te whakaarotau: 1 ki te 19), he kau rānei.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ka kati ake i a ia anō i te %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Kati ake i a ia anō i muri i (miniti, kāore e hiahiatia)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>He tau tōpū ngā miniti mai i te 1 ki te 44640 (31 rā), he kau rānei.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>Version</source>
         <translation>Putanga</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Ngā urunga pae hei whakaputa</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Urunga pae</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>I te pūtake</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Kāore he urunga pae i te pūtake: kei tōna kōpaki ia urunga, ā, ka hono te pūtake ki a rātou</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Ngā urunga pae</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Tohua kia kotahi te urunga pae, kia maha rānei e tiri ana i te kaihautū kotahi mā tō rātou kuhimua URI. Ko te mea i te pūtake ka tukuna ki reira, ko ētahi atu ki te kōpaki o tō rātou kuhimua (/ger/); ka noho ngā hononga i waenga i a rātou ki te tārua. Kāore rawa e tukuna ngā urunga whakahaere.</translation>
     </message>
 </context>
 <context>

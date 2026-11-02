@@ -81086,6 +81086,46 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>No migration was written: %reason</source>
         <translation>Non se escribiu ningunha migración: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Unha execución longa por partes</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Os campos baleiros manteñen os axustes de migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Como máximo estas migracións</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Ningunha migración máis despois de (segundos)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pausa entre migracións (segundos)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioridade máis baixa (1 a 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Un campo de execución longa é un número enteiro desde 1 (a pausa: segundos de 0 a 60, a prioridade: 1 a 19), ou baleiro.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Péchase soo ás %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Pechar soo despois de (minutos, opcional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Os minutos son un número enteiro de 1 a 44640 (31 días), ou baleiro.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>Version</source>
         <translation>Versión</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Accesos ao sitio para publicar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Acceso ao sitio</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Na raíz</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ningún acceso na raíz: cada un está no seu cartafol, e a raíz liga con eles</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accesos ao sitio</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marca un acceso ao sitio, ou varios que comparten un servidor polo seu prefixo de URI. O da raíz sérvese alí, os demais no cartafol do seu prefixo (/ger/); as ligazóns entre eles quedan na copia. Nunca se ofrecen os accesos de administración.</translation>
     </message>
 </context>
 <context>

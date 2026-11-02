@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>ไม่ได้เขียนการย้ายข้อมูล: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>การรันยาวแบบแบ่งเป็นส่วน</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ช่องที่เว้นว่างจะคงการตั้งค่าของ migration.ini [RunSettings]</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>จำนวนการย้ายข้อมูลสูงสุดเท่านี้</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ไม่ย้ายข้อมูลเพิ่มหลังจาก (วินาที)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>หยุดพักระหว่างการย้ายข้อมูล (วินาที)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ลำดับความสำคัญต่ำลง (1 ถึง 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ช่องการรันยาวเป็นจำนวนเต็มตั้งแต่ 1 (การหยุดพัก: วินาทีตั้งแต่ 0 ถึง 60, ลำดับความสำคัญ: 1 ถึง 19) หรือเว้นว่าง</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>จะปิดเองเมื่อเวลา %time</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ปิดเองหลังจาก (นาที, ไม่บังคับ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>จำนวนนาทีเป็นจำนวนเต็มตั้งแต่ 1 ถึง 44640 (31 วัน) หรือเว้นว่าง</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>เวอร์ชัน</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>การเข้าถึงไซต์ที่จะเผยแพร่</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>การเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ที่ราก</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ไม่มีการเข้าถึงไซต์ที่ราก: แต่ละอันอยู่ในโฟลเดอร์ของตน และรากลิงก์ไปยังพวกมัน</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>การเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>เลือกการเข้าถึงไซต์หนึ่งรายการ หรือหลายรายการที่ใช้โฮสต์เดียวกันผ่านคำนำหน้า URI รายการที่รากจะให้บริการที่นั่น รายการอื่นอยู่ในโฟลเดอร์ของคำนำหน้า (/ger/) ลิงก์ระหว่างกันจะอยู่ในสำเนา การเข้าถึงไซต์สำหรับผู้ดูแลระบบจะไม่ถูกเสนอเลย</translation>
     </message>
 </context>
 <context>

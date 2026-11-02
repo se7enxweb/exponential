@@ -13,6 +13,9 @@
  *  TG-08 ExcludePaths patterns
  *  TG-09 the S5 checks: Schedule, Webhook, License, Forms=endpoint without a public address
  *  TG-10 targets as an INI migration: every setting, lists as Var[] then values, credentials as names only
+ *  TG-11 several siteaccesses (SiteAccessList[], DefaultSiteAccess): the list, the default, the members with their
+ *        folders, the URI prefixes from the matching settings, a copy path to its siteaccess, and the checks (front
+ *        siteaccesses only, a URI prefix for each one not at the root, the default among them, folders of their own)
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -194,5 +197,78 @@ class expStaticTargetTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "[staticcache.ini/Target_docs]\n", $ini );
         $this->assertStringContainsString( "ExcludePaths[]\nExcludeSections[]\n", $ini );
         $this->assertStringNotContainsString( 'Enabled=', $ini, 'static publishing is not switched on by a migration' );
+
+        $multi = expStaticTarget::migrationIni( array( new expStaticTarget( 'two', array( 'SiteAccessList' => array( 'site', 'de' ), 'DefaultSiteAccess' => 'site' ) ) ) );
+        $this->assertStringContainsString( "SiteAccessList[]\nSiteAccessList[]=site\nSiteAccessList[]=de\nDefaultSiteAccess=site\n", $multi );
+    }
+
+    /** TG-11 */
+    public function testSeveralSiteAccesses()
+    {
+        $context = self::CONTEXT + array( 'prefixes' => array( 'site' => 'site', 'de' => 'de', 'admin' => 'admin', 'intranet' => null, 'site_editor' => 'site_editor', 'nourl' => 'nourl' ) );
+
+        // the form of one
+        $one = self::valid();
+        $this->assertSame( array( 'site' ), $one->siteAccesses() );
+        $this->assertSame( 'site', $one->defaultSiteAccess() );
+        $this->assertFalse( $one->isMultiSite() );
+        $this->assertSame( array( array( 'siteaccess' => 'site', 'prefix' => '', 'default' => true ) ), $one->members( $context ) );
+        $this->assertSame( array( 'site' ), self::valid( array( 'SiteAccessList' => array( 'site' ) ) )->siteAccesses() );
+
+        // several, the default at the root
+        $two = self::valid( array( 'SiteAccess' => '', 'SiteAccessList' => array( 'de', 'site', 'de' ), 'DefaultSiteAccess' => 'site' ) );
+        $this->assertSame( array( 'de', 'site' ), $two->siteAccesses() );
+        $this->assertTrue( $two->isMultiSite() );
+        $this->assertSame( 'site', $two->siteAccess() );
+        $this->assertSame( array( array( 'siteaccess' => 'site', 'prefix' => '', 'default' => true ), array( 'siteaccess' => 'de', 'prefix' => 'de', 'default' => false ) ),
+                           $two->members( $context ) );
+        $this->assertSame( array(), $two->validate( $context )['errors'] );
+        $this->assertSame( array( 'siteaccess' => 'de', 'prefix' => 'de', 'path' => '/about' ), expStaticTarget::memberOf( '/de/about', $two->members( $context ) ) );
+        $this->assertSame( array( 'siteaccess' => 'de', 'prefix' => 'de', 'path' => '/' ), expStaticTarget::memberOf( '/de', $two->members( $context ) ) );
+        $this->assertSame( array( 'siteaccess' => 'site', 'prefix' => '', 'path' => '/design' ), expStaticTarget::memberOf( '/design', $two->members( $context ) ) );
+
+        // several, none at the root: each in its folder
+        $none = self::valid( array( 'SiteAccess' => '', 'SiteAccessList' => array( 'site', 'de' ) ) );
+        $this->assertSame( '', $none->defaultSiteAccess() );
+        $this->assertSame( 'site', $none->siteAccess(), 'named by the first' );
+        $this->assertSame( array( 'site', 'de' ), array_column( $none->members( $context ), 'prefix' ) );
+        $this->assertNull( expStaticTarget::memberOf( '/about', $none->members( $context ) ) );
+
+        // the checks
+        $errors = function ( array $settings ) use ( $context )
+        {
+            return implode( ' | ', self::valid( array( 'SiteAccess' => '' ) + $settings )->validate( $context )['errors'] );
+        };
+        $this->assertStringContainsString( 'SiteAccessList[]=admin is an administration', $errors( array( 'SiteAccessList' => array( 'site', 'admin' ) ) ) );
+        $this->assertStringContainsString( 'SiteAccessList[]=site_editor is an administration', $errors( array( 'SiteAccessList' => array( 'site', 'site_editor' ) ) ) );
+        $this->assertStringContainsString( 'SiteAccessList[]=ghost is not a siteaccess', $errors( array( 'SiteAccessList' => array( 'site', 'ghost' ) ) ) );
+        $this->assertStringContainsString( 'DefaultSiteAccess=nourl is not one of the siteaccesses', $errors( array( 'SiteAccessList' => array( 'site', 'de' ), 'DefaultSiteAccess' => 'nourl' ) ) );
+        $this->assertStringContainsString( 'DefaultSiteAccess=de is not one of', $errors( array( 'SiteAccess' => 'site', 'DefaultSiteAccess' => 'de' ) ) );
+        $this->assertStringContainsString( 'SiteAccess is not set', $errors( array() ) );
+        $noPrefix = $context;
+        $noPrefix['prefixes']['de'] = null;
+        $message = implode( ' | ', self::valid( array( 'SiteAccess' => '', 'SiteAccessList' => array( 'site', 'de' ), 'DefaultSiteAccess' => 'site' ) )->validate( $noPrefix )['errors'] );
+        $this->assertStringContainsString( 'The siteaccess de is not selected by a part of the address', $message );
+        $this->assertSame( array(), self::valid( array( 'SiteAccess' => '', 'SiteAccessList' => array( 'site', 'de' ), 'DefaultSiteAccess' => 'de' ) )->validate( $noPrefix )['errors'],
+                           'a siteaccess selected by its host only may be the one at the root' );
+        $same = $context;
+        $same['prefixes']['de'] = 'site';
+        $this->assertStringContainsString( 'are selected by the same URI prefix /site/',
+                                           implode( ' | ', self::valid( array( 'SiteAccess' => '', 'SiteAccessList' => array( 'site', 'de' ) ) )->validate( $same )['errors'] ) );
+        $search = $context;
+        $search['prefixes']['de'] = 'static-search';
+        $this->assertStringContainsString( 'is a folder the build writes itself',
+                                           implode( ' | ', self::valid( array( 'SiteAccess' => '', 'SiteAccessList' => array( 'site', 'de' ), 'DefaultSiteAccess' => 'site' ) )->validate( $search )['errors'] ) );
+        $this->assertContains( 'SiteAccess=intranet is not in SiteAccessList[] and is not published: SiteAccessList[] names the siteaccesses when it is set.',
+                               self::valid( array( 'SiteAccess' => 'intranet', 'SiteAccessList' => array( 'site', 'de' ), 'DefaultSiteAccess' => 'site' ) )->validate( $context )['warnings'] );
+
+        // the URI prefixes of the matching settings
+        $this->assertSame( array( 'site' => 'site', 'de' => 'de' ), expStaticTarget::uriPrefixes( array( 'match_order' => 'uri;host' ), array( 'site', 'de' ) ) );
+        $this->assertSame( array( 'site' => null, 'de' => 'deutsch' ),
+                           expStaticTarget::uriPrefixes( array( 'match_order' => array( 'uri' ), 'uri_match_type' => 'map', 'uri_match_map' => array( 'deutsch;de' ) ), array( 'site', 'de' ) ) );
+        $this->assertSame( array( 'site' => null, 'de' => 'de/shop' ),
+                           expStaticTarget::uriPrefixes( array( 'match_order' => 'host_uri;host', 'host_uri_match_map' => array( 'www.example.com;de/shop;de', 'www.example.com;;site' ) ), array( 'site', 'de' ) ) );
+        $this->assertSame( array( 'site' => null ), expStaticTarget::uriPrefixes( array( 'match_order' => 'host' ), array( 'site' ) ) );
+        $this->assertSame( array( 'site' => null ), expStaticTarget::uriPrefixes( array( 'match_order' => 'uri', 'uri_match_element' => 2 ), array( 'site' ) ) );
     }
 }

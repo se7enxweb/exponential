@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>किमपि स्थानान्तरणं न लिखितम्: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>खण्डशः दीर्घः सञ्चालनः</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>रिक्तक्षेत्राणि migration.ini [RunSettings] इत्यस्य विन्यासान् रक्षन्ति।</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>अधिकतमं एतावत्यः स्थानान्तरणानि</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>एतस्मात् परं अन्यत् स्थानान्तरणं नास्ति (क्षणाः)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>स्थानान्तरणयोः मध्ये विरामः (क्षणाः)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>न्यूनतरं प्राथम्यम् (1 तः 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>दीर्घसञ्चालनक्षेत्रं 1 तः आरभ्य पूर्णाङ्कः (विरामः: 0 तः 60 क्षणाः, प्राथम्यम्: 1 तः 19), अथवा रिक्तम्।</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>तत् %time वादने स्वयं पिधीयते।</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>एतस्मात् परं स्वयं पिधत्ताम् (निमेषाः, ऐच्छिकम्)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>निमेषाः 1 तः 44640 (31 दिनानि) पर्यन्तं पूर्णाङ्कः, अथवा रिक्तम्।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>संस्करणम्</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>प्रकाशनीयाः जालस्थलप्रवेशाः</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>जालस्थलप्रवेशः</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>मूले</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>मूले कोऽपि जालस्थलप्रवेशः नास्ति: प्रत्येकं स्वसञ्चिकायाम् अस्ति, मूलं च तान् सम्बध्नाति</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>जालस्थलप्रवेशाः</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>एकं जालस्थलप्रवेशं, अथवा स्वस्य URI-उपसर्गेण एकं आतिथेयं विभजमानान् अनेकान् चिनुत। मूले स्थितः तत्रैव परिवेष्यते, अन्ये स्वोपसर्गस्य सञ्चिकायाम् (/ger/); तेषां मध्ये सम्बन्धाः प्रतिलिप्याम् एव तिष्ठन्ति। प्रशासनस्य प्रवेशाः कदापि न प्रदर्श्यन्ते।</translation>
     </message>
 </context>
 <context>

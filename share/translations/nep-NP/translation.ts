@@ -81094,6 +81094,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>कुनै माइग्रेसन लेखिएन: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>खण्डहरूमा एउटा लामो रन</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>खाली फिल्डहरूले migration.ini [RunSettings] का सेटिङ राख्छन्।</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>अधिकतम यति माइग्रेसन</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>यसपछि थप माइग्रेसन छैन (सेकेन्ड)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>माइग्रेसनहरूबीच विराम (सेकेन्ड)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>कम प्राथमिकता (1 देखि 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>लामो रनको फिल्ड 1 बाट सुरु हुने पूर्ण संख्या हो (विराम: 0 देखि 60 सेकेन्ड, प्राथमिकता: 1 देखि 19), वा खाली।</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>यो %time मा आफैं बन्द हुन्छ।</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>यसपछि आफैं बन्द गर्नुहोस् (मिनेट, ऐच्छिक)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>मिनेट 1 देखि 44640 (31 दिन) सम्मको पूर्ण संख्या हो, वा खाली।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83451,6 +83491,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>संस्करण</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>प्रकाशित गर्ने साइट पहुँचहरू</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>साइट पहुँच</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>मूलमा</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>मूलमा कुनै साइट पहुँच छैन: प्रत्येक आफ्नो फोल्डरमा छ, र मूलले तिनीहरूलाई लिङ्क गर्छ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>साइट पहुँचहरू</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>एउटा साइट पहुँच, वा आफ्नो URI उपसर्गद्वारा एउटा होस्ट साझा गर्ने धेरै छान्नुहोस्। मूलमा भएको त्यहीँ दिइन्छ, अरू आफ्नो उपसर्गको फोल्डरमा (/ger/); तिनीहरूबीचका लिङ्कहरू प्रतिलिपिमै रहन्छन्। प्रशासनका साइट पहुँचहरू कहिल्यै देखाइँदैनन्।</translation>
     </message>
 </context>
 <context>

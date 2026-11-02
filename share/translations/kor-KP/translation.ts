@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>이행을 쓰지 못했습니다: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>부분으로 나누어 오래 실행</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>비워 둔 필드는 migration.ini [RunSettings]의 설정을 유지합니다.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>최대 이 개수만큼의 마이그레이션</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>이 시간 이후에는 마이그레이션 없음(초)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>마이그레이션 사이의 일시 중지(초)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>낮은 우선순위(1~19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>장시간 실행 필드는 1 이상의 정수입니다(일시 중지: 0~60초, 우선순위: 1~19). 비워 둘 수도 있습니다.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>%time에 자동으로 닫힙니다.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>이 시간 후 자동으로 닫기(분, 선택 사항)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>분은 1~44640(31일)의 정수입니다. 비워 둘 수도 있습니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>판</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>공개할 싸이트접근</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>싸이트접근</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>뿌리에</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>뿌리에 싸이트접근 없음: 각각 제 등록부에 있고 뿌리가 그것들에 련결합니다</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>싸이트접근</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>싸이트접근 하나 또는 URI 앞붙이로 한 주콤퓨터를 공유하는 여러개를 선택하십시오. 뿌리에 있는것은 거기서 봉사되고 나머지는 앞붙이 등록부 (/ger/)에 있습니다. 그것들사이의 련결은 사본안에 남습니다. 관리 싸이트접근은 절대로 제공되지 않습니다.</translation>
     </message>
 </context>
 <context>

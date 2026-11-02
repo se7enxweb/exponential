@@ -81084,6 +81084,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>未写入迁移:%reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>分段长时间运行</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>留空的字段保留 migration.ini [RunSettings] 中的设置。</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>最多这么多个迁移</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>在此之后不再启动迁移（秒）</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>迁移之间的暂停（秒）</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>较低优先级（1 到 19）</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>长时间运行字段是从 1 开始的整数（暂停：0 到 60 秒，优先级：1 到 19），或留空。</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>它将在 %time 自动关闭。</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>在此之后自动关闭（分钟，可选）</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>分钟数为 1 到 44640（31 天）的整数，或留空。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83441,6 +83481,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>版本</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>要发布的站点访问</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>站点访问</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>在根目录</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>根目录没有站点访问：每个都在自己的文件夹中，根目录链接到它们</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>站点访问</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>勾选一个站点访问，或多个通过 URI 前缀共享同一主机的站点访问。根目录的那个在根目录提供，其他的在其前缀的文件夹中 (/ger/)；它们之间的链接保留在副本中。从不提供管理站点访问。</translation>
     </message>
 </context>
 <context>

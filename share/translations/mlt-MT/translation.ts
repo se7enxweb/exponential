@@ -81116,6 +81116,46 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>No migration was written: %reason</source>
         <translation>Ma nkitbet l-ebda migrazzjoni: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Tħaddim twil f'partijiet</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>L-oqsma vojta jżommu s-settings ta' migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>L-aktar dan in-numru ta' migrazzjonijiet</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Ebda migrazzjoni oħra wara (sekondi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Waqfa bejn il-migrazzjonijiet (sekondi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prijorità aktar baxxa (1 sa 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Qasam ta' tħaddim twil huwa numru sħiħ minn 1 (il-waqfa: sekondi minn 0 sa 60, il-prijorità: 1 sa 19), jew vojt.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Jingħalaq waħdu fil-%time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Agħlaq waħdu wara (minuti, mhux obbligatorju)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Il-minuti huma numru sħiħ minn 1 sa 44640 (31 jum), jew vojt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83473,6 +83513,30 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>Version</source>
         <translation>Verżjoni</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Aċċessi għas-sit li jiġu ppubblikati</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aċċess għas-sit</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Fl-għerq</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>L-ebda aċċess fl-għerq: kull wieħed jinsab fil-folder tiegħu, u l-għerq jorbot magħhom</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Aċċessi għas-sit</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Immarka aċċess wieħed għas-sit, jew diversi li jaqsmu host wieħed bil-prefiss URI tagħhom. Dak fl-għerq jiġi servut hemm, l-oħrajn fil-folder tal-prefiss tagħhom (/ger/); il-links bejniethom jibqgħu fil-kopja. L-aċċessi tal-amministrazzjoni qatt ma jiġu offruti.</translation>
     </message>
 </context>
 <context>

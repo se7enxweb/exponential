@@ -81086,6 +81086,46 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>No migration was written: %reason</source>
         <translation>Không có bản chuyển đổi nào được ghi: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Một lần chạy dài theo từng phần</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Các trường để trống giữ nguyên cài đặt của migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Tối đa chừng này lượt di chuyển</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Không di chuyển thêm sau (giây)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Tạm dừng giữa các lượt di chuyển (giây)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Mức ưu tiên thấp hơn (1 đến 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Trường chạy dài là số nguyên từ 1 (tạm dừng: giây từ 0 đến 60, mức ưu tiên: 1 đến 19), hoặc để trống.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Nó tự đóng lúc %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Tự đóng sau (phút, tùy chọn)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Số phút là số nguyên từ 1 đến 44640 (31 ngày), hoặc để trống.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>Version</source>
         <translation>Phiên bản</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Điểm truy cập trang cần xuất bản</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ở gốc</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Không có điểm truy cập ở gốc: mỗi cái nằm trong thư mục riêng, và gốc liên kết đến chúng</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Đánh dấu một điểm truy cập trang, hoặc nhiều điểm dùng chung một máy chủ theo tiền tố URI. Điểm ở gốc được phục vụ ở đó, các điểm khác trong thư mục tiền tố của chúng (/ger/); liên kết giữa chúng nằm lại trong bản sao. Điểm truy cập quản trị không bao giờ được đưa ra.</translation>
     </message>
 </context>
 <context>

@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>هیچ مهاجرتی نوشته نشد: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>اجرای طولانی در بخش‌ها</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>فیلدهای خالی تنظیمات migration.ini [RunSettings] را نگه می‌دارند.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>حداکثر این تعداد مهاجرت</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>پس از این هیچ مهاجرتی نیست (ثانیه)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>وقفه بین مهاجرت‌ها (ثانیه)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>اولویت پایین‌تر (۱ تا ۱۹)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>فیلد اجرای طولانی عدد صحیح از 1 است (وقفه: ثانیه از 0 تا 60، اولویت: 1 تا 19) یا خالی.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>در ساعت %time خودش بسته می‌شود.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>پس از این خودش بسته شود (دقیقه، اختیاری)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>دقیقه‌ها عدد صحیح از 1 تا 44640 (31 روز) است یا خالی.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>نسخه</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>دسترسی‌های سایت برای نشر</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>دسترسی سایت</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>در ریشه</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>هیچ دسترسی سایتی در ریشه نیست: هرکدام در پوشهٔ خود است و ریشه به آن‌ها پیوند می‌دهد</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>دسترسی‌های سایت</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>یک دسترسی سایت، یا چند دسترسی را که با پیشوند URI یک میزبان را شریک‌اند علامت بزنید. آنکه در ریشه است همان‌جا ارائه می‌شود، بقیه در پوشهٔ پیشوند خود (/ger/)؛ پیوندهای میان آن‌ها در نسخه می‌مانند. دسترسی‌های مدیریت هرگز پیشنهاد نمی‌شوند.</translation>
     </message>
 </context>
 <context>

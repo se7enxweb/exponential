@@ -81084,6 +81084,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>কোনো মাইগ্রেশন লেখা হয়নি: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>অংশে অংশে একটি দীর্ঘ রান</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>খালি ক্ষেত্র migration.ini [RunSettings]-এর সেটিংস রাখে।</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>সর্বোচ্চ এতগুলো মাইগ্রেশন</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>এর পরে আর কোনো মাইগ্রেশন নয় (সেকেন্ড)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>মাইগ্রেশনের মধ্যে বিরতি (সেকেন্ড)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>কম অগ্রাধিকার (১ থেকে ১৯)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>দীর্ঘ রানের ক্ষেত্র 1 থেকে একটি পূর্ণসংখ্যা (বিরতি: 0 থেকে 60 সেকেন্ড, অগ্রাধিকার: 1 থেকে 19), অথবা খালি।</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>এটি %time-এ নিজে থেকে বন্ধ হবে।</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>এর পরে নিজে থেকে বন্ধ হবে (মিনিট, ঐচ্ছিক)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>মিনিট 1 থেকে 44640 (31 দিন) পর্যন্ত একটি পূর্ণসংখ্যা, অথবা খালি।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83441,6 +83481,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>সংস্করণ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>প্রকাশ করার সাইটঅ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>সাইটঅ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>রুটে</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>রুটে কোনো সাইটঅ্যাক্সেস নেই: প্রতিটি তার ফোল্ডারে, আর রুট সেগুলোর লিংক দেয়</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>সাইটঅ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>একটি সাইটঅ্যাক্সেস, বা URI প্রিফিক্স দিয়ে একটি হোস্ট ভাগ করে এমন কয়েকটি বেছে নিন। রুটেরটি সেখানে পরিবেশিত হয়, অন্যগুলো তাদের প্রিফিক্সের ফোল্ডারে (/ger/); তাদের মধ্যের লিংক কপিতেই থাকে। প্রশাসনের সাইটঅ্যাক্সেস কখনো দেখানো হয় না।</translation>
     </message>
 </context>
 <context>

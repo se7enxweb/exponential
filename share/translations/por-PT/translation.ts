@@ -81116,6 +81116,46 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>No migration was written: %reason</source>
         <translation>Nenhuma migração foi escrita: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Uma execução longa por partes</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Os campos vazios mantêm as definições de migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>No máximo este número de migrações</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Nenhuma migração adicional depois de (segundos)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pausa entre migrações (segundos)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioridade mais baixa (1 a 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Um campo de execução longa é um número inteiro a partir de 1 (a pausa: segundos de 0 a 60, a prioridade: 1 a 19), ou vazio.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Fecha-se sozinha às %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Fechar-se sozinha depois de (minutos, opcional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Os minutos são um número inteiro de 1 a 44640 (31 dias), ou vazio.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83473,6 +83513,30 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
     <message>
         <source>Version</source>
         <translation>Versão</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Acessos ao site a publicar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Acesso ao site (siteaccess)</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Na raiz</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nenhum acesso na raiz: cada um está na sua pasta, e a raiz liga para eles</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Acessos ao site</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Assinale um acesso ao site, ou vários que partilham um anfitrião pelo seu prefixo de URI. O da raiz é servido aí, os outros na pasta do seu prefixo (/ger/); as ligações entre eles ficam na cópia. Os acessos de administração nunca são oferecidos.</translation>
     </message>
 </context>
 <context>

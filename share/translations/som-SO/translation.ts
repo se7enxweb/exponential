@@ -81084,6 +81084,46 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>No migration was written: %reason</source>
         <translation>Wax guuritaan ah lama qorin: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Orod dheer oo qaybo ah</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Meelaha madhan waxay xajiyaan dejinta migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Ugu badnaan tiradan wareejin</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Wareejin dambe ma jirto ka dib (ilbiriqsi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Nasasho u dhexeysa wareejinta (ilbiriqsi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Mudnaan hoose (1 ilaa 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Meesha orodka dheer waa tiro dhan laga bilaabo 1 (nasashada: ilbiriqsi 0 ilaa 60, mudnaanta: 1 ilaa 19), ama madhan.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Waxay is xidhaa %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Is xidh ka dib (daqiiqo, ikhtiyaari)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Daqiiqaduhu waa tiro dhan 1 ilaa 44640 (31 maalmood), ama madhan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83441,6 +83481,30 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>Version</source>
         <translation>Nooc</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Gelitaannada goobta ee la daabacayo</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gelitaanka goobta</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Xididka</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Xididka ma jiro gelitaan goob: mid kastaa wuxuu ku jiraa galkiisa, xididkuna wuu ku xidhaa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Gelitaannada goobta</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Calaamadee hal gelitaan goob, ama dhowr wadaaga hal martigeliye iyagoo adeegsanaya horgalaha URI. Ka xididka ku jira halkaas ayaa laga bixiyaa, kuwa kale galka horgalahooda (/ger/); xiriirrada u dhexeeya waxay ku hadhaan nuqulka. Gelitaannada maamulka weligood lama soo bandhigo.</translation>
     </message>
 </context>
 <context>

@@ -81086,6 +81086,46 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>No migration was written: %reason</source>
         <translation>Nta yimurwa ryanditswe: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Igikorwa kirekire mu bice</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Imirima irimwo ubusa igumana ingenamiterere ya migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Ntiharenze iyi migration</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Nta migration yindi inyuma ya (amasegonda)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Akaruhuko hagati ya migration (amasegonda)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Ibanze rito (1 kugeza kuri 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Umurima w'igikorwa kirekire ni umubare wuzuye uhereye kuri 1 (akaruhuko: amasegonda kuva kuri 0 kugeza kuri 60, ibanze: 1 kugeza kuri 19), canke ubusa.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Kirafunga ubwacyo saa %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Funga ubwayo inyuma ya (iminuta, ntibihambaye)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Iminuta ni umubare wuzuye kuva kuri 1 kugeza kuri 44640 (iminsi 31), canke ubusa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>Version</source>
         <translation>Verisiyo</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Uburyo bwo gushika ku rubuga buzosohorwa</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Uburyo bwo gushika ku rubuga</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Mu mizi</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nta buryo bwo gushika ku rubuga buri mu mizi: kimwe cose kiri mu bubiko bwaco, imizi irabihuza</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Uburyo bwo gushika ku rubuga</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Hitamwo uburyo bumwe bwo gushika ku rubuga, canke bwinshi busangiye umushitsi umwe biciye ku ntango ya URI. Uburi mu mizi butangirwa ngaho, ubundi mu bubiko bw'intango yabwo (/ger/); amahuza hagati yabwo aguma mu kopi. Uburyo bw'ubuyobozi ntibutangwa na rimwe.</translation>
     </message>
 </context>
 <context>

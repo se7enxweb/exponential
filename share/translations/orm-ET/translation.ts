@@ -81086,6 +81086,46 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>No migration was written: %reason</source>
         <translation>Godaansi tokkollee hin barreeffamne: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Hojii dheeraa kutaa kutaadhaan</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Dirreewwan duwwaan qindaa'ina migration.ini [RunSettings] ni eegu.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Daangaan guddaan migration kana</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Migration biraa hin jiru booda (sekondii)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Boqonnaa migration gidduu (sekondii)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Dursa gad aanaa (1 hanga 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Dirreen hojii dheeraa lakkoofsa guutuu 1 irraa eegalu dha (boqonnaa: sekondii 0 hanga 60, dursa: 1 hanga 19), yookaan duwwaa.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>%time irratti ofumaan cufama.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Booda ofumaan cufi (daqiiqaa, filannoo)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Daqiiqaan lakkoofsa guutuu 1 hanga 44640 (guyyaa 31) dha, yookaan duwwaa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>Version</source>
         <translation>Fooyya'iinsa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Seensawwan marsariitii maxxanfaman</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Seensa marsariitii</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Hidda irratti</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Hidda irratti seensi marsariitii hin jiru: tokkoon tokkoon isaanii kuusaa isaa keessa jira, hiddi immoo isaanitti hidhata</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Seensawwan marsariitii</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Seensa marsariitii tokko, ykn kanneen maxxantuu URI isaaniitiin keessummeessaa tokko qooddatan hedduu mallattoo godhi. Kan hidda irra jiru achitti dhiyaata, kanneen biroo kuusaa maxxantuu isaanii keessatti (/ger/); hidhaminsi gidduu isaanii garagalcha keessatti hafa. Seensawwan bulchiinsaa gonkumaa hin dhiyaatan.</translation>
     </message>
 </context>
 <context>

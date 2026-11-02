@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>Міграцыя не запісана: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Працяглы запуск па частках</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Пустыя палі захоўваюць налады migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Не больш за гэтулькі міграцый</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Больш ніякіх міграцый пасля (секунды)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Паўза паміж міграцыямі (секунды)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Ніжэйшы прыярытэт (ад 1 да 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Поле працяглага запуску - цэлы лік ад 1 (паўза: секунды ад 0 да 60, прыярытэт: ад 1 да 19) або пустое.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Яно закрываецца самастойна ў %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Закрыць самастойна праз (хвіліны, неабавязкова)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Хвіліны - цэлы лік ад 1 да 44640 (31 дзень) або пустое.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83443,6 +83483,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>Версія</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Доступы да сайта для публікацыі</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Доступ да сайта</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>У корані</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Няма доступу да сайта ў корані: кожны ў сваёй папцы, а корань спасылаецца на іх</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Доступы да сайта</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Адзначце адзін доступ да сайта або некалькі, што дзеляць адзін хост праз свой URI-прэфікс. Той, што ў корані, абслугоўваецца там, астатнія — у папцы свайго прэфікса (/ger/); спасылкі паміж імі застаюцца ў копіі. Адміністрацыйныя доступы ніколі не прапануюцца.</translation>
     </message>
 </context>
 <context>

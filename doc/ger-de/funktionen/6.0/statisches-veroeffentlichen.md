@@ -16,8 +16,10 @@ und die Seiten unter Setup > Statisches Veröffentlichen. Die Einrichtung bei Gi
 
 ## Was Sie bekommen
 
-- **Ziele** in `staticcache.ini`: Jeder Block `[Target_<id>]` nennt einen Front-Siteaccess, wie seine Links
-  geschrieben werden und wohin die Kopie gehen soll. Eine Installation kann viele Ziele haben.
+- **Ziele** in `staticcache.ini`: Jeder Block `[Target_<id>]` nennt einen Front-Siteaccess, oder mehrere, die sich
+  über ihr URI-Präfix einen Host teilen (`SiteAccessList[]`, eine Kopie mit dem `DefaultSiteAccess` im Stamm und den
+  anderen in ihren Ordnern: [Statisches Veröffentlichen für Multisite-Installationen](../../anleitungen/statisches-veroeffentlichen-fuer-multisite-installationen.md)),
+  wie seine Links geschrieben werden und wohin die Kopie gehen soll. Eine Installation kann viele Ziele haben.
 - **`exp:static:build <ziel>`**: durchläuft den Siteaccess als anonymer Benutzer, nimmt heraus, was eine öffentliche
   Kopie nicht tragen darf, schreibt die Links um, kopiert die Dateien, die die Seiten brauchen, und schreibt die
   Zusatzdateien, die ein statischer Host erwartet.
@@ -116,6 +118,8 @@ gebaut):
 |---|---|---|
 | `Name` | die Kennung | In Listen angezeigt |
 | `SiteAccess` | | Der zu veröffentlichende Front-Siteaccess; Administrations- und Bearbeitungs-Siteaccesses werden abgelehnt |
+| `SiteAccessList[]` | leer | Mehrere Front-Siteaccesses in einer Kopie, statt `SiteAccess`: jeder außer dem Standard im Ordner seines URI-Präfixes (`/bold_ger/`); Links zwischen ihnen bleiben in der Kopie. Jeder muss über ein URI-Präfix gewählt werden (MatchOrder `uri`, oder `host_uri` mit einer URI) |
+| `DefaultSiteAccess` | leer | Der Siteaccess aus `SiteAccessList[]` im Stamm der Kopie; leer: jeder in seinem Ordner, und der Stamm ist eine Seite, die auf sie verlinkt |
 | `Links` | `relative` | `relative` oder `base-path` |
 | `BasePath` | leer | Der Pfad, unter dem die Website ausgeliefert wird: `/<repository>/` für eine GitHub-Projekt-Website, leer für eine eigene Domain |
 | `PublicURL` | leer | Die öffentliche Adresse, für die Sitemap, `robots.txt` und absolute Canonical- und Social-Card-Links |

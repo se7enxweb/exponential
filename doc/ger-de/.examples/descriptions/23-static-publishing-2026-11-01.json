@@ -28,12 +28,12 @@
         "de": "Das Durchlaufen nach so vielen Seiten beenden (Standard MaxPages des Ziels)"
     },
     "command:expstaticbuild --nodes": {
-        "en": "Build only the pages of these nodes (node ids; a comma list or repeated); the rest of the last build stays",
-        "de": "Nur die Seiten dieser Knoten bauen (Knoten-IDs; eine Kommaliste oder wiederholt); der Rest des letzten Builds bleibt"
+        "en": "Build only the pages of these nodes (node ids; a comma list or repeated), in each siteaccess of the target; the rest of the last build stays",
+        "de": "Nur die Seiten dieser Knoten bauen (Knoten-IDs; eine Kommaliste oder wiederholt), in jedem Siteaccess des Ziels; der Rest des letzten Builds bleibt"
     },
     "command:expstaticbuild --paths": {
-        "en": "Build only these pages, by their path in the site (/about-us; a comma list or repeated); the rest of the last build stays",
-        "de": "Nur diese Seiten bauen, nach ihrem Pfad in der Website (/about-us; eine Kommaliste oder wiederholt); der Rest des letzten Builds bleibt"
+        "en": "Build only these pages, by their path in the copy (/about-us, /ger/about-us for a siteaccess in a folder; a comma list or repeated); the rest of the last build stays",
+        "de": "Nur diese Seiten bauen, nach ihrem Pfad in der Kopie (/about-us, /ger/about-us für einen Siteaccess in einem Ordner; eine Kommaliste oder wiederholt); der Rest des letzten Builds bleibt"
     },
     "command:expstaticbuild --report": {
         "en": "Also write the report (exp-static/1, JSON) to this file",

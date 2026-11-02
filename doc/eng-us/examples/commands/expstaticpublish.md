@@ -40,7 +40,7 @@ cronjob part staticpublish tries again. Every publish is a row of exp_static_run
 | Option | Value | Help |
 |---|---|---|
 | `--build` |  | Build the target first (as exp:static:build); nothing is committed when the build does not finish |
-| `--nodes` | required | Build only the pages of these nodes (node ids; a comma list or repeated); the rest of the last build stays |
+| `--nodes` | required | Build only the pages of these nodes (node ids; a comma list or repeated), in each siteaccess of the target; the rest of the last build stays |
 | `--message` | required | The commit message (default: what was published, or which publish is restored) |
 | `--no-push` |  | Commit and tag, but do not push (exp:static:push pushes later) |
 | `--format` | required | text (default) or json (the machine output exp-static/1) |

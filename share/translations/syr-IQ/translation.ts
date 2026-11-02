@@ -81094,6 +81094,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>ܠܐ ܐܬܟܬܒ ܫܘܢܝܐ: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>ܥܒܕܐ ܐܪܝܟܐ ܒܦܘܠܓܐ</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ܚܩܠܐ ܣܪܝܩܐ ܢܛܪܝܢ ܣܝܡܬܐ ܕmigration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ܐܬܪܘܬܐ ܠܐ ܝܬܝܪܐ ܡܢ ܗܠܝܢ</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ܐܬܪܘܬܐ ܐܚܪܬܐ ܠܝܬ ܒܬܪ (ܪܦܦܐ)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>ܢܝܚܐ ܒܝܢܬ ܐܬܪܘܬܐ (ܪܦܦܐ)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ܩܕܡܘܬܐ ܬܚܬܝܬܐ (1 ܥܕܡܐ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ܚܩܠܐ ܕܥܒܕܐ ܐܪܝܟܐ ܡܢܝܢܐ ܡܠܝܐ ܗܘ ܡܢ 1 (ܢܝܚܐ: ܪܦܦܐ ܡܢ 0 ܥܕܡܐ 60، ܩܕܡܘܬܐ: 1 ܥܕܡܐ 19)، ܐܘ ܣܪܝܩܐ.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ܣܟܪ ܒܢܦܫܗ ܒ%time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ܣܟܪ ܒܢܦܫܗ ܒܬܪ (ܩܛܝܢܬܐ، ܨܒܘܬܢܝܬܐ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>ܩܛܝܢܬܐ ܡܢܝܢܐ ܡܠܝܐ ܗܘ ܡܢ 1 ܥܕܡܐ 44640 (31 ܝܘܡܬܐ)، ܐܘ ܣܪܝܩܐ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83451,6 +83491,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>ܡܦܩܬܐ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ܡܥܠ̈ܢܐ ܕܐܬܪܐ ܠܡܦܪܣܡܘ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ܡܥܠܢܐ ܕܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ܒܥܩܪܐ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ܠܝܬ ܡܥܠܢܐ ܒܥܩܪܐ: ܟܠ ܚܕ ܒܬܝܩܗ ܕܝܠܗ، ܘܥܩܪܐ ܡܐܣܪ ܠܗܘܢ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ܡܥܠ̈ܢܐ ܕܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ܪܫܘܡ ܚܕ ܡܥܠܢܐ ܕܐܬܪܐ، ܐܘ ܣܓܝܐܐ ܕܡܫܬܘܬܦܝܢ ܒܡܐܪܚ ܚܕ ܒܐܦܬܚܐ ܕURI ܕܝܠܗܘܢ. ܗܘ ܕܒܥܩܪܐ ܡܬܬܝܗܒ ܬܡܢ، ܘܐܚܪܢܐ ܒܬܝܩܐ ܕܐܦܬܚܐ ܕܝܠܗܘܢ (/ger/)؛ ܐܣܘܪܐ ܕܒܝܢܝܗܘܢ ܡܩܘܝܢ ܒܢܘܣܚܬܐ. ܡܥܠ̈ܢܐ ܕܡܕܒܪܢܘܬܐ ܠܐ ܡܬܩܪܒܝܢ ܡܢ ܡܬܘܡ.</translation>
     </message>
 </context>
 <context>
