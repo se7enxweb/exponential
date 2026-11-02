@@ -229,6 +229,32 @@ erreichbar ist. Ein CI-Job kann bauen, prüfen und pushen:
 GH_PAGES_TOKEN=... ./console exp:static:publish github-public --format=json     # Credential=token:env:GH_PAGES_TOKEN
 ```
 
+## Mit dem Vorlagen-Repository beginnen
+
+Für eine Site, die vollständig bei GitHub gebaut wird, ohne eigenen Server, beginnen Sie mit dem Vorlagen-Repository
+[exponential-static-site-starter](https://github.com/se7enxweb/exponential-static-site-starter). Klicken Sie auf **Use this template**, stellen Sie
+**Settings > Pages > Source** auf **GitHub Actions** und pushen Sie. Sein Workflow:
+
+1. installiert Exponential mit Composer;
+2. holt Ihre Site: eine SQLite-Datenbank und den Storage-Ordner aus `data/` und dazu Ihre Einstellungen, Erweiterungen
+   und Designs aus `site/`, oder, wenn dort keine Datenbank liegt, ein Site-Paket, das `exp:install` installiert;
+3. stellt die Site mit dem eingebauten Webserver von PHP auf `127.0.0.1` bereit und führt `exp:static:build` und
+   `exp:static:diff --check-links` darauf aus;
+4. übergibt die Kopie an die Pages-Actions von GitHub, die sie unter `https://<owner>.github.io/<repository>/`
+   veröffentlichen.
+
+Ein Token ist nicht nötig: Das Deployment nutzt die Rechte, die GitHub dem Workflow gibt. Das README der Vorlage
+führt ihre Einstellungen und die Grenzen von GitHub Pages auf; dasselbe Skript baut die Kopie auch auf Ihrem eigenen
+Rechner.
+
+## Ansehen: die Demo-Site
+
+Die Demo-Site von Exponential wird auf diesem Weg als statische Kopie unter [https://se7enxweb.github.io/exponential-demo-site-static/](https://se7enxweb.github.io/exponential-demo-site-static/)
+veröffentlicht (in Kürze), aus dem Repository
+[se7enxweb/exponential-demo-site-static](https://github.com/se7enxweb/exponential-demo-site-static). Ihre Seiten zeigen,
+was eine statische Kopie behält (Layouts, Menüs, Galerien, Bilder und Downloads) und was sich ändert (die Suche läuft
+über einen vorab gebauten Index im Browser; Formulare, Anmeldung und Shop entfallen).
+
 ## Fehlerbehebung
 
 | Symptom | Ursache und Abhilfe |

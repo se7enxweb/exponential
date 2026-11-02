@@ -36,6 +36,9 @@ früheren zurückkehren können.
   einer bestehenden Site bis zu einer erreichbaren `github.io`-Adresse.
 - Was es ist und was es dem statischen Cache hinzufügt:
   [Statisches Veröffentlichen](../../funktionen/6.0/statisches-veroeffentlichen.md).
+- Entwicklung und CI: Beginnen Sie mit dem Vorlagen-Repository [exponential-static-site-starter](https://github.com/se7enxweb/exponential-static-site-starter),
+  das eine statische Kopie mit GitHub Actions baut und auf GitHub Pages veröffentlicht.
+- Eine statische Kopie ansehen: die Demo-Site unter [https://se7enxweb.github.io/exponential-demo-site-static/](https://se7enxweb.github.io/exponential-demo-site-static/) (in Kürze).
 
 ## Die Schritte
 

@@ -32,6 +32,9 @@ publish. Every publish is kept, so you can always go back to an earlier one.
 - New to it? Follow the tutorial [Host static sites on GitHub Pages](../../guides/host-static-sites-on-github-pages.md):
   from an existing site to a live `github.io` address.
 - What it is and what it adds to the static cache: [Static publishing](../../features/6.0/static-publishing.md).
+- Developers and CI: start from the template repository [exponential-static-site-starter](https://github.com/se7enxweb/exponential-static-site-starter), which
+  builds a static copy with GitHub Actions and deploys it to GitHub Pages.
+- See a static copy: the demo site at [https://se7enxweb.github.io/exponential-demo-site-static/](https://se7enxweb.github.io/exponential-demo-site-static/) (coming soon).
 
 ## The steps
 

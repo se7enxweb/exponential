@@ -6947,7 +6947,7 @@ cdac22058aa72ebee655751b3f933e83  doc/eng-us/guides/finding-an-error-by-its-refe
 996ecbfce279c75c2c2fdfdd94d6a171  doc/eng-us/guides/getting-started.md
 f7352a34a1031d780b6996c1dab0204a  doc/eng-us/guides/graphql-recipes.md
 39b2ec78e026ac8f19a5466682cc008a  doc/eng-us/guides/graphql-walkthrough.md
-653f284b4ce857eeb11b4358aa112b20  doc/eng-us/guides/host-static-sites-on-github-pages.md
+affc291f4a13e6a8d4d1a5c3faed556b  doc/eng-us/guides/host-static-sites-on-github-pages.md
 fbcbc9cf7bbfb1f95906327d9513b2c6  doc/eng-us/guides/images/account-approval/approval-item.png
 8bcb3ac63cc2341e4ef7d3045867af4b  doc/eng-us/guides/images/account-approval/approved.png
 4a8739c9f2f5b65580e85608c8d2f948  doc/eng-us/guides/images/account-approval/section-workflow.png
@@ -11669,7 +11669,7 @@ fc23d60d728e81d272031605c23d84a3  doc/eng-us/help/sqli-import/README.md
 7f4dc9243ab6deb0ed1d81bf1851b8b0  doc/eng-us/help/sqli-import/schedules-and-cron.md
 d573b991b0d68701551d0a1541af5eec  doc/eng-us/help/sqli-import/the-import-editor.md
 31561f92b58b4db7a20db82581154906  doc/eng-us/help/sqli-import/upgrading-from-1x.md
-74c0054625ef48b4f6e4936d8b0d456d  doc/eng-us/help/static-publishing/README.md
+4df02578aa1ac65cdf739b6dd3e4aeba  doc/eng-us/help/static-publishing/README.md
 be48efb890664a903b7df285511f74dc  doc/eng-us/help/static-publishing/build-preview-and-publish.md
 0d795daa0fa3f5b47b4edd3e2257f069  doc/eng-us/help/static-publishing/choose-branch-or-github-actions.md
 f95eacdd60f486d6e20ce8ddf4e58f73  doc/eng-us/help/static-publishing/connect-to-github-token-key-or-app.md
@@ -13318,7 +13318,7 @@ e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 65397ae907e9925c848b87c52e153223  doc/ger-de/anleitungen/setup-dateien-von-der-konsole.md
 3d68e8329fa2aaef4030a2530bd4e3a1  doc/ger-de/anleitungen/sicherheit-und-audit.md
 9e388232668d81a22e1a5ec8da626be5  doc/ger-de/anleitungen/sitzungen.md
-5774193668ad84c53845960447ee58ef  doc/ger-de/anleitungen/statische-websites-auf-github-pages-hosten.md
+4887893e28ed5a746840fe0212a0f0dc  doc/ger-de/anleitungen/statische-websites-auf-github-pages-hosten.md
 22181fd2efb68afb99149172011da890  doc/ger-de/anleitungen/statisches-veroeffentlichen-deploy-keys.md
 a69dd29dbd1ecd48baf7206358e184cb  doc/ger-de/anleitungen/statisches-veroeffentlichen-dynamische-funktionen.md
 8a1f7f299f2773a102a3f53329f39ade  doc/ger-de/anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md
@@ -19999,7 +19999,7 @@ d5b3cedb5adc84c82b4ea67b02ec1cfd  doc/ger-de/hilfe/sqli-import/aktualisierung-vo
 d229868061c504d4a7675593302ac931  doc/ger-de/hilfe/sqli-import/importe-und-laeufe.md
 038a380a22e33db9548b4cb0d168eae3  doc/ger-de/hilfe/sqli-import/zeitplaene-und-cron.md
 6b37ffe4b4ca1e11f721159fad23bd48  doc/ger-de/hilfe/standard-administratorpasswort.md
-a4308d34ab40240fa9d27501cf89a79e  doc/ger-de/hilfe/statisches-veroeffentlichen/README.md
+99d0a333f2c51f17921c39cb7c13deef  doc/ger-de/hilfe/statisches-veroeffentlichen/README.md
 e53602a8a2c71d5d309e7368f93bb80a  doc/ger-de/hilfe/statisches-veroeffentlichen/automatisch-veroeffentlichen.md
 2a6cdd08a2282f2a9f0b2b527e9f47a0  doc/ger-de/hilfe/statisches-veroeffentlichen/benachrichtigungen-und-webhooks.md
 a0ba55a3953fa1abe2dc3eaa6a5c5062  doc/ger-de/hilfe/statisches-veroeffentlichen/branch-oder-github-actions-waehlen.md

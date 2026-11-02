@@ -217,6 +217,30 @@ check and push:
 GH_PAGES_TOKEN=... ./console exp:static:publish github-public --format=json     # Credential=token:env:GH_PAGES_TOKEN
 ```
 
+## Start from the template repository
+
+For a site that is built entirely on GitHub, without a server of your own, start from the template repository
+[exponential-static-site-starter](https://github.com/se7enxweb/exponential-static-site-starter). Click **Use this template**, set **Settings > Pages > Source**
+to **GitHub Actions** and push. Its workflow:
+
+1. installs Exponential with Composer;
+2. brings in your site: a SQLite database and the storage folder from `data/` plus your settings, extensions and
+   designs from `site/`, or, with no database there, a site package installed with `exp:install`;
+3. serves the site on `127.0.0.1` with PHP's built-in web server and runs `exp:static:build` and
+   `exp:static:diff --check-links` on it;
+4. hands the copy to GitHub's own Pages actions, which publish it at `https://<owner>.github.io/<repository>/`.
+
+No token is needed: the deploy uses the permissions GitHub gives the workflow. The template's README lists its
+settings and the limits of GitHub Pages; the same script builds the copy on your own computer.
+
+## See it: the demo site
+
+The Exponential demo site is being published this way as a static copy at
+[https://se7enxweb.github.io/exponential-demo-site-static/](https://se7enxweb.github.io/exponential-demo-site-static/) (coming soon), from the repository
+[se7enxweb/exponential-demo-site-static](https://github.com/se7enxweb/exponential-demo-site-static). Its pages show
+what a static copy keeps (layouts, menus, galleries, images and downloads) and what changes (search runs on a
+prebuilt index in the browser; forms, login and the shop are left out).
+
 ## Troubleshooting
 
 | Symptom | Cause and fix |
