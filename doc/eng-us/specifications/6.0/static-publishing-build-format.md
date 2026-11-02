@@ -76,6 +76,9 @@ bytes.
 
 An address belongs to the site when it is root-relative, relative (resolved against the document's own address), or
 absolute on one of the build's origins: the address the build fetched from, the siteaccess's `SiteURL` and `LiveURL`.
+On the host of `SiteURL` (when it is not the address the build fetched from) the site is also below the path of
+`SiteURL` there: a site fetched below `/site` but served at the root of `www.example.com` owns
+`https://www.example.com/about` as well as `https://www.example.com/site/about`.
 Dot segments are resolved and `/index.php` is removed. Then:
 
 | Kind | Rule | Written as |

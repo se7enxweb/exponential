@@ -64,6 +64,9 @@ class expStaticLinkRewriter
     const NAVIGATION_RELS = '#^\s*(?:(?:alternate|search|home|index|start|help|author|license|next|prev|previous|first|last|up|shortlink|edit|edituri|bookmark|archives|contents|sitemap)\s*)+$#i';
 
     private $origins = array();
+
+    /** origin key => the site path on that origin, when it is not site_path (a site at the root of its SiteURL host) */
+    private $originSitePaths = array();
     private $outsideLinks = 'keep';
     private $adminLinks = 'keep';
     private $adminPaths = array();
@@ -99,7 +102,9 @@ class expStaticLinkRewriter
      *        every page without a query), files (callable( $outputPath ) => bool: whether the export holds the
      *        file; null: every file), outside_links (keep or unlink: a link to a page of the site's host the export
      *        does not hold), admin_links (keep or unlink: a link into an administration siteaccess), admin_paths
-     *        (array of host paths of the administration siteaccesses: /admin)
+     *        (array of host paths of the administration siteaccesses: /admin), origin_site_paths (origin => the site
+     *        path on that origin when it differs from site_path: the site served at the root of its SiteURL host while
+     *        the build fetches it below /site; an address there is the site's below either path)
      */
     public function __construct( array $options = array() )
     {
@@ -108,6 +113,12 @@ class expStaticLinkRewriter
             $key = self::originKey( (string)$origin );
             if ( $key !== '' )
                 $this->origins[$key] = true;
+        }
+        foreach ( isset( $options['origin_site_paths'] ) ? (array)$options['origin_site_paths'] : array() as $origin => $path )
+        {
+            $key = self::originKey( (string)$origin );
+            if ( $key !== '' && isset( $this->origins[$key] ) )
+                $this->originSitePaths[$key] = self::trimSlash( (string)$path );
         }
         $this->sitePath = isset( $options['site_path'] ) ? self::trimSlash( (string)$options['site_path'] ) : '';
         $this->mode = isset( $options['mode'] ) && $options['mode'] === self::MODE_BASE_PATH ? self::MODE_BASE_PATH : self::MODE_RELATIVE;
@@ -317,11 +328,16 @@ class expStaticLinkRewriter
             $url = substr( $url, 0, $mark );
         }
 
+        $sitePaths = array( $this->sitePath );
         if ( strpos( $url, '//' ) === 0 || preg_match( '#^https?://#i', $url ) )
         {
             $absolute = strpos( $url, '//' ) === 0 ? 'http:' . $url : $url;
-            if ( !isset( $this->origins[self::originKey( $absolute )] ) )
+            $origin = self::originKey( $absolute );
+            if ( !isset( $this->origins[$origin] ) )
                 return array( 'kind' => 'external' ) + $none;
+            // the site may live at another path on this origin (served at the root of its SiteURL host)
+            if ( isset( $this->originSitePaths[$origin] ) && $this->originSitePaths[$origin] !== $this->sitePath )
+                $sitePaths[] = $this->originSitePaths[$origin];
             $path = (string)parse_url( $absolute, PHP_URL_PATH );
             if ( $path === '' )
                 $path = '/';
@@ -345,14 +361,22 @@ class expStaticLinkRewriter
         if ( preg_match( self::FILE_ROOTS, $path ) )
             return array( 'kind' => 'file', 'output' => rawurldecode( ltrim( $path, '/' ) ) ) + $out;
 
-        if ( $this->sitePath !== '' )
+        $page = null;
+        foreach ( $sitePaths as $sitePath )
         {
-            if ( $path !== $this->sitePath && strpos( $path, $this->sitePath . '/' ) !== 0 )
-                return array( 'kind' => 'outside' ) + $out;
-            $page = (string)substr( $path, strlen( $this->sitePath ) );
+            if ( $sitePath === '' )
+            {
+                $page = $path;
+                break;
+            }
+            if ( $path === $sitePath || strpos( $path, $sitePath . '/' ) === 0 )
+            {
+                $page = (string)substr( $path, strlen( $sitePath ) );
+                break;
+            }
         }
-        else
-            $page = $path;
+        if ( $page === null )
+            return array( 'kind' => 'outside' ) + $out;
         $page = $page === '' ? '/' : $page;
         if ( strlen( $page ) > 1 )
             $page = rtrim( $page, '/' );

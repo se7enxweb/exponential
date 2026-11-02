@@ -82,7 +82,10 @@ codiert; ein Tag ohne etwas zum Umschreiben behält seine Bytes.
 
 Eine Adresse gehört zur Website, wenn sie wurzelrelativ ist, relativ (aufgelöst gegen die Adresse des Dokuments
 selbst) oder absolut auf einem der Ursprünge des Builds: die Adresse, von der der Build abrief, die `SiteURL` des
-Siteaccess und `LiveURL`. Punktsegmente werden aufgelöst und `/index.php` entfernt. Dann:
+Siteaccess und `LiveURL`. Auf dem Host der `SiteURL` (wenn er nicht die Adresse ist, von der der Build abrief)
+liegt die Website auch unterhalb des Pfads der `SiteURL` dort: Eine Website, die unterhalb von `/site` abgerufen,
+aber an der Wurzel von `www.example.com` ausgeliefert wird, besitzt `https://www.example.com/about` ebenso wie
+`https://www.example.com/site/about`. Punktsegmente werden aufgelöst und `/index.php` entfernt. Dann:
 
 | Art | Regel | Geschrieben als |
 |---|---|---|

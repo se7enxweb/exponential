@@ -24,6 +24,8 @@
  *        address too) become text, /administrators is no admin path; each setting alone; navigation <link>s dropped,
  *        style sheets kept; the admin paths a build derives (expStaticBuild::adminPaths())
  *  LR-16 keep (the default) changes nothing: the output is byte for byte the one without the settings
+ *  LR-17 a site served at the root of its SiteURL host (origin_site_paths): its pages there are the site's below either
+ *        path, so a canonical link names the public address and links to held pages are never taken out
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -413,5 +415,22 @@ class expStaticLinkRewriterTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $plain, self::unlinker( array( 'outside_links' => 'keep', 'admin_links' => 'keep' ) )->rewriteHtml( $html, '/site', 'index.html' ) );
         $this->assertSame( $plain, self::unlinker( array( 'outside_links' => 'bogus' ) )->rewriteHtml( $html, '/site', 'index.html' ), 'anything else is keep' );
         $this->assertStringContainsString( '<a href="https://www.example.com/admin/x">b</a>', $plain );
+    }
+
+    /** LR-17 */
+    public function testSiteAtTheRootOfItsSiteUrlHost()
+    {
+        $r = self::unlinker( array( 'outside_links' => 'unlink', 'admin_links' => 'unlink', 'public_url' => 'https://owner.github.io/repo/',
+                                    'origin_site_paths' => array( 'www.example.com' => '' ) ) );
+        $html = '<link rel="canonical" href="https://www.example.com/about" />'
+              . '<a href="https://www.example.com/about">root</a> <a href="https://www.example.com/site/about">prefixed</a>'
+              . ' <a href="https://www.example.com/user/login">login</a> <a href="https://www.example.com/admin/x">admin</a>'
+              . ' <a href="http://127.0.0.1:18308/about">crawl</a> <a href="https://www.example.com:8080/about">port</a>';
+        $out = $r->rewriteHtml( $html, '/site/about', 'about/index.html' );
+        $this->assertStringContainsString( '<link rel="canonical" href="https://owner.github.io/repo/about/" />', $out, 'the canonical of a page the copy holds' );
+        $this->assertStringContainsString( '<a href="./">root</a> <a href="./">prefixed</a> login admin', $out, 'below either path on the SiteURL host' );
+        $this->assertStringContainsString( ' crawl ', $out, 'on the crawl origin the site path stays /site' );
+        $this->assertStringContainsString( '<a href="https://www.example.com:8080/about">port</a>', $out, 'another port is another host' );
+        $this->assertSame( array( 2, 1 ), array( $r->counts()['removed_outside'], $r->counts()['removed_admin'] ) );
     }
 }

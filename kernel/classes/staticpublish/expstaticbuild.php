@@ -272,8 +272,16 @@ class expStaticBuild
         $originUrl = parse_url( $base, PHP_URL_SCHEME ) . '://' . parse_url( $base, PHP_URL_HOST ) . ( parse_url( $base, PHP_URL_PORT ) ? ':' . parse_url( $base, PHP_URL_PORT ) : '' );
         $siteUrl = isset( $this->context['urls'][$target->siteAccess()] ) ? (string)$this->context['urls'][$target->siteAccess()] : '';
         $origins = array( $originUrl );
+        $originSitePaths = array();
         if ( $siteUrl !== '' )
+        {
             $origins[] = $siteUrl;
+            // the site's own pages on its SiteURL host (canonical links, links written in full in the content) are
+            // below the path of SiteURL there, which need not be the path the build fetches from (/site)
+            $siteOrigin = preg_replace( '#^([a-z]+://)?([^/]+).*$#i', '$2', $siteUrl );
+            if ( strtolower( (string)$siteOrigin ) !== strtolower( (string)preg_replace( '#^[a-z]+://#i', '', $originUrl ) ) )
+                $originSitePaths[$siteOrigin] = rtrim( (string)parse_url( 'http://' . preg_replace( '#^[a-z]+://#i', '', $siteUrl ), PHP_URL_PATH ), '/' );
+        }
         $liveUrl = (string)$target->setting( 'LiveURL' );
         if ( $liveUrl === '' && $siteUrl !== '' )
         {
@@ -380,7 +388,7 @@ class expStaticBuild
         $rewriterOptions = array( 'origins' => $origins, 'site_path' => $sitePath, 'mode' => $target->linkMode(), 'base_path' => $target->basePath(),
                                   'public_url' => $target->publicUrl(), 'live_url' => $liveUrl, 'pages' => $held, 'files' => $files,
                                   'outside_links' => $target->setting( 'OutsideLinks' ), 'admin_links' => $target->setting( 'AdminLinks' ),
-                                  'admin_paths' => self::adminPaths( $this->context, $origins, $sitePath ) );
+                                  'admin_paths' => self::adminPaths( $this->context, $origins, $sitePath ), 'origin_site_paths' => $originSitePaths );
         $rewriter = new expStaticLinkRewriter( $rewriterOptions );
         $collector = new expStaticAssetCollector( array( 'root' => $this->options['root'], 'output' => $staging, 'origin' => $originUrl,
                                                          'fetch' => array( $this, 'request' ), 'rewriter' => $rewriter, 'emit' => $this->emit,
