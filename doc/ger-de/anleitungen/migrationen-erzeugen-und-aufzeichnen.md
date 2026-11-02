@@ -8,8 +8,8 @@ diese auf Staging und Produktion aus.
 
 Diese Seite erklärt die Aufzeichnung und die Generatoren von Exponential 6.0.15: den, der aus einer Aufzeichnung eine
 Migrationsdatei macht, den, der eine Migration dessen schreibt, was eine Installation jetzt hat (Inhalte, Klassen,
-Rollen, Sektionen, Einstellungen), und die Gerüste jeder Art von Migrationsdatei. Das Erzeugen aus einem Vergleich und
-der Konverter aus dem YAML des Referenz-Bundles folgen später. Die Ausgaben unten entstanden am 1. November 2026 auf
+Rollen, Sektionen, Einstellungen), die Gerüste jeder Art von Migrationsdatei, den Editor der Administration und den
+Konverter aus dem YAML des Referenz-Bundles. Das Erzeugen aus einem Vergleich folgt später. Die Ausgaben unten entstanden am 1. und 2. November 2026 auf
 SQLite.
 
 [Anleitungen](README.md) · [Migrationen](migrationen.md) · Verwandt: [PHP-Migrationen](migrationen-php.md),
@@ -501,9 +501,86 @@ $ ./console exp:migration:generate --from-class=news_article --from-role="News e
 
 Die Formate: [SQL und Einstellungen](migrationen-sql-und-einstellungen.md), [GraphQL](graphql-rezepte.md).
 
+## Der Editor in der Administration
+
+**Einstellungen > Migrationen > Editor** (`migration/editor`, Richtlinie `migration/edit`) schreibt und ändert
+YAML-Migrationen ohne Shell. `migration/editor` beginnt eine neue; `migration/editor/<Migrations-ID>` öffnet eine aus
+den durchsuchten Migrationsordnern, solange sie nicht gelaufen ist.
+
+- **Der Text** ist die Migration, wie sie gespeichert wird, mit den Kopfzeilen. Schreiben Sie Schritte von Hand, oder:
+- **Einen Schritt hinzufügen**: einen Schritttyp wählen und *Formular anzeigen*. Das Formular entsteht aus dem Schema
+  des Schritttyps: jeder Schlüssel mit seinem Typ (eine Knoten- oder Objektangabe, eine ganze Zahl, true/false, eine
+  Liste oder Map als YAML), den Werten, die er annimmt (eine Auswahlliste), seiner Vorgabe und den Modi, zu denen er
+  gehört. Darunter `if`, `references` (Paare Name=Wert, mit den Werten, die der Schritt liefert), `environments`,
+  `engines` und `comment`. *Schritt hinzufügen* setzt ihn ans Ende von `steps` oder `down`.
+- **Schritte** listet jeden Schritt mit *Bearbeiten* (lädt ihn ins Formular; *Schritt ändern* setzt ihn an seine
+  Stelle zurück), nach oben, nach unten und *Entfernen*. Schleifen und Schritte eines Typs, den die Installation nicht
+  hat, haben kein Formular: Ändern Sie sie im Text.
+- **Prüfen** führt aus, was `exp:migration:check` ausführt: den Kopf, das Dokument und jeden Schritt durch seinen
+  Schritttyp. **Vorschau** zeigt das YAML, wie es gespeichert wird.
+- **Speichern** schreibt die Datei über den Kernel: eine neue Migration als `<jetzt>_<name>.yml` in den Migrationsordner
+  der Website (der erste Eintrag von `[MigrationSettings] DirectoryList`) oder in das `ExtensionDirectory` einer aktiven
+  Erweiterung, nie über eine Datei; eine vorhandene an ihrem Ort. Ein Text, der die Prüfung nicht besteht, wird nicht
+  gespeichert, und eine Migration, die gelaufen ist, wird nie wieder gespeichert (die Prüfsummenprüfung würde sie
+  ablehnen): Ihre Änderung kommt in eine neue Migration.
+
+Wird ein Schritt im Formular hinzugefügt oder geändert, wird der Text aus der eingelesenen Migration neu geschrieben:
+Die Kopfzeilen bleiben, Kommentare zwischen den Schritten nicht. Der Editor schreibt nichts außerhalb der
+Migrationsordner.
+
+## Migrationen des Referenz-Bundles umwandeln
+
+`exp:migration:convert <Datei oder Ordner>` liest YAML-Migrationen des Migrations-Bundles der Symfony-basierten
+Plattform (das „Referenz-Bundle“: eine Liste von Schritten mit `type`, `mode`, `match`, `attributes` und `references`)
+und schreibt für jede Datei eine YAML-Migration von Exponential. Gelesen wird nur das dokumentierte Dateiformat; Code
+des Bundles wird nicht verwendet.
+
+```text
+$ ./console exp:migration:convert var/import/20240115093000_news.yml
+Exponential migrations: convert, dry run (--apply writes the files)
+var/import/20240115093000_news.yml -> migrations/20240115093000_news.yml: 1 step(s) converted, 1 left to do by hand
+    by hand: step 2 (php): the step type php has no counterpart that converts; write it by hand: {"type":"php","class":"X"}
+    | # description: Converted from 20240115093000_news.yml
+    | #
+    | # Converted by exp:migration:convert. Check it before the run: ./console exp:migration:check and ./console exp:migration:dry-run
+    | #
+    | # Not converted, to be done by hand:
+    | # - step 2 (php): the step type php has no counterpart that converts; write it by hand: {"type":"php","class":"X"}
+    | steps:
+    |     - type: section
+    |       mode: create
+    |       identifier: news
+    |       name: News
+Converted 1 step(s), 1 to do by hand
+PASS
+```
+
+| Schritt des Bundles | Wird zu |
+|---|---|
+| `content` create, update, delete | `content`: `content_type` → `class`, `parent_location` → `parent`, `attributes` → `fields`, `lang` → `language`, `match` (Inhalts-ID, Remote-ID, Knoten-ID oder Knoten-Remote-ID) → `object` oder `node` |
+| `content_type` create, update, delete | `content_class`: Namen und Beschreibungen je Sprache, `content_type_group` → `groups`, Attribute (`info-collector`, `disable-translation`, `field-settings`, `position`); die Attribute eines Updates kommen in `update_attributes` (neue nach `add_attributes` verschieben) |
+| `content_type_group` | `content_class_group` |
+| `location` create, update, delete | `location` create (eins je Elternknoten), update (Priorität, Sortierung), `move` (ein neuer Elternknoten), `hide`/`unhide`, delete |
+| `role` create, update, delete, `assign` | `role` mit `policies` (Einschränkungen als Kennung => Werte), `assign`-Schritte mit `users`/`groups`, eine Einschränkung Subtree oder Section |
+| `section`, `user`, `user_group`, `language`, `tag` | die gleichnamigen Schritttypen (`username` → `login`, Vor- und Nachname → `fields`) |
+| `sql` | `sql` mit einem Schlüssel je Datenbank |
+| `reference` set, `trash` purge | `reference` `set`, `trash` purge |
+
+`reference:<name>` und `[reference:<name>]` werden zu `${ref.<name>}`; die Referenzen, die ein Schritt setzt, behalten
+ihre Namen, mit den Wertnamen des Kernel-Schritts (`location_id` → `node_id`, `content_id` → `object_id` ...). Was sich
+nicht umwandeln lässt, wird nie geraten: PHP- und Service-Aufrufe, HTTP, Mail, Prozesse, Schleifen, Dateien,
+Migrationsdefinitionen, andere Modi und Schlüssel ohne Gegenstück kommen in die Liste oben in der neuen Datei, von Hand
+zu erledigen. Jeder umgewandelte Schritt wird von seinem Schritttyp geprüft; einer, der nicht besteht, steht mit dem
+Grund ebenfalls in der Liste.
+
+Die neue Datei behält Datum und Uhrzeit vom Anfang des alten Namens, die Reihenfolge bleibt also; ein Name ohne sie
+bekommt die Zeit von jetzt. `--source=extension:<name>` schreibt in den Migrationsordner einer Erweiterung, `--author`
+in den Kopf. Ohne `--apply` wird nichts geschrieben, und eine vorhandene Datei wird nie ersetzt.
+
 ## Verwandte Seiten
 
 - [Änderungen in der Administration aufzeichnen](../hilfe/migrationen/aufzeichnung.md)
 - [Rezept: eine Sitzung in der Administration aufzeichnen](../beispiele/kochbuch/migrationen-sitzung-aufzeichnen.md)
 - [Das Migrationsdateiformat: aufgezeichnete Ereignisse](../spezifikationen/6.0/migrationsdateiformat.md#aufgezeichnete-ereignisse-exp-migration-recording-event1)
 - [Migrationen](migrationen.md) · [Das Prüfprotokoll](../funktionen/6.0/pruefprotokoll.md) · [„Identität bestätigen“](identitaet-bestaetigen.md)
+- [`exp:migration:convert`](../beispiele/befehle/expmigrationconvert.md) · [Die Ansicht migration/editor](../beispiele/modulansichten/migration/editor.md)

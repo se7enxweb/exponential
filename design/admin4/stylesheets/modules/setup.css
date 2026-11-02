@@ -1486,3 +1486,15 @@ label.a4-package-option-label {
   .a4-setup-publish-runs td.a4-num { text-align: start; }
   .a4-setup-publish-runs td[data-label]::before { content: attr(data-label); flex: 0 0 7.5em; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); }
 }
+
+/* ---- migration/editor: Setup > Migrations > Editor (design:migration/editor.tpl) ---- */
+/* The migration and its step form beside the check, the preview and the list; one column on a narrow screen */
+.a4-setup-editor-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--a4-space-4); align-items: start; }
+@media (max-width: 1100px) {
+  .a4-setup-editor-grid { grid-template-columns: minmax(0, 1fr); }
+}
+/* YAML is written in a fixed-width font, tabs and long lines kept */
+.a4-setup-editor-text { font-family: var(--a4-mono); font-size: var(--a4-text-s); white-space: pre; overflow-wrap: normal; overflow-x: auto; tab-size: 4; }
+/* The YAML migrations to open */
+.a4-setup-editor-files { margin: 0; padding: 0; list-style: none; }
+.a4-setup-editor-files > li + li { margin-top: var(--a4-space-2); }

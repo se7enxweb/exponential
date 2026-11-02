@@ -4,7 +4,7 @@ audience: developer, admin, software-engineer, php-developer, hosting
 category: migrations
 order: 20
 summary: Jeder Befehl exp:migration in einer Tabelle - was er tut, wann man ihn braucht, seine meistgenutzten Optionen und ein Link auf seine erzeugte Referenzseite - mit den gemeinsamen Optionen, den Exit-Codes, der Maschinenausgabe und den exp:upgrade-Befehlen, die mit Migrationen zusammenarbeiten.
-keywords: Migrationsbefehle, Konsole, Kommandozeile, Optionen, Exit-Codes, Probelauf, Sicherungspunkt, Rücknahme, exp:migration, exp:migration:status, exp:migration:migrate, exp:migration:dry-run, exp:migration:rollback, exp:migration:resume, exp:migration:caption, exp:migration:push, exp:migration:check, exp:migration:generate, console, command line, CLI, options, exit codes, json, exp-migration/1, --apply, --format, migration commands
+keywords: Migrationsbefehle, Konsole, Kommandozeile, Optionen, Exit-Codes, Probelauf, Sicherungspunkt, Rücknahme, exp:migration, exp:migration:status, exp:migration:migrate, exp:migration:dry-run, exp:migration:rollback, exp:migration:resume, exp:migration:caption, exp:migration:push, exp:migration:check, exp:migration:generate, exp:migration:convert, exp:migration:repo:split, console, command line, CLI, options, exit codes, json, exp-migration/1, --apply, --format, migration commands
 type: help
 ---
 # Migrationsbefehle
@@ -37,6 +37,8 @@ Optionsdefinitionen des Befehls selbst.
 | `exp:migration:push` | pusht die Läufe, deren Push gescheitert ist | `--apply`, `--limit` | [expmigrationpush](../../beispiele/befehle/expmigrationpush.md) |
 | `exp:migration:check` | die Prüfung der Migrationsdateien ohne Datenbank: Namen, Kopf, Reihenfolge, PHP-Syntax, die Klasse | `--path`, `--environment` | [expmigrationcheck](../../beispiele/befehle/expmigrationcheck.md) |
 | `exp:migration:generate` | schreibt eine neue PHP-Migration aus dem Gerüst | `--skeleton <name>`, `--description`, `--author`, `--source=extension:<name>`, `--apply` | [expmigrationgenerate](../../beispiele/befehle/expmigrationgenerate.md) |
+| `exp:migration:convert` | wandelt YAML-Migrationen des Referenz-Bundles in YAML-Migrationen von Exponential um; was sich nicht umwandeln lässt, steht in der neuen Datei | `<Datei oder Ordner>`, `--source=extension:<name>`, `--apply` | [expmigrationconvert](../../beispiele/befehle/expmigrationconvert.md) |
+| `exp:migration:repo:split` | trennt den Migrationsordner mit seiner Historie in ein eigenes Repository ab | `--to`, `--remote`, `--branch`, `--apply` | [expmigrationreposplit](../../beispiele/befehle/expmigrationreposplit.md) |
 
 ## Nach Aufgabe
 

@@ -4,7 +4,7 @@ audience: developer, admin, software-engineer, php-developer, hosting
 category: migrations
 order: 20
 summary: Every exp:migration command in one table - what it does, when to use it, its most used options and a link to its generated reference page - with the options all of them share, the exit codes, the machine output and the exp:upgrade commands that work with migrations.
-keywords: exp:migration, exp:migration:status, exp:migration:migrate, exp:migration:dry-run, exp:migration:rollback, exp:migration:resume, exp:migration:caption, exp:migration:push, exp:migration:check, exp:migration:generate, console, command line, CLI, options, exit codes, json, exp-migration/1, --apply, --format, migration commands
+keywords: exp:migration, exp:migration:status, exp:migration:migrate, exp:migration:dry-run, exp:migration:rollback, exp:migration:resume, exp:migration:caption, exp:migration:push, exp:migration:check, exp:migration:generate, exp:migration:convert, exp:migration:repo:split, console, command line, CLI, options, exit codes, json, exp-migration/1, --apply, --format, migration commands
 type: help
 ---
 # Migration commands
@@ -36,6 +36,8 @@ its generated reference page, made from the command's own option definitions.
 | `exp:migration:push` | pushes the runs whose push failed | `--apply`, `--limit` | [expmigrationpush](../../examples/commands/expmigrationpush.md) |
 | `exp:migration:check` | the lint of the migration files, without a database: names, headers, order, PHP syntax, the class | `--path`, `--environment` | [expmigrationcheck](../../examples/commands/expmigrationcheck.md) |
 | `exp:migration:generate` | writes a new PHP migration from the skeleton | `--skeleton <name>`, `--description`, `--author`, `--source=extension:<name>`, `--apply` | [expmigrationgenerate](../../examples/commands/expmigrationgenerate.md) |
+| `exp:migration:convert` | converts YAML migrations of the reference bundle into YAML migrations of Exponential; what does not convert is listed in the new file | `<file or folder>`, `--source=extension:<name>`, `--apply` | [expmigrationconvert](../../examples/commands/expmigrationconvert.md) |
+| `exp:migration:repo:split` | splits the migrations folder into a repository of its own, with its history | `--to`, `--remote`, `--branch`, `--apply` | [expmigrationreposplit](../../examples/commands/expmigrationreposplit.md) |
 
 ## By task
 

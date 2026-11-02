@@ -6,7 +6,7 @@
  * code); a run or rollback started here runs as the signed-in user in a console process of its own (expMigrationJob).
  *
  * Policies: migration/read (see), migration/run (run, resume, simulate), migration/rollback (take back),
- * migration/edit (recordings of changes; later the editor and the generators). Only Administrator has them in a new installation. Runs and
+ * migration/edit (recordings of changes, the generators and the editor of YAML migrations). Only Administrator has them in a new installation. Runs and
  * rollbacks ask "Verify it's you" (site.ini [ReauthGroup_system]).
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -79,6 +79,16 @@ $ViewList['recording'] = array(
     'params' => array( 'RecordingID' ),
     'unordered_params' => array() );
 
+$ViewList['editor'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'editor.php',
+    'functions' => array( 'edit' ),
+    'single_post_actions' => array( 'ChooseTypeButton' => 'ChooseType', 'AddStepButton' => 'AddStep', 'EditStepButton' => 'EditStep',
+                                    'RemoveStepButton' => 'RemoveStep', 'MoveUpButton' => 'MoveUp', 'MoveDownButton' => 'MoveDown',
+                                    'CheckButton' => 'Check', 'SaveButton' => 'Save' ),
+    'params' => array( 'MigrationID' ),
+    'unordered_params' => array() );
+
 $FunctionList = array();
 // See the migrations, their state, the runs and their logs, and the dry run
 $FunctionList['read'] = array();
@@ -86,7 +96,7 @@ $FunctionList['read'] = array();
 $FunctionList['run'] = array();
 // Take back a run, one migration or (expert) restore an earlier caption
 $FunctionList['rollback'] = array();
-// Record changes as migrations (recordings of changes; the site-wide window asks "Verify it's you"), and later write
+// Record changes as migrations (recordings of changes; the site-wide window asks "Verify it's you"), and write
 // and generate migrations in the administration (the editor and the generators)
 $FunctionList['edit'] = array();
 

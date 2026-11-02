@@ -7,8 +7,8 @@ generate a migration from it, then run that migration on staging and production.
 
 This page explains the recording and the generators of Exponential 6.0.15: the one that turns a recording into a
 migration file, the one that writes a migration of what an installation has now (content, classes, roles, sections,
-settings), and the skeletons of every kind of migration file. Generating from a diff and the converter from the
-reference bundle's YAML follow later. The output below was produced on SQLite on 1 November 2026.
+settings), the skeletons of every kind of migration file, the editor of the administration and the converter from the
+reference bundle's YAML. Generating from a diff follows later. The output below was produced on SQLite on 1 and 2 November 2026.
 
 [Guides](README.md) · [Migrations](migrations.md) · Related: [PHP migrations](migrations-php.md),
 [Rollback and captions](migrations-rollback-and-captions.md), [The file format](../specifications/6.0/migration-file-format.md#recorded-events-exp-migration-recording-event1),
@@ -486,9 +486,81 @@ $ ./console exp:migration:generate --from-class=news_article --from-role="News e
 
 The formats: [SQL and settings](migrations-sql-and-settings.md), [GraphQL](graphql-recipes.md).
 
+## The editor in the administration
+
+**Setup > Migrations > Editor** (`migration/editor`, policy `migration/edit`) writes and changes YAML migrations
+without a shell. `migration/editor` starts a new one; `migration/editor/<migration id>` opens one of the searched
+migration folders, as long as it has not run.
+
+- **The text** is the migration as it is saved, header lines included. Write steps by hand, or:
+- **Add a step**: choose a step type and *Show its form*. The form is made from the step type's own schema: every key
+  with its type (a node or object identifier, a whole number, true/false, a list or map written as YAML), the values
+  it takes (a choice list), its default and the modes it belongs to. Below it `if`, `references` (name=value pairs,
+  with the values the step gives), `environments`, `engines` and `comment`. *Add step* puts it at the end of `steps`
+  or `down`.
+- **Steps** lists every step with *Edit* (loads it into the form; *Change step* puts it back in its place), move up,
+  move down and *Remove*. Loops and steps of a type the installation lacks have no form: change them in the text.
+- **Check** runs what `exp:migration:check` runs: the header, the document and every step through its step type.
+  **Preview** shows the YAML as it will be saved.
+- **Save** writes the file through the kernel: a new migration as `<now>_<name>.yml` into the site's migrations folder
+  (the first `[MigrationSettings] DirectoryList` entry) or an active extension's `ExtensionDirectory`, never over a
+  file; an existing one in place. A text that does not pass the check is not saved, and a migration that has run is
+  never saved again (the checksum guard would refuse it): its change goes into a new migration.
+
+When a step is added or changed in the form, the text is written again from the parsed migration: the header lines
+stay, comments between the steps do not. The editor writes nothing outside the migration folders.
+
+## Converting migrations of the reference bundle
+
+`exp:migration:convert <file or folder>` reads YAML migrations of the migration bundle of the Symfony based platform
+(the "reference bundle": a list of steps with `type`, `mode`, `match`, `attributes` and `references`) and writes a
+YAML migration of Exponential for each file. Only the documented file format is read; no code of the bundle is used.
+
+```text
+$ ./console exp:migration:convert var/import/20240115093000_news.yml
+Exponential migrations: convert, dry run (--apply writes the files)
+var/import/20240115093000_news.yml -> migrations/20240115093000_news.yml: 1 step(s) converted, 1 left to do by hand
+    by hand: step 2 (php): the step type php has no counterpart that converts; write it by hand: {"type":"php","class":"X"}
+    | # description: Converted from 20240115093000_news.yml
+    | #
+    | # Converted by exp:migration:convert. Check it before the run: ./console exp:migration:check and ./console exp:migration:dry-run
+    | #
+    | # Not converted, to be done by hand:
+    | # - step 2 (php): the step type php has no counterpart that converts; write it by hand: {"type":"php","class":"X"}
+    | steps:
+    |     - type: section
+    |       mode: create
+    |       identifier: news
+    |       name: News
+Converted 1 step(s), 1 to do by hand
+PASS
+```
+
+| The bundle's step | Becomes |
+|---|---|
+| `content` create, update, delete | `content`: `content_type` → `class`, `parent_location` → `parent`, `attributes` → `fields`, `lang` → `language`, `match` (content id, remote id, location id or remote id) → `object` or `node` |
+| `content_type` create, update, delete | `content_class`: names and descriptions per language, `content_type_group` → `groups`, attributes (`info-collector`, `disable-translation`, `field-settings`, `position`); an update's attributes go to `update_attributes` (move new ones to `add_attributes`) |
+| `content_type_group` | `content_class_group` |
+| `location` create, update, delete | `location` create (one per parent), update (priority, sorting), `move` (a new parent), `hide`/`unhide`, delete |
+| `role` create, update, delete, `assign` | `role` with `policies` (limitations as identifier => values), `assign` steps with `users`/`groups`, one Subtree or Section limitation |
+| `section`, `user`, `user_group`, `language`, `tag` | the step types of the same name (`username` → `login`, first and last name → `fields`) |
+| `sql` | `sql` with one key per engine |
+| `reference` set, `trash` purge | `reference` `set`, `trash` purge |
+
+`reference:<name>` and `[reference:<name>]` become `${ref.<name>}`; the references a step sets keep their names, with
+the value names of the kernel's step (`location_id` → `node_id`, `content_id` → `object_id` ...). What does not convert
+is never guessed: PHP and service calls, HTTP, mail, processes, loops, files, migration definitions, other modes and
+keys without a counterpart go into the list at the top of the new file, to be done by hand. Every converted step is
+checked by its step type; one that does not pass is in that list too, with the reason.
+
+The new file keeps the date and time at the start of the old name, so the order stays; a name without one gets the
+time of now. `--source=extension:<name>` writes into an extension's migrations folder, `--author` into the header.
+Without `--apply` nothing is written, and an existing file is never replaced.
+
 ## Related pages
 
 - [Recording changes in the administration](../help/migrations/recording.md)
 - [Recipe: record an administrator session](../examples/cookbook/migrations-record-an-admin-session.md)
 - [The migration file format: recorded events](../specifications/6.0/migration-file-format.md#recorded-events-exp-migration-recording-event1)
 - [Migrations](migrations.md) · [The audit trail](../features/6.0/audit-trail.md) · ["Verify it's you"](verify-its-you.md)
+- [`exp:migration:convert`](../examples/commands/expmigrationconvert.md) · [The view migration/editor](../examples/module-views/migration/editor.md)

@@ -29,7 +29,7 @@ Audit-Ereignisse, die er schreibt.
 | `migration/read` | den Stand, den Verlauf, die Seite eines Laufs, den Probelauf, den Dashboard-Block, das Panel der Seitenleiste | den Ansichten `status`, `history`, `log`, `stream`, `dryrun` |
 | `migration/run` | Ausführen, Fortsetzen und **Simulieren** im Probelauf | der Ansicht `run`, und `dryrun` für die Simulation |
 | `migration/rollback` | einen Lauf, eine Migration oder einen früheren Sicherungspunkt zurücknehmen | der Ansicht `rollback` |
-| `migration/edit` | Änderungen aufzeichnen (Setup > Migrationen > Aufzeichnung, siehe [Änderungen aufzeichnen](aufzeichnung.md)); später auch das Schreiben und Erzeugen von Migrationen in der Administration | der Ansicht `recording` |
+| `migration/edit` | Änderungen aufzeichnen (Setup > Migrationen > Aufzeichnung, siehe [Änderungen aufzeichnen](aufzeichnung.md)), Migrationen daraus erzeugen und YAML-Migrationen im Editor schreiben und ändern (Setup > Migrationen > Editor) | den Ansichten `recording` und `editor` |
 
 Keine von ihnen hat Einschränkungen: Jede gilt ganz oder gar nicht. In einer neuen Installation hat sie nur die Rolle
 Administrator. Ausführen, Fortsetzen, Simulieren und Zurücknehmen fragen zuerst nach „Identität bestätigen“

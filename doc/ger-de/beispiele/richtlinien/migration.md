@@ -13,7 +13,7 @@ Die Richtlinienfunktionen von `migration` und ihre Einschränkungen, aus `$Funct
 
 ## edit
 
-Geprüft von den Ansichten: [recording](../modulansichten/migration/recording.md).
+Geprüft von den Ansichten: [editor](../modulansichten/migration/editor.md), [recording](../modulansichten/migration/recording.md).
 
 Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
 

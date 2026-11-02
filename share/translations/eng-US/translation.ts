@@ -81128,6 +81128,214 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
         <translation>The minutes are a whole number from 1 to 44640 (31 days), or empty.</translation>
     </message>
+    <message>
+        <source>Migration %id</source>
+        <translation>Migration %id</translation>
+    </message>
+    <message>
+        <source>New migration</source>
+        <translation>New migration</translation>
+    </message>
+    <message>
+        <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
+        <translation>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</translation>
+    </message>
+    <message>
+        <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
+        <translation>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</translation>
+    </message>
+    <message>
+        <source>The file cannot be written by the web server.</source>
+        <translation>The file cannot be written by the web server.</translation>
+    </message>
+    <message>
+        <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
+        <translation>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</translation>
+    </message>
+    <message>
+        <source>Name of the migration</source>
+        <translation>Name of the migration</translation>
+    </message>
+    <message>
+        <source>Where it goes</source>
+        <translation>Where it goes</translation>
+    </message>
+    <message>
+        <source>The site</source>
+        <translation>The site</translation>
+    </message>
+    <message>
+        <source>YAML</source>
+        <translation>YAML</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Check</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Steps</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Keys</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Move up</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Move down</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
+    <message>
+        <source>No steps yet: add one with the form, or write them in the text.</source>
+        <translation>No steps yet: add one with the form, or write them in the text.</translation>
+    </message>
+    <message>
+        <source>Change step %number</source>
+        <translation>Change step %number</translation>
+    </message>
+    <message>
+        <source>Add a step</source>
+        <translation>Add a step</translation>
+    </message>
+    <message>
+        <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
+        <translation>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</translation>
+    </message>
+    <message>
+        <source>Step type</source>
+        <translation>Step type</translation>
+    </message>
+    <message>
+        <source>Show its form</source>
+        <translation>Show its form</translation>
+    </message>
+    <message>
+        <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
+        <translation>The step has keys its type does not know; they are left out when the step is changed: %keys</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Mode</translation>
+    </message>
+    <message>
+        <source>In</source>
+        <translation>In</translation>
+    </message>
+    <message>
+        <source>only in %modes</source>
+        <translation>only in %modes</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Default: %value</translation>
+    </message>
+    <message>
+        <source>Conditions, references and comment</source>
+        <translation>Conditions, references and comment</translation>
+    </message>
+    <message>
+        <source>Name=value pairs separated by commas. The values of this step: %values</source>
+        <translation>Name=value pairs separated by commas. The values of this step: %values</translation>
+    </message>
+    <message>
+        <source>Example</source>
+        <translation>Example</translation>
+    </message>
+    <message>
+        <source>Change step</source>
+        <translation>Change step</translation>
+    </message>
+    <message>
+        <source>Add step</source>
+        <translation>Add step</translation>
+    </message>
+    <message>
+        <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
+        <translation>What exp:migration:check says: the header, the document and every step checked by its step type.</translation>
+    </message>
+    <message>
+        <source>The migration passes the check.</source>
+        <translation>The migration passes the check.</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Preview</translation>
+    </message>
+    <message>
+        <source>The YAML as it will be saved.</source>
+        <translation>The YAML as it will be saved.</translation>
+    </message>
+    <message>
+        <source>Show the YAML</source>
+        <translation>Show the YAML</translation>
+    </message>
+    <message>
+        <source>YAML migrations</source>
+        <translation>YAML migrations</translation>
+    </message>
+    <message>
+        <source>has run</source>
+        <translation>has run</translation>
+    </message>
+    <message>
+        <source>There are no YAML migrations yet.</source>
+        <translation>There are no YAML migrations yet.</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Editor</translation>
+    </message>
+    <message>
+        <source>There is no YAML migration %id in the migration folders.</source>
+        <translation>There is no YAML migration %id in the migration folders.</translation>
+    </message>
+    <message>
+        <source>Choose a step type.</source>
+        <translation>Choose a step type.</translation>
+    </message>
+    <message>
+        <source>The step is added. Check the migration before you save it.</source>
+        <translation>The step is added. Check the migration before you save it.</translation>
+    </message>
+    <message>
+        <source>The step is changed. Check the migration before you save it.</source>
+        <translation>The step is changed. Check the migration before you save it.</translation>
+    </message>
+    <message>
+        <source>Choose a step.</source>
+        <translation>Choose a step.</translation>
+    </message>
+    <message>
+        <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
+        <translation>This step has no form (a loop, or a step type this installation does not have): change it in the text.</translation>
+    </message>
+    <message>
+        <source>Choose where the migration goes: the site or an active extension.</source>
+        <translation>Choose where the migration goes: the site or an active extension.</translation>
+    </message>
+    <message>
+        <source>Saved %file. Run a dry run before the migration runs.</source>
+        <translation>Saved %file. Run a dry run before the migration runs.</translation>
+    </message>
+    <message>
+        <source>Not saved: %reason</source>
+        <translation>Not saved: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
