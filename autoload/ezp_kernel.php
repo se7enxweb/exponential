@@ -1513,6 +1513,7 @@ return array(
       'expMigrationDefinition'                                       => 'kernel/classes/migration/expmigrationdefinition.php',
       'expMigrationDeployNotifier'                                   => 'kernel/classes/migration/expmigrationdeploynotifier.php',
       'expMigrationDeployRecord'                                     => 'kernel/classes/migration/expmigrationdeployrecord.php',
+      'expMigrationDiff'                                             => 'kernel/classes/migration/expmigrationdiff.php',
       'expMigrationEditor'                                           => 'kernel/classes/migration/expmigrationeditor.php',
       'expMigrationFiles'                                            => 'kernel/classes/migration/expmigrationfiles.php',
       'expMigrationGenerator'                                        => 'kernel/classes/migration/expmigrationgenerator.php',

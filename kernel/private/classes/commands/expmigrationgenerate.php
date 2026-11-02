@@ -1,6 +1,6 @@
 <?php
 /**
- * @description Write a new migration file: --skeleton writes an empty migration (PHP, or with --type=yml, sql, ini or graphql that kind); --from-recording turns a recording of changes into a YAML migration; --from-content, --from-class, --from-role, --from-section and --from-settings turn what the installation has into one; a dry run unless --apply
+ * @description Write a new migration file: --skeleton writes an empty migration (PHP, or with --type=yml, sql, ini or graphql that kind); --from-recording turns a recording of changes into a YAML migration; --from-content, --from-class, --from-role, --from-section and --from-settings turn what the installation has into one; --from-diff turns what changed since a caption, another installation or a database dump into one; a dry run unless --apply
  * @alias exp:migration:generate
  *
  * File containing the exp:migration:generate command.
@@ -44,6 +44,14 @@ class Expmigrationgenerate extends ExpmigrationBase
                              "(of settings/override, or with --siteaccess=<name> of that siteaccess) write a YAML migration that\n" .
                              "makes those things as they are now (mode ensure). Personal data stays out: a user is named by\n" .
                              "secrets, and secret settings are left to be set by hand.\n" .
+                             "--from-diff=<caption|address|dump> compares this installation with a saved state: a caption\n" .
+                             "(Sicherungspunkt) by id, another installation by its address (https://..., read once through its REST\n" .
+                             "route /api/migration/v1/snapshot with an API key of the scope migration:read, --token; never written\n" .
+                             "to), or a database dump (a SQLite file, or an SQL dump of this installation's engine, loaded into a\n" .
+                             "throwaway database). --compare names what (classes, roles, sections, states, languages, content,\n" .
+                             "settings; content with --subtree=<node>). What was added or changed becomes a step that makes it as it\n" .
+                             "is now (mode ensure), what was removed a delete step; run on the saved state, the migration makes it\n" .
+                             "like this installation. What no step type repeats is listed to be done by hand.\n" .
                              "\n" .
                              "./console exp:migration:generate --skeleton add_news_class\n" .
                              "./console exp:migration:generate --skeleton news_folder --type=yml --apply\n" .
@@ -53,9 +61,12 @@ class Expmigrationgenerate extends ExpmigrationBase
                              "./console exp:migration:generate --skeleton news_folder --source=extension:expnews --apply\n" .
                              "./console exp:migration:generate --from-recording=20261101-120000-a1b2c3 news_section --apply\n" .
                              "./console exp:migration:generate --from-class=news_article --from-role=\"News editor\" news_setup\n" .
-                             "./console exp:migration:generate --from-content=path:news --depth=1 news_tree --apply",
+                             "./console exp:migration:generate --from-content=path:news --depth=1 news_tree --apply\n" .
+                             "./console exp:migration:generate --from-diff=20261102-101500 news_changes\n" .
+                             "./console exp:migration:generate --from-diff=var/backup/before.sqlite --compare=classes,roles --apply\n" .
+                             "./console exp:migration:generate --from-diff=https://staging.example.com --token=staging_api_key --subtree=path:news",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[skeleton][source:][description:][author:][type:][apply][dry-run][format:][from-recording:][engine:][from-content:][depth:][max-objects:][from-class:][from-role:][from-section:][from-settings:][siteaccess:]', '[name]', array(
+        return (array)$this->startup( '[skeleton][source:][description:][author:][type:][apply][dry-run][format:][from-recording:][engine:][from-content:][depth:][max-objects:][from-class:][from-role:][from-section:][from-settings:][siteaccess:][from-diff:][compare:][subtree:][token:][backup-dir:]', '[name]', array(
             'skeleton' => 'An empty migration with its header: PHP with plan(), up() and down(), or the kind --type names',
             'source' => 'The source: site or extension:<name> (generate: where the file goes; rollback: which migration, when two sources have its id)',
             'description' => 'The description in the header of the new migration',
@@ -68,12 +79,17 @@ class Expmigrationgenerate extends ExpmigrationBase
             'from-recording' => 'Generate a YAML migration from a recording of changes (its id)',
             'from-content' => 'Generate a YAML migration of content: the nodes (id, remote:<remote id>, path:<url path>), comma-separated',
             'depth' => 'With --from-content: the levels below each node that go in too (default 0: the node alone)',
-            'max-objects' => 'With --from-content: at most this many objects (default 500)',
+            'max-objects' => 'With --from-content, or --from-diff with --subtree: at most this many objects (default 500)',
             'from-class' => 'Generate a YAML migration of content classes (identifiers, comma-separated)',
             'from-role' => 'Generate a YAML migration of roles with their policies (names, comma-separated)',
             'from-section' => 'Generate a YAML migration of sections (identifiers, comma-separated)',
             'from-settings' => 'Generate a YAML migration of settings files of settings/override (site.ini ..., comma-separated)',
             'siteaccess' => 'With --from-settings: the files of this siteaccess instead of settings/override',
+            'from-diff' => 'Generate a YAML migration of what changed since a saved state: a caption id, the address of another installation (https://...) or a database dump',
+            'compare' => 'With --from-diff: what to compare (classes, roles, sections, states, languages, content, settings; comma-separated, default all but content)',
+            'subtree' => 'With --from-diff: compare the content of the subtree of this node (id, remote:<remote id>, path:<url path>)',
+            'token' => 'With --from-diff=<address>: the API key of the other installation with the scope migration:read, by secret name or env:VARIABLE',
+            'backup-dir' => 'Where the captions made without git_manager are (default var/backup/upgrade)',
         ) );
     }
 
@@ -91,9 +107,34 @@ class Expmigrationgenerate extends ExpmigrationBase
         foreach ( self::FROM_EXISTING as $key )
             if ( $this->value( $options, $key ) !== '' )
                 $existing[$key] = $this->value( $options, $key );
-        $kinds = ( empty( $options['skeleton'] ) ? 0 : 1 ) + ( $fromRecording !== '' ? 1 : 0 ) + ( $existing ? 1 : 0 );
+        $fromDiff = $this->value( $options, 'from-diff' );
+        $kinds = ( empty( $options['skeleton'] ) ? 0 : 1 ) + ( $fromRecording !== '' ? 1 : 0 ) + ( $existing ? 1 : 0 ) + ( $fromDiff !== '' ? 1 : 0 );
         if ( $kinds > 1 )
-            $this->usage( '--skeleton, --from-recording and the options --from-content ... --from-settings exclude each other' );
+            $this->usage( '--skeleton, --from-recording, --from-diff and the options --from-content ... --from-settings exclude each other' );
+        if ( $fromDiff === '' )
+            foreach ( array( 'compare', 'subtree', 'token' ) as $key )
+                if ( $this->value( $options, $key ) !== '' )
+                    $this->usage( "--$key goes with --from-diff" );
+        if ( $fromDiff !== '' )
+        {
+            if ( isset( $settings['type'] ) || isset( $settings['engine'] ) )
+                $this->usage( 'a generated migration is a YAML migration: --type and --engine go with --skeleton' );
+            $settings['name'] = $this->argument( $options );
+            $settings['apply'] = $apply;
+            foreach ( array( 'compare' => 'compare', 'subtree' => 'subtree', 'token' => 'token', 'backup-dir' => 'backupDir' ) as $option => $key )
+                if ( $this->value( $options, $option ) !== '' )
+                    $settings[$key] = $this->value( $options, $option );
+            if ( $this->value( $options, 'max-objects' ) !== '' )
+            {
+                if ( !ctype_digit( $this->value( $options, 'max-objects' ) ) )
+                    $this->usage( '--max-objects takes a number' );
+                $settings['limit'] = (int)$this->value( $options, 'max-objects' );
+            }
+            $this->database( $format );
+            $report = \expMigrationDiff::fromDiff( $fromDiff, $settings );
+            $report['mode'] = $apply ? 'generate-from-diff' : 'generate-from-diff-dry-run';
+            $this->finish( $report, $format );
+        }
         if ( $fromRecording !== '' || $existing )
         {
             if ( isset( $settings['type'] ) || isset( $settings['engine'] ) )
@@ -133,7 +174,8 @@ class Expmigrationgenerate extends ExpmigrationBase
         }
         if ( empty( $options['skeleton'] ) )
             $this->usage( 'say what to generate: --skeleton writes an empty migration, --from-recording=<id> a migration of a recording, '
-                        . '--from-content, --from-class, --from-role, --from-section or --from-settings one of what is there' );
+                        . '--from-content, --from-class, --from-role, --from-section or --from-settings one of what is there, '
+                        . '--from-diff=<caption|address|dump> one of what changed since then' );
         $name = $this->argument( $options );
         if ( $name === '' )
             $this->usage( 'name the migration, e.g. ./console exp:migration:generate --skeleton add_news_class' );
@@ -181,10 +223,15 @@ class Expmigrationgenerate extends ExpmigrationBase
         if ( strpos( $report['mode'], 'generate-from-' ) === 0 )
         {
             $dry = substr( $report['mode'], -8 ) === '-dry-run';
-            $lines = array( 'Exponential migrations: generate from ' . ( strpos( $report['mode'], 'generate-from-recording' ) === 0 ? 'a recording' : 'what the installation has' )
-                          . ( $dry ? ', dry run (--apply writes the file)' : '' ) );
+            $from = strpos( $report['mode'], 'generate-from-recording' ) === 0 ? 'a recording'
+                  : ( strpos( $report['mode'], 'generate-from-diff' ) === 0 ? 'a difference' : 'what the installation has' );
+            $lines = array( 'Exponential migrations: generate from ' . $from . ( $dry ? ', dry run (--apply writes the file)' : '' ) );
             if ( !empty( $report['recording'] ) )
                 $lines[] = ExpmigrationrecordBase::recordingLine( $report['recording'] );
+            if ( !empty( $report['source'] ) )
+                $lines[] = 'Compared with the ' . $report['source']['kind'] . ' ' . $report['source']['name'];
+            foreach ( isset( $report['diff'] ) ? (array)$report['diff'] : array() as $kind => $c )
+                $lines[] = sprintf( '  %-10s %d added, %d changed, %d removed', $kind, $c['added'], $c['changed'], $c['removed'] );
             foreach ( $report['plan'] as $i => $line )
                 $lines[] = sprintf( '  %3d  %s', $i + 1, $line );
             if ( !empty( $report['omitted'] ) )
