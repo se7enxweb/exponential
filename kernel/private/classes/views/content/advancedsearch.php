@@ -70,7 +70,9 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
         $tpl = \eZTemplate::factory();
 
         $ini = \eZINI::instance();
-        $useSearchCode = $ini->variable( 'SearchSettings', 'SearchViewHandling' ) == 'default';
+        // as content/search: the administration's filtered search page searches itself (Search::templateSearchesItself())
+        $useSearchCode = $ini->variable( 'SearchSettings', 'SearchViewHandling' ) == 'default'
+                         && !Search::templateSearchesItself( 'content/advancedsearch.tpl' );
         $logSearchStats = $ini->variable( 'SearchSettings', 'LogSearchStats' ) == 'enabled';
 
         $searchText = '';

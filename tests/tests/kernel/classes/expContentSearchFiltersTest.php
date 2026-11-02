@@ -311,6 +311,46 @@ class expContentSearchFiltersTest extends PHPUnit\Framework\TestCase
                                            file_get_contents( dirname( __DIR__, 4 ) . '/design/admin4/templates/content/search_page.tpl' ) );
     }
 
+    /** SF-13: the view leaves its own search out only when the design's template is the filtered page */
+    public function testTheViewKnowsWhenItsTemplateSearchesItself()
+    {
+        $root = sys_get_temp_dir() . '/exp-sf13-' . getmypid();
+        foreach ( array( 'ext/templates/content', 'own/templates/content', 'old/templates/content' ) as $dir )
+            @mkdir( "$root/$dir", 0777, true );
+        file_put_contents( "$root/own/templates/content/search.tpl", "{* the page *}\n{include uri='design:content/search_page.tpl'}\n" );
+        file_put_contents( "$root/old/templates/content/search.tpl", "{foreach \$search_result as \$r}{/foreach}\n" );
+        try
+        {
+            $search = '\Exponential\View\Kernel\Content\Search';
+            $this->assertTrue( $search::templateSearchesItself( 'content/search.tpl', array( "$root/ext", "$root/own", "$root/old" ) ) );
+            // the first design that has the template wins, as in the template resource (an extension's own page)
+            $this->assertFalse( $search::templateSearchesItself( 'content/search.tpl', array( "$root/old", "$root/own" ) ) );
+            $this->assertFalse( $search::templateSearchesItself( 'content/advancedsearch.tpl', array( "$root/own" ) ), 'no such template' );
+        }
+        finally
+        {
+            foreach ( array( 'own', 'old' ) as $design )
+                @unlink( "$root/$design/templates/content/search.tpl" );
+            foreach ( array( 'ext', 'own', 'old' ) as $design )
+            {
+                @rmdir( "$root/$design/templates/content" );
+                @rmdir( "$root/$design/templates" );
+                @rmdir( "$root/$design" );
+            }
+            @rmdir( $root );
+        }
+        // both views ask before they search, and the admin templates include the page
+        foreach ( array( 'search' => 'content/search.tpl', 'advancedsearch' => 'content/advancedsearch.tpl' ) as $view => $template )
+        {
+            $code = file_get_contents( dirname( __DIR__, 4 ) . '/kernel/private/classes/views/content/' . $view . '.php' );
+            $this->assertStringContainsString( "templateSearchesItself( '$template' )", $code, $view );
+        }
+        foreach ( array( 'admin', 'admin4' ) as $design )
+            foreach ( array( 'search.tpl', 'advancedsearch.tpl' ) as $file )
+                $this->assertStringContainsString( "{include uri='design:content/search_page.tpl'}",
+                    file_get_contents( dirname( __DIR__, 4 ) . "/design/$design/templates/content/$file" ), "$design/$file" );
+    }
+
     /** SF-10 */
     public function testFetchRunsTheRightSearch()
     {

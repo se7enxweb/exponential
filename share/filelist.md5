@@ -3489,7 +3489,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-ac4113eab1383d66bf0ebc7744af5677  doc/changelogs/6.0/6.0.15.md
+f0e2ecd918caa57d7f077e4c499b22e6  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -25421,7 +25421,7 @@ e3520c0aec0d5644d24878392b78c124  kernel/private/classes/views/class/translation
 cd7983fbc98bd2329c06da71e9b384c1  kernel/private/classes/views/collaboration/item.php
 a0dfae33c90fce6b6e3e2ac283ec7355  kernel/private/classes/views/collaboration/view.php
 47ce07bd06e03ce865fb96d50f81fdee  kernel/private/classes/views/content/action.php
-6cf4d6ce42a7bab52c77e0baab6d2488  kernel/private/classes/views/content/advancedsearch.php
+76a4519df354ee4ba563b18d5dd49a48  kernel/private/classes/views/content/advancedsearch.php
 801fa3a21b47401b60b424fadb544964  kernel/private/classes/views/content/bookmark.php
 5513a551c2f24d5a25d237b99519f622  kernel/private/classes/views/content/browse.php
 7deea2188b33b0c4b5b5e880f9210ab5  kernel/private/classes/views/content/collectedinfo.php
@@ -25449,7 +25449,7 @@ c5250f152637793a9dec11c8c58b9621  kernel/private/classes/views/content/queued.ph
 141749c8150097182c5434cb25da9405  kernel/private/classes/views/content/removeobject.php
 315ab5874d17fe38beb5923ac2aabe80  kernel/private/classes/views/content/restore.php
 4c76096eb254f944fb870043b35f6c05  kernel/private/classes/views/content/reverserelatedlist.php
-0ea754ecbac86306fea0f3c266770ae4  kernel/private/classes/views/content/search.php
+6cdce017ecfae5f241c2a5f81df929a2  kernel/private/classes/views/content/search.php
 d7eb50f9fc448059c7a761655e8f0e2b  kernel/private/classes/views/content/sharedpreview.php
 8a9eb394e340040723f45a0b05f73fcd  kernel/private/classes/views/content/subitemsexport.php
 28f29a90d8706da4651c88d4a10dea0c  kernel/private/classes/views/content/suggest.php
@@ -28378,7 +28378,7 @@ a6f6894206dbc0dde7dae7dba8bf008a  tests/tests/kernel/classes/expContentLanguages
 7ae2670b84ae38e5b8c5a5b23cb9cccf  tests/tests/kernel/classes/expContentPreviewLinkTest.php
 530d3937f557729c918c83262d7ea3b5  tests/tests/kernel/classes/expContentRemoveLeftoversTest.php
 db6ee7a9d8d4631eaad0c55b6b5ce17d  tests/tests/kernel/classes/expContentScheduleTest.php
-ba57762b381fec5c1eaf1385c4022880  tests/tests/kernel/classes/expContentSearchFiltersTest.php
+83455d3f245d2db4b81b3ba368e44e58  tests/tests/kernel/classes/expContentSearchFiltersTest.php
 7d1aa02d1bc554730e39b449430164d6  tests/tests/kernel/classes/expCronjobPauseTest.php
 25a6ff60c12764a1b9811f86ce18533f  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
 9f3998cf6c064a3c02c62ad6c6f696f9  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php
