@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-e6d2919cdc13ee6db414e40d57149905  autoload/ezp_kernel.php
+320794f23c120f73b65b9c417105f019  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3447,7 +3447,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-43989d4a5fd10c5a31aca64412b9453b  doc/changelogs/6.0/6.0.15.md
+b23ae6aef577b7860d1172a9314270fa  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -5281,7 +5281,7 @@ c37f07d43590060e833e7777441e3d07  doc/eng-us/examples/ini-settings/package/Licen
 24d936fa664c5fa6a0e42af1567dde3f  doc/eng-us/examples/ini-settings/package/License_MIT.md
 bebcf8207d40e898c61bf394e3d867de  doc/eng-us/examples/ini-settings/package/MaintainerSettings.md
 645b57979db87ca5eebf38daad03634c  doc/eng-us/examples/ini-settings/package/PackageFormatSettings.md
-5c6a8635b9669c81bd1fedfddd3318a1  doc/eng-us/examples/ini-settings/package/PackageSettings.md
+32e50a05a0f8449ad49ee3f7f4f4c4ec  doc/eng-us/examples/ini-settings/package/PackageSettings.md
 7a10f576cdada90f8a465e7f9a86bc5c  doc/eng-us/examples/ini-settings/package/README.md
 6d33b637b709dc4175f41b981eb30ca4  doc/eng-us/examples/ini-settings/package/RepositorySettings.md
 7858bbd5d691711a1f2a70cb659c1fed  doc/eng-us/examples/ini-settings/package/UploadSettings.md
@@ -7036,7 +7036,7 @@ cacbe6383326b6771b72d2dbf36ba63a  doc/eng-us/guides/smarty-templates-troubleshoo
 569d6daa6eee147300e288b42a976f3a  doc/eng-us/guides/static-publishing-deploy-keys.md
 558fe0f5a25f69322510c7ee71b86554  doc/eng-us/guides/static-publishing-dynamic-features.md
 8a5e11b6f4abd5001f29ba202f81274b  doc/eng-us/guides/static-publishing-history-and-rollback.md
-351ad91b42d8510ae65dab441a0d79c5  doc/eng-us/guides/static-publishing-targets-and-credentials.md
+34c91503bdd48e027a50cf933c5be222  doc/eng-us/guides/static-publishing-targets-and-credentials.md
 0e616e641c81de1e6783d78293e100f6  doc/eng-us/guides/system-information.md
 d035e16cb63dcde8ecc14a1d2866bd78  doc/eng-us/guides/template-conversion.md
 d1b8c66ba0a9cc758c55c45be1bb8bc6  doc/eng-us/guides/template-engines-speed.md
@@ -11663,7 +11663,7 @@ d573b991b0d68701551d0a1541af5eec  doc/eng-us/help/sqli-import/the-import-editor.
 31561f92b58b4db7a20db82581154906  doc/eng-us/help/sqli-import/upgrading-from-1x.md
 74c0054625ef48b4f6e4936d8b0d456d  doc/eng-us/help/static-publishing/README.md
 be48efb890664a903b7df285511f74dc  doc/eng-us/help/static-publishing/build-preview-and-publish.md
-d6140291b4a9625b7cf3698c84e04918  doc/eng-us/help/static-publishing/choose-branch-or-github-actions.md
+b297fcaf939f6b3913f224fb33f2dde5  doc/eng-us/help/static-publishing/choose-branch-or-github-actions.md
 1c8de571d4fbcd8d10377e3ffed2a49d  doc/eng-us/help/static-publishing/connect-to-github-token-key-or-app.md
 a4395423d74a1b56df6c06a6952160dc  doc/eng-us/help/static-publishing/github-pages-limits-and-terms.md
 a4cd5c7f877ed210e68fd3a93e1337b9  doc/eng-us/help/static-publishing/history-and-rollback.md
@@ -13313,7 +13313,7 @@ e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 5774193668ad84c53845960447ee58ef  doc/ger-de/anleitungen/statische-websites-auf-github-pages-hosten.md
 22181fd2efb68afb99149172011da890  doc/ger-de/anleitungen/statisches-veroeffentlichen-deploy-keys.md
 a69dd29dbd1ecd48baf7206358e184cb  doc/ger-de/anleitungen/statisches-veroeffentlichen-dynamische-funktionen.md
-350040c99a16eebe1386bbe590f7d4b4  doc/ger-de/anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md
+8a1f7f299f2773a102a3f53329f39ade  doc/ger-de/anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md
 e0ae991ca3d22de9371e2f23ca4e32c1  doc/ger-de/anleitungen/statisches-veroeffentlichen-verlauf-und-zuruecknehmen.md
 5cde673181ca9270862809be220cfb98  doc/ger-de/anleitungen/systeminformationen.md
 e2353a9acc40010bfb026b399ea3a82d  doc/ger-de/anleitungen/template-engines-geschwindigkeit.md
@@ -15026,7 +15026,7 @@ cbb875ea0daf20bdef3687a91445915d  doc/ger-de/beispiele/ini-einstellungen/package
 24f46666e1b2d6fc80acb82deb399d40  doc/ger-de/beispiele/ini-einstellungen/package/License_MIT.md
 a4b906cd39b1f4bfeb66704a9f14c05b  doc/ger-de/beispiele/ini-einstellungen/package/MaintainerSettings.md
 f4da71bbe31edf9ef19251e994b0b2ff  doc/ger-de/beispiele/ini-einstellungen/package/PackageFormatSettings.md
-adaee26f33cbd64134d08cfc844b2bcc  doc/ger-de/beispiele/ini-einstellungen/package/PackageSettings.md
+432dc1d19199b2e73eb76efa15162807  doc/ger-de/beispiele/ini-einstellungen/package/PackageSettings.md
 7efd63ca348db4b226ccd1f5a2b90412  doc/ger-de/beispiele/ini-einstellungen/package/README.md
 7accefc06156927bd04b7b564e303d0a  doc/ger-de/beispiele/ini-einstellungen/package/RepositorySettings.md
 94d505a3d15d3aa21a0ff45bd6fe70b5  doc/ger-de/beispiele/ini-einstellungen/package/UploadSettings.md
@@ -19989,7 +19989,7 @@ d229868061c504d4a7675593302ac931  doc/ger-de/hilfe/sqli-import/importe-und-laeuf
 a4308d34ab40240fa9d27501cf89a79e  doc/ger-de/hilfe/statisches-veroeffentlichen/README.md
 c5b9ca4bae8e9d042cea4dbbd7a1a759  doc/ger-de/hilfe/statisches-veroeffentlichen/automatisch-veroeffentlichen.md
 b034a705e6be9f73c8c5c9573f53f70f  doc/ger-de/hilfe/statisches-veroeffentlichen/benachrichtigungen-und-webhooks.md
-714eac9c580a616fd3947096075ed1c4  doc/ger-de/hilfe/statisches-veroeffentlichen/branch-oder-github-actions-waehlen.md
+b66b9dbb0e35737dcff066651fb90120  doc/ger-de/hilfe/statisches-veroeffentlichen/branch-oder-github-actions-waehlen.md
 1dcd36f08b79444d7a5a774223eb680f  doc/ger-de/hilfe/statisches-veroeffentlichen/build-vorschau-und-veroeffentlichen.md
 0d86814ec41eab27dfb203bd72773598  doc/ger-de/hilfe/statisches-veroeffentlichen/der-einrichtungsassistent.md
 a9238bb6ea6ccfb9a7e2c7e3e3f9a0a3  doc/ger-de/hilfe/statisches-veroeffentlichen/eigene-domain-verwenden.md
@@ -24403,6 +24403,7 @@ feb8f53c21d3850301ff6c1fef9969eb  kernel/classes/notification/handler/ezsubtree/
 bb9182366474e0827da78768982dc4d5  kernel/classes/packagecreators/ezcontentobject/ezcontentobjectpackagecreator.php
 9f4182a1b60e482000d69883c0392693  kernel/classes/packagecreators/ezextension/ezextensionpackagecreator.php
 153e969c3fb653590e5dae36851c359b  kernel/classes/packagecreators/ezstyle/ezstylepackagecreator.php
+95dee3b0becae89ef13b5bc8f4a79c23  kernel/classes/packagehandlers/expstatictarget/expstatictargetpackagehandler.php
 6b65a00634ce765f69a0233038fddc6f  kernel/classes/packagehandlers/ezcontentclass/ezcontentclasspackagehandler.php
 1d5b5ed92afaf38fa889e523d41f3901  kernel/classes/packagehandlers/ezcontentobject/ezcontentobjectpackagehandler.php
 902e3b8cfa6e921610e1cd3af6e2d52c  kernel/classes/packagehandlers/ezdb/ezdbpackagehandler.php
@@ -24462,7 +24463,7 @@ d0ff0cbe939677e04c1ea1c242db0095  kernel/classes/staticpublish/expstaticdegrader
 d2a209c210d20f86e5763a64ef73e08f  kernel/classes/staticpublish/expstaticextras.php
 71bde045bcd3dc5e0d23a11f1cf2acfd  kernel/classes/staticpublish/expstaticformendpoint.php
 12a7fdf5eae919aa2707d2ac7d60d1f2  kernel/classes/staticpublish/expstaticformtoken.php
-100b8474a9beabac6c6b12a889ad481e  kernel/classes/staticpublish/expstaticgithub.php
+e4af3364468ad9469593250767cd8ce8  kernel/classes/staticpublish/expstaticgithub.php
 31fb0a784e250e5c1ec396b53df5a21f  kernel/classes/staticpublish/expstaticjob.php
 7f2d293dedb7a328f2321f3a7535d4fe  kernel/classes/staticpublish/expstaticlinkchecker.php
 989efd874fa7a50dcbead52880194f60  kernel/classes/staticpublish/expstaticlinkrewriter.php
@@ -24985,7 +24986,7 @@ cb7bbc456ccda83f42007091bc72e12d  kernel/private/classes/commands/ezcsvimport.ph
 f004ef9b146066b759f044b1ab95804b  kernel/private/classes/commands/ezgeneratetranslationcache.php
 b6e9b7a825ebddf63c0fce5bfde61fe3  kernel/private/classes/commands/ezimportdbafile.php
 e309d886d9ef2805018743500dfc09c0  kernel/private/classes/commands/ezpgenerateautoloads.php
-2ca155fc976a76bd34cf4f433ea22a68  kernel/private/classes/commands/ezpm.php
+6133b1a590f0408488a1a0e9e10919c4  kernel/private/classes/commands/ezpm.php
 7cdbf8eec324a4913f9fb7211dd16426  kernel/private/classes/commands/ezpublishingbenchmark.php
 7d3a4958f8f14b070d9c36ed156d9981  kernel/private/classes/commands/ezrequestrules.php
 509c2ce9ffc3e94ffb54bcca99a2eaef  kernel/private/classes/commands/ezsessiongc.php
@@ -26224,7 +26225,7 @@ c1f0320332dab25bd13faf6ea46c6a74  settings/membermanagement.ini
 f2d407568390892dd7c309d0beee596b  settings/module.ini
 3ae9f2ad8f986a9acce088d9bff7b10a  settings/notification.ini
 ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
-c2fbd3f88b13951fd0a7ff1503cf8f29  settings/package.ini
+cd6e72f7a165cd2867446bc7bc7aad5a  settings/package.ini
 33feee634197eb5cde08585beacd9d73  settings/paymentgateways.ini
 3a13a85a0747ba7150891dfbb20b25db  settings/pdf.ini
 bada4e0f552e8fc8c771aec209487b83  settings/querycache.ini
@@ -28632,7 +28633,7 @@ c043add0dcb7a14de3d5d610b5c45115  tests/tests/kernel/classes/staticpublish/expSt
 3979bc5a303fe7d2b1e227585e8944ec  tests/tests/kernel/classes/staticpublish/expStaticDegraderTest.php
 0ac14314c5e2bc01199792dd2b25ddef  tests/tests/kernel/classes/staticpublish/expStaticExtrasTest.php
 b674b9f3f52a668377100f22d8104e61  tests/tests/kernel/classes/staticpublish/expStaticFormEndpointTest.php
-e9fdf50d060e9a71db847406af7e0237  tests/tests/kernel/classes/staticpublish/expStaticGitHubTest.php
+197ad228066dc318abc3c6105189e835  tests/tests/kernel/classes/staticpublish/expStaticGitHubTest.php
 f9f6e7d3550d867ef242158560604dfb  tests/tests/kernel/classes/staticpublish/expStaticLinkCheckerTest.php
 c84634e3e809c1f62ebf9d36a557f0a2  tests/tests/kernel/classes/staticpublish/expStaticLinkRewriterTest.php
 ee068eb421875f971f1aae84fec35885  tests/tests/kernel/classes/staticpublish/expStaticManifestTest.php
@@ -28644,6 +28645,7 @@ b34f4973d7f792b39f06887cb6785369  tests/tests/kernel/classes/staticpublish/expSt
 428973ac81ebd8eddfeabbd1663f927c  tests/tests/kernel/classes/staticpublish/expStaticSearchIndexTest.php
 d1808405ac31f5912840ac6e79c4756b  tests/tests/kernel/classes/staticpublish/expStaticStatusDatabaseTest.php
 a2b4e8ca63b01cd95bf10a6ef9335454  tests/tests/kernel/classes/staticpublish/expStaticStatusEngineChecks.php
+83ade49464f01d23c5f2e037d10395a5  tests/tests/kernel/classes/staticpublish/expStaticTargetPackageHandlerTest.php
 1aa41b8447599b0f0dc0ed6476ae7281  tests/tests/kernel/classes/staticpublish/expStaticTargetTest.php
 c2a2dd43cc5556f9a25d23a0133e4fbb  tests/tests/kernel/classes/subitems/columns/expSubitemsColumnCatalogueTest.php
 9e3f8b34f093c03df12eb0f75abbd38e  tests/tests/kernel/classes/subitems/columns/expSubitemsColumnsTestCase.php

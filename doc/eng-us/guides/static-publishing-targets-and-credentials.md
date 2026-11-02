@@ -210,6 +210,13 @@ installation (`YYYYMMDDHHMMSS_static_targets.ini`) or in a site package, and run
 its secret name (`token:github_pages_token`), never as its value: store the value in Setup > Secrets of the other
 installation. The migration does not switch static publishing on.
 
+A package carries targets too: `php bin/php/ezpm.php -r <repository> add <package> expstatictarget github-public`
+(ids separated by commas, or `all`) adds each one as `statictargets/target-<id>.xml`. Only the wizard's settings
+travel; the credential travels as its name, a user or password in the git address is left out, and so is the webhook,
+whose address is often a secret itself. Installing the package writes a target the installation does not have yet
+into `settings/override/staticcache.ini.append.php` (audited like a save in the wizard) and keeps one it has as it
+is. Uninstalling the package leaves the settings alone: remove a target in Setup > Static publishing.
+
 ## Troubleshooting
 
 | Symptom | Cause and fix |

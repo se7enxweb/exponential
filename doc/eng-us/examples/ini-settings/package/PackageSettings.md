@@ -53,7 +53,7 @@ ExtensionDirectories[]
 > Aliases for handlers, this allows handlers to have  
 > nicer names and also shortcuts for doing specific items.  
 
-Default: a hash of 11: `ezcontentclass=eZContentClassPackageHandler`, `ezcontentobject=eZContentObjectPackageHandler`, `eziniaddon=eZINIAddonPackageHandler`, `ezfile=eZFilePackageHandler`, `ezini=eZFilePackageHandler`, `ezdesign=eZFilePackageHandler`, `eztemplate=eZFilePackageHandler`, `ezthumbnail=eZFilePackageHandler`, `ezsql=eZDBPackageHandler`, `ezextension=eZExtensionPackageHandler`, `ezinstallscript=eZInstallScriptPackageHandler`.
+Default: a hash of 12: `ezcontentclass=eZContentClassPackageHandler`, `ezcontentobject=eZContentObjectPackageHandler`, `eziniaddon=eZINIAddonPackageHandler`, `ezfile=eZFilePackageHandler`, `ezini=eZFilePackageHandler`, `ezdesign=eZFilePackageHandler`, `eztemplate=eZFilePackageHandler`, `ezthumbnail=eZFilePackageHandler`, `ezsql=eZDBPackageHandler`, `ezextension=eZExtensionPackageHandler`, `ezinstallscript=eZInstallScriptPackageHandler`, `expstatictarget=expStaticTargetPackageHandler`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -72,6 +72,7 @@ HandlerAlias[ezthumbnail]=eZFilePackageHandler
 HandlerAlias[ezsql]=eZDBPackageHandler
 HandlerAlias[ezextension]=eZExtensionPackageHandler
 HandlerAlias[ezinstallscript]=eZInstallScriptPackageHandler
+HandlerAlias[expstatictarget]=expStaticTargetPackageHandler
 */ ?>
 ```
 

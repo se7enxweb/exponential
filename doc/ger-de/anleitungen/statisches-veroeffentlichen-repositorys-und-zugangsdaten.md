@@ -220,6 +220,14 @@ aus: ihre Blöcke `[Target_<id>]` und `TargetList[]`. Legen Sie sie im Migration
 Name seines Secrets (`token:github_pages_token`), nie als Wert: Legen Sie den Wert unter Setup > Secrets der anderen
 Installation ab. Die Migration schaltet das statische Veröffentlichen nicht ein.
 
+Auch ein Paket nimmt Ziele mit: `php bin/php/ezpm.php -r <repository> add <paket> expstatictarget github-public`
+(IDs durch Kommas getrennt, oder `all`) legt jedes als `statictargets/target-<id>.xml` ab. Es reisen nur die
+Einstellungen des Assistenten; das Credential reist als Name, ein Benutzer oder Passwort in der Git-Adresse bleibt
+weg, ebenso der Webhook, dessen Adresse oft selbst ein Secret ist. Beim Installieren des Pakets wird ein Ziel, das die
+Installation noch nicht hat, in `settings/override/staticcache.ini.append.php` geschrieben (protokolliert wie ein
+Speichern im Assistenten); ein vorhandenes bleibt, wie es ist. Das Deinstallieren lässt die Einstellungen in Ruhe:
+Entfernen Sie ein Ziel unter Setup > Statisches Veröffentlichen.
+
 ## Fehlerbehebung
 
 | Symptom | Ursache und Abhilfe |

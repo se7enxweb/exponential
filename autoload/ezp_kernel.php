@@ -1723,6 +1723,7 @@ return array(
       'expStaticServe'                                               => 'kernel/classes/staticpublish/expstaticserve.php',
       'expStaticStatus'                                              => 'kernel/classes/staticpublish/expstaticstatus.php',
       'expStaticTarget'                                              => 'kernel/classes/staticpublish/expstatictarget.php',
+      'expStaticTargetPackageHandler'                                => 'kernel/classes/packagehandlers/expstatictarget/expstatictargetpackagehandler.php',
       'expSubitemsAttributeColumn'                                   => 'kernel/classes/subitems/expsubitemsattributecolumn.php',
       'expSubitemsBuiltinColumn'                                     => 'kernel/classes/subitems/expsubitemsbuiltincolumn.php',
       'expSubitemsCSVExport'                                         => 'kernel/classes/subitems/expsubitemscsvexport.php',

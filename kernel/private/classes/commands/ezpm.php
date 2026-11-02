@@ -183,6 +183,8 @@ function helpAdd()
                   "  ezcontentclass:    Add contentclass definitions\n" .
                   "  ezcontentobject:   Add content objects and their subtrees\n" .
                   "  ezcontentsubtree:  Alias for ezcontentobject; exports the node and its subtree\n" .
+                  "  expstatictarget:   Add static publishing targets (ids separated by commas, or all);\n" .
+                  "                     their settings travel, a credential only as its secret name\n" .
                   "\n" .
                   "ezcontentobject parameters:\n" .
                   "  NODE                 Numeric node ID or URL path of the starting node\n" .
