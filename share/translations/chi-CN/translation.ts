@@ -80804,6 +80804,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>无法更改记录：%reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>生成迁移</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>迁移名称(可选)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>已写入迁移 %file。任何步骤都无法完成的更改列在文件顶部,需要手动完成。</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>未写入迁移:%reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

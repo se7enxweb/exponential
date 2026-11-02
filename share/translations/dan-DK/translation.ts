@@ -81486,6 +81486,22 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Optagelsen kunne ikke ændres: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Generér migrering</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Migreringens navn (valgfrit)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migreringen %file er skrevet. Ændringer, som intet trin kan foretage, er nævnt øverst i filen og skal laves i hånden.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Ingen migrering blev skrevet: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

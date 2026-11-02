@@ -1,7 +1,8 @@
 {* migration/recording/<id>: one recording of changes. Variables: recording (expMigrationRecording::summary() with
    user_name: events, steps (type/mode => count), with_omitted, step_types), events (recorded_at, audit_name, step,
    subject, omitted, notes; the first 1000), more_events, plan (the steps a migration of it would have: step, subject,
-   audit, omitted), missing_step_types, may_stop, messages, can_run, can_rollback, view. *}
+   audit, omitted), missing_step_types, may_stop, messages, can_run, can_rollback, view. Generate (GenerateButton,
+   MigrationName) writes the migration of it when the installation has its step types. *}
 <div class="a4-page a4-setup-migration" id="exp-migration-recording-view">
 
 <div class="a4-pagehead">
@@ -49,6 +50,19 @@
         <p class="a4-empty">{'Nothing was recorded.'|i18n( 'design/admin/migration' )}</p>
         {/if}
     </div>
+    {if and( $plan|count, eq( $missing_step_types|count, 0 ) )}
+    <form method="post" action={concat( 'migration/recording/', $recording.recording_id )|ezurl}>
+    <div class="a4-card-body">
+        <div class="a4-field a4-field-wide">
+            <label class="a4-label" for="migration-recording-generate-name">{'Name of the migration (optional)'|i18n( 'design/admin/migration' )}</label>
+            <input class="a4-input" id="migration-recording-generate-name" name="MigrationName" maxlength="100" value="{$recording.label|wash}" />
+        </div>
+    </div>
+    <div class="a4-card-foot a4-actions">
+        <button type="submit" class="a4-btn a4-btn-primary" name="GenerateButton" value="1">{'Generate migration'|i18n( 'design/admin/migration' )}</button>
+    </div>
+    </form>
+    {/if}
 </section>
 
 <section class="a4-card is-flush a4-section" aria-labelledby="migration-recording-events">

@@ -1,7 +1,7 @@
 {
     "command:expmigrationgenerate --from-recording": {
-        "en": "Generate a YAML migration from a recording of changes (its id); it needs the YAML step types the recording uses",
-        "de": "Erzeugt eine YAML-Migration aus einer Aufzeichnung von Änderungen (ihre ID); dafür braucht es die YAML-Schritttypen, die die Aufzeichnung verwendet"
+        "en": "Generate a YAML migration from a recording of changes (its id)",
+        "de": "Erzeugt eine YAML-Migration aus einer Aufzeichnung von Änderungen (ihre ID)"
     },
     "command:expmigrationrecorddiscard": {
         "en": "Discard a recording of changes: the recording and every event it captured are removed (a running one stops recording); a dry run unless --apply",

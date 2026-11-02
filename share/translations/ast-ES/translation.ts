@@ -80806,6 +80806,22 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Nun se pudo camudar la grabación: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Xenerar migración</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Nome de la migración (opcional)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Escribióse la migración %file. Los cambeos que nengún pasu pue facer nómense na parte de riba del ficheru, pa facelos a mano.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Nun s'escribió nenguna migración: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

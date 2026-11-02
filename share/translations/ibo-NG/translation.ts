@@ -80804,6 +80804,22 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>The recording could not be changed: %reason</source>
         <translation>Enweghị ike ịgbanwe ndekọ ahụ: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Mepụta mbugharị</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Aha mbugharị ahụ (nhọrọ)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>E dere mbugharị %file. Mgbanwe ndị ọ dịghị nzọụkwụ nwere ike ime ka akpọrọ n'elu faịlụ ahụ, ka e jiri aka mee ha.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Ọ dịghị mbugharị e dere: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

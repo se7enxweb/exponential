@@ -80836,6 +80836,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>Δεν ήταν δυνατή η αλλαγή της καταγραφής: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Δημιουργία μετάβασης</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Όνομα της μετάβασης (προαιρετικό)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Γράφτηκε η μετάβαση %file. Οι αλλαγές που δεν μπορεί να κάνει κανένα βήμα αναφέρονται στην αρχή του αρχείου, για να γίνουν με το χέρι.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Δεν γράφτηκε καμία μετάβαση: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

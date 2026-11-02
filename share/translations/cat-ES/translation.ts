@@ -80836,6 +80836,22 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>The recording could not be changed: %reason</source>
         <translation>No s'ha pogut canviar l'enregistrament: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Genera la migració</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Nom de la migració (opcional)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>S'ha escrit la migració %file. Els canvis que cap pas no pot fer s'anomenen al començament del fitxer, per fer-los a mà.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>No s'ha escrit cap migració: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

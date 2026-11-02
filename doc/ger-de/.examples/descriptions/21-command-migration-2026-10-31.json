@@ -68,8 +68,44 @@
         "de": "Die Migrationen in einer Transaktion ausführen, die zurückgerollt wird (PostgreSQL und SQLite; anderswo wird der Plan aufgelistet)"
     },
     "command:expmigrationgenerate": {
-        "en": "Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; --from-recording turns a recording of changes into a YAML migration; a dry run unless --apply",
-        "de": "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down(), mit --type=yml eine leere YAML-Migration; --from-recording macht aus einer Aufzeichnung von Änderungen eine YAML-Migration; ein Probelauf ohne --apply"
+        "en": "Write a new migration file: --skeleton writes an empty migration (PHP, or with --type=yml, sql, ini or graphql that kind); --from-recording turns a recording of changes into a YAML migration; --from-content, --from-class, --from-role, --from-section and --from-settings turn what the installation has into one; a dry run unless --apply",
+        "de": "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere Migration (PHP, oder mit --type=yml, sql, ini oder graphql diese Art); --from-recording macht aus einer Aufzeichnung von Änderungen eine YAML-Migration; --from-content, --from-class, --from-role, --from-section und --from-settings machen eine aus dem, was die Installation hat; ein Probelauf ohne --apply"
+    },
+    "command:expmigrationgenerate --engine": {
+        "en": "With --type=sql: the file of one engine (mysql, pgsql, sqlite, oracle, mongodb) instead of the portable one",
+        "de": "Mit --type=sql: die Datei einer Engine (mysql, pgsql, sqlite, oracle, mongodb) statt der portablen"
+    },
+    "command:expmigrationgenerate --from-content": {
+        "en": "Generate a YAML migration of content: the nodes (id, remote:<remote id>, path:<url path>), comma-separated",
+        "de": "Erzeugt eine YAML-Migration von Inhalten: die Knoten (ID, remote:<Remote-ID>, path:<URL-Pfad>), durch Kommas getrennt"
+    },
+    "command:expmigrationgenerate --depth": {
+        "en": "With --from-content: the levels below each node that go in too (default 0: the node alone)",
+        "de": "Mit --from-content: die Ebenen unter jedem Knoten, die mit hineinkommen (Standard 0: der Knoten allein)"
+    },
+    "command:expmigrationgenerate --max-objects": {
+        "en": "With --from-content: at most this many objects (default 500)",
+        "de": "Mit --from-content: höchstens so viele Objekte (Standard 500)"
+    },
+    "command:expmigrationgenerate --from-class": {
+        "en": "Generate a YAML migration of content classes (identifiers, comma-separated)",
+        "de": "Erzeugt eine YAML-Migration von Inhaltsklassen (Bezeichner, durch Kommas getrennt)"
+    },
+    "command:expmigrationgenerate --from-role": {
+        "en": "Generate a YAML migration of roles with their policies (names, comma-separated)",
+        "de": "Erzeugt eine YAML-Migration von Rollen mit ihren Richtlinien (Namen, durch Kommas getrennt)"
+    },
+    "command:expmigrationgenerate --from-section": {
+        "en": "Generate a YAML migration of sections (identifiers, comma-separated)",
+        "de": "Erzeugt eine YAML-Migration von Sektionen (Bezeichner, durch Kommas getrennt)"
+    },
+    "command:expmigrationgenerate --from-settings": {
+        "en": "Generate a YAML migration of settings files of settings/override (site.ini ..., comma-separated)",
+        "de": "Erzeugt eine YAML-Migration von Einstellungsdateien aus settings/override (site.ini ..., durch Kommas getrennt)"
+    },
+    "command:expmigrationgenerate --siteaccess": {
+        "en": "With --from-settings: the files of this siteaccess instead of settings/override",
+        "de": "Mit --from-settings: die Dateien dieses Siteaccess statt settings/override"
     },
     "command:expmigrationgenerate --author": {
         "en": "The author in the header of the new migration",
@@ -84,16 +120,16 @@
         "de": "text (Standard) oder json (die Maschinenausgabe exp-migration/1)"
     },
     "command:expmigrationgenerate --skeleton": {
-        "en": "An empty migration with its header: PHP with plan(), up() and down(), or YAML without steps",
-        "de": "Eine leere Migration mit Kopfzeilen: PHP mit plan(), up() und down(), oder YAML ohne Schritte"
+        "en": "An empty migration with its header: PHP with plan(), up() and down(), or the kind --type names",
+        "de": "Eine leere Migration mit Kopfzeilen: PHP mit plan(), up() und down(), oder die Art, die --type nennt"
     },
     "command:expmigrationgenerate --source": {
         "en": "The source: site or extension:<name> (generate: where the file goes; rollback: which migration, when two sources have its id)",
         "de": "Die Quelle: site oder extension:<Name> (generate: wohin die Datei kommt; rollback: welche Migration, wenn zwei Quellen ihre ID haben)"
     },
     "command:expmigrationgenerate --type": {
-        "en": "The type of the new migration: php (the default) or yml",
-        "de": "Der Typ der neuen Migration: php (der Standard) oder yml"
+        "en": "The type of the new migration: php (the default), yml, sql, ini or graphql (a YAML migration with a graphql step to fill in)",
+        "de": "Der Typ der neuen Migration: php (der Standard), yml, sql, ini oder graphql (eine YAML-Migration mit einem graphql-Schritt zum Ausfüllen)"
     },
     "command:expmigrationmigrate": {
         "en": "Run the pending migrations: a dry run unless --apply; captions before and after, restore on failure, commit, tag and push",

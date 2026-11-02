@@ -86,7 +86,7 @@ Had you renamed the folder after publishing it, step 2 would still be one creati
 ## 5. Generate the migration
 
 ```text
-$ ./console exp:migration:generate --from-recording=20261101-124707-de8bac news_section
+$ ./console exp:migration:generate --from-recording=20261101-124707-de8bac news_section --apply
 Exponential migrations: generate from a recording
   20261101-124707-de8bac stopped   session     5 event(s)  2026-11-01 12:47  user #14  "news section"
     1  section/ensure section news
@@ -94,15 +94,15 @@ Exponential migrations: generate from a recording
     3  location/update location remote:89e19c337bfb26c11d3d7a34a71a6618
     4  role/assign role Editor
     5  location/hide location remote:89e19c337bfb26c11d3d7a34a71a6618
-Step types missing: content, location, role, section
-FAIL: needs the YAML step types content, location, role, section (the YAML steps v1 of work package 10): nothing is written until this installation has them
-FAIL (exit 1)
+Wrote migrations/20261101125500_news_section.yml
+Next: ./console exp:migration:check and ./console exp:migration:dry-run
+PASS
 ```
 
-In 6.0.15 the YAML step types for content, locations, roles and sections are not there yet: the command lists the
-steps and writes nothing. Keep the recording; once the step types are installed, the same command writes
-`migrations/<time>_news_section.yml`, which you check, commit and run on production like any migration
-([Migrations](../../guides/migrations.md)).
+The file has one step per line above, in the form of the step types `section`, `content`, `location` and `role`
+([the file it writes](../../guides/migrations-generators-and-recording.md#generating-a-migration-from-a-recording)).
+Check it, commit it and run it on production like any migration ([Migrations](../../guides/migrations.md)). In the
+administration, **Generate migration** on the recording's page does the same.
 
 ## 6. Clean up
 

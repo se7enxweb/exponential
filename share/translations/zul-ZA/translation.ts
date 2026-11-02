@@ -80804,6 +80804,22 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>The recording could not be changed: %reason</source>
         <translation>Okuqoshiwe akushintsheki: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Dala ukufuduka</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Igama lokufuduka (okokuzikhethela)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Ukufuduka %file kubhaliwe. Izinguquko okungekho sinyathelo esingazenza zibalwe phezulu kwefayela, ukuze zenziwe ngesandla.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Akukho kufuduka okubhaliwe: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

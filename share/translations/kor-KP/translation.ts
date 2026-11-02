@@ -80806,6 +80806,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>기록을 변경할수 없습니다: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>이행 생성</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>이행의 이름 (선택)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>이행 %file을 썼습니다. 어떤 단계도 할수 없는 변경은 파일 첫머리에 적혀있으며 손으로 해야 합니다.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>이행을 쓰지 못했습니다: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

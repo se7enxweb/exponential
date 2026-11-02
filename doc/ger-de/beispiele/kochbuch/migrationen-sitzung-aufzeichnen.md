@@ -90,7 +90,7 @@ Namen.
 ## 5. Die Migration erzeugen
 
 ```text
-$ ./console exp:migration:generate --from-recording=20261101-124707-de8bac news_section
+$ ./console exp:migration:generate --from-recording=20261101-124707-de8bac news_section --apply
 Exponential migrations: generate from a recording
   20261101-124707-de8bac stopped   session     5 event(s)  2026-11-01 12:47  user #14  "news section"
     1  section/ensure section news
@@ -98,15 +98,16 @@ Exponential migrations: generate from a recording
     3  location/update location remote:89e19c337bfb26c11d3d7a34a71a6618
     4  role/assign role Editor
     5  location/hide location remote:89e19c337bfb26c11d3d7a34a71a6618
-Step types missing: content, location, role, section
-FAIL: needs the YAML step types content, location, role, section (the YAML steps v1 of work package 10): nothing is written until this installation has them
-FAIL (exit 1)
+Wrote migrations/20261101125500_news_section.yml
+Next: ./console exp:migration:check and ./console exp:migration:dry-run
+PASS
 ```
 
-In 6.0.15 gibt es die YAML-Schritttypen für Inhalte, Orte, Rollen und Sektionen noch nicht: der Befehl listet die
-Schritte und schreibt nichts. Behalten Sie die Aufzeichnung; sobald die Schritttypen installiert sind, schreibt
-derselbe Befehl `migrations/<zeit>_news_section.yml`, die Sie prüfen, committen und auf der Produktion ausführen wie
-jede Migration ([Migrationen](../../anleitungen/migrationen.md)).
+Die Datei hat einen Schritt je Zeile oben, in der Form der Schritttypen `section`, `content`, `location` und `role`
+([die Datei, die er schreibt](../../anleitungen/migrationen-erzeugen-und-aufzeichnen.md#eine-migration-aus-einer-aufzeichnung-erzeugen)).
+Prüfen Sie sie, committen Sie sie und führen Sie sie auf der Produktion aus wie jede Migration
+([Migrationen](../../anleitungen/migrationen.md)). In der Administration macht **Migration erzeugen** auf der Seite
+der Aufzeichnung dasselbe.
 
 ## 6. Aufräumen
 

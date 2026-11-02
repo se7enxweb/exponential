@@ -80806,6 +80806,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>تۆمارەکە نەگۆڕدرا: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>کۆچ دروست بکە</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>ناوی کۆچەکە (ئارەزوومەندانە)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>کۆچی %file نووسرا. ئەو گۆڕانکارییانەی هیچ هەنگاوێک ناتوانێت بیانکات لە سەرەوەی فایلەکە ناویان هاتووە، بۆ ئەوەی بە دەست بکرێن.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>هیچ کۆچێک نەنووسرا: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

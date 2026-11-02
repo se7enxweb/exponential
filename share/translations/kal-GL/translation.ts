@@ -80836,6 +80836,22 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>The recording could not be changed: %reason</source>
         <translation>Immiussaq allanngortinneqarsinnaanngilaq: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Nuussineq pilersiruk</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Nuussinerup taaguutaa (toqqarsinnaavoq)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Nuussineq %file allanneqarpoq. Allanngortitsinerit alloriarnermit sumilluunniit pineqarsinnaanngitsut fiilip qulaani taaneqarput, assammik iliuuserineqassapput.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Nuussineq allanneqanngilaq: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

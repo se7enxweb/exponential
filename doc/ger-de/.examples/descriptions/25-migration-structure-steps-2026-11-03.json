@@ -387,6 +387,10 @@
         "en": "the type of password_hash: (md5_password, md5_user, md5_site, plaintext, password_hash ...)",
         "de": "der Typ von password_hash: (md5_password, md5_user, md5_site, plaintext, password_hash ...)"
     },
+    "step:user secrets": {
+        "en": "login, email or password => the name of a secret (Setup > Secrets, or env:<variable>) the value is read from when the step runs, instead of login:, email: or password:",
+        "de": "login, email oder password => der Name eines Geheimnisses (Setup > Geheimnisse oder env:<Variable>), aus dem der Wert gelesen wird, wenn der Schritt läuft, statt login:, email: oder password:"
+    },
     "step:user remote_id": {
         "en": "the remote id of a new user's object",
         "de": "die Remote-ID des Objekts eines neuen Benutzers"

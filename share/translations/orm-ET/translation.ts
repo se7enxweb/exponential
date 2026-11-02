@@ -80806,6 +80806,22 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Waraabbiin jijjiiramuu hin dandeenye: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Godaansa uumi</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Maqaa godaansichaa (filannoo)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Godaansi %file barreeffameera. Jijjiiramoonni tarkaanfiin kamiyyuu gochuu hin dandeenye gubbaa faayilichaa irratti maqaa dhahamaniiru, harkaan akka hojjetaman.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Godaansi tokkollee hin barreeffamne: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

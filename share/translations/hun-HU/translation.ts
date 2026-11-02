@@ -80836,6 +80836,22 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>A rögzítést nem sikerült módosítani: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Migráció létrehozása</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>A migráció neve (nem kötelező)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>A(z) %file migráció elkészült. Azok a változások, amelyeket egyetlen lépés sem tud elvégezni, a fájl elején szerepelnek, kézzel kell elvégezni őket.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Nem készült migráció: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

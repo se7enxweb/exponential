@@ -80815,6 +80815,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>Le-mṣelan šaxlexla ktava: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Ebid migratsia</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Shimma d-migratsia (bkhayra)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migratsia %file ktiwla. Shuḥlape d-la pasʿa mṣe ʿawid, mshumma b-reshit d-fayil, ʿwada b-ida.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>La migratsia ktiwla: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

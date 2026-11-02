@@ -80806,6 +80806,22 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>Nahrawka njeda so změnić: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Migraciju wutworić</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Mjeno migracije (opcionalne)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Migracija %file je so napisała. Změny, kotrež žadyn krok činić njemóže, su na spočatku dataje mjenowane, zo bychu so z ruku činili.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Žana migracija njeje so napisała: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

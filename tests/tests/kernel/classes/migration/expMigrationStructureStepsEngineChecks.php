@@ -11,7 +11,8 @@
  *       renamed, one removed), a section created and assigned, a user group, a user with a password in it and in a
  *       second group, a role with limited policies assigned to the group in a subtree, an object state group with two
  *       states. Ensured again: nothing changes. The second migration updates, so it cannot undo itself
- *  SE-2 a migration whose steps undo themselves (creates and an assign) runs and is rolled back: everything is gone
+ *  SE-2 a migration whose steps undo themselves (creates and an assign) runs and is rolled back: everything is gone;
+ *       the user is named by secrets (environment variables)
  *  SE-3 the deletes: a class with objects only with with_objects, a role, a section, a user, a group, a state group,
  *       a class group and a language
  *
@@ -343,7 +344,7 @@ steps:
       attributes: [ { identifier: name, type: ezstring, name: Name } ]
     - { type: section, mode: create, identifier: wp10b_reverted, name: WP10b reverted }
     - { type: user_group, mode: create, parent: 5, remote_id: wp10b-reverted-group, name: WP10b reverted }
-    - { type: user, mode: create, login: wp10b-reverted, email: wp10b-reverted@example.com, password: x-Wp10b-1, groups: [ object-remote:wp10b-reverted-group ] }
+    - { type: user, mode: create, secrets: { login: "env:WP10B_LOGIN", email: "env:WP10B_EMAIL", password: "env:WP10B_PASSWORD" }, groups: [ object-remote:wp10b-reverted-group ] }
     - { type: role, mode: create, name: WP10b reverted, policies: [ { module: user, function: login } ] }
     - { type: role, mode: assign, role: WP10b reverted, users: [ wp10b-reverted ] }
     - { type: object_state_group, mode: create, identifier: wp10b_reverted, name: WP10b reverted, states: [ { identifier: one, name: One } ] }
@@ -351,7 +352,10 @@ YAML
             . ( $hadNorwegian ? "\n" : "\n    - { type: language, mode: create, locale: nor-NO, name: Norsk }\n" ),
         ) );
         $this->assertTrue( $migrations[0]->reversible() );
-        $report = ( new expMigrationRunner( $this->runnerContext( $db ) ) )->run( $migrations );
+        putenv( 'WP10B_LOGIN=wp10b-reverted' );
+        putenv( 'WP10B_EMAIL=wp10b-reverted@example.com' );
+        putenv( 'WP10B_PASSWORD=x-Wp10b-1' );
+        $report =( new expMigrationRunner( $this->runnerContext( $db ) ) )->run( $migrations );
         $this->assertSame( 0, $report['exit'], implode( '; ', $report['errors'] ) . ' ' . json_encode( array_column( $report['migrations'], 'messages' ) ) );
         $this->assertInstanceOf( 'eZRole', eZRole::fetchByName( 'WP10b reverted' ) );
         $this->assertInstanceOf( 'eZUser', eZUser::fetchByName( 'wp10b-reverted' ) );

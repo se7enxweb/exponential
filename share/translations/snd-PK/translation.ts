@@ -80806,6 +80806,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The recording could not be changed: %reason</source>
         <translation>رڪارڊنگ بدلائي نه سگهي: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>لڏپلاڻ ٺاهيو</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>لڏپلاڻ جو نالو (اختياري)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>لڏپلاڻ %file لکي وئي. اهي تبديليون جيڪي ڪو به قدم نٿو ڪري سگهي، فائل جي مٿان ڄاڻايل آهن، هٿ سان ڪرڻيون آهن.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>ڪا به لڏپلاڻ نه لکي وئي: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -80806,6 +80806,22 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>The recording could not be changed: %reason</source>
         <translation>Asekles ur yettwabeddel ara: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Sirew tunigin</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Isem n tunigin (d afrayan)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Tunigin %file tettwaru. Ibeddilen ur yezmir ad yexdem ula d yiwen n uḥric ttwabedren deg uqerru n ufaylu, ad ttwaxedmen s ufus.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Ulac tunigin i yettwarun: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

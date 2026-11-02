@@ -80806,6 +80806,22 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>The recording could not be changed: %reason</source>
         <translation>ʻAʻole hiki ke hoʻololi i ka hoʻopaʻa ʻana: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Hana i ka neʻe</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Ka inoa o ka neʻe (koho)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Ua kākau ʻia ka neʻe %file. ʻO nā loli i hiki ʻole i kekahi ʻanuʻu ke hana, ua helu ʻia ma ka piko o ka faila, e hana lima ʻia.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>ʻAʻohe neʻe i kākau ʻia: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

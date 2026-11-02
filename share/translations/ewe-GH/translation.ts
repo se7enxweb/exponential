@@ -80806,6 +80806,22 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>The recording could not be changed: %reason</source>
         <translation>Womete ŋu trɔ ŋɔŋlɔɖi la o: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Wɔ migration</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Migration ƒe ŋkɔ (ne èdi)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Woŋlɔ migration %file. Tɔtrɔ siwo afɔɖeɖe aɖeke mate ŋu awɔ o la, woŋlɔ wo ŋkɔ ɖe faɛl la ƒe tame, be nàwɔ wo kple asi.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Womeŋlɔ migration aɖeke o: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

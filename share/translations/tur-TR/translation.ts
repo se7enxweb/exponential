@@ -80811,6 +80811,22 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The recording could not be changed: %reason</source>
         <translation>Kayıt değiştirilemedi: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Taşıma oluştur</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Taşımanın adı (isteğe bağlı)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>%file taşıması yazıldı. Hiçbir adımın yapamadığı değişiklikler dosyanın başında belirtilmiştir, elle yapılmalıdır.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Hiçbir taşıma yazılmadı: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

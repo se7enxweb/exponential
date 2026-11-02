@@ -2,14 +2,14 @@
 title: exp:expmigrationgenerate
 audience: developer, admin
 category: examples
-summary: "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down(), mit --type=yml eine leere YAML-Migration; --from-recording macht aus einer Aufzeichnung von Änderungen eine YAML-Migration; ein Probelauf ohne --apply."
+summary: "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere Migration (PHP, oder mit --type=yml, sql, ini oder graphql diese Art); --from-recording macht aus einer Aufzeichnung von Änderungen eine YAML-Migration; --from-content, --from-class, --from-role, --from-section ..."
 keywords: Konsole, Befehl, exp:expmigrationgenerate, expmigrationgenerate, console, command, CLI, expmigrationgenerate.php, exp:migration:generate
 type: generated
 generated: exp:help:examples
 ---
 # exp:expmigrationgenerate
 
-Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down(), mit --type=yml eine leere YAML-Migration; --from-recording macht aus einer Aufzeichnung von Änderungen eine YAML-Migration; ein Probelauf ohne --apply.
+Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere Migration (PHP, oder mit --type=yml, sql, ini oder graphql diese Art); --from-recording macht aus einer Aufzeichnung von Änderungen eine YAML-Migration; --from-content, --from-class, --from-role, --from-section und --from-settings machen eine aus dem, was die Installation hat; ein Probelauf ohne --apply.
 
 Skript `bin/php/expmigrationgenerate.php`, Code in `kernel/private/classes/commands/expmigrationgenerate.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -29,34 +29,53 @@ Write a new migration
 with the header (description, author), plan(), up() and down(), in the site's migrations directory
 (the first [MigrationSettings] DirectoryList entry) or, with --source=extension:<name>, in the
 extension's. The class is named after the name and the time, in the namespace Site\Migrations or
-Extension\<Name>\Migrations. With --type=yml it writes YYYYMMDDHHMMSS_<name>.yml instead: the header
-and an empty list of steps. Without --apply it shows the file and writes nothing; an existing file is
-never replaced.
+Extension\<Name>\Migrations. --type=yml writes YYYYMMDDHHMMSS_<name>.yml instead (the header and an
+empty list of steps), --type=graphql the same with an example of the step graphql, --type=ini an INI
+migration and --type=sql an SQL migration (with --engine=mysql, pgsql, sqlite or oracle the file of one
+engine, with --engine=mongodb the .mongodb.json file). Without --apply it shows the file and writes
+nothing; an existing file is never replaced.
 --from-recording=<id> turns a recording of changes (exp:migration:record:start) into a YAML
-migration: its events folded into one step per thing changed. It needs the YAML step types the
-recording uses (content, location, class, role, user ...); until the installation has them it lists
-the steps and the step types missing, and writes nothing.
+migration: its events folded into one step per thing changed, checked as exp:migration:check checks
+a file. What no step type repeats is listed, and named in the file, to be done by hand.
+--from-content=<node>[,<node>...] (with --depth=<levels below> and --max-objects=<n>), --from-class,
+--from-role, --from-section (identifiers or names, comma-separated) and --from-settings=<file>[,...]
+(of settings/override, or with --siteaccess=<name> of that siteaccess) write a YAML migration that
+makes those things as they are now (mode ensure). Personal data stays out: a user is named by
+secrets, and secret settings are left to be set by hand.
 
 ./console exp:migration:generate --skeleton add_news_class
 ./console exp:migration:generate --skeleton news_folder --type=yml --apply
+./console exp:migration:generate --skeleton news_index --type=sql --engine=pgsql --apply
+./console exp:migration:generate --skeleton news_settings --type=ini --apply
 ./console exp:migration:generate --skeleton add_news_class --description="The news class" --apply
 ./console exp:migration:generate --skeleton news_folder --source=extension:expnews --apply
-./console exp:migration:generate --from-recording=20261101-120000-a1b2c3 news_section
+./console exp:migration:generate --from-recording=20261101-120000-a1b2c3 news_section --apply
+./console exp:migration:generate --from-class=news_article --from-role="News editor" news_setup
+./console exp:migration:generate --from-content=path:news --depth=1 news_tree --apply
 ```
 
 ## Optionen
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--skeleton` |  | Eine leere Migration mit Kopfzeilen: PHP mit plan(), up() und down(), oder YAML ohne Schritte |
+| `--skeleton` |  | Eine leere Migration mit Kopfzeilen: PHP mit plan(), up() und down(), oder die Art, die --type nennt |
 | `--source` | erforderlich | Die Quelle: site oder extension:<Name> (generate: wohin die Datei kommt; rollback: welche Migration, wenn zwei Quellen ihre ID haben) |
 | `--description` | erforderlich | Die Beschreibung in den Kopfzeilen der neuen Migration |
 | `--author` | erforderlich | Der Autor in den Kopfzeilen der neuen Migration |
-| `--type` | erforderlich | Der Typ der neuen Migration: php (der Standard) oder yml |
+| `--type` | erforderlich | Der Typ der neuen Migration: php (der Standard), yml, sql, ini oder graphql (eine YAML-Migration mit einem graphql-Schritt zum Ausfüllen) |
 | `--apply` |  | Die Änderungen vornehmen (ohne die Option ein Probelauf, der sie auflistet und nichts ändert) |
 | `--dry-run` |  | Der Standard, angenommen für Skripte, die ihn übergeben: auflisten, was sich ändern würde, nichts ändern |
 | `--format` | erforderlich | text (Standard) oder json (die Maschinenausgabe exp-migration/1) |
-| `--from-recording` | erforderlich | Erzeugt eine YAML-Migration aus einer Aufzeichnung von Änderungen (ihre ID); dafür braucht es die YAML-Schritttypen, die die Aufzeichnung verwendet |
+| `--from-recording` | erforderlich | Erzeugt eine YAML-Migration aus einer Aufzeichnung von Änderungen (ihre ID) |
+| `--engine` | erforderlich | Mit --type=sql: die Datei einer Engine (mysql, pgsql, sqlite, oracle, mongodb) statt der portablen |
+| `--from-content` | erforderlich | Erzeugt eine YAML-Migration von Inhalten: die Knoten (ID, remote:<Remote-ID>, path:<URL-Pfad>), durch Kommas getrennt |
+| `--depth` | erforderlich | Mit --from-content: die Ebenen unter jedem Knoten, die mit hineinkommen (Standard 0: der Knoten allein) |
+| `--max-objects` | erforderlich | Mit --from-content: höchstens so viele Objekte (Standard 500) |
+| `--from-class` | erforderlich | Erzeugt eine YAML-Migration von Inhaltsklassen (Bezeichner, durch Kommas getrennt) |
+| `--from-role` | erforderlich | Erzeugt eine YAML-Migration von Rollen mit ihren Richtlinien (Namen, durch Kommas getrennt) |
+| `--from-section` | erforderlich | Erzeugt eine YAML-Migration von Sektionen (Bezeichner, durch Kommas getrennt) |
+| `--from-settings` | erforderlich | Erzeugt eine YAML-Migration von Einstellungsdateien aus settings/override (site.ini ..., durch Kommas getrennt) |
+| `--siteaccess` | erforderlich | Mit --from-settings: die Dateien dieses Siteaccess statt settings/override |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

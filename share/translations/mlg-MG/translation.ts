@@ -80806,6 +80806,22 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>The recording could not be changed: %reason</source>
         <translation>Tsy azo novaina ny fandraketana: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Mamorona fifindrana</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Anaran'ny fifindrana (tsy voatery)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>Voasoratra ny fifindrana %file. Ny fiovana tsy azon'ny dingana rehetra atao dia voatonona eo an-tampon'ny rakitra, hatao amin'ny tanana.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Tsy nisy fifindrana voasoratra: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -80806,6 +80806,22 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>The recording could not be changed: %reason</source>
         <translation>La registraziun n'ha betg pudì vegnir midada: %reason</translation>
     </message>
+    <message>
+        <source>Generate migration</source>
+        <translation>Generar la migraziun</translation>
+    </message>
+    <message>
+        <source>Name of the migration (optional)</source>
+        <translation>Num da la migraziun (facultativ)</translation>
+    </message>
+    <message>
+        <source>Wrote the migration %file. Changes no step can make are named at the top of the file, to be made by hand.</source>
+        <translation>La migraziun %file è vegnida scritta. Las midadas che nagin pass na po far èn numnadas en il chau da la datoteca, da far a maun.</translation>
+    </message>
+    <message>
+        <source>No migration was written: %reason</source>
+        <translation>Nagina migraziun n'è vegnida scritta: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
