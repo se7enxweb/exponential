@@ -28903,7 +28903,7 @@ ce11659d7ef102c44a77972a943abab2  tests/tests/kernel/content/eZAuditLocationTest
 6621b245b9540e19529626f735b1c071  tests/tests/kernel/content/eZContentVersionviewPlacementTest.php
 a3f58dd84b4e820a76e77160f38d09b0  tests/tests/kernel/content/eZEditLocationsVisibilityTest.php
 1b4b2442dfd63eef0360e6efca04de2a  tests/tests/kernel/content/eZLoginTemplatesRegisterLinkTest.php
-700913474002ebdb64f2ed6d4b3bfca4  tests/tests/kernel/content/eZPendingIndexActionsTest.php
+f612018e346b99680befcefb4b2b6746  tests/tests/kernel/content/eZPendingIndexActionsTest.php
 00e12b5b76a19905726972c2e21c6bf9  tests/tests/kernel/content/eZPublishRegisterSearchObjectTest.php
 7c9c00792dd5b619d6be0feb67ea0859  tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php
 5d929cd3075a1bc40dbffeea444b14d3  tests/tests/kernel/content/eZPublishWithoutNotificationTest.php
@@ -29287,7 +29287,7 @@ ef5fbe2c38e40f6b928b749e9d1c394b  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
 41ad6b0de2479238f509f8e4d61298ce  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
 595e7ab1cedd85478942a82e6a062c97  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php
 98ac0a85b24dddc04a8ff6b0e7156c2a  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
-0edda2ec2f2a6d2e11cefa6f6447e531  tests/tests/lib/ezdb/eZSQLite3BackgroundWriterHandoffTest.php
+5bcd39d973a0ad530333df3bb0df7c99  tests/tests/lib/ezdb/eZSQLite3BackgroundWriterHandoffTest.php
 336df5140ca5fa2e49cba8b52540981d  tests/tests/lib/ezdb/eZSQLite3DBQueryCountTest.php
 779e2f30111326b4a985a21c4f181b12  tests/tests/lib/ezdb/eZSQLite3InsertOrReplaceTest.php
 e7c428ffa18e115fd9afa3ac417d175c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php

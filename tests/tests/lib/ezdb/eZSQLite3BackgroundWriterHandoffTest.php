@@ -14,7 +14,7 @@
  *  BWH-01  behind one background loop of back-to-back transactions, a writer's transaction starts within 2 s
  *  BWH-02  behind two such loops (the demo's cron part and content job), it starts within 3 s, and both loops go on
  *          committing (neither starves the other)
- *  BWH-03  a writer alone takes the lock at once, without the hand-off pause
+ *  BWH-03  a writer alone sees nobody waiting (no hand-off pause), and a waiting writer is seen
  *  BWH-04  indexcontent indexes a moved subtree in one transaction per object, not inside the moved object's
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -185,12 +185,26 @@ class eZSQLite3BackgroundWriterHandoffTest extends PHPUnit\Framework\TestCase
     /** BWH-03 */
     public function testAWriterAloneDoesNotPause()
     {
+        // Not timed (a loaded machine's fsync alone can exceed HANDOFF_MS): what decides the pause is whether the
+        // queue file shows a waiting writer, and with nobody waiting it does not.
         $db = $this->connect();
-        $longest = 0;
+        $waiting = new ReflectionMethod( 'eZSQLite3DB', 'writersWaiting' );
+        $queueOf = new ReflectionMethod( 'eZSQLite3DB', 'writerQueue' );
+        $queue = $queueOf->invoke( $db );
+        $this->assertIsResource( $queue, 'the queue file next to the database could not be opened' );
+        $this->assertFalse( $waiting->invoke( $db, $queue ), 'a writer alone saw others waiting' );
         for ( $i = 0; $i < 20; $i++ )
-            $longest = max( $longest, $this->pageSave( $db ) );
-        $this->assertLessThan( eZSQLite3DB::HANDOFF_MS / 1000, $longest, 'a writer alone paused as if others waited' );
+            $this->pageSave( $db );
+        $this->assertFalse( $waiting->invoke( $db, $queue ), 'a save left the queue marked as waiting' );
         $this->assertSame( 20, $this->rows( $db, 'page' ) );
+
+        // a writer that waits (holds the shared lock) is seen, and no longer once it is in
+        $other = fopen( $this->file . '.writer-queue', 'r' );
+        $this->assertTrue( flock( $other, LOCK_SH ) );
+        $this->assertTrue( $waiting->invoke( $db, $queue ), 'a waiting writer was not seen' );
+        flock( $other, LOCK_UN );
+        fclose( $other );
+        $this->assertFalse( $waiting->invoke( $db, $queue ) );
         $db->close();
     }
 
