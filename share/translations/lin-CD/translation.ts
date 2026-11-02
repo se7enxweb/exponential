@@ -81336,15 +81336,15 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Baserveur ya mosika</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Babobongisi mosusu oyo bobongisi oyo epanzelaka migrasyo na yango: bopanzi etindaka migrasyo na baserveur ya mosika oyo eponami mpe etambwisaka yango kuna, nyonso na mbala moko mpe ekokani. Serveur ya mosika ebombaka sekele ata moke te: ndenge na yango ya kokɔta epesaka nkombo ya moko na Bobongisi &gt; Bisekele.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika ya sika</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Komeka connexion ya %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Baserveur nyonso ya mosika</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kino baserveur ya mosika %parallel esalemaka na mbala moko; phase moko ekoki kozwa basekonde %timeout na moko na moko.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>bibongiseli ya kobongisa</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>bafisye kaka (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Kilé ya SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>moko te (agent ya SSH mpe bakilé ya hôte)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bopanzi na lisanga moko ekendaka na serveur ya mosika nyonso ya lisanga yango.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Panzá na baserveur ya mosika</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naino serveur ya mosika moko te ebongisami.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eloko moko te etindami to etambwisami awa: Bómbá ekomaka bibongiseli na settings/override/migration.ini.append.php. Ndenge ya kokɔta ezali nkombo; motuya na yango etikalaka na Bobongisi &gt; Bisekele to na esika ya serveur.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibongiseli ndenge ekɔtisamaki, naino ebombami te.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Kilé ya hôte</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Serveur ya mosika</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nkombo ya serveur ya mosika mpe esika nini yango ezali.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Balɛtrɛ, bitángo, - mpe _, ndakisa production1. Epesaka serveur ya mosika nkombo na balapolo mpe na console (--remotes=production1) mpe ekoki kobongolama sima te.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Bopanzi na biteni elekaka na bisika na molɔngɔ oyo.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na boponi, ekabolami na bavirgile, ndakisa production. Bopanzi na lisanga moko ekendaka na serveur ya mosika nyonso ya lisanga yango.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Connexion</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ndenge nini bafisye ekokoma kuna, mpe esika bobongisi ezali.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na nzela ya SSH, kaka oyo ebongwani, mpe bolekisi oyo ekatanaki ebandaka lisusu. Boponi ya malamu koleka esika rsync etiami.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH na scp mpo na bafisye.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH na sftp mpo na bafisye.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bafisye kaka: migrasyo etindami mpe etángami lisusu, kasi ekoki kotambwisama kuna te.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP na nzela ya TLS; bafisye kaka.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bobongisi mosusu na serveur oyo, na dossier moko.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nkombo ya hôte to adresi, ndakisa node1.example.com. Mpo na local te.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mpamba: 22 mpo na SSH, 21 mpo na FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Moboko ya bobongisi kuna, ndakisa /var/www/site (mpo na FTP: nzela oyo compte ya FTP emonaka).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Molɔngɔ ya mitindo ya PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI ya kuna: php, to nzela mobimba lokola /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Ba-script ya console etambwisamaka kuna lokola root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaka soki mosaleli ya serveur ya mosika azali root (na ntango wana etambwisamaka na --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Ndenge ya kokɔta</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ndenge nini bobongisi oyo ekɔtaka kuna. Kaka nkombo moko ebombamaka.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Agent ya SSH mpe bakilé ya mosaleli oyo bobongisi oyo etambolaka na nkombo na ye (mpe ntango nyonso mpo na local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kilé ya moto moko oyo ebombami lokola sekele.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Liloba ya sekele oyo ebombami lokola sekele (FTP ekɔtaka na yango).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nkombo ya sekele</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekele moko ya Bobongisi &gt; Bisekele, ndakisa deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>To variable moko ya esika</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Variable ya processus ya serveur oyo ezali na yango, ndakisa DEPLOY_KEY (ebombami lokola env:DEPLOY_KEY). Ezwaka esika ya nkombo ya sekele.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Kilé ya hôte</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na boponi, mpo na SSH, sftp mpe rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Elembo ya mosapi ya kilé ya hôte</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ndenge ssh-keygen -l ekomaka yango. Na yango, hôte esengeli kolakisa kilé oyo; soki yango te, kilé eyebanaka na boyokani ya liboso.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Talá</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mekelá connexion na bibongiseli oyo ezali likoló, sima talá milɔngɔ oyo ekokomama.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Longolá serveur ya mosika oyo</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibongiseli na yango elongolami na settings/override/migration.ini.append.php. Eloko moko te ebongwanaka na serveur ya mosika, mpe bopanzi na yango etikalaka na lisolo.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ee, longolá serveur ya mosika oyo</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapanzi</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bopanzi etindaka migrasyo ya bobongisi oyo na baserveur ya mosika oyo eponami mpe etambwisaka yango kuna lokola %user, nyonso na mbala moko mpe ekokani: liboso serveur ya mosika moko na moko etalelamaka, mpe soki moko ekweyi, serveur nyonso oyo esalelaki yango ezongisamaka sima. Ekobaka na nse, mpe lokasa na yango elakisaka serveur ya mosika moko na moko ntango ezali kokende.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Baserveur ya mosika</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiá elembo na baserveur ya mosika, na lisanga moko, to na nyonso mibale.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Panzá kuna</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Ndenge nini</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Panzá</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Tindá mpe tambwisá</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasyo etindami, etalelami mpe etambwisami na serveur ya mosika moko na moko na ID moko ya botambwisi oyo bakabolaka.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolekisa kaka</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Bafisye etindami mpe etalelami, eloko moko te etambwisami (nzela kaka moko mpo na serveur ya mosika ya FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Na biteni</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eteni na eteni na molɔngɔ ya bisika (dev, stage, beta, production ...): eteni ya liboso epanzami, sima ekuke ezelaka kino moto moko andima oyo elandi. Nyonso to eloko te na kati ya eteni moko na moko.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaka migrasyo oyo</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na boponi: ba-ID ya migrasyo, ekabolami na bavirgile. Mpamba: migrasyo nyonso ya site mpe ya ba-extension na yango.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Botali ya liboso kaka</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ee, panzá sikoyo</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapanzi oyo etindaki to etambwisaki eloko, ya sika liboso (botali ya liboso ebombaka lapolo te).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>kolekisa kaka</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>na biteni, biteni %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ekokani te</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naino bopanzi moko te.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Bopanzi %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika moko na moko ya bopanzi elongo na ezalela na yango. Bopanzi oyo ebandisami awa ekobaka na nse ntango lokasa oyo ekangami; fungolá lokasa lisusu mpo na kolanda yango.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Bopanzi nyonso</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Botali ya liboso</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Eteni oyo elandi</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Kotala bibongiseli mpe ndenge ya kokɔta</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Botali ya liboso: kotánga ezalela ya serveur ya mosika moko na moko</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Kotinda bafisye ya migrasyo</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Kotala oyo ekomaki</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Kotambwisa migrasyo na serveur ya mosika moko na moko</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Kozongisa baserveur ya mosika sima</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bopanzi esili. Kozwa lapolo na yango.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bokoli ekokaki kolandama te. Zongisá lokasa mpo na komona ndenge bopanzi ezali kokende.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Phase</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokasa oyo elandaka bopanzi ntango ezali kokende.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekokani</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Biteni</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>eteni %stage ezali kozela na ekuke na yango</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekuke %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>endimami na %user na %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Eteni</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Bafisye oyo etindami</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version ya kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>esalelami: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ya kosalela: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Ba-phase</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekuke: eteni %stage na %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Biteni oyo ezali liboso na yango epanzami. Talá yango, sima ndimá eteni oyo elandi: baserveur ya mosika na yango etalelamaka lisusu mpe epanzamaka, nyonso to eloko te.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ee, panzá eteni oyo elandi sikoyo</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Zongisá bopanzi oyo</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika nyonso oyo esalelaki yango (%list) ezongaka na elilingi oyo ezwamaki liboso ya botambwisi na yango, nyonso na mbala moko.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ee, zongisá bopanzi oyo sikoyo</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>ekanami</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>elekisami</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>epanzami</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ezali kozela na ekuke</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>ebongisami</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ezali kozela eteni na yango</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>bafisye etindami</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>etalelami</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ekweyi, ezongisi yango moko</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>ebongwani te</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>epanzami te</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ekoki kokómama te</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika eyanoli.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika ekoki kosalelama sikoyo te.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done esilisami, %pending ezali kozela, %failed ekweyi</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Kufulu</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>botambwisi moko esimbi kufulu kuna</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage na %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poná serveur ya mosika oyo ya komeka.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Liboso, tiá elembo na « Ee, longolá serveur ya mosika oyo ».</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika ekokaki kolongolama te: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika ekokaki kobombama te: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poná ata serveur ya mosika moko to lisanga moko.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika moko oyo eponamaki ezali lisusu te na bibongiseli. Zongisá lokasa.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Liboso, tiá elembo na « Ee, panzá sikoyo ».</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika ya FTP ekoki kotambwisa migrasyo te: poná « Kolekisa kaka », to tiká yango.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasyo ya kopanza ezali ba-ID ya migrasyo, ekabolami na bavirgile.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bopanzi ezali naino kokoba. Zelá kino esila.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bopanzi oyo ezelaka na ekuke te.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika moko te esalelaki bopanzi oyo: eloko te ya kozongisa.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Liboso, tiá elembo na « Ee, panzá eteni oyo elandi sikoyo ».</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Liboso, tiá elembo na « Ee, zongisá bopanzi oyo sikoyo ».</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika na ID %id ezali kala.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Port ezali motango kobanda 1 kino 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Esika ezali liloba ya balɛtrɛ, bitángo, - mpe _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisanga ezali liloba ya balɛtrɛ, bitángo, - mpe _ (kasi all te): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ndenge ya kokɔta ekoki kotángama sikoyo te: %problem. Bómbá yango na Bobongisi &gt; Bisekele (to tiá variable) liboso ya bopanzi ya liboso.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika ya FTP ezwaka kaka bafisye: bopanzi na yango ezali « Kolekisa kaka », mpe migrasyo na yango etambwisamaka kuna na mabɔkɔ.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur ya mosika %id ezali te na settings/override/migration.ini.append.php; longolá yango esika ebongisami.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekɔtaki na nzela ya FTP mpe etángaki index.php. Ezalela ya migrasyo ya serveur ya mosika ya FTP ekoki kotángama te.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopanza %deploy ekweyi na %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopanza %deploy ezali kozela na ekuke moko na %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopanza %deploy elongi na %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mokanda oyo etindamaki na %site mpo ete migration.ini [RemoteSettings] Notify[] esengi yango.</translation>
     </message>
 </context>
 </TS>

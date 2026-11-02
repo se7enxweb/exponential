@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Генара дӀахӀоттамаш</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀокху дӀахӀоттамо шен миграцеш дӀакхачош болу кхин дӀахӀоттамаш: дӀакхачоро миграцеш харжинчу генарчу дӀахӀоттамашка дохьу, цигахь дӀайоьхуьйту, массо а цкъачунна а цхьаьнадогӀуш а. Генарчу дӀахӀоттамехь цкъа а къайле хӀума ца хуьлу: цуьнан чуваларан хаамаша ДӀахӀоттор &gt; Къайле хӀуманаш чуьра цхьаъ цӀе йоккху.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Керла генара дӀахӀоттам</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id зӀе таллар</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Генара дӀахӀоттамаш массо а</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>%parallel кхаччалц генарчу дӀахӀоттамашца цхьана хенахь болх бо; хӀоранна тӀехь цхьана мурна %timeout секунд яла мега.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Генара дӀахӀоттам</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>нисдан деза нисдарш</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>файлаш бен (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH догӀа</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>цхьа а яц (хостан SSH агент а догӀанаш а)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Тобане дӀакхачор цуьнан массо а генарчу дӀахӀоттаме кхочу.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Генарчу дӀахӀоттамашка дӀакхачо</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀинца а цхьа а генара дӀахӀоттам нисбина бац.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Генара дӀахӀоттам %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Кхузахь хӀумма а дӀа ца дохьу, дӀа ца доьхуьйту: Ӏалашдан нисдарш settings/override/migration.ini.append.php чу йоззу. Чуваларан хаамаш – цӀе ю; цуьнан маьӀна ДӀахӀоттор &gt; Къайле хӀуманаш чохь я хьолехь дуьсу.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Яздинчу кепара нисдарш, хӀинца а Ӏалаш ца дина.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Хостан догӀа</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Генара дӀахӀоттам</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Генарчу дӀахӀоттаман цӀе хӀун ю, иза муьлха хьал ду.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Элпаш, терахьаш, - а, _ а, масала production1. Цо генарчу дӀахӀоттаман цӀе йо хаамашкахь а консолехь а (--remotes=production1), тӀаьхьа иза хийца йиш яц.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... ТӀегӀанашца дӀакхачор хьолашкахула оцу рогӀаллехь дӀадоьду.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Лаахь, запятойшца къастийна, масала production. Тобане дӀакхачор цуьнан массо а генарчу дӀахӀоттаме кхочу.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. ЗӀе</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлаш цига муха кхочу, дӀахӀоттам мичахь бу.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH тӀехула, хийцинарг бен, хадийна дӀакхехьар кхин дӀа до. rsync дӀахӀоттийна меттехь уггар дика харжам.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлашна scp йолу SSH.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлашна sftp йолу SSH.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлаш бен: миграцеш дӀайохьу а юха йоьшу а, амма цигахь дӀа яха йиш яц.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS тӀехула FTP; файлаш бен.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀокху серверехь, папкехь болу кхин дӀахӀоттам.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Хостан цӀе я адрес, масала node1.example.com. local-на дац.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Даьсса: SSH-на 22, FTP-на 21.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Цигара дӀахӀоттаман орам, масала /var/www/site (FTP-на: FTP аккаунтана гуш болу некъ).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP-н командийн могӀа</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>Цигара PHP CLI: php, я /opt/plesk/php/8.4/bin/php санна юьззина некъ.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Консолан скрипташ цигахь root санна дӀайоьду</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Генарчу дӀахӀоттаман декъашхо root велахь бен (тӀаккха уьш --allow-root-user цуьнца дӀайоьду).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Чуваларан хаамаш</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀара дӀахӀоттам цига муха чуволу. ЦӀе бен Ӏалаш ца йо.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀара дӀахӀоттам болх беш волчу декъашхочун SSH агент а догӀанаш а (local-на гуттар а).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Къайле хӀума санна Ӏалашдина долахь догӀа.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Къайле хӀума санна Ӏалашдина пароль (FTP цуьнца чуволу).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Къайлечу хӀуманан цӀе</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀахӀоттор &gt; Къайле хӀуманаш чуьра къайле хӀума, масала deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Я хьалан хийцалург</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Иза латтош йолу серверан процессан хийцалург, масала DEPLOY_KEY (env:DEPLOY_KEY санна Ӏалашйина). Иза къайлечу хӀуманан цӀерийн метта хуьлу.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Хостан догӀа</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Лаахь, SSH-на, sftp-на, rsync-на.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Хостан догӀанан пӀелгийн лар</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ssh-keygen -l цо зорба тоьхна санна. Иза делахь, хоста хӀара догӀа гайта деза; иза доцуш, догӀа хьалхарчу зӀенехь Ӏамадо.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Талла</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Лакхарчу нисдаршца зӀе талла, тӀаккха йоззур йолу могӀанаш талла.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀара генара дӀахӀоттам дӀабаккха</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Цуьнан нисдарш settings/override/migration.ini.append.php чуьра дӀадоху. Генарчу дӀахӀоттамехь хӀумма а ца хийцало, цуьнан дӀакхачорш историхь дуьсу.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀаъ, хӀара генара дӀахӀоттам дӀабаккха</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀакхачорш</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀакхачоро хӀокху дӀахӀоттаман миграцеш харжинчу генарчу дӀахӀоттамашка дохьу, уьш цигахь %user санна дӀайоьхуьйту, массо а цкъачунна а цхьаьнадогӀуш а: хьалха массо а генара дӀахӀоттам толлу, цхьаъ ца хилча, лелийна массо а генара дӀахӀоттам юхаберзабо. Иза фонехь дӀадоьду, цуьнан агӀоно массо а генара дӀахӀоттам гойту, иза дӀадоьдучу хенахь.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Генара дӀахӀоттамаш</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Генара дӀахӀоттамаш, тоба я шиъ а билгалде.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Цига дӀакхачо</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Муха</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀакхачо</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀадахьийта а дӀадоло а</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Миграцеш массо а генарчу дӀахӀоттаме дӀайохьу, толлу, цхьаьна йолчу дӀадахьаран Id-ца дӀайоьхуьйту.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀакхехьар бен</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлаш дӀайохьу а толлу а, хӀумма а дӀа ца доьхуьйту (FTP генарчу дӀахӀоттамна цхьа бен некъ).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>ТӀегӀанашца</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>ТӀегӀа тӀегӀанца, хьолийн рогӀаллехь (dev, stage, beta, production ...): хьалхара тӀегӀа дӀакхачадо, тӀаккха ков хьоьжу, цхьаммо тӀехьара тӀегӀа тӀелацалц. ХӀора тӀегӀанехь массо а я хӀумма а.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀара миграцеш бен</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Лаахь: миграцийн Id, запятойшца къастийна. Даьсса: сайтан а цуьнан шордарийн а массо а миграци.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Хьалхе таллар бен</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀаъ, хӀинца дӀакхачо</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Цхьа хӀума дӀадахьийтина я дӀадолийна дӀакхачорш, керланиг хьалха (хьалхе талларо хаам ца буьту).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>дӀакхехьар бен</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>тӀегӀанашца, %stages тӀегӀа</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>цхьаьна ца догӀу</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀинца а дӀакхачор дац.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀакхачор %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀакхачоран массо а генара дӀахӀоттам шен хьолаца. Кхузахь долийна дӀакхачор хӀара агӀо дӀакъевлича а фонехь дӀадоьду; иза тергал дан агӀо юха схьаелла.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀакхачорш массо а</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Хьалхе таллар</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ТӀехьара тӀегӀа</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Нисдарш а чуваларан хаамаш а толлуш</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Хьалхе таллар: массо а генарчу дӀахӀоттаман хьал доьшуш</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Миграцийн файлаш дӀахьийтуш</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Кхаьчнарг толлуш</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Массо а генарчу дӀахӀоттамехь миграцеш дӀайоьхуш</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Генара дӀахӀоттамаш юхабоьрзуш</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀакхачор чекхдаьлла. Цуьнан хаам чубуллуш.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀабахар тергал дан ца делира. ДӀакхачор муха доьду хаа агӀо юха чуйилла.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Мур</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀокху агӀоно дӀакхачор тергал до, иза дӀадоьдучу хенахь.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ЦхьаьнадогӀуш</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ТӀегӀанаш</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage тӀегӀа шен ковехь хьоьжу</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ков %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user тӀелаьцна %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ТӀегӀа</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀадахьийтина файлаш</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Кернелан верси</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>лелийна: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>лело: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Мурраш</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ков: %stages чуьра %stage тӀегӀа</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Цунна хьалхара тӀегӀанаш дӀакхачийна. Уьш талла, тӀаккха тӀехьара тӀегӀа тӀелаца: цуьнан генара дӀахӀоттамаш юха а толлу, дӀакхачадо, массо а я хӀумма а.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀаъ, тӀехьара тӀегӀа хӀинца дӀакхачо</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀара дӀакхачор юхадерзо</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Иза лелийна массо а генара дӀахӀоттам (%list) шен дӀадахьарал хьалха динчу сурте юхаберза, массо а цкъачунна.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀаъ, хӀара дӀакхачор хӀинца юхадерзо</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>планехь ду</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>дӀакхехьна</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>дӀакхачийна</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ковехь хьоьжу</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>кечдина</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>шен тӀегӀане хьоьжу</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>файлаш дӀадахьийтина</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>таллина</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ца хилла, ша юхаметтахӀоттийна</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>ца хийцина</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>дӀа ца кхачийна</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>кхача йиш яц</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Генарчу дӀахӀоттамо жоп делла.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Генара дӀахӀоттам хӀинца леладан йиш яц.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done кхочушйина, %pending хьоьжуш, %failed ца хилла</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Блокировка</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>цигахь цхьана дӀадахьаро блокировка латтайо</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stages чуьра %stage</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Талла генара дӀахӀоттам харжа.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Хьалха «ХӀаъ, хӀара генара дӀахӀоттам дӀабаккха» билгалде.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Генара дӀахӀоттам дӀабаккха ца белира: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Генара дӀахӀоттам Ӏалашбан ца белира: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Лаххара а цхьа генара дӀахӀоттам я тоба харжа.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Харжинчу генарчу дӀахӀоттамех цхьаъ нисдаршкахь кхин бац. АгӀо юха чуйилла.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Хьалха «ХӀаъ, хӀинца дӀакхачо» билгалде.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP генарчу дӀахӀоттамо миграцеш дӀа ца йоьхуьйту: «ДӀакхехьар бен» харжа, я иза ма харжа.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀакхачо езаш йолу миграцеш – запятойшца къастийна миграцийн Id ю.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>ДӀакхачор хӀинца а доьду. Иза чекхдаллалц собар де.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀара дӀакхачор ковехь ца хьоьжу.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Цхьа а генарчу дӀахӀоттамо хӀара дӀакхачор ца лелийна: юхадерзо хӀумма а дац.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Хьалха «ХӀаъ, тӀехьара тӀегӀа хӀинца дӀакхачо» билгалде.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Хьалха «ХӀаъ, хӀара дӀакхачор хӀинца юхадерзо» билгалде.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id Id йолу генара дӀахӀоттам хӀинцале а бу.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Порт – 1 тӀера 65535 кхаччалц терахь ду.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Хьал – элпаш, терахьаш, - а, _ а йолу дош ду (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Тоба – элпаш, терахьаш, - а, _ а йолу дош ду (all доцуш): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Чуваларан хаамаш хӀинца еша йиш яц: %problem. Хьалхарчу дӀакхачорал хьалха уьш ДӀахӀоттор &gt; Къайле хӀуманаш чохь Ӏалашбе (я хийцалург хӀоттае).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP генарчу дӀахӀоттамо файлаш бен ца оьцу: цига дӀакхачор «ДӀакхехьар бен» ду, цуьнан миграцеш цигахь куьйга дӀайоьхуьйту.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id генара дӀахӀоттам settings/override/migration.ini.append.php чохь бац; иза нисбинчу меттехь дӀабаккха.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP тӀехула чувахана, index.php йешна. FTP генарчу дӀахӀоттаман миграцийн хьал еша йиш яц.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site тӀехь дӀакхачо %deploy ца хилла</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site тӀехь дӀакхачо %deploy ков тӀехь хьоьжуш ю</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site тӀехь дӀакхачо %deploy кхиамца хилла</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ХӀара кехат дӀадахьийтина %site, хӀунда аълча migration.ini [RemoteSettings] Notify[] иза дехна.</translation>
     </message>
 </context>
 </TS>

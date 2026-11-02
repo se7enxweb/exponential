@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်များ</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဤတပ်ဆင်မှုက ၎င်း၏ ပြောင်းရွှေ့မှုများကို ဖြန့်ချိပေးသော အခြားတပ်ဆင်မှုများ- ဖြန့်ချိမှုတစ်ခုသည် ပြောင်းရွှေ့မှုများကို ရွေးထားသော အဝေးစနစ်များသို့ ပို့ပြီး ထိုနေရာတွင် အားလုံးကို တစ်ပြိုင်နက်တည်း ထပ်တူကျစွာ လုပ်ဆောင်သည်။ အဝေးစနစ်တစ်ခုသည် လျှို့ဝှက်ချက်ကို ဘယ်တော့မှ မသိမ်းပါ- ၎င်း၏ ဝင်ရောက်ခွင့် အထောက်အထားက စနစ်ထည့်သွင်းမှု &gt; လျှို့ဝှက်ချက်များ ရှိ လျှို့ဝှက်ချက်တစ်ခုကို ညွှန်ပြသည်။</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ် အသစ်</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id ၏ ချိတ်ဆက်မှု စမ်းသပ်ခြင်း</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်များ</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ် %parallel ခုအထိ တစ်ပြိုင်နက် လုပ်ဆောင်သည်၊ အပိုင်းတစ်ခုသည် တစ်ခုစီတွင် %timeout စက္ကန့်အထိ ကြာနိုင်သည်။</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြင်ရန် ဆက်တင်များ</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖိုင်များသာ (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH သော့</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>မရှိ (host ၏ SSH agent နှင့် သော့များ)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>အုပ်စုတစ်ခုသို့ ဖြန့်ချိမှုသည် ၎င်း၏ အဝေးစနစ်တိုင်းသို့ ရောက်သည်။</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်များသို့ ဖြန့်ချိရန်</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ် မသတ်မှတ်ရသေးပါ။</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ် %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဤနေရာတွင် ဘာမှ မပို့ မလုပ်ဆောင်ပါ- “သိမ်းရန်” သည် ဆက်တင်များကို settings/override/migration.ini.append.php သို့ ရေးသည်။ ဝင်ရောက်ခွင့် အထောက်အထားသည် အမည်တစ်ခုဖြစ်ပြီး ၎င်း၏ တန်ဖိုးသည် စနစ်ထည့်သွင်းမှု &gt; လျှို့ဝှက်ချက်များ တွင် သို့မဟုတ် ပတ်ဝန်းကျင်တွင် ရှိနေသည်။</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ထည့်သွင်းထားသည့်အတိုင်း ဆက်တင်များ၊ မသိမ်းရသေးပါ။</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Host သော့</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. အဝေးစနစ်</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်ကို ဘာခေါ်သည်နှင့် ၎င်းသည် မည်သည့် ပတ်ဝန်းကျင် ဖြစ်သည်။</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>စာလုံး၊ ဂဏန်း၊ - နှင့် _၊ ဥပမာ production1။ ၎င်းသည် အစီရင်ခံစာများနှင့် console (--remotes=production1) တွင် အဝေးစနစ်ကို အမည်ပေးပြီး နောက်ပိုင်းတွင် ပြောင်း၍မရပါ။</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... အသုတ်လိုက် ဖြန့်ချိမှုသည် ပတ်ဝန်းကျင်များကို ဤအစီအစဉ်အတိုင်း ဖြတ်သွားသည်။</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ရွေးချယ်နိုင်၊ ကော်မာဖြင့် ခွဲပါ၊ ဥပမာ production။ အုပ်စုတစ်ခုသို့ ဖြန့်ချိမှုသည် ၎င်း၏ အဝေးစနစ်တိုင်းသို့ ရောက်သည်။</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. ချိတ်ဆက်မှု</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖိုင်များ ထိုနေရာသို့ မည်သို့ရောက်သည်နှင့် တပ်ဆင်မှု မည်သည့်နေရာတွင် ရှိသည်။</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ဖြင့်၊ ပြောင်းလဲသည့်အရာကိုသာ၊ ပြတ်တောက်သွားသော လွှဲပြောင်းမှုကို ဆက်လုပ်သည်။ rsync ထည့်သွင်းထားသည့်နေရာတွင် အကောင်းဆုံး ရွေးချယ်မှု။</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖိုင်များအတွက် scp ပါသော SSH။</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖိုင်များအတွက် sftp ပါသော SSH။</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖိုင်များသာ- ပြောင်းရွှေ့မှုများကို ပို့ပြီး ပြန်ဖတ်သည်၊ သို့သော် ထိုနေရာတွင် မလုပ်ဆောင်နိုင်ပါ။</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS ပေါ်ရှိ FTP၊ ဖိုင်များသာ။</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဤဆာဗာပေါ်ရှိ ဖိုင်တွဲတစ်ခုထဲက အခြားတပ်ဆင်မှုတစ်ခု။</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Host အမည် သို့မဟုတ် လိပ်စာ၊ ဥပမာ node1.example.com။ local အတွက် မဟုတ်ပါ။</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဗလာ- SSH အတွက် 22၊ FTP အတွက် 21။</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>ထိုနေရာရှိ တပ်ဆင်မှု၏ root လမ်းကြောင်း၊ ဥပမာ /var/www/site (FTP အတွက်- FTP အကောင့်က မြင်သည့် လမ်းကြောင်း)။</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP ကွန်မန်းလိုင်း</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>ထိုနေရာရှိ PHP CLI- php သို့မဟုတ် /opt/plesk/php/8.4/bin/php ကဲ့သို့ လမ်းကြောင်းအပြည့်။</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>console script များကို ထိုနေရာတွင် root အဖြစ် လုပ်ဆောင်သည်</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်၏ အသုံးပြုသူသည် root ဖြစ်မှသာ (ထိုအခါ ၎င်းတို့ကို --allow-root-user ဖြင့် လုပ်ဆောင်သည်)။</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. ဝင်ရောက်ခွင့် အထောက်အထား</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဤတပ်ဆင်မှုသည် ထိုနေရာတွင် မည်သို့ ဝင်ရောက်သည်။ အမည်တစ်ခုသာ သိမ်းသည်။</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>ဤတပ်ဆင်မှု လုပ်ဆောင်နေသည့် အသုံးပြုသူ၏ SSH agent နှင့် သော့များ (local အတွက် အမြဲတမ်း)။</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>လျှို့ဝှက်ချက်အဖြစ် သိမ်းထားသော ကိုယ်ပိုင်သော့။</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>လျှို့ဝှက်ချက်အဖြစ် သိမ်းထားသော စကားဝှက် (FTP သည် ၎င်းဖြင့် ဝင်ရောက်သည်)။</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>လျှို့ဝှက်ချက် အမည်</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>စနစ်ထည့်သွင်းမှု &gt; လျှို့ဝှက်ချက်များ မှ လျှို့ဝှက်ချက်တစ်ခု၊ ဥပမာ deploy_production1။</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>သို့မဟုတ် ပတ်ဝန်းကျင် ကိန်းရှင်တစ်ခု</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>၎င်းကို သိမ်းထားသော ဆာဗာ process ၏ ကိန်းရှင်၊ ဥပမာ DEPLOY_KEY (env:DEPLOY_KEY အဖြစ် သိမ်းသည်)။ ၎င်းသည် လျှို့ဝှက်ချက် အမည်၏ နေရာကို အစားထိုးသည်။</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Host သော့</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>ရွေးချယ်နိုင်၊ SSH၊ sftp နှင့် rsync အတွက်။</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Host သော့ လက်ဗွေ</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>ssh-keygen -l က ထုတ်ပြသည့်အတိုင်း SHA256:...။ ၎င်းပါလျှင် host သည် ဤသော့ကို ပြရမည်၊ မပါလျှင် ပထမဆုံး ချိတ်ဆက်ချိန်တွင် သော့ကို မှတ်သားသည်။</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. ပြန်လည်သုံးသပ်ခြင်း</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>အထက်ပါ ဆက်တင်များဖြင့် ချိတ်ဆက်မှုကို စမ်းသပ်ပြီးနောက် ရေးသားမည့် စာကြောင်းများကို ပြန်လည်သုံးသပ်ပါ။</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ဤအဝေးစနစ်ကို ဖယ်ရှားရန်</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>၎င်း၏ ဆက်တင်များကို settings/override/migration.ini.append.php မှ ဖယ်ရှားသည်။ အဝေးစနစ်ပေါ်တွင် ဘာမှ မပြောင်းလဲဘဲ ၎င်း၏ ဖြန့်ချိမှုများသည် မှတ်တမ်းတွင် ကျန်ရှိနေသည်။</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ဟုတ်ကဲ့၊ ဤအဝေးစနစ်ကို ဖယ်ရှားပါ</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိမှုများ</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိမှုတစ်ခုသည် ဤတပ်ဆင်မှု၏ ပြောင်းရွှေ့မှုများကို ရွေးထားသော အဝေးစနစ်များသို့ ပို့ပြီး ထိုနေရာတွင် %user အဖြစ် အားလုံးကို တစ်ပြိုင်နက်တည်း ထပ်တူကျစွာ လုပ်ဆောင်သည်- အဝေးစနစ်တိုင်းကို ဦးစွာ စစ်ဆေးပြီး တစ်ခု မအောင်မြင်ပါက အသုံးချပြီးသော အဝေးစနစ်တိုင်းကို ပြန်ရုပ်သိမ်းသည်။ ၎င်းသည် နောက်ခံတွင် ဆက်လက်လုပ်ဆောင်ပြီး ၎င်း၏ စာမျက်နှာက အဝေးစနစ်တိုင်းကို လုပ်ဆောင်နေစဉ် ပြသည်။</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. အဝေးစနစ်များ</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်များ၊ အုပ်စုတစ်ခု သို့မဟုတ် နှစ်ခုလုံးကို အမှန်ခြစ်ပါ။</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>၎င်းသို့ ဖြန့်ချိရန်</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. နည်းလမ်း</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိရန်</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>ပို့ပြီး လုပ်ဆောင်ရန်</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြောင်းရွှေ့မှုများကို အဝေးစနစ်တိုင်းသို့ ပို့၊ အတည်ပြုစစ်ဆေးပြီး မျှဝေထားသော လုပ်ဆောင်မှု အမှတ်စဉ်တစ်ခုတည်းဖြင့် လုပ်ဆောင်သည်။</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>လွှဲပြောင်းရန်သာ</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖိုင်များကို ပို့ပြီး အတည်ပြုစစ်ဆေးသည်၊ ဘာမှ မလုပ်ဆောင်ပါ (FTP အဝေးစနစ်အတွက် တစ်ခုတည်းသော နည်းလမ်း)။</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>အသုတ်လိုက်</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>ပတ်ဝန်းကျင်များ၏ အစီအစဉ်အတိုင်း (dev, stage, beta, production ...) အသုတ်လိုက်- ပထမအသုတ်ကို ဖြန့်ချိပြီးနောက် တစ်စုံတစ်ယောက်က နောက်အသုတ်ကို အတည်ပြုသည်အထိ ဂိတ်က စောင့်သည်။ အသုတ်တစ်ခုစီအတွင်း အားလုံး သို့မဟုတ် ဘာမှမဟုတ်။</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>ဤပြောင်းရွှေ့မှုများသာ</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>ရွေးချယ်နိုင်- ပြောင်းရွှေ့မှု အမှတ်စဉ်များ၊ ကော်မာဖြင့် ခွဲပါ။ ဗလာ- ဆိုက်နှင့် ၎င်း၏ extension များ၏ ပြောင်းရွှေ့မှုအားလုံး။</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>ကြိုတင်စစ်ဆေးမှုသာ</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>ဟုတ်ကဲ့၊ ယခု ဖြန့်ချိပါ</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>တစ်ခုခုကို ပို့ခဲ့သော သို့မဟုတ် လုပ်ဆောင်ခဲ့သော ဖြန့်ချိမှုများ၊ အသစ်ဆုံးကို ဦးစွာ (ကြိုတင်စစ်ဆေးမှုသည် အစီရင်ခံစာ မသိမ်းပါ)။</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>လွှဲပြောင်းရန်သာ</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>အသုတ်လိုက်၊ အသုတ် %stages ခု</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ထပ်တူမကျ</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိမှု မရှိသေးပါ။</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိမှု %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိမှု၏ အဝေးစနစ်တိုင်းနှင့် ၎င်း၏ အခြေအနေ။ ဤနေရာတွင် စတင်ခဲ့သော ဖြန့်ချိမှုသည် ဤစာမျက်နှာကို ပိတ်လိုက်သောအခါ နောက်ခံတွင် ဆက်လက်လုပ်ဆောင်သည်၊ ၎င်းကို လိုက်ကြည့်ရန် စာမျက်နှာကို ထပ်ဖွင့်ပါ။</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိမှုအားလုံး</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>ကြိုတင်စစ်ဆေးမှု</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>နောက်အသုတ်</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>ဆက်တင်များနှင့် ဝင်ရောက်ခွင့် အထောက်အထားများကို စစ်ဆေးနေသည်</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ကြိုတင်စစ်ဆေးမှု- အဝေးစနစ်တိုင်း၏ အခြေအနေကို ဖတ်နေသည်</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြောင်းရွှေ့မှု ဖိုင်များကို ပို့နေသည်</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>ရောက်ရှိလာသည်ကို အတည်ပြုစစ်ဆေးနေသည်</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်တိုင်းတွင် ပြောင်းရွှေ့မှုများကို လုပ်ဆောင်နေသည်</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်များကို ပြန်ရုပ်သိမ်းနေသည်</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိမှု ပြီးဆုံးပါပြီ။ ၎င်း၏ အစီရင်ခံစာကို ဖွင့်နေသည်။</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>တိုးတက်မှုကို လိုက်ကြည့်၍ မရပါ။ ဖြန့်ချိမှု မည်သို့ရှိသည်ကို ကြည့်ရန် စာမျက်နှာကို ပြန်ဖွင့်ပါ။</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>အပိုင်း</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဤစာမျက်နှာသည် ဖြန့်ချိမှုကို လုပ်ဆောင်နေစဉ် လိုက်ကြည့်သည်။</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ထပ်တူကျ</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>အသုတ်များ</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>အသုတ် %stage သည် ၎င်း၏ ဂိတ်တွင် စောင့်နေသည်</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ဂိတ် %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user က %time တွင် အတည်ပြုခဲ့သည်</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>အသုတ်</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ပို့ပြီးသော ဖိုင်များ</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Kernel ဗားရှင်း</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>အသုံးချပြီး- %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>အသုံးချရန်- %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>အပိုင်းများ</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ဂိတ်- %stages ခုအနက် အသုတ် %stage</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>၎င်းမတိုင်မီ အသုတ်များကို ဖြန့်ချိပြီးဖြစ်သည်။ ၎င်းတို့ကို စစ်ဆေးပြီးနောက် နောက်အသုတ်ကို အတည်ပြုပါ- ၎င်း၏ အဝေးစနစ်များကို ထပ်မံစစ်ဆေးပြီး ဖြန့်ချိသည်၊ အားလုံး သို့မဟုတ် ဘာမှမဟုတ်။</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>ဟုတ်ကဲ့၊ နောက်အသုတ်ကို ယခု ဖြန့်ချိပါ</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>ဤဖြန့်ချိမှုကို ပြန်လှည့်ရန်</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>၎င်းကို အသုံးချခဲ့သော အဝေးစနစ်တိုင်း (%list) သည် ၎င်း၏ လုပ်ဆောင်မှု မတိုင်မီ ယူထားသော လျှပ်တစ်ပြက်မှတ်တမ်းသို့ တစ်ပြိုင်နက်တည်း ပြန်သွားသည်။</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>ဟုတ်ကဲ့၊ ဤဖြန့်ချိမှုကို ယခု ပြန်လှည့်ပါ</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>စီစဉ်ထားသည်</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>လွှဲပြောင်းပြီး</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိပြီး</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ဂိတ်တွင် စောင့်နေသည်</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြင်ဆင်ပြီး</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>၎င်း၏ အသုတ်ကို စောင့်နေသည်</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖိုင်များ ပို့ပြီး</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>အတည်ပြုပြီး</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>မအောင်မြင်၊ မိမိကိုယ်ကို ပြန်လည်ထားရှိခဲ့သည်</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>မပြောင်းလဲ</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>မဖြန့်ချိရသေး</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ဆက်သွယ်၍မရ</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်က တုံ့ပြန်ခဲ့သည်။</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်ကို ယခု အသုံးပြု၍မရပါ။</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done ပြီးဆုံး၊ %pending ဆိုင်းငံ့၊ %failed မအောင်မြင်</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>သော့ခတ်မှု</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>လုပ်ဆောင်မှုတစ်ခုက ထိုနေရာတွင် သော့ကို ကိုင်ထားသည်</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stages ခုအနက် %stage</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>စမ်းသပ်မည့် အဝေးစနစ်ကို ရွေးပါ။</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>“ဟုတ်ကဲ့၊ ဤအဝေးစနစ်ကို ဖယ်ရှားပါ” ကို ဦးစွာ အမှန်ခြစ်ပါ။</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်ကို ဖယ်ရှား၍မရပါ- %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ်ကို သိမ်း၍မရပါ- %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ် သို့မဟုတ် အုပ်စု အနည်းဆုံးတစ်ခု ရွေးပါ။</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>ရွေးထားသော အဝေးစနစ်တစ်ခုသည် ဆက်တင်များတွင် မရှိတော့ပါ။ စာမျက်နှာကို ပြန်ဖွင့်ပါ။</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>“ဟုတ်ကဲ့၊ ယခု ဖြန့်ချိပါ” ကို ဦးစွာ အမှန်ခြစ်ပါ။</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP အဝေးစနစ်သည် ပြောင်းရွှေ့မှုများကို မလုပ်ဆောင်နိုင်ပါ- “လွှဲပြောင်းရန်သာ” ကို ရွေးပါ သို့မဟုတ် ၎င်းကို ချန်ထားပါ။</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိမည့် ပြောင်းရွှေ့မှုများသည် ကော်မာဖြင့် ခွဲထားသော ပြောင်းရွှေ့မှု အမှတ်စဉ်များ ဖြစ်ရမည်။</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိမှု ဆက်လက်လုပ်ဆောင်နေဆဲဖြစ်သည်။ ပြီးဆုံးသည်အထိ စောင့်ပါ။</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဤဖြန့်ချိမှုသည် ဂိတ်တွင် မစောင့်ပါ။</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>မည်သည့် အဝေးစနစ်မှ ဤဖြန့်ချိမှုကို အသုံးမချခဲ့ပါ- ပြန်လှည့်စရာ ဘာမှ မရှိပါ။</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>“ဟုတ်ကဲ့၊ နောက်အသုတ်ကို ယခု ဖြန့်ချိပါ” ကို ဦးစွာ အမှန်ခြစ်ပါ။</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>“ဟုတ်ကဲ့၊ ဤဖြန့်ချိမှုကို ယခု ပြန်လှည့်ပါ” ကို ဦးစွာ အမှန်ခြစ်ပါ။</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>အမှတ်စဉ် %id ပါသော အဝေးစနစ် ရှိပြီးသားဖြစ်သည်။</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>ပေါ့တ်သည် 1 မှ 65535 အထိ ဂဏန်းတစ်ခု ဖြစ်ရမည်။</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>ပတ်ဝန်းကျင်သည် စာလုံး၊ ဂဏန်း၊ - နှင့် _ ပါသော စကားလုံးတစ်လုံး ဖြစ်ရမည် (alpha, dev, stage, beta, production ...)။</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>အုပ်စုသည် စာလုံး၊ ဂဏန်း၊ - နှင့် _ ပါသော စကားလုံးတစ်လုံး ဖြစ်ရမည် (all မဟုတ်ရ)- %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>ဝင်ရောက်ခွင့် အထောက်အထားကို ယခု ဖတ်၍မရပါ- %problem။ ပထမဆုံး ဖြန့်ချိမှု မတိုင်မီ ၎င်းကို စနစ်ထည့်သွင်းမှု &gt; လျှို့ဝှက်ချက်များ တွင် သိမ်းပါ (သို့မဟုတ် ကိန်းရှင်ကို သတ်မှတ်ပါ)။</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP အဝေးစနစ်သည် ဖိုင်များကိုသာ လက်ခံသည်- ၎င်းသို့ ဖြန့်ချိမှုသည် “လွှဲပြောင်းရန်သာ” ဖြစ်ပြီး ၎င်း၏ ပြောင်းရွှေ့မှုများကို ထိုနေရာတွင် လက်ဖြင့် လုပ်ဆောင်ရသည်။</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>အဝေးစနစ် %id သည် settings/override/migration.ini.append.php တွင် မရှိပါ- ၎င်းကို သတ်မှတ်ထားသည့်နေရာတွင် ဖယ်ရှားပါ။</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ဖြင့် ဝင်ရောက်ပြီး index.php ကို ဖတ်ခဲ့သည်။ FTP အဝေးစနစ်၏ ပြောင်းရွှေ့မှု အနေအထားကို ဖတ်၍မရပါ။</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိမှု %deploy သည် %site တွင် မအောင်မြင်ပါ</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိမှု %deploy သည် %site တွင် ဂိတ်တစ်ခု၌ စောင့်နေသည်</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖြန့်ချိမှု %deploy သည် %site တွင် အောင်မြင်ပါသည်</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>migration.ini [RemoteSettings] Notify[] က တောင်းဆိုထားသောကြောင့် ဤမေးလ်ကို %site မှ ပို့ခဲ့သည်။</translation>
     </message>
 </context>
 </TS>

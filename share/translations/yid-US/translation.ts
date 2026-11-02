@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ווײַט־סיסטעמען</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>די אַנדערע אינסטאַלאַציעס וווּהין די דאָזיקע ליפֿערט אויס אירע מיגראַציעס: אַן אויסליפֿערונג שיקט די מיגראַציעס צו די אויסגעקליבענע ווײַט־סיסטעמען און פֿירט זיי דאָרט אויס, אַלע אויף איין מאָל און סינכראָניזירט. אַ ווײַט־סיסטעם האַלט קיינמאָל ניט קיין סוד: איר צוטריט־באַווײַז באַצייכנט איינעם אין אייַנריכטונג &gt; סודות.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>נײַע ווײַט־סיסטעם</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>פֿאַרבינדונג־פּראָבע פֿון %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>די ווײַט־סיסטעמען</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>ביז %parallel ווײַט־סיסטעמען ווערן באַאַרבעט אין דער זעלבער צײַט; איין פֿאַזע מעג דויערן %timeout סעקונדעס אויף יעדער.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ווײַט־סיסטעם</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>באַשטימונגען צו פֿאַרריכטן</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>בלויז טעקעס (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH־שליסל</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>קיינער (דער SSH־אַגענט און די שליסלען פֿונעם האָסט)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>אַן אויסליפֿערונג צו אַ גרופּע גייט צו יעדער ווײַט־סיסטעם פֿון איר.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>אויסליפֿערן צו ווײַט־סיסטעמען</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>נאָך קיין ווײַט־סיסטעם ניט אײַנגעריכט.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ווײַט־סיסטעם %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>דאָ ווערט גאָרנישט געשיקט אָדער אויסגעפֿירט: אויפֿהיטן שרײַבט די באַשטימונגען אין settings/override/migration.ini.append.php. דער צוטריט־באַווײַז איז אַ נאָמען; זײַן ווערט בלײַבט אין אייַנריכטונג &gt; סודות אָדער אין דער סבֿיבֿה.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>די באַשטימונגען ווי אַרײַנגעשריבן, נאָך ניט אויפֿגעהיט.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>האָסט־שליסל</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. די ווײַט־סיסטעם</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ווי די ווײַט־סיסטעם הייסט און וועלכע סבֿיבֿה זי איז.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>אותיות, ציפֿערן, - און _, למשל production1. עס באַצייכנט די ווײַט־סיסטעם אין באַריכטן און אויף דער קאָנסאָל (--remotes=production1) און מע קען עס שפּעטער ניט ענדערן.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... אַן אויסליפֿערונג אין עטאַפּן גייט דורך די סבֿיבֿות אין דער סדר.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>אויף ברירה, צעטיילט מיט קאָמעס, למשל production. אַן אויסליפֿערונג צו אַ גרופּע גייט צו יעדער ווײַט־סיסטעם פֿון איר.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. די פֿאַרבינדונג</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ווי די טעקעס קומען אַהין, און וווּ די אינסטאַלאַציע געפֿינט זיך.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>איבער SSH, בלויז וואָס האָט זיך געענדערט, און אַן איבערגעריסענע איבערפֿירונג גייט ווײַטער. די בעסטע ברירה וווּ rsync איז אינסטאַלירט.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH מיט scp פֿאַר די טעקעס.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH מיט sftp פֿאַר די טעקעס.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>בלויז טעקעס: די מיגראַציעס ווערן געשיקט און צוריקגעלייענט, נאָר מע קען זיי דאָרט ניט אויספֿירן.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP איבער TLS; בלויז טעקעס.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>אַן אַנדער אינסטאַלאַציע אויף דעם סערווער, אין אַ מאַפּע.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>אַ האָסט־נאָמען אָדער אַן אַדרעס, למשל node1.example.com. ניט פֿאַר local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>ליידיק: 22 פֿאַר SSH, 21 פֿאַר FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>דער וואָרצל פֿון דער אינסטאַלאַציע דאָרט, למשל /var/www/site (פֿאַר FTP: דער וועג וואָס דער FTP־חשבון זעט).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP־באַפֿעלשורה</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>דער PHP CLI דאָרט: php, אָדער אַ פֿולער וועג ווי /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>די קאָנסאָל־סקריפּטן לויפֿן דאָרט ווי root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>בלויז ווען דער באַניצער פֿון דער ווײַט־סיסטעם איז root (זיי ווערן דעמאָלט אויסגעפֿירט מיט --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. דער צוטריט־באַווײַז</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ווי די דאָזיקע אינסטאַלאַציע לאָגירט זיך דאָרט אַרײַן. מע היט אויף בלויז אַ נאָמען.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>דער SSH־אַגענט און די שליסלען פֿונעם באַניצער אונטער וועמען די דאָזיקע אינסטאַלאַציע לויפֿט (און שטענדיק פֿאַר local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>אַ פּריוואַטער שליסל, אָפּגעהיט ווי אַ סוד.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>אַ פּאַראָל, אָפּגעהיט ווי אַ סוד (FTP לאָגירט זיך אַרײַן דערמיט).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>נאָמען פֿונעם סוד</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>אַ סוד פֿון אייַנריכטונג &gt; סודות, למשל deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>אָדער אַ סבֿיבֿה־וואַריאַבל</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>די וואַריאַבל פֿונעם סערווער־פּראָצעס וואָס האַלט עס, למשל DEPLOY_KEY (אויפֿגעהיט ווי env:DEPLOY_KEY). זי פֿאַרנעמט דעם אָרט פֿונעם סוד־נאָמען.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. דער האָסט־שליסל</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>אויף ברירה, פֿאַר SSH, sftp און rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>פֿינגערדרוק פֿונעם האָסט־שליסל</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ווי ssh-keygen -l דרוקט עס אויס. מיט אים מוז דער האָסט ווײַזן דעם דאָזיקן שליסל; אָן אים ווערט דער שליסל געלערנט בײַם ערשטן קאָנטאַקט.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. איבערקוקן</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>פּרובירט אויס די פֿאַרבינדונג מיט די באַשטימונגען אויבן, דערנאָך קוקט איבער די שורות וואָס וועלן געשריבן ווערן.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>אַוועקנעמען די דאָזיקע ווײַט־סיסטעם</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>אירע באַשטימונגען ווערן אַרויסגענומען פֿון settings/override/migration.ini.append.php. אויף דער ווײַט־סיסטעם ענדערט זיך גאָרנישט, און אירע אויסליפֿערונגען בלײַבן אין דער געשיכטע.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>יאָ, אַוועקנעמען די דאָזיקע ווײַט־סיסטעם</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>אויסליפֿערונגען</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>אַן אויסליפֿערונג שיקט די מיגראַציעס פֿון דער אינסטאַלאַציע צו די אויסגעקליבענע ווײַט־סיסטעמען און פֿירט זיי דאָרט אויס ווי %user, אַלע אויף איין מאָל און סינכראָניזירט: יעדע ווײַט־סיסטעם ווערט קודם קאָנטראָלירט, און ווען איינע פֿאַלט דורך, ווערט יעדע וואָס האָט זיי צוגעלייגט צוריקגענומען. זי גייט אין הינטערגרונט, און איר בלאַט ווײַזט יעדע ווײַט־סיסטעם בשעת זי גייט.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. די ווײַט־סיסטעמען</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>צייכנט אָן ווײַט־סיסטעמען, אַ גרופּע, אָדער ביידע.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>אויסליפֿערן אַהין</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. ווי</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>אויסליפֿערן</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>שיקן און אויספֿירן</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>די מיגראַציעס ווערן געשיקט, קאָנטראָלירט און אויסגעפֿירט אויף יעדער ווײַט־סיסטעם מיט איין געמיינזאַמער לויף־ID.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>בלויז איבערפֿירן</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>די טעקעס ווערן געשיקט און קאָנטראָלירט, גאָרנישט ווערט אויסגעפֿירט (דער איינציקער וועג פֿאַר אַ FTP־ווײַט־סיסטעם).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>אין עטאַפּן</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>עטאַפּ נאָך עטאַפּ אין דער סדר פֿון די סבֿיבֿות (dev, stage, beta, production ...): דער ערשטער עטאַפּ ווערט אויסגעליפֿערט, דערנאָך וואַרט אַ טויער ביז עמעצער באַשטעטיקט דעם ווײַטערדיקן. אַלץ אָדער גאָרנישט אין יעדן עטאַפּ.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>בלויז די דאָזיקע מיגראַציעס</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>אויף ברירה: מיגראַציע־IDs, צעטיילט מיט קאָמעס. ליידיק: יעדע מיגראַציע פֿון דעם וועבזײַטל און זײַנע עקסטענשאַנס.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>בלויז פֿאָרקאָנטראָל</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>יאָ, אויסליפֿערן איצט</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>די אויסליפֿערונגען וואָס האָבן עפּעס געשיקט אָדער אויסגעפֿירט, די נײַסטע ערשט (אַ פֿאָרקאָנטראָל היט ניט אויף קיין באַריכט).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>בלויז איבערפֿירן</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>אין עטאַפּן, %stages עטאַפּן</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ניט סינכראָניזירט</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>נאָך קיין אויסליפֿערונג ניטאָ.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>אויסליפֿערונג %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>יעדע ווײַט־סיסטעם פֿון דער אויסליפֿערונג מיט איר מצב. אַן אויסליפֿערונג וואָס איז דאָ אָנגעהויבן גייט ווײַטער אין הינטערגרונט ווען מע פֿאַרמאַכט דעם בלאַט; עפֿנט ווידער דעם בלאַט כּדי זי נאָכצופֿאָלגן.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>אַלע אויסליפֿערונגען</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>פֿאָרקאָנטראָל</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ווײַטערדיקער עטאַפּ</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>מע קאָנטראָלירט די באַשטימונגען און די צוטריט־באַווײַזן</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>פֿאָרקאָנטראָל: מע לייענט דעם מצב פֿון יעדער ווײַט־סיסטעם</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>מע שיקט די מיגראַציע־טעקעס</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>מע קאָנטראָלירט וואָס איז אָנגעקומען</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>מע פֿירט אויס די מיגראַציעס אויף יעדער ווײַט־סיסטעם</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>מע נעמט צוריק די ווײַט־סיסטעמען</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>די אויסליפֿערונג האָט זיך געענדיקט. מע לאָדט איר באַריכט.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>מע האָט ניט געקענט נאָכפֿאָלגן דעם פֿאָרשריט. לאָדט איבער דעם בלאַט כּדי צו זען ווי די אויסליפֿערונג שטייט.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>פֿאַזע</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>דער דאָזיקער בלאַט פֿאָלגט נאָך די אויסליפֿערונג בשעת זי גייט.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>סינכראָניזירט</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>עטאַפּן</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>עטאַפּ %stage וואַרט בײַ זײַן טויער</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>טויער %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>באַשטעטיקט פֿון %user אום %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>עטאַפּ</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>געשיקטע טעקעס</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>קערנל־ווערסיע</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>צוגעלייגט: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>צו צולייגן: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>פֿאַזעס</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>טויער: עטאַפּ %stage פֿון %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>די עטאַפּן פֿאַר אים זענען אויסגעליפֿערט. קאָנטראָלירט זיי, דערנאָך באַשטעטיקט דעם ווײַטערדיקן עטאַפּ: זײַנע ווײַט־סיסטעמען ווערן ווידער קאָנטראָלירט און אויסגעליפֿערט, אַלץ אָדער גאָרנישט.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>יאָ, אויסליפֿערן איצט דעם ווײַטערדיקן עטאַפּ</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>צוריקדרייען די דאָזיקע אויסליפֿערונג</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>יעדע ווײַט־סיסטעם וואָס האָט זי צוגעלייגט (%list) קערט זיך אום צום אָפּבילד וואָס איז גענומען געוואָרן פֿאַר איר לויף, אַלע אויף איין מאָל.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>יאָ, צוריקדרייען איצט די דאָזיקע אויסליפֿערונג</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>פּלאַנירט</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>איבערגעפֿירט</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>אויסגעליפֿערט</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>וואַרט בײַ אַ טויער</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>צוגעגרייט</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>וואַרט אויף זײַן עטאַפּ</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>טעקעס געשיקט</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>קאָנטראָלירט</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>דורכגעפֿאַלן, האָט זיך אַליין צוריקגעשטעלט</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>אומגעענדערט</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ניט אויסגעליפֿערט</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ניט דערגרייכבאַר</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>די ווײַט־סיסטעם האָט געענטפֿערט.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>מע קען איצט ניט באַניצן די ווײַט־סיסטעם.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done פֿאַרטיק, %pending וואַרטנדיק, %failed דורכגעפֿאַלן</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>שלאָס</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>אַ לויף האַלט דאָרט דעם שלאָס</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage פֿון %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>קלײַבט אויס די ווײַט־סיסטעם צו אויספּרובירן.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>צייכנט קודם אָן „יאָ, אַוועקנעמען די דאָזיקע ווײַט־סיסטעם“.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>מע האָט ניט געקענט אַוועקנעמען די ווײַט־סיסטעם: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>מע האָט ניט געקענט אויפֿהיטן די ווײַט־סיסטעם: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>קלײַבט אויס כאָטש איין ווײַט־סיסטעם אָדער גרופּע.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>אַן אויסגעקליבענע ווײַט־סיסטעם איז מער ניט אין די באַשטימונגען. לאָדט איבער דעם בלאַט.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>צייכנט קודם אָן „יאָ, אויסליפֿערן איצט“.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>אַ FTP־ווײַט־סיסטעם קען ניט אויספֿירן קיין מיגראַציעס: קלײַבט אויס „בלויז איבערפֿירן“, אָדער לאָזט זי אויס.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>די מיגראַציעס צו אויסליפֿערן זענען מיגראַציע־IDs, צעטיילט מיט קאָמעס.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>די אויסליפֿערונג גייט נאָך. וואַרט ביז זי ענדיקט זיך.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>די דאָזיקע אויסליפֿערונג וואַרט ניט בײַ קיין טויער.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>קיין ווײַט־סיסטעם האָט ניט צוגעלייגט די דאָזיקע אויסליפֿערונג: עס איז גאָרנישט צו צוריקדרייען.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>צייכנט קודם אָן „יאָ, אויסליפֿערן איצט דעם ווײַטערדיקן עטאַפּ“.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>צייכנט קודם אָן „יאָ, צוריקדרייען איצט די דאָזיקע אויסליפֿערונג“.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>אַ ווײַט־סיסטעם מיט דער ID %id איז שוין פֿאַראַן.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>דער פּאָרט איז אַ נומער פֿון 1 ביז 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>די סבֿיבֿה איז אַ וואָרט פֿון אותיות, ציפֿערן, - און _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>אַ גרופּע איז אַ וואָרט פֿון אותיות, ציפֿערן, - און _ (ניט all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>מע קען איצט ניט לייענען דעם צוטריט־באַווײַז: %problem. היט אים אויף אין אייַנריכטונג &gt; סודות (אָדער שטעלט אײַן די וואַריאַבל) פֿאַר דער ערשטער אויסליפֿערונג.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>אַ FTP־ווײַט־סיסטעם באַקומט בלויז טעקעס: אַן אויסליפֿערונג צו איר איז „בלויז איבערפֿירן“, און אירע מיגראַציעס ווערן דאָרט אויסגעפֿירט מיט דער האַנט.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>די ווײַט־סיסטעם %id איז ניט אין settings/override/migration.ini.append.php; נעמט זי אַוועק דאָרט וווּ זי איז באַשטימט.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>אַרײַנלאָגירט איבער FTP און געלייענט index.php. דעם מיגראַציע־מצב פֿון אַ FTP־ווײַט־סיסטעם קען מען ניט לייענען.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>די אויסליפֿערונג %deploy איז דורכגעפֿאַלן אויף %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>די אויסליפֿערונג %deploy וואַרט ביי אַ טויער אויף %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>די אויסליפֿערונג %deploy איז געלונגען אויף %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>דער בריוו איז געשיקט געוואָרן פֿון %site, ווײַל migration.ini [RemoteSettings] Notify[] פֿאָדערט עס.</translation>
     </message>
 </context>
 </TS>

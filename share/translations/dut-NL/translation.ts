@@ -82561,15 +82561,15 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestemmingen</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>De andere installaties waarnaar deze installatie haar migraties uitrolt: een uitrol stuurt de migraties naar de gekozen bestemmingen en voert ze daar uit, allemaal tegelijk en synchroon. Een bestemming bevat nooit een geheim: haar aanmeldgegevens noemen er een in Setup &gt; Geheimen.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuwe bestemming</translation>
     </message>
     <message>
         <source>Help</source>
@@ -82577,19 +82577,19 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbindingstest van %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>De bestemmingen</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tot %parallel bestemmingen worden tegelijk bewerkt; één fase mag op elke bestemming %timeout seconden duren.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestemming</translation>
     </message>
     <message>
         <source>Address</source>
@@ -82605,15 +82605,15 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>instellingen te corrigeren</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>alleen bestanden (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-sleutel</translation>
     </message>
     <message>
         <source>Password</source>
@@ -82621,7 +82621,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>geen (de SSH-agent en sleutels van de host)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -82629,23 +82629,23 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Een uitrol naar een groep gaat naar elke bestemming ervan.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Naar bestemmingen uitrollen</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is nog geen bestemming ingesteld.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestemming %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hier wordt niets verstuurd of uitgevoerd: Opslaan schrijft de instellingen naar settings/override/migration.ini.append.php. De aanmeldgegevens zijn een naam; de waarde blijft in Setup &gt; Geheimen of in de omgeving.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -82653,7 +82653,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>De instellingen zoals ingevoerd, nog niet opgeslagen.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -82681,15 +82681,15 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Hostsleutel</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. De bestemming</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoe de bestemming heet en welke omgeving ze is.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -82697,47 +82697,47 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Letters, cijfers, - en _, bijvoorbeeld production1. De ID noemt de bestemming in verslagen en op de console (--remotes=production1) en kan later niet worden gewijzigd.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Een uitrol in etappes doorloopt de omgevingen in deze volgorde.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Optioneel, gescheiden door komma's, bijvoorbeeld production. Een uitrol naar een groep gaat naar elke bestemming ervan.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. De verbinding</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoe de bestanden daar komen, en waar de installatie staat.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Via SSH, alleen wat is gewijzigd, een afgebroken overdracht wordt hervat. De beste keuze waar rsync is geïnstalleerd.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH met scp voor de bestanden.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH met sftp voor de bestanden.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alleen bestanden: de migraties worden verstuurd en teruggelezen, maar kunnen daar niet worden uitgevoerd.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP via TLS; alleen bestanden.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Een andere installatie op deze server, in een map.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -82745,7 +82745,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Een hostnaam of adres, bijvoorbeeld node1.example.com. Niet voor local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -82753,7 +82753,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Leeg: 22 voor SSH, 21 voor FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -82765,31 +82765,31 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>De hoofdmap van de installatie daar, bijvoorbeeld /var/www/site (voor FTP: het pad dat het FTP-account ziet).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP-opdrachtregel</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>De PHP-CLI daar: php, of een volledig pad zoals /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>De consolescripts draaien daar als root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Alleen als de gebruiker van de bestemming root is (ze worden dan uitgevoerd met --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. De aanmeldgegevens</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoe deze installatie zich daar aanmeldt. Alleen een naam wordt opgeslagen.</translation>
     </message>
     <message>
         <source>None</source>
@@ -82797,23 +82797,23 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>De SSH-agent en sleutels van de gebruiker waaronder deze installatie draait (en altijd voor local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Een privésleutel die als geheim is bewaard.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Een wachtwoord dat als geheim is bewaard (FTP meldt zich ermee aan).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam van het geheim</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Een geheim uit Setup &gt; Geheimen, bijvoorbeeld deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -82821,247 +82821,247 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Of een omgevingsvariabele</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>De variabele van het serverproces die het bevat, bijvoorbeeld DEPLOY_KEY (opgeslagen als env:DEPLOY_KEY). Ze komt in de plaats van de naam van het geheim.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. De hostsleutel</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Optioneel, voor SSH, sftp en rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Vingerafdruk van de hostsleutel</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... zoals ssh-keygen -l hem toont. Ermee moet de host deze sleutel tonen; zonder wordt de sleutel bij het eerste contact geleerd.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Controle</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Test de verbinding met de instellingen hierboven en controleer daarna de regels die worden geschreven.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze bestemming verwijderen</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>De instellingen ervan worden uit settings/override/migration.ini.append.php gehaald. Op de bestemming verandert niets, en haar uitrollen blijven in de geschiedenis.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, deze bestemming verwijderen</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitrollen</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Een uitrol stuurt de migraties van deze installatie naar de gekozen bestemmingen en voert ze daar uit als %user, allemaal tegelijk en synchroon: elke bestemming wordt eerst gecontroleerd, en als er een mislukt, wordt elke bestemming die ze heeft toegepast teruggedraaid. De uitrol loopt op de achtergrond, en de pagina ervan toont elke bestemming terwijl hij loopt.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. De bestemmingen</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vink bestemmingen aan, een groep, of beide.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Ernaartoe uitrollen</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Hoe</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitrollen</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Versturen en uitvoeren</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>De migraties worden naar elke bestemming verstuurd, gecontroleerd en uitgevoerd met één gedeelde uitvoerings-ID.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Alleen overdragen</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>De bestanden worden verstuurd en gecontroleerd, er wordt niets uitgevoerd (de enige manier voor een FTP-bestemming).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>In etappes</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etappe na etappe in de volgorde van de omgevingen (dev, stage, beta, production ...): de eerste etappe wordt uitgerold, daarna wacht een wachtpunt tot iemand de volgende goedkeurt. Alles of niets binnen elke etappe.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Alleen deze migraties</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Optioneel: migratie-ID's, gescheiden door komma's. Leeg: elke migratie van de site en haar extensies.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Alleen voorcontrole</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, nu uitrollen</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>De uitrollen die iets hebben verstuurd of uitgevoerd, de nieuwste eerst (een voorcontrole bewaart geen verslag).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>alleen overdragen</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>in etappes, %stages etappes</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>niet synchroon</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nog geen uitrol.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitrol %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elke bestemming van de uitrol met haar stand. Een hier gestarte uitrol loopt op de achtergrond door als deze pagina wordt gesloten; open de pagina opnieuw om hem te volgen.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle uitrollen</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorcontrole</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Volgende etappe</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>De instellingen en de aanmeldgegevens worden gecontroleerd</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorcontrole: de stand van elke bestemming wordt gelezen</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>De migratiebestanden worden verstuurd</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Wat is aangekomen, wordt gecontroleerd</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>De migraties worden op elke bestemming uitgevoerd</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>De bestemmingen worden teruggedraaid</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>De uitrol is beëindigd. Het verslag wordt geladen.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>De voortgang kon niet worden gevolgd. Laad de pagina opnieuw om te zien hoe de uitrol ervoor staat.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fase</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze pagina volgt de uitrol terwijl hij loopt.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Synchroon</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Etappes</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>etappe %stage wacht bij haar wachtpunt</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtpunt %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>goedgekeurd door %user om %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Etappe</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Verstuurde bestanden</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Kernelversie</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>toegepast: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>toe te passen: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fasen</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtpunt: etappe %stage van %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>De etappes ervoor zijn uitgerold. Controleer ze en keur daarna de volgende etappe goed: haar bestemmingen worden opnieuw gecontroleerd en uitgerold, alles of niets.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -83069,7 +83069,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, de volgende etappe nu uitrollen</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -83077,31 +83077,31 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze uitrol terugdraaien</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elke bestemming die hem heeft toegepast (%list) keert terug naar de momentopname van vóór haar uitvoering, allemaal tegelijk.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, deze uitrol nu terugdraaien</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>gepland</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>overgedragen</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>uitgerold</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>wacht bij een wachtpunt</translation>
     </message>
     <message>
         <source>selected</source>
@@ -83109,7 +83109,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>voorbereid</translation>
     </message>
     <message>
         <source>ready</source>
@@ -83117,51 +83117,51 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>wacht op zijn etappe</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>bestanden verstuurd</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>gecontroleerd</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>mislukt, heeft zichzelf hersteld</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>ongewijzigd</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>niet uitgerold</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>niet bereikbaar</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>De bestemming heeft geantwoord.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>De bestemming kan nu niet worden gebruikt.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done klaar, %pending in afwachting, %failed mislukt</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Vergrendeling</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>een uitvoering houdt daar de vergrendeling</translation>
     </message>
     <message>
         <source>free</source>
@@ -83169,23 +83169,23 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage van %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies de bestemming die moet worden getest.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vink eerst „Ja, deze bestemming verwijderen” aan.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>De bestemming kon niet worden verwijderd: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>De bestemming kon niet worden opgeslagen: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -83193,75 +83193,75 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies ten minste één bestemming of groep.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Een gekozen bestemming staat niet meer in de instellingen. Laad de pagina opnieuw.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vink eerst „Ja, nu uitrollen” aan.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Een FTP-bestemming kan geen migraties uitvoeren: kies „Alleen overdragen”, of laat ze weg.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>De uit te rollen migraties zijn migratie-ID's, gescheiden door komma's.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>De uitrol loopt nog. Wacht tot hij is beëindigd.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze uitrol wacht niet bij een wachtpunt.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen bestemming heeft deze uitrol toegepast: er valt niets terug te draaien.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vink eerst „Ja, de volgende etappe nu uitrollen” aan.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vink eerst „Ja, deze uitrol nu terugdraaien” aan.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er bestaat al een bestemming met de ID %id.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>De poort is een getal van 1 tot 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>De omgeving is een woord van letters, cijfers, - en _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Een groep is een woord van letters, cijfers, - en _ (niet all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>De aanmeldgegevens kunnen nu niet worden gelezen: %problem. Sla ze vóór de eerste uitrol op in Setup &gt; Geheimen (of stel de variabele in).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Een FTP-bestemming ontvangt alleen bestanden: een uitrol ernaartoe is „Alleen overdragen”, en de migraties worden daar met de hand uitgevoerd.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>De bestemming %id staat niet in settings/override/migration.ini.append.php; verwijder haar waar ze is ingesteld.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Via FTP aangemeld en index.php gelezen. De migratiestand van een FTP-bestemming kan niet worden gelezen.</translation>
     </message>
 </context>
 <context>
@@ -85665,19 +85665,19 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>De uitrol %deploy is mislukt op %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>De uitrol %deploy wacht bij een poort op %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>De uitrol %deploy is geslaagd op %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze mail is verstuurd door %site omdat migration.ini [RemoteSettings] Notify[] erom vraagt.</translation>
     </message>
 </context>
 </TS>

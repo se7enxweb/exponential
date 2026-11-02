@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຄື່ອງປາຍທາງ</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>ການຕິດຕັ້ງອື່ນໆທີ່ການຕິດຕັ້ງນີ້ນຳສົ່ງການຍ້າຍຂໍ້ມູນໄປຫາ: ການນຳສົ່ງຈະສົ່ງການຍ້າຍຂໍ້ມູນໄປຫາເຄື່ອງປາຍທາງທີ່ເລືອກ ແລະ ດຳເນີນການຢູ່ທີ່ນັ້ນ, ທັງໝົດພ້ອມກັນ ແລະ ສອດຄ່ອງກັນ. ເຄື່ອງປາຍທາງບໍ່ເຄີຍເກັບຂໍ້ມູນລັບ: ຂໍ້ມູນເຂົ້າສູ່ລະບົບຂອງມັນອ້າງເຖິງຊື່ໜຶ່ງໃນ ຕັ້ງຄ່າລະບົບ &gt; ຂໍ້ມູນລັບ.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຄື່ອງປາຍທາງໃໝ່</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ທົດສອບການເຊື່ອມຕໍ່ຂອງ %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຄື່ອງປາຍທາງທັງໝົດ</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຄື່ອງປາຍທາງສູງສຸດ %parallel ເຄື່ອງຈະຖືກດຳເນີນການພ້ອມກັນ; ຊ່ວງໜຶ່ງອາດໃຊ້ເວລາ %timeout ວິນາທີໃນແຕ່ລະເຄື່ອງ.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຄື່ອງປາຍທາງ</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ການຕັ້ງຄ່າທີ່ຕ້ອງແກ້ໄຂ</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>ໄຟລ໌ເທົ່ານັ້ນ (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>ກະແຈ SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ມີ (SSH agent ແລະ ກະແຈຂອງໂຮສ)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ການນຳສົ່ງໄປຫາກຸ່ມຈະໄປຮອດທຸກເຄື່ອງປາຍທາງໃນກຸ່ມນັ້ນ.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ນຳສົ່ງໄປຫາເຄື່ອງປາຍທາງ</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ຍັງບໍ່ມີເຄື່ອງປາຍທາງໃດຖືກຕັ້ງຄ່າ.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຄື່ອງປາຍທາງ %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ມີຫຍັງຖືກສົ່ງ ຫຼື ດຳເນີນການຢູ່ນີ້: ບັນທຶກ ຈະຂຽນການຕັ້ງຄ່າລົງໃນ settings/override/migration.ini.append.php. ຂໍ້ມູນເຂົ້າສູ່ລະບົບເປັນພຽງຊື່; ຄ່າຂອງມັນຍັງຢູ່ໃນ ຕັ້ງຄ່າລະບົບ &gt; ຂໍ້ມູນລັບ ຫຼື ໃນສະພາບແວດລ້ອມ.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ການຕັ້ງຄ່າຕາມທີ່ປ້ອນ, ຍັງບໍ່ໄດ້ບັນທຶກ.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>ກະແຈຂອງໂຮສ</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. ເຄື່ອງປາຍທາງ</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຄື່ອງປາຍທາງມີຊື່ຫຍັງ ແລະ ເປັນສະພາບແວດລ້ອມໃດ.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>ຕົວອັກສອນ, ຕົວເລກ, - ແລະ _, ຕົວຢ່າງ production1. ມັນເປັນຊື່ຂອງເຄື່ອງປາຍທາງໃນລາຍງານ ແລະ ໃນຄອນໂຊລ (--remotes=production1) ແລະ ບໍ່ສາມາດປ່ຽນໄດ້ພາຍຫຼັງ.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... ການນຳສົ່ງເປັນໄລຍະຈະຜ່ານສະພາບແວດລ້ອມຕາມລຳດັບນີ້.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ບັງຄັບ, ຂັ້ນດ້ວຍເຄື່ອງໝາຍຈຸດ, ຕົວຢ່າງ production. ການນຳສົ່ງໄປຫາກຸ່ມຈະໄປຮອດທຸກເຄື່ອງປາຍທາງໃນກຸ່ມນັ້ນ.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. ການເຊື່ອມຕໍ່</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ໄຟລ໌ໄປຮອດທີ່ນັ້ນແນວໃດ, ແລະ ການຕິດຕັ້ງຢູ່ໃສ.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>ຜ່ານ SSH, ສະເພາະສິ່ງທີ່ປ່ຽນແປງ, ການໂອນທີ່ຂາດຈະດຳເນີນຕໍ່. ເປັນທາງເລືອກທີ່ດີທີ່ສຸດບ່ອນທີ່ມີ rsync ຕິດຕັ້ງ.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ກັບ scp ສຳລັບໄຟລ໌.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ກັບ sftp ສຳລັບໄຟລ໌.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>ໄຟລ໌ເທົ່ານັ້ນ: ການຍ້າຍຂໍ້ມູນຈະຖືກສົ່ງ ແລະ ອ່ານກັບຄືນ, ແຕ່ບໍ່ສາມາດດຳເນີນການຢູ່ທີ່ນັ້ນໄດ້.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ຜ່ານ TLS; ໄຟລ໌ເທົ່ານັ້ນ.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ການຕິດຕັ້ງອື່ນຢູ່ໃນເຊີບເວີນີ້, ໃນໂຟນເດີໜຶ່ງ.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>ຊື່ໂຮສ ຫຼື ທີ່ຢູ່, ຕົວຢ່າງ node1.example.com. ບໍ່ໃຊ້ສຳລັບ local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>ວ່າງ: 22 ສຳລັບ SSH, 21 ສຳລັບ FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>ໂຟນເດີຮາກຂອງການຕິດຕັ້ງຢູ່ທີ່ນັ້ນ, ຕົວຢ່າງ /var/www/site (ສຳລັບ FTP: ເສັ້ນທາງທີ່ບັນຊີ FTP ເຫັນ).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>ບັນທັດຄຳສັ່ງ PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI ຢູ່ທີ່ນັ້ນ: php, ຫຼື ເສັ້ນທາງເຕັມເຊັ່ນ /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>ສະຄຣິບຄອນໂຊລເຮັດວຽກໃນນາມ root ຢູ່ທີ່ນັ້ນ</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>ສະເພາະເມື່ອຜູ້ໃຊ້ຂອງເຄື່ອງປາຍທາງແມ່ນ root (ຈາກນັ້ນຈະດຳເນີນການດ້ວຍ --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. ຂໍ້ມູນເຂົ້າສູ່ລະບົບ</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ການຕິດຕັ້ງນີ້ເຂົ້າສູ່ລະບົບຢູ່ທີ່ນັ້ນແນວໃດ. ບັນທຶກໄວ້ແຕ່ຊື່ເທົ່ານັ້ນ.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH agent ແລະ ກະແຈຂອງຜູ້ໃຊ້ທີ່ການຕິດຕັ້ງນີ້ເຮັດວຽກໃນນາມ (ແລະ ສະເໝີສຳລັບ local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>ກະແຈສ່ວນຕົວທີ່ເກັບໄວ້ເປັນຂໍ້ມູນລັບ.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>ລະຫັດຜ່ານທີ່ເກັບໄວ້ເປັນຂໍ້ມູນລັບ (FTP ເຂົ້າສູ່ລະບົບດ້ວຍມັນ).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>ຊື່ຂໍ້ມູນລັບ</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>ຂໍ້ມູນລັບຈາກ ຕັ້ງຄ່າລະບົບ &gt; ຂໍ້ມູນລັບ, ຕົວຢ່າງ deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>ຫຼື ຕົວແປສະພາບແວດລ້ອມ</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>ຕົວແປຂອງໂປຣເຊສເຊີບເວີທີ່ເກັບມັນໄວ້, ຕົວຢ່າງ DEPLOY_KEY (ບັນທຶກເປັນ env:DEPLOY_KEY). ມັນໃຊ້ແທນຊື່ຂໍ້ມູນລັບ.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. ກະແຈຂອງໂຮສ</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ບັງຄັບ, ສຳລັບ SSH, sftp ແລະ rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>ລາຍນິ້ວມືຂອງກະແຈໂຮສ</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ຕາມທີ່ ssh-keygen -l ພິມອອກ. ຖ້າມີ, ໂຮສຕ້ອງສະແດງກະແຈນີ້; ຖ້າບໍ່ມີ, ກະແຈຈະຖືກຈື່ໄວ້ໃນການຕິດຕໍ່ຄັ້ງທຳອິດ.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. ກວດສອບ</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>ທົດສອບການເຊື່ອມຕໍ່ດ້ວຍການຕັ້ງຄ່າຂ້າງເທິງ, ຈາກນັ້ນກວດສອບແຖວທີ່ຈະຖືກຂຽນ.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ລຶບເຄື່ອງປາຍທາງນີ້</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>ການຕັ້ງຄ່າຂອງມັນຈະຖືກເອົາອອກຈາກ settings/override/migration.ini.append.php. ບໍ່ມີຫຍັງປ່ຽນແປງຢູ່ເຄື່ອງປາຍທາງ, ແລະ ການນຳສົ່ງຂອງມັນຍັງຄົງຢູ່ໃນປະຫວັດ.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ແມ່ນ, ລຶບເຄື່ອງປາຍທາງນີ້</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ການນຳສົ່ງ</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ການນຳສົ່ງຈະສົ່ງການຍ້າຍຂໍ້ມູນຂອງການຕິດຕັ້ງນີ້ໄປຫາເຄື່ອງປາຍທາງທີ່ເລືອກ ແລະ ດຳເນີນການຢູ່ທີ່ນັ້ນໃນນາມ %user, ທັງໝົດພ້ອມກັນ ແລະ ສອດຄ່ອງກັນ: ທຸກເຄື່ອງປາຍທາງຈະຖືກກວດສອບກ່ອນ, ແລະ ເມື່ອເຄື່ອງໃດລົ້ມເຫຼວ, ທຸກເຄື່ອງປາຍທາງທີ່ນຳໃຊ້ແລ້ວຈະຖືກຍ້ອນກັບ. ມັນດຳເນີນຢູ່ເບື້ອງຫຼັງ, ແລະ ໜ້າຂອງມັນຈະສະແດງທຸກເຄື່ອງປາຍທາງໃນລະຫວ່າງດຳເນີນ.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. ເຄື່ອງປາຍທາງທັງໝົດ</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>ໝາຍເຄື່ອງປາຍທາງ, ກຸ່ມ, ຫຼື ທັງສອງຢ່າງ.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>ນຳສົ່ງໄປຫາມັນ</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. ວິທີການ</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ນຳສົ່ງ</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>ສົ່ງ ແລະ ດຳເນີນການ</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>ການຍ້າຍຂໍ້ມູນຈະຖືກສົ່ງ, ຢືນຢັນ ແລະ ດຳເນີນການຢູ່ທຸກເຄື່ອງປາຍທາງດ້ວຍ ID ການດຳເນີນການດຽວກັນ.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>ໂອນເທົ່ານັ້ນ</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ໄຟລ໌ຈະຖືກສົ່ງ ແລະ ຢືນຢັນ, ບໍ່ມີຫຍັງຖືກດຳເນີນການ (ວິທີດຽວສຳລັບເຄື່ອງປາຍທາງ FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>ເປັນໄລຍະ</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>ເທື່ອລະໄລຍະຕາມລຳດັບຂອງສະພາບແວດລ້ອມ (dev, stage, beta, production ...): ໄລຍະທຳອິດຈະຖືກນຳສົ່ງ, ຈາກນັ້ນດ່ານຈະລໍຖ້າຈົນກວ່າມີຄົນອະນຸມັດໄລຍະຖັດໄປ. ທັງໝົດ ຫຼື ບໍ່ມີເລີຍ ພາຍໃນແຕ່ລະໄລຍະ.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>ສະເພາະການຍ້າຍຂໍ້ມູນເຫຼົ່ານີ້</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ບັງຄັບ: ID ຂອງການຍ້າຍຂໍ້ມູນ, ຂັ້ນດ້ວຍເຄື່ອງໝາຍຈຸດ. ວ່າງ: ທຸກການຍ້າຍຂໍ້ມູນຂອງເວັບໄຊ ແລະ ສ່ວນຂະຫຍາຍຂອງມັນ.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>ກວດກ່ອນເທົ່ານັ້ນ</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>ແມ່ນ, ນຳສົ່ງດຽວນີ້</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>ການນຳສົ່ງທີ່ໄດ້ສົ່ງ ຫຼື ດຳເນີນການບາງຢ່າງ, ລ່າສຸດຢູ່ກ່ອນ (ການກວດກ່ອນບໍ່ເກັບລາຍງານ).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>ໂອນເທົ່ານັ້ນ</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ເປັນໄລຍະ, %stages ໄລຍະ</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ສອດຄ່ອງກັນ</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ຍັງບໍ່ມີການນຳສົ່ງ.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ການນຳສົ່ງ %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ທຸກເຄື່ອງປາຍທາງຂອງການນຳສົ່ງພ້ອມສະຖານະ. ການນຳສົ່ງທີ່ເລີ່ມຢູ່ນີ້ຈະດຳເນີນຕໍ່ຢູ່ເບື້ອງຫຼັງເມື່ອປິດໜ້ານີ້; ເປີດໜ້ານີ້ອີກເພື່ອຕິດຕາມ.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ການນຳສົ່ງທັງໝົດ</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>ການກວດກ່ອນ</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ໄລຍະຖັດໄປ</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>ກຳລັງກວດສອບການຕັ້ງຄ່າ ແລະ ຂໍ້ມູນເຂົ້າສູ່ລະບົບ</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ການກວດກ່ອນ: ກຳລັງອ່ານສະຖານະຂອງທຸກເຄື່ອງປາຍທາງ</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>ກຳລັງສົ່ງໄຟລ໌ການຍ້າຍຂໍ້ມູນ</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>ກຳລັງຢືນຢັນສິ່ງທີ່ມາຮອດ</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ກຳລັງດຳເນີນການຍ້າຍຂໍ້ມູນຢູ່ທຸກເຄື່ອງປາຍທາງ</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>ກຳລັງຍ້ອນກັບເຄື່ອງປາຍທາງ</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>ການນຳສົ່ງສິ້ນສຸດແລ້ວ. ກຳລັງໂຫຼດລາຍງານ.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ສາມາດຕິດຕາມຄວາມຄືບໜ້າໄດ້. ໂຫຼດໜ້ານີ້ຄືນໃໝ່ເພື່ອເບິ່ງວ່າການນຳສົ່ງເປັນແນວໃດ.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>ຊ່ວງ</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ໜ້ານີ້ຕິດຕາມການນຳສົ່ງໃນລະຫວ່າງດຳເນີນ.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ສອດຄ່ອງກັນ</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ໄລຍະຕ່າງໆ</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ໄລຍະ %stage ລໍຖ້າຢູ່ດ່ານຂອງມັນ</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ດ່ານ %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>ອະນຸມັດໂດຍ %user ເວລາ %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ໄລຍະ</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ໄຟລ໌ທີ່ສົ່ງແລ້ວ</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>ເວີຊັນເຄີເນລ</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ນຳໃຊ້ແລ້ວ: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ທີ່ຈະນຳໃຊ້: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>ຊ່ວງຕ່າງໆ</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ດ່ານ: ໄລຍະ %stage ຈາກ %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>ໄລຍະກ່ອນໜ້ານີ້ຖືກນຳສົ່ງແລ້ວ. ກວດສອບພວກມັນ, ຈາກນັ້ນອະນຸມັດໄລຍະຖັດໄປ: ເຄື່ອງປາຍທາງຂອງມັນຈະຖືກກວດສອບອີກຄັ້ງ ແລະ ນຳສົ່ງ, ທັງໝົດ ຫຼື ບໍ່ມີເລີຍ.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>ແມ່ນ, ນຳສົ່ງໄລຍະຖັດໄປດຽວນີ້</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>ຍ້ອນກັບການນຳສົ່ງນີ້</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>ທຸກເຄື່ອງປາຍທາງທີ່ນຳໃຊ້ມັນແລ້ວ (%list) ຈະກັບໄປຫາພາບບັນທຶກທີ່ຖ່າຍໄວ້ກ່ອນການດຳເນີນການ, ທັງໝົດພ້ອມກັນ.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>ແມ່ນ, ຍ້ອນກັບການນຳສົ່ງນີ້ດຽວນີ້</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>ວາງແຜນໄວ້</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>ໂອນແລ້ວ</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ນຳສົ່ງແລ້ວ</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ລໍຖ້າຢູ່ດ່ານ</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>ກຽມພ້ອມແລ້ວ</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ລໍຖ້າໄລຍະຂອງມັນ</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ສົ່ງໄຟລ໌ແລ້ວ</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>ຢືນຢັນແລ້ວ</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ລົ້ມເຫຼວ, ກູ້ຄືນຕົວເອງແລ້ວ</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ປ່ຽນແປງ</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ຍັງບໍ່ໄດ້ນຳສົ່ງ</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຂົ້າເຖິງບໍ່ໄດ້</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຄື່ອງປາຍທາງຕອບກັບແລ້ວ.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ສາມາດໃຊ້ເຄື່ອງປາຍທາງໄດ້ໃນຕອນນີ້.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done ສຳເລັດແລ້ວ, %pending ລໍຖ້າດຳເນີນການ, %failed ລົ້ມເຫຼວ</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>ການລັອກ</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>ມີການດຳເນີນການໜຶ່ງຖືການລັອກຢູ່ທີ່ນັ້ນ</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage ຈາກ %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>ເລືອກເຄື່ອງປາຍທາງທີ່ຈະທົດສອບ.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ໝາຍ “ແມ່ນ, ລຶບເຄື່ອງປາຍທາງນີ້” ກ່ອນ.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ສາມາດລຶບເຄື່ອງປາຍທາງໄດ້: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ສາມາດບັນທຶກເຄື່ອງປາຍທາງໄດ້: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>ເລືອກເຄື່ອງປາຍທາງ ຫຼື ກຸ່ມຢ່າງໜ້ອຍໜຶ່ງ.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຄື່ອງປາຍທາງທີ່ເລືອກໄວ້ເຄື່ອງໜຶ່ງບໍ່ມີຢູ່ໃນການຕັ້ງຄ່າອີກແລ້ວ. ກະລຸນາໂຫຼດໜ້ານີ້ຄືນໃໝ່.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ໝາຍ “ແມ່ນ, ນຳສົ່ງດຽວນີ້” ກ່ອນ.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຄື່ອງປາຍທາງ FTP ບໍ່ສາມາດດຳເນີນການຍ້າຍຂໍ້ມູນໄດ້: ເລືອກ “ໂອນເທົ່ານັ້ນ” ຫຼື ບໍ່ຕ້ອງລວມມັນເຂົ້າ.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ການຍ້າຍຂໍ້ມູນທີ່ຈະນຳສົ່ງແມ່ນ ID ຂອງການຍ້າຍຂໍ້ມູນ, ຂັ້ນດ້ວຍເຄື່ອງໝາຍຈຸດ.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>ການນຳສົ່ງຍັງດຳເນີນຢູ່. ລໍຖ້າໃຫ້ມັນສິ້ນສຸດ.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>ການນຳສົ່ງນີ້ບໍ່ໄດ້ລໍຖ້າຢູ່ດ່ານ.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ມີເຄື່ອງປາຍທາງໃດນຳໃຊ້ການນຳສົ່ງນີ້: ບໍ່ມີຫຍັງໃຫ້ຍ້ອນກັບ.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ໝາຍ “ແມ່ນ, ນຳສົ່ງໄລຍະຖັດໄປດຽວນີ້” ກ່ອນ.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ໝາຍ “ແມ່ນ, ຍ້ອນກັບການນຳສົ່ງນີ້ດຽວນີ້” ກ່ອນ.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>ມີເຄື່ອງປາຍທາງທີ່ມີ ID %id ຢູ່ແລ້ວ.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>ພອດແມ່ນຕົວເລກຈາກ 1 ຫາ 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>ສະພາບແວດລ້ອມແມ່ນຄຳທີ່ປະກອບດ້ວຍຕົວອັກສອນ, ຕົວເລກ, - ແລະ _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>ກຸ່ມແມ່ນຄຳທີ່ປະກອບດ້ວຍຕົວອັກສອນ, ຕົວເລກ, - ແລະ _ (ບໍ່ແມ່ນ all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>ບໍ່ສາມາດອ່ານຂໍ້ມູນເຂົ້າສູ່ລະບົບໄດ້ໃນຕອນນີ້: %problem. ບັນທຶກມັນໄວ້ໃນ ຕັ້ງຄ່າລະບົບ &gt; ຂໍ້ມູນລັບ (ຫຼື ຕັ້ງຕົວແປ) ກ່ອນການນຳສົ່ງຄັ້ງທຳອິດ.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຄື່ອງປາຍທາງ FTP ຮັບໄດ້ແຕ່ໄຟລ໌: ການນຳສົ່ງໄປຫາມັນແມ່ນ “ໂອນເທົ່ານັ້ນ”, ແລະ ການຍ້າຍຂໍ້ມູນຂອງມັນຕ້ອງດຳເນີນການດ້ວຍມືຢູ່ທີ່ນັ້ນ.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຄື່ອງປາຍທາງ %id ບໍ່ຢູ່ໃນ settings/override/migration.ini.append.php; ລຶບມັນອອກຢູ່ບ່ອນທີ່ມັນຖືກຕັ້ງໄວ້.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>ເຂົ້າສູ່ລະບົບຜ່ານ FTP ແລະ ອ່ານ index.php ແລ້ວ. ບໍ່ສາມາດອ່ານສະຖານະການຍ້າຍຂໍ້ມູນຂອງເຄື່ອງປາຍທາງ FTP ໄດ້.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ການນຳສົ່ງ %deploy ລົ້ມເຫຼວຢູ່ %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ການນຳສົ່ງ %deploy ກຳລັງລໍຖ້າຢູ່ປະຕູໜຶ່ງຢູ່ %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ການນຳສົ່ງ %deploy ສຳເລັດຢູ່ %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ອີເມວນີ້ຖືກສົ່ງໂດຍ %site ເພາະວ່າ migration.ini [RemoteSettings] Notify[] ຮ້ອງຂໍ.</translation>
     </message>
 </context>
 </TS>

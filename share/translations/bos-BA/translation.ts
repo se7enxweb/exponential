@@ -81366,15 +81366,15 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaljeni sistemi</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Druge instalacije na koje ova isporučuje svoje migracije: isporuka šalje migracije na odabrane udaljene sisteme i tamo ih pokreće, sve odjednom i usklađeno. Udaljeni sistem nikada ne čuva tajnu: njegovi pristupni podaci imenuju jednu u Podešavanje &gt; Tajne.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Novi udaljeni sistem</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81382,19 +81382,19 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Test veze za %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaljeni sistemi</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Do %parallel udaljenih sistema obrađuje se istovremeno; jedna faza može trajati %timeout sekundi na svakom.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaljeni sistem</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81410,15 +81410,15 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>postavke za ispravku</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>samo datoteke (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ključ</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81426,7 +81426,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>nema (SSH agent i ključevi hosta)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81434,23 +81434,23 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuka grupi ide na svaki njen udaljeni sistem.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuka na udaljene sisteme</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Još nije podešen nijedan udaljeni sistem.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaljeni sistem %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ovdje se ništa ne šalje niti pokreće: Sačuvaj upisuje postavke u settings/override/migration.ini.append.php. Pristupni podaci su naziv; njihova vrijednost ostaje u Podešavanje &gt; Tajne ili u okruženju.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81458,7 +81458,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Postavke kako su unesene, još nisu sačuvane.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81486,15 +81486,15 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Ključ hosta</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Udaljeni sistem</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kako se udaljeni sistem zove i koje je okruženje.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81502,47 +81502,47 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Slova, cifre, - i _, na primjer production1. Imenuje udaljeni sistem u izvještajima i na konzoli (--remotes=production1) i ne može se kasnije promijeniti.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Isporuka u etapama prolazi kroz okruženja ovim redoslijedom.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neobavezno, odvojeno zarezima, na primjer production. Isporuka grupi ide na svaki njen udaljeni sistem.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Veza</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kako datoteke stižu tamo i gdje je instalacija.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Preko SSH-a, samo ono što se promijenilo, a prekinuti prijenos se nastavlja. Najbolji izbor gdje je rsync instaliran.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH sa scp za datoteke.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH sa sftp za datoteke.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Samo datoteke: migracije se šalju i ponovo čitaju, ali se tamo ne mogu pokrenuti.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP preko TLS-a; samo datoteke.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Druga instalacija na ovom serveru, u folderu.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81550,7 +81550,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naziv hosta ili adresa, na primjer node1.example.com. Ne za local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81558,7 +81558,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prazno: 22 za SSH, 21 za FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81570,31 +81570,31 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Korijen instalacije tamo, na primjer /var/www/site (za FTP: putanja koju vidi FTP račun).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP komandna linija</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI tamo: php ili puna putanja kao /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Konzolne skripte se tamo pokreću kao root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Samo kada je korisnik udaljenog sistema root (tada se pokreću s --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Pristupni podaci</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kako se ova instalacija tamo prijavljuje. Sačuvan je samo naziv.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81602,23 +81602,23 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH agent i ključevi korisnika pod kojim ova instalacija radi (i uvijek za local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Privatni ključ sačuvan kao tajna.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Lozinka sačuvana kao tajna (FTP se prijavljuje s njom).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naziv tajne</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tajna iz Podešavanje &gt; Tajne, na primjer deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81626,247 +81626,247 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Ili varijabla okruženja</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Varijabla serverskog procesa koja ga sadrži, na primjer DEPLOY_KEY (sačuvano kao env:DEPLOY_KEY). Zauzima mjesto naziva tajne.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Ključ hosta</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neobavezno, za SSH, sftp i rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Otisak ključa hosta</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... kako ga ispisuje ssh-keygen -l. S njim host mora pokazati ovaj ključ; bez njega se ključ uči pri prvom kontaktu.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Pregled</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Testirajte vezu s gornjim postavkama, a zatim pregledajte redove koji će biti upisani.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukloni ovaj udaljeni sistem</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Njegove postavke se uklanjaju iz settings/override/migration.ini.append.php. Na udaljenom sistemu se ništa ne mijenja, a njegove isporuke ostaju u historiji.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Da, ukloni ovaj udaljeni sistem</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuke</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuka šalje migracije ove instalacije na odabrane udaljene sisteme i tamo ih pokreće kao %user, sve odjednom i usklađeno: svaki udaljeni sistem se prvo provjerava, a kada jedan ne uspije, svaki koji ih je primijenio se vraća. Odvija se u pozadini, a njena stranica prikazuje svaki udaljeni sistem dok traje.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Udaljeni sistemi</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Označite udaljene sisteme, grupu ili oboje.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuči na njega</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Kako</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuči</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Pošalji i pokreni</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracije se šalju, provjeravaju i pokreću na svakom udaljenom sistemu s jednim zajedničkim ID-om pokretanja.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Samo prijenos</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteke se šalju i provjeravaju, ništa se ne pokreće (jedini način za FTP udaljeni sistem).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>U etapama</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapu po etapu, redoslijedom okruženja (dev, stage, beta, production ...): prva etapa se isporučuje, zatim kapija čeka dok neko ne odobri sljedeću. Sve ili ništa unutar svake etape.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Samo ove migracije</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neobavezno: ID-ovi migracija, odvojeni zarezima. Prazno: svaka migracija stranice i njenih ekstenzija.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Samo prethodna provjera</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Da, isporuči sada</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuke koje su nešto poslale ili pokrenule, najnovija prva (prethodna provjera ne čuva izvještaj).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>samo prijenos</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>u etapama, %stages etapa</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>neusklađeno</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Još nema isporuka.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuka %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Svaki udaljeni sistem isporuke s njegovim stanjem. Isporuka pokrenuta ovdje nastavlja se u pozadini kada se ova stranica zatvori; ponovo otvorite stranicu da je pratite.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Sve isporuke</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Prethodna provjera</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Sljedeća etapa</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Provjera postavki i pristupnih podataka</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Prethodna provjera: čitanje stanja svakog udaljenog sistema</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Slanje datoteka migracija</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Provjera onoga što je stiglo</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokretanje migracija na svakom udaljenom sistemu</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Vraćanje udaljenih sistema</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuka je završena. Učitavanje njenog izvještaja.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Napredak nije bilo moguće pratiti. Ponovo učitajte stranicu da vidite kako napreduje isporuka.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Faza</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ova stranica prati isporuku dok traje.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Usklađeno</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Etape</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>etapa %stage čeka na svojoj kapiji</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapija %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>odobrio %user u %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapa</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Poslane datoteke</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzija kernela</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>primijenjeno: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>za primjenu: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Faze</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapija: etapa %stage od %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etape prije nje su isporučene. Provjerite ih, a zatim odobrite sljedeću etapu: njeni udaljeni sistemi se ponovo provjeravaju i isporučuju, sve ili ništa.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81874,7 +81874,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Da, isporuči sljedeću etapu sada</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81882,31 +81882,31 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrati ovu isporuku</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Svaki udaljeni sistem koji ju je primijenio (%list) vraća se na snimak napravljen prije njegovog pokretanja, svi odjednom.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Da, vrati ovu isporuku sada</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>planirano</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>preneseno</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>isporučeno</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>čeka na kapiji</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81914,7 +81914,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>pripremljeno</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81922,51 +81922,51 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>čeka svoju etapu</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>datoteke poslane</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>provjereno</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>neuspjelo, samo se vratilo</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>nepromijenjeno</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>nije isporučeno</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>nedostupno</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaljeni sistem je odgovorio.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaljeni sistem se sada ne može koristiti.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done završeno, %pending na čekanju, %failed neuspjelo</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaključavanje</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>pokretanje tamo drži zaključavanje</translation>
     </message>
     <message>
         <source>free</source>
@@ -81974,23 +81974,23 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage od %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaberite udaljeni sistem koji treba testirati.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prvo označite „Da, ukloni ovaj udaljeni sistem“.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaljeni sistem nije moguće ukloniti: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaljeni sistem nije moguće sačuvati: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81998,75 +81998,75 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaberite barem jedan udaljeni sistem ili grupu.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Odabrani udaljeni sistem više nije u postavkama. Ponovo učitajte stranicu.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prvo označite „Da, isporuči sada“.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP udaljeni sistem ne može pokretati migracije: odaberite „Samo prijenos“ ili ga izostavite.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracije za isporuku su ID-ovi migracija, odvojeni zarezima.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuka je još u toku. Sačekajte da završi.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ova isporuka ne čeka na kapiji.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nijedan udaljeni sistem nije primijenio ovu isporuku: nema šta da se vrati.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prvo označite „Da, isporuči sljedeću etapu sada“.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prvo označite „Da, vrati ovu isporuku sada“.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaljeni sistem s ID-om %id već postoji.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Port je broj od 1 do 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Okruženje je riječ od slova, cifara, - i _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupa je riječ od slova, cifara, - i _ (ne all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pristupni podaci se sada ne mogu pročitati: %problem. Sačuvajte ih u Podešavanje &gt; Tajne (ili postavite varijablu) prije prve isporuke.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP udaljeni sistem samo prima datoteke: isporuka na njega je „Samo prijenos“, a njegove migracije se tamo pokreću ručno.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaljeni sistem %id nije u settings/override/migration.ini.append.php; uklonite ga tamo gdje je postavljen.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prijavljeno preko FTP-a i pročitan index.php. Stanje migracija FTP udaljenog sistema ne može se pročitati.</translation>
     </message>
 </context>
 <context>
@@ -84470,19 +84470,19 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuka %deploy na %site nije uspjela</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuka %deploy na %site čeka na kapiji</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Isporuka %deploy na %site je uspjela</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ovu poruku je poslao %site jer to traži migration.ini [RemoteSettings] Notify[].</translation>
     </message>
 </context>
 </TS>

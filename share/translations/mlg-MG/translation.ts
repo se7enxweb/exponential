@@ -81336,15 +81336,15 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ireo toerana lavitra</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ireo fametrahana hafa amoahan'ity iray ity ny fifindrany: ny famoahana dia mandefa ny fifindrana any amin'ireo toerana lavitra voafidy ary manatanteraka azy ireo any, miaraka sady mifanaraka. Tsy mitahiry zava-miafina mihitsy ny toerana lavitra: ny fahazoan-dalana hiditra azy dia manonona iray ao amin'ny Fametrahana &gt; Zava-miafina.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Toerana lavitra vaovao</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitsapana ny fampifandraisana amin'ny %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny toerana lavitra</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Toerana lavitra hatramin'ny %parallel no karakaraina miaraka; mety haharitra %timeout segondra isaky ny iray ny fizarana iray.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Toerana lavitra</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>fikirana tokony hahitsy</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>rakitra ihany (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Lakile SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>tsy misy (ny mpandraharaha SSH sy ny lakilen'ny mpampiantrano)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny famoahana ho an'ny vondrona iray dia mankany amin'ny toerana lavitra rehetra ao aminy.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Avoahy any amin'ireo toerana lavitra</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mbola tsy misy toerana lavitra voakirakira.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Toerana lavitra %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy misy alefa na tanterahina eto: ny Tehirizo dia manoratra ny fikirana ao amin'ny settings/override/migration.ini.append.php. Anarana ny fahazoan-dalana hiditra; ny sandany dia mijanona ao amin'ny Fametrahana &gt; Zava-miafina na ao amin'ny tontolo.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny fikirana araka ny nampidirina, mbola tsy voatahiry.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Lakilen'ny mpampiantrano</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Ny toerana lavitra</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny anaran'ny toerana lavitra sy hoe tontolo inona izy.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Litera, isa, - sy _, ohatra production1. Izy no anaran'ny toerana lavitra ao amin'ny tatitra sy amin'ny console (--remotes=production1) ary tsy azo ovaina any aoriana.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Ny famoahana isak'ambaratonga dia mandalo ireo tontolo araka io filaharana io.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy voatery, misaraka amin'ny faingo, ohatra production. Ny famoahana ho an'ny vondrona iray dia mankany amin'ny toerana lavitra rehetra ao aminy.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Ny fampifandraisana</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny fomba ahatongavan'ny rakitra any, sy ny toerana misy ny fametrahana.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Amin'ny alalan'ny SSH, izay niova ihany, tohizana ny fandefasana tapaka. Safidy tsara indrindra raha misy rsync voapetraka.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH miaraka amin'ny scp ho an'ny rakitra.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH miaraka amin'ny sftp ho an'ny rakitra.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rakitra ihany: alefa sy vakiana indray ny fifindrana, nefa tsy azo tanterahina any.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP amin'ny alalan'ny TLS; rakitra ihany.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fametrahana hafa amin'ity mpizara ity, ao anaty lahatahiry iray.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anaran'ny mpampiantrano na adiresy, ohatra node1.example.com. Tsy ho an'ny local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Foana: 22 ho an'ny SSH, 21 ho an'ny FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny fototry ny fametrahana any, ohatra /var/www/site (ho an'ny FTP: ny lalana hitan'ny kaonty FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Baikon'ny PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny PHP CLI any: php, na lalana feno toy ny /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Mandeha amin'ny maha root any ireo script console</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Raha root ihany ny mpampiasan'ny toerana lavitra (tanterahina amin'ny --allow-root-user izy ireo amin'izay).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Ny fahazoan-dalana hiditra</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny fomba idiran'ity fametrahana ity any. Anarana ihany no tehirizina.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny mpandraharaha SSH sy ny lakilen'ny mpampiasa mampandeha ity fametrahana ity (ary foana ho an'ny local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lakile manokana voatahiry ho zava-miafina.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Teny miafina voatahiry ho zava-miafina (amin'izany no idiran'ny FTP).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Anaran'ny zava-miafina</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zava-miafina avy amin'ny Fametrahana &gt; Zava-miafina, ohatra deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Na fari-piovan'ny tontolo</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny fari-piovan'ny fizotry ny mpizara mitazona azy, ohatra DEPLOY_KEY (voatahiry ho env:DEPLOY_KEY). Izy no misolo ny anaran'ny zava-miafina.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Ny lakilen'ny mpampiantrano</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy voatery, ho an'ny SSH, sftp sy rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Dian-tanan'ny lakilen'ny mpampiantrano</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... araka ny fanontan'ny ssh-keygen -l azy. Raha misy izy, tsy maintsy maneho io lakile io ny mpampiantrano; raha tsy misy, dia ianarana amin'ny fifandraisana voalohany ny lakile.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Jereo</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Andramo ny fampifandraisana amin'ny fikirana etsy ambony, avy eo jereo ireo andalana hosoratana.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Esory ity toerana lavitra ity</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esorina ao amin'ny settings/override/migration.ini.append.php ny fikirany. Tsy misy miova ao amin'ny toerana lavitra, ary mijanona ao amin'ny tantara ny famoahana azy.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Eny, esory ity toerana lavitra ity</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Famoahana</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny famoahana dia mandefa ny fifindran'ity fametrahana ity any amin'ireo toerana lavitra voafidy ary manatanteraka azy ireo any amin'ny maha %user, miaraka sady mifanaraka: hamarinina aloha ny toerana lavitra tsirairay, ary raha misy iray tsy mahomby, dia averina ny toerana lavitra rehetra efa nampihatra. Mandeha ao ambadika izy, ary ny pejiny dia mampiseho ny toerana lavitra tsirairay mandritra ny fandehany.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Ireo toerana lavitra</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mariho ireo toerana lavitra, vondrona iray, na izy roa.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Avoahy any aminy</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Ahoana</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Avoahy</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Alefaso ary atanteraho</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alefa, hamarinina ary tanterahina amin'ny toerana lavitra tsirairay ny fifindrana miaraka amin'ny id fanatanterahana iraisana iray.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Fandefasana ihany</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Alefa sy hamarinina ny rakitra, tsy misy tanterahina (ny hany fomba ho an'ny toerana lavitra FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Isak'ambaratonga</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ambaratonga tsirairay araka ny filaharan'ny tontolo (dev, stage, beta, production ...): avoaka ny ambaratonga voalohany, avy eo miandry ny vavahady mandra-pankatoavin'olona ny manaraka. Ny rehetra na tsy misy ao anatin'ny ambaratonga tsirairay.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Ireto fifindrana ireto ihany</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy voatery: id-n'ny fifindrana, misaraka amin'ny faingo. Foana: ny fifindrana rehetra amin'ny tranonkala sy ny fanitarana azy.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Fanamarinana mialoha ihany</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Eny, avoahy izao</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ireo famoahana nandefa na nanatanteraka zavatra, ny vaovao indrindra aloha (tsy mitahiry tatitra ny fanamarinana mialoha).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>fandefasana ihany</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>isak'ambaratonga, ambaratonga %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>tsy mifanaraka</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mbola tsy misy famoahana.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Famoahana %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny toerana lavitra tsirairay amin'ny famoahana miaraka amin'ny toetrany. Ny famoahana natomboka teto dia mitohy ao ambadika rehefa akatona ity pejy ity; sokafy indray ny pejy hanarahana azy.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny famoahana rehetra</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Fanamarinana mialoha</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ambaratonga manaraka</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Manamarina ny fikirana sy ny fahazoan-dalana hiditra</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Fanamarinana mialoha: mamaky ny toetry ny toerana lavitra tsirairay</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Mandefa ny rakitry ny fifindrana</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Manamarina izay tonga</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Manatanteraka ny fifindrana amin'ny toerana lavitra tsirairay</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Mamerina ireo toerana lavitra</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vita ny famoahana. Maka ny tatitra momba azy.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy voaraha ny fandrosoana. Avereno alaina ny pejy mba hahitana ny fandehan'ny famoahana.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fizarana</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Manaraka ny famoahana mandritra ny fandehany ity pejy ity.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Mifanaraka</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ireo ambaratonga</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>miandry eo amin'ny vavahadiny ny ambaratonga %stage</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Vavahady %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>nankatoavin'i %user tamin'ny %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ambaratonga</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Rakitra nalefa</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Dikan'ny kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>nampiharina: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>hampiharina: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Ireo fizarana</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Vavahady: ambaratonga %stage amin'ny %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Efa navoaka ireo ambaratonga teo alohany. Hamarino izy ireo, avy eo ankatoavo ny ambaratonga manaraka: hamarinina indray ary avoaka ny toerana lavitra ao aminy, ny rehetra na tsy misy.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Eny, avoahy izao ny ambaratonga manaraka</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Avereno ity famoahana ity</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny toerana lavitra rehetra nampihatra azy (%list) dia miverina amin'ny dika tahiry nalaina talohan'ny fanatanterahana azy, miaraka avokoa.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Eny, avereno izao ity famoahana ity</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>voalamina</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>nalefa</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>navoaka</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>miandry eo amin'ny vavahady</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>voaomana</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>miandry ny ambaratongany</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>rakitra nalefa</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>voamarina</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>tsy nahomby, namerina ny tenany</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>tsy niova</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>tsy navoaka</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>tsy azo tratrarina</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Namaly ny toerana lavitra.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy azo ampiasaina izao ny toerana lavitra.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done vita, %pending miandry, %failed tsy nahomby</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Hidy</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>misy fanatanterahana mitana ny hidy any</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage amin'ny %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fidio ny toerana lavitra hotsapaina.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mariho aloha ny « Eny, esory ity toerana lavitra ity ».</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy voaesotra ny toerana lavitra: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy voatahiry ny toerana lavitra: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fidio toerana lavitra na vondrona iray farafahakeliny.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy ao anatin'ny fikirana intsony ny toerana lavitra iray voafidy. Avereno alaina ny pejy.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mariho aloha ny « Eny, avoahy izao ».</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy afaka manatanteraka fifindrana ny toerana lavitra FTP: fidio « Fandefasana ihany », na avelao any ivelany izy.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny fifindrana havoaka dia id-n'ny fifindrana, misaraka amin'ny faingo.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mbola mandeha ny famoahana. Andraso ho vita izy.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy miandry amin'ny vavahady ity famoahana ity.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy nisy toerana lavitra nampihatra ity famoahana ity: tsy misy haverina.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mariho aloha ny « Eny, avoahy izao ny ambaratonga manaraka ».</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mariho aloha ny « Eny, avereno izao ity famoahana ity ».</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Efa misy toerana lavitra manana ny id %id.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny port dia isa manomboka amin'ny 1 ka hatramin'ny 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny tontolo dia teny iray misy litera, isa, - sy _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny vondrona dia teny iray misy litera, isa, - sy _ (tsy all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy azo vakiana izao ny fahazoan-dalana hiditra: %problem. Tehirizo ao amin'ny Fametrahana &gt; Zava-miafina izy (na apetraho ny fari-piova) alohan'ny famoahana voalohany.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rakitra ihany no raisin'ny toerana lavitra FTP: « Fandefasana ihany » ny famoahana any aminy, ary tanterahina amin'ny tanana any ny fifindrany.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy ao amin'ny settings/override/migration.ini.append.php ny toerana lavitra %id; esory any amin'ny toerana nametrahana azy.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Niditra tamin'ny FTP ary namaky ny index.php. Tsy azo vakiana ny satan'ny fifindrana amin'ny toerana lavitra FTP.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsy nahomby ny famoahana %deploy tao amin'ny %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Miandry eo amin'ny vavahady iray ny famoahana %deploy ao amin'ny %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahomby ny famoahana %deploy tao amin'ny %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nalefan'ny %site ity mailaka ity satria angatahan'ny migration.ini [RemoteSettings] Notify[] izany.</translation>
     </message>
 </context>
 </TS>

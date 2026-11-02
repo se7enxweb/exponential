@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोटां</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>हें इन्स्टॉलेशन आपलीं स्थलांतरां डिप्लॉय करता तीं हेर इन्स्टॉलेशनां: डिप्लॉय स्थलांतरां वेंचिल्ल्या रिमोटांक धाडटा आनी तीं थंय चलयता, सगळीं एकाच वेळार आनी समन्वयान. रिमोटांत केन्नाच गुपित आसना: ताचें क्रेडेन्शियल सेटअप &gt; गुपितां हांगाच्या एका गुपिताचें नांव सांगता.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>नवो रिमोट</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id चें कनेक्शन तपासणी</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोटां</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>एकाच वेळार %parallel मेरेन रिमोटांचेर काम जाता; एका फेजीक दर एकाचेर %timeout सेकंद लागूं येतात.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोट</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>सुदारपाचीं सेटिंग्ज</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>फकत फायली (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH की</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>कांयच ना (होस्टाचो SSH एजंट आनी की)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>गटाक केल्लो डिप्लॉय ताच्या दर एका रिमोटाक वता.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोटांक डिप्लॉय करात</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>अजून खंयचोच रिमोट सेट केल्लो ना.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोट %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>हांगा कांयच धाडना वा चलयना: जतन करात सेटिंग्ज settings/override/migration.ini.append.php हातूंत बरयता. क्रेडेन्शियल हें एक नांव; ताचें मोल सेटअप &gt; गुपितां हांगा वा वातावरणांत उरता.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>घाल्ल्या प्रमाण सेटिंग्ज, अजून जतन केल्लीं नात.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>होस्ट की</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. रिमोट</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोटाचें नांव कितें आनी तें खंयचें वातावरण.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>अक्षरां, आंकडे, - आनी _, देखीक production1. तें अहवालांनी आनी कन्सोलाचेर (--remotes=production1) रिमोटाचें नांव जाता आनी उपरांत बदलूंक शकना.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... टप्प्यांनी केल्लो डिप्लॉय ह्या क्रमान वातावरणां मदल्यान वता.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>वैकल्पीक, स्वल्पविरामांनी वेगळे केल्ले, देखीक production. गटाक केल्लो डिप्लॉय ताच्या दर एका रिमोटाक वता.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. कनेक्शन</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>फायली थंय कश्यो पावतात, आनी इन्स्टॉलेशन खंय आसा.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH वयल्यान, फकत बदल्लें तें, मोडिल्लें ट्रान्सफर फुडें चालू जाता. rsync इन्स्टॉल केल्लें आसा थंय सगळ्यांत बरी निवड.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>फायलीं खातीर scp वांगडा SSH.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>फायलीं खातीर sftp वांगडा SSH.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>फकत फायली: स्थलांतरां धाडटात आनी परत वाचतात, पूण थंय चलोवंक शकनात.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS वयल्यान FTP; फकत फायली.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ह्याच सर्वराचेर, एका फोल्डरांत आशिल्लें दुसरें इन्स्टॉलेशन.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>होस्टाचें नांव वा पत्तो, देखीक node1.example.com. local खातीर न्हय.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>रिकामें: SSH खातीर 22, FTP खातीर 21.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>थंयचें इन्स्टॉलेशनाचें रूट, देखीक /var/www/site (FTP खातीर: FTP खात्याक दिसता तो मार्ग).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP कमांड लायन</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>थंयचो PHP CLI: php, वा /opt/plesk/php/8.4/bin/php सारको पुराय मार्ग.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>कन्सोल स्क्रिप्टां थंय root म्हूण चलतात</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोटाचो वापरपी root आसल्यारूच (तेन्ना तीं --allow-root-user वांगडा चलयतात).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. क्रेडेन्शियल</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>हें इन्स्टॉलेशन थंय कशें साइन इन करता. फकत एक नांव जतन जाता.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>हें इन्स्टॉलेशन ज्या वापरप्या म्हूण चलता ताचो SSH एजंट आनी की (आनी local खातीर सदांच).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>गुपित म्हूण दवरिल्ली खाजगी की.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>गुपित म्हूण दवरिल्लो पासवर्ड (FTP ताचेवरवीं साइन इन करता).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>गुपिताचें नांव</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>सेटअप &gt; गुपितां हांगाचें एक गुपित, देखीक deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>वा एक वातावरण व्हेरिएबल</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>तें दवरपी सर्वर प्रक्रियेचें व्हेरिएबल, देखीक DEPLOY_KEY (env:DEPLOY_KEY म्हूण जतन). तें गुपिताच्या नांवाची सुवात घेता.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. होस्ट की</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>वैकल्पीक, SSH, sftp आनी rsync खातीर.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>होस्ट कीचो फिंगरप्रिंट</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ssh-keygen -l छापता तशें. तें आसल्यार, होस्टान ही की दाखोवंक जाय; ताचे बगर, पयल्या संपर्काचे वेळार की शिकतात.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. पुनरावलोकन</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>वयल्या सेटिंग्जां वांगडा कनेक्शन तपासात, मागीर बरोवपाच्यो ओळी पुनरावलोकन करात.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>हो रिमोट काडात</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>ताचीं सेटिंग्ज settings/override/migration.ini.append.php हांतूंतल्यान काडटात. रिमोटाचेर कांयच बदलना, आनी ताचे डिप्लॉय इतिहासांत उरतात.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>हय, हो रिमोट काडात</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>डिप्लॉय</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>डिप्लॉय ह्या इन्स्टॉलेशनाचीं स्थलांतरां वेंचिल्ल्या रिमोटांक धाडटा आनी तीं थंय %user म्हूण चलयता, सगळीं एकाच वेळार आनी समन्वयान: दर एक रिमोट पयलीं तपासतात, आनी एक अपेशी जालो जाल्यार, लागू केल्लो दर एक रिमोट फाटीं घेतात. तो फाटल्यान चालू उरता, आनी ताचें पान दर एक रिमोट तो फुडें वता तशें दाखयता.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. रिमोटां</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोट, एक गट, वा दोनूय टीक करात.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>थंय डिप्लॉय करात</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. कशें</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>डिप्लॉय करात</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>धाडात आनी चलोवात</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थलांतरां दर एका रिमोटाक धाडटात, तपासतात आनी एकाच वांटून घेतिल्ल्या चलोवणी आयडी वांगडा चलयतात.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>फकत ट्रान्सफर</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>फायली धाडटात आनी तपासतात, कांयच चलयनात (FTP रिमोटा खातीर एकूच मार्ग).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>टप्प्यांनी</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>वातावरणांच्या क्रमान टप्प्या टप्प्यान (dev, stage, beta, production ...): पयलो टप्पो डिप्लॉय जाता, मागीर कोणूय फुडलो मंजूर करीसर एक गेट वाट पळयता. दर एका टप्प्यांत सगळें वा कांयच ना.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>फकत हीं स्थलांतरां</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>वैकल्पीक: स्थलांतर आयडी, स्वल्पविरामांनी वेगळे केल्ले. रिकामें: सायटीचें आनी ताच्या एक्सटेंशनांचें दर एक स्थलांतर.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>फकत पूर्व तपासणी</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>हय, आतां डिप्लॉय करात</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>कितें तरी धाडिल्ले वा चलयिल्ले डिप्लॉय, नवो पयलीं (पूर्व तपासणी अहवाल दवरना).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>फकत ट्रान्सफर</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>टप्प्यांनी, %stages टप्पे</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>समन्वय ना</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>अजून डिप्लॉय ना.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>डिप्लॉय %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>डिप्लॉयाचो दर एक रिमोट ताच्या स्थिती सयत. हांगा सुरू केल्लो डिप्लॉय हें पान बंद केल्यार फाटल्यान चालू उरता; तो पळोवंक पान परत उगडात.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>सगळे डिप्लॉय</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>पूर्व तपासणी</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>फुडलो टप्पो</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>सेटिंग्ज आनी क्रेडेन्शियल तपासतात</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>पूर्व तपासणी: दर एका रिमोटाची स्थिती वाचतात</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थलांतर फायली धाडटात</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>पावलें तें तपासतात</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>दर एका रिमोटाचेर स्थलांतरां चलयतात</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोट फाटीं घेतात</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>डिप्लॉय सोंपलो. ताचो अहवाल लोड जाता.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रगती पळोवंक मेळूंक ना. डिप्लॉय कसो चल्ला तें पळोवंक पान परतून लोड करात.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>फेज</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>हें पान डिप्लॉय चलता तसो पळयता.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>समन्वयान</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>टप्पे</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>टप्पो %stage आपल्या गेटार वाट पळयता</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>गेट %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user हांणी %time वेळार मंजूर केलें</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>टप्पो</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>धाडिल्ल्यो फायली</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>कर्नल आवृत्ती</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>लागू केलें: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>लागू करपाक: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>फेजी</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>गेट: %stages पैकीं टप्पो %stage</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>ताचे आदले टप्पे डिप्लॉय जाल्यात. ते तपासात, मागीर फुडलो टप्पो मंजूर करात: ताचे रिमोट परत तपासतात आनी डिप्लॉय करतात, सगळें वा कांयच ना.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>हय, फुडलो टप्पो आतां डिप्लॉय करात</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>हो डिप्लॉय फाटीं घेयात</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>तो लागू केल्लो दर एक रिमोट (%list) आपल्या चलोवणे आदीं घेतिल्ल्या स्नॅपशॉटाकडेन परत वता, सगळे एकाच वेळार.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>हय, हो डिप्लॉय आतां फाटीं घेयात</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>येवजिल्लें</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>ट्रान्सफर जालें</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>डिप्लॉय जालें</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>गेटार वाट पळयता</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>तयार केल्लें</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>आपल्या टप्प्याची वाट पळयता</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>फायली धाडल्यो</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>तपासलें</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>अपेशी, आपणाक परत हाडलें</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>बदल ना</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>डिप्लॉय जावंक ना</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>पावूंक शकना</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोटान जाप दिली.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोट आतां वापरूंक शकना.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done पुराय, %pending प्रलंबीत, %failed अपेशी</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>कुलूप</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>एका चलोवणेकडेन थंय कुलूप आसा</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stages पैकीं %stage</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>तपासपाचो रिमोट वेंचात.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>पयलीं “हय, हो रिमोट काडात” हाचेर टीक करात.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोट काडूंक मेळूंक ना: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोट जतन करूंक मेळूंक ना: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>कमीत कमी एक रिमोट वा गट वेंचात.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>वेंचिल्लो एक रिमोट आतां सेटिंग्जांत ना. पान परतून लोड करात.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>पयलीं “हय, आतां डिप्लॉय करात” हाचेर टीक करात.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP रिमोट स्थलांतरां चलोवंक शकना: “फकत ट्रान्सफर” वेंचात, वा तो सोडून दियात.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>डिप्लॉय करपाचीं स्थलांतरां स्थलांतर आयडी, स्वल्पविरामांनी वेगळे केल्ले.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>डिप्लॉय अजून चालू आसा. तो सोंपसर वाट पळयात.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>हो डिप्लॉय गेटार वाट पळयना.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>खंयच्याच रिमोटान हो डिप्लॉय लागू केलो ना: फाटीं घेवपाक कांयच ना.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>पयलीं “हय, फुडलो टप्पो आतां डिप्लॉय करात” हाचेर टीक करात.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>पयलीं “हय, हो डिप्लॉय आतां फाटीं घेयात” हाचेर टीक करात.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id आयडी आशिल्लो रिमोट पयलींच आसा.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>पोर्ट हो 1 ते 65535 मेरेनचो आंकडो.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>वातावरण हो अक्षरां, आंकडे, - आनी _ हांचो एक शब्द (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>गट हो अक्षरां, आंकडे, - आनी _ हांचो एक शब्द (all न्हय): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>क्रेडेन्शियल आतां वाचूंक शकना: %problem. पयल्या डिप्लॉया आदीं तें सेटअप &gt; गुपितां हांगा जतन करात (वा व्हेरिएबल सेट करात).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP रिमोट फकत फायली घेता: ताका केल्लो डिप्लॉय “फकत ट्रान्सफर” आसता, आनी ताचीं स्थलांतरां थंय हातान चलयतात.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>रिमोट %id settings/override/migration.ini.append.php हातूंत ना; तो सेट केला थंय काडात.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP वयल्यान साइन इन जालें आनी index.php वाचलें. FTP रिमोटाची स्थलांतर स्थिती वाचूंक शकना.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site चेर डिप्लॉय %deploy अपेशी जालें</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site चेर डिप्लॉय %deploy एका गेटार वाट पळयता</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site चेर डिप्लॉय %deploy येसस्वी जालें</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>हो मेल %site न धाडला, कित्याक migration.ini [RemoteSettings] Notify[] ताची मागणी करता.</translation>
     </message>
 </context>
 </TS>

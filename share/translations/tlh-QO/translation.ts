@@ -81369,15 +81369,15 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghachmey</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>jomghachvam vIHghachmey ngeHlu'bogh latlh jomghachmey: ngeHghach vIHghachmey ngeH wIvlu'pu'bogh Hop jomghachmeyDaq 'ej pa' QapmoH, Hoch rap poHDaq, rap Dotlhmey. not pegh ghaj Hop jomghach: SeHlaw &gt; peghmey Daq wa' pegh pong 'elmeH De'Daj.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghach chu'</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81385,19 +81385,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id rarghach nuDghach</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghachmey'e'</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>rap poHDaq %parallel Hop jomghachmey qaSmoHlu', law' puS; Hoch Hop jomghachDaq %timeout lup nIteb wa' 'ay' taHlaH.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghach</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81413,15 +81413,15 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>tI'meH DuHmey</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>teywaymey neH (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ngaQHa'moHwI'</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81429,7 +81429,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>pagh (jabwI' SSH Duy ngaQHa'moHwI'mey je)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81437,23 +81437,23 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ghomvaD ngeHghach ghomvetlh Hop jomghachmey Hoch ghoS.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghachmeyDaq yIngeH</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghach SeHlu'pu'be' 'ach.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghach %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>naDev pagh ngeHlu' pagh QapmoHlu': settings/override/migration.ini.append.php Daq DuHmey ghItlh “yIpol”. pong ghaH 'elmeH De''e'; SeHlaw &gt; peghmey Daq pagh vum DaqDaq ratlh lo'laHghachDaj.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81461,7 +81461,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ghItlhlu'pu'bogh DuHmey, pollu'pu'be' 'ach.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81489,15 +81489,15 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>jabwI' ngaQHa'moHwI'</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Hop jomghach</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghach pong, 'ej vum Daq'e' ghaHbogh.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81505,47 +81505,47 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>ngutlhmey, mI'mey, - _ je, ghu': production1. ja'ghachmeyDaq, ra'ghomDaq je (--remotes=production1) Hop jomghach pong, 'ej ghIq choHlaHbe'lu'.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... mIwvamDaq vum Daqmey vegh patlhmey lo'bogh ngeHghach.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>DaneHchugh, ghIchmey'e' ghItlhmey luSol, ghu': production. ghomvaD ngeHghach ghomvetlh Hop jomghachmey Hoch ghoS.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. rarghach</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>chay' pa' paw teywaymey, 'ej nuqDaq jomghach tu'lu'.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH vegh, choHbogh neH, 'ej ghorlu'pu'bogh ngeHghach taHqa'. rsync jomlu'pu'bogh Daq wIvlu'meH QaQqu'.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>teywaymeyvaD scp lo'bogh SSH.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>teywaymeyvaD sftp lo'bogh SSH.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>teywaymey neH: vIHghachmey ngeHlu' 'ej laDqa'lu', 'ach pa' QapmoHlaHbe'lu'.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS vegh FTP; teywaymey neH.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>jabwI'vamDaq latlh jomghach, ghItlh pa'Daq.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81553,7 +81553,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>jabwI' pong pagh Daq, ghu': node1.example.com. local-vaD ghaHbe'.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81561,7 +81561,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>chIm: SSH-vaD 22, FTP-vaD 21.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81573,31 +81573,31 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>pa' jomghach DaH'e', ghu': /var/www/site (FTP-vaD: FTP mI' leghbogh He).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP ra'meH tlhegh</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>pa' PHP CLI: php, pagh He naQ, /opt/plesk/php/8.4/bin/php rur.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>pa' root rur Qap ra'ghom ghItlhmey</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>root ghaHchugh Hop jomghach lo'wI' neH (vaj --allow-root-user lo'meH QapmoHlu').</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. 'elmeH De'</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>chay' pa' 'el jomghachvam. pong neH pollu'.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81605,23 +81605,23 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>jomghachvam Qapbogh lo'wI' SSH Duy ngaQHa'moHwI'mey je (local-vaD reH).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>pegh rur polbogh pegh ngaQHa'moHwI'.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>pegh rur polbogh pegh mu' (FTP 'elmeH lo'lu').</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>pegh pong</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>SeHlaw &gt; peghmey Daq pegh, ghu': deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81629,247 +81629,247 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>pagh vum Daq choHlaHbogh mI'</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>ghaH ghajbogh jabwI' mIw choHlaHbogh mI', ghu': DEPLOY_KEY (env:DEPLOY_KEY rur pollu'). pegh pong Daq tlhap.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. jabwI' ngaQHa'moHwI'</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>DaneHchugh, SSH, sftp, rsync je ghaHvaD.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>jabwI' ngaQHa'moHwI' nI'qa'</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ssh-keygen -l ghItlhbogh rur. ghaH lo'lu'chugh, ngaQHa'moHwI'vam 'ang'nIS jabwI'; lo'lu'be'chugh, wa'DIch rarghachDaq ngaQHa'moHwI' ghojlu'.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. nuDghach</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dung DuHmey lo'taHvIS rarghach yInuD, ghIq ghItlhlu'taHvIpbogh tlheghmey yInuD.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghachvam yIteq</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>settings/override/migration.ini.append.php vo' DuHmeyDaj teqlu'. Hop jomghachDaq pagh choHlu', 'ej qunDaq ratlh ngeHghachmeyDaj.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>HIja', Hop jomghachvam yIteq</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ngeHghachmey</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ngeHghach jomghachvam vIHghachmey ngeH wIvlu'pu'bogh Hop jomghachmeyDaq 'ej pa' %user rur QapmoH, Hoch rap poHDaq, rap Dotlhmey: wa'DIch Hoch Hop jomghach 'ollu', 'ej wa' Qapbe'chugh, lo'pu'bogh Hoch Hop jomghach cheghmoHlu'. 'em Daq taH, 'ej taHtaHvIS Hoch Hop jomghach 'ang navDaj.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Hop jomghachmey</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghachmey, wa' ghom, pagh cha' yIwIv.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>pa' yIngeH</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. chay'</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>yIngeH</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>yIngeH 'ej yIQapmoH</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoch Hop jomghachDaq vIHghachmey ngeHlu', 'ollu', QapmoHlu' je, wa' QapmoHghach ngu'meH mI' lo'lu'.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>teywaymey neH</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>teywaymey ngeHlu' 'ej 'ollu', pagh QapmoHlu' (FTP Hop jomghachvaD mIw wa' neH).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>patlhmey lo'</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>vum Daqmey mIwDaq patlh patlh je (dev, stage, beta, production ...): wa'DIch patlh ngeHlu', ghIq patlh veb chaw'pa' vay', loS lojmIt. Hoch patlhDaq Hoch pagh pagh.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>vIHghachmeyvam neH</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>DaneHchugh: vIHghach ngu'meH mI'mey, ghIchmey luSol. chIm: Daq Daq chel'eghmeyDaj je Hoch vIHghach.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>wa'DIch nuDghach neH</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>HIja', DaH yIngeH</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>vay' ngeHpu'bogh pagh QapmoHpu'bogh ngeHghachmey, chu'qu' wa'DIch (ja'ghach pollaHbe' wa'DIch nuDghach).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>teywaymey neH</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>patlhmey lo', %stages patlhmey</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>rapbe' Dotlhmey</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ngeHghach tu'lu'be' 'ach.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ngeHghach %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ngeHghach Hop jomghachmey Hoch ghapDaj je. navvam SoQmoHlu'DI', 'em Daq taH naDev taghlu'pu'bogh ngeHghach; tlha'meH nav yIpoSmoHqa'.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoch ngeHghachmey</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>wa'DIch nuDghach</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>patlh veb</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>DuHmey 'elmeH De' je 'ollu'taH</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>wa'DIch nuDghach: Hoch Hop jomghach ghap laDlu'taH</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>vIHghach teywaymey ngeHlu'taH</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>pawpu'bogh Doch 'ollu'taH</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoch Hop jomghachDaq vIHghachmey QapmoHlu'taH</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghachmey cheghmoHlu'taH</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>rInpu' ngeHghach. ja'ghachDaj lI'lu'taH.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>ghoSghach tlha'laHbe'lu'. ngeHghach Dotlh DaleghmeH nav yIlI'qa'.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>'ay'</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>taHtaHvIS ngeHghach tlha' navvam.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>rap Dotlhmey</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>patlhmey</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>lojmItDajDaq loS patlh %stage</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>lojmIt %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user chaw'pu', %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>patlh</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ngeHlu'pu'bogh teywaymey</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>qalmey mI'</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>lo'lu'pu': %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>lo'meH: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>'ay'mey</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>lojmIt: patlh %stage / %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>nIteb patlhmey ngeHlu'pu'. tI'ol, ghIq patlh veb yIchaw': Hop jomghachmeyDaj 'ollu'qa' 'ej ngeHlu', Hoch pagh pagh.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81877,7 +81877,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>HIja', DaH patlh veb yIngeH</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81885,31 +81885,31 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>ngeHghachvam yIcheghmoH</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>lo'pu'bogh Hoch Hop jomghach (%list) QapmoHghachDaj nIteb tlhaplu'pu'bogh cheghmeH Daq chegh, Hoch rap poHDaq.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>HIja', DaH ngeHghachvam yIcheghmoH</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>nablu'pu'</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>ngeHlu'pu'</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ngeHlu'pu'</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>lojmItDaq loS</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81917,7 +81917,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>ghuSmoHlu'pu'</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81925,51 +81925,51 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>patlhDaj loS</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>teywaymey ngeHlu'pu'</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>'ollu'pu'</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>Qapbe', 'ej cheghmoH'eghpu'</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>choHlu'be'</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ngeHlu'pu'be'</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>paghlaHbe'lu'</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>jangpu' Hop jomghach.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>DaH Hop jomghach lo'laHbe'lu'.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done rIn, %pending loStaH, %failed Qapbe'</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>ngaQghach</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>pa' ngaQghach ghaj QapmoHghach</translation>
     </message>
     <message>
         <source>free</source>
@@ -81977,23 +81977,23 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage / %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>nuDmeH Hop jomghach yIwIv.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>wa'DIch “HIja', Hop jomghachvam yIteq” yIwIv.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghach teqlaHbe'lu': %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Hop jomghach pollaHbe'lu': %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -82001,75 +82001,75 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>wa' Hop jomghach pagh wa' ghom yIwIv, puS.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>DuHmeyDaq wIvlu'pu'bogh Hop jomghach tu'lu'be' DaH. nav yIlI'qa'.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>wa'DIch “HIja', DaH yIngeH” yIwIv.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>vIHghachmey QapmoHlaHbe' FTP Hop jomghach: “teywaymey neH” yIwIv, pagh yIlon.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ngeHmeH vIHghachmey'e' vIHghach ngu'meH mI'mey chaH, ghIchmey luSol.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>taHtaH ngeHghach. rInpa' yIloS.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>lojmItDaq loSbe' ngeHghachvam.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>ngeHghachvam lo'pu'be' Hop jomghach: cheghmoHmeH pagh tu'lu'.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>wa'DIch “HIja', DaH patlh veb yIngeH” yIwIv.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>wa'DIch “HIja', DaH ngeHghachvam yIcheghmoH” yIwIv.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id ngu'meH mI' ghajbogh Hop jomghach tu'lu'pu'.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>lojmIt mI''e' 1 vo' 65535 ghoS mI' ghaH.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>vum Daq'e' mu' ghaH, ngutlhmey, mI'mey, - _ je chenmoH (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>ghom'e' mu' ghaH, ngutlhmey, mI'mey, - _ je chenmoH (all ghaHbe'): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>DaH 'elmeH De' laDlaHbe'lu': %problem. wa'DIch ngeHghach nIteb SeHlaw &gt; peghmey Daq yIpol (pagh mI' yIHIjmoH).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>teywaymey neH Hev FTP Hop jomghach: “teywaymey neH” ghaH ngeHghach, 'ej ghopDu'mo' pa' vIHghachmeyDaj QapmoHlu'.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>settings/override/migration.ini.append.php Daq Hop jomghach %id tu'lu'be'; SeHlu'bogh DaqDaq yIteq.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP vegh 'ellu'pu' 'ej index.php laDlu'pu'. FTP Hop jomghach vIHghach Dotlh laDlaHbe'lu'.</translation>
     </message>
 </context>
 <context>
@@ -84473,19 +84473,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site Daq ngeHghach %deploy Qapbe'</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site Daq lojmIt Dop ngeHghach %deploy loS</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site Daq ngeHghach %deploy Qap</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>QIn'vam ngeH %site, migration.ini [RemoteSettings] Notify[] poQmo'.</translation>
     </message>
 </context>
 </TS>

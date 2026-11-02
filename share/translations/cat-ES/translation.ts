@@ -81366,15 +81366,15 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Destinacions</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les altres instal·lacions a les quals aquesta desplega les seves migracions: un desplegament envia les migracions a les destinacions triades i les hi executa, totes alhora i en sincronia. Una destinació mai no conté cap secret: la seva credencial n'anomena un a Configuració &gt; Secrets.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Destinació nova</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81382,19 +81382,19 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Prova de connexió de %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Les destinacions</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es treballa en fins a %parallel destinacions alhora; una fase pot trigar %timeout segons a cadascuna.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Destinació</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81410,15 +81410,15 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>configuració per corregir</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>només fitxers (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Clau SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81426,7 +81426,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>cap (l'agent SSH i les claus del servidor)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81434,23 +81434,23 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un desplegament a un grup va a cadascuna de les seves destinacions.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplega a les destinacions</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Encara no hi ha cap destinació configurada.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Destinació %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aquí no s'envia ni s'executa res: Desa escriu la configuració a settings/override/migration.ini.append.php. La credencial és un nom; el seu valor es queda a Configuració &gt; Secrets o a l'entorn.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81458,7 +81458,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La configuració tal com s'ha introduït, encara sense desar.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81486,15 +81486,15 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Clau del servidor</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. La destinació</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Com es diu la destinació i quin entorn és.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81502,47 +81502,47 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lletres, xifres, - i _, per exemple production1. Anomena la destinació als informes i a la consola (--remotes=production1) i no es pot canviar més endavant.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Un desplegament per etapes recorre els entorns en aquest ordre.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcional, separats per comes, per exemple production. Un desplegament a un grup va a cadascuna de les seves destinacions.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. La connexió</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Com hi arriben els fitxers i on és la instal·lació.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per SSH, només el que ha canviat, i una transferència interrompuda es reprèn. La millor opció on hi ha rsync instal·lat.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH amb scp per als fitxers.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH amb sftp per als fitxers.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Només fitxers: les migracions s'envien i es tornen a llegir, però no s'hi poden executar.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP sobre TLS; només fitxers.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una altra instal·lació en aquest servidor, en una carpeta.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81550,7 +81550,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un nom de servidor o una adreça, per exemple node1.example.com. No per a local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81558,7 +81558,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Buit: 22 per a SSH, 21 per a FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81570,31 +81570,31 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>L'arrel de la instal·lació allà, per exemple /var/www/site (per a FTP: el camí que veu el compte FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línia d'ordres de PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>La CLI de PHP d'allà: php, o un camí complet com /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Els scripts de consola s'hi executen com a root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Només quan l'usuari de la destinació és root (aleshores s'executen amb --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. La credencial</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Com inicia la sessió allà aquesta instal·lació. Només es desa un nom.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81602,23 +81602,23 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>L'agent SSH i les claus de l'usuari amb què s'executa aquesta instal·lació (i sempre per a local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una clau privada desada com a secret.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Una contrasenya desada com a secret (FTP inicia la sessió amb una).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom del secret</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un secret de Configuració &gt; Secrets, per exemple deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81626,247 +81626,247 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>O una variable d'entorn</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>La variable del procés del servidor que el conté, per exemple DEPLOY_KEY (desada com a env:DEPLOY_KEY). Ocupa el lloc del nom del secret.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. La clau del servidor</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcional, per a SSH, sftp i rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Empremta de la clau del servidor</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... tal com l'imprimeix ssh-keygen -l. Amb ella, el servidor ha de mostrar aquesta clau; sense ella, la clau s'aprèn en el primer contacte.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Revisa</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proveu la connexió amb la configuració de dalt i després reviseu les línies que s'escriuran.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Treu aquesta destinació</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>La seva configuració es treu de settings/override/migration.ini.append.php. A la destinació no canvia res, i els seus desplegaments es mantenen a l'historial.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Sí, treu aquesta destinació</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplegaments</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un desplegament envia les migracions d'aquesta instal·lació a les destinacions triades i les hi executa com a %user, totes alhora i en sincronia: primer es comprova cada destinació i, si una falla, es desfà cada destinació que les ha aplicat. Continua en segon pla, i la seva pàgina mostra cada destinació a mesura que avança.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Les destinacions</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Marqueu destinacions, un grup o tots dos.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplega-hi</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Com</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplega</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Envia i executa</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les migracions s'envien, es verifiquen i s'executen a cada destinació amb un sol id d'execució compartit.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Només transferir</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Els fitxers s'envien i es verifiquen, no s'executa res (l'única manera per a una destinació FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Per etapes</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapa per etapa en l'ordre dels entorns (dev, stage, beta, production ...): es desplega la primera etapa i després un control espera fins que algú aprova la següent. Tot o res dins de cada etapa.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Només aquestes migracions</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcional: ids de migració, separats per comes. Buit: totes les migracions del lloc i de les seves extensions.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Només comprovació prèvia</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Sí, desplega ara</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Els desplegaments que han enviat o executat alguna cosa, primer el més recent (una comprovació prèvia no conserva cap informe).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>només transferir</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>per etapes, %stages etapes</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>fora de sincronia</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Encara no hi ha cap desplegament.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplegament %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cada destinació del desplegament amb el seu estat. Un desplegament iniciat aquí continua en segon pla quan es tanca aquesta pàgina; torneu a obrir la pàgina per seguir-lo.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Tots els desplegaments</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprovació prèvia</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapa següent</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Es comproven la configuració i les credencials</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprovació prèvia: es llegeix l'estat de cada destinació</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>S'envien els fitxers de migració</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Es verifica el que ha arribat</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>S'executen les migracions a cada destinació</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Es desfan les destinacions</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>El desplegament ha acabat. Es carrega el seu informe.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>No s'ha pogut seguir el progrés. Torneu a carregar la pàgina per veure com va el desplegament.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fase</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aquesta pàgina segueix el desplegament a mesura que avança.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>En sincronia</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapes</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>l'etapa %stage espera al seu control</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Control %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>aprovat per %user a les %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapa</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxers enviats</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versió del nucli</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>aplicades: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>per aplicar: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fases</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Control: etapa %stage de %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les etapes anteriors ja estan desplegades. Comproveu-les i després aproveu l'etapa següent: les seves destinacions es tornen a comprovar i es despleguen, tot o res.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81874,7 +81874,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Sí, desplega ara l'etapa següent</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81882,31 +81882,31 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Desfés aquest desplegament</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cada destinació que l'ha aplicat (%list) torna a la captura presa abans de la seva execució, totes alhora.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Sí, desfés ara aquest desplegament</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>planificat</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>transferida</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>desplegada</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>espera en un control</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81914,7 +81914,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>preparat</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81922,51 +81922,51 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>espera la seva etapa</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>fitxers enviats</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>verificada</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>fallida, s'ha restaurat sola</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>sense canvis</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>no desplegada</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>no accessible</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>La destinació ha respost.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ara no es pot fer servir la destinació.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done fetes, %pending pendents, %failed fallides</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Bloqueig</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>una execució hi té el bloqueig</translation>
     </message>
     <message>
         <source>free</source>
@@ -81974,23 +81974,23 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage de %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trieu la destinació que voleu provar.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Primer marqueu «Sí, treu aquesta destinació».</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>No s'ha pogut treure la destinació: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>No s'ha pogut desar la destinació: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81998,75 +81998,75 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trieu almenys una destinació o un grup.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una destinació triada ja no és a la configuració. Torneu a carregar la pàgina.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Primer marqueu «Sí, desplega ara».</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una destinació FTP no pot executar migracions: trieu «Només transferir» o deixeu-la fora.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les migracions a desplegar són ids de migració, separats per comes.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>El desplegament encara està en curs. Espereu que acabi.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aquest desplegament no espera en cap control.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cap destinació no ha aplicat aquest desplegament: no hi ha res a desfer.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Primer marqueu «Sí, desplega ara l'etapa següent».</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Primer marqueu «Sí, desfés ara aquest desplegament».</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja existeix una destinació amb l'id %id.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>El port és un nombre de l'1 al 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>L'entorn és una paraula de lletres, xifres, - i _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Un grup és una paraula de lletres, xifres, - i _ (no all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ara no es pot llegir la credencial: %problem. Deseu-la a Configuració &gt; Secrets (o definiu la variable) abans del primer desplegament.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una destinació FTP només rep fitxers: un desplegament cap a ella és «Només transferir», i les seves migracions s'hi executen a mà.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>La destinació %id no és a settings/override/migration.ini.append.php; traieu-la allà on estigui definida.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>S'ha iniciat la sessió per FTP i s'ha llegit index.php. L'estat de migració d'una destinació FTP no es pot llegir.</translation>
     </message>
 </context>
 <context>
@@ -84470,19 +84470,19 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>El desplegament %deploy ha fallat a %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>El desplegament %deploy espera en una porta a %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>El desplegament %deploy ha tingut èxit a %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aquest correu l'ha enviat %site perquè ho demana migration.ini [RemoteSettings] Notify[].</translation>
     </message>
 </context>
 </TS>

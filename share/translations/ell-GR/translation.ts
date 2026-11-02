@@ -81366,15 +81366,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Απομακρυσμένοι κόμβοι</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι άλλες εγκαταστάσεις στις οποίες αυτή αναπτύσσει τις μετεγκαταστάσεις της: μια ανάπτυξη στέλνει τις μετεγκαταστάσεις στους επιλεγμένους απομακρυσμένους κόμβους και τις εκτελεί εκεί, σε όλους ταυτόχρονα και συγχρονισμένα. Ένας απομακρυσμένος κόμβος δεν περιέχει ποτέ μυστικό: τα διαπιστευτήριά του ονομάζουν ένα στις Ρυθμίσεις συστήματος &gt; Μυστικά.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Νέος απομακρυσμένος κόμβος</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81382,19 +81382,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Έλεγχος σύνδεσης του %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι απομακρυσμένοι κόμβοι</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Έως %parallel απομακρυσμένοι κόμβοι επεξεργάζονται ταυτόχρονα· μία φάση μπορεί να διαρκέσει %timeout δευτερόλεπτα σε καθέναν.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Απομακρυσμένος κόμβος</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81410,15 +81410,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ρυθμίσεις προς διόρθωση</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>μόνο αρχεία (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Κλειδί SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81426,7 +81426,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>κανένα (ο πράκτορας SSH και τα κλειδιά του κεντρικού υπολογιστή)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81434,23 +81434,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Μια ανάπτυξη σε μια ομάδα πηγαίνει σε κάθε απομακρυσμένο κόμβο της.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανάπτυξη σε απομακρυσμένους κόμβους</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν έχει ρυθμιστεί ακόμη κανένας απομακρυσμένος κόμβος.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Απομακρυσμένος κόμβος %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Εδώ δεν αποστέλλεται ούτε εκτελείται τίποτα: η Αποθήκευση γράφει τις ρυθμίσεις στο settings/override/migration.ini.append.php. Τα διαπιστευτήρια είναι ένα όνομα· η τιμή τους παραμένει στις Ρυθμίσεις συστήματος &gt; Μυστικά ή στο περιβάλλον.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81458,7 +81458,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι ρυθμίσεις όπως εισήχθησαν, χωρίς να έχουν αποθηκευτεί ακόμη.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81486,15 +81486,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Κλειδί κεντρικού υπολογιστή</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Ο απομακρυσμένος κόμβος</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Πώς ονομάζεται ο απομακρυσμένος κόμβος και σε ποιο περιβάλλον ανήκει.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81502,47 +81502,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Γράμματα, ψηφία, - και _, για παράδειγμα production1. Ονομάζει τον απομακρυσμένο κόμβο στις αναφορές και στην κονσόλα (--remotes=production1) και δεν μπορεί να αλλάξει αργότερα.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Μια ανάπτυξη σε στάδια περνά από τα περιβάλλοντα με αυτή τη σειρά.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Προαιρετικό, χωρισμένο με κόμματα, για παράδειγμα production. Μια ανάπτυξη σε μια ομάδα πηγαίνει σε κάθε απομακρυσμένο κόμβο της.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Η σύνδεση</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Πώς φτάνουν τα αρχεία εκεί και πού βρίσκεται η εγκατάσταση.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέσω SSH, μόνο ό,τι άλλαξε, με συνέχιση μιας διακοπείσας μεταφοράς. Η καλύτερη επιλογή όπου είναι εγκατεστημένο το rsync.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH με scp για τα αρχεία.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH με sftp για τα αρχεία.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Μόνο αρχεία: οι μετεγκαταστάσεις αποστέλλονται και διαβάζονται πίσω, αλλά δεν μπορούν να εκτελεστούν εκεί.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP μέσω TLS· μόνο αρχεία.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Μια άλλη εγκατάσταση σε αυτόν τον διακομιστή, σε έναν φάκελο.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81550,7 +81550,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ένα όνομα κεντρικού υπολογιστή ή μια διεύθυνση, για παράδειγμα node1.example.com. Όχι για το local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81558,7 +81558,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Κενό: 22 για SSH, 21 για FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81570,31 +81570,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο ριζικός κατάλογος της εγκατάστασης εκεί, για παράδειγμα /var/www/site (για FTP: η διαδρομή που βλέπει ο λογαριασμός FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Γραμμή εντολών PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το PHP CLI εκεί: php ή μια πλήρης διαδρομή όπως /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Τα σενάρια κονσόλας εκτελούνται εκεί ως root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Μόνο όταν ο χρήστης του απομακρυσμένου κόμβου είναι ο root (τότε εκτελούνται με --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Τα διαπιστευτήρια</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Πώς συνδέεται αυτή η εγκατάσταση εκεί. Αποθηκεύεται μόνο ένα όνομα.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81602,23 +81602,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο πράκτορας SSH και τα κλειδιά του χρήστη με τον οποίο εκτελείται αυτή η εγκατάσταση (και πάντα για το local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ένα ιδιωτικό κλειδί που φυλάσσεται ως μυστικό.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ένας κωδικός πρόσβασης που φυλάσσεται ως μυστικό (το FTP συνδέεται με αυτόν).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα μυστικού</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ένα μυστικό από τις Ρυθμίσεις συστήματος &gt; Μυστικά, για παράδειγμα deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81626,247 +81626,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Ή μια μεταβλητή περιβάλλοντος</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η μεταβλητή της διεργασίας του διακομιστή που το περιέχει, για παράδειγμα DEPLOY_KEY (αποθηκεύεται ως env:DEPLOY_KEY). Παίρνει τη θέση του ονόματος του μυστικού.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Το κλειδί του κεντρικού υπολογιστή</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Προαιρετικό, για SSH, sftp και rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτύπωμα κλειδιού κεντρικού υπολογιστή</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... όπως το εμφανίζει το ssh-keygen -l. Με αυτό, ο κεντρικός υπολογιστής πρέπει να δείξει αυτό το κλειδί· χωρίς αυτό, το κλειδί μαθαίνεται κατά την πρώτη επαφή.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Έλεγχος</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ελέγξτε τη σύνδεση με τις παραπάνω ρυθμίσεις και στη συνέχεια εξετάστε τις γραμμές που θα γραφτούν.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Αφαίρεση αυτού του απομακρυσμένου κόμβου</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι ρυθμίσεις του αφαιρούνται από το settings/override/migration.ini.append.php. Τίποτα δεν αλλάζει στον απομακρυσμένο κόμβο και οι αναπτύξεις του παραμένουν στο ιστορικό.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ναι, αφαίρεση αυτού του απομακρυσμένου κόμβου</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Αναπτύξεις</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Μια ανάπτυξη στέλνει τις μετεγκαταστάσεις αυτής της εγκατάστασης στους επιλεγμένους απομακρυσμένους κόμβους και τις εκτελεί εκεί ως %user, σε όλους ταυτόχρονα και συγχρονισμένα: κάθε απομακρυσμένος κόμβος ελέγχεται πρώτα και, όταν ένας αποτύχει, κάθε κόμβος που τις εφάρμοσε ανακαλείται. Συνεχίζεται στο παρασκήνιο και η σελίδα της δείχνει κάθε απομακρυσμένο κόμβο καθώς προχωρά.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Οι απομακρυσμένοι κόμβοι</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε απομακρυσμένους κόμβους, μια ομάδα ή και τα δύο.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανάπτυξη σε αυτόν</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Πώς</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανάπτυξη</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποστολή και εκτέλεση</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι μετεγκαταστάσεις αποστέλλονται, επαληθεύονται και εκτελούνται σε κάθε απομακρυσμένο κόμβο με ένα κοινό αναγνωριστικό εκτέλεσης.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Μόνο μεταφορά</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Τα αρχεία αποστέλλονται και επαληθεύονται, τίποτα δεν εκτελείται (ο μόνος τρόπος για έναν απομακρυσμένο κόμβο FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Σε στάδια</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Στάδιο προς στάδιο με τη σειρά των περιβαλλόντων (dev, stage, beta, production ...): αναπτύσσεται το πρώτο στάδιο και στη συνέχεια μια πύλη περιμένει μέχρι κάποιος να εγκρίνει το επόμενο. Όλα ή τίποτα μέσα σε κάθε στάδιο.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Μόνο αυτές οι μετεγκαταστάσεις</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Προαιρετικό: αναγνωριστικά μετεγκαταστάσεων, χωρισμένα με κόμματα. Κενό: κάθε μετεγκατάσταση του ιστότοπου και των επεκτάσεών του.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Μόνο προέλεγχος</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ναι, ανάπτυξη τώρα</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι αναπτύξεις που έστειλαν ή εκτέλεσαν κάτι, οι νεότερες πρώτες (ένας προέλεγχος δεν κρατά αναφορά).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>μόνο μεταφορά</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>σε στάδια, %stages στάδια</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>μη συγχρονισμένος</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Καμία ανάπτυξη ακόμη.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανάπτυξη %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Κάθε απομακρυσμένος κόμβος της ανάπτυξης με την κατάστασή του. Μια ανάπτυξη που ξεκίνησε εδώ συνεχίζεται στο παρασκήνιο όταν κλείσει αυτή η σελίδα· ανοίξτε ξανά τη σελίδα για να την παρακολουθήσετε.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Όλες οι αναπτύξεις</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Προέλεγχος</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Επόμενο στάδιο</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Έλεγχος των ρυθμίσεων και των διαπιστευτηρίων</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Προέλεγχος: ανάγνωση της κατάστασης κάθε απομακρυσμένου κόμβου</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποστολή των αρχείων μετεγκατάστασης</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Επαλήθευση όσων έφτασαν</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Εκτέλεση των μετεγκαταστάσεων σε κάθε απομακρυσμένο κόμβο</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανάκληση των απομακρυσμένων κόμβων</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η ανάπτυξη ολοκληρώθηκε. Φόρτωση της αναφοράς της.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν ήταν δυνατή η παρακολούθηση της προόδου. Ανανεώστε τη σελίδα για να δείτε πώς πάει η ανάπτυξη.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Φάση</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτή η σελίδα παρακολουθεί την ανάπτυξη καθώς προχωρά.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Συγχρονισμένα</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Στάδια</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>το στάδιο %stage περιμένει στην πύλη του</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Πύλη %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>εγκρίθηκε από %user στις %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Στάδιο</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Απεσταλμένα αρχεία</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Έκδοση πυρήνα</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>εφαρμόστηκαν: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>προς εφαρμογή: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Φάσεις</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Πύλη: στάδιο %stage από %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Τα προηγούμενα στάδια έχουν αναπτυχθεί. Ελέγξτε τα και στη συνέχεια εγκρίνετε το επόμενο στάδιο: οι απομακρυσμένοι κόμβοι του ελέγχονται ξανά και αναπτύσσονται, όλα ή τίποτα.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81874,7 +81874,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ναι, ανάπτυξη του επόμενου σταδίου τώρα</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81882,31 +81882,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Αναίρεση αυτής της ανάπτυξης</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Κάθε απομακρυσμένος κόμβος που την εφάρμοσε (%list) επιστρέφει στο στιγμιότυπο που λήφθηκε πριν από την εκτέλεσή του, όλοι ταυτόχρονα.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ναι, αναίρεση αυτής της ανάπτυξης τώρα</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>προγραμματισμένο</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>μεταφέρθηκε</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>αναπτύχθηκε</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>περιμένει σε πύλη</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81914,7 +81914,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>προετοιμάστηκε</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81922,51 +81922,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>περιμένει το στάδιό του</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>τα αρχεία στάλθηκαν</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>επαληθεύτηκε</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>απέτυχε, αυτοαποκαταστάθηκε</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>αμετάβλητο</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>δεν αναπτύχθηκε</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>μη προσβάσιμος</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο απομακρυσμένος κόμβος απάντησε.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο απομακρυσμένος κόμβος δεν μπορεί να χρησιμοποιηθεί τώρα.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done ολοκληρώθηκαν, %pending σε εκκρεμότητα, %failed απέτυχαν</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Κλείδωμα</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>μια εκτέλεση κρατά εκεί το κλείδωμα</translation>
     </message>
     <message>
         <source>free</source>
@@ -81974,23 +81974,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage από %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε τον απομακρυσμένο κόμβο που θα ελεγχθεί.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε πρώτα «Ναι, αφαίρεση αυτού του απομακρυσμένου κόμβου».</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν ήταν δυνατή η αφαίρεση του απομακρυσμένου κόμβου: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν ήταν δυνατή η αποθήκευση του απομακρυσμένου κόμβου: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81998,75 +81998,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε τουλάχιστον έναν απομακρυσμένο κόμβο ή μια ομάδα.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ένας επιλεγμένος απομακρυσμένος κόμβος δεν υπάρχει πλέον στις ρυθμίσεις. Ανανεώστε τη σελίδα.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε πρώτα «Ναι, ανάπτυξη τώρα».</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ένας απομακρυσμένος κόμβος FTP δεν μπορεί να εκτελέσει μετεγκαταστάσεις: επιλέξτε «Μόνο μεταφορά» ή αφήστε τον εκτός.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι μετεγκαταστάσεις προς ανάπτυξη είναι αναγνωριστικά μετεγκαταστάσεων, χωρισμένα με κόμματα.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η ανάπτυξη βρίσκεται ακόμη σε εξέλιξη. Περιμένετε να ολοκληρωθεί.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτή η ανάπτυξη δεν περιμένει σε πύλη.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Κανένας απομακρυσμένος κόμβος δεν εφάρμοσε αυτή την ανάπτυξη: δεν υπάρχει τίποτα για αναίρεση.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε πρώτα «Ναι, ανάπτυξη του επόμενου σταδίου τώρα».</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε πρώτα «Ναι, αναίρεση αυτής της ανάπτυξης τώρα».</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Υπάρχει ήδη απομακρυσμένος κόμβος με το αναγνωριστικό %id.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η θύρα είναι ένας αριθμός από 1 έως 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Το περιβάλλον είναι μια λέξη από γράμματα, ψηφία, - και _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Μια ομάδα είναι μια λέξη από γράμματα, ψηφία, - και _ (όχι all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Τα διαπιστευτήρια δεν μπορούν να διαβαστούν τώρα: %problem. Αποθηκεύστε τα στις Ρυθμίσεις συστήματος &gt; Μυστικά (ή ορίστε τη μεταβλητή) πριν από την πρώτη ανάπτυξη.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ένας απομακρυσμένος κόμβος FTP λαμβάνει μόνο αρχεία: μια ανάπτυξη σε αυτόν είναι «Μόνο μεταφορά» και οι μετεγκαταστάσεις του εκτελούνται εκεί χειροκίνητα.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο απομακρυσμένος κόμβος %id δεν βρίσκεται στο settings/override/migration.ini.append.php· αφαιρέστε τον εκεί όπου έχει οριστεί.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Έγινε σύνδεση μέσω FTP και ανάγνωση του index.php. Η κατάσταση μετεγκατάστασης ενός απομακρυσμένου κόμβου FTP δεν μπορεί να διαβαστεί.</translation>
     </message>
 </context>
 <context>
@@ -84470,19 +84470,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Η ανάπτυξη %deploy απέτυχε στο %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Η ανάπτυξη %deploy περιμένει σε μια πύλη στο %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Η ανάπτυξη %deploy ολοκληρώθηκε με επιτυχία στο %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό το μήνυμα στάλθηκε από το %site επειδή το ζητά το migration.ini [RemoteSettings] Notify[].</translation>
     </message>
 </context>
 </TS>

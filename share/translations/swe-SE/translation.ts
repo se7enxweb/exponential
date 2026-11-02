@@ -82639,15 +82639,15 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjärrsystem</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>De andra installationerna som denna driftsätter sina migreringar till: en driftsättning skickar migreringarna till de valda fjärrsystemen och kör dem där, alla samtidigt och i takt. Ett fjärrsystem innehåller aldrig en hemlighet: dess inloggningsuppgift namnger en under Konfiguration &gt; Hemligheter.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nytt fjärrsystem</translation>
     </message>
     <message>
         <source>Help</source>
@@ -82655,19 +82655,19 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Anslutningstest för %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjärrsystemen</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Upp till %parallel fjärrsystem bearbetas samtidigt; en fas får ta %timeout sekunder på vart och ett.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjärrsystem</translation>
     </message>
     <message>
         <source>Address</source>
@@ -82683,15 +82683,15 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>inställningar att rätta</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>endast filer (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-nyckel</translation>
     </message>
     <message>
         <source>Password</source>
@@ -82699,7 +82699,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ingen (värdens SSH-agent och nycklar)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -82707,23 +82707,23 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>En driftsättning till en grupp går till alla dess fjärrsystem.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Driftsätt till fjärrsystem</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inget fjärrsystem är konfigurerat ännu.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjärrsystem %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingenting skickas eller körs här: Spara skriver inställningarna till settings/override/migration.ini.append.php. Inloggningsuppgiften är ett namn; dess värde finns kvar under Konfiguration &gt; Hemligheter eller i miljön.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -82731,7 +82731,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställningarna som de angetts, inte sparade ännu.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -82759,15 +82759,15 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Värdnyckel</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Fjärrsystemet</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vad fjärrsystemet heter och vilken miljö det är.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -82775,47 +82775,47 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bokstäver, siffror, - och _, till exempel production1. Det namnger fjärrsystemet i rapporter och i konsolen (--remotes=production1) och kan inte ändras senare.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... En driftsättning i etapper går igenom miljöerna i denna ordning.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valfritt, kommaseparerat, till exempel production. En driftsättning till en grupp går till alla dess fjärrsystem.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Anslutningen</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hur filerna kommer dit och var installationen finns.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Över SSH, bara det som ändrats, en avbruten överföring återupptas. Det bästa valet där rsync är installerat.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH med scp för filerna.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH med sftp för filerna.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Endast filer: migreringarna skickas och läses tillbaka, men kan inte köras där.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP över TLS; endast filer.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>En annan installation på denna server, i en mapp.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -82823,7 +82823,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett värdnamn eller en adress, till exempel node1.example.com. Inte för local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -82831,7 +82831,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tomt: 22 för SSH, 21 för FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -82843,31 +82843,31 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Installationens rotkatalog där, till exempel /var/www/site (för FTP: sökvägen som FTP-kontot ser).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP-kommandorad</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI där: php, eller en fullständig sökväg som /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Konsolskripten körs som root där</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Endast när fjärrsystemets användare är root (de körs då med --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Inloggningsuppgiften</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hur denna installation loggar in där. Endast ett namn sparas.</translation>
     </message>
     <message>
         <source>None</source>
@@ -82875,23 +82875,23 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-agenten och nycklarna för användaren som denna installation körs som (och alltid för local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>En privat nyckel som sparas som hemlighet.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett lösenord som sparas som hemlighet (FTP loggar in med ett).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Hemlighetens namn</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>En hemlighet under Konfiguration &gt; Hemligheter, till exempel deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -82899,247 +82899,247 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Eller en miljövariabel</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Variabeln i serverprocessen som innehåller den, till exempel DEPLOY_KEY (sparas som env:DEPLOY_KEY). Den ersätter hemlighetens namn.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Värdnyckeln</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valfritt, för SSH, sftp och rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Värdnyckelns fingeravtryck</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... som ssh-keygen -l skriver ut det. Med det måste värden visa denna nyckel; utan det lärs nyckeln in vid första kontakten.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Granska</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Testa anslutningen med inställningarna ovan och granska sedan raderna som kommer att skrivas.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort detta fjärrsystem</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dess inställningar tas bort ur settings/override/migration.ini.append.php. Ingenting ändras på fjärrsystemet, och dess driftsättningar finns kvar i historiken.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, ta bort detta fjärrsystem</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Driftsättningar</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>En driftsättning skickar denna installations migreringar till de valda fjärrsystemen och kör dem där som %user, alla samtidigt och i takt: varje fjärrsystem kontrolleras först, och om ett misslyckas tas varje fjärrsystem som tillämpade tillbaka. Den fortsätter i bakgrunden, och dess sida visar varje fjärrsystem medan den pågår.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Fjärrsystemen</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markera fjärrsystem, en grupp eller båda.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Driftsätt dit</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Hur</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Driftsätt</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka och kör</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migreringarna skickas, verifieras och körs på varje fjärrsystem med ett gemensamt körnings-id.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Endast överföring</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Filerna skickas och verifieras, ingenting körs (det enda sättet för ett FTP-fjärrsystem).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>I etapper</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapp för etapp i miljöernas ordning (dev, stage, beta, production ...): den första etappen driftsätts, sedan väntar en grind tills någon godkänner nästa. Allt eller inget inom varje etapp.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Endast dessa migreringar</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valfritt: migrerings-id:n, kommaseparerade. Tomt: varje migrering på webbplatsen och dess tillägg.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Endast förkontroll</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, driftsätt nu</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Driftsättningarna som skickade eller körde något, den senaste först (en förkontroll sparar ingen rapport).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>endast överföring</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>i etapper, %stages etapper</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>inte i takt</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen driftsättning ännu.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Driftsättning %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Varje fjärrsystem i driftsättningen med sitt läge. En driftsättning som startats här fortsätter i bakgrunden när sidan stängs; öppna sidan igen för att följa den.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Alla driftsättningar</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Förkontroll</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Nästa etapp</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrollerar inställningarna och inloggningsuppgifterna</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Förkontroll: läser läget för varje fjärrsystem</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Skickar migreringsfilerna</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifierar det som kom fram</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Kör migreringarna på varje fjärrsystem</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Tar tillbaka fjärrsystemen</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Driftsättningen är avslutad. Läser in dess rapport.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Förloppet kunde inte följas. Ladda om sidan för att se hur det går för driftsättningen.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fas</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denna sida följer driftsättningen medan den pågår.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>I takt</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapper</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>etapp %stage väntar vid sin grind</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Grind %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>godkänd av %user kl. %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapp</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Skickade filer</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Kärnversion</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>tillämpade: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>att tillämpa: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Faser</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Grind: etapp %stage av %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapperna före den är driftsatta. Kontrollera dem och godkänn sedan nästa etapp: dess fjärrsystem kontrolleras igen och driftsätts, allt eller inget.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -83147,7 +83147,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, driftsätt nästa etapp nu</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -83155,31 +83155,31 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta tillbaka denna driftsättning</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Varje fjärrsystem som tillämpade den (%list) går tillbaka till ögonblicksbilden som togs före dess körning, alla samtidigt.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, ta tillbaka denna driftsättning nu</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>planerad</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>överförd</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>driftsatt</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>väntar vid en grind</translation>
     </message>
     <message>
         <source>selected</source>
@@ -83187,7 +83187,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>förberedd</translation>
     </message>
     <message>
         <source>ready</source>
@@ -83195,51 +83195,51 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>väntar på sin etapp</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>filer skickade</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>verifierad</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>misslyckades, återställde sig själv</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>oförändrad</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>inte driftsatt</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>inte nåbart</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjärrsystemet svarade.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjärrsystemet kan inte användas nu.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done klara, %pending väntande, %failed misslyckade</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Lås</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>en körning håller låset där</translation>
     </message>
     <message>
         <source>free</source>
@@ -83247,23 +83247,23 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage av %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj fjärrsystemet som ska testas.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markera ”Ja, ta bort detta fjärrsystem” först.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjärrsystemet kunde inte tas bort: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjärrsystemet kunde inte sparas: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -83271,75 +83271,75 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj minst ett fjärrsystem eller en grupp.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett valt fjärrsystem finns inte längre i inställningarna. Ladda om sidan.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markera ”Ja, driftsätt nu” först.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett FTP-fjärrsystem kan inte köra migreringar: välj ”Endast överföring” eller utelämna det.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migreringarna som ska driftsättas är migrerings-id:n, kommaseparerade.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Driftsättningen pågår fortfarande. Vänta tills den är klar.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denna driftsättning väntar inte vid någon grind.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inget fjärrsystem tillämpade denna driftsättning: det finns inget att ta tillbaka.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markera ”Ja, driftsätt nästa etapp nu” först.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markera ”Ja, ta tillbaka denna driftsättning nu” först.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett fjärrsystem med id %id finns redan.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Porten är ett tal från 1 till 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Miljön är ett ord av bokstäver, siffror, - och _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>En grupp är ett ord av bokstäver, siffror, - och _ (inte all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inloggningsuppgiften kan inte läsas nu: %problem. Spara den under Konfiguration &gt; Hemligheter (eller ange variabeln) före den första driftsättningen.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett FTP-fjärrsystem tar bara emot filer: en driftsättning dit är ”Endast överföring”, och dess migreringar körs där för hand.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjärrsystemet %id finns inte i settings/override/migration.ini.append.php; ta bort det där det är angivet.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inloggad över FTP och läste index.php. Migreringsläget för ett FTP-fjärrsystem kan inte läsas.</translation>
     </message>
 </context>
 <context>
@@ -85743,19 +85743,19 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Driftsättningen %deploy misslyckades på %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Driftsättningen %deploy väntar vid en grind på %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Driftsättningen %deploy lyckades på %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det här e-postmeddelandet skickades av %site eftersom migration.ini [RemoteSettings] Notify[] begär det.</translation>
     </message>
 </context>
 </TS>

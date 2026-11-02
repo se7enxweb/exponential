@@ -81334,15 +81334,15 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Iindawo ezikude</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Olunye ufakelo olu fakelo oluhambisela kulo iifuduko zalo: uhambiso luthumela iifuduko kwiindawo ezikude ezikhethiweyo luze luziqhube apho, zonke ngaxeshanye nangokuvisisana. Indawo ekude ayinayo nanini na imfihlo: isiqinisekiso sayo sokungena sithiya igama lemfihlo ku-Ukuseta &gt; Imfihlo.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Indawo ekude entsha</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81350,19 +81350,19 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Uvavanyo loqhagamshelo lwe-%id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezi ndawo zikude</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuya kuthi ga kwi-%parallel iindawo ezikude zisetyenzwa ngaxeshanye; isigaba esinye sinokuthatha imizuzwana eyi-%timeout kwindawo nganye.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Indawo ekude</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81378,15 +81378,15 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>izicwangciso ezifuna ukulungiswa</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>iifayile kuphela (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Isitshixo se-SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81394,7 +81394,7 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>akukho (i-SSH agent nezitshixo zomamkeli)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81402,23 +81402,23 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uhambiso kwiqela luya kuyo yonke indawo ekude yalo.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hambisa kwiindawo ezikude</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Akukabikho ndawo ekude isetiweyo.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Indawo ekude %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Akukho nto ithunyelwayo okanye iqhutywayo apha: Gcina ibhala izicwangciso kwi-settings/override/migration.ini.append.php. Isiqinisekiso sokungena ligama; ixabiso laso lihlala ku-Ukuseta &gt; Imfihlo okanye kwimeko-bume.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81426,7 +81426,7 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izicwangciso njengoko zingenisiwe, azikagcinwa.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81454,15 +81454,15 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Isitshixo somamkeli</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Indawo ekude</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Igama lendawo ekude kunye nokuba yeyiphi imeko-bume.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81470,47 +81470,47 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oonobumba, amanani, - kunye no _, umzekelo production1. Lithiya igama indawo ekude kwiingxelo nakwikhonsoli (--remotes=production1) kwaye alinakutshintshwa kamva.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Uhambiso ngamanqanaba ludlula kwimeko-bume ngolu landelelwano.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Akunyanzelekanga, zahlulwe ngeekoma, umzekelo production. Uhambiso kwiqela luya kuyo yonke indawo ekude yalo.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Uqhagamshelo</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indlela iifayile ezifika ngayo apho, kunye nalapho ufakelo lukhona.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nge-SSH, kuphela oko kutshintshileyo, ukudluliswa okuphazamisekileyo kuyaqhutyekiswa. Olona khetho lufanelekileyo apho i-rsync ifakelwe khona.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>I-SSH ene-scp yeefayile.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>I-SSH ene-sftp yeefayile.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iifayile kuphela: iifuduko ziyathunyelwa zize zifundwe kwakhona, kodwa azinakuqhutywa apho.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>I-FTP nge-TLS; iifayile kuphela.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Olunye ufakelo kule seva, kwifolda.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81518,7 +81518,7 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Igama lomamkeli okanye idilesi, umzekelo node1.example.com. Hayi kwi-local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81526,7 +81526,7 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Akunanto: 22 kwi-SSH, 21 kwi-FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81538,31 +81538,31 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingcambu yofakelo apho, umzekelo /var/www/site (kwi-FTP: indlela ebonwa yiakhawunti ye-FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Umgca womyalelo we-PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>I-PHP CLI apho: php, okanye indlela epheleleyo efana ne /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Izikripthi zekhonsoli ziqhuba njenge root apho</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuphela xa umsebenzisi wendawo ekude engu root (emva koko ziqhutywa ne --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Isiqinisekiso sokungena</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indlela olu fakelo olungena ngayo apho. Kugcinwa igama kuphela.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81570,23 +81570,23 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>I-SSH agent nezitshixo zomsebenzisi olu fakelo oluqhuba njengaye (kwaye rhoqo kwi-local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isitshixo sabucala esigcinwe njengemfihlo.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Inombolo yokuvula egcinwe njengemfihlo (i-FTP ingena ngayo).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Igama lemfihlo</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Imfihlo evela ku-Ukuseta &gt; Imfihlo, umzekelo deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81594,247 +81594,247 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Okanye uguquguquko lwemeko-bume</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uguquguquko lwenkqubo yeseva oluyigcinayo, umzekelo DEPLOY_KEY (egcinwe njenge env:DEPLOY_KEY). Luthatha indawo yegama lemfihlo.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Isitshixo somamkeli</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Akunyanzelekanga, kwi-SSH, sftp kunye ne-rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Uphawu lomnwe lwesitshixo somamkeli</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... njengoko i-ssh-keygen -l iyiprinta. Ukuba ikhona, umamkeli kufuneka abonise esi sitshixo; ukuba ayikho, isitshixo sifundwa kunxibelelwano lokuqala.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Phonononga</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vavanya uqhagamshelo ngezicwangciso ezingentla, emva koko uphonononge imigca eza kubhalwa.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Susa le ndawo ekude</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izicwangciso zayo zisuswa kwi-settings/override/migration.ini.append.php. Akukho nto itshintshayo kwindawo ekude, kwaye iihambiso zayo zihlala kwimbali.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ewe, susa le ndawo ekude</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Iihambiso</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uhambiso luthumela iifuduko zolu fakelo kwiindawo ezikude ezikhethiweyo luze luziqhube apho njengo %user, zonke ngaxeshanye nangokuvisisana: indawo ekude nganye ihlolwa kuqala, kwaye xa enye isilela, yonke indawo ekude ezisebenzisileyo iyarhoxiswa. Luqhubeka ngasemva, kwaye iphepha lalo libonisa indawo ekude nganye njengoko luqhubeka.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Iindawo ezikude</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Phawula iindawo ezikude, iqela, okanye zombini.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Hambisa kuyo</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Njani</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Hambisa</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Thumela uze uqhube</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iifuduko ziyathunyelwa, ziqinisekiswe kwaye ziqhutywe kwindawo ekude nganye nge-ID yomqhubo enye ekwabelwana ngayo.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Dlulisa kuphela</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Iifayile ziyathunyelwa ziqinisekiswe, akukho nto iqhutywayo (ekuphela kwendlela yendawo ekude ye-FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngamanqanaba</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inqanaba ngenqanaba ngokolandelelwano lwemeko-bume (dev, stage, beta, production ...): inqanaba lokuqala liyahanjiswa, emva koko isango lilinda de umntu avume elilandelayo. Konke okanye akukho nto kwinqanaba ngalinye.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezi fuduko kuphela</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Akunyanzelekanga: ii-ID zeefuduko, zahlulwe ngeekoma. Akunanto: lonke ufuduko lwesiza nolwezandiso zaso.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Uhlolo lwangaphambili kuphela</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ewe, hambisa ngoku</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Iihambiso ezithumele okanye ziqhuba into, olutsha kuqala (uhlolo lwangaphambili alugcini ngxelo).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>kudluliswa kuphela</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ngamanqanaba, amanqanaba ali-%stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ayivisisani</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Akukabikho hambiso.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Uhambiso %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yonke indawo ekude yohambiso nemeko yayo. Uhambiso oluqaliswe apha luqhubeka ngasemva xa eli phepha livaliwe; vula iphepha kwakhona ukuze ululandele.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Zonke iihambiso</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Uhlolo lwangaphambili</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Inqanaba elilandelayo</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuhlolwa izicwangciso neziqinisekiso zokungena</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Uhlolo lwangaphambili: kufundwa imeko yendawo ekude nganye</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuthunyelwa iifayile zofuduko</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuqinisekiswa oko kufikileyo</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuqhutywa iifuduko kwindawo ekude nganye</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurhoxiswa iindawo ezikude</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uhambiso luphelile. Kulayishwa ingxelo yalo.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inkqubela ayikwazanga ukulandelwa. Layisha iphepha kwakhona ukuze ubone ukuba uhambiso luqhuba njani.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Isigaba</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eli phepha lilandela uhambiso njengoko luqhubeka.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngokuvisisana</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Amanqanaba</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>inqanaba %stage lilinde esangweni lalo</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Isango %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>ivunywe ngu %user ngo %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Inqanaba</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Iifayile ezithunyelweyo</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Inguqulelo ye-kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>isetyenzisiwe: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>eziza kusetyenziswa: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Izigaba</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Isango: inqanaba %stage kwezi %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Amanqanaba aphambi kwalo sele ehanjisiwe. Wahlole, emva koko uvume inqanaba elilandelayo: iindawo zalo ezikude ziphinda zihlolwe zize zihanjiswe, konke okanye akukho nto.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81842,7 +81842,7 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ewe, hambisa inqanaba elilandelayo ngoku</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81850,31 +81850,31 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Buyisela umva olu hambiso</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yonke indawo ekude elusebenzisileyo (%list) ibuyela kwindawo yokubuyisela eyenziwe phambi komqhubo wayo, zonke ngaxeshanye.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ewe, buyisela umva olu hambiso ngoku</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>icwangcisiwe</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>idlulisiwe</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ihanjisiwe</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ilinde esangweni</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81882,7 +81882,7 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>ilungisiwe</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81890,51 +81890,51 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ilinde inqanaba layo</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>iifayile zithunyelwe</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>iqinisekisiwe</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>isilele, yazibuyisela ngokwayo</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>ayitshintshwanga</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ayihanjiswanga</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ayifikeleleki</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indawo ekude iphendulile.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indawo ekude ayinakusetyenziswa ngoku.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done igqityiwe, %pending ilindile, %failed isilele</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukutshixwa</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>umqhubo ubambe ukutshixwa apho</translation>
     </message>
     <message>
         <source>free</source>
@@ -81942,23 +81942,23 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage kwezi %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Khetha indawo ekude eza kuvavanywa.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qala ngokuphawula “Ewe, susa le ndawo ekude”.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Indawo ekude ayikwazanga ukususwa: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Indawo ekude ayikwazanga ukugcinwa: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81966,75 +81966,75 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Khetha ubuncinane indawo ekude enye okanye iqela.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indawo ekude ekhethiweyo ayisekho kwizicwangciso. Layisha iphepha kwakhona.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qala ngokuphawula “Ewe, hambisa ngoku”.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indawo ekude ye-FTP ayinakuqhuba iifuduko: khetha “Dlulisa kuphela”, okanye uyishiye ngaphandle.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iifuduko eziza kuhanjiswa zii-ID zeefuduko, zahlulwe ngeekoma.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uhambiso lusaqhubeka. Linda de luphele.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Olu hambiso alulindi esangweni.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Akukho ndawo ekude esebenzise olu hambiso: akukho nto yokubuyisela umva.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qala ngokuphawula “Ewe, hambisa inqanaba elilandelayo ngoku”.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qala ngokuphawula “Ewe, buyisela umva olu hambiso ngoku”.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indawo ekude ene-ID %id sele ikhona.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izibuko linani ukusuka ku-1 ukuya ku-65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Imeko-bume ligama elinoonobumba, amanani, - kunye no _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Iqela ligama elinoonobumba, amanani, - kunye no _ (hayi all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isiqinisekiso sokungena asinakufundwa ngoku: %problem. Sigcine ku-Ukuseta &gt; Imfihlo (okanye usete uguquguquko) phambi kohambiso lokuqala.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indawo ekude ye-FTP ifumana iifayile kuphela: uhambiso kuyo luhlobo oluthi “Dlulisa kuphela”, kwaye iifuduko zayo ziqhutywa apho ngesandla.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indawo ekude %id ayikho kwi-settings/override/migration.ini.append.php; yisuse apho isetwe khona.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kungenwe nge-FTP kwaye kufundwe i-index.php. Imeko yofuduko yendawo ekude ye-FTP ayinakufundwa.</translation>
     </message>
 </context>
 <context>
@@ -84438,19 +84438,19 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuhambisa %deploy kusilele ku %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuhambisa %deploy kulinde esangweni ku %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuhambisa %deploy kuphumelele ku %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le meyile ithunyelwe ngu %site kuba migration.ini [RemoteSettings] Notify[] iyayicela.</translation>
     </message>
 </context>
 </TS>

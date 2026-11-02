@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্যসমূহ</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>আন ইনষ্টলেশ্বনসমূহ যিবোৰলৈ এইটোৱে ইয়াৰ স্থানান্তৰণ ডিপ্লয় কৰে: এটা ডিপ্লয়ে স্থানান্তৰণসমূহ বাছনি কৰা দূৰৱৰ্তী গন্তব্যলৈ পঠিয়ায় আৰু তাত চলায়, সকলোতে একেলগে আৰু সমলয়ত। এটা দূৰৱৰ্তী গন্তব্যই কেতিয়াও গোপন মান নাৰাখে: ইয়াৰ প্ৰমাণপত্ৰই ছেটআপ &gt; গোপন মান-ৰ এটাৰ নাম উল্লেখ কৰে।</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>নতুন দূৰৱৰ্তী গন্তব্য</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id ৰ সংযোগ পৰীক্ষা</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্যসমূহ</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>একে সময়তে %parallel টালৈকে দূৰৱৰ্তী গন্তব্যত কাম কৰা হয়; প্ৰতিটোত এটা ধাপত %timeout ছেকেণ্ড লাগিব পাৰে।</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্য</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ঠিক কৰিবলগীয়া ছেটিংছ</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>কেৱল ফাইল (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH চাবি</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>নাই (হ'ষ্টৰ SSH এজেণ্ট আৰু চাবিসমূহ)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>এটা গোটলৈ কৰা ডিপ্লয় তাৰ প্ৰতিটো দূৰৱৰ্তী গন্তব্যলৈ যায়।</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্যলৈ ডিপ্লয় কৰক</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>এতিয়ালৈ কোনো দূৰৱৰ্তী গন্তব্য ছেট আপ কৰা হোৱা নাই।</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্য %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>ইয়াত একো পঠিওৱা বা চলোৱা নহয়: সঞ্চয় কৰক-এ ছেটিংছ settings/override/migration.ini.append.php লৈ লিখে। প্ৰমাণপত্ৰ এটা নাম; ইয়াৰ মান ছেটআপ &gt; গোপন মান বা পৰিৱেশত থাকে।</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>দিয়া অনুসৰি ছেটিংছ, এতিয়াও সঞ্চয় কৰা হোৱা নাই।</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>হ'ষ্ট চাবি</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. দূৰৱৰ্তী গন্তব্য</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্যৰ নাম কি আৰু ই কোনটো পৰিৱেশ।</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>আখৰ, অংক, - আৰু _, উদাহৰণস্বৰূপে production1। ই প্ৰতিবেদন আৰু কনছ'লত (--remotes=production1) দূৰৱৰ্তী গন্তব্যৰ নাম দিয়ে আৰু পিছত সলনি কৰিব নোৱাৰি।</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... পৰ্যায়ক্ৰমে কৰা ডিপ্লয় এই ক্ৰমত পৰিৱেশসমূহৰ মাজেৰে যায়।</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>বৈকল্পিক, কমাৰে পৃথক কৰা, উদাহৰণস্বৰূপে production। এটা গোটলৈ কৰা ডিপ্লয় তাৰ প্ৰতিটো দূৰৱৰ্তী গন্তব্যলৈ যায়।</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. সংযোগ</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলসমূহ তালৈ কেনেকৈ যায়, আৰু ইনষ্টলেশ্বন ক'ত আছে।</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ৰ জৰিয়তে, কেৱল যি সলনি হৈছে, বাধাপ্ৰাপ্ত প্ৰেৰণ পুনৰ আৰম্ভ হয়। rsync ইনষ্টল থকা ঠাইত শ্ৰেষ্ঠ বাছনি।</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলৰ বাবে scp সহ SSH।</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলৰ বাবে sftp সহ SSH।</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>কেৱল ফাইল: স্থানান্তৰণসমূহ পঠিওৱা হয় আৰু পুনৰ পঢ়া হয়, কিন্তু তাত চলাব নোৱাৰি।</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS ৰ জৰিয়তে FTP; কেৱল ফাইল।</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>এই ছাৰ্ভাৰত, এটা ফোল্ডাৰত থকা আন এটা ইনষ্টলেশ্বন।</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>এটা হ'ষ্টৰ নাম বা ঠিকনা, উদাহৰণস্বৰূপে node1.example.com। local ৰ বাবে নহয়।</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>খালী: SSH ৰ বাবে 22, FTP ৰ বাবে 21।</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>তাত ইনষ্টলেশ্বনৰ মূল ফোল্ডাৰ, উদাহৰণস্বৰূপে /var/www/site (FTP ৰ বাবে: FTP একাউণ্টে দেখা পথ)।</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP কমাণ্ড লাইন</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>তাৰ PHP CLI: php, বা /opt/plesk/php/8.4/bin/php ৰ দৰে সম্পূৰ্ণ পথ।</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>তাত কনছ'ল স্ক্ৰিপ্টসমূহ root হিচাপে চলে</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>কেৱল যেতিয়া দূৰৱৰ্তী গন্তব্যৰ ব্যৱহাৰকাৰী root (তেতিয়া সেইবোৰ --allow-root-user ৰে চলোৱা হয়)।</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. প্ৰমাণপত্ৰ</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>এই ইনষ্টলেশ্বনে তাত কেনেকৈ চাইন ইন কৰে। কেৱল এটা নাম সঞ্চয় কৰা হয়।</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>এই ইনষ্টলেশ্বন যি ব্যৱহাৰকাৰী হিচাপে চলে তেওঁৰ SSH এজেণ্ট আৰু চাবিসমূহ (আৰু local ৰ বাবে সদায়)।</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>গোপন মান হিচাপে ৰখা এটা ব্যক্তিগত চাবি।</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>গোপন মান হিচাপে ৰখা এটা পাছৱৰ্ড (FTP-এ ইয়াৰে চাইন ইন কৰে)।</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>গোপন মানৰ নাম</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>ছেটআপ &gt; গোপন মান-ৰ এটা গোপন মান, উদাহৰণস্বৰূপে deploy_production1।</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>অথবা এটা পৰিৱেশ চলক</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>ইয়াক ধৰি ৰখা ছাৰ্ভাৰ প্ৰক্ৰিয়াৰ চলক, উদাহৰণস্বৰূপে DEPLOY_KEY (env:DEPLOY_KEY হিচাপে সঞ্চিত)। ই গোপন মানৰ নামৰ ঠাই লয়।</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. হ'ষ্ট চাবি</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>বৈকল্পিক, SSH, sftp আৰু rsync ৰ বাবে।</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>হ'ষ্ট চাবিৰ ফিংগাৰপ্ৰিণ্ট</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... যেনেকৈ ssh-keygen -l এ প্ৰিণ্ট কৰে। ই থাকিলে, হ'ষ্টে এই চাবি দেখুৱাব লাগিব; নাথাকিলে, প্ৰথম সংযোগত চাবিটো শিকি লোৱা হয়।</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. পৰ্যালোচনা</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>ওপৰৰ ছেটিংছেৰে সংযোগ পৰীক্ষা কৰক, তাৰ পিছত লিখা হ'বলগীয়া শাৰীবোৰ পৰ্যালোচনা কৰক।</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>এই দূৰৱৰ্তী গন্তব্য আঁতৰাওক</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>ইয়াৰ ছেটিংছ settings/override/migration.ini.append.php ৰ পৰা আঁতৰোৱা হয়। দূৰৱৰ্তী গন্তব্যত একো সলনি নহয়, আৰু ইয়াৰ ডিপ্লয়সমূহ ইতিহাসত থাকে।</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>হয়, এই দূৰৱৰ্তী গন্তব্য আঁতৰাওক</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয়সমূহ</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>এটা ডিপ্লয়ে এই ইনষ্টলেশ্বনৰ স্থানান্তৰণসমূহ বাছনি কৰা দূৰৱৰ্তী গন্তব্যলৈ পঠিয়ায় আৰু তাত %user হিচাপে চলায়, সকলোতে একেলগে আৰু সমলয়ত: প্ৰতিটো দূৰৱৰ্তী গন্তব্য প্ৰথমে পৰীক্ষা কৰা হয়, আৰু এটা ব্যৰ্থ হ'লে প্ৰয়োগ কৰা প্ৰতিটো দূৰৱৰ্তী গন্তব্য ঘূৰাই লোৱা হয়। ই পটভূমিত চলে, আৰু ইয়াৰ পৃষ্ঠাই আগবঢ়াৰ লগে লগে প্ৰতিটো দূৰৱৰ্তী গন্তব্য দেখুৱায়।</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. দূৰৱৰ্তী গন্তব্যসমূহ</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্য, এটা গোট, বা দুয়োটা টিক কৰক।</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>তালৈ ডিপ্লয় কৰক</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. কেনেকৈ</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় কৰক</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>পঠিয়াওক আৰু চলাওক</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>স্থানান্তৰণসমূহ প্ৰতিটো দূৰৱৰ্তী গন্তব্যলৈ পঠিওৱা, সত্যাপন কৰা আৰু এটা যৌথ চলন আইডিৰে চলোৱা হয়।</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>কেৱল প্ৰেৰণ</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলসমূহ পঠিওৱা আৰু সত্যাপন কৰা হয়, একো চলোৱা নহয় (FTP দূৰৱৰ্তী গন্তব্যৰ বাবে একমাত্ৰ উপায়)।</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>পৰ্যায়ক্ৰমে</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>পৰিৱেশৰ ক্ৰমত পৰ্যায়ৰ পিছত পৰ্যায় (dev, stage, beta, production ...): প্ৰথম পৰ্যায় ডিপ্লয় কৰা হয়, তাৰ পিছত কোনোবাই পৰৱৰ্তীটো অনুমোদন নকৰালৈকে এটা গেটে অপেক্ষা কৰে। প্ৰতিটো পৰ্যায়ৰ ভিতৰত সকলো বা একো নাই।</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>কেৱল এই স্থানান্তৰণসমূহ</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>বৈকল্পিক: স্থানান্তৰণৰ আইডি, কমাৰে পৃথক কৰা। খালী: ছাইট আৰু ইয়াৰ এক্সটেনশ্বনৰ প্ৰতিটো স্থানান্তৰণ।</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>কেৱল পূৰ্ব-পৰীক্ষা</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>হয়, এতিয়াই ডিপ্লয় কৰক</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>যি ডিপ্লয়ে কিবা পঠিয়াইছিল বা চলাইছিল, শেহতীয়াটো প্ৰথমে (পূৰ্ব-পৰীক্ষাই কোনো প্ৰতিবেদন নাৰাখে)।</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>কেৱল প্ৰেৰণ</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>পৰ্যায়ক্ৰমে, %stages টা পৰ্যায়</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>সমলয়ত নাই</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>এতিয়ালৈ কোনো ডিপ্লয় নাই।</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয়ৰ প্ৰতিটো দূৰৱৰ্তী গন্তব্য আৰু ইয়াৰ অৱস্থা। ইয়াত আৰম্ভ কৰা ডিপ্লয় এই পৃষ্ঠা বন্ধ কৰিলেও পটভূমিত চলি থাকে; ইয়াক অনুসৰণ কৰিবলৈ পৃষ্ঠাখন পুনৰ খোলক।</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>সকলো ডিপ্লয়</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>পূৰ্ব-পৰীক্ষা</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>পৰৱৰ্তী পৰ্যায়</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>ছেটিংছ আৰু প্ৰমাণপত্ৰ পৰীক্ষা কৰা হৈছে</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>পূৰ্ব-পৰীক্ষা: প্ৰতিটো দূৰৱৰ্তী গন্তব্যৰ অৱস্থা পঢ়া হৈছে</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>স্থানান্তৰণৰ ফাইলসমূহ পঠিওৱা হৈছে</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>যি আহি পালে তাৰ সত্যাপন কৰা হৈছে</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>প্ৰতিটো দূৰৱৰ্তী গন্তব্যত স্থানান্তৰণসমূহ চলোৱা হৈছে</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্যসমূহ ঘূৰাই লোৱা হৈছে</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় শেষ হৈছে। ইয়াৰ প্ৰতিবেদন লোড কৰা হৈছে।</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>অগ্ৰগতি অনুসৰণ কৰিব পৰা নগ'ল। ডিপ্লয় কেনেকৈ চলি আছে চাবলৈ পৃষ্ঠাখন পুনৰ লোড কৰক।</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>ধাপ</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>এই পৃষ্ঠাই ডিপ্লয় চলাৰ লগে লগে ইয়াক অনুসৰণ কৰে।</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>সমলয়ত</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>পৰ্যায়সমূহ</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>পৰ্যায় %stage ইয়াৰ গেটত অপেক্ষা কৰিছে</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>গেট %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%time ত %user ৰ দ্বাৰা অনুমোদিত</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>পৰ্যায়</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>পঠিওৱা ফাইলসমূহ</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>কাৰ্নেল সংস্কৰণ</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>প্ৰয়োগ কৰা হ'ল: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>প্ৰয়োগ কৰিবলগীয়া: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>ধাপসমূহ</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>গেট: পৰ্যায় %stage / %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>ইয়াৰ আগৰ পৰ্যায়সমূহ ডিপ্লয় কৰা হৈছে। সেইবোৰ পৰীক্ষা কৰক, তাৰ পিছত পৰৱৰ্তী পৰ্যায় অনুমোদন কৰক: ইয়াৰ দূৰৱৰ্তী গন্তব্যসমূহ পুনৰ পৰীক্ষা কৰি ডিপ্লয় কৰা হয়, সকলো বা একো নাই।</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>হয়, পৰৱৰ্তী পৰ্যায় এতিয়াই ডিপ্লয় কৰক</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>এই ডিপ্লয় উভতাই নিয়ক</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>ইয়াক প্ৰয়োগ কৰা প্ৰতিটো দূৰৱৰ্তী গন্তব্য (%list) তাৰ চলনৰ আগত লোৱা স্নেপশ্বটলৈ উভতি যায়, সকলো একেলগে।</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>হয়, এই ডিপ্লয় এতিয়াই উভতাই নিয়ক</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>পৰিকল্পিত</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>প্ৰেৰিত</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় কৰা হ'ল</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>এটা গেটত অপেক্ষা কৰিছে</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>প্ৰস্তুত</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ইয়াৰ পৰ্যায়ৰ বাবে অপেক্ষা কৰিছে</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইল পঠিওৱা হ'ল</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>সত্যাপিত</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ব্যৰ্থ, নিজকে পুনৰুদ্ধাৰ কৰিলে</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>অপৰিৱৰ্তিত</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় কৰা হোৱা নাই</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>সংযোগ কৰিব নোৱাৰি</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্যই উত্তৰ দিলে।</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্য এতিয়া ব্যৱহাৰ কৰিব নোৱাৰি।</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done সম্পূৰ্ণ, %pending বিবেচনাধীন, %failed ব্যৰ্থ</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>লক</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>তাত এটা চলনে লক ধৰি আছে</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage / %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>পৰীক্ষা কৰিবলগীয়া দূৰৱৰ্তী গন্তব্য বাছনি কৰক।</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>প্ৰথমে “হয়, এই দূৰৱৰ্তী গন্তব্য আঁতৰাওক” টিক কৰক।</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্য আঁতৰাব পৰা নগ'ল: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্য সঞ্চয় কৰিব পৰা নগ'ল: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>অন্ততঃ এটা দূৰৱৰ্তী গন্তব্য বা গোট বাছনি কৰক।</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>বাছনি কৰা এটা দূৰৱৰ্তী গন্তব্য এতিয়া ছেটিংছত নাই। পৃষ্ঠাখন পুনৰ লোড কৰক।</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>প্ৰথমে “হয়, এতিয়াই ডিপ্লয় কৰক” টিক কৰক।</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>এটা FTP দূৰৱৰ্তী গন্তব্যই স্থানান্তৰণ চলাব নোৱাৰে: “কেৱল প্ৰেৰণ” বাছনি কৰক, বা ইয়াক বাদ দিয়ক।</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় কৰিবলগীয়া স্থানান্তৰণসমূহ হৈছে কমাৰে পৃথক কৰা স্থানান্তৰণৰ আইডি।</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় এতিয়াও চলি আছে। ই শেষ নোহোৱালৈকে অপেক্ষা কৰক।</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>এই ডিপ্লয়ে কোনো গেটত অপেক্ষা নকৰে।</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>কোনো দূৰৱৰ্তী গন্তব্যই এই ডিপ্লয় প্ৰয়োগ কৰা নাই: উভতাই নিবলৈ একো নাই।</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>প্ৰথমে “হয়, পৰৱৰ্তী পৰ্যায় এতিয়াই ডিপ্লয় কৰক” টিক কৰক।</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>প্ৰথমে “হয়, এই ডিপ্লয় এতিয়াই উভতাই নিয়ক” টিক কৰক।</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id আইডিৰ এটা দূৰৱৰ্তী গন্তব্য ইতিমধ্যে আছে।</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>পৰ্ট হৈছে 1 ৰ পৰা 65535 লৈ এটা সংখ্যা।</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>পৰিৱেশ হৈছে আখৰ, অংক, - আৰু _ ৰে গঠিত এটা শব্দ (alpha, dev, stage, beta, production ...)।</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>এটা গোট হৈছে আখৰ, অংক, - আৰু _ ৰে গঠিত এটা শব্দ (all নহয়): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>প্ৰমাণপত্ৰ এতিয়া পঢ়িব নোৱাৰি: %problem। প্ৰথম ডিপ্লয়ৰ আগতে ইয়াক ছেটআপ &gt; গোপন মান-ত সঞ্চয় কৰক (বা চলকটো ছেট কৰক)।</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>এটা FTP দূৰৱৰ্তী গন্তব্যই কেৱল ফাইল গ্ৰহণ কৰে: তালৈ ডিপ্লয় হৈছে “কেৱল প্ৰেৰণ”, আৰু ইয়াৰ স্থানান্তৰণসমূহ তাত হাতেৰে চলোৱা হয়।</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>দূৰৱৰ্তী গন্তব্য %id settings/override/migration.ini.append.php ত নাই; য'ত ছেট কৰা আছে তাতেই ইয়াক আঁতৰাওক।</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ৰ জৰিয়তে চাইন ইন কৰি index.php পঢ়া হ'ল। এটা FTP দূৰৱৰ্তী গন্তব্যৰ স্থানান্তৰণৰ স্থিতি পঢ়িব নোৱাৰি।</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site ত ডিপ্লয় %deploy ব্যৰ্থ হৈছে</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site ত ডিপ্লয় %deploy এটা গেটত অপেক্ষা কৰি আছে</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site ত ডিপ্লয় %deploy সফল হৈছে</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>এই মেইলটো %site এ পঠিয়াইছে, কাৰণ migration.ini [RemoteSettings] Notify[] এ ইয়াক বিচাৰে।</translation>
     </message>
 </context>
 </TS>

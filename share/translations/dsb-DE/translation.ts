@@ -81366,15 +81366,15 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdalne instalacije</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Druge instalacije, na kótarež toś ta dodawa swóje migracije: dodaśe pósćelo migracije na wubrane zdalne instalacije a wuwjeźo je tam, wšykne naraz a synchronje. Zdalna instalacija nigda njewopśimujo pótajmstwo: jeje pśizjawjeńske daty pomjenjuju jadno w Zarědowanje &gt; Pótajmstwa.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nowa zdalna instalacija</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81382,19 +81382,19 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Test zwiska za %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdalne instalacije</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Až do %parallel zdalnych instalacijow se rownocasnje wobźěłujo; jadna faza smějo na kuždej %timeout sekundow traś.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdalna instalacija</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81410,15 +81410,15 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>nastajenja za korigěrowanje</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>jano dataje (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-kluc</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81426,7 +81426,7 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>žeden (SSH-agent a kluce hosta)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81434,23 +81434,23 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaśe na kupku źo na kuždu jeje zdalnu instalaciju.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Na zdalne instalacije dodaś</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hyšći žedna zdalna instalacija njejo zarědowana.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdalna instalacija %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>How se nic njepósćelo ani njewuwjedujo: Składowaś pišo nastajenja do settings/override/migration.ini.append.php. Pśizjawjeńske daty su mě; jich gódnota wóstanjo w Zarědowanje &gt; Pótajmstwa abo we wobswěśe.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81458,7 +81458,7 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastajenja, ako su zapódane, hyšći njeskłaźone.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81486,15 +81486,15 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Kluc hosta</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Zdalna instalacija</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kak se zdalna instalacija mjenujo a kótary wobswět wóna jo.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81502,47 +81502,47 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pismiki, cyfry, - a _, na pśikład production1. Pomjenjujo zdalnu instalaciju w rozpšawach a na konsoli (--remotes=production1) a njedajo se pózdźej změniś.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Dodaśe pó stopnjach źo pśez wobswěty w toś tom pórěźe.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcionalnje, źělone z komami, na pśikład production. Dodaśe na kupku źo na kuždu jeje zdalnu instalaciju.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Zwisk</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kak dataje tam dojdu a źo instalacija jo.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pśez SSH, jano to, což jo se změniło, pśetergnjone pśenosowanje se pókšacujo. Nejlěpša wóliba, źož jo rsync instalěrowany.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ze scp za dataje.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ze sftp za dataje.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jano dataje: migracije se pósćelu a slědk cytaju, ale njamógu se tam wuwjasć.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP pśez TLS; jano dataje.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Druga instalacija na toś tom serwerje, w zarědniku.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81550,7 +81550,7 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mě hosta abo adresa, na pśikład node1.example.com. Nic za local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81558,7 +81558,7 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prozne: 22 za SSH, 21 za FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81570,31 +81570,31 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Kórjenjowy zarědnik instalacije tam, na pśikład /var/www/site (pśi FTP: sćažka, kótaruž FTP-konto wiźi).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP-kómandowa smužka</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI tam: php abo dopołna sćažka ako /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Konsolowe skripty tam běže ako root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Jano, gaž wužywaŕ zdalneje instalacije jo root (migracije se pótom z --allow-root-user wuwjedu).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Pśizjawjeńske daty</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kak se toś ta instalacija tam pśizjawja. Skłaźujo se jano mě.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81602,23 +81602,23 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-agent a kluce wužywarja, ako kótaryž toś ta instalacija běžy (a pśecej za local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Priwatny kluc, skłaźony ako pótajmstwo.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Gronidło, skłaźone ako pótajmstwo (FTP se z nim pśizjawja).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Mě pótajmstwa</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pótajmstwo ze Zarědowanje &gt; Pótajmstwa, na pśikład deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81626,247 +81626,247 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Abo wobswětowa wariabla</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wariabla serwerowego procesa, kótaraž jo wopśimujo, na pśikład DEPLOY_KEY (skłaźona ako env:DEPLOY_KEY). Wóna zastupujo mě pótajmstwa.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Kluc hosta</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcionalnje, za SSH, sftp a rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Palcowy wótśišć kluca hosta</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... tak, ako jen ssh-keygen -l wudawa. Z nim musy host toś ten kluc pokazaś; bźez njogo se kluc pśi prědnem kontakśe nawuknjo.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Pśeglědaś</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Testujśo zwisk z nastajenjami górjejce, pótom pśeglědajśo smužki, kótarež se napišu.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Toś tu zdalnu instalaciju wótpóraś</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeje nastajenja se z settings/override/migration.ini.append.php wótpóraju. Na zdalnej instalaciji se nic njezměnijo, a jeje dodaśa wóstanu w historiji.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Jo, toś tu zdalnu instalaciju wótpóraś</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaśa</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaśe pósćelo migracije toś teje instalacije na wubrane zdalne instalacije a wuwjeźo je tam ako %user, wšykne naraz a synchronje: kužda zdalna instalacija se nejpjerwjej pśeglědujo, a gaž se jadna njeraźi, se kužda, kótaraž jo je nałožyła, anulěrujo. Dodaśe běžy w slězynje, a jogo bok pokazujo kuždu zdalnu instalaciju, mjaztym až běžy.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Zdalne instalacije</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markěrujśo zdalne instalacije, kupku abo wobej.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Tam dodaś</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Kak</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaś</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Pósłaś a wuwjasć</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracije se na kuždu zdalnu instalaciju pósćelu, pśeglěduju a z jadnym zgromadnym ID běga wuwjedu.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Jano pśenosowaś</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Dataje se pósćelu a pśeglěduju, nic se njewuwjedujo (jadnučki puś za FTP-zdalnu instalaciju).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Pó stopnjach</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopjeń pó stopnju w pórěźe wobswětow (dev, stage, beta, production ...): prědny stopjeń se doda, pótom wrota cakaju, až něchten pśizwólijo pśiducy. Wšykno abo nic w kuždem stopnju.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Jano toś te migracije</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcionalnje: ID migracijow, źělone z komami. Prozne: kužda migracija sedła a jogo rozšyrjenjow.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Jano pśedkontrola</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jo, něnto dodaś</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaśa, kótarež su něco pósłali abo wuwjadli, nejnowše nejpjerwjej (pśedkontrola njewobchowajo žednu rozpšawu).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>jano pśenosowaś</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>pó stopnjach, %stages stopnjow</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>njesynchronje</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hyšći žedno dodaśe.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaśe %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kužda zdalna instalacija dodaśa z jeje stawom. How startowane dodaśe dalej w slězynje běžy, gaž se toś ten bok zacynijo; wócyńśo bok znowego, aby jo dalej wobglědowali.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Wšykne dodaśa</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Pśedkontrola</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Pśiducy stopjeń</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastajenja a pśizjawjeńske daty se pśeglěduju</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Pśedkontrola: staw kuždeje zdalneje instalacije se cyta</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Dataje migracijow se pósćelu</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Pśeglědujo se, což jo dojšło</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracije běže na kuždej zdalnej instalaciji</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdalne instalacije se slědk bjeru</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaśe jo skóńcone. Jogo rozpšawa se zacytujo.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Póstupoju njejo se dało slědowaś. Zacytajśo bok znowego, aby wiźeli, kak dodaśe stoj.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Faza</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Toś ten bok slědujo dodaśu, mjaztym až běžy.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Synchronje</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopnje</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>stopjeń %stage caka na swójich wrotach</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Wrota %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>pśizwólone wót %user w %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopjeń</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Pósłane dataje</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Wersija kernela</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>nałožone: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>za nałožowanje: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fazy</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Wrota: stopjeń %stage z %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopnje pśed nim su dodane. Pśeglědajśo je, pótom pśizwólśo pśiducy stopjeń: jogo zdalne instalacije se znowego pśeglěduju a dodaju, wšykno abo nic.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81874,7 +81874,7 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jo, pśiducy stopjeń něnto dodaś</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81882,31 +81882,31 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Toś to dodaśe slědk wześ</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kužda zdalna instalacija, kótaraž jo jo nałožyła (%list), se wrośijo k snimkoju, zgótowanemu pśed jeje běgom, wšykne naraz.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jo, toś to dodaśe něnto slědk wześ</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>planowane</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>pśenesone</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>dodane</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>caka na wrotach</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81914,7 +81914,7 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>pśigótowane</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81922,51 +81922,51 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>caka na swój stopjeń</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>dataje pósłane</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>pśeglědane</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>njewuspěšne, jo se samo wótnowiło</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>njezměnjone</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>njedodane</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>njedojśpijobne</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdalna instalacija jo wótegroniła.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdalna instalacija njedajo se něnto wužywaś.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done gótowe, %pending cakajuce, %failed njewuspěšne</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Zastajenje</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>běg tam źaržy zastajenje</translation>
     </message>
     <message>
         <source>free</source>
@@ -81974,23 +81974,23 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage z %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wubjeŕśo zdalnu instalaciju, kótaraž ma se testowaś.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markěrujśo nejpjerwjej „Jo, toś tu zdalnu instalaciju wótpóraś“.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdalna instalacija njejo se dała wótpóraś: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdalna instalacija njejo se dała składowaś: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81998,75 +81998,75 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wubjeŕśo nanejmjenjej jadnu zdalnu instalaciju abo kupku.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wubrana zdalna instalacija wěcej w nastajenjach njejo. Zacytajśo bok znowego.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markěrujśo nejpjerwjej „Jo, něnto dodaś“.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP-zdalna instalacija njamóžo migracije wuwjasć: wubjeŕśo „Jano pśenosowaś“ abo wóstajśo ju wen.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracije za dodaśe su ID migracijow, źělone z komami.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaśe hyšći běžy. Cakajśo, až se skóńcy.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Toś to dodaśe na wrotach njecaka.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žedna zdalna instalacija njejo toś to dodaśe nałožyła: njejo nic, což by se slědk wzeło.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markěrujśo nejpjerwjej „Jo, pśiducy stopjeń něnto dodaś“.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markěrujśo nejpjerwjej „Jo, toś to dodaśe něnto slědk wześ“.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdalna instalacija z ID %id južo eksistěrujo.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Port jo licba wót 1 do 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Wobswět jo słowo z pismikow, cyfrow, - a _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Kupka jo słowo z pismikow, cyfrow, - a _ (nic all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pśizjawjeńske daty njedaju se něnto cytaś: %problem. Składujśo je pśed prědnym dodaśim w Zarědowanje &gt; Pótajmstwa (abo nastajśo wariablu).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP-zdalna instalacija dóstawa jano dataje: dodaśe na nju jo „Jano pśenosowaś“, a jeje migracije se tam z ruku wuwjedu.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdalna instalacija %id njejo w settings/override/migration.ini.append.php; wótpórajśo ju tam, źož jo nastajona.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pśez FTP pśizjawjony a index.php pśecytany. Staw migracijow FTP-zdalneje instalacije njedajo se cytaś.</translation>
     </message>
 </context>
 <context>
@@ -84470,19 +84470,19 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaśe %deploy na %site njejo se raźiło</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaśe %deploy na %site caka pśi wrotach</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaśe %deploy na %site jo se raźiło</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Toś tu e-mailku jo %site pósłał, dokulaž migration.ini [RemoteSettings] Notify[] to žada.</translation>
     </message>
 </context>
 </TS>

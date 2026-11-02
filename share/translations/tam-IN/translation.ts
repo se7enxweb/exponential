@@ -81334,15 +81334,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>தொலைநிலைகள்</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>இந்த நிறுவல் தன் இடம்பெயர்வுகளை வரிசைப்படுத்தும் மற்ற நிறுவல்கள்: ஒரு வரிசைப்படுத்தல் இடம்பெயர்வுகளைத் தேர்ந்தெடுத்த தொலைநிலைகளுக்கு அனுப்பி, அங்கே அனைத்தையும் ஒரே நேரத்தில் ஒத்திசைவுடன் இயக்குகிறது. ஒரு தொலைநிலை ஒருபோதும் ரகசியத்தை வைத்திருப்பதில்லை: அதன் நற்சான்று அமைவு &gt; ரகசியங்கள் இல் உள்ள ஒன்றைக் குறிப்பிடுகிறது.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>புதிய தொலைநிலை</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81350,19 +81350,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id இன் இணைப்புச் சோதனை</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>அனைத்துத் தொலைநிலைகளும்</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒரே நேரத்தில் %parallel தொலைநிலைகள் வரை கையாளப்படுகின்றன; ஒவ்வொன்றிலும் ஒரு படிநிலை %timeout வினாடிகள் வரை ஆகலாம்.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>தொலைநிலை</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81378,15 +81378,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>சரிசெய்ய வேண்டிய அமைப்புகள்</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்புகள் மட்டும் (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH விசை</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81394,7 +81394,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>எதுவுமில்லை (ஹோஸ்டின் SSH முகவரும் விசைகளும்)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81402,23 +81402,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒரு குழுவுக்கான வரிசைப்படுத்தல் அதன் ஒவ்வொரு தொலைநிலைக்கும் செல்கிறது.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>தொலைநிலைகளுக்கு வரிசைப்படுத்து</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>இன்னும் எந்தத் தொலைநிலையும் அமைக்கப்படவில்லை.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>தொலைநிலை %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>இங்கே எதுவும் அனுப்பப்படுவதோ இயக்கப்படுவதோ இல்லை: சேமி அமைப்புகளை settings/override/migration.ini.append.php இல் எழுதுகிறது. நற்சான்று ஒரு பெயர்; அதன் மதிப்பு அமைவு &gt; ரகசியங்கள் இல் அல்லது சூழலில் இருக்கும்.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81426,7 +81426,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>உள்ளிட்டபடியே அமைப்புகள், இன்னும் சேமிக்கப்படவில்லை.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81454,15 +81454,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>ஹோஸ்ட் விசை</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. தொலைநிலை</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>தொலைநிலையின் பெயர் என்ன, அது எந்தச் சூழல்.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81470,47 +81470,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>எழுத்துகள், இலக்கங்கள், - மற்றும் _, எடுத்துக்காட்டாக production1. இது அறிக்கைகளிலும் கன்சோலிலும் (--remotes=production1) தொலைநிலையைக் குறிக்கிறது, பின்னர் மாற்ற முடியாது.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... கட்டங்களாக நடக்கும் வரிசைப்படுத்தல் சூழல்களை இந்த வரிசையில் கடந்து செல்கிறது.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>விருப்பத்தேர்வு, காற்புள்ளிகளால் பிரிக்கப்பட்டவை, எடுத்துக்காட்டாக production. ஒரு குழுவுக்கான வரிசைப்படுத்தல் அதன் ஒவ்வொரு தொலைநிலைக்கும் செல்கிறது.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. இணைப்பு</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்புகள் அங்கே எப்படிச் சேர்கின்றன, நிறுவல் எங்கே உள்ளது.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH வழியாக, மாறியவை மட்டும், தடைபட்ட பரிமாற்றம் தொடரப்படும். rsync நிறுவப்பட்ட இடங்களில் சிறந்த தேர்வு.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்புகளுக்கு scp உடன் SSH.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்புகளுக்கு sftp உடன் SSH.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்புகள் மட்டும்: இடம்பெயர்வுகள் அனுப்பப்பட்டு மீண்டும் படிக்கப்படுகின்றன, ஆனால் அங்கே இயக்க முடியாது.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS மீது FTP; கோப்புகள் மட்டும்.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>இந்தச் சேவையகத்தில், ஒரு கோப்புறையில் உள்ள மற்றொரு நிறுவல்.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81518,7 +81518,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒரு ஹோஸ்ட் பெயர் அல்லது முகவரி, எடுத்துக்காட்டாக node1.example.com. local க்கு அல்ல.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81526,7 +81526,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>காலியாக: SSH க்கு 22, FTP க்கு 21.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81538,31 +81538,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>அங்குள்ள நிறுவலின் மூலக் கோப்புறை, எடுத்துக்காட்டாக /var/www/site (FTP க்கு: FTP கணக்கு பார்க்கும் பாதை).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP கட்டளை வரி</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>அங்குள்ள PHP CLI: php, அல்லது /opt/plesk/php/8.4/bin/php போன்ற முழுப் பாதை.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>கன்சோல் ஸ்கிரிப்ட்கள் அங்கே root ஆக இயங்குகின்றன</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>தொலைநிலையின் பயனர் root ஆக இருக்கும்போது மட்டும் (அப்போது அவை --allow-root-user உடன் இயக்கப்படும்).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. நற்சான்று</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>இந்த நிறுவல் அங்கே எப்படி உள்நுழைகிறது. ஒரு பெயர் மட்டுமே சேமிக்கப்படுகிறது.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81570,23 +81570,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>இந்த நிறுவல் இயங்கும் பயனரின் SSH முகவரும் விசைகளும் (local க்கு எப்போதும்).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>ரகசியமாக வைக்கப்பட்ட தனிப்பட்ட விசை.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>ரகசியமாக வைக்கப்பட்ட கடவுச்சொல் (FTP அதைக் கொண்டு உள்நுழைகிறது).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>ரகசியத்தின் பெயர்</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>அமைவு &gt; ரகசியங்கள் இல் உள்ள ஒரு ரகசியம், எடுத்துக்காட்டாக deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81594,247 +81594,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>அல்லது ஒரு சூழல் மாறி</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>அதை வைத்திருக்கும் சேவையகச் செயல்முறையின் மாறி, எடுத்துக்காட்டாக DEPLOY_KEY (env:DEPLOY_KEY எனச் சேமிக்கப்படும்). இது ரகசியப் பெயருக்குப் பதிலாக வருகிறது.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. ஹோஸ்ட் விசை</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>விருப்பத்தேர்வு, SSH, sftp மற்றும் rsync க்கு.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>ஹோஸ்ட் விசையின் கைரேகை</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... வடிவில், ssh-keygen -l அச்சிடுவது போல. இது இருந்தால், ஹோஸ்ட் இந்த விசையைக் காட்ட வேண்டும்; இல்லையெனில், முதல் தொடர்பில் விசை கற்றுக்கொள்ளப்படும்.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. மதிப்பாய்வு</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>மேலே உள்ள அமைப்புகளுடன் இணைப்பைச் சோதியுங்கள், பின்னர் எழுதப்படும் வரிகளை மதிப்பாய்வு செய்யுங்கள்.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>இந்தத் தொலைநிலையை அகற்று</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>அதன் அமைப்புகள் settings/override/migration.ini.append.php இலிருந்து நீக்கப்படுகின்றன. தொலைநிலையில் எதுவும் மாறாது, அதன் வரிசைப்படுத்தல்கள் வரலாற்றில் இருக்கும்.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ஆம், இந்தத் தொலைநிலையை அகற்று</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>வரிசைப்படுத்தல்கள்</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒரு வரிசைப்படுத்தல் இந்த நிறுவலின் இடம்பெயர்வுகளைத் தேர்ந்தெடுத்த தொலைநிலைகளுக்கு அனுப்பி, அங்கே %user ஆக அனைத்தையும் ஒரே நேரத்தில் ஒத்திசைவுடன் இயக்குகிறது: முதலில் ஒவ்வொரு தொலைநிலையும் சரிபார்க்கப்படுகிறது, ஒன்று தோல்வியுற்றால் பயன்படுத்திய ஒவ்வொரு தொலைநிலையும் திரும்பப்பெறப்படுகிறது. இது பின்னணியில் நடைபெறுகிறது, அதன் பக்கம் ஒவ்வொரு தொலைநிலையையும் நடக்கும்போதே காட்டுகிறது.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. தொலைநிலைகள்</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>தொலைநிலைகள், ஒரு குழு அல்லது இரண்டையும் தேர்வுசெய்யுங்கள்.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>அதற்கு வரிசைப்படுத்து</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. எப்படி</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>வரிசைப்படுத்து</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>அனுப்பி இயக்கு</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>இடம்பெயர்வுகள் ஒவ்வொரு தொலைநிலைக்கும் அனுப்பப்பட்டு, சரிபார்க்கப்பட்டு, ஒரே பகிர்ந்த இயக்க அடையாளத்துடன் இயக்கப்படுகின்றன.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>பரிமாற்றம் மட்டும்</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்புகள் அனுப்பப்பட்டுச் சரிபார்க்கப்படுகின்றன, எதுவும் இயக்கப்படுவதில்லை (FTP தொலைநிலைக்கு ஒரே வழி).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>கட்டங்களாக</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>சூழல்களின் வரிசையில் (dev, stage, beta, production ...) கட்டம் கட்டமாக: முதல் கட்டம் வரிசைப்படுத்தப்படுகிறது, பின்னர் யாராவது அடுத்ததை அங்கீகரிக்கும் வரை ஒரு வாயில் காத்திருக்கிறது. ஒவ்வொரு கட்டத்துக்குள்ளும் அனைத்தும் அல்லது எதுவுமில்லை.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>இந்த இடம்பெயர்வுகள் மட்டும்</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>விருப்பத்தேர்வு: இடம்பெயர்வு அடையாளங்கள், காற்புள்ளிகளால் பிரிக்கப்பட்டவை. காலியாக: தளம் மற்றும் அதன் நீட்டிப்புகளின் ஒவ்வொரு இடம்பெயர்வும்.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>முன்சோதனை மட்டும்</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>ஆம், இப்போது வரிசைப்படுத்து</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>எதையாவது அனுப்பிய அல்லது இயக்கிய வரிசைப்படுத்தல்கள், புதியது முதலில் (முன்சோதனை அறிக்கை எதையும் வைத்திருப்பதில்லை).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>பரிமாற்றம் மட்டும்</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>கட்டங்களாக, %stages கட்டங்கள்</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒத்திசைவில் இல்லை</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>இன்னும் வரிசைப்படுத்தல் இல்லை.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>வரிசைப்படுத்தல் %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>வரிசைப்படுத்தலின் ஒவ்வொரு தொலைநிலையும் அதன் நிலையுடன். இங்கே தொடங்கிய வரிசைப்படுத்தல் இந்தப் பக்கம் மூடப்பட்டாலும் பின்னணியில் தொடர்கிறது; அதைப் பின்தொடர பக்கத்தை மீண்டும் திறங்கள்.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>அனைத்து வரிசைப்படுத்தல்களும்</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>முன்சோதனை</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>அடுத்த கட்டம்</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>அமைப்புகளும் நற்சான்றுகளும் சரிபார்க்கப்படுகின்றன</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>முன்சோதனை: ஒவ்வொரு தொலைநிலையின் நிலையும் படிக்கப்படுகிறது</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>இடம்பெயர்வுக் கோப்புகள் அனுப்பப்படுகின்றன</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>வந்தவை சரிபார்க்கப்படுகின்றன</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒவ்வொரு தொலைநிலையிலும் இடம்பெயர்வுகள் இயக்கப்படுகின்றன</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>தொலைநிலைகள் திரும்பப்பெறப்படுகின்றன</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>வரிசைப்படுத்தல் முடிந்தது. அதன் அறிக்கை ஏற்றப்படுகிறது.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>முன்னேற்றத்தைப் பின்தொடர முடியவில்லை. வரிசைப்படுத்தல் எப்படிப் போகிறது என்று பார்க்கப் பக்கத்தை மீண்டும் ஏற்றுங்கள்.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>படிநிலை</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>இந்தப் பக்கம் வரிசைப்படுத்தலை அது நடக்கும்போதே பின்தொடர்கிறது.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒத்திசைவில்</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>கட்டங்கள்</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>கட்டம் %stage தன் வாயிலில் காத்திருக்கிறது</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>வாயில் %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%time இல் %user அங்கீகரித்தார்</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>கட்டம்</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>அனுப்பிய கோப்புகள்</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>கர்னல் பதிப்பு</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>பயன்படுத்தப்பட்டவை: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>பயன்படுத்த வேண்டியவை: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>படிநிலைகள்</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>வாயில்: %stages இல் கட்டம் %stage</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>அதற்கு முந்தைய கட்டங்கள் வரிசைப்படுத்தப்பட்டுள்ளன. அவற்றைச் சரிபார்த்து, பின்னர் அடுத்த கட்டத்தை அங்கீகரியுங்கள்: அதன் தொலைநிலைகள் மீண்டும் சரிபார்க்கப்பட்டு வரிசைப்படுத்தப்படும், அனைத்தும் அல்லது எதுவுமில்லை.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81842,7 +81842,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>ஆம், அடுத்த கட்டத்தை இப்போது வரிசைப்படுத்து</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81850,31 +81850,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>இந்த வரிசைப்படுத்தலைத் திரும்பப்பெறு</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>அதைப் பயன்படுத்திய ஒவ்வொரு தொலைநிலையும் (%list) தன் இயக்கத்துக்கு முன் எடுத்த மீட்புப் புள்ளிக்கு, அனைத்தும் ஒரே நேரத்தில், திரும்புகிறது.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>ஆம், இந்த வரிசைப்படுத்தலை இப்போது திரும்பப்பெறு</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>திட்டமிடப்பட்டது</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>பரிமாற்றப்பட்டது</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>வரிசைப்படுத்தப்பட்டது</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ஒரு வாயிலில் காத்திருக்கிறது</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81882,7 +81882,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>தயாரிக்கப்பட்டது</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81890,51 +81890,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>தன் கட்டத்துக்காகக் காத்திருக்கிறது</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்புகள் அனுப்பப்பட்டன</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>சரிபார்க்கப்பட்டது</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>தோல்வி, தானாக மீட்டமைந்தது</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>மாற்றமில்லை</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>வரிசைப்படுத்தப்படவில்லை</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>அணுக முடியவில்லை</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>தொலைநிலை பதிலளித்தது.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>தொலைநிலையை இப்போது பயன்படுத்த முடியாது.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done முடிந்தது, %pending நிலுவையில், %failed தோல்வி</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>பூட்டு</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>ஓர் இயக்கம் அங்கே பூட்டை வைத்துள்ளது</translation>
     </message>
     <message>
         <source>free</source>
@@ -81942,23 +81942,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stages இல் %stage</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>சோதிக்க வேண்டிய தொலைநிலையைத் தேர்ந்தெடுங்கள்.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>முதலில் “ஆம், இந்தத் தொலைநிலையை அகற்று” என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>தொலைநிலையை அகற்ற முடியவில்லை: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>தொலைநிலையைச் சேமிக்க முடியவில்லை: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81966,75 +81966,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>குறைந்தது ஒரு தொலைநிலை அல்லது குழுவைத் தேர்ந்தெடுங்கள்.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>தேர்ந்தெடுத்த ஒரு தொலைநிலை இனி அமைப்புகளில் இல்லை. பக்கத்தை மீண்டும் ஏற்றுங்கள்.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>முதலில் “ஆம், இப்போது வரிசைப்படுத்து” என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP தொலைநிலை இடம்பெயர்வுகளை இயக்க முடியாது: “பரிமாற்றம் மட்டும்” என்பதைத் தேர்ந்தெடுங்கள், அல்லது அதை விட்டுவிடுங்கள்.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>வரிசைப்படுத்த வேண்டிய இடம்பெயர்வுகள் காற்புள்ளிகளால் பிரிக்கப்பட்ட இடம்பெயர்வு அடையாளங்கள்.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>வரிசைப்படுத்தல் இன்னும் நடைபெறுகிறது. அது முடியும் வரை காத்திருங்கள்.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>இந்த வரிசைப்படுத்தல் எந்த வாயிலிலும் காத்திருக்கவில்லை.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>எந்தத் தொலைநிலையும் இந்த வரிசைப்படுத்தலைப் பயன்படுத்தவில்லை: திரும்பப்பெற எதுவும் இல்லை.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>முதலில் “ஆம், அடுத்த கட்டத்தை இப்போது வரிசைப்படுத்து” என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>முதலில் “ஆம், இந்த வரிசைப்படுத்தலை இப்போது திரும்பப்பெறு” என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id என்ற அடையாளத்துடன் ஒரு தொலைநிலை ஏற்கெனவே உள்ளது.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>போர்ட் என்பது 1 முதல் 65535 வரையிலான எண்.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>சூழல் என்பது எழுத்துகள், இலக்கங்கள், - மற்றும் _ கொண்ட ஒரு சொல் (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>குழு என்பது எழுத்துகள், இலக்கங்கள், - மற்றும் _ கொண்ட ஒரு சொல் (all அல்ல): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>நற்சான்றை இப்போது படிக்க முடியாது: %problem. முதல் வரிசைப்படுத்தலுக்கு முன் அதை அமைவு &gt; ரகசியங்கள் இல் சேமியுங்கள் (அல்லது மாறியை அமையுங்கள்).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP தொலைநிலை கோப்புகளை மட்டுமே பெறுகிறது: அதற்கான வரிசைப்படுத்தல் “பரிமாற்றம் மட்டும்” ஆகும், அதன் இடம்பெயர்வுகள் அங்கே கைமுறையாக இயக்கப்படுகின்றன.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id என்ற தொலைநிலை settings/override/migration.ini.append.php இல் இல்லை; அது அமைக்கப்பட்ட இடத்தில் அதை அகற்றுங்கள்.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP வழியாக உள்நுழைந்து index.php படிக்கப்பட்டது. FTP தொலைநிலையின் இடம்பெயர்வு நிலையைப் படிக்க முடியாது.</translation>
     </message>
 </context>
 <context>
@@ -84438,19 +84438,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site இல் வரிசைப்படுத்தல் %deploy தோல்வியடைந்தது</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site இல் வரிசைப்படுத்தல் %deploy ஒரு வாயிலில் காத்திருக்கிறது</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site இல் வரிசைப்படுத்தல் %deploy வெற்றியடைந்தது</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>migration.ini [RemoteSettings] Notify[] கேட்பதால் இந்த அஞ்சலை %site அனுப்பியது.</translation>
     </message>
 </context>
 </TS>

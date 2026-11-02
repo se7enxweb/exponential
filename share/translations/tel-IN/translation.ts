@@ -81334,15 +81334,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్‌లు</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఈ ఇన్‌స్టాలేషన్ తన మైగ్రేషన్‌లను డిప్లాయ్ చేసే ఇతర ఇన్‌స్టాలేషన్‌లు: ఒక డిప్లాయ్ మైగ్రేషన్‌లను ఎంచుకున్న రిమోట్‌లకు పంపి అక్కడ అమలు చేస్తుంది, అన్నీ ఒకేసారి మరియు సమకాలంలో. రిమోట్ ఎప్పుడూ రహస్యాన్ని కలిగి ఉండదు: దాని ఆధారాలు సెటప్ &gt; రహస్యాలు లోని ఒకదాని పేరును సూచిస్తాయి.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>కొత్త రిమోట్</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81350,19 +81350,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id కనెక్షన్ పరీక్ష</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్‌లు</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఒకేసారి గరిష్ఠంగా %parallel రిమోట్‌లపై పని జరుగుతుంది; ఒక్కో దానిపై ఒక ఫేజ్ %timeout సెకన్లు పట్టవచ్చు.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81378,15 +81378,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>సరిచేయాల్సిన సెట్టింగ్‌లు</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>ఫైళ్లు మాత్రమే (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH కీ</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81394,7 +81394,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ఏదీ లేదు (హోస్ట్ యొక్క SSH ఏజెంట్ మరియు కీలు)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81402,23 +81402,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఒక సమూహానికి డిప్లాయ్ దానిలోని ప్రతి రిమోట్‌కు వెళ్తుంది.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్‌లకు డిప్లాయ్ చేయి</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఇంకా ఏ రిమోట్ సెటప్ చేయబడలేదు.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్ %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఇక్కడ ఏమీ పంపబడదు లేదా అమలు చేయబడదు: సేవ్ చేయండి సెట్టింగ్‌లను settings/override/migration.ini.append.php లో రాస్తుంది. ఆధారాలు ఒక పేరు మాత్రమే; దాని విలువ సెటప్ &gt; రహస్యాలు లో లేదా పర్యావరణంలో ఉంటుంది.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81426,7 +81426,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>నమోదు చేసిన విధంగా సెట్టింగ్‌లు, ఇంకా సేవ్ చేయలేదు.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81454,15 +81454,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>హోస్ట్ కీ</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. రిమోట్</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్ పేరు ఏమిటి, అది ఏ పర్యావరణం.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81470,47 +81470,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>అక్షరాలు, అంకెలు, - మరియు _, ఉదాహరణకు production1. ఇది నివేదికలలో మరియు కన్సోల్‌లో (--remotes=production1) రిమోట్‌కు పేరు పెడుతుంది, తర్వాత మార్చలేము.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... దశలవారీ డిప్లాయ్ పర్యావరణాలను ఈ క్రమంలో దాటుతుంది.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఐచ్ఛికం, కామాలతో వేరు చేసి, ఉదాహరణకు production. ఒక సమూహానికి డిప్లాయ్ దానిలోని ప్రతి రిమోట్‌కు వెళ్తుంది.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. కనెక్షన్</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఫైళ్లు అక్కడికి ఎలా చేరతాయి, ఇన్‌స్టాలేషన్ ఎక్కడ ఉంది.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ద్వారా, మారినది మాత్రమే, ఆగిపోయిన బదిలీ కొనసాగించబడుతుంది. rsync ఇన్‌స్టాల్ అయి ఉన్న చోట ఉత్తమ ఎంపిక.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఫైళ్ల కోసం scp తో SSH.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఫైళ్ల కోసం sftp తో SSH.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఫైళ్లు మాత్రమే: మైగ్రేషన్‌లు పంపబడి తిరిగి చదవబడతాయి, కానీ అక్కడ అమలు చేయలేము.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS ద్వారా FTP; ఫైళ్లు మాత్రమే.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఈ సర్వర్‌లో, ఒక ఫోల్డర్‌లో ఉన్న మరొక ఇన్‌స్టాలేషన్.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81518,7 +81518,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఒక హోస్ట్ పేరు లేదా చిరునామా, ఉదాహరణకు node1.example.com. local కోసం కాదు.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81526,7 +81526,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఖాళీ: SSH కు 22, FTP కు 21.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81538,31 +81538,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>అక్కడ ఇన్‌స్టాలేషన్ యొక్క రూట్, ఉదాహరణకు /var/www/site (FTP కోసం: FTP ఖాతా చూసే పాత్).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP కమాండ్ లైన్</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>అక్కడి PHP CLI: php, లేదా /opt/plesk/php/8.4/bin/php వంటి పూర్తి పాత్.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>కన్సోల్ స్క్రిప్ట్‌లు అక్కడ root గా నడుస్తాయి</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్ వినియోగదారు root అయినప్పుడు మాత్రమే (అప్పుడు అవి --allow-root-user తో అమలవుతాయి).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. ఆధారాలు</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఈ ఇన్‌స్టాలేషన్ అక్కడ ఎలా సైన్ ఇన్ అవుతుంది. ఒక పేరు మాత్రమే సేవ్ చేయబడుతుంది.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81570,23 +81570,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>ఈ ఇన్‌స్టాలేషన్ ఏ వినియోగదారుగా నడుస్తుందో ఆ వినియోగదారు SSH ఏజెంట్ మరియు కీలు (local కోసం ఎల్లప్పుడూ).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>రహస్యంగా ఉంచిన ప్రైవేట్ కీ.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>రహస్యంగా ఉంచిన పాస్‌వర్డ్ (FTP దీనితో సైన్ ఇన్ అవుతుంది).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>రహస్యం పేరు</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>సెటప్ &gt; రహస్యాలు నుండి ఒక రహస్యం, ఉదాహరణకు deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81594,247 +81594,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>లేదా ఒక పర్యావరణ వేరియబుల్</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>దాన్ని కలిగి ఉన్న సర్వర్ ప్రాసెస్ వేరియబుల్, ఉదాహరణకు DEPLOY_KEY (env:DEPLOY_KEY గా సేవ్ చేయబడుతుంది). ఇది రహస్యం పేరు స్థానాన్ని తీసుకుంటుంది.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. హోస్ట్ కీ</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఐచ్ఛికం, SSH, sftp మరియు rsync కోసం.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>హోస్ట్ కీ వేలిముద్ర</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ssh-keygen -l ముద్రించినట్లు. ఇది ఉంటే, హోస్ట్ ఈ కీని చూపాలి; లేకపోతే, మొదటి సంప్రదింపులో కీ నేర్చుకోబడుతుంది.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. సమీక్ష</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>పై సెట్టింగ్‌లతో కనెక్షన్‌ను పరీక్షించండి, తర్వాత రాయబోయే పంక్తులను సమీక్షించండి.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ఈ రిమోట్‌ను తీసివేయి</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>దీని సెట్టింగ్‌లు settings/override/migration.ini.append.php నుండి తీసివేయబడతాయి. రిమోట్‌లో ఏమీ మారదు, దీని డిప్లాయ్‌లు చరిత్రలో ఉంటాయి.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>అవును, ఈ రిమోట్‌ను తీసివేయి</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>డిప్లాయ్‌లు</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఒక డిప్లాయ్ ఈ ఇన్‌స్టాలేషన్ మైగ్రేషన్‌లను ఎంచుకున్న రిమోట్‌లకు పంపి, వాటిని అక్కడ %user గా అమలు చేస్తుంది, అన్నీ ఒకేసారి మరియు సమకాలంలో: ప్రతి రిమోట్ ముందుగా తనిఖీ చేయబడుతుంది, ఒకటి విఫలమైతే, వర్తింపజేసిన ప్రతి రిమోట్ వెనక్కి తీసుకోబడుతుంది. ఇది నేపథ్యంలో కొనసాగుతుంది, దాని పేజీ ప్రతి రిమోట్‌ను జరుగుతున్న కొద్దీ చూపిస్తుంది.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. రిమోట్‌లు</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్‌లను, ఒక సమూహాన్ని, లేదా రెండింటినీ టిక్ చేయండి.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>దానికి డిప్లాయ్ చేయి</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. ఎలా</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>డిప్లాయ్</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>పంపి అమలు చేయి</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>మైగ్రేషన్‌లు ప్రతి రిమోట్‌కు పంపబడి, ధృవీకరించబడి, ఒకే ఉమ్మడి రన్ ఐడితో అమలు చేయబడతాయి.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>బదిలీ మాత్రమే</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ఫైళ్లు పంపబడి ధృవీకరించబడతాయి, ఏమీ అమలు చేయబడదు (FTP రిమోట్‌కు ఇదొక్కటే మార్గం).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>దశలవారీగా</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>పర్యావరణాల క్రమంలో దశలవారీగా (dev, stage, beta, production ...): మొదటి దశ డిప్లాయ్ చేయబడుతుంది, తర్వాత ఎవరైనా తదుపరి దశను ఆమోదించే వరకు ఒక గేట్ వేచి ఉంటుంది. ప్రతి దశలో అన్నీ లేదా ఏదీ కాదు.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>ఈ మైగ్రేషన్‌లు మాత్రమే</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఐచ్ఛికం: మైగ్రేషన్ ఐడిలు, కామాలతో వేరు చేసి. ఖాళీ: సైట్ మరియు దాని ఎక్స్‌టెన్షన్‌ల ప్రతి మైగ్రేషన్.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>ముందస్తు తనిఖీ మాత్రమే</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>అవును, ఇప్పుడే డిప్లాయ్ చేయి</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>ఏదైనా పంపిన లేదా అమలు చేసిన డిప్లాయ్‌లు, కొత్తవి ముందుగా (ముందస్తు తనిఖీ నివేదికను ఉంచదు).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>బదిలీ మాత్రమే</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>దశలవారీగా, %stages దశలు</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>సమకాలంలో లేదు</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఇంకా డిప్లాయ్ లేదు.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>డిప్లాయ్ %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>డిప్లాయ్‌లోని ప్రతి రిమోట్ దాని స్థితితో. ఇక్కడ ప్రారంభించిన డిప్లాయ్ ఈ పేజీ మూసినప్పుడు నేపథ్యంలో కొనసాగుతుంది; దాన్ని అనుసరించడానికి పేజీని మళ్లీ తెరవండి.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>అన్ని డిప్లాయ్‌లు</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>ముందస్తు తనిఖీ</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>తదుపరి దశ</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>సెట్టింగ్‌లు మరియు ఆధారాలను తనిఖీ చేస్తోంది</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ముందస్తు తనిఖీ: ప్రతి రిమోట్ స్థితిని చదువుతోంది</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>మైగ్రేషన్ ఫైళ్లను పంపుతోంది</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>చేరినదాన్ని ధృవీకరిస్తోంది</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ప్రతి రిమోట్‌లో మైగ్రేషన్‌లను అమలు చేస్తోంది</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్‌లను వెనక్కి తీసుకుంటోంది</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>డిప్లాయ్ ముగిసింది. దాని నివేదికను లోడ్ చేస్తోంది.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>పురోగతిని అనుసరించలేకపోయాం. డిప్లాయ్ ఎలా జరుగుతోందో చూడటానికి పేజీని మళ్లీ లోడ్ చేయండి.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>ఫేజ్</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఈ పేజీ డిప్లాయ్ జరుగుతున్న కొద్దీ దాన్ని అనుసరిస్తుంది.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>సమకాలంలో</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>దశలు</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>దశ %stage తన గేట్ వద్ద వేచి ఉంది</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>గేట్ %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%time కు %user ఆమోదించారు</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>దశ</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>పంపిన ఫైళ్లు</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>కెర్నల్ వెర్షన్</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>వర్తింపజేసినవి: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>వర్తింపజేయాల్సినవి: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>ఫేజ్‌లు</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>గేట్: %stages లో దశ %stage</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>దీనికి ముందు దశలు డిప్లాయ్ చేయబడ్డాయి. వాటిని తనిఖీ చేసి, తర్వాత తదుపరి దశను ఆమోదించండి: దాని రిమోట్‌లు మళ్లీ తనిఖీ చేయబడి డిప్లాయ్ చేయబడతాయి, అన్నీ లేదా ఏదీ కాదు.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81842,7 +81842,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>అవును, తదుపరి దశను ఇప్పుడే డిప్లాయ్ చేయి</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81850,31 +81850,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>ఈ డిప్లాయ్‌ను వెనక్కి తీసుకో</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>దాన్ని వర్తింపజేసిన ప్రతి రిమోట్ (%list) తన రన్‌కు ముందు తీసుకున్న పునరుద్ధరణ బిందువుకు తిరిగి వెళ్తుంది, అన్నీ ఒకేసారి.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>అవును, ఈ డిప్లాయ్‌ను ఇప్పుడే వెనక్కి తీసుకో</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>ప్రణాళికలో ఉంది</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>బదిలీ అయింది</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>డిప్లాయ్ అయింది</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ఒక గేట్ వద్ద వేచి ఉంది</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81882,7 +81882,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>సిద్ధం చేయబడింది</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81890,51 +81890,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>తన దశ కోసం వేచి ఉంది</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ఫైళ్లు పంపబడ్డాయి</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>ధృవీకరించబడింది</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>విఫలమైంది, తనను తాను పునరుద్ధరించుకుంది</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>మారలేదు</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>డిప్లాయ్ కాలేదు</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>చేరుకోలేము</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్ సమాధానం ఇచ్చింది.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్‌ను ఇప్పుడు ఉపయోగించలేము.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done పూర్తయింది, %pending పెండింగ్‌లో ఉంది, %failed విఫలం</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>లాక్</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>అక్కడ ఒక రన్ లాక్‌ను పట్టి ఉంది</translation>
     </message>
     <message>
         <source>free</source>
@@ -81942,23 +81942,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stages లో %stage</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>పరీక్షించాల్సిన రిమోట్‌ను ఎంచుకోండి.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ముందుగా “అవును, ఈ రిమోట్‌ను తీసివేయి” టిక్ చేయండి.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్‌ను తీసివేయలేకపోయాం: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్‌ను సేవ్ చేయలేకపోయాం: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81966,75 +81966,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>కనీసం ఒక రిమోట్ లేదా సమూహాన్ని ఎంచుకోండి.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఎంచుకున్న ఒక రిమోట్ ఇప్పుడు సెట్టింగ్‌లలో లేదు. పేజీని మళ్లీ లోడ్ చేయండి.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ముందుగా “అవును, ఇప్పుడే డిప్లాయ్ చేయి” టిక్ చేయండి.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP రిమోట్ మైగ్రేషన్‌లను అమలు చేయలేదు: “బదిలీ మాత్రమే” ఎంచుకోండి, లేదా దాన్ని వదిలేయండి.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>డిప్లాయ్ చేయాల్సిన మైగ్రేషన్‌లు కామాలతో వేరు చేసిన మైగ్రేషన్ ఐడిలు.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>డిప్లాయ్ ఇంకా జరుగుతోంది. అది ముగిసే వరకు వేచి ఉండండి.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఈ డిప్లాయ్ ఏ గేట్ వద్దా వేచి ఉండదు.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఏ రిమోట్ ఈ డిప్లాయ్‌ను వర్తింపజేయలేదు: వెనక్కి తీసుకోవడానికి ఏమీ లేదు.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ముందుగా “అవును, తదుపరి దశను ఇప్పుడే డిప్లాయ్ చేయి” టిక్ చేయండి.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ముందుగా “అవును, ఈ డిప్లాయ్‌ను ఇప్పుడే వెనక్కి తీసుకో” టిక్ చేయండి.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id ఐడితో ఒక రిమోట్ ఇప్పటికే ఉంది.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>పోర్ట్ 1 నుండి 65535 వరకు ఒక సంఖ్య.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>పర్యావరణం అనేది అక్షరాలు, అంకెలు, - మరియు _ తో కూడిన ఒక పదం (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>సమూహం అనేది అక్షరాలు, అంకెలు, - మరియు _ తో కూడిన ఒక పదం (all కాదు): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>ఆధారాలను ఇప్పుడు చదవలేము: %problem. మొదటి డిప్లాయ్‌కు ముందు వాటిని సెటప్ &gt; రహస్యాలు లో సేవ్ చేయండి (లేదా వేరియబుల్‌ను సెట్ చేయండి).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP రిమోట్ ఫైళ్లను మాత్రమే స్వీకరిస్తుంది: దానికి డిప్లాయ్ “బదిలీ మాత్రమే”, దాని మైగ్రేషన్‌లు అక్కడ చేతితో అమలు చేయబడతాయి.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>రిమోట్ %id settings/override/migration.ini.append.php లో లేదు; అది సెట్ చేయబడిన చోట దాన్ని తీసివేయండి.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ద్వారా సైన్ ఇన్ అయి index.php చదివింది. FTP రిమోట్ యొక్క మైగ్రేషన్ స్థితిని చదవలేము.</translation>
     </message>
 </context>
 <context>
@@ -84438,19 +84438,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site లో డిప్లాయ్ %deploy విఫలమైంది</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site లో డిప్లాయ్ %deploy ఒక గేట్ వద్ద వేచి ఉంది</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site లో డిప్లాయ్ %deploy విజయవంతమైంది</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>migration.ini [RemoteSettings] Notify[] కోరుతున్నందున ఈ మెయిల్‌ను %site పంపింది.</translation>
     </message>
 </context>
 </TS>

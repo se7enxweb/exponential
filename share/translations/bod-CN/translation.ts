@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་ཁག</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>སྒྲིག་འཇུག་འདིས་རང་གི་གནས་སྤོ་བཀོད་སྤེལ་བྱེད་སའི་སྒྲིག་འཇུག་གཞན་དག བཀོད་སྤེལ་གྱིས་གནས་སྤོ་རྣམས་བདམས་པའི་ཐག་རིང་སྒྲིག་འཇུག་ཁག་ལ་བསྐུར་ནས་དེར་འཁོར་སྐྱོད་བྱེད། ཚང་མ་དུས་མཉམ་དང་མཉམ་འགྲོས་སུ་འགྲོ། ཐག་རིང་སྒྲིག་འཇུག་ལ་གསང་བ་ནམ་ཡང་མི་ཉར། དེའི་ངོ་སྤྲོད་ལག་ཁྱེར་གྱིས་ སྒྲིག་བཀོད། &gt; གསང་བ། ནང་གི་གཅིག་གི་མིང་སྟོན།</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་གསར་པ།</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id ཡི་སྦྲེལ་མཐུད་ཚོད་ལྟ།</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་རྣམས།</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་ %parallel བར་དུས་མཉམ་དུ་ལས་ཀ་བྱེད། རེ་རེའི་སྟེང་དུས་རིམ་གཅིག་ལ་སྐར་ཆ་ %timeout འགོར་ཆོག</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>བཅོས་དགོས་པའི་སྒྲིག་འགོད།</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡིག་ཆ་ཁོ་ན། (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ལྡེ་མིག</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>མེད། (གཙོ་འཕྲུལ་གྱི་ SSH ངོ་ཚབ་དང་ལྡེ་མིག)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཚོ་ཆུང་ཞིག་ལ་བཀོད་སྤེལ་བྱས་ན་དེའི་ཐག་རིང་སྒྲིག་འཇུག་ཚང་མར་འགྲོ།</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་ཁག་ལ་བཀོད་སྤེལ་བྱེད།</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ད་དུང་ཐག་རིང་སྒྲིག་འཇུག་གཅིག་ཀྱང་སྒྲིག་མེད།</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>འདིར་ཅི་ཡང་མི་བསྐུར་ཞིང་འཁོར་སྐྱོད་ཀྱང་མི་བྱེད། ཉར་ཚགས། ཀྱིས་སྒྲིག་འགོད་རྣམས་ settings/override/migration.ini.append.php ནང་འབྲི། ངོ་སྤྲོད་ལག་ཁྱེར་ནི་མིང་ཞིག་ཡིན། དེའི་རིན་ཐང་ སྒྲིག་བཀོད། &gt; གསང་བ། ནང་ངམ་ཁོར་ཡུག་ནང་སྡོད།</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>བཅུག་པ་ལྟར་གྱི་སྒྲིག་འགོད། ད་དུང་ཉར་ཚགས་མ་བྱས།</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>གཙོ་འཕྲུལ་གྱི་ལྡེ་མིག</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. ཐག་རིང་སྒྲིག་འཇུག</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་གི་མིང་ཅི་ཡིན་པ་དང་ཁོར་ཡུག་གང་ཡིན་པ།</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡི་གེ། ཨང་ཀི། - དང་ _ དཔེར་ན། production1. དེས་སྙན་ཞུ་དང་བཀོལ་སྤྱོད་སྒྲོམ་སྟེང་ (--remotes=production1) ཐག་རིང་སྒྲིག་འཇུག་གི་མིང་སྟོན་ལ། རྗེས་སུ་བསྒྱུར་མི་ཐུབ།</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... རིམ་སྐབས་ལྟར་གྱི་བཀོད་སྤེལ་ནི་གོ་རིམ་འདི་ལྟར་ཁོར་ཡུག་ཁག་བརྒྱུད་འགྲོ།</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>གདམ་ཀ (,) རྟགས་ཀྱིས་ཕྱེ་བ། དཔེར་ན། production. ཚོ་ཆུང་ཞིག་ལ་བཀོད་སྤེལ་བྱས་ན་དེའི་ཐག་རིང་སྒྲིག་འཇུག་ཚང་མར་འགྲོ།</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. སྦྲེལ་མཐུད།</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡིག་ཆ་དེར་ཇི་ལྟར་སླེབས་པ་དང་། སྒྲིག་འཇུག་གང་དུ་ཡོད་པ།</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH བརྒྱུད། འགྱུར་བ་བྱུང་བ་ཁོ་ན། ཆད་པའི་བརྒྱུད་སྐྱེལ་མུ་མཐུད་བྱེད། rsync སྒྲིག་འཇུག་བྱས་ཡོད་སར་གདམ་ཀ་ལེགས་ཤོས།</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡིག་ཆའི་ཆེད་དུ་ scp དང་བཅས་པའི་ SSH.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡིག་ཆའི་ཆེད་དུ་ sftp དང་བཅས་པའི་ SSH.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡིག་ཆ་ཁོ་ན། གནས་སྤོ་རྣམས་བསྐུར་ནས་ཕྱིར་ཀློག་བྱེད། འོན་ཀྱང་དེར་འཁོར་སྐྱོད་བྱེད་མི་ཐུབ།</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS བརྒྱུད་པའི་ FTP; ཡིག་ཆ་ཁོ་ན།</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཞབས་ཞུ་འཕྲུལ་ཆས་འདིའི་སྟེང་གི་སྒྲིག་འཇུག་གཞན་ཞིག ཡིག་སྣོད་ཅིག་གི་ནང་།</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>གཙོ་འཕྲུལ་གྱི་མིང་ངམ་ཁ་བྱང་། དཔེར་ན། node1.example.com. local ལ་མིན།</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>སྟོང་པ། SSH ལ་ 22, FTP ལ་ 21.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>དེའི་སྒྲིག་འཇུག་གི་རྩ་བའི་ཡིག་སྣོད། དཔེར་ན། /var/www/site (FTP ལ། FTP རྩིས་ཁྲས་མཐོང་བའི་ལམ་ཐིག)</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP བཀའ་བརྡའི་ཕྲེང་།</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>དེའི་ PHP CLI: php, ཡང་ན་ /opt/plesk/php/8.4/bin/php ལྟ་བུའི་ལམ་ཐིག་ཆ་ཚང་།</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོལ་སྤྱོད་སྒྲོམ་གྱི་ལས་འཆར་རྣམས་དེར་ root ཡི་ཐོག་ནས་འཁོར་སྐྱོད་བྱེད།</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་གི་སྤྱོད་མཁན་ root ཡིན་དུས་ཁོ་ན། (དེ་དུས་ --allow-root-user དང་མཉམ་དུ་འཁོར་སྐྱོད་བྱེད།)</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. ངོ་སྤྲོད་ལག་ཁྱེར།</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>སྒྲིག་འཇུག་འདིས་དེར་ཇི་ལྟར་ནང་འཛུལ་བྱེད་པ། མིང་ཁོ་ན་ཉར་ཚགས་བྱེད།</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>སྒྲིག་འཇུག་འདི་གང་གི་ཐོག་ནས་འཁོར་བའི་སྤྱོད་མཁན་དེའི་ SSH ངོ་ཚབ་དང་ལྡེ་མིག (local ལ་རྟག་ཏུ།)</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>གསང་བ་ལྟར་ཉར་བའི་སྒེར་གྱི་ལྡེ་མིག</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>གསང་བ་ལྟར་ཉར་བའི་གསང་གྲངས། (FTP ཡིས་དེ་བཀོལ་ནས་ནང་འཛུལ་བྱེད།)</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>གསང་བའི་མིང་།</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>སྒྲིག་བཀོད། &gt; གསང་བ། ནང་གི་གསང་བ་ཞིག དཔེར་ན། deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡང་ན་ཁོར་ཡུག་གི་འགྱུར་ཚད།</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>དེ་ཉར་བའི་ཞབས་ཞུ་འཕྲུལ་ཆས་བྱ་རིམ་གྱི་འགྱུར་ཚད། དཔེར་ན། DEPLOY_KEY (env:DEPLOY_KEY ལྟར་ཉར།) དེས་གསང་བའི་མིང་གི་ཚབ་བྱེད།</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. གཙོ་འཕྲུལ་གྱི་ལྡེ་མིག</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>གདམ་ཀ SSH, sftp དང་ rsync ཆེད།</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>གཙོ་འཕྲུལ་ལྡེ་མིག་གི་མཛུབ་རིས།</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ssh-keygen -l གིས་པར་འདེབས་པ་ལྟར། དེ་ཡོད་ན་གཙོ་འཕྲུལ་གྱིས་ལྡེ་མིག་འདི་ངེས་པར་སྟོན་དགོས། དེ་མེད་ན་ཐོག་མའི་འབྲེལ་བ་བྱེད་སྐབས་ལྡེ་མིག་སློབ་སྦྱོང་བྱེད།</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. ཞིབ་ལྟ།</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>གོང་གི་སྒྲིག་འགོད་ཀྱིས་སྦྲེལ་མཐུད་ཚོད་ལྟ་བྱས་རྗེས། འབྲི་རྒྱུའི་ཕྲེང་རྣམས་ཞིབ་ལྟ་བྱོས།</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་འདི་ཕྱིར་འདོན།</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>དེའི་སྒྲིག་འགོད་རྣམས་ settings/override/migration.ini.append.php ནས་ཕྱིར་འདོན་བྱེད། ཐག་རིང་སྒྲིག་འཇུག་སྟེང་ཅི་ཡང་མི་འགྱུར་ལ། དེའི་བཀོད་སྤེལ་རྣམས་ལོ་རྒྱུས་ནང་སྡོད།</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡིན། ཐག་རིང་སྒྲིག་འཇུག་འདི་ཕྱིར་འདོན།</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་ཁག</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་གྱིས་སྒྲིག་འཇུག་འདིའི་གནས་སྤོ་རྣམས་བདམས་པའི་ཐག་རིང་སྒྲིག་འཇུག་ཁག་ལ་བསྐུར་ནས་དེར་ %user ཡི་ཐོག་ནས་འཁོར་སྐྱོད་བྱེད། ཚང་མ་དུས་མཉམ་དང་མཉམ་འགྲོས་སུ་འགྲོ། ཐག་རིང་སྒྲིག་འཇུག་རེ་རེ་སྔོན་ལ་ཞིབ་བཤེར་བྱེད་ལ། གལ་ཏེ་གཅིག་ཕམ་ན། ལག་བསྟར་བྱས་པའི་ཐག་རིང་སྒྲིག་འཇུག་ཚང་མ་ཕྱིར་ལོག་བྱེད། དེ་རྒྱབ་ལྗོངས་སུ་འཕེལ་ཞིང་། དེའི་ཤོག་ངོས་སུ་ཐག་རིང་སྒྲིག་འཇུག་རེ་རེའི་གནས་བབ་རིམ་བཞིན་སྟོན།</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. ཐག་རིང་སྒྲིག་འཇུག་ཁག</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག ཚོ་ཆུང་། ཡང་ན་གཉིས་ཀ་ལ་རྟགས་རྒྱོབ།</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>དེར་བཀོད་སྤེལ་བྱེད།</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. ཇི་ལྟར།</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་བྱེད།</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>བསྐུར་ནས་འཁོར་སྐྱོད་བྱེད།</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>གནས་སྤོ་རྣམས་ཐག་རིང་སྒྲིག་འཇུག་རེ་རེར་བསྐུར་ནས་ཞིབ་བཤེར་བྱས་ཏེ། མཉམ་སྤྱོད་ཀྱི་འཁོར་སྐྱོད་ཐོ་ཨང་གཅིག་གིས་འཁོར་སྐྱོད་བྱེད།</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>བརྒྱུད་སྐྱེལ་ཁོ་ན།</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡིག་ཆ་བསྐུར་ནས་ཞིབ་བཤེར་བྱེད། ཅི་ཡང་འཁོར་སྐྱོད་མི་བྱེད། (FTP ཐག་རིང་སྒྲིག་འཇུག་ལ་ཐབས་ལམ་གཅིག་པུ།)</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>རིམ་སྐབས་ལྟར།</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཁོར་ཡུག་གི་གོ་རིམ་ལྟར་རིམ་སྐབས་རེ་རེ་བཞིན། (dev, stage, beta, production ...) རིམ་སྐབས་དང་པོ་བཀོད་སྤེལ་བྱེད། དེ་ནས་མི་ཞིག་གིས་རྗེས་མར་ཆོག་མཆན་མ་སྤྲད་བར་འགག་སྒོས་སྒུག རིམ་སྐབས་རེ་རེའི་ནང་ཡང་ན་ཚང་མ། ཡང་ན་ཅི་ཡང་མེད།</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>གནས་སྤོ་འདི་དག་ཁོ་ན།</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>གདམ་ཀ གནས་སྤོའི་ཐོ་ཨང་། (,) རྟགས་ཀྱིས་ཕྱེ་བ། སྟོང་པ། དྲ་ཚིགས་དང་དེའི་རྒྱ་སྐྱེད་ཀྱི་གནས་སྤོ་ཚང་མ།</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>སྔོན་ཚུད་ཞིབ་བཤེར་ཁོ་ན།</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡིན། ད་ལྟ་བཀོད་སྤེལ་བྱེད།</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>ཅི་ཞིག་བསྐུར་བའམ་འཁོར་སྐྱོད་བྱས་པའི་བཀོད་སྤེལ་རྣམས། གསར་ཤོས་སྔོན་ལ། (སྔོན་ཚུད་ཞིབ་བཤེར་གྱིས་སྙན་ཞུ་མི་ཉར།)</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>བརྒྱུད་སྐྱེལ་ཁོ་ན།</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>རིམ་སྐབས་ལྟར། རིམ་སྐབས་ %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>མཉམ་འགྲོས་མིན།</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ད་དུང་བཀོད་སྤེལ་མེད།</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ། %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་གྱི་ཐག་རིང་སྒྲིག་འཇུག་རེ་རེ་དེའི་གནས་བབ་དང་བཅས། འདིར་འགོ་བཙུགས་པའི་བཀོད་སྤེལ་ནི་ཤོག་ངོས་འདི་ཁ་བརྒྱབ་ཀྱང་རྒྱབ་ལྗོངས་སུ་མུ་མཐུད་འཕེལ། རྗེས་འདེད་བྱེད་པར་ཤོག་ངོས་བསྐྱར་དུ་ཕྱེ།</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་ཚང་མ།</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>སྔོན་ཚུད་ཞིབ་བཤེར།</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>རིམ་སྐབས་རྗེས་མ།</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>སྒྲིག་འགོད་དང་ངོ་སྤྲོད་ལག་ཁྱེར་ཞིབ་བཤེར་བྱེད་བཞིན་པ།</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>སྔོན་ཚུད་ཞིབ་བཤེར། ཐག་རིང་སྒྲིག་འཇུག་རེ་རེའི་གནས་བབ་ཀློག་བཞིན་པ།</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>གནས་སྤོའི་ཡིག་ཆ་བསྐུར་བཞིན་པ།</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>སླེབས་པ་ཞིབ་བཤེར་བྱེད་བཞིན་པ།</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་རེ་རེར་གནས་སྤོ་འཁོར་སྐྱོད་བྱེད་བཞིན་པ།</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་ཁག་ཕྱིར་ལོག་བྱེད་བཞིན་པ།</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་མཇུག་རྫོགས། དེའི་སྙན་ཞུ་འཇུག་བཞིན་པ།</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>མཐར་ཕྱིན་རིམ་པའི་རྗེས་འདེད་བྱེད་མ་ཐུབ། བཀོད་སྤེལ་ཇི་ལྟར་འགྲོ་བཞིན་པ་ལྟ་བར་ཤོག་ངོས་བསྐྱར་འཇུག་བྱོས།</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>དུས་རིམ།</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཤོག་ངོས་འདིས་བཀོད་སྤེལ་འཕེལ་བཞིན་པའི་རྗེས་འདེད་བྱེད།</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>མཉམ་འགྲོས།</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>རིམ་སྐབས་ཁག</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>རིམ་སྐབས་ %stage རང་གི་འགག་སྒོར་སྒུག་བཞིན་པ།</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>འགག་སྒོ། %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user ཡིས་ %time ལ་ཆོག་མཆན་སྤྲད།</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>རིམ་སྐབས།</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>བསྐུར་ཟིན་པའི་ཡིག་ཆ།</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>སྙིང་པོའི་པར་གཞི།</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ལག་བསྟར་བྱས། %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ལག་བསྟར་བྱ་རྒྱུ། %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>དུས་རིམ་ཁག</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>འགག་སྒོ། %stages ནང་གི་རིམ་སྐབས་ %stage</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>དེའི་སྔོན་གྱི་རིམ་སྐབས་རྣམས་བཀོད་སྤེལ་ཟིན། དེ་དག་ཞིབ་བཤེར་བྱས་རྗེས་རིམ་སྐབས་རྗེས་མར་ཆོག་མཆན་སྤྲོད། དེའི་ཐག་རིང་སྒྲིག་འཇུག་རྣམས་བསྐྱར་དུ་ཞིབ་བཤེར་བྱས་ནས་བཀོད་སྤེལ་བྱེད། ཡང་ན་ཚང་མ། ཡང་ན་ཅི་ཡང་མེད།</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡིན། ད་ལྟ་རིམ་སྐབས་རྗེས་མ་བཀོད་སྤེལ་བྱེད།</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་འདི་ཕྱིར་ལོག</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>དེ་ལག་བསྟར་བྱས་པའི་ཐག་རིང་སྒྲིག་འཇུག་རེ་རེ། (%list) རང་གི་འཁོར་སྐྱོད་སྔོན་དུ་བླངས་པའི་པར་རིས་ལ་ཕྱིར་ལོག ཚང་མ་དུས་མཉམ་དུ།</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡིན། ད་ལྟ་བཀོད་སྤེལ་འདི་ཕྱིར་ལོག</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>འཆར་གཞི་བཀོད་ཟིན།</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>བརྒྱུད་སྐྱེལ་བྱས།</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་བྱས།</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>འགག་སྒོར་སྒུག་བཞིན་པ།</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>གྲ་སྒྲིག་བྱས།</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>རང་གི་རིམ་སྐབས་ལ་སྒུག་བཞིན་པ།</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ཡིག་ཆ་བསྐུར་ཟིན།</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>ཞིབ་བཤེར་བྱས།</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ཕམ་པ། རང་ཉིད་སླར་གསོ་བྱས།</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>འགྱུར་མེད།</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་མ་བྱས།</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>འབྲེལ་བ་བྱེད་མི་ཐུབ།</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་གིས་ལན་བཏབ།</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>ད་ལྟ་ཐག་རིང་སྒྲིག་འཇུག་བེད་སྤྱོད་བྱེད་མི་ཐུབ།</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done ལེགས་གྲུབ། %pending སྒུག་བཞིན་པ། %failed ཕམ་པ།</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>ཟྭ།</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>འཁོར་སྐྱོད་ཅིག་གིས་དེར་ཟྭ་བཟུང་ཡོད།</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stages ནང་གི་ %stage</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཚོད་ལྟ་བྱ་རྒྱུའི་ཐག་རིང་སྒྲིག་འཇུག་འདེམས།</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐོག་མར་ “ཡིན། ཐག་རིང་སྒྲིག་འཇུག་འདི་ཕྱིར་འདོན།” ལ་རྟགས་རྒྱོབ།</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་ཕྱིར་འདོན་བྱེད་མ་ཐུབ། %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་ཉར་ཚགས་བྱེད་མ་ཐུབ། %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཉུང་མཐར་ཐག་རིང་སྒྲིག་འཇུག་གམ་ཚོ་ཆུང་གཅིག་འདེམས།</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>བདམས་པའི་ཐག་རིང་སྒྲིག་འཇུག་ཅིག་སྒྲིག་འགོད་ནང་མེད་པར་གྱུར། ཤོག་ངོས་བསྐྱར་འཇུག་བྱོས།</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐོག་མར་ “ཡིན། ད་ལྟ་བཀོད་སྤེལ་བྱེད།” ལ་རྟགས་རྒྱོབ།</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ཐག་རིང་སྒྲིག་འཇུག་གིས་གནས་སྤོ་འཁོར་སྐྱོད་བྱེད་མི་ཐུབ། “བརྒྱུད་སྐྱེལ་ཁོ་ན།” འདེམས་པའམ། ཡང་ན་དེ་ཕུད།</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་བྱ་རྒྱུའི་གནས་སྤོ་ནི་ (,) རྟགས་ཀྱིས་ཕྱེ་བའི་གནས་སྤོའི་ཐོ་ཨང་ཡིན།</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་ད་དུང་འཕེལ་བཞིན་ཡོད། མཇུག་མ་རྫོགས་བར་སྒུག</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་འདི་འགག་སྒོར་མི་སྒུག</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག་གང་གིས་ཀྱང་བཀོད་སྤེལ་འདི་ལག་བསྟར་མ་བྱས། ཕྱིར་ལོག་བྱ་རྒྱུ་ཅི་ཡང་མེད།</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐོག་མར་ “ཡིན། ད་ལྟ་རིམ་སྐབས་རྗེས་མ་བཀོད་སྤེལ་བྱེད།” ལ་རྟགས་རྒྱོབ།</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐོག་མར་ “ཡིན། ད་ལྟ་བཀོད་སྤེལ་འདི་ཕྱིར་ལོག” ལ་རྟགས་རྒྱོབ།</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐོ་ཨང་ %id ཡོད་པའི་ཐག་རིང་སྒྲིག་འཇུག་སྔར་ནས་ཡོད།</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐོག (port) ནི་ 1 ནས་ 65535 བར་གྱི་ཨང་གྲངས་ཤིག་ཡིན།</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>ཁོར་ཡུག་ནི་ཡི་གེ། ཨང་ཀི། - དང་ _ ལས་གྲུབ་པའི་ཚིག་ཅིག་ཡིན། (alpha, dev, stage, beta, production ...)</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>ཚོ་ཆུང་ནི་ཡི་གེ། ཨང་ཀི། - དང་ _ ལས་གྲུབ་པའི་ཚིག་ཅིག་ཡིན། (all མིན།): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>ད་ལྟ་ངོ་སྤྲོད་ལག་ཁྱེར་ཀློག་མི་ཐུབ། %problem. བཀོད་སྤེལ་དང་པོའི་སྔོན་དུ་དེ་ སྒྲིག་བཀོད། &gt; གསང་བ། ནང་ཉར་ཚགས་བྱོས། (ཡང་ན་འགྱུར་ཚད་གཏན་འཁེལ་བྱོས།)</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ཐག་རིང་སྒྲིག་འཇུག་གིས་ཡིག་ཆ་ཁོ་ན་ལེན། དེར་བཀོད་སྤེལ་ནི་ “བརྒྱུད་སྐྱེལ་ཁོ་ན།” ཡིན་ལ། དེའི་གནས་སྤོ་རྣམས་དེར་ལག་པས་འཁོར་སྐྱོད་བྱེད།</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>ཐག་རིང་སྒྲིག་འཇུག %id ནི་ settings/override/migration.ini.append.php ནང་མེད། དེ་གང་དུ་སྒྲིག་ཡོད་སར་ཕྱིར་འདོན་བྱོས།</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP བརྒྱུད་ནང་འཛུལ་བྱས་ནས་ index.php ཀློག་ཟིན། FTP ཐག་རིང་སྒྲིག་འཇུག་གི་གནས་སྤོའི་གནས་བབ་ཀློག་མི་ཐུབ།</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་ %deploy %site ཐོག་ཕམ་སོང་།</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་ %deploy %site ཐོག་སྒོ་ཞིག་ལ་སྒུག་བཞིན་འདུག</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>བཀོད་སྤེལ་ %deploy %site ཐོག་ལེགས་གྲུབ་བྱུང་།</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>སྐད་འཕྲིན་འདི་ %site ནས་བཏང་བ་ཡིན། རྒྱུ་མཚན་ནི་ migration.ini [RemoteSettings] Notify[] ཡིས་བླངས་པས་སོ།</translation>
     </message>
 </context>
 </TS>

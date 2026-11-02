@@ -81334,15 +81334,15 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebe dị anya niile</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nrụnye ndị ọzọ nrụnye a na-enyefe mbugharị ya: nnyefe na-ezipu mbugharị gaa n'ebe dị anya a họọrọ ma gbaa ha n'ebe ahụ, ha niile n'otu oge na n'otu ọnọdụ. Ebe dị anya anaghị ejide ihe nzuzo ọ bụla: ihe njirimara nbanye ya na-akpọ aha otu dị na Nrụnye &gt; Ihe nzuzo.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebe dị anya ọhụrụ</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81350,19 +81350,19 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnwale njikọ nke %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebe dị anya ndị ahụ</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>A na-arụ ọrụ n'ihe ruru %parallel ebe dị anya n'otu oge; otu usoro nwere ike iwe sekọnd %timeout n'ebe ọ bụla.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebe dị anya</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81378,15 +81378,15 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ntọala a ga-edozi</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>naanị faịlụ (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Isi SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81394,7 +81394,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ọ dịghị (onye nnọchi SSH na isi nke ọgbakọ)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81402,23 +81402,23 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnyefe nye otu na-aga n'ebe dị anya ọ bụla dị n'ime ya.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyefee n'ebe dị anya</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Edobebeghị ebe dị anya ọ bụla.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebe dị anya %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ọ dịghị ihe a na-ezipu ma ọ bụ agba ebe a: Chekwaa na-ede ntọala na settings/override/migration.ini.append.php. Ihe njirimara nbanye bụ aha; uru ya na-anọ na Nrụnye &gt; Ihe nzuzo ma ọ bụ na gburugburu.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81426,7 +81426,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ntọala dị ka e tinyere ha, a chekwabeghị ha.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81454,15 +81454,15 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Isi ọgbakọ</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Ebe dị anya</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihe a na-akpọ ebe dị anya ahụ na gburugburu ọ bụ.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81470,47 +81470,47 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mkpụrụedemede, ọnụọgụ, - na _, dịka production1. Ọ na-akpọ ebe dị anya ahụ aha n'akụkọ na na console (--remotes=production1), a pụghịkwa ịgbanwe ya emesịa.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Nnyefe n'ọkwa na-agafe gburugburu n'usoro a.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhọrọ, kewaa ya na rịkọma, dịka production. Nnyefe nye otu na-aga n'ebe dị anya ọ bụla dị n'ime ya.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Njikọ</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Otú faịlụ si eru ebe ahụ, na ebe nrụnye ahụ dị.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Site na SSH, naanị ihe gbanwere, a na-amaliteghachi mbufe kwụsịrị. Nhọrọ kacha mma ebe a wụnyere rsync.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH na scp maka faịlụ.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH na sftp maka faịlụ.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naanị faịlụ: a na-ezipu mbugharị ma gụghachi ha, mana a pụghị ịgba ha n'ebe ahụ.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP site na TLS; naanị faịlụ.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nrụnye ọzọ na sava a, n'ime folda.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81518,7 +81518,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aha ọgbakọ ma ọ bụ adreesị, dịka node1.example.com. Ọ bụghị maka local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81526,7 +81526,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapụ ya efu: 22 maka SSH, 21 maka FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81538,31 +81538,31 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Mgbọrọgwụ nrụnye ahụ n'ebe ahụ, dịka /var/www/site (maka FTP: ụzọ akaụntụ FTP na-ahụ).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ahịrị iwu PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI dị n'ebe ahụ: php, ma ọ bụ ụzọ zuru ezu dịka /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Skript console na-agba dị ka root n'ebe ahụ</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Naanị mgbe onye ọrụ nke ebe dị anya ahụ bụ root (a na-agba ha mgbe ahụ na --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Ihe njirimara nbanye</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Otú nrụnye a si abanye n'ebe ahụ. Naanị aha ka a na-echekwa.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81570,23 +81570,23 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Onye nnọchi SSH na isi nke onye ọrụ nrụnye a na-agba dị ka ya (na mgbe niile maka local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isi nkeonwe e debere dị ka ihe nzuzo.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Okwuntughe e debere dị ka ihe nzuzo (FTP ji ya abanye).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Aha ihe nzuzo</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihe nzuzo dị na Nrụnye &gt; Ihe nzuzo, dịka deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81594,247 +81594,247 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Ma ọ bụ ihe mgbanwe gburugburu</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihe mgbanwe nke usoro sava na-ejide ya, dịka DEPLOY_KEY (echekwara dị ka env:DEPLOY_KEY). Ọ na-anọchi aha ihe nzuzo.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Isi ọgbakọ</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhọrọ, maka SSH, sftp na rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Akara mkpịsị aka nke isi ọgbakọ</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... dị ka ssh-keygen -l si ebipụta ya. Ọ bụrụ na e nyere ya, ọgbakọ ga-egosi isi a; ọ bụrụ na e nyeghị ya, a na-amụta isi ahụ na kọntaktị mbụ.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Nyochaa</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nwalee njikọ ahụ site na ntọala dị n'elu, wee nyochaa ahịrị a ga-ede.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Wepụ ebe dị anya a</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>A na-ewepụ ntọala ya na settings/override/migration.ini.append.php. Ọ dịghị ihe na-agbanwe n'ebe dị anya ahụ, nnyefe ya na-anọgidekwa n'akụkọ ihe mere.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ee, wepụ ebe dị anya a</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnyefe</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnyefe na-ezipu mbugharị nke nrụnye a gaa n'ebe dị anya a họọrọ ma gbaa ha n'ebe ahụ dị ka %user, ha niile n'otu oge na n'otu ọnọdụ: a na-ebu ụzọ lelee ebe dị anya ọ bụla, ma ọ bụrụ na otu dara, a na-eweghachi ebe ọ bụla tinyere ya. Ọ na-aga n'azụ, ibe ya na-egosikwa ebe dị anya ọ bụla ka ọ na-aga.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Ebe dị anya niile</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaa ebe dị anya, otu, ma ọ bụ ha abụọ.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyefee ya ebe ahụ</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Otú</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyefee</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Zipu ma gbaa</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>A na-ezipu mbugharị, nyochaa ha ma gbaa ha n'ebe dị anya ọ bụla na otu njirimara ọgbụgba a na-ekerịta.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Naanị ibufe</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>A na-ezipu faịlụ ma nyochaa ha, ọ dịghị ihe a na-agba (naanị ụzọ maka ebe dị anya FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>N'ọkwa</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ọkwa n'ọkwa n'usoro gburugburu (dev, stage, beta, production ...): a na-ebu ụzọ nyefee ọkwa mbụ, mgbe ahụ ọnụ ụzọ na-eche ruo mgbe mmadụ kwenyere na nke na-esote. Ha niile ma ọ bụ ọ dịghị nke n'ime ọkwa ọ bụla.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Naanị mbugharị ndị a</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhọrọ: njirimara mbugharị, kewaa ha na rịkọma. Efu: mbugharị ọ bụla nke saịtị ahụ na ndọtị ya.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Naanị nlele mbụ</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ee, nyefee ugbu a</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnyefe ndị zipụrụ ma ọ bụ gbaa ihe, nke kacha ọhụrụ na mbụ (nlele mbụ anaghị edebe akụkọ).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>naanị ibufe</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>n'ọkwa, ọkwa %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>anọghị n'otu ọnọdụ</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Enwebeghị nnyefe.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnyefe %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebe dị anya ọ bụla nke nnyefe ahụ na ọnọdụ ya. Nnyefe malitere ebe a na-aga n'ihu n'azụ mgbe e mechiri ibe a; mepee ibe ahụ ọzọ ka i soro ya.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnyefe niile</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Nlele mbụ</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ọkwa na-esote</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Na-elele ntọala na ihe njirimara nbanye</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nlele mbụ: na-agụ ọnọdụ ebe dị anya ọ bụla</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Na-ezipu faịlụ mbugharị</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Na-enyocha ihe rutere</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Na-agba mbugharị n'ebe dị anya ọ bụla</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Na-eweghachi ebe dị anya</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnyefe ahụ akwụsịla. Na-ebugo akụkọ ya.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Enweghị ike iso ọganihu ahụ. Bugharịa ibe ahụ ka ịhụ otú nnyefe ahụ si aga.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Usoro</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ibe a na-eso nnyefe ahụ ka ọ na-aga.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>N'otu ọnọdụ</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ọkwa niile</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ọkwa %stage na-eche n'ọnụ ụzọ ya</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ọnụ ụzọ %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user kwenyere na ya na %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ọkwa</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Faịlụ ezipụrụ</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Mbipụta kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>etinyela: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>a ga-etinye: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Usoro niile</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ọnụ ụzọ: ọkwa %stage n'ime %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>E nyefeela ọkwa ndị bu ya ụzọ. Lelee ha, wee kwenye na ọkwa na-esote: a ga-elele ebe dị anya ya ọzọ ma nyefee ha, ha niile ma ọ bụ ọ dịghị nke.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81842,7 +81842,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ee, nyefee ọkwa na-esote ugbu a</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81850,31 +81850,31 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Tụgharịa nnyefe a azụ</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebe dị anya ọ bụla tinyere ya (%list) na-alaghachi n'onyonyo nchekwa e sere tupu ọgbụgba ya, ha niile n'otu oge.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ee, tụgharịa nnyefe a azụ ugbu a</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>e zubere</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>ebufela</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>enyefela</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>na-eche n'ọnụ ụzọ</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81882,7 +81882,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>akwadoro</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81890,51 +81890,51 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>na-eche ọkwa ya</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ezipụla faịlụ</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>enyochala</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>dara, weghachiri onwe ya</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>agbanweghị</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>enyefeghị</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>enweghị ike iru ya</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebe dị anya ahụ zara.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>A pụghị iji ebe dị anya ahụ ugbu a.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done emechala, %pending na-eche, %failed dara</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Mkpọchi</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>ọgbụgba na-ejide mkpọchi n'ebe ahụ</translation>
     </message>
     <message>
         <source>free</source>
@@ -81942,23 +81942,23 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage n'ime %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Họrọ ebe dị anya a ga-anwale.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Buru ụzọ kaa “Ee, wepụ ebe dị anya a”.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Enweghị ike iwepụ ebe dị anya ahụ: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Enweghị ike ichekwa ebe dị anya ahụ: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81966,75 +81966,75 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Họrọ opekata mpe otu ebe dị anya ma ọ bụ otu.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Otu ebe dị anya a họọrọ anọghịzi na ntọala. Bugharịa ibe ahụ.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Buru ụzọ kaa “Ee, nyefee ugbu a”.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebe dị anya FTP enweghị ike ịgba mbugharị: họrọ “Naanị ibufe”, ma ọ bụ hapụ ya.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mbugharị a ga-enyefe bụ njirimara mbugharị, e kewara na rịkọma.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnyefe ahụ ka na-aga. Chere ka ọ kwụsị.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnyefe a anaghị eche n'ọnụ ụzọ.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ọ dịghị ebe dị anya tinyere nnyefe a: ọ dịghị ihe a ga-atụgharị azụ.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Buru ụzọ kaa “Ee, nyefee ọkwa na-esote ugbu a”.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Buru ụzọ kaa “Ee, tụgharịa nnyefe a azụ ugbu a”.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebe dị anya nwere njirimara %id adịlarị.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ọdụ ụgbọ mmiri bụ ọnụọgụ site na 1 ruo 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Gburugburu bụ okwu nwere mkpụrụedemede, ọnụọgụ, - na _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Otu bụ okwu nwere mkpụrụedemede, ọnụọgụ, - na _ (ọ bụghị all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>A pụghị ịgụ ihe njirimara nbanye ugbu a: %problem. Chekwaa ya na Nrụnye &gt; Ihe nzuzo (ma ọ bụ tọọ ihe mgbanwe ahụ) tupu nnyefe mbụ.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebe dị anya FTP na-anata naanị faịlụ: nnyefe nye ya bụ “Naanị ibufe”, a na-ejikwa aka agba mbugharị ya n'ebe ahụ.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebe dị anya %id anọghị na settings/override/migration.ini.append.php; wepụ ya ebe e tọrọ ya.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Abanyela site na FTP ma gụọ index.php. A pụghị ịgụ ọnọdụ mbugharị nke ebe dị anya FTP.</translation>
     </message>
 </context>
 <context>
@@ -84438,19 +84438,19 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnyefe %deploy adaala na %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnyefe %deploy na-eche n'ọnụ ụzọ ama na %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Nnyefe %deploy gara nke ọma na %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>%site zitere ozi a n'ihi na migration.ini [RemoteSettings] Notify[] chọrọ ya.</translation>
     </message>
 </context>
 </TS>

@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>เครื่องปลายทาง</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>การติดตั้งอื่นๆ ที่การติดตั้งนี้ดีพลอยไมเกรชันไปให้: การดีพลอยจะส่งไมเกรชันไปยังเครื่องปลายทางที่เลือกและเรียกใช้ที่นั่น พร้อมกันทั้งหมดและสอดคล้องกัน เครื่องปลายทางไม่เคยเก็บข้อมูลลับ: ข้อมูลรับรองของเครื่องปลายทางระบุชื่อข้อมูลลับใน ตั้งค่าระบบ &gt; ข้อมูลลับ</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>เครื่องปลายทางใหม่</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ทดสอบการเชื่อมต่อของ %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>เครื่องปลายทางทั้งหมด</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>ทำงานกับเครื่องปลายทางได้พร้อมกันสูงสุด %parallel เครื่อง แต่ละเฟสใช้เวลาได้ %timeout วินาทีบนแต่ละเครื่อง</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>เครื่องปลายทาง</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ต้องแก้ไขการตั้งค่า</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>เฉพาะไฟล์ (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>คีย์ SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่มี (SSH agent และคีย์ของโฮสต์)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>การดีพลอยไปยังกลุ่มจะส่งไปยังทุกเครื่องปลายทางในกลุ่มนั้น</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ดีพลอยไปยังเครื่องปลายทาง</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ยังไม่ได้ตั้งค่าเครื่องปลายทางใด</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>เครื่องปลายทาง %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>ที่นี่จะไม่มีการส่งหรือเรียกใช้สิ่งใด: ปุ่มบันทึกจะเขียนการตั้งค่าลงใน settings/override/migration.ini.append.php ข้อมูลรับรองเป็นเพียงชื่อ ค่าจริงยังคงอยู่ใน ตั้งค่าระบบ &gt; ข้อมูลลับ หรือในสภาพแวดล้อม</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่าตามที่ป้อน ยังไม่ได้บันทึก</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>คีย์โฮสต์</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. เครื่องปลายทาง</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ชื่อของเครื่องปลายทางและสภาพแวดล้อมของเครื่อง</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>ตัวอักษร ตัวเลข - และ _ เช่น production1 ใช้เรียกเครื่องปลายทางในรายงานและบนคอนโซล (--remotes=production1) และเปลี่ยนภายหลังไม่ได้</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... การดีพลอยแบบแบ่งระยะจะผ่านสภาพแวดล้อมตามลำดับนี้</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่บังคับ คั่นด้วยจุลภาค เช่น production การดีพลอยไปยังกลุ่มจะส่งไปยังทุกเครื่องปลายทางในกลุ่มนั้น</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. การเชื่อมต่อ</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไฟล์ไปถึงที่นั่นอย่างไร และการติดตั้งอยู่ที่ใด</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>ผ่าน SSH ส่งเฉพาะสิ่งที่เปลี่ยน และถ่ายโอนที่ขาดตอนต่อจากเดิม ตัวเลือกที่ดีที่สุดเมื่อมี rsync ติดตั้งอยู่</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH พร้อม scp สำหรับไฟล์</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH พร้อม sftp สำหรับไฟล์</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>เฉพาะไฟล์: ไมเกรชันจะถูกส่งและอ่านกลับ แต่ไม่สามารถเรียกใช้ที่นั่นได้</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ผ่าน TLS เฉพาะไฟล์</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>การติดตั้งอื่นบนเซิร์ฟเวอร์นี้ ในโฟลเดอร์หนึ่ง</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>ชื่อโฮสต์หรือที่อยู่ เช่น node1.example.com ไม่ใช้กับ local</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>เว้นว่าง: 22 สำหรับ SSH, 21 สำหรับ FTP</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>รากของการติดตั้งที่นั่น เช่น /var/www/site (สำหรับ FTP: พาธที่บัญชี FTP มองเห็น)</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>บรรทัดคำสั่ง PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI ที่นั่น: php หรือพาธเต็ม เช่น /opt/plesk/php/8.4/bin/php</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>สคริปต์คอนโซลทำงานในฐานะ root ที่นั่น</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>เฉพาะเมื่อผู้ใช้ของเครื่องปลายทางเป็น root (จะเรียกใช้ด้วย --allow-root-user)</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. ข้อมูลรับรอง</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>การติดตั้งนี้ลงชื่อเข้าใช้ที่นั่นอย่างไร บันทึกไว้เพียงชื่อเท่านั้น</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH agent และคีย์ของผู้ใช้ที่การติดตั้งนี้ทำงานอยู่ (และใช้เสมอสำหรับ local)</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>คีย์ส่วนตัวที่เก็บเป็นข้อมูลลับ</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>รหัสผ่านที่เก็บเป็นข้อมูลลับ (FTP ใช้รหัสผ่านนี้ลงชื่อเข้าใช้)</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>ชื่อข้อมูลลับ</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>ข้อมูลลับใน ตั้งค่าระบบ &gt; ข้อมูลลับ เช่น deploy_production1</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>หรือตัวแปรสภาพแวดล้อม</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>ตัวแปรของโปรเซสเซิร์ฟเวอร์ที่เก็บค่านี้ เช่น DEPLOY_KEY (บันทึกเป็น env:DEPLOY_KEY) ใช้แทนชื่อข้อมูลลับ</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. คีย์โฮสต์</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่บังคับ สำหรับ SSH, sftp และ rsync</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>ลายนิ้วมือคีย์โฮสต์</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ตามที่ ssh-keygen -l แสดง หากระบุ โฮสต์ต้องแสดงคีย์นี้ หากไม่ระบุ คีย์จะถูกจดจำเมื่อติดต่อครั้งแรก</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. ตรวจทาน</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>ทดสอบการเชื่อมต่อด้วยการตั้งค่าด้านบน แล้วตรวจทานบรรทัดที่จะถูกเขียน</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>นำเครื่องปลายทางนี้ออก</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่าของเครื่องนี้จะถูกนำออกจาก settings/override/migration.ini.append.php ไม่มีสิ่งใดเปลี่ยนแปลงบนเครื่องปลายทาง และการดีพลอยของเครื่องนี้ยังคงอยู่ในประวัติ</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ใช่ นำเครื่องปลายทางนี้ออก</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>การดีพลอย</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>การดีพลอยจะส่งไมเกรชันของการติดตั้งนี้ไปยังเครื่องปลายทางที่เลือกและเรียกใช้ที่นั่นในฐานะ %user พร้อมกันทั้งหมดและสอดคล้องกัน: ทุกเครื่องปลายทางจะถูกตรวจสอบก่อน และหากมีเครื่องใดล้มเหลว ทุกเครื่องที่นำไปใช้แล้วจะถูกถอนกลับ การดีพลอยทำงานอยู่เบื้องหลัง และหน้าของการดีพลอยจะแสดงทุกเครื่องปลายทางตามความคืบหน้า</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. เครื่องปลายทางทั้งหมด</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>ทำเครื่องหมายเครื่องปลายทาง กลุ่ม หรือทั้งสองอย่าง</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>ดีพลอยไปที่นี่</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. วิธีการ</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ดีพลอย</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>ส่งและเรียกใช้</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไมเกรชันจะถูกส่ง ตรวจยืนยัน และเรียกใช้บนทุกเครื่องปลายทางด้วยรหัสการเรียกใช้ร่วมกันหนึ่งรหัส</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>ถ่ายโอนเท่านั้น</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ไฟล์จะถูกส่งและตรวจยืนยัน โดยไม่มีการเรียกใช้สิ่งใด (วิธีเดียวสำหรับเครื่องปลายทาง FTP)</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>แบ่งเป็นระยะ</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>ทีละระยะตามลำดับของสภาพแวดล้อม (dev, stage, beta, production ...): ดีพลอยระยะแรกก่อน จากนั้นด่านจะรอจนกว่าจะมีผู้อนุมัติระยะถัดไป ภายในแต่ละระยะจะสำเร็จทั้งหมดหรือไม่ทำเลย</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>เฉพาะไมเกรชันเหล่านี้</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่บังคับ: รหัสไมเกรชัน คั่นด้วยจุลภาค เว้นว่าง: ทุกไมเกรชันของเว็บไซต์และส่วนขยาย</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>ตรวจล่วงหน้าเท่านั้น</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>ใช่ ดีพลอยตอนนี้</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>การดีพลอยที่ได้ส่งหรือเรียกใช้บางสิ่ง ล่าสุดอยู่ก่อน (การตรวจล่วงหน้าไม่เก็บรายงาน)</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>ถ่ายโอนเท่านั้น</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>แบ่งเป็นระยะ %stages ระยะ</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่ตรงกัน</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ยังไม่มีการดีพลอย</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>การดีพลอย %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ทุกเครื่องปลายทางของการดีพลอยพร้อมสถานะ การดีพลอยที่เริ่มจากที่นี่จะทำงานต่อเบื้องหลังเมื่อปิดหน้านี้ เปิดหน้านี้อีกครั้งเพื่อติดตาม</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>การดีพลอยทั้งหมด</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>การตรวจล่วงหน้า</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ระยะถัดไป</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>กำลังตรวจสอบการตั้งค่าและข้อมูลรับรอง</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ตรวจล่วงหน้า: กำลังอ่านสถานะของทุกเครื่องปลายทาง</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>กำลังส่งไฟล์ไมเกรชัน</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>กำลังตรวจยืนยันสิ่งที่ส่งถึง</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>กำลังเรียกใช้ไมเกรชันบนทุกเครื่องปลายทาง</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>กำลังถอนกลับเครื่องปลายทาง</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>การดีพลอยสิ้นสุดแล้ว กำลังโหลดรายงาน</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่สามารถติดตามความคืบหน้าได้ โปรดโหลดหน้านี้ใหม่เพื่อดูความคืบหน้าของการดีพลอย</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>เฟส</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>หน้านี้ติดตามการดีพลอยตามความคืบหน้า</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ตรงกัน</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ระยะทั้งหมด</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ระยะ %stage รออยู่ที่ด่าน</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ด่าน %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>อนุมัติโดย %user เมื่อ %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ระยะ</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ไฟล์ที่ส่งแล้ว</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>เวอร์ชันเคอร์เนล</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>นำไปใช้แล้ว: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>จะนำไปใช้: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>เฟสทั้งหมด</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ด่าน: ระยะ %stage จาก %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>ระยะก่อนหน้าดีพลอยแล้ว โปรดตรวจสอบ แล้วอนุมัติระยะถัดไป: เครื่องปลายทางของระยะนั้นจะถูกตรวจสอบอีกครั้งและดีพลอย สำเร็จทั้งหมดหรือไม่ทำเลย</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>ใช่ ดีพลอยระยะถัดไปตอนนี้</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>ย้อนกลับการดีพลอยนี้</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>ทุกเครื่องปลายทางที่นำไปใช้แล้ว (%list) จะกลับไปยังจุดคืนค่าที่สร้างไว้ก่อนการเรียกใช้ พร้อมกันทั้งหมด</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>ใช่ ย้อนกลับการดีพลอยนี้ตอนนี้</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>วางแผนไว้</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>ถ่ายโอนแล้ว</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ดีพลอยแล้ว</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>รออยู่ที่ด่าน</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>เตรียมแล้ว</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>รอระยะของตน</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ส่งไฟล์แล้ว</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>ตรวจยืนยันแล้ว</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ล้มเหลว คืนค่าตัวเองแล้ว</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่เปลี่ยนแปลง</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่ได้ดีพลอย</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>เข้าถึงไม่ได้</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>เครื่องปลายทางตอบกลับแล้ว</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่สามารถใช้เครื่องปลายทางนี้ได้ในขณะนี้</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done เสร็จแล้ว, %pending รอดำเนินการ, %failed ล้มเหลว</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>ล็อก</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>มีการเรียกใช้ถือล็อกอยู่ที่นั่น</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage จาก %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>โปรดเลือกเครื่องปลายทางที่จะทดสอบ</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>โปรดทำเครื่องหมาย “ใช่ นำเครื่องปลายทางนี้ออก” ก่อน</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่สามารถนำเครื่องปลายทางออกได้: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่สามารถบันทึกเครื่องปลายทางได้: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>โปรดเลือกเครื่องปลายทางหรือกลุ่มอย่างน้อยหนึ่งรายการ</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>เครื่องปลายทางที่เลือกไว้ไม่อยู่ในการตั้งค่าแล้ว โปรดโหลดหน้านี้ใหม่</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>โปรดทำเครื่องหมาย “ใช่ ดีพลอยตอนนี้” ก่อน</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>เครื่องปลายทาง FTP ไม่สามารถเรียกใช้ไมเกรชันได้ โปรดเลือก “ถ่ายโอนเท่านั้น” หรือไม่ต้องรวมไว้</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไมเกรชันที่จะดีพลอยคือรหัสไมเกรชัน คั่นด้วยจุลภาค</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>การดีพลอยยังดำเนินอยู่ โปรดรอจนกว่าจะสิ้นสุด</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>การดีพลอยนี้ไม่รอที่ด่าน</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่มีเครื่องปลายทางใดนำการดีพลอยนี้ไปใช้ จึงไม่มีสิ่งใดให้ย้อนกลับ</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>โปรดทำเครื่องหมาย “ใช่ ดีพลอยระยะถัดไปตอนนี้” ก่อน</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>โปรดทำเครื่องหมาย “ใช่ ย้อนกลับการดีพลอยนี้ตอนนี้” ก่อน</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>มีเครื่องปลายทางที่มีรหัส %id อยู่แล้ว</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>พอร์ตคือตัวเลขตั้งแต่ 1 ถึง 65535</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>สภาพแวดล้อมคือคำที่ประกอบด้วยตัวอักษร ตัวเลข - และ _ (alpha, dev, stage, beta, production ...)</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>กลุ่มคือคำที่ประกอบด้วยตัวอักษร ตัวเลข - และ _ (ห้ามเป็น all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่สามารถอ่านข้อมูลรับรองได้ในขณะนี้: %problem โปรดบันทึกไว้ใน ตั้งค่าระบบ &gt; ข้อมูลลับ (หรือตั้งค่าตัวแปร) ก่อนการดีพลอยครั้งแรก</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>เครื่องปลายทาง FTP รับได้เฉพาะไฟล์ การดีพลอยไปยังเครื่องนั้นจึงเป็นแบบ “ถ่ายโอนเท่านั้น” และต้องเรียกใช้ไมเกรชันที่นั่นด้วยตนเอง</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>เครื่องปลายทาง %id ไม่อยู่ใน settings/override/migration.ini.append.php โปรดนำออกจากที่ที่กำหนดไว้</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>ลงชื่อเข้าใช้ผ่าน FTP และอ่าน index.php แล้ว ไม่สามารถอ่านสถานะไมเกรชันของเครื่องปลายทาง FTP ได้</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>การดีพลอย %deploy ล้มเหลวบน %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>การดีพลอย %deploy กำลังรอที่ประตูบน %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>การดีพลอย %deploy สำเร็จบน %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>อีเมลนี้ส่งโดย %site เนื่องจาก migration.ini [RemoteSettings] Notify[] ร้องขอ</translation>
     </message>
 </context>
 </TS>

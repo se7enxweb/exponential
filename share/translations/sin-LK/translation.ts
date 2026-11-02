@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථයන්</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>මෙම ස්ථාපනය සිය සංක්‍රමණ යොදවන අනෙකුත් ස්ථාපන: යෙදවීමක් සංක්‍රමණ තෝරාගත් දුරස්ථයන් වෙත යවා ඒවා එහි ධාවනය කරයි, සියල්ල එකවර සහ සමමුහුර්තව. දුරස්ථයක් කිසි විටෙක රහසක් දරන්නේ නැත: එහි අක්තපත්‍රය පිහිටුවීම &gt; රහස් හි එකක් නම් කරයි.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>නව දුරස්ථය</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id හි සබැඳුම් පරීක්ෂාව</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථයන්</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>එකවර දුරස්ථයන් %parallel ක් දක්වා සැකසේ; එක් අවධියකට එක් එකක් මත තත්පර %timeout ක් ගත විය හැක.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථය</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>නිවැරදි කළ යුතු සැකසුම්</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>ගොනු පමණි (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH යතුර</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>කිසිවක් නැත (host හි SSH agent සහ යතුරු)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>සමූහයකට යෙදවීමක් එහි සෑම දුරස්ථයක් වෙතම යයි.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථයන් වෙත යොදවන්න</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>තවම කිසිදු දුරස්ථයක් පිහිටුවා නැත.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථය %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>මෙහි කිසිවක් යවන්නේ හෝ ධාවනය කරන්නේ නැත: සුරකින්න සැකසුම් settings/override/migration.ini.append.php වෙත ලියයි. අක්තපත්‍රය නමකි; එහි අගය පිහිටුවීම &gt; රහස් හි හෝ පරිසරයේ රැඳේ.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ඇතුළත් කළ පරිදි සැකසුම්, තවම සුරැකී නැත.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Host යතුර</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. දුරස්ථය</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථය හඳුන්වන නම සහ එය කුමන පරිසරයද යන්න.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>අකුරු, ඉලක්කම්, - සහ _, උදාහරණයක් ලෙස production1. එය වාර්තාවල සහ කොන්සෝලයේ (--remotes=production1) දුරස්ථය නම් කරන අතර පසුව වෙනස් කළ නොහැක.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... අදියර වශයෙන් යෙදවීමක් මෙම අනුපිළිවෙලින් පරිසර හරහා යයි.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>විකල්ප, කොමා වලින් වෙන් කළ, උදාහරණයක් ලෙස production. සමූහයකට යෙදවීමක් එහි සෑම දුරස්ථයක් වෙතම යයි.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. සබැඳුම</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ගොනු එහි යන ආකාරය සහ ස්ථාපනය ඇති තැන.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH හරහා, වෙනස් වූ දේ පමණි, බිඳුණු මාරු කිරීමක් නැවත ආරම්භ කෙරේ. rsync ස්ථාපනය කර ඇති තැන හොඳම තේරීම.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ගොනු සඳහා scp සහිත SSH.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ගොනු සඳහා sftp සහිත SSH.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>ගොනු පමණි: සංක්‍රමණ යවා නැවත කියවනු ලැබේ, නමුත් එහි ධාවනය කළ නොහැක.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS හරහා FTP; ගොනු පමණි.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>මෙම සේවාදායකයේ, ෆෝල්ඩරයක ඇති තවත් ස්ථාපනයක්.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Host නාමයක් හෝ ලිපිනයක්, උදාහරණයක් ලෙස node1.example.com. local සඳහා නොවේ.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>හිස්: SSH සඳහා 22, FTP සඳහා 21.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>එහි ස්ථාපනයේ මූලය, උදාහරණයක් ලෙස /var/www/site (FTP සඳහා: FTP ගිණුම දකින මාර්ගය).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP විධාන පේළිය</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>එහි PHP CLI: php, හෝ /opt/plesk/php/8.4/bin/php වැනි සම්පූර්ණ මාර්ගයක්.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>කොන්සෝල ස්ක්‍රිප්ට් එහි root ලෙස ධාවනය වේ</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථයේ පරිශීලකයා root වූ විට පමණි (එවිට ඒවා --allow-root-user සමඟ ධාවනය කෙරේ).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. අක්තපත්‍රය</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>මෙම ස්ථාපනය එහි පිවිසෙන ආකාරය. සුරකින්නේ නමක් පමණි.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>මෙම ස්ථාපනය ධාවනය වන පරිශීලකයාගේ SSH agent සහ යතුරු (සහ local සඳහා සැමවිටම).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>රහසක් ලෙස තබා ඇති පෞද්ගලික යතුරක්.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>රහසක් ලෙස තබා ඇති මුරපදයක් (FTP එයින් පිවිසෙයි).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>රහසේ නම</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>පිහිටුවීම &gt; රහස් හි රහසක්, උදාහරණයක් ලෙස deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>නැතහොත් පරිසර විචල්‍යයක්</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>එය දරන සේවාදායක ක්‍රියාවලියේ විචල්‍යය, උදාහරණයක් ලෙස DEPLOY_KEY (env:DEPLOY_KEY ලෙස සුරැකේ). එය රහසේ නම වෙනුවට යොදා ගැනේ.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Host යතුර</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>විකල්ප, SSH, sftp සහ rsync සඳහා.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Host යතුරේ ඇඟිලි සලකුණ</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:..., ssh-keygen -l මුද්‍රණය කරන පරිදි. එය සහිතව, host එක මෙම යතුර පෙන්විය යුතුය; එය නොමැතිව, පළමු සම්බන්ධතාවයේදී යතුර දැනගනු ලැබේ.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. සමාලෝචනය</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>ඉහත සැකසුම් සමඟ සබැඳුම පරීක්ෂා කරන්න, ඉන්පසු ලියනු ලබන පේළි සමාලෝචනය කරන්න.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>මෙම දුරස්ථය ඉවත් කරන්න</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>එහි සැකසුම් settings/override/migration.ini.append.php වෙතින් ඉවත් කෙරේ. දුරස්ථයේ කිසිවක් වෙනස් නොවන අතර, එහි යෙදවීම් ඉතිහාසයේ රැඳේ.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ඔව්, මෙම දුරස්ථය ඉවත් කරන්න</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>යෙදවීම්</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>යෙදවීමක් මෙම ස්ථාපනයේ සංක්‍රමණ තෝරාගත් දුරස්ථයන් වෙත යවා ඒවා එහි %user ලෙස ධාවනය කරයි, සියල්ල එකවර සහ සමමුහුර්තව: සෑම දුරස්ථයක්ම පළමුව පරීක්ෂා කෙරේ, එකක් අසාර්ථක වූ විට, යෙදූ සෑම දුරස්ථයක්ම ආපසු ගනු ලැබේ. එය පසුබිමේ සිදු වන අතර, එහි පිටුව එය සිදුවන අතරතුර සෑම දුරස්ථයක්ම පෙන්වයි.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. දුරස්ථයන්</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථයන්, සමූහයක් හෝ දෙකම සලකුණු කරන්න.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>එයට යොදවන්න</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. කෙසේද</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>යොදවන්න</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>යවා ධාවනය කරන්න</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>සංක්‍රමණ එක් පොදු ධාවන හැඳුනුමක් සමඟ සෑම දුරස්ථයකටම යවා, සත්‍යාපනය කර ධාවනය කෙරේ.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>මාරු කිරීම පමණි</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ගොනු යවා සත්‍යාපනය කෙරේ, කිසිවක් ධාවනය නොකෙරේ (FTP දුරස්ථයක් සඳහා ඇති එකම මග).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>අදියර වශයෙන්</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>පරිසරවල අනුපිළිවෙලින් අදියරෙන් අදියර (dev, stage, beta, production ...): පළමු අදියර යොදවනු ලැබේ, ඉන්පසු කෙනෙකු ඊළඟ එක අනුමත කරන තෙක් ද්වාරයක් බලා සිටී. එක් එක් අදියර තුළ සියල්ල හෝ කිසිවක් නැත.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>මෙම සංක්‍රමණ පමණි</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>විකල්ප: සංක්‍රමණ හැඳුනුම්, කොමා වලින් වෙන් කළ. හිස්: අඩවියේ සහ එහි දිගු වල සෑම සංක්‍රමණයක්ම.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>පූර්ව පරීක්ෂාව පමණි</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>ඔව්, දැන් යොදවන්න</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>යමක් යැවූ හෝ ධාවනය කළ යෙදවීම්, නවතම පළමුව (පූර්ව පරීක්ෂාවක් වාර්තාවක් තබා නොගනී).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>මාරු කිරීම පමණි</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>අදියර වශයෙන්, අදියර %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>සමමුහුර්ත නැත</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>තවම යෙදවීමක් නැත.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>යෙදවීම %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>යෙදවීමේ සෑම දුරස්ථයක්ම එහි තත්ත්වය සමඟ. මෙහි ආරම්භ කළ යෙදවීමක් මෙම පිටුව වසා දැමූ විට පසුබිමේ දිගටම සිදු වේ; එය අනුගමනය කිරීමට පිටුව නැවත විවෘත කරන්න.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>සියලු යෙදවීම්</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>පූර්ව පරීක්ෂාව</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ඊළඟ අදියර</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>සැකසුම් සහ අක්තපත්‍ර පරීක්ෂා කෙරේ</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>පූර්ව පරීක්ෂාව: සෑම දුරස්ථයකම තත්ත්වය කියවනු ලැබේ</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>සංක්‍රමණ ගොනු යවනු ලැබේ</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>ලැබුණු දේ සත්‍යාපනය කෙරේ</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>සෑම දුරස්ථයකම සංක්‍රමණ ධාවනය කෙරේ</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථයන් ආපසු ගනු ලැබේ</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>යෙදවීම අවසන් විය. එහි වාර්තාව පූරණය වෙමින්.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>ප්‍රගතිය අනුගමනය කළ නොහැකි විය. යෙදවීම සිදුවන ආකාරය බැලීමට පිටුව නැවත පූරණය කරන්න.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>අවධිය</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>මෙම පිටුව යෙදවීම සිදුවන අතරතුර එය අනුගමනය කරයි.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>සමමුහුර්තයි</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>අදියරයන්</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage අදියර එහි ද්වාරයේ රැඳී සිටී</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ද්වාරය %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%time ට %user විසින් අනුමත කරන ලදී</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>අදියර</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>යැවූ ගොනු</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>කර්නල අනුවාදය</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>යොදන ලදී: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>යෙදිය යුතු: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>අවධි</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ද්වාරය: %stages න් %stage අදියර</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>එයට පෙර අදියරයන් යොදවා ඇත. ඒවා පරීක්ෂා කරන්න, ඉන්පසු ඊළඟ අදියර අනුමත කරන්න: එහි දුරස්ථයන් නැවත පරීක්ෂා කර යොදවනු ලැබේ, සියල්ල හෝ කිසිවක් නැත.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>ඔව්, ඊළඟ අදියර දැන් යොදවන්න</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>මෙම යෙදවීම ආපසු හරවන්න</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>එය යෙදූ සෑම දුරස්ථයක්ම (%list) එහි ධාවනයට පෙර ගත් සටහනට ආපසු යයි, සියල්ල එකවර.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>ඔව්, මෙම යෙදවීම දැන් ආපසු හරවන්න</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>සැලසුම් කළ</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>මාරු කරන ලදී</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>යොදවන ලදී</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ද්වාරයක රැඳී සිටී</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>සූදානම් කළ</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>එහි අදියර බලා සිටී</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ගොනු යවන ලදී</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>සත්‍යාපනය කළ</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>අසාර්ථක විය, එය විසින්ම ප්‍රතිසාධනය විය</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>නොවෙනස්</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>යොදවා නැත</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ළඟා විය නොහැක</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථය පිළිතුරු දුන්නේය.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථය දැන් භාවිත කළ නොහැක.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done නිමයි, %pending පොරොත්තුවෙන්, %failed අසාර්ථකයි</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>අගුල</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>ධාවනයක් එහි අගුල දරයි</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stages න් %stage</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>පරීක්ෂා කළ යුතු දුරස්ථය තෝරන්න.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>පළමුව “ඔව්, මෙම දුරස්ථය ඉවත් කරන්න” සලකුණු කරන්න.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථය ඉවත් කළ නොහැකි විය: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>දුරස්ථය සුරැකිය නොහැකි විය: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>අවම වශයෙන් එක් දුරස්ථයක් හෝ සමූහයක් තෝරන්න.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>තෝරාගත් දුරස්ථයක් තවදුරටත් සැකසුම්වල නැත. පිටුව නැවත පූරණය කරන්න.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>පළමුව “ඔව්, දැන් යොදවන්න” සලකුණු කරන්න.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP දුරස්ථයකට සංක්‍රමණ ධාවනය කළ නොහැක: “මාරු කිරීම පමණි” තෝරන්න, නැතහොත් එය ඉවත තබන්න.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>යෙදවිය යුතු සංක්‍රමණ යනු කොමා වලින් වෙන් කළ සංක්‍රමණ හැඳුනුම් වේ.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>යෙදවීම තවමත් සිදුවෙමින් පවතී. එය අවසන් වන තෙක් රැඳී සිටින්න.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>මෙම යෙදවීම ද්වාරයක රැඳී නොසිටී.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>කිසිදු දුරස්ථයක් මෙම යෙදවීම යොදා නැත: ආපසු හැරවීමට කිසිවක් නැත.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>පළමුව “ඔව්, ඊළඟ අදියර දැන් යොදවන්න” සලකුණු කරන්න.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>පළමුව “ඔව්, මෙම යෙදවීම දැන් ආපසු හරවන්න” සලකුණු කරන්න.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id හැඳුනුම සහිත දුරස්ථයක් දැනටමත් පවතී.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>තොට 1 සිට 65535 දක්වා අංකයකි.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>පරිසරය යනු අකුරු, ඉලක්කම්, - සහ _ වලින් යුත් වචනයකි (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>සමූහයක් යනු අකුරු, ඉලක්කම්, - සහ _ වලින් යුත් වචනයකි (all නොවේ): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>අක්තපත්‍රය දැන් කියවිය නොහැක: %problem. පළමු යෙදවීමට පෙර එය පිහිටුවීම &gt; රහස් හි සුරකින්න (හෝ විචල්‍යය සකසන්න).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP දුරස්ථයක් ගොනු පමණක් ලබා ගනී: එයට යෙදවීමක් “මාරු කිරීම පමණි” වන අතර, එහි සංක්‍රමණ එහි අතින් ධාවනය කෙරේ.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id දුරස්ථය settings/override/migration.ini.append.php හි නැත; එය සකසා ඇති තැනින් ඉවත් කරන්න.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP හරහා පිවිස index.php කියවන ලදී. FTP දුරස්ථයක සංක්‍රමණ තත්ත්වය කියවිය නොහැක.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>යෙදවීම %deploy %site හි අසාර්ථක විය</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>යෙදවීම %deploy %site හි ගේට්ටුවක් අසල රැඳී සිටී</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>යෙදවීම %deploy %site හි සාර්ථක විය</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>migration.ini [RemoteSettings] Notify[] එය ඉල්ලන නිසා මෙම තැපෑල %site විසින් යවන ලදී.</translation>
     </message>
 </context>
 </TS>

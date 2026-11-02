@@ -81366,15 +81366,15 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Attālās sistēmas</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Citas instalācijas, uz kurām šī izvieto savas migrācijas: izvietošana nosūta migrācijas uz izvēlētajām attālajām sistēmām un izpilda tās tur, visās vienlaikus un sinhroni. Attālā sistēma nekad neglabā noslēpumu: tās piekļuves dati norāda uz vienu no sadaļas Iestatīšana &gt; Noslēpumi.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Jauna attālā sistēma</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81382,19 +81382,19 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Savienojuma pārbaude: %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Attālās sistēmas</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vienlaikus tiek apstrādātas līdz %parallel attālajām sistēmām; viena fāze katrā var ilgt %timeout sekundes.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Attālā sistēma</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81410,15 +81410,15 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>jālabo iestatījumi</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>tikai faili (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH atslēga</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81426,7 +81426,7 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>nav (resursdatora SSH aģents un atslēgas)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81434,23 +81434,23 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietošana grupai notiek katrā tās attālajā sistēmā.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietot attālajās sistēmās</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vēl nav iestatīta neviena attālā sistēma.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Attālā sistēma %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šeit nekas netiek nosūtīts vai izpildīts: Saglabāt ieraksta iestatījumus failā settings/override/migration.ini.append.php. Piekļuves dati ir nosaukums; to vērtība paliek sadaļā Iestatīšana &gt; Noslēpumi vai vidē.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81458,7 +81458,7 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iestatījumi, kā ievadīti, vēl nav saglabāti.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81486,15 +81486,15 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Resursdatora atslēga</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Attālā sistēma</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kā sauc attālo sistēmu un kura vide tā ir.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81502,47 +81502,47 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Burti, cipari, - un _, piemēram, production1. Tas nosauc attālo sistēmu atskaitēs un konsolē (--remotes=production1), un to vēlāk nevar mainīt.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Izvietošana pa posmiem iet cauri vidēm šādā secībā.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neobligāti, atdalīti ar komatiem, piemēram, production. Izvietošana grupai notiek katrā tās attālajā sistēmā.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Savienojums</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kā faili nonāk tur un kur atrodas instalācija.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Caur SSH, tikai izmainītais, pārtraukta pārsūtīšana tiek atsākta. Labākā izvēle, ja rsync ir instalēts.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ar scp failiem.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ar sftp failiem.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tikai faili: migrācijas tiek nosūtītas un nolasītas atpakaļ, bet tur tās nevar izpildīt.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP caur TLS; tikai faili.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cita instalācija šajā serverī, mapē.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81550,7 +81550,7 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Resursdatora nosaukums vai adrese, piemēram, node1.example.com. Neattiecas uz local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81558,7 +81558,7 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tukšs: 22 SSH, 21 FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81570,31 +81570,31 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalācijas saknes direktorijs tur, piemēram, /var/www/site (FTP gadījumā: ceļš, ko redz FTP konts).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP komandrinda</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI tur: php vai pilns ceļš, piemēram, /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Konsoles skripti tur darbojas kā root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Tikai tad, ja attālās sistēmas lietotājs ir root (tad tos izpilda ar --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Piekļuves dati</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kā šī instalācija tur pierakstās. Tiek saglabāts tikai nosaukums.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81602,23 +81602,23 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Tā lietotāja SSH aģents un atslēgas, kura vārdā darbojas šī instalācija (un vienmēr local gadījumā).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Privātā atslēga, kas glabāta kā noslēpums.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Parole, kas glabāta kā noslēpums (FTP ar to pierakstās).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Noslēpuma nosaukums</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Noslēpums no sadaļas Iestatīšana &gt; Noslēpumi, piemēram, deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81626,247 +81626,247 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Vai vides mainīgais</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Servera procesa mainīgais, kas to satur, piemēram, DEPLOY_KEY (saglabāts kā env:DEPLOY_KEY). Tas aizstāj noslēpuma nosaukumu.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Resursdatora atslēga</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neobligāti, SSH, sftp un rsync gadījumā.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Resursdatora atslēgas pirkstu nospiedums</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... tā, kā to izdrukā ssh-keygen -l. Ja tas norādīts, resursdatoram jāuzrāda šī atslēga; ja nav, atslēga tiek apgūta pirmajā saziņā.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Pārskatīšana</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pārbaudiet savienojumu ar iepriekš norādītajiem iestatījumiem, pēc tam pārskatiet rindas, kas tiks ierakstītas.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Noņemt šo attālo sistēmu</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tās iestatījumi tiek izņemti no settings/override/migration.ini.append.php. Attālajā sistēmā nekas nemainās, un tās izvietošanas paliek vēsturē.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Jā, noņemt šo attālo sistēmu</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietošanas</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietošana nosūta šīs instalācijas migrācijas uz izvēlētajām attālajām sistēmām un izpilda tās tur kā %user, visās vienlaikus un sinhroni: vispirms tiek pārbaudīta katra attālā sistēma, un, ja kāda neizdodas, katrā attālajā sistēmā, kurā tās tika lietotas, izmaiņas tiek atsauktas. Tā notiek fonā, un tās lapā redzama katra attālā sistēma, darbam turpinoties.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Attālās sistēmas</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Atzīmējiet attālās sistēmas, grupu vai abus.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietot tur</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Veids</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietot</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Nosūtīt un izpildīt</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrācijas tiek nosūtītas, pārbaudītas un izpildītas katrā attālajā sistēmā ar vienu kopīgu izpildes ID.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Tikai pārsūtīt</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Faili tiek nosūtīti un pārbaudīti, nekas netiek izpildīts (vienīgais veids FTP attālajai sistēmai).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Pa posmiem</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Posmu pa posmam vidžu secībā (dev, stage, beta, production ...): pirmais posms tiek izvietots, tad kontrolpunkts gaida, līdz kāds apstiprina nākamo. Viss vai nekas katra posma ietvaros.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Tikai šīs migrācijas</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neobligāti: migrāciju ID, atdalīti ar komatiem. Tukšs: katra vietnes un tās paplašinājumu migrācija.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Tikai iepriekšēja pārbaude</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jā, izvietot tagad</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietošanas, kas kaut ko nosūtīja vai izpildīja, jaunākā pirmā (iepriekšēja pārbaude atskaiti nesaglabā).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>tikai pārsūtīt</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>pa posmiem, posmu skaits: %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>nav sinhroni</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vēl nav nevienas izvietošanas.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietošana %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Katra izvietošanas attālā sistēma ar tās stāvokli. Šeit sākta izvietošana turpinās fonā, kad šī lapa tiek aizvērta; atveriet lapu vēlreiz, lai tai sekotu.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Visas izvietošanas</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Iepriekšēja pārbaude</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Nākamais posms</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Notiek iestatījumu un piekļuves datu pārbaude</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Iepriekšēja pārbaude: tiek nolasīts katras attālās sistēmas stāvoklis</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Notiek migrāciju failu nosūtīšana</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Notiek saņemtā pārbaude</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Notiek migrāciju izpilde katrā attālajā sistēmā</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Notiek attālo sistēmu atsaukšana</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietošana ir beigusies. Notiek tās atskaites ielāde.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gaitu neizdevās izsekot. Pārlādējiet lapu, lai redzētu, kā norit izvietošana.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fāze</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šī lapa seko izvietošanai tās gaitā.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinhroni</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Posmi</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>posms %stage gaida savā kontrolpunktā</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrolpunkts %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>apstiprināja %user %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Posms</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Nosūtītie faili</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodola versija</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>lietotas: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>jālieto: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fāzes</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrolpunkts: posms %stage no %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iepriekšējie posmi ir izvietoti. Pārbaudiet tos, pēc tam apstipriniet nākamo posmu: tā attālās sistēmas tiek vēlreiz pārbaudītas un izvietotas, viss vai nekas.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81874,7 +81874,7 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jā, izvietot nākamo posmu tagad</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81882,31 +81882,31 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Atsaukt šo izvietošanu</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Katra attālā sistēma, kurā tā tika lietota (%list), atgriežas pie pirms tās izpildes uzņemtā momentuzņēmuma, visas vienlaikus.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jā, atsaukt šo izvietošanu tagad</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>plānota</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>pārsūtīta</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>izvietota</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>gaida kontrolpunktā</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81914,7 +81914,7 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>sagatavota</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81922,51 +81922,51 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>gaida savu posmu</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>faili nosūtīti</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>pārbaudīta</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>neizdevās, atjaunojās pati</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>nemainīta</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>nav izvietota</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>nav sasniedzama</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Attālā sistēma atbildēja.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Attālo sistēmu pašlaik nevar izmantot.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done pabeigtas, %pending gaida, %failed neizdevās</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Bloķēšana</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>tur bloķē kāda izpilde</translation>
     </message>
     <message>
         <source>free</source>
@@ -81974,23 +81974,23 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage no %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvēlieties pārbaudāmo attālo sistēmu.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vispirms atzīmējiet „Jā, noņemt šo attālo sistēmu“.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Attālo sistēmu neizdevās noņemt: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Attālo sistēmu neizdevās saglabāt: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81998,75 +81998,75 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvēlieties vismaz vienu attālo sistēmu vai grupu.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvēlēta attālā sistēma vairs nav iestatījumos. Pārlādējiet lapu.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vispirms atzīmējiet „Jā, izvietot tagad“.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP attālā sistēma nevar izpildīt migrācijas: izvēlieties „Tikai pārsūtīt“ vai izlaidiet to.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietojamās migrācijas ir migrāciju ID, atdalīti ar komatiem.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietošana vēl notiek. Pagaidiet, līdz tā beigsies.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šī izvietošana negaida kontrolpunktā.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neviena attālā sistēma nelietoja šo izvietošanu: nav ko atsaukt.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vispirms atzīmējiet „Jā, izvietot nākamo posmu tagad“.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vispirms atzīmējiet „Jā, atsaukt šo izvietošanu tagad“.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Attālā sistēma ar ID %id jau pastāv.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ports ir skaitlis no 1 līdz 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Vide ir vārds no burtiem, cipariem, - un _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupa ir vārds no burtiem, cipariem, - un _ (ne all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Piekļuves datus pašlaik nevar nolasīt: %problem. Pirms pirmās izvietošanas saglabājiet tos sadaļā Iestatīšana &gt; Noslēpumi (vai iestatiet mainīgo).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP attālā sistēma tikai saņem failus: izvietošana uz to ir „Tikai pārsūtīt“, un tās migrācijas tur izpilda manuāli.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Attālā sistēma %id nav failā settings/override/migration.ini.append.php; noņemiet to tur, kur tā ir iestatīta.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pierakstījās caur FTP un nolasīja index.php. FTP attālās sistēmas migrāciju stāvokli nevar nolasīt.</translation>
     </message>
 </context>
 <context>
@@ -84470,19 +84470,19 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietošana %deploy vietnē %site neizdevās</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietošana %deploy vietnē %site gaida pie vārtiem</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvietošana %deploy vietnē %site izdevās</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šo vēstuli nosūtīja %site, jo to pieprasa migration.ini [RemoteSettings] Notify[].</translation>
     </message>
 </context>
 </TS>

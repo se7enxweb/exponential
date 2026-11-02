@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ርሑቕ መዕለቢታት</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>እዚ ምትካል ምግዕዓዛቱ ዝዝርግሓሎም ካልኦት ምትካላት: ምዝርጋሕ ነቶም ምግዕዓዛት ናብቶም ዝተመርጹ ርሑቕ መዕለቢታት ይሰድዶም እሞ ኣብኡ የካይዶም፣ ኩሎም ብሓንሳብን ብማዕረን። ርሑቕ መዕለቢ ፈጺሙ ምስጢር ኣይሕዝን: መረጋገጺኡ ሓደ ምስጢር ኣብ ምድላው &gt; ምስጢራት ይሰምይ።</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ሓድሽ ርሑቕ መዕለቢ</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ፈተነ ምትእስሳር ናይ %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>እቶም ርሑቕ መዕለቢታት</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>ክሳብ %parallel ርሑቕ መዕለቢታት ብሓንሳብ ይስርሓሎም፤ ሓደ መድረኽ ኣብ ነፍሲ ወከፍ %timeout ሰከንድ ክወስድ ይኽእል።</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ርሑቕ መዕለቢ</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ዝእረሙ ቅጥዕታት</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>ፋይላት ጥራይ (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>ቁልፊ SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>የለን (ወኪል SSH ከምኡ'ውን ቁልፍታት ናይቲ ሆስት)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ምዝርጋሕ ናብ ጉጅለ ናብ ኩሎም ርሑቕ መዕለቢታቱ ይኸይድ።</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ናብ ርሑቕ መዕለቢታት ዘርግሕ</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ገና ዝተዳለወ ርሑቕ መዕለቢ የለን።</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ርሑቕ መዕለቢ %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>ኣብዚ ዝለኣኽ ወይ ዝካየድ የለን: ኣቐምጥ ነቶም ቅጥዕታት ናብ settings/override/migration.ini.append.php ይጽሕፎም። እቲ መረጋገጺ ስም እዩ፤ ዋጋኡ ኣብ ምድላው &gt; ምስጢራት ወይ ኣብ ከባቢ ይጸንሕ።</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ቅጥዕታት ከም ዝኣተዉ፣ ገና ኣይተቐመጡን።</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>ቁልፊ ሆስት</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. እቲ ርሑቕ መዕለቢ</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>እቲ ርሑቕ መዕለቢ ስሙ እንታይ ምዃኑን ኣየናይ ከባቢ ምዃኑን።</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>ፊደላት፣ ኣሃዛት፣ - ከምኡ'ውን _፣ ንኣብነት production1። ነቲ ርሑቕ መዕለቢ ኣብ ጸብጻባትን ኣብ ኮንሶልን (--remotes=production1) ይሰምዮ፣ ደሓር ድማ ክቕየር ኣይክእልን።</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... ብደረጃታት ዝግበር ምዝርጋሕ ነቶም ከባቢታት በዚ ቅደም ሰዓብ ይሓልፎም።</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ኣማራጺ፣ ብኮማ ዝተፈላለየ፣ ንኣብነት production። ምዝርጋሕ ናብ ጉጅለ ናብ ኩሎም ርሑቕ መዕለቢታቱ ይኸይድ።</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. እቲ ምትእስሳር</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ፋይላት ብኸመይ ናብኡ ከም ዝበጽሑ፣ እቲ ምትካል ድማ ኣበይ ከም ዘሎ።</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>ብ SSH፣ ዝተቐየረ ጥራይ፣ ዝተቛረጸ ምስግጋር ይቕጽል። rsync ኣብ ዝተተኸለሉ እቲ ዝበለጸ ምርጫ።</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ምስ scp ን ፋይላት።</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ምስ sftp ን ፋይላት።</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>ፋይላት ጥራይ: ምግዕዓዛት ይለኣኹን ተመሊሶም ይንበቡን፣ ኣብኡ ግን ክካየዱ ኣይክእሉን።</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ብ TLS፤ ፋይላት ጥራይ።</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ኣብዚ ሰርቨር ዘሎ ካልእ ምትካል፣ ኣብ ሓደ ፎልደር።</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>ስም ሆስት ወይ ኣድራሻ፣ ንኣብነት node1.example.com። ን local ኣይኮነን።</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>ባዶ: 22 ን SSH፣ 21 ን FTP።</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>ሱር ናይቲ ምትካል ኣብኡ፣ ንኣብነት /var/www/site (ን FTP: እቲ ሕሳብ FTP ዝርእዮ መንገዲ)።</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>መስመር ትእዛዝ PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI ኣብኡ: php፣ ወይ ምሉእ መንገዲ ከም /opt/plesk/php/8.4/bin/php።</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>ስክሪፕታት ኮንሶል ኣብኡ ከም root ይሰርሑ</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>ተጠቃሚ ናይቲ ርሑቕ መዕለቢ root ምስ ዝኸውን ጥራይ (ሽዑ ብ --allow-root-user ይካየዱ)።</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. እቲ መረጋገጺ</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>እዚ ምትካል ኣብኡ ብኸመይ ከም ዝኣቱ። ስም ጥራይ እዩ ዝዕቀብ።</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>ወኪል SSH ከምኡ'ውን ቁልፍታት ናይቲ እዚ ምትካል ብእኡ ዝሰርሕ ተጠቃሚ (ን local ድማ ኩሉ ግዜ)።</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>ከም ምስጢር ዝተዓቀበ ብሕታዊ ቁልፊ።</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>ከም ምስጢር ዝተዓቀበ መሕለፊ ቃል (FTP ብእኡ ይኣቱ)።</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>ስም ምስጢር</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>ምስጢር ካብ ምድላው &gt; ምስጢራት፣ ንኣብነት deploy_production1።</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>ወይ ተለዋዋጢ ከባቢ</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>እቲ ዝሕዞ ተለዋዋጢ ናይ መስርሕ ሰርቨር፣ ንኣብነት DEPLOY_KEY (ከም env:DEPLOY_KEY ይዕቀብ)። ኣብ ክንዲ ስም ምስጢር ይኣቱ።</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. ቁልፊ ሆስት</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>ኣማራጺ፣ ን SSH፣ sftp ከምኡ'ውን rsync።</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>ኣሻራ ቁልፊ ሆስት</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ከምቲ ssh-keygen -l ዝሕትሞ። ምስኡ፣ እቲ ሆስት ነዚ ቁልፊ ከርኢ ኣለዎ፤ ብዘይኡ፣ እቲ ቁልፊ ኣብ ቀዳማይ ርክብ ይፍለጥ።</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. ግምገማ</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>ነቲ ምትእስሳር ብቅጥዕታት ኣብ ላዕሊ ፈትኖ፣ ድሕሪኡ ነቶም ዝጽሓፉ መስመራት ገምግሞም።</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ነዚ ርሑቕ መዕለቢ ኣውጽእ</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>ቅጥዕታቱ ካብ settings/override/migration.ini.append.php ይወጹ። ኣብቲ ርሑቕ መዕለቢ ዝቕየር የለን፣ ምዝርጋሓቱ ድማ ኣብ ታሪኽ ይጸንሑ።</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>እወ፣ ነዚ ርሑቕ መዕለቢ ኣውጽእ</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ምዝርጋሓት</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ምዝርጋሕ ነቶም ምግዕዓዛት ናይዚ ምትካል ናብቶም ዝተመርጹ ርሑቕ መዕለቢታት ይሰድዶም እሞ ኣብኡ ከም %user የካይዶም፣ ኩሎም ብሓንሳብን ብማዕረን: ነፍሲ ወከፍ ርሑቕ መዕለቢ ቅድም ይምርመር፣ ሓደ እንተ ፈሺሉ ድማ ኩሎም ዘተግበሩ ርሑቕ መዕለቢታት ይምለሱ። ኣብ ድሕሪት ይቕጽል፣ ገጹ ድማ ነፍሲ ወከፍ ርሑቕ መዕለቢ ከም ዝኸይድ የርኢ።</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. እቶም ርሑቕ መዕለቢታት</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>ርሑቕ መዕለቢታት፣ ጉጅለ፣ ወይ ክልቲኦም ምልክት ግበር።</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>ናብኡ ዘርግሕ</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. ብኸመይ</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ዘርግሕ</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>ስደድን ኣካይድን</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>ምግዕዓዛት ናብ ነፍሲ ወከፍ ርሑቕ መዕለቢ ይለኣኹ፣ ይረጋገጹ፣ ብሓደ ሓባራዊ መለለዪ ምክያድ ድማ ይካየዱ።</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>ምስግጋር ጥራይ</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ፋይላት ይለኣኹን ይረጋገጹን፣ ዝካየድ የለን (ን ርሑቕ መዕለቢ FTP እቲ በይኑ መንገዲ)።</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>ብደረጃታት</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>ደረጃ ብደረጃ ብቕደም ሰዓብ ናይ ከባቢታት (dev, stage, beta, production ...): እቲ ቀዳማይ ደረጃ ይዝርጋሕ፣ ድሕሪኡ ሓደ ኣፍደገ ሓደ ሰብ ነቲ ዝቕጽል ክሳብ ዘጽድቖ ይጽበ። ኣብ ውሽጢ ነፍሲ ወከፍ ደረጃ ኩሉ ወይ ዋላ ሓደ።</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>እዞም ምግዕዓዛት ጥራይ</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>ኣማራጺ: መለለዪታት ምግዕዓዛት፣ ብኮማ ዝተፈላለዩ። ባዶ: ኩሎም ምግዕዓዛት ናይቲ ወብሳይትን ተወሰኽቱን።</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>ቅድመ-ምርመራ ጥራይ</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>እወ፣ ሕጂ ዘርግሕ</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>ገለ ዝሰደዱ ወይ ዘካየዱ ምዝርጋሓት፣ እቲ ሓድሽ ቅድም (ቅድመ-ምርመራ ጸብጻብ ኣይዕቅብን)።</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>ምስግጋር ጥራይ</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ብደረጃታት፣ %stages ደረጃታት</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ብማዕረ ኣይኮነን</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ገና ምዝርጋሕ የለን።</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ምዝርጋሕ %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ነፍሲ ወከፍ ርሑቕ መዕለቢ ናይቲ ምዝርጋሕ ምስ ኩነቱ። ኣብዚ ዝጀመረ ምዝርጋሕ እዚ ገጽ ምስ ተዓጸወ ኣብ ድሕሪት ይቕጽል፤ ንምክትታሉ ነቲ ገጽ ደጊምካ ክፈቶ።</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ኩሎም ምዝርጋሓት</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>ቅድመ-ምርመራ</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ዝቕጽል ደረጃ</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>ቅጥዕታትን መረጋገጺን ይምርመሩ ኣለዉ</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ቅድመ-ምርመራ: ኩነት ናይ ነፍሲ ወከፍ ርሑቕ መዕለቢ ይንበብ ኣሎ</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>ፋይላት ምግዕዓዝ ይለኣኹ ኣለዉ</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>ዝበጽሐ ይረጋገጽ ኣሎ</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ምግዕዓዛት ኣብ ነፍሲ ወከፍ ርሑቕ መዕለቢ ይካየዱ ኣለዉ</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>ርሑቕ መዕለቢታት ይምለሱ ኣለዉ</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>እቲ ምዝርጋሕ ተወዲኡ። ጸብጻቡ ይጽዓን ኣሎ።</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>እቲ ምዕባለ ክከታተል ኣይተኻእለን። እቲ ምዝርጋሕ ከመይ ይኸይድ ከም ዘሎ ንምርኣይ ነቲ ገጽ ደጊምካ ጽዓኖ።</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>መድረኽ</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>እዚ ገጽ ነቲ ምዝርጋሕ ከም ዝኸይድ ይከታተሎ።</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ብማዕረ</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ደረጃታት</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ደረጃ %stage ኣብ ኣፍደጉ ይጽበ ኣሎ</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ኣፍደገ %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>ብ %user ኣብ %time ጸዲቑ</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ደረጃ</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ዝተላእኩ ፋይላት</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>ስሪት ከርነል</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ተተግቢሩ: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ዝትግበሩ: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>መድረኻት</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ኣፍደገ: ደረጃ %stage ካብ %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>እቶም ቅድሚኡ ዘለዉ ደረጃታት ተዘርጊሖም። መርምሮም፣ ድሕሪኡ ነቲ ዝቕጽል ደረጃ ኣጽድቖ: ርሑቕ መዕለቢታቱ ደጊሞም ይምርመሩን ይዝርግሑን፣ ኩሉ ወይ ዋላ ሓደ።</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>እወ፣ ነቲ ዝቕጽል ደረጃ ሕጂ ዘርግሕ</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>ነዚ ምዝርጋሕ መልሶ</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>ኩሎም ዘተግበርዎ ርሑቕ መዕለቢታት (%list) ናብቲ ቅድሚ ምክያዶም ዝተወስደ ነጥቢ ምምላስ ይምለሱ፣ ኩሎም ብሓንሳብ።</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>እወ፣ ነዚ ምዝርጋሕ ሕጂ መልሶ</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>ተመዲቡ</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>ተሰጋጊሩ</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ተዘርጊሑ</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ኣብ ኣፍደገ ይጽበ</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>ተዳልዩ</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ንደረጃኡ ይጽበ</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ፋይላት ተላኢኾም</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>ተረጋጊጹ</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ፈሺሉ፣ ባዕሉ ተመሊሱ</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>ዘይተቐየረ</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ኣይተዘርግሐን</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ክብጻሕ ኣይክእልን</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>እቲ ርሑቕ መዕለቢ መሊሱ።</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>እቲ ርሑቕ መዕለቢ ሕጂ ክጥቀመሉ ኣይከኣልን።</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done ተወዲኡ፣ %pending ዝጽበ፣ %failed ፈሺሉ</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>መዕጸዊ</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>ሓደ ምክያድ ኣብኡ ነቲ መዕጸዊ ሒዝዎ ኣሎ</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage ካብ %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>ዝፍተን ርሑቕ መዕለቢ ምረጽ።</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ቅድም «እወ፣ ነዚ ርሑቕ መዕለቢ ኣውጽእ» ምልክት ግበር።</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>እቲ ርሑቕ መዕለቢ ክወጽእ ኣይከኣለን: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>እቲ ርሑቕ መዕለቢ ክቕመጥ ኣይከኣለን: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>እንተወሓደ ሓደ ርሑቕ መዕለቢ ወይ ጉጅለ ምረጽ።</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>ሓደ ዝተመርጸ ርሑቕ መዕለቢ ድሕሪ ሕጂ ኣብ ቅጥዕታት የለን። ነቲ ገጽ ደጊምካ ጽዓኖ።</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ቅድም «እወ፣ ሕጂ ዘርግሕ» ምልክት ግበር።</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>ርሑቕ መዕለቢ FTP ምግዕዓዛት ከካይድ ኣይኽእልን: «ምስግጋር ጥራይ» ምረጽ፣ ወይ ኣግልሎ።</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ዝዝርግሑ ምግዕዓዛት መለለዪታት ምግዕዓዛት እዮም፣ ብኮማ ዝተፈላለዩ።</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>እቲ ምዝርጋሕ ገና ይቕጽል ኣሎ። ክሳብ ዝውዳእ ተጸበ።</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>እዚ ምዝርጋሕ ኣብ ኣፍደገ ኣይጽበን።</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>ነዚ ምዝርጋሕ ዘተግበረ ርሑቕ መዕለቢ የለን: ዝምለስ የለን።</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ቅድም «እወ፣ ነቲ ዝቕጽል ደረጃ ሕጂ ዘርግሕ» ምልክት ግበር።</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ቅድም «እወ፣ ነዚ ምዝርጋሕ ሕጂ መልሶ» ምልክት ግበር።</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>መለለዪ %id ዘለዎ ርሑቕ መዕለቢ ድሮ ኣሎ።</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>ፖርት ካብ 1 ክሳብ 65535 ዘሎ ቁጽሪ እዩ።</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>ከባቢ ካብ ፊደላት፣ ኣሃዛት፣ - ከምኡ'ውን _ ዝቖመ ቃል እዩ (alpha, dev, stage, beta, production ...)።</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>ጉጅለ ካብ ፊደላት፣ ኣሃዛት፣ - ከምኡ'ውን _ ዝቖመ ቃል እዩ (all ኣይኮነን): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>እቲ መረጋገጺ ሕጂ ክንበብ ኣይክእልን: %problem። ቅድሚ እቲ ቀዳማይ ምዝርጋሕ ኣብ ምድላው &gt; ምስጢራት ኣቐምጦ (ወይ ነቲ ተለዋዋጢ ኣቐምጥ)።</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>ርሑቕ መዕለቢ FTP ፋይላት ጥራይ ይቕበል: ናብኡ ዝግበር ምዝርጋሕ «ምስግጋር ጥራይ» እዩ፣ ምግዕዓዛቱ ድማ ኣብኡ ብኢድ ይካየዱ።</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>እቲ ርሑቕ መዕለቢ %id ኣብ settings/override/migration.ini.append.php የለን፤ ኣብቲ ዝተቐመጠሉ ቦታ ኣውጽኦ።</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>ብ FTP ኣትዩ index.php ኣንቢቡ። ኩነት ምግዕዓዝ ናይ ርሑቕ መዕለቢ FTP ክንበብ ኣይክእልን።</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ምዝርጋሕ %deploy ኣብ %site ፈሺሉ</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ምዝርጋሕ %deploy ኣብ %site ኣብ ኣፍደገ ይጽበ ኣሎ</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ምዝርጋሕ %deploy ኣብ %site ተዓዊቱ</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>እዚ ኢመይል ብ %site እዩ ተላኢኹ፡ ምኽንያቱ migration.ini [RemoteSettings] Notify[] ይሓቶ እዩ።</translation>
     </message>
 </context>
 </TS>

@@ -1480,6 +1480,8 @@
         "WebDAV": "protocol name"
     },
     "fre-FR": {
+        "Phase": "the same word in French (a phase of a deploy)",
+        "Phases": "the same word in French, plural",
         "Migration %id": "migration is the same word in French",
         "Mode": "the same word in French (the step mode)",
         "Publication": "the same word in French",
@@ -2391,6 +2393,7 @@
         "Webhook": "Kurdish technical usage keeps the English term Webhook"
     },
     "lat-VA": {
+        "Phases": "the Latin plural of phasis, spelled like the English",
         "#level1 - #level2": "only PDF level placeholders and a separator; nothing to translate",
         "#levelIndex1:#levelIndex2": "only PDF level placeholders and a separator; nothing to translate",
         "%device, %width × %height px": "only placeholders and the unit symbol px",
@@ -15811,6 +15814,7 @@
         "Div": "HTML element name"
     },
     "fil-PH": {
+        "Remote": "the English loanword used in Filipino software, like Host and Port in this catalogue",
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "Node ID: %node_id Visibility: %visibility": "placeholders and technical labels only",
         "File": "glossary loanword",
@@ -17175,6 +17179,7 @@
         "Div": "HTML element name"
     },
     "lin-CD": {
+        "Phase": "the French loanword used in Lingala technical text",
         "ID %id": "term, acronym or name spelled the same in Lingala",
         "Siteaccess": "term, acronym or name spelled the same in Lingala",
         "Locale": "term, acronym or name spelled the same in Lingala",

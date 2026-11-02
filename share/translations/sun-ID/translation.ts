@@ -81344,15 +81344,15 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Server-server jauh</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pamasangan séjén anu dikirimkeun migrasi ku pamasangan ieu: pangiriman ngirimkeun migrasi ka server-server jauh anu dipilih sarta ngajalankeunana di ditu, sakaligus jeung saluyu. Server jauh teu pernah nyimpen rusiah: kredénsialna nyebut hiji rusiah dina Panyetélan &gt; Rusiah.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Server jauh anyar</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81360,19 +81360,19 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Uji sambungan %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Server-server jauh</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepi ka %parallel server jauh dikerjakeun dina waktos anu sarua; hiji fase bisa butuh %timeout detik dina unggalna.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Server jauh</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81388,15 +81388,15 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>setélan anu kudu dibenerkeun</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>ukur file (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Konci SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81404,7 +81404,7 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>teu aya (agén SSH jeung konci host)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81412,23 +81412,23 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pangiriman ka hiji grup indit ka unggal server jauh di jerona.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirimkeun ka server-server jauh</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Can aya server jauh anu disetél.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Server jauh %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Euweuh nu dikirim atawa dijalankeun di dieu: Simpen nulis setélan ka settings/override/migration.ini.append.php. Kredénsial téh hiji ngaran; nilaina tetep dina Panyetélan &gt; Rusiah atawa dina lingkungan.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81436,7 +81436,7 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Setélan sakumaha diasupkeun, can disimpen.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81464,15 +81464,15 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Konci host</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Server jauh</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naon ngaran server jauh jeung lingkungan mana éta.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81480,47 +81480,47 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hurup, angka, - jeung _, contona production1. Ieu ngaranan server jauh dina laporan jeung dina konsol (--remotes=production1) sarta teu bisa dirobah engké.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Pangiriman bertahap ngaliwatan lingkungan-lingkungan dina urutan ieu.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilihan, dipisahkeun ku koma, contona production. Pangiriman ka hiji grup indit ka unggal server jauh di jerona.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Sambungan</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kumaha file nepi ka ditu, jeung di mana pamasanganana.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaliwatan SSH, ukur anu robah, pamindahan anu pegat diteruskeun. Pilihan pangsaéna di tempat rsync dipasang.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH jeung scp pikeun file.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH jeung sftp pikeun file.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukur file: migrasi dikirim jeung dibaca deui, tapi teu bisa dijalankeun di ditu.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ngaliwatan TLS; ukur file.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pamasangan séjén dina server ieu, dina hiji map.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81528,7 +81528,7 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaran host atawa alamat, contona node1.example.com. Lain pikeun local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81536,7 +81536,7 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kosong: 22 pikeun SSH, 21 pikeun FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81548,31 +81548,31 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Akar pamasangan di ditu, contona /var/www/site (pikeun FTP: jalur anu katingali ku akun FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Baris paréntah PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI di ditu: php, atawa jalur lengkep saperti /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrip konsol dijalankeun salaku root di ditu</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukur lamun pamaké server jauh téh root (harita dijalankeun kalayan --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Kredénsial</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kumaha pamasangan ieu asup di ditu. Ukur ngaran anu disimpen.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81580,23 +81580,23 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Agén SSH jeung konci pamaké anu dipaké ku pamasangan ieu pikeun jalan (sarta salawasna pikeun local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konci pribadi anu disimpen salaku rusiah.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Sandi anu disimpen salaku rusiah (FTP asup make éta).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaran rusiah</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rusiah tina Panyetélan &gt; Rusiah, contona deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81604,247 +81604,247 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Atawa variabel lingkungan</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Variabel prosés server anu nyimpenna, contona DEPLOY_KEY (disimpen salaku env:DEPLOY_KEY). Ieu ngagantikeun ngaran rusiah.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Konci host</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilihan, pikeun SSH, sftp jeung rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Sidik konci host</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... sakumaha ssh-keygen -l nyitakna. Upami aya, host kudu némbongkeun konci ieu; upami henteu, konci diajar dina kontak munggaran.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Tinjauan</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uji sambungan ku setélan di luhur, tuluy tinjau baris-baris anu bakal ditulis.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaluarkeun server jauh ieu</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Setélanana dikaluarkeun tina settings/override/migration.ini.append.php. Euweuh nu robah dina server jauh, sarta pangirimanana tetep aya dina riwayat.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Leres, kaluarkeun server jauh ieu</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Pangiriman</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pangiriman ngirimkeun migrasi pamasangan ieu ka server-server jauh anu dipilih sarta ngajalankeunana di ditu salaku %user, sakaligus jeung saluyu: unggal server jauh dipariksa heula, sarta lamun hiji gagal, unggal server jauh anu geus nerapkeun ditarik deui. Prosésna lumangsung di tukang, sarta kacana némbongkeun unggal server jauh salila lumangsung.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Server-server jauh</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Contréng server-server jauh, hiji grup, atawa duanana.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirimkeun ka dinya</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Kumaha</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirimkeun</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirim jeung jalankeun</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasi dikirim, diverifikasi jeung dijalankeun dina unggal server jauh kalayan hiji ID jalanan babarengan.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukur mindahkeun</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>File dikirim jeung diverifikasi, euweuh nu dijalankeun (hiji-hijina cara pikeun server jauh FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Bertahap</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tahap demi tahap numutkeun urutan lingkungan (dev, stage, beta, production ...): tahap kahiji dikirimkeun, tuluy hiji gerbang ngantosan nepi ka aya nu nyatujuan tahap salajengna. Sadayana atawa henteu sama sakali dina unggal tahap.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukur migrasi ieu</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilihan: ID migrasi, dipisahkeun ku koma. Kosong: unggal migrasi situs jeung éksténsina.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukur pamariksaan awal</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Leres, kirimkeun ayeuna</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Pangiriman anu ngirim atawa ngajalankeun hiji hal, anu panganyarna heula (pamariksaan awal teu nyimpen laporan).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>ukur mindahkeun</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>bertahap, %stages tahap</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>teu saluyu</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Can aya pangiriman.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Pangiriman %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unggal server jauh tina pangiriman jeung kaayaanana. Pangiriman anu dimimitian di dieu terus lumangsung di tukang lamun kaca ieu ditutup; buka deui kacana pikeun nuturkeunana.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Sadaya pangiriman</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Pamariksaan awal</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Tahap salajengna</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Mariksa setélan jeung kredénsial</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Pamariksaan awal: maca kaayaan unggal server jauh</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngirim file migrasi</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaverifikasi naon anu nepi</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngajalankeun migrasi dina unggal server jauh</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Narik deui server-server jauh</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pangiriman geus réngsé. Ngamuat laporanana.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kamajuan teu bisa dituturkeun. Muat deui kacana pikeun ningali kumaha pangiriman lumangsung.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fase</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaca ieu nuturkeun pangiriman salila lumangsung.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Saluyu</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Tahap-tahap</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>tahap %stage ngantosan di gerbangna</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerbang %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>disatujuan ku %user dina %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Tahap</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>File anu dikirim</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Vérsi kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>diterapkeun: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>rék diterapkeun: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fase-fase</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerbang: tahap %stage ti %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tahap-tahap saméméhna geus dikirimkeun. Pariksa heula, tuluy satujuan tahap salajengna: server-server jauhna dipariksa deui jeung dikirimkeun, sadayana atawa henteu sama sakali.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81852,7 +81852,7 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Leres, kirimkeun tahap salajengna ayeuna</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81860,31 +81860,31 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarik deui pangiriman ieu</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unggal server jauh anu geus nerapkeunana (%list) balik deui ka potret kaayaan anu dicandak saméméh jalananana, sakaligus.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Leres, tarik deui pangiriman ieu ayeuna</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>direncanakeun</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>dipindahkeun</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>dikirimkeun</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ngantosan di gerbang</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81892,7 +81892,7 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>disiapkeun</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81900,51 +81900,51 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ngantosan tahapna</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>file dikirim</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>diverifikasi</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>gagal, mulihkeun sorangan</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>teu robah</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>teu dikirimkeun</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>teu bisa dihontal</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Server jauh ngajawab.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Server jauh teu bisa dipaké ayeuna.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done réngsé, %pending ngantosan, %failed gagal</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Konci</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>hiji jalanan nyekel konci di ditu</translation>
     </message>
     <message>
         <source>free</source>
@@ -81952,23 +81952,23 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage ti %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih server jauh anu rék diuji.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Contréng heula “Leres, kaluarkeun server jauh ieu”.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Server jauh teu bisa dikaluarkeun: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Server jauh teu bisa disimpen: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81976,75 +81976,75 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih sahenteuna hiji server jauh atawa grup.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Server jauh anu dipilih geus teu aya dina setélan. Muat deui kacana.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Contréng heula “Leres, kirimkeun ayeuna”.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Server jauh FTP teu bisa ngajalankeun migrasi: pilih “Ukur mindahkeun”, atawa tinggalkeun.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrasi anu rék dikirimkeun téh ID migrasi, dipisahkeun ku koma.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pangiriman masih lumangsung. Antosan nepi ka réngsé.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pangiriman ieu henteu ngantosan di gerbang.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Euweuh server jauh anu nerapkeun pangiriman ieu: euweuh nu kudu ditarik deui.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Contréng heula “Leres, kirimkeun tahap salajengna ayeuna”.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Contréng heula “Leres, tarik deui pangiriman ieu ayeuna”.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Server jauh kalayan ID %id geus aya.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Port téh angka ti 1 nepi ka 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Lingkungan téh hiji kecap tina hurup, angka, - jeung _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grup téh hiji kecap tina hurup, angka, - jeung _ (lain all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kredénsial teu bisa dibaca ayeuna: %problem. Simpen dina Panyetélan &gt; Rusiah (atawa setél variabelna) saméméh pangiriman munggaran.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Server jauh FTP ukur narima file: pangiriman ka dinya téh “Ukur mindahkeun”, sarta migrasina dijalankeun di ditu sacara manual.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Server jauh %id teu aya dina settings/override/migration.ini.append.php; kaluarkeun di tempat manéhna disetél.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Asup ngaliwatan FTP sarta maca index.php. Kaayaan migrasi server jauh FTP teu bisa dibaca.</translation>
     </message>
 </context>
 <context>
@@ -84448,19 +84448,19 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Pangiriman %deploy gagal di %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Pangiriman %deploy keur ngadagoan di gerbang di %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Pangiriman %deploy hasil di %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Surélék ieu dikirim ku %site sabab migration.ini [RemoteSettings] Notify[] mundut kitu.</translation>
     </message>
 </context>
 </TS>

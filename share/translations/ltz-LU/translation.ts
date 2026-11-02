@@ -81336,15 +81336,15 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Géigestellen</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Déi aner Installatiounen, un déi dës hir Migratiounen ausliwwert: Eng Ausliwwerung schéckt d'Migratiounen un déi gewielt Géigestellen a léisst se do lafen, all gläichzäiteg an am Gläichstand. Eng Géigestell hält ni e Geheimnis: Hir Umeldedate nennen eent a Konfiguratioun &gt; Geheimnisser.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nei Géigestell</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbindungstest vun %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Géigestellen</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bis zu %parallel Géigestelle ginn zur selwechter Zäit beaarbecht; eng Phas däerf op all eenzeler %timeout Sekonnen daueren.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Géigestell</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>Astellunge fir ze korrigéieren</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>nëmme Fichieren (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-Schlëssel</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>keng (SSH-Agent a Schlëssele vum Host)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eng Ausliwwerung un eng Grupp geet un all hir Géigestellen.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Un Géigestellen ausliwweren</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach keng Géigestell ageriicht.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Géigestell %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hei gëtt näischt geschéckt oder lafe gelooss: Späicheren schreift d'Astellungen an settings/override/migration.ini.append.php. D'Umeldedate sinn en Numm; hire Wäert bleift a Konfiguratioun &gt; Geheimnisser oder an der Ëmgebung.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Astellunge wéi aginn, nach net gespäichert.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Host-Schlëssel</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. D'Géigestell</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wéi d'Géigestell heescht a wéi eng Ëmgebung se ass.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Buschtawen, Zifferen, - an _, zum Beispill production1. Si bezeechent d'Géigestell a Rapporten an op der Konsol (--remotes=production1) a kann duerno net méi geännert ginn.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Eng Ausliwwerung a Stufen geet d'Ëmgebungen an dëser Reiefolleg duerch.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakultativ, mat Kommaen getrennt, zum Beispill production. Eng Ausliwwerung un eng Grupp geet un all hir Géigestellen.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. D'Verbindung</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wéi d'Fichieren dohinner kommen a wou d'Installatioun läit.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iwwer SSH, nëmmen dat, wat geännert huet, eng ofgebrache Iwwerdroung gëtt weidergefouert. Déi bescht Wiel, wou rsync installéiert ass.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH mat scp fir d'Fichieren.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH mat sftp fir d'Fichieren.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nëmme Fichieren: D'Migratioune ginn geschéckt an zréckgelies, kënnen do awer net lafe gelooss ginn.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP iwwer TLS; nëmme Fichieren.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eng aner Installatioun op dësem Server, an engem Dossier.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>En Hostnumm oder eng Adress, zum Beispill node1.example.com. Net fir local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eidel: 22 fir SSH, 21 fir FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>De Wuerzelverzeechnes vun der Installatioun do, zum Beispill /var/www/site (bei FTP: de Pad, deen de FTP-Kont gesäit).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP-Kommandozeil</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'PHP-CLI do: php oder e kompletten Pad wéi /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Konsolskripter lafen do als root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Nëmmen, wann de Benotzer vun der Géigestell root ass (si lafen dann mat --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. D'Umeldedaten</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wéi dës Installatioun sech do umellt. Gespäichert gëtt nëmmen en Numm.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Den SSH-Agent an d'Schlëssele vum Benotzer, als deen dës Installatioun leeft (an ëmmer bei local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>E private Schlëssel, als Geheimnis ofgeluecht.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>E Passwuert, als Geheimnis ofgeluecht (FTP mellt sech domat un).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Numm vum Geheimnis</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>E Geheimnis aus Konfiguratioun &gt; Geheimnisser, zum Beispill deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Oder eng Ëmgebungsvariabel</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Variabel vum Serverprozess, déi et enthält, zum Beispill DEPLOY_KEY (gespäichert als env:DEPLOY_KEY). Si trëtt un d'Plaz vum Numm vum Geheimnis.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. De Host-Schlëssel</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakultativ, fir SSH, sftp an rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Fangerofdrock vum Host-Schlëssel</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... sou wéi ssh-keygen -l en ausgëtt. Mat him muss den Host dëse Schlëssel weisen; ouni hie gëtt de Schlëssel beim éischte Kontakt geléiert.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Iwwerpréifen</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maacht en Test vun der Verbindung mat den Astellungen uewen, a kuckt dann d'Zeilen no, déi geschriwwe ginn.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Dës Géigestell ewechhuelen</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hir Astellunge ginn aus settings/override/migration.ini.append.php erausgeholl. Op der Géigestell ännert sech näischt, an hir Ausliwwerunge bleiwen am Historique.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Jo, dës Géigestell ewechhuelen</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausliwwerungen</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eng Ausliwwerung schéckt d'Migratioune vun dëser Installatioun un déi gewielt Géigestellen a léisst se do als %user lafen, all gläichzäiteg an am Gläichstand: All Géigestell gëtt fir d'éischt kontrolléiert, a wann eng feelschléit, gëtt all Géigestell, déi ugewannt huet, zréckgeholl. Si leeft am Hannergrond, an hir Säit weist all Géigestell, während si leeft.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. D'Géigestellen</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kräizt Géigestellen, eng Grupp oder béides un.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Dohin ausliwweren</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Wéi</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausliwweren</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Schécken a lafe loossen</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Migratioune ginn op all Géigestell geschéckt, iwwerpréift a mat enger gemeinsamer Laf-ID lafe gelooss.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Nëmmen iwwerdroen</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Fichieren ginn geschéckt an iwwerpréift, näischt gëtt lafe gelooss (deen eenzege Wee fir eng FTP-Géigestell).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>A Stufen</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stuf fir Stuf an der Reiefolleg vun den Ëmgebungen (dev, stage, beta, production ...): Déi éischt Stuf gëtt ausgeliwwert, dann waart eng Paart, bis een déi nächst approuvéiert. Alles oder näischt bannent all Stuf.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Nëmmen dës Migratiounen</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakultativ: Migratiouns-IDen, mat Kommaen getrennt. Eidel: all Migratioun vum Site a vu sengen Extensiounen.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Nëmmen d'Virkontroll</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jo, elo ausliwweren</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Ausliwwerungen, déi eppes geschéckt oder lafe gelooss hunn, déi neist fir d'éischt (eng Virkontroll behält kee Rapport).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>nëmmen iwwerdroen</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>a Stufen, %stages Stufen</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>net am Gläichstand</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach keng Ausliwwerung.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausliwwerung %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>All Géigestell vun der Ausliwwerung mat hirem Stand. Eng Ausliwwerung, déi hei gestart gouf, leeft am Hannergrond weider, wann dës Säit zougemaach gëtt; maacht d'Säit nees op, fir se ze verfollegen.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>All Ausliwwerungen</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Virkontroll</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Nächst Stuf</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Astellungen an d'Umeldedate ginn iwwerpréift</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Virkontroll: De Stand vun all Géigestell gëtt gelies</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Migratiounsfichiere ginn geschéckt</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Wat ukomm ass, gëtt iwwerpréift</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Migratioune lafen op all Géigestell</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Géigestelle ginn zréckgeholl</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Ausliwwerung ass eriwwer. Hire Rapport gëtt gelueden.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>De Fortschrëtt konnt net verfollegt ginn. Luet d'Säit nei, fir ze gesinn, wéi et mat der Ausliwwerung steet.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Phas</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dës Säit verfollegt d'Ausliwwerung, während se leeft.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Am Gläichstand</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Stufen</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>Stuf %stage waart un hirer Paart</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Paart %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>approuvéiert vum %user um %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Stuf</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Geschéckte Fichieren</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Kernel-Versioun</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ugewannt: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>unzewenden: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Phasen</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Paart: Stuf %stage vun %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Stufen dovir sinn ausgeliwwert. Kontrolléiert se an approuvéiert dann déi nächst Stuf: Hir Géigestelle ginn nach eng Kéier kontrolléiert an ausgeliwwert, alles oder näischt.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jo, déi nächst Stuf elo ausliwweren</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Dës Ausliwwerung zréckrollen</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>All Géigestell, déi se ugewannt huet (%list), geet zréck op d'Momentopnam virun hirem Laf, all gläichzäiteg.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jo, dës Ausliwwerung elo zréckrollen</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>geplangt</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>iwwerdroen</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ausgeliwwert</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>waart un enger Paart</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>virbereet</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>waart op hir Stuf</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichiere geschéckt</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>iwwerpréift</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>feelgeschloen, huet sech selwer restauréiert</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>onverännert</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>net ausgeliwwert</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>net erreechbar</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Géigestell huet geäntwert.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Géigestell kann elo net benotzt ginn.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done fäerdeg, %pending op, %failed feelgeschloen</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Spär</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>e Laf hält do d'Spär</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage vun %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielt d'Géigestell, déi getest soll ginn.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kräizt fir d'éischt „Jo, dës Géigestell ewechhuelen“ un.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Géigestell konnt net ewechgeholl ginn: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Géigestell konnt net gespäichert ginn: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielt mindestens eng Géigestell oder Grupp.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eng gewielt Géigestell ass net méi an den Astellungen. Luet d'Säit nei.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kräizt fir d'éischt „Jo, elo ausliwweren“ un.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eng FTP-Géigestell kann keng Migratioune lafe loossen: Wielt „Nëmmen iwwerdroen“ oder loosst se ewech.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Migratiounen, déi ausgeliwwert solle ginn, sinn Migratiouns-IDen, mat Kommaen getrennt.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Ausliwwerung leeft nach. Waart, bis se eriwwer ass.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dës Ausliwwerung waart net un enger Paart.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Keng Géigestell huet dës Ausliwwerung ugewannt: Et gëtt näischt zréckzerollen.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kräizt fir d'éischt „Jo, déi nächst Stuf elo ausliwweren“ un.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kräizt fir d'éischt „Jo, dës Ausliwwerung elo zréckrollen“ un.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eng Géigestell mat der ID %id gëtt et schonn.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>De Port ass eng Zuel vun 1 bis 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Ëmgebung ass e Wuert aus Buschtawen, Zifferen, - an _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Eng Grupp ass e Wuert aus Buschtawen, Zifferen, - an _ (net all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Umeldedate kënnen elo net gelies ginn: %problem. Leet se virun der éischter Ausliwwerung a Konfiguratioun &gt; Geheimnisser of (oder setzt d'Variabel).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eng FTP-Géigestell kritt nëmme Fichieren: Eng Ausliwwerung dohin ass „Nëmmen iwwerdroen“, an hir Migratioune ginn do mat der Hand lafe gelooss.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Géigestell %id steet net an settings/override/migration.ini.append.php; huelt se do ewech, wou se agestallt ass.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iwwer FTP ugemellt an index.php gelies. De Migratiounsstand vun enger FTP-Géigestell kann net gelies ginn.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Ausliwwerung %deploy ass op %site feelgeschloen</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Ausliwwerung %deploy waart op %site un enger Paart</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>D'Ausliwwerung %deploy ass op %site gelongen</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dës Mail gouf vun %site geschéckt, well migration.ini [RemoteSettings] Notify[] et verlaangt.</translation>
     </message>
 </context>
 </TS>

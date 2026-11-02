@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानानि</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>अन्यानि संस्थापनानि येषु इदं स्वस्थानान्तरणानि विनियोजयति: विनियोजनं स्थानान्तरणानि चितानि दूरस्थस्थानानि प्रति प्रेषयति तत्र च निष्पादयति, सर्वाणि युगपत् समन्वितानि च। दूरस्थस्थानं कदापि गोप्यं न धारयति: तस्य प्रमाणपत्रं स्थापना &gt; गोप्यानि इत्यत्र एकस्य नाम निर्दिशति।</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>नूतनं दूरस्थस्थानम्</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id इत्यस्य संयोजनपरीक्षणम्</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानानि</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>%parallel पर्यन्तं दूरस्थस्थानानि युगपत् संसाध्यन्ते; एका अवस्था प्रत्येकस्मिन् %timeout सेकण्ड्-पर्यन्तं ग्रहीतुं शक्नोति।</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानम्</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>संशोधनीयाः विन्यासाः</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>केवलं सञ्चिकाः (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-कुञ्जिका</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>किमपि न (आतिथेयस्य SSH-प्रतिनिधिः कुञ्जिकाः च)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>समूहं प्रति विनियोजनं तस्य सर्वाणि दूरस्थस्थानानि प्रति गच्छति।</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानानि प्रति विनियोजयतु</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>अद्यापि किमपि दूरस्थस्थानं न स्थापितम्।</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानम् %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>अत्र किमपि न प्रेष्यते न निष्पाद्यते: संरक्षणं विन्यासान् settings/override/migration.ini.append.php इत्यत्र लिखति। प्रमाणपत्रम् एकं नाम; तस्य मूल्यं स्थापना &gt; गोप्यानि इत्यत्र परिवेशे वा तिष्ठति।</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>यथा प्रविष्टाः विन्यासाः, अद्यापि असंरक्षिताः।</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>आतिथेयकुञ्जिका</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. दूरस्थस्थानम्</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानस्य नाम किम्, कः परिवेशः च।</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>अक्षराणि, अङ्काः, - _ च, यथा production1। एतत् प्रतिवेदनेषु कन्सोल्-मध्ये च (--remotes=production1) दूरस्थस्थानं निर्दिशति, पश्चात् परिवर्तयितुं न शक्यते।</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... स्तरशः विनियोजनम् अनेन क्रमेण परिवेशान् गच्छति।</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ऐच्छिकम्, अल्पविरामैः विभक्तम्, यथा production। समूहं प्रति विनियोजनं तस्य सर्वाणि दूरस्थस्थानानि प्रति गच्छति।</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. संयोजनम्</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>सञ्चिकाः तत्र कथं गच्छन्ति, संस्थापनं च कुत्र अस्ति।</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH द्वारा, केवलं यत् परिवर्तितम्, भग्नं सम्प्रेषणं पुनः आरभ्यते। यत्र rsync संस्थापितम् तत्र उत्तमः विकल्पः।</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>सञ्चिकानां कृते scp सहितम् SSH।</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>सञ्चिकानां कृते sftp सहितम् SSH।</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>केवलं सञ्चिकाः: स्थानान्तरणानि प्रेष्यन्ते पुनः पठ्यन्ते च, किन्तु तत्र निष्पादयितुं न शक्यन्ते।</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS द्वारा FTP; केवलं सञ्चिकाः।</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>अस्मिन् सेवके अन्यत् संस्थापनम्, एकस्यां सञ्चिकाधान्याम्।</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>आतिथेयनाम सङ्केतः वा, यथा node1.example.com। local कृते न।</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>रिक्तम्: SSH कृते 22, FTP कृते 21।</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>तत्र संस्थापनस्य मूलम्, यथा /var/www/site (FTP कृते: FTP-लेखा यं मार्गं पश्यति)।</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP-आदेशपङ्क्तिः</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>तत्रत्यं PHP CLI: php, अथवा /opt/plesk/php/8.4/bin/php इव पूर्णः मार्गः।</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>कन्सोल्-लिपयः तत्र root रूपेण प्रचलन्ति</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>केवलं यदा दूरस्थस्थानस्य उपयोक्ता root अस्ति (तदा तानि --allow-root-user सह निष्पाद्यन्ते)।</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. प्रमाणपत्रम्</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>इदं संस्थापनं तत्र कथं प्रविशति। केवलं नाम संरक्ष्यते।</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>यस्य उपयोक्तुः रूपेण इदं संस्थापनं प्रचलति तस्य SSH-प्रतिनिधिः कुञ्जिकाः च (local कृते सर्वदा)।</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>गोप्यरूपेण रक्षिता निजी कुञ्जिका।</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>गोप्यरूपेण रक्षितः गुप्तशब्दः (FTP तेन प्रविशति)।</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>गोप्यस्य नाम</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थापना &gt; गोप्यानि इत्यस्मात् एकं गोप्यम्, यथा deploy_production1।</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>अथवा परिवेशचरः</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>सेवकप्रक्रियायाः यः चरः तत् धारयति, यथा DEPLOY_KEY (env:DEPLOY_KEY इति संरक्षितः)। सः गोप्यनाम्नः स्थानं गृह्णाति।</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. आतिथेयकुञ्जिका</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>ऐच्छिकम्, SSH, sftp rsync च कृते।</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>आतिथेयकुञ्जिकायाः अङ्गुलिचिह्नम्</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... यथा ssh-keygen -l मुद्रयति। तेन सह आतिथेयः इमां कुञ्जिकां दर्शयेत्; तेन विना प्रथमसम्पर्के कुञ्जिका ज्ञायते।</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. समीक्षा</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>उपरितनैः विन्यासैः संयोजनं परीक्षताम्, ततः लेखिष्यमाणाः पङ्क्तीः समीक्षताम्।</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>इदं दूरस्थस्थानम् अपसारयतु</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>तस्य विन्यासाः settings/override/migration.ini.append.php इत्यस्मात् अपसार्यन्ते। दूरस्थस्थाने किमपि न परिवर्तते, तस्य विनियोजनानि च इतिहासे तिष्ठन्ति।</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>आम्, इदं दूरस्थस्थानम् अपसारयतु</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>विनियोजनानि</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>विनियोजनम् अस्य संस्थापनस्य स्थानान्तरणानि चितानि दूरस्थस्थानानि प्रति प्रेषयति, तत्र च तानि %user इति रूपेण निष्पादयति, सर्वाणि युगपत् समन्वितानि च: प्रथमं प्रत्येकं दूरस्थस्थानं परीक्ष्यते, एकस्मिन् विफले सति येषु प्रयुक्तं तानि सर्वाणि दूरस्थस्थानानि निवर्त्यन्ते। तत् पृष्ठभूमौ प्रचलति, तस्य पृष्ठं च प्रचलति सति प्रत्येकं दूरस्थस्थानं दर्शयति।</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. दूरस्थस्थानानि</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानानि, एकं समूहम्, उभयं वा चिह्नयतु।</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>तत्र विनियोजयतु</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. कथम्</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>विनियोजयतु</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रेषयतु निष्पादयतु च</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थानान्तरणानि प्रत्येकं दूरस्थस्थानं प्रति प्रेष्यन्ते, सत्याप्यन्ते, एकेन सामान्येन निष्पादन-अभिज्ञापकेन निष्पाद्यन्ते च।</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>केवलं सम्प्रेषणम्</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>सञ्चिकाः प्रेष्यन्ते सत्याप्यन्ते च, किमपि न निष्पाद्यते (FTP-दूरस्थस्थानस्य एकमात्रः मार्गः)।</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>स्तरशः</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>परिवेशानां क्रमेण (dev, stage, beta, production ...) स्तरशः: प्रथमः स्तरः विनियुज्यते, ततः कश्चित् अग्रिमम् अनुमोदयति तावत् एकं तोरणं प्रतीक्षते। प्रत्येकस्मिन् स्तरे सर्वं वा किमपि न वा।</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>केवलम् एतानि स्थानान्तरणानि</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>ऐच्छिकम्: स्थानान्तरण-अभिज्ञापकाः, अल्पविरामैः विभक्ताः। रिक्तम्: जालस्थानस्य तस्य विस्तारणानां च सर्वाणि स्थानान्तरणानि।</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>केवलं पूर्वपरीक्षणम्</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>आम्, इदानीं विनियोजयतु</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>यानि विनियोजनानि किमपि प्रेषितवन्ति निष्पादितवन्ति वा, नूतनतमं प्रथमम् (पूर्वपरीक्षणं प्रतिवेदनं न रक्षति)।</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>केवलं सम्प्रेषणम्</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>स्तरशः, %stages स्तराः</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>असमन्वितम्</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>अद्यापि विनियोजनं नास्ति।</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>विनियोजनम् %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>विनियोजनस्य प्रत्येकं दूरस्थस्थानं तस्य स्थित्या सह। अत्र आरब्धं विनियोजनम् अस्मिन् पृष्ठे पिहिते अपि पृष्ठभूमौ प्रचलति; तद् अनुसर्तुं पृष्ठं पुनः उद्घाटयतु।</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>सर्वाणि विनियोजनानि</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>पूर्वपरीक्षणम्</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>अग्रिमः स्तरः</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>विन्यासाः प्रमाणपत्रं च परीक्ष्यन्ते</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>पूर्वपरीक्षणम्: प्रत्येकस्य दूरस्थस्थानस्य स्थितिः पठ्यते</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थानान्तरणसञ्चिकाः प्रेष्यन्ते</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>यत् आगतं तत् सत्याप्यते</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रत्येकस्मिन् दूरस्थस्थाने स्थानान्तरणानि निष्पाद्यन्ते</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानानि निवर्त्यन्ते</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>विनियोजनं समाप्तम्। तस्य प्रतिवेदनम् आनीयते।</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रगतिः अनुसर्तुं न शक्ता। विनियोजनं कथं प्रचलति इति द्रष्टुं पृष्ठं पुनः आनयतु।</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>अवस्था</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>इदं पृष्ठं प्रचलत् विनियोजनम् अनुसरति।</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>समन्वितम्</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>स्तराः</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>स्तरः %stage स्वतोरणे प्रतीक्षते</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>तोरणम् %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user द्वारा %time समये अनुमोदितम्</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>स्तरः</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रेषिताः सञ्चिकाः</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>कर्नल्-संस्करणम्</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रयुक्तम्: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रयोक्तव्यम्: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>अवस्थाः</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>तोरणम्: %stages मध्ये स्तरः %stage</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>तस्मात् पूर्वतनाः स्तराः विनियुक्ताः। तान् परीक्षताम्, ततः अग्रिमं स्तरम् अनुमोदयतु: तस्य दूरस्थस्थानानि पुनः परीक्ष्यन्ते विनियुज्यन्ते च, सर्वं वा किमपि न वा।</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>आम्, अग्रिमं स्तरम् इदानीं विनियोजयतु</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>इदं विनियोजनं प्रत्यावर्तयतु</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>येषु दूरस्थस्थानेषु तत् प्रयुक्तम् (%list), तानि सर्वाणि निष्पादनात् पूर्वं गृहीतं स्थितिचित्रं प्रति युगपत् प्रत्यावर्तन्ते।</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>आम्, इदं विनियोजनम् इदानीं प्रत्यावर्तयतु</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>योजितम्</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>सम्प्रेषितम्</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>विनियुक्तम्</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>तोरणे प्रतीक्षते</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>सज्जीकृतम्</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>स्वस्तरं प्रतीक्षते</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>सञ्चिकाः प्रेषिताः</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>सत्यापितम्</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>विफलम्, स्वयं पुनःस्थापितम्</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>अपरिवर्तितम्</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>अविनियुक्तम्</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>अप्राप्यम्</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानं प्रत्युत्तरं दत्तवत्।</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानम् इदानीं प्रयोक्तुं न शक्यते।</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done पूर्णानि, %pending प्रतीक्षमाणानि, %failed विफलानि</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>तालकम्</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>एकं निष्पादनं तत्र तालकं धारयति</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stages मध्ये %stage</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>परीक्षणीयं दूरस्थस्थानं चिनोतु।</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रथमं “आम्, इदं दूरस्थस्थानम् अपसारयतु” इति चिह्नयतु।</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानम् अपसारयितुं न शक्तम्: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानं संरक्षितुं न शक्तम्: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>न्यूनातिन्यूनम् एकं दूरस्थस्थानं समूहं वा चिनोतु।</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>चितं किमपि दूरस्थस्थानं विन्यासेषु इदानीं नास्ति। पृष्ठं पुनः आनयतु।</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रथमं “आम्, इदानीं विनियोजयतु” इति चिह्नयतु।</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP-दूरस्थस्थानं स्थानान्तरणानि निष्पादयितुं न शक्नोति: “केवलं सम्प्रेषणम्” चिनोतु, अथवा तत् त्यजतु।</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>विनियोजनीयानि स्थानान्तरणानि स्थानान्तरण-अभिज्ञापकाः, अल्पविरामैः विभक्ताः।</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>विनियोजनम् अद्यापि प्रचलति। तस्य समाप्तिं प्रतीक्षताम्।</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>इदं विनियोजनं तोरणे न प्रतीक्षते।</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>किमपि दूरस्थस्थानम् इदं विनियोजनं न प्रयुक्तवत्: प्रत्यावर्तनीयं किमपि नास्ति।</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रथमं “आम्, अग्रिमं स्तरम् इदानीं विनियोजयतु” इति चिह्नयतु।</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रथमं “आम्, इदं विनियोजनम् इदानीं प्रत्यावर्तयतु” इति चिह्नयतु।</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id अभिज्ञापकयुक्तं दूरस्थस्थानं पूर्वमेव विद्यते।</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>द्वारं 1 तः 65535 पर्यन्तं सङ्ख्या।</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>परिवेशः अक्षरैः, अङ्कैः, - _ च रचितः एकः शब्दः (alpha, dev, stage, beta, production ...)।</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>समूहः अक्षरैः, अङ्कैः, - _ च रचितः एकः शब्दः (all न): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रमाणपत्रम् इदानीं पठितुं न शक्यते: %problem। प्रथमविनियोजनात् पूर्वं तत् स्थापना &gt; गोप्यानि इत्यत्र संरक्षतु (अथवा चरं स्थापयतु)।</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP-दूरस्थस्थानं केवलं सञ्चिकाः स्वीकरोति: तत्र विनियोजनं “केवलं सम्प्रेषणम्” भवति, तस्य स्थानान्तरणानि च तत्र हस्तेन निष्पाद्यन्ते।</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरस्थस्थानम् %id settings/override/migration.ini.append.php इत्यत्र नास्ति; यत्र स्थापितं तत्र अपसारयतु।</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP द्वारा प्रविष्टम्, index.php च पठितम्। FTP-दूरस्थस्थानस्य स्थानान्तरणस्थितिः पठितुं न शक्यते।</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site इत्यत्र विनियोजनम् %deploy विफलम् अभवत्</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site इत्यत्र विनियोजनम् %deploy द्वारे प्रतीक्षते</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site इत्यत्र विनियोजनम् %deploy सफलम् अभवत्</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>इदं पत्रं %site इत्यनेन प्रेषितम्, यतः migration.ini [RemoteSettings] Notify[] तत् याचते।</translation>
     </message>
 </context>
 </TS>

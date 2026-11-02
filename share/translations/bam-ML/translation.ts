@@ -81336,15 +81336,15 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjanw</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sigili wɛrɛ minnu ma nin bɛ a ka yɔrɔyɛlɛmaw jɛnsɛn: jɛnsɛnni bɛ yɔrɔyɛlɛmaw ci yɔrɔjan sugandilenw ma k'u waleya yen, u bɛɛ ɲɔgɔn fɛ ani u bɛɛ bɛnnen. Yɔrɔjan tɛ gundo mara abada: a ka donni sɛbɛn bɛ gundo dɔ tɔgɔ fɔ Labɛnni &gt; Gundow la.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan kura</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id ka jɛɲɔgɔnya sɛgɛsɛgɛli</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjanw</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fo yɔrɔjan %parallel bɛ baara ɲɔgɔn fɛ; tilayɔrɔ kelen bɛ se ka segondi %timeout ta u kelen-kelen bɛɛ kan.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>labɛnw ka kan ka latilen</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>fisiyew dɔrɔn (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH kile</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>foyi (hɔsiti ka SSH dɛmɛbaga ni kilew)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛnni min bɛ kɛ jɛkulu dɔ ye, o bɛ taa a ka yɔrɔjan bɛɛ ma.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛn yɔrɔjanw ma</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan si ma labɛn fɔlɔ.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Foyi tɛ ci walima ka waleya yan: Mara bɛ labɛnw sɛbɛn settings/override/migration.ini.append.php kɔnɔ. Donni sɛbɛn ye tɔgɔ ye; a nafa bɛ to Labɛnni &gt; Gundow la walima baarayɔrɔ la.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Labɛnw i n'a fɔ u donna cogo min, u ma mara fɔlɔ.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Hɔsiti kile</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Yɔrɔjan</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan tɔgɔ ye min ye ani a ye baarayɔrɔ min ye.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sɛbɛndenw, jatedenw, - ani _, misali la production1. A bɛ yɔrɔjan tɔgɔ fɔ rapɔrɔw la ani konsoli kan (--remotes=production1), a tɛ se ka yɛlɛma kɔfɛ.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Dakun-dakun jɛnsɛnni bɛ baarayɔrɔw tɛmɛ nin taabolo la.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>N'i b'a fɛ, virigili b'u cɛ, misali la production. Jɛnsɛnni min bɛ kɛ jɛkulu dɔ ye, o bɛ taa a ka yɔrɔjan bɛɛ ma.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Jɛɲɔgɔnya</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fisiyew bɛ se yen cogo min, ani sigili bɛ yɔrɔ min.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH kan, min yɛlɛmana o dɔrɔn, lataali tigɛlen bɛ taa a fɛ. Sugandili ɲuman don yɔrɔ minnu na rsync sigilen bɛ.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ni scp ye fisiyew kama.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ni sftp ye fisiyew kama.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fisiyew dɔrɔn: yɔrɔyɛlɛmaw bɛ ci ka kalan ka segin, nka u tɛ se ka waleya yen.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP TLS kan; fisiyew dɔrɔn.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sigili wɛrɛ min bɛ nin sɛriwɛri kan, dosiye dɔ kɔnɔ.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hɔsiti tɔgɔ walima adiresi, misali la node1.example.com. A tɛ local kama.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lankolon: 22 SSH kama, 21 FTP kama.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Sigili ju yen, misali la /var/www/site (FTP kama: sira min FTP kɔnti b'a ye).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP ka cikansira</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI min bɛ yen: php, walima sira dafalen i n'a fɔ /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Konsoli sɛbɛnw bɛ waleya yen i n'a fɔ root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ni yɔrɔjan ka baarakɛla ye root ye dɔrɔn (u bɛ waleya ni --allow-root-user ye o tuma).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Donni sɛbɛn</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sigili nin bɛ don yen cogo min. Tɔgɔ dɔrɔn de bɛ mara.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Baarakɛla min tɔgɔ la sigili nin bɛ waleya, o ka SSH dɛmɛbaga ni kilew (ani tuma bɛɛ local kama).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kile kɛrɛnkɛrɛnnen min maralen bɛ i n'a fɔ gundo.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Gundodaɲɛ min maralen bɛ i n'a fɔ gundo (FTP bɛ don ni o ye).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Gundo tɔgɔ</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gundo dɔ min bɛ Labɛnni &gt; Gundow la, misali la deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Walima baarayɔrɔ yɛlɛmata dɔ</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sɛriwɛri porosesi yɛlɛmata min b'a mara, misali la DEPLOY_KEY (a maralen bɛ i n'a fɔ env:DEPLOY_KEY). A bɛ gundo tɔgɔ nɔ na.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Hɔsiti kile</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>N'i b'a fɛ, SSH, sftp ani rsync kama.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Hɔsiti kile bolonɔ</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... i n'a fɔ ssh-keygen -l b'a sɛbɛn cogo min. N'a bɛ yen, hɔsiti ka kan ka nin kile jira; n'a tɛ yen, kile bɛ dɔn ɲɔgɔn sɔrɔli fɔlɔ la.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Lajɛ</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛɲɔgɔnya sɛgɛsɛgɛ ni labɛn minnu bɛ sanfɛ, o kɔ, sira minnu bɛna sɛbɛn, olu lajɛ.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nin yɔrɔjan bɔsi</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>A ka labɛnw bɛ bɔ settings/override/migration.ini.append.php kɔnɔ. Foyi tɛ yɛlɛma yɔrɔjan kan, a ka jɛnsɛnniw bɛ to tariku la.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɔwɔ, nin yɔrɔjan bɔsi</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛnniw</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛnni bɛ sigili nin ka yɔrɔyɛlɛmaw ci yɔrɔjan sugandilenw ma k'u waleya yen i n'a fɔ %user, u bɛɛ ɲɔgɔn fɛ ani u bɛɛ bɛnnen: yɔrɔjan bɛɛ bɛ lajɛ fɔlɔ, ni kelen ma ɲɛ, yɔrɔjan o yɔrɔjan y'a waleya, o bɛ segin kɔ. A bɛ taa a fɛ kɔfɛ, a ka ɲɛ bɛ yɔrɔjan bɛɛ jira a ka taa cogo la.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Yɔrɔjanw</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjanw sugandi, jɛkulu dɔ, walima u fila bɛɛ.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛn yen</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Cogo min</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛn</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Ci ka waleya</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔyɛlɛmaw bɛ ci, ka lajɛ ka waleya yɔrɔjan bɛɛ kan ni waleya tɔgɔnɔ kelen ye u bɛɛ ye.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataali dɔrɔn</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Fisiyew bɛ ci ka lajɛ, foyi tɛ waleya (FTP yɔrɔjan ka sira kelenpe).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Dakun-dakun</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dakun ni dakun baarayɔrɔw ka taabolo la (dev, stage, beta, production ...): dakun fɔlɔ bɛ jɛnsɛn, o kɔ donda dɔ bɛ makɔnɔ fo mɔgɔ dɔ ka sɔn dakun nata ma. Bɛɛ walima foyi dakun kelen-kelen bɛɛ kɔnɔ.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Nin yɔrɔyɛlɛmaw dɔrɔn</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>N'i b'a fɛ: yɔrɔyɛlɛma tɔgɔnɔw, virigili b'u cɛ. Lankolon: siti n'a ka fɛnfaraw ka yɔrɔyɛlɛma bɛɛ.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Lajɛli fɔlɔ dɔrɔn</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɔwɔ, jɛnsɛn sisan</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛnni minnu ye fɛn dɔ ci walima k'a waleya, kuranw fɔlɔ (lajɛli fɔlɔ tɛ rapɔrɔ mara).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>lataali dɔrɔn</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>dakun-dakun, dakun %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>a ma bɛn</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛnni si tɛ yen fɔlɔ.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛnni %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛnni ka yɔrɔjan bɛɛ n'a ka cogoya. Jɛnsɛnni min daminɛna yan, o bɛ taa a fɛ kɔfɛ ni nin ɲɛ datugura; ɲɛ da wuli tugun walasa k'a nɔfɛ.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛnniw bɛɛ</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Lajɛli fɔlɔ</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Dakun nata</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Labɛnw ni donni sɛbɛnw bɛ lajɛ</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Lajɛli fɔlɔ: yɔrɔjan bɛɛ ka cogoya bɛ kalan</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔyɛlɛma fisiyew bɛ ci</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Min sera, o bɛ lajɛ</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔyɛlɛmaw bɛ waleya yɔrɔjan bɛɛ kan</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjanw bɛ segin kɔ</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛnni banna. A ka rapɔrɔ bɛ doni.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɲɛtaa ma se ka nɔfɛ. Ɲɛ in doni tugun walasa ka jɛnsɛnni taa cogo ye.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilayɔrɔ</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nin ɲɛ bɛ jɛnsɛnni nɔfɛ a ka taa cogo la.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Bɛnnen</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Dakunw</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>dakun %stage bɛ makɔnɔni na a ka donda la</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Donda %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user y'a sɔn %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Dakun</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Fisiye cilenw</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Kernel wɛrisɔn</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>waleyalenw: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ka waleya: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilayɔrɔw</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Donda: dakun %stage %stages kɔnɔ</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>A ɲɛ dakunw jɛnsɛnna. U lajɛ, o kɔ sɔn dakun nata ma: a ka yɔrɔjanw bɛ lajɛ tugun ka jɛnsɛn, bɛɛ walima foyi.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɔwɔ, dakun nata jɛnsɛn sisan</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Nin jɛnsɛnni segin kɔ</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan o yɔrɔjan y'a waleya (%list), o bɛ segin ja ma min tara sani a ka waleya ka kɛ, u bɛɛ ɲɔgɔn fɛ.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɔwɔ, nin jɛnsɛnni segin kɔ sisan</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>a bolodara</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>a lataara</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>a jɛnsɛnna</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>a bɛ makɔnɔni na donda dɔ la</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>a labɛnna</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>a bɛ a ka dakun makɔnɔ</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>fisiyew cira</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>a lajɛra</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>a ma ɲɛ, a y'a yɛrɛ segin</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>a ma yɛlɛma</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>a ma jɛnsɛn</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>a tɛ se ka sɔrɔ</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan ye jaabi di.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan tɛ se ka baara la sisan.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done banna, %pending bɛ makɔnɔni na, %failed ma ɲɛ</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Datugulan</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>waleya dɔ ye datugulan minɛ yen</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage %stages kɔnɔ</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan sugandi min ka kan ka sɛgɛsɛgɛ.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>«Ɔwɔ, nin yɔrɔjan bɔsi» sugandi fɔlɔ.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan ma se ka bɔsi: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan ma se ka mara: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan kelen walima jɛkulu kelen sugandi a dɔgɔyalenba la.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan sugandilen dɔ tɛ labɛnw na tugun. Ɲɛ in doni tugun.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>«Ɔwɔ, jɛnsɛn sisan» sugandi fɔlɔ.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP yɔrɔjan tɛ se ka yɔrɔyɛlɛmaw waleya: «Lataali dɔrɔn» sugandi, walima a to kɔ.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔyɛlɛma minnu ka kan ka jɛnsɛn, olu ye yɔrɔyɛlɛma tɔgɔnɔw ye, virigili b'u cɛ.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛnni bɛ taa hali bi. A makɔnɔ fo a ka ban.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nin jɛnsɛnni tɛ makɔnɔ donda si la.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan si ma nin jɛnsɛnni waleya: foyi tɛ yen ka segin kɔ.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>«Ɔwɔ, dakun nata jɛnsɛn sisan» sugandi fɔlɔ.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>«Ɔwɔ, nin jɛnsɛnni segin kɔ sisan» sugandi fɔlɔ.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan min tɔgɔnɔ ye %id, o bɛ yen kaban.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pɔrɔ ye jate ye 1 ni 65535 cɛ.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Baarayɔrɔ ye daɲɛ ye min dilanen bɛ ni sɛbɛndenw, jatedenw, - ani _ ye (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛkulu ye daɲɛ ye min dilanen bɛ ni sɛbɛndenw, jatedenw, - ani _ ye (a tɛ all ye): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Donni sɛbɛn tɛ se ka kalan sisan: %problem. A mara Labɛnni &gt; Gundow la (walima yɛlɛmata sigi) sani jɛnsɛnni fɔlɔ ka kɛ.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP yɔrɔjan bɛ fisiyew dɔrɔn sɔrɔ: jɛnsɛnni min bɛ kɛ a ye, o ye «Lataali dɔrɔn» ye, a ka yɔrɔyɛlɛmaw bɛ waleya yen ni bolo ye.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yɔrɔjan %id tɛ settings/override/migration.ini.append.php kɔnɔ; a bɔsi yɔrɔ min na a labɛnnen bɛ.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Donna FTP fɛ ka index.php kalan. FTP yɔrɔjan ka yɔrɔyɛlɛma hali tɛ se ka kalan.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛn %deploy ma ɲɛ %site kan</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛn %deploy bɛ makɔnɔni na da dɔ la %site kan</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Jɛnsɛn %deploy ɲɛna %site kan</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nin bataki ci bɔra %site fɛ bawo migration.ini [RemoteSettings] Notify[] b'a ɲini.</translation>
     </message>
 </context>
 </TS>

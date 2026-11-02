@@ -82016,15 +82016,15 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjernservere</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>De andre installationer, som denne udruller sine migreringer til: en udrulning sender migreringerne til de valgte fjernservere og kører dem der, alle på én gang og synkront. En fjernserver indeholder aldrig en hemmelighed: dens legitimation navngiver en i Opsætning &gt; Hemmeligheder.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny fjernserver</translation>
     </message>
     <message>
         <source>Help</source>
@@ -82032,19 +82032,19 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Test forbindelsen til %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjernserverne</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Op til %parallel fjernservere behandles samtidig; en fase må tage %timeout sekunder på hver.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjernserver</translation>
     </message>
     <message>
         <source>Address</source>
@@ -82060,15 +82060,15 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>indstillinger skal rettes</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>kun filer (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-nøgle</translation>
     </message>
     <message>
         <source>Password</source>
@@ -82076,7 +82076,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ingen (værtens SSH-agent og nøgler)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -82084,23 +82084,23 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>En udrulning til en gruppe går til alle dens fjernservere.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Udrul til fjernservere</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen fjernserver er sat op endnu.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjernserver %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Her sendes eller køres intet: Gem skriver indstillingerne til settings/override/migration.ini.append.php. Legitimationen er et navn; dens værdi bliver i Opsætning &gt; Hemmeligheder eller i miljøet.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -82108,7 +82108,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstillingerne som indtastet, endnu ikke gemt.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -82136,15 +82136,15 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Værtsnøgle</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Fjernserveren</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvad fjernserveren hedder, og hvilket miljø den er.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -82152,47 +82152,47 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bogstaver, cifre, - og _, for eksempel production1. Det navngiver fjernserveren i rapporter og på konsollen (--remotes=production1) og kan ikke ændres senere.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... En udrulning i etaper går gennem miljøerne i denne rækkefølge.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valgfri, adskilt af kommaer, for eksempel production. En udrulning til en gruppe går til alle dens fjernservere.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Forbindelsen</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvordan filerne kommer derhen, og hvor installationen ligger.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Over SSH, kun det ændrede, en afbrudt overførsel genoptages. Det bedste valg, hvor rsync er installeret.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH med scp til filerne.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH med sftp til filerne.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun filer: migreringerne sendes og læses tilbage, men kan ikke køres der.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP over TLS; kun filer.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>En anden installation på denne server, i en mappe.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -82200,7 +82200,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Et værtsnavn eller en adresse, for eksempel node1.example.com. Ikke for local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -82208,7 +82208,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tom: 22 for SSH, 21 for FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -82220,31 +82220,31 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Installationens rod der, for eksempel /var/www/site (for FTP: den sti, FTP-kontoen ser).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP-kommandolinje</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI der: php eller en fuld sti som /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Konsolscripts kører som root der</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun når fjernserverens bruger er root (de køres så med --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Legitimationen</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvordan denne installation logger ind der. Kun et navn gemmes.</translation>
     </message>
     <message>
         <source>None</source>
@@ -82252,23 +82252,23 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-agenten og nøglerne for den bruger, denne installation kører som (og altid for local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>En privat nøgle gemt som hemmelighed.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>En adgangskode gemt som hemmelighed (FTP logger ind med en).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Hemmelighedens navn</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>En hemmelighed fra Opsætning &gt; Hemmeligheder, for eksempel deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -82276,247 +82276,247 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Eller en miljøvariabel</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Variablen i serverprocessen, der indeholder den, for eksempel DEPLOY_KEY (gemt som env:DEPLOY_KEY). Den træder i stedet for hemmelighedens navn.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Værtsnøglen</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valgfri, for SSH, sftp og rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Værtsnøglens fingeraftryk</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... som ssh-keygen -l viser det. Med det skal værten vise denne nøgle; uden det læres nøglen ved første kontakt.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Gennemsyn</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Test forbindelsen med indstillingerne ovenfor, og gennemse derefter de linjer, der vil blive skrevet.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern denne fjernserver</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dens indstillinger fjernes fra settings/override/migration.ini.append.php. Intet ændres på fjernserveren, og dens udrulninger bliver i historikken.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, fjern denne fjernserver</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Udrulninger</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>En udrulning sender denne installations migreringer til de valgte fjernservere og kører dem der som %user, alle på én gang og synkront: hver fjernserver kontrolleres først, og hvis én mislykkes, tages hver fjernserver, der har anvendt dem, tilbage. Den kører i baggrunden, og dens side viser hver fjernserver undervejs.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Fjernserverne</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sæt flueben ved fjernservere, en gruppe eller begge.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Udrul hertil</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Hvordan</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Udrul</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Send og kør</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migreringerne sendes, verificeres og køres på hver fjernserver med ét fælles kørsels-ID.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun overførsel</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Filerne sendes og verificeres, intet køres (den eneste måde for en FTP-fjernserver).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>I etaper</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etape for etape i miljøernes rækkefølge (dev, stage, beta, production ...): den første etape udrulles, derefter venter en sluse, indtil nogen godkender den næste. Alt eller intet inden for hver etape.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun disse migreringer</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valgfri: migrerings-ID'er, adskilt af kommaer. Tom: alle migreringer for webstedet og dets udvidelser.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun forhåndskontrol</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, udrul nu</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>De udrulninger, der har sendt eller kørt noget, de nyeste først (en forhåndskontrol gemmer ingen rapport).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>kun overførsel</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>i etaper, %stages etaper</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ikke synkron</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen udrulning endnu.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Udrulning %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hver fjernserver i udrulningen med dens tilstand. En udrulning startet her fortsætter i baggrunden, når denne side lukkes; åbn siden igen for at følge den.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle udrulninger</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Forhåndskontrol</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Næste etape</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrollerer indstillingerne og legitimationen</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Forhåndskontrol: læser tilstanden for hver fjernserver</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Sender migreringsfilerne</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Verificerer det, der er ankommet</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Kører migreringerne på hver fjernserver</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Tager fjernserverne tilbage</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Udrulningen er afsluttet. Indlæser dens rapport.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fremskridtet kunne ikke følges. Genindlæs siden for at se, hvordan udrulningen går.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fase</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne side følger udrulningen undervejs.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Synkront</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Etaper</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>etape %stage venter ved sin sluse</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluse %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>godkendt af %user kl. %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Etape</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Sendte filer</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Kerneversion</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>anvendt: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>skal anvendes: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Faser</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluse: etape %stage af %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etaperne før den er udrullet. Kontrollér dem, og godkend derefter den næste etape: dens fjernservere kontrolleres igen og udrulles, alt eller intet.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -82524,7 +82524,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, udrul den næste etape nu</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -82532,31 +82532,31 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Rul denne udrulning tilbage</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hver fjernserver, der har anvendt den (%list), vender tilbage til øjebliksbilledet taget før dens kørsel, alle på én gang.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, rul denne udrulning tilbage nu</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>planlagt</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>overført</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>udrullet</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>venter ved en sluse</translation>
     </message>
     <message>
         <source>selected</source>
@@ -82564,7 +82564,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>forberedt</translation>
     </message>
     <message>
         <source>ready</source>
@@ -82572,51 +82572,51 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>venter på sin etape</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>filer sendt</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>verificeret</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>mislykkedes, gendannede sig selv</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>uændret</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ikke udrullet</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ikke tilgængelig</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjernserveren svarede.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjernserveren kan ikke bruges nu.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done udført, %pending afventer, %failed mislykkedes</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Lås</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>en kørsel holder låsen der</translation>
     </message>
     <message>
         <source>free</source>
@@ -82624,23 +82624,23 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage af %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg den fjernserver, der skal testes.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sæt først flueben ved »Ja, fjern denne fjernserver«.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjernserveren kunne ikke fjernes: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjernserveren kunne ikke gemmes: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -82648,75 +82648,75 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg mindst én fjernserver eller gruppe.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>En valgt fjernserver findes ikke længere i indstillingerne. Genindlæs siden.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sæt først flueben ved »Ja, udrul nu«.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>En FTP-fjernserver kan ikke køre migreringer: vælg »Kun overførsel«, eller udelad den.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migreringerne, der skal udrulles, er migrerings-ID'er, adskilt af kommaer.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Udrulningen er stadig i gang. Vent, til den er færdig.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne udrulning venter ikke ved en sluse.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen fjernserver har anvendt denne udrulning: der er intet at rulle tilbage.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sæt først flueben ved »Ja, udrul den næste etape nu«.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sæt først flueben ved »Ja, rul denne udrulning tilbage nu«.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der findes allerede en fjernserver med ID'et %id.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Porten er et tal fra 1 til 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Miljøet er et ord af bogstaver, cifre, - og _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>En gruppe er et ord af bogstaver, cifre, - og _ (ikke all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Legitimationen kan ikke læses nu: %problem. Gem den i Opsætning &gt; Hemmeligheder (eller sæt variablen) før den første udrulning.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>En FTP-fjernserver modtager kun filer: en udrulning til den er »Kun overførsel«, og dens migreringer køres der manuelt.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjernserveren %id er ikke i settings/override/migration.ini.append.php; fjern den der, hvor den er angivet.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Logget ind over FTP og læst index.php. Migreringstilstanden for en FTP-fjernserver kan ikke læses.</translation>
     </message>
 </context>
 <context>
@@ -85120,19 +85120,19 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Udrulningen %deploy mislykkedes på %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Udrulningen %deploy venter ved en port på %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Udrulningen %deploy lykkedes på %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne mail blev sendt af %site, fordi migration.ini [RemoteSettings] Notify[] beder om det.</translation>
     </message>
 </context>
 </TS>

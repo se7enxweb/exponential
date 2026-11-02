@@ -81334,15 +81334,15 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Sabobin nesa</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauran shigarwar da wannan take isar da ƙaurace-ƙaurace dinta zuwa gare su: isarwa tana aika ƙaurace-ƙaurace zuwa sabobin nesa da aka zaɓa kuma tana gudanar da su a can, duka lokaci guda kuma cikin daidaito. Sabar nesa ba ta taɓa riƙe sirri ba: shaidar shigarta tana ambaton ɗaya a Saitin farko &gt; Sirrika.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Sabuwar sabar nesa</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81350,19 +81350,19 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Gwajin haɗin %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Sabobin nesa</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Har zuwa sabobin nesa %parallel ake aiki a kansu lokaci guda; zango ɗaya zai iya ɗaukar daƙiƙa %timeout a kowace.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Sabar nesa</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81378,15 +81378,15 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>saitunan da za a gyara</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>fayiloli kawai (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Maɓallin SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81394,7 +81394,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>babu (wakilin SSH da maɓallan mai masaukin baƙi)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81402,23 +81402,23 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isarwa zuwa ƙungiya tana zuwa kowace sabar nesa ta cikinta.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Isar zuwa sabobin nesa</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ba a saita wata sabar nesa ba tukuna.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Sabar nesa %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ba a aika ko gudanar da komai a nan: Ajiye yana rubuta saitunan zuwa settings/override/migration.ini.append.php. Shaidar shiga suna ce; ƙimarta tana zama a Saitin farko &gt; Sirrika ko a cikin muhalli.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81426,7 +81426,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Saitunan kamar yadda aka shigar, ba a ajiye su ba tukuna.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81454,15 +81454,15 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Maɓallin mai masaukin baƙi</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Sabar nesa</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sunan sabar nesa da kuma wane muhalli ne ita.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81470,47 +81470,47 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Haruffa, lambobi, - da _, misali production1. Yana sanya wa sabar nesa suna a cikin rahotanni da kuma a kan na'urar umarni (--remotes=production1) kuma ba za a iya canza shi daga baya ba.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Isarwa bisa matakai tana bi ta muhallan bisa wannan jeri.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na zaɓi, a raba da waƙafi, misali production. Isarwa zuwa ƙungiya tana zuwa kowace sabar nesa ta cikinta.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Haɗin</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yadda fayilolin suke isa can, da kuma inda shigarwar take.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta hanyar SSH, abin da ya canza kawai, kuma ana ci gaba da aikawar da ta katse. Zaɓi mafi kyau inda aka shigar da rsync.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH tare da scp don fayilolin.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH tare da sftp don fayilolin.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fayiloli kawai: ana aika ƙaurace-ƙaurace kuma a sake karanta su, amma ba za a iya gudanar da su a can ba.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ta hanyar TLS; fayiloli kawai.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wata shigarwa a kan wannan sabar, cikin babban fayil.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81518,7 +81518,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sunan mai masaukin baƙi ko adireshi, misali node1.example.com. Ba don local ba.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81526,7 +81526,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Babu komai: 22 don SSH, 21 don FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81538,31 +81538,31 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Tushen shigarwar a can, misali /var/www/site (don FTP: hanyar da asusun FTP yake gani).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Layin umarni na PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI a can: php, ko cikakkiyar hanya kamar /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Rubutun na'urar umarni suna gudana a matsayin root a can</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Sai kawai idan mai amfanin sabar nesa root ne (sannan ana gudanar da su da --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Shaidar shiga</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yadda wannan shigarwa take shiga a can. Suna kawai ake ajiyewa.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81570,23 +81570,23 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Wakilin SSH da maɓallan mai amfani da wannan shigarwa take aiki a matsayinsa (kuma koyaushe don local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maɓalli na sirri da aka ajiye a matsayin sirri.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalmar sirri da aka ajiye a matsayin sirri (FTP yana shiga da ita).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Sunan sirri</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sirri daga Saitin farko &gt; Sirrika, misali deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81594,247 +81594,247 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko wani maɓalli na muhalli</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maɓallin tsarin sabar da yake riƙe da shi, misali DEPLOY_KEY (an ajiye a matsayin env:DEPLOY_KEY). Yana maye gurbin sunan sirri.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Maɓallin mai masaukin baƙi</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na zaɓi, don SSH, sftp da rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Sawun yatsan maɓallin mai masaukin baƙi</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... kamar yadda ssh-keygen -l yake buga shi. Da shi, dole mai masaukin baƙi ya nuna wannan maɓalli; ba tare da shi ba, ana koyon maɓallin a farkon haɗuwa.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Dubawa</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gwada haɗin da saitunan da ke sama, sannan ka duba layukan da za a rubuta.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Cire wannan sabar nesa</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana cire saitunanta daga settings/override/migration.ini.append.php. Babu abin da yake canzawa a kan sabar nesa, kuma isarwarta suna nan a cikin tarihi.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>I, cire wannan sabar nesa</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Isarwa-isarwa</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isarwa tana aika ƙaurace-ƙauracen wannan shigarwa zuwa sabobin nesa da aka zaɓa kuma tana gudanar da su a can a matsayin %user, duka lokaci guda kuma cikin daidaito: ana fara duba kowace sabar nesa, kuma idan ɗaya ta kasa, ana janye kowace sabar nesa da ta aiwatar. Tana gudana a bango, kuma shafinta yana nuna kowace sabar nesa yayin da take tafiya.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Sabobin nesa</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yi alama a sabobin nesa, ƙungiya, ko duka biyun.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Isar zuwa gare ta</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Yadda</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Isar</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Aika ka gudanar</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana aika ƙaurace-ƙaurace, a tabbatar da su kuma a gudanar da su a kowace sabar nesa da lambar aiki guda ɗaya ta tarayya.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Aikawa kawai</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana aika fayilolin kuma a tabbatar da su, ba a gudanar da komai (hanya ɗaya tilo don sabar nesa ta FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Bisa matakai</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mataki bayan mataki bisa jerin muhallai (dev, stage, beta, production ...): ana isar da mataki na farko, sannan ƙofa tana jira har sai wani ya amince da na gaba. Duka ko babu a cikin kowane mataki.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Waɗannan ƙaurace-ƙaurace kawai</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na zaɓi: lambobin ƙaura, a raba da waƙafi. Babu komai: kowace ƙaura ta shafin da ƙarin-ƙarinsa.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Duba kafin farawa kawai</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>I, isar yanzu</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Isarwar da suka aika ko suka gudanar da wani abu, mafi sabuwa a farko (duba kafin farawa ba ya ajiye rahoto).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>aikawa kawai</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>bisa matakai, matakai %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ba cikin daidaito</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Babu isarwa tukuna.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Isarwa %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kowace sabar nesa ta isarwar tare da halinta. Isarwa da aka fara a nan tana ci gaba a bango idan aka rufe wannan shafi; sake buɗe shafin don bin ta.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Duk isarwa</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Duba kafin farawa</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Mataki na gaba</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana duba saitunan da shaidun shiga</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Duba kafin farawa: ana karanta halin kowace sabar nesa</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana aika fayilolin ƙaura</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana tabbatar da abin da ya iso</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana gudanar da ƙaurace-ƙaurace a kowace sabar nesa</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana janye sabobin nesa</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isarwar ta ƙare. Ana loda rahotonta.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ba a iya bin ci gaban ba. Sake loda shafin don ganin yadda isarwar take tafiya.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Zango</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wannan shafi yana bin isarwar yayin da take tafiya.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Cikin daidaito</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Matakai</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>mataki %stage yana jira a ƙofarsa</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ƙofa %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user ya amince a %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Mataki</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Fayilolin da aka aika</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Sigar kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>an aiwatar: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>za a aiwatar: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Zanguna</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ƙofa: mataki %stage cikin %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>An isar da matakan da ke gabansa. Duba su, sannan ka amince da mataki na gaba: ana sake duba sabobin nesansa kuma a isar, duka ko babu.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81842,7 +81842,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>I, isar da mataki na gaba yanzu</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81850,31 +81850,31 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Janye wannan isarwa</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kowace sabar nesa da ta aiwatar da ita (%list) tana komawa kan hoton da aka ɗauka kafin aikinta, duka lokaci guda.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>I, janye wannan isarwa yanzu</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>an tsara</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>an aika</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>an isar</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>yana jira a ƙofa</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81882,7 +81882,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>an shirya</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81890,51 +81890,51 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>yana jiran matakinsa</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>an aika fayiloli</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>an tabbatar</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ya kasa, ya maido da kansa</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>ba a canza ba</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ba a isar ba</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ba a iya kaiwa</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sabar nesa ta amsa.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ba za a iya amfani da sabar nesa yanzu ba.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done an gama, %pending ana jira, %failed sun kasa</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Kulle</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>wani aiki yana riƙe da kulle a can</translation>
     </message>
     <message>
         <source>free</source>
@@ -81942,23 +81942,23 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage cikin %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaɓi sabar nesa da za a gwada.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Da farko ka yi alama a “I, cire wannan sabar nesa”.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Ba a iya cire sabar nesa ba: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Ba a iya ajiye sabar nesa ba: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81966,75 +81966,75 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaɓi aƙalla sabar nesa ɗaya ko ƙungiya.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wata sabar nesa da aka zaɓa ba ta cikin saitunan kuma. Sake loda shafin.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Da farko ka yi alama a “I, isar yanzu”.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sabar nesa ta FTP ba za ta iya gudanar da ƙaurace-ƙaurace ba: zaɓi “Aikawa kawai”, ko ka bar ta.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ƙaurace-ƙauracen da za a isar lambobin ƙaura ne, a raba da waƙafi.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isarwar tana ci gaba har yanzu. Jira ta ƙare.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wannan isarwa ba ta jira a ƙofa.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Babu sabar nesa da ta aiwatar da wannan isarwa: babu abin da za a janye.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Da farko ka yi alama a “I, isar da mataki na gaba yanzu”.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Da farko ka yi alama a “I, janye wannan isarwa yanzu”.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sabar nesa mai lamba %id ta riga ta wanzu.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tashar jiha lamba ce daga 1 zuwa 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Muhalli kalma ce ta haruffa, lambobi, - da _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ƙungiya kalma ce ta haruffa, lambobi, - da _ (ba all ba): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ba za a iya karanta shaidar shiga yanzu ba: %problem. Ajiye ta a Saitin farko &gt; Sirrika (ko saita maɓallin) kafin isarwa ta farko.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sabar nesa ta FTP tana karɓar fayiloli ne kawai: isarwa zuwa gare ta “Aikawa kawai” ce, kuma ana gudanar da ƙaurace-ƙaurace dinta a can da hannu.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sabar nesa %id ba ta cikin settings/override/migration.ini.append.php; cire ta a inda aka saita ta.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>An shiga ta hanyar FTP kuma an karanta index.php. Ba za a iya karanta matsayin ƙaura na sabar nesa ta FTP ba.</translation>
     </message>
 </context>
 <context>
@@ -84438,19 +84438,19 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Isarwa %deploy ta kasa a %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Isarwa %deploy tana jira a wata ƙofa a %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Isarwa %deploy ta yi nasara a %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>%site ne ya aiko da wannan saƙo saboda migration.ini [RemoteSettings] Notify[] ya buƙaci haka.</translation>
     </message>
 </context>
 </TS>

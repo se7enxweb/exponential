@@ -82548,15 +82548,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Cele</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inne instalacje, do których ta wdraża swoje migracje: wdrożenie wysyła migracje do wybranych celów i uruchamia je tam, wszędzie naraz i synchronicznie. Cel nigdy nie przechowuje sekretu: jego poświadczenie wskazuje sekret w sekcji Konfiguracja &gt; Sekrety.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nowy cel</translation>
     </message>
     <message>
         <source>Help</source>
@@ -82564,19 +82564,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Test połączenia z %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Cele</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jednocześnie obsługiwanych jest do %parallel celów; jedna faza może trwać na każdym z nich %timeout sekund.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Cel</translation>
     </message>
     <message>
         <source>Address</source>
@@ -82592,15 +82592,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ustawienia do poprawienia</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>tylko pliki (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Klucz SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -82608,7 +82608,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>brak (agent SSH i klucze hosta)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -82616,23 +82616,23 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdrożenie do grupy trafia do każdego jej celu.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdróż do celów</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie skonfigurowano jeszcze żadnego celu.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Cel %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutaj nic nie jest wysyłane ani uruchamiane: przycisk „Zapisać” zapisuje ustawienia w settings/override/migration.ini.append.php. Poświadczenie to nazwa; jego wartość pozostaje w sekcji Konfiguracja &gt; Sekrety lub w środowisku.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -82640,7 +82640,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia w postaci wprowadzonej, jeszcze niezapisane.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -82668,15 +82668,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Klucz hosta</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Cel</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jak nazywa się cel i jakim jest środowiskiem.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -82684,47 +82684,47 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Litery, cyfry, - i _, na przykład production1. Identyfikator nazywa cel w raportach i w konsoli (--remotes=production1) i nie można go później zmienić.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Wdrożenie etapami przechodzi przez środowiska w tej kolejności.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcjonalnie, oddzielone przecinkami, na przykład production. Wdrożenie do grupy trafia do każdego jej celu.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Połączenie</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jak pliki tam trafiają i gdzie jest instalacja.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Przez SSH, tylko to, co się zmieniło, przerwane przesyłanie jest wznawiane. Najlepszy wybór tam, gdzie zainstalowano rsync.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH z scp dla plików.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH z sftp dla plików.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tylko pliki: migracje są wysyłane i odczytywane z powrotem, ale nie można ich tam uruchomić.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP przez TLS; tylko pliki.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inna instalacja na tym serwerze, w folderze.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -82732,7 +82732,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa hosta lub adres, na przykład node1.example.com. Nie dla local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -82740,7 +82740,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puste: 22 dla SSH, 21 dla FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -82752,31 +82752,31 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalog główny instalacji tam, na przykład /var/www/site (dla FTP: ścieżka widziana przez konto FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Wiersz poleceń PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI tam: php albo pełna ścieżka, na przykład /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrypty konsoli działają tam jako root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Tylko gdy użytkownikiem celu jest root (są wtedy uruchamiane z --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Poświadczenie</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jak ta instalacja się tam loguje. Zapisywana jest tylko nazwa.</translation>
     </message>
     <message>
         <source>None</source>
@@ -82784,23 +82784,23 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Agent SSH i klucze użytkownika, jako który działa ta instalacja (i zawsze dla local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klucz prywatny przechowywany jako sekret.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Hasło przechowywane jako sekret (FTP loguje się za jego pomocą).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa sekretu</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekret z sekcji Konfiguracja &gt; Sekrety, na przykład deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -82808,247 +82808,247 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Lub zmienna środowiskowa</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zmienna procesu serwera, która go przechowuje, na przykład DEPLOY_KEY (zapisywana jako env:DEPLOY_KEY). Zastępuje nazwę sekretu.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Klucz hosta</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcjonalnie, dla SSH, sftp i rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Odcisk klucza hosta</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... tak, jak wypisuje go ssh-keygen -l. Z nim host musi pokazać ten klucz; bez niego klucz jest zapamiętywany przy pierwszym kontakcie.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Przegląd</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Przetestuj połączenie z powyższymi ustawieniami, a potem przejrzyj wiersze, które zostaną zapisane.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń ten cel</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jego ustawienia zostaną usunięte z settings/override/migration.ini.append.php. Na celu nic się nie zmienia, a jego wdrożenia pozostają w historii.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Tak, usuń ten cel</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdrożenia</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdrożenie wysyła migracje tej instalacji do wybranych celów i uruchamia je tam jako %user, wszędzie naraz i synchronicznie: każdy cel jest najpierw sprawdzany, a gdy jeden zawiedzie, każdy cel, który je zastosował, zostaje wycofany. Wdrożenie trwa w tle, a jego strona na bieżąco pokazuje każdy cel.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Cele</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaznacz cele, grupę lub jedno i drugie.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdróż do niego</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Jak</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdróż</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyślij i uruchom</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracje są wysyłane, weryfikowane i uruchamiane na każdym celu z jednym wspólnym identyfikatorem przebiegu.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Tylko przesłanie</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Pliki są wysyłane i weryfikowane, nic nie jest uruchamiane (jedyny sposób dla celu FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapami</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etap po etapie w kolejności środowisk (dev, stage, beta, production ...): pierwszy etap jest wdrażany, potem bramka czeka, aż ktoś zatwierdzi następny. Wszystko albo nic w obrębie każdego etapu.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Tylko te migracje</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcjonalnie: identyfikatory migracji oddzielone przecinkami. Puste: każda migracja witryny i jej rozszerzeń.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Tylko kontrola wstępna</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Tak, wdróż teraz</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdrożenia, które coś wysłały lub uruchomiły, od najnowszego (kontrola wstępna nie zachowuje raportu).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>tylko przesłanie</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>etapami, liczba etapów: %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>niezsynchronizowany</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Brak wdrożeń.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdrożenie %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Każdy cel wdrożenia z jego stanem. Wdrożenie uruchomione tutaj trwa dalej w tle, gdy ta strona zostanie zamknięta; otwórz stronę ponownie, aby je śledzić.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Wszystkie wdrożenia</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrola wstępna</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Następny etap</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprawdzanie ustawień i poświadczeń</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrola wstępna: odczytywanie stanu każdego celu</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Wysyłanie plików migracji</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Weryfikowanie tego, co dotarło</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchamianie migracji na każdym celu</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Wycofywanie celów</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdrożenie zakończyło się. Wczytywanie raportu.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się śledzić postępu. Odśwież stronę, aby zobaczyć, jak przebiega wdrożenie.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Faza</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta strona śledzi wdrożenie na bieżąco.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Zsynchronizowane</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapy</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>etap %stage czeka przy swojej bramce</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Bramka %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>zatwierdzone przez %user o %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Etap</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Wysłane pliki</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Wersja jądra</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>zastosowano: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>do zastosowania: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fazy</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Bramka: etap %stage z %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poprzednie etapy są wdrożone. Sprawdź je, a potem zatwierdź następny etap: jego cele są ponownie sprawdzane i wdrażane, wszystko albo nic.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -83056,7 +83056,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Tak, wdróż teraz następny etap</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -83064,31 +83064,31 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Wycofaj to wdrożenie</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Każdy cel, który je zastosował (%list), wraca do migawki wykonanej przed jego przebiegiem, wszystkie naraz.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Tak, wycofaj teraz to wdrożenie</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>zaplanowane</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>przesłano</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>wdrożono</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>czeka przy bramce</translation>
     </message>
     <message>
         <source>selected</source>
@@ -83096,7 +83096,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>przygotowane</translation>
     </message>
     <message>
         <source>ready</source>
@@ -83104,51 +83104,51 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>czeka na swój etap</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>pliki wysłane</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>zweryfikowano</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>nie powiódł się, przywrócił się sam</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>bez zmian</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>nie wdrożono</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>nieosiągalny</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cel odpowiedział.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Celu nie można teraz użyć.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done wykonane, %pending oczekujące, %failed nieudane</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Blokada</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>przebieg trzyma tam blokadę</translation>
     </message>
     <message>
         <source>free</source>
@@ -83156,23 +83156,23 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage z %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz cel do przetestowania.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Najpierw zaznacz „Tak, usuń ten cel”.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się usunąć celu: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się zapisać celu: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -83180,75 +83180,75 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz co najmniej jeden cel lub grupę.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybranego celu nie ma już w ustawieniach. Odśwież stronę.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Najpierw zaznacz „Tak, wdróż teraz”.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cel FTP nie może uruchamiać migracji: wybierz „Tylko przesłanie” albo go pomiń.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracje do wdrożenia to identyfikatory migracji oddzielone przecinkami.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdrożenie wciąż trwa. Poczekaj, aż się zakończy.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>To wdrożenie nie czeka przy bramce.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Żaden cel nie zastosował tego wdrożenia: nie ma czego wycofywać.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Najpierw zaznacz „Tak, wdróż teraz następny etap”.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Najpierw zaznacz „Tak, wycofaj teraz to wdrożenie”.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cel o identyfikatorze %id już istnieje.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Port to liczba od 1 do 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Środowisko to słowo z liter, cyfr, - i _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupa to słowo z liter, cyfr, - i _ (nie all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można teraz odczytać poświadczenia: %problem. Zapisz je w sekcji Konfiguracja &gt; Sekrety (lub ustaw zmienną) przed pierwszym wdrożeniem.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cel FTP odbiera tylko pliki: wdrożenie do niego to „Tylko przesłanie”, a jego migracje uruchamia się tam ręcznie.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Celu %id nie ma w settings/override/migration.ini.append.php; usuń go tam, gdzie jest ustawiony.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zalogowano przez FTP i odczytano index.php. Nie można odczytać stanu migracji celu FTP.</translation>
     </message>
 </context>
 <context>
@@ -85652,19 +85652,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdrożenie %deploy nie powiodło się w %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdrożenie %deploy czeka przy bramce w %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Wdrożenie %deploy powiodło się w %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta wiadomość została wysłana przez %site, ponieważ wymaga tego migration.ini [RemoteSettings] Notify[].</translation>
     </message>
 </context>
 </TS>

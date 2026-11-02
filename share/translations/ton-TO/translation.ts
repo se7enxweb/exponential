@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaahi feituʻu mamaʻo</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e ngaahi fokotuʻu kehe ʻoku tufaki ki ai ʻe he fokotuʻu ni hono ngaahi fetuku: ʻoku ʻave ʻe ha tufaki ʻa e ngaahi fetuku ki he ngaahi feituʻu mamaʻo naʻe fili pea fakalele ai, kotoa ʻi he taimi tatau pea tatau fakataha. ʻOku ʻikai ʻaupito puke ʻe ha feituʻu mamaʻo ha meʻa fufū: ʻoku fakahingoa ʻe hono fakamoʻoni hū ha taha ʻi he Fokotuʻu &gt; Ngaahi fufū.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Feituʻu mamaʻo foʻou</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivi ʻo e fakahoko ʻo %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e ngaahi feituʻu mamaʻo</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ngāueʻi ʻo aʻu ki he feituʻu mamaʻo ʻe %parallel ʻi he taimi tatau; ʻe lava ke ʻalu ha konga ngāue ʻe taha ʻo %timeout sekoni ʻi he taha kotoa.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Feituʻu mamaʻo</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ngaahi fokotuʻutuʻu ke fakatonutonu</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>ngaahi faile pē (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Kī SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻikai (ko e SSH agent mo e ngaahi kī ʻo e hōsi)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻalu ha tufaki ki ha kulupu ki he feituʻu mamaʻo kotoa ʻo ia.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Tufaki ki he ngaahi feituʻu mamaʻo</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Teʻeki fokotuʻu ha feituʻu mamaʻo.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Feituʻu mamaʻo %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻikai ha meʻa ʻe ʻave pe fakalele heni: ʻoku tohi ʻe he Tauhi ʻa e ngaahi fokotuʻutuʻu ki he settings/override/migration.ini.append.php. Ko e fakamoʻoni hū ko ha hingoa; ʻoku nofo hono mahuʻinga ʻi he Fokotuʻu &gt; Ngaahi fufū pe ʻi he ʻātakai.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e ngaahi fokotuʻutuʻu ʻo hangē ko ia naʻe tohi, teʻeki tauhi.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Kī ʻo e hōsi</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Ko e feituʻu mamaʻo</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e hingoa ʻo e feituʻu mamaʻo mo e ʻātakai ʻoku ʻi ai.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaahi mataʻitohi, fika, - mo e _, hangē ko e production1. ʻOku ne fakahingoa ʻa e feituʻu mamaʻo ʻi he ngaahi lipooti mo e konisoli (--remotes=production1) pea ʻe ʻikai lava ʻo liliu ki mui.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... ʻOku fou ha tufaki fakalakanga ʻi he ngaahi ʻātakai ʻi he hokohoko ko ʻeni.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fili pē, vaheʻi ʻaki ha koma, hangē ko e production. ʻOku ʻalu ha tufaki ki ha kulupu ki he feituʻu mamaʻo kotoa ʻo ia.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Ko e fakahoko</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Founga ʻoku aʻu ai ʻa e ngaahi faile ki ai, mo e feituʻu ʻoku ʻi ai ʻa e fokotuʻu.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻI he SSH, ko e meʻa pē naʻe liliu, pea ʻoku hoko atu ha hiki naʻe motu. Ko e fili lelei taha ʻi he feituʻu ʻoku fokotuʻu ai ʻa e rsync.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH mo e scp ki he ngaahi faile.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH mo e sftp ki he ngaahi faile.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaahi faile pē: ʻoku ʻave mo toe lau ʻa e ngaahi fetuku, ka ʻoku ʻikai lava ʻo fakalele ʻi ai.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ʻi he TLS; ngaahi faile pē.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko ha fokotuʻu kehe ʻi he sēvā ni, ʻi ha folota.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko ha hingoa hōsi pe tuʻasila, hangē ko e node1.example.com. ʻIkai ki he local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maha: 22 ki he SSH, 21 ki he FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e aka ʻo e fokotuʻu ʻi ai, hangē ko e /var/www/site (ki he FTP: ko e hala ʻoku sio ki ai ʻa e ʻakauni FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Laine fekau PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e PHP CLI ʻi ai: php, pe ko ha hala kakato hangē ko e /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku lele ai ʻa e ngaahi sikilipi konisoli ʻo hangē ko e root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapau pē ko e tokotaha fakaʻaongaʻi ʻo e feituʻu mamaʻo ko e root (ʻoku fakalele leva ia mo e --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Ko e fakamoʻoni hū</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Founga ʻoku hū ai ʻa e fokotuʻu ni ki ai. Ko ha hingoa pē ʻoku tauhi.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e SSH agent mo e ngaahi kī ʻo e tokotaha fakaʻaongaʻi ʻoku lele ai ʻa e fokotuʻu ni (pea maʻu ai pē ki he local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko ha kī fakafoʻituitui ʻoku tauhi ko ha meʻa fufū.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko ha lea fufū ʻoku tauhi ko ha meʻa fufū (ʻoku hū ʻa e FTP ʻaki ha taha).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Hingoa ʻo e meʻa fufū</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko ha meʻa fufū mei he Fokotuʻu &gt; Ngaahi fufū, hangē ko e deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Pe ko ha liliuʻanga ʻātakai</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e liliuʻanga ʻo e ngāue ʻa e sēvā ʻoku ne puke ia, hangē ko e DEPLOY_KEY (tauhi ko e env:DEPLOY_KEY). ʻOku ne fetongi ʻa e hingoa ʻo e meʻa fufū.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Ko e kī ʻo e hōsi</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fili pē, ki he SSH, sftp mo e rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakaʻilonga tuhu ʻo e kī ʻo e hōsi</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... hangē ko hono paaki ʻe he ssh-keygen -l. Kapau ʻoku ʻi ai, kuo pau ke fakahā ʻe he hōsi ʻa e kī ni; kapau ʻoku ʻikai, ʻoku ako ʻa e kī ʻi he fetuʻutaki ʻuluaki.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Sivi</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivi ʻa e fakahoko mo e ngaahi fokotuʻutuʻu ʻi ʻolunga, pea sivi leva ʻa e ngaahi laine ʻe tohi.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Toʻo ʻa e feituʻu mamaʻo ni</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku toʻo hono ngaahi fokotuʻutuʻu mei he settings/override/migration.ini.append.php. ʻOku ʻikai ha meʻa ʻe liliu ʻi he feituʻu mamaʻo, pea ʻoku nofo pē hono ngaahi tufaki ʻi he hisitōlia.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻIo, toʻo ʻa e feituʻu mamaʻo ni</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaahi tufaki</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻave ʻe ha tufaki ʻa e ngaahi fetuku ʻo e fokotuʻu ni ki he ngaahi feituʻu mamaʻo naʻe fili pea fakalele ai ʻo hangē ko %user, kotoa ʻi he taimi tatau pea tatau fakataha: ʻoku ʻuluaki siviʻi ʻa e feituʻu mamaʻo kotoa, pea kapau ʻe taʻelavameʻa ha taha, ʻoku toʻo fakafoki ʻa e feituʻu mamaʻo kotoa naʻe ngāueʻaki. ʻOku hoko ia ʻi mui, pea ʻoku fakahā ʻe hono peesi ʻa e feituʻu mamaʻo kotoa lolotonga ʻene hoko.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Ko e ngaahi feituʻu mamaʻo</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakaʻilongaʻi ha ngaahi feituʻu mamaʻo, ha kulupu, pe fakatouʻosi.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Tufaki ki ai</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Founga</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Tufaki</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻAve pea fakalele</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻave, siviʻi mo fakalele ʻa e ngaahi fetuku ʻi he feituʻu mamaʻo kotoa ʻaki ha ID fakalele ʻe taha ʻoku vahevahe.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiki atu pē</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻave mo siviʻi ʻa e ngaahi faile, ʻoku ʻikai ha meʻa ʻe fakalele (ko e founga pē ia ki ha feituʻu mamaʻo FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakalakanga</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lakanga ki he lakanga ʻo fakatatau ki he hokohoko ʻo e ngaahi ʻātakai (dev, stage, beta, production ...): ʻoku tufaki ʻa e lakanga ʻuluaki, pea tatali leva ha matapā kae ʻoua kuo fakangofua ʻe ha taha ʻa e hoko. Kotoa pe ʻikai ha meʻa ʻi loto ʻi he lakanga taki taha.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e ngaahi fetuku ko ʻeni pē</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fili pē: ngaahi ID ʻo e fetuku, vaheʻi ʻaki ha koma. Maha: ko e fetuku kotoa ʻo e uepisaiti mo hono ngaahi fakalahi.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivi ki muʻa pē</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻIo, tufaki he taimi ni</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e ngaahi tufaki naʻe ʻave pe fakalele ha meʻa, ko e foʻou taha ʻi muʻa (ʻoku ʻikai tauhi ʻe ha sivi ki muʻa ha lipooti).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>hiki atu pē</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>fakalakanga, lakanga ʻe %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻikai tatau fakataha</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Teʻeki ha tufaki.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Tufaki %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e feituʻu mamaʻo kotoa ʻo e tufaki mo hono tuʻunga. ʻOku hoko atu ʻi mui ha tufaki naʻe kamataʻi heni ʻo kapau ʻe tāpuni ʻa e peesi ni; toe fakaava ʻa e peesi ke muimuiʻi ia.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaahi tufaki kotoa</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivi ki muʻa</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Lakanga hoko</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku siviʻi ʻa e ngaahi fokotuʻutuʻu mo e fakamoʻoni hū</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivi ki muʻa: ʻoku lau ʻa e tuʻunga ʻo e feituʻu mamaʻo kotoa</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻave ʻa e ngaahi faile fetuku</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku siviʻi ʻa e meʻa naʻe aʻu mai</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku fakalele ʻa e ngaahi fetuku ʻi he feituʻu mamaʻo kotoa</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku toʻo fakafoki ʻa e ngaahi feituʻu mamaʻo</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuo ngata ʻa e tufaki. ʻOku hoko mai hono lipooti.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naʻe ʻikai lava ʻo muimuiʻi ʻa e fakalakalaka. Toe hoko mai ʻa e peesi ke sio pe ʻoku fēfē ʻa e tufaki.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Konga ngāue</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku muimuiʻi ʻe he peesi ni ʻa e tufaki lolotonga ʻene hoko.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Tatau fakataha</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaahi lakanga</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻoku tatali ʻa e lakanga %stage ʻi hono matapā</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Matapā %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>fakangofua ʻe %user ʻi he %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Lakanga</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaahi faile kuo ʻave</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Paaki ʻo e kēneli</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>kuo ngāueʻaki: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ke ngāueʻaki: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngaahi konga ngāue</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Matapā: lakanga %stage ʻo e %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuo tufaki ʻa e ngaahi lakanga ki muʻa ʻiate ia. Siviʻi kinautolu, pea fakangofua leva ʻa e lakanga hoko: ʻoku toe siviʻi mo tufaki hono ngaahi feituʻu mamaʻo, kotoa pe ʻikai ha meʻa.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻIo, tufaki ʻa e lakanga hoko he taimi ni</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakafoki ʻa e tufaki ni</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku foki ʻa e feituʻu mamaʻo kotoa naʻe ngāueʻaki ia (%list) ki he poini fakafoki naʻe toʻo ki muʻa ʻi hono fakalele, kotoa ʻi he taimi tatau.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻIo, fakafoki ʻa e tufaki ni he taimi ni</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>kuo palani</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>kuo hiki atu</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>kuo tufaki</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻoku tatali ʻi ha matapā</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>kuo teuteu</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻoku tatali ki hono lakanga</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>kuo ʻave ʻa e ngaahi faile</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>kuo siviʻi</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>taʻelavameʻa, kuo fakafoki pē ʻe ia</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻikai liliu</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>teʻeki tufaki</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻikai lava ʻo aʻu ki ai</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuo tali mai ʻa e feituʻu mamaʻo.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻikai lava ʻo ngāueʻaki ʻa e feituʻu mamaʻo he taimi ni.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done kuo ʻosi, %pending ʻoku tatali, %failed taʻelavameʻa</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Loka</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻoku puke ʻe ha fakalele ʻa e loka ʻi ai</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage ʻo e %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fili ʻa e feituʻu mamaʻo ke sivi.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakaʻilongaʻi ʻuluaki ʻa e “ʻIo, toʻo ʻa e feituʻu mamaʻo ni”.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Naʻe ʻikai lava ʻo toʻo ʻa e feituʻu mamaʻo: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Naʻe ʻikai lava ʻo tauhi ʻa e feituʻu mamaʻo: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fili ha feituʻu mamaʻo pe kulupu ʻe taha ʻi he siʻisiʻi taha.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko ha feituʻu mamaʻo naʻe fili ʻoku ʻikai toe ʻi he ngaahi fokotuʻutuʻu. Toe hoko mai ʻa e peesi.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakaʻilongaʻi ʻuluaki ʻa e “ʻIo, tufaki he taimi ni”.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻikai lava ha feituʻu mamaʻo FTP ʻo fakalele ha ngaahi fetuku: fili “Hiki atu pē”, pe tuku ia ki tafaʻaki.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e ngaahi fetuku ke tufaki ko e ngaahi ID fetuku, vaheʻi ʻaki ha koma.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku kei hoko ʻa e tufaki. Tatali kae ʻoua kuo ngata.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻikai tatali ʻa e tufaki ni ʻi ha matapā.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naʻe ʻikai ngāueʻaki ʻe ha feituʻu mamaʻo ʻa e tufaki ni: ʻoku ʻikai ha meʻa ke fakafoki.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakaʻilongaʻi ʻuluaki ʻa e “ʻIo, tufaki ʻa e lakanga hoko he taimi ni”.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fakaʻilongaʻi ʻuluaki ʻa e “ʻIo, fakafoki ʻa e tufaki ni he taimi ni”.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuo ʻosi ʻi ai ha feituʻu mamaʻo mo e ID %id.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e poati ko ha fika mei he 1 ki he 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko e ʻātakai ko ha foʻi lea ʻo e ngaahi mataʻitohi, fika, - mo e _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko ha kulupu ko ha foʻi lea ʻo e ngaahi mataʻitohi, fika, - mo e _ (ʻikai ko e all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻikai lava ʻo lau ʻa e fakamoʻoni hū he taimi ni: %problem. Tauhi ia ʻi he Fokotuʻu &gt; Ngaahi fufū (pe fokotuʻu ʻa e liliuʻanga) ki muʻa ʻi he tufaki ʻuluaki.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku maʻu pē ʻe ha feituʻu mamaʻo FTP ʻa e ngaahi faile: ko ha tufaki ki ai ko e “Hiki atu pē”, pea ʻoku fakalele ʻaki ʻa e nima hono ngaahi fetuku ʻi ai.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku ʻikai ʻi he settings/override/migration.ini.append.php ʻa e feituʻu mamaʻo %id; toʻo ia ʻi he feituʻu ʻoku fokotuʻu ai.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuo hū ʻi he FTP pea lau ʻa e index.php. ʻOku ʻikai lava ʻo lau ʻa e tuʻunga fetuku ʻo ha feituʻu mamaʻo FTP.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Naʻe taʻelavameʻa ʻa e tufaki %deploy ʻi %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ʻOku tatali ʻa e tufaki %deploy ʻi ha matapā ʻi %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Naʻe lavameʻa ʻa e tufaki %deploy ʻi %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naʻe fekau mai ʻa e meili ni ʻe %site koeʻuhí ʻoku kole ki ai ʻa migration.ini [RemoteSettings] Notify[].</translation>
     </message>
 </context>
 </TS>

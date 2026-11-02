@@ -81336,15 +81336,15 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo dzekure</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kumwe kuiswa uko uku kunoendesa kutama kwako: kuendesa kunotumira kutama kunzvimbo dzekure dzakasarudzwa uye kuzvimhanyisa ikoko, zvese panguva imwe chete uye zvakaenderana. Nzvimbo yekure haimbobati chakavanzika: humbowo hwayo hwekupinda hunodoma chimwe muGadziriro &gt; Zvakavanzika.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure itsva</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuedza kubatana kwe %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo dzekure idzi</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kusvika nzvimbo dzekure %parallel dzinoshandwa panguva imwe chete; nhambo imwe inogona kutora masekondi %timeout pane imwe neimwe.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>marongero ekugadzirisa</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>mafaira chete (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiyi yeSSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>hapana (SSH agent nemakiyi ehosti)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuendesa kuboka kunoenda kunzvimbo dzekure dzaro dzese.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Endesa kunzvimbo dzekure</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapana nzvimbo yekure yakagadzirwa parizvino.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapana chinotumirwa kana kumhanyiswa pano: Chengetedza inonyora marongero mu settings/override/migration.ini.append.php. Humbowo hwekupinda izita; kukosha kwahwo kunoramba kuri muGadziriro &gt; Zvakavanzika kana munharaunda.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Marongero sezvaakaiswa, asati achengetedzwa.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiyi yehosti</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Nzvimbo yekure</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuti nzvimbo yekure inonzi chii uye kuti inharaunda ipi.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mabhii, manhamba, - uye _, semuenzaniso production1. Rinodoma nzvimbo yekure mumishumo uye pakonzori (--remotes=production1) uye harigoni kushandurwa gare gare.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Kuendesa muzvikamu kunofamba nemunharaunda muhurongwa uhu.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hazvimanikidzwe, zvakaparadzaniswa nemakoma, semuenzaniso production. Kuendesa kuboka kunoenda kunzvimbo dzekure dzaro dzese.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Kubatana</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuti mafaira anosvika sei ikoko, uye kuti kuiswa kuri kupi.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pamusoro peSSH, zvachinja chete, kufambisa kwakadimburwa kunoenderera. Sarudzo yakanakisa pane rsync yakaiswa.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ne scp yemafaira.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ne sftp yemafaira.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mafaira chete: kutama kwedata kunotumirwa uye kunoverengwa zvakare, asi hakugoni kumhanyiswa ikoko.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP pamusoro peTLS; mafaira chete.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kumwe kuiswa pasevha iyi, mufoda.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zita rehosti kana kero, semuenzaniso node1.example.com. Kwete kune local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isina chinhu: 22 yeSSH, 21 yeFTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Mudzi wekuiswa ikoko, semuenzaniso /var/www/site (kuFTP: nzira inoonekwa neakaundi yeFTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Mutsara wemirairo wePHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI ikoko: php, kana nzira yakazara se /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvinyorwa zvekonzori zvinomhanya ikoko se root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Chete kana mushandisi wenzvimbo yekure ari root (kwozomhanyiswa ne --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Humbowo hwekupinda</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuti kuiswa uku kunopinda sei ikoko. Zita chete ndiro rinochengetwa.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH agent nemakiyi emushandisi anomhanyisa kuiswa uku (uye nguva dzose kune local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiyi yepachivande inochengetwa sechakavanzika.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasiwedhi inochengetwa sechakavanzika (FTP inopinda nayo).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Zita rechakavanzika</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chakavanzika chiri muGadziriro &gt; Zvakavanzika, semuenzaniso deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Kana chichinjo chenharaunda</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chichinjo chepurosesi yesevha chinochibata, semuenzaniso DEPLOY_KEY (chinochengetwa se env:DEPLOY_KEY). Chinotora nzvimbo yezita rechakavanzika.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Kiyi yehosti</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hazvimanikidzwe, zveSSH, sftp ne rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Chidhindo chekiyi yehosti</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... sezvinoratidzwa ne ssh-keygen -l. Kana iripo, hosti inofanira kuratidza kiyi iyi; kana isipo, kiyi inodzidzwa pakubatana kwekutanga.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Ongororo</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Edza kubatana nemarongero ari pamusoro, wozoongorora mitsara ichanyorwa.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Bvisa nzvimbo yekure iyi</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Marongero ayo anobviswa mu settings/override/migration.ini.append.php. Hapana chinoshanduka panzvimbo yekure, uye kuendesa kwayo kunoramba kuri munhoroondo.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Hongu, bvisa nzvimbo yekure iyi</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuendesa</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuendesa kunotumira kutama kwedata kwekuiswa uku kunzvimbo dzekure dzakasarudzwa uye kuzvimhanyisa ikoko se %user, zvese panguva imwe chete uye zvakaenderana: nzvimbo yekure yega yega inotanga kutariswa, uye kana imwe ikakundikana, nzvimbo yekure yega yega yakazviisa inodzoserwa shure. Kunoenderera kumashure, uye peji yako inoratidza nzvimbo yekure yega yega sezvazvinofamba.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Nzvimbo dzekure</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isa chiratidzo panzvimbo dzekure, paboka, kana pazvose.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Endesa ikoko</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Nzira yazvo</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Endesa</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Tumira uye mhanyisa</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutama kunotumirwa, kunotariswa uye kunomhanyiswa panzvimbo yekure yega yega ne ID imwe chete yekumhanyisa.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Kufambisa chete</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Mafaira anotumirwa uye anotariswa, hapana chinomhanyiswa (nzira chete yenzvimbo yekure yeFTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Muzvikamu</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chikamu nechikamu muhurongwa hwenharaunda (dev, stage, beta, production ...): chikamu chekutanga chinoendeswa, ipapo gedhi rinomirira kusvikira mumwe munhu abvumira chinotevera. Zvese kana hapana mukati mechikamu chimwe nechimwe.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutama uku chete</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hazvimanikidzwe: ID dzekutama, dzakaparadzaniswa nemakoma. Isina chinhu: kutama kwese kwesaiti nezvekuwedzera zvayo.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutarisa kwekutanga chete</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Hongu, endesa izvozvi</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuendesa kwakatumira kana kumhanyisa chimwe chinhu, kutsva kwazvo kuchitanga (kutarisa kwekutanga hakuchengeti mushumo).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>kufambisa chete</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>muzvikamu, zvikamu %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>hazvina kuenderana</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapana kuendesa parizvino.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuendesa %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure yega yega yekuendesa uku nemamiriro ayo. Kuendesa kwakatangwa pano kunoenderera kumashure kana peji iyi ikavharwa; vhura peji zvakare kuti uteedzere.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuendesa kwese</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutarisa kwekutanga</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Chikamu chinotevera</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutarisa marongero nehumbowo hwekupinda</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutarisa kwekutanga: kuverenga mamiriro enzvimbo yekure yega yega</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutumira mafaira ekutama</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutarisa zvasvika</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Kumhanyisa kutama panzvimbo yekure yega yega</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Kudzosera nzvimbo dzekure</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuendesa kwapera. Kurodha mushumo wako.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kufambira mberi hakuna kukwanisa kuteedzerwa. Rodhazve peji kuti uone kuti kuendesa kuri kufamba sei.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhambo</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Peji iyi inoteedzera kuendesa sezvakunofamba.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvakaenderana</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvikamu</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>chikamu %stage chakamirira pagedhi racho</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Gedhi %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>zvakabvumirwa na %user pa %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Chikamu</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Mafaira akatumirwa</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Shanduro yeKernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>zvakaiswa: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>zvekuisa: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhambo dzese</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Gedhi: chikamu %stage pa %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvikamu zvakapfuura zvakaendeswa. Zvitarise, wobvumira chikamu chinotevera: nzvimbo dzekure dzacho dzinotariswa zvakare uye dzinoendeswa, zvese kana hapana.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Hongu, endesa chikamu chinotevera izvozvi</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Dzosera shure kuendesa uku</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure yega yega yakazviisa (%list) inodzokera kumufananidzo wakatorwa pamberi pekumhanyisa kwayo, zvese panguva imwe chete.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Hongu, dzosera shure kuendesa uku izvozvi</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>zvakarongwa</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>zvakafambiswa</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>zvakaendeswa</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>zvakamirira pagedhi</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>zvakagadzirirwa</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>zvakamirira chikamu chazvo</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>mafaira akatumirwa</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>zvakatariswa</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>zvakakundikana, zvakazvidzorera zvega</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>hazvina kuchinja</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>hazvina kuendeswa</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>hazvisvikiki</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure yapindura.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure haigoni kushandiswa izvozvi.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done zvapera, %pending zvakamirira, %failed zvakakundikana</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Chikiyo</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>kumhanyisa kwakabata chikiyo ikoko</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage pa %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarudza nzvimbo yekure yekuedza.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanga waisa chiratidzo pa “Hongu, bvisa nzvimbo yekure iyi”.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure haina kukwanisa kubviswa: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure haina kukwanisa kuchengetedzwa: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarudza zvishoma nzvimbo yekure imwe kana boka rimwe.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Imwe nzvimbo yekure yakasarudzwa haichisiri mumarongero. Rodhazve peji.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanga waisa chiratidzo pa “Hongu, endesa izvozvi”.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure yeFTP haikwanisi kumhanyisa kutama kwedata: sarudza “Kufambisa chete”, kana kuisiya.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kutama kwekuendesa ID dzekutama, dzakaparadzaniswa nemakoma.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuendesa kuchiri kuenderera. Mirira kusvikira kwapera.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuendesa uku hakumirire pagedhi.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapana nzvimbo yekure yakaisa kuendesa uku: hapana chekudzosera shure.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanga waisa chiratidzo pa “Hongu, endesa chikamu chinotevera izvozvi”.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanga waisa chiratidzo pa “Hongu, dzosera shure kuendesa uku izvozvi”.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure ine ID %id iripo kare.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiteshi inhamba kubva pa 1 kusvika pa 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Nharaunda izwi remabhii, manhamba, - uye _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Boka izwi remabhii, manhamba, - uye _ (kwete all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Humbowo hwekupinda hahugoni kuverengwa izvozvi: %problem. Huchengetedze muGadziriro &gt; Zvakavanzika (kana gadza chichinjo) pamberi pekuendesa kwekutanga.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure yeFTP inogamuchira mafaira chete: kuendesa kwairi kunova “Kufambisa chete”, uye kutama kwayo kunomhanyiswa ikoko nemaoko.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nzvimbo yekure %id haisi mu settings/override/migration.ini.append.php; ibvise painogadzwa.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yapinda neFTP uye yaverenga index.php. Chimiro chekutama chenzvimbo yekure yeFTP hachikwanisi kuverengwa.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuendesa %deploy kwakakundikana pa %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuendesa %deploy kwakamirira pagedhi pa %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuendesa %deploy kwabudirira pa %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsamba iri rakatumirwa ne %site nekuti migration.ini [RemoteSettings] Notify[] inozvikumbira.</translation>
     </message>
 </context>
 </TS>

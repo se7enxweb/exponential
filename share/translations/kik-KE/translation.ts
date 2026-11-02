@@ -81336,15 +81336,15 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Mahandi ma kũraya</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mahandi marĩa mangĩ ũhandi ũyũ ũtwaraga mĩthamio yaguo: mũtwaro ũtũmaga mĩthamio kũrĩ mahandi ma kũraya marĩa mathuurĩtwo na ũkamĩtengeria kuo, mothe ihinda rĩmwe na makĩhwananĩtie. Ũhandi wa kũraya ndũrĩ hĩndĩ ũigaga itumbĩ: ũira waguo wa gũtoonya ũgwetaga rĩmwe thĩinĩ wa Mwambĩrĩria &gt; Matumbĩ.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi wa kũraya mwerũ</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Kũgeria ũgwatanio wa %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Mahandi ma kũraya</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mahandi ma kũraya nginya %parallel nĩ marutagĩrwo wĩra ihinda rĩmwe; kĩhinda kĩmwe no gĩkinyie sekondi %timeout harĩ o ũmwe.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi wa kũraya</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>mĩtaratara ya kũrũnga</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>faĩlo tu (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Rĩhingũro rĩa SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>gũtirĩ (SSH agent na ihingũro cia host)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũtwaro kũrĩ gĩkundi ũthiĩ kũrĩ o ũhandi wa kũraya wa gĩkio.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Twara kũrĩ mahandi ma kũraya</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gũtirĩ ũhandi wa kũraya ũhaarĩirio rĩu.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi wa kũraya %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gũtirĩ kĩtũmagwo kana gĩtengagĩrio haha: Iga nĩĩandĩkaga mĩtaratara thĩinĩ wa settings/override/migration.ini.append.php. Ũira wa gũtoonya nĩ rĩĩtwa; kĩrĩa kĩrĩ thĩinĩ waguo gĩtigaraga Mwambĩrĩria &gt; Matumbĩ kana mawĩra-inĩ ma kũhũthĩra.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mĩtaratara o ta ũrĩa yandĩkĩtwo, ĩtaigĩtwo rĩu.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Rĩhingũro rĩa host</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Ũhandi wa kũraya</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũrĩa ũhandi wa kũraya ũĩtagwo na mawĩra ma kũhũthĩra marĩa ũrĩ.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Marũa, namba, - na _, ta production1. Nĩrĩo rĩĩtwa rĩa ũhandi wa kũraya maripoti-inĩ na console-inĩ (--remotes=production1) na ndĩngĩgarũrwo thuutha.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Mũtwaro na irathi ũhĩtũkagĩra mawĩra ma kũhũthĩra na mũthiĩre ũyũ.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ti ya bata, ikĩgayanio na koma, ta production. Mũtwaro kũrĩ gĩkundi ũthiĩ kũrĩ o ũhandi wa kũraya wa gĩkio.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Ũgwatanio</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũrĩa faĩlo ikinyaga kuo, na harĩa ũhandi ũrĩ.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na SSH, kĩrĩa kĩgarũrũkĩte tu, na ũhĩtũkia ũrĩa watinĩkire ũgathiĩ na mbere. Ũthuuri mwega mũno harĩa rsync ĩhandĩtwo.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH na scp kwa faĩlo.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH na sftp kwa faĩlo.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Faĩlo tu: mĩthamio ĩtũmagwo na ĩgathomwo rĩngĩ, no ndĩngĩtengerio kuo.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP na TLS; faĩlo tu.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi ũngĩ thĩinĩ wa server ĩno, foda-inĩ.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rĩĩtwa rĩa host kana anwani, ta node1.example.com. Ti rĩa local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hatarĩ kĩndũ: 22 kwa SSH, 21 kwa FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũri wa ũhandi kuo, ta /var/www/site (kwa FTP: njĩra ĩrĩa akaunti ya FTP yonaga).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Command line ya PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI ya kuo: php, kana njĩra yothe ta /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Scripts cia console itengagĩrio kuo ta root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>No rĩrĩa mũhũthiri wa ũhandi wa kũraya arĩ root (hĩndĩ ĩyo ĩtengagĩrio na --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Ũira wa gũtoonya</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũrĩa ũhandi ũyũ ũtoonyaga kuo. No rĩĩtwa tu rĩigagwo.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH agent na ihingũro cia mũhũthiri ũrĩa ũhandi ũyũ ũtengagĩrio ta we (na hĩndĩ ciothe kwa local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rĩhingũro rĩa mwene rĩigĩtwo ta itumbĩ.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiugo kĩa hitho kĩigĩtwo ta itumbĩ (FTP ĩtoonyaga nakĩo).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Rĩĩtwa rĩa itumbĩ</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Itumbĩ rĩa Mwambĩrĩria &gt; Matumbĩ, ta deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Kana variable ya mawĩra ma kũhũthĩra</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Variable ya mawĩra ma server ĩrĩa ĩrĩ narĩo, ta DEPLOY_KEY (ĩigĩtwo ta env:DEPLOY_KEY). Ĩkaga handũ ha rĩĩtwa rĩa itumbĩ.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Rĩhingũro rĩa host</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ti ya bata, kwa SSH, sftp na rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũhũrĩ wa rĩhingũro rĩa host</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... o ta ũrĩa ssh-keygen -l ĩrĩonanagia. Ũrĩ naguo, host no nginya yonanie rĩhingũro rĩĩrĩ; hatarĩ naguo, rĩhingũro rĩmenyagwo hĩndĩ ya ũgwatanio wa mbere.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Gũthingata</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geria ũgwatanio na mĩtaratara ĩrĩa ĩrĩ igũrũ, ningĩ ũthingate mĩhari ĩrĩa ĩkwandĩkwo.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ehereria ũhandi ũyũ wa kũraya</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mĩtaratara yaguo nĩ ĩrehererio thĩinĩ wa settings/override/migration.ini.append.php. Gũtirĩ kĩgarũrũkaga ũhandi-inĩ wa kũraya, na mĩtwaro yaguo ĩtigaraga rũgano-inĩ.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĩĩ, ehereria ũhandi ũyũ wa kũraya</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Mĩtwaro</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũtwaro ũtũmaga mĩthamio ya ũhandi ũyũ kũrĩ mahandi ma kũraya marĩa mathuurĩtwo na ũkamĩtengeria kuo ta %user, mothe ihinda rĩmwe na makĩhwananĩtie: o ũhandi wa kũraya ũtiiragwo mbere, na ũmwe waaga, o ũrĩa wamĩhũthĩrĩte nĩ ũcookagio. Ũthiaga na mbere ũrĩ na thuutha, na ũkurasa waguo ũkonania o ũhandi wa kũraya o ũrĩa ũrathiĩ.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Mahandi ma kũraya</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikĩra kĩmenyithia harĩ mahandi ma kũraya, gĩkundi, kana cierĩ.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Twara kuo</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Atĩa</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Twara</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Tũma na ũtengerie</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mĩthamio nĩ ĩtũmagwo, ĩgatiirwo na ĩgatengerio o ũhandi-inĩ wa kũraya na namba ĩmwe ya mũtengerio ĩrĩa ihũthagĩrwo nĩ othe.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Hĩtũkia tu</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Faĩlo nĩ itũmagwo na igatiirwo, gũtirĩ gĩtengagĩrio (njĩra ĩmwe tu kwa ũhandi wa kũraya wa FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Na irathi</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kĩrathi kĩmwe kĩmwe kũringana na mũthiĩre wa mawĩra ma kũhũthĩra (dev, stage, beta, production ...): kĩrathi kĩa mbere nĩ gĩtwarwo, ningĩ kĩhingo gĩkaetereria nginya mũndũ etĩkĩrie kĩrĩa kĩrũmĩrĩire. Ciothe kana gũtirĩ thĩinĩ wa o kĩrathi.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Mĩthamio ĩno tu</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ti ya bata: namba cia mĩthamio, ikĩgayanio na koma. Hatarĩ kĩndũ: o mũthamio wa thaiti na extensions ciayo.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Gũtiira mbere tu</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĩĩ, twara rĩu</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Mĩtwaro ĩrĩa yatũmire kana ĩgĩtengeria kĩndũ, ĩrĩa njerũ mbere (gũtiira mbere gũtiigaga ripoti).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>hĩtũkia tu</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>na irathi, irathi %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>matihwananĩtie</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gũtirĩ mũtwaro rĩu.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũtwaro %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>O ũhandi wa kũraya wa mũtwaro na ũrĩa ũrĩ. Mũtwaro wambĩrĩirio haha ũthiaga na mbere ũrĩ na thuutha rĩrĩa ũkurasa ũyũ wahingwo; hingũra ũkurasa rĩngĩ nĩguo ũũrũmĩrĩre.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Mĩtwaro yothe</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Gũtiira mbere</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Kĩrathi kĩrĩa kĩrũmĩrĩire</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Nĩ kũratiirwo mĩtaratara na ũira wa gũtoonya</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Gũtiira mbere: nĩ kũrathomwo ũrĩa o ũhandi wa kũraya ũrĩ</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Nĩ kũratũmwo faĩlo cia mĩthamio</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Nĩ kũratiirwo kĩrĩa gĩkinyĩte</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nĩ kũratengerio mĩthamio o ũhandi-inĩ wa kũraya</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Nĩ kũracookio mahandi ma kũraya</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũtwaro nĩ ũrĩkĩtie. Nĩ kũrarehwo ripoti yaguo.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũrĩa ũrathiĩ ndũngĩarũmĩrĩrwo. Cookia rĩngĩ ũkurasa nĩguo wone ũrĩa mũtwaro ũrathiĩ.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Kĩhinda</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũkurasa ũyũ ũrũmagĩrĩra mũtwaro o ũrĩa ũrathiĩ.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Mahwananĩtie</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Irathi</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>kĩrathi %stage nĩ kĩretereire kĩhingo-inĩ gĩakĩo</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Kĩhingo %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>nĩ yetĩkĩririo nĩ %user ihinda %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Kĩrathi</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Faĩlo iria ciatũmirwo</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version ya kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>nĩ ĩhũthĩrĩtwo: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>cia kũhũthĩrwo: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihinda</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Kĩhingo: kĩrathi %stage thĩinĩ wa %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Irathi iria irĩ mbere yakĩo nĩ itwarĩtwo. Ĩtiire, ningĩ wĩtĩkĩrie kĩrathi kĩrĩa kĩrũmĩrĩire: mahandi makĩo ma kũraya matiiragwo rĩngĩ na magatwarwo, mothe kana gũtirĩ.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĩĩ, twara kĩrathi kĩrĩa kĩrũmĩrĩire rĩu</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookia mũtwaro ũyũ</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>O ũhandi wa kũraya ũrĩa wauhũthĩrire (%list) ũcookaga harĩ mbica ĩrĩa yoetwo mbere ya mũtengerio waguo, mothe ihinda rĩmwe.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĩĩ, cookia mũtwaro ũyũ rĩu</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>nĩ ĩbangĩtwo</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>nĩ ĩhĩtũkĩtio</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>nĩ ĩtwarĩtwo</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ĩretereire kĩhingo-inĩ</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>nĩ ĩhaarĩirio</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ĩretereire kĩrathi kĩayo</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>faĩlo nĩ ciatũmirwo</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>nĩ ĩtiirĩtwo</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>nĩ ĩoire, yecookirie yo nyene</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>ndĩgarũrũkĩte</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ndĩtwarĩtwo</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ndĩkinyĩrĩka</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi wa kũraya nĩ wacookirie.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi wa kũraya ndũngĩhũthĩka rĩu.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done nĩĩrĩkĩtie, %pending nĩ ĩretereire, %failed nĩ ĩoire</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Kĩhingĩro</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>mũtengerio nĩ ũnyitĩte kĩhingĩro kuo</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage thĩinĩ wa %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thuura ũhandi wa kũraya wa kũgeria.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikĩra kĩmenyithia harĩ “Ĩĩ, ehereria ũhandi ũyũ wa kũraya” mbere.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi wa kũraya ndũngĩehereirio: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi wa kũraya ndũngĩigirwo: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thuura nginya ũhandi wa kũraya ũmwe kana gĩkundi.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi wa kũraya ũrĩa wathuurirwo ndũrĩ rĩngĩ mĩtaratara-inĩ. Cookia rĩngĩ ũkurasa ũyũ.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikĩra kĩmenyithia harĩ “Ĩĩ, twara rĩu” mbere.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi wa kũraya wa FTP ndũngĩtengeria mĩthamio: thuura “Hĩtũkia tu”, kana ũũtige.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mĩthamio ya gũtwarwo nĩ namba cia mĩthamio, ikĩgayanio na koma.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũtwaro o ũrathiĩ. Etereria ũrĩkie.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũtwaro ũyũ ndwetagĩrĩra kĩhingo-inĩ.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gũtirĩ ũhandi wa kũraya wahũthĩrire mũtwaro ũyũ: gũtirĩ kĩa gũcookia.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikĩra kĩmenyithia harĩ “Ĩĩ, twara kĩrathi kĩrĩa kĩrũmĩrĩire rĩu” mbere.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikĩra kĩmenyithia harĩ “Ĩĩ, cookia mũtwaro ũyũ rĩu” mbere.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi wa kũraya ũrĩ na namba %id nĩ ũrĩ kuo.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mũrango nĩ namba kuuma 1 nginya 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Mawĩra ma kũhũthĩra nĩ kiugo kĩa marũa, namba, - na _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gĩkundi nĩ kiugo kĩa marũa, namba, - na _ (ti all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũira wa gũtoonya ndũngĩthomeka rĩu: %problem. Ũige thĩinĩ wa Mwambĩrĩria &gt; Matumbĩ (kana ũige variable) mbere ya mũtwaro wa mbere.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi wa kũraya wa FTP wamũkagĩra faĩlo tu: mũtwaro kuo nĩ “Hĩtũkia tu”, na mĩthamio yaguo ĩtengagĩrio kuo na moko.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ũhandi wa kũraya %id ndũrĩ thĩinĩ wa settings/override/migration.ini.append.php; ũehererie harĩa ũhaarĩirio.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nĩ yatoonyire na FTP na ĩgĩthoma index.php. Ũrĩa mĩthamio ya ũhandi wa kũraya wa FTP ĩrĩ ndũngĩthomeka.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Twara %deploy nĩ ĩoire kũrĩ %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Twara %deploy nĩ ĩretereire kĩhingo-inĩ kũrĩ %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Twara %deploy nĩ ĩhingĩte wega kũrĩ %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Marũa maya matũmirwo nĩ %site tondũ migration.ini [RemoteSettings] Notify[] nĩ ĩrenda ũguo.</translation>
     </message>
 </context>
 </TS>

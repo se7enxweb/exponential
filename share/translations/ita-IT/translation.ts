@@ -82743,15 +82743,15 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Destinazioni</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le altre installazioni a cui questa distribuisce le sue migrazioni: una distribuzione invia le migrazioni alle destinazioni scelte e le esegue lì, tutte insieme e in sincronia. Una destinazione non contiene mai un segreto: la sua credenziale ne nomina uno in Impostazioni &gt; Segreti.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuova destinazione</translation>
     </message>
     <message>
         <source>Help</source>
@@ -82759,19 +82759,19 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Test di connessione di %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Le destinazioni</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fino a %parallel destinazioni vengono elaborate contemporaneamente; una fase può durare %timeout secondi su ciascuna.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Destinazione</translation>
     </message>
     <message>
         <source>Address</source>
@@ -82787,15 +82787,15 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>impostazioni da correggere</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>solo file (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiave SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -82803,7 +82803,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>nessuna (agente SSH e chiavi dell'host)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -82811,23 +82811,23 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una distribuzione a un gruppo va a ogni sua destinazione.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Distribuisci alle destinazioni</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ancora nessuna destinazione configurata.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Destinazione %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qui non viene inviato né eseguito nulla: Salva scrive le impostazioni in settings/override/migration.ini.append.php. La credenziale è un nome; il suo valore resta in Impostazioni &gt; Segreti o nell'ambiente.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -82835,7 +82835,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le impostazioni come inserite, non ancora salvate.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -82863,15 +82863,15 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Chiave dell'host</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. La destinazione</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Come si chiama la destinazione e quale ambiente è.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -82879,47 +82879,47 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettere, cifre, - e _, per esempio production1. Identifica la destinazione nei rapporti e sulla console (--remotes=production1) e non può essere modificato in seguito.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Una distribuzione a livelli attraversa gli ambienti in questo ordine.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Facoltativi, separati da virgole, per esempio production. Una distribuzione a un gruppo va a ogni sua destinazione.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. La connessione</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Come arrivano lì i file e dove si trova l'installazione.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Via SSH, solo ciò che è cambiato, un trasferimento interrotto viene ripreso. La scelta migliore dove rsync è installato.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH con scp per i file.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH con sftp per i file.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Solo file: le migrazioni vengono inviate e rilette, ma non possono essere eseguite lì.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP su TLS; solo file.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un'altra installazione su questo server, in una cartella.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -82927,7 +82927,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un nome host o un indirizzo, per esempio node1.example.com. Non per local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -82935,7 +82935,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vuoto: 22 per SSH, 21 per FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -82947,31 +82947,31 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>La radice dell'installazione lì, per esempio /var/www/site (per FTP: il percorso che vede l'account FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Riga di comando PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>La CLI PHP lì: php, oppure un percorso completo come /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Lì gli script della console vengono eseguiti come root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Solo se l'utente della destinazione è root (vengono allora eseguiti con --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. La credenziale</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Come questa installazione accede lì. Viene salvato solo un nome.</translation>
     </message>
     <message>
         <source>None</source>
@@ -82979,23 +82979,23 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>L'agente SSH e le chiavi dell'utente con cui gira questa installazione (e sempre per local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una chiave privata conservata come segreto.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Una password conservata come segreto (FTP accede con una password).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome del segreto</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un segreto di Impostazioni &gt; Segreti, per esempio deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -83003,247 +83003,247 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppure una variabile d'ambiente</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>La variabile del processo server che la contiene, per esempio DEPLOY_KEY (salvata come env:DEPLOY_KEY). Prende il posto del nome del segreto.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. La chiave dell'host</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Facoltativa, per SSH, sftp e rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Impronta della chiave dell'host</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... come lo stampa ssh-keygen -l. Se indicata, l'host deve mostrare questa chiave; altrimenti la chiave viene appresa al primo contatto.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Riepilogo</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Testa la connessione con le impostazioni qui sopra, poi controlla le righe che verranno scritte.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi questa destinazione</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le sue impostazioni vengono rimosse da settings/override/migration.ini.append.php. Sulla destinazione non cambia nulla e le sue distribuzioni restano nella storia.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Sì, rimuovi questa destinazione</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Distribuzioni</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una distribuzione invia le migrazioni di questa installazione alle destinazioni scelte e le esegue lì come %user, tutte insieme e in sincronia: ogni destinazione viene prima controllata e, se una non riesce, ogni destinazione che le ha applicate viene riportata indietro. Si svolge in background e la sua pagina mostra ogni destinazione man mano.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Le destinazioni</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spunta destinazioni, un gruppo o entrambi.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Distribuisci lì</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Come</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Distribuisci</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Invia ed esegui</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le migrazioni vengono inviate, verificate ed eseguite su ogni destinazione con un unico ID di esecuzione condiviso.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Solo trasferimento</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>I file vengono inviati e verificati, non viene eseguito nulla (l'unico modo per una destinazione FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>A livelli</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Livello per livello nell'ordine degli ambienti (dev, stage, beta, production ...): il primo livello viene distribuito, poi un varco attende finché qualcuno approva il successivo. Tutto o niente all'interno di ogni livello.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Solo queste migrazioni</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Facoltativo: ID di migrazioni, separati da virgole. Vuoto: ogni migrazione del sito e delle sue estensioni.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Solo verifica preliminare</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Sì, distribuisci ora</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Le distribuzioni che hanno inviato o eseguito qualcosa, dalla più recente (una verifica preliminare non conserva alcun rapporto).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>solo trasferimento</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>a livelli, %stages livelli</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>non in sincronia</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ancora nessuna distribuzione.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Distribuzione %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ogni destinazione della distribuzione con il suo stato. Una distribuzione avviata qui prosegue in background quando questa pagina viene chiusa; riapri la pagina per seguirla.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Tutte le distribuzioni</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifica preliminare</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Livello successivo</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Controllo delle impostazioni e delle credenziali</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifica preliminare: lettura dello stato di ogni destinazione</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Invio dei file di migrazione</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifica di ciò che è arrivato</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Esecuzione delle migrazioni su ogni destinazione</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Ripristino delle destinazioni</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>La distribuzione è terminata. Caricamento del suo rapporto.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non è stato possibile seguire l'avanzamento. Ricarica la pagina per vedere come procede la distribuzione.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fase</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Questa pagina segue la distribuzione man mano.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>In sincronia</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Livelli</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>il livello %stage attende al suo varco</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Varco %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>approvato da %user alle %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Livello</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>File inviati</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versione del kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>applicate: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>da applicare: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fasi</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Varco: livello %stage di %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>I livelli precedenti sono distribuiti. Controllali, poi approva il livello successivo: le sue destinazioni vengono controllate di nuovo e distribuite, tutto o niente.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -83251,7 +83251,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Sì, distribuisci ora il livello successivo</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -83259,31 +83259,31 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Annulla questa distribuzione</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ogni destinazione che l'ha applicata (%list) torna all'istantanea acquisita prima della sua esecuzione, tutte insieme.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Sì, annulla ora questa distribuzione</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>pianificata</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>trasferita</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>distribuita</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>attende a un varco</translation>
     </message>
     <message>
         <source>selected</source>
@@ -83291,7 +83291,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>preparata</translation>
     </message>
     <message>
         <source>ready</source>
@@ -83299,51 +83299,51 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>attende il suo livello</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>file inviati</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>verificata</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>non riuscita, si è ripristinata da sola</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>invariata</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>non distribuita</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>non raggiungibile</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>La destinazione ha risposto.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>La destinazione non può essere usata ora.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done completate, %pending in attesa, %failed non riuscite</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Blocco</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>lì un'esecuzione detiene il blocco</translation>
     </message>
     <message>
         <source>free</source>
@@ -83351,23 +83351,23 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage di %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli la destinazione da testare.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spunta prima «Sì, rimuovi questa destinazione».</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile rimuovere la destinazione: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile salvare la destinazione: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -83375,75 +83375,75 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegli almeno una destinazione o un gruppo.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una destinazione scelta non è più nelle impostazioni. Ricarica la pagina.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spunta prima «Sì, distribuisci ora».</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una destinazione FTP non può eseguire migrazioni: scegli «Solo trasferimento» oppure escludila.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le migrazioni da distribuire sono ID di migrazioni, separati da virgole.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>La distribuzione è ancora in corso. Attendi che termini.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Questa distribuzione non attende a un varco.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessuna destinazione ha applicato questa distribuzione: non c'è nulla da annullare.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spunta prima «Sì, distribuisci ora il livello successivo».</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spunta prima «Sì, annulla ora questa distribuzione».</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esiste già una destinazione con l'ID %id.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>La porta è un numero da 1 a 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>L'ambiente è una parola di lettere, cifre, - e _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Un gruppo è una parola di lettere, cifre, - e _ (non all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>La credenziale non può essere letta ora: %problem. Salvala in Impostazioni &gt; Segreti (o imposta la variabile) prima della prima distribuzione.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Una destinazione FTP riceve solo file: una distribuzione verso di essa è «Solo trasferimento» e le sue migrazioni vengono eseguite lì a mano.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>La destinazione %id non è in settings/override/migration.ini.append.php; rimuovila dove è impostata.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Accesso via FTP eseguito e index.php letto. Lo stato delle migrazioni di una destinazione FTP non può essere letto.</translation>
     </message>
 </context>
 <context>
@@ -85847,19 +85847,19 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>La distribuzione %deploy non è riuscita su %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>La distribuzione %deploy attende a un cancello su %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>La distribuzione %deploy è riuscita su %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Questa mail è stata inviata da %site perché migration.ini [RemoteSettings] Notify[] lo richiede.</translation>
     </message>
 </context>
 </TS>

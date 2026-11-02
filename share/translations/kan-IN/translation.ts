@@ -81334,15 +81334,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್‌ಗಳು</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಈ ಇನ್‌ಸ್ಟಾಲೇಶನ್ ತನ್ನ ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ಡಿಪ್ಲಾಯ್ ಮಾಡುವ ಇತರ ಇನ್‌ಸ್ಟಾಲೇಶನ್‌ಗಳು: ಡಿಪ್ಲಾಯ್ ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿದ ರಿಮೋಟ್‌ಗಳಿಗೆ ಕಳುಹಿಸಿ ಅಲ್ಲಿ ರನ್ ಮಾಡುತ್ತದೆ, ಎಲ್ಲವೂ ಒಂದೇ ಬಾರಿಗೆ ಮತ್ತು ಸಿಂಕ್‌ನಲ್ಲಿ. ರಿಮೋಟ್ ಎಂದಿಗೂ ರಹಸ್ಯವನ್ನು ಹೊಂದಿರುವುದಿಲ್ಲ: ಅದರ ರುಜುವಾತು ಸೆಟಪ್ &gt; ರಹಸ್ಯಗಳು ನಲ್ಲಿರುವ ಒಂದರ ಹೆಸರನ್ನು ಸೂಚಿಸುತ್ತದೆ.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹೊಸ ರಿಮೋಟ್</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81350,19 +81350,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id ನ ಸಂಪರ್ಕ ಪರೀಕ್ಷೆ</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್‌ಗಳು</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಒಂದೇ ಸಮಯದಲ್ಲಿ %parallel ರಿಮೋಟ್‌ಗಳವರೆಗೆ ಕೆಲಸ ಮಾಡಲಾಗುತ್ತದೆ; ಪ್ರತಿಯೊಂದರಲ್ಲೂ ಒಂದು ಹಂತ %timeout ಸೆಕೆಂಡುಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಬಹುದು.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81378,15 +81378,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ಸರಿಪಡಿಸಬೇಕಾದ ಸೆಟ್ಟಿಂಗ್‌ಗಳು</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>ಫೈಲ್‌ಗಳು ಮಾತ್ರ (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ಕೀ</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81394,7 +81394,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ಯಾವುದೂ ಇಲ್ಲ (ಹೋಸ್ಟ್‌ನ SSH ಏಜೆಂಟ್ ಮತ್ತು ಕೀಗಳು)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81402,23 +81402,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಗುಂಪಿಗೆ ಮಾಡುವ ಡಿಪ್ಲಾಯ್ ಅದರ ಪ್ರತಿ ರಿಮೋಟ್‌ಗೆ ಹೋಗುತ್ತದೆ.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್‌ಗಳಿಗೆ ಡಿಪ್ಲಾಯ್ ಮಾಡು</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ರಿಮೋಟ್ ಹೊಂದಿಸಲಾಗಿಲ್ಲ.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್ %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಇಲ್ಲಿ ಏನನ್ನೂ ಕಳುಹಿಸುವುದಿಲ್ಲ ಅಥವಾ ರನ್ ಮಾಡುವುದಿಲ್ಲ: ಉಳಿಸು ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು settings/override/migration.ini.append.php ಗೆ ಬರೆಯುತ್ತದೆ. ರುಜುವಾತು ಒಂದು ಹೆಸರು; ಅದರ ಮೌಲ್ಯ ಸೆಟಪ್ &gt; ರಹಸ್ಯಗಳು ನಲ್ಲಿ ಅಥವಾ ಪರಿಸರದಲ್ಲಿ ಉಳಿಯುತ್ತದೆ.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81426,7 +81426,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ನಮೂದಿಸಿದಂತೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳು, ಇನ್ನೂ ಉಳಿಸಲಾಗಿಲ್ಲ.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81454,15 +81454,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹೋಸ್ಟ್ ಕೀ</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. ರಿಮೋಟ್</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್‌ನ ಹೆಸರೇನು ಮತ್ತು ಅದು ಯಾವ ಪರಿಸರ.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81470,47 +81470,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅಕ್ಷರಗಳು, ಅಂಕೆಗಳು, - ಮತ್ತು _, ಉದಾಹರಣೆಗೆ production1. ಇದು ವರದಿಗಳಲ್ಲಿ ಮತ್ತು ಕನ್ಸೋಲ್‌ನಲ್ಲಿ (--remotes=production1) ರಿಮೋಟ್‌ನ ಹೆಸರಾಗುತ್ತದೆ ಮತ್ತು ನಂತರ ಬದಲಾಯಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... ಘಟ್ಟಗಳ ಡಿಪ್ಲಾಯ್ ಈ ಕ್ರಮದಲ್ಲಿ ಪರಿಸರಗಳ ಮೂಲಕ ಸಾಗುತ್ತದೆ.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಐಚ್ಛಿಕ, ಅಲ್ಪವಿರಾಮಗಳಿಂದ ಬೇರ್ಪಡಿಸಿ, ಉದಾಹರಣೆಗೆ production. ಗುಂಪಿಗೆ ಮಾಡುವ ಡಿಪ್ಲಾಯ್ ಅದರ ಪ್ರತಿ ರಿಮೋಟ್‌ಗೆ ಹೋಗುತ್ತದೆ.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. ಸಂಪರ್ಕ</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಫೈಲ್‌ಗಳು ಅಲ್ಲಿಗೆ ಹೇಗೆ ತಲುಪುತ್ತವೆ, ಮತ್ತು ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಎಲ್ಲಿದೆ.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ಮೂಲಕ, ಬದಲಾದದ್ದು ಮಾತ್ರ, ಮುರಿದ ವರ್ಗಾವಣೆಯನ್ನು ಮುಂದುವರಿಸಲಾಗುತ್ತದೆ. rsync ಇನ್‌ಸ್ಟಾಲ್ ಆಗಿರುವಲ್ಲಿ ಉತ್ತಮ ಆಯ್ಕೆ.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಫೈಲ್‌ಗಳಿಗೆ scp ನೊಂದಿಗೆ SSH.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಫೈಲ್‌ಗಳಿಗೆ sftp ನೊಂದಿಗೆ SSH.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಫೈಲ್‌ಗಳು ಮಾತ್ರ: ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ಕಳುಹಿಸಿ ಮತ್ತೆ ಓದಲಾಗುತ್ತದೆ, ಆದರೆ ಅಲ್ಲಿ ರನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS ಮೂಲಕ FTP; ಫೈಲ್‌ಗಳು ಮಾತ್ರ.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಈ ಸರ್ವರ್‌ನಲ್ಲಿ, ಒಂದು ಫೋಲ್ಡರ್‌ನಲ್ಲಿರುವ ಇನ್ನೊಂದು ಇನ್‌ಸ್ಟಾಲೇಶನ್.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81518,7 +81518,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹೋಸ್ಟ್ ಹೆಸರು ಅಥವಾ ವಿಳಾಸ, ಉದಾಹರಣೆಗೆ node1.example.com. local ಗಾಗಿ ಅಲ್ಲ.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81526,7 +81526,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಖಾಲಿ: SSH ಗೆ 22, FTP ಗೆ 21.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81538,31 +81538,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅಲ್ಲಿ ಇನ್‌ಸ್ಟಾಲೇಶನ್‌ನ ಮೂಲ ಫೋಲ್ಡರ್, ಉದಾಹರಣೆಗೆ /var/www/site (FTP ಗೆ: FTP ಖಾತೆ ನೋಡುವ ಪಾತ್).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP ಕಮಾಂಡ್ ಲೈನ್</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅಲ್ಲಿನ PHP CLI: php, ಅಥವಾ /opt/plesk/php/8.4/bin/php ನಂತಹ ಪೂರ್ಣ ಪಾತ್.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅಲ್ಲಿ ಕನ್ಸೋಲ್ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು root ಆಗಿ ನಡೆಯುತ್ತವೆ</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್‌ನ ಬಳಕೆದಾರ root ಆಗಿದ್ದಾಗ ಮಾತ್ರ (ಆಗ ಅವುಗಳನ್ನು --allow-root-user ನೊಂದಿಗೆ ರನ್ ಮಾಡಲಾಗುತ್ತದೆ).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. ರುಜುವಾತು</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಈ ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಅಲ್ಲಿ ಹೇಗೆ ಸೈನ್ ಇನ್ ಆಗುತ್ತದೆ. ಹೆಸರನ್ನು ಮಾತ್ರ ಉಳಿಸಲಾಗುತ್ತದೆ.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81570,23 +81570,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>ಈ ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಯಾವ ಬಳಕೆದಾರನಾಗಿ ನಡೆಯುತ್ತದೆಯೋ ಆ ಬಳಕೆದಾರನ SSH ಏಜೆಂಟ್ ಮತ್ತು ಕೀಗಳು (ಮತ್ತು local ಗಾಗಿ ಯಾವಾಗಲೂ).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಹಸ್ಯವಾಗಿ ಇರಿಸಿದ ಖಾಸಗಿ ಕೀ.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಹಸ್ಯವಾಗಿ ಇರಿಸಿದ ಪಾಸ್‌ವರ್ಡ್ (FTP ಇದರಿಂದ ಸೈನ್ ಇನ್ ಆಗುತ್ತದೆ).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಹಸ್ಯದ ಹೆಸರು</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಸೆಟಪ್ &gt; ರಹಸ್ಯಗಳು ನಲ್ಲಿರುವ ಒಂದು ರಹಸ್ಯ, ಉದಾಹರಣೆಗೆ deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81594,247 +81594,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅಥವಾ ಪರಿಸರ ವೇರಿಯೇಬಲ್</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅದನ್ನು ಹೊಂದಿರುವ ಸರ್ವರ್ ಪ್ರಕ್ರಿಯೆಯ ವೇರಿಯೇಬಲ್, ಉದಾಹರಣೆಗೆ DEPLOY_KEY (env:DEPLOY_KEY ಆಗಿ ಉಳಿಸಲಾಗುತ್ತದೆ). ಇದು ರಹಸ್ಯದ ಹೆಸರಿನ ಸ್ಥಾನವನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. ಹೋಸ್ಟ್ ಕೀ</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಐಚ್ಛಿಕ, SSH, sftp ಮತ್ತು rsync ಗಾಗಿ.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹೋಸ್ಟ್ ಕೀ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:..., ssh-keygen -l ಮುದ್ರಿಸುವ ರೂಪದಲ್ಲಿ. ಇದಿದ್ದರೆ, ಹೋಸ್ಟ್ ಈ ಕೀಯನ್ನೇ ತೋರಿಸಬೇಕು; ಇಲ್ಲದಿದ್ದರೆ, ಮೊದಲ ಸಂಪರ್ಕದಲ್ಲಿ ಕೀಯನ್ನು ಕಲಿಯಲಾಗುತ್ತದೆ.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. ಪರಿಶೀಲನೆ</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೇಲಿನ ಸೆಟ್ಟಿಂಗ್‌ಗಳೊಂದಿಗೆ ಸಂಪರ್ಕವನ್ನು ಪರೀಕ್ಷಿಸಿ, ನಂತರ ಬರೆಯಲಾಗುವ ಸಾಲುಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ಈ ರಿಮೋಟ್ ತೆಗೆದುಹಾಕು</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅದರ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು settings/override/migration.ini.append.php ನಿಂದ ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ. ರಿಮೋಟ್‌ನಲ್ಲಿ ಏನೂ ಬದಲಾಗುವುದಿಲ್ಲ, ಮತ್ತು ಅದರ ಡಿಪ್ಲಾಯ್‌ಗಳು ಇತಿಹಾಸದಲ್ಲಿ ಉಳಿಯುತ್ತವೆ.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹೌದು, ಈ ರಿಮೋಟ್ ತೆಗೆದುಹಾಕು</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ಡಿಪ್ಲಾಯ್‌ಗಳು</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಡಿಪ್ಲಾಯ್ ಈ ಇನ್‌ಸ್ಟಾಲೇಶನ್‌ನ ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿದ ರಿಮೋಟ್‌ಗಳಿಗೆ ಕಳುಹಿಸಿ ಅಲ್ಲಿ %user ಆಗಿ ರನ್ ಮಾಡುತ್ತದೆ, ಎಲ್ಲವೂ ಒಂದೇ ಬಾರಿಗೆ ಮತ್ತು ಸಿಂಕ್‌ನಲ್ಲಿ: ಪ್ರತಿ ರಿಮೋಟ್ ಅನ್ನು ಮೊದಲು ಪರಿಶೀಲಿಸಲಾಗುತ್ತದೆ, ಮತ್ತು ಒಂದು ವಿಫಲವಾದರೆ, ಅನ್ವಯಿಸಿದ ಪ್ರತಿ ರಿಮೋಟ್ ಅನ್ನು ಹಿಂಪಡೆಯಲಾಗುತ್ತದೆ. ಇದು ಹಿನ್ನೆಲೆಯಲ್ಲಿ ನಡೆಯುತ್ತದೆ, ಮತ್ತು ಅದರ ಪುಟವು ನಡೆಯುತ್ತಿರುವಂತೆ ಪ್ರತಿ ರಿಮೋಟ್ ಅನ್ನು ತೋರಿಸುತ್ತದೆ.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. ರಿಮೋಟ್‌ಗಳು</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್‌ಗಳು, ಒಂದು ಗುಂಪು, ಅಥವಾ ಎರಡನ್ನೂ ಗುರುತಿಸಿ.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅದಕ್ಕೆ ಡಿಪ್ಲಾಯ್ ಮಾಡು</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. ಹೇಗೆ</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ಡಿಪ್ಲಾಯ್ ಮಾಡು</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>ಕಳುಹಿಸು ಮತ್ತು ರನ್ ಮಾಡು</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ಪ್ರತಿ ರಿಮೋಟ್‌ಗೆ ಕಳುಹಿಸಿ, ಪರಿಶೀಲಿಸಿ, ಒಂದೇ ಹಂಚಿಕೊಂಡ ರನ್ ಐಡಿಯೊಂದಿಗೆ ರನ್ ಮಾಡಲಾಗುತ್ತದೆ.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>ವರ್ಗಾವಣೆ ಮಾತ್ರ</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ಫೈಲ್‌ಗಳನ್ನು ಕಳುಹಿಸಿ ಪರಿಶೀಲಿಸಲಾಗುತ್ತದೆ, ಏನನ್ನೂ ರನ್ ಮಾಡುವುದಿಲ್ಲ (FTP ರಿಮೋಟ್‌ಗೆ ಇರುವ ಏಕೈಕ ಮಾರ್ಗ).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>ಘಟ್ಟಗಳಲ್ಲಿ</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಪರಿಸರಗಳ ಕ್ರಮದಲ್ಲಿ ಘಟ್ಟದಿಂದ ಘಟ್ಟಕ್ಕೆ (dev, stage, beta, production ...): ಮೊದಲ ಘಟ್ಟವನ್ನು ಡಿಪ್ಲಾಯ್ ಮಾಡಲಾಗುತ್ತದೆ, ನಂತರ ಯಾರಾದರೂ ಮುಂದಿನದನ್ನು ಅನುಮೋದಿಸುವವರೆಗೆ ಒಂದು ಗೇಟ್ ಕಾಯುತ್ತದೆ. ಪ್ರತಿ ಘಟ್ಟದೊಳಗೆ ಎಲ್ಲವೂ ಅಥವಾ ಏನೂ ಇಲ್ಲ.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>ಈ ಮೈಗ್ರೇಶನ್‌ಗಳು ಮಾತ್ರ</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಐಚ್ಛಿಕ: ಮೈಗ್ರೇಶನ್ ಐಡಿಗಳು, ಅಲ್ಪವಿರಾಮಗಳಿಂದ ಬೇರ್ಪಡಿಸಿ. ಖಾಲಿ: ಸೈಟ್ ಮತ್ತು ಅದರ ಎಕ್ಸ್‌ಟೆನ್ಶನ್‌ಗಳ ಪ್ರತಿ ಮೈಗ್ರೇಶನ್.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>ಪೂರ್ವಪರಿಶೀಲನೆ ಮಾತ್ರ</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹೌದು, ಈಗ ಡಿಪ್ಲಾಯ್ ಮಾಡು</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>ಏನನ್ನಾದರೂ ಕಳುಹಿಸಿದ ಅಥವಾ ರನ್ ಮಾಡಿದ ಡಿಪ್ಲಾಯ್‌ಗಳು, ಹೊಸದು ಮೊದಲು (ಪೂರ್ವಪರಿಶೀಲನೆ ಯಾವುದೇ ವರದಿಯನ್ನು ಇಡುವುದಿಲ್ಲ).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>ವರ್ಗಾವಣೆ ಮಾತ್ರ</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ಘಟ್ಟಗಳಲ್ಲಿ, %stages ಘಟ್ಟಗಳು</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ಸಿಂಕ್‌ನಲ್ಲಿಲ್ಲ</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಡಿಪ್ಲಾಯ್ ಇಲ್ಲ.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ಡಿಪ್ಲಾಯ್ %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಡಿಪ್ಲಾಯ್‌ನ ಪ್ರತಿ ರಿಮೋಟ್ ಅದರ ಸ್ಥಿತಿಯೊಂದಿಗೆ. ಇಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿದ ಡಿಪ್ಲಾಯ್ ಈ ಪುಟವನ್ನು ಮುಚ್ಚಿದಾಗ ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಮುಂದುವರಿಯುತ್ತದೆ; ಅದನ್ನು ಅನುಸರಿಸಲು ಪುಟವನ್ನು ಮತ್ತೆ ತೆರೆಯಿರಿ.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ಎಲ್ಲಾ ಡಿಪ್ಲಾಯ್‌ಗಳು</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>ಪೂರ್ವಪರಿಶೀಲನೆ</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮುಂದಿನ ಘಟ್ಟ</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಮತ್ತು ರುಜುವಾತುಗಳನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ಪೂರ್ವಪರಿಶೀಲನೆ: ಪ್ರತಿ ರಿಮೋಟ್‌ನ ಸ್ಥಿತಿಯನ್ನು ಓದಲಾಗುತ್ತಿದೆ</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೈಗ್ರೇಶನ್ ಫೈಲ್‌ಗಳನ್ನು ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>ತಲುಪಿದ್ದನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ಪ್ರತಿ ರಿಮೋಟ್‌ನಲ್ಲಿ ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ರನ್ ಮಾಡಲಾಗುತ್ತಿದೆ</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್‌ಗಳನ್ನು ಹಿಂಪಡೆಯಲಾಗುತ್ತಿದೆ</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಡಿಪ್ಲಾಯ್ ಮುಗಿದಿದೆ. ಅದರ ವರದಿಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಪ್ರಗತಿಯನ್ನು ಅನುಸರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಡಿಪ್ಲಾಯ್ ಹೇಗೆ ನಡೆಯುತ್ತಿದೆ ಎಂದು ನೋಡಲು ಪುಟವನ್ನು ರೀಲೋಡ್ ಮಾಡಿ.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹಂತ</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಈ ಪುಟವು ಡಿಪ್ಲಾಯ್ ನಡೆಯುತ್ತಿರುವಂತೆ ಅದನ್ನು ಅನುಸರಿಸುತ್ತದೆ.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ಸಿಂಕ್‌ನಲ್ಲಿ</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ಘಟ್ಟಗಳು</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ಘಟ್ಟ %stage ತನ್ನ ಗೇಟ್‌ನಲ್ಲಿ ಕಾಯುತ್ತಿದೆ</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ಗೇಟ್ %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%time ಕ್ಕೆ %user ಅವರಿಂದ ಅನುಮೋದಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ಘಟ್ಟ</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ಕಳುಹಿಸಿದ ಫೈಲ್‌ಗಳು</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>ಕರ್ನಲ್ ಆವೃತ್ತಿ</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅನ್ವಯಿಸಲಾಗಿದೆ: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅನ್ವಯಿಸಬೇಕಾದವು: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹಂತಗಳು</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ಗೇಟ್: %stages ರಲ್ಲಿ ಘಟ್ಟ %stage</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅದಕ್ಕಿಂತ ಹಿಂದಿನ ಘಟ್ಟಗಳು ಡಿಪ್ಲಾಯ್ ಆಗಿವೆ. ಅವುಗಳನ್ನು ಪರಿಶೀಲಿಸಿ, ನಂತರ ಮುಂದಿನ ಘಟ್ಟವನ್ನು ಅನುಮೋದಿಸಿ: ಅದರ ರಿಮೋಟ್‌ಗಳನ್ನು ಮತ್ತೆ ಪರಿಶೀಲಿಸಿ ಡಿಪ್ಲಾಯ್ ಮಾಡಲಾಗುತ್ತದೆ, ಎಲ್ಲವೂ ಅಥವಾ ಏನೂ ಇಲ್ಲ.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81842,7 +81842,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹೌದು, ಮುಂದಿನ ಘಟ್ಟವನ್ನು ಈಗ ಡಿಪ್ಲಾಯ್ ಮಾಡು</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81850,31 +81850,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>ಈ ಡಿಪ್ಲಾಯ್ ರೋಲ್‌ಬ್ಯಾಕ್ ಮಾಡು</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅದನ್ನು ಅನ್ವಯಿಸಿದ ಪ್ರತಿ ರಿಮೋಟ್ (%list) ತನ್ನ ರನ್‌ಗೆ ಮೊದಲು ತೆಗೆದ ಕ್ಯಾಪ್ಶನ್‌ಗೆ ಹಿಂತಿರುಗುತ್ತದೆ, ಎಲ್ಲವೂ ಒಂದೇ ಬಾರಿಗೆ.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>ಹೌದು, ಈ ಡಿಪ್ಲಾಯ್ ಅನ್ನು ಈಗ ರೋಲ್‌ಬ್ಯಾಕ್ ಮಾಡು</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>ಯೋಜಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>ವರ್ಗಾಯಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ಡಿಪ್ಲಾಯ್ ಆಗಿದೆ</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ಒಂದು ಗೇಟ್‌ನಲ್ಲಿ ಕಾಯುತ್ತಿದೆ</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81882,7 +81882,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>ಸಿದ್ಧಪಡಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81890,51 +81890,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ತನ್ನ ಘಟ್ಟಕ್ಕಾಗಿ ಕಾಯುತ್ತಿದೆ</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ಫೈಲ್‌ಗಳನ್ನು ಕಳುಹಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>ಪರಿಶೀಲಿಸಲಾಗಿದೆ</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ವಿಫಲವಾಗಿದೆ, ತಾನೇ ಮರುಸ್ಥಾಪಿಸಿಕೊಂಡಿದೆ</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>ಬದಲಾಗಿಲ್ಲ</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ಡಿಪ್ಲಾಯ್ ಆಗಿಲ್ಲ</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ತಲುಪಲಾಗುತ್ತಿಲ್ಲ</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್ ಉತ್ತರಿಸಿದೆ.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್ ಅನ್ನು ಈಗ ಬಳಸಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done ಮುಗಿದಿದೆ, %pending ಬಾಕಿ, %failed ವಿಫಲ</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>ಲಾಕ್</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>ಅಲ್ಲಿ ಒಂದು ರನ್ ಲಾಕ್ ಹಿಡಿದಿದೆ</translation>
     </message>
     <message>
         <source>free</source>
@@ -81942,23 +81942,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stages ರಲ್ಲಿ %stage</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಪರೀಕ್ಷಿಸಬೇಕಾದ ರಿಮೋಟ್ ಆಯ್ಕೆಮಾಡಿ.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೊದಲು “ಹೌದು, ಈ ರಿಮೋಟ್ ತೆಗೆದುಹಾಕು” ಗುರುತಿಸಿ.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್ ಅನ್ನು ತೆಗೆದುಹಾಕಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್ ಅನ್ನು ಉಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81966,75 +81966,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಕನಿಷ್ಠ ಒಂದು ರಿಮೋಟ್ ಅಥವಾ ಗುಂಪನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಆಯ್ಕೆಮಾಡಿದ ಒಂದು ರಿಮೋಟ್ ಇನ್ನು ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಇಲ್ಲ. ಪುಟವನ್ನು ರೀಲೋಡ್ ಮಾಡಿ.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೊದಲು “ಹೌದು, ಈಗ ಡಿಪ್ಲಾಯ್ ಮಾಡು” ಗುರುತಿಸಿ.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ರಿಮೋಟ್ ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ರನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ: “ವರ್ಗಾವಣೆ ಮಾತ್ರ” ಆಯ್ಕೆಮಾಡಿ, ಅಥವಾ ಅದನ್ನು ಬಿಟ್ಟುಬಿಡಿ.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಡಿಪ್ಲಾಯ್ ಮಾಡಬೇಕಾದ ಮೈಗ್ರೇಶನ್‌ಗಳು ಅಲ್ಪವಿರಾಮಗಳಿಂದ ಬೇರ್ಪಡಿಸಿದ ಮೈಗ್ರೇಶನ್ ಐಡಿಗಳು.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಡಿಪ್ಲಾಯ್ ಇನ್ನೂ ನಡೆಯುತ್ತಿದೆ. ಅದು ಮುಗಿಯುವವರೆಗೆ ಕಾಯಿರಿ.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಈ ಡಿಪ್ಲಾಯ್ ಯಾವುದೇ ಗೇಟ್‌ನಲ್ಲಿ ಕಾಯುವುದಿಲ್ಲ.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಯಾವುದೇ ರಿಮೋಟ್ ಈ ಡಿಪ್ಲಾಯ್ ಅನ್ನು ಅನ್ವಯಿಸಿಲ್ಲ: ರೋಲ್‌ಬ್ಯಾಕ್ ಮಾಡಲು ಏನೂ ಇಲ್ಲ.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೊದಲು “ಹೌದು, ಮುಂದಿನ ಘಟ್ಟವನ್ನು ಈಗ ಡಿಪ್ಲಾಯ್ ಮಾಡು” ಗುರುತಿಸಿ.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಮೊದಲು “ಹೌದು, ಈ ಡಿಪ್ಲಾಯ್ ಅನ್ನು ಈಗ ರೋಲ್‌ಬ್ಯಾಕ್ ಮಾಡು” ಗುರುತಿಸಿ.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id ಐಡಿ ಇರುವ ರಿಮೋಟ್ ಈಗಾಗಲೇ ಇದೆ.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಪೋರ್ಟ್ 1 ರಿಂದ 65535 ರವರೆಗಿನ ಒಂದು ಸಂಖ್ಯೆ.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>ಪರಿಸರ ಎಂದರೆ ಅಕ್ಷರಗಳು, ಅಂಕೆಗಳು, - ಮತ್ತು _ ಇರುವ ಒಂದು ಪದ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>ಗುಂಪು ಎಂದರೆ ಅಕ್ಷರಗಳು, ಅಂಕೆಗಳು, - ಮತ್ತು _ ಇರುವ ಒಂದು ಪದ (all ಅಲ್ಲ): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>ರುಜುವಾತನ್ನು ಈಗ ಓದಲು ಸಾಧ್ಯವಿಲ್ಲ: %problem. ಮೊದಲ ಡಿಪ್ಲಾಯ್‌ಗೆ ಮೊದಲು ಅದನ್ನು ಸೆಟಪ್ &gt; ರಹಸ್ಯಗಳು ನಲ್ಲಿ ಉಳಿಸಿ (ಅಥವಾ ವೇರಿಯೇಬಲ್ ಹೊಂದಿಸಿ).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ರಿಮೋಟ್ ಫೈಲ್‌ಗಳನ್ನು ಮಾತ್ರ ಸ್ವೀಕರಿಸುತ್ತದೆ: ಅದಕ್ಕೆ ಮಾಡುವ ಡಿಪ್ಲಾಯ್ “ವರ್ಗಾವಣೆ ಮಾತ್ರ” ಆಗಿರುತ್ತದೆ, ಮತ್ತು ಅದರ ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ಅಲ್ಲಿ ಕೈಯಿಂದ ರನ್ ಮಾಡಲಾಗುತ್ತದೆ.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>ರಿಮೋಟ್ %id settings/override/migration.ini.append.php ನಲ್ಲಿ ಇಲ್ಲ; ಅದನ್ನು ಹೊಂದಿಸಿರುವ ಸ್ಥಳದಲ್ಲಿ ತೆಗೆದುಹಾಕಿ.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ಮೂಲಕ ಸೈನ್ ಇನ್ ಆಗಿ index.php ಓದಲಾಗಿದೆ. FTP ರಿಮೋಟ್‌ನ ಮೈಗ್ರೇಶನ್ ಸ್ಥಿತಿಯನ್ನು ಓದಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
     </message>
 </context>
 <context>
@@ -84438,19 +84438,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site ನಲ್ಲಿ ಡಿಪ್ಲಾಯ್ %deploy ವಿಫಲವಾಗಿದೆ</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site ನಲ್ಲಿ ಡಿಪ್ಲಾಯ್ %deploy ಒಂದು ಗೇಟ್‌ನಲ್ಲಿ ಕಾಯುತ್ತಿದೆ</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site ನಲ್ಲಿ ಡಿಪ್ಲಾಯ್ %deploy ಯಶಸ್ವಿಯಾಗಿದೆ</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ಈ ಮೇಲ್ ಅನ್ನು %site ಕಳುಹಿಸಿದೆ, ಏಕೆಂದರೆ migration.ini [RemoteSettings] Notify[] ಅದನ್ನು ಕೇಳುತ್ತದೆ.</translation>
     </message>
 </context>
 </TS>

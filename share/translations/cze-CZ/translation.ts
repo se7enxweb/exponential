@@ -82622,15 +82622,15 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálené instalace</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ostatní instalace, do kterých tato nasazuje své migrace: nasazení odešle migrace do vybraných vzdálených instalací a spustí je tam, všechny najednou a v souladu. Vzdálená instalace nikdy neobsahuje tajný údaj: její přihlašovací údaj odkazuje na jeden v Nastavení &gt; Tajné údaje.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nová vzdálená instalace</translation>
     </message>
     <message>
         <source>Help</source>
@@ -82638,19 +82638,19 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Test připojení %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálené instalace</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Současně se zpracovává až %parallel vzdálených instalací; jedna fáze smí na každé trvat %timeout sekund.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálená instalace</translation>
     </message>
     <message>
         <source>Address</source>
@@ -82666,15 +82666,15 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>nastavení k opravě</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>pouze soubory (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Klíč SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -82682,7 +82682,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>žádný (agent SSH a klíče hostitele)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -82690,23 +82690,23 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasazení do skupiny jde do každé její vzdálené instalace.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasadit do vzdálených instalací</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatím není nastavena žádná vzdálená instalace.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálená instalace %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zde se nic neodesílá ani nespouští: Uložit zapíše nastavení do settings/override/migration.ini.append.php. Přihlašovací údaj je název; jeho hodnota zůstává v Nastavení &gt; Tajné údaje nebo v prostředí.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -82714,7 +82714,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení tak, jak byla zadána, zatím neuložená.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -82742,15 +82742,15 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Klíč hostitele</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Vzdálená instalace</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jak se vzdálená instalace jmenuje a jaké je to prostředí.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -82758,47 +82758,47 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Písmena, číslice, - a _, například production1. Označuje vzdálenou instalaci v hlášeních a v konzoli (--remotes=production1) a později ho nelze změnit.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Nasazení po stupních prochází prostředí v tomto pořadí.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Volitelné, oddělené čárkami, například production. Nasazení do skupiny jde do každé její vzdálené instalace.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Připojení</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jak se tam soubory dostanou a kde je instalace.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Přes SSH, jen to, co se změnilo, přerušený přenos pokračuje. Nejlepší volba tam, kde je nainstalován rsync.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH se scp pro soubory.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH se sftp pro soubory.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pouze soubory: migrace se odešlou a přečtou zpět, ale nelze je tam spustit.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP přes TLS; pouze soubory.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jiná instalace na tomto serveru, ve složce.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -82806,7 +82806,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Název hostitele nebo adresa, například node1.example.com. Ne pro local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -82814,7 +82814,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prázdné: 22 pro SSH, 21 pro FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -82826,31 +82826,31 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Kořen instalace tam, například /var/www/site (u FTP: cesta, kterou vidí účet FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Příkazová řádka PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI tam: php nebo úplná cesta, například /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Skripty konzole tam běží jako root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Jen když je uživatel vzdálené instalace root (pak se spouštějí s --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Přihlašovací údaj</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jak se tam tato instalace přihlašuje. Ukládá se jen název.</translation>
     </message>
     <message>
         <source>None</source>
@@ -82858,23 +82858,23 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Agent SSH a klíče uživatele, pod kterým tato instalace běží (a vždy pro local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Soukromý klíč uložený jako tajný údaj.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Heslo uložené jako tajný údaj (FTP se s ním přihlašuje).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Název tajného údaje</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tajný údaj z Nastavení &gt; Tajné údaje, například deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -82882,247 +82882,247 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Nebo proměnná prostředí</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proměnná serverového procesu, která ho obsahuje, například DEPLOY_KEY (uloženo jako env:DEPLOY_KEY). Nahrazuje název tajného údaje.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Klíč hostitele</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Volitelné, pro SSH, sftp a rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Otisk klíče hostitele</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... tak, jak ho vypíše ssh-keygen -l. S ním musí hostitel ukázat tento klíč; bez něj se klíč naučí při prvním kontaktu.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Kontrola</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Otestujte připojení s nastavením výše a pak zkontrolujte řádky, které se zapíšou.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit tuto vzdálenou instalaci</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Její nastavení se odstraní ze settings/override/migration.ini.append.php. Ve vzdálené instalaci se nic nezmění a její nasazení zůstanou v historii.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ano, odstranit tuto vzdálenou instalaci</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasazení</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasazení odešle migrace této instalace do vybraných vzdálených instalací a spustí je tam jako %user, všechny najednou a v souladu: nejprve se zkontroluje každá vzdálená instalace, a když jedna selže, vezme se zpět každá, která je použila. Běží na pozadí a jeho stránka průběžně ukazuje každou vzdálenou instalaci.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Vzdálené instalace</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaškrtněte vzdálené instalace, skupinu nebo obojí.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasadit do ní</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Jak</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasadit</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Odeslat a spustit</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrace se odešlou do každé vzdálené instalace, ověří a spustí s jedním společným ID běhu.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Pouze přenos</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory se odešlou a ověří, nic se nespustí (jediný způsob pro vzdálenou instalaci přes FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Po stupních</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stupeň po stupni v pořadí prostředí (dev, stage, beta, production ...): nasadí se první stupeň, pak brána čeká, dokud někdo neschválí další. V rámci každého stupně vše, nebo nic.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Pouze tyto migrace</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Volitelné: ID migrací oddělená čárkami. Prázdné: každá migrace webu a jeho rozšíření.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Pouze předběžná kontrola</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ano, nasadit nyní</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasazení, která něco odeslala nebo spustila, od nejnovějšího (předběžná kontrola žádné hlášení neuchovává).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>pouze přenos</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>po stupních, počet stupňů: %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>není v souladu</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatím žádné nasazení.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasazení %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Každá vzdálená instalace nasazení s jejím stavem. Nasazení spuštěné zde pokračuje na pozadí, i když se tato stránka zavře; otevřete stránku znovu, abyste ho sledovali.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Všechna nasazení</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Předběžná kontrola</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Další stupeň</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrolují se nastavení a přihlašovací údaje</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Předběžná kontrola: čte se stav každé vzdálené instalace</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Odesílají se soubory migrací</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Ověřuje se, co dorazilo</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrace běží v každé vzdálené instalaci</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálené instalace se vracejí zpět</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasazení skončilo. Načítá se jeho hlášení.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Průběh se nepodařilo sledovat. Načtěte stránku znovu a podívejte se, jak nasazení pokračuje.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fáze</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tato stránka průběžně sleduje nasazení.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>V souladu</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Stupně</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>stupeň %stage čeká u své brány</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Brána %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>schválil %user v %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Stupeň</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Odeslané soubory</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Verze jádra</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>použito: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>k použití: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fáze</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Brána: stupeň %stage z %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stupně před ním jsou nasazeny. Zkontrolujte je a pak schvalte další stupeň: jeho vzdálené instalace se znovu zkontrolují a nasadí, vše, nebo nic.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -83130,7 +83130,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ano, nasadit další stupeň nyní</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -83138,31 +83138,31 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrátit toto nasazení</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Každá vzdálená instalace, která ho použila (%list), se vrátí ke snímku pořízenému před jejím během, všechny najednou.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ano, vrátit toto nasazení nyní</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>naplánováno</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>přeneseno</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>nasazeno</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>čeká u brány</translation>
     </message>
     <message>
         <source>selected</source>
@@ -83170,7 +83170,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>připraveno</translation>
     </message>
     <message>
         <source>ready</source>
@@ -83178,51 +83178,51 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>čeká na svůj stupeň</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>soubory odeslány</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>ověřeno</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>selhalo, samo se obnovilo</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>beze změny</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>nenasazeno</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>nedostupné</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálená instalace odpověděla.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálenou instalaci teď nelze použít.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done hotovo, %pending čeká, %failed selhalo</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Zámek</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>běh tam drží zámek</translation>
     </message>
     <message>
         <source>free</source>
@@ -83230,23 +83230,23 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage z %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte vzdálenou instalaci, která se má otestovat.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejprve zaškrtněte „Ano, odstranit tuto vzdálenou instalaci“.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálenou instalaci se nepodařilo odstranit: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálenou instalaci se nepodařilo uložit: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -83254,75 +83254,75 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte alespoň jednu vzdálenou instalaci nebo skupinu.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybraná vzdálená instalace už v nastavení není. Načtěte stránku znovu.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejprve zaškrtněte „Ano, nasadit nyní“.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálená instalace přes FTP nemůže spouštět migrace: zvolte „Pouze přenos“, nebo ji vynechte.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migrace k nasazení jsou ID migrací oddělená čárkami.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasazení stále probíhá. Počkejte, až skončí.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Toto nasazení nečeká u brány.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádná vzdálená instalace toto nasazení nepoužila: není co vracet.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejprve zaškrtněte „Ano, nasadit další stupeň nyní“.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejprve zaškrtněte „Ano, vrátit toto nasazení nyní“.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálená instalace s ID %id už existuje.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Port je číslo od 1 do 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Prostředí je slovo z písmen, číslic, - a _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Skupina je slovo z písmen, číslic, - a _ (ne all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Přihlašovací údaj teď nelze přečíst: %problem. Před prvním nasazením ho uložte v Nastavení &gt; Tajné údaje (nebo nastavte proměnnou).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálená instalace přes FTP jen přijímá soubory: nasazení do ní je „Pouze přenos“ a její migrace se tam spouštějí ručně.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdálená instalace %id není v settings/override/migration.ini.append.php; odstraňte ji tam, kde je nastavena.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Přihlášeno přes FTP a přečten index.php. Stav migrací vzdálené instalace přes FTP nelze přečíst.</translation>
     </message>
 </context>
 <context>
@@ -85726,19 +85726,19 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasazení %deploy na %site selhalo</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasazení %deploy na %site čeká u brány</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Nasazení %deploy na %site proběhlo úspěšně</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tento e-mail odeslal %site, protože to vyžaduje migration.ini [RemoteSettings] Notify[].</translation>
     </message>
 </context>
 </TS>

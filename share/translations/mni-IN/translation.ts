@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটশিং</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>ইনস্টলেসন অসিনা মসিগী মাইগ্রেসনশিং ডিপ্লয় তৌবা অতোপ্পা ইনস্টলেসনশিং: ডিপ্লয় অমনা মাইগ্রেসনশিং খনখিবা রিমোটশিংদা থাদুনা মফম অদুদা রন তৌই, পুম্নমক মতম অমতা অমসুং সিঙ্ক ওইনা. রিমোট অমনা সিক্রেট কদাইদসু থম্দে: মসিগী ক্রেডেনসিয়েলনা সেটআপ &gt; সিক্রেটশিং দা লৈবা অমগী মমিং পুল্লি.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>অনৌবা রিমোট</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id গী সংযোগ টেস্ট</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটশিং</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট %parallel ফাওবা মতম অমতা থবক তৌই; ফেজ অমনা অমমম্দা সেকেন্ড %timeout ফাওবা লৌবা য়াই.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>চুম্থোকপা তাবা সেটিংশিং</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলশিং খক্তা (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH কী</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>লৈতে (হোস্টকী SSH এজেন্ট অমসুং কীশিং)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>গ্রুপ অমদা তৌবা ডিপ্লয় অমনা মসিগী রিমোট খুদিংমকতা চৎলি.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটশিংদা ডিপ্লয় তৌবা</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>হৌজিক ফাওবা রিমোট অমত্তা সেটআপ তৌদ্রি.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>মফম অসিদা করিসু থাদে নত্রগা রন তৌদে: “থম্বা” না সেটিংশিং settings/override/migration.ini.append.php দা ইই. ক্রেডেনসিয়েল অসি মমিং অমনি; মসিগী ভেল্যু সেটআপ &gt; সিক্রেটশিং দা নত্রগা এনভাইরনমেন্টতা লৈরি.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>হাপখিবা মতৌ অদুগুম্বা সেটিংশিং, হৌজিক ফাওবা থম্দ্রি.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>হোস্ট কী</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. রিমোট</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটকী মমিং অমসুং মসি ওইবা এনভাইরনমেন্ট.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>ময়েক, নম্বর, - অমসুং _, খুদম ওইনা production1. মসিনা রিপোর্টশিংদা অমসুং কনসোলদা (--remotes=production1) রিমোটকী মমিং ওই অমসুং মতুংদা হোংদোকপা ঙম্লোই.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... স্টেজ স্টেজ ওইবা ডিপ্লয় অমনা এনভাইরনমেন্টশিং মথং অসিগী মনুংদা চৎলি.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>অপশনেল, কমানা খায়দোকপা, খুদম ওইনা production. গ্রুপ অমদা তৌবা ডিপ্লয় অমনা মসিগী রিমোট খুদিংমকতা চৎলি.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. সংযোগ</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলশিং মফম অদুদা করম্না য়ৌবগে, অমসুং ইনস্টলেসন কদায়দা লৈবগে.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH গী মখাদা, হোংলবা খক্তা, কায়খিবা ট্রান্সফর অমুক মখা চত্থই. rsync ইনস্টল তৌরবা মফমদা খ্বাইদগী ফবা খনবা.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলশিংগীদমক scp গা লোয়ননা SSH.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলশিংগীদমক sftp গা লোয়ননা SSH.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলশিং খক্তা: মাইগ্রেসনশিং থাদুনা অমুক পায়খৎলি, অদুবু মফম অদুদা রন তৌবা ঙম্লোই.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS গী মখাদা FTP; ফাইলশিং খক্তা.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>সর্ভর অসিদা লৈবা অতোপ্পা ইনস্টলেসন অমা, ফোল্দর অমদা.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>হোস্টকী মমিং নত্রগা এদ্রেস অমা, খুদম ওইনা node1.example.com. local গীদমক নত্তে.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>অহাংবা: SSH গীদমক 22, FTP গীদমক 21.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>মফম অদুদা ইনস্টলেসনগী রুট, খুদম ওইনা /var/www/site (FTP গীদমক: FTP একাউন্টনা উবা পাথ).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP কমান্দ লাইন</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>মফম অদুগী PHP CLI: php, নত্রগা /opt/plesk/php/8.4/bin/php গুম্বা মপুং ফাবা পাথ অমা.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>কনসোল স্ক্রিপ্টশিং মফম অদুদা root ওইনা রন তৌই</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটকী ইউজর root ওইরবা মতমদা খক্তা (মতম অদুদা মখোয় --allow-root-user গা লোয়ননা রন তৌই).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. ক্রেডেনসিয়েল</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ইনস্টলেসন অসিনা মফম অদুদা করম্না সাইন ইন তৌবগে. মমিং অমখক্তমক থম্মি.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>ইনস্টলেসন অসি রন তৌবা ইউজরগী SSH এজেন্ট অমসুং কীশিং (অমসুং local গীদমক মতম পুম্বদা).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>সিক্রেট অমা ওইনা থম্লবা প্রাইভেট কী অমা.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>সিক্রেট অমা ওইনা থম্লবা পাসওয়র্দ অমা (FTP না পাসওয়র্দ অমনা সাইন ইন তৌই).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>সিক্রেটকী মমিং</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>সেটআপ &gt; সিক্রেটশিং দগী সিক্রেট অমা, খুদম ওইনা deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>নত্রগা এনভাইরনমেন্ট ভেরিয়েবল অমা</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>মসি থম্লিবা সর্ভর প্রোসেসকী ভেরিয়েবল, খুদম ওইনা DEPLOY_KEY (env:DEPLOY_KEY ওইনা থম্মি). মসিনা সিক্রেটকী মমিংগী মফম লৌই.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. হোস্ট কী</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>অপশনেল, SSH, sftp অমসুং rsync গীদমক.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>হোস্ট কীগী ফিঙ্গরপ্রিন্ট</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ssh-keygen -l না প্রিন্ট তৌবগুম. মসি লৈরবদি, হোস্টনা কী অসি উৎপা তাই; মসি লৈতবদি, অহানবা কন্টেক্টতা কী অদু তম্লগনি.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. রিভিউ তৌবা</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>মথক্কী সেটিংশিং অসিগা লোয়ননা সংযোগ টেস্ট তৌবিয়ু, মতুংদা ইগদবা লাইনশিং রিভিউ তৌবিয়ু.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট অসি থোক্কনবা</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>মসিগী সেটিংশিং settings/override/migration.ini.append.php দগী লৌথোকই. রিমোটতা করিসু হোংদে, অমসুং মসিগী ডিপ্লয়শিং ইতিহাসতা লৈরি.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>হোই, রিমোট অসি থোক্কনবা</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয়শিং</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় অমনা ইনস্টলেসন অসিগী মাইগ্রেসনশিং খনখিবা রিমোটশিংদা থাদুনা মফম অদুদা %user ওইনা রন তৌই, পুম্নমক মতম অমতা অমসুং সিঙ্ক ওইনা: অহানবদা রিমোট খুদিংমক চেক তৌই, অমসুং অমনা ঙমদ্রবদি, এপ্লাই তৌরবা রিমোট খুদিংমক হন্দোক্লি. মসি বেকগ্রাউন্দতা চত্থরি, অমসুং মসিগী পেজনা চত্লিঙৈদা রিমোট খুদিংমক উত্লি.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. রিমোটশিং</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটশিং, গ্রুপ অমা, নত্রগা অনিমক টিক তৌবিয়ু.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>মসিদা ডিপ্লয় তৌবা</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. করম্না</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয়</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>থাবা অমসুং রন তৌবা</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>মাইগ্রেসনশিং রিমোট খুদিংমকতা শেয়র তৌবা রন ID অমগা লোয়ননা থাই, ভেরিফাই তৌই অমসুং রন তৌই.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>ট্রান্সফর খক্তা</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলশিং থাদুনা ভেরিফাই তৌই, করিসু রন তৌদে (FTP রিমোট অমগীদমক লম্বী অমখক্তা).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>স্টেজ স্টেজ ওইনা</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>এনভাইরনমেন্টশিংগী মথং মনুংদা স্টেজ অমা অমা (dev, stage, beta, production ...): অহানবা স্টেজ ডিপ্লয় তৌই, মতুংদা কনানা মথংগী স্টেজ অনুমোদন তৌবা ফাওবা গেট অমনা ঙাইরি. স্টেজ খুদিংমককী মনুংদা পুম্নমক নত্রগা করিসু নত্তে.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>মাইগ্রেসনশিং অসি খক্তা</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>অপশনেল: মাইগ্রেসন IDশিং, কমানা খায়দোকপা. অহাংবা: সাইট অমসুং মসিগী এক্সটেনসনশিংগী মাইগ্রেসন খুদিংমক.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>প্রিফ্লাইট চেক খক্তা</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>হোই, হৌজিক ডিপ্লয় তৌবা</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>করিগুম্বা থাখিবা নত্রগা রন তৌখিবা ডিপ্লয়শিং, অনৌবা অদু অহানবদা (প্রিফ্লাইট চেক অমনা রিপোর্ট থম্দে).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>ট্রান্সফর খক্তা</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>স্টেজ স্টেজ ওইনা, স্টেজ %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>সিঙ্ক ওইদে</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>হৌজিক ফাওবা ডিপ্লয় অমত্তা লৈতে.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয়গী রিমোট খুদিংমক মসিগী স্থিতিগা লোয়ননা. মফম অসিদা হৌদোকখিবা ডিপ্লয় অমা পেজ অসি বন্দ তৌরবা মতমদা বেকগ্রাউন্দতা চত্থরি; মসিগী মতুং ইন্নবা পেজ অসি অমুক হাংদোকপিয়ু.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় পুম্নমক</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>প্রিফ্লাইট চেক</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>মথংগী স্টেজ</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>সেটিংশিং অমসুং ক্রেডেনসিয়েল চেক তৌরি</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>প্রিফ্লাইট চেক: রিমোট খুদিংমকী স্থিতি পারি</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>মাইগ্রেসন ফাইলশিং থারি</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>লাক্লবা অদু ভেরিফাই তৌরি</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট খুদিংমকতা মাইগ্রেসনশিং রন তৌরি</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটশিং হন্দোক্লি</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় লোইরে. মসিগী রিপোর্ট লোড তৌরি.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>অগ্রগতি মতুং ইন্নবা ঙমদ্রে. ডিপ্লয় করম্না চত্লিবগে উনবা পেজ অসি অনৌবা ওইনা লোড তৌবিয়ু.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>ফেজ</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>পেজ অসিনা ডিপ্লয় চত্লিঙৈদা মতুং ইন্নরি.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>সিঙ্ক ওইরি</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>স্টেজশিং</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>স্টেজ %stage মসিগী গেটতা ঙাইরি</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>গেট %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user না %time দা অনুমোদন তৌরে</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>স্টেজ</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>থাখিবা ফাইলশিং</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>কর্নেল ভর্সন</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>এপ্লাই তৌরে: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>এপ্লাই তৌগদবা: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>ফেজশিং</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>গেট: %stages গী স্টেজ %stage</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>মসিগী মমাংগী স্টেজশিং ডিপ্লয় তৌরে. মখোয় চেক তৌবিয়ু, মতুংদা মথংগী স্টেজ অনুমোদন তৌবিয়ু: মসিগী রিমোটশিং অমুক চেক তৌদুনা ডিপ্লয় তৌই, পুম্নমক নত্রগা করিসু নত্তে.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>হোই, মথংগী স্টেজ হৌজিক ডিপ্লয় তৌবা</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় অসি রোলবেক তৌবা</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>মসি এপ্লাই তৌখিবা রিমোট খুদিংমক (%list) মসিগী রন্না মমাংদা লৌখিবা স্নেপশটতা হল্লক্লি, পুম্নমক মতম অমতা.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>হোই, ডিপ্লয় অসি হৌজিক রোলবেক তৌবা</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>প্লান তৌরে</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>ট্রান্সফর তৌরে</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় তৌরে</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>গেট অমদা ঙাইরি</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>শেমগৎলে</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>মসিগী স্টেজ ঙাইরি</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলশিং থারে</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>ভেরিফাই তৌরে</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ঙমদ্রে, মশাগী মশা অমুক রিস্টোর তৌরে</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>হোংদ্রে</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় তৌদ্রি</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>য়ৌবা ঙম্লোই</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটনা পাউখুম পীরে.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট অসি হৌজিক শিজিন্নবা ঙম্লোই.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done লোইরবা, %pending ঙাক্লিবা, %failed ঙমদ্রবা</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>লোক</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>মফম অদুদা রন অমনা লোক পাইরি</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stages গী %stage</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>টেস্ট তৌগদবা রিমোট খনবিয়ু.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>অহানবদা “হোই, রিমোট অসি থোক্কনবা” টিক তৌবিয়ু.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট অসি থোক্কনবা ঙমদ্রে: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট অসি থম্বা ঙমদ্রে: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট নত্রগা গ্রুপ অমা যাংসু খনবিয়ু.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>খনখিবা রিমোট অমা হৌজিক সেটিংশিংদা লৈত্রে. পেজ অসি অনৌবা ওইনা লোড তৌবিয়ু.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>অহানবদা “হোই, হৌজিক ডিপ্লয় তৌবা” টিক তৌবিয়ু.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP রিমোট অমনা মাইগ্রেসনশিং রন তৌবা ঙম্লোই: “ট্রান্সফর খক্তা” খনবিয়ু, নত্রগা মসি থাদোকপিয়ু.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় তৌগদবা মাইগ্রেসনশিং অসি মাইগ্রেসন IDশিংনি, কমানা খায়দোকপা.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় অসি হৌজিকসু চত্থরি. মসি লোইবা ফাওবা ঙাইবিয়ু.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় অসিনা গেট অমদা ঙাইদে.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট অমত্তনা ডিপ্লয় অসি এপ্লাই তৌখিদে: রোলবেক তৌগদবা করিসু লৈতে.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>অহানবদা “হোই, মথংগী স্টেজ হৌজিক ডিপ্লয় তৌবা” টিক তৌবিয়ু.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>অহানবদা “হোই, ডিপ্লয় অসি হৌজিক রোলবেক তৌবা” টিক তৌবিয়ু.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>ID %id লৈবা রিমোট অমা হান্নবা লৈরে.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>পোর্ট অসি 1 দগী 65535 ফাওবগী নম্বর অমনি.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>এনভাইরনমেন্ট হায়বসি ময়েক, নম্বর, - অমসুং _ না শেম্বা ৱাহৈ অমনি (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>গ্রুপ হায়বসি ময়েক, নম্বর, - অমসুং _ না শেম্বা ৱাহৈ অমনি (all নত্তে): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>ক্রেডেনসিয়েল অসি হৌজিক পাবা ঙম্লোই: %problem. অহানবা ডিপ্লয়গী মমাংদা মসি সেটআপ &gt; সিক্রেটশিং দা থম্বিয়ু (নত্রগা ভেরিয়েবল সেট তৌবিয়ু).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP রিমোট অমনা ফাইলশিং খক্তা ফংই: মসিদা তৌবা ডিপ্লয় অমা “ট্রান্সফর খক্তা” নি, অমসুং মসিগী মাইগ্রেসনশিং মফম অদুদা খুৎনা রন তৌই.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট %id অসি settings/override/migration.ini.append.php দা লৈতে; মসি সেট তৌরবা মফম অদুদা থোক্কনবিয়ু.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP গী মখাদা সাইন ইন তৌরে অমসুং index.php পারে. FTP রিমোট অমগী মাইগ্রেসন স্থিতি পাবা ঙম্লোই.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় %deploy %site দা ঙমদ্রে</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় %deploy %site দা থোঙ অমদা ঙাইরি</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় %deploy %site দা মায় পাখ্রে</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>মেল অসি %site না থারকনি মরমদি migration.ini [RemoteSettings] Notify[] না মসি হায়জৈ।</translation>
     </message>
 </context>
 </TS>

@@ -81334,15 +81334,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটসমূহ</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>অন্য যে ইনস্টলেশনগুলোতে এটি তার মাইগ্রেশন ডিপ্লয় করে: একটি ডিপ্লয় মাইগ্রেশনগুলো বেছে নেওয়া রিমোটগুলোতে পাঠায় এবং সেখানে চালায়, সব একসাথে ও সিঙ্কে। একটি রিমোট কখনও কোনো সিক্রেট রাখে না: এর ক্রেডেনশিয়াল সেটআপ &gt; সিক্রেট-এর একটির নাম উল্লেখ করে।</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>নতুন রিমোট</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81350,19 +81350,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id-এর সংযোগ পরীক্ষা</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটগুলো</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>একসাথে সর্বোচ্চ %parallel রিমোটে কাজ করা হয়; প্রতিটিতে একটি ফেজে %timeout সেকেন্ড লাগতে পারে।</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81378,15 +81378,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>সংশোধনযোগ্য সেটিংস</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>শুধু ফাইল (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH কী</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81394,7 +81394,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>কিছু নেই (হোস্টের SSH এজেন্ট ও কী)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81402,23 +81402,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>একটি গ্রুপে ডিপ্লয় সেই গ্রুপের প্রতিটি রিমোটে যায়।</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটে ডিপ্লয় করুন</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>এখনও কোনো রিমোট সেট আপ করা হয়নি।</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>এখানে কিছুই পাঠানো বা চালানো হয় না: সংরক্ষণ করুন সেটিংসগুলো settings/override/migration.ini.append.php-তে লেখে। ক্রেডেনশিয়াল একটি নাম; এর মান সেটআপ &gt; সিক্রেট-এ বা পরিবেশে থাকে।</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81426,7 +81426,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>যেমন লেখা হয়েছে সেই সেটিংস, এখনও সংরক্ষিত হয়নি।</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81454,15 +81454,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>হোস্ট কী</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. রিমোট</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটটির নাম কী এবং এটি কোন পরিবেশ।</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81470,47 +81470,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>অক্ষর, সংখ্যা, - ও _, যেমন production1। এটি প্রতিবেদনে ও কনসোলে (--remotes=production1) রিমোটের নাম হিসেবে ব্যবহৃত হয় এবং পরে বদলানো যায় না।</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... পর্যায়ক্রমিক ডিপ্লয় এই ক্রমে পরিবেশগুলোর মধ্য দিয়ে যায়।</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ঐচ্ছিক, কমা দিয়ে আলাদা, যেমন production। একটি গ্রুপে ডিপ্লয় সেই গ্রুপের প্রতিটি রিমোটে যায়।</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. সংযোগ</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলগুলো কীভাবে সেখানে পৌঁছায়, এবং ইনস্টলেশনটি কোথায় আছে।</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-এর মাধ্যমে, শুধু যা বদলেছে, ভেঙে যাওয়া স্থানান্তর আবার চালু হয়। যেখানে rsync ইনস্টল করা আছে সেখানে সেরা পছন্দ।</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলের জন্য scp সহ SSH।</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলের জন্য sftp সহ SSH।</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>শুধু ফাইল: মাইগ্রেশনগুলো পাঠানো ও আবার পড়ে দেখা হয়, কিন্তু সেখানে চালানো যায় না।</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS-এর মাধ্যমে FTP; শুধু ফাইল।</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>এই সার্ভারে একটি ফোল্ডারে থাকা অন্য একটি ইনস্টলেশন।</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81518,7 +81518,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>একটি হোস্ট নাম বা ঠিকানা, যেমন node1.example.com। local-এর জন্য নয়।</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81526,7 +81526,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>খালি: SSH-এর জন্য 22, FTP-এর জন্য 21।</translation>
     </message>
     <message>
         <source>User</source>
@@ -81538,31 +81538,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>সেখানে ইনস্টলেশনের রুট, যেমন /var/www/site (FTP-এর জন্য: FTP অ্যাকাউন্ট যে পাথ দেখে)।</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP কমান্ড লাইন</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>সেখানকার PHP CLI: php, অথবা /opt/plesk/php/8.4/bin/php-এর মতো একটি পূর্ণ পাথ।</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>কনসোল স্ক্রিপ্টগুলো সেখানে root হিসেবে চলে</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>শুধু যখন রিমোটের ব্যবহারকারী root (তখন সেগুলো --allow-root-user দিয়ে চালানো হয়)।</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. ক্রেডেনশিয়াল</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>এই ইনস্টলেশন সেখানে কীভাবে সাইন ইন করে। শুধু একটি নাম সংরক্ষণ করা হয়।</translation>
     </message>
     <message>
         <source>None</source>
@@ -81570,23 +81570,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>যে ব্যবহারকারী হিসেবে এই ইনস্টলেশন চলে তার SSH এজেন্ট ও কী (এবং local-এর জন্য সবসময়)।</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>সিক্রেট হিসেবে রাখা একটি প্রাইভেট কী।</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>সিক্রেট হিসেবে রাখা একটি পাসওয়ার্ড (FTP এটি দিয়ে সাইন ইন করে)।</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>সিক্রেটের নাম</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>সেটআপ &gt; সিক্রেট-এর একটি সিক্রেট, যেমন deploy_production1।</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81594,247 +81594,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>অথবা একটি পরিবেশ ভেরিয়েবল</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>সার্ভার প্রসেসের যে ভেরিয়েবল এটি ধারণ করে, যেমন DEPLOY_KEY (env:DEPLOY_KEY হিসেবে সংরক্ষিত)। এটি সিক্রেটের নামের জায়গা নেয়।</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. হোস্ট কী</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>ঐচ্ছিক, SSH, sftp ও rsync-এর জন্য।</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>হোস্ট কী-এর ফিঙ্গারপ্রিন্ট</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... যেমন ssh-keygen -l দেখায়। এটি থাকলে হোস্টকে এই কী দেখাতে হবে; না থাকলে প্রথম সংযোগে কী শিখে নেওয়া হয়।</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. পর্যালোচনা</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>উপরের সেটিংস দিয়ে সংযোগ পরীক্ষা করুন, তারপর যে লাইনগুলো লেখা হবে সেগুলো পর্যালোচনা করুন।</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>এই রিমোটটি অপসারণ করুন</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>এর সেটিংস settings/override/migration.ini.append.php থেকে সরিয়ে ফেলা হয়। রিমোটে কিছুই বদলায় না, এবং এর ডিপ্লয়গুলো ইতিহাসে থেকে যায়।</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>হ্যাঁ, এই রিমোটটি অপসারণ করুন</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয়সমূহ</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>একটি ডিপ্লয় এই ইনস্টলেশনের মাইগ্রেশনগুলো বেছে নেওয়া রিমোটগুলোতে পাঠায় এবং সেখানে %user হিসেবে চালায়, সব একসাথে ও সিঙ্কে: প্রথমে প্রতিটি রিমোট যাচাই করা হয়, আর একটি ব্যর্থ হলে যে রিমোটগুলোতে প্রয়োগ করা হয়েছে সেগুলো ফিরিয়ে নেওয়া হয়। এটি পটভূমিতে চলতে থাকে, এবং এর পৃষ্ঠা চলার সময় প্রতিটি রিমোট দেখায়।</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. রিমোটসমূহ</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট, একটি গ্রুপ, অথবা দুটোই টিক দিন।</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>এতে ডিপ্লয় করুন</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. কীভাবে</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় করুন</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>পাঠান ও চালান</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>মাইগ্রেশনগুলো প্রতিটি রিমোটে পাঠানো, যাচাই করা এবং একটি সাধারণ রান আইডি দিয়ে চালানো হয়।</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>শুধু স্থানান্তর</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইলগুলো পাঠানো ও যাচাই করা হয়, কিছুই চালানো হয় না (FTP রিমোটের জন্য একমাত্র উপায়)।</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>পর্যায়ক্রমে</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>পরিবেশগুলোর ক্রমে পর্যায়ে পর্যায়ে (dev, stage, beta, production ...): প্রথম পর্যায় ডিপ্লয় করা হয়, তারপর একটি গেট অপেক্ষা করে যতক্ষণ না কেউ পরবর্তীটি অনুমোদন করে। প্রতিটি পর্যায়ের মধ্যে সব অথবা কিছুই না।</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>শুধু এই মাইগ্রেশনগুলো</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>ঐচ্ছিক: মাইগ্রেশন আইডি, কমা দিয়ে আলাদা। খালি: সাইট ও এর এক্সটেনশনগুলোর প্রতিটি মাইগ্রেশন।</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>শুধু প্রিফ্লাইট</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>হ্যাঁ, এখনই ডিপ্লয় করুন</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>যে ডিপ্লয়গুলো কিছু পাঠিয়েছে বা চালিয়েছে, সবচেয়ে নতুনটি আগে (প্রিফ্লাইট কোনো প্রতিবেদন রাখে না)।</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>শুধু স্থানান্তর</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>পর্যায়ক্রমে, %stages পর্যায়</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>সিঙ্কে নেই</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>এখনও কোনো ডিপ্লয় নেই।</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয়ের প্রতিটি রিমোট তার অবস্থাসহ। এখানে শুরু করা একটি ডিপ্লয় এই পৃষ্ঠা বন্ধ করলেও পটভূমিতে চলতে থাকে; অনুসরণ করতে পৃষ্ঠাটি আবার খুলুন।</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>সব ডিপ্লয়</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>প্রিফ্লাইট</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>পরবর্তী পর্যায়</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>সেটিংস ও ক্রেডেনশিয়াল যাচাই করা হচ্ছে</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>প্রিফ্লাইট: প্রতিটি রিমোটের অবস্থা পড়া হচ্ছে</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>মাইগ্রেশন ফাইল পাঠানো হচ্ছে</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>যা পৌঁছেছে তা যাচাই করা হচ্ছে</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>প্রতিটি রিমোটে মাইগ্রেশনগুলো চালানো হচ্ছে</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটগুলো ফিরিয়ে নেওয়া হচ্ছে</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় শেষ হয়েছে। এর প্রতিবেদন লোড হচ্ছে।</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>অগ্রগতি অনুসরণ করা যায়নি। ডিপ্লয় কেমন চলছে দেখতে পৃষ্ঠাটি পুনরায় লোড করুন।</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>ফেজ</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>এই পৃষ্ঠা ডিপ্লয় চলার সাথে সাথে অনুসরণ করে।</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>সিঙ্কে আছে</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>পর্যায়সমূহ</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>পর্যায় %stage তার গেটে অপেক্ষা করছে</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>গেট %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user কর্তৃক %time-এ অনুমোদিত</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>পর্যায়</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>পাঠানো ফাইল</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>কার্নেল সংস্করণ</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>প্রয়োগ করা হয়েছে: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>প্রয়োগ করতে হবে: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>ফেজসমূহ</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>গেট: %stages-এর মধ্যে পর্যায় %stage</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>এর আগের পর্যায়গুলো ডিপ্লয় করা হয়েছে। সেগুলো যাচাই করুন, তারপর পরবর্তী পর্যায় অনুমোদন করুন: এর রিমোটগুলো আবার যাচাই করে ডিপ্লয় করা হয়, সব অথবা কিছুই না।</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81842,7 +81842,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>হ্যাঁ, পরবর্তী পর্যায় এখনই ডিপ্লয় করুন</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81850,31 +81850,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>এই ডিপ্লয়টি ফিরিয়ে নিন</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>যে প্রতিটি রিমোট এটি প্রয়োগ করেছে (%list), সেগুলো তাদের রানের আগে নেওয়া ক্যাপশনে ফিরে যায়, সব একসাথে।</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>হ্যাঁ, এই ডিপ্লয়টি এখনই ফিরিয়ে নিন</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>পরিকল্পিত</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>স্থানান্তরিত</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় করা হয়েছে</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>একটি গেটে অপেক্ষা করছে</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81882,7 +81882,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>প্রস্তুত করা হয়েছে</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81890,51 +81890,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>নিজের পর্যায়ের জন্য অপেক্ষা করছে</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ফাইল পাঠানো হয়েছে</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>যাচাইকৃত</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ব্যর্থ, নিজেই পুনরুদ্ধার করেছে</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>অপরিবর্তিত</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় করা হয়নি</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>পৌঁছানো যাচ্ছে না</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট সাড়া দিয়েছে।</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটটি এখন ব্যবহার করা যাচ্ছে না।</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done সম্পন্ন, %pending মুলতুবি, %failed ব্যর্থ</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>লক</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>সেখানে একটি রান লক ধরে রেখেছে</translation>
     </message>
     <message>
         <source>free</source>
@@ -81942,23 +81942,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stages-এর মধ্যে %stage</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>পরীক্ষার জন্য রিমোট বেছে নিন।</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>আগে “হ্যাঁ, এই রিমোটটি অপসারণ করুন” টিক দিন।</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটটি অপসারণ করা যায়নি: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোটটি সংরক্ষণ করা যায়নি: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81966,75 +81966,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>অন্তত একটি রিমোট বা গ্রুপ বেছে নিন।</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>বেছে নেওয়া একটি রিমোট আর সেটিংসে নেই। পৃষ্ঠাটি পুনরায় লোড করুন।</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>আগে “হ্যাঁ, এখনই ডিপ্লয় করুন” টিক দিন।</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>একটি FTP রিমোট মাইগ্রেশন চালাতে পারে না: “শুধু স্থানান্তর” বেছে নিন, অথবা এটি বাদ দিন।</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় করার মাইগ্রেশনগুলো হলো মাইগ্রেশন আইডি, কমা দিয়ে আলাদা।</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় এখনও চলছে। এটি শেষ হওয়া পর্যন্ত অপেক্ষা করুন।</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>এই ডিপ্লয় কোনো গেটে অপেক্ষা করে না।</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>কোনো রিমোট এই ডিপ্লয় প্রয়োগ করেনি: ফিরিয়ে নেওয়ার কিছু নেই।</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>আগে “হ্যাঁ, পরবর্তী পর্যায় এখনই ডিপ্লয় করুন” টিক দিন।</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>আগে “হ্যাঁ, এই ডিপ্লয়টি এখনই ফিরিয়ে নিন” টিক দিন।</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id আইডি-সহ একটি রিমোট আগে থেকেই আছে।</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>পোর্ট হলো 1 থেকে 65535 পর্যন্ত একটি সংখ্যা।</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>পরিবেশ হলো অক্ষর, সংখ্যা, - ও _ দিয়ে গঠিত একটি শব্দ (alpha, dev, stage, beta, production ...)।</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>গ্রুপ হলো অক্ষর, সংখ্যা, - ও _ দিয়ে গঠিত একটি শব্দ (all নয়): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>ক্রেডেনশিয়ালটি এখন পড়া যাচ্ছে না: %problem। প্রথম ডিপ্লয়ের আগে এটি সেটআপ &gt; সিক্রেট-এ সংরক্ষণ করুন (অথবা ভেরিয়েবলটি সেট করুন)।</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>একটি FTP রিমোট শুধু ফাইল গ্রহণ করে: এতে ডিপ্লয় হলো “শুধু স্থানান্তর”, এবং এর মাইগ্রেশনগুলো সেখানে হাতে চালানো হয়।</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>রিমোট %id settings/override/migration.ini.append.php-তে নেই; যেখানে এটি সেট করা আছে সেখান থেকে অপসারণ করুন।</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP-এর মাধ্যমে সাইন ইন করে index.php পড়া হয়েছে। একটি FTP রিমোটের মাইগ্রেশন স্ট্যাটাস পড়া যায় না।</translation>
     </message>
 </context>
 <context>
@@ -84438,19 +84438,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় %deploy %site-এ ব্যর্থ হয়েছে</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় %deploy %site-এ একটি গেটে অপেক্ষা করছে</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>ডিপ্লয় %deploy %site-এ সফল হয়েছে</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>এই মেইলটি %site পাঠিয়েছে কারণ migration.ini [RemoteSettings] Notify[] এটি চায়।</translation>
     </message>
 </context>
 </TS>

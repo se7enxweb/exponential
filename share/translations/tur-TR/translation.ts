@@ -81341,15 +81341,15 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzak sistemler</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu kurulumun geçişlerini dağıttığı diğer kurulumlar: bir dağıtım, geçişleri seçilen uzak sistemlere gönderir ve orada hepsini aynı anda ve eşzamanlı çalıştırır. Bir uzak sistem asla gizli değer tutmaz: kimlik bilgisi Kurulum &gt; Gizli değerler içindeki birini adlandırır.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni uzak sistem</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81357,19 +81357,19 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id bağlantısını test et</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzak sistemler</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aynı anda en fazla %parallel uzak sistem üzerinde çalışılır; bir evre her birinde %timeout saniye sürebilir.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzak sistem</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81385,15 +81385,15 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>düzeltilecek ayarlar</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>yalnızca dosyalar (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH anahtarı</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81401,7 +81401,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>yok (ana bilgisayarın SSH aracısı ve anahtarları)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81409,23 +81409,23 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir gruba yapılan dağıtım, grubun her uzak sistemine gider.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzak sistemlere dağıt</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Henüz hiçbir uzak sistem ayarlanmadı.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzak sistem %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Burada hiçbir şey gönderilmez veya çalıştırılmaz: Kaydet, ayarları settings/override/migration.ini.append.php dosyasına yazar. Kimlik bilgisi bir addır; değeri Kurulum &gt; Gizli değerler içinde veya ortamda kalır.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81433,7 +81433,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Girildiği haliyle ayarlar, henüz kaydedilmedi.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81461,15 +81461,15 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana bilgisayar anahtarı</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Uzak sistem</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzak sistemin adı ve hangi ortam olduğu.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81477,47 +81477,47 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Harfler, rakamlar, - ve _, örneğin production1. Uzak sistemi raporlarda ve konsolda (--remotes=production1) adlandırır ve sonradan değiştirilemez.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Aşamalı bir dağıtım ortamlardan bu sırayla geçer.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>İsteğe bağlı, virgülle ayrılmış, örneğin production. Bir gruba yapılan dağıtım, grubun her uzak sistemine gider.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Bağlantı</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosyaların oraya nasıl ulaştığı ve kurulumun nerede olduğu.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH üzerinden, yalnızca değişenler; yarıda kalan bir aktarım sürdürülür. rsync kurulu olan yerlerde en iyi seçim.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosyalar için scp ile SSH.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosyalar için sftp ile SSH.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yalnızca dosyalar: geçişler gönderilir ve geri okunur, ancak orada çalıştırılamaz.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS üzerinden FTP; yalnızca dosyalar.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu sunucuda, bir klasördeki başka bir kurulum.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81525,7 +81525,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir ana bilgisayar adı veya adresi, örneğin node1.example.com. local için değil.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81533,7 +81533,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Boş: SSH için 22, FTP için 21.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81545,31 +81545,31 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurulumun oradaki kök dizini, örneğin /var/www/site (FTP için: FTP hesabının gördüğü yol).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP komut satırı</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oradaki PHP CLI: php veya /opt/plesk/php/8.4/bin/php gibi tam bir yol.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Konsol betikleri orada root olarak çalışır</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Yalnızca uzak sistemin kullanıcısı root olduğunda (o zaman --allow-root-user ile çalıştırılırlar).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Kimlik bilgisi</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu kurulumun orada nasıl oturum açtığı. Yalnızca bir ad kaydedilir.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81577,23 +81577,23 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu kurulumun altında çalıştığı kullanıcının SSH aracısı ve anahtarları (local için her zaman).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gizli değer olarak saklanan özel bir anahtar.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Gizli değer olarak saklanan bir parola (FTP bununla oturum açar).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Gizli değerin adı</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurulum &gt; Gizli değerler içinden bir gizli değer, örneğin deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81601,247 +81601,247 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Veya bir ortam değişkeni</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Onu tutan sunucu sürecinin değişkeni, örneğin DEPLOY_KEY (env:DEPLOY_KEY olarak kaydedilir). Gizli değerin adının yerini alır.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Ana bilgisayar anahtarı</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>İsteğe bağlı; SSH, sftp ve rsync için.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana bilgisayar anahtarının parmak izi</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>ssh-keygen -l komutunun yazdırdığı biçimde SHA256:... Verilirse ana bilgisayar bu anahtarı göstermelidir; verilmezse anahtar ilk temasta öğrenilir.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Gözden geçirme</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bağlantıyı yukarıdaki ayarlarla test edin, ardından yazılacak satırları gözden geçirin.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu uzak sistemi kaldır</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayarları settings/override/migration.ini.append.php dosyasından çıkarılır. Uzak sistemde hiçbir şey değişmez ve dağıtımları geçmişte kalır.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Evet, bu uzak sistemi kaldır</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Dağıtımlar</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir dağıtım, bu kurulumun geçişlerini seçilen uzak sistemlere gönderir ve orada %user olarak hepsini aynı anda ve eşzamanlı çalıştırır: önce her uzak sistem denetlenir ve biri başarısız olursa, uygulamış olan her uzak sistem geri alınır. Dağıtım arka planda sürer ve sayfası ilerledikçe her uzak sistemi gösterir.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Uzak sistemler</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzak sistemleri, bir grubu veya her ikisini işaretleyin.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Buraya dağıt</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Nasıl</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Dağıt</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Gönder ve çalıştır</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçişler her uzak sisteme gönderilir, doğrulanır ve ortak tek bir çalıştırma kimliğiyle çalıştırılır.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Yalnızca aktar</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosyalar gönderilir ve doğrulanır, hiçbir şey çalıştırılmaz (bir FTP uzak sistemi için tek yol).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Aşamalı</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ortamların sırasıyla aşama aşama (dev, stage, beta, production ...): ilk aşama dağıtılır, ardından bir kapı, biri sonrakini onaylayana kadar bekler. Her aşama içinde ya hepsi ya hiçbiri.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Yalnızca bu geçişler</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>İsteğe bağlı: virgülle ayrılmış geçiş kimlikleri. Boş: sitenin ve uzantılarının tüm geçişleri.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Yalnızca ön denetim</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Evet, şimdi dağıt</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir şey gönderen veya çalıştıran dağıtımlar, en yenisi önce (ön denetim rapor saklamaz).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>yalnızca aktar</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>aşamalı, %stages aşama</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>eşzamanlı değil</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Henüz dağıtım yok.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Dağıtım %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dağıtımın her uzak sistemi ve durumu. Burada başlatılan bir dağıtım, bu sayfa kapatıldığında arka planda sürer; izlemek için sayfayı yeniden açın.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm dağıtımlar</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Ön denetim</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Sonraki aşama</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayarlar ve kimlik bilgileri denetleniyor</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ön denetim: her uzak sistemin durumu okunuyor</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçiş dosyaları gönderiliyor</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulaşanlar doğrulanıyor</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçişler her uzak sistemde çalıştırılıyor</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzak sistemler geri alınıyor</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dağıtım bitti. Raporu yükleniyor.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>İlerleme izlenemedi. Dağıtımın ne durumda olduğunu görmek için sayfayı yeniden yükleyin.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Evre</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu sayfa dağıtımı ilerledikçe izler.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Eşzamanlı</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Aşamalar</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage aşaması kapısında bekliyor</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapı %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user tarafından %time saatinde onaylandı</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Aşama</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Gönderilen dosyalar</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Çekirdek sürümü</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>uygulandı: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>uygulanacak: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Evreler</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapı: aşama %stage / %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ondan önceki aşamalar dağıtıldı. Onları denetleyin, ardından sonraki aşamayı onaylayın: onun uzak sistemleri yeniden denetlenir ve dağıtılır, ya hepsi ya hiçbiri.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81849,7 +81849,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Evet, sonraki aşamayı şimdi dağıt</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81857,31 +81857,31 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu dağıtımı geri al</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bunu uygulamış olan her uzak sistem (%list), çalıştırmasından önce alınan geri yükleme noktasına hepsi aynı anda döner.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Evet, bu dağıtımı şimdi geri al</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>planlandı</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>aktarıldı</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>dağıtıldı</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>bir kapıda bekliyor</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81889,7 +81889,7 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>hazırlandı</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81897,51 +81897,51 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>aşamasını bekliyor</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>dosyalar gönderildi</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>doğrulandı</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>başarısız, kendini geri yükledi</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>değişmedi</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>dağıtılmadı</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ulaşılamıyor</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzak sistem yanıt verdi.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzak sistem şu anda kullanılamıyor.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done tamamlandı, %pending beklemede, %failed başarısız</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Kilit</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>orada bir çalıştırma kilidi tutuyor</translation>
     </message>
     <message>
         <source>free</source>
@@ -81949,23 +81949,23 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage / %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Test edilecek uzak sistemi seçin.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Önce “Evet, bu uzak sistemi kaldır” seçeneğini işaretleyin.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzak sistem kaldırılamadı: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzak sistem kaydedilemedi: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81973,75 +81973,75 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>En az bir uzak sistem veya grup seçin.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçilen bir uzak sistem artık ayarlarda yok. Sayfayı yeniden yükleyin.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Önce “Evet, şimdi dağıt” seçeneğini işaretleyin.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir FTP uzak sistemi geçiş çalıştıramaz: “Yalnızca aktar” seçeneğini seçin veya onu dışarıda bırakın.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dağıtılacak geçişler, virgülle ayrılmış geçiş kimlikleridir.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dağıtım hâlâ sürüyor. Bitmesini bekleyin.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu dağıtım bir kapıda beklemiyor.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu dağıtımı hiçbir uzak sistem uygulamadı: geri alınacak bir şey yok.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Önce “Evet, sonraki aşamayı şimdi dağıt” seçeneğini işaretleyin.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Önce “Evet, bu dağıtımı şimdi geri al” seçeneğini işaretleyin.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id kimlikli bir uzak sistem zaten var.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bağlantı noktası 1 ile 65535 arasında bir sayıdır.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ortam; harf, rakam, - ve _ karakterlerinden oluşan bir sözcüktür (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grup; harf, rakam, - ve _ karakterlerinden oluşan bir sözcüktür (all olamaz): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kimlik bilgisi şu anda okunamıyor: %problem. İlk dağıtımdan önce Kurulum &gt; Gizli değerler içine kaydedin (veya değişkeni ayarlayın).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir FTP uzak sistemi yalnızca dosya alır: ona yapılan dağıtım “Yalnızca aktar” olur ve geçişleri orada elle çalıştırılır.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id uzak sistemi settings/override/migration.ini.append.php içinde değil; ayarlandığı yerde kaldırın.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP üzerinden oturum açıldı ve index.php okundu. Bir FTP uzak sisteminin geçiş durumu okunamaz.</translation>
     </message>
 </context>
 <context>
@@ -84445,19 +84445,19 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%deploy dağıtımı %site üzerinde başarısız oldu</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%deploy dağıtımı %site üzerinde bir kapıda bekliyor</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%deploy dağıtımı %site üzerinde başarılı oldu</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu e-posta, migration.ini [RemoteSettings] Notify[] bunu istediği için %site tarafından gönderildi.</translation>
     </message>
 </context>
 </TS>

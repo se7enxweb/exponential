@@ -81336,15 +81336,15 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Mga destinasyon</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang ubang mga instalasyon diin kini nga instalasyon mag-deploy sa iyang mga migrasyon: ang pag-deploy magpadala sa mga migrasyon ngadto sa napiling mga destinasyon ug padaganon kini didto, dungan ug managsama. Ang destinasyon dili gayod magkupot og sekreto: ang kredensyal niini nagngalan og usa sa Pag-setup &gt; Mga sekreto.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Bag-ong destinasyon</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagsulay sa koneksyon sa %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang mga destinasyon</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hangtod %parallel ka destinasyon ang dungan nga trabahoon; ang usa ka hugna mahimong mokabat og %timeout segundos sa matag usa.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Destinasyon</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>mga setting nga ayohon</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>mga file lang (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Key sa SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>wala (ang SSH agent ug mga key sa host)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang pag-deploy sa usa ka grupo moadto sa matag destinasyon niini.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>I-deploy ngadto sa mga destinasyon</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wala pay destinasyon nga na-setup.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Destinasyon %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Walay ipadala o padaganon dinhi: ang Tipigi magsulat sa mga setting ngadto sa settings/override/migration.ini.append.php. Ang kredensyal usa ka ngalan; ang bili niini magpabilin sa Pag-setup &gt; Mga sekreto o sa palibot.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang mga setting sama sa gisulod, wala pa matipigi.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Key sa host</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Ang destinasyon</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unsa ang ngalan sa destinasyon ug unsang palibot kini.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mga letra, numero, - ug _, pananglitan production1. Kini ang ngalan sa destinasyon sa mga taho ug sa console (--remotes=production1) ug dili na mausab sa ulahi.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Ang pag-deploy sa mga yugto moagi sa mga palibot sumala niini nga han-ay.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opsyonal, gibulag sa mga koma, pananglitan production. Ang pag-deploy sa usa ka grupo moadto sa matag destinasyon niini.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Ang koneksyon</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Giunsa pag-abot didto sa mga file, ug asa ang instalasyon.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pinaagi sa SSH, ang nausab lang, ang naputol nga pagbalhin ipadayon. Ang labing maayong pilian kon diin naka-install ang rsync.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH uban ang scp alang sa mga file.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH uban ang sftp alang sa mga file.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mga file lang: ang mga migrasyon ipadala ug basahon balik, apan dili mapadagan didto.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP pinaagi sa TLS; mga file lang.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Laing instalasyon niining server, sa usa ka folder.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa ka host name o adres, pananglitan node1.example.com. Dili alang sa local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Walay sulod: 22 alang sa SSH, 21 alang sa FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang root sa instalasyon didto, pananglitan /var/www/site (alang sa FTP: ang dalan nga makita sa FTP account).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Command line sa PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang PHP CLI didto: php, o usa ka bug-os nga dalan sama sa /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang mga console script modagan didto isip root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon root lang ang tiggamit sa destinasyon (padaganon kini unya gamit ang --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Ang kredensyal</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Giunsa pag-sign in niining instalasyon didto. Ngalan lang ang gitipigan.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang SSH agent ug mga key sa tiggamit nga gigamit niining instalasyon sa pagdagan (ug kanunay alang sa local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa ka pribadong key nga gitipigan isip sekreto.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa ka password nga gitipigan isip sekreto (ang FTP mo-sign in gamit niini).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngalan sa sekreto</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa ka sekreto sa Pag-setup &gt; Mga sekreto, pananglitan deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>O usa ka variable sa palibot</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang variable sa proseso sa server nga nagkupot niini, pananglitan DEPLOY_KEY (gitipigan isip env:DEPLOY_KEY). Kini ang mopuli sa ngalan sa sekreto.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Ang key sa host</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opsyonal, alang sa SSH, sftp ug rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Fingerprint sa key sa host</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... sama sa pag-print sa ssh-keygen -l. Kon aduna, kinahanglang ipakita sa host kini nga key; kon wala, ang key makat-onan sa unang kontak.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Susiha</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulayi ang koneksyon gamit ang mga setting sa ibabaw, unya susiha ang mga linya nga isulat.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuhaa kini nga destinasyon</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang mga setting niini kuhaon gikan sa settings/override/migration.ini.append.php. Walay mausab sa destinasyon, ug ang mga pag-deploy niini magpabilin sa kasaysayan.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Oo, kuhaa kini nga destinasyon</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Mga pag-deploy</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang pag-deploy magpadala sa mga migrasyon niining instalasyon ngadto sa napiling mga destinasyon ug padaganon kini didto isip %user, dungan ug managsama: susihon una ang matag destinasyon, ug kon mapakyas ang usa, bawion ang matag destinasyon nga nag-apply. Nagpadayon kini sa likod, ug ang panid niini nagpakita sa matag destinasyon samtang nagpadayon.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Ang mga destinasyon</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markahi ang mga destinasyon, usa ka grupo, o pareho.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>I-deploy ngadto niini</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Unsaon</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>I-deploy</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Ipadala ug padagana</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang mga migrasyon ipadala, susihon ug padaganon sa matag destinasyon uban ang usa ka gipaambit nga ID sa padagan.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagbalhin lang</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang mga file ipadala ug susihon, walay padaganon (ang bugtong paagi alang sa FTP nga destinasyon).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Sa mga yugto</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yugto por yugto sumala sa han-ay sa mga palibot (dev, stage, beta, production ...): i-deploy ang unang yugto, unya maghulat ang ganghaan hangtod adunay mo-aprobar sa sunod. Tanan o wala sulod sa matag yugto.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Kini lang nga mga migrasyon</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opsyonal: mga ID sa migrasyon, gibulag sa mga koma. Walay sulod: matag migrasyon sa site ug sa mga extension niini.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Pauna nga susi lang</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Oo, i-deploy karon</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang mga pag-deploy nga nagpadala o nagpadagan og bisan unsa, ang pinakabag-o una (ang pauna nga susi walay taho nga gitipigan).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>pagbalhin lang</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>sa mga yugto, %stages ka yugto</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>dili managsama</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wala pay pag-deploy.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Pag-deploy %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang matag destinasyon sa pag-deploy uban ang kahimtang niini. Ang pag-deploy nga gisugdan dinhi magpadayon sa likod kon sirhan kining panid; ablihi pag-usab ang panid aron sundan kini.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanang pag-deploy</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Pauna nga susi</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Sunod nga yugto</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Gisusi ang mga setting ug ang mga kredensyal</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Pauna nga susi: gibasa ang kahimtang sa matag destinasyon</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Gipadala ang mga file sa migrasyon</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Gisusi ang miabot</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Gipadagan ang mga migrasyon sa matag destinasyon</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Gibawi ang mga destinasyon</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahuman na ang pag-deploy. Gikarga ang taho niini.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dili masundan ang pag-uswag. I-reload ang panid aron makita kon unsa na ang pag-deploy.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Hugna</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kini nga panid nagsunod sa pag-deploy samtang nagpadayon kini.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Managsama</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Mga yugto</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ang yugto %stage naghulat sa ganghaan niini</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ganghaan %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>giaprobahan ni %user sa %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Yugto</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Gipadala nga mga file</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Bersyon sa kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>gi-apply: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>i-apply: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Mga hugna</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ganghaan: yugto %stage sa %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na-deploy na ang mga yugto sa wala pa niini. Susiha kini, unya aprobahi ang sunod nga yugto: susihon pag-usab ang mga destinasyon niini ug i-deploy, tanan o wala.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Oo, i-deploy karon ang sunod nga yugto</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Ibalik kini nga pag-deploy</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang matag destinasyon nga nag-apply niini (%list) mobalik sa kuha nga gikuha sa wala pa ang padagan niini, dungan.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Oo, ibalik karon kini nga pag-deploy</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>giplano</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>nabalhin</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>na-deploy</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>naghulat sa ganghaan</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>naandam</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>naghulat sa yugto niini</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>gipadala ang mga file</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>nasusi</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>napakyas, nabalik sa kaugalingon</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>wala mausab</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>wala na-deploy</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>dili maabot</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitubag ang destinasyon.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dili magamit ang destinasyon karon.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done nahuman, %pending naghulat, %failed napakyas</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Kandado</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>usa ka padagan ang nagkupot sa kandado didto</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage sa %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilia ang destinasyon nga sulayan.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markahi una ang “Oo, kuhaa kini nga destinasyon”.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Dili makuha ang destinasyon: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Dili matipigan ang destinasyon: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagpili og labing menos usa ka destinasyon o grupo.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang usa ka napiling destinasyon wala na sa mga setting. I-reload ang panid.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markahi una ang “Oo, i-deploy karon”.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang FTP nga destinasyon dili makapadagan og mga migrasyon: pilia ang “Pagbalhin lang”, o ayaw kini iapil.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang mga migrasyon nga i-deploy mga ID sa migrasyon, gibulag sa mga koma.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nagpadayon pa ang pag-deploy. Hulata nga mahuman kini.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kini nga pag-deploy dili maghulat sa ganghaan.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Walay destinasyon nga nag-apply niining pag-deploy: walay ibalik.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markahi una ang “Oo, i-deploy karon ang sunod nga yugto”.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Markahi una ang “Oo, ibalik karon kini nga pag-deploy”.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aduna nay destinasyon nga adunay ID nga %id.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang port usa ka numero gikan sa 1 hangtod 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang palibot usa ka pulong sa mga letra, numero, - ug _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang grupo usa ka pulong sa mga letra, numero, - ug _ (dili all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dili mabasa ang kredensyal karon: %problem. Tipigi kini sa Pag-setup &gt; Mga sekreto (o ibutang ang variable) sa wala pa ang unang pag-deploy.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang FTP nga destinasyon modawat lang og mga file: ang pag-deploy niini “Pagbalhin lang”, ug ang mga migrasyon niini padaganon didto gamit ang kamot.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang destinasyon nga %id wala sa settings/override/migration.ini.append.php; kuhaa kini didto kon asa kini gibutang.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naka-sign in pinaagi sa FTP ug nabasa ang index.php. Dili mabasa ang kahimtang sa migrasyon sa FTP nga destinasyon.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang deploy %deploy napakyas sa %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang deploy %deploy naghulat sa usa ka ganghaan sa %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ang deploy %deploy milampos sa %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kini nga mail gipadala sa %site kay gipangayo kini sa migration.ini [RemoteSettings] Notify[].</translation>
     </message>
 </context>
 </TS>

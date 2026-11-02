@@ -81334,15 +81334,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ടുകൾ</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഈ ഇൻസ്റ്റലേഷൻ അതിന്റെ മൈഗ്രേഷനുകൾ ഡിപ്ലോയ് ചെയ്യുന്ന മറ്റ് ഇൻസ്റ്റലേഷനുകൾ: ഒരു ഡിപ്ലോയ്മെന്റ് മൈഗ്രേഷനുകൾ തിരഞ്ഞെടുത്ത റിമോട്ടുകളിലേക്ക് അയച്ച് അവിടെ പ്രവർത്തിപ്പിക്കുന്നു, എല്ലാം ഒരേസമയം സമന്വയത്തോടെ. ഒരു റിമോട്ട് ഒരിക്കലും ഒരു രഹസ്യം സൂക്ഷിക്കുന്നില്ല: അതിന്റെ ക്രെഡൻഷ്യൽ സജ്ജീകരണം &gt; രഹസ്യങ്ങൾ എന്നതിലെ ഒന്നിന്റെ പേര് നൽകുന്നു.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>പുതിയ റിമോട്ട്</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81350,19 +81350,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id-ന്റെ കണക്ഷൻ പരിശോധന</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ടുകൾ</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരേസമയം %parallel റിമോട്ടുകളിൽ വരെ പ്രവർത്തിക്കുന്നു; ഓരോന്നിലും ഒരു ഫേസിന് %timeout സെക്കൻഡ് എടുക്കാം.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ട്</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81378,15 +81378,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ശരിയാക്കേണ്ട ക്രമീകരണങ്ങൾ</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>ഫയലുകൾ മാത്രം (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH കീ</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81394,7 +81394,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒന്നുമില്ല (ഹോസ്റ്റിന്റെ SSH ഏജന്റും കീകളും)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81402,23 +81402,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു ഗ്രൂപ്പിലേക്കുള്ള ഡിപ്ലോയ്മെന്റ് അതിലെ ഓരോ റിമോട്ടിലേക്കും പോകുന്നു.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ടുകളിലേക്ക് ഡിപ്ലോയ് ചെയ്യുക</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഇതുവരെ ഒരു റിമോട്ടും സജ്ജീകരിച്ചിട്ടില്ല.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ട് %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഇവിടെ ഒന്നും അയയ്ക്കുകയോ പ്രവർത്തിപ്പിക്കുകയോ ചെയ്യുന്നില്ല: “സംരക്ഷിക്കുക” ക്രമീകരണങ്ങൾ settings/override/migration.ini.append.php-ലേക്ക് എഴുതുന്നു. ക്രെഡൻഷ്യൽ ഒരു പേരാണ്; അതിന്റെ മൂല്യം സജ്ജീകരണം &gt; രഹസ്യങ്ങൾ എന്നതിലോ പരിസ്ഥിതിയിലോ തുടരും.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81426,7 +81426,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>നൽകിയതുപോലെയുള്ള ക്രമീകരണങ്ങൾ, ഇതുവരെ സംരക്ഷിച്ചിട്ടില്ല.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81454,15 +81454,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>ഹോസ്റ്റ് കീ</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. റിമോട്ട്</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ടിന്റെ പേരും അത് ഏത് പരിസ്ഥിതിയാണെന്നും.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81470,47 +81470,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>അക്ഷരങ്ങൾ, അക്കങ്ങൾ, -, _, ഉദാഹരണത്തിന് production1. റിപ്പോർട്ടുകളിലും കൺസോളിലും (--remotes=production1) ഇതാണ് റിമോട്ടിന്റെ പേര്, പിന്നീട് മാറ്റാനാവില്ല.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... സ്റ്റേജുകളായുള്ള ഒരു ഡിപ്ലോയ്മെന്റ് ഈ ക്രമത്തിൽ പരിസ്ഥിതികളിലൂടെ കടന്നുപോകുന്നു.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഐച്ഛികം, കോമകൊണ്ട് വേർതിരിച്ചത്, ഉദാഹരണത്തിന് production. ഒരു ഗ്രൂപ്പിലേക്കുള്ള ഡിപ്ലോയ്മെന്റ് അതിലെ ഓരോ റിമോട്ടിലേക്കും പോകുന്നു.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. കണക്ഷൻ</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഫയലുകൾ എങ്ങനെ അവിടെ എത്തുന്നു, ഇൻസ്റ്റലേഷൻ എവിടെയാണ്.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH വഴി, മാറിയത് മാത്രം, മുറിഞ്ഞ കൈമാറ്റം പുനരാരംഭിക്കുന്നു. rsync ഇൻസ്റ്റാൾ ചെയ്തിടത്ത് ഏറ്റവും നല്ല തിരഞ്ഞെടുപ്പ്.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഫയലുകൾക്ക് scp ഉള്ള SSH.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഫയലുകൾക്ക് sftp ഉള്ള SSH.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഫയലുകൾ മാത്രം: മൈഗ്രേഷനുകൾ അയച്ച് തിരികെ വായിക്കുന്നു, പക്ഷേ അവിടെ പ്രവർത്തിപ്പിക്കാനാവില്ല.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS വഴി FTP; ഫയലുകൾ മാത്രം.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഈ സെർവറിലെ ഒരു ഫോൾഡറിലുള്ള മറ്റൊരു ഇൻസ്റ്റലേഷൻ.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81518,7 +81518,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു ഹോസ്റ്റ് നാമം അല്ലെങ്കിൽ വിലാസം, ഉദാഹരണത്തിന് node1.example.com. local-ന് വേണ്ടിയല്ല.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81526,7 +81526,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>ശൂന്യമെങ്കിൽ: SSH-ന് 22, FTP-ന് 21.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81538,31 +81538,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>അവിടത്തെ ഇൻസ്റ്റലേഷന്റെ റൂട്ട്, ഉദാഹരണത്തിന് /var/www/site (FTP-ന്: FTP അക്കൗണ്ട് കാണുന്ന പാത്ത്).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP കമാൻഡ് ലൈൻ</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>അവിടത്തെ PHP CLI: php, അല്ലെങ്കിൽ /opt/plesk/php/8.4/bin/php പോലുള്ള പൂർണ്ണ പാത്ത്.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>കൺസോൾ സ്ക്രിപ്റ്റുകൾ അവിടെ root ആയി പ്രവർത്തിക്കുന്നു</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ടിന്റെ ഉപയോക്താവ് root ആണെങ്കിൽ മാത്രം (അപ്പോൾ അവ --allow-root-user ഉപയോഗിച്ച് പ്രവർത്തിപ്പിക്കുന്നു).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. ക്രെഡൻഷ്യൽ</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഈ ഇൻസ്റ്റലേഷൻ അവിടെ എങ്ങനെ സൈൻ ഇൻ ചെയ്യുന്നു. ഒരു പേര് മാത്രമേ സംരക്ഷിക്കൂ.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81570,23 +81570,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>ഈ ഇൻസ്റ്റലേഷൻ പ്രവർത്തിക്കുന്ന ഉപയോക്താവിന്റെ SSH ഏജന്റും കീകളും (local-ന് എപ്പോഴും).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>രഹസ്യമായി സൂക്ഷിച്ച ഒരു സ്വകാര്യ കീ.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>രഹസ്യമായി സൂക്ഷിച്ച ഒരു പാസ്‌വേഡ് (FTP ഇതുപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുന്നു).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>രഹസ്യത്തിന്റെ പേര്</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>സജ്ജീകരണം &gt; രഹസ്യങ്ങൾ എന്നതിലെ ഒരു രഹസ്യം, ഉദാഹരണത്തിന് deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81594,247 +81594,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>അല്ലെങ്കിൽ ഒരു പരിസ്ഥിതി വേരിയബിൾ</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഇത് സൂക്ഷിക്കുന്ന സെർവർ പ്രോസസിന്റെ വേരിയബിൾ, ഉദാഹരണത്തിന് DEPLOY_KEY (env:DEPLOY_KEY ആയി സംരക്ഷിക്കുന്നു). ഇത് രഹസ്യത്തിന്റെ പേരിന് പകരമാകുന്നു.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. ഹോസ്റ്റ് കീ</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഐച്ഛികം, SSH, sftp, rsync എന്നിവയ്ക്ക്.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>ഹോസ്റ്റ് കീ ഫിംഗർപ്രിന്റ്</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:..., ssh-keygen -l കാണിക്കുന്നതുപോലെ. ഇതുണ്ടെങ്കിൽ, ഹോസ്റ്റ് ഈ കീ തന്നെ കാണിക്കണം; ഇല്ലെങ്കിൽ, ആദ്യ ബന്ധത്തിൽ കീ പഠിക്കുന്നു.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. അവലോകനം</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>മുകളിലെ ക്രമീകരണങ്ങൾ ഉപയോഗിച്ച് കണക്ഷൻ പരിശോധിക്കുക, തുടർന്ന് എഴുതാൻ പോകുന്ന വരികൾ അവലോകനം ചെയ്യുക.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ഈ റിമോട്ട് നീക്കം ചെയ്യുക</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>അതിന്റെ ക്രമീകരണങ്ങൾ settings/override/migration.ini.append.php-ൽ നിന്ന് നീക്കം ചെയ്യുന്നു. റിമോട്ടിൽ ഒന്നും മാറുന്നില്ല, അതിന്റെ ഡിപ്ലോയ്മെന്റുകൾ ചരിത്രത്തിൽ തുടരും.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>അതെ, ഈ റിമോട്ട് നീക്കം ചെയ്യുക</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ഡിപ്ലോയ്മെന്റുകൾ</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു ഡിപ്ലോയ്മെന്റ് ഈ ഇൻസ്റ്റലേഷന്റെ മൈഗ്രേഷനുകൾ തിരഞ്ഞെടുത്ത റിമോട്ടുകളിലേക്ക് അയച്ച് അവിടെ %user ആയി പ്രവർത്തിപ്പിക്കുന്നു, എല്ലാം ഒരേസമയം സമന്വയത്തോടെ: ആദ്യം ഓരോ റിമോട്ടും പരിശോധിക്കുന്നു, ഒന്ന് പരാജയപ്പെട്ടാൽ, പ്രയോഗിച്ച ഓരോ റിമോട്ടും തിരികെയാക്കുന്നു. ഇത് പശ്ചാത്തലത്തിൽ തുടരുന്നു, അതിന്റെ പേജ് പുരോഗമിക്കുന്നതിനനുസരിച്ച് ഓരോ റിമോട്ടും കാണിക്കുന്നു.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. റിമോട്ടുകൾ</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ടുകളോ ഒരു ഗ്രൂപ്പോ രണ്ടും ടിക്ക് ചെയ്യുക.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>ഇതിലേക്ക് ഡിപ്ലോയ് ചെയ്യുക</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. എങ്ങനെ</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ഡിപ്ലോയ് ചെയ്യുക</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>അയച്ച് പ്രവർത്തിപ്പിക്കുക</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>മൈഗ്രേഷനുകൾ ഒരു പൊതു റൺ ഐഡിയോടെ ഓരോ റിമോട്ടിലേക്കും അയച്ച്, പരിശോധിച്ച്, പ്രവർത്തിപ്പിക്കുന്നു.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>കൈമാറ്റം മാത്രം</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>ഫയലുകൾ അയച്ച് പരിശോധിക്കുന്നു, ഒന്നും പ്രവർത്തിപ്പിക്കുന്നില്ല (ഒരു FTP റിമോട്ടിനുള്ള ഏക മാർഗ്ഗം).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>സ്റ്റേജുകളായി</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>പരിസ്ഥിതികളുടെ ക്രമത്തിൽ സ്റ്റേജ് തോറും (dev, stage, beta, production ...): ആദ്യ സ്റ്റേജ് ഡിപ്ലോയ് ചെയ്യുന്നു, തുടർന്ന് ആരെങ്കിലും അടുത്തത് അംഗീകരിക്കുന്നതുവരെ ഒരു ഗേറ്റ് കാത്തിരിക്കുന്നു. ഓരോ സ്റ്റേജിനുള്ളിലും എല്ലാം അല്ലെങ്കിൽ ഒന്നുമില്ല.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>ഈ മൈഗ്രേഷനുകൾ മാത്രം</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഐച്ഛികം: മൈഗ്രേഷൻ ഐഡികൾ, കോമകൊണ്ട് വേർതിരിച്ചത്. ശൂന്യമെങ്കിൽ: സൈറ്റിന്റെയും അതിന്റെ എക്സ്റ്റൻഷനുകളുടെയും എല്ലാ മൈഗ്രേഷനുകളും.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>പ്രീഫ്ലൈറ്റ് മാത്രം</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>അതെ, ഇപ്പോൾ ഡിപ്ലോയ് ചെയ്യുക</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>എന്തെങ്കിലും അയച്ചതോ പ്രവർത്തിപ്പിച്ചതോ ആയ ഡിപ്ലോയ്മെന്റുകൾ, ഏറ്റവും പുതിയത് ആദ്യം (ഒരു പ്രീഫ്ലൈറ്റ് റിപ്പോർട്ട് സൂക്ഷിക്കുന്നില്ല).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>കൈമാറ്റം മാത്രം</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>സ്റ്റേജുകളായി, %stages സ്റ്റേജുകൾ</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>സമന്വയത്തിലല്ല</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഇതുവരെ ഡിപ്ലോയ്മെന്റ് ഇല്ല.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ഡിപ്ലോയ്മെന്റ് %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഡിപ്ലോയ്മെന്റിലെ ഓരോ റിമോട്ടും അതിന്റെ അവസ്ഥയോടൊപ്പം. ഇവിടെ ആരംഭിച്ച ഒരു ഡിപ്ലോയ്മെന്റ് ഈ പേജ് അടച്ചാലും പശ്ചാത്തലത്തിൽ തുടരും; അത് പിന്തുടരാൻ പേജ് വീണ്ടും തുറക്കുക.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>എല്ലാ ഡിപ്ലോയ്മെന്റുകളും</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>പ്രീഫ്ലൈറ്റ്</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>അടുത്ത സ്റ്റേജ്</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>ക്രമീകരണങ്ങളും ക്രെഡൻഷ്യലുകളും പരിശോധിക്കുന്നു</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>പ്രീഫ്ലൈറ്റ്: ഓരോ റിമോട്ടിന്റെയും അവസ്ഥ വായിക്കുന്നു</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>മൈഗ്രേഷൻ ഫയലുകൾ അയയ്ക്കുന്നു</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>എത്തിയത് പരിശോധിക്കുന്നു</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ഓരോ റിമോട്ടിലും മൈഗ്രേഷനുകൾ പ്രവർത്തിപ്പിക്കുന്നു</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ടുകൾ തിരികെയാക്കുന്നു</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഡിപ്ലോയ്മെന്റ് അവസാനിച്ചു. അതിന്റെ റിപ്പോർട്ട് ലോഡ് ചെയ്യുന്നു.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>പുരോഗതി പിന്തുടരാനായില്ല. ഡിപ്ലോയ്മെന്റ് എങ്ങനെ പോകുന്നു എന്ന് കാണാൻ പേജ് വീണ്ടും ലോഡ് ചെയ്യുക.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>ഫേസ്</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഡിപ്ലോയ്മെന്റ് പുരോഗമിക്കുന്നതിനനുസരിച്ച് ഈ പേജ് അത് പിന്തുടരുന്നു.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>സമന്വയത്തിൽ</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>സ്റ്റേജുകൾ</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>സ്റ്റേജ് %stage അതിന്റെ ഗേറ്റിൽ കാത്തിരിക്കുന്നു</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ഗേറ്റ് %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%time-ന് %user അംഗീകരിച്ചു</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>സ്റ്റേജ്</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>അയച്ച ഫയലുകൾ</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>കേർണൽ പതിപ്പ്</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>പ്രയോഗിച്ചു: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>പ്രയോഗിക്കാനുള്ളവ: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>ഫേസുകൾ</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ഗേറ്റ്: സ്റ്റേജ് %stage / %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>അതിനു മുമ്പുള്ള സ്റ്റേജുകൾ ഡിപ്ലോയ് ചെയ്തു. അവ പരിശോധിക്കുക, തുടർന്ന് അടുത്ത സ്റ്റേജ് അംഗീകരിക്കുക: അതിന്റെ റിമോട്ടുകൾ വീണ്ടും പരിശോധിച്ച് ഡിപ്ലോയ് ചെയ്യുന്നു, എല്ലാം അല്ലെങ്കിൽ ഒന്നുമില്ല.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81842,7 +81842,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>അതെ, അടുത്ത സ്റ്റേജ് ഇപ്പോൾ ഡിപ്ലോയ് ചെയ്യുക</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81850,31 +81850,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>ഈ ഡിപ്ലോയ്മെന്റ് തിരികെയാക്കുക</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഇത് പ്രയോഗിച്ച ഓരോ റിമോട്ടും (%list) അതിന്റെ റണ്ണിന് മുമ്പ് എടുത്ത സ്നാപ്ഷോട്ടിലേക്ക് മടങ്ങുന്നു, എല്ലാം ഒരേസമയം.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>അതെ, ഈ ഡിപ്ലോയ്മെന്റ് ഇപ്പോൾ തിരികെയാക്കുക</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>ആസൂത്രണം ചെയ്തു</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>കൈമാറി</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ഡിപ്ലോയ് ചെയ്തു</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു ഗേറ്റിൽ കാത്തിരിക്കുന്നു</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81882,7 +81882,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>തയ്യാറാക്കി</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81890,51 +81890,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>അതിന്റെ സ്റ്റേജിനായി കാത്തിരിക്കുന്നു</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ഫയലുകൾ അയച്ചു</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>പരിശോധിച്ചു</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>പരാജയപ്പെട്ടു, സ്വയം പുനഃസ്ഥാപിച്ചു</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>മാറ്റമില്ല</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ഡിപ്ലോയ് ചെയ്തിട്ടില്ല</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>എത്തിച്ചേരാനാവില്ല</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ട് പ്രതികരിച്ചു.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ട് ഇപ്പോൾ ഉപയോഗിക്കാനാവില്ല.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done പൂർത്തിയായി, %pending തീർച്ചപ്പെടുത്താത്തത്, %failed പരാജയപ്പെട്ടു</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>ലോക്ക്</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു റൺ അവിടെ ലോക്ക് കൈവശം വച്ചിരിക്കുന്നു</translation>
     </message>
     <message>
         <source>free</source>
@@ -81942,23 +81942,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage / %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>പരിശോധിക്കേണ്ട റിമോട്ട് തിരഞ്ഞെടുക്കുക.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ആദ്യം “അതെ, ഈ റിമോട്ട് നീക്കം ചെയ്യുക” ടിക്ക് ചെയ്യുക.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ട് നീക്കം ചെയ്യാനായില്ല: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>റിമോട്ട് സംരക്ഷിക്കാനായില്ല: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81966,75 +81966,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>കുറഞ്ഞത് ഒരു റിമോട്ട് അല്ലെങ്കിൽ ഗ്രൂപ്പ് തിരഞ്ഞെടുക്കുക.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>തിരഞ്ഞെടുത്ത ഒരു റിമോട്ട് ഇപ്പോൾ ക്രമീകരണങ്ങളിൽ ഇല്ല. പേജ് വീണ്ടും ലോഡ് ചെയ്യുക.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ആദ്യം “അതെ, ഇപ്പോൾ ഡിപ്ലോയ് ചെയ്യുക” ടിക്ക് ചെയ്യുക.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു FTP റിമോട്ടിന് മൈഗ്രേഷനുകൾ പ്രവർത്തിപ്പിക്കാനാവില്ല: “കൈമാറ്റം മാത്രം” തിരഞ്ഞെടുക്കുക, അല്ലെങ്കിൽ അത് ഒഴിവാക്കുക.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഡിപ്ലോയ് ചെയ്യേണ്ട മൈഗ്രേഷനുകൾ കോമകൊണ്ട് വേർതിരിച്ച മൈഗ്രേഷൻ ഐഡികളാണ്.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഡിപ്ലോയ്മെന്റ് ഇപ്പോഴും നടക്കുന്നു. അത് അവസാനിക്കുന്നതുവരെ കാത്തിരിക്കുക.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഈ ഡിപ്ലോയ്മെന്റ് ഒരു ഗേറ്റിൽ കാത്തിരിക്കുന്നില്ല.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു റിമോട്ടും ഈ ഡിപ്ലോയ്മെന്റ് പ്രയോഗിച്ചില്ല: തിരികെയാക്കാൻ ഒന്നുമില്ല.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ആദ്യം “അതെ, അടുത്ത സ്റ്റേജ് ഇപ്പോൾ ഡിപ്ലോയ് ചെയ്യുക” ടിക്ക് ചെയ്യുക.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>ആദ്യം “അതെ, ഈ ഡിപ്ലോയ്മെന്റ് ഇപ്പോൾ തിരികെയാക്കുക” ടിക്ക് ചെയ്യുക.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id എന്ന ഐഡിയുള്ള ഒരു റിമോട്ട് ഇതിനകം നിലവിലുണ്ട്.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>പോർട്ട് 1 മുതൽ 65535 വരെയുള്ള ഒരു സംഖ്യയാണ്.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>പരിസ്ഥിതി അക്ഷരങ്ങൾ, അക്കങ്ങൾ, -, _ എന്നിവ ചേർന്ന ഒരു വാക്കാണ് (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു ഗ്രൂപ്പ് അക്ഷരങ്ങൾ, അക്കങ്ങൾ, -, _ എന്നിവ ചേർന്ന ഒരു വാക്കാണ് (all അല്ല): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>ക്രെഡൻഷ്യൽ ഇപ്പോൾ വായിക്കാനാവില്ല: %problem. ആദ്യ ഡിപ്ലോയ്മെന്റിന് മുമ്പ് ഇത് സജ്ജീകരണം &gt; രഹസ്യങ്ങൾ എന്നതിൽ സംരക്ഷിക്കുക (അല്ലെങ്കിൽ വേരിയബിൾ സജ്ജമാക്കുക).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>ഒരു FTP റിമോട്ട് ഫയലുകൾ മാത്രമേ സ്വീകരിക്കൂ: അതിലേക്കുള്ള ഡിപ്ലോയ്മെന്റ് “കൈമാറ്റം മാത്രം” ആണ്, അതിന്റെ മൈഗ്രേഷനുകൾ അവിടെ കൈകൊണ്ട് പ്രവർത്തിപ്പിക്കുന്നു.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id എന്ന റിമോട്ട് settings/override/migration.ini.append.php-ൽ ഇല്ല; അത് സജ്ജമാക്കിയിടത്ത് നിന്ന് നീക്കം ചെയ്യുക.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP വഴി സൈൻ ഇൻ ചെയ്ത് index.php വായിച്ചു. ഒരു FTP റിമോട്ടിന്റെ മൈഗ്രേഷൻ നില വായിക്കാനാവില്ല.</translation>
     </message>
 </context>
 <context>
@@ -84438,19 +84438,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site ൽ ഡിപ്ലോയ് %deploy പരാജയപ്പെട്ടു</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site ൽ ഡിപ്ലോയ് %deploy ഒരു ഗേറ്റിൽ കാത്തിരിക്കുന്നു</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site ൽ ഡിപ്ലോയ് %deploy വിജയിച്ചു</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>migration.ini [RemoteSettings] Notify[] ആവശ്യപ്പെടുന്നതിനാൽ %site ആണ് ഈ മെയിൽ അയച്ചത്.</translation>
     </message>
 </context>
 </TS>

@@ -81366,15 +81366,15 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Afgeleë stelsels</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die ander installasies waarheen hierdie een sy migrasies ontplooi: 'n ontplooiing stuur die migrasies na die gekose afgeleë stelsels en voer dit daar uit, almal gelyktydig en gesinchroniseer. 'n Afgeleë stelsel hou nooit 'n geheim nie: sy aanmeldbewys noem een in Opstelling &gt; Geheime.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuwe afgeleë stelsel</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81382,19 +81382,19 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Toets verbinding van %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Die afgeleë stelsels</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tot %parallel afgeleë stelsels word gelyktydig hanteer; een fase mag op elkeen %timeout sekondes duur.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Afgeleë stelsel</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81410,15 +81410,15 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>instellings om reg te stel</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>slegs lêers (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-sleutel</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81426,7 +81426,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>geen (die gasheer se SSH-agent en sleutels)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81434,23 +81434,23 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>'n Ontplooiing na 'n groep gaan na elke afgeleë stelsel daarvan.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ontplooi na afgeleë stelsels</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nog geen afgeleë stelsel is opgestel nie.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Afgeleë stelsel %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Niks word hier gestuur of uitgevoer nie: Stoor skryf die instellings na settings/override/migration.ini.append.php. Die aanmeldbewys is 'n naam; sy waarde bly in Opstelling &gt; Geheime of in die omgewing.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81458,7 +81458,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die instellings soos ingevoer, nog nie gestoor nie.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81486,15 +81486,15 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Gasheersleutel</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Die afgeleë stelsel</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wat die afgeleë stelsel genoem word en watter omgewing dit is.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81502,47 +81502,47 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Letters, syfers, - en _, byvoorbeeld production1. Dit benoem die afgeleë stelsel in verslae en op die konsole (--remotes=production1) en kan later nie verander word nie.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... 'n Ontplooiing in stadiums gaan in hierdie volgorde deur die omgewings.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opsioneel, geskei deur kommas, byvoorbeeld production. 'n Ontplooiing na 'n groep gaan na elke afgeleë stelsel daarvan.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Die verbinding</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoe die lêers daar kom, en waar die installasie is.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oor SSH, slegs wat verander het, 'n onderbroke oordrag word hervat. Die beste keuse waar rsync geïnstalleer is.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH met scp vir die lêers.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH met sftp vir die lêers.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Slegs lêers: die migrasies word gestuur en teruggelees, maar kan nie daar uitgevoer word nie.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP oor TLS; slegs lêers.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>'n Ander installasie op hierdie bediener, in 'n gids.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81550,7 +81550,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>'n Gasheernaam of adres, byvoorbeeld node1.example.com. Nie vir local nie.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81558,7 +81558,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Leeg: 22 vir SSH, 21 vir FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81570,31 +81570,31 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Die installasie se wortel daar, byvoorbeeld /var/www/site (vir FTP: die pad wat die FTP-rekening sien).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP-opdragreël</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die PHP CLI daar: php, of 'n volledige pad soos /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Die konsoleskripte loop daar as root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Slegs wanneer die afgeleë stelsel se gebruiker root is (hulle word dan met --allow-root-user uitgevoer).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Die aanmeldbewys</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoe hierdie installasie daar aanmeld. Slegs 'n naam word gestoor.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81602,23 +81602,23 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Die SSH-agent en sleutels van die gebruiker waaronder hierdie installasie loop (en altyd vir local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>'n Privaat sleutel wat as 'n geheim bewaar word.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>'n Wagwoord wat as 'n geheim bewaar word (FTP meld daarmee aan).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam van die geheim</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>'n Geheim van Opstelling &gt; Geheime, byvoorbeeld deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81626,247 +81626,247 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Of 'n omgewingsveranderlike</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die veranderlike van die bedienerproses wat dit bevat, byvoorbeeld DEPLOY_KEY (gestoor as env:DEPLOY_KEY). Dit neem die plek van die naam van die geheim in.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Die gasheersleutel</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opsioneel, vir SSH, sftp en rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Vingerafdruk van die gasheersleutel</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... soos ssh-keygen -l dit druk. Daarmee moet die gasheer hierdie sleutel wys; daarsonder word die sleutel by die eerste kontak geleer.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Hersien</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Toets die verbinding met die instellings hierbo, en hersien dan die reëls wat geskryf sal word.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwyder hierdie afgeleë stelsel</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sy instellings word uit settings/override/migration.ini.append.php verwyder. Niks verander op die afgeleë stelsel nie, en sy ontplooiings bly in die geskiedenis.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, verwyder hierdie afgeleë stelsel</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ontplooiings</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>'n Ontplooiing stuur hierdie installasie se migrasies na die gekose afgeleë stelsels en voer dit daar as %user uit, almal gelyktydig en gesinchroniseer: elke afgeleë stelsel word eers gekontroleer, en as een misluk, word elke afgeleë stelsel wat dit toegepas het, teruggeneem. Dit loop in die agtergrond, en sy bladsy wys elke afgeleë stelsel terwyl dit loop.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Die afgeleë stelsels</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk afgeleë stelsels, 'n groep, of albei.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Ontplooi daarheen</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Hoe</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ontplooi</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Stuur en voer uit</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die migrasies word na elke afgeleë stelsel gestuur, geverifieer en met een gedeelde lopie-ID uitgevoer.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Slegs oordrag</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Die lêers word gestuur en geverifieer, niks word uitgevoer nie (die enigste manier vir 'n FTP-afgeleë stelsel).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>In stadiums</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stadium vir stadium in die volgorde van die omgewings (dev, stage, beta, production ...): die eerste stadium word ontplooi, dan wag 'n hek totdat iemand die volgende goedkeur. Alles of niks binne elke stadium.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Slegs hierdie migrasies</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opsioneel: migrasie-ID's, geskei deur kommas. Leeg: elke migrasie van die werf en sy uitbreidings.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Slegs voorafkontrole</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, ontplooi nou</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Die ontplooiings wat iets gestuur of uitgevoer het, die nuutste eerste ('n voorafkontrole hou geen verslag nie).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>slegs oordrag</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>in stadiums, %stages stadiums</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>nie gesinchroniseer nie</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nog geen ontplooiing nie.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ontplooiing %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elke afgeleë stelsel van die ontplooiing met sy toestand. 'n Ontplooiing wat hier begin is, gaan in die agtergrond voort wanneer hierdie bladsy gesluit word; maak die bladsy weer oop om dit te volg.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle ontplooiings</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorafkontrole</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Volgende stadium</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Die instellings en die aanmeldbewys word gekontroleer</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorafkontrole: die toestand van elke afgeleë stelsel word gelees</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Die migrasielêers word gestuur</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Wat aangekom het, word geverifieer</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Die migrasies word op elke afgeleë stelsel uitgevoer</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Die afgeleë stelsels word teruggeneem</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die ontplooiing het geëindig. Sy verslag word gelaai.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die vordering kon nie gevolg word nie. Herlaai die bladsy om te sien hoe dit met die ontplooiing gaan.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fase</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hierdie bladsy volg die ontplooiing terwyl dit loop.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Gesinchroniseer</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Stadiums</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>stadium %stage wag by sy hek</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Hek %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>goedgekeur deur %user om %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Stadium</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestuurde lêers</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Kernweergawe</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>toegepas: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>om toe te pas: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fases</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Hek: stadium %stage van %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die stadiums daarvoor is ontplooi. Kontroleer hulle, en keur dan die volgende stadium goed: sy afgeleë stelsels word weer gekontroleer en ontplooi, alles of niks.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81874,7 +81874,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, ontplooi nou die volgende stadium</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81882,31 +81882,31 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Rol hierdie ontplooiing terug</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elke afgeleë stelsel wat dit toegepas het (%list), gaan terug na die momentopname wat voor sy lopie geneem is, almal gelyktydig.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, rol hierdie ontplooiing nou terug</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>beplan</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>oorgedra</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ontplooi</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>wag by 'n hek</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81914,7 +81914,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>voorberei</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81922,51 +81922,51 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>wag vir sy stadium</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>lêers gestuur</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>geverifieer</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>misluk, het homself herstel</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>onveranderd</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>nie ontplooi nie</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>nie bereikbaar nie</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die afgeleë stelsel het geantwoord.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die afgeleë stelsel kan nie nou gebruik word nie.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done klaar, %pending hangend, %failed misluk</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Slot</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>'n lopie hou die slot daar</translation>
     </message>
     <message>
         <source>free</source>
@@ -81974,23 +81974,23 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage van %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies die afgeleë stelsel om te toets.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk eers “Ja, verwyder hierdie afgeleë stelsel”.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Die afgeleë stelsel kon nie verwyder word nie: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Die afgeleë stelsel kon nie gestoor word nie: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81998,75 +81998,75 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies ten minste een afgeleë stelsel of groep.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>'n Gekose afgeleë stelsel is nie meer in die instellings nie. Herlaai die bladsy.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk eers “Ja, ontplooi nou”.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>'n FTP-afgeleë stelsel kan nie migrasies uitvoer nie: kies “Slegs oordrag”, of laat dit uit.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die migrasies om te ontplooi is migrasie-ID's, geskei deur kommas.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die ontplooiing is nog aan die gang. Wag totdat dit eindig.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hierdie ontplooiing wag nie by 'n hek nie.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen afgeleë stelsel het hierdie ontplooiing toegepas nie: daar is niks om terug te rol nie.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk eers “Ja, ontplooi nou die volgende stadium”.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk eers “Ja, rol hierdie ontplooiing nou terug”.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>'n Afgeleë stelsel met die ID %id bestaan reeds.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die poort is 'n getal van 1 tot 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Die omgewing is 'n woord van letters, syfers, - en _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>'n Groep is 'n woord van letters, syfers, - en _ (nie all nie): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die aanmeldbewys kan nie nou gelees word nie: %problem. Stoor dit in Opstelling &gt; Geheime (of stel die veranderlike) voor die eerste ontplooiing.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>'n FTP-afgeleë stelsel ontvang slegs lêers: 'n ontplooiing daarheen is “Slegs oordrag”, en sy migrasies word daar met die hand uitgevoer.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die afgeleë stelsel %id is nie in settings/override/migration.ini.append.php nie; verwyder dit waar dit ingestel is.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oor FTP aangemeld en index.php gelees. Die migrasietoestand van 'n FTP-afgeleë stelsel kan nie gelees word nie.</translation>
     </message>
 </context>
 <context>
@@ -84470,19 +84470,19 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Die ontplooiing %deploy het op %site misluk</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Die ontplooiing %deploy wag by 'n hek op %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Die ontplooiing %deploy het op %site geslaag</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hierdie e-pos is deur %site gestuur omdat migration.ini [RemoteSettings] Notify[] dit vra.</translation>
     </message>
 </context>
 </TS>

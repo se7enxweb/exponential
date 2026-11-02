@@ -81336,15 +81336,15 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Các máy đích</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Các bản cài đặt khác mà bản này triển khai bản di chuyển đến: một lượt triển khai gửi các bản di chuyển đến các máy đích đã chọn và chạy chúng ở đó, tất cả cùng lúc và đồng bộ. Máy đích không bao giờ giữ bí mật: thông tin xác thực của nó chỉ nêu tên một bí mật trong Thiết lập &gt; Bí mật.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Máy đích mới</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiểm tra kết nối của %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Các máy đích</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tối đa %parallel máy đích được xử lý cùng lúc; mỗi công đoạn có thể mất %timeout giây trên mỗi máy.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Máy đích</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>thiết lập cần sửa</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>chỉ tệp (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Khóa SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>không có (SSH agent và các khóa của máy chủ)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Triển khai đến một nhóm sẽ đi tới mọi máy đích của nhóm đó.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Triển khai đến máy đích</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chưa thiết lập máy đích nào.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Máy đích %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ở đây không gửi hay chạy gì cả: Lưu ghi thiết lập vào settings/override/migration.ini.append.php. Thông tin xác thực là một cái tên; giá trị của nó vẫn ở Thiết lập &gt; Bí mật hoặc trong môi trường.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thiết lập như đã nhập, chưa được lưu.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Khóa máy chủ</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Máy đích</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Máy đích tên là gì và thuộc môi trường nào.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chữ cái, chữ số, - và _, ví dụ production1. Nó đặt tên cho máy đích trong báo cáo và trên console (--remotes=production1) và không thể đổi về sau.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Lượt triển khai theo giai đoạn đi qua các môi trường theo thứ tự này.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tùy chọn, phân cách bằng dấu phẩy, ví dụ production. Triển khai đến một nhóm sẽ đi tới mọi máy đích của nhóm đó.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Kết nối</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cách tệp được đưa tới đó, và bản cài đặt nằm ở đâu.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qua SSH, chỉ những gì đã thay đổi, lượt truyền bị ngắt được tiếp tục. Lựa chọn tốt nhất ở nơi đã cài rsync.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH với scp cho các tệp.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH với sftp cho các tệp.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ tệp: các bản di chuyển được gửi và đọc lại, nhưng không thể chạy ở đó.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP qua TLS; chỉ tệp.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Một bản cài đặt khác trên máy chủ này, trong một thư mục.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tên máy chủ hoặc địa chỉ, ví dụ node1.example.com. Không dùng cho local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Để trống: 22 cho SSH, 21 cho FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Thư mục gốc của bản cài đặt ở đó, ví dụ /var/www/site (với FTP: đường dẫn mà tài khoản FTP nhìn thấy).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Dòng lệnh PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI ở đó: php, hoặc đường dẫn đầy đủ như /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Các script console chạy ở đó với quyền root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ khi người dùng của máy đích là root (khi đó chúng được chạy với --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Thông tin xác thực</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cách bản cài đặt này đăng nhập ở đó. Chỉ một cái tên được lưu.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH agent và các khóa của người dùng mà bản cài đặt này chạy dưới quyền (và luôn dùng cho local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Khóa riêng được lưu dưới dạng bí mật.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Mật khẩu được lưu dưới dạng bí mật (FTP đăng nhập bằng mật khẩu).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Tên bí mật</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Một bí mật trong Thiết lập &gt; Bí mật, ví dụ deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoặc một biến môi trường</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Biến của tiến trình máy chủ chứa nó, ví dụ DEPLOY_KEY (lưu dưới dạng env:DEPLOY_KEY). Nó thay cho tên bí mật.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Khóa máy chủ</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tùy chọn, cho SSH, sftp và rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Dấu vân tay khóa máy chủ</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... như ssh-keygen -l in ra. Khi có nó, máy chủ phải xuất trình đúng khóa này; khi không có, khóa được ghi nhận ở lần kết nối đầu tiên.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Xem lại</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiểm tra kết nối với các thiết lập ở trên, rồi xem lại các dòng sẽ được ghi.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Gỡ bỏ máy đích này</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thiết lập của nó được gỡ khỏi settings/override/migration.ini.append.php. Không có gì thay đổi trên máy đích, và các lượt triển khai của nó vẫn ở trong lịch sử.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Có, gỡ bỏ máy đích này</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Các lượt triển khai</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Một lượt triển khai gửi các bản di chuyển của bản cài đặt này đến các máy đích đã chọn và chạy chúng ở đó với tư cách %user, tất cả cùng lúc và đồng bộ: mọi máy đích được kiểm tra trước, và khi một máy thất bại, mọi máy đích đã áp dụng sẽ được hoàn tác. Quá trình chạy ở chế độ nền, và trang của nó hiển thị từng máy đích trong lúc chạy.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Các máy đích</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hãy đánh dấu các máy đích, một nhóm, hoặc cả hai.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Triển khai đến đây</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Cách thức</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Triển khai</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Gửi và chạy</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Các bản di chuyển được gửi, kiểm tra và chạy trên mọi máy đích với một id lượt chạy chung.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ truyền tệp</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Các tệp được gửi và kiểm tra, không chạy gì (cách duy nhất cho máy đích FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Theo giai đoạn</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Từng giai đoạn theo thứ tự các môi trường (dev, stage, beta, production ...): giai đoạn đầu được triển khai, rồi một điểm duyệt chờ đến khi có người phê duyệt giai đoạn tiếp theo. Tất cả hoặc không gì trong mỗi giai đoạn.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ các bản di chuyển này</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tùy chọn: id bản di chuyển, phân cách bằng dấu phẩy. Để trống: mọi bản di chuyển của site và các phần mở rộng của nó.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ kiểm tra trước</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Có, triển khai ngay</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Các lượt triển khai đã gửi hoặc chạy gì đó, mới nhất trước (kiểm tra trước không lưu báo cáo).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>chỉ truyền tệp</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>theo giai đoạn, %stages giai đoạn</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>không đồng bộ</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chưa có lượt triển khai nào.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Lượt triển khai %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mọi máy đích của lượt triển khai cùng trạng thái của nó. Lượt triển khai bắt đầu ở đây vẫn tiếp tục ở chế độ nền khi trang này bị đóng; hãy mở lại trang để theo dõi.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Mọi lượt triển khai</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiểm tra trước</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Giai đoạn tiếp theo</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang kiểm tra thiết lập và thông tin xác thực</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiểm tra trước: đang đọc trạng thái của mọi máy đích</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang gửi các tệp di chuyển</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang kiểm tra những gì đã đến</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang chạy các bản di chuyển trên mọi máy đích</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Đang hoàn tác các máy đích</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lượt triển khai đã kết thúc. Đang tải báo cáo.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể theo dõi tiến độ. Hãy tải lại trang để xem lượt triển khai đang thế nào.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Công đoạn</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trang này theo dõi lượt triển khai trong lúc chạy.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Đồng bộ</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Các giai đoạn</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>giai đoạn %stage đang chờ ở điểm duyệt</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Điểm duyệt %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>được %user phê duyệt lúc %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Giai đoạn</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp đã gửi</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Phiên bản kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>đã áp dụng: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>cần áp dụng: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Các công đoạn</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Điểm duyệt: giai đoạn %stage trên %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Các giai đoạn trước đã được triển khai. Hãy kiểm tra chúng, rồi phê duyệt giai đoạn tiếp theo: các máy đích của nó được kiểm tra lại và triển khai, tất cả hoặc không gì.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Có, triển khai giai đoạn tiếp theo ngay</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoàn tác lượt triển khai này</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mọi máy đích đã áp dụng nó (%list) quay về điểm khôi phục được tạo trước lượt chạy của nó, tất cả cùng lúc.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Có, hoàn tác lượt triển khai này ngay</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>đã lên kế hoạch</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>đã truyền</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>đã triển khai</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>đang chờ ở điểm duyệt</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>đã chuẩn bị</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>đang chờ giai đoạn của nó</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>đã gửi tệp</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>đã kiểm tra</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>thất bại, đã tự khôi phục</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>không đổi</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>chưa triển khai</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>không truy cập được</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Máy đích đã phản hồi.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiện không thể dùng máy đích.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done xong, %pending đang chờ, %failed thất bại</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Khóa</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>một lượt chạy đang giữ khóa ở đó</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage trên %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hãy chọn máy đích cần kiểm tra.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hãy đánh dấu “Có, gỡ bỏ máy đích này” trước.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể gỡ bỏ máy đích: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Không thể lưu máy đích: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hãy chọn ít nhất một máy đích hoặc nhóm.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Một máy đích đã chọn không còn trong thiết lập. Hãy tải lại trang.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hãy đánh dấu “Có, triển khai ngay” trước.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Máy đích FTP không thể chạy bản di chuyển: hãy chọn “Chỉ truyền tệp” hoặc bỏ nó ra.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Các bản di chuyển cần triển khai là id bản di chuyển, phân cách bằng dấu phẩy.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lượt triển khai vẫn đang chạy. Hãy chờ đến khi nó kết thúc.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lượt triển khai này không chờ ở điểm duyệt nào.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không máy đích nào đã áp dụng lượt triển khai này: không có gì để hoàn tác.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hãy đánh dấu “Có, triển khai giai đoạn tiếp theo ngay” trước.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hãy đánh dấu “Có, hoàn tác lượt triển khai này ngay” trước.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Đã có một máy đích với id %id.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cổng là một số từ 1 đến 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Môi trường là một từ gồm chữ cái, chữ số, - và _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhóm là một từ gồm chữ cái, chữ số, - và _ (không phải all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiện không thể đọc thông tin xác thực: %problem. Hãy lưu nó trong Thiết lập &gt; Bí mật (hoặc đặt biến) trước lượt triển khai đầu tiên.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Máy đích FTP chỉ nhận tệp: triển khai đến nó là “Chỉ truyền tệp”, và các bản di chuyển của nó được chạy thủ công ở đó.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Máy đích %id không nằm trong settings/override/migration.ini.append.php; hãy gỡ nó ở nơi nó được đặt.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Đã đăng nhập qua FTP và đọc index.php. Không thể đọc trạng thái di chuyển của máy đích FTP.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Lượt triển khai %deploy đã thất bại trên %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Lượt triển khai %deploy đang chờ tại một cổng trên %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Lượt triển khai %deploy đã thành công trên %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thư này được gửi bởi %site vì migration.ini [RemoteSettings] Notify[] yêu cầu.</translation>
     </message>
 </context>
 </TS>

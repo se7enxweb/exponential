@@ -81366,15 +81366,15 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Cianchórais</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na suiteálacha eile a n-imscarann an ceann seo a himirceanna chucu: seolann imscaradh na himirceanna chuig na cianchórais a roghnaíodh agus ritheann sé ansin iad, go léir ag an am céanna agus i gcomhcheim. Ní choinníonn cianchóras rún riamh: ainmníonn a dhintiúr ceann i Socrú &gt; Rúin.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Cianchóras nua</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81382,19 +81382,19 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Tástáil nasc %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Na cianchórais</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oibrítear ar suas le %parallel cianchóras ag an am céanna; féadfaidh tréimhse amháin %timeout soicind a thógáil ar gach ceann.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Cianchóras</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81410,15 +81410,15 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>socruithe le ceartú</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>comhaid amháin (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Eochair SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81426,7 +81426,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>dada (gníomhaire agus eochracha SSH an óstaigh)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81434,23 +81434,23 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Téann imscaradh chuig grúpa chuig gach cianchóras sa ghrúpa sin.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Imscar chuig cianchórais</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Níl cianchóras ar bith socraithe fós.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Cianchóras %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ní sheoltar ná ní ritear aon rud anseo: scríobhann Sábháil na socruithe chuig settings/override/migration.ini.append.php. Is ainm é an dintiúr; fanann a luach i Socrú &gt; Rúin nó sa timpeallacht.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81458,7 +81458,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na socruithe mar a iontráladh iad, gan sábháil fós.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81486,15 +81486,15 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Eochair óstaigh</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. An cianchóras</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cad is ainm don chianchóras agus cén timpeallacht é.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81502,47 +81502,47 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Litreacha, digití, - agus _, mar shampla production1. Ainmníonn sé an cianchóras i dtuairiscí agus ar an gconsól (--remotes=production1) agus ní féidir é a athrú níos déanaí.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Téann imscaradh i leibhéil trí na timpeallachtaí san ord seo.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Roghnach, scartha le camóga, mar shampla production. Téann imscaradh chuig grúpa chuig gach cianchóras sa ghrúpa sin.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. An nasc</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Conas a shroicheann na comhaid ansin, agus cá bhfuil an tsuiteáil.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thar SSH, an méid a d'athraigh amháin, aistriú briste atosaithe. An rogha is fearr nuair atá rsync suiteáilte.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH le scp do na comhaid.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH le sftp do na comhaid.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Comhaid amháin: seoltar na himirceanna agus léitear ar ais iad, ach ní féidir iad a rith ansin.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP thar TLS; comhaid amháin.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Suiteáil eile ar an bhfreastalaí seo, i bhfillteán.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81550,7 +81550,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ainm óstaigh nó seoladh, mar shampla node1.example.com. Ní le haghaidh local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81558,7 +81558,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Folamh: 22 do SSH, 21 do FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81570,31 +81570,31 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Fréamh na suiteála ansin, mar shampla /var/www/site (do FTP: an chonair a fheiceann an cuntas FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Líne ordaithe PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>An PHP CLI ansin: php, nó conair iomlán mar /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Ritheann na scripteanna consóil mar root ansin</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ach amháin nuair is é root úsáideoir an chianchórais (ritear iad ansin le --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. An dintiúr</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Conas a shíníonn an tsuiteáil seo isteach ansin. Ní shábháiltear ach ainm.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81602,23 +81602,23 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Gníomhaire agus eochracha SSH an úsáideora a ritheann an tsuiteáil seo faoi (agus i gcónaí do local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eochair phríobháideach a choinnítear mar rún.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasfhocal a choinnítear mar rún (síníonn FTP isteach le ceann).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ainm an rúin</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rún as Socrú &gt; Rúin, mar shampla deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81626,247 +81626,247 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Nó athróg timpeallachta</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Athróg phróiseas an fhreastalaí a choinníonn é, mar shampla DEPLOY_KEY (sábháilte mar env:DEPLOY_KEY). Glacann sí áit ainm an rúin.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Eochair an óstaigh</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Roghnach, do SSH, sftp agus rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Méarlorg eochair an óstaigh</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... mar a phriontálann ssh-keygen -l é. Leis, caithfidh an t-óstach an eochair seo a thaispeáint; gan é, foghlaimítear an eochair ag an gcéad teagmháil.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Athbhreithnigh</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tástáil an nasc leis na socruithe thuas, ansin athbhreithnigh na línte a scríobhfar.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Bain an cianchóras seo</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Baintear a shocruithe as settings/override/migration.ini.append.php. Ní athraíonn aon rud ar an gcianchóras, agus fanann a imscarthaí sa stair.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Tá, bain an cianchóras seo</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Imscarthaí</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seolann imscaradh imirceanna na suiteála seo chuig na cianchórais a roghnaíodh agus ritheann sé ansin iad mar %user, go léir ag an am céanna agus i gcomhcheim: seiceáiltear gach cianchóras ar dtús, agus má theipeann ar cheann acu, cealaítear gach cianchóras a chuir i bhfeidhm iad. Leanann sé ar aghaidh sa chúlra, agus taispeánann a leathanach gach cianchóras de réir mar a théann sé.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Na cianchórais</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuir tic le cianchórais, le grúpa, nó leis an dá cheann.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Imscar chuige</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Conas</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Imscar</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Seol agus rith</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seoltar na himirceanna chuig gach cianchóras, fíoraítear iad agus ritear iad le haitheantas reatha comhroinnte amháin.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Aistriú amháin</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Seoltar agus fíoraítear na comhaid, ní ritear aon rud (an t-aon bhealach do chianchóras FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>I leibhéil</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Leibhéal ar leibhéal in ord na dtimpeallachtaí (dev, stage, beta, production ...): imscartar an chéad leibhéal, ansin fanann geata go gceadaíonn duine éigin an chéad cheann eile. Gach rud nó faic laistigh de gach leibhéal.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Na himirceanna seo amháin</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Roghnach: aitheantais imirce, scartha le camóga. Folamh: gach imirce den suíomh agus dá eisínteachtaí.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Réamhsheiceáil amháin</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Tá, imscar anois</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Na himscarthaí a sheol nó a rith rud éigin, an ceann is nuaí ar dtús (ní choinníonn réamhsheiceáil tuairisc).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>aistriú amháin</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>i leibhéil, %stages leibhéal</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>as comhcheim</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Níl imscaradh ar bith ann fós.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Imscaradh %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gach cianchóras den imscaradh lena staid. Leanann imscaradh a tosaíodh anseo ar aghaidh sa chúlra nuair a dhúntar an leathanach seo; oscail an leathanach arís chun é a leanúint.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Gach imscaradh</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Réamhsheiceáil</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>An chéad leibhéal eile</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Ag seiceáil na socruithe agus na ndintiúr</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Réamhsheiceáil: ag léamh staid gach cianchórais</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ag seoladh chomhaid na n-imirceanna</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Ag fíorú an méid a tháinig</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ag rith na n-imirceanna ar gach cianchóras</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Ag cealú na gcianchóras</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tá an t-imscaradh críochnaithe. Ag lódáil a thuairisce.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Níorbh fhéidir an dul chun cinn a leanúint. Athlódáil an leathanach chun féachaint conas atá ag éirí leis an imscaradh.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Tréimhse</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Leanann an leathanach seo an t-imscaradh de réir mar a théann sé.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>I gcomhcheim</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Leibhéil</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>leibhéal %stage ag fanacht ag a gheata</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Geata %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>ceadaithe ag %user ag %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Leibhéal</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Comhaid seolta</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Leagan na heithne</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>curtha i bhfeidhm: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>le cur i bhfeidhm: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Tréimhsí</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Geata: leibhéal %stage as %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tá na leibhéil roimhe imscartha. Seiceáil iad, ansin ceadaigh an chéad leibhéal eile: seiceáiltear a chianchórais arís agus imscartar iad, gach rud nó faic.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81874,7 +81874,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Tá, imscar an chéad leibhéal eile anois</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81882,31 +81882,31 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Cealaigh an t-imscaradh seo</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Filleann gach cianchóras a chuir i bhfeidhm é (%list) ar an ngabháil a glacadh roimh a rith, go léir ag an am céanna.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Tá, cealaigh an t-imscaradh seo anois</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>pleanáilte</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>aistrithe</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>imscartha</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ag fanacht ag geata</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81914,7 +81914,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>ullmhaithe</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81922,51 +81922,51 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ag fanacht lena leibhéal</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>comhaid seolta</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>fíoraithe</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>theip air, d'athchóirigh sé é féin</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>gan athrú</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>gan imscaradh</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ní féidir teacht air</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>D'fhreagair an cianchóras.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ní féidir an cianchóras a úsáid anois.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done críochnaithe, %pending ar feitheamh, %failed theip orthu</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Glas</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>tá an glas ag rith ansin</translation>
     </message>
     <message>
         <source>free</source>
@@ -81974,23 +81974,23 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage as %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Roghnaigh an cianchóras le tástáil.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuir tic le “Tá, bain an cianchóras seo” ar dtús.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Níorbh fhéidir an cianchóras a bhaint: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Níorbh fhéidir an cianchóras a shábháil: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81998,75 +81998,75 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Roghnaigh cianchóras nó grúpa amháin ar a laghad.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Níl cianchóras a roghnaíodh sna socruithe a thuilleadh. Athlódáil an leathanach.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuir tic le “Tá, imscar anois” ar dtús.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ní féidir le cianchóras FTP imirceanna a rith: roghnaigh “Aistriú amháin”, nó fág amach é.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Is aitheantais imirce iad na himirceanna le himscaradh, scartha le camóga.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tá an t-imscaradh ar siúl fós. Fan go gcríochnóidh sé.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ní fhanann an t-imscaradh seo ag geata.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Níor chuir cianchóras ar bith an t-imscaradh seo i bhfeidhm: níl aon rud le cealú.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuir tic le “Tá, imscar an chéad leibhéal eile anois” ar dtús.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuir tic le “Tá, cealaigh an t-imscaradh seo anois” ar dtús.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tá cianchóras leis an aitheantas %id ann cheana.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Is uimhir ó 1 go 65535 é an port.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Is focal í an timpeallacht de litreacha, digití, - agus _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Is focal é grúpa de litreacha, digití, - agus _ (ní all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ní féidir an dintiúr a léamh anois: %problem. Sábháil i Socrú &gt; Rúin é (nó socraigh an athróg) roimh an gcéad imscaradh.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ní fhaigheann cianchóras FTP ach comhaid: is “Aistriú amháin” imscaradh chuige, agus ritear a imirceanna ansin de láimh.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Níl an cianchóras %id i settings/override/migration.ini.append.php; bain é san áit a bhfuil sé socraithe.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Síníodh isteach thar FTP agus léadh index.php. Ní féidir stádas imirce cianchórais FTP a léamh.</translation>
     </message>
 </context>
 <context>
@@ -84470,19 +84470,19 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Theip ar an imscaradh %deploy ar %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Tá an t-imscaradh %deploy ag fanacht ag geata ar %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>D'éirigh leis an imscaradh %deploy ar %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sheol %site an ríomhphost seo mar go n-iarrann migration.ini [RemoteSettings] Notify[] é.</translation>
     </message>
 </context>
 </TS>

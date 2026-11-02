@@ -82776,15 +82776,15 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveurs distants</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les autres installations vers lesquelles celle-ci déploie ses migrations : un déploiement envoie les migrations aux serveurs distants choisis et les y exécute, tous en même temps et de façon synchronisée. Un serveur distant ne contient jamais de secret : ses identifiants de connexion en désignent un dans Administration &gt; Gestion des secrets.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nouveau serveur distant</translation>
     </message>
     <message>
         <source>Help</source>
@@ -82792,19 +82792,19 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Test de connexion de %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Les serveurs distants</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jusqu’à %parallel serveurs distants sont traités en même temps ; une phase peut durer %timeout secondes sur chacun.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur distant</translation>
     </message>
     <message>
         <source>Address</source>
@@ -82820,15 +82820,15 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>réglages à corriger</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>fichiers uniquement (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Clé SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -82836,7 +82836,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>aucun (l’agent SSH et les clés de l’hôte)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -82844,23 +82844,23 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un déploiement vers un groupe va à chacun de ses serveurs distants.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Déployer vers les serveurs distants</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun serveur distant n’est encore configuré.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur distant %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rien n’est envoyé ni exécuté ici : Enregistrer écrit les réglages dans settings/override/migration.ini.append.php. Les identifiants de connexion sont un nom ; leur valeur reste dans Administration &gt; Gestion des secrets ou dans l’environnement.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -82868,7 +82868,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les réglages tels que saisis, pas encore enregistrés.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -82896,15 +82896,15 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Clé d’hôte</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Le serveur distant</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le nom du serveur distant et l’environnement qu’il représente.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -82912,47 +82912,47 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettres, chiffres, - et _, par exemple production1. Il désigne le serveur distant dans les rapports et sur la console (--remotes=production1) et ne peut pas être modifié par la suite.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Un déploiement par paliers parcourt les environnements dans cet ordre.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Facultatif, séparés par des virgules, par exemple production. Un déploiement vers un groupe va à chacun de ses serveurs distants.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. La connexion</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Comment les fichiers y parviennent, et où se trouve l’installation.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Par SSH, seulement ce qui a changé, un transfert interrompu étant repris. Le meilleur choix là où rsync est installé.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH avec scp pour les fichiers.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH avec sftp pour les fichiers.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichiers uniquement : les migrations sont envoyées et relues, mais ne peuvent pas y être exécutées.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP sur TLS ; fichiers uniquement.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Une autre installation sur ce serveur, dans un dossier.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -82960,7 +82960,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un nom d’hôte ou une adresse, par exemple node1.example.com. Pas pour local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -82968,7 +82968,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vide : 22 pour SSH, 21 pour FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -82980,31 +82980,31 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>La racine de l’installation là-bas, par exemple /var/www/site (pour FTP : le chemin que voit le compte FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ligne de commande PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le PHP CLI là-bas : php, ou un chemin complet tel que /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Les scripts de console y sont exécutés en tant que root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Seulement si l’utilisateur du serveur distant est root (elles sont alors exécutées avec --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Les identifiants de connexion</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Comment cette installation s’y connecte. Seul un nom est enregistré.</translation>
     </message>
     <message>
         <source>None</source>
@@ -83012,23 +83012,23 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>L’agent SSH et les clés de l’utilisateur sous lequel tourne cette installation (et toujours pour local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Une clé privée conservée comme secret.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Un mot de passe conservé comme secret (FTP se connecte avec).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom du secret</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un secret d’Administration &gt; Gestion des secrets, par exemple deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -83036,247 +83036,247 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Ou une variable d’environnement</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>La variable du processus serveur qui le contient, par exemple DEPLOY_KEY (enregistrée comme env:DEPLOY_KEY). Elle remplace le nom du secret.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. La clé d’hôte</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Facultatif, pour SSH, sftp et rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Empreinte de la clé d’hôte</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... tel que ssh-keygen -l l’affiche. Avec elle, l’hôte doit présenter cette clé ; sans elle, la clé est apprise au premier contact.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Relecture</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Testez la connexion avec les réglages ci-dessus, puis relisez les lignes qui seront écrites.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer ce serveur distant</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ses réglages sont retirés de settings/override/migration.ini.append.php. Rien ne change sur le serveur distant, et ses déploiements restent dans l’historique.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Oui, supprimer ce serveur distant</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Déploiements</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un déploiement envoie les migrations de cette installation aux serveurs distants choisis et les y exécute en tant que %user, tous en même temps et de façon synchronisée : chaque serveur distant est d’abord vérifié et, si l’un échoue, chaque serveur distant qui les a appliquées est ramené en arrière. Il se poursuit en arrière-plan, et sa page montre chaque serveur distant au fur et à mesure.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Les serveurs distants</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cochez des serveurs distants, un groupe, ou les deux.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Y déployer</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Comment</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Déployer</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer et exécuter</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les migrations sont envoyées, vérifiées et exécutées sur chaque serveur distant avec un même ID d’exécution partagé.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Transfert seulement</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Les fichiers sont envoyés et vérifiés, rien n’est exécuté (la seule possibilité pour un serveur distant FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Par paliers</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Palier par palier dans l’ordre des environnements (dev, stage, beta, production ...) : le premier palier est déployé, puis un point de validation attend que quelqu’un approuve le suivant. Tout ou rien au sein de chaque palier.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Seulement ces migrations</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Facultatif : des ID de migration, séparés par des virgules. Vide : toutes les migrations du site et de ses extensions.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Vérification préalable seulement</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Oui, déployer maintenant</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Les déploiements qui ont envoyé ou exécuté quelque chose, du plus récent au plus ancien (une vérification préalable ne conserve pas de rapport).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>transfert seulement</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>par paliers, %stages paliers</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>désynchronisé</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun déploiement pour l’instant.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Déploiement %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chaque serveur distant du déploiement avec son état. Un déploiement lancé ici se poursuit en arrière-plan quand cette page est fermée ; rouvrez la page pour le suivre.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Tous les déploiements</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Vérification préalable</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Palier suivant</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Vérification des réglages et des identifiants de connexion</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Vérification préalable : lecture de l’état de chaque serveur distant</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoi des fichiers de migration</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Vérification de ce qui est arrivé</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Exécution des migrations sur chaque serveur distant</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Retour arrière des serveurs distants</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le déploiement est terminé. Chargement de son rapport.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>La progression n’a pas pu être suivie. Rechargez la page pour voir où en est le déploiement.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Phase</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cette page suit le déploiement au fur et à mesure.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Synchronisé</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Paliers</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>le palier %stage attend à son point de validation</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Point de validation %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>approuvé par %user à %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Palier</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichiers envoyés</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version du noyau</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>appliquées : %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>à appliquer : %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Phases</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Point de validation : palier %stage sur %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les paliers précédents sont déployés. Vérifiez-les, puis approuvez le palier suivant : ses serveurs distants sont vérifiés à nouveau et déployés, tout ou rien.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -83284,7 +83284,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Oui, déployer le palier suivant maintenant</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -83292,31 +83292,31 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Annuler ce déploiement</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chaque serveur distant qui l’a appliqué (%list) revient à l’instantané pris avant son exécution, tous en même temps.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Oui, annuler ce déploiement maintenant</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>prévu</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>transféré</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>déployé</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>attend à un point de validation</translation>
     </message>
     <message>
         <source>selected</source>
@@ -83324,7 +83324,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>préparé</translation>
     </message>
     <message>
         <source>ready</source>
@@ -83332,51 +83332,51 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>attend son palier</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>fichiers envoyés</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>vérifié</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>en échec, s’est restauré lui-même</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>inchangé</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>non déployé</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>injoignable</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le serveur distant a répondu.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le serveur distant ne peut pas être utilisé pour l’instant.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done effectuées, %pending en attente, %failed en échec</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Verrou</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>une exécution y détient le verrou</translation>
     </message>
     <message>
         <source>free</source>
@@ -83384,23 +83384,23 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage sur %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisissez le serveur distant à tester.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cochez d’abord « Oui, supprimer ce serveur distant ».</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Le serveur distant n’a pas pu être supprimé : %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Le serveur distant n’a pas pu être enregistré : %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -83408,75 +83408,75 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisissez au moins un serveur distant ou un groupe.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un serveur distant choisi ne figure plus dans les réglages. Rechargez la page.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cochez d’abord « Oui, déployer maintenant ».</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un serveur distant FTP ne peut pas exécuter de migrations : choisissez « Transfert seulement », ou laissez-le de côté.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les migrations à déployer sont des ID de migration, séparés par des virgules.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le déploiement est toujours en cours. Attendez qu’il se termine.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce déploiement n’attend à aucun point de validation.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun serveur distant n’a appliqué ce déploiement : il n’y a rien à annuler.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cochez d’abord « Oui, déployer le palier suivant maintenant ».</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cochez d’abord « Oui, annuler ce déploiement maintenant ».</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un serveur distant avec l’ID %id existe déjà.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le port est un nombre de 1 à 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>L’environnement est un mot fait de lettres, de chiffres, de - et de _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Un groupe est un mot fait de lettres, de chiffres, de - et de _ (pas all) : %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les identifiants de connexion ne peuvent pas être lus maintenant : %problem. Enregistrez-les dans Administration &gt; Gestion des secrets (ou définissez la variable) avant le premier déploiement.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un serveur distant FTP ne reçoit que des fichiers : un déploiement vers lui est « Transfert seulement », et ses migrations y sont exécutées à la main.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le serveur distant %id ne figure pas dans settings/override/migration.ini.append.php ; supprimez-le là où il est défini.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Connecté par FTP et index.php lu. L’état des migrations d’un serveur distant FTP ne peut pas être lu.</translation>
     </message>
 </context>
 <context>
@@ -85880,19 +85880,19 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Le déploiement %deploy a échoué sur %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Le déploiement %deploy attend à une porte sur %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Le déploiement %deploy a réussi sur %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce courriel a été envoyé par %site parce que migration.ini [RemoteSettings] Notify[] le demande.</translation>
     </message>
 </context>
 </TS>

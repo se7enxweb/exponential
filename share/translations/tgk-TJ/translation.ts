@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳҳои дурдаст</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Насбҳои дигаре, ки ин насб миграсияҳои худро ба онҳо ҷойгир мекунад: ҷойгиркунӣ миграсияҳоро ба гиреҳҳои дурдасти интихобшуда мефиристад ва онҳоро дар он ҷо иҷро мекунад, ҳамаро якбора ва ҳамоҳанг. Гиреҳи дурдаст ҳеҷ гоҳ рамз нигоҳ намедорад: маълумоти воридшавии он ба як рамз дар Насб &gt; Рамзҳо ишора мекунад.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдасти нав</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Санҷиши пайвастшавии %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳҳои дурдаст</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>То %parallel гиреҳи дурдаст якбора коркард мешаванд; як давра дар ҳар кадом метавонад %timeout сония давом кунад.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдаст</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>танзимот ислоҳ талаб мекунад</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>танҳо файлҳо (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Калиди SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ҳеҷ (агенти SSH ва калидҳои мизбон)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҷойгиркунӣ ба гурӯҳ ба ҳар гиреҳи дурдасти он меравад.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ба гиреҳҳои дурдаст ҷойгир кардан</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳоло ягон гиреҳи дурдаст танзим нашудааст.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдаст %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дар ин ҷо ҳеҷ чиз фиристода ё иҷро намешавад: тугмаи «Захира кардан» танзимотро ба settings/override/migration.ini.append.php менависад. Маълумоти воридшавӣ ном аст; қимати он дар Насб &gt; Рамзҳо ё дар муҳит мемонад.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Танзимот ба тавре ки ворид шудаанд, ҳанӯз захира нашудаанд.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Калиди мизбон</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Гиреҳи дурдаст</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдаст чӣ ном дорад ва кадом муҳит аст.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳарфҳо, рақамҳо, - ва _, масалан production1. Он гиреҳи дурдастро дар гузоришҳо ва дар консол (--remotes=production1) ном мебарад ва баъдтар тағйир дода намешавад.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Ҷойгиркунии марҳилавӣ муҳитҳоро бо ҳамин тартиб мегузарад.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ихтиёрӣ, бо вергул ҷудо карда, масалан production. Ҷойгиркунӣ ба гурӯҳ ба ҳар гиреҳи дурдасти он меравад.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Пайвастшавӣ</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлҳо чӣ тавр ба он ҷо мерасанд ва насб дар куҷост.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Тавассути SSH, танҳо он чи тағйир ёфтааст, интиқоли қатъшуда идома дода мешавад. Беҳтарин интихоб дар ҷое, ки rsync насб шудааст.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH бо scp барои файлҳо.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH бо sftp барои файлҳо.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Танҳо файлҳо: миграсияҳо фиристода ва баргардонда хонда мешаванд, вале дар он ҷо иҷро шуда наметавонанд.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP тавассути TLS; танҳо файлҳо.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Насби дигар дар ҳамин сервер, дар як ҷузвдон.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Номи мизбон ё суроға, масалан node1.example.com. На барои local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Холӣ: 22 барои SSH, 21 барои FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Решаи насб дар он ҷо, масалан /var/www/site (барои FTP: роҳе, ки ҳисоби FTP мебинад).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Сатри фармони PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI дар он ҷо: php ё роҳи пурра, масалан /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Скриптҳои консол дар он ҷо ҳамчун root иҷро мешаванд</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Танҳо вақте ки корбари гиреҳи дурдаст root аст (он гоҳ онҳо бо --allow-root-user иҷро мешаванд).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Маълумоти воридшавӣ</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ин насб дар он ҷо чӣ тавр ворид мешавад. Танҳо ном захира мешавад.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Агенти SSH ва калидҳои корбаре, ки ин насб аз номи ӯ кор мекунад (ва ҳамеша барои local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Калиди хусусӣ, ки ҳамчун рамз нигоҳ дошта мешавад.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Пароле, ки ҳамчун рамз нигоҳ дошта мешавад (FTP бо он ворид мешавад).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Номи рамз</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Рамз аз Насб &gt; Рамзҳо, масалан deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Ё тағйирёбандаи муҳит</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Тағйирёбандаи раванди сервер, ки онро нигоҳ медорад, масалан DEPLOY_KEY (ҳамчун env:DEPLOY_KEY захира мешавад). Он ҷои номи рамзро мегирад.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Калиди мизбон</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ихтиёрӣ, барои SSH, sftp ва rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Изи ангушти калиди мизбон</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ба тавре ки ssh-keygen -l онро чоп мекунад. Бо он мизбон бояд ҳамин калидро нишон диҳад; бе он калид ҳангоми тамоси аввал омӯхта мешавад.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Аз назар гузаронӣ</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пайвастшавиро бо танзимоти боло санҷед, сипас сатрҳоеро, ки навишта мешаванд, аз назар гузаронед.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ин гиреҳи дурдастро хориҷ кардан</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Танзимоти он аз settings/override/migration.ini.append.php хориҷ карда мешаванд. Дар гиреҳи дурдаст ҳеҷ чиз тағйир намеёбад ва ҷойгиркуниҳои он дар таърих мемонанд.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳа, ин гиреҳи дурдастро хориҷ кунед</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҷойгиркуниҳо</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҷойгиркунӣ миграсияҳои ин насбро ба гиреҳҳои дурдасти интихобшуда мефиристад ва онҳоро дар он ҷо ҳамчун %user иҷро мекунад, ҳамаро якбора ва ҳамоҳанг: аввал ҳар гиреҳи дурдаст санҷида мешавад ва агар яке ноком шавад, ҳар гиреҳе, ки татбиқ карда буд, бозпас гирифта мешавад. Он дар пасзамина идома меёбад ва саҳифаи он ҳар гиреҳи дурдастро дар ҷараён нишон медиҳад.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Гиреҳҳои дурдаст</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳҳои дурдаст, гурӯҳ ё ҳардуро қайд кунед.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Ба он ҷойгир кардан</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Чӣ тавр</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҷойгир кардан</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Фиристодан ва иҷро кардан</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Миграсияҳо ба ҳар гиреҳи дурдаст фиристода, санҷида ва бо як рақами умумии иҷро иҷро карда мешаванд.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Танҳо интиқол</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлҳо фиристода ва санҷида мешаванд, ҳеҷ чиз иҷро намешавад (ягона роҳ барои гиреҳи дурдасти FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Марҳила ба марҳила</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Марҳила ба марҳила бо тартиби муҳитҳо (dev, stage, beta, production ...): аввал марҳилаи якум ҷойгир карда мешавад, сипас дарвоза интизор мешавад, то касе марҳилаи навбатиро тасдиқ кунад. Дар дохили ҳар марҳила ҳама ё ҳеҷ.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Танҳо ҳамин миграсияҳо</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ихтиёрӣ: рақамҳои миграсияҳо, бо вергул ҷудо карда. Холӣ: ҳар миграсияи сомона ва васеъшавиҳои он.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Танҳо санҷиши пешакӣ</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳа, ҳозир ҷойгир кунед</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҷойгиркуниҳое, ки чизе фиристоданд ё иҷро карданд, навтаринаш аввал (санҷиши пешакӣ гузориш нигоҳ намедорад).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>танҳо интиқол</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>марҳилавӣ, %stages марҳила</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ноҳамоҳанг</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳоло ҷойгиркунӣ нест.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҷойгиркунии %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳар гиреҳи дурдасти ҷойгиркунӣ бо ҳолати он. Ҷойгиркунии дар ин ҷо оғозшуда ҳангоми пӯшидани ин саҳифа дар пасзамина идома меёбад; барои пайгирӣ саҳифаро боз кушоед.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳамаи ҷойгиркуниҳо</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Санҷиши пешакӣ</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Марҳилаи навбатӣ</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Санҷиши танзимот ва маълумоти воридшавӣ</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Санҷиши пешакӣ: хондани ҳолати ҳар гиреҳи дурдаст</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Фиристодани файлҳои миграсия</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Санҷиши он чи расид</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Иҷрои миграсияҳо дар ҳар гиреҳи дурдаст</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Бозпас гирифтани гиреҳҳои дурдаст</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҷойгиркунӣ анҷом ёфт. Гузориши он бор карда мешавад.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пешрафтро пайгирӣ кардан нашуд. Саҳифаро аз нав бор кунед, то бинед, ки ҷойгиркунӣ чӣ ҳол дорад.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Давра</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ин саҳифа ҷойгиркуниро дар ҷараёнаш пайгирӣ мекунад.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳамоҳанг</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Марҳилаҳо</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>марҳилаи %stage дар дарвозаи худ интизор аст</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Дарвозаи %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>аз ҷониби %user дар %time тасдиқ шуд</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Марҳила</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлҳои фиристодашуда</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Версияи ядро</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>татбиқшуда: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>барои татбиқ: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Давраҳо</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Дарвоза: марҳилаи %stage аз %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Марҳилаҳои пеш аз он ҷойгир карда шудаанд. Онҳоро санҷед, сипас марҳилаи навбатиро тасдиқ кунед: гиреҳҳои дурдасти он боз санҷида ва ҷойгир карда мешаванд, ҳама ё ҳеҷ.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳа, марҳилаи навбатиро ҳозир ҷойгир кунед</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Ин ҷойгиркуниро бозгардондан</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳар гиреҳи дурдасте, ки онро татбиқ кардааст (%list), якбора ба акси пеш аз иҷрои худ гирифташуда бармегардад.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҳа, ин ҷойгиркуниро ҳозир бозгардонед</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>ба нақша гирифта шуд</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>интиқол ёфт</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ҷойгир шуд</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>дар дарвоза интизор аст</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>омода шуд</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>марҳилаи худро интизор аст</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>файлҳо фиристода шуданд</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>санҷида шуд</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ноком шуд, худашро барқарор кард</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>бетағйир</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ҷойгир нашуд</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>дастнорас</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдаст ҷавоб дод.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдастро ҳоло истифода бурдан ғайриимкон аст.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done иҷрошуда, %pending дар интизорӣ, %failed ноком</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Қулф</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>иҷрое дар он ҷо қулфро нигоҳ медорад</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage аз %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдастеро, ки бояд санҷида шавад, интихоб кунед.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Аввал қайд кунед: «Ҳа, ин гиреҳи дурдастро хориҷ кунед».</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдастро хориҷ кардан нашуд: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдастро захира кардан нашуд: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ақаллан як гиреҳи дурдаст ё гурӯҳро интихоб кунед.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Яке аз гиреҳҳои дурдасти интихобшуда дигар дар танзимот нест. Саҳифаро аз нав бор кунед.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Аввал қайд кунед: «Ҳа, ҳозир ҷойгир кунед».</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдасти FTP миграсияҳоро иҷро карда наметавонад: интихоб кунед «Танҳо интиқол» ё онро истисно кунед.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Миграсияҳо барои ҷойгиркунӣ рақамҳои миграсия мебошанд, ки бо вергул ҷудо карда шудаанд.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҷойгиркунӣ ҳанӯз идома дорад. Интизор шавед, то он анҷом ёбад.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ин ҷойгиркунӣ дар дарвоза интизор намешавад.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ягон гиреҳи дурдаст ин ҷойгиркуниро татбиқ накардааст: чизе барои бозгардондан нест.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Аввал қайд кунед: «Ҳа, марҳилаи навбатиро ҳозир ҷойгир кунед».</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Аввал қайд кунед: «Ҳа, ин ҷойгиркуниро ҳозир бозгардонед».</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдаст бо рақами %id аллакай вуҷуд дорад.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Порт рақамест аз 1 то 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Муҳит калимаест аз ҳарфҳо, рақамҳо, - ва _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Гурӯҳ калимаест аз ҳарфҳо, рақамҳо, - ва _ (на all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Маълумоти воридшавиро ҳоло хондан ғайриимкон аст: %problem. Онро пеш аз ҷойгиркунии аввал дар Насб &gt; Рамзҳо захира кунед (ё тағйирёбандаро муқаррар кунед).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдасти FTP танҳо файлҳоро қабул мекунад: ҷойгиркунӣ ба он «Танҳо интиқол» аст ва миграсияҳои он дар он ҷо дастӣ иҷро карда мешаванд.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиреҳи дурдасти %id дар settings/override/migration.ini.append.php нест; онро дар ҷое, ки муқаррар шудааст, хориҷ кунед.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Тавассути FTP ворид шуда, index.php хонда шуд. Вазъи миграсияи гиреҳи дурдасти FTP-ро хондан ғайриимкон аст.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҷойгиркунии %deploy дар %site ноком шуд</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҷойгиркунии %deploy дар %site назди дарвоза интизор аст</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ҷойгиркунии %deploy дар %site бомуваффақият анҷом ёфт</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ин мактубро %site фиристод, зеро migration.ini [RemoteSettings] Notify[] инро талаб мекунад.</translation>
     </message>
 </context>
 </TS>

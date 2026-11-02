@@ -81368,15 +81368,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>יעדים מרוחקים</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>ההתקנות האחרות שאליהן התקנה זו פורסת את ההגירות שלה: פריסה שולחת את ההגירות ליעדים המרוחקים שנבחרו ומריצה אותן שם, כולם בבת אחת ובסנכרון. יעד מרוחק לעולם אינו מחזיק סוד: אישור הגישה שלו מציין סוד בהגדרות &gt; סודות.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>יעד מרוחק חדש</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81384,19 +81384,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>בדיקת החיבור של %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>היעדים המרוחקים</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>עד %parallel יעדים מרוחקים מטופלים בו-זמנית; פאזה אחת עשויה להימשך %timeout שניות בכל אחד.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>יעד מרוחק</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81412,15 +81412,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>הגדרות לתיקון</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>קבצים בלבד (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>מפתח SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ללא (סוכן ה-SSH והמפתחות של המארח)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81436,23 +81436,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>פריסה לקבוצה מגיעה לכל היעדים המרוחקים שבה.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>פריסה ליעדים מרוחקים</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>עדיין לא הוגדר יעד מרוחק.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>יעד מרוחק %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>דבר אינו נשלח או מורץ כאן: שמירה כותבת את ההגדרות אל settings/override/migration.ini.append.php. אישור הגישה הוא שם; ערכו נשאר בהגדרות &gt; סודות או בסביבה.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81460,7 +81460,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>ההגדרות כפי שהוזנו, עדיין לא נשמרו.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81488,15 +81488,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>מפתח מארח</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. היעד המרוחק</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>איך נקרא היעד המרוחק ואיזו סביבה הוא.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81504,47 +81504,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>אותיות, ספרות, - ו-_, לדוגמה production1. הוא נותן שם ליעד המרוחק בדוחות ובמסוף (--remotes=production1) ואי אפשר לשנותו מאוחר יותר.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... פריסה בשלבים עוברת בין הסביבות בסדר הזה.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>אופציונלי, מופרד בפסיקים, לדוגמה production. פריסה לקבוצה מגיעה לכל היעדים המרוחקים שבה.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. החיבור</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>כיצד הקבצים מגיעים לשם, והיכן נמצאת ההתקנה.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>דרך SSH, רק מה שהשתנה, העברה שנקטעה ממשיכה. הבחירה הטובה ביותר היכן ש-rsync מותקן.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH עם scp עבור הקבצים.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH עם sftp עבור הקבצים.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>קבצים בלבד: ההגירות נשלחות ונקראות בחזרה, אך אי אפשר להריץ אותן שם.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP מעל TLS; קבצים בלבד.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>התקנה אחרת בשרת זה, בתיקייה.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81552,7 +81552,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>שם מארח או כתובת, לדוגמה node1.example.com. לא עבור local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81560,7 +81560,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>ריק: 22 עבור SSH, 21 עבור FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81572,31 +81572,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>תיקיית השורש של ההתקנה שם, לדוגמה /var/www/site (עבור FTP: הנתיב שחשבון ה-FTP רואה).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>שורת הפקודה של PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>ה-PHP CLI שם: php, או נתיב מלא כגון /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>סקריפטי המסוף רצים שם בתור root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>רק כאשר המשתמש של היעד המרוחק הוא root (הן מורצות אז עם --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. אישור הגישה</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>כיצד התקנה זו מתחברת שם. נשמר רק שם.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81604,23 +81604,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>סוכן ה-SSH והמפתחות של המשתמש שתחתיו התקנה זו רצה (ותמיד עבור local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>מפתח פרטי השמור כסוד.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>סיסמה השמורה כסוד (FTP מתחבר באמצעותה).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>שם הסוד</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>סוד מתוך הגדרות &gt; סודות, לדוגמה deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81628,247 +81628,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>או משתנה סביבה</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>המשתנה של תהליך השרת שמחזיק אותו, לדוגמה DEPLOY_KEY (נשמר בתור env:DEPLOY_KEY). הוא בא במקום שם הסוד.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. מפתח המארח</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>אופציונלי, עבור SSH, sftp ו-rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>טביעת האצבע של מפתח המארח</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... כפי ש-ssh-keygen -l מדפיס אותו. איתו, המארח חייב להציג מפתח זה; בלעדיו, המפתח נלמד במגע הראשון.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. סקירה</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>בדקו את החיבור עם ההגדרות שלמעלה, ולאחר מכן סקרו את השורות שייכתבו.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>הסרת יעד מרוחק זה</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>ההגדרות שלו מוסרות מתוך settings/override/migration.ini.append.php. דבר אינו משתנה ביעד המרוחק, והפריסות שלו נשארות בהיסטוריה.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>כן, להסיר יעד מרוחק זה</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>פריסות</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>פריסה שולחת את ההגירות של התקנה זו ליעדים המרוחקים שנבחרו ומריצה אותן שם בתור %user, כולם בבת אחת ובסנכרון: כל יעד מרוחק נבדק קודם, וכאשר אחד נכשל, כל יעד מרוחק שהחיל אותן מוחזר לאחור. היא ממשיכה ברקע, והדף שלה מציג כל יעד מרוחק תוך כדי.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. היעדים המרוחקים</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>סמנו יעדים מרוחקים, קבוצה, או את שניהם.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>פריסה אליו</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. איך</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>פריסה</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>שליחה והרצה</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>ההגירות נשלחות, מאומתות ומורצות בכל יעד מרוחק עם מזהה ריצה משותף אחד.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>העברה בלבד</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>הקבצים נשלחים ומאומתים, דבר אינו מורץ (הדרך היחידה עבור יעד מרוחק מסוג FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>בשלבים</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>שלב אחר שלב לפי סדר הסביבות (dev, stage, beta, production ...): השלב הראשון נפרס, ואז שער ממתין עד שמישהו מאשר את הבא. הכול או כלום בתוך כל שלב.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>רק ההגירות האלה</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>אופציונלי: מזהי הגירות, מופרדים בפסיקים. ריק: כל הגירה של האתר ושל ההרחבות שלו.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>בדיקה מקדימה בלבד</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>כן, לפרוס עכשיו</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>הפריסות ששלחו או הריצו משהו, החדשה ביותר ראשונה (בדיקה מקדימה אינה שומרת דוח).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>העברה בלבד</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>בשלבים, %stages שלבים</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>לא בסנכרון</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>עדיין אין פריסה.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>פריסה %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>כל יעד מרוחק של הפריסה עם מצבו. פריסה שהתחילה כאן ממשיכה ברקע כאשר הדף נסגר; פתחו את הדף שוב כדי לעקוב אחריה.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>כל הפריסות</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>בדיקה מקדימה</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>השלב הבא</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>בודק את ההגדרות ואת אישורי הגישה</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>בדיקה מקדימה: קורא את המצב של כל יעד מרוחק</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>שולח את קובצי ההגירה</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>מאמת את מה שהגיע</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>מריץ את ההגירות בכל יעד מרוחק</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>מחזיר את היעדים המרוחקים לאחור</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>הפריסה הסתיימה. טוען את הדוח שלה.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>לא ניתן היה לעקוב אחר ההתקדמות. טענו מחדש את הדף כדי לראות את מצב הפריסה.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>פאזה</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>דף זה עוקב אחר הפריסה תוך כדי התקדמותה.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>בסנכרון</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>שלבים</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>שלב %stage ממתין בשער שלו</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>שער %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>אושר על ידי %user בשעה %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>שלב</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>קבצים שנשלחו</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>גרסת הליבה</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>הוחלו: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>להחלה: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>פאזות</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>שער: שלב %stage מתוך %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>השלבים שלפניו נפרסו. בדקו אותם, ולאחר מכן אשרו את השלב הבא: היעדים המרוחקים שלו נבדקים שוב ונפרסים, הכול או כלום.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81876,7 +81876,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>כן, לפרוס את השלב הבא עכשיו</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81884,31 +81884,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>החזרת פריסה זו לאחור</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>כל יעד מרוחק שהחיל אותה (%list) חוזר לתמונת המצב שנלקחה לפני הריצה שלו, כולם בבת אחת.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>כן, להחזיר פריסה זו לאחור עכשיו</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>מתוכנן</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>הועבר</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>נפרס</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ממתין בשער</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81916,7 +81916,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>מוכן מראש</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81924,51 +81924,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ממתין לשלב שלו</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>קבצים נשלחו</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>אומת</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>נכשל, שחזר את עצמו</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>ללא שינוי</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>לא נפרס</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>לא ניתן להשגה</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>היעד המרוחק ענה.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>לא ניתן להשתמש ביעד המרוחק כעת.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done הושלמו, %pending ממתינים, %failed נכשלו</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>נעילה</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>ריצה מחזיקה שם את הנעילה</translation>
     </message>
     <message>
         <source>free</source>
@@ -81976,23 +81976,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage מתוך %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>בחרו את היעד המרוחק לבדיקה.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>סמנו קודם את “כן, להסיר יעד מרוחק זה”.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>לא ניתן היה להסיר את היעד המרוחק: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>לא ניתן היה לשמור את היעד המרוחק: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -82000,75 +82000,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>בחרו לפחות יעד מרוחק אחד או קבוצה.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>יעד מרוחק שנבחר כבר אינו נמצא בהגדרות. טענו מחדש את הדף.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>סמנו קודם את “כן, לפרוס עכשיו”.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>יעד מרוחק מסוג FTP אינו יכול להריץ הגירות: בחרו “העברה בלבד”, או השמיטו אותו.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ההגירות לפריסה הן מזהי הגירות, מופרדים בפסיקים.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>הפריסה עדיין מתבצעת. המתינו עד שתסתיים.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>פריסה זו אינה ממתינה בשער.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>אף יעד מרוחק לא החיל פריסה זו: אין מה להחזיר לאחור.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>סמנו קודם את “כן, לפרוס את השלב הבא עכשיו”.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>סמנו קודם את “כן, להחזיר פריסה זו לאחור עכשיו”.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>יעד מרוחק עם המזהה %id כבר קיים.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>הפורט הוא מספר בין 1 ל-65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>הסביבה היא מילה של אותיות, ספרות, - ו-_ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>קבוצה היא מילה של אותיות, ספרות, - ו-_ (לא all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>לא ניתן לקרוא כעת את אישור הגישה: %problem. שמרו אותו בהגדרות &gt; סודות (או הגדירו את המשתנה) לפני הפריסה הראשונה.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>יעד מרוחק מסוג FTP מקבל קבצים בלבד: פריסה אליו היא “העברה בלבד”, וההגירות שלו מורצות שם ידנית.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>היעד המרוחק %id אינו נמצא ב-settings/override/migration.ini.append.php; הסירו אותו במקום שבו הוא מוגדר.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>התחבר דרך FTP וקרא את index.php. לא ניתן לקרוא את מצב ההגירות של יעד מרוחק מסוג FTP.</translation>
     </message>
 </context>
 <context>
@@ -84472,19 +84472,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>הפריסה %deploy נכשלה באתר %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>הפריסה %deploy ממתינה בשער באתר %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>הפריסה %deploy הצליחה באתר %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>הודעה זו נשלחה על ידי %site כי migration.ini [RemoteSettings] Notify[] מבקש זאת.</translation>
     </message>
 </context>
 </TS>

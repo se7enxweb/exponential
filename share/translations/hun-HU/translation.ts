@@ -81366,15 +81366,15 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Távoli rendszerek</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Azok a további telepítések, amelyekre ez a telepítés kihelyezi a migrációit: a kihelyezés elküldi a migrációkat a kiválasztott távoli rendszerekre, és ott futtatja őket, egyszerre és szinkronban. Egy távoli rendszer soha nem tárol titkos értéket: a hitelesítési adata egyet nevez meg a Rendszer &gt; Titkos értékek menüben.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Új távoli rendszer</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81382,19 +81382,19 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id kapcsolatának tesztelése</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>A távoli rendszerek</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Legfeljebb %parallel távoli rendszeren folyik egyszerre a munka; egy fázis mindegyiken %timeout másodpercig tarthat.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Távoli rendszer</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81410,15 +81410,15 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>javítandó beállítások</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>csak fájlok (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-kulcs</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81426,7 +81426,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>nincs (a gazdagép SSH-ügynöke és kulcsai)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81434,23 +81434,23 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egy csoportba irányuló kihelyezés a csoport minden távoli rendszerére eljut.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kihelyezés távoli rendszerekre</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Még nincs beállított távoli rendszer.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Távoli rendszer: %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Itt semmi sem kerül elküldésre vagy futtatásra: a Mentés a beállításokat a settings/override/migration.ini.append.php fájlba írja. A hitelesítési adat egy név; az értéke a Rendszer &gt; Titkos értékek menüben vagy a környezetben marad.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81458,7 +81458,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>A beállítások a megadott formában, még nincsenek mentve.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81486,15 +81486,15 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Gazdagépkulcs</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. A távoli rendszer</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hogyan hívják a távoli rendszert, és melyik környezet.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81502,47 +81502,47 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Betűk, számjegyek, - és _, például production1. Ez nevezi meg a távoli rendszert a jelentésekben és a konzolon (--remotes=production1), és később nem módosítható.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... A szakaszos kihelyezés ebben a sorrendben halad végig a környezeteken.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem kötelező, vesszővel elválasztva, például production. Egy csoportba irányuló kihelyezés a csoport minden távoli rendszerére eljut.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. A kapcsolat</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hogyan jutnak oda a fájlok, és hol van a telepítés.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-n keresztül, csak ami változott, a megszakadt átvitel folytatódik. A legjobb választás, ahol az rsync telepítve van.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH, scp-vel a fájlokhoz.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH, sftp-vel a fájlokhoz.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Csak fájlok: a migrációk elküldésre és visszaolvasásra kerülnek, de ott nem futtathatók.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP TLS-en keresztül; csak fájlok.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egy másik telepítés ezen a szerveren, egy mappában.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81550,7 +81550,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egy gazdagépnév vagy cím, például node1.example.com. A local esetén nem.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81558,7 +81558,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Üresen: SSH esetén 22, FTP esetén 21.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81570,31 +81570,31 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>A telepítés ottani gyökérkönyvtára, például /var/www/site (FTP esetén: az az elérési út, amelyet az FTP-fiók lát).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP parancssor</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>Az ottani PHP CLI: php, vagy egy teljes elérési út, például /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>A konzolszkriptek ott rootként futnak</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Csak ha a távoli rendszer felhasználója root (ekkor --allow-root-user kapcsolóval futnak).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. A hitelesítés</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hogyan jelentkezik be oda ez a telepítés. Csak egy név kerül mentésre.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81602,23 +81602,23 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Annak a felhasználónak az SSH-ügynöke és kulcsai, akiként ez a telepítés fut (local esetén mindig).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Titkos értékként tárolt privát kulcs.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Titkos értékként tárolt jelszó (az FTP ezzel jelentkezik be).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Titkos érték neve</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egy titkos érték a Rendszer &gt; Titkos értékek menüből, például deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81626,247 +81626,247 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Vagy egy környezeti változó</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>A szerverfolyamat azon változója, amely tartalmazza, például DEPLOY_KEY (env:DEPLOY_KEY formában mentve). A titkos érték nevének helyébe lép.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. A gazdagépkulcs</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem kötelező, SSH, sftp és rsync esetén.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>A gazdagépkulcs ujjlenyomata</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... ahogy az ssh-keygen -l kiírja. Ha meg van adva, a gazdagépnek ezt a kulcsot kell mutatnia; ha nincs, a kulcs az első kapcsolatkor rögzül.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Áttekintés</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tesztelje a kapcsolatot a fenti beállításokkal, majd tekintse át a kiírandó sorokat.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>A távoli rendszer eltávolítása</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>A beállításai törlődnek a settings/override/migration.ini.append.php fájlból. A távoli rendszeren semmi sem változik, és a kihelyezései megmaradnak az előzményekben.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Igen, a távoli rendszer eltávolítása</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Kihelyezések</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>A kihelyezés elküldi ennek a telepítésnek a migrációit a kiválasztott távoli rendszerekre, és ott %user felhasználóként futtatja őket, egyszerre és szinkronban: először minden távoli rendszer ellenőrzésre kerül, és ha az egyik sikertelen, minden olyan távoli rendszer visszavonásra kerül, amely alkalmazta őket. A háttérben fut, és az oldala menet közben minden távoli rendszert mutat.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. A távoli rendszerek</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jelöljön be távoli rendszereket, egy csoportot vagy mindkettőt.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Kihelyezés ide</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Hogyan</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kihelyezés</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Küldés és futtatás</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>A migrációk minden távoli rendszerre elküldésre, ellenőrzésre és futtatásra kerülnek egy közös futtatásazonosítóval.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Csak átvitel</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>A fájlok elküldésre és ellenőrzésre kerülnek, semmi sem fut (egy FTP-s távoli rendszer esetén ez az egyetlen mód).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Szakaszos</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Szakaszról szakaszra a környezetek sorrendjében (dev, stage, beta, production ...): az első szakasz kihelyezésre kerül, majd egy kapu vár, amíg valaki jóvá nem hagyja a következőt. Minden szakaszon belül mindent vagy semmit.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Csak ezek a migrációk</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem kötelező: migrációazonosítók, vesszővel elválasztva. Üresen: a webhely és bővítményei összes migrációja.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Csak előzetes ellenőrzés</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Igen, kihelyezés most</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Azok a kihelyezések, amelyek küldtek vagy futtattak valamit, a legújabb elöl (az előzetes ellenőrzés nem őriz jelentést).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>csak átvitel</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>szakaszos, %stages szakasz</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>nincs szinkronban</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Még nincs kihelyezés.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kihelyezés %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>A kihelyezés minden távoli rendszere az állapotával. Az itt indított kihelyezés a háttérben folytatódik, ha bezárja ezt az oldalt; nyissa meg újra az oldalt a követéséhez.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Összes kihelyezés</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Előzetes ellenőrzés</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Következő szakasz</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>A beállítások és a hitelesítési adatok ellenőrzése</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Előzetes ellenőrzés: minden távoli rendszer állapotának beolvasása</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>A migrációs fájlok küldése</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>A megérkezett fájlok ellenőrzése</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>A migrációk futtatása minden távoli rendszeren</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>A távoli rendszerek visszavonása</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>A kihelyezés véget ért. A jelentés betöltése.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>A haladás nem volt követhető. Töltse újra az oldalt, hogy lássa, hol tart a kihelyezés.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fázis</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez az oldal menet közben követi a kihelyezést.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Szinkronban</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Szakaszok</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>a(z) %stage. szakasz a kapujánál vár</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage. kapu</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>jóváhagyta: %user, %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Szakasz</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Elküldött fájlok</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Kernelverzió</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>alkalmazva: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>alkalmazandó: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fázisok</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapu: %stage. szakasz (összesen %stages)</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Az előző szakaszok ki vannak helyezve. Ellenőrizze őket, majd hagyja jóvá a következő szakaszt: annak távoli rendszerei újra ellenőrzésre és kihelyezésre kerülnek, mindent vagy semmit.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81874,7 +81874,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Igen, a következő szakasz kihelyezése most</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81882,31 +81882,31 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>A kihelyezés visszavonása</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Minden távoli rendszer, amely alkalmazta (%list), egyszerre visszatér a futtatása előtt készült pillanatképhez.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Igen, a kihelyezés visszavonása most</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>tervezett</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>átvive</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>kihelyezve</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>kapunál vár</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81914,7 +81914,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>előkészítve</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81922,51 +81922,51 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>a szakaszára vár</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>fájlok elküldve</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>ellenőrizve</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>sikertelen, önmagát visszaállította</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>változatlan</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>nincs kihelyezve</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>nem elérhető</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>A távoli rendszer válaszolt.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>A távoli rendszer most nem használható.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done kész, %pending függőben, %failed sikertelen</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Zárolás</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>egy futtatás tartja ott a zárolást</translation>
     </message>
     <message>
         <source>free</source>
@@ -81974,23 +81974,23 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage / %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki a tesztelendő távoli rendszert.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Előbb jelölje be az „Igen, a távoli rendszer eltávolítása” lehetőséget.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>A távoli rendszert nem sikerült eltávolítani: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>A távoli rendszert nem sikerült menteni: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81998,75 +81998,75 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Válasszon legalább egy távoli rendszert vagy csoportot.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egy kiválasztott távoli rendszer már nem szerepel a beállításokban. Töltse újra az oldalt.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Előbb jelölje be az „Igen, kihelyezés most” lehetőséget.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egy FTP-s távoli rendszer nem tud migrációkat futtatni: válassza a „Csak átvitel” lehetőséget, vagy hagyja ki.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>A kihelyezendő migrációk migrációazonosítók, vesszővel elválasztva.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>A kihelyezés még folyamatban van. Várja meg, amíg véget ér.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez a kihelyezés nem vár kapunál.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyetlen távoli rendszer sem alkalmazta ezt a kihelyezést: nincs mit visszavonni.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Előbb jelölje be az „Igen, a következő szakasz kihelyezése most” lehetőséget.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Előbb jelölje be az „Igen, a kihelyezés visszavonása most” lehetőséget.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Már létezik %id azonosítójú távoli rendszer.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>A port egy 1 és 65535 közötti szám.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>A környezet betűkből, számjegyekből, - és _ jelekből álló szó (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>A csoport betűkből, számjegyekből, - és _ jelekből álló szó (nem all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>A hitelesítési adat most nem olvasható: %problem. Mentse a Rendszer &gt; Titkos értékek menüben (vagy állítsa be a változót) az első kihelyezés előtt.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egy FTP-s távoli rendszer csak fájlokat fogad: a kihelyezés oda „Csak átvitel”, és a migrációit ott kézzel kell futtatni.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>A(z) %id távoli rendszer nem szerepel a settings/override/migration.ini.append.php fájlban; ott távolítsa el, ahol be van állítva.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bejelentkezve FTP-n keresztül, és az index.php beolvasva. Egy FTP-s távoli rendszer migrációs állapota nem olvasható.</translation>
     </message>
 </context>
 <context>
@@ -84470,19 +84470,19 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>A(z) %deploy kihelyezés sikertelen volt itt: %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>A(z) %deploy kihelyezés egy kapunál várakozik itt: %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>A(z) %deploy kihelyezés sikeres volt itt: %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezt a levelet a(z) %site küldte, mert a migration.ini [RemoteSettings] Notify[] ezt kéri.</translation>
     </message>
 </context>
 </TS>

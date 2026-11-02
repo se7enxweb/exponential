@@ -81336,15 +81336,15 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjarstøðir</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinar innleggingarnar, sum henda rullar flytingar sínar út til: ein útrulling sendir flytingarnar til valdu fjarstøðirnar og koyrir tær har, allar í senn og samstilt. Ein fjarstøð goymir ongantíð eitt loyndarmál: atgongdarprógv hennara nevnir eitt í Uppseting &gt; Loyndarmál.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nýggj fjarstøð</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Royna sambandið við %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjarstøðirnar</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Upp til %parallel fjarstøðir verða viðgjørdar samstundis; ein fasa kann taka %timeout sekund á hvørjari.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjarstøð</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>stillingar at rætta</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>bert fílur (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-lykil</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>eingin (SSH-agenturin og lyklarnir hjá vertinum)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein útrulling til ein bólk fer til allar fjarstøðir í honum.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Rulla út til fjarstøðir</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eingin fjarstøð er sett upp enn.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjarstøð %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Einki verður sent ella koyrt her: Goym skrivar stillingarnar í settings/override/migration.ini.append.php. Atgongdarprógvið er eitt navn; virði tess verður verandi í Uppseting &gt; Loyndarmál ella í umhvørvinum.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stillingarnar, sum tær eru skrivaðar inn, ikki goymdar enn.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertslykil</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Fjarstøðin</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvussu fjarstøðin eitur, og hvørt umhvørvi hon er.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bókstavir, tøl, - og _, til dømis production1. Tað nevnir fjarstøðina í frágreiðingum og á konsolinum (--remotes=production1) og kann ikki broytast seinni.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Ein útrulling í áfangum gongur ígjøgnum umhvørvini í hesi raðfylgju.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valfrítt, skilt sundur við komma, til dømis production. Ein útrulling til ein bólk fer til allar fjarstøðir í honum.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Sambandið</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvussu fílurnar koma hagar, og hvar innleggingin er.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Umvegis SSH, bert tað, sum er broytt, og ein avbrotin flutningur heldur fram. Besta valið, har rsync er innlagt.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH við scp fyri fílurnar.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH við sftp fyri fílurnar.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bert fílur: flytingarnar verða sendar og lisnar aftur, men kunnu ikki koyrast har.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP umvegis TLS; bert fílur.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein onnur innlegging á hesum ambætaranum, í eini mappu.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eitt vertsnavn ella ein adressa, til dømis node1.example.com. Ikki fyri local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tómt: 22 fyri SSH, 21 fyri FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Rótin á innleggingini har, til dømis /var/www/site (fyri FTP: leiðin, sum FTP-kontan sær).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP-kommandolinja</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI har: php ella ein full leið sum /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Konsolskriptini koyra sum root har</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Bert tá ið brúkarin á fjarstøðini er root (tær verða tá koyrdar við --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Atgongdarprógvið</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvussu henda innleggingin ritar inn har. Bert eitt navn verður goymt.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-agenturin og lyklarnir hjá brúkaranum, sum henda innleggingin koyrir sum (og altíð fyri local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein privatur lykil goymdur sum loyndarmál.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Eitt loyniorð goymt sum loyndarmál (FTP ritar inn við einum).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn á loyndarmáli</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eitt loyndarmál úr Uppseting &gt; Loyndarmál, til dømis deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Ella ein umhvørvisbroytilig</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Broytiligin í ambætaratilgongdini, sum hevur tað, til dømis DEPLOY_KEY (goymd sum env:DEPLOY_KEY). Hon kemur í staðin fyri navnið á loyndarmálinum.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Vertslykilin</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valfrítt, fyri SSH, sftp og rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Fingramerki hjá vertslyklinum</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... sum ssh-keygen -l prentar tað. Við tí má vertin vísa henda lykilin; uttan tað verður lykilin lærdur við fyrsta samband.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Eftirmeting</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Royn sambandið við stillingunum omanfyri, og eftirmet síðan linjurnar, sum verða skrivaðar.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Tak hesa fjarstøð burtur</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stillingar hennara verða tiknar burtur úr settings/override/migration.ini.append.php. Einki broytist á fjarstøðini, og útrullingar hennara verða verandi í søguni.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, tak hesa fjarstøð burtur</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Útrullingar</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein útrulling sendir flytingarnar í hesi innleggingini til valdu fjarstøðirnar og koyrir tær har sum %user, allar í senn og samstilt: hvør fjarstøð verður kannað fyrst, og miseydnast ein, verður hvør fjarstøð, sum hevur nýtt tær, tikin aftur. Hon gongur í bakgrundini, og síða hennara vísir hvørja fjarstøð, meðan hon gongur.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Fjarstøðirnar</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Set kross við fjarstøðir, ein bólk ella bæði.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Rulla út til hana</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Hvussu</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Rulla út</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Send og koyr</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytingarnar verða sendar, kannaðar og koyrdar á hvørjari fjarstøð við einum felags koyringar-id.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Bert flutningur</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Fílurnar verða sendar og kannaðar, einki verður koyrt (einasti mátin fyri eina FTP-fjarstøð).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Í áfangum</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Áfanga fyri áfanga í raðfylgjuni hjá umhvørvunum (dev, stage, beta, production ...): fyrsti áfanginn verður rullaður út, síðan bíðar ein grind, til onkur góðkennir tann næsta. Alt ella einki innan fyri hvønn áfanga.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Bert hesar flytingar</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valfrítt: flytingar-id, skild sundur við komma. Tómt: allar flytingar í heimasíðuni og víðkanum hennara.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Bert forkanning</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, rulla út nú</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Útrullingarnar, sum sendu ella koyrdu okkurt, tann nýggjasta fyrst (ein forkanning goymir onga frágreiðing).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>bert flutningur</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>í áfangum, %stages áfangar</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ikki samstilt</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eingin útrulling enn.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Útrulling %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvør fjarstøð í útrullingini við støðu síni. Ein útrulling, sum er byrjað her, heldur fram í bakgrundini, tá ið henda síðan verður latin aftur; lat síðuna upp aftur fyri at fylgja henni.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Allar útrullingar</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Forkanning</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Næsti áfangi</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanni stillingarnar og atgongdarprógvið</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Forkanning: lesi støðuna á hvørjari fjarstøð</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Sendi flytingarfílurnar</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanni, hvat kom fram</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Koyri flytingarnar á hvørjari fjarstøð</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Taki fjarstøðirnar aftur</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Útrullingin er endað. Lesi frágreiðing hennara.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gongdin kundi ikki fylgjast. Les síðuna inn aftur fyri at síggja, hvussu útrullingin gongur.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fasa</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Henda síðan fylgir útrullingini, meðan hon gongur.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Samstilt</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Áfangar</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>áfangi %stage bíðar við grind sína</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Grind %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>góðkent av %user kl. %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Áfangi</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Sendar fílur</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Kjarnuútgáva</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>nýtt: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>at nýta: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fasur</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Grind: áfangi %stage av %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Áfangarnir undan honum eru rullaðir út. Kanna teir, og góðkenn síðan næsta áfanga: fjarstøðir hansara verða kannaðar aftur og rullaðar út, alt ella einki.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, rulla næsta áfanga út nú</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Tak hesa útrulling aftur</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hvør fjarstøð, sum hevur nýtt hana (%list), fer aftur til støðumyndina, sum varð tikin áðrenn koyring hennara, allar í senn.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ja, tak hesa útrulling aftur nú</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>ætlað</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>flutt</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>rullað út</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>bíðar við eina grind</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>fyrireikað</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>bíðar eftir áfanga sínum</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>fílur sendar</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>kannað</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>miseydnaðist, endurskapaði seg sjálva</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>óbroytt</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ikki rullað út</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>kann ikki náast</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjarstøðin svaraði.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjarstøðin kann ikki brúkast nú.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done liðugar, %pending bíða, %failed miseydnaðust</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Lás</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>ein koyring hevur lásið har</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage av %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vel fjarstøðina, sum skal roynast.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Set fyrst kross við „Ja, tak hesa fjarstøð burtur“.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjarstøðin kundi ikki takast burtur: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjarstøðin kundi ikki goymast: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vel í minsta lagi eina fjarstøð ella ein bólk.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein vald fjarstøð er ikki longur í stillingunum. Les síðuna inn aftur.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Set fyrst kross við „Ja, rulla út nú“.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein FTP-fjarstøð kann ikki koyra flytingar: vel „Bert flutningur“, ella lat hana vera uttanfyri.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytingarnar, sum skulu rullast út, eru flytingar-id, skild sundur við komma.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Útrullingin er enn í gongd. Bíð, til hon endar.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Henda útrulling bíðar ikki við eina grind.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eingin fjarstøð hevur nýtt hesa útrulling: einki er at taka aftur.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Set fyrst kross við „Ja, rulla næsta áfanga út nú“.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Set fyrst kross við „Ja, tak hesa útrulling aftur nú“.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein fjarstøð við id %id er longu til.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Porturin er eitt tal frá 1 til 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Umhvørvið er eitt orð úr bókstavum, tølum, - og _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein bólkur er eitt orð úr bókstavum, tølum, - og _ (ikki all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Atgongdarprógvið kann ikki lesast nú: %problem. Goym tað í Uppseting &gt; Loyndarmál (ella set broytiligu) áðrenn fyrstu útrullingina.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein FTP-fjarstøð tekur bert ímóti fílum: ein útrulling til hana er „Bert flutningur“, og flytingar hennara verða koyrdar har við hond.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjarstøðin %id er ikki í settings/override/migration.ini.append.php; tak hana burtur, har hon er sett.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ritaði inn umvegis FTP og las index.php. Flytingarstøðan hjá eini FTP-fjarstøð kann ikki lesast.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Útrullingin %deploy miseydnaðist á %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Útrullingin %deploy bíðar við eitt portur á %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Útrullingin %deploy eydnaðist á %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesin teldupósturin varð sendur av %site, tí migration.ini [RemoteSettings] Notify[] biður um tað.</translation>
     </message>
 </context>
 </TS>

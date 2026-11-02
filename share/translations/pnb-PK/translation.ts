@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹاں</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>ہور انسٹالیشناں جنہاں ول ایہ اپنیاں مائیگریشناں ڈیپلائے کردی اے: ڈیپلائے مائیگریشناں چنے ہوئے ریموٹاں نوں گھلدا اے تے اوتھے چلاندا اے، سارے اکٹھے تے ہم آہنگ۔ ریموٹ کدی کوئی راز نہیں رکھدا: ایہدی سند سیٹ اپ &gt; خفیہ معلومات وچوں اک دا ناں لیندی اے۔</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>نواں ریموٹ</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id دے کنکشن دی جانچ</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹاں</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>اکو ویلے %parallel ریموٹاں تک اُتے کم ہوندا اے؛ ہر اک اُتے اک مرحلہ %timeout سیکنڈ لے سکدا اے۔</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹ</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ٹھیک کرن والیاں سیٹنگاں</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>صرف فائلاں (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH کنجی</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>کوئی نہیں (ہوسٹ دا SSH ایجنٹ تے کنجیاں)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>کسے گروپ نوں ڈیپلائے اوہدے ہر ریموٹ تک جاندا اے۔</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹاں ول ڈیپلائے کرو</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>حالے کوئی ریموٹ سیٹ اپ نہیں کیتا گیا۔</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹ %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>ایتھے کجھ گھلیا یا چلایا نہیں جاندا: محفوظ کرو سیٹنگاں نوں settings/override/migration.ini.append.php وچ لکھدا اے۔ سند اک ناں اے؛ ایہدی قدر سیٹ اپ &gt; خفیہ معلومات وچ یا ماحول وچ رہندی اے۔</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>سیٹنگاں جیویں درج کیتیاں، حالے محفوظ نہیں۔</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>ہوسٹ کنجی</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. ریموٹ</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹ دا ناں کیہ اے تے ایہ کیہڑا ماحول اے۔</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>اکھر، ہندسے، - تے _، مثال دے طور تے production1۔ ایہ رپورٹاں تے کنسول اُتے (--remotes=production1) ریموٹ دا ناں اے تے بعد وچ بدلیا نہیں جا سکدا۔</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... درجہ وار ڈیپلائے ایسے ترتیب نال ماحولاں وچوں لنگھدا اے۔</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>اپنی مرضی، کامیاں نال وکھ، مثال دے طور تے production۔ کسے گروپ نوں ڈیپلائے اوہدے ہر ریموٹ تک جاندا اے۔</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. کنکشن</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>فائلاں اوتھے کیویں اپڑدیاں نیں، تے انسٹالیشن کتھے اے۔</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH اُتے، صرف جو بدلیا، ٹٹی ہوئی منتقلی فیر شروع ہوندی اے۔ جتھے rsync انسٹال ہووے اوتھے سبھ توں چنگی چوݨ۔</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>فائلاں لئی scp نال SSH۔</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>فائلاں لئی sftp نال SSH۔</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>صرف فائلاں: مائیگریشناں گھلیاں تے واپس پڑھیاں جاندیاں نیں، پر اوتھے چلائیاں نہیں جا سکدیاں۔</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>TLS اُتے FTP؛ صرف فائلاں۔</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>ایس سرور اُتے اک فولڈر وچ کوئی ہور انسٹالیشن۔</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>ہوسٹ دا ناں یا پتہ، مثال دے طور تے node1.example.com۔ local لئی نہیں۔</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>خالی: SSH لئی 22، FTP لئی 21۔</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>اوتھے انسٹالیشن دی جڑ، مثال دے طور تے /var/www/site (FTP لئی: اوہ راہ جو FTP کھاتہ ویکھدا اے)۔</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP کمانڈ لائن</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>اوتھے دا PHP CLI: php، یا پوری راہ جیویں /opt/plesk/php/8.4/bin/php۔</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>کنسول سکرپٹ اوتھے root وجوں چلدے نیں</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>صرف جدوں ریموٹ دا ورتݨ والا root ہووے (فیر اوہ --allow-root-user نال چلائیاں جاندیاں نیں)۔</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. سند</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>ایہ انسٹالیشن اوتھے کیویں سائن ان کردی اے۔ صرف اک ناں محفوظ ہوندا اے۔</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>اوس ورتݨ والے دا SSH ایجنٹ تے کنجیاں جیہدے وجوں ایہ انسٹالیشن چلدی اے (تے local لئی ہمیشہ)۔</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>خفیہ معلومات وجوں رکھی نجی کنجی۔</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>خفیہ معلومات وجوں رکھیا پاس ورڈ (FTP ایہدے نال سائن ان کردا اے)۔</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>راز دا ناں</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>سیٹ اپ &gt; خفیہ معلومات دا اک راز، مثال دے طور تے deploy_production1۔</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>یا اک ماحولی ویری ایبل</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>سرور پراسیس دا اوہ ویری ایبل جیہدے وچ ایہ اے، مثال دے طور تے DEPLOY_KEY (env:DEPLOY_KEY وجوں محفوظ)۔ ایہ راز دے ناں دی تھاں لیندا اے۔</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. ہوسٹ کنجی</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>اپنی مرضی، SSH، sftp تے rsync لئی۔</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>ہوسٹ کنجی دا فنگر پرنٹ</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... جیویں ssh-keygen -l ایہنوں وکھاندا اے۔ ایہدے نال، ہوسٹ نوں ایہو کنجی وکھاݨی پوے گی؛ ایہدے بغیر، کنجی پہلے رابطے تے سکھ لئی جاندی اے۔</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. جائزہ</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>اُتلیاں سیٹنگاں نال کنکشن دی جانچ کرو، فیر لکھیاں جاݨ والیاں سطراں دا جائزہ لوو۔</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ایہ ریموٹ ہٹاؤ</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>ایہدیاں سیٹنگاں settings/override/migration.ini.append.php توں کڈھ دتیاں جاندیاں نیں۔ ریموٹ اُتے کجھ نہیں بدلدا، تے ایہدے ڈیپلائے تریخ وچ رہندے نیں۔</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ہاں، ایہ ریموٹ ہٹاؤ</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>ڈیپلائے</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ڈیپلائے ایس انسٹالیشن دیاں مائیگریشناں چنے ہوئے ریموٹاں نوں گھلدا اے تے اوہناں نوں اوتھے %user وجوں چلاندا اے، سارے اکٹھے تے ہم آہنگ: ہر ریموٹ پہلاں جانچیا جاندا اے، تے جے اک ناکام ہووے تاں ہر اوہ ریموٹ جیہنے لاگو کیتا، واپس لیا جاندا اے۔ ایہ پچھوکڑ وچ چلدا اے، تے ایہدا صفحہ ہر ریموٹ نوں چلدیاں چلدیاں وکھاندا اے۔</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. ریموٹاں</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹاں، اک گروپ، یا دوواں اُتے نشان لاؤ۔</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>ایہدے ول ڈیپلائے کرو</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. کیویں</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ڈیپلائے کرو</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>گھلو تے چلاؤ</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>مائیگریشناں ہر ریموٹ نوں گھلیاں، جانچیاں تے اک سانجھی رن شناخت نال چلائیاں جاندیاں نیں۔</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>صرف منتقلی</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>فائلاں گھلیاں تے جانچیاں جاندیاں نیں، کجھ نہیں چلایا جاندا (FTP ریموٹ لئی اکو اک طریقہ)۔</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>درجہ وار</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>ماحولاں دی ترتیب وچ درجہ بہ درجہ (dev, stage, beta, production ...): پہلا درجہ ڈیپلائے ہوندا اے، فیر اک گیٹ اڈیکدا اے جدوں تک کوئی اگلا منظور نہ کرے۔ ہر درجے دے اندر سارا یا کجھ وی نہیں۔</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>صرف ایہ مائیگریشناں</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>اپنی مرضی: مائیگریشن شناختاں، کامیاں نال وکھ۔ خالی: سائٹ تے اوہدیاں ایکسٹینشناں دی ہر مائیگریشن۔</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>صرف اگاؤں جانچ</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>ہاں، ہُݨ ڈیپلائے کرو</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>اوہ ڈیپلائے جنہاں نے کجھ گھلیا یا چلایا، سبھ توں نواں پہلاں (اگاؤں جانچ کوئی رپورٹ نہیں رکھدی)۔</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>صرف منتقلی</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>درجہ وار، %stages درجے</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ہم آہنگ نہیں</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>حالے کوئی ڈیپلائے نہیں۔</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>ڈیپلائے %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ڈیپلائے دا ہر ریموٹ اپنی حالت نال۔ ایتھے شروع کیتا ڈیپلائے ایہ صفحہ بند ہون تے پچھوکڑ وچ چلدا رہندا اے؛ ایہنوں ویکھن لئی صفحہ فیر کھولو۔</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>سارے ڈیپلائے</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>اگاؤں جانچ</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>اگلا درجہ</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>سیٹنگاں تے سنداں جانچیاں جا رہیاں نیں</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>اگاؤں جانچ: ہر ریموٹ دی حالت پڑھی جا رہی اے</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>مائیگریشن فائلاں گھلیاں جا رہیاں نیں</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>جو اپڑیا اوہدی جانچ ہو رہی اے</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>ہر ریموٹ اُتے مائیگریشناں چل رہیاں نیں</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹ واپس لئے جا رہے نیں</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>ڈیپلائے مک گیا اے۔ ایہدی رپورٹ لوڈ ہو رہی اے۔</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>پیش رفت ویکھی نہیں جا سکی۔ ڈیپلائے دا حال ویکھن لئی صفحہ فیر لوڈ کرو۔</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>مرحلہ</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ایہ صفحہ ڈیپلائے نوں چلدیاں چلدیاں ویکھدا رہندا اے۔</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>ہم آہنگ</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>درجے</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>درجہ %stage اپنے گیٹ اُتے اڈیک وچ اے</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>گیٹ %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user نے %time تے منظور کیتا</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>درجہ</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>گھلیاں فائلاں</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>کرنل ورژن</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>لاگو کیتی: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>لاگو کرنا اے: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>مرحلے</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>گیٹ: %stages وچوں درجہ %stage</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>ایہدے توں پہلاں دے درجے ڈیپلائے ہو چکے نیں۔ اوہناں نوں جانچو، فیر اگلا درجہ منظور کرو: ایہدے ریموٹ فیر جانچے تے ڈیپلائے کیتے جاندے نیں، سارا یا کجھ وی نہیں۔</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>ہاں، اگلا درجہ ہُݨ ڈیپلائے کرو</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>ایہ ڈیپلائے واپس لوو</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>ہر اوہ ریموٹ جیہنے ایہنوں لاگو کیتا (%list) اپنے رن توں پہلاں لئے سنیپ شاٹ ول واپس جاندا اے، سارے اکٹھے۔</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>ہاں، ایہ ڈیپلائے ہُݨ واپس لوو</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>منصوبہ بند</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>منتقل کیتا</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ڈیپلائے ہو گیا</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>گیٹ اُتے اڈیک وچ</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>تیار کیتا</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>اپنے درجے دی اڈیک وچ</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>فائلاں گھل دتیاں</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>جانچیا</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ناکام، اپنے آپ نوں بحال کر لیا</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>بدلیا نہیں</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ڈیپلائے نہیں ہویا</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>اپڑ توں باہر</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹ نے جواب دتا۔</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹ ہُݨ ورتیا نہیں جا سکدا۔</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done مکمل، %pending زیر التوا، %failed ناکام</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>تالا</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>اوتھے اک رن نے تالا لایا ہویا اے</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stages وچوں %stage</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>جانچ لئی ریموٹ چنو۔</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>پہلاں “ہاں، ایہ ریموٹ ہٹاؤ” اُتے نشان لاؤ۔</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹ ہٹایا نہیں جا سکیا: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹ محفوظ نہیں کیتا جا سکیا: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>گھٹ توں گھٹ اک ریموٹ یا گروپ چنو۔</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>اک چنیا ہویا ریموٹ ہُݨ سیٹنگاں وچ نہیں۔ صفحہ فیر لوڈ کرو۔</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>پہلاں “ہاں، ہُݨ ڈیپلائے کرو” اُتے نشان لاؤ۔</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ریموٹ مائیگریشناں نہیں چلا سکدا: “صرف منتقلی” چنو، یا ایہنوں چھڈ دیو۔</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>ڈیپلائے کرن والیاں مائیگریشناں مائیگریشن شناختاں نیں، کامیاں نال وکھ۔</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>ڈیپلائے حالے چل رہیا اے۔ ایہدے مکن دی اڈیک کرو۔</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>ایہ ڈیپلائے کسے گیٹ اُتے نہیں اڈیکدا۔</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>کسے ریموٹ نے ایہ ڈیپلائے لاگو نہیں کیتا: واپس لین لئی کجھ نہیں۔</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>پہلاں “ہاں، اگلا درجہ ہُݨ ڈیپلائے کرو” اُتے نشان لاؤ۔</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>پہلاں “ہاں، ایہ ڈیپلائے ہُݨ واپس لوو” اُتے نشان لاؤ۔</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>شناخت %id والا ریموٹ پہلاں ای موجود اے۔</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>پورٹ 1 توں 65535 تک دا اک نمبر اے۔</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>ماحول اکھراں، ہندسیاں، - تے _ دا اک لفظ اے (alpha, dev, stage, beta, production ...)۔</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>گروپ اکھراں، ہندسیاں، - تے _ دا اک لفظ اے (all نہیں): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>سند ہُݨ پڑھی نہیں جا سکدی: %problem۔ پہلے ڈیپلائے توں پہلاں ایہنوں سیٹ اپ &gt; خفیہ معلومات وچ محفوظ کرو (یا ویری ایبل سیٹ کرو)۔</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP ریموٹ صرف فائلاں لیندا اے: ایہدے ول ڈیپلائے “صرف منتقلی” ہوندا اے، تے ایہدیاں مائیگریشناں اوتھے ہتھ نال چلائیاں جاندیاں نیں۔</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>ریموٹ %id settings/override/migration.ini.append.php وچ نہیں اے؛ ایہنوں اوتھے ای ہٹاؤ جتھے ایہ سیٹ کیتا گیا اے۔</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP اُتے سائن ان کیتا تے index.php پڑھی۔ FTP ریموٹ دی مائیگریشن حالت پڑھی نہیں جا سکدی۔</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site اتے ڈیپلائے %deploy ناکام ہو گیا</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site اتے ڈیپلائے %deploy اک گیٹ تے اڈیک رہیا اے</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>%site اتے ڈیپلائے %deploy کامیاب ہو گیا</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>ایہہ میل %site نے گھلی اے، کیونجے migration.ini [RemoteSettings] Notify[] ایہدی منگ کردا اے۔</translation>
     </message>
 </context>
 </TS>

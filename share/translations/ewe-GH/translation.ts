@@ -81336,15 +81336,15 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Didiƒetɔwo</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoɖo bubu siwo gbɔ ɖoɖo sia ɖoa eƒe ʋuʋuwo ɖe dɔ me le: dɔmeɖoɖo ɖoa ʋuʋuawo ɖe didiƒetɔ siwo wotia la gbɔ eye wòwɔa wo le afima, wo katã ɣeyiɣi ɖeka me eye le ɖeka me. Didiƒetɔ melé nya ɣaɣla aɖeke ɖe asi gbeɖe o: eƒe gedeeme ƒe kpeɖodzinua yɔa nya ɣaɣla ɖeka le Ɖoɖowɔwɔ &gt; Nuviwo me.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Didiƒetɔ yeye</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id ƒe kadodo dodokpɔ</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Didiƒetɔawo</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wowɔa dɔ le didiƒetɔ %parallel gbɔ ɣeyiɣi ɖeka me le gãƒe; akpa ɖeka ate ŋu axɔ sekend %timeout le ɖesiaɖe dzi.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Didiƒetɔ</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ɖoɖo siwo woaɖɔ ɖo</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>faɛlwo ko (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH ƒe safui</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>naneke (host ƒe SSH agent kple safuiwo)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dɔmeɖoɖo na ƒuƒoƒo aɖe yia eƒe didiƒetɔ ɖesiaɖe gbɔ.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoe ɖe dɔ me le didiƒetɔwo gbɔ</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Woɖo didiƒetɔ aɖeke haɖe o.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Didiƒetɔ %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Womeɖoa naneke ɖa alo wɔa naneke le afi sia o: Dzra ɖo ŋlɔa ɖoɖoawo ɖe settings/override/migration.ini.append.php me. Gedeeme ƒe kpeɖodzinua nye ŋkɔ; eƒe asixɔxɔ susɔna ɖe Ɖoɖowɔwɔ &gt; Nuviwo me alo le nɔƒea me.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoɖoawo abe alesi woŋlɔ wo ene, womedzra wo ɖo haɖe o.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Host ƒe safui</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Didiƒetɔa</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ŋkɔ si wotsɔna yɔa didiƒetɔa kple nɔƒe si wònye.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuŋlɔdzesiwo, xexlẽdzesiwo, - kple _, le kpɔɖeŋu me production1. Eyae nye didiƒetɔa ƒe ŋkɔ le nyatakakawo me kple le console dzi (--remotes=production1) eye womate ŋu atrɔe emegbe o.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Dɔmeɖoɖo le ɖoƒewo me toa nɔƒeawo me le ɖoɖo sia nu.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne èlɔ̃, wotsɔ koma ma wo dome, le kpɔɖeŋu me production. Dɔmeɖoɖo na ƒuƒoƒo aɖe yia eƒe didiƒetɔ ɖesiaɖe gbɔ.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Kadodoa</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alesi faɛlawo yia afima, kple afi si ɖoɖoa le.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>To SSH dzi, nu si trɔ ko, eye wogayia tsɔtsɔyi si nyã la dzi. Tiatia nyuitɔ le afi si wode rsync ɖo.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH kple scp na faɛlwo.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH kple sftp na faɛlwo.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Faɛlwo ko: woɖoa ʋuʋuawo ɖa eye wogaxlẽa wo, gake womate ŋu awɔ wo le afima o.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP to TLS dzi; faɛlwo ko.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoɖo bubu le sɛva sia dzi, le faɛldzraɖoƒe aɖe me.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Host ƒe ŋkɔ alo adrɛs, le kpɔɖeŋu me node1.example.com. Menye na local o.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ƒuƒlu: 22 na SSH, 21 na FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoɖoa ƒe ke le afima, le kpɔɖeŋu me /var/www/site (na FTP: mɔ si FTP ƒe akɔnta kpɔna).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP ƒe sededefli</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI si le afima: php, alo mɔ bliboa abe /opt/plesk/php/8.4/bin/php ene.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Console ƒe sedenuwo wɔa dɔ abe root ene le afima</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne didiƒetɔa ƒe zãla nye root ko (ekema wowɔa wo kple --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Gedeeme ƒe kpeɖodzinua</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alesi ɖoɖo sia gena ɖe eme le afima. Ŋkɔ ko wodzrana ɖo.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Zãla si ƒe ŋkɔ me ɖoɖo sia wɔa dɔ le ƒe SSH agent kple safuiwo (eye ɣesiaɣi na local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ame ŋutɔ ƒe safui si wodzra ɖo abe nya ɣaɣla ene.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Mɔxenya si wodzra ɖo abe nya ɣaɣla ene (FTP tsɔnɛ gena ɖe eme).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nya ɣaɣla ƒe ŋkɔ</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nya ɣaɣla aɖe tso Ɖoɖowɔwɔ &gt; Nuviwo me, le kpɔɖeŋu me deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Alo nɔƒe ƒe tɔtrɔnu</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sɛva ƒe dɔwɔwɔ ƒe tɔtrɔnu si me wòle, le kpɔɖeŋu me DEPLOY_KEY (wodzrae ɖo abe env:DEPLOY_KEY ene). Exɔa nya ɣaɣla ƒe ŋkɔ ƒe teƒe.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Host ƒe safuia</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne èlɔ̃, na SSH, sftp kple rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Host ƒe safui ƒe asidzesi</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... abe alesi ssh-keygen -l taa ene. Ne ele eme la, ele be host la naɖe safui sia afia; ne mele eme o la, wosrɔ̃a safuia le kadodo gbãtɔ me.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Kpɔ ɖe eŋu</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Te kadodoa kpɔ kple ɖoɖo siwo le etame, emegbe kpɔ fli siwo woaŋlɔ la ɖa.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖe didiƒetɔ sia ɖa</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Woɖea eƒe ɖoɖowo ɖa le settings/override/migration.ini.append.php me. Naneke metrɔna le didiƒetɔa gbɔ o, eye eƒe dɔmeɖoɖowo susɔna ɖe ŋutinya me.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɛ̃, ɖe didiƒetɔ sia ɖa</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Dɔmeɖoɖowo</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dɔmeɖoɖo ɖoa ʋuʋu siwo le ɖoɖo sia me ɖe didiƒetɔ siwo wotia la gbɔ eye wòwɔa wo le afima abe %user ene, wo katã ɣeyiɣi ɖeka me eye le ɖeka me: wokpɔa didiƒetɔ ɖesiaɖe gbã, eye ne ɖeka mede edzi o la, wogbugbɔa didiƒetɔ ɖesiaɖe si wɔ eŋudɔ. Eyina edzi le megbe, eye eƒe axa fiaa didiƒetɔ ɖesiaɖe esime wòle edzi yim.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Didiƒetɔawo</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tia didiƒetɔwo, ƒuƒoƒo aɖe, alo wo eve siaa.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoe ɖe dɔ me le afima</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Aleke</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoe ɖe dɔ me</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoe ɖa eye nàwɔe</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Woɖoa ʋuʋuawo ɖe didiƒetɔ ɖesiaɖe gbɔ, kpɔa wo ɖa eye wowɔa wo kple wɔwɔ ƒe Id ɖeka si wo katã ma.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsɔe yi ko</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Woɖoa faɛlawo ɖa eye wokpɔa wo ɖa, womewɔa naneke o (mɔ ɖeka kolia na FTP didiƒetɔ).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Le ɖoƒewo me</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoƒe ɖeka ɖeka le nɔƒewo ƒe ɖoɖo nu (dev, stage, beta, production ...): woɖoa ɖoƒe gbãtɔ ɖe dɔ me, emegbe agbo aɖe lalana va se ɖe esime ame aɖe alɔ̃ ɖe esi kplɔe ɖo dzi. Wo katã alo naneke o le ɖoƒe ɖesiaɖe me.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Ʋuʋu siawo ko</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne èlɔ̃: ʋuʋuwo ƒe Id, wotsɔ koma ma wo dome. Ƒuƒlu: nyatakakadzraɖoƒea kple eƒe tsɔtsɔkpewo ƒe ʋuʋu ɖesiaɖe.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodokpɔ gbãtɔ ko</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɛ̃, ɖoe ɖe dɔ me fifia</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Dɔmeɖoɖo siwo ɖo nane ɖa alo wɔ nane, yeyetɔ gbã (dodokpɔ gbãtɔ medzraa nyatakaka ɖo o).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>tsɔe yi ko</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>le ɖoƒewo me, ɖoƒe %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>mele ɖeka me o</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dɔmeɖoɖo aɖeke meli haɖe o.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Dɔmeɖoɖo %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dɔmeɖoɖoa ƒe didiƒetɔ ɖesiaɖe kple eƒe nɔnɔme. Dɔmeɖoɖo si wodze egɔme le afi sia yia edzi le megbe ne wotu axa sia; ʋu axaa ake be nàkplɔe ɖo.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Dɔmeɖoɖowo katã</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodokpɔ gbãtɔ</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoƒe si kplɔe ɖo</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Wole ɖoɖoawo kple gedeeme ƒe kpeɖodzinuawo kpɔm</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodokpɔ gbãtɔ: wole didiƒetɔ ɖesiaɖe ƒe nɔnɔme xlẽm</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Wole ʋuʋu ƒe faɛlwo ɖom ɖa</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Wole nu si va ɖo kpɔm ɖa</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Wole ʋuʋuawo wɔm le didiƒetɔ ɖesiaɖe dzi</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Wole didiƒetɔawo gbugbɔm</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dɔmeɖoɖoa wu enu. Wole eƒe nyatakaka hem vɛ.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Womete ŋu kplɔ ŋgɔyiyia ɖo o. Gahe axaa vɛ be nàkpɔ alesi dɔmeɖoɖoa le edzi yim.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Akpa</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Axa sia kplɔa dɔmeɖoɖoa ɖo esime wòle edzi yim.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Le ɖeka me</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoƒewo</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ɖoƒe %stage le lalam le eƒe agbo nu</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Agbo %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>%user lɔ̃ ɖe edzi le %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoƒe</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Faɛl siwo woɖo ɖa</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Kernel ƒe ɖeɖe</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>wowɔ eŋudɔ: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>woawɔ eŋudɔ: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Akpawo</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Agbo: ɖoƒe %stage le %stages me</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Woɖo ɖoƒe siwo do ŋgɔ nɛ ɖe dɔ me. Kpɔ wo ɖa, emegbe lɔ̃ ɖe ɖoƒe si kplɔe ɖo dzi: wogakpɔa eƒe didiƒetɔwo ɖa eye woɖoa wo ɖe dɔ me, wo katã alo naneke o.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɛ̃, ɖo ɖoƒe si kplɔe ɖo ɖe dɔ me fifia</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Gbugbɔ dɔmeɖoɖo sia ɖe megbe</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Didiƒetɔ ɖesiaɖe si wɔ eŋudɔ (%list) trɔna yia nɔnɔmefoto si woɖe do ŋgɔ na eƒe wɔwɔa gbɔ, wo katã ɣeyiɣi ɖeka me.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɛ̃, gbugbɔ dɔmeɖoɖo sia ɖe megbe fifia</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>woɖo eŋu ɖoɖo</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>wotsɔe yi</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>woɖoe ɖe dɔ me</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>le lalam le agbo aɖe nu</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>wodzrae ɖo</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>le eƒe ɖoƒe lalam</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>woɖo faɛlwo ɖa</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>wokpɔe ɖa</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>mede edzi o, egaɖo eɖokui anyi</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>metrɔ o</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>womeɖoe ɖe dɔ me o</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>womate ŋu aɖo egbɔ o</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Didiƒetɔa ɖo eŋu.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Womate ŋu azã didiƒetɔa fifia o.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done wowɔe nu, %pending le lalam, %failed mede edzi o</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Mɔxexe</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>wɔwɔ aɖe lé mɔxexea ɖe asi le afima</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage le %stages me</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tia didiƒetɔ si nàte kpɔ.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tia “Ɛ̃, ɖe didiƒetɔ sia ɖa” gbã.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Womete ŋu ɖe didiƒetɔa ɖa o: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Womete ŋu dzra didiƒetɔa ɖo o: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tia didiƒetɔ alo ƒuƒoƒo ɖeka ya teti.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Didiƒetɔ aɖe si wotia mele ɖoɖoawo me azɔ o. Gahe axaa vɛ.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tia “Ɛ̃, ɖoe ɖe dɔ me fifia” gbã.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP didiƒetɔ mate ŋu awɔ ʋuʋuwo o: tia “Tsɔe yi ko”, alo ɖe eɖa.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ʋuʋu siwo woaɖo ɖe dɔ me nye ʋuʋuwo ƒe Id, wotsɔ koma ma wo dome.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dɔmeɖoɖoa gale edzi yim. Lala va se ɖe esime wòawu enu.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dɔmeɖoɖo sia melalana le agbo aɖeke nu o.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Didiƒetɔ aɖeke mewɔ dɔmeɖoɖo sia ŋudɔ o: naneke meli si woagbugbɔ ɖe megbe o.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tia “Ɛ̃, ɖo ɖoƒe si kplɔe ɖo ɖe dɔ me fifia” gbã.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tia “Ɛ̃, gbugbɔ dɔmeɖoɖo sia ɖe megbe fifia” gbã.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Didiƒetɔ si ƒe Id nye %id li xoxo.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Port la nye xexlẽdzesi tso 1 va ɖo 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Nɔƒea nye nya si wotsɔ nuŋlɔdzesiwo, xexlẽdzesiwo, - kple _ wɔ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ƒuƒoƒo nye nya si wotsɔ nuŋlɔdzesiwo, xexlẽdzesiwo, - kple _ wɔ (menye all o): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Womate ŋu axlẽ gedeeme ƒe kpeɖodzinua fifia o: %problem. Dzrae ɖo ɖe Ɖoɖowɔwɔ &gt; Nuviwo me (alo ɖo tɔtrɔnua) do ŋgɔ na dɔmeɖoɖo gbãtɔ.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP didiƒetɔ xɔa faɛlwo ko: dɔmeɖoɖo na eya nye “Tsɔe yi ko”, eye wotsɔa asi wɔa eƒe ʋuʋuwo le afima.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Didiƒetɔ %id mele settings/override/migration.ini.append.php me o; ɖee ɖa le afi si woɖoe ɖo.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wode eme to FTP dzi eye woxlẽ index.php. Womate ŋu axlẽ FTP didiƒetɔ ƒe ʋuʋu ƒe nɔnɔme o.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoe ɖe dɔ me %deploy mede edzi o le %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoe ɖe dɔ me %deploy le lalam le agbo aɖe nu le %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɖoe ɖe dɔ me %deploy dze edzi le %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>%site ye ɖo agbalẽ sia ɖe esi migration.ini [RemoteSettings] Notify[] bia be woaɖoe ta.</translation>
     </message>
 </context>
 </TS>

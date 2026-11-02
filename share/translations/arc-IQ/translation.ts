@@ -81345,15 +81345,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרי רחיקי</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>תקוני אחרני דהדין משלם להון שוניא דיליה: משלמנותא משדרא שוניא לאתרי רחיקי גביי ומרהטא להון תמן, כולהון כחדא ושוין. אתרא רחיקא לעלם לא אחיד ארזא: סהדותא דעללא דילה מזכרא חד בטויבא &gt; ארזא.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא רחיקא חדתא</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81361,19 +81361,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>בוחרנא דחוברא ד־%id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרי רחיקי</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>עד %parallel אתרי רחיקי מתעבדין בחד זבנא; חולקא חד יכיל למסב %timeout שניין בכל חד.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא רחיקא</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81389,15 +81389,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>טויבא לתקנא</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>פנקיאתא בלחוד (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>קלידא ד־SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81405,7 +81405,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ליכא (סוכנא ד־SSH וקלידא דמתחמא)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81413,23 +81413,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>משלמנותא לכנושתא אזלא לכל אתרא רחיקא דילה.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>אשלם לאתרי רחיקי</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>עד כען ליכא אתרא רחיקא מתקן.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא רחיקא %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>מדעם לא משתדר ולא מתרהט הכא: נטרא כתב טויבא ל־settings/override/migration.ini.append.php. סהדותא דעללא היא שמא; טימה קאים בטויבא &gt; ארזא או בסביבותא.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81437,7 +81437,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>טויבא כמא דאתכתבו, עד כען לא נטירין.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81465,15 +81465,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>קלידא דמתחמא</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. אתרא רחיקא</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>מא שמיה דאתרא רחיקא ואידא סביבותא היא.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81481,47 +81481,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>אתוותא, מניני, - ו־_, למתלא production1. הוא שמא דאתרא רחיקא במשתעייתא ובקונסולא (--remotes=production1) ולא משתני לבתר.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... משלמנותא במעלי עברא בסביבתא בהדין סדרא.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>לא מחייב, פרישין בפסיקי, למתלא production. משלמנותא לכנושתא אזלא לכל אתרא רחיקא דילה.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. חוברא</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>איכנא פנקיאתא מטין לתמן, ואן תקונא.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>על SSH, בלחוד מאי דאשתני, העברא דאתברת משריא תוב. גביתא טבתא היכא ד־rsync מתקן.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH עם scp לפנקיאתא.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH עם sftp לפנקיאתא.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>פנקיאתא בלחוד: שוניא משתדרין ומתקרין תוב, ברם לא מתרהטין תמן.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP על TLS; פנקיאתא בלחוד.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>תקונא אחרינא בהדין משמשנא, בגו תיקא.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81529,7 +81529,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>שמא דמתחמא או מונעא, למתלא node1.example.com. לא ל־local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81537,7 +81537,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>ריקנא: 22 ל־SSH, 21 ל־FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81549,31 +81549,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>עקרא דתקונא תמן, למתלא /var/www/site (ל־FTP: שבילא דחשבונא ד־FTP חזי).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>שורתא דפקודי PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI דתמן: php, או שבילא שלמא כגון /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>כתבי קונסולא רהטין תמן כ־root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>בלחוד כד מפלחנא דאתרא רחיקא הוא root (הינון מתרהטין הידין עם --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. סהדותא דעללא</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>איכנא הדין תקונא עאל תמן. שמא בלחוד מתנטר.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81581,23 +81581,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>סוכנא ד־SSH וקלידא דמפלחנא דהדין תקונא רהט בשמיה (ותדירא ל־local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>קלידא פרישא נטירא כארזא.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>מלתא דעברא נטירא כארזא (FTP עאל בה).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>שמא דארזא</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>ארזא מן טויבא &gt; ארזא, למתלא deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81605,247 +81605,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>או משתנא דסביבותא</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>משתנא דעובדא דמשמשנא דאחיד לה, למתלא DEPLOY_KEY (נטיר כ־env:DEPLOY_KEY). הוא קאים בדוך שמא דארזא.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. קלידא דמתחמא</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>לא מחייב, ל־SSH, sftp ו־rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>רושמא דקלידא דמתחמא</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... היכמא ד־ssh-keygen -l כתב לה. עמה, מתחמא מחויב לחואה הדין קלידא; בלאה, קלידא מתילף בפגעתא קדמיתא.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. בוחרנא חריא</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>בדוק חוברא עם טויבא דלעל, ובתר כן חזי שורתא דמתכתבן.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>שקול הדין אתרא רחיקא</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>טויבא דילה מתנסבין מן settings/override/migration.ini.append.php. מדעם לא משתני באתרא רחיקא, ומשלמנואתא דילה קיימין בתשעיתא.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>אין, שקול הדין אתרא רחיקא</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>משלמנואתא</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>משלמנותא משדרא שוניא דהדין תקונא לאתרי רחיקי גביי ומרהטא להון תמן כ־%user, כולהון כחדא ושוין: כל אתרא רחיקא מתבדק קדמאית, וכד חד לא אצלח, כל אתרא רחיקא דעבד מתהדר. היא אזלא בגו, ודפהא מחויא כל אתרא רחיקא כד היא אזלא.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. אתרי רחיקי</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>סמן אתרי רחיקי, כנושתא, או תרויהון.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>אשלם לתמן</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. איכנא</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>אשלם</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>שדר ורהט</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>שוניא משתדרין, מתבדקין ומתרהטין בכל אתרא רחיקא עם ID חד דרהטא משותף.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>העברא בלחוד</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>פנקיאתא משתדרין ומתבדקין, מדעם לא מתרהט (אורחא יחידאה לאתרא רחיקא ד־FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>במעלי</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>מעלתא בתר מעלתא בסדרא דסביבתא (dev, stage, beta, production ...): מעלתא קדמיתא משתלמא, ובתר כן תרעא מסכי עד דאנש משרר לדבתרה. כולא או לא מדעם בגו כל מעלתא.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>הלין שוניא בלחוד</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>לא מחייב: ID דשוניא, פרישין בפסיקי. ריקנא: כל שוניא דאתרא ודתוספתא דילה.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>בוחרנא קדמאה בלחוד</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>אין, אשלם השתא</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>משלמנואתא דשדרו או רהטו מדעם, חדתא קדמאה (בוחרנא קדמאה לא נטר משתעיתא).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>העברא בלחוד</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>במעלי, %stages מעלי</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>לא שוין</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>עד כען ליכא משלמנותא.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>משלמנותא %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>כל אתרא רחיקא דמשלמנותא עם מקמיה. משלמנותא דשריא הכא אזלא בגו כד הדין דפא מסתכר; פתח דפא תוב למיזל בתרה.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>כל משלמנואתא</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>בוחרנא קדמאה</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>מעלתא דבתר</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>בדקין טויבא וסהדוואתא דעללא</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>בוחרנא קדמאה: קרין מקמא דכל אתרא רחיקא</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>משדרין פנקיאתא דשוניא</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>בדקין מאי דמטא</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>מרהטין שוניא בכל אתרא רחיקא</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>מהדרין אתרי רחיקי</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>משלמנותא סלקת. טעינין משתעיתא דילה.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>לא אתמצי למיזל בתר מיזל לקדמא. טעין תוב דפא למחזי איכנא משלמנותא אזלא.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>חולקא</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>הדין דפא אזל בתר משלמנותא כד היא אזלא.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>שוין</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>מעלי</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>מעלתא %stage מסכיא בתרעה</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>תרעא %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>אשתרר על ידי %user ב־%time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>מעלתא</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>פנקיאתא דאשתדרו</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>מהדורתא דקרנל</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>אתעביד: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>לעבדא: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>חולקי</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>תרעא: מעלתא %stage מן %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>מעלי דקדמה משתלמן. בדוק יתהון, ובתר כן שרר מעלתא דבתר: אתרי רחיקי דילה מתבדקין תוב ומשתלמין, כולא או לא מדעם.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81853,7 +81853,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>אין, אשלם השתא מעלתא דבתר</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81861,31 +81861,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>אהדר הדא משלמנותא לאחורא</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>כל אתרא רחיקא דעבדה (%list) הדר לצלמא דאתנסיב קדם רהטיה, כולהון כחדא.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>אין, אהדר הדא משלמנותא לאחורא השתא</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>מסדר</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>אתעבר</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>אשתלם</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>מסכי בתרעא</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81893,7 +81893,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>מטיב</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81901,51 +81901,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>מסכי למעלתיה</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>פנקיאתא אשתדרו</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>אתבדק</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>לא אצלח, אהדר נפשיה</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>לא אשתני</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>לא אשתלם</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>לא ממטיא</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא רחיקא ענא.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא רחיקא לא מתחשח השתא.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done גמירא, %pending מסכיא, %failed לא אצלח</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>מנעולא</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>רהטא אחיד מנעולא תמן</translation>
     </message>
     <message>
         <source>free</source>
@@ -81953,23 +81953,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage מן %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>בחר אתרא רחיקא לבוחרנא.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>סמן קדמאית “אין, שקול הדין אתרא רחיקא”.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא רחיקא לא אשתקל: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא רחיקא לא אתנטר: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81977,75 +81977,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>בחר לכל הפחות אתרא רחיקא חד או כנושתא.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא רחיקא גביא לא איתוהי תוב בטויבא. טעין תוב דפא.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>סמן קדמאית “אין, אשלם השתא”.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא רחיקא ד־FTP לא יכיל לרהטא שוניא: בחר “העברא בלחוד”, או שבוק יתה לברא.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>שוניא לאשלמא הינון ID דשוניא, פרישין בפסיקי.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>משלמנותא עדיין אזלא. סכי עד דתסוף.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>הדא משלמנותא לא מסכיא בתרעא.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>ליכא אתרא רחיקא דעבד הדא משלמנותא: ליכא מדעם לאהדרא לאחורא.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>סמן קדמאית “אין, אשלם השתא מעלתא דבתר”.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>סמן קדמאית “אין, אהדר הדא משלמנותא לאחורא השתא”.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא רחיקא עם ID %id איתוהי כבר.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>פורט הוא מנינא מן 1 עד 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>סביבותא היא מלתא מן אתוותא, מניני, - ו־_ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>כנושתא היא מלתא מן אתוותא, מניני, - ו־_ (לא all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>סהדותא דעללא לא מתקריא השתא: %problem. נטר יתה בטויבא &gt; ארזא (או קבע משתנא) קדם משלמנותא קדמיתא.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא רחיקא ד־FTP מקבל פנקיאתא בלחוד: משלמנותא לה היא “העברא בלחוד”, ושוניא דילה מתרהטין תמן בידא.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>אתרא רחיקא %id לא איתוהי ב־settings/override/migration.ini.append.php; שקול יתה היכא דמתקבע.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>עאל על FTP וקרא index.php. מקמא דשוניא דאתרא רחיקא ד־FTP לא מתקרי.</translation>
     </message>
 </context>
 <context>
@@ -84449,19 +84449,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>אשלמתא %deploy לא אצלחת על %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>אשלמתא %deploy מסכיא בתרעא על %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>אשלמתא %deploy אצלחת על %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>הנא אגרתא אשתדרת מן %site מטל דבעא לה migration.ini [RemoteSettings] Notify[].</translation>
     </message>
 </context>
 </TS>

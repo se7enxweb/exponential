@@ -81336,15 +81336,15 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngā pae mamao</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngā tāutanga kē e tukuna ai e tēnei ōna hekenga: ka tukuna e te tukunga ngā hekenga ki ngā pae mamao i kōwhiria, ā, ka whakahaerehia ki reira, i te wā kotahi, ā, i te ōrite. Kāore rawa tētahi pae mamao e pupuri i tētahi mea muna: ka tapaina e tōna tohu tuakiri tētahi i Whakaritenga &gt; Ngā mea muna.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Pae mamao hou</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Whakamātau hononga o %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngā pae mamao</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ka mahia ngā pae mamao e %parallel te nui i te wā kotahi; ka roa pea tētahi wāhanga kia %timeout hēkona i ia pae.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Pae mamao</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>ngā tautuhinga hei whakatika</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>ngā kōnae anake (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Kī SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>kore (te kaihoko SSH me ngā kī o te kaihautū)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ka tae te tukunga ki tētahi rōpū ki ia pae mamao o taua rōpū.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuku ki ngā pae mamao</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kāore anō he pae mamao kua whakaritea.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Pae mamao %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kāore he mea e tukuna, e whakahaerehia rānei i konei: ka tuhi a Tiaki i ngā tautuhinga ki settings/override/migration.ini.append.php. He ingoa te tohu tuakiri; ka noho tōna uara ki Whakaritenga &gt; Ngā mea muna, ki te taiao rānei.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngā tautuhinga pērā i tā i whakauruhia, kāore anō kia tiakina.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Kī kaihautū</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Te pae mamao</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>He aha te ingoa o te pae mamao, ā, ko tēhea taiao.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngā pū, ngā mati, te - me te _, hei tauira production1. Ko te ingoa tēnei o te pae mamao i ngā pūrongo me te papatohu (--remotes=production1), ā, kāore e taea te panoni ā muri ake.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Ka haere tētahi tukunga ā-taumata i ngā taiao i tēnei raupapa.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kōwhiringa, ka wehea ki ngā piko, hei tauira production. Ka tae te tukunga ki tētahi rōpū ki ia pae mamao o taua rōpū.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Te hononga</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Me pēhea te tae o ngā kōnae ki reira, ā, kei hea te tāutanga.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mā SSH, ko ngā mea i panoni anake, ka haere tonu tētahi whakawhitinga i motu. Te kōwhiringa pai rawa ki te wāhi kua tāutahia a rsync.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH me scp mō ngā kōnae.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH me sftp mō ngā kōnae.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngā kōnae anake: ka tukuna ngā hekenga, ka pānuitia anō, engari kāore e taea te whakahaere ki reira.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP mā TLS; ngā kōnae anake.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>He tāutanga kē i tēnei tūmau, i roto i tētahi kōpaki.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>He ingoa kaihautū, he wāhitau rānei, hei tauira node1.example.com. Ehara mō local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kau: 22 mō SSH, 21 mō FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Te pūtake o te tāutanga ki reira, hei tauira /var/www/site (mō FTP: te ara e kitea ana e te pūkete FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Rārangi tono PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>Te PHP CLI ki reira: php, he ara katoa rānei pērā i /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Ka whakahaere ngā hōtuhi papatohu ki reira hei root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ina ko root anake te kaiwhakamahi o te pae mamao (ka whakahaerehia ki --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Te tohu tuakiri</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Me pēhea te takiuru a tēnei tāutanga ki reira. He ingoa anake ka tiakina.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Te kaihoko SSH me ngā kī o te kaiwhakamahi e whakahaere ana i tēnei tāutanga (ā, i ngā wā katoa mō local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>He kī tūmataiti e puritia ana hei mea muna.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>He kupuhipa e puritia ana hei mea muna (ka takiuru te FTP ki tētahi).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingoa o te mea muna</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>He mea muna o Whakaritenga &gt; Ngā mea muna, hei tauira deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>He taurangi taiao rānei</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Te taurangi o te tukanga tūmau e pupuri ana i a ia, hei tauira DEPLOY_KEY (ka tiakina hei env:DEPLOY_KEY). Ka whakakapi i te ingoa o te mea muna.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Te kī kaihautū</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kōwhiringa, mō SSH, sftp me rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Matihao o te kī kaihautū</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... pērā i tā ssh-keygen -l e tā ai. Mēnā kei reira, me whakaatu te kaihautū i tēnei kī; ki te kore, ka akona te kī i te whakapānga tuatahi.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Arotake</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Whakamātauria te hononga ki ngā tautuhinga i runga ake, kātahi ka arotake i ngā rārangi ka tuhia.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Tangohia tēnei pae mamao</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ka tangohia ōna tautuhinga i settings/override/migration.ini.append.php. Kāore he mea e panoni i te pae mamao, ā, ka noho tonu ōna tukunga ki te hītori.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Āe, tangohia tēnei pae mamao</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngā tukunga</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ka tukuna e te tukunga ngā hekenga o tēnei tāutanga ki ngā pae mamao i kōwhiria, ā, ka whakahaerehia ki reira hei %user, i te wā kotahi, ā, i te ōrite: ka tirotirohia ia pae mamao i te tuatahi, ā, ki te rahua tētahi, ka tangohia whakamuri ia pae mamao i whakamahi. Ka haere tonu i muri, ā, ka whakaatu tōna whārangi i ia pae mamao i a ia e haere ana.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Ngā pae mamao</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tohua ngā pae mamao, tētahi rōpū, ngā mea e rua rānei.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Tukuna ki reira</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Me pēhea</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuku</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Tukuna, whakahaerehia</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ka tukuna, ka manatokohia, ka whakahaerehia ngā hekenga i ia pae mamao me tētahi tautohu whakahaerenga kotahi e tiritiria ana.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Whakawhiti anake</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ka tukuna, ka manatokohia ngā kōnae, kāore he mea e whakahaerehia (te huarahi anake mō tētahi pae mamao FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Ā-taumata</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Taumata i muri i te taumata, i te raupapa o ngā taiao (dev, stage, beta, production ...): ka tukuna te taumata tuatahi, kātahi ka tatari tētahi kēti kia whakamanatia e tētahi te taumata e whai ake. Te katoa, te kore rānei i roto i ia taumata.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Ēnei hekenga anake</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kōwhiringa: ngā tautohu hekenga, ka wehea ki ngā piko. Kau: ia hekenga o te pae me ōna toronga.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Arowhai tōmua anake</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Āe, tukuna ināianei</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngā tukunga i tuku, i whakahaere rānei i tētahi mea, ko te mea hou rawa i te tuatahi (kāore he pūrongo e puritia e tētahi arowhai tōmua).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>whakawhiti anake</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ā-taumata, %stages taumata</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>kāore i te ōrite</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kāore anō he tukunga.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Tukunga %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ia pae mamao o te tukunga me tōna āhua. Ka haere tonu i muri tētahi tukunga i tīmata i konei ina katia tēnei whārangi; whakatuwherahia anō te whārangi hei whai i a ia.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngā tukunga katoa</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Arowhai tōmua</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Taumata e whai ake</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>E tirotiro ana i ngā tautuhinga me ngā tohu tuakiri</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Arowhai tōmua: e pānui ana i te āhua o ia pae mamao</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>E tuku ana i ngā kōnae hekenga</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>E manatoko ana i ngā mea i tae mai</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>E whakahaere ana i ngā hekenga i ia pae mamao</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>E tango whakamuri ana i ngā pae mamao</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kua mutu te tukunga. E uta ana i tōna pūrongo.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kāore i taea te whai i te ahunga whakamua. Utaina anō te whārangi kia kite i te āhua o te tukunga.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Wāhanga</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ka whai tēnei whārangi i te tukunga i a ia e haere ana.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Kei te ōrite</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngā taumata</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>e tatari ana te taumata %stage ki tōna kēti</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Kēti %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>i whakamanatia e %user i %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Taumata</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngā kōnae i tukuna</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Putanga kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>kua whakamahia: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>hei whakamahi: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngā wāhanga</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Kēti: taumata %stage o %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kua tukuna ngā taumata i mua. Tirohia, kātahi ka whakamana i te taumata e whai ake: ka tirotirohia anō ōna pae mamao, ka tukuna, te katoa, te kore rānei.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Āe, tukuna te taumata e whai ake ināianei</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Whakahokia tēnei tukunga</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ka hoki ia pae mamao i whakamahi i a ia (%list) ki te hopukanga i tangohia i mua i tōna whakahaerenga, i te wā kotahi.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Āe, whakahokia tēnei tukunga ināianei</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>kua whakamaheretia</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>kua whakawhitia</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>kua tukuna</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>e tatari ana ki tētahi kēti</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>kua whakaritea</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>e tatari ana ki tōna taumata</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>kua tukuna ngā kōnae</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>kua manatokohia</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>i rahua, i whakahoki anō i a ia anō</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>kāore i panoni</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>kāore i tukuna</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>kāore e taea te tae atu</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>I whakautu te pae mamao.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kāore e taea te whakamahi i te pae mamao ināianei.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done kua oti, %pending e tatari ana, %failed i rahua</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Raka</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>kei tētahi whakahaerenga te raka ki reira</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage o %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kōwhiria te pae mamao hei whakamātau.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tohua te “Āe, tangohia tēnei pae mamao” i te tuatahi.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Kāore i taea te tango i te pae mamao: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Kāore i taea te tiaki i te pae mamao: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kōwhiria kia kotahi te pae mamao, te rōpū rānei, i te iti rawa.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kua kore tētahi pae mamao i kōwhiria i roto i ngā tautuhinga. Utaina anō te whārangi.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tohua te “Āe, tukuna ināianei” i te tuatahi.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kāore e taea e tētahi pae mamao FTP te whakahaere hekenga: kōwhiria te “Whakawhiti anake”, waiho rānei.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko ngā hekenga hei tuku he tautohu hekenga, ka wehea ki ngā piko.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>E haere tonu ana te tukunga. Tatari kia mutu.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kāore tēnei tukunga e tatari ki tētahi kēti.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kāore he pae mamao i whakamahi i tēnei tukunga: kāore he mea hei whakahoki.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tohua te “Āe, tukuna te taumata e whai ake ināianei” i te tuatahi.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tohua te “Āe, whakahokia tēnei tukunga ināianei” i te tuatahi.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kua tīariari kē tētahi pae mamao me te tautohu %id.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>He tau te tauranga mai i te 1 ki te 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>He kupu te taiao o ngā pū, ngā mati, te - me te _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>He kupu te rōpū o ngā pū, ngā mati, te - me te _ (ehara i te all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kāore e taea te pānui i te tohu tuakiri ināianei: %problem. Tiakina ki Whakaritenga &gt; Ngā mea muna (tautuhia rānei te taurangi) i mua i te tukunga tuatahi.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ka whiwhi noa tētahi pae mamao FTP i ngā kōnae: ko te tukunga ki reira he “Whakawhiti anake”, ā, ka whakahaerehia ā-ringa ōna hekenga ki reira.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kāore te pae mamao %id i roto i settings/override/migration.ini.append.php; tangohia i te wāhi i tautuhia ai.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>I takiuru mā FTP, ā, i pānuitia te index.php. Kāore e taea te pānui i te tūnga hekenga o tētahi pae mamao FTP.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>I rahua te tuku %deploy i %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>E tatari ana te tuku %deploy ki tētahi kēti i %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>I angitū te tuku %deploy i %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>I tukuna tēnei īmēra e %site nā te mea e tono ana a migration.ini [RemoteSettings] Notify[].</translation>
     </message>
 </context>
 </TS>

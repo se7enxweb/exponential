@@ -81336,15 +81336,15 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokkuuji woɗɗuɗi</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aafgol goɗɗi ɗi ngol saakata egge mum: saakugol ina neldo egge ɗee e nokkuuji woɗɗuɗi suɓaaɗi, ina dogina ɗe toon, fof e wakkati gooto, ina fotondiri. Nokku woɗɗo jogataa sirru abadaa: ko seŋorta mum ina innda sirru e Teeltugol &gt; Ɗuuɗe suuɗɗe.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo kesɗo</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Laargol jokkorde %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokkuuji woɗɗuɗi ɗii</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Haa nokkuuji woɗɗuɗi %parallel ina golleede e wakkati gooto; sahaa gooto ina waawi ƴettude segonde %timeout e nokku kala.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>teelte cellinteeɗe</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>fiilde tan (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Saawtu SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>alaa (agent SSH e saawtuuji host oo)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Saakugol e fedde ina yaha e nokkuuji woɗɗuɗi mayre fof.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Saaku e nokkuuji woɗɗuɗi</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alaa nokku woɗɗo teeltaaɗo tawo.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alaa ko neldetee walla dogintee ɗoo: Mooftu ina winnda teelte ɗee e settings/override/migration.ini.append.php. Ko seŋorta ko innde; keewal mum ina heddoo e Teeltugol &gt; Ɗuuɗe suuɗɗe walla e jooɗorde.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Teelte ɗee no naatniraa, mooftaaka tawo.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Saawtu host</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Nokku woɗɗo</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>No nokku woɗɗo oo innetee e jooɗorde nde o woni.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alkule, limle, - e _, ko wayi no production1. Ina innda nokku woɗɗo oo e ciimte e e konsol (--remotes=production1), waawaa wayleede caggal.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Saakugol e tolnooji ina rewa jooɗorde ɗee e ngol dewondiral.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Suɓaade, seerndaaɗe e virgule, ko wayi no production. Saakugol e fedde ina yaha e nokkuuji woɗɗuɗi mayre fof.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Jokkorde</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>No fiilde ɗee yottortoo toon, e ɗo aafgol ngol woni.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>E dow SSH, ko waylii tan, yawtingol taƴaangol ina jokkee. Suɓaade ɓurnde moƴƴude ɗo rsync aafaa.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH e scp ngam fiilde ɗee.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH e sftp ngam fiilde ɗee.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiilde tan: egge ɗee ina neldee, ina janngee kadi, kono ɗe waawaa dogineede toon.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP e dow TLS; fiilde tan.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aafgol goɗngol e ndee sarwoor, nder dossier.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Innde host walla ñiiɓirde, ko wayi no node1.example.com. Wonaa ngam local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Meho: 22 ngam SSH, 21 ngam FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Lekki aafgol ngol toon, ko wayi no /var/www/site (ngam FTP: laawol ngol konte FTP ndee yiyata).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Laawol yamiroore PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP CLI toon: php, walla laawol timmungol no /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Binndanɗe konsol ina dogoo toon no root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Tan so kuutoro nokku woɗɗo oo ko root (ɗe dogintee tuma oon e --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Ko seŋorta</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>No ngol aafgol seŋortoo toon. Ko innde tan mooftetee.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Agent SSH e saawtuuji kuutoro mo aafgol ngol dogortoo (e sahaa kala ngam local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Saawtu keeriiɗo mooftaaɗo no sirru.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Finnde mooftaande no sirru (FTP ina seŋoroo e mayre).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Innde sirru</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sirru e Teeltugol &gt; Ɗuuɗe suuɗɗe, ko wayi no deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Walla waylotooɗo jooɗorde</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Waylotooɗo kuugal sarwoor jogiiɗo ɗum, ko wayi no DEPLOY_KEY (mooftaaɗo no env:DEPLOY_KEY). Ina lomta innde sirru.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Saawtu host</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Suɓaade, ngam SSH, sftp e rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Maande saawtu host</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... no ssh-keygen -l winndirta ɗum. So ina woodi, host oo ina haani hollude saawtu ngu; so alaa, saawtu ngu ina anndee e jokkondiral adiingal.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Tar</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Laar jokkorde nde e teelte dow ɗee, caggal ɗuum tar diidi winndeteeɗi ɗii.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Itt nokku woɗɗo ngu</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Teelte mum ina ittee e settings/override/migration.ini.append.php. Alaa ko waylotoo e nokku woɗɗo oo, saakuuji mum ina keddoo e daartol.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Eey, itt nokku woɗɗo ngu</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Saakuuji</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Saakugol ina neldo egge aafgol ngol e nokkuuji woɗɗuɗi suɓaaɗi, ina dogina ɗe toon no %user, fof e wakkati gooto, ina fotondiri: nokku woɗɗo kala ina laaree adii, so gooto waɗaaki, nokku woɗɗo kala mo waɗi ɗe ina artiree. Ina jokkoo e caggal, hello mum ina holla nokku woɗɗo kala no yahrata.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Nokkuuji woɗɗuɗi</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maandin nokkuuji woɗɗuɗi, fedde, walla ɗi ɗiɗi fof.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Saaku toon</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. No ɗum waɗirtee</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Saaku</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Neldu e dogin</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egge ɗee ina neldee, ina laaree, ina dogee e nokku woɗɗo kala e ID dogal gooto rendaaɗo.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Yawtin tan</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiilde ɗee ina neldee, ina laaree, alaa ko dogintee (ko ɗum tan woni laawol nokku woɗɗo FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>E tolnooji</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tolno e tolno e dewondiral jooɗorde ɗee (dev, stage, beta, production ...): tolno adiingo ina saakee, caggal ɗuum damal ina fada haa goɗɗo jaɓa tolno garoowo. Fof walla alaa e nder tolno kala.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Egge ɗee tan</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Suɓaade: ID egge, seerndaaɗe e virgule. Meho: eggol kala lowre ndee e ɓeyditte mayre.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Laargol adii tan</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Eey, saaku jooni</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Saakuuji neldiiɗi walla doginiiɗi huunde, ɓurɗi kesɗude adii (laargol adii hedditaani ciimtol).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>yawtin tan</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>e tolnooji, tolnooji %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>fotondiraani</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alaa saakugol tawo.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Saakugol %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo kala e saakugol ngol e no ngonri. Saakugol fuɗɗiingol ɗoo ina jokkoo e caggal so hello ngoo uddaama; udditu hello ngoo kadi ngam rewde ngol.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Saakuuji ɗii fof</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Laargol adii</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Tolno garoowo</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Ina laaree teelte ɗee e ko seŋorta</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Laargol adii: ina janngee no nokku woɗɗo kala ngonri</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ina neldee fiilde egge ɗee</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Ina laaree ko yottii</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Egge ɗee ina dogoo e nokku woɗɗo kala</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Ina artiree nokkuuji woɗɗuɗi ɗii</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Saakugol ngol gasii. Ciimtol mum ina loowee.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko yaha waawaa rewde. Loow hello ngoo kadi ngam yiyde no saakugol ngol yahrata.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahaa</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngoo hello ina rewa saakugol ngol no yahrata.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Ina fotondiri</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Tolnooji</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>tolno %stage ina fada e damal mum</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Damal %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>jaɓaama e %user e %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Tolno</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiilde neldaaɗe</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Wersiyoŋ kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>waɗaama: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>waɗoyteeɗe: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Sahaaji</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Damal: tolno %stage e nder %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tolnooji adiiɗi ɗum saakaama. Laar ɗi, caggal ɗuum jaɓ tolno garoowo: nokkuuji woɗɗuɗi mayru ina laaree kadi, ina saakee, fof walla alaa.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Eey, saaku tolno garoowo jooni</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Artir ngol saakugol</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo kala mo waɗi ngol (%list) ina rutto e natal ƴettangal adii dogal mum, fof e wakkati gooto.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Eey, artir ngol saakugol jooni</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>eɓɓaama</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>yawtinaama</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>saakaama</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>ina fada e damal</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>moƴƴinaama</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>ina fada tolno mum</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>fiilde neldaama</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>laaraama</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>waɗaaki, artirii hoore mum</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>waylaaka</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>saakaaka</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>heɓotaako</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo oo jaabii.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo oo waawaa huutoreede jooni.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done timmi, %pending ina fadi, %failed waɗaaki</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Uddorde</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>dogal ina jogii uddorde ndee toon</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage e nder %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Suɓo nokku woɗɗo ngam laarde.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maandin «Eey, itt nokku woɗɗo ngu» adii.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo oo waawaa ittaade: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo oo waawaa mooftaade: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Suɓo hay nokku woɗɗo gooto walla fedde wootere.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo suɓaaɗo alaa kadi e teelte ɗee. Loow hello ngoo kadi.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maandin «Eey, saaku jooni» adii.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo FTP waawaa dogingol egge: suɓo «Yawtin tan», walla accu mo.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egge saaketeeɗe ko ID egge, seerndaaɗe e virgule.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Saakugol ngol ina yahra tawo. Fad haa ngol gasa.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngol saakugol fadataa e damal.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alaa nokku woɗɗo waɗi ngol saakugol: alaa ko artirtee.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maandin «Eey, saaku tolno garoowo jooni» adii.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maandin «Eey, artir ngol saakugol jooni» adii.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo jogiiɗo ID %id ina woodi too.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Port ko limre gila 1 haa 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Jooɗorde ko konngol mbaɗaangol e alkule, limle, - e _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Fedde ko konngol mbaɗaangol e alkule, limle, - e _ (wonaa all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ko seŋorta waawaa janngeede jooni: %problem. Mooftu ɗum e Teeltugol &gt; Ɗuuɗe suuɗɗe (walla teeltu waylotooɗo oo) adii saakugol adiingol.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo FTP ina heɓa fiilde tan: saakugol to makko ko «Yawtin tan», egge makko ina dogee toon e juuɗe.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokku woɗɗo %id alaa e settings/override/migration.ini.append.php; itt mo ɗo o teeltaa.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seŋoraama e dow FTP, index.php janngaama. Statut egge nokku woɗɗo FTP waawaa janngeede.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Saaku %deploy waɗaaki e %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Saaku %deploy ina habba e damal e %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Saaku %deploy moƴƴi e %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ɓataake ndee neldaa ko %site sabu migration.ini [RemoteSettings] Notify[] ina naamnii ɗum.</translation>
     </message>
 </context>
 </TS>

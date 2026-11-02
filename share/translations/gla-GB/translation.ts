@@ -81336,15 +81336,15 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ionadan cèin</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na stàlaidhean eile dhan sgaoil an tè seo a h-imrichean: cuiridh sgaoileadh na h-imrichean dha na h-ionadan cèin a chaidh a thaghadh agus ruithidh e iad an sin, uile aig an aon àm agus co-shioncronaichte. Cha chum ionad cèin rùn-dìomhair idir: ainmichidh an teisteas aige fear ann an Suidheachadh &gt; Rùintean-dìomhair.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ionad cèin ùr</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Deuchainn ceangail %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Na h-ionadan cèin</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thèid obrachadh air suas ri %parallel ionadan cèin aig an aon àm; faodaidh ceum %timeout diogan a thoirt air gach fear.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ionad cèin</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>roghainnean ri chàradh</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>faidhlichean a-mhàin (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>Iuchair SSH</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>chan eil gin (àidseant SSH agus iuchraichean an òstair)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thèid sgaoileadh gu buidheann gu gach ionad cèin aice.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Sgaoil gu ionadan cèin</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chan eil ionad cèin air a shuidheachadh fhathast.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Ionad cèin %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cha tèid dad a chur no a ruith an seo: sgrìobhaidh “Sàbhail” na roghainnean gu settings/override/migration.ini.append.php. ’S e ainm a th’ anns an teisteas; fanaidh a luach ann an Suidheachadh &gt; Rùintean-dìomhair no san àrainneachd.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na roghainnean mar a chaidh an cur a-steach, gun sàbhaladh fhathast.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Iuchair an òstair</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. An t-ionad cèin</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dè an t-ainm a th’ air an ionad chèin agus dè an àrainneachd a th’ ann.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Litrichean, àireamhan, - agus _, mar eisimpleir production1. Ainmichidh e an t-ionad cèin ann an aithisgean agus air a’ chonsoil (--remotes=production1) agus chan urrainnear atharrachadh às a dhèidh.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Thèid sgaoileadh ann an ìrean tro na h-àrainneachdan san òrdugh seo.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Roghainneil, air an sgaradh le cromagan, mar eisimpleir production. Thèid sgaoileadh gu buidheann gu gach ionad cèin aice.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. An ceangal</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ciamar a ruigeas na faidhlichean an sin, agus càite a bheil an stàladh.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thar SSH, dìreach na dh’atharraich, agus leanar air gluasad briste. An roghainn as fheàrr far a bheil rsync air a stàladh.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH le scp airson nam faidhlichean.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH le sftp airson nam faidhlichean.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Faidhlichean a-mhàin: thèid na h-imrichean a chur is a leughadh air ais, ach chan urrainnear an ruith an sin.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP thar TLS; faidhlichean a-mhàin.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stàladh eile air an fhrithealaiche seo, ann am pasgan.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ainm òstair no seòladh, mar eisimpleir node1.example.com. Chan ann airson local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falamh: 22 airson SSH, 21 airson FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Freumh an stàlaidh an sin, mar eisimpleir /var/www/site (airson FTP: an t-slighe a chì an cunntas FTP).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>Loidhne-àithne PHP</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>An PHP CLI an sin: php, no slighe shlàn mar /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruithidh na sgriobtaichean consoil an sin mar root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Dìreach nuair as e root cleachdaiche an ionaid chèin (thèid an ruith an uair sin le --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. An teisteas</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ciamar a chlàraicheas an stàladh seo a-steach an sin. Cha tèid ach ainm a shàbhaladh.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Àidseant SSH agus iuchraichean a’ chleachdaiche fon ruith an stàladh seo (agus an-còmhnaidh airson local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iuchair phrìobhaideach air a cumail mar rùn-dìomhair.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Facal-faire air a chumail mar rùn-dìomhair (clàraidh FTP a-steach le fear).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ainm an rùin-dhìomhair</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rùn-dìomhair o Suidheachadh &gt; Rùintean-dìomhair, mar eisimpleir deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>No caochladair àrainneachd</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>An caochladair aig pròiseas an fhrithealaiche anns a bheil e, mar eisimpleir DEPLOY_KEY (air a shàbhaladh mar env:DEPLOY_KEY). Gabhaidh e àite ainm an rùin-dhìomhair.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Iuchair an òstair</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Roghainneil, airson SSH, sftp agus rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Lorg-meòir iuchair an òstair</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... mar a chlò-bhuaileas ssh-keygen -l e. Leis, feumaidh an t-òstair an iuchair seo a shealltainn; às aonais, thèid an iuchair ionnsachadh aig a’ chiad cheangal.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Lèirmheas</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Feuch an ceangal leis na roghainnean gu h-àrd, an uair sin dèan lèirmheas air na loidhnichean a thèid a sgrìobhadh.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Thoir air falbh an t-ionad cèin seo</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thèid na roghainnean aige a thoirt à settings/override/migration.ini.append.php. Chan atharraich dad air an ionad chèin, agus fanaidh na sgaoilidhean aige san eachdraidh.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Tha, thoir air falbh an t-ionad cèin seo</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Sgaoilidhean</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuiridh sgaoileadh imrichean an stàlaidh seo dha na h-ionadan cèin a chaidh a thaghadh agus ruithidh e iad an sin mar %user, uile aig an aon àm agus co-shioncronaichte: thèid gach ionad cèin a sgrùdadh an toiseach, agus ma dh’fhàilligeas fear, thèid gach ionad cèin a chuir an sàs iad a thoirt air ais. Bidh e a’ dol air adhart sa chùlaibh, agus seallaidh an duilleag aige gach ionad cèin fhad ’s a bhios e a’ dol.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Na h-ionadan cèin</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuir strìochag ri ionadan cèin, buidheann no an dà chuid.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Sgaoil thuige</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Ciamar</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Sgaoil</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuir is ruith</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Thèid na h-imrichean a chur, a dhearbhadh agus a ruith air gach ionad cèin le aon ID ruith co-roinnte.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Gluasad a-mhàin</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Thèid na faidhlichean a chur is a dhearbhadh, cha tèid dad a ruith (an aon dòigh airson ionad cèin FTP).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Ann an ìrean</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ìre air ìre ann an òrdugh nan àrainneachdan (dev, stage, beta, production ...): thèid a’ chiad ìre a sgaoileadh, an uair sin feithidh geata gus an aontaich cuideigin ris an ath thè. A h-uile càil no càil idir taobh a-staigh gach ìre.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Na h-imrichean seo a-mhàin</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Roghainneil: IDs nan imrichean, air an sgaradh le cromagan. Falamh: gach imrich aig an làrach is aig na leudachain aice.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Ro-sgrùdadh a-mhàin</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Tha, sgaoil an-dràsta</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Na sgaoilidhean a chuir no a ruith rudeigin, an fheadhainn as ùire an toiseach (cha chum ro-sgrùdadh aithisg).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>gluasad a-mhàin</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>ann an ìrean, %stages ìrean</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>gun cho-shioncronachadh</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chan eil sgaoileadh ann fhathast.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Sgaoileadh %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gach ionad cèin den sgaoileadh le a staid. Leanaidh sgaoileadh a thòisich an seo air adhart sa chùlaibh nuair a thèid an duilleag seo a dhùnadh; fosgail an duilleag a-rithist gus a leantainn.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Gach sgaoileadh</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Ro-sgrùdadh</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>An ath ìre</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>A’ sgrùdadh nan roghainnean agus nan teisteasan</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Ro-sgrùdadh: a’ leughadh staid gach ionaid chèin</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>A’ cur faidhlichean nan imrichean</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>A’ dearbhadh na ràinig</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>A’ ruith nan imrichean air gach ionad cèin</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>A’ toirt nan ionadan cèin air ais</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tha an sgaoileadh deiseil. A’ luchdadh na h-aithisg aige.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cha b’ urrainnear an adhartas a leantainn. Ath-luchdaich an duilleag gus faicinn ciamar a tha an sgaoileadh a’ dol.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Ceum</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Leanaidh an duilleag seo an sgaoileadh fhad ’s a bhios e a’ dol.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Co-shioncronaichte</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ìrean</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>tha ìre %stage a’ feitheamh aig a geata</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Geata %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>air aontachadh le %user aig %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ìre</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Faidhlichean air an cur</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Tionndadh a’ kernel</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>air a chur an sàs: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>ri chur an sàs: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Ceuman</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Geata: ìre %stage à %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chaidh na h-ìrean roimhe a sgaoileadh. Sgrùd iad, an uair sin aontaich ris an ath ìre: thèid na h-ionadan cèin aice a sgrùdadh a-rithist agus a sgaoileadh, a h-uile càil no càil idir.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Tha, sgaoil an ath ìre an-dràsta</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Thoir an sgaoileadh seo air ais</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tillidh gach ionad cèin a chuir an sàs e (%list) dhan ghlacadh a chaidh a ghabhail ron ruith aige, uile aig an aon àm.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Tha, thoir an sgaoileadh seo air ais an-dràsta</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>air a phlanadh</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>air a ghluasad</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>air a sgaoileadh</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>a’ feitheamh aig geata</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>air ullachadh</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>a’ feitheamh ris an ìre aige</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>faidhlichean air an cur</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>air a dhearbhadh</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>air fàilligeadh, dh’aisig e e fhèin</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>gun atharrachadh</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>gun sgaoileadh</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>cha ghabh ruigsinn</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fhreagair an t-ionad cèin.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cha ghabh an t-ionad cèin a chleachdadh an-dràsta.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done deiseil, %pending ri dhèanamh, %failed air fàilligeadh</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Glas</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>tha ruith a’ cumail na glaise an sin</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage à %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tagh an t-ionad cèin ri dheuchainn.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuir strìochag ri “Tha, thoir air falbh an t-ionad cèin seo” an toiseach.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Cha b’ urrainnear an t-ionad cèin a thoirt air falbh: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Cha b’ urrainnear an t-ionad cèin a shàbhaladh: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tagh co-dhiù aon ionad cèin no buidheann.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chan eil ionad cèin a chaidh a thaghadh sna roghainnean tuilleadh. Ath-luchdaich an duilleag.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuir strìochag ri “Tha, sgaoil an-dràsta” an toiseach.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chan urrainn do dh’ionad cèin FTP imrichean a ruith: tagh “Gluasad a-mhàin”, no fàg às e.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>’S e IDs imrichean, air an sgaradh le cromagan, a th’ anns na h-imrichean ri sgaoileadh.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tha an sgaoileadh fhathast a’ dol. Fuirich gus an crìochnaich e.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chan eil an sgaoileadh seo a’ feitheamh aig geata.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cha do chuir ionad cèin sam bith an sgaoileadh seo an sàs: chan eil dad ri thoirt air ais.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuir strìochag ri “Tha, sgaoil an ath ìre an-dràsta” an toiseach.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuir strìochag ri “Tha, thoir an sgaoileadh seo air ais an-dràsta” an toiseach.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tha ionad cèin leis an ID %id ann mu thràth.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>’S e àireamh eadar 1 agus 65535 a th’ anns a’ phort.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>’S e facal de litrichean, àireamhan, - agus _ a th’ anns an àrainneachd (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>’S e facal de litrichean, àireamhan, - agus _ a th’ ann am buidheann (chan e all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cha ghabh an teisteas a leughadh an-dràsta: %problem. Sàbhail e ann an Suidheachadh &gt; Rùintean-dìomhair (no suidhich an caochladair) ron chiad sgaoileadh.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chan fhaigh ionad cèin FTP ach faidhlichean: ’s e “Gluasad a-mhàin” a th’ ann an sgaoileadh thuige, agus thèid na h-imrichean aige a ruith an sin le làimh.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chan eil an t-ionad cèin %id ann an settings/override/migration.ini.append.php; thoir air falbh e far a bheil e air a shuidheachadh.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Air clàradh a-steach thar FTP agus air index.php a leughadh. Cha ghabh staid imrich ionaid chèin FTP a leughadh.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Dh'fhàillig an sgaoileadh %deploy air %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Tha an sgaoileadh %deploy a' feitheamh aig geata air %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Shoirbhich leis an sgaoileadh %deploy air %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chaidh am post-d seo a chur le %site a chionn 's gu bheil migration.ini [RemoteSettings] Notify[] ga iarraidh.</translation>
     </message>
 </context>
 </TS>

@@ -81336,15 +81336,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Հեռակա հանգույցներ</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Այլ տեղադրումները, որոնց այս տեղադրումը տեղակայում է իր միգրացիաները — տեղակայումն ուղարկում է միգրացիաները ընտրված հեռակա հանգույցներին և գործարկում դրանք այնտեղ, բոլորը միաժամանակ և համաժամեցված։ Հեռակա հանգույցը երբեք գաղտնիք չի պահում — դրա մուտքի տվյալները նշում են մեկը Կարգաբերում &gt; Գաղտնիքներ բաժնից։</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Նոր հեռակա հանգույց</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Կապի փորձարկում՝ %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Հեռակա հանգույցները</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Միաժամանակ մշակվում են մինչև %parallel հեռակա հանգույց, մեկ փուլը յուրաքանչյուրում կարող է տևել %timeout վայրկյան։</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Հեռակա հանգույց</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>կարգավորումները պետք է ուղղել</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>միայն ֆայլեր (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH բանալի</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>ոչ մեկը (հոսթի SSH գործակալը և բանալիները)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Խմբին տեղակայումն ուղարկվում է նրա յուրաքանչյուր հեռակա հանգույցին։</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայել հեռակա հանգույցներին</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Դեռ ոչ մի հեռակա հանգույց կարգավորված չէ։</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Հեռակա հանգույց %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Այստեղ ոչինչ չի ուղարկվում կամ գործարկվում — «Պահպանել»-ը գրում է կարգավորումները settings/override/migration.ini.append.php ֆայլում։ Մուտքի տվյալները անուն են, դրա արժեքը մնում է Կարգաբերում &gt; Գաղտնիքներ բաժնում կամ միջավայրում։</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Կարգավորումները՝ ինչպես մուտքագրված են, դեռ չպահպանված։</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Հոսթի բանալի</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Հեռակա հանգույցը</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ինչպես է կոչվում հեռակա հանգույցը, և որ միջավայրն է այն։</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Տառեր, թվանշաններ, - և _, օրինակ՝ production1։ Այն անվանում է հեռակա հանգույցը հաշվետվություններում և կոնսոլում (--remotes=production1) և հետագայում չի կարող փոխվել։</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Աստիճաններով տեղակայումն անցնում է միջավայրերով այս հերթականությամբ։</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ըստ ցանկության, ստորակետերով բաժանված, օրինակ՝ production։ Խմբին տեղակայումն ուղարկվում է նրա յուրաքանչյուր հեռակա հանգույցին։</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Կապը</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ինչպես են ֆայլերը հասնում այնտեղ, և որտեղ է տեղադրումը։</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-ով, միայն փոփոխվածը, ընդհատված փոխանցումը շարունակվում է։ Լավագույն ընտրությունը, որտեղ rsync-ը տեղադրված է։</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH՝ scp-ով ֆայլերի համար։</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH՝ sftp-ով ֆայլերի համար։</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Միայն ֆայլեր — միգրացիաներն ուղարկվում և հետ են կարդացվում, բայց այնտեղ չեն կարող գործարկվել։</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP TLS-ի միջոցով, միայն ֆայլեր։</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Մեկ այլ տեղադրում այս սերվերում, պանակում։</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Հոսթի անուն կամ հասցե, օրինակ՝ node1.example.com։ Ոչ local-ի համար։</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Դատարկ՝ 22 SSH-ի համար, 21 FTP-ի համար։</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղադրման արմատն այնտեղ, օրինակ՝ /var/www/site (FTP-ի համար՝ ուղին, որը տեսնում է FTP հաշիվը)։</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP հրամանի տող</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>Այնտեղի PHP CLI-ն՝ php կամ ամբողջական ուղի, օրինակ՝ /opt/plesk/php/8.4/bin/php։</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Կոնսոլային սկրիպտներն այնտեղ աշխատում են որպես root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Միայն եթե հեռակա հանգույցի օգտատերը root է (այդ դեպքում դրանք գործարկվում են --allow-root-user դրոշով)։</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Մուտքի տվյալները</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ինչպես է այս տեղադրումը մուտք գործում այնտեղ։ Պահպանվում է միայն անուն։</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Այն օգտատիրոջ SSH գործակալը և բանալիները, որի անունից աշխատում է այս տեղադրումը (և միշտ local-ի համար)։</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Որպես գաղտնիք պահված մասնավոր բանալի։</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Որպես գաղտնիք պահված գաղտնաբառ (FTP-ն մուտք է գործում դրանով)։</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Գաղտնիքի անուն</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Գաղտնիք Կարգաբերում &gt; Գաղտնիքներ բաժնից, օրինակ՝ deploy_production1։</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Կամ միջավայրի փոփոխական</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Սերվերի պրոցեսի փոփոխականը, որը պահում է այն, օրինակ՝ DEPLOY_KEY (պահպանվում է որպես env:DEPLOY_KEY)։ Այն փոխարինում է գաղտնիքի անունը։</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Հոսթի բանալին</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ըստ ցանկության, SSH-ի, sftp-ի և rsync-ի համար։</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Հոսթի բանալու մատնահետք</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:..., ինչպես այն տպում է ssh-keygen -l հրամանը։ Դրա առկայությամբ հոսթը պետք է ցույց տա այս բանալին, առանց դրա՝ բանալին սովորվում է առաջին կապի ժամանակ։</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Վերանայում</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Փորձարկեք կապը վերևի կարգավորումներով, ապա վերանայեք այն տողերը, որոնք կգրվեն։</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Հեռացնել այս հեռակա հանգույցը</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Դրա կարգավորումները հանվում են settings/override/migration.ini.append.php ֆայլից։ Հեռակա հանգույցում ոչինչ չի փոխվում, և դրա տեղակայումները մնում են պատմության մեջ։</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Այո, հեռացնել այս հեռակա հանգույցը</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայումներ</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայումն ուղարկում է այս տեղադրման միգրացիաները ընտրված հեռակա հանգույցներին և գործարկում դրանք այնտեղ որպես %user, բոլորը միաժամանակ և համաժամեցված — նախ ստուգվում է յուրաքանչյուր հեռակա հանգույց, և եթե մեկը ձախողվում է, յուրաքանչյուր հանգույց, որը կիրառել է, հետ է վերադարձվում։ Այն ընթանում է հետին պլանում, և դրա էջը ցույց է տալիս յուրաքանչյուր հեռակա հանգույց ընթացքում։</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Հեռակա հանգույցները</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Նշեք հեռակա հանգույցներ, խումբ կամ երկուսը։</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայել դրան</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Ինչպես</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայել</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Ուղարկել և գործարկել</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Միգրացիաներն ուղարկվում, ստուգվում և գործարկվում են յուրաքանչյուր հեռակա հանգույցում մեկ ընդհանուր գործարկման նույնացուցիչով։</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Միայն փոխանցում</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ֆայլերն ուղարկվում և ստուգվում են, ոչինչ չի գործարկվում (FTP հեռակա հանգույցի միակ տարբերակը)։</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Աստիճաններով</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Աստիճան առ աստիճան՝ միջավայրերի հերթականությամբ (dev, stage, beta, production ...) — տեղակայվում է առաջին աստիճանը, հետո դարպասը սպասում է, մինչև ինչ-որ մեկը հաստատի հաջորդը։ Յուրաքանչյուր աստիճանի ներսում՝ ամեն ինչ կամ ոչինչ։</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Միայն այս միգրացիաները</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ըստ ցանկության՝ միգրացիաների նույնացուցիչներ, ստորակետերով բաժանված։ Դատարկ՝ կայքի և դրա ընդլայնումների բոլոր միգրացիաները։</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Միայն նախնական ստուգում</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Այո, տեղակայել հիմա</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայումները, որոնք ինչ-որ բան ուղարկել կամ գործարկել են, նորագույնը՝ առաջինը (նախնական ստուգումը հաշվետվություն չի պահում)։</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>միայն փոխանցում</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>աստիճաններով, %stages աստիճան</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>համաժամեցված չէ</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Դեռ տեղակայում չկա։</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայում %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայման յուրաքանչյուր հեռակա հանգույց՝ իր վիճակով։ Այստեղ սկսված տեղակայումը շարունակվում է հետին պլանում, երբ այս էջը փակվում է, բացեք էջը կրկին՝ այն հետևելու համար։</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Բոլոր տեղակայումները</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Նախնական ստուգում</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Հաջորդ աստիճան</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Կարգավորումների և մուտքի տվյալների ստուգում</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Նախնական ստուգում՝ յուրաքանչյուր հեռակա հանգույցի վիճակի ընթերցում</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Միգրացիայի ֆայլերի ուղարկում</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Ժամանածի ստուգում</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Միգրացիաների գործարկում յուրաքանչյուր հեռակա հանգույցում</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Հեռակա հանգույցների հետ վերադարձ</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայումն ավարտվել է։ Դրա հաշվետվությունը բեռնվում է։</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Չհաջողվեց հետևել ընթացքին։ Վերաբեռնեք էջը՝ տեսնելու, թե ինչպես է ընթանում տեղակայումը։</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Փուլ</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Այս էջը հետևում է տեղակայմանը ընթացքում։</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Համաժամեցված</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Աստիճաններ</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage աստիճանը սպասում է իր դարպասի մոտ</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Դարպաս %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>հաստատել է %user, %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Աստիճան</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Ուղարկված ֆայլեր</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Միջուկի տարբերակ</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>կիրառված՝ %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>կիրառելու՝ %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Փուլեր</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Դարպաս — աստիճան %stage՝ %stages-ից</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Դրանից առաջ աստիճանները տեղակայված են։ Ստուգեք դրանք, ապա հաստատեք հաջորդ աստիճանը — դրա հեռակա հանգույցները կրկին ստուգվում և տեղակայվում են, ամեն ինչ կամ ոչինչ։</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Այո, տեղակայել հաջորդ աստիճանը հիմա</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Հետ վերադարձնել այս տեղակայումը</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Յուրաքանչյուր հեռակա հանգույց, որը կիրառել է այն (%list), վերադառնում է իր գործարկումից առաջ արված ակնթարթային պատկերին, բոլորը միաժամանակ։</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Այո, հետ վերադարձնել այս տեղակայումը հիմա</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>պլանավորված</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>փոխանցված</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>տեղակայված</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>սպասում է դարպասի մոտ</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>նախապատրաստված</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>սպասում է իր աստիճանին</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>ֆայլերն ուղարկված են</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>ստուգված</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>ձախողվել է, ինքն իրեն վերականգնել է</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>անփոփոխ</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>տեղակայված չէ</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>անհասանելի</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Հեռակա հանգույցը պատասխանեց։</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Հեռակա հանգույցը հիմա չի կարող օգտագործվել։</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done կատարված, %pending սպասման մեջ, %failed ձախողված</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Կողպեք</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>գործարկումն այնտեղ պահում է կողպեքը</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage՝ %stages-ից</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ընտրեք փորձարկվող հեռակա հանգույցը։</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Նախ նշեք «Այո, հեռացնել այս հեռակա հանգույցը»։</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Չհաջողվեց հեռացնել հեռակա հանգույցը՝ %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Չհաջողվեց պահպանել հեռակա հանգույցը՝ %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ընտրեք առնվազն մեկ հեռակա հանգույց կամ խումբ։</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ընտրված հեռակա հանգույցներից մեկն այլևս կարգավորումներում չէ։ Վերաբեռնեք էջը։</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Նախ նշեք «Այո, տեղակայել հիմա»։</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP հեռակա հանգույցը չի կարող միգրացիաներ գործարկել — ընտրեք «Միայն փոխանցում» կամ բաց թողեք այն։</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայվող միգրացիաները միգրացիաների նույնացուցիչներ են՝ ստորակետերով բաժանված։</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայումը դեռ ընթանում է։ Սպասեք, մինչև այն ավարտվի։</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Այս տեղակայումը դարպասի մոտ չի սպասում։</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ոչ մի հեռակա հանգույց չի կիրառել այս տեղակայումը — հետ վերադարձնելու բան չկա։</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Նախ նշեք «Այո, տեղակայել հաջորդ աստիճանը հիմա»։</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Նախ նշեք «Այո, հետ վերադարձնել այս տեղակայումը հիմա»։</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id նույնացուցիչով հեռակա հանգույց արդեն կա։</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Պորտը 1-ից 65535 թիվ է։</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Միջավայրը տառերից, թվանշաններից, - և _ նշաններից կազմված բառ է (alpha, dev, stage, beta, production ...)։</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Խումբը տառերից, թվանշաններից, - և _ նշաններից կազմված բառ է (ոչ all)՝ %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Մուտքի տվյալները հիմա հնարավոր չէ կարդալ՝ %problem։ Պահպանեք դրանք Կարգաբերում &gt; Գաղտնիքներ բաժնում (կամ սահմանեք փոփոխականը) մինչև առաջին տեղակայումը։</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP հեռակա հանգույցը միայն ֆայլեր է ստանում — դրան տեղակայումը «Միայն փոխանցում» է, և դրա միգրացիաներն այնտեղ գործարկվում են ձեռքով։</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>%id հեռակա հանգույցը settings/override/migration.ini.append.php ֆայլում չէ — հեռացրեք այն այնտեղ, որտեղ այն սահմանված է։</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Մուտք է գործվել FTP-ով, և կարդացվել է index.php ֆայլը։ FTP հեռակա հանգույցի միգրացիաների կարգավիճակը հնարավոր չէ կարդալ։</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայումը %deploy ձախողվեց %site-ում</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայումը %deploy սպասում է դարպասի մոտ %site-ում</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Տեղակայումը %deploy հաջողվեց %site-ում</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Այս նամակն ուղարկել է %site-ը, որովհետև դա պահանջում է migration.ini [RemoteSettings] Notify[]։</translation>
     </message>
 </context>
 </TS>

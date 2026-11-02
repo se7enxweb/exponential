@@ -81366,15 +81366,15 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuotolinės sistemos</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiti įdiegimai, į kuriuos šis diegia savo migracijas: diegimas nusiunčia migracijas į pasirinktas nuotolines sistemas ir ten jas vykdo, visose vienu metu ir sinchroniškai. Nuotolinė sistema niekada nelaiko slapto įrašo: jos prisijungimo duomenys nurodo jį skiltyje Sąranka &gt; Slaptieji duomenys.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nauja nuotolinė sistema</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81382,19 +81382,19 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>%id ryšio bandymas</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuotolinės sistemos</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vienu metu apdorojama iki %parallel nuotolinių sistemų; viena fazė kiekvienoje gali trukti %timeout sekundžių.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuotolinė sistema</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81410,15 +81410,15 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>reikia pataisyti nustatymus</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>tik failai (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH raktas</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81426,7 +81426,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>nėra (serverio SSH agentas ir raktai)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81434,23 +81434,23 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegimas į grupę vyksta į kiekvieną jos nuotolinę sistemą.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegti į nuotolines sistemas</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dar nesukurta nė viena nuotolinė sistema.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuotolinė sistema %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Čia niekas nesiunčiama ir nevykdoma: Įrašyti įrašo nustatymus į settings/override/migration.ini.append.php. Prisijungimo duomenys yra pavadinimas; jų reikšmė lieka skiltyje Sąranka &gt; Slaptieji duomenys arba aplinkoje.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81458,7 +81458,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nustatymai taip, kaip įvesti, dar neįrašyti.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81486,15 +81486,15 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Serverio raktas</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Nuotolinė sistema</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaip vadinama nuotolinė sistema ir kokia tai aplinka.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81502,47 +81502,47 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Raidės, skaitmenys, - ir _, pavyzdžiui, production1. Juo nuotolinė sistema vadinama ataskaitose ir konsolėje (--remotes=production1), vėliau jo pakeisti negalima.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Diegimas etapais eina per aplinkas šia tvarka.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nebūtina, atskirta kableliais, pavyzdžiui, production. Diegimas į grupę vyksta į kiekvieną jos nuotolinę sistemą.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Ryšys</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaip failai ten patenka ir kur yra įdiegimas.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per SSH, tik tai, kas pasikeitė, nutrūkęs perdavimas pratęsiamas. Geriausias pasirinkimas, kur įdiegtas rsync.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH su scp failams.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH su sftp failams.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tik failai: migracijos nusiunčiamos ir nuskaitomos atgal, bet ten jų vykdyti negalima.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP per TLS; tik failai.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kitas įdiegimas šiame serveryje, aplanke.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81550,7 +81550,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serverio pavadinimas arba adresas, pavyzdžiui, node1.example.com. Ne local atveju.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81558,7 +81558,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuščia: 22 SSH, 21 FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81570,31 +81570,31 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>Ten esantis įdiegimo šakninis katalogas, pavyzdžiui, /var/www/site (FTP atveju: kelias, kurį mato FTP paskyra).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP komandinė eilutė</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ten esantis PHP CLI: php arba visas kelias, pavyzdžiui, /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>Konsolės scenarijai ten vykdomi kaip root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Tik kai nuotolinės sistemos naudotojas yra root (tada jos vykdomos su --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. Prisijungimo duomenys</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaip šis įdiegimas ten prisijungia. Įrašomas tik pavadinimas.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81602,23 +81602,23 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>Naudotojo, kurio vardu veikia šis įdiegimas, SSH agentas ir raktai (local atveju visada).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Privatusis raktas, laikomas kaip slaptas įrašas.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Slaptažodis, laikomas kaip slaptas įrašas (FTP juo prisijungia).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Slapto įrašo pavadinimas</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Slaptas įrašas iš Sąranka &gt; Slaptieji duomenys, pavyzdžiui, deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81626,247 +81626,247 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Arba aplinkos kintamasis</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serverio proceso kintamasis, kuriame jis laikomas, pavyzdžiui, DEPLOY_KEY (įrašomas kaip env:DEPLOY_KEY). Jis naudojamas vietoj slapto įrašo pavadinimo.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. Serverio raktas</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nebūtina, SSH, sftp ir rsync atveju.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Serverio rakto kontrolinis kodas</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... taip, kaip jį išveda ssh-keygen -l. Su juo serveris turi parodyti šį raktą; be jo raktas įsimenamas pirmojo ryšio metu.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Peržiūra</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Išbandykite ryšį su aukščiau nurodytais nustatymais, tada peržiūrėkite eilutes, kurios bus įrašytos.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Šalinti šią nuotolinę sistemą</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jos nustatymai pašalinami iš settings/override/migration.ini.append.php. Nuotolinėje sistemoje niekas nesikeičia, o jos diegimai lieka istorijoje.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Taip, šalinti šią nuotolinę sistemą</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegimai</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegimas nusiunčia šio įdiegimo migracijas į pasirinktas nuotolines sistemas ir ten jas vykdo kaip %user, visose vienu metu ir sinchroniškai: pirmiausia patikrinama kiekviena nuotolinė sistema, o jei vienoje nepavyksta, atšaukiama kiekviena, kuri jas pritaikė. Jis vyksta fone, o jo puslapis eigoje rodo kiekvieną nuotolinę sistemą.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. Nuotolinės sistemos</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pažymėkite nuotolines sistemas, grupę arba abu.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegti į ją</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Kaip</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegti</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Siųsti ir vykdyti</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracijos nusiunčiamos į kiekvieną nuotolinę sistemą, patikrinamos ir vykdomos su vienu bendru vykdymo ID.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Tik perduoti</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>Failai nusiunčiami ir patikrinami, niekas nevykdoma (vienintelis būdas FTP nuotolinei sistemai).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapais</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapas po etapo aplinkų tvarka (dev, stage, beta, production ...): įdiegiamas pirmas etapas, tada vartai laukia, kol kas nors patvirtins kitą. Kiekviename etape viskas arba nieko.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Tik šios migracijos</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nebūtina: migracijų ID, atskirti kableliais. Tuščia: kiekviena svetainės ir jos plėtinių migracija.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Tik išankstinis patikrinimas</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Taip, diegti dabar</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegimai, kurie ką nors nusiuntė ar vykdė, naujausi pirmiau (išankstinis patikrinimas ataskaitos nesaugo).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>tik perduoti</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>etapais, etapų: %stages</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>nesinchronizuota</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegimų dar nėra.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegimas %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiekviena diegimo nuotolinė sistema su jos būkle. Čia pradėtas diegimas tęsiasi fone, kai šis puslapis uždaromas; atverkite puslapį dar kartą, kad jį stebėtumėte.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Visi diegimai</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Išankstinis patikrinimas</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Kitas etapas</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Tikrinami nustatymai ir prisijungimo duomenys</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Išankstinis patikrinimas: nuskaitoma kiekvienos nuotolinės sistemos būklė</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Siunčiami migracijų failai</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Tikrinama, kas atkeliavo</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Migracijos vykdomos kiekvienoje nuotolinėje sistemoje</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuotolinės sistemos atšaukiamos</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegimas baigtas. Įkeliama jo ataskaita.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigos stebėti nepavyko. Įkelkite puslapį iš naujo, kad pamatytumėte, kaip vyksta diegimas.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fazė</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šis puslapis stebi diegimą, kol jis vyksta.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinchroniškai</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapai</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>etapas %stage laukia prie savo vartų</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Vartai %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>patvirtino %user, %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapas</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Nusiųsti failai</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Branduolio versija</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>pritaikyta: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>bus pritaikyta: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fazės</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Vartai: etapas %stage iš %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ankstesni etapai įdiegti. Patikrinkite juos, tada patvirtinkite kitą etapą: jo nuotolinės sistemos dar kartą patikrinamos ir įdiegiamos, viskas arba nieko.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81874,7 +81874,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Taip, diegti kitą etapą dabar</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81882,31 +81882,31 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Atšaukti šį diegimą</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiekviena jį pritaikiusi nuotolinė sistema (%list) grįžta į momentinę kopiją, padarytą prieš jos vykdymą, visos vienu metu.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Taip, atšaukti šį diegimą dabar</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>suplanuota</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>perduota</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>įdiegta</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>laukia prie vartų</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81914,7 +81914,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>paruošta</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81922,51 +81922,51 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>laukia savo etapo</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>failai nusiųsti</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>patikrinta</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>nepavyko, atsikūrė savaime</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>nepakeista</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>neįdiegta</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>nepasiekiama</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuotolinė sistema atsakė.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuotolinės sistemos dabar naudoti negalima.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done atlikta, %pending laukia, %failed nepavyko</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Užraktas</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>ten užraktą laiko vykdymas</translation>
     </message>
     <message>
         <source>free</source>
@@ -81974,23 +81974,23 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage iš %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite nuotolinę sistemą, kurią norite išbandyti.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pirmiau pažymėkite „Taip, šalinti šią nuotolinę sistemą“.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepavyko pašalinti nuotolinės sistemos: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepavyko įrašyti nuotolinės sistemos: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81998,75 +81998,75 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite bent vieną nuotolinę sistemą arba grupę.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinktos nuotolinės sistemos nebėra nustatymuose. Įkelkite puslapį iš naujo.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pirmiau pažymėkite „Taip, diegti dabar“.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP nuotolinė sistema negali vykdyti migracijų: pasirinkite „Tik perduoti“ arba jos neįtraukite.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegtinos migracijos yra migracijų ID, atskirti kableliais.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegimas dar vyksta. Palaukite, kol jis baigsis.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šis diegimas nelaukia prie vartų.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nė viena nuotolinė sistema nepritaikė šio diegimo: nėra ką atšaukti.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pirmiau pažymėkite „Taip, diegti kitą etapą dabar“.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pirmiau pažymėkite „Taip, atšaukti šį diegimą dabar“.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuotolinė sistema su ID %id jau yra.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prievadas yra skaičius nuo 1 iki 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplinka yra žodis iš raidžių, skaitmenų, - ir _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupė yra žodis iš raidžių, skaitmenų, - ir _ (ne all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prisijungimo duomenų dabar nuskaityti negalima: %problem. Prieš pirmąjį diegimą įrašykite juos skiltyje Sąranka &gt; Slaptieji duomenys (arba nustatykite kintamąjį).</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP nuotolinė sistema tik priima failus: diegimas į ją yra „Tik perduoti“, o jos migracijos ten vykdomos rankiniu būdu.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuotolinės sistemos %id nėra settings/override/migration.ini.append.php; pašalinkite ją ten, kur ji nustatyta.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prisijungta per FTP ir nuskaitytas index.php. FTP nuotolinės sistemos migracijų būklės nuskaityti negalima.</translation>
     </message>
 </context>
 <context>
@@ -84470,19 +84470,19 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegimas %deploy svetainėje %site nepavyko</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegimas %deploy svetainėje %site laukia prie vartų</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>Diegimas %deploy svetainėje %site pavyko</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šį laišką išsiuntė %site, nes to prašo migration.ini [RemoteSettings] Notify[].</translation>
     </message>
 </context>
 </TS>

@@ -81336,15 +81336,15 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>Remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Forstacioj</translation>
     </message>
     <message>
         <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
-        <translation type="unfinished"></translation>
+        <translation>La aliaj instalaĵoj, al kiuj ĉi tiu liveras siajn migradojn: liverado sendas la migradojn al la elektitaj forstacioj kaj rulas ilin tie, ĉiujn samtempe kaj sinkrone. Forstacio neniam tenas sekreton: ĝia akreditaĵo nomas unu en Agordado &gt; Sekretoj.</translation>
     </message>
     <message>
         <source>New remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Nova forstacio</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81352,19 +81352,19 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>Test connection of %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Testo de konekto de %id</translation>
     </message>
     <message>
         <source>The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>La forstacioj</translation>
     </message>
     <message>
         <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĝis %parallel forstacioj estas traktataj samtempe; unu fazo povas daŭri %timeout sekundojn ĉe ĉiu.</translation>
     </message>
     <message>
         <source>Remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Forstacio</translation>
     </message>
     <message>
         <source>Address</source>
@@ -81380,15 +81380,15 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>settings to fix</source>
-        <translation type="unfinished"></translation>
+        <translation>korektendaj agordoj</translation>
     </message>
     <message>
         <source>files only (FTP)</source>
-        <translation type="unfinished"></translation>
+        <translation>nur dosieroj (FTP)</translation>
     </message>
     <message>
         <source>SSH key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-ŝlosilo</translation>
     </message>
     <message>
         <source>Password</source>
@@ -81396,7 +81396,7 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>none (the host's SSH agent and keys)</source>
-        <translation type="unfinished"></translation>
+        <translation>neniu (la SSH-agento kaj ŝlosiloj de la gastiganto)</translation>
     </message>
     <message>
         <source>Test connection</source>
@@ -81404,23 +81404,23 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Liverado al grupo iras al ĉiu ĝia forstacio.</translation>
     </message>
     <message>
         <source>Deploy to remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>Liveri al forstacioj</translation>
     </message>
     <message>
         <source>No remote is set up yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ankoraŭ neniu forstacio estas agordita.</translation>
     </message>
     <message>
         <source>Remote %id</source>
-        <translation type="unfinished"></translation>
+        <translation>Forstacio %id</translation>
     </message>
     <message>
         <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenio estas sendata aŭ rulata ĉi tie: Konservi skribas la agordojn al settings/override/migration.ini.append.php. La akreditaĵo estas nomo; ĝia valoro restas en Agordado &gt; Sekretoj aŭ en la medio.</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -81428,7 +81428,7 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>The settings as entered, not saved yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La agordoj kiel enigitaj, ankoraŭ ne konservitaj.</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81456,15 +81456,15 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>Host key</source>
-        <translation type="unfinished"></translation>
+        <translation>Gastiganta ŝlosilo</translation>
     </message>
     <message>
         <source>1. The remote</source>
-        <translation type="unfinished"></translation>
+        <translation>1. La forstacio</translation>
     </message>
     <message>
         <source>What the remote is called and which environment it is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiel la forstacio nomiĝas kaj kiu medio ĝi estas.</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81472,47 +81472,47 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Literoj, ciferoj, - kaj _, ekzemple production1. Ĝi nomas la forstacion en raportoj kaj en la konzolo (--remotes=production1) kaj ne povas esti ŝanĝita poste.</translation>
     </message>
     <message>
         <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
-        <translation type="unfinished"></translation>
+        <translation>alpha, dev, stage, beta, production ... Etapa liverado trairas la mediojn en ĉi tiu ordo.</translation>
     </message>
     <message>
         <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nedeviga, apartigitaj per komoj, ekzemple production. Liverado al grupo iras al ĉiu ĝia forstacio.</translation>
     </message>
     <message>
         <source>2. The connection</source>
-        <translation type="unfinished"></translation>
+        <translation>2. La konekto</translation>
     </message>
     <message>
         <source>How the files get there, and where the installation is.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiel la dosieroj atingas tien, kaj kie la instalaĵo estas.</translation>
     </message>
     <message>
         <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per SSH, nur kio ŝanĝiĝis, rompita transigo daŭrigata. La plej bona elekto, kie rsync estas instalita.</translation>
     </message>
     <message>
         <source>SSH with scp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH kun scp por la dosieroj.</translation>
     </message>
     <message>
         <source>SSH with sftp for the files.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH kun sftp por la dosieroj.</translation>
     </message>
     <message>
         <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nur dosieroj: la migradoj estas sendataj kaj relegataj, sed ne povas esti rulataj tie.</translation>
     </message>
     <message>
         <source>FTP over TLS; files only.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP per TLS; nur dosieroj.</translation>
     </message>
     <message>
         <source>Another installation on this server, in a folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alia instalaĵo sur ĉi tiu servilo, en dosierujo.</translation>
     </message>
     <message>
         <source>Host</source>
@@ -81520,7 +81520,7 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>A host name or address, for example node1.example.com. Not for local.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gastiganta nomo aŭ adreso, ekzemple node1.example.com. Ne por local.</translation>
     </message>
     <message>
         <source>Port</source>
@@ -81528,7 +81528,7 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>Empty: 22 for SSH, 21 for FTP.</source>
-        <translation type="unfinished"></translation>
+        <translation>Malplena: 22 por SSH, 21 por FTP.</translation>
     </message>
     <message>
         <source>User</source>
@@ -81540,31 +81540,31 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
-        <translation type="unfinished"></translation>
+        <translation>La radiko de la instalaĵo tie, ekzemple /var/www/site (por FTP: la vojo, kiun la FTP-konto vidas).</translation>
     </message>
     <message>
         <source>PHP command line</source>
-        <translation type="unfinished"></translation>
+        <translation>PHP-komandlinio</translation>
     </message>
     <message>
         <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
-        <translation type="unfinished"></translation>
+        <translation>La PHP-CLI tie: php, aŭ plena vojo kiel /opt/plesk/php/8.4/bin/php.</translation>
     </message>
     <message>
         <source>The console scripts run as root there</source>
-        <translation type="unfinished"></translation>
+        <translation>La konzolaj skriptoj ruliĝas tie kiel root</translation>
     </message>
     <message>
         <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
-        <translation type="unfinished"></translation>
+        <translation>Nur kiam la uzanto de la forstacio estas root (ili tiam estas rulataj kun --allow-root-user).</translation>
     </message>
     <message>
         <source>3. The credential</source>
-        <translation type="unfinished"></translation>
+        <translation>3. La akreditaĵo</translation>
     </message>
     <message>
         <source>How this installation signs in there. Only a name is saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiel ĉi tiu instalaĵo ensalutas tie. Nur nomo estas konservata.</translation>
     </message>
     <message>
         <source>None</source>
@@ -81572,23 +81572,23 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
-        <translation type="unfinished"></translation>
+        <translation>La SSH-agento kaj ŝlosiloj de la uzanto, kiel kiu ĉi tiu instalaĵo ruliĝas (kaj ĉiam por local).</translation>
     </message>
     <message>
         <source>A private key kept as a secret.</source>
-        <translation type="unfinished"></translation>
+        <translation>Privata ŝlosilo konservata kiel sekreto.</translation>
     </message>
     <message>
         <source>A password kept as a secret (FTP signs in with one).</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasvorto konservata kiel sekreto (FTP ensalutas per ĝi).</translation>
     </message>
     <message>
         <source>Secret name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nomo de la sekreto</translation>
     </message>
     <message>
         <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekreto de Agordado &gt; Sekretoj, ekzemple deploy_production1.</translation>
     </message>
     <message>
         <source>Setup &gt; Secrets</source>
@@ -81596,247 +81596,247 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>Or an environment variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Aŭ media variablo</translation>
     </message>
     <message>
         <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
-        <translation type="unfinished"></translation>
+        <translation>La variablo de la servila procezo, kiu tenas ĝin, ekzemple DEPLOY_KEY (konservita kiel env:DEPLOY_KEY). Ĝi anstataŭas la nomon de la sekreto.</translation>
     </message>
     <message>
         <source>4. The host key</source>
-        <translation type="unfinished"></translation>
+        <translation>4. La gastiganta ŝlosilo</translation>
     </message>
     <message>
         <source>Optional, for SSH, sftp and rsync.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nedeviga, por SSH, sftp kaj rsync.</translation>
     </message>
     <message>
         <source>Host key fingerprint</source>
-        <translation type="unfinished"></translation>
+        <translation>Fingrospuro de la gastiganta ŝlosilo</translation>
     </message>
     <message>
         <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
-        <translation type="unfinished"></translation>
+        <translation>SHA256:... kiel ssh-keygen -l presas ĝin. Kun ĝi, la gastiganto devas montri ĉi tiun ŝlosilon; sen ĝi, la ŝlosilo estas lernata ĉe la unua kontakto.</translation>
     </message>
     <message>
         <source>5. Review</source>
-        <translation type="unfinished"></translation>
+        <translation>5. Kontrolo</translation>
     </message>
     <message>
         <source>Test the connection with the settings above, then review the lines that will be written.</source>
-        <translation type="unfinished"></translation>
+        <translation>Testu la konekton kun la supraj agordoj, poste kontrolu la liniojn, kiuj estos skribitaj.</translation>
     </message>
     <message>
         <source>Remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Forpreni ĉi tiun forstacion</translation>
     </message>
     <message>
         <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĝiaj agordoj estas forprenataj el settings/override/migration.ini.append.php. Nenio ŝanĝiĝas ĉe la forstacio, kaj ĝiaj liveradoj restas en la historio.</translation>
     </message>
     <message>
         <source>Yes, remove this remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Jes, forpreni ĉi tiun forstacion</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Liveradoj</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Liverado sendas la migradojn de ĉi tiu instalaĵo al la elektitaj forstacioj kaj rulas ilin tie kiel %user, ĉiujn samtempe kaj sinkrone: ĉiu forstacio unue estas kontrolata, kaj kiam unu malsukcesas, ĉiu forstacio, kiu aplikis, estas reprenata. Ĝi daŭras fone, kaj ĝia paĝo montras ĉiun forstacion dum ĝi progresas.</translation>
     </message>
     <message>
         <source>1. The remotes</source>
-        <translation type="unfinished"></translation>
+        <translation>1. La forstacioj</translation>
     </message>
     <message>
         <source>Tick remotes, a group, or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Marku forstaciojn, grupon aŭ ambaŭ.</translation>
     </message>
     <message>
         <source>Deploy to it</source>
-        <translation type="unfinished"></translation>
+        <translation>Liveri al ĝi</translation>
     </message>
     <message>
         <source>2. How</source>
-        <translation type="unfinished"></translation>
+        <translation>2. Kiel</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Liveri</translation>
     </message>
     <message>
         <source>Send and run</source>
-        <translation type="unfinished"></translation>
+        <translation>Sendi kaj ruli</translation>
     </message>
     <message>
         <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
-        <translation type="unfinished"></translation>
+        <translation>La migradoj estas sendataj, kontrolataj kaj rulataj ĉe ĉiu forstacio kun unu komuna rul-identigilo.</translation>
     </message>
     <message>
         <source>Transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>Nur transigi</translation>
     </message>
     <message>
         <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
-        <translation type="unfinished"></translation>
+        <translation>La dosieroj estas sendataj kaj kontrolataj, nenio estas rulata (la sola maniero por FTP-forstacio).</translation>
     </message>
     <message>
         <source>Staged</source>
-        <translation type="unfinished"></translation>
+        <translation>Etape</translation>
     </message>
     <message>
         <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapo post etapo laŭ la ordo de la medioj (dev, stage, beta, production ...): la unua etapo estas liverata, poste pordego atendas, ĝis iu aprobas la sekvan. Ĉio aŭ nenio en ĉiu etapo.</translation>
     </message>
     <message>
         <source>Only these migrations</source>
-        <translation type="unfinished"></translation>
+        <translation>Nur ĉi tiuj migradoj</translation>
     </message>
     <message>
         <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nedeviga: identigiloj de migradoj, apartigitaj per komoj. Malplena: ĉiu migrado de la retejo kaj ĝiaj kromprogramoj.</translation>
     </message>
     <message>
         <source>Preflight only</source>
-        <translation type="unfinished"></translation>
+        <translation>Nur antaŭkontrolo</translation>
     </message>
     <message>
         <source>Yes, deploy now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jes, liveri nun</translation>
     </message>
     <message>
         <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
-        <translation type="unfinished"></translation>
+        <translation>La liveradoj, kiuj sendis aŭ rulis ion, la plej nova unue (antaŭkontrolo konservas neniun raporton).</translation>
     </message>
     <message>
         <source>transfer only</source>
-        <translation type="unfinished"></translation>
+        <translation>nur transigo</translation>
     </message>
     <message>
         <source>staged, %stages stages</source>
-        <translation type="unfinished"></translation>
+        <translation>etapa, %stages etapoj</translation>
     </message>
     <message>
         <source>out of sync</source>
-        <translation type="unfinished"></translation>
+        <translation>nesinkrona</translation>
     </message>
     <message>
         <source>No deploy yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ankoraŭ neniu liverado.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation type="unfinished"></translation>
+        <translation>Liverado %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉiu forstacio de la liverado kun sia stato. Liverado startigita ĉi tie daŭras fone, kiam ĉi tiu paĝo estas fermita; malfermu la paĝon denove por sekvi ĝin.</translation>
     </message>
     <message>
         <source>All deploys</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉiuj liveradoj</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation type="unfinished"></translation>
+        <translation>Antaŭkontrolo</translation>
     </message>
     <message>
         <source>Next stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekva etapo</translation>
     </message>
     <message>
         <source>Checking the settings and the credentials</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrolante la agordojn kaj la akreditaĵojn</translation>
     </message>
     <message>
         <source>Preflight: reading the state of every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Antaŭkontrolo: legante la staton de ĉiu forstacio</translation>
     </message>
     <message>
         <source>Sending the migration files</source>
-        <translation type="unfinished"></translation>
+        <translation>Sendante la migradajn dosierojn</translation>
     </message>
     <message>
         <source>Verifying what arrived</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrolante kio alvenis</translation>
     </message>
     <message>
         <source>Running the migrations on every remote</source>
-        <translation type="unfinished"></translation>
+        <translation>Rulante la migradojn ĉe ĉiu forstacio</translation>
     </message>
     <message>
         <source>Taking the remotes back</source>
-        <translation type="unfinished"></translation>
+        <translation>Reprenante la forstaciojn</translation>
     </message>
     <message>
         <source>The deploy has ended. Loading its report.</source>
-        <translation type="unfinished"></translation>
+        <translation>La liverado finiĝis. Ŝargante ĝian raporton.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
-        <translation type="unfinished"></translation>
+        <translation>La progreso ne sekveblis. Reŝargu la paĝon por vidi, kiel la liverado iras.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation type="unfinished"></translation>
+        <translation>Fazo</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉi tiu paĝo sekvas la liveradon dum ĝi progresas.</translation>
     </message>
     <message>
         <source>In sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinkrone</translation>
     </message>
     <message>
         <source>Stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapoj</translation>
     </message>
     <message>
         <source>stage %stage waits at its gate</source>
-        <translation type="unfinished"></translation>
+        <translation>etapo %stage atendas ĉe sia pordego</translation>
     </message>
     <message>
         <source>Gate %stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Pordego %stage</translation>
     </message>
     <message>
         <source>approved by %user at %time</source>
-        <translation type="unfinished"></translation>
+        <translation>aprobita de %user je %time</translation>
     </message>
     <message>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>Etapo</translation>
     </message>
     <message>
         <source>Files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Senditaj dosieroj</translation>
     </message>
     <message>
         <source>Kernel version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versio de la kerno</translation>
     </message>
     <message>
         <source>applied: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>aplikitaj: %list</translation>
     </message>
     <message>
         <source>to apply: %list</source>
-        <translation type="unfinished"></translation>
+        <translation>aplikotaj: %list</translation>
     </message>
     <message>
         <source>Phases</source>
-        <translation type="unfinished"></translation>
+        <translation>Fazoj</translation>
     </message>
     <message>
         <source>Gate: stage %stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>Pordego: etapo %stage el %stages</translation>
     </message>
     <message>
         <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
-        <translation type="unfinished"></translation>
+        <translation>La etapoj antaŭ ĝi estas liveritaj. Kontrolu ilin, poste aprobu la sekvan etapon: ĝiaj forstacioj estas denove kontrolataj kaj liverataj, ĉio aŭ nenio.</translation>
     </message>
     <message>
         <source>Next</source>
@@ -81844,7 +81844,7 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>Yes, deploy the next stage now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jes, liveri la sekvan etapon nun</translation>
     </message>
     <message>
         <source>Approve</source>
@@ -81852,31 +81852,31 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>Roll this deploy back</source>
-        <translation type="unfinished"></translation>
+        <translation>Malfari ĉi tiun liveradon</translation>
     </message>
     <message>
         <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉiu forstacio, kiu aplikis ĝin (%list), revenas al la momentfoto farita antaŭ sia rulo, ĉiuj samtempe.</translation>
     </message>
     <message>
         <source>Yes, roll this deploy back now</source>
-        <translation type="unfinished"></translation>
+        <translation>Jes, malfari ĉi tiun liveradon nun</translation>
     </message>
     <message>
         <source>planned</source>
-        <translation type="unfinished"></translation>
+        <translation>planita</translation>
     </message>
     <message>
         <source>transferred</source>
-        <translation type="unfinished"></translation>
+        <translation>transigita</translation>
     </message>
     <message>
         <source>deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>liverita</translation>
     </message>
     <message>
         <source>waits at a gate</source>
-        <translation type="unfinished"></translation>
+        <translation>atendas ĉe pordego</translation>
     </message>
     <message>
         <source>selected</source>
@@ -81884,7 +81884,7 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>prepared</source>
-        <translation type="unfinished"></translation>
+        <translation>preparita</translation>
     </message>
     <message>
         <source>ready</source>
@@ -81892,51 +81892,51 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>waits for its stage</source>
-        <translation type="unfinished"></translation>
+        <translation>atendas sian etapon</translation>
     </message>
     <message>
         <source>files sent</source>
-        <translation type="unfinished"></translation>
+        <translation>dosieroj senditaj</translation>
     </message>
     <message>
         <source>verified</source>
-        <translation type="unfinished"></translation>
+        <translation>kontrolita</translation>
     </message>
     <message>
         <source>failed, restored itself</source>
-        <translation type="unfinished"></translation>
+        <translation>malsukcesis, restarigis sin mem</translation>
     </message>
     <message>
         <source>unchanged</source>
-        <translation type="unfinished"></translation>
+        <translation>neŝanĝita</translation>
     </message>
     <message>
         <source>not deployed</source>
-        <translation type="unfinished"></translation>
+        <translation>ne liverita</translation>
     </message>
     <message>
         <source>not reachable</source>
-        <translation type="unfinished"></translation>
+        <translation>ne atingebla</translation>
     </message>
     <message>
         <source>The remote answered.</source>
-        <translation type="unfinished"></translation>
+        <translation>La forstacio respondis.</translation>
     </message>
     <message>
         <source>The remote cannot be used now.</source>
-        <translation type="unfinished"></translation>
+        <translation>La forstacio ne uzeblas nun.</translation>
     </message>
     <message>
         <source>%done done, %pending pending, %failed failed</source>
-        <translation type="unfinished"></translation>
+        <translation>%done faritaj, %pending atendantaj, %failed malsukcesaj</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Ŝloso</translation>
     </message>
     <message>
         <source>a run holds the lock there</source>
-        <translation type="unfinished"></translation>
+        <translation>rulo tenas la ŝloson tie</translation>
     </message>
     <message>
         <source>free</source>
@@ -81944,23 +81944,23 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>%stage of %stages</source>
-        <translation type="unfinished"></translation>
+        <translation>%stage el %stages</translation>
     </message>
     <message>
         <source>Choose the remote to test.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektu la forstacion testotan.</translation>
     </message>
     <message>
         <source>Tick "Yes, remove this remote" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unue marku “Jes, forpreni ĉi tiun forstacion”.</translation>
     </message>
     <message>
         <source>The remote could not be removed: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>La forstacio ne forpreneblis: %problem</translation>
     </message>
     <message>
         <source>The remote could not be saved: %problem</source>
-        <translation type="unfinished"></translation>
+        <translation>La forstacio ne konserveblis: %problem</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81968,75 +81968,75 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     </message>
     <message>
         <source>Choose at least one remote or group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektu almenaŭ unu forstacion aŭ grupon.</translation>
     </message>
     <message>
         <source>A chosen remote is no longer in the settings. Reload the page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elektita forstacio ne plu estas en la agordoj. Reŝargu la paĝon.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unue marku “Jes, liveri nun”.</translation>
     </message>
     <message>
         <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP-forstacio ne povas ruli migradojn: elektu “Nur transigi”, aŭ preterlasu ĝin.</translation>
     </message>
     <message>
         <source>The migrations to deploy are migration ids, separated by commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>La liverotaj migradoj estas identigiloj de migradoj, apartigitaj per komoj.</translation>
     </message>
     <message>
         <source>The deploy is still going on. Wait for it to end.</source>
-        <translation type="unfinished"></translation>
+        <translation>La liverado ankoraŭ daŭras. Atendu, ĝis ĝi finiĝos.</translation>
     </message>
     <message>
         <source>This deploy does not wait at a gate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉi tiu liverado ne atendas ĉe pordego.</translation>
     </message>
     <message>
         <source>No remote applied this deploy: there is nothing to roll back.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neniu forstacio aplikis ĉi tiun liveradon: estas nenio por malfari.</translation>
     </message>
     <message>
         <source>Tick "Yes, deploy the next stage now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unue marku “Jes, liveri la sekvan etapon nun”.</translation>
     </message>
     <message>
         <source>Tick "Yes, roll this deploy back now" first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unue marku “Jes, malfari ĉi tiun liveradon nun”.</translation>
     </message>
     <message>
         <source>A remote with the id %id exists already.</source>
-        <translation type="unfinished"></translation>
+        <translation>Forstacio kun la identigilo %id jam ekzistas.</translation>
     </message>
     <message>
         <source>The port is a number from 1 to 65535.</source>
-        <translation type="unfinished"></translation>
+        <translation>La pordo estas nombro de 1 ĝis 65535.</translation>
     </message>
     <message>
         <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
-        <translation type="unfinished"></translation>
+        <translation>La medio estas vorto el literoj, ciferoj, - kaj _ (alpha, dev, stage, beta, production ...).</translation>
     </message>
     <message>
         <source>A group is a word of letters, digits, - and _ (not all): %group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupo estas vorto el literoj, ciferoj, - kaj _ (ne all): %group</translation>
     </message>
     <message>
         <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
-        <translation type="unfinished"></translation>
+        <translation>La akreditaĵo ne legeblas nun: %problem. Konservu ĝin en Agordado &gt; Sekretoj (aŭ agordu la variablon) antaŭ la unua liverado.</translation>
     </message>
     <message>
         <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
-        <translation type="unfinished"></translation>
+        <translation>FTP-forstacio nur ricevas dosierojn: liverado al ĝi estas “Nur transigi”, kaj ĝiaj migradoj estas rulataj tie permane.</translation>
     </message>
     <message>
         <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
-        <translation type="unfinished"></translation>
+        <translation>La forstacio %id ne estas en settings/override/migration.ini.append.php; forprenu ĝin tie, kie ĝi estas agordita.</translation>
     </message>
     <message>
         <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensalutis per FTP kaj legis index.php. La migrada stato de FTP-forstacio ne legeblas.</translation>
     </message>
 </context>
 <context>
@@ -84440,19 +84440,19 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <name>design/standard/migration/mail</name>
     <message>
         <source>The deploy %deploy failed on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>La liverado %deploy malsukcesis ĉe %site</translation>
     </message>
     <message>
         <source>The deploy %deploy waits at a gate on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>La liverado %deploy atendas ĉe pordego ĉe %site</translation>
     </message>
     <message>
         <source>The deploy %deploy succeeded on %site</source>
-        <translation type="unfinished"></translation>
+        <translation>La liverado %deploy sukcesis ĉe %site</translation>
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĉi tiun retleteron sendis %site, ĉar migration.ini [RemoteSettings] Notify[] petas ĝin.</translation>
     </message>
 </context>
 </TS>
