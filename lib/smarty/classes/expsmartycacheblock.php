@@ -19,9 +19,7 @@ class expSmartyCacheBlock implements \Smarty\BlockHandler\BlockHandlerInterface
 
         if ( $content === null )
         {
-            $accessName = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : false;
-            if ( !empty( $GLOBALS['expUISwitchVariantKey'] ) )
-                $accessName .= '-' . $GLOBALS['expUISwitchVariantKey'];
+            $accessName = eZTemplateCacheBlock::accessKey();
             $placement = 'stpl:' . $template->getSource()->getResourceName() . ':' . ( isset( $params['id'] ) ? $params['id'] : '0' );
             $keys = isset( $params['keys'] ) ? expSmartyRenderer::unwrap( $params['keys'] ) : null;
             $keyArray = $keys === null ? array( $placement, $accessName ) : array( $keys, $placement, $accessName );

@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching مان %shown پاليسيون (ڪل %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>کولڻ تي لوڊ ٿئي ٿو.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function، ڪردار، حد</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>پاليسيون ڳوليو</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>وڌيڪ لوڊ ڪريو</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ماڊيول/فنڪشن</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>سڀ ڪردار (%count پاليسيون)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ڪا پاليسي نه ٿي ملي.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched پاليسين مان %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>ڪو جواب ناهي</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

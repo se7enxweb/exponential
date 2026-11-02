@@ -68848,6 +68848,42 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown vun %matching Richtlinnen (%total am Ganzen)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Gëtt beim Opmaache gelueden.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modul/funktioun, roll, limitatioun</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Politiken duerchsichen</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Méi lueden</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/Funktioun</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>All Rollen (%count Politiken)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Keng Politik passt.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown vun %matched Politiken</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Keng Äntwert</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

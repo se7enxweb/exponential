@@ -68787,6 +68787,42 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown din %matching politici (%total în total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Se încarcă la deschidere.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modul/funcție, rol, limitare</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Caută în politici</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Încarcă mai multe</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funcție</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Toate rolurile (%count politici)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nicio politică nu corespunde.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown din %matched politici</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Niciun răspuns</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

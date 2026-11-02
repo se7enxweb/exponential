@@ -68846,6 +68846,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching ರಲ್ಲಿ %shown ನೀತಿಗಳು (ಒಟ್ಟು %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>ತೆರೆದಾಗ ಲೋಡ್ ಆಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, ಪಾತ್ರ, ಮಿತಿ</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>ನೀತಿಗಳನ್ನು ಹುಡುಕಿ</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>ಇನ್ನಷ್ಟು ಲೋಡ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ಮಾಡ್ಯೂಲ್/ಫಂಕ್ಷನ್</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>ಎಲ್ಲಾ ಪಾತ್ರಗಳು (%count ನೀತಿಗಳು)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ಯಾವುದೇ ನೀತಿ ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched ನೀತಿಗಳಲ್ಲಿ %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>ಉತ್ತರವಿಲ್ಲ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

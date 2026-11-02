@@ -68848,6 +68848,42 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown pa %matching mitemo (%total pamwe chete)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Inotakurwa kana yavhurwa.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, basa, muganho</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Tsvaga mapolisi</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Takura zvakawanda</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modhiyuru/fanikishoni</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Mabasa ese (mapolisi %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Hapana mutemo unoenderana.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown pamapolisi %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Hapana mhinduro</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

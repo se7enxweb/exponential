@@ -64,8 +64,10 @@ geleert wurde (oder „nie“).
 
 Der Reiter **Benutzer** (Chip `VC <Profil>`) zeigt das Cache-Profil des Benutzers, den Fingerabdruck der Teile des
 Schlüssels im Ansichts-Cache von Inhalten, die vom Benutzer abhängen, sodass zwei Benutzer erkennen, ob sie sich die
-gecachten Ansichten teilen; seine Präferenzen und Rollenzuweisungen; und in einem Abschnitt, der erst beim Öffnen geladen
-wird, die Richtlinien dieser Rollen, seitenweise und nach Modul und Funktion filterbar. Für `setup/setup` und für einen
+gecachten Ansichten teilen; seine Präferenzen und Rollenzuweisungen mit Links zu den Rollen; und für `setup/setup` in
+einem Abschnitt, der erst beim Öffnen geladen wird, die Richtlinien dieser Rollen, seitenweise, nach Rolle und per Suche
+(`content/read` findet auch die Platzhalter, die es gewähren), mit Klassen, Sektionen, Siteaccesses und Knoten mit Namen.
+Der Reiter ist für `setup/setup` und für einen
 anonymen Besucher, der die Debug-Ausgabe erhält ([Details](../../bc/6.0/debug-leiste.md#benutzer-rollen-und-cache-profil)).
 
 ## Wer sie verwenden darf

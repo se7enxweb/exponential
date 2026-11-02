@@ -68848,6 +68848,42 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown o %matching kulekele (%total a pau)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Hoʻouka ʻia ke wehe ʻia.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/hana, kuleana, palena</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Huli i nā kulekele</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Hoʻouka hou aku</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/hana</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Nā kuleana āpau (%count kulekele)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ʻAʻohe kulekele kūpono.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown o %matched kulekele</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>ʻAʻohe pane</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_theme-designer]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_theme-designer] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_theme-designer, INI, setting, StartPage, Related
+summary: "The settings of [Landing_theme-designer] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_theme-designer, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_theme-designer]
 
-The block `[Landing_theme-designer]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_theme-designer]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,21 @@ Default: `help/theme-designers/theme-designers-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_theme-designer]
 StartPage=help/theme-designers/theme-designers-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 2: `help/theme-designers/show-your-theme-as-a-live-static-demo.md`, `help/static-publishing/make-a-free-website-in-15-minutes.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_theme-designer]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/theme-designers/show-your-theme-as-a-live-static-demo.md
+InfoPages[]=help/static-publishing/make-a-free-website-in-15-minutes.md
 */ ?>
 ```
 

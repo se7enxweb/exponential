@@ -68846,6 +68846,42 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown n'ime %matching iwu (%total na ngụkọta)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>A na-ebudata ya mgbe e meghere ya.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, ọrụ, mmachi</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Chọọ amụma ndị ahụ</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Bubata ọzọ</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/ọrụ</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Ọrụ niile (amụma %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Enweghị amụma kwekọrọ.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown n'ime amụma %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Enweghị azịza</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

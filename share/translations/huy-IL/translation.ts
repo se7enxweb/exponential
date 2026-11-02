@@ -68857,6 +68857,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown מן %matching פוקדנא (%total בכלה)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>נטען בעת הפתיחה.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, תפקיד, הגבלה</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>חיפוש במדיניות</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>טען עוד</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>מודול/פולחנא</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>כל התפקידים (%count כללי מדיניות)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>אין כלל מדיניות תואם.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown מתוך %matched כללי מדיניות</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>אין תשובה</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -304,74 +304,79 @@
     box.replaceChildren(hint(t('Could not load: %error', { '%error': err && err.message ? err.message : String(err) }), 'warn'),
       retry ? el('button', { type: 'button', class: 'exp-debug-button', onclick: retry }, t('Retry')) : null);
   };
-  /* ---------------------------------------------------------------- User tab: role policies */
-  // The Policies section asks expdebugbar::policies::<module>::<function>::<offset> the first time it is opened, a
-  // page at a time; the filter is part of the path ("-" for any), nothing goes in the query string.
-  root.querySelectorAll('details.exp-debug-user-policies').forEach((details) => {
-    const out = details.querySelector('.exp-debug-user-policies-box');
-    if (!out) return;
-    const state = { module: '', fn: '', offset: 0 };
-    const pathArg = (v) => (v ? encodeURIComponent(v) : '-');
-    const results = el('div', { class: 'exp-debug-user-policies-results', 'aria-live': 'polite' });
-    let controls = null, moduleSelect = null, fnSelect = null, modules = [];
-    const fillFunctions = () => {
-      const m = modules.find((x) => x.module === state.module);
-      const names = m ? m.functions : Array.from(new Set(modules.flatMap((x) => x.functions))).sort();
-      fnSelect.replaceChildren(el('option', { value: '' }, t('All functions')), ...names.map((f) => el('option', { value: f, selected: f === state.fn }, f)));
-      if (state.fn && names.indexOf(state.fn) === -1) state.fn = '';
-      fnSelect.value = state.fn;
-    };
-    const buildControls = () => {
-      const mid = nextId('policy-module'), fid = nextId('policy-function');
-      moduleSelect = el('select', { id: mid },
-        el('option', { value: '' }, t('All modules')), ...modules.map((m) => el('option', { value: m.module }, m.module)));
-      fnSelect = el('select', { id: fid });
-      fillFunctions();
-      moduleSelect.addEventListener('change', () => { state.module = moduleSelect.value; fillFunctions(); state.offset = 0; load(false); });
-      fnSelect.addEventListener('change', () => { state.fn = fnSelect.value; state.offset = 0; load(false); });
-      controls = el('div', { class: 'exp-debug-row' }, el('label', { for: mid }, t('Module')), moduleSelect, el('label', { for: fid }, t('Function')), fnSelect);
-      out.replaceChildren(controls, results);
-    };
-    const limitationText = (p) => (p.limitations || []).map((l) => l.identifier + ': ' + (l.values || []).join(', ')).join('; ');
-    const rowOf = (p) => el('tr', {},
-      el('td', {}, p.role + ' (' + p.role_id + ')'), el('td', {}, el('code', {}, p.module)), el('td', {}, el('code', {}, p.function)),
-      el('td', {}, (p.limitations || []).length ? limitationText(p) : el('em', {}, t('none'))));
-    const render = (ans, append) => {
-      modules = ans.modules || [];
-      if (!controls) buildControls();
-      let table = results.querySelector('table');
-      if (!append || !table) {
-        table = el('table', { class: 'exp-debug-facts exp-debug-user-policy-list' },
-          el('tr', {}, el('th', {}, t('Role')), el('th', {}, t('Module')), el('th', {}, t('Function')), el('th', {}, t('Limitations'))));
-        results.replaceChildren(el('p', { class: 'exp-debug-hint exp-debug-user-policy-count', role: 'status' }), table);
-      }
-      (ans.policies || []).forEach((p) => table.append(rowOf(p)));
-      const shown = table.querySelectorAll('tr').length - 1;
-      const count = results.querySelector('.exp-debug-user-policy-count');
-      count.textContent = !ans.total ? t('These roles have no policies.')
-        : (!ans.matching ? t('No policy matches the filter.') : t('%shown of %matching policies (%total in all)', { '%shown': shown, '%matching': ans.matching, '%total': ans.total }));
-      table.hidden = !ans.matching;
-      const old = results.querySelector('.exp-debug-user-policy-more'); if (old) old.remove();
-      if (ans.next_offset !== null && ans.next_offset !== undefined) {
-        results.append(el('p', { class: 'exp-debug-user-policy-more' }, el('button', { type: 'button', class: 'exp-debug-button',
-          onclick: () => { state.offset = ans.next_offset; load(true); } }, t('Show more'))));
-      }
-      if (filter && filter.value) runFilter();
-    };
-    const load = (append) => {
-      const status = el('p', { class: 'exp-debug-hint', role: 'status' }, t('Loading...'));
-      const box = controls ? results : out;
-      if (append) box.append(status); else box.replaceChildren(status);
-      return call('policies::' + pathArg(state.module) + '::' + pathArg(state.fn) + '::' + state.offset, {})
-        .then((ans) => { status.remove(); render(ans || {}, append); })
-        .catch((err) => { status.remove(); failure(box, err, () => { state.offset = 0; load(false); }); });
-    };
-    let asked = false;
-    details.addEventListener('toggle', () => { if (details.open && !asked) { asked = true; load(false); } });
-  });
-
   const reloadNote = () => el('p', { class: 'exp-debug-hint', role: 'status' }, t('Reload the page to see the effect.') + ' ',
     el('button', { type: 'button', class: 'exp-debug-button', onclick: () => window.location.reload() }, t('Reload now')));
+
+  /* ---------------------------------------------------------------- User tab: the policies, loaded when opened */
+  // expdebugbar::policies answers a page of rows for a role, a search or all; the roles with their counts come with the
+  // first answer. Built here, so a user with hundreds of roles costs the page nothing until the section is opened.
+  root.querySelectorAll('[data-exp-debug-policies]').forEach((details) => {
+    const body = details.querySelector('.exp-debug-policies-body');
+    if (!body) return;
+    let loaded = false;
+    let seq = 0;
+    // the address of role/view; eZURI drops its trailing slash, the id follows after one
+    const roleBase = details.getAttribute('data-role-url') || '';
+    const roleUrl = roleBase ? roleBase.replace(/\/?$/, '/') : '';
+    let state = { role: '', q: '', offset: 0 };
+    let roles = [];
+    let timer = null;
+    // UTF-8 text as base64url: a search may hold "/" or "::", which a path argument cannot
+    const b64url = (s) => btoa(Array.from(new TextEncoder().encode(s), (b) => String.fromCharCode(b)).join(''))
+      .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    const search = el('input', { type: 'search', class: 'exp-debug-policies-search', maxlength: '100', placeholder: t('module/function, role, limitation'), 'aria-label': t('Search the policies') });
+    const roleSelect = el('select', { class: 'exp-debug-policies-role', 'aria-label': t('Role') });
+    const status = el('div', { class: 'exp-debug-hint', role: 'status', 'aria-live': 'polite', tabindex: '-1' });
+    const table = el('table', { class: 'exp-debug-facts exp-debug-user-policies' });
+    const more = el('button', { type: 'button', class: 'exp-debug-button', hidden: true }, t('Load more'));
+    const header = () => el('tr', {}, el('th', {}, t('Module/function')), el('th', {}, t('Limitations')), el('th', {}, t('Role')));
+    const rowOf = (r) => {
+      const name = r.module + '/' + r.function;
+      const limits = (r.limitations || []).map((l) => el('div', {}, el('strong', {}, l.identifier + ': '), (l.values || []).join(', ')));
+      return el('tr', {},
+        el('td', {}, el('code', { class: r.module === '*' || r.function === '*' ? 'exp-debug-policy-all' : null }, name)),
+        el('td', {}, limits.length ? limits : el('em', {}, t('none'))),
+        el('td', {}, r.role + ' (', roleUrl ? el('a', { href: roleUrl + r.role_id }, String(r.role_id)) : String(r.role_id), ')'));
+    };
+    // an answer to an older request (typed on, another role) is dropped: only the latest one fills the table
+    const load = (append) => {
+      const mine = ++seq;
+      status.textContent = t('Loading...');
+      if (!append) more.hidden = true;
+      // everything in the path (expdebugbar::policies::<role>::<offset>::<search>), the search as base64url
+      call('policies::' + (state.role || '-') + '::' + (append ? state.offset : 0) + '::' + (state.q ? b64url(state.q) : '-'), {}).then((answer) => {
+        if (mine !== seq) return;
+        if (!answer || !Array.isArray(answer.rows)) throw new Error(t('No answer'));
+        if (answer.roles && !roles.length) {
+          roles = answer.roles;
+          roleSelect.replaceChildren(el('option', { value: '' }, t('All roles (%count policies)', { '%count': answer.total })),
+            ...roles.map((r) => el('option', { value: String(r.id), title: (r.assignments || []).map((a) => (a.from || t('the user')) + (a.limit ? ', ' + a.limit : '')).join('; ') },
+              r.name + ' (' + r.id + '): ' + r.count)));
+        }
+        if (!append) table.replaceChildren(header());
+        answer.rows.forEach((r) => table.append(rowOf(r)));
+        const shown = table.rows.length - 1;
+        status.textContent = answer.matched === 0 ? t('No policy matches.') : t('%shown of %matched policies', { '%shown': shown, '%matched': answer.matched });
+        more.hidden = shown >= answer.matched;
+        state.offset = shown;
+        // the button that was clicked may be gone: keep the keyboard in the section
+        if (append && more.hidden) status.focus();
+      }).catch((err) => { if (mine === seq) failure(status, err, () => load(append)); });
+    };
+    const reload = () => { state.offset = 0; load(false); };
+    search.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => { state.q = search.value.trim(); reload(); }, 300);
+    });
+    roleSelect.addEventListener('change', () => { state.role = roleSelect.value; reload(); });
+    more.addEventListener('click', () => load(true));
+    details.addEventListener('toggle', () => {
+      if (!details.open || loaded) return;
+      loaded = true;
+      body.replaceChildren(el('p', { class: 'exp-debug-policies-tools' }, search, ' ', roleSelect), status, table, more);
+      reload();
+    });
+  });
 
   /* ---------------------------------------------------------------- IP helpers (client side validation) */
   const parseV4 = (s) => {

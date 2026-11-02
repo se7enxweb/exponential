@@ -68856,6 +68856,42 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ti %matching kawijakan (%total sadayana)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Dimuat nalika dibuka.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, peran, wates</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Panggihan kawijakan</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Muat deui</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/fungsi</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Sadaya peran (%count kawijakan)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Teu aya kawijakan nu cocog.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown tina %matched kawijakan</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Teu aya waleran</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

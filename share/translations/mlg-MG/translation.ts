@@ -68848,6 +68848,42 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown amin'ny %matching politika (%total raha atambatra)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Mipoitra rehefa vohana.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, andraikitra, fameperana</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Hikaroka ao amin'ny politika</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Haka bebe kokoa</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Môdily/asa</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Ny andraikitra rehetra (politika %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Tsy misy politika mifanaraka.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown amin'ny politika %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Tsy misy valiny</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68787,6 +68787,42 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown od %matching smernica (ukupno %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Učitava se pri otvaranju.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, uloga, ograničenje</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Pretraži politike</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Učitaj još</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funkcija</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Sve uloge (%count politika)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nijedna politika ne odgovara.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown od %matched politika</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nema odgovora</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

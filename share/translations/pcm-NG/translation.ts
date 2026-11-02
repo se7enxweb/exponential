@@ -68856,6 +68856,42 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown out of %matching policies (%total for all)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>E go load as dem open am.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, role, limitation</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Search di policies</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Load more tins</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/di function</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>All di roles (%count policies)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>No policy match.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown for %matched policies</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>No answer dey</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

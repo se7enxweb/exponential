@@ -68846,6 +68846,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching கொள்கைகளில் %shown (மொத்தம் %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>திறக்கும்போது ஏற்றப்படும்.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, பங்கு, வரம்பு</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>கொள்கைகளைத் தேடு</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>மேலும் ஏற்று</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>தொகுதிக்கூறு/செயல்கூறு</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>அனைத்துப் பங்குகளும் (%count கொள்கைகள்)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>பொருந்தும் கொள்கை எதுவும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched கொள்கைகளில் %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>பதில் இல்லை</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

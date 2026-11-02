@@ -67337,6 +67337,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown з %matching політик (усього %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Завантажується під час відкриття.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, роль, обмеження</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Пошук за політиками</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Завантажити ще</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Модуль/функція</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Усі ролі (політик: %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Відповідних політик немає.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown із %matched політик</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Немає відповіді</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

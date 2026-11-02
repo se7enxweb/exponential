@@ -68787,6 +68787,42 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching käytäntöä (yhteensä %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ladataan avattaessa.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rooli, rajoitus</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Hae käytäntöjä</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Lataa lisää</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moduuli/toiminto</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Kaikki roolit (%count käytäntöä)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Mikään käytäntö ei täsmää.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown / %matched käytäntöä</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Ei vastausta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

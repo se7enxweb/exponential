@@ -67337,6 +67337,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown من %matching سياسة (%total إجمالًا)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>يتم التحميل عند الفتح.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function، الدور، القيد</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>البحث في السياسات</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>تحميل المزيد</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>الوحدة/الوظيفة</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>كل الأدوار (%count سياسة)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>لا توجد سياسة مطابقة.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown من %matched سياسة</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>لا توجد استجابة</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

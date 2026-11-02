@@ -60,8 +60,10 @@ The **Cache** tab lists the caches and clears them through the cache manager, sh
 
 The **User** tab (chip `VC <profile>`) shows the user's cache profile, the fingerprint of the parts of the content view
 cache key that depend on the user, so two users can tell whether they share the cached views; their preferences and
-role assignments; and, in a section loaded only when it is opened, the policies of those roles, a page at a time and
-filtered by module and function. For `setup/setup`, and for an anonymous visitor who gets the debug output
+role assignments with links to the roles; and, for `setup/setup`, in a section loaded only when it is opened, the
+policies of those roles, a page at a time, by role and by search (`content/read` also finds the wildcards that grant
+it), with classes, sections, siteaccesses and nodes by name. The tab is for `setup/setup`, and for an anonymous visitor
+who gets the debug output
 ([details](../../bc/6.0/debug-bar.md#user-roles-and-cache-profile)).
 
 ## Who may use it

@@ -68846,6 +68846,42 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown kwi %matching yemigaqo-nkqubo (%total iyonke)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ilayishwa xa ivulwa.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, indima, umqathango</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Khangela imigaqo-nkqubo</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Layisha ngakumbi</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Imodyuli/umsebenzi</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Zonke iindima (imigaqo-nkqubo e-%count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Akukho mgaqo-nkqubo ufanayo.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown kwimigaqo-nkqubo e-%matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Akukho mpendulo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

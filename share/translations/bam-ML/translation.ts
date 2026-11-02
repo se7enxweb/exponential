@@ -68848,6 +68848,42 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown %matching sariyaw la (%total bɛɛ lajɛlen)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>A bɛ ta ni a dayɛlɛra.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/baara, yɔrɔ, dancɛ</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Sariyaw ɲini</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Caman ta</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/baara</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Yɔrɔw bɛɛ (sariya %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Sariya si ma kɛ kelen ye.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown ka bɔ sariya %matched la</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Jaabi t'a la</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

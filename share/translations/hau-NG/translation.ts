@@ -68846,6 +68846,42 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown cikin %matching manufofi (%total gaba ɗaya)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ana loda shi idan an buɗe.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, matsayi, iyaka</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Nemi manufofi</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Loda ƙari</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Tsarin sashe/aiki</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Dukkan matsayi (manufofi %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Babu manufar da ta dace.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown daga cikin manufofi %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Babu amsa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

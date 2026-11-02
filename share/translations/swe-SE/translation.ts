@@ -68694,6 +68694,42 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown av %matching policyer (%total totalt)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Läses in när den öppnas.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, roll, begränsning</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Sök i policyerna</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Läs in fler</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funktion</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Alla roller (%count policyer)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ingen policy matchar.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown av %matched policyer</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Inget svar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

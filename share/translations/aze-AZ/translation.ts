@@ -68848,6 +68848,42 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching siyasət (cəmi %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Açılanda yüklənir.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rol, məhdudiyyət</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Siyasətlərdə axtar</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Daha çox yüklə</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funksiya</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Bütün rollar (%count siyasət)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Heç bir siyasət uyğun gəlmir.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched siyasətdən %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Cavab yoxdur</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

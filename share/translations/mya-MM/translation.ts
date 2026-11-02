@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>မူဝါဒ %matching ခုအနက် %shown ခု (စုစုပေါင်း %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>ဖွင့်သည့်အခါ တင်ပါမည်။</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>မော်ဂျူး/လုပ်ဆောင်ချက်, အခန်းကဏ္ဍ, ကန့်သတ်ချက်</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>မူဝါဒများကို ရှာဖွေရန်</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>ထပ်မံတင်ရန်</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>မော်ဂျူး/လုပ်ဆောင်ချက်</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>အခန်းကဏ္ဍအားလုံး (မူဝါဒ %count ခု)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ကိုက်ညီသော မူဝါဒ မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>မူဝါဒ %matched ခုအနက် %shown ခု</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>အဖြေ မရှိပါ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

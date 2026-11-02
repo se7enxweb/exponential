@@ -67340,6 +67340,42 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ex %matching regulis (%total in summa)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Oneratur cum aperitur.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modulus/functio, munus, limitatio</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Quaere in normis</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Plura onera</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modulus/functio</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Omnia munera (%count normae)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nulla norma congruit.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown ex %matched normis</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nullum responsum</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

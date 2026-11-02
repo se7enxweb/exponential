@@ -67793,6 +67793,42 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown af %matching politikker (%total i alt)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Indlæses, når den åbnes.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rolle, begrænsning</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Søg i politikkerne</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Indlæs flere</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funktion</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Alle roller (%count politikker)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ingen politik matcher.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown af %matched politikker</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Intet svar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68857,6 +68857,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ܡܢ %matching ܢܡܘܣ̈ܐ (%total ܒܟܠ)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>מתטען כד מתפתח.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>מודול/פולחנא, דורא, תחומא</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>בציא בפוקדנא</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>טען טפי</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>מודול/פולחנא</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>כלהון דורא (%count פוקדנא)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>לית פוקדנא דמשתוי.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown מן %matched פוקדנא</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>לית פתגמא</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

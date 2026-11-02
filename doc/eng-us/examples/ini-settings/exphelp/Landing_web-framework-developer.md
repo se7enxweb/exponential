@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_web-framework-developer]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_web-framework-developer] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_web-framework-developer, INI, setting, StartPage, Related
+summary: "The settings of [Landing_web-framework-developer] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_web-framework-developer, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_web-framework-developer]
 
-The block `[Landing_web-framework-developer]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_web-framework-developer]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,21 @@ Default: `help/web-framework-developers/web-framework-developers-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_web-framework-developer]
 StartPage=help/web-framework-developers/web-framework-developers-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 2: `help/web-framework-developers/static-publishing-compared-with-static-site-generators.md`, `guides/static-publishing-ci-and-github-actions.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_web-framework-developer]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/web-framework-developers/static-publishing-compared-with-static-site-generators.md
+InfoPages[]=guides/static-publishing-ci-and-github-actions.md
 */ ?>
 ```
 

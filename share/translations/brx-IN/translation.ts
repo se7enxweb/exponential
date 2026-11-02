@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching निति निफ्राय %shown (गासै %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>खेवनाय बेलाय लोड जायो।</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, फोजोब, सिमा</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>नीतिफोरखौ दां</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>आरो लोड खालाम</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>मडुल/फङ्सन</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>गासैबो फोजोबफोर (%count नीति)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>नीति मिलनाय गैया।</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched नीतिफोरनिफ्राय %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>जायो गैया</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
