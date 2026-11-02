@@ -177,11 +177,11 @@ class expMigrationRemoteCredential
     {
         $dir = $this->workDir . '/.keys';
         if ( !is_dir( $dir ) )
-            @mkdir( $dir, 0700, true );
-        @chmod( $dir, 0700 );
+            @mkdir( $dir, eZDir::dirMode( 0700 ), true );
+        @chmod( $dir, eZDir::dirMode( 0700 ) );
         $file = $dir . '/' . $prefix . '-' . bin2hex( random_bytes( 8 ) );
         touch( $file );
-        @chmod( $file, 0600 );
+        @chmod( $file, eZFile::fileMode( 0600 ) );
         file_put_contents( $file, $content );
         $this->files[] = $file;
         return $file;

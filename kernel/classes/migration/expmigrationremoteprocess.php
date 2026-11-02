@@ -132,7 +132,7 @@ class expMigrationRemoteProcess
                 foreach ( $op['copy'] as $from => $to )
                 {
                     if ( !is_dir( dirname( $to ) ) )
-                        @mkdir( dirname( $to ), 0775, true );
+                        @mkdir( dirname( $to ), eZDir::dirMode( 0775 ), true );
                     if ( !@copy( $from, $to ) )
                     {
                         $results[$key]['stderr'] .= "could not copy to $to\n";

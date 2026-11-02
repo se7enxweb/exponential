@@ -226,7 +226,7 @@ class expMigrationRemoteDeploy
     {
         $dir = $this->options['work_dir'];
         if ( !is_dir( $dir ) )
-            @mkdir( $dir, 0775, true );
+            @mkdir( $dir, eZDir::dirMode( 0775 ), true );
         $handle = @fopen( $dir . '/deploy.lock', 'c' );
         if ( !$handle )
             return null;
@@ -300,7 +300,7 @@ class expMigrationRemoteDeploy
                 $ok = false;
             }
             if ( !is_dir( $keyDir ) )
-                @mkdir( $keyDir, 0700, true );
+                @mkdir( $keyDir, eZDir::dirMode( 0700 ), true );
             $this->transports[$id] = new expMigrationRemoteTransport( $remote, $credential, $keyDir . '/' . $id );
         }
         if ( !$ok )
@@ -879,7 +879,7 @@ class expMigrationRemoteDeploy
     {
         $dir = $this->options['work_dir'] . '/reports';
         if ( !is_dir( $dir ) )
-            @mkdir( $dir, 0775, true );
+            @mkdir( $dir, eZDir::dirMode( 0775 ), true );
         @file_put_contents( $dir . '/' . $this->deployId() . '.json', json_encode( $report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . "\n" );
     }
 
