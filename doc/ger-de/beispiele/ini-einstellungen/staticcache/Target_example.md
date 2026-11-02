@@ -240,9 +240,11 @@ LiveURL=
 > Links auf Seiten des eigenen Hosts der Website (oder LiveURL), die der Build nicht  
 > enthält (eine Modulansicht wie /user/login oder /shop/basket, eine Seite mit  
 > Query-String, eine ausgelassene Seite, ein anderer Siteaccess): keep (sie gehen zur  
-> Live-Website, oder bleiben ohne eine, wie sie sind) oder unlink (der Link wird zu  
-> seinem Text; eine class, die er hatte, bleibt an einem <span>). Bilder, Stylesheets,  
-> Formulare (siehe Forms) und Links auf andere Hosts werden nie herausgenommen.  
+> Live-Website, oder bleiben ohne eine, wie sie sind) oder unlink (der Link bleibt  
+> ein <a> mit seinen Klassen, aber ohne Adresse, mit aria-disabled markiert und von der  
+> exp-static.css des Builds ausgegraut, so dass das Aussehen des Themes bleibt). Bilder,  
+> Stylesheets, Formulare (siehe Forms) und Links auf andere Hosts werden nie  
+> herausgenommen.  
 
 Standard: `keep`.
 

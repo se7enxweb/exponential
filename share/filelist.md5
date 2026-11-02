@@ -5451,7 +5451,7 @@ bf02cda33caea946f6ca68a305e6dbdd  doc/eng-us/examples/ini-settings/solr/SolrSett
 73d85b9ae40a5d141847ad3e1143a768  doc/eng-us/examples/ini-settings/staticcache/CacheSettings.md
 f1561bc3cf4a8d14b756a98d22432282  doc/eng-us/examples/ini-settings/staticcache/README.md
 cffc6099548d6633dbf0d73a33d6c059  doc/eng-us/examples/ini-settings/staticcache/StaticPublishSettings.md
-403fc2d642cc6a1120516fb7acf67393  doc/eng-us/examples/ini-settings/staticcache/Target_example.md
+0ce644f136eb361af6729cba753d1ece  doc/eng-us/examples/ini-settings/staticcache/Target_example.md
 b7966a1493a890a2069df8cbf21fb616  doc/eng-us/examples/ini-settings/subitems/Defaults_media.md
 69e73f81beb54abd96703666a1a0712d  doc/eng-us/examples/ini-settings/subitems/Defaults_users.md
 ca7c9510412159019e2908e2d8b6a88e  doc/eng-us/examples/ini-settings/subitems/Preset_editorial.md
@@ -6886,7 +6886,7 @@ fe1c6abb641c7c1556cdce16bb86142c  doc/eng-us/features/6.0/smarty-templates.md
 784cbc15d1de89c345943913993e388c  doc/eng-us/features/6.0/soap-client-tls.md
 a46d405f5296bc36483dd00721014cbc  doc/eng-us/features/6.0/sqlite-database.md
 935ec6788e61b1717356146c44579111  doc/eng-us/features/6.0/static-cache-generator.md
-86b47290878a837947b3d86bae41410e  doc/eng-us/features/6.0/static-publishing.md
+ad74dd6e5ac131f4306301c1c2cbd7f2  doc/eng-us/features/6.0/static-publishing.md
 afd23090dc06207591ccdb4eb6b91806  doc/eng-us/features/6.0/store-dashboard.md
 9f9bea9c87ecaffffafb0e1ac4361b00  doc/eng-us/features/6.0/string-template-operators.md
 e0fe70a6b6d52d4ec6f29e9cee750368  doc/eng-us/features/6.0/subitems-copy-selected.md
@@ -12958,7 +12958,7 @@ acf80981b12ccd8ca2d672ee2d1c1ec0  doc/eng-us/specifications/6.0/runnable-command
 7cfa35396e92191dbe2408004e86d416  doc/eng-us/specifications/6.0/security-hardening-2026-08.md
 8e5d88b3a7f5bd9ec543ac03aa7463ec  doc/eng-us/specifications/6.0/security-hardening-6.0.13.md
 26d18bdf558a01bafff2ac715a841d66  doc/eng-us/specifications/6.0/sqlite3-database-driver.md
-4bd86722e3d5a14f14f807829a048445  doc/eng-us/specifications/6.0/static-publishing-build-format.md
+43b5345b7169ffff3bb61c4985dfe978  doc/eng-us/specifications/6.0/static-publishing-build-format.md
 c267a0550b900807dfed443c52266c85  doc/eng-us/specifications/6.0/static-publishing-form-endpoint.md
 b118225dc0e1ae32082c94ca48138d4c  doc/eng-us/specifications/6.0/syndication.md
 b23159133a1d0d3c2ad55fbda0c8597a  doc/eng-us/specifications/6.0/velocity-engine-settings.md
@@ -13206,7 +13206,7 @@ f26edba2f4dce1ecdfe95d75e31d053e  doc/ger-de/.examples/descriptions/21-legacy-fo
 98601c733889b38a62f0f2ab1a605634  doc/ger-de/.examples/descriptions/22-migration-ini-cronjob-and-template-check-2026-10-31.json
 26458ad79eb818c7bca8362306c42667  doc/ger-de/.examples/descriptions/23-migration-admin-2026-11-01.json
 f070af430a26abc5390d222deec82c54  doc/ger-de/.examples/descriptions/23-migration-yaml-engine-2026-11-01.json
-ed6b75a3fb02292a3e388850035a949e  doc/ger-de/.examples/descriptions/23-static-publishing-2026-11-01.json
+78cfd3f7b6b501f5f75384300d64e8e3  doc/ger-de/.examples/descriptions/23-static-publishing-2026-11-01.json
 d194eb016db44534c8c8be9b3b874206  doc/ger-de/.examples/descriptions/24-migration-recording-2026-11-01.json
 ef666b3ee71630e84153acebec27299a  doc/ger-de/.examples/descriptions/24-migration-yaml-steps-2026-11-02.json
 43cb1de6f0637773dc385e117cbfefe6  doc/ger-de/.examples/descriptions/24-static-publishing-git-2026-11-01.json
@@ -15209,7 +15209,7 @@ b0dc36b499f6bb53381464cc91bb464a  doc/ger-de/beispiele/ini-einstellungen/solr/So
 e1b3e3f084109414fed2281625e0b949  doc/ger-de/beispiele/ini-einstellungen/staticcache/CacheSettings.md
 4b16352c9a1d0353035169c7612f5ccb  doc/ger-de/beispiele/ini-einstellungen/staticcache/README.md
 50d25225b0db88ba036b5a8fe47292cd  doc/ger-de/beispiele/ini-einstellungen/staticcache/StaticPublishSettings.md
-ecfc17c3d541a5d24012c816924b9fc9  doc/ger-de/beispiele/ini-einstellungen/staticcache/Target_example.md
+a650bd772179f76318f6d2da0f2a7208  doc/ger-de/beispiele/ini-einstellungen/staticcache/Target_example.md
 19f8469ff6b1b9290ce0160dfbf35547  doc/ger-de/beispiele/ini-einstellungen/subitems/Defaults_media.md
 31681049d4d11f5823b75dc5fcb1b3d2  doc/ger-de/beispiele/ini-einstellungen/subitems/Defaults_users.md
 bd9579a93d6b61e7aaabeb52f2a150ec  doc/ger-de/beispiele/ini-einstellungen/subitems/Preset_editorial.md
@@ -16436,7 +16436,7 @@ c622d935f4e14bd1f509b16f2c08c311  doc/ger-de/funktionen/6.0/sortierung-der-beste
 0b01e6dac291a44099f8820396143b1e  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
 1c981d8a54aac59d03d7a8849d066c38  doc/ger-de/funktionen/6.0/standard-extension-auslieferung.md
 a4b2787b5f4888427cd0d4441ac16470  doc/ger-de/funktionen/6.0/standardwerte-einer-sauberen-installation.md
-52820942da5fa33334b14228ffd2c31b  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
+65a4bca286f03aca05e854650a49c024  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
 e3f9f4f40efea9ae4d8d4382d03600b1  doc/ger-de/funktionen/6.0/systemkarte.md
 fec92c66d4f001c693d6267a7591471f  doc/ger-de/funktionen/6.0/template-editor-ueberschreibungen.md
 1e6bfbed65344611a4fb28e0213bf0e1  doc/ger-de/funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md
@@ -22288,7 +22288,7 @@ da71ae2edb8e08a7c2003f78957321a1  doc/ger-de/spezifikationen/6.0/mail-einstellun
 c83d971494616e6050d2ac9fad29ff2f  doc/ger-de/spezifikationen/6.0/sicherheitshaertung-6.0.13.md
 e74b59965ce8bdb608a720100c84692b  doc/ger-de/spezifikationen/6.0/sicherheitsvorgaben-2026-09.md
 876a7f3c2cc819436930c0fa5235088c  doc/ger-de/spezifikationen/6.0/sqlite3-datenbanktreiber.md
-12d8c2e911873d03632ddb127bca937a  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-build-format.md
+eec10b122eb34db2e2e8e3a855c8a9d9  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-build-format.md
 3b4c9352f7670bd3c487fd1b31af9f28  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-formular-endpunkt.md
 f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 8faea3493dbcfc10fdf62435ec8c2a7d  doc/ger-de/spezifikationen/6.0/velocity-engine-einstellungen.md
@@ -24480,7 +24480,7 @@ a4256533dc1c0a8afd51c4fe5de6c60d  kernel/classes/role/exprolepolicysentence.php
 a6942c619908de9aff2835601b137d63  kernel/classes/shopaccounthandlers/ezusershopaccounthandler.php
 ee07bebf65ac9238807f87dc4446ae79  kernel/classes/staticpublish/expstaticadmin.php
 4c27e245a401bd764beda0c02e40fe82  kernel/classes/staticpublish/expstaticassetcollector.php
-819c9c41414b500fc526ed4d9589c842  kernel/classes/staticpublish/expstaticbuild.php
+958e48d0501a90e93143054af11539c8  kernel/classes/staticpublish/expstaticbuild.php
 b0efb84f30b72643059fb90b0ee57f1b  kernel/classes/staticpublish/expstaticcredentials.php
 d0ff0cbe939677e04c1ea1c242db0095  kernel/classes/staticpublish/expstaticdegrader.php
 2d4317b2d941b0221ee344c4000a7e64  kernel/classes/staticpublish/expstaticdnscheck.php
@@ -24490,7 +24490,7 @@ d2a209c210d20f86e5763a64ef73e08f  kernel/classes/staticpublish/expstaticextras.p
 e4af3364468ad9469593250767cd8ce8  kernel/classes/staticpublish/expstaticgithub.php
 7658656108a2c5362271bf49745bbc63  kernel/classes/staticpublish/expstaticjob.php
 7f2d293dedb7a328f2321f3a7535d4fe  kernel/classes/staticpublish/expstaticlinkchecker.php
-1e4b63d19e4cefb55362660f505e81b0  kernel/classes/staticpublish/expstaticlinkrewriter.php
+37051ce03d9c783ab539e6409c8b1ceb  kernel/classes/staticpublish/expstaticlinkrewriter.php
 20e9c4c0d6946b224498ff039be5d02a  kernel/classes/staticpublish/expstaticlock.php
 6037e14340786977a4efee9773ba1f31  kernel/classes/staticpublish/expstaticmanifest.php
 b7086d6b660a5b747eed2eee477e8540  kernel/classes/staticpublish/expstaticnotifier.php
@@ -26269,7 +26269,7 @@ c729f6d640ef55743933025d78fd064c  settings/site.ini
 52dd1a738a1a703bfd45ac4eae0fbcba  settings/smarty.ini
 16959b1c9cb408528496ee6aeabe3a64  settings/soap.ini
 6f619e35e9ab075d6bfac58736897d8a  settings/solr.ini
-35812d16bf652d247afc6a457fb353ea  settings/staticcache.ini
+ac4c9900017a32003dc25ca5132d350b  settings/staticcache.ini
 d4db8f52a92806d9486a1cd58e595a09  settings/subitems.ini
 977e56784d1ea230cb7bdb18665defdf  settings/subitemscolumns.ini
 d991cf1227c1908a98f4ca754bae65c1  settings/syscard.ini
@@ -28660,7 +28660,7 @@ e02245c806ec11dee72b57b7e4d1ece0  tests/tests/kernel/classes/staticpublish/expSt
 b674b9f3f52a668377100f22d8104e61  tests/tests/kernel/classes/staticpublish/expStaticFormEndpointTest.php
 36261ce09d4f1424c69c939877e7391b  tests/tests/kernel/classes/staticpublish/expStaticGitHubTest.php
 f9f6e7d3550d867ef242158560604dfb  tests/tests/kernel/classes/staticpublish/expStaticLinkCheckerTest.php
-3271fb73d3c1f80225668be691c5fc1b  tests/tests/kernel/classes/staticpublish/expStaticLinkRewriterTest.php
+6e9dea981848b5c4f8d5638c9a65574c  tests/tests/kernel/classes/staticpublish/expStaticLinkRewriterTest.php
 ee068eb421875f971f1aae84fec35885  tests/tests/kernel/classes/staticpublish/expStaticManifestTest.php
 87d9e9e8a8eba07e15f47b2d69a101f4  tests/tests/kernel/classes/staticpublish/expStaticNotifierTest.php
 adb80e7b78eabc0a7df0252fe4fa55ea  tests/tests/kernel/classes/staticpublish/expStaticPostProcessorTest.php

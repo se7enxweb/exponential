@@ -95,11 +95,23 @@ hosts, fragments of the same page (`#top`), a lone query (`?x`), and `mailto:`, 
 other schemes are never changed.
 
 With `OutsideLinks=unlink` a link (`<a href>`) to such a page, and with `AdminLinks=unlink` a link whose path starts
-with the path of an administration siteaccess, is taken out instead: the `<a>` and its closing tag become a `<span>`
-with the link's `class` attribute, or nothing when it had none, so only its content stays. A `<link>` whose `rel` only
-names navigation (`alternate`, `search`, `home`, `next`, `prev` ...) is dropped. Files, images, style sheets, scripts,
-form actions and other hosts are never taken out. An administration path is never held as a page of the site. The
-report counts both (`links_removed_outside`, `links_removed_admin`).
+with the path of an administration siteaccess, is taken out instead. It stays an `<a>`, a placeholder link without
+an address, so every rule of the theme on `a`, `nav a`, `.menu a` and the like still styles it in the menus, the
+footer, the breadcrumbs, buttons and cards:
+
+- `href`, `target`, `rel`, `download`, `ping`, `hreflang`, `referrerpolicy` and the event handlers (`on...`) go; every
+  other attribute and the content stay, and the closing `</a>` stays.
+- `aria-disabled="true"` is added, and the class `exp-static-unavailable` (to the link's `class` attribute, or as one).
+  No `title` is added.
+- `exp-static.css` at the root of the build is linked at the end of the `<head>` of every page that has such a link
+  (as any link: relative, or below the base path; renamed when `PostProcess[]=fingerprint` is set). It is written only
+  when a page needs it, and holds only `.exp-static-unavailable{opacity:.5;cursor:not-allowed;text-decoration:none;pointer-events:none}`
+  and a rule that keeps it so on hover and focus: color, font and spacing come from the theme.
+
+A `<link>` whose `rel` only names navigation (`alternate`, `search`, `home`, `next`, `prev` ...) is dropped. Files,
+images, style sheets, scripts, form actions and other hosts are never taken out. An administration path is never held
+as a page of the site. The report counts both (`links_removed_outside`, `links_removed_admin`) and the placeholder
+links (`links_unavailable`).
 
 **Relative links** (`Links=relative`) are relative to the folder of the file that holds them: `about-us/` from
 `index.html`, `../` from `about-us/index.html` to the front page, `./` to the folder's own page. **Base-path links**
@@ -195,7 +207,7 @@ object to a file.
 | `scope` | `full` or `partial` |
 | `target`, `siteaccess`, `run_id`, `started_at`, `duration_ms`, `directory` | the build |
 | `links` | `mode`, `base_path`, `public_url` |
-| `counts` | `pages`, `pages_refused`, `pages_skipped`, `pages_excluded`, `files`, `storage`, `files_failed`, `extras`, `links_rewritten`, `links_live`, `links_external`, `links_removed_outside`, `links_removed_admin`, `site_broken_links`, `bytes`, `stripped` (by what was taken out) |
+| `counts` | `pages`, `pages_refused`, `pages_skipped`, `pages_excluded`, `files`, `storage`, `files_failed`, `extras`, `links_rewritten`, `links_live`, `links_external`, `links_removed_outside`, `links_removed_admin`, `links_unavailable`, `site_broken_links`, `bytes`, `stripped` (by what was taken out) |
 | `diff` | `added`, `changed`, `removed`, `unchanged` (counts), `bytes_added`, `bytes_removed`, `files` (the paths, at most 500 of each) |
 | `pages` | each page: `path`, `file`, `bytes`, `node`, `stripped` |
 | `refused` | each refused page: `path`, `url`, `reasons` |
