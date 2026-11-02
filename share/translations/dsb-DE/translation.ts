@@ -14616,6 +14616,14 @@ Pokazka: pakety se njewótinstalěruju.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Nawody, pytanje a kak zmólku k wěsći daśo.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nowe wopśimjeśe</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nejnowše wopśimjeśe, což jo za pśespytowanje zaźaržane, a akcije za wuběrk.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81310,6 +81318,10 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Formular njedajo se cytaś.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Pśeglědowa tafla</translation>
     </message>
 </context>
 <context>

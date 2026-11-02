@@ -14677,6 +14677,14 @@ Avertiment: Ils pachets na vegnan betg deinstallads.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Instrucziuns, tschertga e co annunziar in errur.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Cuntegn recent</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Il cuntegn il pli nov, quai che vegn retegnì per la verificaziun, ed acziuns per ina selecziun.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Il formular n'ha betg pudì vegnir legì.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Survista</translation>
     </message>
 </context>
 <context>

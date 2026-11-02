@@ -1,6 +1,6 @@
 <?php
 /**
- * Entry point of kernel/moderation/report.php: the result per object of an action of Setup > Recent content that ran
+ * Entry point of kernel/moderation/report.php: the result per object of an action of Dashboard > Recent content that ran
  * in the background.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.

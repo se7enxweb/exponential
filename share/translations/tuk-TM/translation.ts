@@ -14677,6 +14677,14 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Gollanmalar, gözleg we ýalňyşlygy nädip habar bermelidigi.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Täze mazmun</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Iň täze mazmun, barlag üçin saklanýanlar we saýlanan elementler boýunça hereketler.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>The form could not be read.</source>
         <translation>Formany okap bolmady.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dolandyryş paneli</translation>
     </message>
 </context>
 <context>

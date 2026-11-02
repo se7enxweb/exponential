@@ -29,7 +29,7 @@ Eine Richtlinie auf `moderation/*` (jede Funktion) erlaubt sie ebenfalls; Einsch
 
 | Schlüssel | Wert |
 |---|---|
-| Navigationsbereich | `ezsetupnavigationpart` |
+| Navigationsbereich | `ezmynavigationpart` |
 | Einzelne POST-Aktionen | ApplyButton: Apply, ConfirmDestructiveButton: Confirm, CancelButton: Cancel |
 
 ## Beispiel

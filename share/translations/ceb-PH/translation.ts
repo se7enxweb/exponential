@@ -14677,6 +14677,14 @@ Hinumdomi: Dili i-uninstall ang mga pakete.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Mga giya, pagpangita ug unsaon pagreport ug sayop.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Bag-ong sulod</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ang pinakabag-ong sulod, ang gipugngan alang sa pagrepaso, ug mga aksyon sa usa ka pinili.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>The form could not be read.</source>
         <translation>Dili mabasa ang porma.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
     </message>
 </context>
 <context>

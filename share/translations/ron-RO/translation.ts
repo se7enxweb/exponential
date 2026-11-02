@@ -14616,6 +14616,14 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ghiduri, căutare și modul de raportare a unei erori.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Conținut recent</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Cel mai nou conținut, ce este reținut pentru verificare și acțiuni asupra unei selecții.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81310,6 +81318,10 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>The form could not be read.</source>
         <translation>Formularul nu a putut fi citit.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tablou de bord</translation>
     </message>
 </context>
 <context>

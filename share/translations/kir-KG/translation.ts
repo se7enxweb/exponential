@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>Колдонмолор, издөө жана катаны кантип билдирүү керек.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Жаңы мазмун</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Эң жаңы мазмун, текшерүүгө кармалгандар жана тандалгандарга аракеттер.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>Форманы окуу мүмкүн болгон жок.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Башкаруу панели</translation>
     </message>
 </context>
 <context>

@@ -14677,6 +14677,14 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ngā aratohu, te rapu me te āhua o te pūrongo i tētahi hapa.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ihirangi hou</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Te ihirangi hou rawa, ngā mea kua puritia mō te arotake, me ngā mahi ki tētahi tīpakonga.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>The form could not be read.</source>
         <translation>Kāore i taea te pānui i te puka.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Papatohu</translation>
     </message>
 </context>
 <context>

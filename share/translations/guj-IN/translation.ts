@@ -14675,6 +14675,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>માર્ગદર્શિકાઓ, શોધ અને ભૂલની જાણ કેવી રીતે કરવી.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>તાજેતરની સામગ્રી</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>સૌથી નવી સામગ્રી, સમીક્ષા માટે જે રોકેલ છે, અને પસંદગી પર ક્રિયાઓ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81278,6 +81286,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>ફોર્મ વાંચી શકાયું નથી.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ડેશબોર્ડ</translation>
     </message>
 </context>
 <context>

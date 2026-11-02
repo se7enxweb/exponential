@@ -14677,6 +14677,14 @@ Nòta: los paquets seràn pas desinstallats.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guidas, recèrca e cossí senhalar una error.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contengut recent</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Lo contengut mai novèl, çò qu'es retengut per verificacion e d'accions sus una seleccion.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Lo formulari se poguèt pas legir.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tablèu de bòrd</translation>
     </message>
 </context>
 <context>

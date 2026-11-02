@@ -8,7 +8,7 @@
  */
 
 /**
- * What the pages of Setup > Recent content (the module moderation) need besides the list and the actions: the policies
+ * What the pages of Dashboard > Recent content (the module moderation) need besides the list and the actions: the policies
  * of the current user, the choices of the filter and action forms, the dashboard block's counts (the fetch function
  * moderation/summary).
  *

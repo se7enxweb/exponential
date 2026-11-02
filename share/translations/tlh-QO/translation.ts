@@ -14619,6 +14619,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>nav, nej &apos;ej chay&apos; Qagh ja&apos;lu&apos;.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>chu&apos; De&apos;</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>chu&apos;qu&apos; De&apos;, nuDmeH &apos;ollu&apos;ta&apos;bogh, wIvlu&apos;ta&apos;bogh vangmey je.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81313,6 +81321,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>mu&apos;tlheghmey laDlaHlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>jIH</translation>
     </message>
 </context>
 <context>

@@ -29,7 +29,7 @@ A policy on `moderation/*` (every function) also grants it; limitations of the p
 
 | Key | Value |
 |---|---|
-| Navigation part | `ezsetupnavigationpart` |
+| Navigation part | `ezmynavigationpart` |
 | Single POST actions | ApplyButton: Apply, ConfirmDestructiveButton: Confirm, CancelButton: Cancel |
 
 ## Example

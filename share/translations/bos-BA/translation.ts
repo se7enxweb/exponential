@@ -14616,6 +14616,14 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Vodiči, pretraga i kako prijaviti grešku.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Novi sadržaj</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Najnoviji sadržaj, ono što je zadržano radi pregleda, i radnje nad odabirom.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81310,6 +81318,10 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Obrazac nije moguće pročitati.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Kontrolna tabla</translation>
     </message>
 </context>
 <context>

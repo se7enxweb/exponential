@@ -15119,6 +15119,14 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guides, recherche et comment signaler une erreur.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contenus récents</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Les contenus les plus récents, ce qui est retenu pour vérification, et des actions sur une sélection.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -82720,6 +82728,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>The form could not be read.</source>
         <translation>Le formulaire n&apos;a pas pu être lu.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tableau de bord</translation>
     </message>
 </context>
 <context>

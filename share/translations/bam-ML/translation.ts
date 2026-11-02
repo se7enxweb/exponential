@@ -14677,6 +14677,14 @@ Ko: pakew tɛna sigili bɔ.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ladilikanw, ɲinini ani fili fɔcogo.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Kɔnɔko kuraw</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Kɔnɔko kuraw, fɛn minnu minɛna ka lajɛ, ani kɛwalew sugandili kan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Formilɛri ma se ka kalan.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Kunnafoni tablo</translation>
     </message>
 </context>
 <context>

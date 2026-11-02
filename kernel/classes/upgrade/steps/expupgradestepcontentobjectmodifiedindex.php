@@ -8,7 +8,7 @@
  */
 
 /**
- * The index ezcontentobject_modified on ezcontentobject.modified: Setup > Recent content (moderation/recent) lists the
+ * The index ezcontentobject_modified on ezcontentobject.modified: Dashboard > Recent content (moderation/recent) lists the
  * objects by their modification date, a page at a time, and on a large database that read must be indexed (the
  * creation date has ezcontentobject_pub already).
  *
@@ -24,7 +24,7 @@ class expUpgradeStepContentObjectModifiedIndex extends expUpgradeSchemaStep
 
     public function description()
     {
-        return 'The index ezcontentobject_modified on ezcontentobject.modified, for Setup > Recent content';
+        return 'The index ezcontentobject_modified on ezcontentobject.modified, for Dashboard > Recent content';
     }
 
     public function indexes()

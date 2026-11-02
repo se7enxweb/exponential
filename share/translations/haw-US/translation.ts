@@ -14677,6 +14677,14 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
         <source>Guides, search and how to report an error.</source>
         <translation>Nā alakaʻi, ka ʻimi a me ka haʻi ʻana i kekahi hewa.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ka ʻike hou</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ka ʻike hou loa, ka mea i kāohi ʻia no ka loiloi, a me nā hana ma kekahi koho ʻana.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>The form could not be read.</source>
         <translation>ʻAʻole i hiki ke heluhelu i ka palapala.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Papa nānā</translation>
     </message>
 </context>
 <context>

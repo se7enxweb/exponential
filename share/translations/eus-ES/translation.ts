@@ -14677,6 +14677,14 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Gidak, bilaketa eta errore bat nola jakinarazi.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Azken edukiak</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Eduki berrienak, berrikusteko atxikita dagoena eta hautapen baten gaineko ekintzak.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Ezin izan da formularioa irakurri.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Aginte-panela</translation>
     </message>
 </context>
 <context>

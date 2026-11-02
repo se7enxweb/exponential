@@ -14619,6 +14619,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Duces, quaestio et quomodo errorem nunties.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contentum recens</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Contentum novissimum, quae ad recognitionem retinentur, et actiones in selectionem.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81313,6 +81321,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Formula legi non potuit.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tabula moderatoria</translation>
     </message>
 </context>
 <context>

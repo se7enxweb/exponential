@@ -14677,6 +14677,14 @@ Icyitonderwa: Amapaki ntazakurwa muri sisitemu.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ubuyobozi, ishakisha n'uko batanga raporo y'ikosa.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ibirimo bishya</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ibirimo bishya cyane, ibifashwe ngo bisuzumwe, n'ibikorwa ku byatoranyijwe.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
     <message>
         <source>The form could not be read.</source>
         <translation>Ifishi ntiyashoboye gusomwa.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Ikibaho</translation>
     </message>
 </context>
 <context>

@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>სახელმძღვანელოები, ძიება და შეცდომის შეტყობინების წესი.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ახალი შიგთავსი</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>უახლესი შიგთავსი, რაც შემოწმებისთვის არის შეჩერებული, და მოქმედებები მონიშნულზე.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>ფორმის წაკითხვა ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>საინფორმაციო დაფა</translation>
     </message>
 </context>
 <context>

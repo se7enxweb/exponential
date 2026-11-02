@@ -14675,6 +14675,14 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>Guides, search and how to report an error.</source>
         <translation>Kılavuzlar, arama ve bir hatanın nasıl bildirileceği.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Son içerikler</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>En yeni içerikler, inceleme için bekletilenler ve bir seçim üzerindeki eylemler.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81285,6 +81293,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>The form could not be read.</source>
         <translation>Form okunamadı.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Pano</translation>
     </message>
 </context>
 <context>

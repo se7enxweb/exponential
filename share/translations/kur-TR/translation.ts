@@ -14675,6 +14675,14 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Rêber, lêgerîn û çawa çewtiyekê ragihînin.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Naveroka nû</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Naveroka herî nû, tiştên ku ji bo nirxandinê hatine ragirtin, û kiryarên li ser hilbijartinekê.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81278,6 +81286,10 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>The form could not be read.</source>
         <translation>Form nehat xwendin.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Panela kontrolê</translation>
     </message>
 </context>
 <context>

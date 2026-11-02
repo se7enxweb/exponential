@@ -563,7 +563,7 @@ Change password and Edit profile last, as in the left menu):
 
 | Group | Links (`MegaMenuLinks[]`) |
 |---|---|
-| Overview | `overview-dashboard` (Dashboard); the Help center (`overview-help_center`) joins it once the help adds its link to `[Leftmenu_my]` |
+| Overview | `overview-dashboard` (Dashboard), `overview-recent_content` (Recent content, for moderators); the Help center (`overview-help_center`) joins it once the help adds its link to `[Leftmenu_my]` |
 | Your work | `work-my_drafts`, `work-my_pending`, `work-collaboration`, `work-my_bookmarks` |
 | Activity and audit | `activity-console` (Audit trail), `activity-expai_events` (AI events) |
 | Exponential Intelligence | `ei-expai`, `ei-expai_vector`, `ei-expai_chain`, `ei-expai_alttext`, `ei-expai_log`, `ei-expai_help` |

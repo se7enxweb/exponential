@@ -14677,6 +14677,14 @@ Fakatokanga: ʻE ʻikai toʻo ʻa e fokotuʻu ʻo e ngaahi pēkeisi.</translatio
         <source>Guides, search and how to report an error.</source>
         <translation>Ngaahi tataki, kumi mo e founga ke fakahā ha fehalaaki.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ngaahi meʻa foʻou</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ko e ngaahi meʻa foʻou taha, ko e meʻa kuo taʻofi ke vakaiʻi, mo e ngaahi ngāue ki ha fili.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>Naʻe ʻikai lava ke lau ʻa e foomu.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tēpile ngāue</translation>
     </message>
 </context>
 <context>

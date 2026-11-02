@@ -14616,6 +14616,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>Οδηγίες, αναζήτηση και πώς αναφέρετε ένα σφάλμα.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Πρόσφατο περιεχόμενο</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Το νεότερο περιεχόμενο, ό,τι κρατείται για έλεγχο, και ενέργειες σε μια επιλογή.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81310,6 +81318,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>Δεν ήταν δυνατή η ανάγνωση της φόρμας.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Πίνακας εργαλείων</translation>
     </message>
 </context>
 <context>

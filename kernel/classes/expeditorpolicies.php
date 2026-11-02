@@ -71,10 +71,10 @@ class expEditorPolicies
             // the user may edit the object's draft in its language. Only where ezie is active (a site that kept it).
             array( 'module' => 'ezie', 'function' => '*', 'needs' => 'ezie',
                    'reason' => 'the older image editor beside an image in the edit form (ezie, where a site keeps it active; every view still checks the draft)' ),
-            // Setup > Recent content (doc/eng-us/features/6.0/moderation.md): the list and its actions; each object's
+            // Dashboard > Recent content (doc/eng-us/features/6.0/moderation.md): the list and its actions; each object's
             // own policies still decide. Not moderation/personaldata (the submitters' addresses and browsers).
             array( 'module' => 'moderation', 'function' => 'read', 'needs' => 'moderation',
-                   'reason' => 'the newest content and what is held for review (Setup > Recent content, moderation/recent)' ),
+                   'reason' => 'the newest content and what is held for review (Dashboard > Recent content, moderation/recent)' ),
             array( 'module' => 'moderation', 'function' => 'act', 'needs' => 'moderation',
                    'reason' => 'releasing, holding, hiding and removing a selection there (moderation/action; each object\'s own policies still decide)' ),
             array( 'module' => 'user', 'function' => 'password', 'needs' => '',

@@ -1,6 +1,6 @@
 <?php
 /**
- * Entry point of kernel/moderation/action.php: an action on the selection of Setup > Recent content.
+ * Entry point of kernel/moderation/action.php: an action on the selection of Dashboard > Recent content.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

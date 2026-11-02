@@ -14677,6 +14677,14 @@ Pokazka: pakety so njewotinstaluja.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Nawody, pytanje a kak zmylk zdźělić.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nowy wobsah</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Najnowši wobsah, štož je za přepruwowanje zadźeržane, a akcije za wuběr.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Formular njeda so čitać.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Přehladowa tafla</translation>
     </message>
 </context>
 <context>

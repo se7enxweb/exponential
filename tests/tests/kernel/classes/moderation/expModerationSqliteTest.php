@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup > Recent content on SQLite in the process: a database file of its own with the kernel schema of
+ * Dashboard > Recent content on SQLite in the process: a database file of its own with the kernel schema of
  * share/db_schema.dba and the clean data (expModerationEngineChecks, ME-1 to ME-6).
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/classes/moderation/expModerationSqliteTest.php

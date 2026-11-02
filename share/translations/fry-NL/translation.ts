@@ -14677,6 +14677,14 @@ Let op: de pakketten wurde net de-ynstallearre.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Hantliedingen, sykje en hoe't jo in flater melde.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Resinte ynhâld</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>De nijste ynhâld, wat foar kontrôle tsjinhâlden wurdt, en aksjes op in seleksje.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>It formulier koe net lêzen wurde.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboerd</translation>
     </message>
 </context>
 <context>

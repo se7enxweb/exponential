@@ -14677,6 +14677,14 @@ Note: Dem no go uninstall di packages.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guides, search and how to report error.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>New content wey just come</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Di newest content, wetin dem hold make dem review am, and actions for di ones wey you choose.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81288,6 +81296,10 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>We no fit read di form.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
     </message>
 </context>
 <context>

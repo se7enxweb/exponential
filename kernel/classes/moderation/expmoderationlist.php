@@ -8,7 +8,7 @@
  */
 
 /**
- * The list of Setup > Recent content (moderation/recent, doc/eng-us/features/6.0/moderation.md): the most recently
+ * The list of Dashboard > Recent content (moderation/recent, doc/eng-us/features/6.0/moderation.md): the most recently
  * created or modified objects, newest first, one page at a time, with their status, the review hold, the draft or
  * pending version and its scheduled publication, the creator, and where the submission came from (the address and the
  * browser the audit recorded).

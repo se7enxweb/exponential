@@ -124,7 +124,7 @@ GroupSections[account]=Leftmenu_my
 
 ## MegaMenuLinks
 
-Standard: eine Liste mit 18: `overview-dashboard`, `overview-help_center`, `work-my_drafts`, `work-my_pending`, `work-collaboration`, `work-my_bookmarks`, `activity-console`, `activity-expai_events`, `ei-expai`, `ei-expai_vector`, `ei-expai_chain`, `ei-expai_alttext` ....
+Standard: eine Liste mit 19: `overview-dashboard`, `overview-recent_content`, `overview-help_center`, `work-my_drafts`, `work-my_pending`, `work-collaboration`, `work-my_bookmarks`, `activity-console`, `activity-expai_events`, `ei-expai`, `ei-expai_vector`, `ei-expai_chain` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -133,6 +133,7 @@ Standard: eine Liste mit 18: `overview-dashboard`, `overview-help_center`, `work
 # ein leeres "MegaMenuLinks[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 MegaMenuLinks[]
 MegaMenuLinks[]=overview-dashboard
+MegaMenuLinks[]=overview-recent_content
 MegaMenuLinks[]=overview-help_center
 MegaMenuLinks[]=work-my_drafts
 MegaMenuLinks[]=work-my_pending

@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>Ուղեցույցներ, որոնում և ինչպես հաղորդել սխալի մասին։</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Նոր բովանդակություն</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Նորագույն բովանդակությունը, այն, ինչ պահվում է ստուգման համար, և գործողություններ ընտրվածի հետ։</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>Ձևը հնարավոր չեղավ կարդալ։</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Վահանակ</translation>
     </message>
 </context>
 <context>

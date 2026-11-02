@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>คู่มือ การค้นหา และวิธีรายงานข้อผิดพลาด.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>เนื้อหาล่าสุด</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>เนื้อหาใหม่ล่าสุด สิ่งที่ถูกระงับไว้เพื่อตรวจทาน และการดำเนินการกับรายการที่เลือก</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>ไม่สามารถอ่านแบบฟอร์มได้</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>แดชบอร์ด</translation>
     </message>
 </context>
 <context>

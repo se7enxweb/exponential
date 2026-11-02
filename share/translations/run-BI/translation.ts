@@ -14677,6 +14677,14 @@ Ikitonderwa: Amapaki ntazokurwamwo.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ubuyobozi, ugushakisha n'ingene bavuga ikosa.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ibirimwo bishasha</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ibirimwo bishasha cane, ivyafashwe ngo vyihwezwe, n'ibikorwa ku vyatowe.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>The form could not be read.</source>
         <translation>Ifishi ntiyashoboye gusomwa.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Ikibaho</translation>
     </message>
 </context>
 <context>

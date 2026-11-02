@@ -14616,6 +14616,14 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ilitsersuutit, ujarlerneq kukkunerlu qanoq nalunaarutigineqarsinnaanersoq.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Imarisaat nutaat</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Imarisaat nutaanerpaat, misissorneqarnissaannut unitsitat, toqqakkanullu iliuusissat.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81310,6 +81318,10 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>The form could not be read.</source>
         <translation>Immersugassaq atuarneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Aqutsivik</translation>
     </message>
 </context>
 <context>

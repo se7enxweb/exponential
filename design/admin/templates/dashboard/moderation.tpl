@@ -1,5 +1,5 @@
 {* The dashboard block "moderation" (dashboard.ini [DashboardBlock_moderation], shown only with moderation/read): how many
-   objects are held for review and how many were created today, with links to Setup > Recent content (moderation/recent)
+   objects are held for review and how many were created today, with links to Dashboard > Recent content (moderation/recent)
    filtered on them. Drawn with the administration's shared components (components.css): no CSS in the template. *}
 {* The module name is a variable, so the fetch is not compiled into a direct class call: a server process started
    before the class existed (a Velocity worker before its restart) gets an empty block, not an error. *}

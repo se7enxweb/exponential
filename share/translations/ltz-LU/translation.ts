@@ -14677,6 +14677,14 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ureegungen, Sich a wéi een e Feeler mellt.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nei Inhalter</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Déi neist Inhalter, wat fir d'Iwwerpréiwung zréckgehal gëtt, an Aktiounen op eng Auswiel.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>De Formulaire konnt net gelies ginn.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Iwwersiicht</translation>
     </message>
 </context>
 <context>

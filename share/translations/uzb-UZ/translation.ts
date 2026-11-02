@@ -14677,6 +14677,14 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Qoʻllanmalar, qidiruv va xatoni qanday xabar qilish.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Yangi kontent</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Eng yangi kontent, tekshiruv uchun ushlab turilganlar va tanlov ustida amallar.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>The form could not be read.</source>
         <translation>Formani oʻqib boʻlmadi.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Boshqaruv paneli</translation>
     </message>
 </context>
 <context>

@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>ຄູ່ມື, ການຄົ້ນຫາ ແລະວິທີລາຍງານຂໍ້ຜິດພາດ.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ເນື້ອຫາລ່າສຸດ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ເນື້ອຫາໃໝ່ສຸດ, ສິ່ງທີ່ຖືກກັກໄວ້ເພື່ອກວດສອບ, ແລະ ການກະທຳກັບລາຍການທີ່ເລືອກ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81280,6 +81288,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The form could not be read.</source>
         <translation>ບໍ່ສາມາດອ່ານແບບຟອມໄດ້.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ແດຊບອດ</translation>
     </message>
 </context>
 <context>

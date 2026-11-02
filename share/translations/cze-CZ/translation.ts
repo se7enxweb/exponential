@@ -15102,6 +15102,14 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Návody, vyhledávání a jak nahlásit chybu.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nový obsah</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nejnovější obsah, co je zadrženo ke kontrole, a akce s výběrem.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -82566,6 +82574,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>The form could not be read.</source>
         <translation>Formulář nelze načíst.</translation>
+    </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Nástěnka</translation>
     </message>
 </context>
 <context>
