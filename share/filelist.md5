@@ -8320,10 +8320,10 @@ f8810734b779057cc77056ca700affa3  doc/eng-us/help/database-administrators/schema
 dd859924cccf87cceedaed1607653e7f  doc/eng-us/help/database-administrators/securing-the-database.md
 a9782757cabcd3b1878af7af23cd5eee  doc/eng-us/help/database-administrators/sessions-in-the-database.md
 c61bf834423e847c20f0dcae2fa2c0fa  doc/eng-us/help/database-administrators/sql-query-cache.md
-4a145ff8b3854e56e3c2ad6e9dccf4a7  doc/eng-us/help/database-administrators/sqlite-files-ownership-and-permissions.md
+f0e35bba33be182ae1fe914ebbf3fe93  doc/eng-us/help/database-administrators/sqlite-files-ownership-and-permissions.md
 7df30163dce387c09608d8f8f36eb24f  doc/eng-us/help/database-administrators/sqlite-for-database-administrators.md
 2b2f3aac251b7d211500ce6dcb6275b9  doc/eng-us/help/database-administrators/sqlite-maintenance.md
-19eb71cb76331670f60c68823c0dc200  doc/eng-us/help/database-administrators/sqlite-write-queue-and-locking.md
+1cad61a7af0bf5c247fea61ff0b71afa  doc/eng-us/help/database-administrators/sqlite-write-queue-and-locking.md
 bc489746b529cc9960734fceb34525d4  doc/eng-us/help/database-administrators/supported-engines-and-versions.md
 174a8672bbff65e841ea06c36235d033  doc/eng-us/help/database-administrators/tables-you-should-know.md
 ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-database-layer-in-one-page.md
@@ -13007,7 +13007,7 @@ acf80981b12ccd8ca2d672ee2d1c1ec0  doc/eng-us/specifications/6.0/runnable-command
 68c7ab1fd35cdcc4ced2bf0ce5acf477  doc/eng-us/specifications/6.0/security-defaults-2026-09.md
 7cfa35396e92191dbe2408004e86d416  doc/eng-us/specifications/6.0/security-hardening-2026-08.md
 8e5d88b3a7f5bd9ec543ac03aa7463ec  doc/eng-us/specifications/6.0/security-hardening-6.0.13.md
-26d18bdf558a01bafff2ac715a841d66  doc/eng-us/specifications/6.0/sqlite3-database-driver.md
+b1abda78002856148896b955b0067d78  doc/eng-us/specifications/6.0/sqlite3-database-driver.md
 43b5345b7169ffff3bb61c4985dfe978  doc/eng-us/specifications/6.0/static-publishing-build-format.md
 c267a0550b900807dfed443c52266c85  doc/eng-us/specifications/6.0/static-publishing-form-endpoint.md
 b452d0a629e4af725d82380f64c0b4b2  doc/eng-us/specifications/6.0/static-publishing-manifest.md
@@ -17634,7 +17634,7 @@ a6e1c9c607e1378bca67350d58dd466d  doc/ger-de/hilfe/datenbankadministratoren/sess
 11dd4cb96cbe830affe7b3ceb38f2261  doc/ger-de/hilfe/datenbankadministratoren/sql-abfrage-cache.md
 6f471132c12bbc001a088b2d3f2cac85  doc/ger-de/hilfe/datenbankadministratoren/sqlite-dateien-eigentuemer-und-rechte.md
 3786e378aafcb121b07694f6b86e0ef8  doc/ger-de/hilfe/datenbankadministratoren/sqlite-fuer-datenbankadministratoren.md
-8ebe3aa5ed810ed97f227778a32e2d1b  doc/ger-de/hilfe/datenbankadministratoren/sqlite-schreibwarteschlange-und-sperren.md
+74b8af64dd2165dc69e65f8696066ffa  doc/ger-de/hilfe/datenbankadministratoren/sqlite-schreibwarteschlange-und-sperren.md
 5661419b14a7f4becb4e730fd72534bb  doc/ger-de/hilfe/datenbankadministratoren/sqlite-wartung.md
 d7fc9e07aa9708c2d661ab7292b7947f  doc/ger-de/hilfe/datenbankadministratoren/stand-von-microsoft-sql-server.md
 facff089e557edaf8c306980aa5f184e  doc/ger-de/hilfe/datenbankadministratoren/tabellen-des-suchindex.md
@@ -25202,7 +25202,7 @@ b4e438d889c9b76ff605201076b3775a  kernel/private/classes/cronjobs/contentcheck.p
 6a68ea8fe76d185290d85672363f7d7d  kernel/private/classes/cronjobs/graphqlwebhooks.php
 2c98f5bc55ad6dfda1e96f60cccf68b4  kernel/private/classes/cronjobs/hide.php
 7072a4c924167fdaf87d78b378e70f08  kernel/private/classes/cronjobs/httpcache_cleanup.php
-ae903f9abb227be4af94045745756171  kernel/private/classes/cronjobs/indexcontent.php
+80886fb681c768195194dfb34b03fe40  kernel/private/classes/cronjobs/indexcontent.php
 353f5f009dfa16160261b9ad3e6c4380  kernel/private/classes/cronjobs/internal_drafts_cleanup.php
 38b18a63e9ccef20a51a628f409c0911  kernel/private/classes/cronjobs/linkcheck.php
 564ffc5ca105136bdc049a68329df0aa  kernel/private/classes/cronjobs/mailbounces.php
@@ -26027,7 +26027,7 @@ b66248e35051b10fab37396107632d39  lib/ezdb/classes/ezdbquerycache.php
 6fcbf61fd8586aefce6b28a6ef386d4a  lib/ezdb/classes/ezmysqlidb.php
 ec6538c99af5eb7c84f089898a6907d2  lib/ezdb/classes/eznulldb.php
 d2b9ad028227c37896ac352d2c697f71  lib/ezdb/classes/ezpostgresqldb.php
-420b37a2ce9857c45113adff6b73152a  lib/ezdb/classes/ezsqlite3db.php
+4ecb51070d9a7ae2190148823ebbc4f7  lib/ezdb/classes/ezsqlite3db.php
 86b2f701aa81e8db34267630e6ce5acf  lib/ezdbschema/classes/expmongoschema.php
 eca147e65440b86a146555c6e4122e0f  lib/ezdbschema/classes/ezdbschema.php
 7f09acd4dab532f71ff61c004d1f4af8  lib/ezdbschema/classes/ezdbschemachecker.php
@@ -28138,7 +28138,7 @@ a30fb30ff3303214ffeeada9a74aba91  tests/tests/kernel/classes/datatable/expDataTa
 51b67ad911358f9ed3a9239ad3b72b08  tests/tests/kernel/classes/datatable/expDataTableRegistryEntryTest.php
 e87086374f567014629a0eb813f78391  tests/tests/kernel/classes/datatable/expDataTableRelationTest.php
 ac89f8dbc4b8940b4ec6d081fe6e9df1  tests/tests/kernel/classes/datatable/expDataTableSchemaTest.php
-d50a4f84e676a2c67493dc997b0df12e  tests/tests/kernel/classes/datatable/expDataTableSqliteFixture.php
+5bb101c04aebe7537a863e6e2b903bb9  tests/tests/kernel/classes/datatable/expDataTableSqliteFixture.php
 8397418da0e0183e6ad9d46be77a6163  tests/tests/kernel/classes/datatable/expDataTableTestLoader.php
 21b04fdec6319bebbb8e0cd1a6ee63a5  tests/tests/kernel/classes/datatable/expDataTableWriterTest.php
 f489b2f2ba31e9d3677a338f5aa1b3fe  tests/tests/kernel/classes/datatable/expKernelSecretAndConnectionTablesTest.php
@@ -28841,7 +28841,7 @@ ba297fd7b466944dcca37e13ae49d2c9  tests/tests/kernel/classes/urlalias/eZURLWildc
 460ddd4a97aee2a64e9e1f94070a929d  tests/tests/kernel/classes/urlaliasml_test.php
 e3c634109dba0b45dfcd1f31ffb83236  tests/tests/kernel/classes/user/eZForgotPasswordExpiryTest.php
 7f236a736bd9a5bde40e3c0855fa0a78  tests/tests/kernel/classes/user/expDemoModeTest.php
-f2a3db914ee8888fceef6e3986367244  tests/tests/kernel/classes/user/expLastSeenWhileDatabaseBusyTest.php
+e7b7cc4719c3f900b5c6b802d9741e3a  tests/tests/kernel/classes/user/expLastSeenWhileDatabaseBusyTest.php
 68d5ee71998ad0e0392789957f1afc1b  tests/tests/kernel/classes/user/expPasswordChangeRequiredTest.php
 ce0dccf22b28774e6e7caacfac27098c  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 c7a5edf71b5db67fed879faef8e98286  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
@@ -29279,13 +29279,14 @@ db6c4a8ca3c8ccf2ed6fcbbdd2c0b803  tests/tests/kernel/requestlog/fixtures/request
 04f721dfbca54f26e828acc82f099bf9  tests/tests/kernel/search/eZSearchEngineIntegerClampTest.php
 3cf24f8bef74899f6fa0c6d36fea7ed6  tests/tests/kernel/search/ezsearchengine_regression.php
 8cd1e96448bd72742a9f3661f885e9d1  tests/tests/kernel/suite.php
-7f6e2b6de48fdcd12e58a1b3cc4d69ea  tests/tests/lib/ezdb/eZDBExceptionCodeTest.php
+608bf719ad07c666c6efb6c9a74cc28e  tests/tests/lib/ezdb/eZDBExceptionCodeTest.php
 b60dc460fe5444f72a0e09fc1305a105  tests/tests/lib/ezdb/eZDBInterfaceHelpersTest.php
 8f01078350da067cc0f5ac5ca3e493fa  tests/tests/lib/ezdb/eZDBInterfaceTest.php
 ef5fbe2c38e40f6b928b749e9d1c394b  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
 41ad6b0de2479238f509f8e4d61298ce  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
 595e7ab1cedd85478942a82e6a062c97  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php
 98ac0a85b24dddc04a8ff6b0e7156c2a  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
+0edda2ec2f2a6d2e11cefa6f6447e531  tests/tests/lib/ezdb/eZSQLite3BackgroundWriterHandoffTest.php
 336df5140ca5fa2e49cba8b52540981d  tests/tests/lib/ezdb/eZSQLite3DBQueryCountTest.php
 779e2f30111326b4a985a21c4f181b12  tests/tests/lib/ezdb/eZSQLite3InsertOrReplaceTest.php
 e7c428ffa18e115fd9afa3ac417d175c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php
