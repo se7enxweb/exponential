@@ -76515,6 +76515,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>פרסומא קביעא</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>בבוחרנא</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>קרויא חזין לדפא הנא.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>כסיא מן קרויא עדמא דאנש פרס לה.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>דפא השא בבוחרנא איתוהי. כסיא מן קרויא עדמא דמתפרס.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>דפא אתפרס: קרויא חזין לה השא.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>דפא תוב סורטא איתוהי. כסיא מן קרויא עדמא דמתבחר ומתפרס.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>פורסא השא</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>בלחוד מפלחנא דאית לה דורא %role ולא כתב מפקתא הדא מצא פרס לה.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>סוגא דעודרנא דמסכין לפורסא</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>מכסא לה מן קרויא עדמא דמתפרס תוב.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>בוחורא בחר לה בתרכן. קרויא לא חזין לה עדכיל.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>קרויא חזין לה מן יד.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>מפק לה מן בוחרנא לעבדא יתירא. קרויא לא חזין לה.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>לכסיו דפא הנא מן קרויא?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>לבסתר דפא הנא לסורטא?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>קרויא לא חזין תוב %title עדמא דאנש פרס לה תוב.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title הפך לסורטא לעבדא יתירא. קרויא עדכיל לא חזין לה, וסניק לבוחרנא חדתא קדם דמתפרס.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>בוטלא</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>סוגא הלין בבוחרנא אינון. קרויא חזין להון כד אנש דלא כתב מפקתא דהשא פרס להון.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

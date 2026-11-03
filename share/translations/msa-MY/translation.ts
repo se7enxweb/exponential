@@ -76506,6 +76506,82 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>Static publishing</source>
         <translation>Penerbitan statik</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Dalam semakan</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Pembaca dapat melihat halaman ini.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Tersembunyi daripada pembaca sehingga seseorang mengeluarkannya.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Halaman kini dalam Semakan. Halaman tersembunyi daripada pembaca sehingga dikeluarkan.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Halaman telah Dikeluarkan: pembaca kini dapat melihatnya.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Halaman kembali menjadi Draf. Halaman tersembunyi daripada pembaca sehingga disemak dan dikeluarkan.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Keluarkan sekarang</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Hanya pengguna dengan peranan %role yang tidak menulis versi ini boleh mengeluarkannya.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Topik bantuan yang menunggu keluaran</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Menyembunyikannya daripada pembaca sehingga dikeluarkan semula.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Penyemak akan menyemaknya seterusnya. Pembaca belum dapat melihatnya.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Pembaca dapat melihatnya serta-merta.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Menarik balik daripada semakan untuk kerja lanjut. Pembaca tidak dapat melihatnya.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Sembunyikan halaman ini daripada pembaca?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Hantar halaman ini kembali ke Draf?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Pembaca tidak lagi dapat melihat %title sehingga seseorang mengeluarkannya semula.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title kembali ke Draf untuk kerja lanjut. Pembaca masih tidak dapat melihatnya, dan ia perlu disemak semula sebelum dikeluarkan.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Batal</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Topik ini dalam Semakan. Pembaca dapat melihatnya sebaik sahaja seseorang yang tidak menulis versi semasa mengeluarkannya.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

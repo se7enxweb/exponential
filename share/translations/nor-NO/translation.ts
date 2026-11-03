@@ -76314,6 +76314,82 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>Static publishing</source>
         <translation>Statisk publisering</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Til gjennomgang</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Leserne ser denne siden.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Skjult for leserne til noen frigir den.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Siden er nå til gjennomgang. Den er skjult for leserne til den blir frigitt.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Siden er frigitt: leserne ser den nå.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Siden er et utkast igjen. Den er skjult for leserne til den er gjennomgått og frigitt.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Frigi nå</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Bare en bruker med rollen %role som ikke skrev denne versjonen, kan frigi den.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Hjelpeemner som venter på frigivelse</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Skjuler den for leserne til den blir frigitt igjen.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>En kontrollør sjekker den deretter. Leserne ser den ikke ennå.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Leserne ser den med en gang.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Tar den ut av gjennomgang for mer arbeid. Leserne ser den ikke.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Skjule denne siden for leserne?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Sende denne siden tilbake til utkast?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Leserne ser ikke lenger %title før noen frigir den igjen.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title går tilbake til utkast for mer arbeid. Leserne ser den fortsatt ikke, og den må gjennomgås på nytt før den blir frigitt.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Disse emnene er til gjennomgang. Leserne ser dem så snart noen som ikke skrev den gjeldende versjonen, frigir dem.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

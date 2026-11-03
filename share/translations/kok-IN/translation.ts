@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>स्टॅटिक प्रकाशन</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>तपासणेंत</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>वाचपी हें पान पळयतात.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>कोणूय तें प्रकाशीत करीमेरेन वाचपींसावन लिपयिल्लें.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>पान आतां तपासणेंत आसा. तें प्रकाशीत जायमेरेन वाचपींसावन लिपयिल्लें आसा.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>पान प्रकाशीत जालां: वाचपी तें आतां पळयतात.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>पान परत मसुदो जालां. तपासणी आनी प्रकाशन जायमेरेन तें वाचपींसावन लिपयिल्लें आसा.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>आतां प्रकाशीत करात</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role भूमिका आशिल्लो आनी ही आवृत्ती बरयनाशिल्लो वापरपीच ती प्रकाशीत करूंक शकता.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>प्रकाशनाची वाट पळोवपी मदत विशय</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>परत प्रकाशीत जायमेरेन तें वाचपींसावन लिपयता.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>उपरांत एक तपासणीकार तें तपासतलो. वाचपी तें अजून पळयनात.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>वाचपी तें रोखडेंच पळयतात.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>आनीक कामा खातीर तें तपासणेंतल्यान काडटा. वाचपी तें पळयनात.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>हें पान वाचपींसावन लिपोवचें?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>हें पान परत मसुद्याकडेन धाडचें?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>कोणूय परत प्रकाशीत करीमेरेन वाचपी %title पळयनात.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title आनीक कामा खातीर परत मसुद्याकडेन वता. वाचपी तें अजूनय पळयनात, आनी प्रकाशना आदीं ताका नवी तपासणी जाय.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करात</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>हे विशय तपासणेंत आसात. सद्याची आवृत्ती बरयनाशिल्लो कोणूय ते प्रकाशीत करतकच वाचपी ते पळयतले.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

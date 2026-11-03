@@ -76445,6 +76445,82 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Static publishing</source>
         <translation>Statiese publisering</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>In Hersiening</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Lesers sien hierdie bladsy.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Versteek vir lesers totdat iemand dit vrystel.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Die bladsy is nou in Hersiening. Dit is versteek vir lesers totdat dit vrygestel word.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Die bladsy is Vrygestel: lesers sien dit nou.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Die bladsy is weer ’n Konsep. Dit is versteek vir lesers totdat dit hersien en vrygestel word.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Stel nou vry</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Slegs ’n gebruiker met die rol %role wat nie hierdie weergawe geskryf het nie, kan dit vrystel.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Hulponderwerpe wat op vrystelling wag</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Versteek dit vir lesers totdat dit weer vrygestel word.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>’n Hersiener kontroleer dit volgende. Lesers sien dit nog nie.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Lesers sien dit dadelik.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Haal dit uit hersiening vir verdere werk. Lesers sien dit nie.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Versteek hierdie bladsy vir lesers?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Stuur hierdie bladsy terug na Konsep?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Lesers sien %title nie meer nie totdat iemand dit weer vrystel.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title gaan terug na Konsep vir verdere werk. Lesers sien dit steeds nie, en dit het ’n nuwe hersiening nodig voordat dit vrygestel word.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kanselleer</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Hierdie onderwerpe is in Hersiening. Lesers sien dit sodra iemand wat nie die huidige weergawe geskryf het nie, dit vrystel.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

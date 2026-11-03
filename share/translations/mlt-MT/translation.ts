@@ -76445,6 +76445,82 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Static publishing</source>
         <translation>Pubblikazzjoni statika</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Fir-reviżjoni</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Il-qarrejja jaraw din il-paġna.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Moħbija mill-qarrejja sakemm xi ħadd jirrilaxxaha.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Il-paġna issa tinsab fl-istat Reviżjoni. Hija moħbija mill-qarrejja sakemm tiġi rilaxxata.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Il-paġna hija Rilaxxata: il-qarrejja jarawha issa.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Il-paġna reġgħet saret Abbozz. Hija moħbija mill-qarrejja sakemm tiġi riveduta u rilaxxata.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Irrilaxxa issa</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Huwa biss utent bir-rwol %role li ma kitibx din il-verżjoni li jista' jirrilaxxaha.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Suġġetti tal-għajnuna li qed jistennew ir-rilaxx</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Taħbiha mill-qarrejja sakemm terġa' tiġi rilaxxata.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Imbagħad jiċċekkjaha reviżur. Il-qarrejja għadhom ma jarawhiex.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Il-qarrejja jarawha minnufih.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Toħroġha mir-reviżjoni għal aktar xogħol. Il-qarrejja ma jarawhiex.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Taħbi din il-paġna mill-qarrejja?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Tibgħat din il-paġna lura għall-Abbozz?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Il-qarrejja ma jibqgħux jaraw %title sakemm xi ħadd jerġa' jirrilaxxah.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title imur lura għall-Abbozz għal aktar xogħol. Il-qarrejja għadhom ma jarawhx, u jeħtieġ reviżjoni ġdida qabel ma jiġi rilaxxat.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ikkanċella</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Dawn is-suġġetti jinsabu fl-istat Reviżjoni. Il-qarrejja jarawhom hekk kif xi ħadd li ma kitibx il-verżjoni attwali jirrilaxxahom.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

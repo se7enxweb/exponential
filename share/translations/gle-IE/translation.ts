@@ -76445,6 +76445,82 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>Static publishing</source>
         <translation>Foilsiú statach</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Á athbhreithniú</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Feiceann léitheoirí an leathanach seo.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>I bhfolach ar léitheoirí go dtí go n-eiseoidh duine é.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Tá an leathanach in Athbhreithniú anois. Tá sé i bhfolach ar léitheoirí go dtí go n-eiseofar é.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Tá an leathanach Eisithe: feiceann léitheoirí anois é.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Is Dréacht an leathanach arís. Tá sé i bhfolach ar léitheoirí go dtí go ndéanfar athbhreithniú air agus go n-eiseofar é.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Eisigh anois</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Ní féidir é a eisiúint ach ag úsáideoir a bhfuil an ról %role aige agus nár scríobh an leagan seo.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Topaicí cabhrach ag fanacht le heisiúint</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Cuireann sé i bhfolach ar léitheoirí é go dtí go n-eiseofar arís é.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Seiceálfaidh athbhreithneoir é ina dhiaidh seo. Ní fheiceann léitheoirí fós é.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Feiceann léitheoirí láithreach é.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Baintear as athbhreithniú é le haghaidh tuilleadh oibre. Ní fheiceann léitheoirí é.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>An leathanach seo a chur i bhfolach ar léitheoirí?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>An leathanach seo a sheoladh ar ais chuig Dréacht?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Ní fheiceann léitheoirí %title a thuilleadh go dtí go n-eiseoidh duine arís é.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>Téann %title ar ais chuig Dréacht le haghaidh tuilleadh oibre. Ní fheiceann léitheoirí fós é, agus teastaíonn athbhreithniú nua uaidh sula n-eiseofar é.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cealaigh</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Tá na topaicí seo in Athbhreithniú. Feiceann léitheoirí iad nuair a eisíonn duine nár scríobh an leagan reatha iad.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

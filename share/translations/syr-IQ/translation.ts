@@ -76514,6 +76514,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>ܦܪܣܐ ܩܒܝܥܐ</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>ܒܒܘܚܪܢܐ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ܩܪܘ̈ܝܐ ܚܙܝܢ ܠܦܐܬܐ ܗܕܐ.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>ܛܫܝܐ ܡܢ ܩܪܘ̈ܝܐ ܥܕܡܐ ܕܐܢܫ ܦܪܣ ܠܗ̇.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>ܦܐܬܐ ܗܫܐ ܒܒܘܚܪܢܐ ܐܝܬܝܗ̇. ܛܫܝܐ ܡܢ ܩܪܘ̈ܝܐ ܥܕܡܐ ܕܬܬܦܪܣ.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>ܦܐܬܐ ܐܬܦܪܣܬ: ܩܪܘ̈ܝܐ ܚܙܝܢ ܠܗ̇ ܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>ܦܐܬܐ ܬܘܒ ܣܘܪܛܐ ܐܝܬܝܗ̇. ܛܫܝܐ ܡܢ ܩܪܘ̈ܝܐ ܥܕܡܐ ܕܬܬܒܚܪ ܘܬܬܦܪܣ.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ܦܪܘܣ ܗܫܐ</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>ܒܠܚܘܕ ܡܦܠܚܢܐ ܕܐܝܬ ܠܗ ܬܦܩܝܕܐ %role ܘܠܐ ܟܬܒ ܠܗܢܐ ܢܘܣܚܐ ܡܨܐ ܕܢܦܪܘܣ ܠܗ.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ܣܘ̈ܓܐ ܕܥܘܕܪܢܐ ܕܡܣܟܝܢ ܠܦܘܪܣܐ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ܛܫܐ ܠܗ̇ ܡܢ ܩܪܘ̈ܝܐ ܥܕܡܐ ܕܬܬܦܪܣ ܬܘܒ.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>ܒܚܘܪܐ ܒܚܪ ܠܗ̇ ܒܬܪܟܢ. ܩܪܘ̈ܝܐ ܥܕܟܝܠ ܠܐ ܚܙܝܢ ܠܗ̇.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ܩܪܘ̈ܝܐ ܚܙܝܢ ܠܗ̇ ܡܚܕܐ.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ܡܦܩ ܠܗ̇ ܡܢ ܒܘܚܪܢܐ ܠܦܘܠܚܢܐ ܝܬܝܪܐ. ܩܪܘ̈ܝܐ ܠܐ ܚܙܝܢ ܠܗ̇.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ܬܛܫܐ ܠܦܐܬܐ ܗܕܐ ܡܢ ܩܪܘ̈ܝܐ؟</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ܬܗܦܟ ܠܦܐܬܐ ܗܕܐ ܠܣܘܪܛܐ؟</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>ܩܪܘ̈ܝܐ ܠܐ ܚܙܝܢ ܬܘܒ %title ܥܕܡܐ ܕܐܢܫ ܦܪܣ ܠܗ̇ ܬܘܒ.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ܗܦܟ ܠܣܘܪܛܐ ܠܦܘܠܚܢܐ ܝܬܝܪܐ. ܩܪܘ̈ܝܐ ܥܕܟܝܠ ܠܐ ܚܙܝܢ ܠܗ̇، ܘܣܢܝܩܐ ܠܒܘܚܪܢܐ ܚܕܬܐ ܩܕܡ ܕܬܬܦܪܣ.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ܒܘܛܠܐ</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ܣܘ̈ܓܐ ܗܠܝܢ ܒܒܘܚܪܢܐ ܐܝܬܝܗܘܢ. ܩܪܘ̈ܝܐ ܚܙܝܢ ܠܗܘܢ ܡܐ ܕܦܪܣ ܠܗܘܢ ܐܢܫ ܕܠܐ ܟܬܒ ܠܢܘܣܚܐ ܗܫܝܐ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76514,6 +76514,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>स्टैटिक प्रकाशन</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>समीक्षा मे</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>पाठक ई पृष्ठ देखैत छथि।</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>जा धरि कियो एकरा जारी नहि करैत छथि, ता धरि पाठक सँ नुकाएल अछि।</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>पृष्ठ आब समीक्षा मे अछि। जा धरि ई जारी नहि होइत अछि, ता धरि पाठक सँ नुकाएल अछि।</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>पृष्ठ जारी भ' गेल अछि: पाठक आब एकरा देखैत छथि।</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>पृष्ठ फेर सँ ड्राफ़्ट अछि। जा धरि एकर समीक्षा भ' क' ई जारी नहि होइत अछि, ता धरि पाठक सँ नुकाएल अछि।</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>आब जारी करू</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>केवल %role भूमिका बला ओ प्रयोक्ता, जे ई संस्करण नहि लिखलनि, एकरा जारी क' सकैत छथि।</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>जारी होएबाक प्रतीक्षा मे सहायता विषय</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>फेर सँ जारी होएबा धरि एकरा पाठक सँ नुकबैत अछि।</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>आगाँ कोनो समीक्षक एकरा जाँचताह। पाठक एखन धरि एकरा नहि देखैत छथि।</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>पाठक एकरा तुरंत देखैत छथि।</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>आर काज लेल एकरा समीक्षा सँ बाहर करैत अछि। पाठक एकरा नहि देखैत छथि।</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ई पृष्ठ पाठक सँ नुकाबी?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ई पृष्ठ वापस ड्राफ़्ट मे पठाबी?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>जा धरि कियो फेर सँ जारी नहि करैत छथि, पाठक आब %title नहि देखताह।</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title आर काज लेल वापस ड्राफ़्ट मे जाइत अछि। पाठक एखनो एकरा नहि देखैत छथि, आ जारी होएबा सँ पहिने एकर नव समीक्षा आवश्यक अछि।</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करू</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ई विषय समीक्षा मे अछि। जखन वर्तमान संस्करण नहि लिखनिहार कियो एकरा जारी करताह, तखन पाठक एकरा देखताह।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

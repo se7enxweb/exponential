@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Статикалык жарыялоо</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Текшерүүдө</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Окуучулар бул бетти көрүшөт.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Кимдир бирөө чыгармайынча окуучулардан жашырылган.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Бет азыр текшерүүдө. Чыгарылганга чейин ал окуучулардан жашырылган.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Бет чыгарылды: окуучулар аны азыр көрүшөт.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Бет кайрадан долбоор болду. Текшерилип, чыгарылганга чейин ал окуучулардан жашырылган.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Азыр чыгаруу</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Аны бул версияны жазбаган, %role ролу бар колдонуучу гана чыгара алат.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Чыгарууну күтүп жаткан жардам темалары</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Кайра чыгарылганга чейин аны окуучулардан жашырат.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Андан кийин аны текшерүүчү карайт. Окуучулар аны азырынча көрүшпөйт.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Окуучулар аны дароо көрүшөт.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Кошумча иш үчүн аны текшерүүдөн чыгарат. Окуучулар аны көрүшпөйт.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Бул бетти окуучулардан жашырасызбы?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Бул бетти долбоорго кайтарасызбы?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Кимдир бирөө кайра чыгармайынча окуучулар %title көрүшпөйт.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title кошумча иш үчүн долбоорго кайтат. Окуучулар аны дагы эле көрүшпөйт, ал эми чыгаруудан мурун ага жаңы текшерүү керек.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Жокко чыгаруу</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Бул темалар текшерүүдө. Учурдагы версияны жазбаган кимдир бирөө аларды чыгаргандан кийин окуучулар аларды көрүшөт.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

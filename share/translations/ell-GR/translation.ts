@@ -76445,6 +76445,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Στατική δημοσίευση</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Σε έλεγχο</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Οι αναγνώστες βλέπουν αυτήν τη σελίδα.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Κρυφή από τους αναγνώστες μέχρι να τη δημοσιεύσει κάποιος.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Η σελίδα βρίσκεται τώρα σε έλεγχο. Είναι κρυφή από τους αναγνώστες μέχρι να δημοσιευτεί.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Η σελίδα δημοσιεύτηκε: οι αναγνώστες τη βλέπουν τώρα.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Η σελίδα είναι ξανά προσχέδιο. Είναι κρυφή από τους αναγνώστες μέχρι να ελεγχθεί και να δημοσιευτεί.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Δημοσίευση τώρα</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Μόνο ένας χρήστης με τον ρόλο %role που δεν έγραψε αυτήν την έκδοση μπορεί να τη δημοσιεύσει.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Θέματα βοήθειας σε αναμονή δημοσίευσης</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Την κρύβει από τους αναγνώστες μέχρι να δημοσιευτεί ξανά.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Στη συνέχεια την ελέγχει ένας ελεγκτής. Οι αναγνώστες δεν τη βλέπουν ακόμη.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Οι αναγνώστες τη βλέπουν αμέσως.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Την αφαιρεί από τον έλεγχο για περισσότερη δουλειά. Οι αναγνώστες δεν τη βλέπουν.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Απόκρυψη αυτής της σελίδας από τους αναγνώστες;</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Επιστροφή αυτής της σελίδας σε προσχέδιο;</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Οι αναγνώστες δεν βλέπουν πλέον %title μέχρι να δημοσιευτεί ξανά από κάποιον.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title επιστρέφει σε προσχέδιο για περισσότερη δουλειά. Οι αναγνώστες εξακολουθούν να μην το βλέπουν, και χρειάζεται νέο έλεγχο πριν δημοσιευτεί.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Άκυρο</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Αυτά τα θέματα βρίσκονται σε έλεγχο. Οι αναγνώστες τα βλέπουν μόλις τα δημοσιεύσει κάποιος που δεν έγραψε την τρέχουσα έκδοση.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -74776,6 +74776,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>النشر الثابت</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>قيد المراجعة</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>يرى القرّاء هذه الصفحة.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>مخفية عن القرّاء حتى يصدرها أحد.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>الصفحة قيد المراجعة الآن. وهي مخفية عن القرّاء حتى يتم إصدارها.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>تم إصدار الصفحة: يراها القرّاء الآن.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>عادت الصفحة مسودة. وهي مخفية عن القرّاء حتى تتم مراجعتها وإصدارها.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>إصدار الآن</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>لا يمكن إصدارها إلا لمستخدم لديه الدور %role ولم يكتب هذه النسخة.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>مواضيع المساعدة بانتظار الإصدار</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>يخفيها عن القرّاء حتى يتم إصدارها مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>يتحقق منها مراجع بعد ذلك. لا يراها القرّاء بعد.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>يراها القرّاء فورًا.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>يخرجها من المراجعة لمزيد من العمل. لا يراها القرّاء.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>إخفاء هذه الصفحة عن القرّاء؟</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>إعادة هذه الصفحة إلى المسودة؟</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>لن يرى القرّاء %title بعد الآن حتى يصدرها أحد مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>تعود %title إلى المسودة لمزيد من العمل. لا يزال القرّاء لا يرونها، وتحتاج إلى مراجعة جديدة قبل إصدارها.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>إلغاء</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>هذه المواضيع قيد المراجعة. يراها القرّاء بمجرد أن يصدرها شخص لم يكتب النسخة الحالية.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

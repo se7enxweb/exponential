@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Нашри статикӣ</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Дар баррасӣ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Хонандагон ин саҳифаро мебинанд.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>То касе онро нашр накунад, аз хонандагон пинҳон аст.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Саҳифа ҳоло дар баррасӣ аст. То нашр нашавад, аз хонандагон пинҳон аст.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Саҳифа нашр шуд: хонандагон ҳоло онро мебинанд.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Саҳифа боз сиёҳнавис аст. То баррасӣ ва нашр нашавад, аз хонандагон пинҳон аст.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Ҳозир нашр кардан</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Танҳо корбаре, ки нақши %role дорад ва ин версияро нанавиштааст, метавонад онро нашр кунад.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Мавзӯъҳои кӯмак, ки интизори нашранд</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>То аз нав нашр шудан онро аз хонандагон пинҳон мекунад.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Баъд баррасикунанда онро месанҷад. Хонандагон ҳоло онро намебинанд.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Хонандагон онро фавран мебинанд.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Онро барои кори иловагӣ аз баррасӣ мегирад. Хонандагон онро намебинанд.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Ин саҳифаро аз хонандагон пинҳон кунем?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Ин саҳифаро ба сиёҳнавис баргардонем?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>То касе онро аз нав нашр накунад, хонандагон дигар %title намебинанд.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title барои кори иловагӣ ба сиёҳнавис бармегардад. Хонандагон ҳанӯз онро намебинанд ва пеш аз нашр баррасии нав лозим аст.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Бекор кардан</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Ин мавзӯъҳо дар баррасӣ ҳастанд. Хонандагон онҳоро вақте мебинанд, ки касе, ки версияи ҷориро нанавиштааст, онҳоро нашр кунад.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

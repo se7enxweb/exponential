@@ -1666,6 +1666,10 @@
 .a4-help-feedback-form > * + * { margin-top: var(--a4-space-3); }
 .a4-help-feedback-form .a4-field { max-width: 40ch; }
 .a4-help-workflow .a4-steps { margin-bottom: 0; }
+/* the status box (the state as a badge and what it means for readers) and the steps, each with what it does */
+.a4-help-wf-status { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
+.a4-help-wf-actions { display: grid; gap: var(--a4-space-3); margin: 0; padding: 0; list-style: none; }
+.a4-help-wf-action { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2) var(--a4-space-3); }
 /* a rule's code and a field's name stay whole; the finding wraps */
 .a4-help-workflow td code { white-space: nowrap; }
 

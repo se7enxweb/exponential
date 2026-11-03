@@ -76504,6 +76504,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>ਸਟੈਟਿਕ ਪ੍ਰਕਾਸ਼ਨ</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>ਸਮੀਖਿਆ ਵਿੱਚ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ਪਾਠਕ ਇਹ ਪੰਨਾ ਵੇਖਦੇ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>ਜਦੋਂ ਤੱਕ ਕੋਈ ਇਸਨੂੰ ਜਾਰੀ ਨਹੀਂ ਕਰਦਾ, ਪਾਠਕਾਂ ਤੋਂ ਲੁਕਿਆ ਹੋਇਆ।</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>ਪੰਨਾ ਹੁਣ ਸਮੀਖਿਆ ਵਿੱਚ ਹੈ। ਜਾਰੀ ਹੋਣ ਤੱਕ ਇਹ ਪਾਠਕਾਂ ਤੋਂ ਲੁਕਿਆ ਹੋਇਆ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>ਪੰਨਾ ਜਾਰੀ ਕੀਤਾ ਗਿਆ ਹੈ: ਪਾਠਕ ਹੁਣ ਇਸਨੂੰ ਵੇਖਦੇ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>ਪੰਨਾ ਮੁੜ ਖਰੜਾ ਹੈ। ਸਮੀਖਿਆ ਹੋਣ ਅਤੇ ਜਾਰੀ ਹੋਣ ਤੱਕ ਇਹ ਪਾਠਕਾਂ ਤੋਂ ਲੁਕਿਆ ਹੋਇਆ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ਹੁਣੇ ਜਾਰੀ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>ਸਿਰਫ਼ %role ਰੋਲ ਵਾਲਾ ਉਹ ਵਰਤੋਂਕਾਰ, ਜਿਸਨੇ ਇਹ ਵਰਜ਼ਨ ਨਹੀਂ ਲਿਖਿਆ, ਇਸਨੂੰ ਜਾਰੀ ਕਰ ਸਕਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ਜਾਰੀ ਹੋਣ ਦੀ ਉਡੀਕ ਵਿੱਚ ਮਦਦ ਵਿਸ਼ੇ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ਮੁੜ ਜਾਰੀ ਹੋਣ ਤੱਕ ਇਸਨੂੰ ਪਾਠਕਾਂ ਤੋਂ ਲੁਕਾਉਂਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>ਅੱਗੇ ਇੱਕ ਸਮੀਖਿਅਕ ਇਸਦੀ ਜਾਂਚ ਕਰਦਾ ਹੈ। ਪਾਠਕ ਅਜੇ ਇਸਨੂੰ ਨਹੀਂ ਵੇਖਦੇ।</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ਪਾਠਕ ਇਸਨੂੰ ਤੁਰੰਤ ਵੇਖਦੇ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ਹੋਰ ਕੰਮ ਲਈ ਇਸਨੂੰ ਸਮੀਖਿਆ ਤੋਂ ਬਾਹਰ ਕੱਢਦਾ ਹੈ। ਪਾਠਕ ਇਸਨੂੰ ਨਹੀਂ ਵੇਖਦੇ।</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ਕੀ ਇਹ ਪੰਨਾ ਪਾਠਕਾਂ ਤੋਂ ਲੁਕਾਉਣਾ ਹੈ?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ਕੀ ਇਹ ਪੰਨਾ ਖਰੜੇ ਵਿੱਚ ਵਾਪਸ ਭੇਜਣਾ ਹੈ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>ਜਦੋਂ ਤੱਕ ਕੋਈ ਇਸਨੂੰ ਮੁੜ ਜਾਰੀ ਨਹੀਂ ਕਰਦਾ, ਪਾਠਕ %title ਹੋਰ ਨਹੀਂ ਵੇਖਣਗੇ।</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ਹੋਰ ਕੰਮ ਲਈ ਖਰੜੇ ਵਿੱਚ ਵਾਪਸ ਜਾਂਦਾ ਹੈ। ਪਾਠਕ ਅਜੇ ਵੀ ਇਸਨੂੰ ਨਹੀਂ ਵੇਖਦੇ, ਅਤੇ ਜਾਰੀ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਇਸਦੀ ਨਵੀਂ ਸਮੀਖਿਆ ਲੋੜੀਂਦੀ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ਰੱਦ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ਇਹ ਵਿਸ਼ੇ ਸਮੀਖਿਆ ਵਿੱਚ ਹਨ। ਮੌਜੂਦਾ ਵਰਜ਼ਨ ਨਾ ਲਿਖਣ ਵਾਲਾ ਕੋਈ ਵਿਅਕਤੀ ਜਦੋਂ ਇਨ੍ਹਾਂ ਨੂੰ ਜਾਰੀ ਕਰਦਾ ਹੈ, ਪਾਠਕ ਇਨ੍ਹਾਂ ਨੂੰ ਵੇਖਦੇ ਹਨ।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

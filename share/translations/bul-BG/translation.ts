@@ -76445,6 +76445,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Статично публикуване</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>В преглед</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Читателите виждат тази страница.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Скрита от читателите, докато някой не я издаде.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Страницата вече е в преглед. Скрита е от читателите, докато не бъде издадена.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Страницата е издадена: читателите вече я виждат.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Страницата отново е чернова. Скрита е от читателите, докато не бъде прегледана и издадена.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Издай сега</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Само потребител с ролята %role, който не е написал тази версия, може да я издаде.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Теми в помощта, чакащи издаване</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Скрива я от читателите, докато не бъде издадена отново.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>След това я проверява рецензент. Читателите все още не я виждат.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Читателите я виждат веднага.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Изважда я от преглед за още работа. Читателите не я виждат.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Да се скрие ли тази страница от читателите?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Да се върне ли тази страница в чернова?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Читателите вече не виждат %title, докато някой не я издаде отново.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title се връща в чернова за още работа. Читателите все още не я виждат и тя се нуждае от нов преглед, преди да бъде издадена.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Отказ</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Тези теми са в преглед. Читателите ги виждат, щом ги издаде някой, който не е написал текущата версия.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

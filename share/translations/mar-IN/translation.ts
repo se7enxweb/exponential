@@ -76504,6 +76504,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>स्टॅटिक प्रकाशन</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>पुनरावलोकनात</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>वाचक हे पृष्ठ पाहतात.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>कोणी प्रकाशित करेपर्यंत वाचकांपासून लपवलेले.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>पृष्ठ आता पुनरावलोकनात आहे. ते प्रकाशित होईपर्यंत वाचकांपासून लपवलेले आहे.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>पृष्ठ प्रकाशित झाले आहे: वाचक ते आता पाहतात.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>पृष्ठ पुन्हा मसुदा आहे. त्याचे पुनरावलोकन होऊन ते प्रकाशित होईपर्यंत ते वाचकांपासून लपवलेले आहे.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>आता प्रकाशित करा</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role ही भूमिका असलेला आणि ही आवृत्ती न लिहिलेला वापरकर्ताच ती प्रकाशित करू शकतो.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>प्रकाशनाच्या प्रतीक्षेत असलेले मदत विषय</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ते पुन्हा प्रकाशित होईपर्यंत वाचकांपासून लपवते.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>पुढे एक पुनरावलोकक ते तपासतो. वाचकांना ते अजून दिसत नाही.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>वाचकांना ते लगेच दिसते.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>अधिक कामासाठी ते पुनरावलोकनातून बाहेर काढते. वाचकांना ते दिसत नाही.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>हे पृष्ठ वाचकांपासून लपवायचे?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>हे पृष्ठ पुन्हा मसुद्याकडे पाठवायचे?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>कोणी पुन्हा प्रकाशित करेपर्यंत वाचकांना %title आता दिसणार नाही.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title अधिक कामासाठी पुन्हा मसुद्याकडे जाते. वाचकांना ते अजूनही दिसत नाही, आणि प्रकाशित होण्यापूर्वी त्याचे नवीन पुनरावलोकन आवश्यक आहे.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करा</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>हे विषय पुनरावलोकनात आहेत. सध्याची आवृत्ती न लिहिलेल्या व्यक्तीने ते प्रकाशित केल्यावर वाचकांना ते दिसतील.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

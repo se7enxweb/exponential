@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Ստատիկ հրապարակում</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Վերանայման մեջ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Ընթերցողները տեսնում են այս էջը։</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Թաքցված է ընթերցողներից, մինչև որևէ մեկը թողարկի այն։</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Էջն այժմ վերանայման մեջ է։ Այն թաքցված է ընթերցողներից, մինչև թողարկվի։</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Էջը թողարկված է. ընթերցողները հիմա տեսնում են այն։</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Էջը կրկին սևագիր է։ Այն թաքցված է ընթերցողներից, մինչև վերանայվի և թողարկվի։</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Թողարկել հիմա</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Միայն %role դեր ունեցող օգտատերը, որը չի գրել այս տարբերակը, կարող է թողարկել այն։</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Թողարկման սպասող օգնության թեմաներ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Թաքցնում է այն ընթերցողներից, մինչև կրկին թողարկվի։</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Հաջորդը վերանայողը կստուգի այն։ Ընթերցողները դեռ չեն տեսնում այն։</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Ընթերցողներն անմիջապես տեսնում են այն։</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Հանում է այն վերանայումից՝ լրացուցիչ աշխատանքի համար։ Ընթերցողները չեն տեսնում այն։</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Թաքցնե՞լ այս էջը ընթերցողներից։</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Վերադարձնե՞լ այս էջը սևագրի։</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Ընթերցողներն այլևս չեն տեսնում %title-ը, մինչև որևէ մեկը կրկին թողարկի այն։</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title-ը վերադառնում է սևագրի՝ լրացուցիչ աշխատանքի համար։ Ընթերցողները դեռ չեն տեսնում այն, և թողարկումից առաջ անհրաժեշտ է նոր վերանայում։</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Չեղարկել</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Այս թեմաները վերանայման մեջ են։ Ընթերցողները կտեսնեն դրանք, երբ ընթացիկ տարբերակը չգրած որևէ մեկը թողարկի դրանք։</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

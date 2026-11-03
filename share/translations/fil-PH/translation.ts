@@ -76506,6 +76506,82 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>Static publishing</source>
         <translation>Static na pag-publish</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Nasa Review</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Nakikita ng mga mambabasa ang pahinang ito.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Nakatago sa mga mambabasa hanggang may mag-release nito.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Nasa Review na ang pahina. Nakatago ito sa mga mambabasa hanggang ma-release.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Na-release na ang pahina: nakikita na ito ng mga mambabasa.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Draft muli ang pahina. Nakatago ito sa mga mambabasa hanggang masuri at ma-release.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>I-release ngayon</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Tanging user na may tungkuling %role na hindi sumulat ng bersyong ito ang makakapag-release nito.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Mga paksa ng tulong na naghihintay ng release</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Itinatago ito sa mga mambabasa hanggang ma-release muli.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Susuriin ito ng isang reviewer. Hindi pa ito nakikita ng mga mambabasa.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Makikita agad ito ng mga mambabasa.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Inaalis ito sa review para sa karagdagang trabaho. Hindi ito nakikita ng mga mambabasa.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Itago ang pahinang ito sa mga mambabasa?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Ibalik ang pahinang ito sa Draft?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Hindi na nakikita ng mga mambabasa ang %title hanggang may mag-release ulit nito.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>Babalik sa Draft ang %title para sa karagdagang trabaho. Hindi pa rin ito nakikita ng mga mambabasa, at kailangan nito ng bagong review bago ma-release.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kanselahin</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Nasa Review ang mga paksang ito. Makikita ng mga mambabasa ang mga ito kapag ni-release ng taong hindi sumulat ng kasalukuyang bersyon.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

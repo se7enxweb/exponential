@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>স্টেটিক প্রকাশন</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>রিভিউদা লৈরি</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>পাংবা মীশিংনা লমায় অসি ফংই.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>কনাগুম্বা অমনা রিলিজ তৌদ্রিফাওবা পাংবা মীশিংদগী থুপ্না থম্লি.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>লমায় অসি ঙসি রিভিউদা লৈরি. রিলিজ তৌদ্রিফাওবা পাংবা মীশিংদগী থুপ্না থম্লি.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>লমায় অসি রিলিজ তৌরে: পাংবা মীশিংনা ঙসি ফংরি.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>লমায় অসি অমুক ড্রাফ্ট ওইরে. রিভিউ তৌরগা রিলিজ তৌদ্রিফাওবা পাংবা মীশিংদগী থুপ্না থম্লি.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ঙসি রিলিজ তৌবা</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role ভূমিকা লৈবা অমসুং ভর্সন অসি য়ুম্খিদবা শিজিন্নবা মী অমখক্তনা মসি রিলিজ তৌবা ঙম্মি.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>রিলিজ তৌনবা ঙাইরিবা ফংজেলগী বিষয়শিং</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>অমুক রিলিজ তৌদ্রিফাওবা পাংবা মীশিংদগী থুপ্লি.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>মতুংদা রিভিউ তৌবা মী অমনা চেক তৌগনি. পাংবা মীশিংনা হৌজিক ফংদ্রি.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>পাংবা মীশিংনা খুদক্তা ফংই.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>থবক হেন্না তৌনবা রিভিউদগী লৌথোকই. পাংবা মীশিংনা ফংদে.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>লমায় অসি পাংবা মীশিংদগী থুপ্কদ্রা?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>লমায় অসি ড্রাফ্টদা হন্দোকখিগদ্রা?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>কনাগুম্বা অমনা অমুক রিলিজ তৌদ্রিফাওবা পাংবা মীশিংনা %title অদু ফংলরোই.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title থবক হেন্না তৌনবা ড্রাফ্টদা হল্লি. পাংবা মীশিংনা হৌজিকসু ফংদ্রি, অমসুং রিলিজ তৌদ্রিঙৈগী মমাংদা অনৌবা রিভিউ অমা মথৌ তাই.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>কেন্সেল তৌবা</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>বিষয়শিং অসি রিভিউদা লৈরি. ঙসিগী ভর্সন য়ুম্খিদবা মী অমনা রিলিজ তৌবা মতমদা পাংবা মীশিংনা ফংগনি.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

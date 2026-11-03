@@ -76506,6 +76506,82 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>Static publishing</source>
         <translation>Famoahana statika</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Ao amin'ny fanamarinana</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Hitan'ny mpamaky ity pejy ity.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Afenina amin'ny mpamaky mandra-pamoahan'olona azy.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Ao amin'ny fanamarinana ankehitriny ny pejy. Afenina amin'ny mpamaky izy mandra-pivoakany.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Navoaka ny pejy: hitan'ny mpamaky izao.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Drafitra indray ny pejy. Afenina amin'ny mpamaky izy mandra-panamarinana sy famoahana azy.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Avoahy izao</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Mpampiasa manana ny anjara asa %role ka tsy nanoratra ity dikan-teny ity ihany no afaka mamoaka azy.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Lohahevitra fanampiana miandry famoahana</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Manafina azy amin'ny mpamaky mandra-pamoahana azy indray.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Mpanamarina no manamarina azy manaraka. Mbola tsy hitan'ny mpamaky izy.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Hitan'ny mpamaky avy hatrany izy.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Esorina amin'ny fanamarinana izy mba hasiana asa fanampiny. Tsy hitan'ny mpamaky izy.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Hafenina amin'ny mpamaky ve ity pejy ity?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Haverina amin'ny drafitra ve ity pejy ity?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Tsy hitan'ny mpamaky intsony %title mandra-pamoahan'olona azy indray.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>Miverina amin'ny drafitra %title mba hasiana asa fanampiny. Mbola tsy hitan'ny mpamaky izy, ary mila fanamarinana vaovao alohan'ny hamoahana azy.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Foano</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Ao amin'ny fanamarinana ireo lohahevitra ireo. Hitan'ny mpamaky izy ireo raha vao mamoaka azy ireo ny olona tsy nanoratra ny dikan-teny ankehitriny.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

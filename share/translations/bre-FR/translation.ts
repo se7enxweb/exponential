@@ -76506,6 +76506,82 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>Static publishing</source>
         <translation>Embann stadek</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>En adlenn</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Gwelout a ra al lennerien ar bajenn-mañ.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Kuzhet ouzh al lennerien betek ma vo embannet gant unan bennak.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Emañ ar bajenn en adlenn bremañ. Kuzhet eo ouzh al lennerien betek ma vo embannet.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Embannet eo ar bajenn: gwelout a ra al lennerien anezhi bremañ.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Ur brouilhed eo ar bajenn en-dro. Kuzhet eo ouzh al lennerien betek ma vo adlennet hag embannet.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Embann bremañ</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>N'eus nemet un implijer gant ar roll %role ha n'en deus ket skrivet an handelv-mañ a c'hall embann anezhi.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Rubrikoù skoazell o c'hortoz bezañ embannet</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Kuzhat a ra anezhi ouzh al lennerien betek ma vo embannet en-dro.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Un adlenner a wiro anezhi da heul. Ne wel ket al lennerien anezhi c'hoazh.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Gwelout a ra al lennerien anezhi diouzhtu.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Tennañ a ra anezhi eus an adlenn evit labourat muioc'h warni. Ne wel ket al lennerien anezhi.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Kuzhat ar bajenn-mañ ouzh al lennerien?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Kas ar bajenn-mañ en-dro d'ar brouilhed?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Ne wel ket al lennerien %title ken betek ma vo embannet en-dro gant unan bennak.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title a zistro d'ar brouilhed evit labourat muioc'h warni. Ne wel ket al lennerien anezhi c'hoazh, hag ezhomm he deus eus un adlenn nevez a-raok bezañ embannet.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Nullañ</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>En adlenn emañ ar rubrikoù-mañ. Gwelout a ray al lennerien anezho kerkent ha ma vint embannet gant unan bennak n'en deus ket skrivet an handelv red.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

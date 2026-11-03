@@ -76506,6 +76506,82 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>Static publishing</source>
         <translation>Ɖeɖe ɖe dutoƒo si metrɔna o</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Le kpɔkpɔ me</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Xlẽlawo kpɔa axa sia.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Woɣlae ɖe xlẽlawo nu va se ɖe esime ame aɖe naɖee ɖe go.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Axa la le kpɔkpɔ me fifia. Woɣlae ɖe xlẽlawo nu va se ɖe esime woaɖee ɖe go.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Woɖe axa la ɖe go: xlẽlawo kpɔe fifia.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Axa la zu ŋɔŋlɔ gbãtɔ gbugbɔ. Woɣlae ɖe xlẽlawo nu va se ɖe esime woakpɔ eŋu ahaɖee ɖe go.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Ɖee ɖe go fifia</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Zãla si si %role ƒe dɔdeasi le eye meŋlɔ ʋɛsiɔn sia o la ɖeka koe ate ŋu aɖee ɖe go.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Kpekpeɖeŋu ƒe nya siwo le ɖeɖe ɖe go lalam</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Eɣlanɛ ɖe xlẽlawo nu va se ɖe esime woagaɖee ɖe go.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Nyakpɔla aɖe akpɔ eŋu emegbe. Xlẽlawo mekpɔe haɖe o.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Xlẽlawo kpɔnɛ enumake.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Eɖenɛ le kpɔkpɔ me be woawɔ dɔ bubu le eŋu. Xlẽlawo mekpɔnɛ o.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Àɣla axa sia ɖe xlẽlawo nu?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Àgbugbɔ axa sia ayi ŋɔŋlɔ gbãtɔ me?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Xlẽlawo megakpɔa %title o va se ɖe esime ame aɖe nagaɖee ɖe go.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title trɔ yi ŋɔŋlɔ gbãtɔ me be woawɔ dɔ bubu le eŋu. Xlẽlawo mekpɔe haɖe o, eye ehiã kpɔkpɔ yeye hafi woaɖee ɖe go.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ɖe asi le eŋu</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Nya siawo le kpɔkpɔ me. Xlẽlawo akpɔ wo ne ame aɖe si meŋlɔ ʋɛsiɔn si le te fifia o la ɖe wo ɖe go.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>სტატიკური გამოქვეყნება</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>გადასინჯვაშია</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>მკითხველები ამ გვერდს ხედავენ.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>მკითხველებისთვის დამალულია, სანამ ვინმე არ გამოუშვებს.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>გვერდი ახლა გადასინჯვაშია. ის მკითხველებისთვის დამალულია, სანამ არ გამოიშვება.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>გვერდი გამოშვებულია: მკითხველები მას ახლა ხედავენ.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>გვერდი ისევ მონახაზია. ის მკითხველებისთვის დამალულია, სანამ არ გადაისინჯება და არ გამოიშვება.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ახლავე გამოშვება</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>მისი გამოშვება შეუძლია მხოლოდ %role როლის მქონე მომხმარებელს, რომელსაც ეს ვერსია არ დაუწერია.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>გამოშვების მომლოდინე დახმარების თემები</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>მალავს მას მკითხველებისგან, სანამ ხელახლა არ გამოიშვება.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>შემდეგ მას გადამსინჯველი შეამოწმებს. მკითხველები მას ჯერ ვერ ხედავენ.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>მკითხველები მას მაშინვე ხედავენ.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>იღებს მას გადასინჯვიდან დამატებითი მუშაობისთვის. მკითხველები მას ვერ ხედავენ.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>დაიმალოს ეს გვერდი მკითხველებისგან?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>დაბრუნდეს ეს გვერდი მონახაზში?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>მკითხველები ვეღარ ხედავენ %title-ს, სანამ ვინმე ხელახლა არ გამოუშვებს.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ბრუნდება მონახაზში დამატებითი მუშაობისთვის. მკითხველები მას კვლავ ვერ ხედავენ და გამოშვებამდე ახალი გადასინჯვა სჭირდება.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>გაუქმება</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ეს თემები გადასინჯვაშია. მკითხველები მათ დაინახავენ, როგორც კი ვინმე, ვისაც მიმდინარე ვერსია არ დაუწერია, გამოუშვებს მათ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

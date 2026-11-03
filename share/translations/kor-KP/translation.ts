@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>정적 게시</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>검토 중</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>독자에게 이 페이지가 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>누군가 릴리스할 때까지 독자에게 표시되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>페이지가 이제 검토 상태입니다. 릴리스될 때까지 독자에게 표시되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>페이지가 릴리스되였습니다. 이제 독자에게 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>페이지가 다시 초안 상태입니다. 검토 및 릴리스될 때까지 독자에게 표시되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>지금 릴리스</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role 역할이 있고 이 판을 작성하지 않은 사용자만 릴리스할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>릴리스 대기 중인 도움말 주제</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>다시 릴리스될 때까지 독자에게 숨깁니다.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>다음으로 검토자가 확인합니다. 아직 독자에게 표시되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>즉시 독자에게 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>추가 작업을 위해 검토에서 제외합니다. 독자에게 표시되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>이 페이지를 독자에게 숨기시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>이 페이지를 초안으로 되돌리시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>누군가 다시 릴리스할 때까지 독자에게 %title이(가) 더 이상 표시되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title이(가) 추가 작업을 위해 초안으로 돌아갑니다. 여전히 독자에게 표시되지 않으며, 릴리스되기 전에 새로 검토를 받아야 합니다.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>취소</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>이 주제들은 검토 상태입니다. 현재 판을 작성하지 않은 사람이 릴리스하면 독자에게 표시됩니다.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

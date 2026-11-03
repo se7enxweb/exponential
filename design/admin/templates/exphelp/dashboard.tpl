@@ -181,6 +181,11 @@
     {include uri='design:exphelp/parts/dashboard_review.tpl' review=$help_review}
     {/if}
 
+    {* ---- Help maintained as content: topics waiting for release, for who may release them (paged by (offset)) ---- *}
+    {if and( is_set( $help_waiting ), $help_waiting )}
+    {include uri='design:exphelp/parts/dashboard_waiting.tpl' waiting=$help_waiting view_parameters=$view_parameters}
+    {/if}
+
     {* ---- Help maintained as content: manuals and topics (doc/eng-us/features/6.0/help-content.md) ---- *}
     {if and( is_set( $help_content ), $help_content, or( $help_content.manuals|count|gt( 0 ), $help_content.topics|count|gt( 0 ) ) )}
     {include uri='design:exphelp/parts/dashboard_content.tpl' content=$help_content}

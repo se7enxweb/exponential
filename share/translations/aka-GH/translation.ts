@@ -76506,6 +76506,82 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>Static publishing</source>
         <translation>Tintim a ɛgyina</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Ɛwɔ nhwehwɛmu mu</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Akenkanfoɔ hunu krataafa yi.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Akenkanfoɔ nhunu no kosi sɛ obi bɛtintim no.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Krataafa no wɔ nhwehwɛmu mu seesei. Akenkanfoɔ nhunu no kosi sɛ wɔbɛtintim no.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Wɔatintim krataafa no: akenkanfoɔ hunu no seesei.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Krataafa no asan yɛ draft bio. Akenkanfoɔ nhunu no kosi sɛ wɔbɛhwehwɛ mu na wɔatintim no.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Tintim seesei</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Ɔdefoɔ a ɔwɔ dwumadie %role a ɔnkyerɛɛ nsakraeɛ yi nko ara na ɔbɛtumi atintim no.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Mmoa nsɛm a ɛretwɛn ntintimiɛ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Ɛde sie akenkanfoɔ kosi sɛ wɔbɛsan atintim no bio.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Ɔhwehwɛfoɔ bi na ɔbɛhwɛ no akyiri yi. Akenkanfoɔ nhunu no seesei.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Akenkanfoɔ hunu no ntɛm ara.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Ɛyi firi nhwehwɛmu mu ma adwuma foforɔ. Akenkanfoɔ nhunu no.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Wobɛsie krataafa yi afiri akenkanfoɔ ho?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Wobɛsan de krataafa yi akɔ draft mu?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Akenkanfoɔ nhunu %title bio kosi sɛ obi bɛsan atintim no.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title san kɔ draft mu ma adwuma foforɔ. Akenkanfoɔ nhunu no da so, na ɛhia nhwehwɛmu foforɔ ansa na wɔatintim no.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Gyae</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Nsɛm yi wɔ nhwehwɛmu mu. Akenkanfoɔ bɛhunu no bere a obi a ɔnkyerɛɛ nsakraeɛ a ɛwɔ hɔ seesei no atintim no.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

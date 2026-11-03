@@ -76506,6 +76506,82 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>Static publishing</source>
         <translation>Kuburitsa kwakamira</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Iri kuongororwa</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Vaverengi vanoona peji iyi.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Yakavanzwa kuvaverengi kusvikira mumwe munhu aiburitsa.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Peji iri kuongororwa ikozvino. Yakavanzwa kuvaverengi kusvikira yaburitswa.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Peji yakaburitswa: vaverengi vanoiona ikozvino.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Peji yava dhirafiti zvakare. Yakavanzwa kuvaverengi kusvikira yaongororwa uye yaburitswa.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Buritsa ikozvino</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Mushandisi chete ane basa %role asina kunyora shanduro iyi ndiye anogona kuiburitsa.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Misoro yerubatsiro yakamirira kuburitswa</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Inoivanza kuvaverengi kusvikira yaburitswa zvakare.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Muongorori anoitarisa zvinotevera. Vaverengi havasati vachiiona.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Vaverengi vanoiona pakarepo.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Inoibvisa pakuongororwa kuti ishandwe zvakare. Vaverengi havaioni.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Vanza peji iyi kuvaverengi?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Dzosera peji iyi kudhirafiti?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Vaverengi havachaoni %title kusvikira mumwe munhu aiburitsa zvakare.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title inodzokera kudhirafiti kuti ishandwe zvakare. Vaverengi havachiioni, uye inoda kuongororwa patsva isati yaburitswa.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kanzura</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Misoro iyi iri kuongororwa. Vaverengi vanoiona kana mumwe munhu asina kunyora shanduro iripo aiburitsa.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

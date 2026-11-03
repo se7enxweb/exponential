@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>การเผยแพร่แบบคงที่</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>อยู่ระหว่างตรวจทาน</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ผู้อ่านเห็นหน้านี้</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>ซ่อนจากผู้อ่านจนกว่าจะมีผู้ออกรุ่น</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>หน้านี้อยู่ในสถานะตรวจทานแล้ว ซ่อนจากผู้อ่านจนกว่าจะออกรุ่น</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>หน้านี้ออกรุ่นแล้ว: ผู้อ่านเห็นได้แล้วในขณะนี้</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>หน้านี้กลับเป็นฉบับร่างอีกครั้ง ซ่อนจากผู้อ่านจนกว่าจะผ่านการตรวจทานและออกรุ่น</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ออกรุ่นทันที</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>เฉพาะผู้ใช้ที่มีบทบาท %role และไม่ได้เขียนเวอร์ชันนี้เท่านั้นที่ออกรุ่นได้</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>หัวข้อวิธีใช้ที่รอออกรุ่น</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ซ่อนจากผู้อ่านจนกว่าจะออกรุ่นอีกครั้ง</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>ผู้ตรวจทานจะตรวจสอบเป็นลำดับถัดไป ผู้อ่านยังไม่เห็น</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ผู้อ่านเห็นได้ทันที</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>นำออกจากการตรวจทานเพื่อแก้ไขเพิ่มเติม ผู้อ่านไม่เห็น</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ซ่อนหน้านี้จากผู้อ่านหรือไม่?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ส่งหน้านี้กลับไปเป็นฉบับร่างหรือไม่?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>ผู้อ่านจะไม่เห็น %title อีกจนกว่าจะมีผู้ออกรุ่นอีกครั้ง</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title กลับไปเป็นฉบับร่างเพื่อแก้ไขเพิ่มเติม ผู้อ่านยังไม่เห็น และต้องผ่านการตรวจทานใหม่ก่อนออกรุ่น</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ยกเลิก</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>หัวข้อเหล่านี้อยู่ในสถานะตรวจทาน ผู้อ่านจะเห็นเมื่อมีผู้ที่ไม่ได้เขียนเวอร์ชันปัจจุบันออกรุ่น</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

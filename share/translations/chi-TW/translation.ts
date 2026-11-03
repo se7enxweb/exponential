@@ -76504,6 +76504,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>靜態發佈</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>檢閱中</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>讀者可以看到此頁面。</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>在有人發佈之前對讀者隱藏。</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>此頁面目前處於檢閱階段。在發佈之前對讀者隱藏。</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>此頁面已發佈：讀者現在可以看到它。</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>此頁面已再次成為草稿。在檢閱並發佈之前對讀者隱藏。</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>立即發佈</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>只有具有 %role 角色且未撰寫此版本的使用者才能發佈它。</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>等待發佈的說明主題</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>在再次發佈之前對讀者隱藏。</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>接下來由檢閱者檢查。讀者暫時看不到。</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>讀者會立即看到。</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>將其撤出檢閱以繼續修改。讀者看不到。</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>要對讀者隱藏此頁面嗎？</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>要將此頁面退回草稿嗎？</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>在有人再次發佈之前，讀者將不再看到 %title。</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title 退回草稿以繼續修改。讀者仍然看不到它，發佈前需要重新檢閱。</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>這些主題正在檢閱中。一旦未撰寫目前版本的人發佈它們，讀者即可看到。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

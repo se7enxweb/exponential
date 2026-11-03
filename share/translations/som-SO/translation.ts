@@ -76504,6 +76504,82 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>Static publishing</source>
         <translation>Daabacaadda taagan</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Dib-u-eegis ku jira</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Akhristayaashu way arkaan boggan.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Waa ka qarsoon yahay akhristayaasha ilaa qof sii daayo.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Boggu hadda wuxuu ku jiraa Dib-u-eegis. Waa ka qarsoon yahay akhristayaasha ilaa la sii daayo.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Boggii waa la sii daayay: akhristayaashu hadda way arkaan.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Boggu mar kale waa Qabyo. Waa ka qarsoon yahay akhristayaasha ilaa dib loo eego oo la sii daayo.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Hadda sii daa</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Kaliya isticmaale leh doorka %role oo aan qorin noocan ayaa sii dayn kara.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Mawduucyada caawimaadda ee sugaya sii deynta</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Waxay ka qarisaa akhristayaasha ilaa mar kale la sii daayo.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Dib-u-eege ayaa marka xigta hubiya. Akhristayaashu weli ma arkaan.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Akhristayaashu isla markiiba way arkaan.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Waxay ka saartaa dib-u-eegista si shaqo dheeraad ah loogu qabto. Akhristayaashu ma arkaan.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Ma ka qarinaysaa boggan akhristayaasha?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Ma dib ugu celinaysaa boggan Qabyo?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Akhristayaashu mar dambe ma arkaan %title ilaa qof mar kale sii daayo.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title wuxuu dib ugu noqonayaa Qabyo si shaqo dheeraad ah loogu qabto. Akhristayaashu weli ma arkaan, wuxuuna u baahan yahay dib-u-eegis cusub ka hor inta aan la sii dayn.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Jooji</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Mawduucyadani waxay ku jiraan Dib-u-eegis. Akhristayaashu way arkaan marka qof aan qorin nooca hadda jira uu sii daayo.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

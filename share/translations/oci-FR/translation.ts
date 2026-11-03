@@ -76506,6 +76506,82 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>Static publishing</source>
         <translation>Publicacion estatica</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>En relectura</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Los lectors veson aquesta pagina.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Amagada als lectors fins que qualqu'un la publique.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>La pagina es ara en relectura. Es amagada als lectors fins que siá publicada.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>La pagina es publicada: los lectors la veson ara.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>La pagina es tornada un borrolhon. Es amagada als lectors fins que siá relegida e publicada.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Publicar ara</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Sonque un utilizaire amb lo ròtle %role que a pas escrich aquesta version la pòt publicar.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Subjèctes d'ajuda que esperan la publicacion</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>L'amaga als lectors fins que siá publicada tornamai.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Un relector la verifica puèi. Los lectors la veson pas encara.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Los lectors la veson sulpic.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>La tira de la relectura per mai de trabalh. Los lectors la veson pas.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Amagar aquesta pagina als lectors?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Tornar aquesta pagina al borrolhon?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Los lectors veson pas pus %title fins que qualqu'un lo publique tornamai.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title torna al borrolhon per mai de trabalh. Los lectors lo veson totjorn pas, e li cal una relectura novèla abans d'èsser publicat.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anullar</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Aquestes subjèctes son en relectura. Los lectors los veson tre que qualqu'un qu'a pas escrich la version actuala los publica.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

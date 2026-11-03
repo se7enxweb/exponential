@@ -74776,6 +74776,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Статична публікація</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>На перевірці</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Читачі бачать цю сторінку.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Прихована від читачів, доки хтось її не випустить.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Сторінка зараз на перевірці. Вона прихована від читачів, доки її не випустять.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Сторінку випущено: читачі вже її бачать.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Сторінка знову стала чернеткою. Вона прихована від читачів, доки її не перевірять і не випустять.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Випустити зараз</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Випустити цю версію може лише користувач із роллю %role, який її не писав.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Теми довідки, що очікують на випуск</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Приховує її від читачів, доки її знову не випустять.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Далі її перевірить рецензент. Читачі її ще не бачать.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Читачі одразу її побачать.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Знімає її з перевірки для доопрацювання. Читачі її не бачать.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Приховати цю сторінку від читачів?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Повернути цю сторінку в чернетку?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Читачі більше не бачать %title, доки хтось знову не випустить цю сторінку.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title повертається в чернетку на доопрацювання. Читачі досі не бачать сторінку, а перед випуском потрібна нова перевірка.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Ці теми на перевірці. Читачі побачать їх, щойно їх випустить той, хто не писав поточну версію.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

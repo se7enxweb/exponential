@@ -76445,6 +76445,82 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Static publishing</source>
         <translation>Publicare statică</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>În verificare</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Cititorii văd această pagină.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Ascunsă cititorilor până când cineva o publică.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Pagina este acum în Verificare. Este ascunsă cititorilor până când este publicată.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Pagina este Publicată: cititorii o văd acum.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Pagina este din nou o Ciornă. Este ascunsă cititorilor până când este verificată și publicată.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Publică acum</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Doar un utilizator cu rolul %role care nu a scris această versiune o poate publica.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Subiecte de ajutor care așteaptă publicarea</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>O ascunde cititorilor până când este publicată din nou.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Urmează să o verifice un verificator. Cititorii nu o văd încă.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Cititorii o văd imediat.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>O scoate din verificare pentru mai multă muncă. Cititorii nu o văd.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Ascundeți această pagină de cititori?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Trimiteți această pagină înapoi la Ciornă?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Cititorii nu mai văd %title până când cineva îl publică din nou.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title revine la Ciornă pentru mai multă muncă. Cititorii tot nu îl văd și are nevoie de o nouă verificare înainte de a fi publicat.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulare</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Aceste subiecte sunt în Verificare. Cititorii le văd imediat ce cineva care nu a scris versiunea curentă le publică.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

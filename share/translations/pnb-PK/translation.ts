@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>سٹیٹک اشاعت</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>جائزے وچ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>پڑھݨ والے ایہہ صفحہ ویکھدے نیں۔</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>جدوں تیکر کوئی اینوں جاری نہیں کردا، پڑھݨ والیاں توں لُکیا ہویا اے۔</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>صفحہ ہݨ جائزے وچ اے۔ جاری ہوݨ تیکر ایہہ پڑھݨ والیاں توں لُکیا ہویا اے۔</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>صفحہ جاری کر دتا گیا اے: پڑھݨ والے ہݨ اینوں ویکھدے نیں۔</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>صفحہ پھیر مسودہ اے۔ جائزے تے جاری ہوݨ تیکر ایہہ پڑھݨ والیاں توں لُکیا ہویا اے۔</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ہݨے جاری کرو</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>صرف %role کردار والا اوہ ورتن والا، جنہے ایہہ ورژن نہیں لکھیا، اینوں جاری کر سکدا اے۔</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>جاری ہوݨ دی اڈیک وچ مدد دے موضوع</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>پھیر جاری ہوݨ تیکر اینوں پڑھݨ والیاں توں لُکاندا اے۔</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>اگے کوئی جائزہ کار اینوں چیک کردا اے۔ پڑھݨ والے حالے اینوں نہیں ویکھدے۔</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>پڑھݨ والے اینوں فوراً ویکھدے نیں۔</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ہور کم لئی اینوں جائزے توں کڈھدا اے۔ پڑھݨ والے اینوں نہیں ویکھدے۔</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>کیہ ایہہ صفحہ پڑھݨ والیاں توں لُکاݨا اے؟</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>کیہ ایہہ صفحہ مسودے وچ واپس گھلݨا اے؟</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>جدوں تیکر کوئی اینوں پھیر جاری نہیں کردا، پڑھݨ والے %title ہور نہیں ویکھݨگے۔</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ہور کم لئی مسودے وچ واپس جاندا اے۔ پڑھݨ والے حالے وی اینوں نہیں ویکھدے، تے جاری ہوݨ توں پہلاں اینوں نواں جائزہ چاہیدا اے۔</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>رد کرو</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ایہہ موضوع جائزے وچ نیں۔ جدوں موجودہ ورژن نہ لکھݨ والا کوئی بندہ اینہاں نوں جاری کردا اے، پڑھݨ والے اینہاں نوں ویکھدے نیں۔</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76281,6 +76281,82 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Static publishing</source>
         <translation>Statisch publiceren</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>In beoordeling</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Lezers zien deze pagina.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Verborgen voor lezers totdat iemand deze vrijgeeft.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>De pagina is nu in beoordeling. Deze is verborgen voor lezers totdat deze wordt vrijgegeven.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>De pagina is vrijgegeven: lezers zien deze nu.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>De pagina is weer een concept. Deze is verborgen voor lezers totdat deze is beoordeeld en vrijgegeven.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Nu vrijgeven</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Alleen een gebruiker met de rol %role die deze versie niet heeft geschreven, kan deze vrijgeven.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Helponderwerpen die wachten op vrijgave</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Verbergt deze voor lezers totdat deze opnieuw wordt vrijgegeven.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Een beoordelaar controleert deze hierna. Lezers zien deze nog niet.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Lezers zien deze meteen.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Haalt deze uit beoordeling voor meer werk. Lezers zien deze niet.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Deze pagina verbergen voor lezers?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Deze pagina terugzetten naar concept?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Lezers zien %title niet meer totdat iemand deze opnieuw vrijgeeft.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title gaat terug naar concept voor meer werk. Lezers zien deze nog steeds niet, en er is een nieuwe beoordeling nodig voordat deze wordt vrijgegeven.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Deze onderwerpen zijn in beoordeling. Lezers zien ze zodra iemand die de huidige versie niet heeft geschreven ze vrijgeeft.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

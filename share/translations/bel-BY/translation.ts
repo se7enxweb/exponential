@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Статычная публікацыя</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>На праверцы</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Чытачы бачаць гэту старонку.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Схавана ад чытачоў, пакуль хтосьці яе не выпусціць.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Старонка цяпер на праверцы. Яна схавана ад чытачоў, пакуль яе не выпусцяць.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Старонка выпушчана: чытачы бачаць яе цяпер.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Старонка зноў з'яўляецца чарнавіком. Яна схавана ад чытачоў, пакуль яе не правераць і не выпусцяць.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Выпусціць зараз</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Выпусціць яе можа толькі карыстальнік з роллю %role, які не пісаў гэту версію.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Тэмы даведкі, якія чакаюць выпуску</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Хавае яе ад чытачоў, пакуль яе зноў не выпусцяць.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Далей яе праверыць рэцэнзент. Чытачы яе пакуль не бачаць.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Чытачы бачаць яе адразу.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Здымае яе з праверкі для далейшай працы. Чытачы яе не бачаць.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Схаваць гэту старонку ад чытачоў?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Вярнуць гэту старонку ў чарнавікі?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Чытачы больш не бачаць %title, пакуль хтосьці зноў яе не выпусціць.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title вяртаецца ў чарнавікі для далейшай працы. Чытачы па-ранейшаму яе не бачаць, і перад выпускам патрэбна новая праверка.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасаваць</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Гэтыя тэмы на праверцы. Чытачы ўбачаць іх, як толькі іх выпусціць хтосьці, хто не пісаў бягучую версію.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76506,6 +76506,82 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>Static publishing</source>
         <translation>Statik neşir</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Gözden geçirilýär</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Okyjylar bu sahypany görýärler.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Kimdir biri goýberýänçä okyjylardan gizlenýär.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Sahypa indi gözden geçirilýär. Goýberilýänçä okyjylardan gizlenýär.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Sahypa goýberildi: okyjylar ony indi görýärler.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Sahypa ýene garalama boldy. Gözden geçirilip goýberilýänçä okyjylardan gizlenýär.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Häzir goýber</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Bu wersiýany diňe %role roly bolan we ony ýazmadyk ulanyjy goýberip bilýär.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Goýberilmegine garaşýan kömek temalary</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Ony täzeden goýberilýänçä okyjylardan gizleýär.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Soňra ony gözden geçiriji barlaýar. Okyjylar ony entek görmeýärler.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Okyjylar ony derrew görýärler.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Goşmaça iş üçin ony gözden geçirişden aýyrýar. Okyjylar ony görmeýärler.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Bu sahypany okyjylardan gizlemelimi?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Bu sahypany garalama yzyna ibermelimi?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Kimdir biri ony täzeden goýberýänçä okyjylar %title görmeýärler.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title goşmaça iş üçin garalama gaýdýar. Okyjylar ony henizem görmeýärler we goýberilmezden öň täze gözden geçirmäge mätäç.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ýatyr</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Bu temalar gözden geçirilýär. Häzirki wersiýany ýazmadyk biri olary goýberen badyna okyjylar olary görýärler.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

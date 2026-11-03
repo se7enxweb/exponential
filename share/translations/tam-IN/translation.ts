@@ -76504,6 +76504,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>நிலையான வெளியீடு</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>மதிப்பாய்வில்</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>வாசகர்கள் இந்தப் பக்கத்தைப் பார்க்கிறார்கள்.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>யாராவது வெளியிடும் வரை வாசகர்களிடமிருந்து மறைக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>பக்கம் இப்போது மதிப்பாய்வில் உள்ளது. வெளியிடப்படும் வரை வாசகர்களிடமிருந்து மறைக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>பக்கம் வெளியிடப்பட்டது: வாசகர்கள் இப்போது அதைப் பார்க்கிறார்கள்.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>பக்கம் மீண்டும் வரைவாக உள்ளது. மதிப்பாய்வு செய்யப்பட்டு வெளியிடப்படும் வரை வாசகர்களிடமிருந்து மறைக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>இப்போது வெளியிடு</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role பங்கு உள்ள, இந்தப் பதிப்பை எழுதாத பயனர் மட்டுமே அதை வெளியிட முடியும்.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>வெளியீட்டுக்காகக் காத்திருக்கும் உதவி தலைப்புகள்</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>மீண்டும் வெளியிடப்படும் வரை வாசகர்களிடமிருந்து மறைக்கிறது.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>அடுத்து ஒரு மதிப்பாய்வாளர் அதைச் சரிபார்ப்பார். வாசகர்கள் இன்னும் அதைப் பார்க்கவில்லை.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>வாசகர்கள் உடனே அதைப் பார்க்கிறார்கள்.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>மேலும் பணிக்காக மதிப்பாய்விலிருந்து எடுக்கிறது. வாசகர்கள் அதைப் பார்ப்பதில்லை.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>இந்தப் பக்கத்தை வாசகர்களிடமிருந்து மறைக்கவா?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>இந்தப் பக்கத்தை வரைவுக்குத் திருப்பி அனுப்பவா?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>யாராவது மீண்டும் வெளியிடும் வரை வாசகர்கள் %title ஐ இனி பார்க்க மாட்டார்கள்.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title மேலும் பணிக்காக வரைவுக்குத் திரும்புகிறது. வாசகர்கள் இன்னும் அதைப் பார்க்கவில்லை, வெளியிடப்படும் முன் புதிய மதிப்பாய்வு தேவை.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ரத்துசெய்</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>இந்தத் தலைப்புகள் மதிப்பாய்வில் உள்ளன. தற்போதைய பதிப்பை எழுதாத ஒருவர் வெளியிட்டதும் வாசகர்கள் அவற்றைப் பார்ப்பார்கள்.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76506,6 +76506,82 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>Static publishing</source>
         <translation>Static nga pag-publish</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Naa sa Review</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Makita sa mga magbabasa kini nga panid.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Gitago sa mga magbabasa hangtod adunay mo-release niini.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Ang panid naa na sa Review. Gitago kini sa mga magbabasa hangtod ma-release.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Na-release na ang panid: makita na kini sa mga magbabasa.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Draft na usab ang panid. Gitago kini sa mga magbabasa hangtod masusi ug ma-release.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>I-release karon</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Ang tiggamit lang nga adunay papel nga %role ug wala misulat niini nga bersyon ang maka-release niini.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Mga hilisgutan sa tabang nga naghulat sa release</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Gitago kini sa mga magbabasa hangtod ma-release pag-usab.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Usa ka tigsusi ang mosusi niini sunod. Dili pa kini makita sa mga magbabasa.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Makita dayon kini sa mga magbabasa.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Gikuha kini gikan sa review alang sa dugang trabaho. Dili kini makita sa mga magbabasa.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Itago kini nga panid sa mga magbabasa?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Ibalik kini nga panid sa Draft?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Dili na makita sa mga magbabasa ang %title hangtod adunay mo-release niini pag-usab.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>Mobalik ang %title sa Draft alang sa dugang trabaho. Dili pa gihapon kini makita sa mga magbabasa, ug kinahanglan kini og bag-ong review sa dili pa ma-release.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kanselaha</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Kini nga mga hilisgutan naa sa Review. Makita kini sa mga magbabasa kung i-release na kini sa usa nga wala misulat sa kasamtangang bersyon.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

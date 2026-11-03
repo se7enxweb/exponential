@@ -76506,6 +76506,82 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>Static publishing</source>
         <translation>Maxxansa dhaabbataa</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Ilaalcha keessa</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Dubbistoonni fuula kana ni argu.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Hamma namni tokko maxxansutti dubbistoota irraa dhokfameera.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Fuulli kun amma Ilaalcha keessa jira. Hamma maxxanfamutti dubbistoota irraa dhokfameera.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Fuulli kun Maxxanfameera: dubbistoonni amma ni argu.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Fuulli kun deebi'ee Wixinee ta'eera. Hamma ilaalamee maxxanfamutti dubbistoota irraa dhokfameera.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Amma maxxansi</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Fayyadamaa gahee %role qabu kan fooyya'iinsa kana hin barreessine qofatu maxxansuu danda'a.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Mata dureewwan gargaarsaa maxxansa eegaa jiran</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Hamma irra deebi'ee maxxanfamutti dubbistoota irraa dhoksa.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Itti aansee ilaalaan tokko ni mirkaneessa. Dubbistoonni ammallee hin argan.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Dubbistoonni battaluma ni argu.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Hojii dabalataatiif Ilaalcha keessaa baasa. Dubbistoonni hin argan.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Fuula kana dubbistoota irraa dhoksituu?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Fuula kana gara Wixineetti deebistuu?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Hamma namni tokko irra deebi'ee maxxansutti dubbistoonni %title hin argan.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title hojii dabalataatiif gara Wixineetti deebi'a. Dubbistoonni ammallee hin argan, maxxanfamuu isaa dura immoo ilaalcha haaraa barbaada.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Dhiisi</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Mata dureewwan kun Ilaalcha keessa jiru. Akkuma namni fooyya'iinsa ammaa hin barreessine maxxanseen dubbistoonni ni argu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76514,6 +76514,82 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>Static publishing</source>
         <translation>Panerbitan statis</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Ing Pamriksan</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Pamaca bisa ndeleng kaca iki.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Didhelikake saka pamaca nganti ana sing ngrilis.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Kaca saiki ana ing Pamriksan. Kaca didhelikake saka pamaca nganti dirilis.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Kaca wis Dirilis: pamaca saiki bisa ndeleng.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Kaca bali dadi Draf. Kaca didhelikake saka pamaca nganti dipriksa lan dirilis.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Rilis saiki</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Mung pangguna kanthi peran %role sing ora nulis versi iki sing bisa ngrilis.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Topik pitulung sing ngenteni rilis</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Ndhelikake saka pamaca nganti dirilis maneh.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Banjur ana pamriksa sing mriksa. Pamaca durung bisa ndeleng.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Pamaca langsung bisa ndeleng.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Ngetokake saka pamriksan kanggo digarap maneh. Pamaca ora bisa ndeleng.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Dhelikake kaca iki saka pamaca?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Balekake kaca iki menyang Draf?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Pamaca ora bisa ndeleng %title maneh nganti ana sing ngrilis maneh.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title bali menyang Draf kanggo digarap maneh. Pamaca isih durung bisa ndeleng, lan butuh pamriksan anyar sadurunge dirilis.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Batal</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Topik-topik iki ana ing Pamriksan. Pamaca bisa ndeleng sawise ana wong sing ora nulis versi saiki ngrilis.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

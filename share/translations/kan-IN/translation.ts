@@ -76504,6 +76504,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆ</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>ಪರಿಶೀಲನೆಯಲ್ಲಿದೆ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ಓದುಗರು ಈ ಪುಟವನ್ನು ನೋಡುತ್ತಾರೆ.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>ಯಾರಾದರೂ ಬಿಡುಗಡೆ ಮಾಡುವವರೆಗೆ ಓದುಗರಿಂದ ಮರೆಮಾಡಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>ಪುಟ ಈಗ ಪರಿಶೀಲನೆಯಲ್ಲಿದೆ. ಬಿಡುಗಡೆಯಾಗುವವರೆಗೆ ಅದು ಓದುಗರಿಂದ ಮರೆಯಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>ಪುಟ ಬಿಡುಗಡೆಯಾಗಿದೆ: ಓದುಗರು ಈಗ ಅದನ್ನು ನೋಡುತ್ತಾರೆ.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>ಪುಟ ಮತ್ತೆ ಕರಡು ಆಗಿದೆ. ಪರಿಶೀಲಿಸಿ ಬಿಡುಗಡೆ ಮಾಡುವವರೆಗೆ ಅದು ಓದುಗರಿಂದ ಮರೆಯಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ಈಗ ಬಿಡುಗಡೆ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>ಈ ಆವೃತ್ತಿಯನ್ನು ಬರೆಯದ, %role ಪಾತ್ರ ಹೊಂದಿರುವ ಬಳಕೆದಾರರು ಮಾತ್ರ ಅದನ್ನು ಬಿಡುಗಡೆ ಮಾಡಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ಬಿಡುಗಡೆಗಾಗಿ ಕಾಯುತ್ತಿರುವ ಸಹಾಯ ವಿಷಯಗಳು</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ಮತ್ತೆ ಬಿಡುಗಡೆಯಾಗುವವರೆಗೆ ಅದನ್ನು ಓದುಗರಿಂದ ಮರೆಮಾಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>ಮುಂದೆ ಪರಿಶೀಲಕರು ಅದನ್ನು ಪರಿಶೀಲಿಸುತ್ತಾರೆ. ಓದುಗರು ಅದನ್ನು ಇನ್ನೂ ನೋಡುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ಓದುಗರು ಅದನ್ನು ತಕ್ಷಣ ನೋಡುತ್ತಾರೆ.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ಹೆಚ್ಚಿನ ಕೆಲಸಕ್ಕಾಗಿ ಅದನ್ನು ಪರಿಶೀಲನೆಯಿಂದ ಹೊರತೆಗೆಯುತ್ತದೆ. ಓದುಗರು ಅದನ್ನು ನೋಡುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ಈ ಪುಟವನ್ನು ಓದುಗರಿಂದ ಮರೆಮಾಡಬೇಕೆ?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ಈ ಪುಟವನ್ನು ಮತ್ತೆ ಕರಡಿಗೆ ಕಳುಹಿಸಬೇಕೆ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>ಯಾರಾದರೂ ಮತ್ತೆ ಬಿಡುಗಡೆ ಮಾಡುವವರೆಗೆ ಓದುಗರು %title ಅನ್ನು ನೋಡುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ಹೆಚ್ಚಿನ ಕೆಲಸಕ್ಕಾಗಿ ಕರಡಿಗೆ ಮರಳುತ್ತದೆ. ಓದುಗರು ಇನ್ನೂ ಅದನ್ನು ನೋಡುವುದಿಲ್ಲ, ಮತ್ತು ಬಿಡುಗಡೆಗೆ ಮೊದಲು ಹೊಸ ಪರಿಶೀಲನೆ ಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ರದ್ದುಮಾಡು</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ಈ ವಿಷಯಗಳು ಪರಿಶೀಲನೆಯಲ್ಲಿವೆ. ಪ್ರಸ್ತುತ ಆವೃತ್ತಿಯನ್ನು ಬರೆಯದ ಯಾರಾದರೂ ಅವುಗಳನ್ನು ಬಿಡುಗಡೆ ಮಾಡಿದ ಕೂಡಲೇ ಓದುಗರು ಅವುಗಳನ್ನು ನೋಡುತ್ತಾರೆ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

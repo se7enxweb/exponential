@@ -13,7 +13,10 @@
  * Draft and Review) or assign it a state (help release: back to Review, Released). The command lists them all:
  * ./console exp:help:content review.
  *
- * overdue() is the rule alone, without a database.
+ * The dashboard also lists the topics waiting for release (in Review) to those whose roles let them release them
+ * (waitingForCurrentUser(), "Waiting for release"); the topic page links there when someone else has to release it.
+ *
+ * overdue() and waiting() are the rules alone, without a database.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -136,6 +139,72 @@ class expHelpContentReview
             $items[] = $item;
         }
         return array( 'items' => array_slice( $items, 0, max( 1, (int)$limit ) ), 'count' => count( $items ), 'max_days' => self::maxDays() );
+    }
+
+    /**
+     * The topics waiting for release: those in Review, the longest waiting first (pure, for the tests)
+     *
+     * @param array $topics the topics (expHelpContentRepository::index()['topics'])
+     * @return array list of array( help_id, title, object_id, node_id, modified )
+     */
+    public static function waiting( array $topics )
+    {
+        $list = array();
+        foreach ( $topics as $topic )
+        {
+            if ( !isset( $topic['state'] ) || $topic['state'] !== expHelpContentSchema::STATE_REVIEW )
+                continue;
+            $list[] = array(
+                'help_id' => (string)$topic['help_id'],
+                'title' => (string)( isset( $topic['title'] ) && $topic['title'] !== '' ? $topic['title'] : $topic['help_id'] ),
+                'object_id' => (int)$topic['object_id'],
+                'node_id' => isset( $topic['node_id'] ) ? (int)$topic['node_id'] : 0,
+                'modified' => isset( $topic['modified'] ) ? (int)$topic['modified'] : 0,
+            );
+        }
+        usort( $list, function ( $a, $b ) {
+            return $a['modified'] <=> $b['modified'] ?: strcmp( $a['help_id'], $b['help_id'] );
+        } );
+        return $list;
+    }
+
+    /**
+     * The topics waiting for release that the current user's roles let them release (state/assign of Released, the
+     * role "Help release"), one page of them. is_author marks a topic whose current version the user wrote: someone
+     * else releases it. False when help as content is not installed or no such topic is waiting.
+     *
+     * @param int $offset the view parameter (offset)
+     * @param int $limit
+     * @return array|false array( 'items' => list of help_id, title, object_id, node_id, modified, is_author;
+     *                     'count' => int, 'offset' => int, 'limit' => int )
+     */
+    public static function waitingForCurrentUser( $offset = 0, $limit = self::DEFAULT_LIMIT )
+    {
+        if ( !expHelpContentProvider::isEnabled() )
+            return false;
+        $released = expHelpContentEbooks::releasedState();
+        if ( !$released instanceof eZContentObjectState )
+            return false;
+        $releasedId = (int)$released->attribute( 'id' );
+        $repository = expHelpContentRepository::instance();
+        $userId = (int)eZUser::currentUserID();
+        $items = array();
+        foreach ( self::waiting( $repository->index()['topics'] ) as $item )
+        {
+            $object = $repository->object( $item['object_id'] );
+            if ( !$object instanceof eZContentObject
+                 || !in_array( $releasedId, array_map( 'intval', (array)$object->attribute( 'allowed_assign_state_id_list' ) ), true ) )
+                continue;
+            $item['is_author'] = expHelpContentWorkflow::isRefusedAuthor( expHelpContentWorkflow::authorId( $object ), $userId );
+            $items[] = $item;
+        }
+        if ( !$items )
+            return false;
+        $limit = max( 1, (int)$limit );
+        $offset = max( 0, (int)$offset );
+        if ( $offset >= count( $items ) )
+            $offset = 0;
+        return array( 'items' => array_slice( $items, $offset, $limit ), 'count' => count( $items ), 'offset' => $offset, 'limit' => $limit );
     }
 }
 

@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>स्टेटिक फोरमायनाय</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>नायजानाव</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>फरायग्राफोरा बे बिलाइखौ नायो.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>सासे फोरमायाखै समाव फरायग्राफोरनिफ्राय दोनथुमनाय.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>बिलाइआ आबुं नायजानाव दं. फोरमायाखै समाव बेयो फरायग्राफोरनिफ्राय दोनथुमनाय.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>बिलाइखौ फोरमायनाय जादों: फरायग्राफोरा आबुं बेखौ नायो.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>बिलाइआ फिन खस्रा जादों. नायजानाय आरो फोरमायाखै समाव बेयो फरायग्राफोरनिफ्राय दोनथुमनाय.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>दानोइ फोरमाय</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role बाहागो गोनांनाय आरो बे भार्सनखौ लिराखै बाहायग्रानोसो बेखौ फोरमायनो हायो.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>फोरमायनायनि थाखाय नेथायनाय मदद बिषयफोर</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>फिन फोरमायाखै समाव बेखौ फरायग्राफोरनिफ्राय दोनथुमो.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>उननाव सासे नायग्राया बेखौ आनजाद खालामगोन. फरायग्राफोरा दासिमबो बेखौ नायाखै.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>फरायग्राफोरा बेखौ दानोइ नायो.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>गोबां हाबानि थाखाय बेखौ नायजानायनिफ्राय दिहुनो. फरायग्राफोरा बेखौ नाया.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>बे बिलाइखौ फरायग्राफोरनिफ्राय दोनथुमनो?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>बे बिलाइखौ खस्रानो फिन दैथि हरनो?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>सासे फिन फोरमायाखै समाव फरायग्राफोरा %title खौ नाया.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title गोबां हाबानि थाखाय खस्रानो फिन थांगासिनो. फरायग्राफोरा दासिमबो बेखौ नाया, आरो फोरमायनायनि सिगाङाव गोदान नायजानाय गोनां.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>बन्द</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>बे बिषयफोरा नायजानाव दं. आखुनि भार्सनखौ लिराखै सासे बेफोरखौ फोरमायोब्ला फरायग्राफोरा बेफोरखौ नायो.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

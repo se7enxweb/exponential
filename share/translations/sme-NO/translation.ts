@@ -76506,6 +76506,82 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>Static publishing</source>
         <translation>Stáhtalaš almmuheapmi</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Dárkkisteamis</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Lohkkit oidnet dán siiddu.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Čiehkkojuvvon lohkkiin dassážii go muhtun almmuha dan.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Siidu lea dál Dárkkisteamis. Dat lea čiehkkojuvvon lohkkiin dassážii go dat almmuhuvvo.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Siidu lea Almmuhuvvon: lohkkit oidnet dan dál.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Siidu lea fas Luonos. Dat lea čiehkkojuvvon lohkkiin dassážii go dat dárkkistuvvo ja almmuhuvvo.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Almmut dál</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Dušše geavaheaddji geas lea rolla %role ja guhte ii čállán dán veršuvnna, sáhttá almmuhit dan.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Veahkkefáttát mat vurdet almmuheami</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Čiehká dan lohkkiin dassážii go dat almmuhuvvo fas.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Dárkkisteaddji dárkkista dan dasto. Lohkkit eai oaine dan vel.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Lohkkit oidnet dan dakkaviđe.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Váldá dan eret dárkkisteamis eanet bargui. Lohkkit eai oaine dan.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Čiehkat dán siiddu lohkkiin?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Sáddet dán siiddu ruovttoluotta Luonosii?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Lohkkit eai šat oaine %title dassážii go muhtun almmuha dan fas.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title máhcca Luonosii eanet bargui. Lohkkit eai ain oaine dan, ja dat dárbbaša ođđa dárkkisteami ovdal go almmuhuvvo.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Gaskkalduhttit</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Dát fáttát leat Dárkkisteamis. Lohkkit oidnet daid go muhtun guhte ii čállán dálá veršuvnna almmuha daid.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

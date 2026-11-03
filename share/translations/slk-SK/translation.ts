@@ -76445,6 +76445,82 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>Static publishing</source>
         <translation>Statické publikovanie</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>V kontrole</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Čitatelia vidia túto stránku.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Skrytá pred čitateľmi, kým ju niekto nevydá.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Stránka je teraz v stave Kontrola. Pred čitateľmi je skrytá, kým nebude vydaná.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Stránka je vydaná: čitatelia ju teraz vidia.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Stránka je opäť konceptom. Pred čitateľmi je skrytá, kým nebude skontrolovaná a vydaná.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Vydať teraz</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Túto verziu môže vydať iba používateľ s rolou %role, ktorý ju nenapísal.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Témy pomocníka čakajúce na vydanie</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Skryje ju pred čitateľmi, kým nebude znova vydaná.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Ďalej ju skontroluje kontrolór. Čitatelia ju zatiaľ nevidia.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Čitatelia ju uvidia okamžite.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Vyberie ju z kontroly na ďalšiu prácu. Čitatelia ju nevidia.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Skryť túto stránku pred čitateľmi?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Vrátiť túto stránku do konceptu?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Čitatelia už nevidia %title, kým stránku niekto znova nevydá.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title sa vracia do konceptu na ďalšiu prácu. Čitatelia stránku stále nevidia a pred vydaním potrebuje novú kontrolu.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Zrušiť</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Tieto témy sú v kontrole. Čitatelia ich uvidia, keď ich vydá niekto, kto nenapísal aktuálnu verziu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

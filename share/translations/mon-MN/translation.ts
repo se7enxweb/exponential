@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Статик нийтлэлт</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Хяналтад</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Уншигчид энэ хуудсыг харж байна.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Хэн нэгэн гаргах хүртэл уншигчдаас нуугдсан.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Хуудас одоо «Хяналт» төлөвт байна. Гаргах хүртэл уншигчдаас нуугдсан.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Хуудас гарсан: уншигчид одоо үүнийг харж байна.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Хуудас дахин ноорог боллоо. Хянаж, гаргах хүртэл уншигчдаас нуугдсан.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Одоо гаргах</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Зөвхөн %role үүрэгтэй, энэ хувилбарыг бичээгүй хэрэглэгч үүнийг гаргаж чадна.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Гаргахыг хүлээж буй тусламжийн сэдвүүд</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Дахин гаргах хүртэл уншигчдаас нууна.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Дараа нь хянагч шалгана. Уншигчид одоохондоо харахгүй.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Уншигчид шууд харна.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Нэмэлт ажил хийхээр хяналтаас гаргана. Уншигчид харахгүй.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Энэ хуудсыг уншигчдаас нуух уу?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Энэ хуудсыг ноорог руу буцаах уу?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Хэн нэгэн дахин гаргах хүртэл уншигчид %title-г харахгүй.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title нэмэлт ажил хийхээр ноорог руу буцна. Уншигчид одоо ч харахгүй бөгөөд гаргахаас өмнө шинэ хяналт шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Цуцлах</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Эдгээр сэдэв «Хяналт» төлөвт байна. Одоогийн хувилбарыг бичээгүй хэн нэгэн гаргамагц уншигчид харна.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

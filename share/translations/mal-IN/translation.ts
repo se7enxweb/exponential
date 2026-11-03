@@ -76504,6 +76504,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>അവലോകനത്തിൽ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>വായനക്കാർക്ക് ഈ പേജ് കാണാം.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>ആരെങ്കിലും റിലീസ് ചെയ്യുന്നതുവരെ വായനക്കാരിൽ നിന്ന് മറച്ചിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>പേജ് ഇപ്പോൾ അവലോകനത്തിലാണ്. റിലീസ് ചെയ്യുന്നതുവരെ ഇത് വായനക്കാരിൽ നിന്ന് മറച്ചിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>പേജ് റിലീസ് ചെയ്തു: വായനക്കാർക്ക് ഇപ്പോൾ അത് കാണാം.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>പേജ് വീണ്ടും ഡ്രാഫ്റ്റാണ്. അവലോകനം ചെയ്ത് റിലീസ് ചെയ്യുന്നതുവരെ ഇത് വായനക്കാരിൽ നിന്ന് മറച്ചിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ഇപ്പോൾ റിലീസ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role റോളുള്ളതും ഈ പതിപ്പ് എഴുതാത്തതുമായ ഒരു ഉപയോക്താവിന് മാത്രമേ ഇത് റിലീസ് ചെയ്യാനാകൂ.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>റിലീസിനായി കാത്തിരിക്കുന്ന സഹായ വിഷയങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>വീണ്ടും റിലീസ് ചെയ്യുന്നതുവരെ ഇത് വായനക്കാരിൽ നിന്ന് മറയ്ക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>അടുത്തതായി ഒരു അവലോകകൻ ഇത് പരിശോധിക്കും. വായനക്കാർക്ക് ഇത് ഇതുവരെ കാണാനാകില്ല.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>വായനക്കാർക്ക് ഇത് ഉടൻ കാണാം.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>കൂടുതൽ ജോലിക്കായി ഇത് അവലോകനത്തിൽ നിന്ന് മാറ്റുന്നു. വായനക്കാർക്ക് ഇത് കാണാനാകില്ല.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ഈ പേജ് വായനക്കാരിൽ നിന്ന് മറയ്ക്കണോ?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ഈ പേജ് വീണ്ടും ഡ്രാഫ്റ്റിലേക്ക് അയയ്ക്കണോ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>ആരെങ്കിലും വീണ്ടും റിലീസ് ചെയ്യുന്നതുവരെ വായനക്കാർക്ക് %title ഇനി കാണാനാകില്ല.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>കൂടുതൽ ജോലിക്കായി %title വീണ്ടും ഡ്രാഫ്റ്റിലേക്ക് പോകുന്നു. വായനക്കാർക്ക് ഇപ്പോഴും ഇത് കാണാനാകില്ല, റിലീസ് ചെയ്യുന്നതിന് മുമ്പ് ഇതിന് പുതിയ അവലോകനം ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>റദ്ദാക്കുക</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ഈ വിഷയങ്ങൾ അവലോകനത്തിലാണ്. നിലവിലെ പതിപ്പ് എഴുതാത്ത ആരെങ്കിലും റിലീസ് ചെയ്താൽ വായനക്കാർക്ക് ഇവ കാണാം.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
