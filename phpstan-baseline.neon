@@ -343,20 +343,6 @@ parameters:
 			path: kernel/classes/ezcontentobject.php
 
 		-
-			message: '#^Class MongoDB\\Model\\BSONArray not found\.$#'
-			identifier: class.notFound
-			count: 2
-			path: kernel/classes/ezcontentobject.php
-			reportUnmatched: false
-
-		-
-			message: '#^Class MongoDB\\Model\\BSONDocument not found\.$#'
-			identifier: class.notFound
-			count: 2
-			path: kernel/classes/ezcontentobject.php
-			reportUnmatched: false
-
-		-
 			message: '#^Variable \$accessNode might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
@@ -1113,6 +1099,12 @@ parameters:
 			path: kernel/common/ezurloperator.php
 
 		-
+			message: '#^Variable \$code might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: kernel/common/ezurloperator.php
+
+		-
 			message: '#^Variable \$icons might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
@@ -1200,6 +1192,12 @@ parameters:
 			message: '#^Variable \$class might not be defined\.$#'
 			identifier: variable.undefined
 			count: 3
+			path: kernel/content/versionviewframe.php
+
+		-
+			message: '#^Variable \$contentObject might not be defined\.$#'
+			identifier: variable.undefined
+			count: 26
 			path: kernel/content/versionviewframe.php
 
 		-
@@ -1347,6 +1345,12 @@ parameters:
 			path: kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
 
 		-
+			message: '#^Access to an undefined property eZDFSFileHandler\:\:\$metaData\.$#'
+			identifier: property.notFound
+			count: 11
+			path: kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
+
+		-
 			message: '#^Undefined variable\: \$cli$#'
 			identifier: variable.undefined
 			count: 1
@@ -1405,6 +1409,12 @@ parameters:
 			identifier: variable.undefined
 			count: 3
 			path: kernel/private/classes/cronjobs/internal_drafts_cleanup.php
+
+		-
+			message: '#^Undefined variable\: \$cli$#'
+			identifier: variable.undefined
+			count: 17
+			path: kernel/private/classes/cronjobs/linkcheck.php
 
 		-
 			message: '#^Undefined variable\: \$cli$#'
@@ -2283,15 +2293,33 @@ parameters:
 			path: kernel/private/classes/views/content/dashboard.php
 
 		-
+			message: '#^Undefined variable\: \$Module$#'
+			identifier: variable.undefined
+			count: 6
+			path: kernel/private/classes/views/content/download.php
+
+		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
 			count: 4
 			path: kernel/private/classes/views/content/download.php
 
 		-
+			message: '#^Undefined variable\: \$Result$#'
+			identifier: variable.undefined
+			count: 7
+			path: kernel/private/classes/views/content/download.php
+
+		-
 			message: '#^Variable \$Params in isset\(\) is never defined\.$#'
 			identifier: isset.variable
 			count: 1
+			path: kernel/private/classes/views/content/download.php
+
+		-
+			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
+			identifier: isset.variable
+			count: 7
 			path: kernel/private/classes/views/content/download.php
 
 		-
@@ -2359,6 +2387,12 @@ parameters:
 			identifier: isset.variable
 			count: 4
 			path: kernel/private/classes/views/content/hide.php
+
+		-
+			message: '#^Undefined variable\: \$Params$#'
+			identifier: variable.undefined
+			count: 4
+			path: kernel/private/classes/views/content/keyword.php
 
 		-
 			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
@@ -2431,6 +2465,12 @@ parameters:
 			identifier: isset.variable
 			count: 8
 			path: kernel/private/classes/views/content/pdf.php
+
+		-
+			message: '#^Undefined variable\: \$Params$#'
+			identifier: variable.undefined
+			count: 2
+			path: kernel/private/classes/views/content/pendinglist.php
 
 		-
 			message: '#^Undefined variable\: \$Params$#'
@@ -2703,6 +2743,12 @@ parameters:
 			path: kernel/private/classes/views/content/translations.php
 
 		-
+			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
+			identifier: isset.variable
+			count: 5
+			path: kernel/private/classes/views/content/translations.php
+
+		-
 			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
 			identifier: isset.variable
 			count: 1
@@ -2859,6 +2905,12 @@ parameters:
 			path: kernel/private/classes/views/content/versionview.php
 
 		-
+			message: '#^Undefined variable\: \$Params$#'
+			identifier: variable.undefined
+			count: 4
+			path: kernel/private/classes/views/content/versionview.php
+
+		-
 			message: '#^Undefined variable\: \$Result$#'
 			identifier: variable.undefined
 			count: 6
@@ -2899,6 +2951,12 @@ parameters:
 			identifier: isset.variable
 			count: 1
 			path: kernel/private/classes/views/content/view.php
+
+		-
+			message: '#^Undefined variable\: \$Params$#'
+			identifier: variable.undefined
+			count: 11
+			path: kernel/private/classes/views/error/view.php
 
 		-
 			message: '#^Undefined variable\: \$Result$#'
@@ -3321,6 +3379,12 @@ parameters:
 			path: kernel/private/classes/views/package/viewfile.php
 
 		-
+			message: '#^Undefined variable\: \$Params$#'
+			identifier: variable.undefined
+			count: 6
+			path: kernel/private/classes/views/pdf/edit.php
+
+		-
 			message: '#^Variable \$Params in isset\(\) is never defined\.$#'
 			identifier: isset.variable
 			count: 2
@@ -3463,6 +3527,12 @@ parameters:
 			identifier: isset.variable
 			count: 3
 			path: kernel/private/classes/views/role/policyedit.php
+
+		-
+			message: '#^Undefined variable\: \$Params$#'
+			identifier: variable.undefined
+			count: 3
+			path: kernel/private/classes/views/role/view.php
 
 		-
 			message: '#^Undefined variable\: \$Result$#'
@@ -3789,6 +3859,18 @@ parameters:
 			path: kernel/private/classes/views/setup/designextension.php
 
 		-
+			message: '#^Undefined variable\: \$Params$#'
+			identifier: variable.undefined
+			count: 5
+			path: kernel/private/classes/views/setup/extensions.php
+
+		-
+			message: '#^Variable \$Params in isset\(\) is never defined\.$#'
+			identifier: isset.variable
+			count: 3
+			path: kernel/private/classes/views/setup/extensions.php
+
+		-
 			message: '#^Variable \$Params might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
@@ -3913,6 +3995,12 @@ parameters:
 			identifier: isset.variable
 			count: 1
 			path: kernel/private/classes/views/setup/radsurvey.php
+
+		-
+			message: '#^Undefined variable\: \$Params$#'
+			identifier: variable.undefined
+			count: 3
+			path: kernel/private/classes/views/setup/session.php
 
 		-
 			message: '#^Undefined variable\: \$Result$#'
@@ -5175,6 +5263,12 @@ parameters:
 			path: kernel/private/classes/views/user/edit.php
 
 		-
+			message: '#^Undefined variable\: \$Result$#'
+			identifier: variable.undefined
+			count: 8
+			path: kernel/private/classes/views/user/edit.php
+
+		-
 			message: '#^Variable \$Params in isset\(\) is never defined\.$#'
 			identifier: isset.variable
 			count: 2
@@ -5185,6 +5279,18 @@ parameters:
 			identifier: isset.variable
 			count: 1
 			path: kernel/private/classes/views/user/edit.php
+
+		-
+			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
+			identifier: isset.variable
+			count: 8
+			path: kernel/private/classes/views/user/edit.php
+
+		-
+			message: '#^Undefined variable\: \$Params$#'
+			identifier: variable.undefined
+			count: 2
+			path: kernel/private/classes/views/user/forgotpassword.php
 
 		-
 			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
@@ -5247,9 +5353,21 @@ parameters:
 			path: kernel/private/classes/views/user/password.php
 
 		-
+			message: '#^Undefined variable\: \$Result$#'
+			identifier: variable.undefined
+			count: 4
+			path: kernel/private/classes/views/user/password.php
+
+		-
 			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
 			identifier: isset.variable
 			count: 1
+			path: kernel/private/classes/views/user/password.php
+
+		-
+			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
+			identifier: isset.variable
+			count: 4
 			path: kernel/private/classes/views/user/password.php
 
 		-
@@ -5947,20 +6065,6 @@ parameters:
 			identifier: array.duplicateKey
 			count: 1
 			path: kernel/user/module.php
-
-		-
-			message: '#^Access to constant RETURN_DOCUMENT_AFTER on an unknown class MongoDB\\Operation\\FindOneAndUpdate\.$#'
-			identifier: class.notFound
-			count: 2
-			path: lib/ezdb/classes/expmongodb.php
-			reportUnmatched: false
-
-		-
-			message: '#^Instantiated class MongoDB\\Client not found\.$#'
-			identifier: class.notFound
-			count: 1
-			path: lib/ezdb/classes/expmongodb.php
-			reportUnmatched: false
 
 		-
 			message: '#^Method eZDBInterface\:\:arrayQuery\(\) should return array but return statement is missing\.$#'
@@ -6801,3 +6905,31 @@ parameters:
 			identifier: isset.variable
 			count: 1
 			path: lib/ezutils/classes/ezuri.php
+
+		-
+			message: '#^Class MongoDB\\Model\\BSONArray not found\.$#'
+			identifier: class.notFound
+			count: 2
+			path: kernel/classes/ezcontentobject.php
+			reportUnmatched: false
+
+		-
+			message: '#^Class MongoDB\\Model\\BSONDocument not found\.$#'
+			identifier: class.notFound
+			count: 2
+			path: kernel/classes/ezcontentobject.php
+			reportUnmatched: false
+
+		-
+			message: '#^Access to constant RETURN_DOCUMENT_AFTER on an unknown class MongoDB\\Operation\\FindOneAndUpdate\.$#'
+			identifier: class.notFound
+			count: 2
+			path: lib/ezdb/classes/expmongodb.php
+			reportUnmatched: false
+
+		-
+			message: '#^Instantiated class MongoDB\\Client not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: lib/ezdb/classes/expmongodb.php
+			reportUnmatched: false
