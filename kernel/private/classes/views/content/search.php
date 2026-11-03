@@ -415,7 +415,9 @@ class Search extends \Exponential\Runnable\ModuleView
         if ( !is_array( $match ) || !is_readable( $match['path'] ) )
             return false;
         $text = file_get_contents( $match['path'], false, null, 0, 16384 );
-        return is_string( $text ) && strpos( $text, "{include uri='design:content/search_page.tpl'}" ) !== false;
+        // the administration's page, or a site's (content/front_search_page.tpl, with or without parameters)
+        return is_string( $text ) && ( strpos( $text, "{include uri='design:content/search_page.tpl'}" ) !== false
+                                     || strpos( $text, "{include uri='design:content/front_search_page.tpl'" ) !== false );
     }
 
     /**

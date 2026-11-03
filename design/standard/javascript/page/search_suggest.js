@@ -2,7 +2,9 @@
  * The suggestions of the header search (page_search.tpl, parts/search_suggest.tpl): while the user types, each search
  * field with a data-suggest-url asks content/suggest/(text)/<text> (expSearchSuggest) for content, document pages,
  * users, classes and admin pages, and shows them in groups under the field, the last entry "View all results" (the
- * field's form, content/search). One file for every admin design (design/standard).
+ * field's form, content/search). One file for every admin design (design/standard), and for the sites: a site's form
+ * with the include parts/front_search_suggest.tpl asks content/sitesuggest for content only, and its list takes the
+ * site's own class names (data-suggest-prefix exps-suggest, stylesheets/front_search.css).
  *
  * The field is an ARIA combobox: the list is its listbox, the entry under the arrow keys its aria-activedescendant.
  * Up and Down move through the entries, Enter opens the one chosen (or searches when none is), Escape and a click
@@ -70,8 +72,10 @@
         if (input.getAttribute('data-suggest-ready')) return;
         input.setAttribute('data-suggest-ready', '1');
         var list = document.getElementById(input.getAttribute('aria-controls') || '');
-        var box = list && list.closest ? list.closest('.a4-suggest') : null;
+        var box = list && list.closest ? list.closest('.a4-suggest, [data-suggest-box]') : null;
         if (!list || !box) return;
+        // the class names' prefix: a4-suggest in the administration, the site's own (exps-suggest) on a site
+        var P = box.getAttribute('data-suggest-prefix') || 'a4-suggest';
         var status = document.getElementById(box.id + '-status');
         var form = input.form;
         var min = parseInt(input.getAttribute('data-suggest-min'), 10) || 3;
@@ -93,10 +97,10 @@
         function show() {
             box.hidden = false;
             input.setAttribute('aria-expanded', 'true');
-            box.classList.remove('a4-suggest-end');
+            box.classList.remove(P + '-end');
             var rect = box.getBoundingClientRect ? box.getBoundingClientRect() : null;
             var width = document.documentElement.clientWidth || window.innerWidth;
-            if (rect && (rect.right > width || rect.left < 0)) box.classList.add('a4-suggest-end');
+            if (rect && (rect.right > width || rect.left < 0)) box.classList.add(P + '-end');
         }
 
         function close() {
@@ -132,7 +136,7 @@
 
         function option(item, query) {
             var li = document.createElement('li');
-            li.className = 'a4-suggest-item a4-suggest-' + String(item.type || 'item').replace(/[^a-z]/g, '');
+            li.className = P + '-item ' + P + '-' + String(item.type || 'item').replace(/[^a-z]/g, '');
             li.setAttribute('role', 'option');
             li.setAttribute('aria-selected', 'false');
             li.id = id + '-' + options.length;
@@ -141,21 +145,21 @@
             a.tabIndex = -1;
             if (typeof item.icon === 'string' && item.icon !== '' && safe(item.icon)) {
                 var img = document.createElement('img');
-                img.className = 'a4-suggest-icon';
+                img.className = P + '-icon';
                 img.src = item.icon;
                 img.alt = '';
                 a.appendChild(img);
             } else {
-                a.appendChild(span('a4-suggest-icon'));
+                a.appendChild(span(P + '-icon'));
             }
-            var body = span('a4-suggest-body');
-            var title = span('a4-suggest-title');
+            var body = span(P + '-body');
+            var title = span(P + '-title');
             mark(title, item.title, query);
             body.appendChild(title);
-            if (item.meta) body.appendChild(span('a4-suggest-meta', item.meta));
-            if (item.path && item.path.length) body.appendChild(span('a4-suggest-path', item.path.join(' › ')));
+            if (item.meta) body.appendChild(span(P + '-meta', item.meta));
+            if (item.path && item.path.length) body.appendChild(span(P + '-path', item.path.join(' › ')));
             if (item.excerpt) {
-                var excerpt = span('a4-suggest-excerpt');
+                var excerpt = span(P + '-excerpt');
                 mark(excerpt, item.excerpt, query);
                 body.appendChild(excerpt);
             }
@@ -174,12 +178,12 @@
                 var items = (group.items || []).filter(function (item) { return item && safe(item.url); });
                 if (!items.length) return;
                 var li = document.createElement('li');
-                li.className = 'a4-suggest-group';
+                li.className = P + '-group';
                 li.setAttribute('role', 'group');
-                var heading = span('a4-suggest-heading', group.title || '');
+                var heading = span(P + '-heading', group.title || '');
                 heading.id = id + '-g' + g;
                 heading.setAttribute('role', 'presentation');
-                if (group.count > items.length) heading.appendChild(span('a4-suggest-count', ' ' + group.count));
+                if (group.count > items.length) heading.appendChild(span(P + '-count', ' ' + group.count));
                 li.setAttribute('aria-labelledby', heading.id);
                 li.appendChild(heading);
                 var ul = document.createElement('ul');
@@ -190,20 +194,20 @@
             });
             if (!count) {
                 var none = document.createElement('li');
-                none.className = 'a4-suggest-none';
+                none.className = P + '-none';
                 none.setAttribute('role', 'none');
                 none.textContent = text('none');
                 list.appendChild(none);
             }
             var all = document.createElement('li');
-            all.className = 'a4-suggest-all';
+            all.className = P + '-all';
             all.setAttribute('role', 'option');
             all.setAttribute('aria-selected', 'false');
             all.setAttribute('data-action', 'all');
             all.id = id + '-all';
-            all.appendChild(span('a4-suggest-title', text('all')));
+            all.appendChild(span(P + '-title', text('all')));
             if (data && data.total > 0) {
-                all.appendChild(span('a4-suggest-meta', data.total === 1 && text('count-one') ? text('count-one') : text('count').replace('%count', data.total)));
+                all.appendChild(span(P + '-meta', data.total === 1 && text('count-one') ? text('count-one') : text('count').replace('%count', data.total)));
             }
             list.appendChild(all);
             options.push(all);
@@ -216,7 +220,7 @@
             list.textContent = '';
             options = [];
             var li = document.createElement('li');
-            li.className = 'a4-suggest-none';
+            li.className = P + '-none';
             li.setAttribute('role', 'none');
             li.textContent = text('failed');
             list.appendChild(li);
@@ -299,7 +303,24 @@
         });
     }
 
+    // a site's search form (parts/front_search_suggest.tpl): the box names the address and the fewest characters, the
+    // form's SearchText field becomes the combobox here, so a design only includes the box in its form
+    function wire(box) {
+        var form = box.closest ? box.closest('form') : null;
+        var input = form ? form.querySelector('input[name="SearchText"]') : null;
+        var list = box.querySelector('[role="listbox"]');
+        if (!input || !list || input.getAttribute('data-suggest-url')) return;
+        input.setAttribute('role', 'combobox');
+        input.setAttribute('aria-autocomplete', 'list');
+        input.setAttribute('aria-expanded', 'false');
+        input.setAttribute('aria-controls', list.id);
+        input.setAttribute('autocomplete', 'off');
+        input.setAttribute('data-suggest-url', box.getAttribute('data-suggest-url'));
+        input.setAttribute('data-suggest-min', box.getAttribute('data-suggest-min') || '3');
+    }
+
     function setupAll() {
+        document.querySelectorAll('[data-suggest-box][data-suggest-url]').forEach(wire);
         document.querySelectorAll('input[data-suggest-url]').forEach(setup);
     }
 

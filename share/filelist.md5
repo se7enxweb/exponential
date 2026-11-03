@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-1102b79f92b685e832c8cbffeb24e9d9  autoload/ezp_kernel.php
+3cec0c623e7d3e3dc794accecd042bf0  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -2367,7 +2367,7 @@ ec446731c3546a94da4d6eb65ed278e7  design/standard/javascript/oauthadmin_list.js
 bae1a58d44c84e98d03bd394158e4428  design/standard/javascript/page/content_search_filters.js
 cc3fe1444718f3f951043399aac19e22  design/standard/javascript/page/content_searchresult.js
 c068fa10ee6a97a8029883ad2e3a692e  design/standard/javascript/page/page_search.js
-fa23a393e79d9b4722552046b16ef74d  design/standard/javascript/page/search_suggest.js
+adb56e80577310f89369411ef21ca7e5  design/standard/javascript/page/search_suggest.js
 b877f123016d428e088919cf8a78e139  design/standard/javascript/poll_result_bars.js
 f3a93c89f47978768547db1d54b57ce9  design/standard/javascript/popupmenu/ezpopupmenu.js
 bde438f77f77c586df94571590f9c243  design/standard/javascript/print_link.js
@@ -2385,6 +2385,7 @@ e893b624988aeccab0abef6a46d6e0fa  design/standard/stylesheets/exp_password_page.
 6e0f44e56008bbf5b9ec369378126990  design/standard/stylesheets/expdebugbar-toolbar.css
 52a6560896aff7f2fb8a4e734e4818d5  design/standard/stylesheets/expdebugbar.css
 6be40b2658f59872433cc8104f2deebd  design/standard/stylesheets/ezmedia_silverlight.css
+b3739a8f0e656b80ae4095bb208fbdfd  design/standard/stylesheets/front_search.css
 c815977883ff0447b636e3b2206828a4  design/standard/stylesheets/loginpagelayout.css
 3d104d2130898dcab66b2586407bb602  design/standard/stylesheets/mailpreferences.css
 d30d96f7fbd57acdf214228a9caeeee2  design/standard/stylesheets/mailpreferences_account_link.css
@@ -2825,6 +2826,7 @@ b898e8ef7724e37b2b6286d5f10119c1  design/standard/templates/content/edit_placeme
 23dcd6d6ce6130caf3174bafbef08b4f  design/standard/templates/content/edit_redirection.tpl
 b47784b07d7484a95f2ca4c6d6fe8703  design/standard/templates/content/edit_right_menu.tpl
 adae0def427fd51706089f0a31a1063e  design/standard/templates/content/edit_validation.tpl
+9db3672180966a36aa9fbd1de6fa9bec  design/standard/templates/content/front_search_page.tpl
 d8079a06a353c58205c4023b72fdd1a3  design/standard/templates/content/history.tpl
 a716d7ff7c19c5cac43aaafeeb84c4a1  design/standard/templates/content/history_access_messages.tpl
 456ae8da6dd39dde2bdb8e80b7f218ea  design/standard/templates/content/job.tpl
@@ -3053,6 +3055,7 @@ f061d1ccc56b10ebe5653c5e011329e1  design/standard/templates/page_mainarea.tpl
 cf0962351ff74ebfe70fbd7feeedd1b6  design/standard/templates/pagelayout.tpl
 3a6b816ea7602744a8e6a69a9a2147af  design/standard/templates/pagelayout/hooks/body_end.tpl
 61fb91bd0de24052c8877f0e8732b825  design/standard/templates/parts/exp_content_direction.tpl
+188524ce1a094f353021078bf0e98996  design/standard/templates/parts/front_search_suggest.tpl
 3c4eb8dba083672925e630657e6dfc13  design/standard/templates/parts/header_search.tpl
 656e972face87ddcb802d36cc0c6da54  design/standard/templates/parts/search_suggest.tpl
 d0ba090df7ef9e13793d7802efb17c85  design/standard/templates/parts/sortheader.tpl
@@ -24460,7 +24463,7 @@ c2716b6471cf0a37197768ec9505651c  kernel/classes/expprocesstools.php
 92e6028b29b46ac2653392924fb9e87b  kernel/classes/expreviewhold.php
 94f7415d88b918fec5629f6ab648591e  kernel/classes/expreviewholdauto.php
 8f6269e51f361ef385834a13cc7a6a49  kernel/classes/expscriptstatus.php
-7c3137daa284c176f84b95c9802d6531  kernel/classes/expsearchsuggest.php
+62b00aaa3a82ead0d8d23c189e1ca679  kernel/classes/expsearchsuggest.php
 aa90dfe294797d07ac3ee9c7be7aa569  kernel/classes/expsecretrule.php
 e773b6378b88c7fb7d34dda61c0242d0  kernel/classes/expsetupfilecopy.php
 d5e199bd454224432eabb39471db46a8  kernel/classes/expsetuplog.php
@@ -25248,7 +25251,7 @@ d6f62b2cc63dc30774e5df0248e79317  kernel/content/history.php
 d42c2661d43bf56587959a5fd93f5579  kernel/content/job.php
 d8905c3df3f0e1dc629afcae018cc8f7  kernel/content/jobs.php
 838d5a8ea7e18b02312501a4f0ff95e3  kernel/content/keyword.php
-1d7a2b08ca25c0b1a578bf8faae68067  kernel/content/module.php
+2e12871bb07ed7f3ac65ad3bff9ffa30  kernel/content/module.php
 56b140f7913d79ccf4ace0e3216c7cab  kernel/content/move.php
 dd3d0d0a53d5d9d22893ebfccd31b3e0  kernel/content/multiedit.php
 ea5c50677a44807e4a9de842f49705c2  kernel/content/multiedit_functions.php
@@ -25268,6 +25271,7 @@ aeae63caef1d8796123d727f2f0586f8  kernel/content/reverserelatedlist.php
 90f26e659f09c40faac1fb44c515a307  kernel/content/search.php
 4b11dbca0fd8621339a5966de2187437  kernel/content/section_edit.php
 55cba580226ae414e552a5c20e871bfe  kernel/content/sharedpreview.php
+1205062ca0195683d98c40662680bfd6  kernel/content/sitesuggest.php
 0a0b3064799d1cf7b0025de1b2d4568b  kernel/content/state_edit.php
 e0559006f444bd2f627cfb00324e5847  kernel/content/subitemsexport.php
 a56ab51aee1a087bba9936bca62a068d  kernel/content/suggest.php
@@ -25805,8 +25809,9 @@ b5b14f61d3f6a63cc624107f90bedbbf  kernel/private/classes/views/content/removeedi
 141749c8150097182c5434cb25da9405  kernel/private/classes/views/content/removeobject.php
 81182a1ae3dc9a1889d3e94ed5d72407  kernel/private/classes/views/content/restore.php
 4c76096eb254f944fb870043b35f6c05  kernel/private/classes/views/content/reverserelatedlist.php
-0047c8b5361299cbd5f0a339f3fdb80f  kernel/private/classes/views/content/search.php
+1cda96151ae21e1d0cca1d6a61ef9bb7  kernel/private/classes/views/content/search.php
 d7eb50f9fc448059c7a761655e8f0e2b  kernel/private/classes/views/content/sharedpreview.php
+8e3664871a6442dbf690c504fadd2171  kernel/private/classes/views/content/sitesuggest.php
 8a9eb394e340040723f45a0b05f73fcd  kernel/private/classes/views/content/subitemsexport.php
 28f29a90d8706da4651c88d4a10dea0c  kernel/private/classes/views/content/suggest.php
 9e0e839067d71a8d50f71e9b491662b7  kernel/private/classes/views/content/tipafriend.php
@@ -26889,7 +26894,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-0b9c75ac744c6a545cbc9bbdcb418c81  settings/site.ini
+1f073665e7c811d3a54fc81d0e6aee4e  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -28843,6 +28848,7 @@ c40cd0bc9e3cb716a69ed51ad0dcf654  tests/tests/kernel/classes/expRolePagesTest.ph
 dba841fd53bca2a48771071bc8576cfd  tests/tests/kernel/classes/expSettingsPageTest.php
 bbb595243babbe98857a0bfdd399f674  tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php
 7dc45bff6e79677e772657b530962141  tests/tests/kernel/classes/expSiteAccessOverviewTest.php
+76587f0d25e989d06ca48c17246a8bf0  tests/tests/kernel/classes/expSiteSearchSuggestTest.php
 697f14f19a5cfd2a28cf159520438035  tests/tests/kernel/classes/expSoapEntryScriptTest.php
 87af0fd8caa0dcd57ff6fddf22c840e9  tests/tests/kernel/classes/expSystemReportMaskTest.php
 33a68d0c02646476c5a0be96c865993c  tests/tests/kernel/classes/expSystemReportTest.php
