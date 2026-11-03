@@ -359,6 +359,12 @@ class eZStepCreateSites extends eZStepInstaller
         $ini->setVariable( 'SiteSettings', 'SiteList', $accessMap['sites'] );
         $ini->setVariable( 'SiteAccessSettings', 'AvailableSiteAccessList', $accessMap['accesses'] );
         $ini->setVariable( "SiteAccessSettings", "CheckValidity", "false" );
+        // Clean urls (no /index.php in any generated link) whenever the web
+        // server rewrites them, which Velocity and the shipped .htaccess both do.
+        // It has to be in settings/override: eZSys decides before a siteaccess
+        // is matched. A site package may still write its own value afterwards.
+        if ( $this->serverRewritesUrls() )
+            $ini->setVariable( 'SiteAccessSettings', 'ForceVirtualHost', 'true' );
         // With this following line commented out, php default session management is used
         // $ini->setVariable( 'Session', 'SessionNameHandler', 'custom' );
         $ini->setVariable( 'MailSettings', 'AdminEmail', $this->PersistenceList['admin']['email'] );
@@ -2409,6 +2415,29 @@ language_locale='eng-GB'";
         eZCache::clearByID( 'user_info_cache' );
 
         return true;
+    }
+
+    /*!
+     Whether the web server sends an address without index.php to the front
+     controller. A command line install (the kickstarter, under Velocity or
+     behind the shipped .htaccess) and a wizard reached without index.php in
+     its address both say yes; otherwise the site's login page is asked for
+     without index.php, and only an answer other than not found says yes.
+    */
+    private function serverRewritesUrls()
+    {
+        if ( PHP_SAPI === 'cli' )
+            return true;
+
+        $requestUri = isset( $_SERVER['REQUEST_URI'] ) ? (string)$_SERVER['REQUEST_URI'] : '';
+        if ( $requestUri !== '' && strpos( $requestUri, 'index.php' ) === false )
+            return true;
+
+        $hostname = eZSys::hostname();
+        if ( !$hostname )
+            return false;
+
+        return (bool)eZHTTPTool::getDataByURL( eZSys::serverProtocol() . '://' . $hostname . eZSys::wwwDir() . '/user/login', true );
     }
 
 }

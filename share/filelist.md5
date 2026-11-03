@@ -3515,7 +3515,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-50d13156e003ae04b4c479a37441532a  doc/changelogs/6.0/6.0.15.md
+fe87d8dc3870cceff1859d97f06cdb3e  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -13108,7 +13108,7 @@ cbda8dec23b0413752f3eb9abfe7326d  doc/eng-us/install/05-setup-wizard.md
 2715303134a3c94a032f71a9015fbc35  doc/eng-us/install/07-console-install.md
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
 775ac59139d5fbe41099044e578388be  doc/eng-us/install/09-databases.md
-9cecda935c0e6b1bf89e5fe5b7f9e810  doc/eng-us/install/10-after-installing.md
+10552a7a8037e8e049f0b7adbf7cd26e  doc/eng-us/install/10-after-installing.md
 37decaa74fbd47826653347e4b02ac49  doc/eng-us/install/11-upgrading.md
 f3298b407f6f04238da76fc2a28296db  doc/eng-us/install/12-troubleshooting.md
 56924c9876d782b4b3f1c429c3000549  doc/eng-us/install/13-security-hardening.md
@@ -22699,7 +22699,7 @@ bb19e39caf6993f1bcf9f5b660eb3d9d  doc/ger-de/installation/06-kickstarter.md
 19a73d7020c9efdd3373bc905a7a6752  doc/ger-de/installation/07-installation-ueber-die-konsole.md
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
 c7ee2583299b7d3cc39b8f46e97d32c8  doc/ger-de/installation/09-datenbanken.md
-e34fdc1d32d662c3da6ba883562fa080  doc/ger-de/installation/10-nach-der-installation.md
+d3c779dd5b3a4b50d196e0f41e9a57ce  doc/ger-de/installation/10-nach-der-installation.md
 b8d795ebb1ea91d94d2d59204e2bc9de  doc/ger-de/installation/11-aktualisieren.md
 953bf62bca5d0e3b1a53b764a6a7410b  doc/ger-de/installation/12-fehlerbehebung.md
 f159a990cb201711216fabfaa300a852  doc/ger-de/installation/13-sicherheitshaertung.md
@@ -24593,7 +24593,7 @@ fa1efc92321777aaa6bf1976ab13f48f  kernel/classes/ezshippingmanager.php
 ce4d669e185092be2e6f870615a8b9e7  kernel/classes/ezshopaccounthandler.php
 cc36dc1db3569e799588b5f0f633fd64  kernel/classes/ezsiteaccess.php
 919046fec0ffb6aacd3fdd5b10d4045d  kernel/classes/ezsitedata.php
-bfb5c90cd4ecd53cd5fe3c695de62582  kernel/classes/ezsiteinstaller.php
+293628393537b29810191bf24eee5ef0  kernel/classes/ezsiteinstaller.php
 c28bc6243b66186944a4758389e33c14  kernel/classes/ezsslzone.php
 62fec4d87605d5c0491791b1ee46d900  kernel/classes/ezstaticcache.php
 2bdea4f1b23c6d139caff374628e4293  kernel/classes/ezsubtreecache.php
@@ -26300,7 +26300,7 @@ c0f9d333e53a6c752edc9c591a98cc56  kernel/setup/settingstoolbar.php
 a8713d647fe1b82f9ac380b5c4f65e21  kernel/setup/setupmenu.php
 12388c5f3c97658017a91b8ccf53cdc3  kernel/setup/sitedata.php
 99d8125aa80af11aa9c3a40816df9a22  kernel/setup/staticcachestream.php
-cef417d378ea1c6a809a03ef2510574e  kernel/setup/steps/ezstep_create_sites.php
+c3262a23a6ba629024a6d5d0ae2c4fad  kernel/setup/steps/ezstep_create_sites.php
 a229b281f2a585988ec3d1f040900091  kernel/setup/steps/ezstep_data.php
 d2a0e0acbc37af9ccf239914e1371801  kernel/setup/steps/ezstep_database_choice.php
 73100c86285b78fae3f5cfae4b9670eb  kernel/setup/steps/ezstep_database_init.php

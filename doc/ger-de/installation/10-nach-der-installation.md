@@ -122,7 +122,7 @@ Ein **Siteaccess** ist ein Zugang zur Installation: ein Name, ein Satz Einstellu
 | `URIMatchType`, `URIMatchElement` | `element`, `1` | Mit `uri`: Das erste Pfadelement nennt den Siteaccess (`/admin/...`). |
 | `HostMatchType`, `HostMatchMapItems[]` | `map` | Mit `host`: Ein Hostname wird einem Siteaccess zugeordnet, `HostMatchMapItems[]=www.example.com;site`. |
 | `RelatedSiteAccessList[]` | | Siteaccesses, die sich eine Datenbank teilen. |
-| `ForceVirtualHost` | `false` | `true`, wenn der Webserver jede Adresse auf `index.php` umschreibt, wie es die ausgelieferten Regeln tun. |
+| `ForceVirtualHost` | `false` | `true`, wenn der Webserver jede Adresse auf `index.php` umschreibt, wie es die ausgelieferten Regeln und Velocity tun. Jede Installation (Setup-Assistent, Kickstarter, `exp:install`, jedes Seitenpaket) schreibt `true` in `settings/override/site.ini.append.php`, wenn der Server umschreibt, damit kein generierter Link `/index.php` enthält. Nur auf einem Server ohne Rewrite-Regeln wieder auf `false` setzen. |
 | `RemoveSiteAccessIfDefaultAccess` | `disabled` | `enabled` lässt den Namen des voreingestellten Siteaccess in generierten Links weg. |
 | `RequireUserLogin` | `true` in `site.ini` | Wird je Siteaccess überschrieben; eine öffentliche Site setzt es auf `false`. |
 

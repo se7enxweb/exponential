@@ -1673,7 +1673,12 @@ class eZSiteInstaller
                 $hostPort = ':' . (int)$hostParts['port'];
         }
 
-        $indexFile = eZSys::wwwDir() . ( array_key_exists( 'index_file', $params ) ? (string)$params['index_file'] : eZSys::indexFileName() );
+        // Without an index_file the urls follow the installation: none when it
+        // was set up with ForceVirtualHost=true (clean urls, see ezstep_create_sites).
+        if ( array_key_exists( 'index_file', $params ) )
+            $indexFile = eZSys::wwwDir() . (string)$params['index_file'];
+        else
+            $indexFile = eZSys::wwwDir() . ( eZINI::instance()->variable( 'SiteAccessSettings', 'ForceVirtualHost' ) === 'true' ? '' : eZSys::indexFileName() );
 
         switch( $accessType )
         {
