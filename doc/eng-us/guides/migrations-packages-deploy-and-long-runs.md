@@ -237,6 +237,8 @@ session recording too.
 ## Related pages
 
 - [Migrations](migrations.md), [PHP migrations](migrations-php.md), [Rollback and captions](migrations-rollback-and-captions.md)
+- In the administration: [A long run in parts](../help/migrations/run-dry-run-and-rollback.md#a-long-run-in-parts),
+  [the site-wide window](../help/migrations/recording.md#the-site-wide-window), [Deploy step by step](../help/migrations/deploy-step-by-step.md)
 - [exp:migration:migrate](../examples/commands/expmigrationmigrate.md), [exp:migration:resume](../examples/commands/expmigrationresume.md),
   [exp:migration:record:start](../examples/commands/expmigrationrecordstart.md), [The step type code_file](../examples/migration-steps/code_file.md)
 - [migration.ini](../examples/ini-settings/migration/README.md)

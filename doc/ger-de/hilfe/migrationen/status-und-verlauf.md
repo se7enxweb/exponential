@@ -36,8 +36,16 @@ die Rolle Administrator (über ihre Richtlinie für jedes Modul). Das Ansehen fr
 Adresse ist `/migration/status`. Die Schaltfläche **?** in der Kopfzeile öffnet diese Seite von jeder der drei Seiten
 aus.
 
-Jede Seite von Setup > Migrationen hat dieselbe Reihe von Reitern: **Stand**, **Verlauf**, **Probelauf** und, für
-Benutzer mit den Richtlinien, **Ausführen** (`migration/run`) und **Rücknahme** (`migration/rollback`).
+1. Wählen Sie im oberen Menü **Einrichtung** (Setup).
+2. Wählen Sie in der linken Spalte **Migrationen**. Der Stand öffnet sich.
+3. Wechseln Sie mit den Reitern zwischen den Seiten.
+
+Jede Seite von Setup > Migrationen hat dieselbe Reihe von Reitern: **Stand**, **Verlauf**, **Probelauf**,
+**Gegenstellen** und **Auslieferungen** und, für Benutzer mit den Richtlinien, **Ausführen** (`migration/run`),
+**Rücknahme** (`migration/rollback`), **Aufzeichnung** und **Redaktion** (`migration/edit`). Ein Rundgang durch alle:
+[Ein Rundgang durch Setup > Migrationen](rundgang-durch-setup-migrationen.md).
+
+![Die Reiter von Setup > Migrationen](../bilder/migrationen/status-tabs-light.webp)
 
 ## Der Stand
 
@@ -58,6 +66,23 @@ Von oben:
 Die Stände sind die der Konsole: **erledigt**, **ausstehend**, **nicht nötig** (nicht für diese Umgebung oder
 Datenbank-Engine), **fehlgeschlagen** und **unbekannt**.
 
+Die Upgrade-Schritte des Kernels stehen zuerst in der Liste (Quelle `kernel`); die eigenen Migrationen der Site
+folgen, hier drei erledigte, eine fehlgeschlagene und zwei ausstehende, jede mit dem Lauf, der sie angewendet oder es
+versucht hat:
+
+![Die Migrationen der Site am Ende der Liste: erledigt, fehlgeschlagen und ausstehend, mit ihrem letzten Lauf](../bilder/migrationen/status-site-light.webp)
+
+**Den Stand einer Installation prüfen, Schritt für Schritt:**
+
+1. Öffnen Sie den Stand. Lesen Sie **Überblick**: **Ausstehend** und **Fehlgeschlagen** sollten nach einer
+   Auslieferung 0 sein.
+2. Eine **fehlgeschlagene** Migration: Klicken Sie ihren letzten Lauf an und lesen Sie den Bericht
+   ([Wenn eine Migration scheitert](wenn-eine-migration-scheitert.md)).
+3. **Ausstehende** Migrationen: Öffnen Sie **Probelauf**, um zu sehen, was sie ändern würden, dann **Ausführen**
+   ([Ausführen, Probelauf und Rücknahme](ausfuehren-probelauf-und-rueckgaengig.md)).
+4. Eine Warnung wie „Die Datei hat sich nach dem Anwenden geändert.“ braucht vor dem nächsten Lauf eine Entscheidung
+   ([Ausführen](ausfuehren-probelauf-und-rueckgaengig.md#ausführen)).
+
 Gibt es die Tabellen der Migrationen noch nicht, sagt die Seite das: `./console exp:upgrade --apply` legt sie an.
 
 Die Seite zeigt dasselbe wie `./console exp:migration:status`; im dunklen Modus sieht sie so aus:
@@ -67,6 +92,8 @@ Die Seite zeigt dasselbe wie `./console exp:migration:status`; im dunklen Modus 
 ## Der Verlauf
 
 **Verlauf** (`/migration/history`) listet die Läufe auf, die neuesten zuerst (höchstens 200).
+
+![Der Verlauf: die Läufe mit Stand, Start, Benutzer, Sicherungspunkten und den Spalten des Repositorys](../bilder/migrationen/history-light.webp)
 
 - **Anzeigen** filtert sie: **Alle**, **läuft**, **erledigt**, **fehlgeschlagen**, **zurückgenommen**, jeweils mit
   ihrer Zahl. Der Filter steht in der Adresse (`/migration/history/(state)/failed`), eine gefilterte Liste lässt sich
@@ -93,6 +120,16 @@ Ein Klick auf die Kennung eines Laufs, wo immer sie in Setup > Migrationen steht
 | **Migrationen dieses Laufs** | die Migrationen, die der Lauf aufgezeichnet hat, mit Quelle, Stand und Dauer |
 | **Protokoll des Laufs** | das Ende des Laufprotokolls (`migrations/runs/<run id>.log`); gezeigt werden nur die letzten 256 KB, wie `migration.ini [AdminSettings] LogBytes` es festlegt |
 
+Ein bestandener Lauf: sein Eintrag mit den Sicherungspunkten davor und danach, die Migrationen des Laufs und das
+Protokoll.
+
+![Die Seite eines bestandenen Laufs: der Eintrag, die Migrationen dieses Laufs und das Protokoll des Laufs](../bilder/migrationen/run-log-light.webp)
+
+Ein gescheiterter Lauf: die gescheiterte Migration, ihre Meldung, der wiederhergestellte Sicherungspunkt und **Diesen
+Lauf fortsetzen**.
+
+![Die Seite eines gescheiterten Laufs: die gescheiterte Migration mit ihrer Meldung, der wiederhergestellte Sicherungspunkt und Diesen Lauf fortsetzen](../bilder/migrationen/run-log-failed-light.webp)
+
 Solange ein Lauf im Gang ist, verfolgt die Seite ihn: Fortschritt, Balken und Protokoll wachsen ohne Neuladen, und die
 Seite lädt sich mit dem Bericht neu, wenn der Lauf beendet ist. Ohne JavaScript zeigt **Neu laden**, wie weit er ist.
 
@@ -111,6 +148,8 @@ Das Dashboard der Administration hat für Benutzer mit `migration/read` einen Bl
 - einen Hinweis, wenn Migrationen fehlgeschlagen sind, wenn ein Lauf im Gang ist (mit einem Link zum Verfolgen) oder
   wenn die Installation gesperrt ist;
 - **Alle Migrationen**, einen Link zum Stand.
+
+![Der Block Migrationen des Dashboards](../bilder/migrationen/dashboard-block-light.webp)
 
 Benutzer ohne die Richtlinie sehen den Block nicht. Sein Platz und seine Richtlinie sind Einstellungen:
 [dashboard.ini [DashboardBlock_migrations]](../../beispiele/ini-einstellungen/dashboard/DashboardBlock_migrations.md).

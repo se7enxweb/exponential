@@ -17,7 +17,13 @@ sich. Die Seiten sind **Setup > Migrationen > Gegenstellen** und **Setup > Migra
 leistet `exp:migration:deploy` dasselbe (siehe [Remote-Deploy](../../anleitungen/migrationen-remote-deploy.md), das
 auch jede Phase im Einzelnen erklärt).
 
+Diese Seite ist das Nachschlagewerk. Dasselbe mit nummerierten Schritten und einem Bildschirmfoto jedes Bildschirms:
+[Eine Gegenstelle anlegen, Schritt für Schritt](eine-gegenstelle-anlegen-schritt-fuer-schritt.md) und
+[Ausliefern, Schritt für Schritt](ausliefern-schritt-fuer-schritt.md).
+
 ## Gegenstellen
+
+![Die Liste der Gegenstellen mit Umgebung, Adresse, Zugangsdaten und Gruppen](../bilder/migrationen/remotes-light.webp)
 
 **Gegenstellen** listet jede Gegenstelle aus `migration.ini [RemoteSettings] RemoteList[]` mit ihrer Umgebung, ihrer
 Adresse (`transport://user@host:port/pfad`), ihren Zugangsdaten (die Art und der Name eines Geheimnisses, nie ein Wert)
@@ -57,6 +63,8 @@ bleiben im Verlauf.
 
 **Auslieferungen** hat das Formular, das einen Deploy startet, und darunter den **Verlauf**: jeden Deploy, der etwas gesendet
 oder ausgeführt hat, den neuesten zuerst, mit seinem Stand, dem Stand jeder Gegenstelle, wer ihn gestartet hat und wann.
+
+![Die Seite Auslieferungen: die Gegenstellen, wie, und der Verlauf](../bilder/migrationen/deploys-light.webp)
 
 1. **Die Gegenstellen**: Kreuzen Sie Gegenstellen einzeln an, eine Gruppe (jede ihrer Gegenstellen) oder beides.
 2. **Wie**:

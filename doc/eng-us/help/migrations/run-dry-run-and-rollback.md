@@ -32,11 +32,12 @@ The rules are in `site.ini [ReauthGroup_system]`.
 
 1. [Dry run](#dry-run)
 2. [Run](#run)
-3. [Resume a failed run](#resume-a-failed-run)
-4. [Roll back](#roll-back)
-5. [How a run started here goes on](#how-a-run-started-here-goes-on)
-6. [When a run cannot start](#when-a-run-cannot-start)
-7. [Related pages](#related-pages)
+3. [A long run in parts](#a-long-run-in-parts)
+4. [Resume a failed run](#resume-a-failed-run)
+5. [Roll back](#roll-back)
+6. [How a run started here goes on](#how-a-run-started-here-goes-on)
+7. [When a run cannot start](#when-a-run-cannot-start)
+8. [Related pages](#related-pages)
 
 ## Dry run
 
@@ -45,6 +46,8 @@ The rules are in `site.ini [ReauthGroup_system]`.
 - **The migrations**: each pending migration with what its plan says it would change;
 - **Before and after the run**: whether a caption is taken before the run (**Caption before**) and after it
   (**Caption after**), and what would be committed, tagged and pushed.
+
+![The dry run: the pending migrations with what each would change, and the captions before and after](../images/migrations/dry-run-light.webp)
 
 **Simulate** (with `migration/run`) goes further: the pending migrations really run, in a transaction that is rolled
 back afterwards, and the page lists what each one changed in the database. Nothing is kept. A simulation needs
@@ -55,13 +58,19 @@ the plan instead and says so. While a run is going on, wait for it to end before
 
 **Run** (`/migration/run`, or **Run N pending** on the status) is a form:
 
+![The run form: the pending migrations ticked, a long run in parts, before and after the run, and the confirmation](../images/migrations/run-form-light.webp)
+
 1. **Pending migrations**: every pending or failed migration, all ticked, in the order they run. Untick one to leave
    it, and the ones that require it, for a later run. A migration that **Switches maintenance mode on while it runs**
    says so.
 2. **Changed after they were applied** (only when there are some): migrations whose file is not the one that was
    applied. The run refuses them unless you tick **Accept the changes** and write **Why** (at most 500 characters).
    They are not run again; the new checksum is recorded and the reason kept in the audit log.
-3. **Before and after the run**: the defaults are the safe ones. Each box leaves a step out:
+3. **A long run in parts** (optional): limits for a long run, see [A long run in parts](#a-long-run-in-parts).
+   Empty fields keep the settings of `migration.ini [RunSettings]`.
+4. **Before and after the run**: the defaults are the safe ones. Each box leaves a step out:
+
+   ![Before and after the run: No caption, No restore, Keep changes that are not committed, No commit, No push, No tag](../images/migrations/run-options-light.webp)
 
    | Box | Leaves out |
    |---|---|
@@ -72,12 +81,39 @@ the plan instead and says so. While a run is going on, wait for it to end before
    | **No push** | the push (commit and tag still happen) |
    | **No tag** | the tag (commit and push still happen) |
 
-4. Tick **Yes, run these migrations now** and press **Run**. After "Verify it's you", the run starts and its page
+5. Tick **Yes, run these migrations now** and press **Run**. After "Verify it's you", the run starts and its page
    opens, where you follow it ([The page of a run](status-and-history.md#the-page-of-a-run)).
 
 The run takes a caption of the installation first. When a migration fails the run stops and the caption is
 restored. A run that passed takes a caption after it and commits, tags and pushes its record. **Dry run first**
 opens the dry run.
+
+What you see after **Run**: the run's page with **Progress**: the phase (first "Checking the code and taking a
+caption before the run", then "Running ... (n of m)"), a bar and the run log, which grow without a reload.
+
+![A run that goes on: running, checking the code and taking a caption before the run](../images/migrations/run-live-light.webp)
+
+When it has ended, the page reloads itself with the report, the record and the run log:
+
+![The page of the run once it has ended: the report, the record with the captions, the run log](../images/migrations/run-log-passed-light.webp)
+
+## A long run in parts
+
+The card **A long run in parts** of the run form splits and paces a run of many migrations, or of one that changes
+many objects:
+
+![A long run in parts: at most this many migrations, no further migration after, pause between migrations, lower priority](../images/migrations/run-long-run-light.webp)
+
+| Field | Option | What it does |
+|---|---|---|
+| **At most this many migrations** | `--max-migrations` | applies at most this many; the rest stay pending ("postponed") |
+| **No further migration after (seconds)** | `--max-time` | starts no further migration after this time; the one running is finished |
+| **Pause between migrations (seconds)** | `--throttle` | a pause between two migrations and between the batches of a PHP migration (`0.5` is half a second, at most 60) |
+| **Lower priority (1 to 19)** | `--nice` | runs the background process at a lower priority, as `nice(1)` |
+
+An empty field keeps the setting of `migration.ini [RunSettings]`, shown as the field's placeholder. A run that stops
+at a limit ends without an error; the migrations it left stay pending for the next run or a resume. The first
+migration of a run always starts. Details: [Long runs](../../guides/migrations-packages-deploy-and-long-runs.md#long-runs).
 
 ## Resume a failed run
 
@@ -96,6 +132,14 @@ page. It is a new run of what the failed one left pending (`exp:migration:resume
 | **Runs** | a run with a caption taken before it: that caption is restored |
 | **Migrations** | one applied migration that has a `down()`: its `down()` runs |
 | **Earlier captions (experts)** | any earlier caption, restored |
+
+**To go back to how the site was before a run, step by step:**
+
+1. Open **Rollback**. Find the run under **Runs** (the newest first) and press **Choose**.
+2. Choose the **Parts to restore** (the defaults are usually right).
+3. Tick **Yes, take it back** and press **Roll back**; confirm "Verify it's you".
+4. The rollback's page opens and follows it. Afterwards the status shows the run's migrations as pending again, and
+   the history lists the rollback under **Started here**. You may have to sign in again.
 
 **Choose** opens the confirmation (`/migration/rollback/<run, migration or caption id>`; **Roll back** in the history
 and **Roll back this run** on a run's page open it too):

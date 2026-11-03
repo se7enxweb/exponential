@@ -634,6 +634,7 @@ Without `--apply` nothing is written, and an existing file is never replaced.
 ## Related pages
 
 - [Recording changes in the administration](../help/migrations/recording.md)
+- [Generating migrations](../help/migrations/generating-migrations.md) and [the migration editor](../help/migrations/the-migration-editor.md), step by step with screenshots
 - [Recipe: record an administrator session](../examples/cookbook/migrations-record-an-admin-session.md)
 - [The migration file format: recorded events](../specifications/6.0/migration-file-format.md#recorded-events-exp-migration-recording-event1)
 - [Migrations](migrations.md) · [The audit trail](../features/6.0/audit-trail.md) · ["Verify it's you"](verify-its-you.md)

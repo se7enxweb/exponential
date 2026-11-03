@@ -39,6 +39,9 @@ from another system is **migrating a site**, a different job with its own pages:
 | write your first migration (about 20 minutes) | [the tutorial](../../guides/migrations-tutorial.md) | [PHP migrations](../../guides/migrations-php.md), [the recipes](recipes/README.md) |
 | understand what migrations are and how a run works | [the guide](../../guides/migrations.md) | [Rollback and captions](../../guides/migrations-rollback-and-captions.md), [the migrations repository](../../guides/migrations-repositories.md) |
 | apply migrations other people wrote | [Migrations for administrators](migrations-for-administrators.md) | [In the administration](in-the-administration.md), [Run, dry run and rollback](run-dry-run-and-rollback.md) |
+| find your way around Setup > Migrations | [A tour of Setup > Migrations](a-tour-of-setup-migrations.md) | [The status and the history](status-and-history.md) |
+| turn changes made by hand into a migration | [Recording changes](recording.md) | [Generating migrations](generating-migrations.md), [The migration editor](the-migration-editor.md) |
+| put the migrations on staging and production | [Add a remote step by step](add-a-remote-step-by-step.md) | [Deploy step by step](deploy-step-by-step.md) |
 | ship changes as a team, through CI to production | [Team workflow with git](recipes/team-workflow-with-git.md) | [Testing migrations](recipes/testing-migrations.md), [Deploying with migrations](recipes/deploying-with-migrations.md) |
 | move from Doctrine Migrations, the Kaliop bundle or SQL update files | [Coming from Doctrine Migrations](recipes/coming-from-doctrine-migrations.md) | [Kaliop](recipes/coming-from-kaliop-ezmigrationbundle.md), [SQL update files](recipes/coming-from-sql-update-files.md) |
 
@@ -124,15 +127,21 @@ check it, how to take it back, and the next step. [All recipes](recipes/README.m
 ## In the administration
 
 **Setup > Migrations** shows every migration with its state, runs the pending ones in the background, simulates a
-run and takes a run or a migration back. The dashboard has a **Migrations** block, and the website sidebar a read-only
-panel.
+run and takes a run or a migration back, records changes, writes migrations in its editor, and deploys them to other
+installations. The dashboard has a **Migrations** block, and the website sidebar a panel. Every page below has
+step-by-step instructions with screenshots.
 
+- [A tour of Setup > Migrations](a-tour-of-setup-migrations.md): every tab with a screenshot, and which page for which task
 - [Migrations in the administration](in-the-administration.md): the pages and who may use them
 - [The status and the history](status-and-history.md)
 - [Run, dry run and rollback](run-dry-run-and-rollback.md)
 - [Migrations in the website sidebar](expwt-panel.md)
 - [Recording changes](recording.md): record your own changes, or every change in a site-wide window, as the steps of a migration
 - [Remotes and deploys](remotes-and-deploys.md): the other installations this one deploys its migrations to, deploys all at once or stage by stage with a gate, live per remote, history and rollback
+- [Add a remote step by step](add-a-remote-step-by-step.md): the five steps of the wizard, Test connection, edit and remove, FTP hosts with the trigger, self-healing
+- [Deploy step by step](deploy-step-by-step.md): choose remotes, preflight, deploy, follow it live, approve a gate, roll back, the history and the notice mails
+- [The migration editor](the-migration-editor.md): build a YAML migration with forms, check, preview and save it
+- [Generating migrations](generating-migrations.md): from a recording, in the editor, from what is there, from a difference, skeletons
 
 ## Reference
 
@@ -169,9 +178,10 @@ written as YAML steps too where a step type covers it.
 |---|---|
 | PHP, YAML, SQL and INI migrations in the site, in active extensions and in installed packages | |
 | the dry run, and the simulation with a diff on PostgreSQL and SQLite | a simulation on MySQL/MariaDB, Oracle and MongoDB (the plan is listed) |
-| captions, the automatic restore, rollback of a run, of a migration and of any caption | generators other than the skeleton, an editor in the administration |
+| captions, the automatic restore, rollback of a run, of a migration and of any caption | |
+| generators from a recording, from content, classes, roles, sections and settings, from a difference, and skeletons; the editor in the administration | |
 | commit, tag and push of every run's record; the cronjob part `migrationpush` | `exp:velocity deploy --migrate` |
-| Setup > Migrations, background runs, the dashboard block and the sidebar panel | writing and generating migrations in the administration (`migration/edit` is used only by Recording) |
+| Setup > Migrations, background runs, recording, the editor, remotes and deploys, the dashboard block and the sidebar panel | |
 | the kernel's upgrade steps listed and run among the migrations (stages `database` and `scripts`) | the stages `code`, `libraries` and `finish` stay with `exp:upgrade` |
 
 ## Related pages

@@ -17,9 +17,10 @@ type: help
 3. [Migrationen ausführen](#migrationen-ausführen)
 4. [Sicherheit und der Weg zurück](#sicherheit-und-der-weg-zurück)
 5. [Teams, Umgebungen und Auslieferung](#teams-umgebungen-und-auslieferung)
-6. [Datenbanken](#datenbanken)
-7. [Umstieg von anderen Werkzeugen](#umstieg-von-anderen-werkzeugen)
-8. [Verwandte Seiten](#verwandte-seiten)
+6. [In der Administration](#in-der-administration)
+7. [Datenbanken](#datenbanken)
+8. [Umstieg von anderen Werkzeugen](#umstieg-von-anderen-werkzeugen)
+9. [Verwandte Seiten](#verwandte-seiten)
 
 ## Die Idee
 
@@ -149,6 +150,50 @@ committet, getaggt mit `migrations/<environment>/<run-id>` und vom Lauf selbst g
 Ja, in `extension/<name>/migrations/`; sie laufen, solange die Erweiterung aktiv ist. Pakete tragen sie in ihrem eigenen
 Ordner `migrations/`. [Migrationen in einer Erweiterung oder einem Paket](rezepte/migrationen-in-einer-erweiterung-oder-einem-paket.md).
 
+## In der Administration
+
+**Wo fange ich in der Administration an?**
+Unter **Setup > Migrationen**: seine Reiter sind Stand, Verlauf, Probelauf, Ausführen, Rücknahme, Aufzeichnung,
+Gegenstellen, Auslieferungen und Redaktion. [Ein Rundgang durch Setup > Migrationen](rundgang-durch-setup-migrationen.md).
+
+**Kann ich eine Migration ohne Shell erstellen?**
+Ja: Zeichnen Sie Ihre Änderungen auf und drücken Sie **Migration erzeugen** ([Änderungen aufzeichnen](aufzeichnung.md)),
+oder bauen Sie sie in der **Redaktion** ([Der Migrationseditor](der-migrationseditor.md)).
+
+**Der Editor speichert meine Änderung an einer alten Migration nicht. Warum?**
+Die Migration ist gelaufen; jede Installation, die sie angewendet hat, behält ihre Prüfsumme, und eine geänderte Datei
+würde dort den nächsten Lauf anhalten. Schreiben Sie die Änderung als neue Migration.
+[Eine Migration, die gelaufen ist](der-migrationseditor.md#eine-migration-die-gelaufen-ist).
+
+**Wie lange bleibt eine Aufzeichnung für die ganze Website offen?**
+Bis jemand sie schließt, oder so viele Minuten, wie unter **Von selbst schließen nach (Minuten, optional)** stehen
+(höchstens 31 Tage). [Das Fenster für die ganze Website](aufzeichnung.md#das-fenster-für-die-ganze-website).
+
+**Wie füge ich Staging oder Produktion als Ziel hinzu?**
+**Setup > Migrationen > Gegenstellen > Neue Gegenstelle**: fünf Schritte, die Zugangsdaten als Name eines Geheimnisses.
+[Eine Gegenstelle anlegen, Schritt für Schritt](eine-gegenstelle-anlegen-schritt-fuer-schritt.md).
+
+**Steht ein Passwort in den Einstellungen der Gegenstelle?**
+Nie. Die Einstellungen enthalten den Namen eines Geheimnisses aus Setup > Secrets (oder eine Umgebungsvariable); ein
+in den Assistenten getipptes Passwort wird nicht geschrieben.
+[Schritt 3: die Zugangsdaten](eine-gegenstelle-anlegen-schritt-fuer-schritt.md#schritt-3-die-zugangsdaten).
+
+**Kann ich eine Auslieferung ausprobieren, ohne etwas zu ändern?**
+Ja: **Nur Preflight** auf der Seite Auslieferungen prüft jede Gegenstelle und plant die Dateien, sendet aber nichts.
+[Nur Preflight](ausliefern-schritt-fuer-schritt.md#nur-preflight).
+
+**Meine Auslieferung wartet an einem Tor. Was nun?**
+Es ist eine Auslieferung in Stufen: Prüfen Sie die ausgelieferte Stufe, dann **Freigeben** auf der Seite des Deploys.
+[Deploys in Stufen und das Tor](ausliefern-schritt-fuer-schritt.md#deploys-in-stufen-und-das-tor).
+
+**Was heißt „nicht im Gleichstand“?**
+Eine Gegenstelle ist gescheitert, und nicht jede konnte zurückgenommen werden; die Gegenstellen unterscheiden sich
+jetzt. [Im Gleichstand und nicht im Gleichstand](ausliefern-schritt-fuer-schritt.md#im-gleichstand-und-nicht-im-gleichstand).
+
+**Unser Host bietet nur FTP. Können wir dorthin ausliefern?**
+Mit **Nur übertragen** werden die Dateien gesendet und geprüft; damit sie dort auch laufen, richten Sie den
+signierten HTTP-Trigger ein. [Hosts nur mit FTP und der Trigger](eine-gegenstelle-anlegen-schritt-fuer-schritt.md#hosts-nur-mit-ftp-und-der-trigger).
+
 ## Datenbanken
 
 **Funktionieren Migrationen auf jeder Datenbank?**
@@ -168,8 +213,10 @@ Seite in der Administration. [Umstieg von Doctrine Migrations](rezepte/umstieg-v
 [Exponential-Migrationen für Doctrine-Nutzer](../dxp-entwickler/exponential-migrationen-fuer-doctrine-nutzer.md).
 
 **Wir haben auf eZ Platform das Kaliop-Migrations-Bundle genutzt. Können wir unser YAML umwandeln?**
-Es gibt in 6.0.15 keinen Konverter; jeder Schritt wird von Hand als PHP geschrieben.
-[Umstieg vom Kaliop-Migrations-Bundle](rezepte/umstieg-vom-kaliop-ezmigrationbundle.md).
+Ja: `./console exp:migration:convert <Datei oder Ordner>` liest die YAML-Migrationen dieses Bundles und schreibt für
+jede Datei eine YAML-Migration von Exponential; prüfen Sie jede, bevor sie läuft.
+[Umstieg vom Kaliop-Migrations-Bundle](rezepte/umstieg-vom-kaliop-ezmigrationbundle.md),
+[Migrationen des Referenz-Bundles umwandeln](../../anleitungen/migrationen-erzeugen-und-aufzeichnen.md#migrationen-des-referenz-bundles-umwandeln).
 
 ## Verwandte Seiten
 

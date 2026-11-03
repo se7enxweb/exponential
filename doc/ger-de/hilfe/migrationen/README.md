@@ -39,6 +39,9 @@ aus einem anderen System übernehmen heißt **eine Site migrieren** – eine and
 | Ihre erste Migration schreiben (etwa 20 Minuten) | [dem Tutorial](../../anleitungen/migrationen-tutorial.md) | [PHP-Migrationen](../../anleitungen/migrationen-php.md), [den Rezepten](rezepte/README.md) |
 | verstehen, was Migrationen sind und wie ein Lauf abläuft | [der Anleitung](../../anleitungen/migrationen.md) | [Zurücknehmen und Sicherungspunkte](../../anleitungen/migrationen-rueckgaengig-und-captions.md), [dem Migrations-Repository](../../anleitungen/migrationen-repositories.md) |
 | Migrationen anwenden, die andere geschrieben haben | [Migrationen für Administratoren](migrationen-fuer-administratoren.md) | [In der Administration](in-der-administration.md), [Ausführen, Probelauf und Rücknahme](ausfuehren-probelauf-und-rueckgaengig.md) |
+| sich in Setup > Migrationen zurechtfinden | [Ein Rundgang durch Setup > Migrationen](rundgang-durch-setup-migrationen.md) | [Stand und Verlauf](status-und-verlauf.md) |
+| von Hand gemachte Änderungen zu einer Migration machen | [Änderungen aufzeichnen](aufzeichnung.md) | [Migrationen erzeugen](migrationen-erzeugen.md), [Der Migrationseditor](der-migrationseditor.md) |
+| die Migrationen auf Staging und Produktion bringen | [Eine Gegenstelle anlegen, Schritt für Schritt](eine-gegenstelle-anlegen-schritt-fuer-schritt.md) | [Ausliefern, Schritt für Schritt](ausliefern-schritt-fuer-schritt.md) |
 | Änderungen im Team über CI bis in die Produktion bringen | [Teamarbeit mit Git](rezepte/teamarbeit-mit-git.md) | [Migrationen testen](rezepte/migrationen-testen.md), [Mit Migrationen ausliefern](rezepte/mit-migrationen-ausliefern.md) |
 | von Doctrine Migrations, dem Kaliop-Bundle oder SQL-Update-Dateien umsteigen | [Umstieg von Doctrine Migrations](rezepte/umstieg-von-doctrine-migrations.md) | [Kaliop](rezepte/umstieg-vom-kaliop-ezmigrationbundle.md), [SQL-Update-Dateien](rezepte/umstieg-von-sql-update-dateien.md) |
 
@@ -124,15 +127,21 @@ sie prüfen, wie Sie sie zurücknehmen und der nächste Schritt. [Alle Rezepte](
 ## In der Administration
 
 **Setup > Migrationen** zeigt jede Migration mit ihrem Zustand, führt die ausstehenden im Hintergrund aus, simuliert
-einen Lauf und nimmt einen Lauf oder eine Migration zurück. Das Dashboard hat einen Block **Migrationen**, die
-Website-Seitenleiste ein Panel, das nur liest.
+einen Lauf und nimmt einen Lauf oder eine Migration zurück, zeichnet Änderungen auf, schreibt Migrationen in seinem
+Editor und liefert sie an andere Installationen aus. Das Dashboard hat einen Block **Migrationen**, die
+Website-Seitenleiste ein Panel. Jede Seite unten hat Anleitungen Schritt für Schritt mit Bildschirmfotos.
 
+- [Ein Rundgang durch Setup > Migrationen](rundgang-durch-setup-migrationen.md): jeder Reiter mit Bildschirmfoto, und welche Seite für welche Aufgabe
 - [Migrationen in der Administration](in-der-administration.md): die Seiten und wer sie nutzen darf
 - [Stand und Verlauf](status-und-verlauf.md)
 - [Ausführen, Probelauf und Rücknahme](ausfuehren-probelauf-und-rueckgaengig.md)
 - [Migrationen in der Website-Seitenleiste](expwt-panel.md)
 - [Änderungen aufzeichnen](aufzeichnung.md): die eigenen Änderungen oder in einem websiteweiten Fenster jede Änderung als Schritte einer Migration aufzeichnen
 - [Gegenstellen und Deploys](gegenstellen-und-deploys.md): die anderen Installationen, an die diese ihre Migrationen ausliefert, Deploys gleichzeitig oder Stufe für Stufe mit einem Tor, live je Gegenstelle, Verlauf und Rücknahme
+- [Eine Gegenstelle anlegen, Schritt für Schritt](eine-gegenstelle-anlegen-schritt-fuer-schritt.md): die fünf Schritte des Assistenten, Verbindung testen, bearbeiten und entfernen, FTP-Hosts mit dem Trigger, Selbstheilung
+- [Ausliefern, Schritt für Schritt](ausliefern-schritt-fuer-schritt.md): Gegenstellen wählen, Preflight, ausliefern, live verfolgen, ein Tor freigeben, zurücknehmen, der Verlauf und die Hinweis-Mails
+- [Der Migrationseditor](der-migrationseditor.md): eine YAML-Migration mit Formularen bauen, prüfen, ansehen und speichern
+- [Migrationen erzeugen](migrationen-erzeugen.md): aus einer Aufzeichnung, im Editor, aus dem Vorhandenen, aus einem Unterschied, Gerüste
 
 ## Referenz
 
@@ -169,9 +178,10 @@ sich auch als YAML-Schritte schreiben, wo ein Schritttyp es abdeckt.
 |---|---|
 | PHP-, YAML-, SQL- und INI-Migrationen in der Site, in aktiven Erweiterungen und in installierten Paketen | |
 | der Probelauf und die Simulation mit Diff auf PostgreSQL und SQLite | eine Simulation auf MySQL/MariaDB, Oracle und MongoDB (der Plan wird gelistet) |
-| Sicherungspunkte, die automatische Wiederherstellung, die Rücknahme eines Laufs, einer Migration und jedes Sicherungspunkts | Generatoren außer dem Gerüst, ein Editor in der Administration |
+| Sicherungspunkte, die automatische Wiederherstellung, die Rücknahme eines Laufs, einer Migration und jedes Sicherungspunkts | |
+| Generatoren aus einer Aufzeichnung, aus Inhalten, Klassen, Rollen, Sektionen und Einstellungen, aus einem Unterschied, und Gerüste; der Editor in der Administration | |
 | Commit, Tag und Push der Aufzeichnung jedes Laufs; der Cronjob-Teil `migrationpush` | `exp:velocity deploy --migrate` |
-| Setup > Migrationen, Läufe im Hintergrund, der Dashboard-Block und das Panel der Seitenleiste | das Schreiben und Erzeugen von Migrationen in der Administration (`migration/edit` nutzt bisher nur die Aufzeichnung) |
+| Setup > Migrationen, Läufe im Hintergrund, Aufzeichnung, der Editor, Gegenstellen und Auslieferungen, der Dashboard-Block und das Panel der Seitenleiste | |
 | die Upgrade-Schritte des Kernels unter den Migrationen gelistet und ausgeführt (Stufen `database` und `scripts`) | die Stufen `code`, `libraries` und `finish` bleiben bei `exp:upgrade` |
 
 ## Verwandte Seiten

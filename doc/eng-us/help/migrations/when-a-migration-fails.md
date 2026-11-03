@@ -253,6 +253,7 @@ since; or `exp:upgrade:verify` reports drift after a restore. Send the run id, t
 ## Related pages
 
 - [Migrations: the hub](README.md), [All recipes](recipes/README.md), [Frequently asked questions](faq.md)
+- When a deploy to remotes fails: [Deploy step by step](deploy-step-by-step.md#when-something-goes-wrong); a recording or the editor: [Recording changes](recording.md#when-something-goes-wrong), [The migration editor](the-migration-editor.md#when-something-goes-wrong)
 - [The guide](../../guides/migrations.md), [the tutorial](../../guides/migrations-tutorial.md),
   [PHP migrations](../../guides/migrations-php.md),
   [Rollback and captions](../../guides/migrations-rollback-and-captions.md),

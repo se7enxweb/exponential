@@ -272,6 +272,7 @@ Wiederherstellung Abweichungen meldet. Schicken Sie die Lauf-ID, das Laufprotoko
 ## Verwandte Seiten
 
 - [Migrationen: der Einstieg](README.md), [Alle Rezepte](rezepte/README.md), [Häufige Fragen](faq.md)
+- Wenn eine Auslieferung an Gegenstellen scheitert: [Ausliefern, Schritt für Schritt](ausliefern-schritt-fuer-schritt.md#wenn-etwas-schiefgeht); eine Aufzeichnung oder der Editor: [Änderungen aufzeichnen](aufzeichnung.md#wenn-etwas-schiefgeht), [Der Migrationseditor](der-migrationseditor.md#wenn-etwas-schiefgeht)
 - [Die Anleitung](../../anleitungen/migrationen.md), [das Tutorial](../../anleitungen/migrationen-tutorial.md),
   [PHP-Migrationen](../../anleitungen/migrationen-php.md),
   [Zurücknehmen und Sicherungspunkte](../../anleitungen/migrationen-rueckgaengig-und-captions.md),

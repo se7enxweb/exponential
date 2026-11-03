@@ -272,6 +272,10 @@ check `./console exp:migration:remote:status` afterwards: "In sync: yes".
 
 **Only one migration.** `--only=20261102090000_add_news_class` sends and runs only that one on every remote.
 
+**The same in the administration.** Every step above has a screen in Setup > Migrations, explained with screenshots
+in [Add a remote step by step](../help/migrations/add-a-remote-step-by-step.md) and
+[Deploy step by step](../help/migrations/deploy-step-by-step.md).
+
 ## Troubleshooting
 
 | Symptom | Cause and remedy |

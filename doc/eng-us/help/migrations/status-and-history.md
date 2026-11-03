@@ -35,8 +35,16 @@ role has it (its policy on every module). Seeing never asks for "Verify it's you
 Open **Setup** in the top menu and choose **Migrations** in the left column (group **System**). The address is
 `/migration/status`. The **?** button in the header opens this page from any of the three pages.
 
-Each page of Setup > Migrations has the same row of tabs: **Status**, **History**, **Dry run**, and, for users with
-the policies, **Run** (`migration/run`) and **Rollback** (`migration/rollback`).
+1. Choose **Setup** in the top menu.
+2. Choose **Migrations** in the left column. The status opens.
+3. Use the tabs to move between the pages.
+
+Each page of Setup > Migrations has the same row of tabs: **Status**, **History**, **Dry run**, **Remotes** and
+**Deploys**, and, for users with the policies, **Run** (`migration/run`), **Rollback** (`migration/rollback`),
+**Recording** and **Editor** (`migration/edit`). A tour of all of them:
+[A tour of Setup > Migrations](a-tour-of-setup-migrations.md).
+
+![The tabs of Setup > Migrations](../images/migrations/status-tabs-light.webp)
 
 ## The status
 
@@ -57,6 +65,20 @@ From the top:
 The states are those of the console: **done**, **pending**, **not needed** (not for this environment or database
 engine), **failed** and **unknown**.
 
+The kernel's upgrade steps come first in the list (source `kernel`); the site's own migrations follow, here three
+done, one failed and two pending, each with the run that applied it or tried to:
+
+![The site's migrations at the end of the list: done, failed and pending, with their last run](../images/migrations/status-site-light.webp)
+
+**To check the state of an installation, step by step:**
+
+1. Open the status. Read **Overview**: **Pending** and **Failed** should be 0 after a deploy.
+2. A **failed** migration: click its last run and read the report ([When a migration fails](when-a-migration-fails.md)).
+3. **Pending** migrations: open **Dry run** to see what they would change, then **Run** them
+   ([Run, dry run and rollback](run-dry-run-and-rollback.md)).
+4. A warning such as "The file changed after it was applied." needs a decision before the next run
+   ([Run](run-dry-run-and-rollback.md#run)).
+
 When the tables of the migrations do not exist yet, the page says so: `./console exp:upgrade --apply` makes them.
 
 The page shows the same as `./console exp:migration:status`; the dark mode shows the same page:
@@ -66,6 +88,8 @@ The page shows the same as `./console exp:migration:status`; the dark mode shows
 ## The history
 
 **History** (`/migration/history`) lists the runs, newest first (at most 200).
+
+![The history: the runs with their state, start, user, captions and repository columns](../images/migrations/history-light.webp)
 
 - **Show** filters them: **All**, **running**, **done**, **failed**, **rolled back**, each with its number. The filter
   is part of the address (`/migration/history/(state)/failed`), so a filtered list can be bookmarked.
@@ -89,6 +113,14 @@ Click a run's id anywhere in Setup > Migrations to open its page, `/migration/lo
 | **Migrations of this run** | the migrations the run recorded, with their source, state and time |
 | **Run log** | the end of the run log (`migrations/runs/<run id>.log`); only the last 256 KB are shown, as set by `migration.ini [AdminSettings] LogBytes` |
 
+A run that passed: its record with the captions before and after, the migrations of the run and the run log.
+
+![The page of a run that passed: the record, the migrations of this run and the run log](../images/migrations/run-log-light.webp)
+
+A run that failed: the migration that failed, its message, the caption that was restored, and **Resume this run**.
+
+![The page of a failed run: the failed migration with its message, the restored caption and Resume this run](../images/migrations/run-log-failed-light.webp)
+
 While a run goes on, the page follows it as it goes: the progress, the bar and the log grow without a reload, and
 the page reloads itself with the report when the run has ended. Without JavaScript, **Reload** shows how far it is.
 
@@ -107,6 +139,8 @@ The dashboard of the administration has a **Migrations** block for users with `m
 - a note when migrations failed, when a run is going on (with a link to follow it) or when the installation is
   locked;
 - **All migrations**, a link to the status.
+
+![The Migrations block of the dashboard](../images/migrations/dashboard-block-light.webp)
 
 Users without the policy do not see the block. Its place and policy are settings:
 [dashboard.ini [DashboardBlock_migrations]](../../examples/ini-settings/dashboard/DashboardBlock_migrations.md).

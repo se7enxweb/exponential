@@ -284,6 +284,10 @@ Tor und die Rücknahme).
 
 **Nur eine Migration.** `--only=20261102090000_add_news_class` sendet und führt nur diese auf jeder Gegenstelle aus.
 
+**Dasselbe in der Administration.** Jeder Schritt oben hat einen Bildschirm in Setup > Migrationen, mit
+Bildschirmfotos erklärt in [Eine Gegenstelle anlegen, Schritt für Schritt](../hilfe/migrationen/eine-gegenstelle-anlegen-schritt-fuer-schritt.md)
+und [Ausliefern, Schritt für Schritt](../hilfe/migrationen/ausliefern-schritt-fuer-schritt.md).
+
 ## Fehlerbehebung
 
 | Symptom | Ursache und Abhilfe |

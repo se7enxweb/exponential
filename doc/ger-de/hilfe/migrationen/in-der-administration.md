@@ -32,8 +32,10 @@ Website-Seitenleiste.
 | Probelauf | `/migration/dryrun` | was ein Lauf ändern würde; **Simulieren** führt ihn in einer Transaktion aus, die zurückgerollt wird | [Probelauf](ausfuehren-probelauf-und-rueckgaengig.md#probelauf) |
 | Ausführen | `/migration/run` | die ausstehenden Migrationen ausführen, einzeln ausgewählt | [Ausführen](ausfuehren-probelauf-und-rueckgaengig.md#ausführen) |
 | Rücknahme | `/migration/rollback/<target>` | einen Lauf, eine Migration oder einen früheren Sicherungspunkt zurücknehmen | [Zurücknehmen](ausfuehren-probelauf-und-rueckgaengig.md#zurücknehmen) |
-| Gegenstellen | `/migration/remotes`, `/migration/remote/<id>` | die Installationen, an die diese ihre Migrationen ausliefert: der Assistent, Verbindung testen | [Gegenstellen und Deploys](gegenstellen-und-deploys.md#gegenstellen) |
-| Deploys | `/migration/deploy`, `/migration/deployment/<deploy-id>` | an Gegenstellen ausliefern, gleichzeitig oder Stufe für Stufe, jede Gegenstelle live verfolgen, der Verlauf, ein Tor, eine Rücknahme | [Gegenstellen und Deploys](gegenstellen-und-deploys.md#deploys) |
+| Aufzeichnung | `/migration/recording`, `/migration/recording/<id>` | von Hand gemachte Änderungen aufzeichnen, ein Fenster für die ganze Website, Migration erzeugen | [Änderungen aufzeichnen](aufzeichnung.md) |
+| Redaktion (Editor) | `/migration/editor`, `/migration/editor/<migration-id>` | eine YAML-Migration mit Formularen schreiben, prüfen, ansehen, speichern | [Der Migrationseditor](der-migrationseditor.md) |
+| Gegenstellen | `/migration/remotes`, `/migration/remote/<id>` | die Installationen, an die diese ihre Migrationen ausliefert: der Assistent, Verbindung testen | [Eine Gegenstelle anlegen, Schritt für Schritt](eine-gegenstelle-anlegen-schritt-fuer-schritt.md) |
+| Deploys | `/migration/deploy`, `/migration/deployment/<deploy-id>` | an Gegenstellen ausliefern, gleichzeitig oder Stufe für Stufe, jede Gegenstelle live verfolgen, der Verlauf, ein Tor, eine Rücknahme | [Ausliefern, Schritt für Schritt](ausliefern-schritt-fuer-schritt.md) |
 | Dashboard-Block | das Dashboard | ausstehend, fehlgeschlagen, verwaist, der laufende und der letzte Lauf | [Der Dashboard-Block](status-und-verlauf.md#der-dashboard-block) |
 | Website-Seitenleiste | die Seiten der Site | derselbe Stand, nur lesend | [Migrationen in der Website-Seitenleiste](expwt-panel.md) |
 
@@ -48,7 +50,7 @@ die ausstehenden der Stufen `database` und `scripts` vor den Migrationen der Sit
 | `migration/read` | den Stand, den Verlauf, die Seite eines Laufs, den Probelauf, den Dashboard-Block |
 | `migration/run` | Ausführen, Fortsetzen und das Simulieren im Probelauf |
 | `migration/rollback` | einen Lauf, eine Migration oder einen früheren Sicherungspunkt zurücknehmen |
-| `migration/edit` | vorgesehen für das Schreiben und Erzeugen von Migrationen in der Administration; in 6.0.15 nutzt sie keine Seite |
+| `migration/edit` | die Seite Aufzeichnung und Migration erzeugen, und der Migrationseditor |
 | `migration/remotes` | die Gegenstellen anlegen, ändern und entfernen, an die Deploys gehen, und ihre Verbindung testen |
 | `migration/deploy` | an Gegenstellen ausliefern, das Tor eines Deploys in Stufen freigeben, einen Deploy zurücknehmen |
 
@@ -70,10 +72,13 @@ einen neuen ab.
 
 ## Was auf der Konsole geschieht
 
-Das Schreiben und Erzeugen von Migrationen und die Einstellungen des Migrations-Repositorys gehören in 6.0.15 nicht zu
-Setup > Migrationen: Migrationen sind Dateien in `migrations/` (oder `extension/<name>/migrations/`), erzeugt mit
-`./console exp:migration:generate`, und ihre Einstellungen stehen in `settings/migration.ini`
-([Befehle](befehle.md), [Einstellungen](einstellungen.md)).
+Migrationen sind Dateien in `migrations/` (oder `extension/<name>/migrations/`). Die Administration schreibt
+YAML-Migrationen (der Editor, eine Aufzeichnung); PHP-, SQL- und INI-Migrationen, die Generatoren aus Inhalten,
+Klassen, Rollen, Sektionen, Einstellungen und Unterschieden sowie Gerüste entstehen auf der Konsole mit
+`./console exp:migration:generate` ([Migrationen erzeugen](migrationen-erzeugen.md)). Die Einstellungen stehen in
+`settings/migration.ini` ([Befehle](befehle.md), [Einstellungen](einstellungen.md)).
+
+Ein Rundgang durch jede Seite mit Bildschirmfotos: [Ein Rundgang durch Setup > Migrationen](rundgang-durch-setup-migrationen.md).
 
 ## Verwandte Seiten
 

@@ -246,6 +246,8 @@ bleibt die Zeit, zu der es endete. `--for` und `--until` gelten auch für eine S
 ## Verwandte Seiten
 
 - [Migrationen](migrationen.md), [PHP-Migrationen](migrationen-php.md), [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md)
+- In der Administration: [Ein langer Lauf in Teilen](../hilfe/migrationen/ausfuehren-probelauf-und-rueckgaengig.md#ein-langer-lauf-in-teilen),
+  [das Fenster für die ganze Website](../hilfe/migrationen/aufzeichnung.md#das-fenster-für-die-ganze-website), [Ausliefern, Schritt für Schritt](../hilfe/migrationen/ausliefern-schritt-fuer-schritt.md)
 - [exp:migration:migrate](../beispiele/befehle/expmigrationmigrate.md), [exp:migration:resume](../beispiele/befehle/expmigrationresume.md),
   [exp:migration:record:start](../beispiele/befehle/expmigrationrecordstart.md), [Der Schritttyp code_file](../beispiele/migrationsschritte/code_file.md)
 - [migration.ini](../beispiele/ini-einstellungen/migration/README.md)
