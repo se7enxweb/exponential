@@ -69208,6 +69208,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>לית פתגמא</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>מטשיא</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>חוי פושקי</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>טשי פושקי</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>פתחא</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>פתחא דכל</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>סכרא דכל</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>קלידא או טימא</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>בעי במותבא</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>גנסא</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count יתיר</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>מעיל עמיק טובא למחזיא</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>פסיק, %count אתוותא בכולה</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>שרי</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>שמא דקוקי</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID דמותבא</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>מדברנא</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>שבילא דנטרתא</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>ברירתא דPHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>זבנא דחיי (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>קוקי</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>זבנא דחיי %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>מותבא דילך דPHP, איכנא דהוא הוה כד אתפתח פלגא, לעלם לא אחרנא. טימי דקלידא דדמין לרזא (טוקנא, האשא, מלי סתרא) מטשיין (debugbar.ini SessionMask[]); כל מדעם אחרנא מתחזי איך דנטיר, אף ידיעתא דנפשא.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count קלידא, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>רבא</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>מותבא ריקנא הו.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>לא אתשרי מותבא לבעותא הדא.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>תוספתא %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>קרנל ואחרנא</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>לא כל רשומא מתחזיא: אית במותבא יתיר ממא דמשכח למכתב הכא.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count קלידא לא כתיבין.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>מסגרתא</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>טימי דדמין לטוקנא (JSON Web Token, שרירותא דרישא Authorization, קלידא דיחידא, כתבא אריכא דhex או דמזלא) אף הנון מטשיין, מה דשמא דקלידהון (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>קלידא דמי לרזא (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>טימא דמי לטוקנא.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>תחות קלידא מטשיא.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>מותבא ככתבא, מטשיא איך לוחא.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>מותבא רבא מן %size (debugbar.ini SessionWarnBytes): כל בעותא דמפלחנא הנא קרא כוליה מותבא, וכתב ליה כד אשתני.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP נטר מותבא הנא בקבצא וסכר לקבצא לכוליה בעותא: בעותא דחד מפלחנא (כמה לשוניתא, קריאתא דAJAX) מסכין חד לחד.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>שבוק פתיח</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>רבא מן %size (debugbar.ini SessionWarnBytes): כל בעותא דמפלחנא הנא קרא כוליה מותבא.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits מן %count אתקריו מן סימתא</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>לא אתעבד טופסא (חזוא דאתקרי מן סימתא דחזוא לא עבד מדעם).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>פוקדא דדורא</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>דורא ופוקדנא</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>שחלף מן סעוריא דלא שמא</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>איך סעוריא דלא שמא</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

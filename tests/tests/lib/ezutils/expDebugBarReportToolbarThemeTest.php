@@ -3,10 +3,10 @@
  * The toolbar theme of the Exp Debug bar (lib/ezutils/classes/expdebugbarreport.php, debugbar.ini
  * [DebugBarSettings] Theme=toolbar; design/standard/stylesheets/expdebugbar-toolbar.css):
  *   - themeName(): default and toolbar without regard to case, default for anything else
- *   - the default theme draws the chips as before: a title, the text alone, no request block, no popup
+ *   - the default theme draws the chips with a title and the text alone, no popup; it also starts with the request
  *   - the toolbar theme starts with the request block (status, module/view), draws each block's text and a popup with
  *     the title and its rows, escaped, hidden from assistive technology, and no title tooltip
- *   - requestInfo() and requestChip(): a status only from 100 to 599, amber from 400, red from 500
+ *   - requestInfo() and requestChip(): a status only from 100 to 599, amber for a redirect (not 304), red from 400
  *   - debugbar.ini ships Theme=default and registers the setting; the stylesheet has an icon for every key the summary
  *     draws, no external URL, and is linked only in the toolbar theme
  *   - the panels: metrics from the chips' rows in the toolbar theme only, the tabs a menu down the left side from
@@ -60,7 +60,9 @@ class expDebugBarReportToolbarThemeTest extends PHPUnit\Framework\TestCase
     public function testTheDefaultThemeIsUnchanged()
     {
         $html = self::draw( self::summary(), 'default' );
-        $this->assertStringNotContainsString( 'data-key="request"', $html, 'no request block' );
+        $this->assertStringStartsWith( '<span class="exp-debug-summary" role="group" aria-label="Page summary"><button type="button" class="exp-debug-chip" data-tab="velocity" data-key="request" data-level="ok" title="Request (normal)"', $html,
+                                       'the request comes first in every theme' );
+        $this->assertStringContainsString( '>200 content/view</button>', $html );
         $this->assertStringNotContainsString( 'exp-debug-chip-info', $html );
         $this->assertStringNotContainsString( 'exp-debug-chip-text', $html );
         $this->assertMatchesRegularExpression( '#<button type="button" class="exp-debug-chip" data-tab="timing" data-key="time" data-level="ok" title="Page time \(normal\)"[^>]*>0\.250 s</button>#', $html );
@@ -103,8 +105,15 @@ class expDebugBarReportToolbarThemeTest extends PHPUnit\Framework\TestCase
         $chip = expDebugBarReport::requestChip( $info );
         $this->assertSame( array( 'velocity', 'request', 'high', '503 content/edit' ), array_slice( $chip, 0, 4 ) );
 
-        $this->assertSame( 'warn', expDebugBarReport::requestChip( expDebugBarReport::requestInfo( 403, array() ) )[2] );
-        $this->assertSame( 'ok', expDebugBarReport::requestChip( expDebugBarReport::requestInfo( 302, array() ) )[2] );
+        $this->assertSame( 'high', expDebugBarReport::requestChip( expDebugBarReport::requestInfo( 403, array() ) )[2] );
+        $this->assertSame( 'warn', expDebugBarReport::requestChip( expDebugBarReport::requestInfo( 302, array() ) )[2] );
+        $this->assertSame( 'ok', expDebugBarReport::requestChip( expDebugBarReport::requestInfo( 204, array() ) )[2] );
+        $this->assertSame( 'ok', expDebugBarReport::requestChip( expDebugBarReport::requestInfo( 304, array() ) )[2], 'Not Modified is no redirect' );
+        $this->assertSame( 'ok', expDebugBarReport::requestChip( expDebugBarReport::requestInfo( 103, array() ) )[2] );
+        $this->assertSame( 'ok', expDebugBarReport::requestChip( expDebugBarReport::requestInfo( null, array() ) )[2], 'no status' );
+        $this->assertSame( 'rendering', expDebugBarReport::requestChip( $info, 'rendering' )[0], 'with the Rendering tab it opens that' );
+        $html = self::draw( self::summary( array( 'rendering' => array( array( 'rendering', 'viewcache', 'ok', 'View: hit', 'View cache' ) ) ) ), 'default' );
+        $this->assertStringContainsString( 'data-tab="rendering" data-key="request"', $html );
 
         $unknown = expDebugBarReport::requestInfo( false, false );
         $this->assertNull( $unknown['status'], 'false (the command line, a persistent worker) is no status' );
@@ -183,9 +192,9 @@ class expDebugBarReportToolbarThemeTest extends PHPUnit\Framework\TestCase
                                            'the switch of the panel is filled while the panel is open' );
 
         $source = file_get_contents( $this->root . '/lib/ezutils/classes/expdebugbarreport.php' );
-        // the default theme's markup and data stay as they were: no theme attribute, no request in the page's JSON
+        // the default theme has no theme attribute; the request is in the page's JSON in every theme
         $this->assertStringContainsString( "' data-exp-debug-theme=\"toolbar\"' : ''", $source );
-        $this->assertMatchesRegularExpression( "#if \( \\\$theme === 'toolbar' \)\s+\\\$summary\['request'\] = self::requestInfo\(#", $source );
+        $this->assertMatchesRegularExpression( "#\n\s+\\\$summary\['request'\] = self::requestInfo\( null, null, \\\$pageInfo \);#", $source );
         $this->assertMatchesRegularExpression( "#if \( \\\$theme === 'toolbar' \)\s+echo self::includeTag\( 'css', 'design/standard/stylesheets/expdebugbar-toolbar\.css' \);#", $source );
     }
 
@@ -201,7 +210,7 @@ class expDebugBarReportToolbarThemeTest extends PHPUnit\Framework\TestCase
             $this->assertStringStartsWith( '<h2><button type="button" class="exp-debug-logo" aria-label="Minimise debug bar" title="Minimise debug bar"><svg ', $html, $theme );
             $this->assertStringContainsString( '<a href="#debug-end" aria-controls="debug-details" aria-expanded="false">Exp Debug (By IP Address)</a><span class="exp-debug-summary"', $html, $theme );
             $this->assertStringContainsString( $theme === 'toolbar' ? '<label class="debug-keep-open" title="Keep open on reload"><input type="checkbox"> Keep open on reload</label></h2>'
-                                                                    : '<label class="debug-keep-open"><input type="checkbox"> Keep open on reload</label></h2>', $html, $theme );
+                                                                    : '<label class="debug-keep-open" title="Keep open on reload"><input type="checkbox"> Keep open</label></h2>', $html, $theme );
             $this->assertStringContainsString( '<button type="button" class="exp-debug-restore" hidden aria-label="Show debug bar (3 errors)" title="Show debug bar (3 errors)"><svg ', $html, $theme );
             $this->assertStringContainsString( '<span class="exp-debug-restore-badge" data-level="high" aria-hidden="true">3</span></button>', $html, $theme );
             $this->assertDoesNotMatchRegularExpression( '#\sstyle=#', $html, $theme );

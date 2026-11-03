@@ -69197,6 +69197,190 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>No answer</source>
         <translation>Babu amsa</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>an ɓoye</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Nuna bayani</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Ɓoye bayani</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Buɗe</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Buɗe duka</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Rufe duka</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Maɓalli ko daraja</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Nemi a cikin zaman aiki</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Nau'i</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>ƙarin %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>an saka ciki da zurfi sosai don a nuna</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>an yanke, haruffa %count gaba ɗaya</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>An fara</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Sunan kuki</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID na zaman aiki</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Mai sarrafawa</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Hanyar adanawa</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Tsohon saitin PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Tsawon rai (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kuki</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>tsawon rai %s daƙ.</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Zaman aikin PHP naka na kanka, kamar yadda yake lokacin da aka buɗe sashen, ba na wani ba sam. Ana ɓoye darajojin maɓallan da suke kama da sirri (tokens, hashes, kalmomin sirri) (debugbar.ini SessionMask[]); ana nuna duk sauran kamar yadda aka adana su, har da bayanan mutum.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>maɓallai %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>babba</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Zaman aikin babu komai a ciki.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Ba a fara wani zaman aiki ba don wannan buƙata.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ƙari %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Tushen tsarin da sauransu</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Ba a nuna kowace shigarwa ba: zaman aikin yana da fiye da abin da za a iya lissafawa a nan.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Ba a lissafa maɓallai %count ba.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Firam</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Ana kuma ɓoye darajojin da suke kama da token (JSON Web Token, bayanan shaidar kanun Authorization, maɓallin sirri, dogon rubutun hex ko na bazuwar), komai sunan maɓallinsu (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Maɓallin yana kama da sirri (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Darajar tana kama da token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>A ƙarƙashin maɓallin da aka ɓoye.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Zaman aikin a matsayin rubutu, an ɓoye shi kamar teburin.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Zaman aikin ya fi %size girma (debugbar.ini SessionWarnBytes): kowace buƙatar wannan mai amfani tana karanta dukan zaman aikin, kuma tana rubuta shi idan ya canza.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP yana ajiye wannan zaman aikin a fayiloli kuma yana kulle fayil ɗin a tsawon dukan buƙatar: buƙatun mai amfani ɗaya (shafuka da yawa, kiran AJAX) suna jiran juna.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Bar a buɗe</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Ya fi %size girma (debugbar.ini SessionWarnBytes): kowace buƙatar wannan mai amfani tana karanta dukan zaman aikin.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits cikin %count an karanta daga ma'ajiyar ɗan lokaci</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Ba a zana wani samfuri ba (dubawar da aka karanta daga ma'ajiyar dubawa ba ta zana ko ɗaya).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Ba da ayyuka</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Ayyuka da manufofi</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ya bambanta da na baƙi marasa suna</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>daidai da na baƙi marasa suna</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

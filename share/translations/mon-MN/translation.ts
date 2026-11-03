@@ -69199,6 +69199,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>Хариу алга</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>нуусан</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Тайлбар харуулах</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Тайлбар нуух</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Нээх</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Бүгдийг дэлгэх</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Бүгдийг хураах</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Түлхүүр эсвэл утга</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Сессээс хайх</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Төрөл</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>өөр %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>харуулахад хэт гүн үүрлэсэн</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>таслагдсан, нийт %count тэмдэгт</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Эхэлсэн</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Күүкийн нэр</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Сессийн ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Боловсруулагч</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Хадгалах зам</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP-ийн өгөгдмөл</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Амьдрах хугацаа (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Күүки</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>амьдрах хугацаа %s с</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Таны өөрийн PHP сесс, хэсгийг нээх үед байсан байдлаараа, хэзээ ч өөр хүнийх биш. Нууц мэт харагдах түлхүүрүүдийн утгыг (токен, хэш, нууц үг) нуусан (debugbar.ini SessionMask[]); бусад бүхнийг хадгалсан байдлаар нь, хувийн мэдээллийг ч мөн адил харуулна.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count түлхүүр, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>том</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Сесс хоосон байна.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Энэ хүсэлтэд сесс эхлүүлээгүй.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Өргөтгөл %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Цөм болон бусад</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Бүх бичлэгийг харуулаагүй: сесст энд жагсааж болохоос илүү зүйл байна.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count түлхүүрийг жагсаагаагүй.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Хүрээ</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Токен мэт харагдах утгуудыг (JSON Web Token, Authorization толгойн нэвтрэх мэдээлэл, хувийн түлхүүр, урт арван зургаатын эсвэл санамсаргүй текст) түлхүүр нь ямар ч нэртэй байсан мөн нуудаг (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Түлхүүр нь нууц мэт харагдаж байна (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Утга нь токен мэт харагдаж байна.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Нуусан түлхүүрийн доор.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Сессийг текстээр, хүснэгтийн адил нууж харуулсан.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Сесс %size-аас том байна (debugbar.ini SessionWarnBytes): энэ хэрэглэгчийн хүсэлт бүр сессийг бүхэлд нь уншиж, өөрчлөгдсөн үед бичдэг.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP энэ сессийг файлд хадгалж, хүсэлтийн туршид файлыг түгждэг: нэг хэрэглэгчийн хүсэлтүүд (хэд хэдэн таб, AJAX дуудлага) бие биенээ хүлээдэг.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Нээлттэй байлгах</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size-аас том (debugbar.ini SessionWarnBytes): энэ хэрэглэгчийн хүсэлт бүр сессийг бүхэлд нь уншдаг.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>Нийт %count, кэшээс уншсан %hits</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Ямар ч загвар зурагдаагүй (харагдацын кэшээс уншсан харагдац загвар зурдаггүй).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Үүргийн оноолтууд</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Үүрэг ба бодлогууд</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>нэргүй зочдынхоос ялгаатай</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>нэргүй зочдынхтой адил</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

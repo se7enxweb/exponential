@@ -69138,6 +69138,190 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>No answer</source>
         <translation>Vastust pole</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>maskitud</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Näita selgitusi</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Peida selgitused</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ava</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Ava kõik</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Sule kõik</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Võti või väärtus</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Otsi seansist</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tüüp</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>veel %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>liiga sügavale pesastatud, et näidata</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>kärbitud, kokku %count märki</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Alustatud</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Küpsise nimi</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Seansi ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Käsitleja</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Salvestustee</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP vaikeväärtus</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Eluiga (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Küpsis</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>eluiga %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Teie enda PHP-seanss, nagu see oli jaotise avamisel, mitte kunagi mõni teine. Saladusi meenutavate võtmete (märgid, räsid, paroolid) väärtused on maskitud (debugbar.ini SessionMask[]); kõik muu kuvatakse nii, nagu see on salvestatud, ka isikuandmed.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count võtit, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>suur</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Seanss on tühi.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Selle päringu jaoks ei alustatud seanssi.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Laiendus %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Tuum ja muud</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Kõiki kirjeid ei näidata: seansis on rohkem, kui siin saab loetleda.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count võtit pole loetletud.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Raam</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Ka märki meenutavad väärtused (JSON Web Token, Authorization-päise volitused, privaatvõti, pikk kuueteistkümnend- või juhuslik tekst) maskitakse, olenemata sellest, mis nende võtme nimi on (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Võti meenutab saladust (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Väärtus meenutab märki.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Maskitud võtme all.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Seanss tekstina, maskitud nagu tabel.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Seanss on suurem kui %size (debugbar.ini SessionWarnBytes): selle kasutaja iga päring loeb kogu seansi ja kirjutab selle, kui see muutus.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP hoiab seda seanssi failides ja lukustab faili kogu päringu ajaks: sama kasutaja päringud (mitu vahekaarti, AJAX-päringud) ootavad üksteist.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Hoia avatuna</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Suurem kui %size (debugbar.ini SessionWarnBytes): selle kasutaja iga päring loeb kogu seansi.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>Vahemälust loetud %hits / %count</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Ühtegi malli ei renderdatud (vaatevahemälust loetud vaade ei renderda ühtegi).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rollide määramised</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollid ja poliitikad</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>erineb anonüümsete külastajate omast</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sama mis anonüümsetel külastajatel</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

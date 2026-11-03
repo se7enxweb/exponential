@@ -69199,6 +69199,190 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>No answer</source>
         <translation>Gũtirĩ ũndũ ũgaruririo</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>kĩhithĩtwo</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Onania mataarĩrio</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Hitha mataarĩrio</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Hingũra</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Hingũra ciothe</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Hinga ciothe</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Kĩmenyo kana mũigana</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Caria kĩhinda-inĩ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Mũthemba</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count ingĩ</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>kĩhumbĩrĩtwo thĩinĩ mũno gũkĩonania</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>gĩtinĩtwo, ndemwa %count ciothe</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Nĩ ĩambĩrĩirie</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Rĩĩtwa rĩa kuki</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID ya kĩhinda</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Mũrũgamĩrĩri</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Njĩra ya kũiga</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Mũtugo wa PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Ũtũũro (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kuki</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ũtũũro %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Kĩhinda gĩaku kĩa PHP, o ta ũrĩa gĩatariĩ rĩrĩa gĩcunjĩ kĩahingũrirwo, gũtirĩ hĩndĩ kĩngĩ. Mĩigana ya imenyo iria ihaana ta hitho (tokeni, hashi, ciugo cia hitho) nĩ ĩhithĩtwo (debugbar.ini SessionMask[]); indo iria ingĩ ciothe nĩ ionanagio o ta ũrĩa ciaigirwo, o na ũhoro wa mũndũ kĩũmbe.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>imenyo %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>kĩnene</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Kĩhinda gĩtirĩ na kĩndũ.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Gũtirĩ kĩhinda kĩambĩrĩirio nĩ ũndũ wa ihooya rĩĩrĩ.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Kĩongerereo %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kĩĩhumo na ingĩ</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Ti maandĩko mothe monanĩtio: kĩhinda kĩrĩ na maingĩ gũkĩra marĩa mangĩandĩkwo haha.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Imenyo %count itiandĩkĩtwo.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Fremu</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Mĩigana ĩrĩa ĩhaana ta tokeni (JSON Web Token, ũhoro wa gwĩtĩkĩrĩka wa kĩongo kĩa Authorization, kĩmenyo kĩa hitho, mwandĩko mũraihu wa hex kana wa mũtukanio) o nayo nĩ ĩhithagwo, o na kĩmenyo kĩayo gĩĩtagwo atĩa (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Kĩmenyo nĩ kĩhaana ta hitho (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Mũigana nĩ ũhaana ta tokeni.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Rungu rwa kĩmenyo kĩhithĩtwo.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Kĩhinda ta mwandĩko, kĩhithĩtwo ta mũtaratara.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Kĩhinda nĩ kĩnene gũkĩra %size (debugbar.ini SessionWarnBytes): o ihooya rĩa mũhũthiri ũyũ nĩ rĩthomaga kĩhinda gĩothe, na rĩgakĩandĩka rĩrĩa gĩcenjia.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP nĩ ĩigaga kĩhinda gĩkĩ thĩinĩ wa faili na ĩkahinga faili ihinda rĩothe rĩa ihooya: mahooya ma mũhũthiri ũmwe (tab nyingĩ, mĩĩtĩo ya AJAX) nĩ meetagĩrana.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Tiga kĩhingũku</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Kĩnene gũkĩra %size (debugbar.ini SessionWarnBytes): o ihooya rĩa mũhũthiri ũyũ nĩ rĩthomaga kĩhinda gĩothe.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits kuuma %count nĩ ithomirwo kuuma kĩigĩro-inĩ</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Gũtirĩ mũhiano woimĩrĩirio (mwonekano ũthometwo kuuma kĩigĩro-inĩ kĩa mionekano ndũrehaga o na ũmwe).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Kũhe marolo</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Marolo na mawatho</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>nĩ ngũrani na ageni matarĩ na rĩĩtwa</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>no ta ageni matarĩ na rĩĩtwa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

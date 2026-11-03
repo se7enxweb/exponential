@@ -69138,6 +69138,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>Няма отговор</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>маскирано</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Показване на обясненията</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Скриване на обясненията</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Отвори</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Отвори всички</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Затвори всички</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Ключ или стойност</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Търсене в сесията</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>още %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>твърде дълбоко вложено за показване</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>съкратено, общо %count знака</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Започнато</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Име на бисквитката</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID на сесията</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Обработчик</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Път за запис</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>По подразбиране на PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Време на живот (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Бисквитка</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>време на живот %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Вашата собствена PHP сесия, каквато беше при отварянето на раздела, никога друга. Стойностите на ключове, които приличат на тайни (токени, хешове, пароли), са маскирани (debugbar.ini SessionMask[]); всичко останало се показва така, както е съхранено, включително личните данни.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count ключа, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>голяма</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Сесията е празна.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>За тази заявка не е стартирана сесия.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Разширение %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Ядро и други</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Не всички записи са показани: сесията съдържа повече, отколкото може да бъде изброено тук.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count ключа не са изброени.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Рамка</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Стойности, които приличат на токен (JSON Web Token, идентификационните данни от заглавка Authorization, частен ключ, дълъг шестнадесетичен или случаен текст), също се маскират, независимо как се казва ключът им (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Ключът прилича на тайна (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Стойността прилича на токен.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Под маскиран ключ.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Сесията като текст, маскирана като таблицата.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Сесията е по-голяма от %size (debugbar.ini SessionWarnBytes): всяка заявка на този потребител прочита цялата сесия и я записва, когато се е променила.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP съхранява тази сесия във файлове и заключва файла за цялата заявка: заявките на един и същ потребител (няколко раздела, AJAX заявки) се изчакват една друга.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Запази отворено</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>По-голяма от %size (debugbar.ini SessionWarnBytes): всяка заявка на този потребител прочита цялата сесия.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits от %count са прочетени от кеша</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Не е рендериран шаблон (изглед, прочетен от кеша на изгледите, не рендерира такъв).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Назначения на роли</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Роли и правила</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>различен от този на анонимните посетители</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>като при анонимните посетители</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69149,6 +69149,190 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>No answer</source>
         <translation>Nessuna risposta</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>mascherato</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Mostra spiegazioni</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Nascondi spiegazioni</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Apri</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Apri tutti</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Chiudi tutti</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Chiave o valore</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Cerca nella sessione</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>altri %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>annidato troppo in profondità per essere mostrato</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>troncato, %count caratteri in tutto</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Avviato</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Nome del cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID sessione</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Gestore</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Percorso di salvataggio</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Predefinito di PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Durata (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>durata %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>La tua sessione PHP, com'era quando la sezione è stata aperta, mai quella di un altro. I valori delle chiavi che sembrano segreti (token, hash, password) sono mascherati (debugbar.ini SessionMask[]); tutto il resto è mostrato così come è memorizzato, anche i dati personali.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count chiavi, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>grande</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>La sessione è vuota.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Per questa richiesta non è stata avviata alcuna sessione.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Estensione %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel e altri</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Non tutte le voci sono mostrate: la sessione contiene più di quanto si possa elencare qui.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count chiavi non sono elencate.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Contesto</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Anche i valori che sembrano un token (un JSON Web Token, le credenziali di un'intestazione Authorization, una chiave privata, un lungo testo esadecimale o casuale) sono mascherati, qualunque sia il nome della loro chiave (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>La chiave sembra un segreto (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Il valore sembra un token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Sotto una chiave mascherata.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>La sessione come testo, mascherata come la tabella.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>La sessione è più grande di %size (debugbar.ini SessionWarnBytes): ogni richiesta di questo utente legge l'intera sessione e la scrive quando è cambiata.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP conserva questa sessione in file e blocca il file per tutta la richiesta: le richieste dello stesso utente (più schede, chiamate AJAX) si attendono a vicenda.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Mantieni aperto</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Più grande di %size (debugbar.ini SessionWarnBytes): ogni richiesta di questo utente legge l'intera sessione.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits di %count letti dalla cache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Nessun template è stato renderizzato (una vista letta dalla cache delle viste non ne renderizza nessuno).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Assegnazioni di ruolo</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Ruoli e politiche di accesso</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>diverso da quello dei visitatori anonimi</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>uguale a quello dei visitatori anonimi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

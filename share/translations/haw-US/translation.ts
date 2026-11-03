@@ -69199,6 +69199,190 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>No answer</source>
         <translation>ʻAʻohe pane</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>hūnā ʻia</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Hōʻike i nā wehewehe</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Hūnā i nā wehewehe</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Wehe</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Wehe i nā mea a pau</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Pani i nā mea a pau</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Kī a waiwai paha</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Huli i ka hālāwai</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ʻAno</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count hou aku</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>pili hohonu loa, ʻaʻole hiki ke hōʻike</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>ʻoki ʻia, %count hua i ka huina</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Ua hoʻomaka</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Inoa kuki</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID hālāwai</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Mea lawelawe</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Ala mālama</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Kumu paʻamau PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Wā ola (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kuki</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>wā ola %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>ʻO kāu hālāwai PHP ponoʻī, e like me ia i ka wā i wehe ʻia ai ka māhele, ʻaʻole loa he hālāwai ʻē aʻe. Hūnā ʻia nā waiwai o nā kī e like me nā mea huna (nā hōʻailona, nā hash, nā ʻōlelo huna) (debugbar.ini SessionMask[]); hōʻike ʻia nā mea ʻē aʻe a pau e like me ka mālama ʻia ʻana, me nā ʻikepili pilikino pū.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count kī, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>nui</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Hakahaka ka hālāwai.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>ʻAʻohe hālāwai i hoʻomaka ʻia no kēia noi.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Pākuʻi %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kumu nui a me nā mea ʻē aʻe</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>ʻAʻole hōʻike ʻia nā komo a pau: ʻoi aku ka nui o ka hālāwai ma mua o ka mea hiki ke helu ʻia ma ʻaneʻi.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>ʻAʻole i helu ʻia nā kī %count.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Kahua</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Hūnā pū ʻia nā waiwai e like me ka hōʻailona (he JSON Web Token, nā hōʻoia o ke poʻo Authorization, he kī pilikino, he kikokikona hex a kaulike ʻole paha lōʻihi), ʻaʻohe pilikia i ka inoa o ko lākou kī (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Ua like ke kī me ka mea huna (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Ua like ka waiwai me ka hōʻailona.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Ma lalo o kekahi kī i hūnā ʻia.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>ʻO ka hālāwai ma ke ʻano he kikokikona, hūnā ʻia e like me ka papa.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>ʻOi aku ka nui o ka hālāwai ma mua o %size (debugbar.ini SessionWarnBytes): heluhelu kēlā me kēia noi a kēia mea hoʻohana i ka hālāwai holoʻokoʻa, a kākau iā ia ke loli.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>Mālama ʻo PHP i kēia hālāwai i loko o nā faila a laka i ka faila no ka noi holoʻokoʻa: kali nā noi a ka mea hoʻohana hoʻokahi (kekahi mau ʻaoʻao, nā kāhea AJAX) kekahi i kekahi.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Waiho hāmama</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>ʻOi aku ma mua o %size (debugbar.ini SessionWarnBytes): heluhelu kēlā me kēia noi a kēia mea hoʻohana i ka hālāwai holoʻokoʻa.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits o %count i heluhelu ʻia mai ke ahu</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>ʻAʻohe anakuhi i hōʻike ʻia (ʻaʻole hōʻike kekahi ʻike i heluhelu ʻia mai ke ahu ʻike i kekahi).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Nā hāʻawi kuleana</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Nā kuleana a me nā kulekele</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ʻokoʻa mai nā malihini inoa ʻole</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>like me nā malihini inoa ʻole</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

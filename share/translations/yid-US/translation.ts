@@ -69199,6 +69199,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>קיין ענטפֿער</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>פֿאַרמאַסקירט</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>ווײַזן דערקלערונגען</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>באַהאַלטן דערקלערונגען</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>עפֿענען</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>עפֿענען אַלע</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>פֿאַרמאַכן אַלע</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>שליסל אָדער ווערט</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>זוכן אין דער סעסיע</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>טיפּ</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>נאָך %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>צו טיף אײַנגעשאַכטלט צו ווײַזן</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>אָפּגעשניטן, %count צייכנס אין גאַנצן</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>אָנגעהויבן</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>קיכל־נאָמען</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>סעסיע־ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>באַהאַנדלער</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>שפּייכלער־וועג</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP־סטאַנדאַרט</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>לעבנסצײַט (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>קיכל</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>לעבנסצײַט %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>אײַער אייגענע PHP־סעסיע, אַזוי ווי זי איז געווען ווען דער אָפּטייל איז געעפֿנט געוואָרן, קיינמאָל נישט קיין אַנדערע. ווערטן פֿון שליסלען וואָס זעען אויס ווי סודות (טאָקענס, האַשן, פּאַראָלן) ווערן פֿאַרמאַסקירט (debugbar.ini SessionMask[]); אַלץ אַנדערש ווערט געוויזן ווי עס איז געשפּייכלט, פּערזענלעכע דאַטן אויך.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count שליסלען, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>גרויס</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>די סעסיע איז ליידיק.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>קיין סעסיע איז נישט אָנגעהויבן געוואָרן פֿאַר דער בקשה.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>פֿאַרברייטערונג %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>קערן און אַנדערע</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>נישט יעדער אַרײַנטראָג ווערט געוויזן: די סעסיע האָט מער ווי מע קען דאָ אויסרעכענען.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count שליסלען זענען נישט אויסגערעכנט.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>ראַם</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>ווערטן וואָס זעען אויס ווי אַ טאָקען (אַ JSON Web Token, די באַגלייביקונגען פֿון אַן Authorization־קאָפּ, אַ פּריוואַטער שליסל, אַ לאַנגער העקס־ אָדער צופֿעליקער טעקסט) ווערן אויך פֿאַרמאַסקירט, ווי אַזוי זייער שליסל זאָל נישט הייסן (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>דער שליסל זעט אויס ווי אַ סוד (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>דער ווערט זעט אויס ווי אַ טאָקען.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>אונטער אַ פֿאַרמאַסקירטן שליסל.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>די סעסיע ווי טעקסט, פֿאַרמאַסקירט ווי די טאַבעלע.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>די סעסיע איז גרעסער ווי %size (debugbar.ini SessionWarnBytes): יעדע בקשה פֿון דעם באַניצער לייענט די גאַנצע סעסיע, און שרײַבט זי ווען זי האָט זיך געביטן.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP האַלט די סעסיע אין טעקעס און פֿאַרשליסט די טעקע פֿאַר דער גאַנצער בקשה: בקשות פֿון דעם זעלבן באַניצער (עטלעכע טאַבן, AJAX־רופֿן) וואַרטן איינע אויף דער אַנדערער.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>האַלטן אָפֿן</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>גרעסער ווי %size (debugbar.ini SessionWarnBytes): יעדע בקשה פֿון דעם באַניצער לייענט די גאַנצע סעסיע.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits פֿון %count געלייענט פֿונעם קאַש</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>קיין מוסטער איז נישט רענדערט געוואָרן (אַן אָנבליק געלייענט פֿונעם אָנבליק־קאַש רענדערט קיינעם נישט).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ראָלע־צוטיילונגען</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>ראָלעס און פּאָליטיקן</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>אַנדערש ווי ביי אַנאָנימע באַזוכער</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ווי ביי אַנאָנימע באַזוכער</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

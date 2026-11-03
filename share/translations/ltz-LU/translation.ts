@@ -69199,6 +69199,190 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>No answer</source>
         <translation>Keng Äntwert</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>maskéiert</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Erklärunge weisen</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Erklärunge verstoppen</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Opmaachen</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>All opmaachen</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>All zoumaachen</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Schlëssel oder Wäert</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>An der Sessioun sichen</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>nach %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ze déif verschachtelt fir ze weisen</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>ofgeschnidden, %count Zeechen am Ganzen</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Gestart</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Cookie-Numm</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Sessiouns-ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Handler</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Späicherpfad</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP-Standard</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Liewensdauer (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>Liewensdauer %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Är eege PHP-Sessioun, sou wéi se war, wéi d'Sektioun opgemaach gouf, ni eng aner. Wäerter vu Schlësselen, déi wéi Geheimnisser ausgesinn (Tokens, Hashes, Passwierder), gi maskéiert (debugbar.ini SessionMask[]); alles anescht gëtt gewisen, wéi et gespäichert ass, och perséinlech Daten.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count Schlësselen, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>grouss</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>D'Sessioun ass eidel.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Fir dës Ufro gouf keng Sessioun gestart.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensioun %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel an anerer</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Net all Entrée gëtt gewisen: d'Sessioun huet méi, wéi hei opgelëscht ka ginn.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count Schlësselen sinn net opgelëscht.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Rumm</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Wäerter, déi wéi en Token ausgesinn (e JSON Web Token, d'Umeldungsdate vun engem Authorization-Header, e private Schlëssel, e laangen Hex- oder Zoufallstext), ginn och maskéiert, egal wéi hire Schlëssel heescht (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>De Schlëssel gesäit aus wéi e Geheimnis (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>De Wäert gesäit aus wéi en Token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Ënner engem maskéierte Schlëssel.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>D'Sessioun als Text, maskéiert wéi d'Tabell.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>D'Sessioun ass méi grouss wéi %size (debugbar.ini SessionWarnBytes): all Ufro vun dësem Benotzer liest déi ganz Sessioun a schreift se, wann se geännert huet.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP hält dës Sessioun a Fichieren a spärt de Fichier fir déi ganz Ufro: Ufroe vum selwechte Benotzer (e puer Tabs, AJAX-Opruffer) waarden openeen.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Op loossen</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Méi grouss wéi %size (debugbar.ini SessionWarnBytes): all Ufro vun dësem Benotzer liest déi ganz Sessioun.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits vun %count aus dem Cache gelies</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Keng Schabloun gouf gerendert (eng Vue, déi aus dem Vue-Cache gelies gëtt, rendert keng).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rollenzouweisungen</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollen a Richtlinnen</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>anescht wéi bei anonyme Visiteuren</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>wéi bei anonyme Visiteuren</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

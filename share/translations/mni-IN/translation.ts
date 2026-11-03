@@ -69199,6 +69199,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>হায়বা অমত্তা লৈদে।</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>মাস্ক তৌরবা</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>খঙদোকপশিং উৎপা</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>খঙদোকপশিং থুপ্পা</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ফোংবা</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>খুদিংমক ফোংবা</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>খুদিংমক শেম্বা</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>কী নত্রগা মান</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>সেসনদা থিবা</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>মরীক</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>অতোপ্পা %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>উৎনবা য়াদবা মরম্না য়াম্না অরুবা নেস্ট তৌরি</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>কাক্লে, পুম্নমক %count অক্ষর</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>শুরু তৌরে</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>কুকীগী মমিং</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>সেসন ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>হ্যান্ডলর</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>সেভ তৌবগী লম্বী</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP দিফোল্ট</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>হিংবগী মতম (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>কুকী</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>হিংবগী মতম %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>নহাক্কী মশাগী PHP সেসন, সেক্সন অসি হাংদোকপা মতমদা লৈরম্বা অদুগুম্বা, অতোপ্পা অমা কদাইদসু নত্তে। অরুপ্পা ওইবা মওং দৌবা কীশিংগী (তোকেন, হেস, পাসৱার্দ) মানশিং মাস্ক তৌই (debugbar.ini SessionMask[]); অতোপ্পা পুম্নমক থম্লবা অদুগুম্না উৎই, মশাগী দেতা ফাওবা।</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>কী %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>অচৌবা</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>সেসন অসি অহাংবা ওই।</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>রিক্বেস্ত অসিগীদমক সেসন অমত্তা হৌদোকখিদে।</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>এক্সটেন্সন %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>কর্নেল অমসুং অতোপ্পশিং</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>এন্ট্রি খুদিংমক উৎতে: সেসনদা মফম অসিদা লিস্ত তৌবা য়াবদগী হেন্না লৈ।</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>কী %count লিস্ত তৌদ্রি।</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>ফ্রেম</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>তোকেন্গুম্বা মওং দৌবা মানশিং (JSON Web Token, Authorization হেদরগী ক্রেদেন্সিয়েলশিং, প্রাইভেত কী, অসাংবা হেক্স নত্রগা রেন্দম তেক্সত) মখোয়গী কীগী মমিং করিগুম্বা ওইরবসু মাস্ক তৌই (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>কী অসি অরুপ্পা অমগুম্না উৎই (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>মান অসি তোকেন অমগুম্না উৎই।</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>মাস্ক তৌরবা কী অমগী মখাদা।</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>তেক্সত ওইনা সেসন, তেবলগুম্না মাস্ক তৌরবা।</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>সেসন অসি %size দগী চাউই (debugbar.ini SessionWarnBytes): ইউজর অসিগী রিক্বেস্ত খুদিংমকনা সেসন পুম্নমক পাই, অমসুং অদু হোংলবা মতমদা ইই।</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP না সেসন অসি ফাইলশিংদা থম্মি অমসুং রিক্বেস্ত পুম্নমক্কীদমক ফাইল অদু লক তৌই: ইউজর অমত্তগী রিক্বেস্তশিং (তেব কয়া, AJAX কোল) অমনা অমবু ঙাই।</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>হাংদোক্লগা থম্মু</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size দগী চাউই (debugbar.ini SessionWarnBytes): ইউজর অসিগী রিক্বেস্ত খুদিংমকনা সেসন পুম্নমক পাই।</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count গীদমক %hits কেশদগী পাংলে</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>টেম্প্লেট অমত্তা রেন্দর তৌদ্রে (ভিউ কেশদগী পাখিবা ভিউ অমনা অমত্তা রেন্দর তৌদে)।</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ভূমিকা অসাইনমেন্টশিং</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>ভূমিকা অদুগা পলিসিশিং</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>মমিং লৈতবা লাকপশিংদগী তোঙানবা</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>মমিং লৈতবা লাকপশিংগা মান্নবা</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

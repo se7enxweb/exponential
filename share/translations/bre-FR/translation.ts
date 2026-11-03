@@ -69199,6 +69199,190 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>No answer</source>
         <translation>Respont ebet</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>kuzhet</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Diskouez an displegadennoù</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Kuzhat an displegadennoù</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Digeriñ</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Digeriñ pep tra</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Serriñ pep tra</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Alc'hwez pe dalvoud</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Klask en dalc'h</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Rizh</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count all</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>re zoun enframmet evit bezañ diskouezet</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>troc'het, %count arouezenn en holl</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Loc'het</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Anv an toupin</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID an dalc'h</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Dornataer</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Hent enrollañ</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Dre ziouer PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Padelezh (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Toupin</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>padelezh %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Ho talc'h PHP deoc'h, evel ma oa pa voe digoret ar rann, morse hini unan all. Talvoudoù an alc'hwezioù a seblant bezañ sekredoù (tokenoù, hashoù, gerioù-tremen) a vez kuzhet (debugbar.ini SessionMask[]); kement tra all a vez diskouezet evel m'eo enrollet, ar roadennoù personel ivez.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count alc'hwez, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>bras</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Goullo eo an dalc'h.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>N'eus bet loc'het dalc'h ebet evit ar reked-mañ.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Astenn %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kalon ha re all</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>N'eo ket diskouezet an holl enmontoù: muioc'h a zo en dalc'h eget ar pezh a c'haller listennañ amañ.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count alc'hwez n'int ket listennet.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Framm</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>An talvoudoù a seblant bezañ un token (ur JSON Web Token, titouroù-anaout un talbenn Authorization, un alc'hwez prevez, un destenn hex hir pe dargouezhek) a vez kuzhet ivez, forzh petra eo anv o alc'hwez (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Seblantout a ra an alc'hwez bezañ ur sekred (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Seblantout a ra an talvoud bezañ un token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Dindan un alc'hwez kuzhet.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>An dalc'h evel testenn, kuzhet evel an daolenn.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Brasoc'h eo an dalc'h eget %size (debugbar.ini SessionWarnBytes): pep reked eus an implijer-mañ a lenn an dalc'h a-bezh, hag e skriv anezhañ pa'z eo bet cheñchet.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP a vir an dalc'h-mañ e restroù hag a jaoj ar restr e-pad ar reked a-bezh: rekedoù an hevelep implijer (meur a ivinell, galvoù AJAX) a c'hortoz an eil egile.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Mirout digor</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Brasoc'h eget %size (debugbar.ini SessionWarnBytes): pep reked eus an implijer-mañ a lenn an dalc'h a-bezh.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits diwar %count lennet eus ar grubuilh</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>N'eus bet sevenet patrom ebet (ur gwel lennet eus krubuilh ar gwelioù na seven hini ebet).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Lakadurioù roll</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rolloù ha reolennoù</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>disheñvel diouzh ar weladennerien dizanv</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>heñvel ouzh ar weladennerien dizanv</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

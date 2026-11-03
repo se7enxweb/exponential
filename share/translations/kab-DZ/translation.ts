@@ -69199,6 +69199,190 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>No answer</source>
         <translation>Ulac tiririt</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>yettwaffer</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Sken isegza</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Ffer isegza</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ldi</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Ldi akk</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Mdel akk</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Tasarut neɣ azal</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Nadi deg tɣimit</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Anaw</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count nniḍen</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>deg telqey meqqer aṭas i uskan</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>yettwagzem, %count n yisekkilen akk</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Yebda</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Isem n unagi</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Asulay n tɣimit</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Amsefrak</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Abrid n usekles</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Amezwer n PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Tudert (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Anagi</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>tudert %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Tiɣimit-ik·im n PHP s timmad-is, akken tella mi yettwaldi uḥric, maci tin n wayeḍ akk. Azalen n tsura i yemcabin ɣer tbaḍniwin (ijetunen, hash, awalen uffiren) ttwaffren (debugbar.ini SessionMask[]); ayen nniḍen akk yettwaskan akken yettwasekles, ula d isefka udmawanen.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count n tsura, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>meqqret</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Tiɣimit d tilemt.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Ulac tiɣimit i yebdan i tuttra-a.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Asiɣzef %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Aẓar d wiyaḍ</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Mačči akk inekcamen i d-yettwaskanen: tiɣimit tesɛa ugar n wayen yezmren ad yettwabder dagi.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count n tsura ur ttwabedrent ara.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Agrir</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Azalen i yemcabin ɣer ujetun (JSON Web Token, inezmaz n uqerru Authorization, tasarut tusligt, aḍris aɣezfan n hex neɣ agacuran) ula d nutni ttwaffren, ur yeɛni d acu i d isem n tsarut-nsen (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Tasarut temcabi ɣer tbaḍnit (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Azal yemcabi ɣer ujetun.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Ddaw n tsarut yettwaffren.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Tiɣimit d aḍris, tettwaffer am wfelwi.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Tiɣimit tugar %size (debugbar.ini SessionWarnBytes): yal tuttra n useqdac-a teqqar tiɣimit akk, tettaru-tt mi ara tbeddel.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP yesekles tiɣimit-a deg yifuyla yerna isekkeṛ afaylu deg tuttra akk: tuttriwin n yiwen useqdac (aṭas n yiccaren, isawalen AJAX) ttraǧunt tiyyaḍ.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Eǧǧ-it yeldi</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Tugar %size (debugbar.ini SessionWarnBytes): yal tuttra n useqdac-a teqqar tiɣimit akk.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits seg %count ttwaɣran seg tazarkatut</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Ulac tamudemt i yettwasekren (askan yettwaɣren seg tazarkatut n yiskanen ur yesseker ula yiwet).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Isumar n tlemmas</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Timlilin d tsertiyin</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>yemgarad ɣef yinebgawen udrigen</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>am yinebgawen udrigen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -67688,6 +67688,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>Немає відповіді</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>приховано</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Показати пояснення</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Приховати пояснення</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Відкрити</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Розгорнути все</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Згорнути все</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Ключ або значення</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Пошук у сеансі</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>ще %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>вкладено надто глибоко для показу</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>обрізано, усього символів: %count</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Почато</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Ім'я cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID сеансу</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Обробник</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Шлях збереження</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Типово для PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Час життя (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Файл cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>час життя %s с</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Ваш власний сеанс PHP у тому вигляді, в якому він був під час відкриття розділу, і ніколи не чужий. Значення ключів, схожих на секрети (токени, хеші, паролі), приховано (debugbar.ini SessionMask[]); усе інше показано так, як збережено, зокрема персональні дані.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>Ключів: %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>великий</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Сеанс порожній.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Для цього запиту сеанс не було запущено.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Розширення %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Ядро та інше</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Показано не всі записи: у сеансі більше, ніж можна тут перелічити.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Не перелічено ключів: %count.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Оточення</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Значення, схожі на токен (JSON Web Token, облікові дані заголовка Authorization, закритий ключ, довгий шістнадцятковий або випадковий текст), також приховуються, хоч як би називався їхній ключ (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Ключ схожий на секрет (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Значення схоже на токен.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Під прихованим ключем.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Сеанс у вигляді тексту, прихований так само, як у таблиці.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Сеанс більший за %size (debugbar.ini SessionWarnBytes): кожен запит цього користувача читає весь сеанс і записує його, якщо він змінився.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP зберігає цей сеанс у файлах і блокує файл на час усього запиту: запити одного й того самого користувача (кілька вкладок, виклики AJAX) чекають один на одного.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Залишати відкритим</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Більший за %size (debugbar.ini SessionWarnBytes): кожен запит цього користувача читає весь сеанс.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits з %count прочитано з кешу</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Жодного шаблону не відтворено (подання, прочитане з кешу подань, не відтворює жодного).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Призначення ролей</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Ролі та політики</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>відрізняється від анонімних відвідувачів</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>як у анонімних відвідувачів</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

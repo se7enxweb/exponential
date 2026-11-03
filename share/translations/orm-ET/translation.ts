@@ -69199,6 +69199,190 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>No answer</source>
         <translation>Deebiin hin jiru</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>dhokfame</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Ibsawwan agarsiisi</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Ibsawwan dhoksi</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Bani</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Hunda bani</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Hunda cufi</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Furtuu ykn gatii</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Sashaa keessa barbaadi</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Gosa</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count dabalataa</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>agarsiisuuf baay'ee gadi fagaatee keessa jira</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>kutame, walumaagalatti qubeewwan %count</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Jalqabame</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Maqaa kuukii</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID sashaa</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Hojjechiisaa</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Karaa kuusaa</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Durtii PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Turtii jireenyaa (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kuukii</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>turtii %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Sashaa PHP kee ofii kee, akkuma yeroo kutaan banametti ture, kan nama biraa gonkumaa miti. Gatiiwwan furtuuwwan iccitii fakkaatanii (tookenoota, hash, jecha icciitii) ni dhokfamu (debugbar.ini SessionMask[]); kan hafe hundi akkuma kuufametti agarsiifama, daataa dhuunfaa illee.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>furtuuwwan %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>guddaa</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Sashaan duwwaa dha.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Gaaffii kanaaf sashaan tokkollee hin jalqabamne.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Dabalata %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel fi kan biroo</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Galmeewwan hundi hin agarsiifamne: sashaan kan as tarreeffamuu danda'u caalaa qaba.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Furtuuwwan %count hin tarreeffamne.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Caasaa</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Gatiiwwan tookena fakkaatan (JSON Web Token, ragaa eenyummaa mataduree Authorization, furtuu dhuunfaa, barreeffama hex dheeraa ykn kan akkasumaan) maqaan furtuu isaanii maal iyyuu yoo ta'e ni dhokfamu (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Furtuun iccitii fakkaata (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Gatiin tookena fakkaata.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Furtuu dhokfame jala.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Sashaa akka barreeffamaatti, akka gabateetti dhokfame.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Sashaan %size caala (debugbar.ini SessionWarnBytes): gaaffiin fayyadamaa kanaa hundi sashaa guutuu dubbisa, yeroo jijjiirames ni barreessa.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP sashaa kana faayiloota keessatti kuusa, gaaffii guutuu keessatti faayilicha ni cufa: gaaffiiwwan fayyadamaa tokkoo (taabiiwwan hedduu, waamicha AJAX) wal eegu.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Banaa tursi</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size caala (debugbar.ini SessionWarnBytes): gaaffiin fayyadamaa kanaa hundi sashaa guutuu dubbisa.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count keessaa %hits kuusaa irraa dubbifaman</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Unkaan tokkollee hin dhiyaanne (mul'anni kuusaa mul'ataa irraa dubbifame unka tokkollee hin dhiyeessu).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Ramaddiiwwan gahee</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Gahee-wwan fi imaammatawwan</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>daawwattoota maqaa hin qabne irraa adda</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>akkuma daawwattoota maqaa hin qabne</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

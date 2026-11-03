@@ -6,7 +6,8 @@
  *   - the module views in their order, the view class matched to its script, at most MAX_VIEWS of them
  *   - the content view cache: off with its reason, hit with age and size, expired then generated, uncached
  *   - eZNodeviewfunctions::contentViewRetrieve() notes a hit and a no_cache file
- *   - the tab: values escaped, long values cut with the whole value as tooltip, keys of listeners marked, the chips
+ *   - the tab: an overview and the parts as sub-tabs; values escaped, long values cut with the whole value as tooltip,
+ *     keys of listeners marked, the chips
  *
  * No database.
  *
@@ -260,6 +261,15 @@ class expRenderStatsTest extends PHPUnit\Framework\TestCase
 
         $this->assertMatchesRegularExpression( '#<table class="exp-debug-facts exp-debug-viewcache">.*<tr data-state="hit"><td>node 2, full</td>#s', $html,
                                                'one row like the cache blocks' );
+
+        // an overview, then the parts as sub-tabs, each with its panel
+        $this->assertMatchesRegularExpression( '#^<dl class="exp-debug-overview exp-debug-render-overview">.*<dt>Content view cache</dt><dd><span class="exp-debug-badge" data-level="ok" title="Read from the cache">hit</span></dd>#s', $html );
+        foreach ( array( 'controller', 'tree', 'viewcache', 'blocks', 'templates' ) as $sub )
+        {
+            $this->assertStringContainsString( 'data-subtab="' . $sub . '"', $html, 'sub-tab ' . $sub );
+            $this->assertStringContainsString( '<section class="exp-debug-subpanel" id="exp-debug-rendering-' . $sub . '"', $html, 'its panel' );
+        }
+        $this->assertSame( substr_count( $html, '<section' ), substr_count( $html, '</section>' ), 'every panel closed' );
 
         $off = expDebugBarReport::renderingHtml( $this->rendering( array( 'state' => 'off', 'reason' => 'site.ini [ContentSettings] ViewCaching is disabled' ) ) );
         $this->assertStringContainsString( 'Not used (site.ini [ContentSettings] ViewCaching is disabled)', $off );

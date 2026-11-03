@@ -69199,6 +69199,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>کانٛہہ جواب چھُ نہٕ</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>ژھپاونہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>وضاحتہٕ ہاوِو</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>وضاحتہٕ ژھپاوِو</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>کھولِو</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>سٲرِنی کھولِو</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>سٲرِنی بَنٛد کٔرِو</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>کی یا قیمَت</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>سیشنَس منز ژھارِو</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>قِسِم</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count بییہِ</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ہاونہٕ خاطرٕ واریاہ گہرٕ نیسٹ کرنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>کٹنہٕ آمُت، کُل %count حرف</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>شُروٗع گَیُو</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>کوکی ہُنْد ناو</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>سیشَن ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>ہینڈلر</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>محفوظ کرنُک راستہٕ</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP ڈیفالٹ</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>زندگی ہُنْد وقفہٕ (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>کوکی</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>زندگی ہُنْد وقفہٕ %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>توہۍ سُنْد پنُن PHP سیشَن، یِتھ پٲٹھۍ سُہ سیکشن کھولنہٕ وقتہٕ اوس، کُنہِ تہِ صورتس منز بیاکھ نہٕ۔ راز ہِیہِ باسن وٲلۍ کیز ہٕنٛز (ٹوکن، ہیش، پاس ورڈ) قیمتھ چھِ ژھپاونہٕ یِوان (debugbar.ini SessionMask[])؛ باقی سورُے چھُ یِتھ پٲٹھۍ محفوظ کرنہٕ آمُت تِتھ پٲٹھۍ ہاونہٕ یِوان، ذٲتی ڈیٹا تہِ۔</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count کیز، %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>بوڑ</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>سیشَن چھُ خٲلی۔</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>یَتھ درخواستہِ خاطرٕ آو نہٕ کانٛہہ سیشَن شروٗع کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ایکسٹینشَن %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>کرنل تہٕ باقی</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>پرٛتھ اندراج چھُ نہٕ ہاونہٕ یِوان: سیشنَس منز چھُ یَتہِ لِسٹ کرنہٕ کھوتہٕ زیادٕ۔</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count کیز چھِ نہٕ لِسٹ کرنہٕ آمتۍ۔</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>فریم</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>ٹوکن ہِیہِ باسن وٲلۍ قیمتھ (JSON Web Token، Authorization ہیڈرُک کریڈینشل، پرایویٹ کی، زیٖٹھ ہیکس یا رینڈم مَتن) تہِ چھِ ژھپاونہٕ یِوان، تِہنٛدِ کی ہُنْد ناو یُس تہِ آسِ (debugbar.ini SessionValueMask[])۔</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>کی چھےٚ راز ہِش باسان (debugbar.ini SessionMask[])۔</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>قیمَت چھےٚ ٹوکن ہِش باسان۔</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>ژھپاونہٕ آمژِ کی ہِنٛدِ تَل۔</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>مَتنٕکۍ صورتس منز سیشَن، ٹیبلہٕ ہِیُو ژھپاونہٕ آمُت۔</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>سیشَن چھُ %size کھوتہٕ بوڑ (debugbar.ini SessionWarnBytes): یَتھ صارفٕچ پرٛتھ درخواست چھےٚ پوٗرٕ سیشَن پرَان، تہٕ بدلنہٕ پیٹھ چھےٚ تَتھ لیکھان۔</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP چھُ یہِ سیشَن فائلن منز تھاوان تہٕ پوٗرٕ درخواستہِ خاطرٕ فائل لاک کران: اکہِ صارفٕچ درخواستہٕ (واریاہ ٹیب، AJAX کال) چھےٚ اکھ أکِس پراران۔</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>کھوٚلمُت تھاوِو</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size کھوتہٕ بوڑ (debugbar.ini SessionWarnBytes): یَتھ صارفٕچ پرٛتھ درخواست چھےٚ پوٗرٕ سیشَن پرَان۔</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count منز %hits کیشَن پَرنہٕ آمتۍ</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>کانٛہہ ٹیمپلیٹ آو نہٕ رینڈر کرنہٕ (ویو کیشہٕ پٮ۪ٹھٕ پرنہٕ آمُت ویو چھُ نہٕ کانٛہہ رینڈر کران)۔</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>کردار تَفویٖض</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>کردار تہٕ پالیسی</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>گُمنام آنہٕ وٲلین نِشہٕ بیٛون</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>گُمنام آنہٕ وٲلین ہِیوٗے</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

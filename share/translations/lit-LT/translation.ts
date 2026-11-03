@@ -69138,6 +69138,190 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>No answer</source>
         <translation>Nėra atsakymo</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>užmaskuota</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Rodyti paaiškinimus</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Slėpti paaiškinimus</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Atidaryti</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Atidaryti visus</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Uždaryti visus</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Raktas arba reikšmė</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Ieškoti seanse</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipas</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>dar %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>per giliai įdėta, kad būtų rodoma</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>sutrumpinta, iš viso %count simbolių</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Pradėta</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Slapuko pavadinimas</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Seanso ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Doroklė</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Įrašymo kelias</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP numatytoji reikšmė</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Galiojimo trukmė (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Slapukas</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>galiojimo trukmė %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Jūsų paties PHP seansas, toks, koks buvo atidarant skyrių, niekada ne kito. Raktų, panašių į paslaptis (žetonai, maišos, slaptažodžiai), reikšmės užmaskuojamos (debugbar.ini SessionMask[]); visa kita rodoma taip, kaip saugoma, taip pat ir asmens duomenys.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count raktų, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>didelis</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Seansas tuščias.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Šiai užklausai seansas nebuvo pradėtas.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Plėtinys %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Branduolys ir kiti</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Rodomi ne visi įrašai: seanse yra daugiau, nei galima čia išvardyti.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count raktų neišvardyta.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Rėmas</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Reikšmės, panašios į žetoną (JSON Web Token, Authorization antraštės kredencialai, privatusis raktas, ilgas šešioliktainis ar atsitiktinis tekstas), taip pat užmaskuojamos, kad ir kaip vadintųsi jų raktas (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Raktas panašus į paslaptį (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Reikšmė panaši į žetoną.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Po užmaskuotu raktu.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Seansas kaip tekstas, užmaskuotas kaip lentelė.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Seansas didesnis nei %size (debugbar.ini SessionWarnBytes): kiekviena šio naudotojo užklausa nuskaito visą seansą ir jį įrašo, kai jis pasikeitė.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP laiko šį seansą failuose ir užrakina failą visai užklausai: to paties naudotojo užklausos (kelios kortelės, AJAX iškvietos) laukia viena kitos.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Laikyti atidarytą</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Didesnis nei %size (debugbar.ini SessionWarnBytes): kiekviena šio naudotojo užklausa nuskaito visą seansą.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits iš %count nuskaityta iš talpyklos</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Nebuvo atvaizduotas joks šablonas (rodinys, nuskaitytas iš rodinių talpyklos, jokio neatvaizduoja).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Vaidmenų priskyrimai</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rolės ir politikos</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>skiriasi nuo anoniminių lankytojų</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>toks pat kaip anoniminių lankytojų</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

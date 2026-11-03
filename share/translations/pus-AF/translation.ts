@@ -67747,6 +67747,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>هیڅ ځواب نشته</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>پټ شوی</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>تشریحات ښکاره کړئ</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>تشریحات پټ کړئ</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>پرانیستل</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>ټول پرانیستل</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>ټول تړل</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>کیلي یا ارزښت</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>په ناسته کې لټون</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ډول</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>نور %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>د ښودلو لپاره ډېر ژور ځای پر ځای شوی</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>لنډ شوی، ټول %count توري</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>پیل شو</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>د کوکي نوم</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>د ناستې ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>چلوونکی</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>د خوندي کولو لاره</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>د PHP تلواله</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>عمر (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>کوکي</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>عمر %s ثانیې</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>ستاسو خپله PHP ناسته، لکه څنګه چې د برخې د پرانیستلو پر مهال وه، هېڅکله بله نه. د هغو کیليو ارزښتونه چې د رازونو په څېر ښکاري (ټوکنونه، هشونه، پټنومونه) پټ شوي دي (debugbar.ini SessionMask[])؛ نور هر څه لکه څنګه چې زېرمه شوي ښودل کېږي، شخصي معلومات هم.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count کیلي، %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>لویه</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>ناسته تشه ده.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>د دې غوښتنې لپاره هېڅ ناسته پیل نه شوه.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>غځونه %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>کرنل او نور</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>ټول ننوتي نه دي ښودل شوي: ناسته تر هغه ډېر لري چې دلته لېست کېدای شي.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count کیلي نه دي لېست شوي.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>چوکاټ</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>هغه ارزښتونه چې د ټوکن په څېر ښکاري (یو JSON Web Token، د Authorization سرلیک اعتبارلیکونه، یوه شخصي کیلي، یو اوږد هېکس یا تصادفي متن) هم پټېږي، که د هغوی کیلي هر نوم ولري (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>کیلي د راز په څېر ښکاري (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>ارزښت د ټوکن په څېر ښکاري.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>د یوې پټې کیلي لاندې.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>ناسته د متن په توګه، د جدول په څېر پټه شوې.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>ناسته تر %size لویه ده (debugbar.ini SessionWarnBytes): د دې کارن هره غوښتنه ټوله ناسته لولي، او کله چې بدله شي هغه لیکي.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP دا ناسته په فایلونو کې ساتي او د ټولې غوښتنې په اوږدو کې فایل قلفوي: د ورته کارن غوښتنې (څو ټبونه، AJAX غوښتنې) یو بل ته انتظار باسي.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>پرانیستې ساتل</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>تر %size لویه (debugbar.ini SessionWarnBytes): د دې کارن هره غوښتنه ټوله ناسته لولي.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits له %count څخه له کش څخه لوستل شوي</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>هېڅ کېنډۍ ونه انځورل شوه (هغه لید چې د لید له کش څخه لوستل شوی وي هېڅ نه انځوروي).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>د رول ګمارنې</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>رولونه او تګلارې</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>له بې نومه لیدونکو سره توپير لري</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>د بې نومه لیدونکو په څېر</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

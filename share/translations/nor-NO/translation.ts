@@ -69000,6 +69000,190 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>No answer</source>
         <translation>Ingen svar</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>maskert</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Vis forklaringer</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Skjul forklaringer</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Åpne</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Åpne alle</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Lukk alle</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Nøkkel eller verdi</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Søk i økten</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count til</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>nestet for dypt til å vises</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>avkortet, %count tegn totalt</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startet</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Navn på informasjonskapsel</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Økt-ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Behandler</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Lagringssti</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP-standard</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Levetid (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Informasjonskapsel</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>levetid %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Din egen PHP-økt, slik den var da seksjonen ble åpnet, aldri en annens. Verdier for nøkler som ser ut som hemmeligheter (tokener, hasher, passord), maskeres (debugbar.ini SessionMask[]); alt annet vises slik det er lagret, også personopplysninger.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count nøkler, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>stor</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Økten er tom.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Ingen økt ble startet for denne forespørselen.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Utvidelsen %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kjerne og andre</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Ikke alle oppføringer vises: økten inneholder mer enn det som kan listes her.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count nøkler er ikke oppført.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Rammer</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Verdier som ser ut som et token (et JSON Web Token, legitimasjonen i en Authorization-header, en privat nøkkel, en lang heksadesimal eller tilfeldig tekst), maskeres også, uansett hva nøkkelen heter (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Nøkkelen ser ut som en hemmelighet (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Verdien ser ut som et token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Under en maskert nøkkel.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Økten som tekst, maskert som tabellen.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Økten er større enn %size (debugbar.ini SessionWarnBytes): hver forespørsel fra denne brukeren leser hele økten, og skriver den når den er endret.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP lagrer denne økten i filer og låser filen under hele forespørselen: forespørsler fra samme bruker (flere faner, AJAX-kall) venter på hverandre.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Hold åpen</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Større enn %size (debugbar.ini SessionWarnBytes): hver forespørsel fra denne brukeren leser hele økten.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits av %count lest fra cachen</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Ingen mal ble gjengitt (en visning lest fra visningscachen gjengir ingen).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rolletildelinger</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roller og tilgangsregler</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>forskjellig fra anonyme besøkende</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>samme som for anonyme besøkende</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

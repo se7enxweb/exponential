@@ -69199,6 +69199,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>Җавап юк</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>яшерелгән</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Аңлатмаларны күрсәтү</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Аңлатмаларны яшерү</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ачу</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Барысын ачу</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Барысын ябу</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Ачкыч яки кыйммәт</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Сеанста эзләү</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Төр</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>тагын %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>күрсәтү өчен артык тирән салынган</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>киселгән, барлыгы %count символ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Башланган</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Куки исеме</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Сеанс ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Эшкәрткеч</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Саклау юлы</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP буенча килешү</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Яшәү вакыты (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Куки</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>яшәү вакыты %s с</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Сезнең үз PHP сеансыгыз, бүлек ачылган вакыттагы хәлендә, беркайчан да башкасы түгел. Серләргә охшаган ачкычларның (токеннар, хешлар, серсүзләр) кыйммәтләре яшерелә (debugbar.ini SessionMask[]); калган барысы да сакланган килеш күрсәтелә, шәхси мәгълүматлар да.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count ачкыч, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>зур</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Сеанс буш.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Бу сорау өчен сеанс башланмады.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Киңәйтү %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Ядро һәм башкалар</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Барлык язмалар да күрсәтелми: сеанста монда санап чыгып булганнан күбрәк бар.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count ачкыч санап күрсәтелмәгән.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Рамка</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Токенга охшаган кыйммәтләр (JSON Web Token, Authorization башлыгының хисап мәгълүматлары, шәхси ачкыч, озын уналтылы яки очраклы текст) да, ачкычлары ничек кенә аталса да, яшерелә (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Ачкыч сергә охшаган (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Кыйммәт токенга охшаган.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Яшерелгән ачкыч астында.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Текст рәвешендәге сеанс, таблицадагы кебек яшерелгән.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Сеанс %size зурлыгыннан зуррак (debugbar.ini SessionWarnBytes): бу кулланучының һәр соравы бөтен сеансны укый, ә ул үзгәргәч, аны яза.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP бу сеансны файлларда саклый һәм бөтен сорау дәвамында файлны йозаклый: бер үк кулланучының сораулары (берничә кыстырма, AJAX чакырулары) бер-берсен көтә.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Ачык калдыру</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size зурлыгыннан зуррак (debugbar.ini SessionWarnBytes): бу кулланучының һәр соравы бөтен сеансны укый.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count эчендә %hits кэштан укылды</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Бер шаблон да күрсәтелмәде (күренеш кэшыннан укылган күренеш бернәрсә дә күрсәтми).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Роль беркетүләре</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Роллар һәм сәясәтләр</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>аноним килүчеләрнекеннән аерыла</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>аноним килүчеләрдәге кебек</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

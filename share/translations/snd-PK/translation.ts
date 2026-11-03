@@ -69199,6 +69199,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>ڪو جواب ناهي</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>لڪايل</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>وضاحتون ڏيکاريو</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>وضاحتون لڪايو</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>کوليو</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>سڀ کوليو</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>سڀ بند ڪريو</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>ڪنجي يا قدر</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>سيشن ۾ ڳوليو</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>قسم</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count وڌيڪ</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ڏيکارڻ لاءِ تمام گهڻو اندر رکيل</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>ڪٽيل، ڪل %count اکر</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>شروع ٿيو</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>ڪوڪي جو نالو</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>سيشن ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>هينڊلر</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>محفوظ ڪرڻ جو رستو</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP ڊفالٽ</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>مدت (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>ڪوڪي</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>مدت %s سيڪنڊ</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>توهان جو پنهنجو PHP سيشن، جيئن اهو حصو کولڻ وقت هو، ڪڏهن به ٻيو نه. انهن ڪنجين جا قدر جيڪي راز وانگر لڳن ٿيون (ٽوڪن، هيش، پاسورڊ) لڪايا وڃن ٿا (debugbar.ini SessionMask[])؛ باقي سڀ ڪجهه جيئن محفوظ ٿيل آهي تيئن ڏيکاريو وڃي ٿو، ذاتي ڊيٽا به.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count ڪنجيون، %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>وڏو</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>سيشن خالي آهي.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>هن درخواست لاءِ ڪو به سيشن شروع نه ڪيو ويو.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ايڪسٽينشن %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>ڪرنل ۽ ٻيا</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>سڀ داخلائون نه ڏيکاريون ويون آهن: سيشن ۾ ان کان وڌيڪ آهي جيترو هتي فهرست ۾ ڏيکاري سگهجي ٿو.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count ڪنجيون فهرست ۾ ناهن.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>فريم</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>جيڪي قدر ٽوڪن وانگر لڳن ٿا (JSON Web Token، Authorization هيڊر جون سندون، نجي ڪنجي، ڊگهو هيڪس يا بي ترتيب متن) اهي به لڪايا وڃن ٿا، انهن جي ڪنجي جو نالو ڪجهه به هجي (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>ڪنجي راز وانگر لڳي ٿي (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>قدر ٽوڪن وانگر لڳي ٿو.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>لڪايل ڪنجي جي هيٺان.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>سيشن متن طور، جدول وانگر لڪايل.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>سيشن %size کان وڏو آهي (debugbar.ini SessionWarnBytes): هن صارف جي هر درخواست سڄو سيشن پڙهي ٿي، ۽ تبديل ٿيڻ تي ان کي لکي ٿي.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP هي سيشن فائلن ۾ رکي ٿو ۽ سڄي درخواست دوران فائل کي لاڪ رکي ٿو: ساڳئي صارف جون درخواستون (ڪيترائي ٽيب، AJAX ڪالون) هڪ ٻئي جو انتظار ڪن ٿيون.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>کليل رکو</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size کان وڏو (debugbar.ini SessionWarnBytes): هن صارف جي هر درخواست سڄو سيشن پڙهي ٿي.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count مان %hits ڪيش مان پڙهيا ويا</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>ڪو به ٽيمپليٽ رينڊر نه ٿيو (ويو ڪيش مان پڙهيل ويو ڪو به ٽيمپليٽ رينڊر نٿو ڪري).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ڪردار جون تفويضون</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>ڪردار ۽ پاليسيون</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>گمنام گهمڻ وارن کان مختلف</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>گمنام گهمڻ وارن جهڙو</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

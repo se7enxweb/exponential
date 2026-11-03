@@ -69138,6 +69138,190 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>No answer</source>
         <translation>Ebda tweġiba</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>mgħotti</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Uri l-ispjegazzjonijiet</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Aħbi l-ispjegazzjonijiet</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Iftaħ</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Iftaħ kollox</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Agħlaq kollox</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Ċavetta jew valur</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Fittex fis-sessjoni</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count oħra</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>imdaħħal wisq fil-fond biex jintwera</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>maqtugħ, %count karattru b'kollox</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Beda</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Isem tal-cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID tas-sessjoni</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Ġestur</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Mogħdija tal-ħażna</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Valur predefinit tal-PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Tul ta' ħajja (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>tul ta' ħajja %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Is-sessjoni PHP tiegħek stess, kif kienet meta nfetħet is-sezzjoni, qatt ta' xi ħadd ieħor. Il-valuri taċ-ċwievet li jidhru sigrieti (tokens, hashes, passwords) jiġu mgħottija (debugbar.ini SessionMask[]); kull ħaġa oħra tintwera kif inħażnet, anke d-data personali.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count ċwievet, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>kbira</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Is-sessjoni hija vojta.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Ma nbdiet l-ebda sessjoni għal din it-talba.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Estensjoni %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Il-qalba u oħrajn</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Mhux kull entrata qed tintwera: is-sessjoni fiha aktar milli jista' jitniżżel hawn.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count ċwievet mhumiex elenkati.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Qafas</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Il-valuri li jidhru token (JSON Web Token, il-kredenzjali ta' header Authorization, ċavetta privata, test hex jew każwali twil) jiġu mgħottija wkoll, ikun x'ikun l-isem taċ-ċavetta tagħhom (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Iċ-ċavetta tidher sigriet (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Il-valur jidher token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Taħt ċavetta mgħottija.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Is-sessjoni bħala test, mgħottija bħat-tabella.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Is-sessjoni hija akbar minn %size (debugbar.ini SessionWarnBytes): kull talba ta' dan l-utent taqra s-sessjoni kollha, u tiktibha meta tinbidel.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>Il-PHP iżomm din is-sessjoni f'fajls u jsakkar il-fajl għat-talba kollha: it-talbiet tal-istess utent (diversi tabs, sejħiet AJAX) jistennew lil xulxin.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Żomm miftuħ</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Akbar minn %size (debugbar.ini SessionWarnBytes): kull talba ta' dan l-utent taqra s-sessjoni kollha.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits minn %count inqraw mill-cache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Ebda mudell ma ġie rrenderjat (veduta moqrija mill-cache tal-veduti ma tirrenderja l-ebda wieħed).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Assenjazzjonijiet tar-rwoli</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rwoli u politiki</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>differenti minn tal-viżitaturi anonimi</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>l-istess bħal tal-viżitaturi anonimi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

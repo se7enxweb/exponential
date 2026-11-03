@@ -69199,6 +69199,190 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>No answer</source>
         <translation>Tidak ada jawaban</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>disamarkan</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Tampilkan penjelasan</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Sembunyikan penjelasan</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Buka</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Buka semua</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Tutup semua</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Kunci atau nilai</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Cari di sesi</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipe</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count lagi</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>bersarang terlalu dalam untuk ditampilkan</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>dipotong, total %count karakter</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Dimulai</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Nama cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID sesi</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Penangan</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Jalur simpan</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Bawaan PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Masa hidup (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>masa hidup %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Sesi PHP Anda sendiri, seperti saat bagian ini dibuka, tidak pernah sesi lain. Nilai kunci yang tampak seperti rahasia (token, hash, kata sandi) disamarkan (debugbar.ini SessionMask[]); semua yang lain ditampilkan seperti yang disimpan, termasuk data pribadi.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count kunci, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>besar</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Sesi kosong.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Tidak ada sesi yang dimulai untuk permintaan ini.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ekstensi %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel dan lainnya</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Tidak semua entri ditampilkan: sesi berisi lebih banyak daripada yang dapat dicantumkan di sini.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count kunci tidak dicantumkan.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Bingkai</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Nilai yang tampak seperti token (JSON Web Token, kredensial header Authorization, kunci privat, teks heksadesimal atau acak yang panjang) juga disamarkan, apa pun nama kuncinya (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Kunci tampak seperti rahasia (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Nilai tampak seperti token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Di bawah kunci yang disamarkan.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Sesi sebagai teks, disamarkan seperti tabel.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Sesi lebih besar dari %size (debugbar.ini SessionWarnBytes): setiap permintaan pengguna ini membaca seluruh sesi, dan menulisnya saat sesi berubah.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP menyimpan sesi ini dalam file dan mengunci file selama seluruh permintaan: permintaan dari pengguna yang sama (beberapa tab, panggilan AJAX) saling menunggu.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Tetap terbuka</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Lebih besar dari %size (debugbar.ini SessionWarnBytes): setiap permintaan pengguna ini membaca seluruh sesi.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits dari %count dibaca dari cache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Tidak ada templat yang dirender (tampilan yang dibaca dari cache tampilan tidak merender templat apa pun).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Penetapan peran</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Peran dan kebijakan</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>berbeda dari pengunjung anonim</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sama seperti pengunjung anonim</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

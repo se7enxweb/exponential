@@ -69199,6 +69199,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>ไม่มีการตอบกลับ</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>ถูกปิดบัง</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>แสดงคำอธิบาย</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>ซ่อนคำอธิบาย</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>เปิด</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>เปิดทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>ปิดทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>คีย์หรือค่า</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>ค้นหาในเซสชัน</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ประเภท</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>อีก %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ซ้อนกันลึกเกินกว่าจะแสดงได้</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>ถูกตัด รวม %count อักขระ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>เริ่มเมื่อ</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>ชื่อคุกกี้</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID เซสชัน</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>ตัวจัดการ</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>พาธที่บันทึก</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>ค่าเริ่มต้นของ PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>อายุการใช้งาน (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>คุกกี้</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>อายุการใช้งาน %s วินาที</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>เซสชัน PHP ของคุณเอง ตามที่เป็นอยู่ตอนเปิดส่วนนี้ ไม่ใช่ของผู้อื่นเด็ดขาด ค่าของคีย์ที่ดูเหมือนความลับ (โทเค็น แฮช รหัสผ่าน) จะถูกปิดบัง (debugbar.ini SessionMask[]); ส่วนอื่นทั้งหมดจะแสดงตามที่จัดเก็บไว้ รวมถึงข้อมูลส่วนบุคคลด้วย</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count คีย์, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>ใหญ่</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>เซสชันว่างเปล่า</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>ไม่มีการเริ่มเซสชันสำหรับคำขอนี้</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ส่วนขยาย %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>เคอร์เนลและอื่นๆ</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>ไม่ได้แสดงทุกรายการ: เซสชันมีมากกว่าที่จะแสดงรายการได้ที่นี่</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>ไม่ได้แสดงรายการ %count คีย์</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>เฟรม</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>ค่าที่ดูเหมือนโทเค็น (JSON Web Token, ข้อมูลรับรองของส่วนหัว Authorization, คีย์ส่วนตัว, ข้อความ hex หรือข้อความสุ่มที่ยาว) จะถูกปิดบังด้วย ไม่ว่าคีย์ของค่านั้นจะมีชื่อว่าอะไร (debugbar.ini SessionValueMask[])</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>คีย์ดูเหมือนความลับ (debugbar.ini SessionMask[])</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>ค่าดูเหมือนโทเค็น</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>อยู่ใต้คีย์ที่ถูกปิดบัง</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>เซสชันในรูปแบบข้อความ ปิดบังเหมือนตาราง</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>เซสชันใหญ่กว่า %size (debugbar.ini SessionWarnBytes): ทุกคำขอของผู้ใช้นี้จะอ่านเซสชันทั้งหมด และเขียนเมื่อมีการเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP เก็บเซสชันนี้ไว้ในไฟล์และล็อกไฟล์ตลอดทั้งคำขอ: คำขอของผู้ใช้คนเดียวกัน (หลายแท็บ การเรียก AJAX) จะรอกันและกัน</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>เปิดค้างไว้</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>ใหญ่กว่า %size (debugbar.ini SessionWarnBytes): ทุกคำขอของผู้ใช้นี้จะอ่านเซสชันทั้งหมด</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits จาก %count อ่านจากแคช</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>ไม่มีการเรนเดอร์เทมเพลต (มุมมองที่อ่านจากแคชมุมมองจะไม่เรนเดอร์เทมเพลตใดเลย)</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>การกำหนดบทบาท</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>บทบาทและนโยบาย</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>แตกต่างจากผู้เยี่ยมชมที่ไม่ระบุชื่อ</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>เหมือนกับผู้เยี่ยมชมที่ไม่ระบุชื่อ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

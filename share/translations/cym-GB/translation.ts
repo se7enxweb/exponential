@@ -69199,6 +69199,190 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>No answer</source>
         <translation>Dim ateb</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>wedi'i guddio</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Dangos esboniadau</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Cuddio esboniadau</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Agor</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Agor y cyfan</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Cau'r cyfan</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Allwedd neu werth</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Chwilio'r sesiwn</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Math</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count arall</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>wedi'i nythu'n rhy ddwfn i'w ddangos</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>wedi'i dorri, %count nod i gyd</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Cychwynnwyd</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Enw'r cwci</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID y sesiwn</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Triniwr</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Llwybr cadw</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Rhagosodiad PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Oes (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cwci</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>oes %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Eich sesiwn PHP eich hun, fel yr oedd pan agorwyd yr adran, byth un arall. Mae gwerthoedd allweddi sy'n edrych fel cyfrinachau (tocynnau, stwnshiau, cyfrineiriau) wedi'u cuddio (debugbar.ini SessionMask[]); dangosir popeth arall fel y'i storiwyd, data personol hefyd.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count allwedd, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>mawr</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Mae'r sesiwn yn wag.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Ni ddechreuwyd sesiwn ar gyfer y cais hwn.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Estyniad %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Cnewyllyn ac eraill</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Nid yw pob cofnod yn cael ei ddangos: mae gan y sesiwn fwy nag y gellir ei restru yma.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Nid yw %count allwedd wedi'u rhestru.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Ffrâm</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Mae gwerthoedd sy'n edrych fel tocyn (JSON Web Token, manylion adnabod pennyn Authorization, allwedd breifat, testun hecs neu hap hir) hefyd wedi'u cuddio, beth bynnag yw enw eu hallwedd (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Mae'r allwedd yn edrych fel cyfrinach (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Mae'r gwerth yn edrych fel tocyn.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>O dan allwedd wedi'i chuddio.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Y sesiwn fel testun, wedi'i guddio fel y tabl.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Mae'r sesiwn yn fwy na %size (debugbar.ini SessionWarnBytes): mae pob cais gan y defnyddiwr hwn yn darllen y sesiwn gyfan, ac yn ei hysgrifennu pan newidiodd.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>Mae PHP yn cadw'r sesiwn hon mewn ffeiliau ac yn cloi'r ffeil am y cais cyfan: mae ceisiadau gan yr un defnyddiwr (sawl tab, galwadau AJAX) yn aros am ei gilydd.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Cadw ar agor</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Yn fwy na %size (debugbar.ini SessionWarnBytes): mae pob cais gan y defnyddiwr hwn yn darllen y sesiwn gyfan.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>Darllenwyd %hits o %count o'r storfa</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Ni rendrwyd unrhyw dempled (nid yw golwg a ddarllenwyd o storfa'r golygon yn rendro dim).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Neilltuadau rôl</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rolau a pholisïau</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>yn wahanol i ymwelwyr dienw</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>yr un fath ag ymwelwyr dienw</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69197,6 +69197,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>Kò sí èsì</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>ti fi pamọ́</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Fi àlàyé hàn</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Fi àlàyé pamọ́</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ṣí</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Ṣí gbogbo rẹ̀</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Padé gbogbo rẹ̀</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Kọ́kọ́rọ́ tàbí iye</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Wá nínú ìgbà ìwọlé</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Irú</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count sí i</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ó jìn jù láti fihàn</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>a gé e kúrú, %count lẹ́tà lápapọ̀</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Ti bẹ̀rẹ̀</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Orúkọ kúkì</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID ìgbà ìwọlé</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Olùgbọ́</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Ọ̀nà ìfipamọ́</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Àìyípadà PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Ìgbà ayé (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kúkì</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ìgbà ayé %s ìṣẹ́jú-àáyá</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Ìgbà ìwọlé PHP tìrẹ, bí ó ṣe rí nígbà tí a ṣí abala náà, kì í ṣe ti ẹlòmíràn rárá. Iye àwọn kọ́kọ́rọ́ tí ó dàbí àṣírí (tókìnì, hash, ọ̀rọ̀ aṣínà) ni a fi pamọ́ (debugbar.ini SessionMask[]); gbogbo ohun mìíràn ni a fihàn bí a ṣe tọ́jú rẹ̀, àwọn dátà ti ara ẹni pẹ̀lú.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>Kọ́kọ́rọ́ %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>ńlá</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Ìgbà ìwọlé náà ṣófo.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Kò sí ìgbà ìwọlé tí a bẹ̀rẹ̀ fún ìbéèrè yìí.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Àfikún %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kẹ̀rnẹ́ẹ̀lì àti àwọn mìíràn</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>A kò fi gbogbo ohun tí ó wà hàn: ìgbà ìwọlé náà ní ju ohun tí a lè tò síbí lọ.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>A kò to kọ́kọ́rọ́ %count.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Férémù</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Àwọn iye tí ó dàbí tókìnì (JSON Web Token kan, ìwé-ẹ̀rí orí Authorization kan, kọ́kọ́rọ́ àdáni kan, ọ̀rọ̀ hex tàbí ọ̀rọ̀ àìròtẹ́lẹ̀ gígùn kan) ni a tún fi pamọ́, ohun yòówù kí orúkọ kọ́kọ́rọ́ wọn jẹ́ (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Kọ́kọ́rọ́ náà dàbí àṣírí (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Iye náà dàbí tókìnì.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Lábẹ́ kọ́kọ́rọ́ tí a fi pamọ́.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Ìgbà ìwọlé náà bí ọ̀rọ̀, tí a fi pamọ́ bí tábìlì.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Ìgbà ìwọlé náà tóbi ju %size lọ (debugbar.ini SessionWarnBytes): gbogbo ìbéèrè olùlò yìí ló ń ka gbogbo ìgbà ìwọlé náà, ó sì ń kọ ọ́ nígbà tí ó bá yí padà.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP ń pa ìgbà ìwọlé yìí mọ́ sínú fáìlì, ó sì ń tì fáìlì náà ní gbogbo ìgbà ìbéèrè: àwọn ìbéèrè olùlò kan náà (ọ̀pọ̀ táàbù, ìpè AJAX) ń dúró de ara wọn.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Jẹ́ kí ó ṣí</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Ó tóbi ju %size lọ (debugbar.ini SessionWarnBytes): gbogbo ìbéèrè olùlò yìí ló ń ka gbogbo ìgbà ìwọlé náà.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits nínú %count ni a kà láti inú kásẹ̀</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Kò sí àpẹẹrẹ tí a ṣe (ìwò tí a kà láti inú kásẹ̀ ìwò kì í ṣe ìkankan).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Àwọn ìyàn ipa</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Àwọn ipa àti ìlànà</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>yàtọ̀ sí ti àwọn àlejò aláìlórúkọ</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>bákan náà pẹ̀lú ti àwọn àlejò aláìlórúkọ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -3,13 +3,13 @@ title: debugbar.ini [DebugBarSettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [DebugBarSettings] in debugbar.ini: Settings, Groups, GroupNames, DiscoverBlocks, ExtensionDiscovery, DiscoveryPattern, DiscoveryExclude, Presets ..."
-keywords: Einstellung, debugbar.ini, DebugBarSettings, INI, setting, Settings, Groups, GroupNames, DiscoverBlocks, ExtensionDiscovery, DiscoveryPattern, DiscoveryExclude, Presets, Thresholds, Panels, RenderTree, Theme, LogFile, LogListLimit
+keywords: Einstellung, debugbar.ini, DebugBarSettings, INI, setting, Settings, Groups, GroupNames, DiscoverBlocks, ExtensionDiscovery, DiscoveryPattern, DiscoveryExclude, Presets, Thresholds, SessionMask, SessionValueMask, SessionWarnBytes, Panels, RenderTree, Theme, LogFile, LogListLimit
 type: generated
 generated: exp:help:examples
 ---
 # debugbar.ini [DebugBarSettings]
 
-Der Block `[DebugBarSettings]` von `settings/debugbar.ini`, mit 14 Einstellung(en).
+Der Block `[DebugBarSettings]` von `settings/debugbar.ini`, mit 17 Einstellung(en).
 
 Bearbeiten Sie `settings/debugbar.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -201,6 +201,75 @@ Thresholds[templates]=150;400
 Thresholds[querycache_hit_rate]=50;10
 Thresholds[opcache_memory]=80;95
 Thresholds[apcu_memory]=75;90
+*/ ?>
+```
+
+## SessionMask
+
+> Der Abschnitt Session der Registerkarte Benutzer (die eigene PHP-Session des Benutzers, beim Öffnen geladen): Schlüssel, deren Name zu einer  
+> dieser Masken passt (ein Teil des Namens, ein regulärer Ausdruck ohne Begrenzer, ohne Rücksicht auf Groß- und Kleinschreibung), zeigen nur ihren Typ  
+> und ihre Länge, nie den Wert; alles unter einem maskierten Schlüssel ist ebenfalls maskiert. Leer: token, csrf, nonce, secret, passw,  
+> hash, key$, credential, auth, jwt, bearer, otp, saml, assertion, ticket, sid$. Eine Erweiterung ergänzt eigene in ihrer  
+> settings/debugbar.ini.append.php. Masken verbergen Geheimnisse, keine personenbezogenen Daten: Namen oder Adressen in der Session werden gezeigt.  
+
+Standard: eine Liste mit 16: `token`, `csrf`, `nonce`, `secret`, `passw`, `hash`, `key$`, `credential`, `auth`, `jwt`, `bearer`, `otp` ....
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/debugbar.ini.append.php
+[DebugBarSettings]
+# ein leeres "SessionMask[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+SessionMask[]
+SessionMask[]=token
+SessionMask[]=csrf
+SessionMask[]=nonce
+SessionMask[]=secret
+SessionMask[]=passw
+SessionMask[]=hash
+SessionMask[]=key$
+SessionMask[]=credential
+SessionMask[]=auth
+SessionMask[]=jwt
+SessionMask[]=bearer
+SessionMask[]=otp
+SessionMask[]=saml
+SessionMask[]=assertion
+SessionMask[]=ticket
+SessionMask[]=sid$
+*/ ?>
+```
+
+## SessionValueMask
+
+> Werte, die maskiert werden, gleich wie ihr Schlüssel heißt, zusätzlich zu den Mustern, die immer gelten (ein JSON Web  
+> Token irgendwo im Text, die Zugangsdaten eines Authorization-Headers, ein privater PEM-Schlüssel, bekannte Präfixe von API-Schlüsseln,  
+> 32 oder mehr Hex-Ziffern und ein langer Zufallstext aus Base64-Zeichen): reguläre Ausdrücke ohne  
+> Begrenzer, mit Rücksicht auf Groß- und Kleinschreibung (mit (?i) am Anfang ohne), geprüft an den ersten 4096 Bytes  
+> jedes Textes und jedes Schlüssels. Beispiel: SessionValueMask\[\]=^tok\_\[a-z0-9\]{20,}$  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/debugbar.ini.append.php
+[DebugBarSettings]
+# ein leeres "SessionValueMask[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+SessionValueMask[]
+*/ ?>
+```
+
+## SessionWarnBytes
+
+> Eine Session, die größer als so viele Bytes (serialisiert) ist, wird in der Registerkarte Benutzer als groß markiert: Jeder Request des Benutzers  
+> liest die ganze Session und schreibt sie, wenn sie sich geändert hat.  
+
+Standard: `65536`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/debugbar.ini.append.php
+[DebugBarSettings]
+SessionWarnBytes=65536
 */ ?>
 ```
 

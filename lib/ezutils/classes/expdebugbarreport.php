@@ -198,6 +198,20 @@ class expDebugBarReport
             'module/function, role, limitation', 'Search the policies', 'Role', 'Load more', 'Module/function', 'Limitations',
             'none', 'All roles (%count policies)', 'No policy matches.', '%shown of %matched policies', 'No answer', 'the user',
             'Loading...', 'Could not load: %error', 'Retry',
+            // the User tab's session
+            'masked', 'Show explanations', 'Hide explanations', 'Open', 'Open all', 'Close all', 'Key or value', 'Search the session', 'Type', 'Value', '%count more', 'empty', 'nested too deep to show',
+            'cut, %count characters in all', 'yes', 'no', 'Started', 'Cookie name', 'Session ID', 'Handler',
+            'Save path', 'PHP default', 'Lifetime (gc_maxlifetime)', 'Cookie', 'lifetime %s s',
+            'Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.',
+            '%count keys, %size', 'large', 'The session is empty.', 'No session was started for this request.',
+            'Extension %name', 'Kernel and others',
+            'Not every entry is shown: the session has more than can be listed here.',
+            '%count keys are not listed.', 'Frame',
+            'Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).',
+            'The key looks like a secret (debugbar.ini SessionMask[]).', 'The value looks like a token.', 'Below a masked key.',
+            'Copy as text', 'The session as text, masked like the table.',
+            'The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.',
+            'PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.',
             'Sign in with a user who may change settings (setup/setup) to change them here.', 'Sign in with setup access to change debug settings', 'Sign in with cache access to manage caches',
             'The settings service is not available yet. The classic controls below still work.',
             'Effective value', 'Comes from', 'Write to', 'Apply', 'Applied', 'Not changed', 'Reset', 'Help',
@@ -344,9 +358,8 @@ class expDebugBarReport
         // page cache gets the same bar with "Cached" instead (ezpHttpCacheContract::debugBar())
         $summary['served'] = self::servedInfo();
         $theme = self::theme();
-        // the first block of the toolbar theme: the status the response has so far, the module and view
-        if ( $theme === 'toolbar' )
-            $summary['request'] = self::requestInfo( null, null, $pageInfo );
+        // the first block of every theme: the status the response has so far, the module and view
+        $summary['request'] = self::requestInfo( null, null, $pageInfo );
 
         // The server side's summary (kernel/classes/debugbar), when it is loaded: its levels follow
         // [DebugBarSettings] Thresholds[] in debugbar.ini, so they win over the defaults above.
@@ -370,9 +383,10 @@ class expDebugBarReport
         }
         $summary['querycache'] = $serverSummary !== null && array_key_exists( 'querycache', $serverSummary )
             ? $serverSummary['querycache'] : self::queryCacheSummary();
-        // How the page was rendered (controller, view cache key, compiled templates): for setup/setup only, as the
-        // cache key carries the user's role and limitation ids
-        $rendering = $userInfo['can_setup'] ? self::renderingData() : null;
+        // How the page was rendered: as the User tab, for setup/setup and for an anonymous visitor who gets the debug
+        // output, whose role and limitation ids in the cache key are those of every anonymous visitor
+        $mayRender = class_exists( 'expDebugBarUser' ) ? expDebugBarUser::mayView( $userInfo['can_setup'], $userInfo['logged_in'], true ) : $userInfo['can_setup'];
+        $rendering = $mayRender ? self::renderingData() : null;
         $summary['rendering'] = $rendering === null ? null : self::renderingChips( $rendering );
         // The user's roles and cache profile (User tab and its chip): for setup/setup, as the Rendering tab, and for an
         // anonymous visitor who gets the debug output, whose ids are those of every anonymous visitor
@@ -383,7 +397,9 @@ class expDebugBarReport
             $viewCache = $rendering !== null ? $rendering['view_cache'] : ( class_exists( 'expRenderStats' ) ? expRenderStats::viewCache() : null );
             $userProfile = expDebugBarUser::data( $viewCache );
         }
-        $summary['user'] = $userProfile === null ? null : self::userChip( $userProfile );
+        // without the User tab (a logged-in user without setup/setup who gets the debug output) the chip names the login only
+        $summary['user'] = $userProfile !== null ? self::userChip( $userProfile )
+                         : ( $userInfo['login'] !== '' ? self::loginChip( $userInfo ) : null );
 
         // the chips of the extensions' panels (collected before the messages, see above)
         $summary['panels'] = array();
@@ -708,7 +724,8 @@ class expDebugBarReport
 
     /**
      * The pinned bar and the minimised tab, complete at the first paint (#571): the symbol that minimises the bar, the
-     * "Exp Debug" link, the chips, "Keep open on reload" (its box alone in the toolbar theme, the words its tooltip),
+     * "Exp Debug" link, the chips, "Keep open on reload" (short "Keep open" in the default theme, its box alone in the
+     * toolbar theme; the full words its tooltip),
      * and the hidden tab that restores the bar with the error or warning count. expdebugbar-head.js sets their state
      * before the first paint, expdebugbar.js wires them.
      *
@@ -725,7 +742,7 @@ class expDebugBarReport
               . '<a href="#debug-end" aria-controls="debug-details" aria-expanded="false">Exp Debug' . $e( $by ) . '</a>'
               . self::servedHtml( isset( $summary['served'] ) ? $summary['served'] : null )
               . self::summaryHtml( $summary, $theme )
-              . '<label class="debug-keep-open"' . ( $theme === 'toolbar' ? ' title="' . $e( $keep ) . '"' : '' ) . '><input type="checkbox"> ' . $e( $keep ) . '</label>'
+              . '<label class="debug-keep-open" title="' . $e( $keep ) . '"><input type="checkbox"> ' . $e( $theme === 'toolbar' ? $keep : self::t( 'Keep open' ) ) . '</label>'
               . '</h2>';
         $errors = isset( $summary['errors'] ) ? (int)$summary['errors'] : 0;
         $warnings = isset( $summary['warnings'] ) ? (int)$summary['warnings'] : 0;
@@ -874,9 +891,11 @@ class expDebugBarReport
 
         $toolbar = $theme === 'toolbar';
         $chips = array();
-        // The toolbar theme starts with the request, the details of a block are shown in its popup ('rows')
-        if ( $toolbar && isset( $s['request'] ) && is_array( $s['request'] ) )
-            $chips[] = self::requestChip( $s['request'] );
+        // Every theme starts with the request: its HTTP status (green, yellow for a redirect, red from 400 on) and the
+        // module/view; the toolbar theme shows the details of a block in its popup ('rows')
+        // it opens the Rendering tab (controller, view cache, templates) where the user has it, else the Server tab
+        if ( isset( $s['request'] ) && is_array( $s['request'] ) )
+            $chips[] = self::requestChip( $s['request'], !empty( $s['rendering'] ) ? 'rendering' : 'velocity' );
         $pageMs = $s['time'] * 1000;
         $chips[] = array( 'timing', 'time', $timeLevel,
                           number_format( $s['time'], 3 ) . ' s', self::t( 'Page time' ),
@@ -997,12 +1016,13 @@ class expDebugBarReport
      *
      * @return array a chip as summaryHtml() draws it
      */
-    public static function requestChip( array $r )
+    public static function requestChip( array $r, $tab = 'velocity' )
     {
         $status = isset( $r['status'] ) ? $r['status'] : null;
         $route = $r['module'] !== '' ? $r['module'] . ( $r['view'] !== '' ? '/' . $r['view'] : '' ) : '';
         $text = trim( ( $status !== null ? $status : '' ) . ' ' . $route );
-        $level = $status >= 500 ? 'high' : ( $status >= 400 ? 'warn' : 'ok' );
+        // red from 400, amber for a redirect; 304 Not Modified is no redirect, and 1xx and 2xx are fine
+        $level = $status >= 400 ? 'high' : ( $status >= 300 && $status != 304 ? 'warn' : 'ok' );
         $rows = array( self::t( 'HTTP status' ) => $status !== null ? (string)$status : '-',
                        self::t( 'Module' ) => $r['module'] !== '' ? $r['module'] : '-',
                        self::t( 'View' ) => $r['view'] !== '' ? $r['view'] : '-' );
@@ -1010,7 +1030,7 @@ class expDebugBarReport
             $rows[self::t( 'Siteaccess' )] = $r['siteaccess'];
         if ( $r['node_id'] > 0 )
             $rows[self::t( 'Node ID' )] = (string)$r['node_id'];
-        return array( 'velocity', 'request', $level, $text !== '' ? $text : '-', self::t( 'Request' ), 'rows' => $rows );
+        return array( $tab === 'rendering' ? 'rendering' : 'velocity', 'request', $level, $text !== '' ? $text : '-', self::t( 'Request' ), 'rows' => $rows );
     }
 
     /**
@@ -1543,6 +1563,18 @@ class expDebugBarReport
     }
 
     /**
+     * The chip of the user for a request without the User tab: the login and the user id, opening the Messages tab.
+     *
+     * @param array $info userInfo()
+     * @return array
+     */
+    public static function loginChip( array $info )
+    {
+        return array( 'messages', 'userlogin', 'ok', $info['login'], self::t( 'User' ),
+                      'rows' => array( self::t( 'Login' ) => $info['login'], self::t( 'User ID' ) => (string)$info['id'] ) );
+    }
+
+    /**
      * The chip of the User tab: the user's cache profile, and the profile of this page's view when it has parts of its
      * own (preferences, keys of listeners). Users with the same chip share the view cache files.
      *
@@ -1551,12 +1583,13 @@ class expDebugBarReport
      */
     public static function userChip( array $u )
     {
-        $text = self::t( 'VC %profile', array( '%profile' => $u['profile'] ) );
+        // the login first (the person icon is drawn by the stylesheet), then the cache profile
+        $text = $u['login'] . ' · ' . self::t( 'VC %profile', array( '%profile' => $u['profile'] ) );
         if ( $u['view_profile'] !== null )
             $text .= ' · ' . $u['view_profile'];
         if ( $u['per_user'] )
             $text .= ' · pr_user';
-        $rows = array( self::t( 'User ID' ) => (string)$u['id'], self::t( 'Cache profile' ) => $u['profile'] );
+        $rows = array( self::t( 'Login' ) => $u['login'], self::t( 'User ID' ) => (string)$u['id'], self::t( 'Cache profile' ) => $u['profile'] );
         if ( $u['view_profile'] !== null )
             $rows[self::t( 'This view' )] = $u['view_profile'];
         if ( $u['per_user'] )
@@ -1576,15 +1609,36 @@ class expDebugBarReport
     public static function userHtml( array $u, $policies = false )
     {
         $yes = function ( $value ) { return self::h( $value ? 'yes' : 'no' ); };
-        $html = '<table class="exp-debug-facts exp-debug-user">';
-        $html .= '<tr><th>' . self::h( 'User ID' ) . '</th><td>' . (int)$u['id'] . '</td></tr>';
-        $html .= '<tr><th>' . self::h( 'Login' ) . '</th><td>' . self::renderingValue( $u['login'] ) . '</td></tr>';
-        $html .= '<tr><th>' . self::h( 'Logged in' ) . '</th><td>' . $yes( $u['logged_in'] ) . '</td></tr>';
-        $html .= '<tr><th>' . self::h( 'Siteaccess' ) . '</th><td>' . self::renderingValue( $u['siteaccess'] ) . '</td></tr>';
-        $html .= '<tr><th>' . self::h( 'Session' ) . '</th><td>' . $yes( $u['session'] ) . '</td></tr>';
-        $html .= '</table>';
+        $size = function ( $bytes ) { return $bytes < 1024 ? (int)$bytes . ' B' : round( $bytes / 1024, 1 ) . ' KB'; };
+        // the overview, compact: who, logged in, siteaccess, the session's size, the profile and how it compares, the roles
+        $item = function ( $label, $value ) { return self::overviewItem( $label, $value ); };
+        $html = '<dl class="exp-debug-overview exp-debug-user">';
+        $html .= $item( 'User', '<code>#' . (int)$u['id'] . '</code> ' . self::renderingValue( $u['login'] ) );
+        $html .= $item( 'Logged in', $yes( $u['logged_in'] ) );
+        $html .= $item( 'Siteaccess', self::renderingValue( $u['siteaccess'] ) );
+        $session = $yes( $u['session'] );
+        if ( !empty( $u['session'] ) && isset( $u['session_keys'] ) )
+        {
+            $session = self::h( '%count keys, %size', array( '%count' => (int)$u['session_keys'], '%size' => $size( isset( $u['session_bytes'] ) ? (int)$u['session_bytes'] : 0 ) ) );
+            // every request of the user reads the whole session (and writes it when it changed)
+            if ( !empty( $u['session_large'] ) )
+                $session .= ' <span class="exp-debug-badge" data-level="warn" title="' . self::h( 'Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.', array( '%size' => $size( isset( $u['session_warn_bytes'] ) ? (int)$u['session_warn_bytes'] : 0 ) ) ) . '">' . self::h( 'large' ) . '</span>';
+        }
+        $html .= $item( 'Session', $session );
+        $profile = '<code>' . self::a( $u['profile'] ) . '</code>';
+        if ( isset( $u['anonymous_profile'] ) && $u['anonymous_profile'] !== null )
+        {
+            $same = $u['anonymous_profile'] === $u['profile'];
+            $profile .= ' <span class="exp-debug-badge" data-level="' . ( $same ? 'ok' : 'warn' ) . '">' . self::h( $same ? 'same as anonymous visitors' : 'differs from anonymous visitors' ) . '</span>';
+        }
+        $html .= $item( 'Cache profile', $profile );
+        $html .= $item( 'Role assignments', (string)count( $u['assignments'] ) );
+        $html .= '</dl>';
 
-        $html .= '<h3>' . self::h( 'Cache profile' ) . '</h3>';
+        // the parts below as sub-tabs (expdebugbar.js); without the script they are shown one below the other
+        $html .= self::subtabsHtml( 'user', 'User', array( 'profile' => 'Cache profile', 'preferences' => 'Preferences', 'roles' => 'Roles and policies', 'session' => 'Session' ) );
+
+        $html .= self::subpanelStart( 'user', 'profile' );
         $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.' ) . '</p>';
         $html .= '<p class="exp-debug-user-profile">' . self::h( 'Profile' ) . ' <code>' . self::a( $u['profile'] ) . '</code>';
         if ( $u['view_profile'] !== null )
@@ -1595,7 +1649,7 @@ class expDebugBarReport
             $same = $u['anonymous_profile'] === $u['profile'];
             $html .= '<p class="exp-debug-user-profile">' . self::h( 'Anonymous visitors' ) . ' <code>' . self::a( $u['anonymous_profile'] ) . '</code> '
                    . '<span class="exp-debug-badge" data-level="' . ( $same ? 'ok' : 'warn' ) . '">' . self::h( $same ? 'same as yours' : 'different' ) . '</span></p>';
-            $html .= '<p class="exp-debug-hint">' . self::h( 'The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.' ) . '</p>';
+            $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.' ) . '</p>';
         }
         if ( $u['per_user'] )
             $html .= '<p class="exp-debug-hint">' . self::h( 'ViewCacheTweaks pr_user: every logged-in user has cache files of their own.' ) . '</p>';
@@ -1627,7 +1681,9 @@ class expDebugBarReport
         $html .= '<p><button type="button" class="exp-debug-button exp-debug-copy-profile" data-exp-debug-copy="' . self::a( expDebugBarUser::text( $u ) ) . '" hidden>'
                . self::h( 'Copy as text' ) . '</button> <span class="exp-debug-copy-status exp-debug-copy-profile-status" role="status" aria-live="polite"></span></p>';
 
-        $html .= '<h3>' . self::h( 'Preferences' ) . '</h3>';
+        $html .= '</section>';
+
+        $html .= self::subpanelStart( 'user', 'preferences' );
         $preferenceRows = isset( $u['preferences'] ) ? $u['preferences'] : array();
         if ( !$preferenceRows )
             $html .= '<p class="exp-debug-hint">' . self::h( 'No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).' ) . '</p>';
@@ -1645,7 +1701,9 @@ class expDebugBarReport
             $html .= '</table>';
         }
 
-        $html .= '<h3>' . self::h( 'Roles' ) . '</h3>';
+        $html .= '</section>';
+
+        $html .= self::subpanelStart( 'user', 'roles' );
         if ( !$u['assignments'] )
             $html .= '<p class="exp-debug-hint">' . self::h( 'No role assignments could be read.' ) . '</p>';
         else
@@ -1668,7 +1726,42 @@ class expDebugBarReport
             $html .= '<details class="exp-debug-user-policies-section" data-exp-debug-policies data-role-url="' . self::a( self::url( 'role/view/' ) ) . '"><summary>' . self::h( 'Policies' ) . '</summary>'
                    . '<div class="exp-debug-policies-body"><p class="exp-debug-hint">' . self::h( 'Loaded when opened.' ) . '</p></div></details>';
         }
+        $html .= '</section>';
+
+        // the user's own PHP session: loaded when its sub-tab is first shown (expdebugbar::session), so it is not in the page
+        $html .= self::subpanelStart( 'user', 'session' )
+               . '<div class="exp-debug-user-session-section" data-exp-debug-session><div class="exp-debug-session-body"><p class="exp-debug-hint">'
+               . self::h( 'Loaded when opened.' ) . '</p></div></div></section>';
         return $html;
+    }
+
+    /** One item of the overview at the head of the User and the Rendering tab: the label small above the value (HTML). */
+    protected static function overviewItem( $label, $value )
+    {
+        return '<div class="exp-debug-overview-item"><dt>' . self::h( $label ) . '</dt><dd>' . $value . '</dd></div>';
+    }
+
+    /**
+     * The sub-tabs of a tab (User, Rendering) and the button that shows the explanations; expdebugbar.js switches
+     * them and keeps the last one per tab. Without the script the parts are shown one below the other.
+     *
+     * @param string $scope the tab, part of the ids (exp-debug-<scope>-<id>)
+     * @param string $label the tab's name, untranslated
+     * @param array $tabs id => title, untranslated
+     */
+    protected static function subtabsHtml( $scope, $label, array $tabs )
+    {
+        $html = '<div class="exp-debug-subtabs" data-scope="' . self::a( $scope ) . '"><div class="exp-debug-subtablist" role="tablist" aria-label="' . self::h( $label ) . '">';
+        foreach ( $tabs as $id => $title )
+            $html .= '<button type="button" role="tab" class="exp-debug-subtab" id="exp-debug-' . $scope . '-tab-' . $id . '" data-subtab="' . $id
+                   . '" aria-controls="exp-debug-' . $scope . '-' . $id . '" aria-selected="false">' . self::h( $title ) . '</button>';
+        return $html . '</div><button type="button" class="exp-debug-subtab-help" aria-pressed="false" title="' . self::h( 'Show explanations' ) . '" hidden>?</button></div>';
+    }
+
+    /** The start of a sub-tab's panel (subtabsHtml()); the caller closes the section. */
+    protected static function subpanelStart( $scope, $id )
+    {
+        return '<section class="exp-debug-subpanel" id="exp-debug-' . $scope . '-' . $id . '" role="tabpanel" tabindex="0" aria-labelledby="exp-debug-' . $scope . '-tab-' . $id . '">';
     }
 
     /** The content view cache's state as a sentence, with its reason. */
@@ -1687,14 +1780,34 @@ class expDebugBarReport
     }
 
     /**
-     * The Rendering tab: the controller, the content view cache and its key, and the template compilation.
+     * The Rendering tab: an overview, then as sub-tabs the controller, the template tree, the content view cache and its
+     * key, the cache blocks and the template compilation.
      *
      * @param array $r renderingData()
      * @return string
      */
     public static function renderingHtml( array $r )
     {
-        $html = '<h3>' . self::h( 'Controller' ) . '</h3>';
+        // the overview: what ran, the view cache, the cache blocks, the templates; the parts below as sub-tabs
+        $cache = $r['view_cache'];
+        $totals = isset( $r['cache_block_totals'] ) ? $r['cache_block_totals'] : null;
+        $last = $r['views'] ? end( $r['views'] ) : null;
+        $html = '<dl class="exp-debug-overview exp-debug-render-overview">';
+        $html .= self::overviewItem( 'Module view', $last === null ? '-' : self::a( $last['module'] . '/' . $last['view'] ) );
+        // the state in a word, the whole text as its tooltip
+        $stateWords = array( 'hit' => 'hit', 'generated' => 'generated', 'uncached' => 'generated', 'expired' => 'generated', 'off' => 'off', 'pending' => 'not found' );
+        $html .= self::overviewItem( 'Content view cache', !is_array( $cache ) || $cache['state'] === null ? '-'
+                    : '<span class="exp-debug-badge" data-level="' . ( $cache['state'] === 'hit' || $cache['state'] === 'off' ? 'ok' : 'warn' ) . '" title="'
+                      . self::a( self::renderingStateText( $cache ) ) . '">' . self::h( isset( $stateWords[$cache['state']] ) ? $stateWords[$cache['state']] : 'not found' ) . '</span>' );
+        $html .= self::overviewItem( 'Cache blocks', !$totals || $totals['count'] == 0 ? '-'
+                    : self::h( '%hits of %count read from the cache', array( '%hits' => (int)$totals['hits'], '%count' => (int)$totals['count'] ) ) );
+        $html .= self::overviewItem( 'Templates rendered', empty( $r['tree_count'] ) ? '-' : (string)(int)$r['tree_count'] );
+        $html .= self::overviewItem( 'Compiled in this request', (string)count( $r['templates']['compiled'] ) );
+        $html .= '</dl>';
+        $html .= self::subtabsHtml( 'rendering', 'Rendering', array( 'controller' => 'Controller', 'tree' => 'Template tree', 'viewcache' => 'Content view cache',
+                                                                    'blocks' => 'Cache blocks', 'templates' => 'Templates' ) );
+
+        $html .= self::subpanelStart( 'rendering', 'controller' );
         $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.' ) . '</p>';
         if ( !$r['views'] )
             $html .= '<p class="exp-debug-hint">' . self::h( 'No module view ran.' ) . '</p>';
@@ -1724,12 +1837,14 @@ class expDebugBarReport
             $html .= '</ol></details>';
         }
 
-        // the tree right after the controller: what rendered the page, open
-        $html .= self::templateTreeHtml( isset( $r['tree'] ) ? $r['tree'] : array(), isset( $r['tree_count'] ) ? (int)$r['tree_count'] : 0 );
+        $html .= '</section>';
 
-        $html .= '<h3>' . self::h( 'Content view cache' ) . '</h3>';
+        $html .= self::subpanelStart( 'rendering', 'tree' );
+        $html .= self::templateTreeHtml( isset( $r['tree'] ) ? $r['tree'] : array(), isset( $r['tree_count'] ) ? (int)$r['tree_count'] : 0 );
+        $html .= '</section>';
+
+        $html .= self::subpanelStart( 'rendering', 'viewcache' );
         $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.' ) . '</p>';
-        $cache = $r['view_cache'];
         if ( !is_array( $cache ) || $cache['state'] === null )
             $html .= '<p class="exp-debug-hint">' . self::h( 'No content view ran on this page.' ) . '</p>';
         else
@@ -1767,10 +1882,13 @@ class expDebugBarReport
             $html .= '</table>';
         }
 
-        $html .= self::cacheBlocksHtml( isset( $r['cache_blocks'] ) ? $r['cache_blocks'] : array(),
-                                        isset( $r['cache_block_totals'] ) ? $r['cache_block_totals'] : null );
+        $html .= '</section>';
 
-        $html .= '<h3>' . self::h( 'Templates' ) . '</h3>';
+        $html .= self::subpanelStart( 'rendering', 'blocks' );
+        $html .= self::cacheBlocksHtml( isset( $r['cache_blocks'] ) ? $r['cache_blocks'] : array(), $totals );
+        $html .= '</section>';
+
+        $html .= self::subpanelStart( 'rendering', 'templates' );
         $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.' ) . '</p>';
         $settings = $r['settings'];
         $html .= '<table class="exp-debug-facts">';
@@ -1791,7 +1909,7 @@ class expDebugBarReport
                 $html .= '<li>' . self::renderingValue( self::relativePath( $file ) ) . '</li>';
             $html .= '</ul></details>';
         }
-        return $html;
+        return $html . '</section>';
     }
 
     /**
@@ -1805,9 +1923,8 @@ class expDebugBarReport
     protected static function templateTreeHtml( array $tree, $count )
     {
         if ( !$tree )
-            return '';
-        $html = '<h3>' . self::h( 'Template tree' ) . '</h3>';
-        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.' ) . '</p>';
+            return '<p class="exp-debug-hint">' . self::h( 'No template was rendered (a view read from the view cache renders none).' ) . '</p>';
+        $html = '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.' ) . '</p>';
         $html .= '<details class="exp-debug-render-tree" open><summary>' . self::h( '%count templates', array( '%count' => $count ) ) . '</summary>';
         if ( count( $tree ) < $count )
             $html .= '<p class="exp-debug-hint">' . self::h( 'The first %shown are listed.', array( '%shown' => count( $tree ) ) ) . '</p>';
@@ -1881,8 +1998,7 @@ class expDebugBarReport
      */
     protected static function cacheBlocksHtml( array $blocks, $totals )
     {
-        $html = '<h3>' . self::h( 'Cache blocks' ) . '</h3>';
-        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.' ) . '</p>';
+        $html = '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.' ) . '</p>';
         if ( !$totals || $totals['count'] == 0 )
             return $html . '<p class="exp-debug-hint">' . self::h( 'No cache-block ran on this page.' ) . '</p>';
         $html .= '<p class="exp-debug-hint">' . self::h( '%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row\'s time holds the blocks inside it).',
@@ -2307,10 +2423,13 @@ class expDebugBarReport
         return $info;
     }
 
-    /** Whether the current user may change settings and clear caches. No names, only rights. */
+    /**
+     * The current user for the bar: logged in, the user id and login (for the user chip), and whether the user may
+     * change settings and clear caches.
+     */
     protected static function userInfo()
     {
-        $info = array( 'logged_in' => false, 'id' => 0, 'can_setup' => false, 'can_cache' => false );
+        $info = array( 'logged_in' => false, 'id' => 0, 'login' => '', 'can_setup' => false, 'can_cache' => false );
         if ( !class_exists( 'eZUser', false ) )
             return $info;
         try
@@ -2320,6 +2439,7 @@ class expDebugBarReport
                 return $info;
             $info['logged_in'] = (bool)$user->isRegistered();
             $info['id'] = (int)$user->attribute( 'contentobject_id' );
+            $info['login'] = (string)$user->attribute( 'login' );
             $setup = $user->hasAccessTo( 'setup', 'setup' );
             $cache = $user->hasAccessTo( 'setup', 'managecache' );
             $info['can_setup'] = isset( $setup['accessWord'] ) && $setup['accessWord'] !== 'no';

@@ -69199,6 +69199,190 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>No answer</source>
         <translation>Sen resposta</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>enmascarado</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Amosar as explicacións</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Ocultar as explicacións</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Abrir</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Abrir todo</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Pechar todo</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Chave ou valor</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Buscar na sesión</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count máis</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>aniñado de máis para amosalo</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>cortado, %count caracteres en total</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Iniciado</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Nome da cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID da sesión</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Xestor</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Ruta de gardado</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Valor predeterminado de PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Duración (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>duración %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>A túa propia sesión PHP, tal como estaba cando se abriu a sección, nunca outra. Os valores das chaves que parecen segredos (tokens, hashes, contrasinais) enmascáranse (debugbar.ini SessionMask[]); todo o demais amósase tal como está gardado, tamén os datos persoais.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count chaves, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>grande</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>A sesión está baleira.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Non se iniciou ningunha sesión para esta solicitude.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensión %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Núcleo e outros</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Non se amosan todas as entradas: a sesión ten máis das que se poden listar aquí.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count chaves non se listan.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Marco</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Os valores que parecen un token (un JSON Web Token, as credenciais dunha cabeceira Authorization, unha chave privada, un texto hexadecimal ou aleatorio longo) tamén se enmascaran, se chame como se chame a súa chave (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>A chave parece un segredo (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>O valor parece un token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Debaixo dunha chave enmascarada.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>A sesión como texto, enmascarada como a táboa.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>A sesión é maior que %size (debugbar.ini SessionWarnBytes): cada solicitude deste usuario le a sesión enteira e escríbea cando cambiou.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP garda esta sesión en ficheiros e bloquea o ficheiro durante toda a solicitude: as solicitudes do mesmo usuario (varias lapelas, chamadas AJAX) agárdanse unhas ás outras.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Manter aberto</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Maior que %size (debugbar.ini SessionWarnBytes): cada solicitude deste usuario le a sesión enteira.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits de %count lidos da caché</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Non se renderizou ningún modelo (unha vista lida da caché de vistas non renderiza ningún).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Asignacións de rol</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roles e políticas</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>distinto ao dos visitantes anónimos</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>igual ca para os visitantes anónimos</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

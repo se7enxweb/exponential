@@ -69199,6 +69199,190 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>No answer</source>
         <translation>Javob yo‘q</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>niqoblangan</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Izohlarni koʻrsatish</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Izohlarni yashirish</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ochish</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Hammasini ochish</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Hammasini yopish</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Kalit yoki qiymat</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Seansda qidirish</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tur</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>yana %count ta</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>koʻrsatish uchun juda chuqur joylashgan</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>qisqartirildi, jami %count belgi</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Boshlangan</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Kuki nomi</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Seans ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Ishlovchi</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Saqlash yoʻli</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP standarti</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Yashash muddati (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kuki</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>yashash muddati %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Sizning oʻz PHP seansingiz, boʻlim ochilgan paytdagi holatida, hech qachon boshqasi emas. Sirga oʻxshagan kalitlarning (tokenlar, xeshlar, parollar) qiymatlari niqoblanadi (debugbar.ini SessionMask[]); qolgan hamma narsa saqlanganidek koʻrsatiladi, shaxsiy maʼlumotlar ham.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count ta kalit, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>katta</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Seans boʻsh.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Bu soʻrov uchun seans boshlanmadi.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name kengaytmasi</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Yadro va boshqalar</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Hamma yozuvlar koʻrsatilmagan: seansda bu yerda roʻyxatga olinishi mumkin boʻlganidan koʻproq narsa bor.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count ta kalit roʻyxatga kiritilmagan.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Ramka</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Tokenga oʻxshagan qiymatlar (JSON Web Token, Authorization sarlavhasining hisob maʼlumotlari, shaxsiy kalit, uzun oʻn oltilik yoki tasodifiy matn) ham, kaliti qanday nomlanishidan qatʼi nazar, niqoblanadi (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Kalit sirga oʻxshaydi (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Qiymat tokenga oʻxshaydi.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Niqoblangan kalit ostida.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Matn koʻrinishidagi seans, jadval kabi niqoblangan.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Seans %size dan katta (debugbar.ini SessionWarnBytes): bu foydalanuvchining har bir soʻrovi butun seansni oʻqiydi va u oʻzgarganda uni yozadi.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP bu seansni fayllarda saqlaydi va butun soʻrov davomida faylni qulflaydi: bir foydalanuvchining soʻrovlari (bir nechta varaq, AJAX chaqiruvlari) bir-birini kutadi.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Ochiq qoldirish</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size dan katta (debugbar.ini SessionWarnBytes): bu foydalanuvchining har bir soʻrovi butun seansni oʻqiydi.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count tadan %hits tasi keshdan oʻqildi</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Hech qanday shablon chizilmadi (koʻrinish keshidan oʻqilgan koʻrinish hech narsa chizmaydi).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rol tayinlanishlari</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollar va siyosatlar</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>anonim tashrif buyuruvchilarnikidan farq qiladi</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>anonim tashrif buyuruvchilarnikidek</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

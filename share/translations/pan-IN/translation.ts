@@ -69197,6 +69197,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>ਕੋਈ ਜਵਾਬ ਨਹੀਂ</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>ਲੁਕਾਇਆ ਗਿਆ</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>ਵਿਆਖਿਆਵਾਂ ਦਿਖਾਓ</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>ਵਿਆਖਿਆਵਾਂ ਲੁਕਾਓ</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ਖੋਲ੍ਹੋ</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>ਸਭ ਖੋਲ੍ਹੋ</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>ਸਭ ਬੰਦ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>ਕੁੰਜੀ ਜਾਂ ਮੁੱਲ</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>ਸੈਸ਼ਨ ਵਿੱਚ ਖੋਜੋ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ਕਿਸਮ</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count ਹੋਰ</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ਦਿਖਾਉਣ ਲਈ ਬਹੁਤ ਡੂੰਘਾਈ ਤੱਕ ਨੈਸਟ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>ਕੱਟਿਆ ਗਿਆ, ਕੁੱਲ %count ਅੱਖਰ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ਸ਼ੁਰੂ ਹੋਇਆ</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>ਕੂਕੀ ਦਾ ਨਾਮ</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ਸੈਸ਼ਨ ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>ਹੈਂਡਲਰ</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>ਸੰਭਾਲ ਮਾਰਗ</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP ਡਿਫੌਲਟ</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>ਜੀਵਨਕਾਲ (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>ਕੂਕੀ</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ਜੀਵਨਕਾਲ %s ਸਕਿੰਟ</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>ਤੁਹਾਡਾ ਆਪਣਾ PHP ਸੈਸ਼ਨ, ਜਿਵੇਂ ਇਹ ਭਾਗ ਖੋਲ੍ਹਣ ਵੇਲੇ ਸੀ, ਕਦੇ ਵੀ ਕੋਈ ਹੋਰ ਨਹੀਂ। ਭੇਤ ਵਰਗੀਆਂ ਲੱਗਦੀਆਂ ਕੁੰਜੀਆਂ (ਟੋਕਨ, ਹੈਸ਼, ਪਾਸਵਰਡ) ਦੇ ਮੁੱਲ ਲੁਕਾਏ ਜਾਂਦੇ ਹਨ (debugbar.ini SessionMask[]); ਬਾਕੀ ਸਭ ਕੁਝ ਜਿਵੇਂ ਸੰਭਾਲਿਆ ਗਿਆ ਹੈ ਉਵੇਂ ਹੀ ਦਿਖਾਇਆ ਜਾਂਦਾ ਹੈ, ਨਿੱਜੀ ਡਾਟਾ ਵੀ।</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count ਕੁੰਜੀਆਂ, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>ਵੱਡਾ</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>ਸੈਸ਼ਨ ਖਾਲੀ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>ਇਸ ਬੇਨਤੀ ਲਈ ਕੋਈ ਸੈਸ਼ਨ ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤਾ ਗਿਆ।</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ਐਕਸਟੈਂਸ਼ਨ %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>ਕਰਨਲ ਅਤੇ ਹੋਰ</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>ਹਰ ਐਂਟਰੀ ਨਹੀਂ ਦਿਖਾਈ ਗਈ: ਸੈਸ਼ਨ ਵਿੱਚ ਇੱਥੇ ਸੂਚੀਬੱਧ ਕੀਤੇ ਜਾ ਸਕਣ ਨਾਲੋਂ ਵੱਧ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count ਕੁੰਜੀਆਂ ਸੂਚੀ ਵਿੱਚ ਨਹੀਂ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>ਫਰੇਮ</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>ਟੋਕਨ ਵਰਗੇ ਲੱਗਦੇ ਮੁੱਲ ਵੀ (JSON Web Token, Authorization ਹੈਡਰ ਦੇ ਕ੍ਰੈਡੈਂਸ਼ੀਅਲ, ਨਿੱਜੀ ਕੁੰਜੀ, ਲੰਮਾ ਹੈਕਸ ਜਾਂ ਬੇਤਰਤੀਬ ਟੈਕਸਟ) ਲੁਕਾਏ ਜਾਂਦੇ ਹਨ, ਉਹਨਾਂ ਦੀ ਕੁੰਜੀ ਦਾ ਨਾਮ ਜੋ ਵੀ ਹੋਵੇ (debugbar.ini SessionValueMask[])।</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>ਕੁੰਜੀ ਭੇਤ ਵਰਗੀ ਲੱਗਦੀ ਹੈ (debugbar.ini SessionMask[])।</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>ਮੁੱਲ ਟੋਕਨ ਵਰਗਾ ਲੱਗਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>ਲੁਕਾਈ ਗਈ ਕੁੰਜੀ ਦੇ ਹੇਠਾਂ।</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>ਟੈਕਸਟ ਵਜੋਂ ਸੈਸ਼ਨ, ਸਾਰਣੀ ਵਾਂਗ ਲੁਕਾਇਆ ਗਿਆ।</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>ਸੈਸ਼ਨ %size ਤੋਂ ਵੱਡਾ ਹੈ (debugbar.ini SessionWarnBytes): ਇਸ ਵਰਤੋਂਕਾਰ ਦੀ ਹਰ ਬੇਨਤੀ ਪੂਰਾ ਸੈਸ਼ਨ ਪੜ੍ਹਦੀ ਹੈ, ਅਤੇ ਬਦਲਣ 'ਤੇ ਇਸਨੂੰ ਲਿਖਦੀ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP ਇਸ ਸੈਸ਼ਨ ਨੂੰ ਫਾਈਲਾਂ ਵਿੱਚ ਰੱਖਦਾ ਹੈ ਅਤੇ ਪੂਰੀ ਬੇਨਤੀ ਦੌਰਾਨ ਫਾਈਲ ਨੂੰ ਲੌਕ ਰੱਖਦਾ ਹੈ: ਇੱਕੋ ਵਰਤੋਂਕਾਰ ਦੀਆਂ ਬੇਨਤੀਆਂ (ਕਈ ਟੈਬਾਂ, AJAX ਕਾਲਾਂ) ਇੱਕ ਦੂਜੇ ਦੀ ਉਡੀਕ ਕਰਦੀਆਂ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>ਖੁੱਲ੍ਹਾ ਰੱਖੋ</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size ਤੋਂ ਵੱਡਾ (debugbar.ini SessionWarnBytes): ਇਸ ਵਰਤੋਂਕਾਰ ਦੀ ਹਰ ਬੇਨਤੀ ਪੂਰਾ ਸੈਸ਼ਨ ਪੜ੍ਹਦੀ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count ਵਿੱਚੋਂ %hits ਕੈਸ਼ ਤੋਂ ਪੜ੍ਹੇ ਗਏ</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>ਕੋਈ ਟੈਮਪਲੇਟ ਰੈਂਡਰ ਨਹੀਂ ਹੋਇਆ (ਵਿਊ ਕੈਸ਼ ਤੋਂ ਪੜ੍ਹਿਆ ਵਿਊ ਕੋਈ ਵੀ ਟੈਮਪਲੇਟ ਰੈਂਡਰ ਨਹੀਂ ਕਰਦਾ)।</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ਰੋਲ ਸੌਂਪਣੀਆਂ</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>ਭੂਮਿਕਾਵਾਂ ਅਤੇ ਨੀਤੀਆਂ</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ਗੁਮਨਾਮ ਵਿਜ਼ਟਰਾਂ ਤੋਂ ਵੱਖਰਾ</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ਗੁਮਨਾਮ ਵਿਜ਼ਟਰਾਂ ਵਰਗਾ ਹੀ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
