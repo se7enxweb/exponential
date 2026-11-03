@@ -13,6 +13,13 @@ of Exponential.
 - **Import** (SQL, CSV, TSV) and **export** (SQL dump, CSV, TSV) as direct file downloads that bypass the template
   wrapping.
 - **Several database drivers**: MySQL 8.0+ and MariaDB 10.3+, PostgreSQL 14+, SQLite 3.35+.
+- **The site's own database, preselected**: the editor opens the main database of the installation, read from
+  `site.ini [DatabaseSettings]` of the siteaccess the way the kernel reads it, and connects to it as soon as the
+  backup acknowledgement is confirmed. Its login comes from the INI: it is never typed in, written into a form or
+  shown, and only the server key `main` appears in the URL. Only the engine the site runs on is offered (an SQLite
+  site gets SQLite only, a MySQL site MySQL/MariaDB only): the site uses no other engine, and a connection typed in
+  by hand could reach a database that does not belong to it. An SQLite database named without a path is the file in
+  `var/storage/sqlite3/`, as for the kernel; its table list leaves out SQLite's own tables (`sqlite_sequence` ...).
 - **Safety gate**: a mandatory disclaimer and **backup acknowledgement** screen on every bare access.
 - **CSRF-protected database switching**: the "Change database" link carries a per-session token `dse_switch`; "return
   to last database" works without storing URLs; AdminNeo's server password sessions are kept across the gate.
@@ -51,7 +58,7 @@ php bin/php/ezcache.php --clear-all
 
 | File | Block | Key | Default | Meaning |
 |---|---|---|---|---|
-| `dse.ini` | `DSESettings` | `InsecureUse` | `disabled` | When `enabled`, pre-fills the database password in the login form. Use only in trusted, closed environments |
+| `dse.ini` | `DSESettings` | `InsecureUse` | `disabled` | When `enabled`, pre-fills the database password in the login form. Only used when AdminNeo has no driver for the site's engine (otherwise there is no login form). Use only in trusted, closed environments |
 
 ## What changed
 

@@ -13,6 +13,14 @@ unter `/dse/dashboard`. Es ist die einzige freigegebene Extension für einen Dat
 - **Import** (SQL, CSV, TSV) und **Export** (SQL-Dump, CSV, TSV) als direkte Datei-Downloads, die die Template-Hülle
   umgehen.
 - **Mehrere Datenbanktreiber**: MySQL 8.0+ und MariaDB 10.3+, PostgreSQL 14+, SQLite 3.35+.
+- **Die eigene Datenbank der Website, vorausgewählt**: Der Editor öffnet die Hauptdatenbank der Installation, gelesen
+  aus `site.ini [DatabaseSettings]` des Siteaccess so, wie der Kernel sie liest, und verbindet sich mit ihr, sobald die
+  Bestätigung der Sicherung abgeschickt ist. Die Anmeldung kommt aus der INI: Sie wird nie eingegeben, in kein
+  Formular geschrieben und nicht angezeigt, und in der URL steht nur der Serverschlüssel `main`. Angeboten wird nur
+  das Datenbanksystem, mit dem die Website läuft (eine SQLite-Website bekommt nur SQLite, eine MySQL-Website nur
+  MySQL/MariaDB): Die Website verwendet kein anderes, und eine von Hand eingegebene Verbindung könnte eine Datenbank
+  erreichen, die nicht zu ihr gehört. Eine SQLite-Datenbank ohne Pfad ist wie für den Kernel die Datei in
+  `var/storage/sqlite3/`; ihre Tabellenliste lässt die eigenen Tabellen von SQLite (`sqlite_sequence` ...) weg.
 - **Sicherheitsschranke**: ein verpflichtender Haftungshinweis und ein Bildschirm zur **Bestätigung der Sicherung** bei
   jedem direkten Zugriff.
 - **Gegen CSRF geschützter Wechsel der Datenbank**: Der Link „Change database“ trägt ein Token `dse_switch` pro
@@ -54,7 +62,7 @@ php bin/php/ezcache.php --clear-all
 
 | Datei | Block | Schlüssel | Standard | Bedeutung |
 |---|---|---|---|---|
-| `dse.ini` | `DSESettings` | `InsecureUse` | `disabled` | Bei `enabled` wird das Datenbankpasswort im Anmeldeformular vorausgefüllt. Nur in vertrauenswürdigen, geschlossenen Umgebungen verwenden |
+| `dse.ini` | `DSESettings` | `InsecureUse` | `disabled` | Bei `enabled` wird das Datenbankpasswort im Anmeldeformular vorausgefüllt. Nur wirksam, wenn AdminNeo für das Datenbanksystem der Website keinen Treiber hat (sonst gibt es kein Anmeldeformular). Nur in vertrauenswürdigen, geschlossenen Umgebungen verwenden |
 
 ## Was sich geändert hat
 
