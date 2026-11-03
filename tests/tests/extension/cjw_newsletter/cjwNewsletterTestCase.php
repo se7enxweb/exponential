@@ -62,8 +62,7 @@ abstract class cjwNewsletterTestCase extends PHPUnit\Framework\TestCase
             $script->setUseSiteAccess( 'admin' );
             $script->initialize();
             eZExecution::setCleanExit();
-            if ( !eZDB::instance()->isConnected() )
-                throw new RuntimeException( 'no database connection' );
+            ezpLiveInstallation::installedSiteDatabase();
             if ( !class_exists( 'CjwNewsletterUser' ) )
                 throw new RuntimeException( 'cjw_newsletter is not active' );
             if ( !eZContentObject::fetch( self::LIST_OBJECT_ID ) )

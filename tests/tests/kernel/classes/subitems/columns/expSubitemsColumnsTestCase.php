@@ -62,8 +62,7 @@ abstract class expSubitemsColumnsTestCase extends PHPUnit\Framework\TestCase
             $script->initialize();
             eZExecution::setCleanExit();
 
-            if ( !eZDB::instance()->isConnected() )
-                throw new RuntimeException( 'no database connection' );
+            ezpLiveInstallation::installedSiteDatabase();
             self::$script = $script;
             self::$registry = new expSubitemsColumnRegistry();
         }

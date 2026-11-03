@@ -69,8 +69,7 @@ class expAuditFilterGuardReauthTest extends PHPUnit\Framework\TestCase
                 $script->initialize();
             }
             eZExecution::setCleanExit();
-            if ( !eZDB::instance()->isConnected() )
-                throw new RuntimeException( 'no database connection' );
+            ezpLiveInstallation::installedSiteDatabase();
             self::$booted = true;
         }
         catch ( Throwable $e )

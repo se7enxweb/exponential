@@ -61,8 +61,7 @@ class expAuditExportStreamTest extends PHPUnit\Framework\TestCase
                 $script->initialize();
             }
             eZExecution::setCleanExit();
-            if ( !eZDB::instance()->isConnected() )
-                throw new RuntimeException( 'no database connection' );
+            ezpLiveInstallation::installedSiteDatabase();
             if ( !class_exists( 'expAuditExportStream' ) )
                 throw new RuntimeException( 'expAuditExportStream is not in the autoload array (php bin/php/ezpgenerateautoloads.php -k)' );
             if ( !expAuditIndexSchema::isInstalled() )
