@@ -996,7 +996,8 @@ class expContentCheckReferences
             $dir = $root . '/' . $top;
             if ( !is_dir( $dir ) )
                 continue;
-            $iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS | FilesystemIterator::FOLLOW_SYMLINKS ) );
+            $iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS | FilesystemIterator::FOLLOW_SYMLINKS ),
+                                                     RecursiveIteratorIterator::LEAVES_ONLY, RecursiveIteratorIterator::CATCH_GET_CHILD );
             foreach ( $iterator as $file )
             {
                 $path = $file->getPathname();
@@ -1023,7 +1024,8 @@ class expContentCheckReferences
         $dirs = array_merge( glob( $root . '/design/*', GLOB_ONLYDIR ) ?: array(), glob( $root . '/extension/*/design/*', GLOB_ONLYDIR ) ?: array() );
         foreach ( $dirs as $dir )
         {
-            $iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ) );
+            $iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ),
+                                                     RecursiveIteratorIterator::LEAVES_ONLY, RecursiveIteratorIterator::CATCH_GET_CHILD );
             foreach ( $iterator as $file )
             {
                 $path = $file->getPathname();

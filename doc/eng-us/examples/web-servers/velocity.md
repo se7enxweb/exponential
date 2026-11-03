@@ -128,7 +128,7 @@ Notes:
   a self-signed stand-in rather than shown. A renewed certificate is picked up within a minute, without a restart. For
   Let's Encrypt run by Velocity itself, see `exp:velocity ssl` in
   [chapter 8, section 8.3.9](../../install/08-serving-the-site.md#839-https-served-by-velocity-itself).
-- **HSTS** starts at 300 seconds; raise `HSTSMaxAge` to a year only once every name is served over HTTPS for good.
+- **HSTS** is off as shipped (`HSTSMaxAge=0`); start at 300 seconds as above, and raise `HSTSMaxAge` to a year only once every name is served over HTTPS for good.
 - **Headers.** `[ServerSettings] ResponseHeaders[]` ships the kernel's default security headers for what Velocity
   answers itself, and `ResponseHeadersOnScripts` adds them to pages that lack them: nothing to configure.
 

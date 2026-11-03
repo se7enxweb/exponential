@@ -199,7 +199,7 @@ curl -skI https://127.0.0.1:8080/ | head -1
 
 Expect `HTTP/2 200` (or a redirect). The Velocity server can also make a self-signed certificate on its own, obtain and renew Let's Encrypt certificates and swap a renewed certificate in without a restart: [Velocity HTTPS and certificates](../features/6.0/velocity-https-certificates.md).
 
-Strict-Transport-Security is sent on HTTPS answers with `[HTTPSSettings] HSTSMaxAge` (300 seconds shipped). Raise it to a year (`31536000`) only when every name of the site is served over HTTPS for good: a browser remembers the value even after you lower it ([HTTP/2 and security](../specifications/6.0/velocity-http2-and-security.md)).
+Strict-Transport-Security is sent on HTTPS answers with `[HTTPSSettings] HSTSMaxAge` (shipped as 0, which sends none; start with 300). Raise it to a year (`31536000`) only when every name of the site is served over HTTPS for good: a browser remembers the value even after you lower it ([HTTP/2 and security](../specifications/6.0/velocity-http2-and-security.md)).
 
 ## 7. Ship a PHP change with one command
 
@@ -289,7 +289,7 @@ All are in `settings/velocity.ini` (shipped defaults). `exp:velocity config set`
 | `[CacheSettings]` | `DefaultTtl` | `30` | Seconds a response stays in that cache |
 | `[HTTPSSettings]` | `Enabled` | `false` | HTTPS on Velocity's `HTTPSPort` |
 | `[HTTPSSettings]` | `Certificate`, `Key` | empty | PEM files of your certificate and key |
-| `[HTTPSSettings]` | `HSTSMaxAge` | `300` | Strict-Transport-Security lifetime in seconds |
+| `[HTTPSSettings]` | `HSTSMaxAge` | `0` | Strict-Transport-Security lifetime in seconds |
 | `[DeploySettings]` | `PhpFpmService` | `auto` | The PHP-FPM service `exp:velocity deploy` reloads |
 | `[FrankenPHPSettings]` | `Port`, `HTTPSPort` | `8089`, `8444` | Ports of the FrankenPHP engine |
 | `[PHPServerSettings]` | `Port` | `8087` | Port of the `php` engine (PHP's own server) |
