@@ -32,7 +32,7 @@ entscheidet, welche Seiten es bekommen, sodass Redakteure Seiten umstellen, ohne
 ([README, Exponential Layouts](https://github.com/se7enxweb/exponential/blob/main/README.md#exponential-layouts-revolutionary)).
 Layouts haben Entwürfe wie Inhalte, eine Kopf- oder Fußzeile lässt sich einmal in einem gemeinsamen Layout bauen und
 aus jedem anderen Layout verknüpfen, und Layouts wandern per Export und Import zwischen Installationen. Die Suite wird
-in der Entwicklungslinie 6.0.15 von der `composer.json` des Kernels vorausgesetzt, sodass jede neue Installation sie hat
+in der Linie 6.0.15 von der `composer.json` des Kernels vorausgesetzt, sodass jede neue Installation sie hat
 ([Exponential Layouts](../wer-ist-die-exponential-foundation.md#exponential-layouts)).
 
 ## Was neu ist, und seit wann
@@ -45,7 +45,8 @@ in der Entwicklungslinie 6.0.15 von der `composer.json` des Kernels vorausgesetz
 | Export und Import von Layouts | 17. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#17-october-2026-export-and-import-of-layouts) |
 | Die Seite des Layout-Editors erfüllt WCAG 2 AA (so wie der Changelog es sagt) | 17. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#17-october-2026-the-layout-editor-page-meets-wcag-2-aa) |
 
-Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht.
+Alles in der Linie 6.0.15. Die Daten sind Daten der Änderungen, keine Veröffentlichungsdaten; ob der Tag `v6.0.15`
+existiert, zeigt `git tag -l 'v6.0.*' --sort=version:refname`.
 
 ## Fakten, die Sie drucken können
 

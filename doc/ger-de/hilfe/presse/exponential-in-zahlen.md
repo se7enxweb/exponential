@@ -32,7 +32,7 @@ unter [Wer ist 7x?, 7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen).
 | Ältester Commit im Repository | 2. September 2002 | `git log --reverse` |
 | Commits auf `main` | 27.727 | `git rev-list --count origin/main` |
 | Übernommene Pull Requests im Verlauf | 1.042 | `git log --grep="Merge pull request"` |
-| 6.0.x-Releases | 15 (6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026); 6.0.15 in Entwicklung, kein Tag am 19. Oktober 2026 | `git tag -l 'v6.0.*'` |
+| 6.0.x-Releases | 15 (6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026); 6.0.15 ist die aktuelle Linie (am 19. Oktober 2026 noch ohne Tag) | `git tag -l 'v6.0.*'` |
 | Vom Kernel verlangte se7enxweb-Pakete | 66 am 18. Oktober 2026, 69 am 25. Oktober 2026 (die Zahl wächst, wenn Erweiterungen hinzukommen) | `composer.json` |
 | Pakete des Vendors se7enxweb auf Packagist | 219 | <https://packagist.org/packages/list.json?vendor=se7enxweb> |
 | Öffentliche Repositorys des GitHub-Kontos se7enxweb | 1.025, davon 95 keine Forks | `gh repo list se7enxweb --limit 1100` |

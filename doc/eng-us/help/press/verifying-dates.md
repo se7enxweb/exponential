@@ -50,7 +50,7 @@ own date.
 | 1999 | The first copyright year of eZ Systems AS in the code |
 | 2001, 2014, 2022, 2023 for 7x | Founding as Brookins Consulting, the idea, the project start, the launch |
 | 11 or 12 August 2025 for the rename | Website first, repository the next day; "August 2025" covers both |
-| A date in the 6.0.15 changelog | When a feature arrived in development, not a release date |
+| A date in the 6.0.15 changelog | When a change arrived on the line, not a release date |
 | Dates in the press kit | The kit is dated June 2026; it predates newer releases ([The press kit](the-press-kit.md)) |
 | Time zones | Commits carry their author's offset; for a day near midnight, give the month or check the offset |
 
@@ -60,7 +60,7 @@ own date.
 
 ```text
 "As of 18 October 2026, the newest release is 6.0.14."
-"6.0.15 was in development when this article was published."
+"As of <date>, the tag v6.0.15 <existed | did not exist yet>."
 ```
 
 ## Related pages

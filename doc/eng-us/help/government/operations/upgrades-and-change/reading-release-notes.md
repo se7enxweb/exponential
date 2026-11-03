@@ -22,7 +22,7 @@ where the notes are and how to read them efficiently.
 
 | Notes | Where | Covers |
 |---|---|---|
-| Changelog per version | `doc/changelogs/6.0/` ([6.0.15](../../../../../changelogs/6.0/6.0.15.md), [6.0.14](../../../../../changelogs/6.0/6.0.14.md) ...) | every change of the version; 6.0.15 is "Not released yet" while in development |
+| Changelog per version | `doc/changelogs/6.0/` ([6.0.15](../../../../../changelogs/6.0/6.0.15.md), [6.0.14](../../../../../changelogs/6.0/6.0.14.md) ...) | every change of the version; the first line of each says whether and when it was released |
 | Behavior changes by period | `doc/eng-us/bc/6.0/`, for example [July and August 2026](../../../../bc/6.0/behaviour-changes-2026-07-08.md), [16 to 30 September 2026](../../../../bc/6.0/behaviour-changes-2026-09b.md), [1 to 2 October 2026](../../../../bc/6.0/behaviour-changes-2026-10.md) | what may break and what to do, with a checklist |
 | The upgrading guide's table | [Upgrading, C3](../../../../guides/upgrading.md#c3-read-the-checklist-of-each-period-you-pass) | which notes to read for your starting version |
 | Extensions | [Extension changelogs](../../../../../changelogs/extensions/README.md) | each extension's releases |

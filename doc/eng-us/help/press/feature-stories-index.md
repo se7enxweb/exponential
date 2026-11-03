@@ -27,8 +27,9 @@ and headline ideas, and who to ask. Pick the area your audience cares about.
 
 ## Headline features of the 6.0.15 line
 
-6.0.15 is in development; write about these features as "coming in the next release" or "in the development version"
-([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
+6.0.15 is the current release line of Exponential 6.0. Call these features released only if the tag `v6.0.15` exists
+(`git tag -l 'v6.0.*' --sort=version:refname`); without it, write "in the development version"
+([Covering 6.0.15, before and after its tag](covering-6-0-15-while-in-development.md)).
 
 | Story | In one line |
 |---|---|

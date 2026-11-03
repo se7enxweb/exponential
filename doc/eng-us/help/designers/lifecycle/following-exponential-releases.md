@@ -16,7 +16,7 @@ extensions can affect your templates; knowing early saves emergency fixes.
 
 | Source | What it holds |
 |---|---|
-| `doc/changelogs/6.0/<version>.md` in the repository | The changelog of each release; the one in development (6.0.15) is updated as work lands |
+| `doc/changelogs/6.0/<version>.md` in the repository | The changelog of each release; the one of the current line (6.0.15) is updated as work lands on `main` |
 | `doc/eng-us/bc/6.0/` | Upgrade notes for changes that need action, for example [YUI removal](../../../bc/6.0/yui-removal.md) |
 | `doc/eng-us/features/6.0/` | What a new feature does, for example [jQuery 4 in the admin, and YUI gone](../../../features/6.0/jquery4-and-yui-removal.md) |
 | Releases and tags of `se7enxweb/exponential` and of the extensions you use | Versions as published |

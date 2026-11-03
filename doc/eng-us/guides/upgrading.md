@@ -1,7 +1,7 @@
 # Upgrading: from 4.x, 5.x or an earlier 6.0.x to today
 
 This guide is for whoever runs an existing installation and wants to bring it to the current Exponential 6.0 line.
-That line is 6.0.15, still in development; the newest release tag at the time of writing is `v6.0.14` (see
+That line is 6.0.15, which follows 6.0.14; Composer installs it with the constraint `~6.0.15` (see
 [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)). Find your version, follow the part for it, and finish with the
 checks at the end. They tell you that the result is good.
 

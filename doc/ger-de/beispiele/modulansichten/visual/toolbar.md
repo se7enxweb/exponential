@@ -28,7 +28,6 @@ Die Ansicht nennt keine Richtlinienfunktion, daher braucht der Benutzer eine Ric
 | Schlüssel | Wert |
 |---|---|
 | Navigationsbereich | `ezvisualnavigationpart` |
-| UI-Kontext | `edit` |
 | Einzelne POST-Aktionen | BackToToolbarsButton: BackToToolbars, NewToolButton: NewTool, UpdatePlacementButton: UpdatePlacement, BrowseButton: Browse, RemoveButton: Remove, StoreButton: Store |
 | POST-Aktionen | BrowseActionName |
 

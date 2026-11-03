@@ -28,7 +28,7 @@ die Beschreibung. Ein Clip, eine Idee, eine Quelle.
    Text im Bild müssen die Fakten tragen.
 3. **Legen Sie im Clip offen**, wenn jemand bezahlt oder Ihnen etwas gegeben hat: im Bild am Anfang und in der
    Bildunterschrift ([Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-sponsoring.md#wo-die-offenlegung-steht)).
-4. **Nennen Sie die Version** im Bild, wenn Sie eine Funktion der Entwicklungslinie 6.0.15 zeigen.
+4. **Nennen Sie die Version** im Bild, wenn Sie eine Funktion der Linie 6.0.15 zeigen.
 5. **Untertitel eingebrannt oder hinzugefügt**, weil die meisten Kurzvideos ohne Ton angesehen werden
    ([Untertitel und barrierefreies Video](untertitel-und-barrierefreie-videos.md)).
 6. **Verlinken Sie die Hilfeseite** in der Bildunterschrift oder in Ihrem Profil.

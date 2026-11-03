@@ -23,8 +23,8 @@ not in the release.
 
 ## Wait for the tag
 
-A release exists when its tag exists. Before that, the work is "in development" (for example, "6.0.15 is in
-development", [Who is 7x?](../who-is-7x.md#the-60x-releases)).
+A release exists when its tag exists. Work that no tag contains yet is "in development" (the list of tags and their
+dates: [Who is 7x?](../who-is-7x.md#the-60x-releases)).
 
 ```bash
 git fetch --tags

@@ -33,7 +33,8 @@ the editor so each editor can choose. ("eZ Online Editor" is the name of the `ez
 
 ## What is new, and when
 
-The 6.0.15 line is in development and not released; the dates are dates of the changes.
+The 6.0.15 line is the current release line of Exponential 6.0; the dates are dates of the changes, not a release
+date.
 
 | What | When | Source |
 |---|---|---|

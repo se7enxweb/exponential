@@ -60,7 +60,7 @@ gemeinsamen Stylesheets mit Farbtokens, deren Kontrast im hellen und dunklen Mod
 |---|---|
 | „WCAG-zertifiziert“ | „Folgt WCAG-Regeln, die Tests prüfen“ |
 | „Die einzige Administration“ | Eines von mehreren Designs; andere bleiben (klassische Administration, admin3, AdminUI) |
-| „Erschienen“ | In der Produktlinie 6.0.15, in Entwicklung |
+| „Erschienen“ | In der Produktlinie 6.0.15; „erschienen“ nur, wenn der Tag `v6.0.15` existiert (`git tag -l 'v6.0.*'`) |
 
 ## Blickwinkel und Ideen für Überschriften
 

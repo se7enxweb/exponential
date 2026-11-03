@@ -109,7 +109,7 @@ work today, each with the page that describes it:
 | Staying up to date | Git clones with their full history, updated by hand or automatically | [Develop with Git](help/develop-with-git.md), [Update with Git](help/update-with-git.md) |
 
 None of this is a separate edition. It is in the same free package, and the newest of it is listed in the
-[6.0.15 changelog](../changelogs/6.0/6.0.15.md) while 6.0.15 is in development.
+[6.0.15 changelog](../changelogs/6.0/6.0.15.md), the changelog of the current 6.0.15 line.
 
 ## Why it is free software, and what that gives you
 

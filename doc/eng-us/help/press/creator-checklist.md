@@ -46,7 +46,7 @@ Pages: [Disclosure and sponsorship ethics](disclosure-and-sponsorship-ethics.md)
 ```
 
 Pages: [Video walkthrough guide](video-walkthrough-guide.md), [Live stream guide](live-stream-guide.md),
-[Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md).
+[Covering 6.0.15, before and after its tag](covering-6-0-15-while-in-development.md).
 
 ## Before publishing
 

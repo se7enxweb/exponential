@@ -330,7 +330,7 @@ then Microsoft zh-CN practice, then majority.
 | finetune / finetuning (installer) | 微调 | not 优化 |
 | salutation | 称呼 | not 称谓 |
 | do-not-contact list | 拒绝联系名单 | not 拒收名单; suppression list stays 抑制名单 |
-| mail gate / gate log | 邮件网关 / 网关日志 | not 邮件关卡; the expmcp write gate stays 写入关卡, quality gates 质量门禁 |
+| mail gate / gate log | 邮件网关 / 网关日志 | not 邮件关卡; the MCP write gate stays 写入关卡, quality gates 质量门禁 |
 | maintainer | 维护者 | not 维护人员 |
 | cron job / cronjob part | cron 任务 / cron 任务部分 | always lower case, also in headings and after quotes; the daemon alone is Cron at the start of a sentence |
 | preset | 方案 | column, debug bar, editor, AI and export presets alike; not 预置 / 预置项 |

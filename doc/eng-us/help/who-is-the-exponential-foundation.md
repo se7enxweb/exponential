@@ -122,7 +122,7 @@ The "State" column is the state on 18 October 2026, with its source.
 
 | Product | What it is | For | State |
 |---|---|---|---|
-| [Exponential 6](#exponential-6-the-kernel) | The CMS, CMF and shop kernel this installation runs | Everyone who builds or runs a site with it | 6.0.14 released 7 June 2026; 6.0.15 in development ([release overview](../release-overview)) |
+| [Exponential 6](#exponential-6-the-kernel) | The CMS, CMF and shop kernel this installation runs | Everyone who builds or runs a site with it | 6.0.14 released 7 June 2026; 6.0.15 is the current line ([release overview](../release-overview)) |
 | [Exponential Basic](#exponential-basic) | The simple CMS of the eZ Publish 2 line | Education, personal use, small sites | v2.4.0.3 (repository description) |
 | [Exponential Platform 3.2.9](#exponential-platform-329) | Symfony-only CMS from the last free eZ Platform | Teams on the eZ Platform 3 stack | 3.2.9 (repository description) |
 | [Exponential Platform Legacy](#exponential-platform-legacy) | Symfony platform plus Exponential 6 (dual kernel) | Sites that keep Exponential 6 and add Symfony | 2.5.x to 5.0.x lines (README) |
@@ -151,7 +151,7 @@ layer, clustering, and a plugin API.
 **Who it is for.** Organizations that run structured content, several sites or several languages from one
 installation, and developers who build applications on its framework.
 
-**Where it stands.** 6.0.14 is the newest tag (7 June 2026). The 6.0.15 line adds, among much else, Velocity, the
+**Where it stands.** 6.0.15 is the current line, after 6.0.14 (7 June 2026). It adds, among much else, Velocity, the
 admin4 design, an audit trail, Exponential Layouts, Exponential Intelligence, content jobs, packages end to end, more
 than 360 locales in the README's count, the LoveStack features of Mugo Web and this help system
 ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md), README "Recent improvements"). The story of every change since

@@ -40,8 +40,8 @@ administrators and editors; members of other groups choose for themselves, and t
 | The guide, social login buttons on the admin4 login page, codes accepted once and counted as failed logins, secrets encryptable at rest | 6 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#6-october-2026-two-step-sign-in) |
 | Every new installation requires two-step sign-in of administrators and editors | 23 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#2026-10-23-every-new-installation-requires-two-step-sign-in-of-administrators-and-editors-and-has-imports) |
 
-The kernel changes are part of the 6.0.15 development line, which is not released; the extension is released on its
-own.
+The kernel changes are part of the 6.0.15 line, the current release line of Exponential 6.0, and their dates are
+not a release date; the extension is released on its own.
 
 ## Facts you can print
 

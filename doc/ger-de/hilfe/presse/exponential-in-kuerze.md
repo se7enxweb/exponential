@@ -62,8 +62,8 @@ Fork übernommen wurde. Version 6.0.0 folgte am 1. Januar 2024. Das Produkt wurd
 
 ## Was neu ist
 
-Das neueste Release ist **6.0.14** (7. Juni 2026). **6.0.15** ist in Entwicklung; sein Changelog nennt bereits, neben
-vielem anderen ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)):
+**6.0.15** ist die aktuelle Linie von Exponential 6.0 und folgt auf **6.0.14** (7. Juni 2026); ihr Changelog nennt,
+neben vielem anderen ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)):
 
 | Funktion | In einem Satz | Thema |
 |---|---|---|
@@ -74,7 +74,7 @@ vielem anderen ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)):
 | Prüfprotokoll | Ein manipulationssicherer Nachweis dessen, was in der Administration geschah | [Thema: das Prüfprotokoll](thema-audit-trail.md) |
 | Das Hilfesystem | Diese Dokumentation in der Administration, durchsuchbar nach Zielgruppe | [Thema: das Hilfesystem](thema-das-hilfesystem.md) |
 
-Geben Sie 6.0.15 kein Veröffentlichungsdatum: Es ist keines veröffentlicht ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
+Geben Sie 6.0.15 ein Veröffentlichungsdatum nur mit dem Tag `v6.0.15`, aus `git tag -l 'v6.0.*'` ([Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 ## Lizenz und Preis
 

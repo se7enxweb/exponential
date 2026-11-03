@@ -39,7 +39,7 @@ HISTORY        Code base developed since 1999, first as eZ Publish, a product it
                almost 18 years. 7x: idea 2014 (se7enx.com registered), project start 2022, launch December 2023.
                Renamed Exponential on 11/12 August 2025.
 RELEASES *     6.0.0 on 1 January 2024 ... 6.0.14 on 7 June 2026 (15 releases). Current line: 6.0.15,
-               in development (lib/version.php), no release tag on 19 October 2026.
+               which follows 6.0.14 (lib/version.php); no release tag on 19 October 2026.
 LICENSE        Software: GNU GPL v2 or later, free of charge. Documentation: GNU FDL 1.3 or later.
                Exponential Velocity: MIT.
 RUNS ON *      PHP 8.0 - 8.5. SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL.
@@ -79,7 +79,7 @@ PRESS          info@se7enx.com   press kit: exponential.earth/about/press-kit
 |---|---|
 | Releases | [The 6.0.x releases at a glance](the-6-0-x-releases-at-a-glance.md), or the tags on GitHub |
 | Runs on | The README section "Requirements" |
-| New in 6.0.15 | The changelog; once 6.0.15 is tagged, it is no longer "in development" |
+| New in 6.0.15 | The changelog, and whether the tag `v6.0.15` exists (`git tag -l 'v6.0.*' --sort=version:refname`) |
 | Languages | [Languages in Exponential](../../languages.md) |
 
 ## Using the fact sheet

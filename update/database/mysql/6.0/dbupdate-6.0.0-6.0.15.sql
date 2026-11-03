@@ -106,6 +106,23 @@ EXECUTE exp_trashed_by_index_stmt;
 DEALLOCATE PREPARE exp_trashed_by_index_stmt;
 
 --
+-- An index on ezcontentobject.modified: Dashboard > Recent content lists the
+-- objects by their modification date, a page at a time, and on a large
+-- database that read must be indexed. Created only when missing.
+--
+
+SET @exp_contentobject_modified_index_sql := IF(
+    ( SELECT COUNT(*) FROM information_schema.STATISTICS
+      WHERE TABLE_SCHEMA = DATABASE()
+        AND TABLE_NAME = 'ezcontentobject'
+        AND INDEX_NAME = 'ezcontentobject_modified' ) = 0,
+    'CREATE INDEX ezcontentobject_modified ON ezcontentobject ( modified )',
+    'DO 0' );
+PREPARE exp_contentobject_modified_index_stmt FROM @exp_contentobject_modified_index_sql;
+EXECUTE exp_contentobject_modified_index_stmt;
+DEALLOCATE PREPARE exp_contentobject_modified_index_stmt;
+
+--
 -- The pdf export carries its own footer wording.
 --
 -- Every page of every export used to read "Exponential PDF export", because

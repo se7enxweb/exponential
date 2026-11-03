@@ -54,7 +54,8 @@ installiert eine Website auf fünf davon ([Installation mit einem Befehl](../../
 | Korrekturen an Treibern und Installationsprogrammen für alle Engines; SQLite ist die Voreinstellung des Setup-Assistenten | 16. bis 30. September 2026 | [Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
 | Oracle 11g und 12.1 (ezoracle 2.3.7) | 14. Oktober 2026 | [Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md#14-october-2026-oracle-11g-and-121-ezoracle-237) |
 
-Die Änderungen von September und Oktober gehören zur Produktlinie 6.0.15, die in Entwicklung und nicht erschienen ist.
+Die Änderungen von September und Oktober gehören zur Produktlinie 6.0.15. Die Daten sind Daten der Änderungen, keine
+Veröffentlichungsdaten; ob der Tag `v6.0.15` existiert, zeigt `git tag -l 'v6.0.*' --sort=version:refname`.
 
 ## Fakten, die Sie drucken können
 

@@ -34,7 +34,7 @@ hat, das Projekt zu verfolgen, hat allen Grund zu fragen.
 
 | Beleg | Quelle |
 |---|---|
-| 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026: fünfzehn Releases, 6.0.15 in Entwicklung | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x) |
+| 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026: fünfzehn Releases; 6.0.15 ist die aktuelle Linie | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x) |
 | „6556 Änderungen im Änderungsbuch in 53 Repositorys seit Dezember 2023“ | [Mit Einwänden umgehen, Wird es gepflegt?](../geschaeft/einwandbehandlung.md#wird-es-gepflegt) |
 | Tests laufen bei jedem Push und Pull Request, auf PHP 8.1 bis 8.5 | [CI](../../bc/6.0/ci.md), [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Was die aktuelle Linie hinzufügt: Velocity, admin4, Prüfprotokoll, Layouts, Exponential Intelligence, die Hilfe | [Änderungsprotokoll 6.0.15](../../../changelogs/6.0/6.0.15.md) |
@@ -58,13 +58,13 @@ der [Geschichte](../../geschichte/README.md).
 
 ```text
 SHORT (social media)
-It's very much alive: fifteen 6.0.x releases since Jan 2024, 6.0.15 in development, tests on every push.
+It's very much alive: 6.0.x releases since Jan 2024, 6.0.15 the current line, tests on every push.
 Releases: https://github.com/se7enxweb/exponential/releases
 
 FORUM
 Fair question - the code base was developed for years as eZ Publish, which its creator discontinued.
 7x took over leadership in 2023, and since 1 January 2024 there have been fifteen 6.0.x releases
-(6.0.0 to 6.0.14), with 6.0.15 in development. Every month is documented in the history pages in doc/eng-us/history,
+(6.0.0 to 6.0.14), and 6.0.15 is the current line. Every month is documented in the history pages in doc/eng-us/history,
 and you can check the tags yourself: git tag -l 'v6.0.*' --sort=version:refname
 Since 2026 a nonprofit, the Exponential Foundation, operates the project.
 

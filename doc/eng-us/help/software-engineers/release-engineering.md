@@ -28,7 +28,8 @@ course for extension maintainers is [Releasing](../extension-development/part-7-
 - The kernel version lives in `lib/version.php` (`VERSION_MAJOR`, `VERSION_MINOR`, `VERSION_RELEASE`) and in the
   database row `ezsite_data` `ezpublish-version`, which the update SQL writes. The root `composer.json` has no
   `version` field; Composer takes the version from the tag.
-- Kernel releases are tagged `v6.0.<n>`. Tags `v6.0.0` to `v6.0.14` exist; the 6.0.15 line is in development.
+- Kernel releases are tagged `v6.0.<n>`. Tags `v6.0.0` to `v6.0.14` exist; 6.0.15 is the current line after them, released
+  as the tag `v6.0.15` once it is published.
 - Extensions are separate Composer packages with their own versions.
 
 Choosing a number: [Version numbers and immutable tags](version-numbers-and-immutable-tags.md).

@@ -39,7 +39,7 @@ Source: [Brand and naming rules](../business/brand-and-naming-rules.md#the-produ
 | Exponential 6 | The major line |
 | 6.0.x | All releases of the line, 6.0.0 to 6.0.14 as of 18 October 2026 |
 | 6.0.14 | One release, a Git tag `v6.0.14` |
-| 6.0.15 | The release in development |
+| 6.0.15 | The current release line, which follows 6.0.14 |
 
 All releases are listed on [The 6.0.x releases at a glance](the-6-0-x-releases-at-a-glance.md).
 
@@ -47,10 +47,11 @@ All releases are listed on [The 6.0.x releases at a glance](the-6-0-x-releases-a
 
 A version is released when its Git tag is published. Until then:
 
-- write "6.0.15, which is in development" or "the next release";
+- write "<version>, which has no release tag yet" or "the next release", after checking
+  `git tag -l 'v6.0.*' --sort=version:refname`;
 - do not give a date unless the project has published one;
-- describe features as "in the 6.0.15 changelog", not as available in a release
-  ([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
+- describe features as "in the <version> changelog", not as available in a release
+  ([Covering the 6.0.15 line](covering-6-0-15-while-in-development.md)).
 
 Once published, a version is never changed: "a fix for a problem in `v6.0.14` or an earlier tag reaches you as the next
 release, not as a corrected copy of the old one" ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md);
@@ -84,7 +85,7 @@ git tag -l 'v6.0.*' | tail -1                  # WRONG: alphabetical, may not be
 | Mistake | Correct |
 |---|---|
 | "Exponential 7" | No such version exists |
-| "6.0.15 (released October 2026)" | 6.0.15 is in development |
+| "6.0.15 (released October 2026)" | Give the date of the tag `v6.0.15`; October 2026 is when much of the line was written |
 | "Velocity 0.0.5" as the next after 0.0.4.9 | The next after 0.0.4.9 is 0.0.4.10 |
 | "the latest version, 6.0.9" | Check the tags; 6.0.14 is the newest as of 18 October 2026 |
 | "eZ Publish 6.0" for the 2024 release | "6.0.0, released in January 2024, while the software was still called eZ Publish" |

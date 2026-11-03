@@ -17,6 +17,7 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [expservices.ini](expservices-expservices.md) | expservices | 7 | ForumClass, ForumContainerClass, TopicClass, ReplyClass, CommentClass, PollClass ... |
 | [ezjscore.ini](ezjscore-ezjscore.md) | ezjscore | 7 | Class, Class, Class, Class, Class, Class ... |
 | [ezoe.ini](ezoe-ezoe.md) | ezoe | 3 | UploadExtensionCheck, Plugins, ExternalPlugins |
+| [admininterface.ini](admininterface.md) | kernel | 1 | PageHitClasses |
 | [audit.ini](audit.md) | kernel | 25 | Sinks, Sinks, Sinks, Sinks, Sinks, Classes ... |
 | [binaryfile.ini](binaryfile.md) | kernel | 2 | Repositories, ExtensionRepositories |
 | [bookmark.ini](bookmark.md) | kernel | 1 | TypeClass |

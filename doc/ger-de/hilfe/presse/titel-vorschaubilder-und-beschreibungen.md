@@ -27,7 +27,7 @@ Ein guter Titel nennt die Aufgabe oder das Thema, das Produkt und, bei Tutorials
 
 | Art | Muster | Beispiel |
 |---|---|---|
-| Tutorial | <Task> in Exponential <version> | „Eine Landingpage mit dem Layout-Editor in Exponential 6.0.15 bauen (Entwicklungslinie)“ |
+| Tutorial | <Task> in Exponential <version> | „Eine Landingpage mit dem Layout-Editor in Exponential 6.0.15 bauen“ |
 | Erster Eindruck | Ein erster Blick auf <feature> | „Ein erster Blick auf Exponential Intelligence, den Assistenten, der nur Entwürfe schreibt“ |
 | Installation | Exponential <version> mit einem Befehl installieren | „Exponential von Grund auf mit einem Befehl auf SQLite installieren“ |
 | Rezension | <Product> im Test: <angle> | „Exponential im Test: eine Website betreiben nach den eZ-Publish-Jahren“ |
@@ -44,7 +44,7 @@ Exponential Layouts. Der alte Name eZ Publish erscheint nur als Geschichte.
 | „Das CMS, das WordPress erledigt“ | Greift ein anderes Projekt an; keine Quelle vergleicht die beiden |
 | „100-mal schneller als <product>“ | Kein veröffentlichter Vergleich stützt einen Faktor |
 | „eZ Publish 7 ist da“ | Das Produkt heißt Exponential; ein solches Release gibt es nicht |
-| „Exponential 6.0.15 veröffentlicht!“ | 6.0.15 ist in Entwicklung und hat kein Veröffentlichungsdatum |
+| „Exponential 6.0.15 veröffentlicht!“ | Nur, wenn der Tag `v6.0.15` existiert (`git tag -l 'v6.0.*'`); dann mit dessen Datum |
 | „Das offizielle Exponential-Tutorial“ | Ihr Inhalt gehört Ihnen, sofern 7x oder die Foundation ihn nicht in Auftrag gegeben haben |
 | „KI schreibt Ihre ganze Website“ | Exponential Intelligence schreibt nur Entwürfe |
 | „Von Ibexa empfohlen“ | Exponential ist nicht mit eZ Systems oder Ibexa verbunden |
@@ -69,7 +69,7 @@ Setzen Sie das Wichtige in die ersten Zeilen, vor „mehr anzeigen“:
 
 ```text
 <One sentence: what the video shows and the promise.>
-Shows Exponential <version | 6.0.15 development line as of <date>> on my own test installation, with invented content.
+Shows Exponential <version | the main branch as of <date>> on my own test installation, with invented content.
 <Disclosure line: paid / gifted / commission / nobody paid for this video.>
 
 SOURCES

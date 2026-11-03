@@ -127,7 +127,7 @@ Die Spalte „Stand“ gibt den Stand vom 18. Oktober 2026 mit seiner Quelle an.
 
 | Produkt | Was es ist | Für wen | Stand |
 |---|---|---|---|
-| [Exponential 6](#exponential-6-der-kernel) | Der CMS-, CMF- und Shop-Kernel, auf dem diese Installation läuft | Alle, die damit eine Site bauen oder betreiben | 6.0.14 veröffentlicht am 7. Juni 2026; 6.0.15 in Entwicklung ([Release-Übersicht](../../eng-us/release-overview)) |
+| [Exponential 6](#exponential-6-der-kernel) | Der CMS-, CMF- und Shop-Kernel, auf dem diese Installation läuft | Alle, die damit eine Site bauen oder betreiben | 6.0.14 veröffentlicht am 7. Juni 2026; 6.0.15 ist die aktuelle Linie ([Release-Übersicht](../../eng-us/release-overview)) |
 | [Exponential Basic](#exponential-basic) | Das einfache CMS der Linie eZ Publish 2 | Bildung, private Nutzung, kleine Sites | v2.4.0.3 (Beschreibung des Repositorys) |
 | [Exponential Platform 3.2.9](#exponential-platform-329) | Reines Symfony-CMS aus der letzten freien eZ Platform | Teams auf dem Stack von eZ Platform 3 | 3.2.9 (Beschreibung des Repositorys) |
 | [Exponential Platform Legacy](#exponential-platform-legacy) | Symfony-Plattform plus Exponential 6 (Dual-Kernel) | Sites, die Exponential 6 behalten und Symfony ergänzen | Linien 2.5.x bis 5.0.x (README) |
@@ -158,7 +158,7 @@ Plugin-API.
 **Für wen es ist.** Organisationen, die strukturierte Inhalte, mehrere Sites oder mehrere Sprachen aus einer
 Installation betreiben, und Entwickler, die Anwendungen auf seinem Framework bauen.
 
-**Wo es steht.** 6.0.14 ist der neueste Tag (7. Juni 2026). Die Linie 6.0.15 bringt neben vielem anderen Velocity,
+**Wo es steht.** Die Linie 6.0.15 ist die aktuelle Linie; sie folgt auf 6.0.14 (7. Juni 2026). Die Linie 6.0.15 bringt neben vielem anderen Velocity,
 das Design admin4, ein Audit-Protokoll, Exponential Layouts, Exponential Intelligence, Inhalts-Jobs, Pakete von Anfang
 bis Ende, mehr als 360 Locales nach der Zählung des README, die LoveStack-Funktionen von Mugo Web und dieses Hilfesystem
 ([Changelog 6.0.15](../../changelogs/6.0/6.0.15.md), README „Recent improvements“). Die Geschichte jeder Änderung

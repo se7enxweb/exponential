@@ -191,7 +191,7 @@ Bedeutung jeder Erhöhung.
 **Wie die Versionen von Exponential funktionieren.**
 
 - **Der Kernel** wird als `6.0.x` versioniert: `lib/version.php` (`ExponentialSDK`, `VERSION_MAJOR = 6`,
-  `VERSION_MINOR = 0`, `VERSION_RELEASE = 15`) und die Tags `v6.0.0` bis `v6.0.14`. 6.0.15 ist in Entwicklung
+  `VERSION_MINOR = 0`, `VERSION_RELEASE = 15`) und die Tags ab `v6.0.0`. 6.0.15 ist die aktuelle Linie
   ([Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)). Neue Funktionen landen in Patch-Releases der Linie 6.0, was
   nicht der Absicht von SemVer für PATCH entspricht.
 - **Extensions** verwenden drei oder vier Stellen: `exp_adminui ~1.0.0.50`, `bcgooglesitemaps ~1.1.6.6`,

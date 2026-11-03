@@ -43,7 +43,7 @@ die Quellen.
 | 25:00 | Wie man aktualisiert, wo man fragt | [Hilfeseiten nach Thema, für die Presse](hilfeseiten-nach-thema-fuer-die-presse.md) |
 
 Nehmen Sie die Folge erst auf, wenn der Tag existiert; vorher nennen Sie sie eine Vorschau auf ein Release in
-Entwicklung ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
+Entwicklung ([Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 ## Folge: wer bezahlt freie Software?
 

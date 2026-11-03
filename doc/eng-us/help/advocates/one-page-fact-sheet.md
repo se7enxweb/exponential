@@ -22,7 +22,7 @@ WHAT IT IS     A professional PHP application framework with advanced CMS functi
                Its most notable feature: a fully customizable content model.
                Shop, multisite, many languages (incl. right to left), workflows, REST API, page builder.
 WHO            7x leads development. The Exponential Foundation, a nonprofit (2026), operates the project.
-RELEASES       Fifteen 6.0.x releases since 1 January 2024 (6.0.0 - 6.0.14); 6.0.15 in development.
+RELEASES       Fifteen 6.0.x releases from 1 January 2024 (6.0.0 - 6.0.14); 6.0.15 is the current line.
 LICENSE        Code: GNU GPL v2 or later.  Documentation: GNU FDL 1.3 or later.
 RUNS ON        PHP 8.0 - 8.5.  SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL.
                Linux, BSD, macOS, Windows (documented tiers). Velocity, FrankenPHP, Apache/nginx + PHP-FPM.

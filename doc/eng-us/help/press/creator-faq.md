@@ -56,8 +56,8 @@ The sources set no rule; avoid names that suggest you are official, and ask firs
 ## Access and help
 
 **Can I get early access to a release?**
-Development is public: the main branch shows what is coming. Label it "in development"
-([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
+Development is public: the main branch shows what is coming. Label what no tag contains yet "in development"
+([Covering 6.0.15, before and after its tag](covering-6-0-15-while-in-development.md)).
 
 **Can someone help me set up a demo?**
 The help covers it; for questions, the forums and the Telegram chat ([Handling comments and questions](handling-comments-and-questions.md)).

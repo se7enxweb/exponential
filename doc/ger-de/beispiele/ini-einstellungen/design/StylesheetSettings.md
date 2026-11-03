@@ -99,7 +99,7 @@ BackendCSSFileList[]
 > ein Bündel für jede Administrationsseite, einmal gecacht. Die Templates der Administration tragen kein eigenes CSS (kein <style>, kein  
 > style=""); siehe doc/eng-us/bc/6.0/admin4-styling.md. Eine Erweiterung fügt ihre Datei BackendCSSFileList hinzu, nicht hier.  
 
-Standard: eine Liste mit 7: `components.css`, `modules/setup.css`, `modules/content.css`, `modules/people.css`, `modules/structure.css`, `modules/workflow.css`, `modules/help.css`.
+Standard: eine Liste mit 8: `components.css`, `modules/setup.css`, `modules/content.css`, `modules/people.css`, `modules/structure.css`, `modules/workflow.css`, `modules/help.css`, `modules/search.css`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -114,6 +114,7 @@ AdminComponentCSSFileList[]=modules/people.css
 AdminComponentCSSFileList[]=modules/structure.css
 AdminComponentCSSFileList[]=modules/workflow.css
 AdminComponentCSSFileList[]=modules/help.css
+AdminComponentCSSFileList[]=modules/search.css
 */ ?>
 ```
 

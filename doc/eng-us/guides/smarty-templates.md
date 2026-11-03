@@ -418,7 +418,7 @@ Two problems that are not compile errors:
 - **"Array to string conversion".** An array was printed or passed where text was expected. Most often a Smarty
   modifier ran instead of the Exponential operator of the same name: Smarty's `explode` takes its parameters the
   other way round, its `implode` is deprecated, its `count` counts a string as 1. Use `exp_explode`, `exp_implode`,
-  `exp_count` ([the `exp_` prefix](smarty-templates-operators.md#the-exp_-prefix)).
+  `exp_count` ([the `exp_` prefix](smarty-templates-operators.md#the-exp-prefix)).
 
 `Debugging=enabled` in `smarty.ini` shows Smarty's debug console with the variables of each template. Turn it off
 again; never leave it on for a public site.

@@ -94,7 +94,7 @@ dass der Webhook des Repositorys zu Packagist fehlen kann, wenn eine neue Versio
 | Datum des Tags und Datum des GitHub-Releases unterscheiden sich | Das Release wurde später als der Tag veröffentlicht; die Release-Übersicht nennt beide, zum Beispiel 6.0.13: Tag am 18. April 2026, Release am 20. April 2026 | Das Datum des Tags, und sagen Sie das ([Daten prüfen](daten-pruefen.md)) |
 | Packagist zeigt einen Tag nicht, den GitHub zeigt | Packagist hat ihn noch nicht gelesen | Warten Sie, oder schreiben Sie „auf GitHub getaggt“ |
 | Ihr Klon zeigt einen Tag nicht | Sie haben ihn nicht geholt | Führen Sie `git fetch --tags` aus |
-| Ein Blog nennt eine Version, die Sie nicht finden | Es kann die Entwicklungslinie sein oder ein Fehler | Drucken Sie sie nicht ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)) |
+| Ein Blog nennt eine Version, die Sie nicht finden | Es kann die Entwicklungslinie sein oder ein Fehler | Drucken Sie sie nicht ([Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md)) |
 
 ## Verwandte Seiten
 

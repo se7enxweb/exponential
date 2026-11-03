@@ -96,7 +96,7 @@ Repository Vorrang:
 
 | Das Kit sagt | Das Repository sagt (19. Oktober 2026) | Quelle |
 |---|---|---|
-| Aktuelle stabile Version 6.0.13 | Das neueste Release ist 6.0.14 (7. Juni 2026); die aktuelle Linie, 6.0.15, ist in Entwicklung und hatte am 19. Oktober 2026 keinen Release-Tag | [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md) |
+| Aktuelle stabile Version 6.0.13 | Nach dem Kit erschien 6.0.14 (7. Juni 2026); die aktuelle Linie ist 6.0.15, die am 19. Oktober 2026 noch keinen Release-Tag hatte. Ob der Tag `v6.0.15` heute existiert, zeigt `git tag -l 'v6.0.*' --sort=version:refname` | [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md) |
 | 6.0.14 „Experimental“ mit MongoDB-Unterstützung | 6.0.14 ist ein Release; MongoDB 8 als Datenbank kam am 1. Juni 2026 | [Wer ist 7x?, Zeitleiste](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste) |
 | „stewarded by 7x (se7enxweb) since 1998“ | Der Urheberrechtsvermerk von 7x und der Foundation beginnt 1998; 7x wurde 2001 als Brookins Consulting gegründet; sein Projekt startete im Dezember 2023 | [7x in drei Etappen: 2014, 2022, 2023](7x-in-drei-etappen.md) |
 | „Founded 1998 (as eZ Publish steward)“ | eZ Systems entwickelte eZ Publish ab 1999; 7x übernahm die Leitung 2023 | [Zeitleiste für Reporter](zeitleiste-fuer-reporter.md) |

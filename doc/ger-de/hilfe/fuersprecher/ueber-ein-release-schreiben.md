@@ -23,8 +23,8 @@ schädlich, wenn er Dinge verspricht, die nicht im Release sind.
 
 ## Auf das Tag warten
 
-Ein Release existiert, wenn sein Tag existiert. Vorher ist die Arbeit „in Entwicklung“ (zum Beispiel „6.0.15 ist in
-Entwicklung“, [Wer ist 7x?](../wer-ist-7x.md#die-releases-60x)).
+Ein Release existiert, wenn sein Tag existiert. Vorher ist die Arbeit „in Entwicklung“ auf `main` (so wurde die Linie
+6.0.15 bis zu ihrem Tag `v6.0.15` beschrieben, [Wer ist 7x?](../wer-ist-7x.md#die-releases-60x)).
 
 ```bash
 git fetch --tags

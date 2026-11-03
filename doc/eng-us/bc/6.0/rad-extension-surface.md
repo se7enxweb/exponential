@@ -2570,7 +2570,6 @@ Declared on this installation:
 | ezoe | online editor engines (`ezoe.ini [EditorSettings] Engines[<id>]=`, implementing `expOEEditorEngine`; tinymce3, tinymce8, and exp_oe_tiptap's tiptap) |
 | expai | provider types, providers, models, batch APIs, lanes, tools, web search providers, MCP servers, MCP bridge tools (listed, not added), service tools (listed, not added), chains, chain steps, field actions, presets, request appliers, diff segmenters, panel sections and panes, history repositories, data policy rules, request veto rules |
 | expqueue | job types, the priority class of each job type (listed, not added), priority classes, resources, commands |
-| expmcp | tools, tools of the in-process bridge (listed, not added), tool profiles, the tools the profiles name (listed, not added), allowlists (listed, not added) |
 
 Besides the registries, the survey counts every **policy limitation** of every module (`module.php` `FunctionList`,
 with the class and method that give its values; one whose class is missing is broken) in the group **policy

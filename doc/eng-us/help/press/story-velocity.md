@@ -46,7 +46,8 @@ It is also very young, which is part of the story.
 | A cut-off restart or deploy no longer leaves Velocity down | 17 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#17-october-2026-a-restart-or-deploy-that-is-cut-off-no-longer-leaves-velocity-down) |
 | Velocity becomes part of Exponential: `composer.json` requires it at `~0.0.4.54`, which runs on PHP 8.0 | 20 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#20-october-2026-exponential-velocity-is-part-of-exponential) |
 
-Velocity in Exponential belongs to the 6.0.15 development line, which is not released.
+Velocity in Exponential belongs to the 6.0.15 line, the current release line of Exponential 6.0; the dates are dates
+of the changes, not a release date.
 
 ## Facts you can print
 

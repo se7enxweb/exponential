@@ -29,10 +29,10 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/content/search.tpl` line 48:
+The first use in the templates of this installation, `design/admin/templates/exphelp/search.tpl` line 193:
 
 ```tpl
-{let adv_url=concat( '/content/advancedsearch/', $search_text|count|gt( 0 )|choose('', concat( '?SearchText=', $search_text|urlencode ) ) )|ezurl}
+{foreach $help_search.suggest as $word}<a class="a4-tag" href={concat( '/exphelp/search/(q)/', $word|urlencode )|ezurl}>{$word|wash}</a>{delimiter} {/delimiter}{/foreach}
 ```
 
 ## Related
