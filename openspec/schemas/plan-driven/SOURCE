@@ -1,0 +1,3 @@
+Schema plan-driven: proposal -> specs -> design -> tasks -> plan -> apply -> verify.
+It is maintained as a shared schema outside this repository (openspec-workflow, commit b546e23) and copied
+here unchanged; propose changes to the schema in a pull request that names this file.
