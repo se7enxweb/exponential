@@ -65,7 +65,7 @@ Antwort. Ein Käufer, der Ihre Antwort prüft und sie zutreffend findet, vertrau
 | Einwand | Kurze Antwort aus den Quellen | Nachweis |
 |---|---|---|
 | „Open Source ist weniger sicher.“ | Vertrauliche Meldung von Sicherheitslücken mit einer ersten Antwort innerhalb eines Werktags; Korrekturen im nächsten 6.0.x-Release; eine CSP, ein Audit-Protokoll, Anmeldung in zwei Schritten und ein Leitfaden zur Sicherheitshärtung | `SECURITY.md`, [Sicherheitshärtung](../sicherheitshaertung.md) |
-| „Wird es noch gepflegt?“ | Fünfzehn 6.0.x-Releases vom 1. Januar 2024 bis zum 7. Juni 2026, 6.0.15 in Entwicklung; CI bei jedem Push | [Wer ist 7x?, Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x), [CI](../../bc/6.0/ci.md) |
+| „Wird es noch gepflegt?“ | Fünfzehn 6.0.x-Releases vom 1. Januar 2024 bis zum 7. Juni 2026, 6.0.15 als aktuelle Linie; CI bei jedem Push | [Wer ist 7x?, Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x), [CI](../../bc/6.0/ci.md) |
 | „Wird es Bestand haben?“ | Eine seit 1999 gepflegte Codebasis, ein Unternehmen und eine gemeinnützige Organisation dahinter und eine GPL-Lizenz, die den Code für alle verfügbar hält | `COPYRIGHT.md`, [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md) |
 | „Wer unterstützt uns?“ | Dokumentierte Zusagen zu PHP, Sicherheitskorrekturen, Releases und Dokumentation; Serviceverträge von 7x oder jedem anderen Anbieter; Orte der Community | [Die Support-Zusage](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |
 | „Welche PHP-Versionen?“ | PHP 8.0 bis 8.5, einschließlich Velocity (ab seinem Release 0.0.4.54) | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
@@ -97,7 +97,7 @@ Sagen Sie, wie der Prozess aussieht und wie der Kunde ihn nachprüfen kann.
 
 **Antwort.** Ja, und der Käufer kann das in wenigen Minuten prüfen:
 
-- Releases: 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026, mit 6.0.15 in Entwicklung
+- Releases: 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026, mit 6.0.15 als aktueller Linie
   ([Wer ist 7x?, Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x)).
 - Änderungen: „6556 Änderungen im Verzeichnis in 53 Repositories seit Dezember 2023. 1037 davon stammen vom
   se7enxweb-Team“ ([Das Ökosystem der Exponential-Plattform](../../geschichte/oekosystem.md)); jeder Monat wird in

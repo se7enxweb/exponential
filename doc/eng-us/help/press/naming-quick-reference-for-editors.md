@@ -69,7 +69,7 @@ license                American spelling in the project's own texts
 | Exponential Qbix | Exponential Velocity |
 | Netgen Layouts for Exponential | Exponential Layouts (a port of the concept of the upstream layouts packages) |
 | v6.0.14 in running text | 6.0.14 |
-| Exponential 6.0.15 was released ... | 6.0.15 is in development (until it is tagged) |
+| Exponential 6.0.15 was released ... (with no tag `v6.0.15`) | The 6.0.15 line; "released" only once the tag `v6.0.15` exists |
 
 ## Test yourself
 

@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # browse.ini
 
-Die ausgelieferten Einstellungen von `settings/browse.ini`: 34 Blöcke, 121 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/browse.ini`: 35 Blöcke, 124 Einstellungen.
 
 > Exponential-Konfigurationsdatei für das Durchsuchen von Inhalten.  
 >
@@ -53,6 +53,7 @@ Die ausgelieferten Einstellungen von `settings/browse.ini`: 34 Blöcke, 121 Eins
 | [AddRelatedObjectToDataType](AddRelatedObjectToDataType.md) | 3 |
 | [AddRelatedObjectListToDataType](AddRelatedObjectListToDataType.md) | 3 |
 | [AddRelatedImageToDataType](AddRelatedImageToDataType.md) | 3 |
+| [ExpImageFromObjectToDataType](ExpImageFromObjectToDataType.md) | 3 |
 | [AddBookmark](AddBookmark.md) | 3 |
 | [AddSubtreeSubscribingNode](AddSubtreeSubscribingNode.md) | 3 |
 | [SelectObjectRelationListNode](SelectObjectRelationListNode.md) | 3 |

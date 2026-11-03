@@ -416,6 +416,7 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 | `6.0.15-contentobject-modified-index` | database | der Index `ezcontentobject_modified` (Dashboard > Neue Inhalte) |
 | `6.0.15-static-publish-tables` | database | `exp_static_run`, `exp_static_page` (statisches Veröffentlichen) |
 | `6.0.15-migration-deploy-tables` | database | `exp_migration_deploy`, `exp_migration_deploy_host` (Auslieferungen von Migrationen an Gegenstellen) |
+| `6.0.15-active-extension-tables` | database | (neu) die Tabellen jeder aktiven Erweiterung mit einer `share/db_schema.dba` (ezstarrating, ezgmaplocation, eztags ...), wo sie fehlen; keine Daten geladen |
 | `6.0.15-site-version` | database | `ezsite_data` `ezpublish-version` auf 6.0.15 gesetzt |
 | `6.0.15-missing-user-settings` | scripts | `createmissingusersettings.php` |
 | `6.0.15-trash-records-to-columns` | scripts | `movetrashrecords.php` (die Datei bleibt erhalten) |
@@ -445,6 +446,12 @@ Keine Schritte, weil sie nicht die Datenbank oder die Einstellungen betreffen: d
 Eine Erweiterung fügt eigene Schritte mit `ExtensionStepList[]` in ihrer `settings/upgrade.ini.append.php` hinzu;
 sie laufen mit denen des Kernels, nach Stufe und Version. [Upgrade-Schritte für
 Erweiterungen](upgrade-schritte-fuer-erweiterungen.md) zeigt, wie.
+
+Die Tabellen einer Erweiterung brauchen keinen eigenen Schritt: `6.0.15-active-extension-tables` legt für jede
+Erweiterung, die aktiv ist (global oder in einem Siteaccess) und eine `share/db_schema.dba` mitbringt, die Tabellen
+dieser Datei an, die der Datenbank fehlen, auf jeder Engine, so wie eine neue Installation nach ihrem Site-Paket.
+Nichts wird gelöscht oder geändert, und keine `share/db_data.dba` wird geladen. Siehe [Erweiterungen einer neuen
+Installation](../funktionen/6.0/erweiterungen-einer-neuen-installation.md#woher-die-tabellen-kommen).
 
 ## Das Versprechen
 

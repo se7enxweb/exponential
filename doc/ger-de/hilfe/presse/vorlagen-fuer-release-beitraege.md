@@ -74,14 +74,15 @@ Changelog: <link>   Repository: https://github.com/se7enxweb/exponential
 ```text
 In development: <topic> in the next Exponential version
 
-The development line of Exponential, 6.0.15, includes <feature>, according to the project's
-changelog for the line (<link>). As of <date checked>, 6.0.15 had not been released; the newest
-release is 6.0.14 of 7 June 2026, and the project has not announced a release date.
+The development line of Exponential, <next version>, includes <feature>, according to the project's
+changelog for the line (<link>). As of <date checked>, <next version> had not been released; the newest
+release is <newest tag> of <its date>, and the project has not announced a release date.
 
 <What the feature does, from its feature page.> <Whether it is active by default, if the source says.>
 ```
 
-Regeln für diese Vorlage: [Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md).
+Setzen Sie die Versionen aus `git tag -l 'v6.0.*' --sort=version:refname` ein. Regeln für diese Vorlage:
+[Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md).
 
 ## Notiz zu einer Erweiterung oder zu Velocity
 
@@ -103,7 +104,7 @@ Changelog: <link>
 ```
 
 ```text
-Not released yet, but in Exponential's 6.0.15 development line: <feature>. Details: <link>
+Not released yet, but in Exponential's <next version> development line: <feature>. Details: <link>
 ```
 
 Schreiben Sie Version und Status in den Beitrag selbst; der erste Beitrag eines Threads wird oft allein geteilt.

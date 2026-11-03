@@ -33,7 +33,7 @@ the supported way, and it has the advantage of working in both engines.
 - **Prefix it with your extension**: `myext_initials`, `myext_badge`. Names are global to the siteaccess; an extension
   registered later replaces an operator of the same name (the media theme's `image` replaces the kernel's).
 - **Avoid the names of Smarty's modifiers** (`count`, `escape`, `replace`, `truncate`, ... the full list is in
-  [the operators guide](smarty-templates-operators.md#the-exp_-prefix)): such an operator works, but `.stpl` authors
+  [the operators guide](smarty-templates-operators.md#the-exp-prefix)): such an operator works, but `.stpl` authors
   must write it with `exp_` in front.
 - **A name that starts with `exp_` is called by that name** (`exp_path`, `exp_environment`). Use it only if your
   operator really is meant to be `exp_...`; never name one `exp_<a Smarty modifier>`.

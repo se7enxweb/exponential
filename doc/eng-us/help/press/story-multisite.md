@@ -31,7 +31,7 @@ between them. This page gives the story, the facts with sources, and one caveat 
 several sites, "each a siteaccess with its own host, path, language and design"
 ([Who is 7x?, A CMS, a CMF and a shop in one](../who-is-7x.md#a-cms-a-cmf-and-a-shop-in-one)). Since January 2026 a
 site that lives in its own extension can carry settings that apply only while its siteaccesses run; in October 2026
-the 6.0.15 development line added matching by the start of a host name, a redirect to the visitor's language and
+the 6.0.15 line added matching by the start of a host name, a redirect to the visitor's language and
 correct links from one site's pages to another site's content.
 
 ## What is new, and when
@@ -43,7 +43,8 @@ correct links from one site's pages to another site's content.
 | Links to content of another site of a multisite installation | 13 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#13-october-2026-links-to-content-of-another-site-of-a-multisite-installation) |
 | The site menu of the administration: the other sites a user may sign in to | 15 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#15-october-2026-the-site-menu-of-the-administration) |
 
-The October changes belong to the 6.0.15 line, which is not released.
+The October changes belong to the 6.0.15 line, the current release line of Exponential 6.0; their dates are dates
+of the changes, not a release date.
 
 ## Facts you can print
 

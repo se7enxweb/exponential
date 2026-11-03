@@ -42,11 +42,11 @@ Sie dürfen über Arbeit in der Entwicklungslinie berichten; sie ist öffentlich
 ist:
 
 ```text
-„Das Changelog des kommenden Release 6.0.15, das noch in Entwicklung ist, nennt ...“
+„Das Changelog des kommenden Release <Version>, das noch in Entwicklung ist, nennt ...“
 ```
 
 Funktionen in Entwicklung können sich vor dem Release ändern. Prüfen Sie sie erneut, wenn das Release getaggt ist
-([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
+([Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 ## Sicherheit: der eine Fall, in dem Sie warten
 

@@ -94,7 +94,7 @@ setzen Sie `object-position` aus einem Skript oder einer Stylesheet-Regel, nicht
 
 ```xml
 <ezimage serial_number="2" ...>
-  <original attribute_id="57" attribute_version="3" attribute_language="ger-DE"/>
+  <original attribute_id="57" attribute_version="3" attribute_language="eng-US"/>
   <focal x="0.7" y="0.3"/>
   <crop x="0.1" y="0" width="0.8" height="1"/>
   <alias name="teaser" .../>

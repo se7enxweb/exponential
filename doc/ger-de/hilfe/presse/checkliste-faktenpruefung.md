@@ -38,7 +38,7 @@ GESCHICHTE UND DATEN
 [ ] Jedes „heute“ oder „neueste“ trägt das Prüfdatum
 
 RELEASES
-[ ] „Veröffentlicht“ nur für eine getaggte Version; 6.0.15 „in Entwicklung“, bis es getaggt ist
+[ ] „Veröffentlicht“ nur für eine getaggte Version; für 6.0.15 mit `git tag -l 'v6.0.*'` geprüft
 [ ] Versionen ohne „v“ geschrieben; nach Version sortiert, nicht nach Namen
 
 FUNKTIONEN

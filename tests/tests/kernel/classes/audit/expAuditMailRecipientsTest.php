@@ -65,8 +65,7 @@ class expAuditMailRecipientsTest extends PHPUnit\Framework\TestCase
                 $script->initialize();
                 eZExecution::setCleanExit();
             }
-            if ( !eZDB::instance()->isConnected() )
-                throw new RuntimeException( 'no database connection' );
+            ezpLiveInstallation::installedSiteDatabase();
             expAuditTestFixtures::setUp( 'recipients-setup' );
             self::make();
             expAuditTestFixtures::tearDown();

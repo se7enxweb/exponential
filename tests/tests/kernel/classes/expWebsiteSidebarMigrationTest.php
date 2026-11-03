@@ -298,7 +298,8 @@ class expWebsiteSidebarMigrationTest extends PHPUnit\Framework\TestCase
         file_put_contents( $path, "<?php /*\n[ExtensionSettings]\nActiveExtensions[]=ezwt\n*/ ?>\n" );
         chmod( $path, eZFile::fileMode( 0640 ) );
         $method = new ReflectionMethod( 'expWebsiteSidebarMigration', 'backup' );
-        $method->setAccessible( true );
+        if ( PHP_VERSION_ID < 80100 )
+            $method->setAccessible( true );
         $method->invoke( null, $path );
         clearstatcache();
         $this->assertFileExists( $path . '.before-expwt' );

@@ -37,7 +37,7 @@ um zur Quelle zu gehen und zu entscheiden, welche Quelle Vorrang hat, wenn sich 
 |---|---|
 | Was Exponential ist | [README.md](https://github.com/se7enxweb/exponential/blob/main/README.md), „What is Exponential?“ |
 | Release-Nummern und Daten | Git-Tags (`git tag -l 'v6.0.*' --sort=version:refname`); [Release-Übersicht](../../../eng-us/release-overview) |
-| Was sich in einem Release geändert hat | [Changelogs](../../../changelogs/README.md); der Changelog 6.0.15 für die Linie in Entwicklung |
+| Was sich in einem Release geändert hat | [Changelogs](../../../changelogs/README.md); der Changelog 6.0.15 für die aktuelle Linie |
 | Die Geschichte Monat für Monat | [Die Geschichte](../../geschichte/README.md) |
 | Inhaber des Urheberrechts | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | Lizenz | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE); [Die Lizenz dieser Dokumentation](../../README-LIZENZ.md) |

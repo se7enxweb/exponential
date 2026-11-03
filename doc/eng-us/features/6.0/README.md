@@ -54,6 +54,7 @@ nginx with PHP-FPM keep working as before.
 - [Kickstarter: install a whole site from one file](kickstarter-cli.md)
 - [Console commands for .htaccess and config.php](setup-files-and-config-php-commands.md)
 - [What a new installation comes with: the default extension distribution](default-extension-distribution.md)
+- [Extensions of a new installation (6.0.15)](extensions-of-a-new-installation.md): bundled, installed, activated by default, their tables
 - [A clean installation that fits shared hosting and says Exponential](clean-install-defaults.md)
 - [The setup wizard's new look, and the editor siteaccess](setup-wizard-and-editor-siteaccess.md)
 - [Settings per environment (EXP_ENV)](environment-settings.md)

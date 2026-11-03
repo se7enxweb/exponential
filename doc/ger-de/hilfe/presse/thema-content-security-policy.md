@@ -38,7 +38,8 @@ Administrator entscheidet, wann er sie durchsetzt, und das Zurücknehmen ist ein
 
 ## Was neu ist, und seit wann
 
-Alles in der Entwicklungslinie 6.0.15, die nicht erschienen ist.
+Alles in der Linie 6.0.15. Die Daten sind Daten der Änderungen, keine Veröffentlichungsdaten; ob der Tag `v6.0.15`
+existiert, zeigt `git tag -l 'v6.0.*' --sort=version:refname`.
 
 | Was | Wann | Quelle |
 |---|---|---|

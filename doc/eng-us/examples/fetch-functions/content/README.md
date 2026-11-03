@@ -38,6 +38,7 @@ Defined in `kernel/content/function_definition.php`. A parameter marked * is req
 | [country_list](country_list.md) | `filter`, `value` |
 | [draft_count](draft_count.md) |  |
 | [draft_version_list](draft_version_list.md) | `offset`, `limit` |
+| [filtered_search](filtered_search.md) | `offset` |
 | [keyword](keyword.md) | `alphabet`*, `classid`, `offset`, `limit`, `owner`, `sort_by`, `parent_node_id`, `include_duplicates`, `strict_matching`, `depth` |
 | [keyword_count](keyword_count.md) | `alphabet`*, `classid`, `owner`, `parent_node_id`, `include_duplicates`, `strict_matching`, `depth` |
 | [language_states](language_states.md) | `object`* |

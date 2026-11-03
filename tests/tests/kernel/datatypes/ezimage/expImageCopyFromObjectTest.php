@@ -60,8 +60,7 @@ class expImageCopyFromObjectTest extends PHPUnit\Framework\TestCase
             $script->setUseSiteAccess( 'admin' );
             $script->initialize();
             eZExecution::setCleanExit();
-            if ( !eZDB::instance()->isConnected() )
-                throw new RuntimeException( 'no database connection' );
+            ezpLiveInstallation::installedSiteDatabase();
             self::$script = $script;
         }
         catch ( Throwable $e )

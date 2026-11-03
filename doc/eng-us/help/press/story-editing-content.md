@@ -29,14 +29,14 @@ Exponential is built around a content model that the site owner defines: "As a C
 fully customizable and extendable content model" ([README](https://github.com/se7enxweb/exponential/blob/main/README.md)). Editors never change the live page
 directly. Every edit is a draft, a copy of the published version, and the site keeps showing the published version
 until the editor presses **Send for publishing**; older versions are kept and can be restored
-([Publishing, versions and the trash](../publishing-and-versions.md)). The 6.0.15 development line adds a preview at
+([Publishing, versions and the trash](../publishing-and-versions.md)). The 6.0.15 line adds a preview at
 phone, tablet and desktop width, background jobs for very large moves and removals, bookmark folders and a redesigned
 administration ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)).
 
 ## What is new, and when
 
-All dates below are dates of changes in the 6.0.15 line, which is **in development and not released**. Write "in the
-development line", never "released on".
+All dates below are dates of changes in the 6.0.15 line, the current release line of Exponential 6.0. They are **not
+release dates**: write "added on", never "released on"; a release date comes only from the tag.
 
 | What | When it was added | Source |
 |---|---|---|
@@ -63,7 +63,7 @@ development line", never "released on".
 ## What not to claim
 
 - "Editors cannot break anything." Say instead: every change is a draft first, and older versions are kept.
-- "6.0.15 brings X on date Y." 6.0.15 has no release date; describe the development line.
+- "6.0.15 brings X on date Y." Take a release date only from the tag `v6.0.15`; describe the 6.0.15 line.
 - "Real-time collaborative editing." The sources describe drafts and an edit-conflict page, not simultaneous editing.
 - Any number of users, sites or editors working with it: the sources do not count them.
 

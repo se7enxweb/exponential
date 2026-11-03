@@ -65,7 +65,7 @@ date; numbers change, so cite the page, not your memory ([Who is 7x?, 7x in numb
 
 | Do not say | Say instead |
 |---|---|
-| "6.0.15 will be released on date X." | "6.0.15 is in development; releases are announced when they are tagged." |
+| "6.0.15 will be released on date X." | "6.0.15 is the current release line; a release exists when its tag is published, and the tag gives its date." |
 | "Feature Y is coming." | "I have not seen it documented. Check the changelog and the issue tracker." |
 | "It will be supported for N years." | "Here is the support commitment as documented" ([The support commitment](../who-is-the-exponential-foundation.md#the-support-commitment)) |
 | "It will never go away." | "The license lets anyone keep and maintain the code." |

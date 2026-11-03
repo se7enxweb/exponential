@@ -97,7 +97,7 @@ Further rules of the project, not checked by any tool:
 ## Changelogs
 
 - Kernel changelogs: `doc/changelogs/<series>/<version>.md`, for example
-  [6.0.15](../../changelogs/6.0/6.0.15.md) (in development; "Not released yet" on its first line). Older series back to
+  [6.0.15](../../changelogs/6.0/6.0.15.md) (the current line; its first line says whether it is released). Older series back to
   2.9 are kept in `doc/changelogs/`.
 - Extension changelogs: `doc/changelogs/extensions/<name>.md`, for example
   [exponential-velocity.md](../../changelogs/extensions/exponential-velocity.md).

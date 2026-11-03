@@ -62,7 +62,7 @@ not state that" over a guess.
 | Objection | Short answer from the sources | Proof |
 |---|---|---|
 | "Open source is less secure." | Private vulnerability reporting with a first answer within one business day; fixes in the next 6.0.x release; a CSP, an audit trail, two-step sign-in and a hardening guide | `SECURITY.md`, [Security hardening](../security-hardening.md) |
-| "Is it still maintained?" | Fifteen 6.0.x releases from 1 January 2024 to 7 June 2026, 6.0.15 in development; CI on every push | [Who is 7x?, The 6.0.x releases](../who-is-7x.md#the-60x-releases), [CI](../../bc/6.0/ci.md) |
+| "Is it still maintained?" | Fifteen 6.0.x releases from 1 January 2024 to 7 June 2026, followed by the current 6.0.15 line; CI on every push | [Who is 7x?, The 6.0.x releases](../who-is-7x.md#the-60x-releases), [CI](../../bc/6.0/ci.md) |
 | "Will it last?" | A code base kept since 1999, a company and a nonprofit behind it, and a GPL license that keeps the code available to everyone | `COPYRIGHT.md`, [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md) |
 | "Who supports us?" | Documented commitments for PHP, security fixes, releases and documentation; service contracts from 7x or any provider; community places | [The support commitment](../who-is-the-exponential-foundation.md#the-support-commitment) |
 | "Which PHP versions?" | PHP 8.0 to 8.5, Velocity included (from its release 0.0.4.54) | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
@@ -94,7 +94,7 @@ customer can verify it.
 
 **Answer.** Yes, and the buyer can check it in minutes:
 
-- Releases: 6.0.0 on 1 January 2024 to 6.0.14 on 7 June 2026, with 6.0.15 in development
+- Releases: 6.0.0 on 1 January 2024 to 6.0.14 on 7 June 2026, followed by the current 6.0.15 line
   ([Who is 7x?, The 6.0.x releases](../who-is-7x.md#the-60x-releases)).
 - Changes: "6556 ledger changes in 53 repositories since December 2023. 1037 of them were made by the se7enxweb team"
   ([The Exponential platform ecosystem](../../history/ecosystem.md)); every month is told in

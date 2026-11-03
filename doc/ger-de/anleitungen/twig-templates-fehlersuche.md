@@ -52,7 +52,7 @@ Warum der unbekannte Operator nur eine Warnung ist: `exp_<name>` ist ein gültig
 kompiliert also, und zur Laufzeit macht ein unbekannter Operator, was er in einem `.tpl` macht: Er reicht seine Eingabe
 durch. `--level=strict` ist der einzige Weg, ihn zu sehen, bevor es eine Seite tut.
 `./console exp:template:check --explain=<regel>` erklärt eine Regel; die
-[Regelreferenz](template-syntaxpruefung-regeln.md) listet alle mit guten und schlechten Beispielen.
+[Regelreferenz](../referenz/template-syntaxpruefung-regeln.md) listet alle mit guten und schlechten Beispielen.
 
 Für einen Editor oder die CI druckt `--format=jsonl` einen Befund je Zeile:
 
@@ -215,7 +215,7 @@ Klasse enthält die Änderungszeit der Datei.
 
 ## Verwandte Seiten
 
-- [Template-Syntax prüfen](template-syntaxpruefung.md) und die [Regeln](template-syntaxpruefung-regeln.md)
+- [Template-Syntax prüfen](template-syntaxpruefung.md) und die [Regeln](../referenz/template-syntaxpruefung-regeln.md)
 - [Twig-Templates im Editor](twig-templates-im-editor.md)
 - [Geschwindigkeit der drei Template-Engines](template-engines-geschwindigkeit.md)
 - [Debugging Twig templates](../../eng-us/guides/twig-templates-debugging.md) (Englisch)

@@ -95,7 +95,7 @@ nur die GraphQL-API nicht verfügbar und sagt, warum ([Die Bibliothek](../funkti
 
 In 6.0.15 wird PHP 8.0 wieder unterstützt, und PHP 7.4 ist wieder nutzbar, ohne Support. Die veröffentlichten Releases `v6.0.8` bis
 `v6.0.14` verlangen in ihrer `composer.json` PHP 8.1, und `v6.0.7` verlangt 7.4 oder 8.1; installieren Sie auf PHP 7.4
-oder 8.0 daher die Linie 6.0.15 (`dev-main`, bis ihr Tag veröffentlicht ist;
+oder 8.0 daher die Linie 6.0.15 (`~6.0.15`: den Tag `v6.0.15`, sobald er veröffentlicht ist, oder `dev-main`;
 [Kapitel 3](03-den-code-beschaffen.md#31-versionen-tags-und-branches)).
 
 Unter PHP 7.4 und 8.0 lädt `autoload.php` die Datei `lib/phpcompat.php`, die die wenigen Funktionen definiert, die

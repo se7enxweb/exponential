@@ -61,7 +61,7 @@ the Nexus 1.3.0.x line for Platform v5, and the v5 starter, have no legacy kerne
 
 | Product | State | Source |
 |---|---|---|
-| Exponential 6 | 6.0.14 released 7 June 2026; 6.0.15 in development | [release overview](../../release-overview) |
+| Exponential 6 | 6.0.14 released 7 June 2026; 6.0.15 is the current release line | [release overview](../../release-overview) |
 | Exponential Basic | v2.4.0.3 | repository description |
 | Velocity | Arrived in Exponential on 22 September 2026 as the recommended engine; part of Exponential, required by `composer.json` at `~0.0.4.54`, as of 6.0.15 (20 October 2026) | [Velocity chronicle](../../history/velocity/README.md), [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#20-october-2026-exponential-velocity-is-part-of-exponential) |
 | Intelligence, Layouts, AdminUI | Required by the kernel since the 6.0.15 line | composer.json |

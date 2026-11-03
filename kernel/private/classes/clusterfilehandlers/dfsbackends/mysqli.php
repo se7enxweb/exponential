@@ -1170,8 +1170,9 @@ class eZDFSFileHandlerMySQLiBackend implements eZClusterEventNotifier
         }
         else
         {
-            /// @todo to be fixed: will this generate a warning?
-            eZDebug::writeError( $sql, "$msg: " . mysqli_error() );
+            // No connection: mysqli_error() needs one (a call without it threw ArgumentCountError on PHP 8); the
+            // connect error is the one that applies
+            eZDebug::writeError( $sql, "$msg: " . mysqli_connect_error() );
         }
     }
 

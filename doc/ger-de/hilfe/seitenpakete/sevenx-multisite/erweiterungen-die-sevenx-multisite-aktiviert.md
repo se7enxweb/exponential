@@ -43,7 +43,7 @@ werden.
 | 4 | `expservices` | entfernte Dienste für Apps der Administration und JavaScript-Frontends; seine Portal-Designs bekommen keinen Siteaccess |
 | 5 | `expqueue` | die Job-Warteschlange (**Setup > Job queue**); ihr Worker läuft mit dem Siteaccess der Administration aus Cron |
 | 6 | `ezoracle` | der Oracle-Treiber, auf jeder anderen Datenbank ohne Wirkung |
-| 7-9 | `ezoe`, `ezformtoken`, `ezwt` | der Online-Editor, Schutz vor Cross-Site Request Forgery für gesendete Formulare, die Website-Toolbar |
+| 7-9 | `ezoe`, `ezformtoken`, `expwt` | der Online-Editor, Schutz vor Cross-Site Request Forgery für gesendete Formulare, die Website-Seitenleiste (anstelle von `ezwt`, der Website-Toolbar, ab den für 6.0.15 gebauten Site-Paketen) |
 | 10-16 | `ezstarrating`, `ezgmaplocation`, `ezautosave`, `ezodf`, `ezie`, `ezprestapi`, `ezpaypal` | |
 | 17-18 | `owsimpleoperator`, `swark` | Template-Operatoren |
 | 19-21 | `bcgooglesitemaps`, `bcwebsitestatistics`, `bccie` | |

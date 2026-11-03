@@ -31,7 +31,7 @@ $result = eZFunctionHandler::execute( 'section', 'list', array() );
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/page_search.tpl` Zeile 68:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/page_search.tpl` Zeile 67:
 
 ```tpl
 {foreach fetch( 'section', 'list' ) as $section}

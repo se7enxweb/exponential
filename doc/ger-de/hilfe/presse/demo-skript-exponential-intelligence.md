@@ -14,8 +14,8 @@ Botschaft, die jeden Schnitt Ihres Videos überstehen muss: **Er schreibt nur En
 und mit dessen Rechten, und veröffentlicht nie von sich aus (`README.md`, „Exponential Intelligence“;
 [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md)).
 
-Es ist die Erweiterung `se7enxweb/expai`, die seit 6.0.15 in `composer.json` verlangt wird (am 25. Oktober 2026 in `~0.0.1.18`), das in
-Entwicklung ist. Sagen Sie das: „die Entwicklungslinie 6.0.15“ oder die Version, die Sie wirklich verwenden. Das Skript
+Es ist die Erweiterung `se7enxweb/expai`, die seit 6.0.15 in `composer.json` verlangt wird (am 25. Oktober 2026 in `~0.0.1.18`). Sagen
+Sie das: „die Linie 6.0.15“ oder die Version, die Sie wirklich verwenden. Das Skript
 dauert etwa sechs Minuten; die Einrichtung geschieht **außerhalb der Kamera**.
 
 ## Inhalt
@@ -28,7 +28,7 @@ dauert etwa sechs Minuten; die Einrichtung geschieht **außerhalb der Kamera**.
 
 ## Außerhalb der Kamera: die Einrichtung
 
-Auf einer neuen Installation der Entwicklungslinie ist der Assistent laut README für die Siteaccesses der Administration
+Auf einer neuen Installation der Linie 6.0.15 ist der Assistent laut README für die Siteaccesses der Administration
 bereits aktiv, seine Tabellen existieren und die Rolle Administrator hat seine Richtlinien; er "sends nothing anywhere
 until you add a provider key". Auf einer älteren Installation folgen Sie den Upgrade-Schritten in der README oder
 [Einschalten](../../funktionen/6.0/erweiterungen/expai.md#einschalten).
@@ -81,7 +81,7 @@ Widerrufen Sie nach der Aufnahme den Schlüssel beim Anbieter, auch wenn Sie gla
 | „Es ist kostenlos.“ | „Die Erweiterung ist freie Software; ein gehosteter Anbieter berechnet die Nutzung, und der Assistent zeigt die geschätzten Kosten.“ |
 | „Es funktioniert mit jedem KI-Dienst.“ | „Anthropic, jeder OpenAI-kompatible Dienst oder ein lokales Modell über Ollama; nur Modelle, die einen Live-Test bestanden haben, dürfen Entwürfe schreiben.“ |
 | „Es ist konform mit <Gesetz>.“ | „Es gibt eine druckbare Seite EI: Summary für einen Datenschutzbeauftragten.“ Rechtliche Schlüsse überlassen Sie diesem |
-| „Es ist in 6.0.14.“ | Es wird ab 6.0.15 verlangt, das in Entwicklung ist; es braucht Exponential 6.0.14 oder später |
+| „Es ist in 6.0.14.“ | Es wird ab 6.0.15 verlangt; es braucht Exponential 6.0.14 oder später |
 
 ## Ohne Anbieterschlüssel
 

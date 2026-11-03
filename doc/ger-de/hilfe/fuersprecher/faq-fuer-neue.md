@@ -19,7 +19,7 @@ der Seite, die sie belegt. Prüfen Sie die Quelle, bevor Sie antworten: Fakten �
 | Was ist Exponential? | Ein PHP-Anwendungsframework mit fortgeschrittener CMS-Funktionalität; seine beste Eigenschaft ist ein vollständig anpassbares Inhaltsmodell | [Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
 | Ist es kostenlos? | Ja: Der Code steht unter der GNU GPL v2 oder später, die Dokumentation unter der GNU FDL | [Gesprächspunkte: Open Source](gespraechspunkte-open-source-und-lizenzierung.md) |
 | Wer macht es? | 7x leitet die Entwicklung; die Exponential Foundation, eine gemeinnützige Organisation, betreibt das Projekt | [7x und die Foundation](7x-und-die-foundation.md) |
-| Wird es gepflegt? | Fünfzehn Releases 6.0.x seit dem 1. Januar 2024; 6.0.15 ist in Entwicklung | [Lebt es noch?](einwand-lebt-es-noch.md) |
+| Wird es gepflegt? | Fünfzehn Releases 6.0.x (6.0.0 bis 6.0.14) seit dem 1. Januar 2024; 6.0.15 ist die aktuelle Linie | [Lebt es noch?](einwand-lebt-es-noch.md) |
 | Ist das nicht eZ Publish? | Es führt diese Codebasis fort; eZ Publish wurde von seinem Hersteller eingestellt; Exponential steht in keiner Verbindung zu eZ Systems oder Ibexa | [Richtig über die Geschichte schreiben](richtig-ueber-die-geschichte-schreiben.md) |
 | Welches Exponential brauche ich? | Kommt darauf an: nur PHP oder Symfony, Framework oder fertige Website | [Die Produktfamilie kennen](die-produktfamilie-kennen.md) |
 

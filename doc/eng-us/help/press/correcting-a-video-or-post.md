@@ -37,7 +37,7 @@ Do not delete silently: people may have shared or quoted the original.
 |---|---|---|
 | Name | "eZ Publish 6" | Exponential 6 ([Naming quick reference for news editors](naming-quick-reference-for-editors.md)) |
 | Organization | "the 7x Foundation" | the Exponential Foundation ([Two organizations, one project](two-organizations-one-project.md)) |
-| Release | "6.0.15 is out" | 6.0.15 is in development ([The 6.0.x releases at a glance](the-6-0-x-releases-at-a-glance.md)) |
+| Release | A version called "out" before its tag exists | A version is released when its tag exists: `git tag -l 'v6.0.*' --sort=version:refname` ([The 6.0.x releases at a glance](the-6-0-x-releases-at-a-glance.md)) |
 | Feature | "the AI publishes" | It writes drafts only ([Story: an assistant that writes drafts only](story-ai-that-writes-drafts-only.md)) |
 | Number | A speed comparison | The documented figures and their conditions only ([Verifying numbers](verifying-numbers.md)) |
 | Affiliation | "by Ibexa" | Not associated with eZ Systems or Ibexa |

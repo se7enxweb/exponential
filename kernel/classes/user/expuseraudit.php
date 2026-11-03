@@ -308,7 +308,7 @@ class expUserAudit
     }
 
     /**
-     * The filters of the view from a request (GET): user (an id or a login), action (an event name or its start),
+     * The filters of the view from a request (its view parameters, see viewParameterInput()): user (an id or a login), action (an event name or its start),
      * result, from and to (Y-m-d), limit.
      *
      * @param array $input
@@ -339,20 +339,37 @@ class expUserAudit
     }
 
     /**
-     * The query string of the filters, for links and the pager ('' when none is set).
+     * The filters as view parameters, /(name)/value, for links, the pager and the redirect of the filter form ('' when
+     * none is set; the limit only when it is not the default 50).
      *
      * @param array $filters
      * @return string
      */
-    public static function queryString( array $filters )
+    public static function viewParameters( array $filters )
     {
-        $q = array();
+        $options = array();
         foreach ( array( 'user', 'action', 'result', 'from', 'to' ) as $key )
-            if ( isset( $filters[$key] ) && $filters[$key] !== '' )
-                $q[$key] = $filters[$key];
-        if ( isset( $filters['limit'] ) && (int)$filters['limit'] !== 50 )
-            $q['limit'] = (int)$filters['limit'];
-        return $q ? '?' . http_build_query( $q, '', '&' ) : '';
+            $options[$key] = isset( $filters[$key] ) ? (string)$filters[$key] : '';
+        $options['limit'] = isset( $filters['limit'] ) && (int)$filters['limit'] !== 50 ? (string)(int)$filters['limit'] : '';
+        return expViewParameters::suffix( $options );
+    }
+
+    /**
+     * The filter fields of a request's view parameters (see viewParameters()), for normaliseFilters().
+     *
+     * @param array $params the view's $Params
+     * @return array
+     */
+    public static function viewParameterInput( array $params )
+    {
+        $input = array();
+        foreach ( array( 'user', 'action', 'result', 'from', 'to', 'limit' ) as $key )
+        {
+            $value = expViewParameters::get( $params, $key );
+            if ( $value !== false )
+                $input[$key] = $value;
+        }
+        return $input;
     }
 
     /**

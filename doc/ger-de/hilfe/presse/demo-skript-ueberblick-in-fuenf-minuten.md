@@ -28,7 +28,7 @@ Bevor Sie beginnen: eine Demo-Installation mit erfundenen Inhalten, angemeldet a
 
 **Ziel:** Der Zuschauer sieht, dass Redakteure in Entwürfen arbeiten, eine Seite sehen, bevor sie online geht, Seiten
 selbst anordnen können und Hilfe im Produkt finden. **Publikum:** Menschen, die Exponential noch nie gesehen haben.
-**Version:** Nennen Sie sie bei 0:00. Das Design admin4 und der aktuelle Layout-Editor gehören zur Entwicklungslinie 6.0.15.
+**Version:** Nennen Sie sie bei 0:00. Das Design admin4 und der aktuelle Layout-Editor gehören zur Linie 6.0.15.
 
 ## Das Skript
 
@@ -58,7 +58,7 @@ Proben Sie es einmal mit einem Timer. Wenn Sie zu lang werden, kürzen Sie den T
 | „Tausende Websites laufen damit.“ | Die Quellen zählen keine Installationen | Lassen Sie es weg |
 | „Es ist das schnellste CMS.“ | Kein veröffentlichter Vergleich | Lassen Sie es weg oder verwenden Sie das Velocity-Skript mit seinen Quellen |
 | „Es ist der Nachfolger von eZ Publish, empfohlen von Ibexa.“ | Nicht mit eZ Systems oder Ibexa verbunden | „Es führt die Codebasis von eZ Publish weiter, einem Produkt, das sein Hersteller nach fast 18 Jahren einstellte.“ |
-| „6.0.15 erscheint nächsten Monat.“ | In Entwicklung, kein Datum | „6.0.15 ist in Entwicklung.“ |
+| „6.0.15 erscheint nächsten Monat.“ | Die Quellen nennen kein Datum vor dem Tag | „6.0.15 ist die aktuelle Linie von Exponential 6.0.“ Ein Datum nennen Sie nur mit dem Tag `v6.0.15`, aus `git tag` |
 | „Die KI veröffentlicht für Sie.“ | Sie schreibt nur Entwürfe | Siehe das [Skript zu Exponential Intelligence](demo-skript-exponential-intelligence.md) |
 
 Mehr: [Aussagen, die Sie nicht machen dürfen](../fuersprecher/aussagen-die-sie-nicht-machen-duerfen.md).

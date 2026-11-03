@@ -74,9 +74,10 @@ Added with the saved searches and the greyed bookmarks:
 | `expBookmarkPage::viewItem()` | Items also have `icon`, `reason` and `reason_text`; the type (`class_name`) is the label of the row's kind when it has one |
 | Templates | `bookmark_tree.tpl` and the `bookmark.tpl` cards draw `a4-bi-<icon>` instead of the gear and show `reason_text`; `design/admin3/templates/pagelayout.tpl` includes the button too |
 
-A stored address can now end in a query string (`content/search?SearchText=news`); code that reads `module_uri`
-directly and splits it on `/` should use `expBookmarkView::parts()` or `pathOf()`, or read `module_name` and
-`view_name`.
+A stored address can now carry a search, as view parameters (`content/search/(text)/news`, the form of the
+administration's search since 2026-11-02, see [Search links with view parameters](search-links-with-view-parameters.md))
+or as a query string for a view that reads one; code that reads `module_uri` directly and splits it on `/` should
+use `expBookmarkView::parts()` or `pathOf()`, or read `module_name` and `view_name`.
 
 ## Parsed address and renaming
 

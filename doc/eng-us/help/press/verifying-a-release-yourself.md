@@ -91,7 +91,7 @@ appear, the repository's webhook to Packagist may be missing ([Extensions guide]
 | Tag date and GitHub release date differ | The release was published later than the tag; the release overview lists both, for example 6.0.13: tag 18 April 2026, release 20 April 2026 | The tag date, and say so ([Verifying dates](verifying-dates.md)) |
 | Packagist does not show a tag that GitHub shows | Packagist has not read it yet | Wait, or say "tagged on GitHub" |
 | Your clone does not show a tag | You have not fetched it | Run `git fetch --tags` |
-| A blog says a version exists that you cannot find | It may be the development line or an error | Do not print it ([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)) |
+| A blog says a version exists that you cannot find | It may be work on the `main` branch or an error | Do not print it ([Covering the 6.0.15 line](covering-6-0-15-while-in-development.md)) |
 
 ## Related pages
 

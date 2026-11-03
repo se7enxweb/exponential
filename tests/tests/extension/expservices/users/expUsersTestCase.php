@@ -104,8 +104,7 @@ abstract class expUsersTestCase extends PHPUnit\Framework\TestCase
             $script->setUseSiteAccess( 'admin' );
             $script->initialize();
             eZExecution::setCleanExit();
-            if ( !eZDB::instance()->isConnected() )
-                throw new RuntimeException( 'no database connection' );
+            ezpLiveInstallation::installedSiteDatabase();
             $GLOBALS['expservices_test_booted'] = true;
         }
         catch ( Throwable $e )

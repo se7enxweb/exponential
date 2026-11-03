@@ -22,8 +22,9 @@ php bin/php/checkdbfiles.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--no-verify-branches` |  | Den Inhalt der Dateien nicht mit früheren Branches vergleichen (um SVN zu vermeiden) |
-| `--export-path` | erforderlich | Verzeichnis, in dem ein neues Verzeichnis für die SVN-Exporte angelegt und wieder entfernt wird (Standard var/tmp) |
+| `--no-verify-branches` |  | Do not compare the files with a release (needs no git checkout) |
+| `--export-path` | erforderlich | Directory in which a new directory for the release's files is made and removed again (default var/tmp) |
+| `--compare-with` | erforderlich | The release to compare with: a tag or commit of the kernel's git repository (default: the newest tag v<major>.<minor>.<patch>) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

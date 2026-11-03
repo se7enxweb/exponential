@@ -3,7 +3,7 @@ title: Die 6.0.x-Releases auf einen Blick
 audience: press
 category: press-media
 order: 14
-summary: Jedes Release von Exponential 6.0.x mit seinem Datum und seinem dokumentierten Schwerpunkt, für Reporter, die eine Release-Geschichte brauchen - dazu, wo der Changelog jedes Releases steht, wie Sie die Liste selbst prüfen und wie Sie über 6.0.15 schreiben, bevor es veröffentlicht ist.
+summary: Jedes Release von Exponential 6.0.x mit seinem Datum und seinem dokumentierten Schwerpunkt, für Reporter, die eine Release-Geschichte brauchen - dazu, wo der Changelog jedes Releases steht, wie Sie die Liste selbst prüfen und wie Sie über 6.0.15 schreiben, vor und nach seinem Tag.
 keywords: Releases, Release-Geschichte, Versionen, 6.0.0, 6.0.10, 6.0.14, 6.0.15, Changelog, Tags, Daten, Veröffentlichungsdaten, releases, release history, versions, changelog, tags, dates, release dates
 type: help
 ---
@@ -39,7 +39,7 @@ seinem Datum auf, nach [doc/eng-us/release-overview](../../../eng-us/release-ove
 | 6.0.12 | 10. Februar 2026 | |
 | 6.0.13 | 18. April 2026 | |
 | 6.0.14 | 7. Juni 2026 | MongoDB 8 als Datenbank |
-| 6.0.15 | nicht veröffentlicht | In Entwicklung: Velocity, admin4, Prüfprotokoll, Exponential Layouts, Exponential Intelligence, das Hilfesystem und mehr |
+| 6.0.15 | das Datum des Tags `v6.0.15`, sobald er veröffentlicht ist | Die aktuelle Linie: Velocity, admin4, Prüfprotokoll, Exponential Layouts, Exponential Intelligence, das Hilfesystem und mehr |
 
 Quelle: [Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x). Eine leere Zelle beim Schwerpunkt bedeutet, dass die
 Geschichtsseiten für dieses Release keine einzelne Hauptnachricht nennen; lesen Sie seinen Changelog.
@@ -55,7 +55,7 @@ in der Vergangenheitsform als Releases von Exponential, zum Beispiel „6.0.0, v
 | 6.0.0 | [6.0.0](../../../changelogs/6.0/6.0.0.md) |
 | 6.0.10 | [6.0.10](../../../changelogs/6.0/6.0.10.md) |
 | 6.0.14 | [6.0.14](../../../changelogs/6.0/6.0.14.md) |
-| 6.0.15 (in Entwicklung) | [6.0.15](../../../changelogs/6.0/6.0.15.md) |
+| 6.0.15 (aktuelle Linie) | [6.0.15](../../../changelogs/6.0/6.0.15.md) |
 | Jedes Release | [Changelogs](../../../changelogs/README.md) |
 
 Wie Sie sie lesen: [Wo Changelogs und Release Notes stehen](wo-changelogs-und-release-notes-stehen.md) und
@@ -74,7 +74,7 @@ Sortieren Sie nach Version, nie nach Name: Eine einfache Sortierung nach Name se
 
 ## Über Releases schreiben
 
-- Ein Release ist ein Git-Tag; solange der Tag nicht existiert, ist die Version „in Entwicklung“ ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
+- Ein Release ist ein Git-Tag; solange der Tag nicht existiert, ist die Version „in Entwicklung“ ([Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md)).
 - Ein veröffentlichtes Release wird nie geändert; eine Korrektur kommt als nächstes Release ([Veröffentlichte Versionen ändern sich nie](veroeffentlichte-versionen-aendern-sich-nie.md)).
 - Schreiben Sie die Version im Fließtext ohne „v“: „Exponential 6.0.14“.
 

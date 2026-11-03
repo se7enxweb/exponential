@@ -60,8 +60,8 @@ of the fork was merged. Version 6.0.0 followed on 1 January 2024. The product wa
 
 ## What is new
 
-The newest release is **6.0.14** (7 June 2026). **6.0.15** is in development; its changelog already lists, among much
-else ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)):
+**6.0.15** is the current release line of Exponential 6.0; it follows **6.0.14** (7 June 2026). Its changelog lists,
+among much else ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)):
 
 | Feature | In one sentence | Story |
 |---|---|---|
@@ -72,7 +72,7 @@ else ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)):
 | Audit trail | A tamper-evident record of what happened in the administration | [Story: the audit trail](story-audit-trail.md) |
 | The help system | This documentation inside the administration, searchable by audience | [Story: the help system](story-the-help-system.md) |
 
-Do not give 6.0.15 a release date: none is published ([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
+Take a release date for 6.0.15 only from its tag `v6.0.15` ([Covering 6.0.15, before and after its tag](covering-6-0-15-while-in-development.md)).
 
 ## License and price
 

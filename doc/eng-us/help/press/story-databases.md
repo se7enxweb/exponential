@@ -52,7 +52,8 @@ command installs a site on five of them ([Install in one command](../../features
 | Driver and installer fixes for all engines; SQLite is the setup wizard's default | 16 to 30 September 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
 | Oracle 11g and 12.1 (ezoracle 2.3.7) | 14 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#14-october-2026-oracle-11g-and-121-ezoracle-237) |
 
-The September and October changes belong to the 6.0.15 line, which is in development and not released.
+The September and October changes belong to the 6.0.15 line, the current release line of Exponential 6.0; their
+dates are dates of the changes, not a release date.
 
 ## Facts you can print
 

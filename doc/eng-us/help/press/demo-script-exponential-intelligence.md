@@ -14,8 +14,8 @@ message that must survive any edit of your video: **it writes drafts only**, as 
 editor's permissions, and never publishes on its own (`README.md`, "Exponential Intelligence";
 [Exponential Intelligence](../../features/6.0/extensions/expai.md)).
 
-It is the extension `se7enxweb/expai`, required in `composer.json` since 6.0.15 (at `~0.0.1.18` on 25 October 2026), which is in
-development. Say so: "the 6.0.15 development line" or the version you really run. The script runs about six minutes;
+It is the extension `se7enxweb/expai`, required in `composer.json` since 6.0.15 (at `~0.0.1.18` on 25 October 2026), the current
+release line. Say so: "the 6.0.15 line" or the version you really run. The script runs about six minutes;
 the setup is done **off camera**.
 
 ## Contents
@@ -28,7 +28,7 @@ the setup is done **off camera**.
 
 ## Off camera: the setup
 
-On a new installation of the development line the README says the assistant is already active for the
+On a new installation of the 6.0.15 line the README says the assistant is already active for the
 administration siteaccesses, its tables exist and the Administrator role holds its policies; it "sends nothing
 anywhere until you add a provider key". On an older installation follow the upgrade steps in the README or
 [Switch it on](../../features/6.0/extensions/expai.md#switch-it-on).
@@ -80,7 +80,7 @@ After the recording, revoke the key at the provider, even if you believe it neve
 | "It's free." | "The extension is free software; a hosted provider charges for its use, and the assistant shows the estimated cost." |
 | "It works with every AI service." | "Anthropic, any OpenAI-compatible service, or a local model through Ollama; only models that passed a live probe may write drafts." |
 | "It's compliant with <law>." | "There is a printable EI: Summary page for a data protection officer." Leave legal conclusions to them |
-| "It is in 6.0.14." | It is required from 6.0.15, which is in development; it needs Exponential 6.0.14 or later |
+| "It is in 6.0.14." | It is required from 6.0.15, the current release line; it needs Exponential 6.0.14 or later |
 
 ## Without a provider key
 

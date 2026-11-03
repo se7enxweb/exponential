@@ -1,12 +1,12 @@
 # exp:template:check: Regel-Referenz
 
-Jeder Befund von [exp:template:check](template-syntaxpruefung.md) trägt eine Regel-ID. Diese Seite listet jede Regel:
+Jeder Befund von [exp:template:check](../anleitungen/template-syntaxpruefung.md) trägt eine Regel-ID. Diese Seite listet jede Regel:
 ihren Schweregrad, die Stufe oder Option, die sie einschaltet, was sie bedeutet, und ein Beispiel eines Templates, das
 sie auslöst, mit der Korrektur. `./console exp:template:check --rules` gibt die Liste aus, `--explain=<id>` eine Regel.
 Die Meldungen des Befehls sind englisch.
 
 Regel-IDs sind dauerhaft: Eine Regel kann stillgelegt werden (dann meldet sie nie mehr etwas), ihre ID wird aber nie
-wiederverwendet ([Kompatibilitätsversprechen](template-syntaxpruefung.md#kompatibilitätsversprechen)).
+wiederverwendet ([Kompatibilitätsversprechen](../anleitungen/template-syntaxpruefung.md#kompatibilitätsversprechen)).
 
 Die Ausgaben unten stammen aus Läufen auf einer Entwicklungsinstallation. Die maschinelle Ausgabe beschreibt
 [das JSON-Schema](../../eng-us/reference/template-check-schema.json) (Englisch); siehe

@@ -54,8 +54,7 @@ class eZImageCopyOwnFilesTest extends PHPUnit\Framework\TestCase
             $script->setUseSiteAccess( 'admin' );
             $script->initialize();
             eZExecution::setCleanExit();
-            if ( !eZDB::instance()->isConnected() )
-                throw new RuntimeException( 'no database connection' );
+            ezpLiveInstallation::installedSiteDatabase();
             self::$script = $script;
         }
         catch ( Throwable $e )
@@ -251,11 +250,17 @@ class eZImageCopyOwnFilesTest extends PHPUnit\Framework\TestCase
         return $object;
     }
 
+    /**
+     * A second version of the object. The name stays: eZImageType::onPublish() names the image file after the object
+     * and moves it when the name changes, so a new name would give the new version a file of its own by design.
+     */
     protected function createNewVersion( eZContentObject $object )
     {
         $this->assertTrue( eZContentFunctions::updateAndPublishObject( $object,
-            array( 'attributes' => array( 'name' => $object->attribute( 'name' ) . ' v2' ) ) ) );
-        return $this->forceFetchContentObject( $object->attribute( 'id' ) );
+            array( 'attributes' => array( 'name' => $object->attribute( 'name' ) ) ) ) );
+        $object = $this->forceFetchContentObject( $object->attribute( 'id' ) );
+        $this->assertEquals( 2, (int)$object->attribute( 'current_version' ), 'a second version is published' );
+        return $object;
     }
 
     /** As content/copy does it: all versions, published below the test folder */

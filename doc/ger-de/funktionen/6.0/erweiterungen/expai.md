@@ -56,8 +56,8 @@ Administrationsoberfläche, und um seine eigene Dokumentation zu finden. Die Ext
 ## Für Entwickler
 
 - Werkzeuge, die das Modell aufrufen kann: Lesedienste von expservices, die mit `'ai' => true` freigegeben sind
-  ([Backend-Dienste](../../../bc/6.0/backend-dienste-ueber-ezjscore.md)), die Brücke im Prozess zur Extension expmcp, wenn sie
-  installiert ist, und externe MCP-Server mit einer Freigabeliste.
+  ([Backend-Dienste](../../../bc/6.0/backend-dienste-ueber-ezjscore.md)), die Brücke im Prozess zu den Lesewerkzeugen
+  einer MCP-Extension, wenn eine installiert ist, und externe MCP-Server mit einer Freigabeliste.
 - Sie baut auf allgemeinen Kernel-Funktionen auf: [Installation als Entwürfe und das JSON-Paketformat](../../../bc/6.0/package-json-format.md),
   das Ereignis `package/install/drafts`, [Audit-Quellen](../../../bc/6.0/audit.md) und in
   [rad.ini](../../../bc/6.0/rad-erweiterungsoberflaeche.md) deklarierte Registries.

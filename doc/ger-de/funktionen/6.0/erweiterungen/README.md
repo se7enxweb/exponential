@@ -7,7 +7,9 @@ Releases von Exponential 6 geändert hat.
 
 Um eine Extension zu aktivieren, fügen Sie sie `ActiveExtensions[]` in `settings/override/site.ini.append.php` hinzu,
 erzeugen die Autoloads neu (`php bin/php/ezpgenerateautoloads.php -e`) und leeren die Caches. Die Seite jeder
-Extension nennt jeden zusätzlichen Schritt (Tabellen, Richtlinien, Schlüssel).
+Extension nennt jeden zusätzlichen Schritt (Tabellen, Richtlinien, Schlüssel). Welche Extensions eine neue
+Installation von 6.0.15 auf der Platte hat und aktiviert und woher ihre Tabellen kommen: [Erweiterungen einer neuen
+Installation](../erweiterungen-einer-neuen-installation.md).
 
 ## Inhalte und Datentypen
 

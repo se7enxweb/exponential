@@ -32,8 +32,8 @@ und Ablehnungen, Inhaltsänderungen, geschriebene Einstellungen, geleerte Caches
 in der Administration oder auf der Kommandozeile lesen“ ([Das Prüfprotokoll](../../funktionen/6.0/pruefprotokoll.md)). „Jeder
 Eintrag trägt den Hash des Eintrags davor (eine Hash-Kette)“, und ein Befehl `verify` sagt, ob etwas bearbeitet oder
 herausgeschnitten wurde. Das Prüfprotokoll geht auch sorgsam mit den Menschen um, die es aufzeichnet: Adressen werden gekürzt,
-und Passwörter werden nie aufgeschrieben. (6.0.15 ist in Entwicklung und nicht erschienen; die Funktion wurde am
-2. Oktober 2026 hinzugefügt.)
+und Passwörter werden nie aufgeschrieben. (6.0.15 ist die aktuelle Linie von Exponential 6.0; die Funktion wurde am
+2. Oktober 2026 hinzugefügt, das ist ein Datum der Änderung, kein Veröffentlichungsdatum.)
 
 ## Was neu ist, und seit wann
 

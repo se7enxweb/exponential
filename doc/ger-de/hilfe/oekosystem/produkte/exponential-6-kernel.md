@@ -39,7 +39,7 @@ Rundgang für Käufer: [Funktionsrundgang](../../kunden/nutzen/rundgang-durch-di
 | Fakt | Quelle |
 |---|---|
 | 6.0.0 erschien am 1. Januar 2024 | [Zeitleiste](../../wer-ist-die-exponential-foundation.md#zeitleiste) |
-| 6.0.14 erschien am 7. Juni 2026; 6.0.15 ist auf `main` in Entwicklung | ebenda |
+| 6.0.14 erschien am 7. Juni 2026; 6.0.15 ist die aktuelle Linie, die `main` trägt | ebenda |
 | 6.0 ist die gepflegte Linie; Korrekturen werden mit dem nächsten Release 6.0.x veröffentlicht | `SECURITY.md` |
 | Ein veröffentlichtes Tag wird nie geändert | `SECURITY.md` |
 | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) werden unterstützt | `README.md`, [PHP-Versionen](../php-stack/php-versionen.md) |

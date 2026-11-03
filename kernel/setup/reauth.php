@@ -6,7 +6,7 @@
  * system, export, delete, content) with its switch, the number of its rules and, for content, the user groups it asks
  * (none ticked: every user). Without a siteaccess the page edits the values of every siteaccess, written to the global
  * override settings/override/site.ini.append.php; with one (chosen in the page, [SiteAccessSettings]
- * AvailableSiteAccessList[]) it edits settings/siteaccess/<name>/site.ini.append.php, so content can ask on the
+ * AvailableSiteAccessList[], a link per siteaccess) it edits settings/siteaccess/<name>/site.ini.append.php, so content can ask on the
  * editors' siteaccess only. Saving (expReauthSettings) answers with a redirect. Content (removing, publishing, storing
  * a draft) is off by default and switched on here. The save itself is a system setting, so it asks first.
  *
@@ -25,12 +25,9 @@ $siteAccesses = $ini->hasVariable( 'SiteAccessSettings', 'AvailableSiteAccessLis
 $scope = expReauthSettings::scope( isset( $Params['SiteAccess'] ) ? $Params['SiteAccess'] : '', $siteAccesses );
 $self = '/setup/reauth' . ( $scope !== '' ? '/' . $scope : '' );
 
-// the scope chooser is a GET form: it opens the page of the scope chosen
-if ( $_SERVER['REQUEST_METHOD'] === 'GET' && isset( $_GET['ReauthScope'] ) )
-{
-    $chosen = expReauthSettings::scope( $_GET['ReauthScope'], $siteAccesses );
-    return $module->redirectTo( '/setup/reauth' . ( $chosen !== '' ? '/' . $chosen : '' ) );
-}
+// the scope is the view's parameter: the page links each scope to setup/reauth/<siteaccess>, never a query string.
+// A link, not a form: every POST to setup/* asks "Verify it's you" ([ReauthGroup_system]), and choosing where the
+// settings apply changes nothing
 
 if ( $_SERVER['REQUEST_METHOD'] === 'POST' && $http->hasPostVariable( 'SaveReauthButton' ) )
 {

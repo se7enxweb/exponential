@@ -46,7 +46,7 @@ Never edit `settings/site.ini` itself: an update replaces it. Put the settings y
 > \[optional\] custom cache purge function "<class>::purgeCache()" to be called  
 > purgeClass=eZSomeClassName  
 
-Default: a list of 5: `rest`, `restRoutes`, `exphelpcontent`, `smarty`, `twig`.
+Default: a list of 6: `rest`, `restRoutes`, `exphelpcontent`, `smarty`, `twig`, `searchsuggest`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -59,6 +59,7 @@ CacheItems[]=restRoutes
 CacheItems[]=exphelpcontent
 CacheItems[]=smarty
 CacheItems[]=twig
+CacheItems[]=searchsuggest
 */ ?>
 ```
 

@@ -47,10 +47,11 @@ einen Beitrag brauchen, fragen Sie 7x schriftlich ([Ein Interview anfragen](ein-
 | Das Changelog des Releases | [6.0.13](../../../changelogs/6.0/6.0.13.md): "Security hardening (seven findings fixed)", die Befunde SEC-01 bis SEC-06 und weitere |
 | Eine Spezifikationsseite pro Härtungsrunde | [Die Härtung von 6.0.13](../../spezifikationen/6.0/sicherheitshaertung-6.0.13.md), [Sicherheitspatches vom August 2026](../../spezifikationen/6.0/sicherheitshaertung-2026-08.md), [Sicherheitsvorgaben vom September 2026](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md) |
 | Die Monatsseite der Geschichte | [August 2026](../../geschichte/2026/2026-08.md): "Six security patches and jQuery 3.7.1 landed on 16 August" |
-| Die Entwicklungslinie | Das [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) führt spätere Korrekturen nach Datum auf; sie sind nicht veröffentlicht, bis das Tag 6.0.15 existiert |
+| Die Linie 6.0.15 | Das [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) führt spätere Korrekturen nach Datum auf; veröffentlicht sind sie mit dem Tag `v6.0.15` |
 
-Beachten Sie den Status: Die Patches vom August 2026 liegen auf der Entwicklungslinie 6.0.15. Ein Beitrag darf nicht
-sagen, sie seien in einer veröffentlichten Version, bis ein Tag sie enthält ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
+Beachten Sie den Status: Die Patches vom August 2026 liegen in der Linie 6.0.15. Ein Beitrag darf nur sagen, sie seien
+in einer veröffentlichten Version, wenn ein Tag sie enthält; ob der Tag `v6.0.15` existiert, zeigt
+`git tag -l 'v6.0.*' --sort=version:refname` ([Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 ## Eine Korrektur genau beschreiben
 

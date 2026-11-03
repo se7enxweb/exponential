@@ -28,7 +28,7 @@ Releases.
 |---|---|---|
 | `v6.0.14` | Der Git-Tag eines Release | „Exponential 6.0.14“ (kein `v` im Fließtext) |
 | `6.0.14` | Changelogs, Packagist | „Exponential 6.0.14“ |
-| `6.0.15stable` | `lib/version.php` auf dem Branch `main` | „die Entwicklungslinie 6.0.15“, nie „6.0.15 stable“ |
+| `6.0.15stable` | `lib/version.php` auf dem Branch `main` | „die Linie 6.0.15 auf dem Branch `main`“, nie „6.0.15 stable“ |
 | `dev-main`, `6.0.x-dev` | Composer-Namen für den Branch `main` | „der Entwicklungs-Branch“ |
 | `v0.0.4.50` | Ein Release-Tag von Velocity | „Exponential Velocity 0.0.4.50“ |
 
@@ -55,7 +55,7 @@ Reihenfolge an, nicht den Umfang. Was ein Release enthält, steht in seinem Chan
 
 | Name | Was es ist | Quelle |
 |---|---|---|
-| Release-Tags `v6.0.0` bis `v6.0.14` | Genaue, dauerhafte Releases der Linie 6.0 | [Den Code besorgen](../../installation/03-den-code-beschaffen.md#31-versionen-tags-und-branches) |
+| Release-Tags ab `v6.0.0` | Genaue, dauerhafte Releases der Linie 6.0 | [Den Code besorgen](../../installation/03-den-code-beschaffen.md#31-versionen-tags-und-branches) |
 | Ältere Tags wie `4.4.0` | Linien aus den Jahren von eZ Publish, ohne `v` getaggt | Dieselbe Seite |
 | Branch `main` | „die aktuelle Entwicklung der Linie 6.0, heute 6.0.15“ | Dieselbe Seite |
 | Release-Branches `6.0.7` bis `6.0.14` | „der Stand jeder Release-Linie“ | Dieselbe Seite |
@@ -71,7 +71,7 @@ oder `sort -V`), nie nach Namen“ ([Den Code besorgen](../../installation/03-de
 
 ```bash
 git tag -l 'v6.0.*'                              # by name: v6.0.10 appears before v6.0.8 - misleading
-git tag -l 'v6.0.*' --sort=version:refname       # by version: v6.0.14 is last - correct
+git tag -l 'v6.0.*' --sort=version:refname       # by version: the newest tag is last - correct
 ```
 
 Dasselbe gilt für Ihre eigenen Tabellen: Ordnen Sie Zeilen nach Release-Datum oder nach Version, nie alphabetisch.

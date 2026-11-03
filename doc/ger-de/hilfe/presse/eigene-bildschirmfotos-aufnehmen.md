@@ -78,13 +78,13 @@ Machen Sie keine Bildschirmfotos von der Live-Website oder der Administration an
 - [ ] Keine personenbezogenen Daten, keine Passwörter, keine Token, keine privaten Hostnamen ([Geheimnisse vom Bildschirm fernhalten](geheimnisse-vom-bildschirm-fernhalten.md)).
 - [ ] Das Standardpasswort des Administrators ist nicht das, das Sie verwendet haben.
 - [ ] Der Bildschirm zeigt, was die Bildunterschrift sagt, in der Version, die die Bildunterschrift nennt.
-- [ ] Nichts Unveröffentlichtes wird als veröffentlicht dargestellt: Ein Bildschirmfoto aus einem Entwicklungsstand zeigt
-      Arbeit an 6.0.15, die „in Entwicklung“ ist ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
+- [ ] Nichts Unveröffentlichtes wird als veröffentlicht dargestellt: Ein Bildschirmfoto vom Branch `main` zeigt
+      einen Stand der Linie 6.0.15, kein Release; ein Release ist erst der Tag ([Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 ## Bildunterschriften
 
 ```text
-"The admin4 dashboard of Exponential in dark mode (development version of 6.0.15, demo content,
+"The admin4 dashboard of Exponential in dark mode (6.0.15 line, main branch, demo content,
  screenshot by <outlet>, <date>)."
 "Adding a block in the Exponential Layouts editor (Exponential <version>, demo installation)."
 ```

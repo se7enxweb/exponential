@@ -28,7 +28,7 @@ Before you start: a demo installation with invented content, signed in as a demo
 
 **Goal:** the viewer sees that editors work in drafts, see a page before it goes live, can arrange pages themselves,
 and find help inside the product. **Audience:** people who have never seen Exponential.
-**Version:** say it at 0:00. The admin4 design and the current layouts editor belong to the 6.0.15 development line.
+**Version:** say it at 0:00. The admin4 design and the current layouts editor belong to the 6.0.15 line.
 
 ## The script
 
@@ -58,7 +58,7 @@ Rehearse it once with a timer. If you run long, cut the layouts part, not the di
 | "Thousands of sites run on it." | The sources do not count installations | Leave it out |
 | "It's the fastest CMS." | No published comparison | Leave it out, or use the Velocity script with its sources |
 | "It's the successor of eZ Publish, endorsed by Ibexa." | Not associated with eZ Systems or Ibexa | "It continues the code base of eZ Publish, a product its creator discontinued after almost 18 years." |
-| "6.0.15 comes out next month." | In development, no date | "6.0.15 is in development." |
+| "The next version comes out next month." | No release date is announced before a tag | Name only versions whose tag exists, with the tag's date. |
 | "The AI publishes for you." | It writes drafts only | See the [Exponential Intelligence script](demo-script-exponential-intelligence.md) |
 
 More: [Claims you must not make](../advocates/claims-you-must-not-make.md).

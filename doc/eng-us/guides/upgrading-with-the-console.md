@@ -392,6 +392,7 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 | `6.0.15-contentobject-modified-index` | database | the index `ezcontentobject_modified` (Dashboard > Recent content) |
 | `6.0.15-static-publish-tables` | database | `exp_static_run`, `exp_static_page` (static publishing) |
 | `6.0.15-migration-deploy-tables` | database | `exp_migration_deploy`, `exp_migration_deploy_host` (deploys of migrations to remotes) |
+| `6.0.15-active-extension-tables` | database | (new) the tables of every active extension that ships a `share/db_schema.dba` (ezstarrating, ezgmaplocation, eztags ...), where missing; no data loaded |
 | `6.0.15-site-version` | database | `ezsite_data` `ezpublish-version` set to 6.0.15 |
 | `6.0.15-missing-user-settings` | scripts | `createmissingusersettings.php` |
 | `6.0.15-trash-records-to-columns` | scripts | `movetrashrecords.php` (the file is kept) |
@@ -420,6 +421,11 @@ and a check of the demo mode environment variable. The changelog lists them.
 
 An extension adds its own steps with `ExtensionStepList[]` in its `settings/upgrade.ini.append.php`; they run with
 the kernel's, by stage and version. [Upgrade steps for extensions](upgrade-steps-for-extensions.md) shows how.
+
+An extension's tables need no step of their own: `6.0.15-active-extension-tables` creates, for every extension
+that is active (globally or in a siteaccess) and ships a `share/db_schema.dba`, the tables of that file the database
+lacks, on every engine, as a new installation does after its site package. Nothing is dropped or changed and no
+`share/db_data.dba` is loaded. See [Extensions of a new installation](../features/6.0/extensions-of-a-new-installation.md#where-the-tables-come-from).
 
 ## The promise
 

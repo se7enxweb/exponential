@@ -19,7 +19,7 @@ proves it. Check the source before you answer: facts change with releases.
 | What is Exponential? | A PHP application framework with advanced CMS functionality; its best feature is a fully customizable content model | [Exponential 6](../who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
 | Is it free? | Yes: the code is under the GNU GPL v2 or later, the documentation under the GNU FDL | [Talking points: open source](talking-points-open-source-and-licensing.md) |
 | Who makes it? | 7x leads development; the Exponential Foundation, a nonprofit, operates the project | [7x and the Foundation](7x-and-the-foundation-for-advocates.md) |
-| Is it maintained? | Fifteen 6.0.x releases since 1 January 2024; 6.0.15 in development | [Is it still alive?](objection-is-it-still-alive.md) |
+| Is it maintained? | Fifteen 6.0.x releases from 1 January 2024 (6.0.0 to 6.0.14), followed by the current 6.0.15 line | [Is it still alive?](objection-is-it-still-alive.md) |
 | Isn't that eZ Publish? | It continues that code base; eZ Publish was discontinued by its creator; Exponential is not associated with eZ Systems or Ibexa | [Writing about the history correctly](writing-about-the-history-correctly.md) |
 | Which Exponential do I need? | Depends on PHP-only or Symfony, framework or ready site | [Knowing the product family](knowing-the-product-family.md) |
 

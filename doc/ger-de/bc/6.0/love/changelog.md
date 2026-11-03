@@ -4,7 +4,7 @@
 Funktion mit ihrem LoveStack-Commit und ihrem Upgrade-Hinweis, steht im Changelog von 6.0.15:
 [LoveStack-Funktionen (ab 2026-10-12)](../../../../changelogs/6.0/6.0.15.md#lovestack-features-from-2026-10-12).
 
-## 6.0.15 (in Entwicklung)
+## 6.0.15
 
 - Hinzugefügt: 36 Funktionen aus LoveStack (mugoweb/ezpublish-legacy, Commit `e61e9fdf0c` vom 23. Februar 2026), in
   Exponential neu gebaut, mit Dank an Mugo Web: L01–L06 Sicherheit und Sitzungen, L07–L12 Diagnose, L13–L21 Inhalte

@@ -42,7 +42,8 @@ incredible improvement to the kernel“ ([README, Recent improvements](https://g
 | SQLite ist der Standard des Einrichtungsassistenten; Installation mit einem Befehl auf SQLite | 16. bis 30. September 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
 | Eine Schreibwarteschlange: Gleichzeitige Veröffentlichungen warten, bis sie an der Reihe sind, statt mit „database is locked“ zu scheitern | 1. und 2. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
 
-Die Änderungen von 2026 sind in der Entwicklungslinie 6.0.15, die nicht veröffentlicht ist.
+Die Änderungen von 2026 sind in der Linie 6.0.15. Die Daten sind Daten der Änderungen, keine Veröffentlichungsdaten; ob
+der Tag `v6.0.15` existiert, zeigt `git tag -l 'v6.0.*' --sort=version:refname`.
 
 ## Fakten, die Sie drucken können
 

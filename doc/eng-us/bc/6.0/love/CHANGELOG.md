@@ -4,7 +4,7 @@ Changes to the LoveStack features in Exponential, newest first. The full list, o
 feature with its LoveStack commit and upgrade note, is in the 6.0.15 changelog:
 [LoveStack features (from 2026-10-12)](../../../../changelogs/6.0/6.0.15.md#lovestack-features-from-2026-10-12).
 
-## 6.0.15 (in development)
+## 6.0.15
 
 - Added: 36 features from LoveStack (mugoweb/ezpublish-legacy, commit `e61e9fdf0c` of 23 February
   2026), rebuilt in Exponential with thanks to Mugo Web: L01–L06 security and sessions, L07–L12

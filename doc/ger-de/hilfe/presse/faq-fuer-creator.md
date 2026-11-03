@@ -58,7 +58,7 @@ die [Pressekontakte](pressekontakte.md).
 
 **Kann ich früheren Zugang zu einem Release bekommen?**
 Die Entwicklung ist öffentlich: Der main-Branch zeigt, was kommt. Kennzeichnen Sie es als „in Entwicklung“
-([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
+([Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 **Kann mir jemand helfen, eine Demo einzurichten?**
 Die Hilfe deckt es ab; bei Fragen helfen die Foren und der Telegram-Chat ([Mit Kommentaren und Fragen umgehen](mit-kommentaren-und-fragen-umgehen.md)).

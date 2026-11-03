@@ -48,7 +48,7 @@ from [A tour of the administration](../admin-tour.md) and [The layouts editor](.
 WALKTHROUGH SCRIPT
 Title:        <the task, as a viewer would search it>
 Promise:      After this video you can <task>.
-Version:      Exponential <6.0.14 | 6.0.15 development line, checked on <date>>, design admin4
+Version:      Exponential <6.0.14 | 6.0.15 | main branch, checked on <date>>, design admin4
 Disclosure:   <line from the disclosure page>
 Help page:    <link>
 

@@ -14,10 +14,10 @@ A view of the `exphelp` module, defined in `kernel/exphelp/module.php` and run b
 ## Address
 
 ```text
-/exphelp/manual/(format)/<Format>
+/exphelp/manual/(format)/<Format>/(step)/<Step>
 ```
 
-Unordered parameters, in any order as `/(name)/value`: `(format)` sets `Format`.
+Unordered parameters, in any order as `/(name)/value`: `(format)` sets `Format`, `(step)` sets `Step`.
 
 ## Who may open it
 

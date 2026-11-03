@@ -16,7 +16,7 @@ veröffentlichen dürfen; dieses Skript nennt daher diese Bildschirme und sagt, 
 
 Melden Sie sich als Administrator einer Demo-Installation an, die nur erfundene Inhalte und erfundene Konten enthält
 ([Eine Demo-Installation einrichten](eine-demo-installation-einrichten.md)). Die Menünamen unten sind die des Designs admin4
-der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
+der Linie 6.0.15; sagen Sie, welche Version Sie zeigen.
 
 ## Inhalt
 

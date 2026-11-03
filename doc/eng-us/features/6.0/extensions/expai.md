@@ -51,8 +51,8 @@ until it is activated. Its full documentation lives with it, in the
 ## For developers
 
 - Tools the model can call, read services of expservices opted in with `'ai' => true`
-  ([backend services](../../../bc/6.0/backend_ezjscore_services.md)), the in-process bridge to the expmcp extension
-  when it is installed, and external MCP servers with an allowlist.
+  ([backend services](../../../bc/6.0/backend_ezjscore_services.md)), the in-process bridge to the read tools
+  of an MCP extension when one is installed, and external MCP servers with an allowlist.
 - It builds on generic kernel features: [install as drafts and the JSON package format](../../../bc/6.0/package-json-format.md),
   the event `package/install/drafts`, [audit sources](../../../bc/6.0/audit.md), and registries declared in
   [rad.ini](../../../bc/6.0/rad-extension-surface.md).

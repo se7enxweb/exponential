@@ -74,7 +74,7 @@ AFTERWARDS
 ```
 
 Pages behind the lines: [Covering a release](covering-a-release.md),
-[Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md),
+[Covering 6.0.15, before and after its tag](covering-6-0-15-while-in-development.md),
 [How version numbers work](how-version-numbers-work.md), [Brand and naming rules](../business/brand-and-naming-rules.md),
 [Verifying numbers](verifying-numbers.md), [Quotes policy](quotes-policy.md),
 [Covering security fixes](covering-security-fixes.md), [Disclosure and conflicts of interest](../advocates/disclosure-and-conflicts-of-interest.md),

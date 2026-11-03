@@ -960,8 +960,28 @@ class eZMySQLiDB extends eZDBInterface
         else
         {
             eZDebug::writeDebug( 'escapeString called before connection is made', __METHOD__ );
-            return mysqli_real_escape_string( $str );
+            // mysqli_real_escape_string() needs a link (one argument threw ArgumentCountError on PHP 8). Use the
+            // write connection when there is one, else escape the characters MySQL escapes itself, as the SQLite3
+            // driver escapes without a connection.
+            if ( $this->DBWriteConnection instanceof mysqli )
+            {
+                return mysqli_real_escape_string( $this->DBWriteConnection, (string)$str );
+            }
+            return self::escapeStringWithoutConnection( (string)$str );
         }
+    }
+
+    /**
+     * Escapes $str as mysqli_real_escape_string() does for an ASCII compatible character set (utf8, utf8mb4, latin1),
+     * for the case that no connection is open yet: NUL, \n, \r, backslash, both quotes and Ctrl-Z get a backslash.
+     *
+     * @param string $str
+     * @return string
+     */
+    public static function escapeStringWithoutConnection( $str )
+    {
+        return strtr( (string)$str, array( "\\" => "\\\\", "\0" => "\\0", "\n" => "\\n", "\r" => "\\r",
+                                           "'" => "\\'", '"' => '\\"', "\x1a" => "\\Z" ) );
     }
 
     function close()

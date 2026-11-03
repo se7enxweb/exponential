@@ -61,7 +61,7 @@ says so instead of choosing one. Where something could not be checked, it is lef
   ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
 - **One code base, kept alive.** "Exponential has made it beyond it's end of life in 2021 and survived" (README,
   "Exponential Project Status"). Since December 2023 7x has published the 6.0.x releases, from 6.0.0 on
-  1 January 2024 to 6.0.14 on 7 June 2026, with 6.0.15 in development ([release overview](../release-overview)).
+  1 January 2024 to 6.0.14 on 7 June 2026, followed by the current 6.0.15 line ([release overview](../release-overview)).
 - **Not eZ Systems, not Ibexa.** "This project is not associated with the original eZ Publish software or its
   original developer, eZ Systems or Ibexa" (README, "Exponential Project Notice : 2025.08.12";
   <https://exponential.earth/about/project>).
@@ -187,7 +187,7 @@ overview" is the file [doc/eng-us/release-overview](../release-overview), which 
 | 12 March 2026 | The repository `exponential-platform-dxp` is created. | GitHub API |
 | 19 March 2026 | The Exponential Foundation is founded in Seattle, Washington. | <https://foundation.exponential.earth/> |
 | 1 June 2026 | MongoDB 8 as a database. | [June 2026](../history/2026/2026-06a.md) |
-| 7 June 2026 | 6.0.14, the newest tag. | release overview, tag v6.0.14 |
+| 7 June 2026 | 6.0.14 is tagged. | release overview, tag v6.0.14 |
 | July 2026 | `ezpm` in the console, a one-command installer and the Kickstarter; the first commits of the Velocity web server (20 July). | [July 2026](../history/2026/2026-07.md), [Velocity chronicle](../history/velocity/README.md) |
 | 31 July 2026 | The repository `explayouts` (Exponential Layouts) is created. | GitHub API |
 | 22 September 2026 | Velocity arrives in Exponential and becomes the recommended engine within two days. | [September 2026](../history/2026/2026-09b.md) |
@@ -272,7 +272,7 @@ From [doc/eng-us/release-overview](../release-overview) and the git tags (`git t
 | 6.0.12 | 10 February 2026 | |
 | 6.0.13 | 18 April 2026 | |
 | 6.0.14 | 7 June 2026 | MongoDB 8 as a database |
-| 6.0.15 | not released yet | Velocity, admin4, audit trail, Exponential Layouts, Exponential Intelligence, the help system and much more ([changelog](../../changelogs/6.0/6.0.15.md)) |
+| 6.0.15 | the date of the tag `v6.0.15` | Velocity, admin4, audit trail, Exponential Layouts, Exponential Intelligence, the help system and much more ([changelog](../../changelogs/6.0/6.0.15.md)) |
 
 A published tag is never changed: "a fix for a problem in `v6.0.14` or an earlier tag reaches you as the next
 release, not as a corrected copy of the old one" ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)).
@@ -485,7 +485,7 @@ Counted on 18 October 2026. Numbers change; the command or page in the last colu
 | Oldest commit | 2 September 2002 | `git log --reverse` |
 | Merged pull requests in the history | 1,062 (as of 25 October 2026; the inherited history included) | `git log --oneline --grep="Merge pull request" origin/main \| wc -l` |
 | Merged pull requests on GitHub (se7enxweb/exponential) | 288 (as of 25 October 2026) | GitHub search `repo:se7enxweb/exponential is:pr is:merged` |
-| 6.0.x releases | 15 (6.0.0 to 6.0.14), 6.0.15 in development | `git tag -l 'v6.0.*'` |
+| 6.0.x releases | 15 (6.0.0 to 6.0.14), followed by the current 6.0.15 line | `git tag -l 'v6.0.*'` |
 | se7enxweb packages required by `composer.json` | 66 | composer.json |
 | Packages of the vendor se7enxweb on Packagist | 219 | <https://packagist.org/packages/list.json?vendor=se7enxweb> |
 | Public repositories of the GitHub account se7enxweb | 1,025, of them 95 not forks | `gh repo list se7enxweb --limit 1100` |
