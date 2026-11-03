@@ -11,7 +11,9 @@ grep -n '"se7enxweb/' composer.json
 ```
 
 The first block of the output is `suggest`, the second `require`. The current `require` and `suggest` sections of
-`composer.json` are the authority; the timeline below tells you when each piece joined.
+`composer.json` are the authority; the timeline below tells you when each piece joined. What a 6.0.15 installation has
+on disk, what it activates by default and where the tables come from is listed in [Extensions of a new
+installation](extensions-of-a-new-installation.md).
 
 ## How it works
 

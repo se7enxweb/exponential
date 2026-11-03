@@ -52,6 +52,13 @@ anderen Verbindungen aus.
 
 ## Eine Tabelle und eine Spalte
 
+Eine neue Tabelle braucht keinen eigenen Schritt: der Kernel-Schritt `6.0.15-active-extension-tables` legt die
+fehlenden Tabellen der `share/db_schema.dba` jeder aktiven Erweiterung an, und eine neue Installation tut dasselbe nach
+ihrem Site-Paket ([woher die Tabellen
+kommen](../funktionen/6.0/erweiterungen-einer-neuen-installation.md#woher-die-tabellen-kommen)). Schreiben Sie einen
+Schritt für das, was er nicht tut: eine Spalte oder einen Index einer bestehenden Tabelle, Zeilen, Richtlinien,
+Einstellungen.
+
 Die Erweiterung hält ihre Tabellen in `share/db_schema.dba`, wie der Kernel. Der Schema-Schritt liest die
 Definitionen aus der Datei, die Sie nennen, legt fehlende Tabellen über die Schema-Klasse der Engine an und ergänzt
 fehlende Spalten und Indizes:

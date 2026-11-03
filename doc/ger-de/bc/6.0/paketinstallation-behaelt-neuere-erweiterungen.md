@@ -74,3 +74,6 @@ Seit dem 28. Oktober 2026 findet der Kernel die Wurzel f√ºr jedes Paket, auch f√
 - `swapNodes()` nennt das Objekt, das es nicht finden konnte ("Can't find the node of the object named 'X' to swap").
 
 Ohne Datenbank getestet in `tests/tests/kernel/classes/setup/SiteInstallerContentRootLookupTest.php`.
+
+Seit 6.0.15 verlangen die Site-Pakete die Erweiterungspakete von ezwt, ezstarrating und ezgmaplocation gar nicht mehr:
+[Site-Pakete installieren keine Erweiterungspakete mehr](seitenpakete-ohne-erweiterungspakete.md).

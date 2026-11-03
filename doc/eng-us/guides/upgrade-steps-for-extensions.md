@@ -48,6 +48,11 @@ Use `$context->db()` for the database, never `eZDB::instance()` of your own: tes
 
 ## A table and a column
 
+A new table needs no step of its own: the kernel's step `6.0.15-active-extension-tables` creates the missing tables
+of the `share/db_schema.dba` of every active extension, and a new installation does the same after its site package
+([where the tables come from](../features/6.0/extensions-of-a-new-installation.md#where-the-tables-come-from)). Write
+a step for what that does not do: a column or an index of a table that exists already, rows, policies, settings.
+
 The extension keeps its tables in `share/db_schema.dba`, as the kernel does. The schema step reads the definitions
 from the file you name, creates the missing tables through the engine's schema handler and adds missing columns and
 indexes:

@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-d5ffb2372aaf728f55d4130c4535d3b9  autoload/ezp_kernel.php
+2c955f5dfff59c497373804caa49d429  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3515,7 +3515,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-f2234f7d4d0ecef74cc2983110b105d1  doc/changelogs/6.0/6.0.15.md
+6e972a211900bd153ef44bc615212600  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3613,7 +3613,7 @@ f3810ed1fe8ce28f454c0747ce38f8cb  doc/changelogs/extensions/symfony.md
 ded49d230901ad3762b2ceae14619701  doc/changelogs/extensions/twig.md
 af285ac8d63f408a2ebaf23e88716894  doc/changelogs/extensions/xrowextract.md
 bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
-58fe592490243d99e873eb90e357feda  doc/eng-us/INSTALL.md
+9915101119cf442e381f8a107eb1c859  doc/eng-us/INSTALL.md
 a22d0be1ce2284b67950a4d1673dd1b0  doc/eng-us/LICENSE-GFDL-1.3.txt
 d1b7052b2035b91ce9c4cece454f14bf  doc/eng-us/README-LICENSE.md
 0ad9c5cf443537f4044d6148bd6729f8  doc/eng-us/UNINSTALL.md
@@ -3710,7 +3710,7 @@ b4320043ff15f8f8443b7ebcd6259fa9  doc/eng-us/bc/6.0/oauth-authorize-policy.md
 5915e407aa7a9cce550d626cc726e267  doc/eng-us/bc/6.0/oauth-pkce.md
 21631aad083808b1268ae87a5cdfd7ce  doc/eng-us/bc/6.0/oauth-token-hardening.md
 2beb9bafc183d1f77b22b02c7a9b7eb8  doc/eng-us/bc/6.0/opml.md
-a44253f2e514ae95c7fe513fe670ae26  doc/eng-us/bc/6.0/package-install-keeps-newer-extensions.md
+41a4304050938146dc83206a56a58d6e  doc/eng-us/bc/6.0/package-install-keeps-newer-extensions.md
 c6a6cb258f60df9e7e88cb550f6c8be0  doc/eng-us/bc/6.0/package-json-format.md
 a7b92c2c51efeb0cb7d2766b2706b86c  doc/eng-us/bc/6.0/pagination-settings.md
 e26186f3f662bbbd3ad8502af66d5d4c  doc/eng-us/bc/6.0/passkeys-and-verify-its-you.md
@@ -3734,6 +3734,7 @@ ce738886977278be943451e45fd98a94  doc/eng-us/bc/6.0/rad-extension-surface.md
 0785742cb6ad30c25657d8d3a4363ac9  doc/eng-us/bc/6.0/role-policy-paging.md
 c418d47a0244a80e9498e192d9572f52  doc/eng-us/bc/6.0/search-links-with-view-parameters.md
 981cb46d02cc504b4d483962e3e5f0ed  doc/eng-us/bc/6.0/shop-basket-view-name.md
+fb079d25e9f453e35fa16aba655bf77b  doc/eng-us/bc/6.0/site-packages-no-extension-packages.md
 1bb2ec9b10e67e5c692f4140f388681a  doc/eng-us/bc/6.0/soap-entry-script-index-soap.md
 1b035a77f2a56fa9b0225c8aca76b934  doc/eng-us/bc/6.0/sql-query-cache.md
 fb85be121ac1186257310cd979fc3c1e  doc/eng-us/bc/6.0/sqlite-transactions.md
@@ -6831,7 +6832,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-47e28bac53b2e8c1c85a24d08796fa51  doc/eng-us/features/6.0/README.md
+4aa263c92723846f734b428dd11840ae  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6863,7 +6864,7 @@ f58ef44439a83c0f3bd4e9ede1173901  doc/eng-us/features/6.0/cronjobs-console.md
 49183904218a17f119fbc88d9bbf6ccb  doc/eng-us/features/6.0/custom-items-per-page.md
 bb5efc485eb376e77b38aa0824f805e5  doc/eng-us/features/6.0/data-tables.md
 038ad003cc7c482d85ba9496eb507bf6  doc/eng-us/features/6.0/debug-output-improvements.md
-2ede246757068e064cab00fcf3fb1795  doc/eng-us/features/6.0/default-extension-distribution.md
+3c75965ad82e4b28d309521a6f7cec41  doc/eng-us/features/6.0/default-extension-distribution.md
 fe706ad129c921a5ec4d194fa6745051  doc/eng-us/features/6.0/editor-account-approval.md
 8bb25377c53c0d863e0b1ad669e226da  doc/eng-us/features/6.0/environment-settings.md
 c5efbdd362ad6370abdcf053a6f5cd9d  doc/eng-us/features/6.0/exp-adminui.md
@@ -6872,8 +6873,9 @@ d9177e42ef957029c160b94a0b7e6363  doc/eng-us/features/6.0/exp-ini-command.md
 ac55ec9c4caa5425b7c20230440f9026  doc/eng-us/features/6.0/extension-list-and-downloads.md
 b35cf8140a2f26d5e3488661f148506d  doc/eng-us/features/6.0/extension-loading-order.md
 9ba1fccc9070cac52fac658d50975120  doc/eng-us/features/6.0/extension-module-override.md
+23087820f0a26b30f88f8a531d4ddfb6  doc/eng-us/features/6.0/extensions-of-a-new-installation.md
 cb7b4a785e49764ddfc2a91a2295decb  doc/eng-us/features/6.0/extensions/AdminAid.md
-0de127972482281c0b6b598bd55bd7af  doc/eng-us/features/6.0/extensions/README.md
+63cc1445e26c496b43d2cf4d954872c6  doc/eng-us/features/6.0/extensions/README.md
 5409537e822b55c82dc6953a412d57d6  doc/eng-us/features/6.0/extensions/bccie.md
 802cfcb8988f3257992676935a2cf9f3  doc/eng-us/features/6.0/extensions/bcgooglesitemaps.md
 40867538617a1d8fa8ad1a3d86c769b7  doc/eng-us/features/6.0/extensions/bcwebsitestatistics.md
@@ -6908,7 +6910,7 @@ f2b92b0e36552e88377e04008fa73e97  doc/eng-us/features/6.0/extensions/ezpaypal.md
 6f058d112c216caee545b823cdc8cdee  doc/eng-us/features/6.0/extensions/ezupdate.md
 e4b52cac625e19ba151e02d8cb0b90c3  doc/eng-us/features/6.0/extensions/ezwebin-ezpackage.md
 492b843d6dc80ba992601605ceeac5fd  doc/eng-us/features/6.0/extensions/ezwebin.md
-880b789b5894d848fd82820bd2c89c8a  doc/eng-us/features/6.0/extensions/ezwt.md
+55213906085e59a9f221405197b4ae90  doc/eng-us/features/6.0/extensions/ezwt.md
 0e49d16a3c345203c41142ec0a36f04b  doc/eng-us/features/6.0/extensions/ezxmlexport.md
 532ad8a4939b361931a94ddc5bb8898b  doc/eng-us/features/6.0/extensions/git_manager.md
 75f3bc39166189bfe5f2ea722f97c0bd  doc/eng-us/features/6.0/extensions/hcaptcha.md
@@ -7202,8 +7204,8 @@ ece15ec77c80cf6be557056386321c5a  doc/eng-us/guides/two-factor-login.md
 d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 601ae064ee2f4daf3ca688b1020c2062  doc/eng-us/guides/ui-switch-settings.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
-13001b8adc7ccfd3fc7f112f8aa78686  doc/eng-us/guides/upgrade-steps-for-extensions.md
-7802e3129c7532aaeee4930f967dd90d  doc/eng-us/guides/upgrading-with-the-console.md
+dd4acb3114392fbaac07d6148d4af8c1  doc/eng-us/guides/upgrade-steps-for-extensions.md
+273bdf42f49fa3b609367573b23890a3  doc/eng-us/guides/upgrading-with-the-console.md
 2987ca23a79d43b361eea5b899af2eec  doc/eng-us/guides/upgrading.md
 f668db27cb3444f6364a9cfbb6fc5b51  doc/eng-us/guides/urls-and-aliases.md
 c0ef983a2b3afe72eea1bf3e56b186a3  doc/eng-us/guides/user-management-from-the-console.md
@@ -11796,7 +11798,7 @@ c655f874f438a502f9329eb4c342a48e  doc/eng-us/help/site-packages/requirements/thu
 788c8a6c4345a8df5491817eb54fe784  doc/eng-us/help/site-packages/requirements/validating-a-package-before-publishing.md
 920f493941adcc979b417d9f9a1aecc0  doc/eng-us/help/site-packages/requirements/version-numbers.md
 4bdd3332ad2517e616037347d4d08958  doc/eng-us/help/site-packages/sevenx-multisite/README.md
-09bde7c05b36cd99d0b955e49a391f0d  doc/eng-us/help/site-packages/sevenx-multisite/extensions-it-activates.md
+3661ae1ac223b6259780d475d0eb8328  doc/eng-us/help/site-packages/sevenx-multisite/extensions-it-activates.md
 b15ea7c1fdde5ce5fd8572e4a9de2e01  doc/eng-us/help/site-packages/sevenx-multisite/layouts-data-and-share-dba.md
 05a122d9ac02b4947367f268bc6d8bc4  doc/eng-us/help/site-packages/sevenx-multisite/post-install-fixes.md
 ddd9dfb14d8ad2a51608e2ae78278304  doc/eng-us/help/site-packages/sevenx-multisite/roles-and-policies.md
@@ -13483,13 +13485,13 @@ f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-mana
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-484f702685c37465b398eeae412bc2ed  doc/ger-de/.paths.json
-f821d9153078456c470ce25557d899f7  doc/ger-de/INSTALL.md
+21f315c1554964f145722bc015d64227  doc/ger-de/.paths.json
+46b0d878748f4b75b5d5c4a2102f56b4  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
 5faeb699b220ee897bf8a42486a761a3  doc/ger-de/anleitungen/README.md
-3c28da16cfa703ea0ae165009d3fed45  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
+a21d414954375daf4142412f3609d82a  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 d7290775402c11f9bffa68a14215d46a  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
 da7ab11cef5bd19657b9d33e0fdd53e8  doc/ger-de/anleitungen/benachrichtigungen-administrator.md
@@ -13644,7 +13646,7 @@ f379e585d7ef4d25192e9e0c4505de3c  doc/ger-de/anleitungen/twig-templates-tutorial
 538acd610f602879df1d118d1a8104b3  doc/ger-de/anleitungen/ui-umschalter-einstellungen.md
 96c7e7570232e91c8971eb947b341ba1  doc/ger-de/anleitungen/umgebungsvariablen.md
 58ef9ee1db2c783c9a482cfa4b020230  doc/ger-de/anleitungen/upgrade-pruefung.md
-56e698d0f903cd6c6bcffc9ed8a67faa  doc/ger-de/anleitungen/upgrade-schritte-fuer-erweiterungen.md
+06171cbbe0b34253535878cf87685009  doc/ger-de/anleitungen/upgrade-schritte-fuer-erweiterungen.md
 b11a22225b42ccc4c1ab499f48114605  doc/ger-de/anleitungen/urls-und-aliase.md
 1daf6e6c7cb5c69aa8b955e48c7d1846  doc/ger-de/anleitungen/vom-statischen-cache-zum-statischen-veroeffentlichen.md
 e3df8372cd5e4c7aa625e0fab21222ad  doc/ger-de/anleitungen/von-statischem-html-zu-exponential-und-zurueck.md
@@ -13728,7 +13730,7 @@ d5c8b87ad96b7a1bb586d0719143abce  doc/ger-de/bc/6.0/menue-inhalte-exportieren.md
 4f34865c236121798d8914f2f63c0f38  doc/ger-de/bc/6.0/oauth-token-haertung.md
 b561173941e1bd7cf5e7da6de12c3eb9  doc/ger-de/bc/6.0/opml.md
 e64015b83ef1461c77168bd9f4938cf3  doc/ger-de/bc/6.0/package-json-format.md
-83700ff483ca67aad78eff8b6b64bd93  doc/ger-de/bc/6.0/paketinstallation-behaelt-neuere-erweiterungen.md
+2b4380d6751dcfa24da8383c6e5c19b2  doc/ger-de/bc/6.0/paketinstallation-behaelt-neuere-erweiterungen.md
 fa6582156c1ac5cda7f7f9673bf80b0a  doc/ger-de/bc/6.0/papierkorb.md
 18120c76004972da66ee7487e3eb0631  doc/ger-de/bc/6.0/passkeys-und-identitaet-bestaetigen.md
 9216ae625e43af5a926b4fd211996ac3  doc/ger-de/bc/6.0/passwort-bei-naechster-anmeldung-aendern.md
@@ -13748,6 +13750,7 @@ b138bfbd2a5ee6ac501a13ad9eac89a4  doc/ger-de/bc/6.0/redakteur-rolle-richtlinien.
 a9e1197830ad95e753f4c6f1c38cf693  doc/ger-de/bc/6.0/reparatur.md
 6ad31ed1e21c597ad6650e1278be2ccf  doc/ger-de/bc/6.0/schutz-fuer-weiterleitungs-query-und-bildaliase.md
 40828a6a1fabb215580f471d7f4631c5  doc/ger-de/bc/6.0/schwache-passwoerter-und-gueltigkeit-von-reset-links.md
+8fbcef07b6315346bc7c3e85c16773ee  doc/ger-de/bc/6.0/seitenpakete-ohne-erweiterungspakete.md
 d1cf560d1b942596beff989679e73cdc  doc/ger-de/bc/6.0/seitenweise-anzeige-von-rollen-und-richtlinien.md
 b8c6635746a56bda4315d93d3df53edf  doc/ger-de/bc/6.0/sicherheit-von-content-view-full.md
 f16c71aee0885dfb239e5224c8791a7f  doc/ger-de/bc/6.0/soap-einstiegsskript-index-soap.md
@@ -16620,7 +16623,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-276bc4b43ef9c5c18a17e2978a94df45  doc/ger-de/funktionen/6.0/README.md
+3cbb12ec62d3cb4140baccab614d05c4  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -16657,8 +16660,9 @@ c2b63dfcd38fd4be5143414587677110  doc/ger-de/funktionen/6.0/e-mail-layout.md
 236706d8d28dba7a4d469e4f69ed7006  doc/ger-de/funktionen/6.0/eigene-anzahl-eintraege-pro-seite.md
 85bf2a1860cb433a0ed427aa63fd4825  doc/ger-de/funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md
 2675712f2345f80d0f2996d3c039b540  doc/ger-de/funktionen/6.0/entfernte-dienste-expservices.md
+17a3eb19622cc0eb502008f1f62d1db6  doc/ger-de/funktionen/6.0/erweiterungen-einer-neuen-installation.md
 4f69b3c9d369ee42cb3acf9581717079  doc/ger-de/funktionen/6.0/erweiterungen/AdminAid.md
-686b5a9153bcff7058a2aca1f256fc44  doc/ger-de/funktionen/6.0/erweiterungen/README.md
+206ff3da800c556b4d2bc189b82d78fc  doc/ger-de/funktionen/6.0/erweiterungen/README.md
 0b0d140f0db3abe3573d5b41c0d2782b  doc/ger-de/funktionen/6.0/erweiterungen/bccie.md
 fac2e20e721c6ddce9e8b05e400fb8d0  doc/ger-de/funktionen/6.0/erweiterungen/bcgooglesitemaps.md
 1c7b7a034659928f80d47af5ab50f1a7  doc/ger-de/funktionen/6.0/erweiterungen/bcwebsitestatistics.md
@@ -16693,7 +16697,7 @@ c72f72ab9ab7d0ab1d508762e69e378d  doc/ger-de/funktionen/6.0/erweiterungen/eztags
 e54c6caba4949d3d842c7be124115012  doc/ger-de/funktionen/6.0/erweiterungen/ezupdate.md
 c3cb31be8b217f3c993b08a8741d31d6  doc/ger-de/funktionen/6.0/erweiterungen/ezwebin-ezpackage.md
 08ca05fc51067db482f2dc657b7c3771  doc/ger-de/funktionen/6.0/erweiterungen/ezwebin.md
-0b101e00230e894112acdd9e9768b1c0  doc/ger-de/funktionen/6.0/erweiterungen/ezwt.md
+18f668770dd5afc742e4635261516b10  doc/ger-de/funktionen/6.0/erweiterungen/ezwt.md
 7c7e30558b4e3e490fb866763520e9d9  doc/ger-de/funktionen/6.0/erweiterungen/ezxmlexport.md
 2312dbb527f088a93c4f09d67519d9bf  doc/ger-de/funktionen/6.0/erweiterungen/git_manager.md
 a38d265836285590635aac632cb2a3de  doc/ger-de/funktionen/6.0/erweiterungen/hcaptcha.md
@@ -16790,7 +16794,7 @@ b11a1cfe5de18bae37f762fc4deab69f  doc/ger-de/funktionen/6.0/smarty-templates.md
 048b85449fe4f1d1f763247b12b53ae7  doc/ger-de/funktionen/6.0/soap-client-tls.md
 c622d935f4e14bd1f509b16f2c08c311  doc/ger-de/funktionen/6.0/sortierung-der-bestellliste.md
 0b01e6dac291a44099f8820396143b1e  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
-1c981d8a54aac59d03d7a8849d066c38  doc/ger-de/funktionen/6.0/standard-extension-auslieferung.md
+4585ca572191483a19c48897dd985efc  doc/ger-de/funktionen/6.0/standard-extension-auslieferung.md
 a4b2787b5f4888427cd0d4441ac16470  doc/ger-de/funktionen/6.0/standardwerte-einer-sauberen-installation.md
 7b785af03f1e8f01ab7f64354515847f  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
 e3f9f4f40efea9ae4d8d4382d03600b1  doc/ger-de/funktionen/6.0/systemkarte.md
@@ -20384,7 +20388,7 @@ e5e949c0a9b61357fdf1aeb80902b302  doc/ger-de/hilfe/seitenpakete/paketserver/wenn
 fd459a697c3c1d9e6c7cc56b90eb4c79  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/das-skript-des-multisite-installers.md
 d1e43646eb0b345f8e43beb016b5a215  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/die-clean-variante-und-sevenx-site.md
 a18505cc314994807556b39c2a375173  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/die-demo-inhaltspakete.md
-ead5d7b1d45e6fdcb2601b205b4bed06  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/erweiterungen-die-sevenx-multisite-aktiviert.md
+d277929b8f890e2bf6f1e7c8d05df398  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/erweiterungen-die-sevenx-multisite-aktiviert.md
 6f1ed7a32e9ab127044aa98e37f1752f  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/korrekturen-nach-der-installation-von-sevenx-multisite.md
 c3b56811a2dda0b6752fd5a0de6b887a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/layoutdaten-und-share-dba-dateien.md
 2bee7c5f19c8ffd0823e4281e64858c7  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/rollen-und-richtlinien-von-sevenx-multisite.md
@@ -25087,6 +25091,7 @@ adc9ef2daefeda3817e54f6214647e20  kernel/classes/upgrade/expupgraderollback.php
 f849e9b7c4f5813bbcff0bc3262fffdf  kernel/classes/upgrade/expupgradestep.php
 1617330e83d07fe09576c5d2ba1e81af  kernel/classes/upgrade/expupgradetableinstallerstep.php
 7e1f0863aa0d81a312f93ce77e8fa7cc  kernel/classes/upgrade/expupgradeverifyafter.php
+fee4cd394d64303b07858548aff430d0  kernel/classes/upgrade/steps/expupgradestepactiveextensiontables.php
 e3ce75d033564977418b42e166b4ab04  kernel/classes/upgrade/steps/expupgradestepanonymouspublicpolicies.php
 c6a637d610db03f7d58a5dce12d99ccc  kernel/classes/upgrade/steps/expupgradestepapikeytable.php
 51716ac42fbfa60d142a4d5fcc216992  kernel/classes/upgrade/steps/expupgradestepauditindextables.php
@@ -26904,7 +26909,7 @@ af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 c80250dec48448bcda0865588dfc740c  settings/twig.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
-164db63b834ae5c8abd09eb2714daeb2  settings/upgrade.ini
+850a71131b59e521624646f7ea3e3017  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 36b07ea522767dd9ddc62b6c380e062d  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
@@ -29369,6 +29374,7 @@ b5a5b0b8af07949159b580216b6c1078  tests/tests/kernel/classes/uiswitch/expUISwitc
 10ce6e7354cbc69c6b1155e5c5e04f33  tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php
 4d4cbda49aeaf6ab4b8574c76d2c5bad  tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php
 ded10af0a07be9289ee8c915f595aa97  tests/tests/kernel/classes/updatesql/UpdateSqlStorageEngineTest.php
+7ad82d9df678a36c49cbac626d63b9e9  tests/tests/kernel/classes/upgrade/expUpgradeActiveExtensionTablesTest.php
 9d0d5b7f17b51025eba972ea40e95988  tests/tests/kernel/classes/upgrade/expUpgradeApplyResultTest.php
 350bffed928079590a31ed99f89b3471  tests/tests/kernel/classes/upgrade/expUpgradeCaptionTest.php
 77d79f5ce967639e5f788bf7f720b32c  tests/tests/kernel/classes/upgrade/expUpgradeCommandContractTest.php

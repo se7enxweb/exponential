@@ -72,3 +72,6 @@ Since 2026-10-28 the kernel finds the root for every package, also for the old o
 - `swapNodes()` names the object it could not find ("Can't find the node of the object named 'X' to swap").
 
 Tested without a database in `tests/tests/kernel/classes/setup/SiteInstallerContentRootLookupTest.php`.
+
+Since 6.0.15 the site packages no longer require the extension packages of ezwt, ezstarrating and ezgmaplocation at
+all: [Site packages no longer install extension packages](site-packages-no-extension-packages.md).

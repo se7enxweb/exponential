@@ -6,6 +6,13 @@ verschieben, entfernen, hier anlegen, Unterelemente sortieren, den Zustand ände
 exportieren. Sie benötigt `ezjscore`. [ezwebin](ezwebin.md), [ezflow](ezflow.md), [ezdemo](ezdemo.md) und das
 [Simple-Theme](sevenx_themes_simple.md) bauen alle auf ihr auf.
 
+**Durch expwt ersetzt.** Die Website-Seitenleiste [expwt](../website-seitenleiste.md) ersetzt ezwt. Seit 6.0.15
+installiert kein Site-Paket das Paket `ezwt_extension`, und die Installer der Site-Pakete aktivieren an seiner Stelle
+expwt (siehe [Site-Pakete installieren keine Erweiterungspakete
+mehr](../../../bc/6.0/seitenpakete-ohne-erweiterungspakete.md) und [Erweiterungen einer neuen
+Installation](../erweiterungen-einer-neuen-installation.md#ezwt-und-expwt)). Eine bestehende Installation zieht mit
+`./console exp:wt:migrate-from-ezwt --apply` um.
+
 ## In Ihr Design einbauen
 
 1. Umschließen Sie in `pagelayout.tpl` die Werkzeugleiste mit einem Cache-Block, dessen Schlüssel die Rollen des
