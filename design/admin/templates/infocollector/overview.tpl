@@ -126,7 +126,7 @@
         <div class="a4-actions">
             <a class="a4-btn a4-btn-small a4-btn-primary" href={concat( '/infocollector/collectionlist/', $item.contentobject_id )|ezurl}>{'Collections'|i18n( 'design/admin/infocollector/overview' )}</a>
             <a class="a4-btn a4-btn-small" href={concat( '/infocollector/export/', $item.contentobject_id )|ezurl} title="{'Download every collection of this object as a CSV file for a spreadsheet.'|i18n( 'design/admin/infocollector/overview' )}">{'Export CSV'|i18n( 'design/admin/infocollector/overview' )}</a>
-            <a class="a4-btn a4-btn-small" href={concat( '/content/view/full/', $item.main_node_id )|ezurl}>{'Object'|i18n( 'design/admin/infocollector/overview' )}</a>
+            <a class="a4-btn a4-btn-small" href={concat( '/content/view/full/', $item.main_node_id )|ezurl} title="{'Object'|i18n( 'design/admin/infocollector/overview' )|wash}">{'Object'|i18n( 'design/admin/infocollector/overview' )}</a>
         </div>
     </div>
     <dl class="a4-facts">

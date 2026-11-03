@@ -139,7 +139,7 @@
             {/if}
         </div>
         <div class="a4-actions">
-            <a class="a4-btn a4-btn-small" href={concat( '/section/view/', $section.id )|ezurl} aria-describedby="{$sec_id}-title">{'View'|i18n( 'design/admin/section/list' )}</a>
+            <a class="a4-btn a4-btn-small" href={concat( '/section/view/', $section.id )|ezurl} aria-describedby="{$sec_id}-title" title="{'View'|i18n( 'design/admin/section/list' )|wash}">{'View'|i18n( 'design/admin/section/list' )}</a>
             {if $can_edit}
             <a class="a4-btn a4-btn-small" href={concat( '/section/edit/', $section.id, '/' )|ezurl} aria-describedby="{$sec_id}-title" title="{'Edit the <%section_name> section.'|i18n( 'design/admin/section/list',, hash( '%section_name', $section.name ) )|wash}">{'Edit'|i18n( 'design/admin/section/list' )}</a>
             {/if}
