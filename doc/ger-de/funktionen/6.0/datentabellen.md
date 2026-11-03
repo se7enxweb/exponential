@@ -598,7 +598,7 @@ Kein Schritt braucht die Kommandozeile. Die Rollen, die die Zeilen sehen oder ä
 
 | Anfrage | Antwort |
 |---|---|
-| `GET <modul>/json?offset=0&limit=50&<feld>=<wert>` | Die Zeilen (höchstens 500), nach Feldern gefiltert: `data`, `total`, `offset`, `limit` |
+| `GET <modul>/json/(offset)/0/(limit)/50/(<feld>)/<wert>` | Die Zeilen (höchstens 500), nach Feldern gefiltert: `data`, `total`, `offset`, `limit` |
 | `GET <modul>/json/<id>` | Eine Zeile, 404, wenn es sie nicht gibt |
 | `POST <modul>/json` | Eine neue Zeile aus einem JSON-Objekt (`Content-Type: application/json`) oder Formularfeldern: 201 |
 | `PUT <modul>/json/<id>` | Eine Änderung: 200; auch `POST` mit `_method=PUT` |

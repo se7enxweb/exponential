@@ -132,6 +132,6 @@ Benutzer-Auditprotokoll; dort halten die Audit-Dateien die Ereignisse.
 ## Beispiel
 
 Auf einer Entwicklungsinstallation unter `https://www.example.com` öffnet ein Administrator
-`https://www.example.com/admin/user/audit?user=member1&from=2026-10-01` und sieht, dass ein Redakteur die
+`https://www.example.com/admin/user/audit/(user)/member1/(from)/2026-10-01` und sieht, dass ein Redakteur die
 E-Mail-Adresse des Mitglieds im Siteaccess editor geändert hat, dass sich das Mitglied zweimal aus demselben Netz
 angemeldet hat und dass derselbe Redakteur abgewiesen wurde, als er ein Administratorkonto bearbeiten wollte.

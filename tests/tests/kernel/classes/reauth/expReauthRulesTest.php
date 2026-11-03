@@ -153,6 +153,11 @@ class expReauthRulesTest extends PHPUnit\Framework\TestCase
         $this->assertNull( expReauth::matchGroup( $s, 'content', 'removeobject', 'POST', array( 'ConfirmButton' => 1 ) ), 'content is off' );
         $s['groups']['content']['enabled'] = true;
         $this->assertSame( 'content', expReauth::matchGroup( $s, 'content', 'removeobject', 'POST', array( 'ConfirmButton' => 1 ) )['group'] );
+        // user/hygiene: the bulk actions and the CSV ask, the posted filter form never does
+        foreach ( array( 'DisableButton', 'ConfirmButton', 'ExportButton' ) as $button )
+            $this->assertSame( 'users', expReauth::matchGroup( $s, 'user', 'hygiene', 'POST', array( $button => 1 ) )['group'], $button );
+        $this->assertNull( expReauth::matchGroup( $s, 'user', 'hygiene', 'POST', array( 'FilterButton' => 1, 'q' => 'x' ) ) );
+        $this->assertNull( expReauth::matchGroup( $s, 'user', 'audit', 'POST', array( 'FilterButton' => 1 ) ) );
         $s['groups']['bogus'] = array( 'enabled' => true, 'rules' => array( 'user/login', 'user/logout *' ) );
         $this->assertNull( expReauth::matchGroup( $s, 'user', 'login', 'POST', array( 'LoginButton' => 1 ) ) );
         $this->assertNull( expReauth::matchGroup( $s, 'user', 'logout', 'GET', array() ) );

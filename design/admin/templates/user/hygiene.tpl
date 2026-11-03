@@ -1,6 +1,6 @@
 {* Check user accounts (user/hygiene): every user account, or those below a user group, by one filter (tabs with their
    counts: all, never signed in, not seen for N days, disabled, locked, orphaned, shared login, shared e-mail address), a search and
-   the page size (a GET form), ordered by the column headers and paged. One row per account: name (its node), login,
+   the page size (a posted form, answered with its view parameters), ordered by the column headers and paged. One row per account: name (its node), login,
    e-mail (only with role/assign), state, last visit, sign-ins, groups and roles.
 
    Disable, enable and unlock the ticked accounts: each button shows a confirmation with the counts, whose Confirm
@@ -134,7 +134,7 @@
 
 <section aria-labelledby="hygiene-find-title">
 <h2 class="a4-sr-only" id="hygiene-find-title">{'Narrow the list'|i18n( 'design/admin/user/hygiene' )}</h2>
-<form class="a4-filterbar" method="get" action={$uri|ezurl} role="search">
+<form class="a4-filterbar" method="post" action={$uri|ezurl} role="search">
     <input type="hidden" name="filter" value="{$hygiene_filters.filter|wash}" />
     <input type="hidden" name="sort" value="{$hygiene_filters.sort|wash}" />
     <input type="hidden" name="order" value="{$hygiene_filters.order|wash}" />
@@ -166,7 +166,7 @@
     </div>
     <div class="a4-field">
         <div class="a4-actions">
-            <button type="submit" class="a4-btn a4-btn-primary">{'Show'|i18n( 'design/admin/user/hygiene' )}</button>
+            <button type="submit" class="a4-btn a4-btn-primary" name="FilterButton" value="1">{'Show'|i18n( 'design/admin/user/hygiene' )}</button>
             {if or( $hygiene_filters.q|ne( '' ), $hygiene_filters.group|gt( 0 ) )}<a class="a4-btn" href={concat( $uri, $hygiene_clear_query )|ezurl}>{'Clear'|i18n( 'design/admin/user/hygiene' )}</a>{/if}
         </div>
     </div>

@@ -23,18 +23,15 @@
 <div class="a4-notice is-{if eq( $message.kind, 'ok' )}ok{else}bad{/if}" role="status">{$message.text|wash}</div>
 {/if}
 
-<form method="get" action={'setup/reauth'|ezurl} class="a4-filterbar" aria-label="{'Where the settings apply'|i18n( 'design/admin/setup/reauth' )|wash}">
-    <div class="a4-field">
-        <label for="reauth-scope">{'Settings for'|i18n( 'design/admin/setup/reauth' )}</label>
-        <select id="reauth-scope" name="ReauthScope">
-            <option value=""{if eq( $scope, '' )} selected="selected"{/if}>{'Every siteaccess'|i18n( 'design/admin/setup/reauth' )}</option>
-            {foreach $siteaccesses as $siteaccess}
-            <option value="{$siteaccess|wash}"{if eq( $scope, $siteaccess )} selected="selected"{/if}>{'Siteaccess %name'|i18n( 'design/admin/setup/reauth',, hash( '%name', $siteaccess ) )|wash}</option>
-            {/foreach}
-        </select>
-    </div>
-    <div class="a4-actions"><button class="a4-btn" type="submit">{'Open'|i18n( 'design/admin/setup/reauth' )}</button></div>
-</form>
+<nav class="a4-filterbar" aria-label="{'Where the settings apply'|i18n( 'design/admin/setup/reauth' )|wash}">
+    <span class="a4-meta">{'Settings for'|i18n( 'design/admin/setup/reauth' )}</span>
+    <ul class="a4-tabs">
+        <li>{if eq( $scope, '' )}<span class="is-current" aria-current="page">{'Every siteaccess'|i18n( 'design/admin/setup/reauth' )}</span>{else}<a href={'setup/reauth'|ezurl}>{'Every siteaccess'|i18n( 'design/admin/setup/reauth' )}</a>{/if}</li>
+        {foreach $siteaccesses as $siteaccess}
+        <li>{if eq( $scope, $siteaccess )}<span class="is-current" aria-current="page">{'Siteaccess %name'|i18n( 'design/admin/setup/reauth',, hash( '%name', $siteaccess ) )|wash}</span>{else}<a href={concat( 'setup/reauth/', $siteaccess )|ezurl}>{'Siteaccess %name'|i18n( 'design/admin/setup/reauth',, hash( '%name', $siteaccess ) )|wash}</a>{/if}</li>
+        {/foreach}
+    </ul>
+</nav>
 
 <form method="post" action={$action_uri|ezurl} class="a4-stack">
 

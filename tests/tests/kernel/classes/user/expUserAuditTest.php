@@ -154,8 +154,9 @@ class expUserAuditTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '', $f['from'], 'not a date' );
         $this->assertSame( '2026-10-28', $f['to'] );
         $this->assertSame( 50, $f['limit'] );
-        $this->assertSame( '?user=member1&action=access.user&to=2026-10-28', expUserAudit::queryString( $f ) );
-        $this->assertSame( '', expUserAudit::queryString( expUserAudit::normaliseFilters( array() ) ) );
+        $this->assertSame( '/(user)/member1/(action)/access.user/(to)/2026-10-28', expUserAudit::viewParameters( $f ) );
+        $this->assertSame( $f, expUserAudit::normaliseFilters( expUserAudit::viewParameterInput( array( 'UserParameters' => array( 'user' => 'member1', 'action' => 'access.user', 'to' => '2026-10-28' ) ) ) ), 'the view parameters give the same filters' );
+        $this->assertSame( '', expUserAudit::viewParameters( expUserAudit::normaliseFilters( array() ) ) );
         $f2 = expUserAudit::normaliseFilters( array( 'action' => "access.user'; DROP TABLE x;--" ) );
         $this->assertSame( 'access.userdroptablex', $f2['action'] );
 

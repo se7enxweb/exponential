@@ -238,7 +238,8 @@ class expUserDeactivationTest extends PHPUnit\Framework\TestCase
         // the way back never leaves the site
         require_once dirname( __DIR__, 5 ) . '/kernel/private/classes/views/user/deactivate.php';
         $redirect = array( '\Exponential\View\Kernel\User\Deactivate', 'normaliseRedirect' );
-        foreach ( array( 'user/hygiene' => 'user/hygiene', '/user/hygiene?filter=disabled&limit=50' => 'user/hygiene?filter=disabled&limit=50',
+        foreach ( array( 'user/hygiene' => 'user/hygiene', '/user/hygiene/(filter)/disabled/(limit)/50' => 'user/hygiene/(filter)/disabled/(limit)/50',
+                         'user/hygiene/(q)/a%20b~2Fc' => 'user/hygiene/(q)/a%20b~2Fc', 'user/hygiene?filter=disabled' => '', 'user/hygiene/(q)/..' => '',
                          'content/view/full/42' => 'content/view/full/42', '/content/view/full/42' => 'content/view/full/42',
                          'https://example.org/' => '', '//example.org' => '', 'user/hygiene/../../x' => '', 'content/view/full/42/x' => '',
                          'user/hygiene?q=<script>' => '', 'javascript:alert(1)' => '', 'user/logout' => '' ) as $in => $out )
