@@ -36,7 +36,8 @@ enforces it ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/mai
 
 ## What is new, and when
 
-All in the 6.0.15 development line, which is not released.
+All in the 6.0.15 line, the current release line of Exponential 6.0; the dates are dates of the changes, not a
+release date.
 
 | What | When | Source |
 |---|---|---|

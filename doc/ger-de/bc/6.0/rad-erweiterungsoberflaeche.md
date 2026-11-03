@@ -2574,7 +2574,6 @@ In dieser Installation deklariert:
 | ezoe | Engines des Online-Editors (`ezoe.ini [EditorSettings] Engines[<id>]=`, die `expOEEditorEngine` implementieren; tinymce3, tinymce8 und tiptap von exp_oe_tiptap) |
 | expai | Provider-Typen, Provider, Modelle, Batch-APIs, Lanes, Werkzeuge, Provider für die Websuche, MCP-Server, Werkzeuge der MCP-Brücke (aufgeführt, nicht hinzugezählt), Dienstwerkzeuge (aufgeführt, nicht hinzugezählt), Ketten, Kettenschritte, Feldaktionen, Voreinstellungen, Anwender von Anfragen, Diff-Segmentierer, Abschnitte und Bereiche des Panels, Verlaufs-Repositorys, Regeln der Datenrichtlinie, Veto-Regeln für Anfragen |
 | expqueue | Job-Typen, die Prioritätsklasse jedes Job-Typs (aufgeführt, nicht hinzugezählt), Prioritätsklassen, Ressourcen, Befehle |
-| expmcp | Werkzeuge, Werkzeuge der prozessinternen Brücke (aufgeführt, nicht hinzugezählt), Werkzeugprofile, die Werkzeuge, die die Profile nennen (aufgeführt, nicht hinzugezählt), Positivlisten (aufgeführt, nicht hinzugezählt) |
 
 Neben den Registries zählt die Übersicht jede **Richtlinien-Einschränkung** jedes Moduls (`module.php` `FunctionList`,
 mit der Klasse und Methode, die ihre Werte liefern; eine, deren Klasse fehlt, ist defekt) in der Gruppe

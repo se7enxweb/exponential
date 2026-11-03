@@ -46,7 +46,7 @@ Seiten: [Offenlegung und Ethik beim Sponsoring](offenlegung-und-ethik-beim-spons
 ```
 
 Seiten: [Leitfaden für Video-Rundgänge](leitfaden-fuer-video-rundgaenge.md), [Leitfaden für Livestreams](leitfaden-fuer-livestreams.md),
-[Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md).
+[Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md).
 
 ## Vor der Veröffentlichung
 

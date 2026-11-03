@@ -28,7 +28,7 @@ nachgehen. Sie liefert das Thema, die Fakten mit Quellen und die Aussagen, die S
 Exponential hat eine „Built in search engine“ ([README, Main Exponential features](https://github.com/se7enxweb/exponential/blob/main/README.md#main-exponential-features))
 und braucht keinen Suchserver: „Exponential searches with its built-in index ... until Solr is installed and switched
 on“ ([Befehle zur Serversteuerung](../../funktionen/6.0/befehle-fuer-webserver-und-solr.md#expsolr-ein-optionaler-suchserver)).
-Die Entwicklungslinie 6.0.15 hat den **Inhaltsfinder** hinzugefügt, der die Inhalte hinter einer ID, einem URL-Alias,
+Die Linie 6.0.15 hat den **Inhaltsfinder** hinzugefügt, der die Inhalte hinter einer ID, einem URL-Alias,
 einer Seitenadresse oder einem Dateipfad findet, und die Suche der Administration gehärtet, sodass fehlerhafte oder
 sehr lange Suchanfragen sie nicht mehr zum Absturz bringen
 ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#14-october-2026-the-search-of-the-administration)). Das
@@ -38,7 +38,8 @@ Hilfesystem hat seine eigene Sofortsuche.
 
 ## Was neu ist, und seit wann
 
-Alles in der Linie 6.0.15, die in Entwicklung und nicht veröffentlicht ist.
+Alles in der Linie 6.0.15. Die Daten sind Daten der Änderungen, keine Veröffentlichungsdaten; ob der Tag `v6.0.15`
+existiert, zeigt `git tag -l 'v6.0.*' --sort=version:refname`.
 
 | Was | Wann | Quelle |
 |---|---|---|

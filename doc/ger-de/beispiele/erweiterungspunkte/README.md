@@ -17,6 +17,7 @@ Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einste
 | [expservices.ini](expservices-expservices.md) | expservices | 7 | ForumClass, ForumContainerClass, TopicClass, ReplyClass, CommentClass, PollClass ... |
 | [ezjscore.ini](ezjscore-ezjscore.md) | ezjscore | 7 | Class, Class, Class, Class, Class, Class ... |
 | [ezoe.ini](ezoe-ezoe.md) | ezoe | 3 | UploadExtensionCheck, Plugins, ExternalPlugins |
+| [admininterface.ini](admininterface.md) | Kernel | 1 | PageHitClasses |
 | [audit.ini](audit.md) | Kernel | 25 | Sinks, Sinks, Sinks, Sinks, Sinks, Classes ... |
 | [binaryfile.ini](binaryfile.md) | Kernel | 2 | Repositories, ExtensionRepositories |
 | [bookmark.ini](bookmark.md) | Kernel | 1 | TypeClass |

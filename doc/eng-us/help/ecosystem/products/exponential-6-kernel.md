@@ -37,7 +37,7 @@ abstraction layer, clustering and a plugin API. A tour for buyers: [Feature tour
 | Fact | Source |
 |---|---|
 | 6.0.0 was released on 1 January 2024 | [Timeline](../../who-is-the-exponential-foundation.md#timeline) |
-| 6.0.14 was released on 7 June 2026; 6.0.15 is in development on `main` | same |
+| 6.0.14 was released on 7 June 2026; 6.0.15 is the current line, carried by `main` | same |
 | 6.0 is the maintained line; fixes are published with the next 6.0.x release | `SECURITY.md` |
 | A published tag is never changed | `SECURITY.md` |
 | PHP 8.0 to 8.5 (PHP 7.4 usable without support) are supported | `README.md`, [PHP versions](../php-stack/php-versions.md) |

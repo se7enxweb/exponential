@@ -334,7 +334,8 @@ class eZShopOperationCollection
         {
             if ( substr( $optionKey, 0, 4 ) == 'set_' )
             {
-                $returnStatus = eZShopOperationCollection::addToBasket( $objectID, $optionList[$optionKey] );
+                // The same quantity for each set (the call without it threw ArgumentCountError on PHP 8)
+                $returnStatus = eZShopOperationCollection::addToBasket( $objectID, $optionList[$optionKey], $quantity );
                 // If adding one 'option set' fails we should stop immediately
                 if ( $returnStatus['status'] == eZModuleOperationInfo::STATUS_CANCELLED )
                     return $returnStatus;

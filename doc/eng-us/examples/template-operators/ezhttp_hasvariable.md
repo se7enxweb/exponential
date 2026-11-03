@@ -29,10 +29,10 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/page_search.tpl` line 4:
+The first use in the templates of this installation, `design/standard/templates/content/edit_redirection.tpl` line 2:
 
 ```tpl
-{if ezhttp_hasvariable( 'SectionID', 'get' )}
+{if ezhttp_hasvariable( 'RedirectURIAfterPublish', 'session' )}
 ```
 
 ## Related

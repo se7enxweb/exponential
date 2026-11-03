@@ -42,7 +42,7 @@ funktionieren, und wann welcher laut den Quellen die richtige Wahl ist.
 
 Exponential verlangt keinen bestimmten Webserver: „All of these work. Exponential does not require any particular one“
 ([README, The traditional options](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options)),
-alle diese Server funktionieren also. Seit der Entwicklungslinie 6.0.15 steuern dieselben Konsolenbefehle auch drei
+alle diese Server funktionieren also. Seit der Linie 6.0.15 steuern dieselben Konsolenbefehle auch drei
 eigene Engines: den mitgelieferten, auf Qbix beruhenden Server von Velocity, „the recommended engine for every stage,
 from development to production, and the fastest“ (die empfohlene und schnellste Engine für jede Stufe, von der
 Entwicklung bis zur Produktion); FrankenPHP, „Caddy with PHP built in ... The production-ready alternative“ (Caddy mit

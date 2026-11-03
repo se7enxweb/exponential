@@ -56,7 +56,7 @@ ten times faster, says 7x, which has maintained the CMS since 1998."
 
 | Claim | Check | Result |
 |---|---|---|
-| "Released last month" | `git tag -l 'v6.0.*' --sort=version:refname` | No v6.0.15 tag: in development |
+| "Released last month" | `git tag -l 'v6.0.*' --sort=version:refname` | Released only if the tag exists, on the tag's date |
 | "eZ Publish 6.0.15" | Naming rules | The product is Exponential |
 | "an AI that writes and publishes" | [expai feature page](../../features/6.0/extensions/expai.md) | Writes drafts only, never publishes |
 | "ten times faster" | README, Velocity section | No comparison published; only the documented figures with their conditions |
@@ -66,7 +66,7 @@ ten times faster, says 7x, which has maintained the CMS since 1998."
 Corrected sentence:
 
 ```text
-"Exponential 6.0.15, which is in development, adds Exponential Intelligence, a writing assistant that
+"Exponential 6.0.15, the current release line, adds Exponential Intelligence, a writing assistant that
 writes drafts but never publishes them, and Velocity, a web server written in PHP, according to the
 project's changelog. 7x has led the project since 2023."
 ```

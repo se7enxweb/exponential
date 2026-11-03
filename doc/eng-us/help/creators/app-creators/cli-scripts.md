@@ -60,7 +60,7 @@ require_once 'autoload.php';
 
 ## The classic pattern
 
-Many scripts use `eZScript` directly, as `extension/expmcp/bin/php/dataset_inspect.php` does:
+Many scripts use `eZScript` directly, as `update/common/scripts/6.0/createbookmarkviewtable.php` does:
 
 ```php
 require_once 'autoload.php';

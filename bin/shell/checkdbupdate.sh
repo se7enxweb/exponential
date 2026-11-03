@@ -126,10 +126,32 @@ else
     has_setval="false"
 fi
 
-SCHEMA_URL="http://svn.ez.no/svn/Exponential/versions/$to"
-PREVIOUS_SCHEMA_URL="http://svn.ez.no/svn/Exponential/versions/$from"
+# the schemas of a release come from its git tag (export_release_schema below)
+SCHEMA_URL="v$to"
+PREVIOUS_SCHEMA_URL="v$from"
 
 [ -d "$DEST" ] || mkdir "$DEST"
+
+# Extracts kernel/sql/<engine> of the release <version> (the git tag v<version>, else <version>) of this
+# repository into <dest>. The svn repository the schemas were once exported from (svn.ez.no) is gone.
+function export_release_schema
+{
+    local version engine dest ref
+    version=$1
+    engine=$2
+    dest=$3
+    for ref in "v$version" "$version"; do
+        if git rev-parse -q --verify "refs/tags/$ref" >/dev/null; then
+            mkdir -p "$dest" || return 1
+            git archive --format=tar -o "$dest.tar" "$ref" "kernel/sql/$engine" || return 1
+            tar -x -f "$dest.tar" -C "$dest" --strip-components=3
+            local code=$?
+            rm -f "$dest.tar"
+            return $code
+        fi
+    done
+    return 1
+}
 
 # Helper function to deal with output
 
@@ -264,11 +286,11 @@ if [ "$DB_TYPE" == "mysql" ]; then
     fi
     db_step_done "Creating" "$DATABASE_NAME"
 
-    mysql_schema_url="$PREVIOUS_SCHEMA_URL/kernel/sql/mysql/"
+    mysql_schema_url="$PREVIOUS_SCHEMA_URL:kernel/sql/mysql/"
     rm -rf "$DEST/mysql"
     echo -n " "
     db_step_start "Exporting" "$from"
-    svn export "$mysql_schema_url" "$DEST/mysql" &>/dev/null
+    export_release_schema "$from" mysql "$DEST/mysql" &>/dev/null
     if [ $? -ne 0 ]; then
 	db_export_failure $DB_TYPE "$from" "$mysql_schema_url"
 	echo "`$POSITION_RESTORE`Exporting(`$SETCOLOR_FAILURE`$from`$SETCOLOR_NORMAL`)"
@@ -333,11 +355,11 @@ elif [ "$DB_TYPE" == "postgresql" ]; then
     fi
     db_step_done "Creating" "$DATABASE_NAME"
 
-    postgresql_schema_url="$PREVIOUS_SCHEMA_URL/kernel/sql/postgresql/"
+    postgresql_schema_url="$PREVIOUS_SCHEMA_URL:kernel/sql/postgresql/"
     rm -rf "$DEST/postgresql"
     echo -n " "
     db_step_start "Exporting" "$from"
-    svn export "$postgresql_schema_url" "$DEST/postgresql" &>/dev/null
+    export_release_schema "$from" postgresql "$DEST/postgresql" &>/dev/null
     if [ $? -ne 0 ]; then
 	db_export_failure $DB_TYPE "$from" "$postgresql_schema_url"
 	exit 1

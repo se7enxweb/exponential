@@ -595,7 +595,6 @@ class expMigrationJob
         {
             $user = expMigrationContext::resolveUser( (string)$login );
             $options = $user ? array( 'user_id' => (int)$user->attribute( 'contentobject_id' ) ) : array();
-            // @phpstan-ignore-next-line expqueue is an extension: its classes exist only where it is active
             $queued = expQueue::enqueue( (string)$type, array( 'job' => (string)$id ), $options );
             return is_object( $queued ) ? (string)$queued->attribute( 'uuid' ) : '';
         }
@@ -618,7 +617,6 @@ class expMigrationJob
             return false;
         try
         {
-            // @phpstan-ignore-next-line expqueue is an extension: its classes exist only where it is active
             $queued = expQueue::fetch( (string)$uuid );
             return is_object( $queued ) && !$queued->isFinal();
         }

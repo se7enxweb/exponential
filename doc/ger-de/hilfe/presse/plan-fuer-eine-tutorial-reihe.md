@@ -27,9 +27,9 @@ an; halten Sie sich an die Regel „eine Aufgabe pro Folge“
 ## Die Version einmal festlegen
 
 Eine Reihe muss durchgehend eine Version zeigen oder deutlich sagen, wann sie wechselt. Die meisten Bildschirme in der
-Hilfe gehören zur Entwicklungslinie 6.0.15, die kein Veröffentlichungsdatum hat; das neueste Release ist 6.0.14
-(7. Juni 2026). Nennen Sie die Version im Titel der Reihe oder in der ersten Folge und in jeder Beschreibung. Wenn
-6.0.15 getaggt ist, prüfen Sie jede Folge anhand des endgültigen Changelogs ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)).
+Hilfe gehören zur Linie 6.0.15, die auf 6.0.14 (7. Juni 2026) folgt. Nennen Sie die Version im Titel der Reihe
+oder in der ersten Folge und in jeder Beschreibung. Haben Sie Folgen vor dem Tag `v6.0.15` aufgenommen, prüfen Sie
+sie anhand des Changelogs zu diesem Tag ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)).
 
 ## Strang A: Redakteure
 

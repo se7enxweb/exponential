@@ -74,7 +74,7 @@ AFTERWARDS
 ```
 
 Die Seiten hinter den Zeilen: [Über ein Release berichten](ueber-ein-release-berichten.md),
-[Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md),
+[Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md),
 [Wie Versionsnummern funktionieren](wie-versionsnummern-funktionieren.md), [Regeln für Marke und Namen](../geschaeft/marken-und-namensregeln.md),
 [Zahlen überprüfen](zahlen-pruefen.md), [Richtlinie für Zitate](richtlinie-fuer-zitate.md),
 [Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md), [Offenlegung und Interessenkonflikte](../fuersprecher/offenlegung-und-interessenkonflikte.md),

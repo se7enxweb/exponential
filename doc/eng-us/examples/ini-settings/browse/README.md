@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # browse.ini
 
-The shipped settings of `settings/browse.ini`: 34 blocks, 121 settings.
+The shipped settings of `settings/browse.ini`: 35 blocks, 124 settings.
 
 > Exponential configuration file for content browsing.  
 >
@@ -53,6 +53,7 @@ The shipped settings of `settings/browse.ini`: 34 blocks, 121 settings.
 | [AddRelatedObjectToDataType](AddRelatedObjectToDataType.md) | 3 |
 | [AddRelatedObjectListToDataType](AddRelatedObjectListToDataType.md) | 3 |
 | [AddRelatedImageToDataType](AddRelatedImageToDataType.md) | 3 |
+| [ExpImageFromObjectToDataType](ExpImageFromObjectToDataType.md) | 3 |
 | [AddBookmark](AddBookmark.md) | 3 |
 | [AddSubtreeSubscribingNode](AddSubtreeSubscribingNode.md) | 3 |
 | [SelectObjectRelationListNode](SelectObjectRelationListNode.md) | 3 |

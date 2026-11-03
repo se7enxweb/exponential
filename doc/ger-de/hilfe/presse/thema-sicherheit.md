@@ -30,14 +30,15 @@ Sicherheitslücke umgehen, die Ihnen jemand zeigt.
 Die Sicherheitsrichtlinie von Exponential passt auf eine Seite. „Please report security issues privately by e-mail to
 security@se7enx.com, not in the public issue tracker or the discussions. You can expect a first answer within one
 business day.“ Korrekturen entstehen auf `main` und werden „published with the next 6.0.x release“, und „A published
-tag is never changed“ ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)). Rund um diesen Prozess ergänzt die Entwicklungslinie 6.0.15
+tag is never changed“ ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)). Rund um diesen Prozess ergänzt die Linie 6.0.15
 Schutzmaßnahmen, die ein Administrator sehen kann: eine Content Security Policy, ein manipulationssicheres
 Prüfprotokoll, die zweistufige Anmeldung, das Ablehnen allgemein bekannter Passwörter und eine Administration ohne
 Inline-Scripts ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)).
 
 ## Was neu ist, und seit wann
 
-Alles in der Linie 6.0.15, die in Entwicklung und nicht veröffentlicht ist.
+Alles in der Linie 6.0.15. Die Daten sind Daten der Änderungen, keine Veröffentlichungsdaten; ob der Tag `v6.0.15`
+existiert, zeigt `git tag -l 'v6.0.*' --sort=version:refname`.
 
 | Was | Wann | Quelle |
 |---|---|---|

@@ -97,7 +97,7 @@ verfolgen, ändern und von dem aus Sie Beiträge zurückgeben können.
 |---|---|
 | Version | **PHP 8.0 bis 8.5**. `composer.json` deklariert `^8.0` (und akzeptiert spätere 8.x-Versionen). PHP 8.0 ist die älteste unterstützte Version, sodass das mitgelieferte PHP von Red Hat Enterprise Linux 9 (und AlmaLinux 9, Rocky Linux 9) Exponential unter Apache, PHP-FPM oder Velocity ausführt. Verwenden Sie das neueste PHP, das Ihr System anbietet. Siehe [Unterstützung für PHP 8.0](bc/6.0/php-8.0-unterstuetzung.md). |
 | Exponential Velocity | läuft ab seinem Release 0.0.4.54 auf **PHP 8.0 bis 8.5** (bis dahin brauchte es 8.1), mit der Extension `sockets` (`pcntl` und `openssl` für den Worker-Pool und HTTPS). Unter RHEL 9 führt das mitgelieferte PHP 8.0 es aus; siehe [Unterstützung für PHP 8.0](bc/6.0/php-8.0-unterstuetzung.md#exponential-velocity-unter-php-80). |
-| Release-Tags | `v6.0.8` bis `v6.0.14` erfordern PHP 8.1; unter PHP 8.0 installieren Sie die Linie 6.0.15 (`dev-main`, die Composer auch als `6.0.x-dev` kennt), bis deren Tag veröffentlicht ist. |
+| Release-Tags | `v6.0.8` bis `v6.0.14` erfordern PHP 8.1; unter PHP 8.0 installieren Sie die Linie 6.0.15 (`se7enxweb/exponential:~6.0.15`; den Tag `v6.0.15`, sobald er veröffentlicht ist, oder den Branch `main`, der diese Linie trägt, `dev-main`, den Composer auch als `6.0.x-dev` kennt). |
 | 64-Bit-PHP | nötig für mehr als 30 Sprachen (`composer.json`, `suggest`). |
 | `memory_limit` | mindestens `64M` (Setup-Prüfung `memory_limit`). Starten Sie den Webserver oder PHP-FPM nach dem Bearbeiten von `php.ini` neu. |
 | `max_execution_time` | mindestens `30` Sekunden (Setup-Prüfung `execution_time`). |

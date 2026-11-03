@@ -33,7 +33,7 @@ class Isalive extends \Exponential\Runnable\ModuleView
         $db = \eZDB::instance();
 
         if ( $db->isConnected() === true )
-            print( "eZ Publish is alive" );
+            print( "Exponential is alive" );
         else
             print( "No connection" );
 

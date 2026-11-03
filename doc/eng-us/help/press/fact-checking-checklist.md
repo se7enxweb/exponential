@@ -37,7 +37,7 @@ HISTORY AND DATES
 [ ] Every "today" or "latest" carries the date checked
 
 RELEASES
-[ ] "Released" only for a tagged version; 6.0.15 "in development" until tagged
+[ ] "Released" only for a tagged version; 6.0.15 only if the tag v6.0.15 exists
 [ ] Versions written without "v"; sorted by version, not by name
 
 FEATURES

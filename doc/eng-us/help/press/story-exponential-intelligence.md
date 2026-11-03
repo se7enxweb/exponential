@@ -30,7 +30,7 @@ language for new content or for changes", and the assistant "writes **drafts**, 
 editor's own permissions" ([README, Exponential Intelligence](https://github.com/se7enxweb/exponential/blob/main/README.md#exponential-intelligence-new)). It
 works with hosted providers in the US or the EU, or with a local open-weight model on the same server; it records every
 request in the audit trail without the prompt or the answer; and it shows the model, region and cost of each click.
-It is the extension `se7enxweb/expai`, required by the kernel from the 6.0.15 development line on
+It is the extension `se7enxweb/expai`, required by the kernel from the 6.0.15 line on
 ([expai feature page](../../features/6.0/extensions/expai.md)).
 
 ## What is new, and when
@@ -42,7 +42,8 @@ It is the extension `se7enxweb/expai`, required by the kernel from the 6.0.15 de
 | `composer.json` requires `se7enxweb/expai`; the job queue `expqueue` too | 12 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution) |
 | First release of the extension, 0.0.1.0 | the sources give no date | [expai, In short](../../features/6.0/extensions/expai.md#in-short) |
 
-The 6.0.15 line is in development and not released.
+The 6.0.15 line is the current release line of Exponential 6.0; the dates are dates of the changes, not a release
+date.
 
 ## Facts you can print
 

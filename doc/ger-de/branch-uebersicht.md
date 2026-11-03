@@ -22,9 +22,9 @@ entwickeln sich weiter; die Befehle unter jeder Überschrift zeigen den aktuelle
 |---|---|
 | Wo findet die Entwicklung statt? | Auf `main` von [se7enxweb/exponential](https://github.com/se7enxweb/exponential), dem einzigen langlebigen Branch |
 | Wie kommen Änderungen hinein? | Auf kurzlebigen Branches, die über Pull Requests in `main` gemergt werden, jeweils als Merge-Commit |
-| Was ist ein Release? | Ein Tag `v6.0.<n>` auf `main`. Der neueste ist `v6.0.14`; `main` trägt 6.0.15 |
+| Was ist ein Release? | Ein Tag `v6.0.<n>` auf `main`. `main` trägt die aktuelle Linie 6.0.15, die auf `v6.0.14` folgt |
 | Ändert sich ein Tag jemals? | Nein. Eine Korrektur kommt immer als nächste Version |
-| Worauf baue ich eine Produktionswebsite auf? | Auf einem Release-Tag (Composer: eine Version wie `~6.0.14`) |
+| Worauf baue ich eine Produktionswebsite auf? | Auf einem Release-Tag (Composer: eine Version wie `~6.0.15`) |
 | Wo liegen die Extensions? | Jede in einem eigenen Repository, mit eigenem Standard-Branch und eigenen Release-Tags |
 
 ## Das Kernel-Repository
@@ -73,12 +73,12 @@ die Befehle auf, mit denen Sie die blockierenden Prüfungen lokal ausführen.
 ### Release-Tags
 
 Ein Release ist ein Tag auf einem Commit von `main` mit dem Namen `v6.0.<n>`. Jedes hat eine Changelog-Seite in
-`doc/changelogs/6.0` (die neueste: [Changelog 6.0.14](../changelogs/6.0/6.0.14.md)) und ein Release auf
+`doc/changelogs/6.0` (die der aktuellen Linie: [Changelog 6.0.15](../changelogs/6.0/6.0.15.md)) und ein Release auf
 [GitHub Releases](https://github.com/se7enxweb/exponential/releases):
 
 | Tags | Anzahl | Hinweise |
 |---|---|---|
-| `v6.0.0` bis `v6.0.14` | 15 | Die Linie 6.0, vom 01.01.2024 bis zum 07.06.2026 |
+| `v6.0.0` bis `v6.0.14` | 15 | Die Linie 6.0, vom 01.01.2024 bis zum 07.06.2026; darauf folgt `v6.0.15` |
 | `2.9-3` bis `4.4.0` | 160 | Die Releases von 2002 bis 2010, mit der Historie importiert; ohne `v` im Namen |
 
 Ein Tag ist dauerhaft. Composer und Packagist lesen ihn einmal, und ein „korrigierter“ Tag ergäbe zwei verschiedene
@@ -107,7 +107,7 @@ git ls-remote --heads https://github.com/se7enxweb/exponential.git
 
 | Linie | Status | Ort |
 |---|---|---|
-| 6.0.x | Gepflegt: Entwicklung auf `main`, Releases `v6.0.0` bis `v6.0.14` | se7enxweb/exponential |
+| 6.0.x | Gepflegt: Entwicklung auf `main`, Releases ab `v6.0.0`, aktuelle Linie 6.0.15 | se7enxweb/exponential |
 | 5.x (5.0 bis 5.4, die Linie 5.90 von 2017.08 bis 2019.03) | Nicht gepflegt. 6.0 führt diese Codebasis fort: 6.0.0 begann mit dem letzten Open-Source-Release des Legacy-Kernels | Das archivierte Upstream-Repository; der [Changelog 6.0.0](../changelogs/6.0/6.0.0.md) erklärt den Wechsel |
 | 4.x | Nicht gepflegt. Seine Tags bis `4.4.0` liegen im Kernel-Repository | se7enxweb/exponential (Tags) |
 | 3.x | Nicht gepflegt. Seine Tags und die SVN-Branches unten werden als Geschichte aufbewahrt | se7enxweb/exponential (Tags) |
@@ -160,8 +160,8 @@ gh release list -R se7enxweb/exponential-platform-nexus --limit 5
 
 | Sie möchten | Verwenden Sie |
 |---|---|
-| Eine Produktionswebsite, die gleich bleibt, bis Sie sich für eine Aktualisierung entscheiden | Ein Release: Composer-Version `~6.0.14` oder den Tag `v6.0.14` in einem Klon |
-| Die neuesten Korrekturen vor ihrem Release, oder PHP 8.0 | `main` (`dev-main` für Composer). Noch kein veröffentlichter Tag akzeptiert PHP 8.0 |
+| Eine Produktionswebsite, die gleich bleibt, bis Sie sich für eine Aktualisierung entscheiden | Ein Release: Composer-Version `~6.0.15` oder den neuesten Tag `v6.0.<n>` in einem Klon |
+| Die neuesten Korrekturen vor ihrem Release, oder PHP 8.0 | `main` (`dev-main` für Composer). PHP 8.0 akzeptiert die Linie 6.0.15 (`~6.0.15` oder `main`); die Tags `v6.0.8` bis `v6.0.14` verlangen PHP 8.1 |
 | Eine Korrektur an einer Extension vor deren Release | Den Standard-Branch dieser Extension oder einen Branch mit der Korrektur, in einem Klon |
 | Eigene Änderungen am Kernel oder an einer Extension | Einen eigenen Branch auf einem Tag oder auf `main`, damit sich Aktualisierungen mit Ihrer Arbeit zusammenführen lassen |
 

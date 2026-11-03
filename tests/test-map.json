@@ -2713,6 +2713,7 @@
     ],
     "share/db_schema.dba": [
       "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
+      "tests/tests/kernel/classes/updatesql/KernelSchemaParityUpdateSqlTest.php",
       "tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php"
     ],
     "kernel/sql/*/*schema.sql": [
@@ -2985,6 +2986,24 @@
     "tests/tests/kernel/classes/user/expUserGroupsBulkEngineChecks.php": [
       "tests/tests/kernel/classes/user/expUserManagerSqliteTest.php",
       "tests/tests/kernel/classes/user/expUserManagerDatabaseTest.php"
+    ],
+    "kernel/sql/mysql/kernel_schema.sql": [
+      "tests/tests/kernel/classes/updatesql/KernelSchemaParityUpdateSqlTest.php"
+    ],
+    "kernel/sql/postgresql/kernel_schema.sql": [
+      "tests/tests/kernel/classes/updatesql/KernelSchemaParityUpdateSqlTest.php"
+    ],
+    "kernel/sql/sqlite/schema.sql": [
+      "tests/tests/kernel/classes/updatesql/KernelSchemaParityUpdateSqlTest.php"
+    ],
+    "update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql": [
+      "tests/tests/kernel/classes/updatesql/KernelSchemaParityUpdateSqlTest.php"
+    ],
+    "update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql": [
+      "tests/tests/kernel/classes/updatesql/KernelSchemaParityUpdateSqlTest.php"
+    ],
+    "update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql": [
+      "tests/tests/kernel/classes/updatesql/KernelSchemaParityUpdateSqlTest.php"
     ]
   },
   "generated": {

@@ -309,16 +309,17 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'name', expUserHygiene::normaliseFilters( array( 'sort' => 'email' ), false )['sort'], 'no e-mail order without the right' );
         $this->assertSame( 'a/(b)', expUserHygiene::normaliseFilters( array( 'q' => " a/(b) \x00" ), true )['q'], 'slashes and brackets are kept; control characters go' );
 
-        $this->assertSame( '', expUserHygiene::queryString( $defaults ) );
-        $this->assertSame( '?filter=inactive&days=30', expUserHygiene::queryString( $defaults, array( 'filter' => 'inactive', 'days' => 30 ) ) );
-        $this->assertSame( '?filter=never', expUserHygiene::queryString( $defaults, array( 'filter' => 'never', 'days' => 30 ) ), 'days only for inactive' );
-        $this->assertSame( '?q=a%20%26%20b&sort=login&order=desc', expUserHygiene::queryString( $defaults, array( 'q' => 'a & b', 'sort' => 'login', 'order' => 'desc' ) ) );
+        $this->assertSame( '', expUserHygiene::viewParameters( $defaults ) );
+        $this->assertSame( '/(filter)/inactive/(days)/30', expUserHygiene::viewParameters( $defaults, array( 'filter' => 'inactive', 'days' => 30 ) ) );
+        $this->assertSame( '/(filter)/never', expUserHygiene::viewParameters( $defaults, array( 'filter' => 'never', 'days' => 30 ) ), 'days only for inactive' );
+        $this->assertSame( '/(q)/a%20%26%20b~2Fc/(sort)/login/(order)/desc', expUserHygiene::viewParameters( $defaults, array( 'q' => 'a & b/c', 'sort' => 'login', 'order' => 'desc' ) ) );
+        $this->assertSame( array( 'q' => 'a & b/c', 'sort' => 'login' ), expUserHygiene::viewParameterInput( array( 'UserParameters' => array( 'q' => 'a & b~2Fc', 'sort' => 'login', 'other' => 'x' ) ) ), 'decoded as the kernel hands the view parameters over' );
 
         $links = expUserHygiene::links( array( 'sort' => 'login', 'q' => 'x', 'group' => 5 ) + $defaults, true );
-        $this->assertSame( '?filter=duplicate_email&group=5&q=x&sort=email', $links['filters']['duplicate_email'], 'shared addresses side by side' );
-        $this->assertSame( '?group=5&q=x&sort=login&order=desc', $links['sorts']['login'], 'the current column reversed' );
-        $this->assertSame( '?group=5&q=x&sort=last_visit&order=desc', $links['sorts']['last_visit'], 'the last visit, the newest first' );
-        $this->assertSame( '?sort=login', $links['clear'] );
+        $this->assertSame( '/(filter)/duplicate_email/(group)/5/(q)/x/(sort)/email', $links['filters']['duplicate_email'], 'shared addresses side by side' );
+        $this->assertSame( '/(group)/5/(q)/x/(sort)/login/(order)/desc', $links['sorts']['login'], 'the current column reversed' );
+        $this->assertSame( '/(group)/5/(q)/x/(sort)/last_visit/(order)/desc', $links['sorts']['last_visit'], 'the last visit, the newest first' );
+        $this->assertSame( '/(sort)/login', $links['clear'] );
         $this->assertArrayNotHasKey( 'email', expUserHygiene::links( $defaults, false )['sorts'] );
         $this->assertArrayNotHasKey( 'duplicate_email', expUserHygiene::links( $defaults, false )['filters'], 'no shared addresses without the right' );
         $this->assertSame( array( 'all', 'never', 'inactive', 'disabled', 'locked', 'orphaned', 'duplicate_login' ), expUserHygiene::filters( false ), 'shared logins without the right to see addresses as well' );
@@ -440,7 +441,7 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 1, $byID[103]['shared_login'], 'the twin in the trash does not count' );
         $this->assertSame( 1, $byID[118]['shared_login'], 'an empty login is shared with nobody' );
         $links = expUserHygiene::links( expUserHygiene::normaliseFilters( array(), false ), false );
-        $this->assertSame( '?filter=duplicate_login&sort=login', $links['filters']['duplicate_login'], 'the accounts of one login side by side' );
+        $this->assertSame( '/(filter)/duplicate_login/(sort)/login', $links['filters']['duplicate_login'], 'the accounts of one login side by side' );
 
         // the anonymous user cannot sign in: not "never signed in", but still in the list of every account
         $never = function ( $anonymousID )
@@ -497,7 +498,9 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $tpl, self::read( 'design/admin/templates/user/hygiene.tpl' ) );
         preg_match_all( '/<form\b[^>]*>/', $tpl, $forms );
         $this->assertCount( 3, $forms[0] );
-        $this->assertSame( 1, preg_match_all( '/method="get"/', implode( '', $forms[0] ) ), 'only the filters are a GET' );
+        $this->assertSame( 0, preg_match_all( '/method="get"/', implode( '', $forms[0] ) ), 'no GET form: the filters are posted and answered with view parameters' );
+        $this->assertStringContainsString( 'name="FilterButton"', $tpl );
+        $this->assertStringNotContainsString( '$_GET', self::read( 'kernel/private/classes/views/user/hygiene.php' ) );
         $this->assertStringContainsString( 'role="search"', $forms[0][1] );
         foreach ( array( 'DisableButton', 'EnableButton', 'UnlockButton', 'ExportButton', 'ConfirmButton' ) as $button )
             $this->assertStringContainsString( 'name="' . $button . '"', $tpl );

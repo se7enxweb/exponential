@@ -27,7 +27,7 @@ A good title names the task or the topic, the product and, for tutorials, the ve
 
 | Kind | Pattern | Example |
 |---|---|---|
-| Tutorial | <Task> in Exponential <version> | "Build a landing page with the layouts editor in Exponential 6.0.15 (development line)" |
+| Tutorial | <Task> in Exponential <version> | "Build a landing page with the layouts editor in Exponential 6.0.15" |
 | First look | A first look at <feature> | "A first look at Exponential Intelligence, the assistant that writes drafts only" |
 | Install | Install Exponential <version> with one command | "Install Exponential from scratch on SQLite with one command" |
 | Review | <Product> review: <angle> | "Exponential review: running a site after the eZ Publish years" |
@@ -44,7 +44,7 @@ The old name eZ Publish appears only as history.
 | "The CMS that kills WordPress" | Attacks another project; no source compares them |
 | "100x faster than <product>" | No published comparison supports a multiple |
 | "eZ Publish 7 is here" | The product is Exponential; there is no such release |
-| "Exponential 6.0.15 released!" | 6.0.15 is in development, with no release date |
+| "Exponential 6.0.15 released!" before checking | A version is released only when its tag exists; check `git tag -l 'v6.0.*' --sort=version:refname` |
 | "The official Exponential tutorial" | Your content is yours unless 7x or the Foundation asked for it |
 | "AI writes your whole site" | Exponential Intelligence writes drafts only |
 | "Endorsed by Ibexa" | Exponential is not associated with eZ Systems or Ibexa |
@@ -69,7 +69,7 @@ Put what matters in the first lines, before "show more":
 
 ```text
 <One sentence: what the video shows and the promise.>
-Shows Exponential <version | 6.0.15 development line as of <date>> on my own test installation, with invented content.
+Shows Exponential <version | the main branch as of <date>> on my own test installation, with invented content.
 <Disclosure line: paid / gifted / commission / nobody paid for this video.>
 
 SOURCES

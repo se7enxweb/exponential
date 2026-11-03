@@ -46,7 +46,8 @@ Er ist außerdem sehr jung, und auch das gehört zur Geschichte.
 | Streams, Deployments ohne unnötiges Neuladen, jeder Worker startet sauber | 11. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#11-october-2026-exponential-velocity-streams-deploys-without-a-needless-reload-and-starts-each-worker-clean) |
 | Ein abgebrochener Neustart oder ein abgebrochenes Deployment lässt Velocity nicht mehr ausgefallen zurück | 17. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#17-october-2026-a-restart-or-deploy-that-is-cut-off-no-longer-leaves-velocity-down) |
 
-Velocity in Exponential gehört zur Entwicklungslinie 6.0.15, die nicht veröffentlicht ist.
+Velocity in Exponential gehört zur Linie 6.0.15. Die Daten sind Daten der Änderungen, keine Veröffentlichungsdaten; ob
+der Tag `v6.0.15` existiert, zeigt `git tag -l 'v6.0.*' --sort=version:refname`.
 
 ## Fakten, die Sie drucken können
 

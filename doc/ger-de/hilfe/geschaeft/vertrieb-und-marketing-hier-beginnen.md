@@ -45,7 +45,7 @@ Jeder der folgenden Sätze stammt aus einer Quelle, die Sie einem Kunden zeigen 
   Hosting; die **Exponential Foundation**, eine im März 2026 gegründete gemeinnützige Organisation, betreibt das Open-Source-Projekt
   ([Wer ist 7x?](../wer-ist-7x.md), [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)).
 - **Wie es gepflegt wird.** Seit dem 1. Januar 2024 sind in der Linie 6.0.x die Releases 6.0.0 bis 6.0.14
-  erschienen; 6.0.15 ist in Entwicklung ([Wer ist 7x?](../wer-ist-7x.md#die-releases-60x)).
+  erschienen; 6.0.15 ist die aktuelle Linie ([Wer ist 7x?](../wer-ist-7x.md#die-releases-60x)).
 - **Was die Lizenz kostet.** Nichts: „Using Exponential under the terms of the GNU GPL is free of charge“
   (`README.md`, „License“) - die Nutzung unter der GNU GPL ist kostenlos. Dienstleistungen wie Hosting, Entwicklung
   und Support verkaufen 7x und andere getrennt davon.

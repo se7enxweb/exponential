@@ -26,7 +26,7 @@ from updates and gives notes you can adapt to your house style.
 | | Correction | Update |
 |---|---|---|
 | When | The story was wrong when published | The story was right, but things changed |
-| Example | "eZ Publish 6.0.14", "the 7x Foundation" | 6.0.15 was released after publication |
+| Example | "eZ Publish 6.0.14", "the 7x Foundation" | A new 6.0.x release was tagged after publication |
 | Note | Required, says what was wrong | Recommended, says what changed and when |
 
 ## Errors that need a correction
@@ -59,7 +59,7 @@ product has been called Exponential since August 2025; the release is Exponentia
 Correction, <date>: An earlier version said Exponential Intelligence publishes articles. According to the
 project's documentation, it writes drafts and never publishes on its own.
 
-Update, <date>: Exponential 6.0.15, described here as in development, was released on <tag date>
+Update, <date>: Exponential <version>, described here as in development, was released on <tag date>
 (source: <link>).
 ```
 

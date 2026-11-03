@@ -43,7 +43,7 @@ Since 12 October 2026 the same engine also installs packages in the background a
 | Do not say | Say instead |
 |---|---|
 | "Operations of any size finish instantly" | They run in the background, in batches |
-| "Released" | In the 6.0.15 line, in development |
+| "Released in 6.0.14" or a release date | In the 6.0.15 line; "released" only once the tag `v6.0.15` exists |
 
 ## Angles and headline ideas
 

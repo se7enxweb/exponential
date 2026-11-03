@@ -23,7 +23,9 @@ class eZCodePageCodec extends eZTextCodec
     */
     public function __construct( $name )
     {
-        parent::__construct( $name );
+        // eZTextCodec takes the requested and real charsets and both encodings (one argument threw
+        // ArgumentCountError on PHP 8): this codec converts the single byte code page $name from and to UTF-8
+        parent::__construct( $name, 'utf-8', $name, 'utf-8', 'singlebyte', 'utf-8' );
         $this->CodePage = false;
     }
 

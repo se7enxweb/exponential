@@ -36,9 +36,9 @@ Ihnen, welche Teile Sie lesen sollten und wer was tut.
 
 ### Die bisherigen Versionen
 
-Exponential 6.0.0 wurde am 1. Januar 2024 veröffentlicht, 6.0.14 am 7. Juni 2026. Die Produktlinie 6.0.15 ist in
-Entwicklung: Das [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) vermerkt „Not released yet“ (noch nicht
-veröffentlicht) und listet auf, was die Linie enthält. Die vollständige Liste der Daten steht unter
+Exponential 6.0.0 wurde am 1. Januar 2024 veröffentlicht, 6.0.14 am 7. Juni 2026. Die Produktlinie 6.0.15 ist die
+aktuelle Linie: Das [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) listet auf, was die Linie enthält; das
+Datum ihres Tags `v6.0.15` zeigt `git tag`. Die vollständige Liste der Daten steht unter
 [Wer ist 7x?](../wer-ist-7x.md#die-releases-60x), entnommen aus der Release-Übersicht und den Git-Tags.
 
 Fakten aus dieser Tabelle, die ein Planer braucht:
@@ -134,7 +134,7 @@ Wählen Sie mit dieser Tabelle zwischen „jetzt“, „nächstes Zeitfenster“
 | Sie betreiben 5.4 oder 5.90 | Ein Projekt planen | Teil B, dann Teil C; Datenbank-Update-Dateien für jeden Schritt |
 | Sie betreiben 3.10 bis 5.3 | Ein Migrationsprojekt planen | Teil A, dann B, dann C; lesen Sie [14. Migration von der Linie 4.x](../../installation/14-migration-von-4x.md) |
 | Sie haben eigene Patches in Kernel-Dateien | Zeit für das Mergen einplanen | Halten Sie sie auf Ihrem eigenen Git-Branch ([Mit Git entwickeln](../mit-git-entwickeln.md#auf-dem-neuesten-stand-bleiben)) |
-| Eine benötigte Funktion gibt es nur in der Entwicklungslinie | Entscheiden, ob Sie `main` betreiben oder auf einen Tag warten | `main` bewegt sich jeden Tag; ein Tag ändert sich nie |
+| Eine benötigte Funktion gibt es nur auf `main`, noch in keinem Tag | Entscheiden, ob Sie `main` betreiben oder auf einen Tag warten | `main` bewegt sich jeden Tag; ein Tag ändert sich nie |
 
 Fragen, die Sie beantworten sollten, bevor Sie einen Termin zusagen:
 

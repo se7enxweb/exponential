@@ -60,7 +60,7 @@ Tags; die Ankündigung hat ihr eigenes Datum.
 
 ```text
 "As of 18 October 2026, the newest release is 6.0.14."
-"6.0.15 was in development when this article was published."
+"As of 18 October 2026, the tag v6.0.15 did not exist yet."
 ```
 
 ## Verwandte Seiten

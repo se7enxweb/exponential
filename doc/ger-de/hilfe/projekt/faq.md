@@ -166,8 +166,8 @@ auf. Bei einem Fehler in der Software siehe [Wenn etwas schiefgeht](../wenn-etwa
 ### Wann und wie werden neue Versionen veröffentlicht?
 
 Die FAQ der Website sagt, dass Releases ab Exponential 6 semantische Versionierung verwenden. Im Repository wird die
-Linie 6.0 als Tags `v6.0.0`, `v6.0.1` und folgende veröffentlicht (das neueste Release im Oktober 2026 ist
-`v6.0.14`; 6.0.15 ist in Entwicklung). Einen festen Kalender gibt es nicht. Eine veröffentlichte Version wird nie
+Linie 6.0 als Tags `v6.0.0`, `v6.0.1` und folgende veröffentlicht (`v6.0.14` erschien im Juni 2026; die aktuelle
+Linie ist 6.0.15). Einen festen Kalender gibt es nicht. Eine veröffentlichte Version wird nie
 geändert: Eine Korrektur kommt immer als nächstes Release
 ([Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md#releases-und-versionsnummern)). Wie
 Sie Releases oder jeder Änderung beim Entstehen folgen, zeigt [Mit Git aktualisieren](../mit-git-aktualisieren.md).

@@ -1,17 +1,18 @@
 ---
-title: Über 6.0.15 berichten, solange es in Entwicklung ist
+title: Über 6.0.15 berichten: vor und nach dem Tag
 audience: press
 category: press-media
 order: 106
-summary: Wie Sie über die Linie Exponential 6.0.15 berichten, bevor sie ein Release-Tag hat - was die Quellen darüber sagen, wie Sie die Arbeit als in Entwicklung kennzeichnen, welche Formulierungen genau sind und warum kein Datum genannt werden darf.
-keywords: 6.0.15, Entwicklungslinie, unveröffentlicht, main-Branch, dev-main, Vorschau, in Entwicklung, kein Veröffentlichungsdatum, Velocity, admin4, Prüfprotokoll, Exponential Layouts, Exponential Intelligence, development line, unreleased, main branch, preview, in development, no release date, audit trail
+summary: Wie Sie über die Linie Exponential 6.0.15 berichten - was die Quellen darüber sagen, wie Sie prüfen, ob der Tag v6.0.15 existiert, wie die Linie vor diesem Tag beschrieben wurde, welche Formulierungen genau sind und warum Sie ein Datum nur aus dem Tag nehmen.
+keywords: 6.0.15, Linie 6.0.15, aktuelle Linie, Tag v6.0.15, main-Branch, dev-main, Veröffentlichungsdatum, Velocity, admin4, Prüfprotokoll, Exponential Layouts, Exponential Intelligence, 6.0.15 line, current line, release tag, main branch, release date, audit trail
 type: help
 ---
-# Über 6.0.15 berichten, solange es in Entwicklung ist
+# Über 6.0.15 berichten: vor und nach dem Tag
 
-Diese Seite ist für Reporter und Creator, die schon jetzt über die Arbeit in der Linie Exponential 6.0.15 schreiben
-wollen, bevor sie veröffentlicht ist. Das ist erlaubt, und die Arbeit ist ausführlich dokumentiert. Wichtig ist, klar zu
-sagen, dass sie in Entwicklung ist, und kein Veröffentlichungsdatum zu nennen, weil keine Quelle eines nennt.
+Diese Seite ist für Reporter und Creator, die über die Arbeit in der Linie Exponential 6.0.15 schreiben wollen, der
+aktuellen Linie von Exponential 6.0 (sie folgt auf 6.0.14). Die Arbeit ist ausführlich dokumentiert. Wichtig ist, zu
+prüfen, ob der Tag `v6.0.15` existiert, und ein Veröffentlichungsdatum nur aus diesem Tag zu nehmen, nie aus einer
+Vermutung.
 
 ## Inhalt
 
@@ -25,13 +26,13 @@ sagen, dass sie in Entwicklung ist, und kein Veröffentlichungsdatum zu nennen, 
 
 | Fakt | Quelle |
 |---|---|
-| "Not released yet. The 6.0.15 line follows v6.0.14 (2026-06-07); no tag `v6.0.15` existed on 2026-10-12." | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
-| "Date not released yet" | [Release-Übersicht](../../../eng-us/release-overview) |
-| Der Branch `main` ist "the current development of the 6.0 line, today 6.0.15" und gibt sich in `lib/version.php` als `6.0.15stable` aus | [Den Code beschaffen](../../installation/03-den-code-beschaffen.md#31-versionen-tags-und-branches) |
+| Die Linie 6.0.15 folgt auf `v6.0.14` (7. Juni 2026); bis zum Tag beginnt ihr Changelog mit "Not released yet" | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
+| Das Datum von 6.0.15 in der Release-Übersicht; bis zum Tag stand dort "Date not released yet" | [Release-Übersicht](../../../eng-us/release-overview) |
+| Der Branch `main` trägt die Linie 6.0.15 und gibt sich in `lib/version.php` als `6.0.15stable` aus | [Den Code beschaffen](../../installation/03-den-code-beschaffen.md#31-versionen-tags-und-branches) |
 | "Security fixes are made on the `main` branch (the 6.0.15 line, `dev-main`) and published with the next 6.0.x release." | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
-| Am 18. Oktober 2026 war das neueste Tag noch `v6.0.14` | `git tag -l 'v6.0.*' --sort=version:refname` |
+| Am 18. Oktober 2026 war das neueste Tag noch `v6.0.14`; ob `v6.0.15` heute existiert, zeigt der Befehl rechts | `git tag -l 'v6.0.*' --sort=version:refname` |
 
-Beachten Sie die Falle in `6.0.15stable`: Das ist die Versionszeichenkette des Entwicklungs-Branches, kein Release. Ein
+Beachten Sie die Falle in `6.0.15stable`: Das ist die Versionszeichenkette des Branches `main`, kein Release. Ein
 Release ist ein Tag ([Über ein Release berichten](ueber-ein-release-berichten.md#was-als-release-zählt)).
 
 ## Was in der Linie steckt
@@ -53,33 +54,37 @@ Erwähnen Sie das, wenn Sie sie beschreiben.
 
 ## Richtig kennzeichnen
 
-Setzen Sie den Status in die Überschrift oder den ersten Satz, nicht in eine Fußnote:
+Setzen Sie den Status in die Überschrift oder den ersten Satz, nicht in eine Fußnote. Prüfen Sie ihn zuerst mit
+`git tag -l 'v6.0.*' --sort=version:refname`. Bis zum Tag `v6.0.15` lauteten Überschriften für die Linie so:
 
 ```text
-In Entwicklung: was die nächste Exponential-Version, 6.0.15, enthalten soll
-Die Entwicklungslinie von Exponential bekommt ein Prüfprotokoll (noch nicht veröffentlicht)
+Die Linie 6.0.15: was die aktuelle Exponential-Version enthält
+Die Linie 6.0.15 von Exponential bekommt ein Prüfprotokoll (Stand <Datum Ihrer Prüfung>)
 ```
 
-Im Text:
+Im Text, wenn es noch keinen Tag `v6.0.15` gibt:
 
 ```text
-Diese Änderungen sind in der Entwicklungslinie 6.0.15 von Exponential. Mit Stand <Datum Ihrer Prüfung> war
-kein Release 6.0.15 veröffentlicht; das neueste Release ist 6.0.14 vom 7. Juni 2026. Das Projekt hat kein
+Diese Änderungen sind in der Linie 6.0.15 von Exponential. Mit Stand <Datum Ihrer Prüfung> war
+kein Release 6.0.15 getaggt; die Linie folgt auf 6.0.14 vom 7. Juni 2026. Das Projekt hat kein
 Veröffentlichungsdatum angekündigt. Quelle: <Link zum Changelog 6.0.15>.
 ```
+
+Wenn der Tag existiert, nennen Sie 6.0.15 ein Release mit dem Datum des Tags
+([Ein Release selbst prüfen](ein-release-selbst-pruefen.md)).
 
 ## Formulierungen: genau und ungenau
 
 | Ungenau | Genau |
 |---|---|
-| „Exponential 6.0.15 ist erschienen.“ | „Exponential 6.0.15 ist in Entwicklung.“ |
-| „6.0.15, fällig in diesem Herbst“ | „Für 6.0.15 ist kein Veröffentlichungsdatum angekündigt.“ |
-| „Das neue Release enthält ...“ | „Die Entwicklungslinie enthält ...“ |
+| „Exponential 6.0.15 ist erschienen.“ (ohne den Tag geprüft zu haben) | „Exponential 6.0.15 ist die aktuelle Linie von Exponential 6.0.“; „erschienen“ mit Datum erst, wenn der Tag `v6.0.15` existiert |
+| „6.0.15, fällig in diesem Herbst“ | „Für 6.0.15 ist kein Veröffentlichungsdatum angekündigt.“ (vor dem Tag) oder das Datum des Tags (danach) |
+| „Das neue Release enthält ...“ (vor dem Tag) | „Die Linie 6.0.15 enthält ...“ |
 | „6.0.15 stable“ | „die Linie 6.0.15“ |
 | „Alle bekommen Velocity mit dem nächsten Update.“ | „Velocity ist ein eigenes Paket, das die `composer.json` von Exponential in `~0.0.4.57` verlangt“ ([Den Code beschaffen](../../installation/03-den-code-beschaffen.md#34-das-velocity-paket)) |
-| „Funktion X ist sicher in 6.0.15.“ | „Funktion X ist heute in der Entwicklungslinie“; die Linie kann sich vor einem Tag noch ändern |
+| „Funktion X ist sicher in 6.0.15.“ (vor dem Tag) | „Funktion X ist heute auf `main`, in der Linie 6.0.15“; vor dem Tag kann sich die Linie noch ändern, danach zählt das Changelog des Tags |
 
-Wenn Sie die Entwicklungslinie für eine Rezension installieren, sagen Sie es und folgen Sie
+Wenn Sie den Branch `main` für eine Rezension installieren, sagen Sie es und folgen Sie
 [Die Entwicklungslinie testen](../fuersprecher/die-entwicklungslinie-testen.md). Zeigen Sie keine Adressen oder Anmeldedaten
 einer Test-Website.
 
@@ -87,7 +92,7 @@ einer Test-Website.
 
 1. Bestätigen Sie das Tag `v6.0.15` ([Ein Release selbst prüfen](ein-release-selbst-pruefen.md)).
 2. Lesen Sie das veröffentlichte Changelog; die Zeile „Not released yet“ wird ersetzt, und der Inhalt kann von dem
-   abweichen, was Sie in der Entwicklung gesehen haben.
+   abweichen, was Sie vor dem Tag auf `main` gesehen haben.
 3. Aktualisieren oder korrigieren Sie frühere Beiträge, die die Linie beschrieben haben ([Korrekturen und Aktualisierungen](korrekturen-und-aktualisierungen.md)).
 4. Verwenden Sie die [Checkliste für die Release-Berichterstattung](checkliste-release-berichterstattung.md).
 

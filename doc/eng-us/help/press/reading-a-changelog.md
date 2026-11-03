@@ -83,10 +83,11 @@ Rules of thumb:
 
 ## Reading the development line
 
-The [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) is different: it begins "Not released yet", is organized by
-period instead of by kind, and is long ("four months of work"). Read the list at its top that explains how the page is organized
-and pick one period. Everything on it must be reported as "in development"
-([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
+The [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) is different: until the tag `v6.0.15` it began "Not released
+yet", it is organized by period instead of by kind, and it is long ("four months of work"). Read the list at its top that
+explains how the page is organized and pick one period. Report what it lists as released only if the tag `v6.0.15`
+exists; without the tag, report it as "in development"
+([Covering 6.0.15, before and after its tag](covering-6-0-15-while-in-development.md)).
 
 ## Related pages
 

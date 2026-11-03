@@ -38,7 +38,7 @@ GNU FDL ([Thema: freie Dokumentation](thema-freie-dokumentation.md)).
 
 | Was | Wann | Quelle |
 |---|---|---|
-| Das Hilfesystem in der Administration | Oktober 2026, in der Linie 6.0.15 (in Entwicklung) | [Oktober 2026](../../geschichte/2026/2026-10.md), [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
+| Das Hilfesystem in der Administration | Oktober 2026, in der Linie 6.0.15 | [Oktober 2026](../../geschichte/2026/2026-10.md), [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
 | Hilfeseiten als Inhalte in der Datenbank, Phase 1 | Linie 6.0.15 | [Hilfe als Inhalt](../../funktionen/6.0/hilfeinhalte.md) |
 
 ![Eine Seite der Hilfe mit Inhaltsverzeichnis und Überschriften](../bilder/help/pr-help-page.webp)
@@ -61,7 +61,7 @@ GNU FDL ([Thema: freie Dokumentation](thema-freie-dokumentation.md)).
 |---|---|
 | „KI-generierte Dokumentation“ | Die Hilfe zeigt die geschriebene Dokumentation des Projekts |
 | „In allen Sprachen verfügbar“ | Die Hilfe zeigt die Sprache der Dokumentation; prüfen Sie [Hilfesystem, Sprachen und Barrierefreiheit](../../funktionen/6.0/hilfesystem.md#sprachen-und-barrierefreiheit) |
-| „Veröffentlicht“ | Teil der Linie 6.0.15, in Entwicklung |
+| „Veröffentlicht“ | Teil der Linie 6.0.15; „veröffentlicht“ nur, wenn der Tag `v6.0.15` existiert (`git tag -l 'v6.0.*'`) |
 
 ## Blickwinkel und Ideen für Überschriften
 

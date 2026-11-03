@@ -42,7 +42,7 @@ git fetch --tags
 git tag -l 'v*' --sort=version:refname | tail -5
 ```
 
-- Published tags `v6.0.0` to `v6.0.14` exist; 6.0.15 is in development
+- Published tags `v6.0.0` to `v6.0.14` exist; 6.0.15 is the current line after them
   ([Source control and releases](../../../../standards/source-control-and-releases.md#the-kernels-versions)).
 - Release dates of recent tags are listed in [The roadmap](../../../project/roadmap.md#what-has-already-been-delivered).
 - Published tags are never changed; a fix arrives as the next version

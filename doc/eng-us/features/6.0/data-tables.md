@@ -574,7 +574,7 @@ No step needs the command line. The roles that should see or change the rows get
 
 | Request | Answer |
 |---|---|
-| `GET <module>/json?offset=0&limit=50&<field>=<value>` | The rows (at most 500), filtered by fields: `data`, `total`, `offset`, `limit` |
+| `GET <module>/json/(offset)/0/(limit)/50/(<field>)/<value>` | The rows (at most 500), filtered by fields: `data`, `total`, `offset`, `limit` |
 | `GET <module>/json/<id>` | One row, 404 when there is none |
 | `POST <module>/json` | A new row from a JSON object (`Content-Type: application/json`) or form fields: 201 |
 | `PUT <module>/json/<id>` | A change: 200; also `POST` with `_method=PUT` |

@@ -1,7 +1,8 @@
 {* The user audit log (user/audit): the security events about user accounts and user groups (table expuser_audit),
    newest first: when, the event and its result, the account or group it was about, who acted, where (siteaccess,
-   host, address) and the fields before and after. A GET form narrows the list (user: an id or a login, the account
-   or the user who acted; action; result; from and to), the pager pages it, and Export as CSV (a POST) sends the
+   host, address) and the fields before and after. A posted form narrows the list (user: an id or a login, the account
+   or the user who acted; action; result; from and to; the view answers it with its view parameters), the pager pages
+   it, and Export as CSV (a POST) sends the
    whole filtered list. Needs the policy user/audit. The same file is in design/admin and design/admin4.
    Guide: doc/eng-us/features/6.0/user-audit.md *}
 
@@ -33,7 +34,7 @@
 
 <section aria-labelledby="audit-find-title">
 <h2 class="a4-sr-only" id="audit-find-title">{'Narrow the list'|i18n( 'design/admin/user/audit' )}</h2>
-<form class="a4-filterbar" method="get" action={$uri|ezurl} role="search">
+<form class="a4-filterbar" method="post" action={$uri|ezurl} role="search">
     <div class="a4-field">
         <label for="audit-user">{'User'|i18n( 'design/admin/user/audit' )}</label>
         <input type="search" id="audit-user" name="user" value="{$audit_filters.user|wash}" autocomplete="off" maxlength="150" aria-describedby="audit-user-help" />
@@ -74,7 +75,7 @@
     </div>
     <div class="a4-field">
         <div class="a4-actions">
-            <button type="submit" class="a4-btn a4-btn-primary">{'Show'|i18n( 'design/admin/user/audit' )}</button>
+            <button type="submit" class="a4-btn a4-btn-primary" name="FilterButton" value="1">{'Show'|i18n( 'design/admin/user/audit' )}</button>
             {if $audit_query|ne( '' )}<a class="a4-btn" href={$uri|ezurl}>{'Clear'|i18n( 'design/admin/user/audit' )}</a>{/if}
         </div>
     </div>
@@ -108,8 +109,8 @@
 <tr>
     <td class="a4-nowrap">{$row.created|l10n( 'shortdatetime' )}</td>
     <td><code>{$row.event_name|wash}</code><br /><span class="a4-badge {first_set( $result_levels[$row.result], 'is-info' )}">{first_set( $result_names[$row.result], $row.result )|wash}</span>{if $row.reason|ne( '' )} <span class="a4-muted">{$row.reason|wash}</span>{/if}</td>
-    <td>{if $row.target_id|gt( 0 )}<a href={concat( $uri, '?user=', $row.target_id )|ezurl} title="{'Every event of this account'|i18n( 'design/admin/user/audit' )}">{if $row.target_login|ne( '' )}{$row.target_login|wash}{else}#{$row.target_id}{/if}</a>{elseif $row.target_login|ne( '' )}{$row.target_login|wash}{else}<span class="a4-muted">{'unknown'|i18n( 'design/admin/user/audit' )}</span>{/if}{if eq( $row.target_type, 'group' )} <span class="a4-badge is-info">{'group'|i18n( 'design/admin/user/audit' )}</span>{/if}</td>
-    <td>{if $row.actor_id|gt( 0 )}<a href={concat( $uri, '?user=', $row.actor_id )|ezurl}>{if $row.actor_login|ne( '' )}{$row.actor_login|wash}{else}#{$row.actor_id}{/if}</a>{else}<span class="a4-muted">{'system'|i18n( 'design/admin/user/audit' )}</span>{/if}</td>
+    <td>{if $row.target_id|gt( 0 )}<a href={concat( $uri, '/(user)/', $row.target_id )|ezurl} title="{'Every event of this account'|i18n( 'design/admin/user/audit' )}">{if $row.target_login|ne( '' )}{$row.target_login|wash}{else}#{$row.target_id}{/if}</a>{elseif $row.target_login|ne( '' )}{$row.target_login|wash}{else}<span class="a4-muted">{'unknown'|i18n( 'design/admin/user/audit' )}</span>{/if}{if eq( $row.target_type, 'group' )} <span class="a4-badge is-info">{'group'|i18n( 'design/admin/user/audit' )}</span>{/if}</td>
+    <td>{if $row.actor_id|gt( 0 )}<a href={concat( $uri, '/(user)/', $row.actor_id )|ezurl}>{if $row.actor_login|ne( '' )}{$row.actor_login|wash}{else}#{$row.actor_id}{/if}</a>{else}<span class="a4-muted">{'system'|i18n( 'design/admin/user/audit' )}</span>{/if}</td>
     <td>{if $row.siteaccess|ne( '' )}{$row.siteaccess|wash}{/if}{if $row.host|ne( '' )}<br /><span class="a4-muted">{$row.host|wash}</span>{/if}{if $row.client_ip|ne( '' )}<br /><span class="a4-muted">{$row.client_ip|wash}</span>{/if}{if $row.module_view|ne( '' )}<br /><code>{$row.module_view|wash}</code>{/if}</td>
     <td>{if $row.before}<ul>{foreach $row.before as $field => $value}<li><code>{$field|wash}</code>: {$value|wash}</li>{/foreach}</ul>{/if}</td>
     <td>{if $row.after}<ul>{foreach $row.after as $field => $value}<li><code>{$field|wash}</code>: {$value|wash}</li>{/foreach}</ul>{/if}</td>

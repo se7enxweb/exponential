@@ -24,7 +24,7 @@ for example ["Is it still alive?"](../advocates/objection-is-it-still-alive.md).
 ### 1. "It is dead; eZ Publish ended in 2021."
 
 The eZ Publish line ended; the code base did not. 7x released 6.0.0 on 1 January 2024 and fourteen more releases
-until 7 June 2026, with 6.0.15 in development ([The 6.0.x releases at a glance](the-6-0-x-releases-at-a-glance.md)).
+until 7 June 2026, followed by the current 6.0.15 line ([The 6.0.x releases at a glance](the-6-0-x-releases-at-a-glance.md)).
 The README: "Exponential has made it beyond it's end of life in 2021 and survived".
 
 ### 2. "It is Ibexa's product."

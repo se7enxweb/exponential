@@ -31,7 +31,7 @@ einfacher Sprache um neue Inhalte oder um Änderungen“, und der Assistent „s
 Redakteur und mit dessen eigenen Berechtigungen“ ([README, Exponential Intelligence](https://github.com/se7enxweb/exponential/blob/main/README.md#exponential-intelligence-new)).
 Er arbeitet mit gehosteten Anbietern in den USA oder in der EU oder mit einem lokalen Open-Weight-Modell auf demselben
 Server; er hält jede Anfrage im Prüfprotokoll fest, ohne den Prompt oder die Antwort; und er zeigt bei jedem Klick das
-Modell, die Region und die Kosten. Er ist die Erweiterung `se7enxweb/expai`, die der Kernel ab der Entwicklungslinie
+Modell, die Region und die Kosten. Er ist die Erweiterung `se7enxweb/expai`, die der Kernel ab der Linie
 6.0.15 voraussetzt ([Funktionsseite zu expai](../../funktionen/6.0/erweiterungen/expai.md)).
 
 ## Was neu ist, und seit wann
@@ -43,7 +43,8 @@ Modell, die Region und die Kosten. Er ist die Erweiterung `se7enxweb/expai`, die
 | `composer.json` setzt `se7enxweb/expai` voraus, ebenso die Job-Warteschlange `expqueue` | 12. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution) |
 | Erstes Release der Erweiterung, 0.0.1.0 | die Quellen nennen kein Datum | [expai, Kurz gesagt](../../funktionen/6.0/erweiterungen/expai.md#kurz-gesagt) |
 
-Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht.
+Alles in der Linie 6.0.15. Die Daten sind Daten der Änderungen, keine Veröffentlichungsdaten; ob der Tag `v6.0.15`
+existiert, zeigt `git tag -l 'v6.0.*' --sort=version:refname`.
 
 ## Fakten, die Sie drucken können
 

@@ -52,7 +52,7 @@ Quellen: `README.md` („What does Exponential provide“, „License“, „Req
 | Die Projekt-Website nennt es „ein preisgekröntes Open-Source-Content-Management-System und Entwicklungsframework für Unternehmen, mit Funktionen für Web-Publishing, Medienportale, Intranets, E-Commerce und Extranets“. | exponential.earth, zitiert auf [Wer ist 7x?](../wer-ist-7x.md#das-produkt-was-exponential-ist) |
 | „Die Nutzung von Exponential unter den Bedingungen der GNU GPL ist kostenlos. Die Professional License ist nicht mehr erhältlich.“ | `README.md`, „License“ |
 | Urheberrechtsvermerke ab 1999 (eZ Systems AS) und ab 1998 (die Exponential Foundation und 7x); Git-Historie ab dem 2. September 2002 | `COPYRIGHT.md`; [Wer ist 7x?](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste) |
-| Releases 6.0.0 (1. Januar 2024) bis 6.0.14 (7. Juni 2026); 6.0.15 in Entwicklung | [Wer ist 7x?](../wer-ist-7x.md#die-releases-60x) |
+| Releases 6.0.0 (1. Januar 2024) bis 6.0.14 (7. Juni 2026); 6.0.15 ist die aktuelle Linie | [Wer ist 7x?](../wer-ist-7x.md#die-releases-60x) |
 | Sechs unterstützte Datenbanken: SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | `README.md`, [Unterstützte Datenbanken](../datenbankunterstuetzung.md) |
 | „fast jedes“ Betriebssystem, „auf dem PHP 8.0 oder später läuft“ | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | PHP 8.0 bis 8.5 (PHP 7.4 ohne Support nutzbar) werden unterstützt | `README.md`, „What version of PHP is required“ |

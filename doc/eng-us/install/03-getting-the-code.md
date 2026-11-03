@@ -37,7 +37,7 @@ Exponential is published as the Composer package
 | Default branch | `main` | the current development of the 6.0 line, today 6.0.15 |
 | Release branches | `6.0.7` to `6.0.14` | the state of each release line |
 
-The newest release tag at the time of writing is `v6.0.14`; the `main` branch identifies itself as `6.0.15stable`
+The current line, 6.0.15, follows the tag `v6.0.14`; the `main` branch identifies itself as `6.0.15stable`
 (`lib/version.php`) and carries the changes described in [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md). To see what
 is published now:
 
@@ -76,9 +76,10 @@ requirement your PHP does not meet:
 |---|---|---|
 | `v6.0.0` to `v6.0.7` | `^7.4 \|\| ^8.1` | not installable |
 | `v6.0.8` to `v6.0.14` | `^8.1` and later 8.x | not installable |
-| 6.0.15 (`main`, `dev-main` for Composer) | `^8.0` and later 8.x | installable |
+| 6.0.15 (`~6.0.15`; `main`, `dev-main` for Composer) | `^8.0` and later 8.x | installable |
 
-No published tag accepts PHP 8.0: on PHP 8.0, take `main` until a tag of the 6.0.15 line exists.
+None of the tags up to `v6.0.14` accepts PHP 8.0: on PHP 8.0, take the 6.0.15 line, with `~6.0.15` (the tag
+`v6.0.15` once it is published) or from `main`, which carries it.
 
 `composer.json` gives `main` the branch alias `6.0.x-dev` (`"extra": { "branch-alias": { "dev-main": "6.0.x-dev" } }`).
 Installed from `main`, the root package is then version `6.0.x-dev` as well as `dev-main`, so a package that
@@ -169,6 +170,7 @@ Without a version, Composer takes the newest stable release. To pin one, or to f
 
 ```bash
 composer create-project se7enxweb/exponential:v6.0.14 exponential
+composer create-project se7enxweb/exponential:~6.0.15 exponential
 composer create-project se7enxweb/exponential:dev-main exponential
 ```
 

@@ -115,7 +115,7 @@ zusätzliche Arbeit, jeweils mit der Seite, die es beschreibt:
 | Auf dem neuesten Stand bleiben | Git-Klone mit ihrer vollen Geschichte, von Hand oder automatisch aktualisiert | [Mit Git entwickeln](hilfe/mit-git-entwickeln.md), [Mit Git aktualisieren](hilfe/mit-git-aktualisieren.md) |
 
 Nichts davon ist eine eigene Edition. Es steckt im selben freien Paket, und das Neueste davon steht im
-[Changelog 6.0.15](../changelogs/6.0/6.0.15.md), solange 6.0.15 in Entwicklung ist.
+[Changelog 6.0.15](../changelogs/6.0/6.0.15.md), dem der aktuellen Linie.
 
 ## Warum es freie Software ist, und was Ihnen das gibt
 

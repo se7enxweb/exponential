@@ -82,6 +82,14 @@ $$;
 
 CREATE INDEX IF NOT EXISTS ezcobj_trash_trashed_by ON ezcontentobject_trash USING btree ( trashed_by );
 
+--
+-- An index on ezcontentobject.modified: Dashboard > Recent content lists the
+-- objects by their modification date, a page at a time, and on a large
+-- database that read must be indexed. Created only when missing.
+--
+
+CREATE INDEX IF NOT EXISTS ezcontentobject_modified ON ezcontentobject USING btree ( modified );
+
 
 --
 -- Sequence names: <table>_s becomes <table>_<column>_seq.

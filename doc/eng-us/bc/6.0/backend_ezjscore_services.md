@@ -183,7 +183,7 @@ Register the class in `ezjscore.ini.append.php`, run `php bin/php/ezpgenerateaut
 ### One declaration, three channels
 
 The same declaration serves HTTP (`ezjscore/call/exp<domain>::<method>`), MCP (the tools `exp_svc_<domain>_<method>`
-that expmcp generates from the catalogue) and, when the service opts in, the assistant of the extension expai. A read
+an MCP server generates from the catalogue) and, when the service opts in, the assistant of the extension expai. A read
 service opts in with `'ai' => true`, or with `'ai' => array( 'summary' => '...' )` to give the model its own
 description; services are private to the assistant by default, and a service with `'write' => true` is never offered.
 The catalogue reports the flag as `ai`. The assistant calls the service in process as the logged-in editor, with the

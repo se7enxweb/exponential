@@ -34,7 +34,7 @@ RELEASE
 Exponential <version> is out. <One change in plain words>. Changelog: <link>
 
 IN DEVELOPMENT
-Coming in the next Exponential release (6.0.15, in development): <feature>. From the changelog: <link>
+Coming in the next Exponential release (<version>, not tagged yet): <feature>. From the changelog: <link>
 
 FEATURE
 Exponential Intelligence, the writing assistant in Exponential, writes drafts and never publishes on its

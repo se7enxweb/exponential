@@ -46,7 +46,7 @@ wenn es keine Antwort gibt.
 
 | Frage | Stand |
 |---|---|
-| Wann 6.0.15 veröffentlicht wird | Kein Datum veröffentlicht ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)) |
+| Wann 6.0.15 veröffentlicht wird | Kein angekündigtes Datum; das Datum ist das des Tags `v6.0.15`, sobald es ihn gibt (`git tag -l 'v6.0.*'`) ([Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md)) |
 | Wie viele Jahre ein Release unterstützt wird | Keine Zahl von Jahren veröffentlicht; was dokumentiert ist, steht unter [Die Zusage zur Unterstützung](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |
 | Eine Roadmap mit Daten | Die Website des Projekts hat einen Link zur Roadmap; diese Hilfe zitiert keine datierten Pläne |
 

@@ -29,7 +29,7 @@ never changed afterwards.
 A version of Exponential is released when its Git tag (for example `v6.0.14`) is published in the repository
 [github.com/se7enxweb/exponential](https://github.com/se7enxweb/exponential). The tag is also the version Composer
 installs from Packagist. Work that is merged but not tagged belongs to the **development line**, which you may
-report on only if you say so plainly ([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
+report on only if you say so plainly ([Covering 6.0.15, before and after its tag](covering-6-0-15-while-in-development.md)).
 
 The project states that "A published tag is never changed: a fix for a problem in `v6.0.14` or an earlier tag
 reaches you as the next release, not as a corrected copy of the old one"
@@ -43,7 +43,7 @@ number will not change after you write about them ([Published versions never cha
 | Newest released version of Exponential | 6.0.14, tag `v6.0.14`, 7 June 2026 | [6.0.14 changelog](../../../changelogs/6.0/6.0.14.md), [release overview](../../release-overview) |
 | First release of the 6.0 line | 6.0.0, 1 January 2024 | [6.0.0 changelog](../../../changelogs/6.0/6.0.0.md) |
 | Number of 6.0.x releases | 15 (6.0.0 to 6.0.14) | [Who is 7x?, The 6.0.x releases](../who-is-7x.md#the-60x-releases) |
-| The development line | 6.0.15, not released, no date | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
+| The current release line | 6.0.15, on `main`, no tag `v6.0.15` on that day | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) |
 
 Check these again on the day you publish; a newer tag may exist by then
 ([Verifying a release yourself](verifying-a-release-yourself.md)).
@@ -77,7 +77,7 @@ story are on [Release story templates](release-story-templates.md).
 
 | Do not write | Write instead |
 |---|---|
-| "6.0.15 will ship on ..." | "6.0.15 is in development; the project has not announced a date." |
+| "6.0.15 will ship on ..." | No date before the tag exists; the release date is the date of the tag `v6.0.15`. |
 | "Version 6.0.14 was updated to fix ..." | "The fix is in the next version" (published versions never change) |
 | "eZ Publish 6.0.14" | "Exponential 6.0.14" ([Brand and naming rules](../business/brand-and-naming-rules.md#the-product-exponential)) |
 | A user count, market share or speed multiple | Leave it out; the sources do not give one ([Claims you must not make](../advocates/claims-you-must-not-make.md#numbers)) |
