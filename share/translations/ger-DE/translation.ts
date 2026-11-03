@@ -71365,6 +71365,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Schnell leeren</translation>
     </message>
     <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits von %count aus dem Cache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Kein Template gerendert (eine Ansicht aus dem View-Cache rendert keines).</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count Schlüssel sind nicht aufgeführt.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Offen halten</translation>
+    </message>
+    <message>
         <source>Keep open on reload</source>
         <translation>Beim Neuladen offen lassen</translation>
     </message>
@@ -71906,7 +71922,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Session</source>
-        <translation>Sitzung</translation>
+        <translation>Session</translation>
     </message>
     <message>
         <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
@@ -72006,7 +72022,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
-        <translation>Das Profil, das anonyme Besucher unter denselben ViewCacheTweaks bekommen, mit den Standardwerten der Präferenzen, ohne die Teile der Ansicht: Ein Listener, der die Sitzung liest, lässt sich dafür nicht fragen.</translation>
+        <translation>Das Profil, das anonyme Besucher unter denselben ViewCacheTweaks bekommen, mit den Standardwerten der Präferenzen, ohne die Teile der Ansicht: Ein Listener, der die Session liest, lässt sich dafür nicht fragen.</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -72111,6 +72127,142 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>No answer</source>
         <translation>Keine Antwort</translation>
+    </message>
+    <message>
+        <source>masked</source>
+        <translation>maskiert</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count weitere</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>zu tief verschachtelt für die Anzeige</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>gekürzt, insgesamt %count Zeichen</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Gestartet</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Cookie-Name</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Session-ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Handler</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Speicherpfad</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP-Vorgabe</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Lebensdauer (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>Lebensdauer %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Die eigene PHP-Session, wie sie beim Öffnen des Abschnitts war, nie eine andere. Werte von Schlüsseln, die nach Geheimnissen aussehen (Token, Hashes, Passwörter), sind maskiert (debugbar.ini SessionMask[]); alles andere erscheint so, wie es gespeichert ist, auch personenbezogene Daten.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count Schlüssel, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>groß</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Die Session ist leer.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Für diesen Request wurde keine Session gestartet.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extension %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel und Sonstiges</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Nicht alle Einträge werden gezeigt: Die Session enthält mehr, als hier aufgelistet werden kann.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Rahmen</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Alle aufklappen</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Alle zuklappen</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Schlüssel oder Wert</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Session durchsuchen</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>wie bei anonymen Besuchern</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>anders als bei anonymen Besuchern</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollen und Richtlinien</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Erklärungen zeigen</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Erklärungen ausblenden</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rollenzuweisungen</translation>
     </message>
 </context>
 <context>

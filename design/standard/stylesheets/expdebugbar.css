@@ -16,6 +16,7 @@
   --xd-accent: #0b5cad;
   --xd-accent-fg: #ffffff;
   --xd-ok: #1d6b35;
+  --xd-on-status: #ffffff; /* text on a status filled with --xd-ok/-warn/-high */
   --xd-ok-bg: #e3f3e7;
   --xd-warn: #7a4a00;
   --xd-warn-bg: #fff0c9;
@@ -43,7 +44,7 @@
   #debug {
     --xd-bg: #1c1e22; --xd-bg-soft: #26292e; --xd-bg-bar: #2a2a2a; --xd-fg: #e8eaed; --xd-fg-soft: #a9afb8;
     --xd-line: #454a52; --xd-line-strong: #6b717c; --xd-accent: #6aa9f0; --xd-accent-fg: #0d1117;
-    --xd-ok: #8fd6a3; --xd-ok-bg: #173323; --xd-warn: #ffd27a; --xd-warn-bg: #3a2c0c; --xd-high: #ff9d9d; --xd-high-bg: #4a1a1a;
+    --xd-ok: #8fd6a3; --xd-on-status: #10161c; --xd-ok-bg: #173323; --xd-warn: #ffd27a; --xd-warn-bg: #3a2c0c; --xd-high: #ff9d9d; --xd-high-bg: #4a1a1a;
     --xd-focus: #8ab4f8; --xd-row: #1c1e22; --xd-row-alt: #24272c; --xd-head: #2c3036; --xd-transaction: #34321c;
     --xd-shadow: rgba(0, 0, 0, .5); --xd-shadow-strong: rgba(0, 0, 0, .6);
     --xd-lv-notice: #8fd6a3; --xd-lv-warning: #ffd27a; --xd-lv-error: #ff9d9d; --xd-lv-debug: #e8b07a;
@@ -54,7 +55,7 @@
 html[data-a4-theme="dark"] #debug {
   --xd-bg: #1c1e22; --xd-bg-soft: #26292e; --xd-bg-bar: #2a2a2a; --xd-fg: #e8eaed; --xd-fg-soft: #a9afb8;
   --xd-line: #454a52; --xd-line-strong: #6b717c; --xd-accent: #6aa9f0; --xd-accent-fg: #0d1117;
-  --xd-ok: #8fd6a3; --xd-ok-bg: #173323; --xd-warn: #ffd27a; --xd-warn-bg: #3a2c0c; --xd-high: #ff9d9d; --xd-high-bg: #4a1a1a;
+  --xd-ok: #8fd6a3; --xd-on-status: #10161c; --xd-ok-bg: #173323; --xd-warn: #ffd27a; --xd-warn-bg: #3a2c0c; --xd-high: #ff9d9d; --xd-high-bg: #4a1a1a;
   --xd-focus: #8ab4f8; --xd-row: #1c1e22; --xd-row-alt: #24272c; --xd-head: #2c3036; --xd-transaction: #34321c;
   --xd-shadow: rgba(0, 0, 0, .5); --xd-shadow-strong: rgba(0, 0, 0, .6);
   --xd-lv-notice: #8fd6a3; --xd-lv-warning: #ffd27a; --xd-lv-error: #ff9d9d; --xd-lv-debug: #e8b07a;
@@ -133,6 +134,15 @@ body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
 #debug .exp-debug-from-render { margin: 0 0 8px; color: var(--xd-fg-soft); font-size: 12px; }
 /* OPcache, APCu, then the PHP and Exponential versions: the last chips, at the right end of the summary */
 #debug .exp-debug-chip.exp-debug-end { margin-inline-start: auto; }
+/* the request's HTTP status in colour (green, yellow for a redirect, red from 400 on) and the user with a person icon */
+#debug:not([data-exp-debug-theme="toolbar"]) .exp-debug-chip[data-key="request"] { font-weight: 700; border-color: transparent; color: var(--xd-on-status); background: var(--xd-ok); }
+#debug:not([data-exp-debug-theme="toolbar"]) .exp-debug-chip[data-key="request"][data-level="warn"] { background: var(--xd-warn); }
+#debug:not([data-exp-debug-theme="toolbar"]) .exp-debug-chip[data-key="request"][data-level="high"] { background: var(--xd-high); }
+#debug:not([data-exp-debug-theme="toolbar"]) .exp-debug-chip:is([data-key="userprofile"], [data-key="userlogin"])::before {
+  content: ""; display: inline-block; width: 12px; height: 12px; margin-inline-end: 4px; vertical-align: -1px; background-color: currentColor;
+  -webkit-mask: var(--xd-person) center / contain no-repeat; mask: var(--xd-person) center / contain no-repeat;
+}
+#debug { --xd-person: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z'/%3E%3C/svg%3E"); }
 
 /* --- the panel */
 #debug-details.active { padding: 0 12px 12px; color: var(--xd-fg); background: var(--xd-bg); }
@@ -213,6 +223,37 @@ textarea.exp-debug-copy-area { position: fixed; top: 0; left: -9999px; width: 1p
 #debug .exp-debug-policies-search { min-width: 16em; flex: 1 1 16em; }
 #debug .exp-debug-policy-all { color: var(--xd-warn); font-weight: bold; }
 #debug .exp-debug-user-policies-section > summary { cursor: pointer; font-weight: bold; margin: 12px 0 6px; }
+/* the User tab: an overview, then its parts as sub-tabs; "?" shows the explanations */
+#debug .exp-debug-overview { display: flex; flex-wrap: wrap; gap: 6px 28px; margin: 4px 0 0; }
+#debug .exp-debug-overview-item { display: flex; flex-direction: column; min-width: 0; }
+#debug .exp-debug-overview-item dt { font-size: 11px; color: var(--xd-fg-soft); text-transform: uppercase; letter-spacing: .03em; margin: 0; }
+#debug .exp-debug-overview-item dd { margin: 1px 0 0; white-space: nowrap; }
+#debug .exp-debug-subtabs { display: flex; flex-wrap: wrap; gap: 2px; align-items: flex-end; border-bottom: 1px solid var(--xd-line); margin: 10px 0 8px; }
+#debug .exp-debug-subtablist { display: flex; flex-wrap: wrap; gap: 2px; align-items: flex-end; }
+#debug .exp-debug-subtab { border: 1px solid transparent; border-bottom: 0; background: none; color: var(--xd-fg-soft); padding: 5px 12px; cursor: pointer; font: inherit; border-radius: 4px 4px 0 0; }
+#debug .exp-debug-subtab:hover { color: var(--xd-fg); background: var(--xd-bg-soft); }
+#debug .exp-debug-subtab[aria-selected="true"] { color: var(--xd-fg); border-color: var(--xd-line); background: var(--xd-bg); font-weight: 600; box-shadow: inset 0 2px 0 var(--xd-accent); margin-bottom: -1px; }
+#debug .exp-debug-subtab[data-matches]::after { content: " (" attr(data-matches) ")"; font-weight: normal; }
+#debug .exp-debug-subtab[data-matches="0"] { font-style: italic; }
+#debug .exp-debug-subtab-help { margin-left: auto; border: 1px solid var(--xd-line); background: none; color: var(--xd-fg-soft); border-radius: 50%; width: 1.8em; height: 1.8em; cursor: pointer; font: inherit; margin-bottom: 4px; }
+#debug .exp-debug-subtab-help[aria-pressed="true"] { color: var(--xd-fg); background: var(--xd-bg-soft); }
+#debug .exp-debug-explain-folded .exp-debug-render-explain { display: none; }
+/* the User tab's session: a table per group, nested keys indented under their parent, opened with the triangle */
+#debug .exp-debug-user-session-section > summary { cursor: pointer; font-weight: bold; margin: 12px 0 6px; }
+#debug .exp-debug-session-tools { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+#debug .exp-debug-session-filter { min-width: 16em; flex: 1 1 16em; }
+#debug .exp-debug-session-group { margin: 14px 0 4px; }
+#debug .exp-debug-session-table { width: 100%; }
+#debug .exp-debug-session-table tr:nth-child(even) > td { background: var(--xd-bg-soft, rgba(127, 127, 127, .06)); }
+#debug .exp-debug-session-keycell { padding-left: calc(4px + var(--depth, 0) * 1.4em); white-space: nowrap; }
+#debug .exp-debug-session-toggle, #debug .exp-debug-session-toggle-space { display: inline-block; width: 1.4em; text-align: center; }
+#debug .exp-debug-session-toggle { border: 0; background: none; padding: 0; cursor: pointer; color: inherit; font: inherit; }
+#debug .exp-debug-session-key { font-weight: bold; }
+#debug .exp-debug-session-size { text-align: right; white-space: nowrap; }
+#debug .exp-debug-session-value { overflow-wrap: anywhere; }
+#debug .exp-debug-session-value code { white-space: pre-wrap; }
+#debug .exp-debug-session-soft { color: var(--xd-fg-soft); }
+#debug .exp-debug-session-hit > td { outline: 1px solid var(--xd-warn); outline-offset: -1px; }
 
 /* --- settings */
 #debug .exp-debug-presets { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 6px 0 10px; }

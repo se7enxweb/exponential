@@ -67582,6 +67582,22 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>%hits of %count read from the cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Keep open on reload</source>
         <translation type="unfinished"></translation>
     </message>
@@ -69027,6 +69043,142 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No answer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>masked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

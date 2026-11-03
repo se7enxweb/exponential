@@ -60,6 +60,9 @@ class expDebugBarUser
             $perUser = strpos( $tweak, 'pr_user' ) !== false && !$user->isAnonymous();
             $profile = self::profile( $userKeys, $viewCache, $perUser ? (int)$user->attribute( 'contentobject_id' ) : null );
 
+            // only how many keys and how large, for the overview (one serialize() while the bar is rendered for this
+            // user): the content is loaded when its section is opened
+            $session = self::sessionStarted() && isset( $_SESSION ) && is_array( $_SESSION ) ? $_SESSION : null;
             $access = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? (string)$GLOBALS['eZCurrentAccess']['name'] : '';
             $profile['anonymous_profile'] = $user->isAnonymous() ? null : self::anonymousProfile( $tweak, $profile['removed'], $cachedViewPreferences );
             $profile['preferences'] = $preferences['rows'];
@@ -69,6 +72,8 @@ class expDebugBarUser
                 'logged_in'   => (bool)$user->isRegistered(),
                 'siteaccess'  => $access,
                 'session'     => class_exists( 'eZSession', false ) && eZSession::hasStarted(),
+                'session_keys'  => $session === null ? 0 : count( $session ),
+                'session_bytes' => $session === null ? 0 : expDebugBarSession::bytes( $session ),
                 'node_id'     => $nodeID,
                 'tweak'       => $tweak,
                 'per_user'    => $perUser,
@@ -79,6 +84,12 @@ class expDebugBarUser
         {
             return null;
         }
+    }
+
+    /** Whether the request has a running session. */
+    protected static function sessionStarted()
+    {
+        return class_exists( 'eZSession', false ) && eZSession::hasStarted();
     }
 
     /**

@@ -43,7 +43,7 @@ at the bottom.
   failed.
 - **Minimise**: click the Exponential symbol at the left end (or press Enter or Space on it) and the whole bar
   becomes a 40 px tab in the bottom right corner showing only the symbol and the error count.
-- **Keep open on reload**: the bar remembers whether it was open (browser `localStorage` keys `exp-debug-keep` and
+- **Keep open on reload** (short "Keep open" in the bar, the whole words as its tooltip): the bar remembers whether it was open (browser `localStorage` keys `exp-debug-keep` and
   `exp-debug-open`); unticked, the details start closed on each page.
 - Readable in light and dark mode; no empty strip under the copyright any more.
 
@@ -58,11 +58,17 @@ the debug conditions of `debug.ini` are discovered automatically.
 The **Cache** tab lists the caches and clears them through the cache manager, showing when each was last cleared
 (or "never").
 
-The **User** tab (chip `VC <profile>`) shows the user's cache profile, the fingerprint of the parts of the content view
+The bar starts with the request: its HTTP status and module/view, green, amber for a redirect, red from status 400; it opens the **Rendering** tab, which starts with an overview
+(module view, view cache, cache blocks, templates) and shows its parts as sub-tabs: controller, template tree, content
+view cache, cache blocks and templates.
+
+The **User** tab (chip `<login> · VC <profile>`, with a person icon) opens with an overview of the user and has four
+sub-tabs (cache profile, preferences, roles and policies, session). It shows the user's cache profile, the fingerprint of the parts of the content view
 cache key that depend on the user, so two users can tell whether they share the cached views; their preferences and
 role assignments with links to the roles; and, for `setup/setup`, in a section loaded only when it is opened, the
 policies of those roles, a page at a time, by role and by search (`content/read` also finds the wildcards that grant
-it), with classes, sections, siteaccesses and nodes by name. The tab is for `setup/setup`, and for an anonymous visitor
+it), with classes, sections, siteaccesses and nodes by name; and the user's own PHP session as a table, loaded when
+its sub-tab is shown, secrets masked, grouped by extension, searchable. The tab is for `setup/setup`, and for an anonymous visitor
 who gets the debug output
 ([details](../../bc/6.0/debug-bar.md#user-roles-and-cache-profile)).
 

@@ -38,7 +38,7 @@ Leiste ist unten angeheftet.
   Fensters abzüglich der Leiste und wird pro Benutzer in der Einstellung `expdebugbar_panel_height` gemerkt, sodass sich
   der Bereich auf der nächsten Seite und in einem anderen Browser in dieser Höhe öffnet. Ohne Anmeldung (die Leiste nach
   IP gezeigt) wird die Höhe im Browser gehalten (Schlüssel `exp-debug-panel-height` in `localStorage`), nie in einer
-  Sitzung. Einzelheiten: [Die Höhe des Bereichs](../../bc/6.0/debug-leiste.md#die-höhe-des-panels).
+  Session. Einzelheiten: [Die Höhe des Bereichs](../../bc/6.0/debug-leiste.md#die-höhe-des-panels).
 - **Meldungen kopieren** auf dem Reiter Meldungen kopiert die gezeigten Meldungen (mit angewendeten Schaltflächen für die
   Stufe und dem Filterfeld) als einfachen Text in die Zwischenablage: pro Eintrag eine Zeile „Stufe: Quelle“, ein Tab und
   die Zeit, dann die Meldung, mit einer Leerzeile zwischen den Einträgen. Es verwendet die Zwischenablage des Browsers und,
@@ -47,7 +47,7 @@ Leiste ist unten angeheftet.
 - **Minimieren**: Klicken Sie auf das Exponential-Symbol am linken Ende (oder drücken Sie darauf Eingabe oder Leertaste),
   und die ganze Leiste wird zu einem Reiter von 40 px in der rechten unteren Ecke, der nur das Symbol und die Anzahl der
   Fehler zeigt.
-- **Beim Neuladen offen lassen**: Die Leiste merkt sich, ob sie offen war (Schlüssel `exp-debug-keep` und
+- **Beim Neuladen offen lassen** (in der Leiste kurz „Offen halten“, der volle Text als Tooltip): Die Leiste merkt sich, ob sie offen war (Schlüssel `exp-debug-keep` und
   `exp-debug-open` in `localStorage` des Browsers); ohne Haken beginnen die Details auf jeder Seite geschlossen.
 - Lesbar im hellen und im dunklen Modus; kein leerer Streifen mehr unter dem Copyright.
 
@@ -62,11 +62,18 @@ sie und vier Voreinstellungen (Template work, SQL tuning, Everything, Off). Exte
 Der Reiter **Cache** führt die Caches auf und leert sie über die Cache-Verwaltung, mit dem Zeitpunkt, an dem jeder zuletzt
 geleert wurde (oder „nie“).
 
-Der Reiter **Benutzer** (Chip `VC <Profil>`) zeigt das Cache-Profil des Benutzers, den Fingerabdruck der Teile des
+Die Leiste beginnt mit der Anfrage: HTTP-Status und Modul/View, grün, gelb bei einer Weiterleitung, rot ab Status 400; sie öffnet den Reiter **Rendering**, der mit
+einer Übersicht beginnt (Modul-View, Ansichts-Cache, Cache-Blöcke, Templates) und seine Teile als Unter-Reiter zeigt:
+Controller, Template-Baum, Ansichts-Cache von Inhalten, Cache-Blöcke und Templates.
+
+Der Reiter **Benutzer** (Chip `<Login> · VC <Profil>`, mit Personen-Symbol) beginnt mit einer Übersicht des Benutzers
+und hat vier Unter-Reiter (Cache-Profil, Präferenzen, Rollen und Richtlinien, Session). Er zeigt das Cache-Profil des Benutzers, den Fingerabdruck der Teile des
 Schlüssels im Ansichts-Cache von Inhalten, die vom Benutzer abhängen, sodass zwei Benutzer erkennen, ob sie sich die
 gecachten Ansichten teilen; seine Präferenzen und Rollenzuweisungen mit Links zu den Rollen; und für `setup/setup` in
 einem Abschnitt, der erst beim Öffnen geladen wird, die Richtlinien dieser Rollen, seitenweise, nach Rolle und per Suche
-(`content/read` findet auch die Platzhalter, die es gewähren), mit Klassen, Sektionen, Siteaccesses und Knoten mit Namen.
+(`content/read` findet auch die Platzhalter, die es gewähren), mit Klassen, Sektionen, Siteaccesses und Knoten mit Namen;
+und die eigene PHP-Session des Benutzers als Tabelle, geladen, wenn ihr Unter-Reiter gezeigt wird, Geheimnisse maskiert,
+nach Extension gruppiert, durchsuchbar.
 Der Reiter ist für `setup/setup` und für einen
 anonymen Besucher, der die Debug-Ausgabe erhält ([Details](../../bc/6.0/debug-leiste.md#benutzer-rollen-und-cache-profil)).
 

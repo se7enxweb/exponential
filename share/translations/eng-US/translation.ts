@@ -62658,6 +62658,22 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Quick clear</translation>
     </message>
     <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits of %count read from the cache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>No template was rendered (a view read from the view cache renders none).</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count keys are not listed.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Keep open</translation>
+    </message>
+    <message>
         <source>Keep open on reload</source>
         <translation>Keep open on reload</translation>
     </message>
@@ -63404,6 +63420,142 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>No answer</source>
         <translation>No answer</translation>
+    </message>
+    <message>
+        <source>masked</source>
+        <translation>masked</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count more</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>nested too deep to show</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>cut, %count characters in all</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Started</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Cookie name</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Session ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Handler</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Save path</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP default</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Lifetime (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>lifetime %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count keys, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>large</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>The session is empty.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>No session was started for this request.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extension %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel and others</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Not every entry is shown: the session has more than can be listed here.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Frame</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Open all</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Close all</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Key or value</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Search the session</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>same as anonymous visitors</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>differs from anonymous visitors</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roles and policies</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Show explanations</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Hide explanations</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Role assignments</translation>
     </message>
 </context>
 <context>

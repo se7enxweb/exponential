@@ -115,7 +115,10 @@ class expDebugBarUserTest extends PHPUnit\Framework\TestCase
     {
         $chip = expDebugBarReport::userChip( $this->profile() );
         $this->assertSame( 'user', $chip[0], 'opens the User tab' );
-        $this->assertSame( 'VC ' . $this->profile()['profile'], $chip[3] );
+        $this->assertSame( $this->profile()['login'] . ' · VC ' . $this->profile()['profile'], $chip[3], 'the login, then the profile' );
+        $this->assertSame( $this->profile()['login'], $chip['rows']['Login'] );
+        $login = expDebugBarReport::loginChip( array( 'login' => 'editor', 'id' => 14 ) );
+        $this->assertSame( array( 'messages', 'userlogin', 'ok', 'editor' ), array_slice( $login, 0, 4 ), 'without the User tab: the login alone' );
         $chip = expDebugBarReport::userChip( $this->profile( array( 'view_profile' => 'abcd1234', 'per_user' => true ) ) );
         $this->assertStringEndsWith( ' · abcd1234 · pr_user', $chip[3] );
         $this->assertContains( 'per user (pr_user)', $chip['rows'] );
