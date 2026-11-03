@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>แพ็กเกจ</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>เนื้อหา (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ถึง %to จาก %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>กรองรายการ</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>ทุกคลาส</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ส่วน</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>ภาษา</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>เจ้าของ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>เผยแพร่แล้ว</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>กลับลำดับ</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ไม่มีรายการ</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ต่อหน้า</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>แสดง %count รายการต่อหน้า.</translation>
+    </message>
 </context>
 </TS>

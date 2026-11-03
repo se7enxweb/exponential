@@ -85444,5 +85444,53 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
         <source>Packages</source>
         <translation>Amapaki</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Ibirimo (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kugeza %to muri %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Iyungurura urutonde</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Ubwoko bwose</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Igice</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Indimi</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Nyirabyo</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Byatangajwe</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Guhindura uko bikurikirana</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nta kintu</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Kuri buri rupapuro</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Kwerekana ibintu %count kuri buri rupapuro.</translation>
+    </message>
 </context>
 </TS>

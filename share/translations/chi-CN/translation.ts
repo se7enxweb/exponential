@@ -85442,5 +85442,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>软件包</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>内容（%count）</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>第 %from 至 %to 项，共 %count 项</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>筛选列表</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>所有类</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>分区</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>语言</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>所有者</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>已发布</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>反转顺序</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>没有条目</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>每页</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>每页显示 %count 个项目。</translation>
+    </message>
 </context>
 </TS>

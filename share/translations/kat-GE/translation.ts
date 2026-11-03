@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>პაკეტები</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>შიგთავსი (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to, სულ %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>სიის გაფილტვრა</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>ყველა კლასი</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>სექცია</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>ენები</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>მფლობელი</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>გამოქვეყნებული</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>რიგის შებრუნება</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ელემენტი არ არის</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>გვერდზე</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>გვერდზე %count ელემენტის ჩვენება.</translation>
+    </message>
 </context>
 </TS>

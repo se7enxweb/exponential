@@ -85452,5 +85452,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>ܨܪ̈ܪܐ</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>ܡܠܝܘܬܐ (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ܥܕܡܐ %to ܡܢ %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ܨܠܠܘ ܠܪܫܝܡܬܐ</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>ܟܠ ܙ̈ܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ܦܠܓܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>ܠܫ̈ܢܐ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ܡܪܐ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ܦܪܝܣܐ</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>ܗܦܟܐ ܕܛܟܣܐ</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ܠܝܬ ܡܢܬܐ</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ܒܟܠ ܦܐܬܐ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ܚܘܝܐ ܕ %count ܡ̈ܢܘܬܐ ܒܦܐܬܐ.</translation>
+    </message>
 </context>
 </TS>

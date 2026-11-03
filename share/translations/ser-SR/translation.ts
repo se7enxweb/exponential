@@ -85474,5 +85474,53 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <source>Packages</source>
         <translation>Paketi</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Sadržaj (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from do %to od %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtriraj listu</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Sve klase</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekcija</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Jezici</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Vlasnik</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Objavljeno</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Obrni redosled</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nema stavki</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Po stranici</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Prikaži %count stavki po stranici.</translation>
+    </message>
 </context>
 </TS>

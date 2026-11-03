@@ -85444,5 +85444,53 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>Packages</source>
         <translation>Gói</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Nội dung (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from đến %to trên %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Lọc danh sách</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Tất cả các lớp</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Khu vực</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Ngôn ngữ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Chủ sở hữu</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Đã xuất bản</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Đảo ngược thứ tự</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Không có mục nào</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Mỗi trang</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Hiển thị %count mục mỗi trang.</translation>
+    </message>
 </context>
 </TS>

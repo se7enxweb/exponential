@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>Ngaahi pēkeisi</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Meʻa ʻi loto (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ki he %to ʻo e %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sivi ʻa e lisi</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Ngaahi kalasi kotoa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Konga</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Ngaahi lea</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ʻOnā</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Kuo pulusi</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Fakafepaki ʻa e hokohoko</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ʻIkai ha meʻa</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ʻI he peesi taki taha</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Fakahā ʻa e ngaahi meʻa ʻe %count ʻi he peesi taki taha.</translation>
+    </message>
 </context>
 </TS>

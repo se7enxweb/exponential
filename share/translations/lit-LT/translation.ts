@@ -85474,5 +85474,53 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Packages</source>
         <translation>Paketai</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Turinys (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to iš %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtruoti sąrašą</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Visos klasės</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Skyrius</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Kalbos</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Savininkas</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publikuota</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Apversti tvarką</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Elementų nėra</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Puslapyje</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Rodyti %count elementų puslapyje.</translation>
+    </message>
 </context>
 </TS>

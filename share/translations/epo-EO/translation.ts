@@ -85444,5 +85444,53 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>Packages</source>
         <translation>Pakoj</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Enhavo (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ĝis %to el %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtri la liston</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Ĉiuj klasoj</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekcio</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Lingvoj</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Posedanto</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publikigita</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Inversigi la ordon</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Neniu ero</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Po paĝo</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Montri %count erojn po paĝo.</translation>
+    </message>
 </context>
 </TS>

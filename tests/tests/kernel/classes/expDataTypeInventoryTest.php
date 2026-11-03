@@ -179,6 +179,60 @@ class expDataTypeInventoryTest extends ezpTestCase
         $this->assertSame( array( 'settings' => array(), 'content' => array(), 'tables' => array() ), expDataTypeInventory::readSource( '' ) );
     }
 
+    public function testNodeParametersDefaultsAndChecks()
+    {
+        $this->assertSame( array( 'sort' => 'modified', 'order' => 'desc', 'offset' => 0, 'limit' => 25, 'class' => 0 ),
+                           expDataTypeInventory::nodeParameters( array(), array( 3, 7 ) ) );
+        $this->assertSame( array( 'sort' => 'name', 'order' => 'asc', 'offset' => 50, 'limit' => 50, 'class' => 7 ),
+                           expDataTypeInventory::nodeParameters( array( 'sort' => 'name', 'offset' => '50', 'limit' => '50', 'class' => '7' ), array( 3, 7 ) ) );
+        $this->assertSame( array( 'sort' => 'published', 'order' => 'asc', 'offset' => 0, 'limit' => 100, 'class' => 0 ),
+                           expDataTypeInventory::nodeParameters( array( 'sort' => 'published', 'order' => 'ASC', 'limit' => '100' ), array( 3 ) ) );
+        // anything else falls back: an unknown sort, order or page size, a negative offset, a class that does not use the datatype
+        $this->assertSame( array( 'sort' => 'modified', 'order' => 'desc', 'offset' => 0, 'limit' => 25, 'class' => 0 ),
+                           expDataTypeInventory::nodeParameters( array( 'sort' => 'owner', 'order' => 'up', 'offset' => '-5', 'limit' => '33', 'class' => '9' ), array( 3, 7 ) ) );
+        $this->assertSame( 'asc', expDataTypeInventory::nodeParameters( array( 'sort' => 'class' ), array() )['order'] );
+    }
+
+    public function testNodeListURLsCarryOnlyWhatDiffersFromTheDefaults()
+    {
+        $default = expDataTypeInventory::nodeParameters( array(), array( 3, 7 ) );
+        $this->assertSame( 'class/datatype/view/xrowmetadata', expDataTypeInventory::nodeListURL( 'xrowmetadata', $default ) );
+        $this->assertSame( array(), expDataTypeInventory::nodeViewParameters( $default ) );
+        $p = expDataTypeInventory::nodeParameters( array( 'sort' => 'name', 'order' => 'desc', 'limit' => '10', 'class' => '7', 'offset' => '20' ), array( 3, 7 ) );
+        $this->assertSame( 'class/datatype/view/xrowmetadata/(sort)/name/(order)/desc/(limit)/10/(class)/7', expDataTypeInventory::nodeListURL( 'xrowmetadata', $p ) );
+        $this->assertSame( 'class/datatype/view/xrowmetadata/(sort)/name/(order)/desc/(limit)/10/(class)/7/(offset)/30',
+                           expDataTypeInventory::nodeListURL( 'xrowmetadata', $p, array( 'offset' => 30 ) ) );
+        $this->assertSame( 'class/datatype/view/xrowmetadata/(class)/7', expDataTypeInventory::nodeListURL( 'xrowmetadata', $p, array( 'sort' => 'modified', 'order' => 'desc', 'limit' => 25 ) ) );
+    }
+
+    public function testNodeSortLinksReverseTheCurrentColumn()
+    {
+        $p = expDataTypeInventory::nodeParameters( array( 'class' => '3' ), array( 3 ) );
+        $links = expDataTypeInventory::nodeSortLinks( 'ezstring', $p );
+        $this->assertSame( array( 'modified', 'published', 'name', 'class' ), array_keys( $links ) );
+        $this->assertTrue( $links['modified']['current'] );
+        $this->assertSame( 'class/datatype/view/ezstring/(sort)/modified/(order)/asc/(class)/3', $links['modified']['url'] );
+        $this->assertFalse( $links['name']['current'] );
+        $this->assertSame( 'class/datatype/view/ezstring/(sort)/name/(order)/asc/(class)/3', $links['name']['url'] );
+        $this->assertSame( 'class/datatype/view/ezstring/(sort)/published/(order)/desc/(class)/3', $links['published']['url'] );
+    }
+
+    public function testNodeFetchParameters()
+    {
+        $p = expDataTypeInventory::nodeParameters( array( 'sort' => 'class', 'offset' => '25' ), array( 3, 7 ) );
+        $fetch = expDataTypeInventory::nodeFetchParameters( array( 3, 7 ), $p, array() );
+        $this->assertSame( array( 3, 7 ), $fetch['ClassFilterArray'] );
+        $this->assertTrue( $fetch['MainNodeOnly'] );
+        $this->assertSame( array( array( 'class_name', true ), array( 'name', true ) ), $fetch['SortBy'] );
+        $this->assertSame( 25, $fetch['Offset'] );
+        $this->assertSame( 25, $fetch['Limit'] );
+        $this->assertSame( array(), $fetch['Limitation'] );
+        $own = expDataTypeInventory::nodeFetchParameters( array( 3, 7 ), expDataTypeInventory::nodeParameters( array( 'class' => '7' ), array( 3, 7 ) ) );
+        $this->assertSame( array( 7 ), $own['ClassFilterArray'] );
+        $this->assertArrayNotHasKey( 'Limitation', $own, 'without a limitation given the read check of the current user applies' );
+        $this->assertSame( array( array( 'modified', false ), array( 'node_id', false ) ), $own['SortBy'] );
+    }
+
     public function testTheViewIsInTheModule()
     {
         $Module = null;

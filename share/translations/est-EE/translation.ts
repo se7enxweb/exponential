@@ -85474,5 +85474,53 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>Packages</source>
         <translation>Paketid</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Sisu (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtreeri loendit</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Kõik klassid</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Jaotis</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Keeled</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Omanik</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Avaldatud</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Pööra järjestus ümber</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Üksusi pole</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Lehel</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Kuva lehel %count üksust.</translation>
+    </message>
 </context>
 </TS>

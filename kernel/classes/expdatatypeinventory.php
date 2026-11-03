@@ -30,6 +30,11 @@ class expDataTypeInventory
     /** The filters of the list (view parameter filter) */
     const FILTERS = array( 'all', 'used', 'unused', 'orphans' );
 
+    /** The sorts of the content list of a datatype (view parameter sort), the first the default, and its page sizes */
+    const NODE_SORTS = array( 'modified', 'published', 'name', 'class' );
+    const NODE_PAGE_SIZES = array( 10, 25, 50, 100 );
+    const NODE_DEFAULT_LIMIT = 25;
+
     /** The settings columns of a class attribute */
     const SETTING_COLUMNS = array( 'data_int1', 'data_int2', 'data_int3', 'data_int4', 'data_float1', 'data_float2',
                                    'data_float3', 'data_float4', 'data_text1', 'data_text2', 'data_text3', 'data_text4',
@@ -263,10 +268,10 @@ class expDataTypeInventory
      * @param callable $count
      * @return array the counted data with counted => timestamp
      */
-    protected static function cached( $name, $refresh, $count )
+    protected static function cached( $name, $refresh, $count, $extraKey = '' )
     {
         $db = eZDB::instance();
-        $key = md5( $db->databaseName() . '|' . ( isset( $db->DB ) && is_string( $db->DB ) ? $db->DB : '' ) );
+        $key = md5( $db->databaseName() . '|' . ( isset( $db->DB ) && is_string( $db->DB ) ? $db->DB : '' ) . '|' . $extraKey );
         $file = eZSys::cacheDirectory() . '/class-datatype-' . $name . '-' . substr( $key, 0, 12 ) . '.json';
         if ( !$refresh )
         {
@@ -664,21 +669,201 @@ class expDataTypeInventory
         return array( 'attributes' => $list, 'classes' => $classes );
     }
 
+    // --------------------------------------------------------------------------------------------------------
+    // The content using a datatype (the paged list of the detail page)
+
     /**
-     * Some nodes of the classes that use a datatype, last modified first, as the current user may read them.
+     * The view parameters of the content list, checked: sort (NODE_SORTS), order (asc|desc; the default is desc for
+     * the dates and asc for name and class), offset, limit (NODE_PAGE_SIZES) and class (one of the classes that use
+     * the datatype, 0 for all of them).
      *
-     * @param array $classIDs
-     * @param int $limit
-     * @return array of eZContentObjectTreeNode
+     * @param array $userParameters the view's UserParameters
+     * @param int[] $classIDs the classes that use the datatype
+     * @return array hash( sort, order, offset, limit, class )
      */
-    public static function sampleNodes( array $classIDs, $limit = 10 )
+    public static function nodeParameters( array $userParameters, array $classIDs )
+    {
+        $sort = isset( $userParameters['sort'] ) ? (string)$userParameters['sort'] : '';
+        if ( !in_array( $sort, self::NODE_SORTS, true ) )
+            $sort = self::NODE_SORTS[0];
+        $order = isset( $userParameters['order'] ) ? strtolower( (string)$userParameters['order'] ) : '';
+        if ( $order !== 'asc' && $order !== 'desc' )
+            $order = self::defaultNodeOrder( $sort );
+        $limit = isset( $userParameters['limit'] ) && ctype_digit( (string)$userParameters['limit'] ) ? (int)$userParameters['limit'] : 0;
+        if ( !in_array( $limit, self::NODE_PAGE_SIZES, true ) )
+            $limit = self::NODE_DEFAULT_LIMIT;
+        $offset = isset( $userParameters['offset'] ) && ctype_digit( (string)$userParameters['offset'] ) ? (int)$userParameters['offset'] : 0;
+        $class = isset( $userParameters['class'] ) && ctype_digit( (string)$userParameters['class'] ) ? (int)$userParameters['class'] : 0;
+        if ( !in_array( $class, array_map( 'intval', $classIDs ), true ) )
+            $class = 0;
+        return array( 'sort' => $sort, 'order' => $order, 'offset' => min( $offset, 10000000 ), 'limit' => $limit, 'class' => $class );
+    }
+
+    /**
+     * @param string $sort
+     * @return string the order a column starts with: newest first for the dates, A to Z for the names
+     */
+    public static function defaultNodeOrder( $sort )
+    {
+        return $sort === 'name' || $sort === 'class' ? 'asc' : 'desc';
+    }
+
+    /**
+     * The view parameters of the content list that differ from the defaults, without the offset (the pager adds it).
+     *
+     * @param array $params nodeParameters()
+     * @param array $overrides keys of $params to change
+     * @return array name => value, in the order sort, order, limit, class
+     */
+    public static function nodeViewParameters( array $params, array $overrides = array() )
+    {
+        $p = array_merge( $params, $overrides );
+        $out = array();
+        if ( $p['sort'] !== self::NODE_SORTS[0] || $p['order'] !== self::defaultNodeOrder( $p['sort'] ) )
+        {
+            $out['sort'] = $p['sort'];
+            $out['order'] = $p['order'];
+        }
+        if ( (int)$p['limit'] !== self::NODE_DEFAULT_LIMIT )
+            $out['limit'] = (int)$p['limit'];
+        if ( (int)$p['class'] > 0 )
+            $out['class'] = (int)$p['class'];
+        return $out;
+    }
+
+    /**
+     * The address of the detail page with the content list's view parameters ("/(name)/value" each).
+     *
+     * @param string $string the datatype string
+     * @param array $params nodeParameters()
+     * @param array $overrides
+     * @return string module-relative
+     */
+    public static function nodeListURL( $string, array $params, array $overrides = array() )
+    {
+        $url = 'class/datatype/view/' . $string;
+        foreach ( self::nodeViewParameters( $params, $overrides ) as $name => $value )
+            $url .= '/(' . $name . ')/' . $value;
+        $offset = array_key_exists( 'offset', $overrides ) ? (int)$overrides['offset'] : 0;
+        return $url . ( $offset > 0 ? '/(offset)/' . $offset : '' );
+    }
+
+    /**
+     * The links of the sortable column heads: the same filter and page size, from the first page, that column, the
+     * other order when it is the current one.
+     *
+     * @param string $string
+     * @param array $params nodeParameters()
+     * @return array sort => hash( url, current, order (of the link) )
+     */
+    public static function nodeSortLinks( $string, array $params )
+    {
+        $out = array();
+        foreach ( self::NODE_SORTS as $sort )
+        {
+            $current = $params['sort'] === $sort;
+            $order = $current ? ( $params['order'] === 'asc' ? 'desc' : 'asc' ) : self::defaultNodeOrder( $sort );
+            $out[$sort] = array( 'url' => self::nodeListURL( $string, $params, array( 'sort' => $sort, 'order' => $order ) ),
+                                 'current' => $current, 'order' => $order );
+        }
+        return $out;
+    }
+
+    /**
+     * The parameters of the tree fetch of the content list: the main nodes of the objects of the classes, below the
+     * top node, with the read check of the current user (or the limitation given), sorted, one page.
+     *
+     * @param int[] $classIDs
+     * @param array $params nodeParameters()
+     * @param array|null $limitation null for the current user's, array() for none (the tests)
+     * @return array
+     */
+    public static function nodeFetchParameters( array $classIDs, array $params, $limitation = null )
+    {
+        $classes = $params['class'] > 0 ? array( (int)$params['class'] ) : array_values( array_map( 'intval', $classIDs ) );
+        $asc = $params['order'] === 'asc';
+        $sortBy = array( 'modified' => array( array( 'modified', $asc ), array( 'node_id', $asc ) ),
+                         'published' => array( array( 'published', $asc ), array( 'node_id', $asc ) ),
+                         'name' => array( array( 'name', $asc ), array( 'node_id', true ) ),
+                         'class' => array( array( 'class_name', $asc ), array( 'name', true ) ) );
+        $fetch = array( 'ClassFilterType' => 'include', 'ClassFilterArray' => $classes, 'MainNodeOnly' => true,
+                        'SortBy' => $sortBy[$params['sort']], 'Offset' => (int)$params['offset'], 'Limit' => (int)$params['limit'],
+                        'LoadDataMap' => false );
+        if ( $limitation !== null )
+            $fetch['Limitation'] = $limitation;
+        return $fetch;
+    }
+
+    /**
+     * One page of the content using a datatype, as the current user may read it, and how much there is. The count
+     * is kept CACHE_TTL seconds per classes and read policy; an offset past the end goes to the last page.
+     *
+     * @param int[] $classIDs the classes that use the datatype
+     * @param array $params nodeParameters()
+     * @param bool $refresh count again
+     * @param array|null $limitation see nodeFetchParameters()
+     * @return array hash( rows => nodeRows(), total, offset )
+     */
+    public static function nodePage( array $classIDs, array $params, $refresh = false, $limitation = null )
     {
         if ( !$classIDs )
-            return array();
-        $nodes = eZContentObjectTreeNode::subTreeByNodeID( array( 'ClassFilterType' => 'include', 'ClassFilterArray' => array_values( $classIDs ),
-                                                                  'SortBy' => array( 'modified', false ), 'Limit' => (int)$limit,
-                                                                  'LoadDataMap' => false, 'MainNodeOnly' => true ), 1 );
-        return is_array( $nodes ) ? $nodes : array();
+            return array( 'rows' => array(), 'total' => 0, 'offset' => 0 );
+        $fetch = self::nodeFetchParameters( $classIDs, $params, $limitation );
+        $count = $fetch;
+        unset( $count['SortBy'], $count['Offset'], $count['Limit'] );
+        if ( $limitation === null )
+        {
+            $access = eZUser::currentUser()->hasAccessTo( 'content', 'read' );
+            $key = md5( json_encode( $count['ClassFilterArray'] ) . '|' . json_encode( $access ) );
+            $counted = self::cached( 'nodes', $refresh, function () use ( $count )
+            {
+                return array( 'total' => (int)eZContentObjectTreeNode::subTreeCountByNodeID( $count, 1 ) );
+            }, $key );
+            $total = (int)$counted['total'];
+        }
+        else
+            $total = (int)eZContentObjectTreeNode::subTreeCountByNodeID( $count, 1 );
+        if ( $total > 0 && $fetch['Offset'] >= $total )
+            $fetch['Offset'] = (int)( floor( ( $total - 1 ) / $fetch['Limit'] ) * $fetch['Limit'] );
+        $nodes = $total > 0 ? eZContentObjectTreeNode::subTreeByNodeID( $fetch, 1 ) : array();
+        return array( 'rows' => self::nodeRows( is_array( $nodes ) ? $nodes : array() ), 'total' => $total, 'offset' => $total > 0 ? $fetch['Offset'] : 0 );
+    }
+
+    /**
+     * The rows of the content list: name, class, section, languages (every translation), owner and the dates of each node.
+     *
+     * @param eZContentObjectTreeNode[] $nodes
+     * @return array
+     */
+    public static function nodeRows( array $nodes )
+    {
+        $sections = array();
+        foreach ( (array)eZSection::fetchList( false ) as $section )
+            $sections[(int)$section['id']] = (string)$section['name'];
+        $owners = array();
+        $rows = array();
+        foreach ( $nodes as $node )
+        {
+            $object = $node->attribute( 'object' );
+            if ( !$object )
+                continue;
+            $ownerID = (int)$object->attribute( 'owner_id' );
+            if ( !array_key_exists( $ownerID, $owners ) )
+            {
+                $owner = $ownerID > 0 ? eZContentObject::fetch( $ownerID ) : null;
+                $owners[$ownerID] = $owner ? array( 'name' => (string)$owner->attribute( 'name' ), 'node_id' => (int)$owner->attribute( 'main_node_id' ) )
+                                           : array( 'name' => '', 'node_id' => 0 );
+            }
+            $sectionID = (int)$object->attribute( 'section_id' );
+            $rows[] = array( 'node_id' => (int)$node->attribute( 'node_id' ), 'name' => (string)$node->attribute( 'name' ),
+                             'url_alias' => (string)$node->attribute( 'url_alias' ),
+                             'class_name' => (string)$node->attribute( 'class_name' ), 'class_id' => (int)$object->attribute( 'contentclass_id' ),
+                             'section_id' => $sectionID, 'section_name' => isset( $sections[$sectionID] ) ? $sections[$sectionID] : '',
+                             'languages' => array_values( array_map( function ( $language ) { return (string)$language->attribute( 'locale' ); }, (array)$object->allLanguages() ) ),
+                             'owner_id' => $ownerID, 'owner_name' => $owners[$ownerID]['name'], 'owner_node_id' => $owners[$ownerID]['node_id'],
+                             'modified' => (int)$object->attribute( 'modified' ), 'published' => (int)$object->attribute( 'published' ) );
+        }
+        return $rows;
     }
 
     /**

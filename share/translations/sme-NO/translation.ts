@@ -85444,5 +85444,53 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>Packages</source>
         <translation>Páhkat</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Sisdoallu (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from rádjai %to, buohkaid lohku %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sillo listtu</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Buot luohkát</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Oassi</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Gielat</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eaiggát</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Almmuhuvvon</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Jorgal ortnega</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ii makkárge elemeanta</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Siidui</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Čájet %count elemeantta siiddus.</translation>
+    </message>
 </context>
 </TS>

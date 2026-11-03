@@ -85474,5 +85474,53 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>Packages</source>
         <translation>Paketit</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Sisältö (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Suodata luetteloa</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Kaikki luokat</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Osio</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Kielet</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Omistaja</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Julkaistu</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Käännä järjestys</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ei kohteita</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Sivua kohden</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Näytä %count kohdetta sivulla.</translation>
+    </message>
 </context>
 </TS>

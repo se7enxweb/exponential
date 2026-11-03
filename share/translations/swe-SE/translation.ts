@@ -86747,5 +86747,53 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Packages</source>
         <translation>Paket</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Innehåll (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from till %to av %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrera listan</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Alla klasser</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sektion</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Språk</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Ägare</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicerad</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Vänd ordningen</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Inget objekt</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per sida</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Visa %count objekt per sida.</translation>
+    </message>
 </context>
 </TS>

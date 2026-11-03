@@ -85444,5 +85444,53 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>Packages</source>
         <translation>Paquetes</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Contido (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to de %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrar a lista</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Todas as clases</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sección</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Idiomas</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Propietario</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicado</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Inverter a orde</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ningún elemento</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Por páxina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Amosar %count elementos por páxina.</translation>
+    </message>
 </context>
 </TS>

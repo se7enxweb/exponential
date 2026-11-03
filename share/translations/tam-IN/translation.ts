@@ -85442,5 +85442,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>தொகுப்புகள்</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>உள்ளடக்கம் (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count இல் %from முதல் %to வரை</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>பட்டியலை வடிகட்டு</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>அனைத்து வகுப்புகளும்</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>பிரிவு</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>மொழிகள்</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>உரிமையாளர்</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>வெளியிடப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>வரிசையைத் தலைகீழாக்கு</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>உருப்படி இல்லை</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ஒரு பக்கத்துக்கு</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ஒரு பக்கத்திற்கு %count உருப்படிகளைக் காட்டு.</translation>
+    </message>
 </context>
 </TS>

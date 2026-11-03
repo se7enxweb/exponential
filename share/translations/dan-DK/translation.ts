@@ -86124,5 +86124,53 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>Packages</source>
         <translation>Pakker</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Indhold (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from til %to af %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrér listen</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Alle klasser</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sektion</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Sprog</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Ejer</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publiceret</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Vend rækkefølgen om</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Intet element</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pr. side</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Vis %count elementer pr. side.</translation>
+    </message>
 </context>
 </TS>

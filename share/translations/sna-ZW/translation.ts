@@ -85444,5 +85444,53 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>Packages</source>
         <translation>Mapakeji</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Zvirimo (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kusvika %to mune %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sefa rondedzero</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Makirasi ose</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Chikamu</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Mitauro</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Muridzi</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Zvakabudiswa</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Dzosera kurongeka</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Hapana chinhu</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Papeji rimwe nerimwe</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Ratidza zvinhu: %count papeji rimwe nerimwe.</translation>
+    </message>
 </context>
 </TS>

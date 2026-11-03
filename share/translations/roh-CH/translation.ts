@@ -85444,5 +85444,53 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>Packages</source>
         <translation>Pachets</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Cuntegn (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from fin %to da %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrar la glista</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Tut las classas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Secziun</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Linguas</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Possessur</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publitgà</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Inversar l'urden</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nagin element</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pagina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Mussar %count elements per pagina.</translation>
+    </message>
 </context>
 </TS>

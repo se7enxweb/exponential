@@ -85444,5 +85444,53 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>Packages</source>
         <translation>Mga pakete</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Sulod (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hangtod %to sa %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Salaa ang lista</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Tanang klase</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksyon</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Mga pinulongan</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tag-iya</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Na-publish</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Balihon ang han-ay</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Walay butang</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Matag panid</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Ipakita ang %count ka butang matag panid.</translation>
+    </message>
 </context>
 </TS>

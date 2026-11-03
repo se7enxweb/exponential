@@ -2,11 +2,13 @@
 
    Its meta data (PHP class, file, provider, flags), the settings columns of a class attribute it reads, its
    templates in the administration and the default site, the classes and class attributes that use it with their
-   objects, some of its nodes, the tables its code names and its help page.
+   objects, the content using it (paged, sortable, by class), the tables its code names and its help page.
 
    Variables (kernel/private/classes/views/class/datatype.php): datatype (a row of expDataTypeInventory::build()),
    datatype_source (settings, content, tables), datatype_tables, datatype_attributes, datatype_classes,
-   datatype_templates, datatype_nodes, datatype_help_page, datatype_counted, datatype_current_access, module.
+   datatype_templates, datatype_nodes (a page of expDataTypeInventory::nodeRows()), datatype_node_total,
+   datatype_node_params, datatype_node_sort_links, datatype_node_size_links, datatype_node_page_uri, view_parameters,
+   datatype_help_page, datatype_counted, datatype_current_access, module.
    The same file is in design/admin and design/admin4. Guide: doc/eng-us/guides/datatypes.md *}
 
 {def $dt = $datatype}
@@ -163,28 +165,84 @@
 </section>
 {/if}
 
-{if $datatype_nodes|count}
+{if $datatype_classes|count}
+{def $np = $datatype_node_params}
 <section class="a4-section" aria-labelledby="datatype-nodes-title">
-<div class="a4-section-head"><h2 class="a4-h2" id="datatype-nodes-title">{'Some content using it'|i18n( 'design/admin/class/datatype' )}</h2><span class="a4-meta">{'Last modified first'|i18n( 'design/admin/class/datatype' )}</span></div>
-<div class="a4-table-wrap">
+<div class="a4-section-head"><h2 class="a4-h2" id="datatype-nodes-title">{'Content (%count)'|i18n( 'design/admin/class/datatype',, hash( '%count', $datatype_node_total ) )|wash}</h2>
+{if $datatype_node_total|gt( 0 )}<span class="a4-meta">{'%from to %to of %count'|i18n( 'design/admin/class/datatype',, hash( '%from', sum( $np.offset, 1 ), '%to', min( sum( $np.offset, $np.limit ), $datatype_node_total ), '%count', $datatype_node_total ) )}</span>{/if}</div>
+
+{if $datatype_classes|count|gt( 1 )}
+<form class="a4-filterbar" method="post" action={concat( 'class/datatype/view/', $dt.string )|ezurl} role="search" aria-label="{'Filter the list'|i18n( 'design/admin/class/datatype' )}">
+    <input type="hidden" name="sort" value="{$np.sort|wash}" />
+    <input type="hidden" name="order" value="{$np.order|wash}" />
+    <input type="hidden" name="limit" value="{$np.limit|wash}" />
+    <div class="a4-field">
+        <label for="datatype-node-class">{'Class'|i18n( 'design/admin/class/datatype' )}</label>
+        <select id="datatype-node-class" name="class">
+            <option value="0">{'All classes'|i18n( 'design/admin/class/datatype' )}</option>
+            {foreach $datatype_classes as $class}<option value="{$class.id}"{if eq( $class.id, $np.class )} selected="selected"{/if}>{$class.name|wash}</option>{/foreach}
+        </select>
+    </div>
+    <div class="a4-field">
+        <div class="a4-actions">
+            <button type="submit" class="a4-btn a4-btn-primary" name="DataTypeNodeFilterButton" value="1">{'Show'|i18n( 'design/admin/class/datatype' )}</button>
+        </div>
+    </div>
+</form>
+{/if}
+
+{if $datatype_nodes|count}
+<div class="a4-table-wrap" role="region" aria-labelledby="datatype-nodes-title" tabindex="0">
 <table class="a4-table">
 <thead><tr>
-    <th scope="col">{'Name'|i18n( 'design/admin/class/datatype' )}</th>
-    <th scope="col">{'Class'|i18n( 'design/admin/class/datatype' )}</th>
-    <th scope="col">{'Modified'|i18n( 'design/admin/class/datatype' )}</th>
+    {foreach hash( 'name', 'Name'|i18n( 'design/admin/class/datatype' ), 'class', 'Class'|i18n( 'design/admin/class/datatype' ),
+                   'section', 'Section'|i18n( 'design/admin/class/datatype' ), 'languages', 'Languages'|i18n( 'design/admin/class/datatype' ),
+                   'owner', 'Owner'|i18n( 'design/admin/class/datatype' ), 'modified', 'Modified'|i18n( 'design/admin/class/datatype' ),
+                   'published', 'Published'|i18n( 'design/admin/class/datatype' ) ) as $column => $text}
+    {if is_set( $datatype_node_sort_links[$column] )}
+    <th scope="col"{if $datatype_node_sort_links[$column].current} aria-sort="{if eq( $np.order, 'asc' )}ascending{else}descending{/if}"{/if}><a href={$datatype_node_sort_links[$column].url|ezurl}{if $datatype_node_sort_links[$column].current} title="{'Reverse the order'|i18n( 'design/admin/class/datatype' )}"{/if}>{$text|wash}{if $datatype_node_sort_links[$column].current} {if eq( $np.order, 'asc' )}&#8593;{else}&#8595;{/if}{/if}</a></th>
+    {else}
+    <th scope="col">{$text|wash}</th>
+    {/if}
+    {/foreach}
 </tr></thead>
 <tbody>
 {foreach $datatype_nodes as $node}
 <tr>
     <td><a href={$node.url_alias|ezurl}>{$node.name|wash}</a> <span class="a4-meta">{'Node %id'|i18n( 'design/admin/class/datatype',, hash( '%id', $node.node_id ) )}</span></td>
-    <td>{$node.class_name|wash}</td>
-    <td>{$node.object.modified|l10n( shortdatetime )}</td>
+    <td><a href={concat( 'class/view/', $node.class_id )|ezurl}>{$node.class_name|wash}</a></td>
+    <td>{if $node.section_name|ne( '' )}<a href={concat( 'section/view/', $node.section_id )|ezurl}>{$node.section_name|wash}</a>{else}{$node.section_id}{/if}</td>
+    <td>{foreach $node.languages as $language}<code class="a4-kbd">{$language|wash}</code> {/foreach}</td>
+    <td>{if $node.owner_node_id|gt( 0 )}<a href={concat( 'content/view/full/', $node.owner_node_id )|ezurl}>{$node.owner_name|wash}</a>{elseif $node.owner_name|ne( '' )}{$node.owner_name|wash}{else}<span class="a4-muted">{'none'|i18n( 'design/admin/class/datatype' )}</span>{/if}</td>
+    <td class="a4-nowrap">{$node.modified|l10n( shortdatetime )}</td>
+    <td class="a4-nowrap">{$node.published|l10n( shortdatetime )}</td>
 </tr>
 {/foreach}
 </tbody>
 </table>
 </div>
+{else}
+<p class="a4-empty">{'No item'|i18n( 'design/admin/class/datatype' )}</p>
+{/if}
+
+<div class="a4-listfoot">
+    <p class="a4-sizes">
+        <span>{'Per page'|i18n( 'design/admin/class/datatype' )}:</span>
+    {foreach $datatype_node_size_links as $size => $size_url}
+        {if eq( $size, $np.limit )}<span class="current" aria-current="true">{$size}</span>{else}<a href={$size_url|ezurl} title="{'Show %count items per page.'|i18n( 'design/admin/class/datatype',, hash( '%count', $size ) )}">{$size}</a>{/if}
+    {/foreach}
+    </p>
+    <div class="a4-pager">
+    {include name=navigator
+             uri='design:navigator/google.tpl'
+             page_uri=$datatype_node_page_uri
+             item_count=$datatype_node_total
+             view_parameters=$view_parameters
+             item_limit=$np.limit}
+    </div>
+</div>
 </section>
+{undef $np}
 {/if}
 
 </div></div></div>

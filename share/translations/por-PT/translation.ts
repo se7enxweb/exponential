@@ -85474,5 +85474,53 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>Packages</source>
         <translation>Pacotes</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Conteúdo (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to de %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrar a lista</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Todas as classes</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Secção</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Idiomas</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Proprietário</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicado</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Inverter a ordem</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nenhum item</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Por página</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Mostrar %count itens por página.</translation>
+    </message>
 </context>
 </TS>

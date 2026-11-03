@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>सङ्कुलानि</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>विषयवस्तु (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count मध्ये %from तः %to पर्यन्तम्</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>सूचीं छानयतु</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>सर्वे वर्गाः</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>विभागः</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>भाषाः</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>स्वामी</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>प्रकाशितम्</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>क्रमस्य व्युत्क्रमणम्</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>किमपि अङ्कनं नास्ति</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>प्रतिपृष्ठम्</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>प्रतिपृष्ठं %count अङ्कनानि दर्शयतु।</translation>
+    </message>
 </context>
 </TS>

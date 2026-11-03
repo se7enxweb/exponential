@@ -86669,5 +86669,53 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Packages</source>
         <translation>Pakketten</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Inhoud (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from tot %to van %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>De lijst filteren</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Alle klassen</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sectie</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Talen</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eigenaar</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Gepubliceerd</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>De volgorde omkeren</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Geen element</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pagina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count items per pagina tonen.</translation>
+    </message>
 </context>
 </TS>

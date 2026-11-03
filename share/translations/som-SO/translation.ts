@@ -85442,5 +85442,53 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>Packages</source>
         <translation>Xirmooyin</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Nuxur (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ilaa %to ee %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Shaandhee liiska</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Dhammaan fasallada</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Qaybta</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Luqadaha</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Mulkiile</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>La daabacay</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Rog habka</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Shay ma jiro</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Bog kasta</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Muuji %count shay bog kasta.</translation>
+    </message>
 </context>
 </TS>

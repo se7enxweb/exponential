@@ -85474,5 +85474,53 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>Packages</source>
         <translation>Balíky</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Obsah (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from až %to z %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrovať zoznam</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Všetky triedy</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekcia</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Jazyky</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Vlastník</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publikované</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Obrátiť poradie</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Žiadna položka</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stránku</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Zobraziť na stránke tento počet položiek: %count.</translation>
+    </message>
 </context>
 </TS>

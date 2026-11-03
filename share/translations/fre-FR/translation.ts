@@ -86884,5 +86884,53 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Packages</source>
         <translation>Paquetages</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Contenu (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from à %to sur %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrer la liste</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Toutes les classes</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Section</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Langues</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Propriétaire</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publié</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Inverser l'ordre</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Aucun élément</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Par page</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Afficher %count éléments par page.</translation>
+    </message>
 </context>
 </TS>

@@ -85474,5 +85474,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>Пакети</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Вміст (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to із %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Фільтрувати список</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Усі класи</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Розділ</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Мови</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Власник</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Опубліковано</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Зворотний порядок</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Немає елементів</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>На сторінку</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Показувати %count елементів на сторінці.</translation>
+    </message>
 </context>
 </TS>

@@ -85452,5 +85452,53 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>Packages</source>
         <translation>Packages</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Content (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filter di list</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>All classes</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Section</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Languages</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Di owner</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Published</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Reverse di order</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>No item dey</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>For each page</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Show %count items for each page.</translation>
+    </message>
 </context>
 </TS>

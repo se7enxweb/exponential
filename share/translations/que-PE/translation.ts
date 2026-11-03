@@ -85444,5 +85444,53 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>Packages</source>
         <translation>Q'ipikuna</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Ukhun (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from manta %to kama, %count manta</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Listata suysuy</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Llapa t'aqakuna</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Raki</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Simikuna</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Kapuq</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Lluqsichisqa</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Ñiqita kutichiy</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Mana ima kanchu</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Sapa raphipi</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Sapa raphipi %count kaqkunata rikuchiy.</translation>
+    </message>
 </context>
 </TS>

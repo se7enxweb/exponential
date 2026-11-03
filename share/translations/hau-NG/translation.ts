@@ -85442,5 +85442,53 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>Packages</source>
         <translation>Fakiti</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Abun ciki (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from zuwa %to daga cikin %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Tace jerin</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Duka rukunai</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sashe</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Harsuna</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Mamallaki</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>An wallafa</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Juya jerin tsarin</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Babu abu</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>A kowane shafi</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Nuna abubuwa %count a kowane shafi.</translation>
+    </message>
 </context>
 </TS>

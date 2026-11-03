@@ -86851,5 +86851,53 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>Packages</source>
         <translation>Pacchetti</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Contenuti (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>da %from a %to di %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtra l'elenco</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Tutte le classi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sezione</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Lingue</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Proprietario</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Pubblicato</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Inverti l'ordine</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nessun elemento</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pagina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Mostra %count elementi per pagina.</translation>
+    </message>
 </context>
 </TS>

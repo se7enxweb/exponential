@@ -85474,5 +85474,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>パッケージ</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>コンテンツ (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count 件中 %from - %to 件</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>一覧を絞り込む</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>すべてのクラス</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>セクション</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>言語</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>所有者</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>公開日時</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>順序を逆にする</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>項目がありません</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>1 ページの表示件数</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>1 ページに %count 件のアイテムを表示します。</translation>
+    </message>
 </context>
 </TS>

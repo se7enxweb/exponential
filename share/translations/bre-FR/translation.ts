@@ -85444,5 +85444,53 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>Packages</source>
         <translation>Pakadoù</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Endalc'had (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from da %to diwar %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Silañ ar roll</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>An holl glasadoù</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Rann</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Yezhoù</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Perc'henn</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Embannet</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Troc'hañ an urzh</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Elfenn ebet</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Dre bajenn</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Diskouez %count elfenn dre bajenn.</translation>
+    </message>
 </context>
 </TS>

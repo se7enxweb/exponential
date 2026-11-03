@@ -85444,5 +85444,53 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>Packages</source>
         <translation>Pecynnau</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Cynnwys (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from i %to o %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Hidlo'r rhestr</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Pob dosbarth</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Adran</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Ieithoedd</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Perchennog</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Wedi'i gyhoeddi</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Gwrthdroi'r drefn</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Dim eitem</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fesul tudalen</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Dangos %count eitem fesul tudalen.</translation>
+    </message>
 </context>
 </TS>

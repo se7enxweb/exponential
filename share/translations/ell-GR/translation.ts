@@ -85474,5 +85474,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>Πακέτα</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Περιεχόμενο (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from έως %to από %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Φιλτράρισμα της λίστας</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Όλες οι κλάσεις</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ενότητα</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Γλώσσες</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Κάτοχος</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Δημοσιευμένο</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Αντιστροφή της σειράς</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Κανένα στοιχείο</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ανά σελίδα</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Εμφάνιση %count στοιχείων ανά σελίδα.</translation>
+    </message>
 </context>
 </TS>

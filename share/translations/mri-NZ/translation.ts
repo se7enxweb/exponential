@@ -85444,5 +85444,53 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>Packages</source>
         <translation>Ngā mōkihi</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Ihirangi (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ki %to o %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Tātaritia te rārangi</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Ngā karaehe katoa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Wāhanga</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Ngā reo</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Kaipupuri</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Kua whakaputaina</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Hurihia te raupapa</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Kāore he tūemi</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ia whārangi</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Whakaaturia ngā tūemi %count i ia whārangi.</translation>
+    </message>
 </context>
 </TS>

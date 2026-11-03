@@ -85442,5 +85442,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>Àwọn Àpò</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Àkóónú (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sí %to nínú %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Ṣe àlẹ̀mọ́ àkójọ náà</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Gbogbo àwọn kíláàsì</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Abala</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Àwọn èdè</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Olùní</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Tí a tẹ̀jáde</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Yí ọ̀nà ìtòlẹ́sẹẹsẹ padà</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Kò sí ohun kan</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fún ojú ìwé kọ̀ọ̀kan</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Fi ohun %count hàn ní ojú ìwé kọ̀ọ̀kan.</translation>
+    </message>
 </context>
 </TS>

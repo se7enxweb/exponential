@@ -85442,5 +85442,53 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>Packages</source>
         <translation>Vifurushi</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Maudhui (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hadi %to kati ya %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Chuja orodha</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Madarasa yote</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sehemu</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Lugha</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Mmiliki</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Imechapishwa</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Geuza mpangilio</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Hakuna kipengee</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Kwa kila ukurasa</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Onyesha vipengee %count kwa kila ukurasa.</translation>
+    </message>
 </context>
 </TS>

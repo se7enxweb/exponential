@@ -85449,5 +85449,53 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Packages</source>
         <translation>Paketler</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>İçerik (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count öğeden %from - %to</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Listeyi filtrele</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Tüm sınıflar</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Bölüm</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Diller</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Sahip</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Yayımlanma</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Sırayı ters çevir</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Öğe yok</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Sayfa başına</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Sayfa başına %count öğe gösterin.</translation>
+    </message>
 </context>
 </TS>

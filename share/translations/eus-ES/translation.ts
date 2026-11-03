@@ -85444,5 +85444,53 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>Packages</source>
         <translation>Paketeak</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Edukia (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, guztira %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Iragazi zerrenda</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Klase guztiak</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Atala</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Hizkuntzak</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Jabea</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Argitaratua</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Irauli ordena</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Elementurik ez</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Orriko</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Erakutsi %count elementu orriko.</translation>
+    </message>
 </context>
 </TS>

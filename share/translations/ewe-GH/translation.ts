@@ -85444,5 +85444,53 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>Packages</source>
         <translation>Agbawo</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Emenuwo (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from va se ɖe %to le %count me</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Tso ŋkɔŋɔŋlɔ la me</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Hatsotso katã</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Akpa</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Gbewo</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Nutɔ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Woɖe ɖe dutoƒo</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Trɔ ɖoɖomɔ la</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nuŋɔŋlɔ aɖeke meli o</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Le axa ɖesiaɖe dzi</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Ɖe nuŋɔŋlɔ %count fia le axa ɖe sia ɖe dzi.</translation>
+    </message>
 </context>
 </TS>

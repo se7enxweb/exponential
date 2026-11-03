@@ -85476,5 +85476,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>חבילות</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>תוכן (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from עד %to מתוך %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>סינון הרשימה</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>כל המחלקות</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>מדור</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>שפות</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>בעלים</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>פורסם</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>היפוך הסדר</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>אין פריטים</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>בעמוד</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>הצגת %count פריטים בעמוד.</translation>
+    </message>
 </context>
 </TS>

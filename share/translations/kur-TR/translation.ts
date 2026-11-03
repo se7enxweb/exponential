@@ -85442,5 +85442,53 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>Packages</source>
         <translation>Pakêt</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Naverok (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from heta %to ji %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Lîsteyê fîlter bike</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Hemû çîn</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Beş</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Ziman</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Xwedî</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Weşandî</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Berevajîkirina rêzê</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Tu hêman tune</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Li her rûpelê</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Li her rûpelê %count hêman nîşan bidin.</translation>
+    </message>
 </context>
 </TS>

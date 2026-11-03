@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>پیکیج</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>مَواد (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from تہٕ %to، کُل %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>فہرست فِلٹَر کٔرِو</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>سٲرِنی کلاس</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>سیکشَن</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>زَبان</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>مالِک</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>شایع کرنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>ترتیٖب اُلٹ کٔرِو</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>کانٛہہ آیِٹَم نہٕ</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ہرِ صَفحس</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ہَر صَفحَس پیٹھ %count آیِٹَم ظاہِر کٔرِو۔</translation>
+    </message>
 </context>
 </TS>

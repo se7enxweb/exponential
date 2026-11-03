@@ -85442,5 +85442,53 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>Packages</source>
         <translation>Amaphakheji</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Okuqukethwe (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kuya ku-%to kwa-%count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Hlunga uhlu</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Zonke izigaba</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Isigaba</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Izilimi</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Umnikazi</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Kushicilelwe</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Hlehlisa ukuhleleka</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ayikho into</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ekhasini ngalinye</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Bonisa izinto ezingu-%count ekhasini ngalinye.</translation>
+    </message>
 </context>
 </TS>

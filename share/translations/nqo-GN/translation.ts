@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>ߔߊߞߋߟߎ</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>ߞߐߣߐߞߏߟߎ (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ߞߊ ߛߋ %to ߡߊ %count ߣߊ</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ߟߌߛߌ ߛߍ߲ߛߍ߲</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>ߞߌߟߊߛߌ ߓߍߍ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ߛߍߞߌߛߌߦߐ߲</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>ߞߊ߲ߟߎ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ߕߌߜ߳ߌ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ߓߌߟߊߟߍ߲</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>ߓߏߟߏߘߊߗߏߜ߳ߏ ߦߍߟߍߡߊ ߞߐ ߡߊ</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ߝߍ߲ ߛߌ ߕߍ</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ߢߍ ߞߋߟߋ߲ ߣߊ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ߝߍ߲ %count ߖߌߙߊ ߢߍ ߞߋߟߋ߲ ߞߐߣߐ.</translation>
+    </message>
 </context>
 </TS>

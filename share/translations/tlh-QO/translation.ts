@@ -85477,5 +85477,53 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Packages</source>
         <translation>'aplo'mey</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>De' (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to (Hoch: %count)</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>tetlh yIghIm</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>buvmey Hoch</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>'ay'</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Holmey</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ghajwI'</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>'anglu'ta'</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>tetlh mIw yItlhe'moH</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Doch pagh</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>wa' navDaq</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>wa' navDaq %count Doch yI'ang.</translation>
+    </message>
 </context>
 </TS>

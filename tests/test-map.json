@@ -3053,11 +3053,13 @@
     ],
     "kernel/classes/expdatatypeinventory.php": [
       "tests/tests/kernel/classes/expDataTypeInventoryTest.php",
-      "tests/tests/kernel/classes/expDataTypeInventorySqliteTest.php"
+      "tests/tests/kernel/classes/expDataTypeInventorySqliteTest.php",
+      "tests/tests/kernel/classes/expDataTypeInventoryNodesSqliteTest.php"
     ],
     "kernel/private/classes/views/class/datatype.php": [
       "tests/tests/kernel/classes/expDataTypeInventoryTest.php",
-      "tests/tests/kernel/classes/expDataTypeInventorySqliteTest.php"
+      "tests/tests/kernel/classes/expDataTypeInventorySqliteTest.php",
+      "tests/tests/kernel/classes/expDataTypeInventoryNodesSqliteTest.php"
     ],
     "kernel/class/datatype.php": [
       "tests/tests/kernel/classes/expDataTypeInventoryTest.php",

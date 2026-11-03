@@ -85474,5 +85474,53 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Packages</source>
         <translation>Poortukkat</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Imarisat (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to, katillugit %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Allattorsimaffik filterikkuk</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Klassit tamarmik</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Immikkoortoq</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Oqaatsit</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Piginnittoq</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Saqqummiunneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Tulleriiaarneq kaaviiguk</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Immikkoortoqanngilaq</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Quppernermut ataatsimut</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Quppernermut ataatsimut allattugaatit %count takutikkit.</translation>
+    </message>
 </context>
 </TS>

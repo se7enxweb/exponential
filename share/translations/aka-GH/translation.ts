@@ -85444,5 +85444,53 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>Packages</source>
         <translation>Boa</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Emu nsɛm (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kɔsi %to wɔ %count mu</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Twa list no so</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Kuo nyinaa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ɔfa</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Kasa</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Wura</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Wɔatintim</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>San hyehyɛ no</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Adeɛ biara nni hɔ</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Krataafa biara so</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Da adeɛ %count adi wɔ krataafa biara so.</translation>
+    </message>
 </context>
 </TS>

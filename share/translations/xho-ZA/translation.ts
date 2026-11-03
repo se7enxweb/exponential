@@ -85442,5 +85442,53 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>Packages</source>
         <translation>Iipakethe</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Umxholo (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ukuya ku-%to kwali-%count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Hluza uluhlu</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Zonke iiklasi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Icandelo</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Iilwimi</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Umnini</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Kushicilelwe</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Tshintshela ucwangciso</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Akukho nto</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ngephepha ngalinye</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Bonisa izinto ezingu-%count ngephepha ngalinye.</translation>
+    </message>
 </context>
 </TS>

@@ -25,7 +25,7 @@ nichts. Jede Angabe unten wurde am 3. November 2026 auf dem Demonstrationsserver
   eigenen Gruppe. Die Inhalte damit lassen sich nicht anzeigen, bearbeiten oder veröffentlichen, bis der Datentyp
   zurück ist oder die Klasse geändert wurde.
 - Die Seite eines Datentyps zeigt seine Einstellungsspalten, seine Templates in dieser Administration und in der
-  Standard-Site, die Klassen und Attribute, die ihn nutzen, mit ihren Objekten, einige seiner Inhalte, seine Tabellen
+  Standard-Site, die Klassen und Attribute, die ihn nutzen, mit ihren Objekten, seine Inhalte, seine Tabellen
   und seine Hilfeseite.
 
 Sie öffnen sie unter Setup > Datentypen (Gruppe "Inhaltsmodell", neben Klassen) oder mit **Datentypen** auf der Seite
@@ -106,7 +106,12 @@ Die Merkmale:
 - **Klassenattribute**: jedes Attribut mit seiner Klasse, seinen Merkmalen (Erforderlich, Durchsuchbar, Übersetzbar,
   Sammelt Informationen) und den gesetzten Einstellungsspalten (`data_int1=600` ...), mit Objekten und
   Objektattributen.
-- **Einige Inhalte, die ihn verwenden**: die zehn zuletzt geänderten Knoten dieser Klassen, die Sie lesen dürfen.
+- **Inhalte**: jedes Objekt dieser Klassen, das Sie lesen dürfen, einmal (sein Hauptknoten), mit Klasse, Sektion,
+  Sprachen, Eigentümer und Daten. Sortieren Sie mit den Spaltenköpfen nach Änderung (Standard, neueste zuerst),
+  Veröffentlichung, Name oder Klasse (ein zweiter Klick kehrt die Reihenfolge um), zeigen Sie 10, 25, 50 oder 100
+  pro Seite und beschränken Sie die Liste auf eine Klasse. Die Auswahl steht in der Adresse, zum Beispiel
+  `/class/datatype/view/ezimage/(sort)/name/(order)/asc/(limit)/50/(class)/5/(offset)/50`; die Anzahl gilt fünf
+  Minuten.
 - **Hilfeseite**: die erzeugte Seite des Datentyps im Hilfezentrum, wo es eine gibt.
 
 ## 5. Nicht registriert: Inhalte reparieren, deren Datentyp fehlt

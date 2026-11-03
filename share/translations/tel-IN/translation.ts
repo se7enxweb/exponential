@@ -85442,5 +85442,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>ప్యాకేజీలు</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>కంటెంట్ (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%countలో %from నుండి %to వరకు</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>జాబితాను ఫిల్టర్ చేయండి</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>అన్ని క్లాస్‌లు</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>విభాగం</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>భాషలు</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>యజమాని</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ప్రచురించబడింది</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>క్రమాన్ని రివర్స్ చేయండి</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>అంశం లేదు</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ప్రతి పేజీకి</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ప్రతి పేజీకి %count అంశాలను చూపండి.</translation>
+    </message>
 </context>
 </TS>

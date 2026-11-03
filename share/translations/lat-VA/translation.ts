@@ -85477,5 +85477,53 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Packages</source>
         <translation>Sarcinae</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Contenta (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ad %to ex %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Indicem cribrare</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Omnes classes</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sectio</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Linguae</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Possessor</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicatum</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Ordinem invertere</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nulla res</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>In singulis paginis</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Res in singulis paginis ostendere: %count.</translation>
+    </message>
 </context>
 </TS>

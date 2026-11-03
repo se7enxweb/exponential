@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>Пакетлар</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Эчтәлек (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count арасыннан %from - %to</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Исемлекне фильтрлау</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Барлык класслар</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Бүлек</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Телләр</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Хуҗа</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Бастырылган</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Тәртипне әйләндерү</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Элемент юк</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Һәр биттә</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Битта %count элемент күрсәтү.</translation>
+    </message>
 </context>
 </TS>

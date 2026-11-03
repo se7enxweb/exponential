@@ -85444,5 +85444,53 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>Packages</source>
         <translation>Paketji</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Loowdi (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from haa %to diga %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sooɓ doggol ngol</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Sifaaji fof</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Taƴre</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Ɗemɗe</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Jom</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Yaltinaama</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Wirtin yuɓɓo</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Alaa huunde</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>E hello</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Hollu %count huunde ka hello kala.</translation>
+    </message>
 </context>
 </TS>

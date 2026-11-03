@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>Багцууд</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Агуулга (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, нийт %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Жагсаалтыг шүүх</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Бүх ангиуд</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Хэсэг</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Хэлүүд</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Эзэмшигч</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Нийтлэгдсэн</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Дарааллыг эсрэгээр нь болгох</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Зүйл алга</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Нэг хуудсанд</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Нэг хуудсанд %count зүйл харуулах.</translation>
+    </message>
 </context>
 </TS>

@@ -85444,5 +85444,53 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>Packages</source>
         <translation>Pakketten</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Ynhâld (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from oant %to fan %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>De list filterje</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Alle klassen</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksje</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Talen</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eigner</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publisearre</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>De folchoarder omkeare</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Gjin ûnderdiel</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per side</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count eleminten per side toane.</translation>
+    </message>
 </context>
 </TS>

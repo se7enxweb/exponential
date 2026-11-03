@@ -85444,5 +85444,53 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>Packages</source>
         <translation>Paketler</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Mazmun (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to (jemi %count)</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sanawy süz</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Ähli klaslar</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Bölüm</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Diller</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eýesi</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Neşir edilen</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Tertibi tersine öwür</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Element ýok</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Her sahypada</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Her sahypada %count element görkez.</translation>
+    </message>
 </context>
 </TS>

@@ -85444,5 +85444,53 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>Packages</source>
         <translation>Paquetes</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Conteníu (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to de %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrar la llista</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Toles clases</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seición</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Llingües</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Propietariu</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Espublizáu</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Invertir l'orde</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nengún elementu</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per páxina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Amosar %count elementos per páxina.</translation>
+    </message>
 </context>
 </TS>

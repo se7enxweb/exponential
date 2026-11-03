@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>פּעקלעך</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>אינהאַלט (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ביז %to פֿון %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>פֿילטרירן די רשימה</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>אַלע קלאַסן</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>אָפּטייל</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>שפּראַכן</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>באַזיצער</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>פֿאַרעפֿנטלעכט</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>איבערקערן דעם סדר</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>קיין עלעמענט</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>פּער בלאַט</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ווייַזן %count עלעמענטן אויף אַ בלאַט.</translation>
+    </message>
 </context>
 </TS>

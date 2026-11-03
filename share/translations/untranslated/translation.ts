@@ -85266,5 +85266,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

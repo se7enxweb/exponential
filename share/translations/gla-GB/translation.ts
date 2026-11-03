@@ -85444,5 +85444,53 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>Packages</source>
         <translation>Pacaidean</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Susbaint (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from gu %to à %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Criathraich an liosta</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>A h-uile clas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Earrann</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Cànanan</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Sealbhadair</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Foillsichte</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Cuir an t-òrdugh an comhair a chùil</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Gun nì</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Air gach duilleag</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Seall %count nithean air gach duilleag.</translation>
+    </message>
 </context>
 </TS>

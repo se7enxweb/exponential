@@ -85474,5 +85474,53 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Packages</source>
         <translation>Pakkette</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Inhoud (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from tot %to van %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtreer die lys</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Alle klasse</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Afdeling</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Tale</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eienaar</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Gepubliseer</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Keer die volgorde om</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Geen element nie</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per bladsy</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Wys %count items per bladsy.</translation>
+    </message>
 </context>
 </TS>

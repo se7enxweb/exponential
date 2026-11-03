@@ -85442,5 +85442,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>ಪ್ಯಾಕೇಜ್‌ಗಳು</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>ವಿಷಯ (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ರಲ್ಲಿ %from ರಿಂದ %to</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ಪಟ್ಟಿಯನ್ನು ಫಿಲ್ಟರ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>ಎಲ್ಲಾ ವರ್ಗಗಳು</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ವಿಭಾಗ</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>ಭಾಷೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ಮಾಲೀಕ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ಪ್ರಕಟಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>ಕ್ರಮವನ್ನು ಹಿಮ್ಮುಖಗೊಳಿಸು</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ಯಾವುದೇ ಐಟಂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ಪ್ರತಿ ಪುಟಕ್ಕೆ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ಪ್ರತಿ ಪುಟಕ್ಕೆ %count ಐಟಂಗಳನ್ನು ತೋರಿಸಿ.</translation>
+    </message>
 </context>
 </TS>

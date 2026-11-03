@@ -85452,5 +85452,53 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>Packages</source>
         <translation>Pakét</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Eusi (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from dugi ka %to tina %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Saring daptar</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Sadaya kelas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Séksi</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Basa</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Nu gaduh</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Diterbitkeun</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Walikkeun urutan</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Euweuh unsur</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per kaca</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Témbongkeun %count item per kaca.</translation>
+    </message>
 </context>
 </TS>

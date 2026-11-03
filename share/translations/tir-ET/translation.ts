@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>ጥቕላላት</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>ትሕዝቶ (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ክሳብ %to ካብ %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ዝርዝር ኣጻሪ</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>ኩሎም ክፍልታት</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ክፋል</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>ቋንቋታት</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ወናኒ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ዝተሓተመ</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>ስርዓት ግልብጥ</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ኣቕሓ የለን</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ኣብ ነፍሲ ወከፍ ገጽ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count ኣቕሑ ኣብ ነፍሲ ወከፍ ገጽ ኣርኢ።</translation>
+    </message>
 </context>
 </TS>

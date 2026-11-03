@@ -85474,5 +85474,53 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Packages</source>
         <translation>Paketat</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Përmbajtja (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from deri në %to nga %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtroni listën</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Të gjitha klasat</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksioni</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Gjuhët</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Pronari</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>I publikuar</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Përmbys renditjen</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Asnjë element</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Për faqe</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Shfaq %count elemente për faqe.</translation>
+    </message>
 </context>
 </TS>

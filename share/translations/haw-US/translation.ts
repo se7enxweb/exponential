@@ -85444,5 +85444,53 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>Packages</source>
         <translation>Nā pūʻolo</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>ʻIke (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to o %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Kānana i ka papa inoa</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Nā papa a pau</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Māhele</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Nā ʻōlelo</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Kahu</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Hoʻopuka ʻia</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Hoʻohuli i ke kaʻina</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ʻAʻohe mea</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ma kēlā me kēia ʻaoʻao</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Hōʻike i nā mea %count ma kēlā ʻaoʻao kēia ʻaoʻao.</translation>
+    </message>
 </context>
 </TS>

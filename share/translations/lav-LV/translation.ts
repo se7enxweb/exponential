@@ -85474,5 +85474,53 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Packages</source>
         <translation>Pakotnes</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Saturs (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to no %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrēt sarakstu</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Visas klases</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sadaļa</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Valodas</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Īpašnieks</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicēts</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Mainīt secību uz pretējo</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nav vienumu</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Lapā</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Rādīt %count vienumus lapā.</translation>
+    </message>
 </context>
 </TS>

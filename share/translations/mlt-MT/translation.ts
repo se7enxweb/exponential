@@ -85474,5 +85474,53 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Packages</source>
         <translation>Pakketti</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Kontenut (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sa %to minn %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Iffiltra l-lista</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Il-klassijiet kollha</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Taqsima</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Lingwi</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Sid</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Ippubblikat</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Aqleb is-sekwenza</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>L-ebda oġġett</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Għal kull paġna</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Uri elementi f'kull paġna: %count.</translation>
+    </message>
 </context>
 </TS>

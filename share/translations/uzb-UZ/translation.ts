@@ -85444,5 +85444,53 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>Packages</source>
         <translation>Paketlar</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Kontent (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count tadan %from–%to</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Roʻyxatni filtrlash</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Barcha sinflar</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Boʻlim</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Tillar</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Egasi</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Nashr qilingan</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Tartibni teskari qilish</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Element yoʻq</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Har bir sahifada</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Har sahifada %count ta elementni koʻrsatish.</translation>
+    </message>
 </context>
 </TS>

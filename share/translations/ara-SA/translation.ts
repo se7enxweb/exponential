@@ -85474,5 +85474,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>الحزم</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>المحتوى (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from إلى %to من %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>تصفية القائمة</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>كل الفئات</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>القسم</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>اللغات</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>المالك</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>منشور</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>عكس الترتيب</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>لا يوجد عنصر</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>لكل صفحة</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>عرض %count عنصر لكل صفحة.</translation>
+    </message>
 </context>
 </TS>

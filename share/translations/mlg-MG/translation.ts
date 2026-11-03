@@ -85444,5 +85444,53 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>Packages</source>
         <translation>Fonosana</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Votoaty (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ka hatramin'ny %to amin'ny %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sivano ny lisitra</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Kilasy rehetra</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Fizarana</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Fiteny</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tompony</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Navoaka</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Ovay mivadika ny filaharana</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Tsy misy singa</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Isaky ny pejy</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Asehoy ny singa %count isaky ny pejy.</translation>
+    </message>
 </context>
 </TS>

@@ -85444,5 +85444,53 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>Packages</source>
         <translation>Paket yi</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Li ci biir (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ba %to ci %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sef limu bi</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Klaas yépp</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Xaaj</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Làkk yi</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Boroom</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Siiwalees na</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Wëlbatiku toftaleef bi</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Amul benn elemaa</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ci xët</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Wone %count elemaa ci benn xët.</translation>
+    </message>
 </context>
 </TS>

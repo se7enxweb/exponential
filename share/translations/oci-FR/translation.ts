@@ -85444,5 +85444,53 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>Packages</source>
         <translation>Paquets</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Contengut (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to sus %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrar la lista</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Totas las classas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seccion</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Lengas</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Proprietari</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicat</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Inversar l'òrdre</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Cap d'element</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pagina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Mostrar %count elements per pagina.</translation>
+    </message>
 </context>
 </TS>

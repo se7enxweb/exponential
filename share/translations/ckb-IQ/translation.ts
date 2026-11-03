@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>پاکێجەکان</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>ناوەڕۆک (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from تا %to لە %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>پاڵاوتنی لیستەکە</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>هەموو پۆلەکان</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>بەش</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>زمانەکان</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>خاوەن</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>بڵاوکراوە</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>ڕیزبەندی بپێچەوە</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>هیچ بڕگەیەک نییە</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>لە هەر پەڕەیەکدا</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count بڕگە لە هەر پەڕەیەکدا پیشان بدە.</translation>
+    </message>
 </context>
 </TS>

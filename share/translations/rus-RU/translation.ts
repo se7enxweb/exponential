@@ -85474,5 +85474,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>Пакеты</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Содержимое (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to из %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Фильтровать список</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Все классы</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Секция</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Языки</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Владелец</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Опубликовано</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Обратный порядок</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Нет элементов</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>На странице</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Показывать элементов на странице: %count.</translation>
+    </message>
 </context>
 </TS>

@@ -85442,5 +85442,53 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>Packages</source>
         <translation>Mpakị</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Ọdịnaya (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ruo %to n'ime %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Zachaa ndepụta ahụ</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Klasị niile</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ngalaba</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Asụsụ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Onye nwe</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Ebipụtara</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Tụgharịa usoro ahụ</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Enweghị ihe ọ bụla</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>N'otu ibe</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Gosi ihe %count n'ibe ọ bụla.</translation>
+    </message>
 </context>
 </TS>

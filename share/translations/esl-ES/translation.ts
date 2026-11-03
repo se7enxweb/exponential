@@ -86926,5 +86926,53 @@ Gracias por tu feedback</translation>
         <source>Packages</source>
         <translation>Paquetes</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Contenido (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to de %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrar la lista</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Todas las clases</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sección</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Idiomas</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Propietario</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicado</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Invertir el orden</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ningún elemento</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Por página</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Mostrar %count elementos por página.</translation>
+    </message>
 </context>
 </TS>

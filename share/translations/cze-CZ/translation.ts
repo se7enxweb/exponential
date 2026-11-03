@@ -86730,5 +86730,53 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Packages</source>
         <translation>Balíčky</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Obsah (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from až %to z %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrovat seznam</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Všechny třídy</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekce</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Jazyky</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Vlastník</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publikováno</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Obrátit pořadí</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Žádná položka</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stránku</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Zobrazit %count položek na stránku.</translation>
+    </message>
 </context>
 </TS>

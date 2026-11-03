@@ -86702,5 +86702,53 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>Packages</source>
         <translation>Pakker</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Innhold (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from til %to av %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrer listen</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Alle klasser</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksjon</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Språk</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eier</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publisert</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Snu rekkefølgen</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ingen elementer</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per side</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Vis %count elementer per side.</translation>
+    </message>
 </context>
 </TS>

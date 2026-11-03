@@ -85444,5 +85444,53 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>Packages</source>
         <translation>Mga package</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Nilalaman (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hanggang %to sa %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Salain ang listahan</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Lahat ng class</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksyon</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Mga wika</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>May-ari</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Na-publish</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Baligtarin ang pagkakasunud-sunod</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Walang item</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Bawat pahina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Magpakita ng %count item bawat pahina.</translation>
+    </message>
 </context>
 </TS>

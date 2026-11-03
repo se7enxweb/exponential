@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>Փաթեթներ</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Բովանդակություն (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from - %to, ընդամենը %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Զտել ցանկը</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Բոլոր դասերը</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Բաժին</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Լեզուներ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Սեփականատեր</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Հրապարակված</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Շրջել կարգը</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Տարր չկա</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Մեկ էջում</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Ցուցադրել %count տարր մեկ էջում։</translation>
+    </message>
 </context>
 </TS>

@@ -85474,5 +85474,53 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Packages</source>
         <translation>Csomagok</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Tartalom (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>A lista szűrése</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Az összes osztály</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Szakasz</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Nyelvek</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tulajdonos</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Közzétéve</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Sorrend megfordítása</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nincs elem</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Oldalanként</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count elem megjelenítése oldalanként.</translation>
+    </message>
 </context>
 </TS>

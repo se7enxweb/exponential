@@ -85474,5 +85474,53 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>Packages</source>
         <translation>Paketi</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Vsebina (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from do %to od %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtriraj seznam</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Vsi razredi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekcija</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Jeziki</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Lastnik</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Objavljeno</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Obrni vrstni red</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ni postavk</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stran</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Število elementov na stran: %count.</translation>
+    </message>
 </context>
 </TS>

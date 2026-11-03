@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>កញ្ចប់</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>មាតិកា (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ដល់ %to ក្នុងចំណោម %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ត្រងបញ្ជី</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>ថ្នាក់ទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ផ្នែក</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>ភាសា</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ម្ចាស់</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>បានបោះពុម្ពផ្សាយ</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>ប្តូរលំដាប់ត្រឡប់</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>គ្មានធាតុ</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ក្នុងមួយទំព័រ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>បង្ហាញ %count ធាតុក្នុងមួយទំព័រ។</translation>
+    </message>
 </context>
 </TS>

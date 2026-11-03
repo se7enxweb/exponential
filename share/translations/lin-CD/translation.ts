@@ -85444,5 +85444,53 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>Packages</source>
         <translation>Ba-paquet</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Makambo (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from tii %to na %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Póná na kati ya liste</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Ba-kalasi nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Eteni</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Nkóta</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Nkolo</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Ebimisami</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Bongolá molongo</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Eloko moko te</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na lokasa moko</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Lakisá biloko %count na lokasa moko.</translation>
+    </message>
 </context>
 </TS>

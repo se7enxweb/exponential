@@ -85444,5 +85444,53 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>Packages</source>
         <translation>Packagen</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Inhalter (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to vun %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>D'Lëscht filteren</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>All Klassen</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sektioun</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Sproochen</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Besëtzer</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publizéiert</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Reiefolleg ëmdréinen</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Keen Element</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Säit</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elementer pro Säit weisen.</translation>
+    </message>
 </context>
 </TS>

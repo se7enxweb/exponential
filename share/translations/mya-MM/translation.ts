@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>ပက်ကေ့ဂျ်များ</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>အကြောင်းအရာ (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ခုအနက် %from မှ %to</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>စာရင်းကို စစ်ထုတ်ရန်</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>အတန်းအစားအားလုံး</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>အပိုင်း</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>ဘာသာစကားများ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ပိုင်ရှင်</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ထုတ်ဝေပြီး</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>အစီအစဉ်ကို ပြောင်းပြန်လှန်ရန်</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>အရာ မရှိပါ</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>တစ်မျက်နှာလျှင်</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>စာမျက်နှာတစ်ခုလျှင် %count ခု ပြရန်။</translation>
+    </message>
 </context>
 </TS>

@@ -85444,5 +85444,53 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>Packages</source>
         <translation>Pakeeji</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Ebirimu (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from okutuuka ku %to ku %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sengejja olukalala</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Kiraasi zonna</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ekitundu</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Ennimi</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Nnannyini</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Ekyafulumizibwa</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Zzaayo ensengeka</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Tewali kiyingizo</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Buli lupapula</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Laga ebiyingizo %count ku buli lupapula.</translation>
+    </message>
 </context>
 </TS>

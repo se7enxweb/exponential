@@ -92414,5 +92414,53 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Packages</source>
         <translation>Pakete</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Inhalte (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to von %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Liste filtern</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Alle Klassen</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sektion</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Sprachen</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eigentümer</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Veröffentlicht</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Reihenfolge umkehren</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Kein Eintrag</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Seite</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elemente pro Seite anzeigen.</translation>
+    </message>
 </context>
 </TS>

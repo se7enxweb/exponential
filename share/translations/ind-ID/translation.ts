@@ -85444,5 +85444,53 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>Packages</source>
         <translation>Paket</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Konten (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sampai %to dari %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Saring daftar</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Semua kelas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksi</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Bahasa</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Pemilik</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Diterbitkan</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Balik urutan</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Tidak ada item</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per halaman</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Tampilkan %count item per halaman.</translation>
+    </message>
 </context>
 </TS>

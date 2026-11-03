@@ -85444,5 +85444,53 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>Packages</source>
         <translation>Pakew</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Kɔnɔkow (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ka se %to ma %count na</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Lisi sɛnsɛn</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Kilasi bɛɛ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekisiyɔn</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Kanw</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tigi</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Bilalen</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Bolodacogo yɛlɛma kɔ ma</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Fɛn si tɛ</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ɲɛ kelen na</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Fɛn %count jira ɲɛ kelen kɔnɔ.</translation>
+    </message>
 </context>
 </TS>

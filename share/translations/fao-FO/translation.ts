@@ -85444,5 +85444,53 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>Packages</source>
         <translation>Pakkar</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Innihald (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from til %to av %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrera listan</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Allir flokkar</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Deild</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Mál</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eigari</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Útgivið</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Vend raðfylgjuni um</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Eingin lutur</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Á síðu</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Vís %count liðir á síðu.</translation>
+    </message>
 </context>
 </TS>

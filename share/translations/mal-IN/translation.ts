@@ -85442,5 +85442,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>പാക്കേജുകൾ</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>ഉള്ളടക്കം (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count എണ്ണത്തിൽ %from മുതൽ %to വരെ</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ലിസ്റ്റ് ഫിൽട്ടർ ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>എല്ലാ ക്ലാസുകളും</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>വിഭാഗം</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>ഭാഷകൾ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ഉടമ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>പ്രസിദ്ധീകരിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>ക്രമം വിപരീതമാക്കുക</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ഇനങ്ങളൊന്നുമില്ല</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ഓരോ പേജിലും</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ഒരു പേജിൽ %count ഇനങ്ങൾ കാണിക്കുക.</translation>
+    </message>
 </context>
 </TS>

@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>ແພັກເກດ</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>ເນື້ອຫາ (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ຫາ %to ຈາກ %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ກັ່ນຕອງລາຍການ</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>ທຸກຄລາສ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ພາກສ່ວນ</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>ພາສາ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ເຈົ້າຂອງ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ເຜີຍແຜ່ແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>ກັບລຳດັບ</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ບໍ່ມີລາຍການ</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ຕໍ່ໜ້າ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ສະແດງ %count ລາຍການຕໍ່ໜ້າ.</translation>
+    </message>
 </context>
 </TS>

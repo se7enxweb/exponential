@@ -86656,5 +86656,53 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Packages</source>
         <translation>Pakiety</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Treść (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to z %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtruj listę</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Wszystkie klasy</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekcja</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Języki</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Właściciel</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Opublikowano</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Odwrócić kolejność</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Brak pozycji</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stronę</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Pokazywać %count elementów na stronie.</translation>
+    </message>
 </context>
 </TS>

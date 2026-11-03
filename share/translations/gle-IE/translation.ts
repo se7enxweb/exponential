@@ -85474,5 +85474,53 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>Packages</source>
         <translation>Pacáistí</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Ábhar (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from go %to as %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Scag an liosta</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Gach aicme</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Rannán</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Teangacha</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Úinéir</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Foilsithe</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Aisiompaigh an t-ord</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Gan mhír</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>In aghaidh an leathanaigh</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Míreanna in aghaidh an leathanaigh: %count.</translation>
+    </message>
 </context>
 </TS>

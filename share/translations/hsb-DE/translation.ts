@@ -85444,5 +85444,53 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>Packages</source>
         <translation>Pakety</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Wobsah (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from do %to z %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Lisćinu filtrować</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Wšě klasy</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Wotrězk</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Rěče</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Wobsedźer</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Wozjewjeny</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Porjad wobroćić</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Žadyn zapisk</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stronu</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Zapiski na stronu: %count.</translation>
+    </message>
 </context>
 </TS>

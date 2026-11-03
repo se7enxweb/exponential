@@ -85474,5 +85474,53 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Packages</source>
         <translation>Pachete</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Conținut (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to din %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrați lista</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Toate clasele</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Secțiune</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Limbi</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Proprietar</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicat</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Inversare ordine</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Niciun element</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pe pagină</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Afișare %count elemente pe pagină.</translation>
+    </message>
 </context>
 </TS>

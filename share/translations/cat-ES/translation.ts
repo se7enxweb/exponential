@@ -85474,5 +85474,53 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>Packages</source>
         <translation>Paquets</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Contingut (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>de %from a %to de %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtra la llista</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Totes les classes</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Secció</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Idiomes</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Propietari</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicat</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Inverteix l'ordre</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Cap element</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pàgina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Mostra %count elements per pàgina.</translation>
+    </message>
 </context>
 </TS>

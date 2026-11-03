@@ -85474,5 +85474,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>패키지</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>콘텐츠(%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count개 중 %from-%to</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>목록 필터링</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>모든 클래스</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>섹션</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>언어</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>소유자</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>게시됨</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>순서 반대로</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>항목 없음</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>페이지당</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>페이지당 %count개 항목을 표시합니다.</translation>
+    </message>
 </context>
 </TS>

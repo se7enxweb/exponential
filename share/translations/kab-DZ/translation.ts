@@ -85444,5 +85444,53 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>Packages</source>
         <translation>Ikemmusen</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Agbur (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ar %to ɣef %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sizdeg tabdart</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Akk ismilen</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Tigezmi</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Tutlayin</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Bab</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Yettwasiẓreg</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Rrẓ tanila</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ulac aferdis</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>I yal asebter</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Sken %count n yiferdisen i yal asebter.</translation>
+    </message>
 </context>
 </TS>

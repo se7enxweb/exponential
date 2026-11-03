@@ -85444,5 +85444,53 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>Packages</source>
         <translation>Ikĩohe</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Ũhoro (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from nginya %to kuuma %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Thuurania mũhari</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Irathi ciothe</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Gĩcunjĩ</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Ũthiomi</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Mwene</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Nĩ gĩcabithĩtio</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Cokia mũbango</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Gũtirĩ kĩndũ</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ũrũa o ũrũa</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Onania ikĩndũ %count ũrũa-inĩ o ũmwe.</translation>
+    </message>
 </context>
 </TS>

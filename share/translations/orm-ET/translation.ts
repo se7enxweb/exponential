@@ -85444,5 +85444,53 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>Its class attribute settings go into packages.</source>
         <translation>Qindaa'inni amala gitaa isaa paakeejiiwwan keessa seena.</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Qabiyyee (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hanga %to, %count keessaa</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Tarree calaqqisi</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Gitoota hundaa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Kutaa</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Afaanota</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Abbaa</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Maxxanfame</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Tartiiba garagalchi</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Wanti hin jiru</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fuula tokkotti</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Fuula tokkoon wantoota %count agarsiisi.</translation>
+    </message>
 </context>
 </TS>

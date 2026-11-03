@@ -85442,5 +85442,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>بستې</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>منځپانګه (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from تر %to له %count څخه</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>لېست فلټر کړئ</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>ټول کلاسونه</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>برخه</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>ژبې</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>خاوند</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>خپور شوی</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>ترتیب اړول</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>هېڅ توکی نشته</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>په هره پاڼه کې</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>په هره پاڼه کې %count توکي ښودل.</translation>
+    </message>
 </context>
 </TS>

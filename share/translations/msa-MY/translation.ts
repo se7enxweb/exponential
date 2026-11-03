@@ -85444,5 +85444,53 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>Packages</source>
         <translation>Pakej</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Kandungan (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hingga %to daripada %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Tapis senarai</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Semua kelas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksyen</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Bahasa</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Pemilik</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Diterbitkan</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Songsangkan tertib</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Tiada item</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Setiap halaman</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Tunjukkan %count item setiap halaman.</translation>
+    </message>
 </context>
 </TS>

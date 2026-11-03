@@ -85452,5 +85452,53 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>Packages</source>
         <translation>Paket</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Isi (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from nganti %to saka %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Saring dhaptar</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Kabeh kelas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksi</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Basa</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Sing nduwe</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Diterbitake</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Walikake urutan</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ora ana item</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Saben kaca</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Tampilake %count item saben kaca.</translation>
+    </message>
 </context>
 </TS>

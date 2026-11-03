@@ -22,7 +22,8 @@ Every figure below was checked against the code (`kernel/private/classes/views/c
 - A datatype the database uses but nothing registers any more is **Not registered**, in red, in a group of its own.
   The content that has it cannot be shown, edited or published until the datatype is back or the class is changed.
 - One datatype's page shows its settings columns, its templates in this administration and in the default site, the
-  classes and attributes that use it with their objects, some of its content, its tables and its help page.
+  classes and attributes that use it with their objects, all of its content (a page at a time, sortable), its
+  tables and its help page.
 
 Open it from Setup > Datatypes (the group "Content model", next to Classes) or with **Datatypes** on the class groups
 page (`/class/grouplist`). It needs the same access as the class pages (`class/*`).
@@ -98,7 +99,12 @@ The flags:
   object attributes.
 - **Class attributes**: each attribute with its class, its flags (Required, Searchable, Translatable, Collects
   information) and its settings columns that are set (`data_int1=600` ...), with its objects and object attributes.
-- **Some content using it**: the ten last modified nodes of those classes that you may read.
+- **Content**: every object of those classes that you may read, once each (its main node), with its class,
+  section, languages, owner and dates. Sort it by modified (the default, newest first), published, name or class
+  with the column heads (a second click reverses the order), show 10, 25, 50 or 100 a page and narrow it to one
+  class. The choice stays in the address, for example
+  `/class/datatype/view/ezimage/(sort)/name/(order)/asc/(limit)/50/(class)/5/(offset)/50`; the count is kept
+  five minutes.
 - **Help page**: the generated page of the datatype in the help center, where there is one.
 
 ## 5. Not registered: repair content whose datatype is gone

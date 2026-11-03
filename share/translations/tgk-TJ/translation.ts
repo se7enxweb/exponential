@@ -85444,5 +85444,53 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Packages</source>
         <translation>Бастаҳо</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Мундариҷа (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from то %to аз %count</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Филтр кардани рӯйхат</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Ҳамаи синфҳо</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Бахш</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Забонҳо</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Соҳиб</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Нашршуда</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Баръакс кардани тартиб</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Унсур нест</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Дар ҳар саҳифа</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Нишон додани %count унсур дар як саҳифа.</translation>
+    </message>
 </context>
 </TS>

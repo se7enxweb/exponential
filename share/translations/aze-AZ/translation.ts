@@ -85444,5 +85444,53 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>Packages</source>
         <translation>Paketlər</translation>
     </message>
+    <message>
+        <source>Content (%count)</source>
+        <translation>Məzmun (%count)</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count içindən %from - %to</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Siyahını filtrlə</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Bütün siniflər</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Bölmə</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Dillər</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Sahib</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Dərc edilib</translation>
+    </message>
+    <message>
+        <source>Reverse the order</source>
+        <translation>Sıranı tərsinə çevir</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Element yoxdur</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Hər səhifədə</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Hər səhifədə %count element göstərin.</translation>
+    </message>
 </context>
 </TS>
