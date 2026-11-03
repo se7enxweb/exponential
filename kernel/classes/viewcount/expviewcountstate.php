@@ -69,7 +69,7 @@ class expViewCountState
     {
         if ( $this->lockHandle !== null )
             return true;
-        if ( !is_dir( $this->directory ) && !@mkdir( $this->directory, 0775, true ) && !is_dir( $this->directory ) )
+        if ( !is_dir( $this->directory ) && !@mkdir( $this->directory, eZDir::dirMode( 0775 ), true ) && !is_dir( $this->directory ) )
             return false;
         $handle = @fopen( $this->file() . '.lock', 'c' );
         if ( !$handle )
@@ -152,7 +152,7 @@ class expViewCountState
      */
     public function save()
     {
-        if ( !is_dir( $this->directory ) && !@mkdir( $this->directory, 0775, true ) && !is_dir( $this->directory ) )
+        if ( !is_dir( $this->directory ) && !@mkdir( $this->directory, eZDir::dirMode( 0775 ), true ) && !is_dir( $this->directory ) )
             return false;
         $file = $this->file();
         $data = array( 'format' => self::FORMAT, 'log' => $this->logFile, 'sites' => (object)$this->sites() );
