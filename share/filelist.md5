@@ -26605,7 +26605,7 @@ ce276e333dac64c6fffa082ac5378cb4  openspec/schemas/plan-driven/templates/plan.md
 ec458d89d7c7ebfd6b11090ef9e816ef  openspec/schemas/plan-driven/templates/tasks.md
 27242bdacf71284fae4c385a68bea5e0  openspec/schemas/plan-driven/templates/verify.md
 d41d8cd98f00b204e9800998ecf8427e  openspec/specs/.gitkeep
-1413906c9321a7803a5cb1710b4e81cd  openspec/specs/admin/search-page/spec.md
+40c7a22b435e0cc56484e4822baa854b  openspec/specs/admin/search-page/spec.md
 cff22610bddd02e8cf7795f65a6e682f  openspec/specs/admin/search-suggestions/spec.md
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
 d75f9c86a66f0ee1b7d3208547666681  phpstan-baseline.neon
