@@ -3515,7 +3515,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-726e7e5119c1d3574dd55a2e5a48af05  doc/changelogs/6.0/6.0.15.md
+5d23c5950239cf656bd8c50f6399f69c  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -24430,7 +24430,7 @@ ca9fcb3bc539db96ba111b2e89b415cd  kernel/classes/expjsonschemavalidator.php
 e28d493c473360f6987268aad63af821  kernel/classes/expkernelservicecompiler.php
 0d1f6478da3d2c9fe01ada5fdda0c15e  kernel/classes/expkernelservicecontainer.php
 70f9f81d133851b79b1283613b9044ec  kernel/classes/expkernelservices.php
-f79bf7b16c9a294ccb4b3f401e737f55  kernel/classes/expkernelservicescope.php
+cbbe66fe3842a099696a0b71654de7a7  kernel/classes/expkernelservicescope.php
 a02c47d7c7720aff231314766e7d3a64  kernel/classes/expkickstarter.php
 adec1f2bf88d5775fb39c94260f850b7  kernel/classes/expkickstarterini.php
 4c3efce95489a61f22bdb9f9b1416d40  kernel/classes/explinkcheck.php
@@ -25709,7 +25709,7 @@ bf34065e5f75151f013ae21ece24fae9  kernel/private/classes/ezpkernel.php
 ab090cf255ce57bb21cc03ce89494ff3  kernel/private/classes/ezpkernelredirect.php
 a9ad609aedf5b203a871d18ff1d63ceb  kernel/private/classes/ezpkernelresult.php
 0ffc521218c97a36fd624c1aaff8d598  kernel/private/classes/ezpkerneltreemenu.php
-e87849a01f1ac2405bccfde872607405  kernel/private/classes/ezpkernelweb.php
+0b3f79274f0755e8eed38a07d3659045  kernel/private/classes/ezpkernelweb.php
 1145d66875a01e743f97b49990fd3a8b  kernel/private/classes/ezplanguageswitcher.php
 c99ddccb64a9bb469e69b80c2078eb6c  kernel/private/classes/ezpmail.php
 cd076c0418540f66f88ff705df128ec8  kernel/private/classes/ezpmobiledevicedetect.php
@@ -26473,7 +26473,7 @@ f8422b2d7c5983552ff65b4105c20766  kernel/workflow/view.php
 29a9398e1ffaf0295240ff21451d1f16  kickstart.ini-dist
 067fc5ca564eac88e7f97630888b36d2  lib/ezdb/classes/expmongodb.php
 13f0a583c9b7da0867680d243ffdcb5e  lib/ezdb/classes/exppdodb.php
-dbeb177b9f0f19b9931a36f338e15216  lib/ezdb/classes/ezdb.php
+4a4c9ff3c3b806245f6e3e709208198b  lib/ezdb/classes/ezdb.php
 661ef313a4ddad8e41cfa06a5e021a1e  lib/ezdb/classes/ezdbinterface.php
 b66248e35051b10fab37396107632d39  lib/ezdb/classes/ezdbquerycache.php
 5d130fa0386f0a1810c63282941ab4aa  lib/ezdb/classes/ezdbtool.php
@@ -29851,6 +29851,7 @@ db6c4a8ca3c8ccf2ed6fcbbdd2c0b803  tests/tests/kernel/requestlog/fixtures/request
 b60dc460fe5444f72a0e09fc1305a105  tests/tests/lib/ezdb/eZDBInterfaceHelpersTest.php
 8f01078350da067cc0f5ac5ca3e493fa  tests/tests/lib/ezdb/eZDBInterfaceTest.php
 ef5fbe2c38e40f6b928b749e9d1c394b  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
+1e03876947563ca98d5dfd45c1611b50  tests/tests/lib/ezdb/eZDBTransactionExceptionTest.php
 7314bda5496532621a536f8ad2818a57  tests/tests/lib/ezdb/eZMySQLiDBEscapeStringWithoutConnectionTest.php
 41ad6b0de2479238f509f8e4d61298ce  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
 595e7ab1cedd85478942a82e6a062c97  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php
