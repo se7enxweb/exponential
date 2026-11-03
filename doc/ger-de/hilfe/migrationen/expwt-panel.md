@@ -3,20 +3,38 @@ title: "Migrationen in der Website-Seitenleiste"
 audience: admin, developer
 category: migrations
 order: 13
-summary: Das schreibgeschützte Panel Migrationen der Website-Seitenleiste (expwt) auf den Seiten der Site - der laufende Lauf, die fehlgeschlagenen und ausstehenden Migrationen, die verwaisten und der letzte Lauf - und wie es zu Setup > Migrationen führt.
-keywords: Migrationen, Website-Seitenleiste, expwt, Panel Migrationen, ausstehende Migrationen, fehlgeschlagene Migrationen, letzter Lauf, schreibgeschützt, website sidebar, migrations panel, migration/read, expwt/use
+summary: Das Panel Migrationen der Website-Seitenleiste (expwt) auf den Seiten der Site mit Bildschirmfoto - Meine Änderungen aufzeichnen, der laufende Lauf, die fehlgeschlagenen und ausstehenden Migrationen, die verwaisten, der letzte Lauf und die letzten Auslieferungen - und wie es zu Setup > Migrationen führt.
+keywords: Migrationen, Website-Seitenleiste, expwt, Panel Migrationen, ausstehende Migrationen, fehlgeschlagene Migrationen, letzter Lauf, Auslieferungen, Meine Änderungen aufzeichnen, Aufzeichnung beenden, website sidebar, migrations panel, deploys, record my changes, migration/read, migration/edit, expwt/use
 type: help
 ---
 # Migrationen in der Website-Seitenleiste
 
 Die Website-Seitenleiste (die Erweiterung expwt) hat ein Panel **Migrationen**: der Stand der Migrationen der
-Installation auf jeder Seite der Site, ohne in die Administration zu wechseln. Es zeigt nur an. Ausführen, Fortsetzen
-und Zurücknehmen bleiben in **Setup > Migrationen**
-([Ausführen, Probelauf und Rücknahme](ausfuehren-probelauf-und-rueckgaengig.md)): Die Seitenleiste hat hier keine
-Schaltfläche, die etwas ändert.
+Installation auf jeder Seite der Site, ohne in die Administration zu wechseln. Ausführen, Fortsetzen, Zurücknehmen und
+Ausliefern bleiben in **Setup > Migrationen** ([Ausführen, Probelauf und Rücknahme](ausfuehren-probelauf-und-rueckgaengig.md),
+[Ausliefern, Schritt für Schritt](ausliefern-schritt-fuer-schritt.md)); das Einzige, was das Panel startet, ist eine
+Aufzeichnung Ihrer eigenen Änderungen.
+
+![Das Panel Migrationen der Website-Seitenleiste: Meine Änderungen aufzeichnen, die fehlgeschlagenen und ausstehenden Migrationen, der letzte Lauf und die Auslieferungen](../bilder/migrationen/expwt-panel-light.webp)
 
 **Wer das Panel sieht:** Benutzer, die die Seitenleiste nutzen dürfen (`expwt/use`) und `migration/read` haben. Ohne
 diese Richtlinie oder auf einem Kernel ohne Migrationen gibt es keinen Reiter Migrationen.
+
+## Das Panel öffnen
+
+1. Melden Sie sich an und öffnen Sie eine beliebige Seite der Site.
+2. Öffnen Sie die Website-Seitenleiste und wählen Sie den Reiter **Migrationen**. Die Zahl am Reiter zählt die
+   ausstehenden, fehlgeschlagenen und ohne Datei aufgezeichneten Migrationen.
+3. **In der Administration öffnen** neben einem Eintrag öffnet seine Seite in Setup > Migrationen.
+
+## Die eigenen Änderungen aus der Seitenleiste aufzeichnen
+
+Mit `migration/edit` beginnt das Panel mit **Meine Änderungen aufzeichnen**. Drücken Sie es, machen Sie Ihre
+Änderungen auf der Site (mit den Bearbeitungswerkzeugen der Seitenleiste oder in der Administration) und drücken Sie
+dann im Panel **Aufzeichnung beenden**. Solange sie läuft, sagt das Panel, dass Ihre Änderungen für eine Migration
+aufgezeichnet werden; ist ein Fenster für die ganze Website offen, sagt es, dass jede Änderung aufgezeichnet wird.
+Erzeugen Sie die Migration aus der Aufzeichnung in der Administration
+([Änderungen aufzeichnen](aufzeichnung.md#die-migration-erzeugen)).
 
 ## Was das Panel zeigt
 
@@ -25,7 +43,11 @@ diese Richtlinie oder auf einem Kernel ohne Migrationen gibt es keinen Reiter Mi
 - die **ausstehenden** Migrationen (Kennung, Quelle, Beschreibung; die ersten 50, der Rest gezählt);
 - die Migrationen, die **aufgezeichnet sind, deren Datei aber fehlt** (die verwaisten des Stands);
 - den **letzten Lauf**: seinen Stand, wann er begann und endete, wer ihn ausgeführt hat, seinen Sicherungspunkt, Tag
-  und Push-Stand und die Meldung eines fehlgeschlagenen Laufs.
+  und Push-Stand und die Meldung eines fehlgeschlagenen Laufs;
+- die **Auslieferungen**: die letzten Deploys an Gegenstellen, jeder mit seinem Stand (ausgeliefert, übertragen,
+  wartet an einem Tor, zurückgenommen ...), jede Gegenstelle mit ihrem Stand, wann und von wem; **In der
+  Administration öffnen** öffnet die Seite des Deploys, auf der ein Tor freigegeben wird
+  ([Ausliefern, Schritt für Schritt](ausliefern-schritt-fuer-schritt.md)).
 
 Jeder Eintrag hat **In der Administration öffnen**: den Stand oder die Seite seines Laufs
 ([Stand und Verlauf](status-und-verlauf.md)).

@@ -289,6 +289,9 @@ and design files, and a site-wide recording window are planned and not part of t
 
 - [Migrations: the hub](../help/migrations/README.md), [All recipes](../help/migrations/recipes/README.md),
   [Frequently asked questions](../help/migrations/faq.md)
+- In the administration, step by step with screenshots: [A tour of Setup > Migrations](../help/migrations/a-tour-of-setup-migrations.md),
+  [The migration editor](../help/migrations/the-migration-editor.md), [Recording changes](../help/migrations/recording.md),
+  [Add a remote step by step](../help/migrations/add-a-remote-step-by-step.md), [Deploy step by step](../help/migrations/deploy-step-by-step.md)
 - [The tutorial](migrations-tutorial.md), [PHP migrations](migrations-php.md),
   [Packages, deploys and long runs](migrations-packages-deploy-and-long-runs.md),
   [Deploying to remote installations](migrations-remote-deploy.md),

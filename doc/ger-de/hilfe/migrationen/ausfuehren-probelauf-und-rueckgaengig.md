@@ -33,11 +33,12 @@ Aktion noch einmal nach Ihrem Passwort (oder einem Passkey) und dann einige Minu
 
 1. [Probelauf](#probelauf)
 2. [Ausführen](#ausführen)
-3. [Einen fehlgeschlagenen Lauf fortsetzen](#einen-fehlgeschlagenen-lauf-fortsetzen)
-4. [Zurücknehmen](#zurücknehmen)
-5. [Wie ein hier gestarteter Lauf weitergeht](#wie-ein-hier-gestarteter-lauf-weitergeht)
-6. [Wenn ein Lauf nicht starten kann](#wenn-ein-lauf-nicht-starten-kann)
-7. [Verwandte Seiten](#verwandte-seiten)
+3. [Ein langer Lauf in Teilen](#ein-langer-lauf-in-teilen)
+4. [Einen fehlgeschlagenen Lauf fortsetzen](#einen-fehlgeschlagenen-lauf-fortsetzen)
+5. [Zurücknehmen](#zurücknehmen)
+6. [Wie ein hier gestarteter Lauf weitergeht](#wie-ein-hier-gestarteter-lauf-weitergeht)
+7. [Wenn ein Lauf nicht starten kann](#wenn-ein-lauf-nicht-starten-kann)
+8. [Verwandte Seiten](#verwandte-seiten)
 
 ## Probelauf
 
@@ -46,6 +47,8 @@ Aktion noch einmal nach Ihrem Passwort (oder einem Passkey) und dann einige Minu
 - **Die Migrationen**: jede ausstehende Migration mit dem, was sie laut ihrem Plan ändern würde;
 - **Vor und nach dem Lauf**: ob vor dem Lauf (**Sicherungspunkt davor**) und danach (**Sicherungspunkt danach**) ein
   Sicherungspunkt genommen wird und was committet, getaggt und gepusht würde.
+
+![Der Probelauf: die ausstehenden Migrationen mit dem, was jede ändern würde, und die Sicherungspunkte davor und danach](../bilder/migrationen/dry-run-light.webp)
 
 **Simulieren** (mit `migration/run`) geht weiter: Die ausstehenden Migrationen laufen wirklich, in einer Transaktion,
 die danach zurückgerollt wird, und die Seite listet auf, was jede in der Datenbank geändert hat. Nichts bleibt. Eine
@@ -57,6 +60,8 @@ Simulieren, bis er beendet ist.
 
 **Ausführen** (`/migration/run`, oder **N ausstehende ausführen** auf der Seite Stand) ist ein Formular:
 
+![Das Formular Ausführen: die ausstehenden Migrationen angehakt, ein langer Lauf in Teilen, vor und nach dem Lauf, und die Bestätigung](../bilder/migrationen/run-form-light.webp)
+
 1. **Ausstehende Migrationen**: jede ausstehende oder fehlgeschlagene Migration, alle angehakt, in der Reihenfolge, in
    der sie laufen. Entfernen Sie den Haken bei einer, um sie und die von ihr abhängigen für einen späteren Lauf zu
    lassen. Eine Migration, die **während des Laufs den Wartungsmodus einschaltet**, sagt das.
@@ -64,7 +69,12 @@ Simulieren, bis er beendet ist.
    Lauf lehnt sie ab, außer Sie haken **Die Änderungen annehmen** an und schreiben unter **Warum** eine Begründung
    (höchstens 500 Zeichen). Sie laufen nicht noch einmal; die neue Prüfsumme wird aufgezeichnet und die Begründung im
    Audit-Log festgehalten.
-3. **Vor und nach dem Lauf**: Die Vorgaben sind die sicheren. Jedes Kästchen lässt einen Schritt weg:
+3. **Ein langer Lauf in Teilen** (optional): Grenzen für einen langen Lauf, siehe
+   [Ein langer Lauf in Teilen](#ein-langer-lauf-in-teilen). Leere Felder behalten die Einstellungen von
+   `migration.ini [RunSettings]`.
+4. **Vor und nach dem Lauf**: Die Vorgaben sind die sicheren. Jedes Kästchen lässt einen Schritt weg:
+
+   ![Vor und nach dem Lauf: Kein Sicherungspunkt, Keine Wiederherstellung, Nicht committete Änderungen behalten, Kein Commit, Kein Push, Kein Tag](../bilder/migrationen/run-options-light.webp)
 
    | Kästchen | Lässt weg |
    |---|---|
@@ -75,13 +85,42 @@ Simulieren, bis er beendet ist.
    | **Kein Push** | den Push (Commit und Tag finden statt) |
    | **Kein Tag** | den Tag (Commit und Push finden statt) |
 
-4. Haken Sie **Ja, diese Migrationen jetzt ausführen** an und klicken Sie auf **Ausführen**. Nach „Identität
+5. Haken Sie **Ja, diese Migrationen jetzt ausführen** an und klicken Sie auf **Ausführen**. Nach „Identität
    bestätigen“ startet der Lauf, und seine Seite öffnet sich, auf der Sie ihn verfolgen
    ([Die Seite eines Laufs](status-und-verlauf.md#die-seite-eines-laufs)).
 
 Der Lauf nimmt zuerst einen Sicherungspunkt der Installation. Scheitert eine Migration, hält der Lauf an und der
 Sicherungspunkt wird wiederhergestellt. Ein gelungener Lauf nimmt danach einen Sicherungspunkt und committet, taggt
 und pusht seinen Eintrag. **Erst ein Probelauf** öffnet den Probelauf.
+
+Was Sie nach **Ausführen** sehen: die Seite des Laufs mit **Fortschritt**: die Phase (zuerst „Code wird geprüft und
+vor dem Lauf ein Sicherungspunkt angelegt“, dann „... läuft (n von m)“), ein Balken und das Protokoll des Laufs, die
+ohne Neuladen wachsen.
+
+![Ein laufender Lauf: läuft, Code wird geprüft und vor dem Lauf ein Sicherungspunkt angelegt](../bilder/migrationen/run-live-light.webp)
+
+Ist er beendet, lädt sich die Seite mit dem Bericht, dem Eintrag und dem Protokoll des Laufs neu:
+
+![Die Seite des Laufs nach seinem Ende: der Bericht, der Eintrag mit den Sicherungspunkten, das Protokoll des Laufs](../bilder/migrationen/run-log-passed-light.webp)
+
+## Ein langer Lauf in Teilen
+
+Die Karte **Ein langer Lauf in Teilen** des Formulars Ausführen teilt und taktet einen Lauf vieler Migrationen oder
+einer, die viele Objekte ändert:
+
+![Ein langer Lauf in Teilen: höchstens so viele Migrationen, keine weitere Migration nach, Pause zwischen Migrationen, niedrigere Priorität](../bilder/migrationen/run-long-run-light.webp)
+
+| Feld | Option | Was es tut |
+|---|---|---|
+| **Höchstens so viele Migrationen** | `--max-migrations` | wendet höchstens so viele an; der Rest bleibt ausstehend („zurückgestellt“) |
+| **Keine weitere Migration nach (Sekunden)** | `--max-time` | startet nach dieser Zeit keine weitere Migration; die laufende wird beendet |
+| **Pause zwischen Migrationen (Sekunden)** | `--throttle` | eine Pause zwischen zwei Migrationen und zwischen den Stapeln einer PHP-Migration (`0.5` ist eine halbe Sekunde, höchstens 60) |
+| **Niedrigere Priorität (1 bis 19)** | `--nice` | lässt den Hintergrundprozess mit niedrigerer Priorität laufen, wie `nice(1)` |
+
+Ein leeres Feld behält die Einstellung von `migration.ini [RunSettings]`, die als Platzhalter des Felds steht. Ein
+Lauf, der an einer Grenze anhält, endet ohne Fehler; die Migrationen, die er lässt, bleiben für den nächsten Lauf oder
+eine Fortsetzung ausstehend. Die erste Migration eines Laufs startet immer. Einzelheiten:
+[Lange Läufe](../../anleitungen/migrationen-pakete-deploy-und-lange-laeufe.md#lange-läufe).
 
 ## Einen fehlgeschlagenen Lauf fortsetzen
 
@@ -100,6 +139,15 @@ fortsetzen** auf der Seite des Laufs. Das ist ein neuer Lauf dessen, was der feh
 | **Läufe** | einen Lauf mit Sicherungspunkt davor: dieser Sicherungspunkt wird wiederhergestellt |
 | **Migrationen** | eine angewendete Migration mit `down()`: ihr `down()` läuft |
 | **Frühere Sicherungspunkte (Fachleute)** | einen beliebigen früheren Sicherungspunkt, wiederhergestellt |
+
+**Zum Zustand vor einem Lauf zurück, Schritt für Schritt:**
+
+1. Öffnen Sie **Rücknahme**. Suchen Sie den Lauf unter **Läufe** (die neuesten zuerst) und drücken Sie **Auswählen**.
+2. Wählen Sie die **Wiederherzustellenden Teile** (die Vorgaben passen meistens).
+3. Haken Sie **Ja, zurücknehmen** an und drücken Sie **Zurücknehmen**; bestätigen Sie „Identität bestätigen“.
+4. Die Seite der Rücknahme öffnet sich und verfolgt sie. Danach zeigt der Stand die Migrationen des Laufs wieder als
+   ausstehend, und der Verlauf listet die Rücknahme unter **Hier gestartet**. Unter Umständen müssen Sie sich neu
+   anmelden.
 
 **Auswählen** öffnet die Bestätigung (`/migration/rollback/<Kennung des Laufs, der Migration oder des
 Sicherungspunkts>`; auch **Zurücknehmen** im Verlauf und **Diesen Lauf zurücknehmen** auf der Seite eines Laufs öffnen

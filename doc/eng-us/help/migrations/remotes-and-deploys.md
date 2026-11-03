@@ -16,7 +16,12 @@ sync: every remote ends in the same migration state, or none changes. The pages 
 and **Setup > Migrations > Deploys**; the console does the same with `exp:migration:deploy` (see
 [Remote deploy](../../guides/migrations-remote-deploy.md), which also explains every phase in detail).
 
+This page is the reference. The same with numbered steps and a screenshot of every screen:
+[Add a remote step by step](add-a-remote-step-by-step.md) and [Deploy step by step](deploy-step-by-step.md).
+
 ## Remotes
+
+![The list of remotes with their environment, address, credential and groups](../images/migrations/remotes-light.webp)
 
 **Remotes** lists every remote of `migration.ini [RemoteSettings] RemoteList[]` with its environment, its address
 (`transport://user@host:port/path`), its credential (the kind and the name of a secret, never a value) and its groups.
@@ -51,6 +56,8 @@ anywhere in the form is not kept. **Remove this remote** takes its settings out 
 
 **Deploys** has the form that starts a deploy and, below it, the **history**: every deploy that sent or ran something,
 the newest first, with its state, every remote's state, who started it and when.
+
+![The Deploys page: the remotes, how, and the history](../images/migrations/deploys-light.webp)
 
 1. **The remotes**: tick remotes one by one, a group (every remote of it), or both.
 2. **How**:

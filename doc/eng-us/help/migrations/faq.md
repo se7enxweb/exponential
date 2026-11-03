@@ -17,9 +17,10 @@ type: help
 3. [Running them](#running-them)
 4. [Safety and going back](#safety-and-going-back)
 5. [Teams, environments and delivery](#teams-environments-and-delivery)
-6. [Databases](#databases)
-7. [Coming from other tools](#coming-from-other-tools)
-8. [Related pages](#related-pages)
+6. [In the administration](#in-the-administration)
+7. [Databases](#databases)
+8. [Coming from other tools](#coming-from-other-tools)
+9. [Related pages](#related-pages)
 
 ## The idea
 
@@ -141,6 +142,48 @@ one), committed, tagged `migrations/<environment>/<run-id>` and pushed by the ru
 Yes, in `extension/<name>/migrations/`; they run while the extension is active. Packages carry them in their own
 `migrations/` folder. [Migrations in an extension or a package](recipes/migrations-in-an-extension-or-package.md).
 
+## In the administration
+
+**Where do I start in the administration?**
+**Setup > Migrations**: its tabs are Status, History, Dry run, Run, Rollback, Recording, Remotes, Deploys and Editor.
+[A tour of Setup > Migrations](a-tour-of-setup-migrations.md).
+
+**Can I make a migration without a shell?**
+Yes: record your changes and press **Generate migration** ([Recording changes](recording.md)), or build it in the
+**Editor** ([The migration editor](the-migration-editor.md)).
+
+**The editor will not save my change to an old migration. Why?**
+The migration has run; every installation that applied it keeps its checksum, and a changed file would stop their
+next run. Write the change as a new migration. [A migration that has run](the-migration-editor.md#a-migration-that-has-run).
+
+**How long does a site-wide recording stay open?**
+Until someone closes it, or for the minutes typed in **Close by itself after (minutes, optional)** (at most 31 days).
+[The site-wide window](recording.md#the-site-wide-window).
+
+**How do I add staging or production as a target?**
+**Setup > Migrations > Remotes > New remote**: five steps, the credential as the name of a secret.
+[Add a remote step by step](add-a-remote-step-by-step.md).
+
+**Is a password stored in the remote's settings?**
+Never. The settings hold the name of a secret of Setup > Secrets (or an environment variable); a password typed into
+the wizard is not written. [Step 3: the credential](add-a-remote-step-by-step.md#step-3-the-credential).
+
+**Can I try a deploy without changing anything?**
+Yes: **Preflight only** on the Deploys page checks every remote and plans the files, and sends nothing.
+[Preflight only](deploy-step-by-step.md#preflight-only).
+
+**My deploy waits at a gate. What now?**
+It is a staged deploy: check the stage that was deployed, then **Approve** on the deploy's page.
+[Staged deploys and the gate](deploy-step-by-step.md#staged-deploys-and-the-gate).
+
+**What does "out of sync" mean?**
+A remote failed and not every remote could be taken back, so the remotes now differ.
+[In sync and out of sync](deploy-step-by-step.md#in-sync-and-out-of-sync).
+
+**Our host only offers FTP. Can we deploy there?**
+With **Transfer only** the files are sent and verified; to run them there too, set up the signed HTTP trigger.
+[FTP-only hosts and the trigger](add-a-remote-step-by-step.md#ftp-only-hosts-and-the-trigger).
+
 ## Databases
 
 **Do migrations work on every database?**
@@ -159,8 +202,9 @@ Migrations change content as well as schema, and every run has captions, a recor
 [Exponential migrations for Doctrine users](../dxp-developers/exponential-migrations-for-doctrine-users.md).
 
 **We used the Kaliop migration bundle on eZ Platform. Can we convert our YAML?**
-There is no converter in 6.0.15; each step is written as PHP by hand.
-[Coming from the Kaliop migration bundle](recipes/coming-from-kaliop-ezmigrationbundle.md).
+Yes: `./console exp:migration:convert <file or folder>` reads the YAML migrations of that bundle and writes a YAML
+migration of Exponential for each file; check each one before it runs. [Coming from the Kaliop migration bundle](recipes/coming-from-kaliop-ezmigrationbundle.md),
+[Converting migrations of the reference bundle](../../guides/migrations-generators-and-recording.md#converting-migrations-of-the-reference-bundle).
 
 ## Related pages
 

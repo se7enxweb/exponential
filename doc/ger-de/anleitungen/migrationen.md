@@ -300,6 +300,9 @@ websiteweites Aufzeichnungsfenster sind geplant und nicht Teil dieses Releases.
 
 - [Migrationen: der Einstieg](../hilfe/migrationen/README.md), [Alle Rezepte](../hilfe/migrationen/rezepte/README.md),
   [Häufige Fragen](../hilfe/migrationen/faq.md)
+- In der Administration, Schritt für Schritt mit Bildschirmfotos: [Ein Rundgang durch Setup > Migrationen](../hilfe/migrationen/rundgang-durch-setup-migrationen.md),
+  [Der Migrationseditor](../hilfe/migrationen/der-migrationseditor.md), [Änderungen aufzeichnen](../hilfe/migrationen/aufzeichnung.md),
+  [Eine Gegenstelle anlegen](../hilfe/migrationen/eine-gegenstelle-anlegen-schritt-fuer-schritt.md), [Ausliefern](../hilfe/migrationen/ausliefern-schritt-fuer-schritt.md)
 - [Das Tutorial](migrationen-tutorial.md), [PHP-Migrationen](migrationen-php.md),
   [Pakete, Deploys und lange Läufe](migrationen-pakete-deploy-und-lange-laeufe.md),
   [Deploy auf entfernte Installationen](migrationen-remote-deploy.md),

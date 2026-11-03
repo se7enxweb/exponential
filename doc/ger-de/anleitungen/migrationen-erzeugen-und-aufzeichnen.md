@@ -636,6 +636,7 @@ in den Kopf. Ohne `--apply` wird nichts geschrieben, und eine vorhandene Datei w
 ## Verwandte Seiten
 
 - [Änderungen in der Administration aufzeichnen](../hilfe/migrationen/aufzeichnung.md)
+- [Migrationen erzeugen](../hilfe/migrationen/migrationen-erzeugen.md) und [der Migrationseditor](../hilfe/migrationen/der-migrationseditor.md), Schritt für Schritt mit Bildschirmfotos
 - [Rezept: eine Sitzung in der Administration aufzeichnen](../beispiele/kochbuch/migrationen-sitzung-aufzeichnen.md)
 - [Das Migrationsdateiformat: aufgezeichnete Ereignisse](../spezifikationen/6.0/migrationsdateiformat.md#aufgezeichnete-ereignisse-exp-migration-recording-event1)
 - [Migrationen](migrationen.md) · [Das Prüfprotokoll](../funktionen/6.0/pruefprotokoll.md) · [„Identität bestätigen“](identitaet-bestaetigen.md)
