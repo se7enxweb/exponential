@@ -1899,6 +1899,7 @@ return array(
       'expUpgradeSchemaStep'                                         => 'kernel/classes/upgrade/expupgradeschemastep.php',
       'expUpgradeScriptStep'                                         => 'kernel/classes/upgrade/expupgradescriptstep.php',
       'expUpgradeStep'                                               => 'kernel/classes/upgrade/expupgradestep.php',
+      'expUpgradeStepActiveExtensionTables'                          => 'kernel/classes/upgrade/steps/expupgradestepactiveextensiontables.php',
       'expUpgradeStepAnonymousPublicPolicies'                        => 'kernel/classes/upgrade/steps/expupgradestepanonymouspublicpolicies.php',
       'expUpgradeStepApiKeyTable'                                    => 'kernel/classes/upgrade/steps/expupgradestepapikeytable.php',
       'expUpgradeStepAuditIndexTables'                               => 'kernel/classes/upgrade/steps/expupgradestepauditindextables.php',

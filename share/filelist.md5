@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-67b961bf65a9165c7383d7481d0590c1  autoload/ezp_kernel.php
+fda2ff05a060f5192b9e996212722cec  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -25032,6 +25032,7 @@ adc9ef2daefeda3817e54f6214647e20  kernel/classes/upgrade/expupgraderollback.php
 f849e9b7c4f5813bbcff0bc3262fffdf  kernel/classes/upgrade/expupgradestep.php
 1617330e83d07fe09576c5d2ba1e81af  kernel/classes/upgrade/expupgradetableinstallerstep.php
 7e1f0863aa0d81a312f93ce77e8fa7cc  kernel/classes/upgrade/expupgradeverifyafter.php
+fee4cd394d64303b07858548aff430d0  kernel/classes/upgrade/steps/expupgradestepactiveextensiontables.php
 e3ce75d033564977418b42e166b4ab04  kernel/classes/upgrade/steps/expupgradestepanonymouspublicpolicies.php
 c6a637d610db03f7d58a5dce12d99ccc  kernel/classes/upgrade/steps/expupgradestepapikeytable.php
 51716ac42fbfa60d142a4d5fcc216992  kernel/classes/upgrade/steps/expupgradestepauditindextables.php
@@ -26840,7 +26841,7 @@ af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 c80250dec48448bcda0865588dfc740c  settings/twig.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
-164db63b834ae5c8abd09eb2714daeb2  settings/upgrade.ini
+850a71131b59e521624646f7ea3e3017  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 36b07ea522767dd9ddc62b6c380e062d  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
@@ -29304,6 +29305,7 @@ a46daadcacf40b3c72d11dfc374d7cb9  tests/tests/kernel/classes/updatesql/CheckDbFi
 10ce6e7354cbc69c6b1155e5c5e04f33  tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php
 4d4cbda49aeaf6ab4b8574c76d2c5bad  tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php
 ded10af0a07be9289ee8c915f595aa97  tests/tests/kernel/classes/updatesql/UpdateSqlStorageEngineTest.php
+122aaa2b4bcd60f5478e7175ef22e667  tests/tests/kernel/classes/upgrade/expUpgradeActiveExtensionTablesTest.php
 9d0d5b7f17b51025eba972ea40e95988  tests/tests/kernel/classes/upgrade/expUpgradeApplyResultTest.php
 350bffed928079590a31ed99f89b3471  tests/tests/kernel/classes/upgrade/expUpgradeCaptionTest.php
 77d79f5ce967639e5f788bf7f720b32c  tests/tests/kernel/classes/upgrade/expUpgradeCommandContractTest.php
