@@ -469,22 +469,44 @@ The state group `help_status` is the workflow: Draft, Review, Released. The admi
 it like any state; the topic's page in the help (admin and admin4) shows it where the topic is read, in the card
 **Review and release**, to who may edit the topic or assign its state:
 
+- a status box: the state as a badge (**Draft**, **In review**, **Released**) and what it means for readers:
+  "Readers see this page." or "Hidden from readers until someone releases it.";
 - the three states as steps, the current one marked;
-- the steps the user's `state/assign` policies allow as buttons: **Send to Review** (Draft), **Release** and
-  **Back to Draft** (Review), **Back to Review** (Released). A help editor gets Send to Review only; who has the role
-  Help release in addition gets the rest. A button is a POST to `exphelp/state/<help_id>` with the kernel's form
-  token, and goes through the kernel's state operation, so workflows attached to it run as for the Object states tab;
-- when the user wrote the topic's current version, no Release button but the reason: "You wrote the current version,
-  so someone else with the release role releases it" ([the author does not release](#roles));
-- after a step, its result (the topic is in Review now, Released, a Draft again, or why nothing changed);
+- the steps the user's `state/assign` policies allow as buttons, each with what it does next to it: **Send to Review**
+  (Draft; a reviewer checks it next, readers do not see it yet), **Release** (Review; readers see it at once) and
+  **Back to Draft** (Review; out of review for more work), **Back to Review** (Released; hides it from readers until
+  it is released again). A help editor gets Send to Review only; who has the role Help release in addition gets the
+  rest. A button is a POST to `exphelp/state/<help_id>` with the kernel's form token, and goes through the kernel's
+  state operation, so workflows attached to it run as for the Object states tab;
+- a step back (**Back to Review**, **Back to Draft**) is not taken at once: `exphelp/state` shows a confirmation page
+  first ("Hide this page from readers?" or "Send this page back to Draft?"), whose form posts the same step again
+  with the confirmation, or **Cancel** to go back with nothing changed. It is a page of its own, without a script,
+  so a click by mistake never hides a released page;
+- when the user cannot release, who can: "Only a user with the role Help release who did not write this version can
+  release it", with a link to [Waiting for release](#waiting-for-release) on the help's dashboard when the user's
+  roles allow releasing. When the user wrote the topic's current version, the reason comes first: "You wrote the
+  current version, so someone else with the release role releases it" ([the author does not release](#roles));
+- after a step, its result with the new state and the next action: "The page is in Review now. It is hidden from
+  readers until it is released." with a **Release now** button when the user may release it, otherwise who may; or
+  Released, a Draft again, or why nothing changed;
 - **Style guide check**: the validator's findings of this topic (level, rule, field, finding), checked with what its
   rules need (the topics it relates to, the topics with its help_id, its figures, the glossary, the released
   help_ids), not the whole help, so the editor sees what `check` would report before sending the topic to Review;
 - the answers to "Was this helpful?" of the topic: yes, no, and the reasons given for no.
 
-The card uses the shared components of the admin designs (`a4-card`, `a4-steps`, `a4-notice`, `a4-table`, `a4-tag`,
-`a4-btn`), has no CSS of its own but its place in the column (`stylesheets/modules/help.css`), and follows the light
-and dark mode. The same template is in design/admin and design/admin4.
+The card uses the shared components of the admin designs (`a4-card`, `a4-steps`, `a4-notice`, `a4-badge`, `a4-table`,
+`a4-tag`, `a4-btn`), has no CSS of its own but its place in the column and the layout of the status box and the
+described steps (`stylesheets/modules/help.css`), and follows the light and dark mode. The same template is in
+design/admin and design/admin4. A manual's page (`exphelp/manual/<remote_id>`) shows the same card, without the
+style guide check, and its steps post to `exphelp/state/manual/<remote_id>`.
+
+### Waiting for release
+
+The help's dashboard lists **Help topics waiting for release**: the topics in Review, the longest waiting first, to
+who may release them (the role Help release). Each row links the topic, shows when it last changed, and has a
+**Release** button; a topic the user wrote is listed too, marked: someone else releases it. The list is paged with
+the view parameter `(offset)` (`exphelp/dashboard/(offset)/10`), ten topics to a page (`ReviewListLimit`). A topic's
+card links here (`exphelp/dashboard#help-dash-waiting`) when the user cannot release it.
 
 ## Was this helpful?
 

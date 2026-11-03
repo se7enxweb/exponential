@@ -50,12 +50,27 @@ können. Sie sehen sie, wenn Sie das Thema bearbeiten oder seinen Status ändern
 3. Klicken Sie auf **Zur Prüfung geben**, wenn das Thema fertig ist.
    Die Karte meldet, dass das Thema jetzt in Prüfung ist.
 
+Der Statuskasten oben in der Karte sagt, was Leser sehen: **Veröffentlicht** heißt "Leser sehen diese Seite",
+**Entwurf** und **In Prüfung** heißen "Für Leser verborgen, bis jemand sie freigibt". Neben jeder Schaltfläche steht,
+was sie bewirkt.
+
 Ein Release-Verantwortlicher öffnet das Thema dann und klickt auf **Freigeben**, oder auf **Zurück zum Entwurf**, um es
-zurückzugeben. Ein freigegebenes Thema geht mit **Zurück in Prüfung** zurück, bevor jemand es wieder ändert.
+zurückzugeben. Release-Verantwortliche finden die Themen in Prüfung auf der Startseite der Hilfe unter **Hilfethemen,
+die auf Freigabe warten**, jedes mit einer Schaltfläche **Freigeben**.
+
+Ein freigegebenes Thema geht mit **Zurück in Prüfung** zurück, bevor jemand es wieder ändert. Weil das Thema dann für
+Leser verborgen ist, fragt die Hilfe zuerst: **Diese Seite vor Lesern verbergen?** Klicken Sie auf **Zurück in
+Prüfung**, um zu bestätigen, oder auf **Abbrechen**, damit es veröffentlicht bleibt. **Zurück zum Entwurf** fragt
+ebenso.
+
+Haben Sie ein freigegebenes Thema versehentlich zurück in Prüfung gegeben, meldet die Karte das: "Die Seite ist jetzt
+in Prüfung. Sie ist für Leser verborgen, bis sie freigegeben ist." Klicken Sie auf **Jetzt freigeben**, um es wieder
+freizugeben, wenn Sie dürfen. Wenn nicht, nennt die Karte, wer es darf: nur ein Benutzer mit der Rolle Help release,
+der diese Version nicht geschrieben hat.
 
 Wenn Sie die aktuelle Version eines Themas geschrieben haben, zeigt die Karte keine Schaltfläche **Freigeben**, sondern
-den Grund: Jemand anderes mit der Freigaberolle gibt es frei. Dieselbe Regel gilt im Reiter **Objektstatus** der
-Administrationsoberfläche.
+den Grund: Jemand anderes mit der Freigaberolle gibt es frei, und einen Link auf die Themen, die auf Freigabe warten.
+Dieselbe Regel gilt im Reiter **Objektstatus** der Administrationsoberfläche.
 
 ## Was Leser sagen: War das hilfreich?
 

@@ -49,11 +49,24 @@ You see it when you may edit the topic or change its state.
 3. Click **Send to Review** when the topic is ready.
    The card says that the topic is in Review now.
 
-A release manager then opens the topic and clicks **Release**, or **Back to Draft** to send it back. A Released topic
-goes back with **Back to Review** before anyone changes it again.
+The status box at the top of the card says what readers see: **Released** means "Readers see this page", **Draft**
+and **In review** mean "Hidden from readers until someone releases it". Each button says what it does next to it.
+
+A release manager then opens the topic and clicks **Release**, or **Back to Draft** to send it back. Release managers
+find the topics in Review on the help's start page, in **Help topics waiting for release**, each with a **Release**
+button.
+
+A Released topic goes back with **Back to Review** before anyone changes it again. Because that hides the topic from
+readers, the help asks first: **Hide this page from readers?** Click **Back to Review** to confirm, or **Cancel** to
+leave it Released. **Back to Draft** asks the same way.
+
+If you sent a Released topic back to Review by mistake, the card says so: "The page is in Review now. It is hidden
+from readers until it is released." Click **Release now** to release it again, if you may. If you may not, the card
+says who may: only a user with the role Help release who did not write this version.
 
 If you wrote the current version of a topic, the card shows no **Release** button but the reason: someone else with
-the release role releases it. The same rule applies on the **Object states** tab of the administration.
+the release role releases it, and links to the topics waiting for release. The same rule applies on the **Object
+states** tab of the administration.
 
 ## What readers say: Was this helpful?
 
