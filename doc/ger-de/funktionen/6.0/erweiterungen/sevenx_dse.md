@@ -13,19 +13,33 @@ unter `/dse/dashboard`. Es ist die einzige freigegebene Extension für einen Dat
 - **Import** (SQL, CSV, TSV) und **Export** (SQL-Dump, CSV, TSV) als direkte Datei-Downloads, die die Template-Hülle
   umgehen.
 - **Mehrere Datenbanktreiber**: MySQL 8.0+ und MariaDB 10.3+, PostgreSQL 14+, SQLite 3.35+.
-- **Die eigene Datenbank der Website, vorausgewählt**: Der Editor öffnet die Hauptdatenbank der Installation, gelesen
-  aus `site.ini [DatabaseSettings]` des Siteaccess so, wie der Kernel sie liest, und verbindet sich mit ihr, sobald die
-  Bestätigung der Sicherung abgeschickt ist. Die Anmeldung kommt aus der INI: Sie wird nie eingegeben, in kein
-  Formular geschrieben und nicht angezeigt, und in der URL steht nur der Serverschlüssel `main`. Angeboten wird nur
-  das Datenbanksystem, mit dem die Website läuft (eine SQLite-Website bekommt nur SQLite, eine MySQL-Website nur
-  MySQL/MariaDB): Die Website verwendet kein anderes, und eine von Hand eingegebene Verbindung könnte eine Datenbank
-  erreichen, die nicht zu ihr gehört. Eine SQLite-Datenbank ohne Pfad ist wie für den Kernel die Datei in
-  `var/storage/sqlite3/`; ihre Tabellenliste lässt die eigenen Tabellen von SQLite (`sqlite_sequence` ...) weg.
+- **Die eigene Datenbank der Website, vorausgewählt**: „Die Datenbank dieser Website öffnen“ auf dem Dashboard öffnet
+  mit einem Klick die Hauptdatenbank der Installation, gelesen aus `site.ini [DatabaseSettings]` des Siteaccess so,
+  wie der Kernel sie liest, als konfigurierten Server `main` von AdminNeo. Die Anmeldung kommt aus der INI: Sie wird
+  nie eingegeben, in kein Formular geschrieben und nicht angezeigt, und in der Adresse steht nur der Serverschlüssel
+  `main`. Eine SQLite-Datenbank ohne Pfad ist wie für den Kernel die Datei in `var/storage/sqlite3/`; ihre
+  Tabellenliste lässt die eigenen Tabellen von SQLite (`sqlite_sequence` ...) weg.
+- **Jede andere Datenbank**: „Mit einer anderen Datenbank verbinden“ auf dem Dashboard und der Link „Change database“
+  im Editor öffnen das eigene Anmeldeformular von AdminNeo mit jedem Treiber, den es hier hat (MySQL/MariaDB,
+  PostgreSQL, MS SQL, SQLite, Oracle, MongoDB ..., soweit ihre PHP-Erweiterungen geladen sind), und den freien Feldern
+  für Server, Benutzername, Passwort und Datenbank; eine SQLite-Datei wird mit ihrem Pfad relativ zur Installation
+  angegeben (nur innerhalb davon). Die in der Sitzung gemerkten Anmeldungen werden dort ebenfalls angeboten. `main`
+  ist nur für Anfragen zu ihr der konfigurierte Server, das freie Formular steht also immer zur Verfügung.
 - **Sicherheitsschranke**: ein verpflichtender Haftungshinweis und ein Bildschirm zur **Bestätigung der Sicherung** bei
   jedem direkten Zugriff.
 - **Gegen CSRF geschützter Wechsel der Datenbank**: Der Link „Change database“ trägt ein Token `dse_switch` pro
   Sitzung; „return to last database“ funktioniert, ohne URLs zu speichern; die Sitzungen mit Serverpasswort von
   AdminNeo bleiben über die Schranke hinweg erhalten.
+- **Ansichtsparameter statt Query-Strings**: Der Zustand des Editors steht als Ansichtsparameter in der Adresse, zum
+  Beispiel `/dse/dashboard/(sqlite)/main/(username)/~/(db)/~dmFy.../(select)/ezsection`. Einfache Werte bleiben
+  lesbar, `~` ist ein leerer Wert, andere Werte (Pfade mit Schrägstrichen) sind `~` und ihre base64url-Form, und
+  Filter und Spaltenlisten reisen gemeinsam in `(qs)`. AdminNeo arbeitet intern weiter mit Query-Strings; die Ansicht
+  füllt sie aus den Ansichtsparametern und schreibt jeden Link, jede Formularadresse, jede Skriptadresse und jede
+  Weiterleitung um, die AdminNeo ausgibt. Die GET-Formulare von AdminNeo (Suche, Filter, Datenbankauswahl) werden
+  gesendet und an ihre Adresse mit Ansichtsparametern weitergeleitet, und eine alte Adresse mit `?sqlite=...` oder
+  `?dse_switch=...` wird ebenso weitergeleitet. Hintergrundanfragen der Skripte von AdminNeo hängen `&page=2` oder
+  `&script=db` an den Pfad an, was die Ansicht liest. Das Formular für SQL-Befehle wird nur gesendet; es schreibt die
+  Anweisung nicht mehr in die Adresse. Eine Anmeldung ist nie ein Ansichtsparameter.
 - **Rollenrichtlinie**: Der Zugriff ist die Richtlinie `dse/dashboard`.
 - **CSS-Isolierung**: Die globalen Stile von AdminNeo können das eigene Layout der Administrationsoberfläche nicht
   beschädigen.
@@ -62,7 +76,7 @@ php bin/php/ezcache.php --clear-all
 
 | Datei | Block | Schlüssel | Standard | Bedeutung |
 |---|---|---|---|---|
-| `dse.ini` | `DSESettings` | `InsecureUse` | `disabled` | Bei `enabled` wird das Datenbankpasswort im Anmeldeformular vorausgefüllt. Nur wirksam, wenn AdminNeo für das Datenbanksystem der Website keinen Treiber hat (sonst gibt es kein Anmeldeformular). Nur in vertrauenswürdigen, geschlossenen Umgebungen verwenden |
+| `dse.ini` | `DSESettings` | `InsecureUse` | `disabled` | Bei `enabled` wird das Datenbankpasswort im Anmeldeformular vorausgefüllt. Nur das freie Anmeldeformular von AdminNeo („Mit einer anderen Datenbank verbinden“) verwendet es; die eigene Datenbank der Website zeigt nie ein Anmeldefeld. Nur in vertrauenswürdigen, geschlossenen Umgebungen verwenden |
 
 ## Was sich geändert hat
 

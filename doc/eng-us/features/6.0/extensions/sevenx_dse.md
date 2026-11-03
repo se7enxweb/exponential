@@ -13,16 +13,30 @@ of Exponential.
 - **Import** (SQL, CSV, TSV) and **export** (SQL dump, CSV, TSV) as direct file downloads that bypass the template
   wrapping.
 - **Several database drivers**: MySQL 8.0+ and MariaDB 10.3+, PostgreSQL 14+, SQLite 3.35+.
-- **The site's own database, preselected**: the editor opens the main database of the installation, read from
-  `site.ini [DatabaseSettings]` of the siteaccess the way the kernel reads it, and connects to it as soon as the
-  backup acknowledgement is confirmed. Its login comes from the INI: it is never typed in, written into a form or
-  shown, and only the server key `main` appears in the URL. Only the engine the site runs on is offered (an SQLite
-  site gets SQLite only, a MySQL site MySQL/MariaDB only): the site uses no other engine, and a connection typed in
-  by hand could reach a database that does not belong to it. An SQLite database named without a path is the file in
-  `var/storage/sqlite3/`, as for the kernel; its table list leaves out SQLite's own tables (`sqlite_sequence` ...).
+- **The site's own database, preselected**: "Open the database of this site" on the dashboard opens the main
+  database of the installation with one click, read from `site.ini [DatabaseSettings]` of the siteaccess the way the
+  kernel reads it, as AdminNeo's configured server `main`. Its login comes from the INI: it is never typed in, written
+  into a form or shown, and only the server key `main` appears in the address. An SQLite database named without a
+  path is the file in `var/storage/sqlite3/`, as for the kernel; its table list leaves out SQLite's own tables
+  (`sqlite_sequence` ...).
+- **Any other database**: "Connect to another database" on the dashboard, and the "Change database" link inside the
+  editor, open AdminNeo's own login form with every driver it has here (MySQL/MariaDB, PostgreSQL, MS SQL, SQLite,
+  Oracle, MongoDB ... as far as their PHP extensions are loaded) and the free-form server, username, password and
+  database fields; an SQLite file is named by its path relative to the installation (inside it only). The logins
+  remembered in the session are offered there too. `main` is the configured server only for requests about it, so
+  the free-form form is always available.
 - **Safety gate**: a mandatory disclaimer and **backup acknowledgement** screen on every bare access.
 - **CSRF-protected database switching**: the "Change database" link carries a per-session token `dse_switch`; "return
   to last database" works without storing URLs; AdminNeo's server password sessions are kept across the gate.
+- **View parameters, no query strings**: the editor's state is in the address as view parameters, for example
+  `/dse/dashboard/(sqlite)/main/(username)/~/(db)/~dmFy.../(select)/ezsection`. Plain values stay readable, `~`
+  is an empty value, other values (paths with slashes) are `~` plus their base64url form, and filters and column
+  lists travel together in `(qs)`. AdminNeo still works with query strings inside; the view fills them from the view
+  parameters and rewrites every link, form action, script address and redirect AdminNeo prints. AdminNeo's GET forms
+  (search, filter, database selector) are posted and redirected to their view-parameter address, and an old
+  `?sqlite=...` or `?dse_switch=...` address is redirected the same way. Background requests of AdminNeo's scripts
+  append `&page=2` or `&script=db` to the path, which the view reads. The SQL command form is only posted; it no
+  longer puts the statement into the address. No login is ever a view parameter.
 - **Role policy**: access is the policy `dse/dashboard`.
 - **CSS isolation**: AdminNeo's global styles cannot damage the admin's own layout.
 
@@ -58,7 +72,7 @@ php bin/php/ezcache.php --clear-all
 
 | File | Block | Key | Default | Meaning |
 |---|---|---|---|---|
-| `dse.ini` | `DSESettings` | `InsecureUse` | `disabled` | When `enabled`, pre-fills the database password in the login form. Only used when AdminNeo has no driver for the site's engine (otherwise there is no login form). Use only in trusted, closed environments |
+| `dse.ini` | `DSESettings` | `InsecureUse` | `disabled` | When `enabled`, pre-fills the database password in the login form. Only AdminNeo's free-form login form ("Connect to another database") uses it; the site's own database never shows a login field. Use only in trusted, closed environments |
 
 ## What changed
 

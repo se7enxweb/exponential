@@ -6848,7 +6848,7 @@ f2b0b9542cc0b519b921c4e696031d7b  doc/eng-us/features/6.0/extensions/ngsymfonyto
 1d6435366247cc7af340e35f1f073d1b  doc/eng-us/features/6.0/extensions/recaptcha.md
 9d7fe39179dcfb24343e8e07e164b7e9  doc/eng-us/features/6.0/extensions/sevenx-recipes.md
 b8f242606ca4ce999158939e09ee1700  doc/eng-us/features/6.0/extensions/sevenx_authentication_2fa.md
-966f087b3bc280b51d31b7ab74e4abf3  doc/eng-us/features/6.0/extensions/sevenx_dse.md
+0d93f54689ad6c352f748e5b78470e6e  doc/eng-us/features/6.0/extensions/sevenx_dse.md
 9259593f1e0f9b24adf957b93ea527e3  doc/eng-us/features/6.0/extensions/sevenx_themes_admin_classic.md
 0856bc1a2d33f4452ecbed9cd49006eb  doc/eng-us/features/6.0/extensions/sevenx_themes_simple.md
 cf383c2a63e360a65b7db996e72203a2  doc/eng-us/features/6.0/extensions/sevenx_valkey_cache.md
@@ -16484,7 +16484,7 @@ bbdf84371d2ac25fe711572ed55f756f  doc/ger-de/funktionen/6.0/erweiterungen/nxc_po
 421b61fbe512f0ccc1c024a775e52ccc  doc/ger-de/funktionen/6.0/erweiterungen/recaptcha.md
 5bce5d0c4563eb313a304c365e26c3ae  doc/ger-de/funktionen/6.0/erweiterungen/sevenx-recipes.md
 2eb7f3ab9c9896a638394ed2ecd8830f  doc/ger-de/funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md
-733eeb0f75dd89be1fa20fdca332ccdb  doc/ger-de/funktionen/6.0/erweiterungen/sevenx_dse.md
+c9f3e289331244c03e600e00eb5314ef  doc/ger-de/funktionen/6.0/erweiterungen/sevenx_dse.md
 a4030805d2febdd6ebb1b2e76b05a1bb  doc/ger-de/funktionen/6.0/erweiterungen/sevenx_themes_admin_classic.md
 f33e38096cdaa422b2e902b85b9b0744  doc/ger-de/funktionen/6.0/erweiterungen/sevenx_themes_simple.md
 c4ac384cbe89a44c6a11a586759b5c84  doc/ger-de/funktionen/6.0/erweiterungen/sevenx_valkey_cache.md
@@ -28139,7 +28139,8 @@ cf79264b76e26d46d385530fc1fc6e93  tests/tests/extension/ezupdate/fixtures/compos
 92aec1fc63c88a9a775b031e597c028d  tests/tests/extension/sevenx_dse/SevenxDseAdminNeoViewTest.php
 f00c0e8f21213eff9ba05fb180a63dc5  tests/tests/extension/sevenx_dse/SevenxDseAdminNeoWorkerStateTest.php
 2f58ff32c9e64f141afdc891d46e3913  tests/tests/extension/sevenx_dse/SevenxDseAdminStylingTest.php
-3c764683369af2cc8e0c190cee9080c5  tests/tests/extension/sevenx_dse/SevenxDseMainDatabaseTest.php
+236741732e39183eb95561d49bab9fa5  tests/tests/extension/sevenx_dse/SevenxDseMainDatabaseTest.php
+42e30a9af34d914ccf6ce30a72d06ab8  tests/tests/extension/sevenx_dse/SevenxDseViewParametersTest.php
 2abc7e0d7ab556d758e40d7c95bc1dbb  tests/tests/extension/sevenx_dse/fixtures/adminneo_ends_with_ezexit.php
 14ed0fd86bd419c3abc2e81c07d0cdc0  tests/tests/extension/sevenx_dse/fixtures/adminneo_runs_to_end.php
 89b118c6d391cbf19c7af686e98794a2  tests/tests/extension/sevenx_dse/fixtures/adminneo_throws_other.php

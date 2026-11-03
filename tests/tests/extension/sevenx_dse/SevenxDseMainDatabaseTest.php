@@ -1,14 +1,17 @@
 <?php
 /**
- * The DS Editor opens the main database of the installation (#16641): extension/sevenx_dse/classes/sevenxdsemaindatabase.php
- * turns site.ini [DatabaseSettings] into AdminNeo's one configured server, and the SQLite driver lists the tables
- * of that database without SQLite's own.
+ * The DS Editor opens the main database of the installation with one click (#16641): extension/sevenx_dse/classes/
+ * sevenxdsemaindatabase.php turns site.ini [DatabaseSettings] into AdminNeo's configured server "main", and the SQLite
+ * driver lists the tables of that database without SQLite's own. Any other database is opened as before, through
+ * AdminNeo's free-form login form with every driver ("Connect to another database", the dse_switch link).
  *
  * - DB-less: the engine of each kernel driver maps to one AdminNeo driver; an SQLite Database value without a path is
  *   the file in var/storage/sqlite3/, as for the kernel (eZSQLite3DB::filePath()); the server entry carries the INI
  *   login for MySQL (port or socket) and PostgreSQL, none for SQLite; an engine AdminNeo has no driver for gives null.
  * - The login form shows no username or password field for a configured server, and the authentication uses the
  *   server's own login (Origin::getCredentials()), never one from the URL.
+ * - "main" is the configured server only for requests about it (isRequested()); every other request gets the
+ *   free-form form with the driver list, server, login and database; the dashboard offers both choices.
  * - SQLite, with a throwaway database file below var/tmp: the path the server entry names, resolved against the
  *   installation root, opens the file; the driver's table query lists its tables and views and leaves out
  *   sqlite_sequence; PRAGMA table_info, LIMIT/OFFSET and rowid work on it.
@@ -127,6 +130,43 @@ class SevenxDseMainDatabaseTest extends PHPUnit\Framework\TestCase
         $config = (string)file_get_contents( self::$ext . '/adminneo/adminneo-config.php' );
         $this->assertStringContainsString( "'servers'", $config );
         $this->assertStringContainsString( 'sevenxDseMainDatabase::current(', $config );
+
+        // The free-form form (another database) never gets the main database's password either: only InsecureUse
+        // (DSE_DEFAULT_PASSWORD, off by default) fills it.
+        $this->assertStringContainsString( '$_configPassword = defined(\'DSE_DEFAULT_PASSWORD\') ? \DSE_DEFAULT_PASSWORD : "";', $admin );
+    }
+
+    public function testMainIsPreselectedAndOtherDatabasesUseTheFreeFormLogin()
+    {
+        // "main" is AdminNeo's configured server only for requests about it.
+        $this->assertTrue( sevenxDseMainDatabase::isRequested( array( 'sqlite' => 'main', 'db' => 'x' ), array() ) );
+        $this->assertTrue( sevenxDseMainDatabase::isRequested( array( 'mysql' => 'main' ), array() ) );
+        $this->assertTrue( sevenxDseMainDatabase::isRequested( array(), array( 'auth' => array( 'driver' => 'sqlite', 'server' => 'main' ) ) ) );
+        $this->assertFalse( sevenxDseMainDatabase::isRequested( array(), array() ), 'the bare login page is the free-form form' );
+        $this->assertFalse( sevenxDseMainDatabase::isRequested( array( 'sqlite' => 'var/tmp/other.db' ), array() ) );
+        $this->assertFalse( sevenxDseMainDatabase::isRequested( array( 'pgsql' => 'db.local' ), array() ) );
+        $this->assertFalse( sevenxDseMainDatabase::isRequested( array( 'sqlite' => 'main' ), array( 'auth' => array( 'driver' => 'mysql', 'server' => 'db.local' ) ) ),
+            'a free-form login posted from a main page is a login to that server' );
+
+        $config = (string)file_get_contents( self::$ext . '/adminneo/adminneo-config.php' );
+        $this->assertSame( 1, preg_match( '~if \( \$_dseMain !== null && sevenxDseMainDatabase::isRequested\( \$_GET, \$_POST \) \)\s*\{\s*\$_dseConfig\[\'servers\'\]~', $config ),
+            'the server list (which hides the driver list and the free-form fields) is set only for requests about main' );
+
+        // The free-form form offers every driver, the server, the login and the database.
+        $admin = (string)file_get_contents( self::$ext . '/adminneo/core/Admin.php' );
+        foreach ( array( 'html_select("auth[driver]", $drivers, $driver)', 'name="auth[server]"', 'name="auth[username]"', 'name="auth[password]"', 'name="auth[db]"' ) as $field )
+        {
+            $this->assertStringContainsString( $field, $admin );
+        }
+
+        // The dashboard opens main with one click and offers the other databases next to it.
+        $gate = (string)file_get_contents( self::$ext . '/design/standard/templates/dse/gate.tpl' );
+        $this->assertStringContainsString( 'name="dse_connect" value="main"', $gate );
+        $this->assertStringContainsString( 'name="dse_connect" value="other"', $gate );
+        $this->assertStringNotContainsString( 'Only its engine', $gate );
+        $dashboard = (string)file_get_contents( self::$ext . '/classes/runnable/views/dse/dashboard.php' );
+        $this->assertStringContainsString( "\$_POST['dse_connect'] !== 'other'", $dashboard );
+        $this->assertStringContainsString( "'/(dse_switch)/'", $dashboard, 'the change-database link is a view parameter' );
     }
 
     public function testSqliteTablesAreListedWithoutSqlitesOwn()
