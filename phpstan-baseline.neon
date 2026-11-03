@@ -1453,12 +1453,6 @@ parameters:
 			path: kernel/private/classes/cronjobs/updateviewcount.php
 
 		-
-			message: '#^Variable \$nodeID might not be defined\.$#'
-			identifier: variable.undefined
-			count: 2
-			path: kernel/private/classes/cronjobs/updateviewcount.php
-
-		-
 			message: '#^Undefined variable\: \$cli$#'
 			identifier: variable.undefined
 			count: 10
