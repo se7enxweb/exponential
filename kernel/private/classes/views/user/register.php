@@ -372,7 +372,7 @@ class Register extends \Exponential\Runnable\ModuleView
             $includeResult = include( 'kernel/content/attribute_edit.php' );
 
         }
-        catch ( Throwable $e )
+        catch ( \Throwable $e )
         {
             // nothing of a transaction that failed half way is committed by a later commit()
             if ( $db->transactionCounter() > 0 )

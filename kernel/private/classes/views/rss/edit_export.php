@@ -286,7 +286,7 @@ class EditExport extends \Exponential\Runnable\ModuleView
                     }
                 }
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )
@@ -359,7 +359,7 @@ class EditExport extends \Exponential\Runnable\ModuleView
                                                          \eZRSSExport::STATUS_VALID,
                                                          \eZRSSExport::STATUS_DRAFT );
                     }
-                    catch ( Throwable $e )
+                    catch ( \Throwable $e )
                     {
                         // nothing of a transaction that failed half way is committed by a later commit()
                         if ( $db->transactionCounter() > 0 )
@@ -443,7 +443,7 @@ class EditExport extends \Exponential\Runnable\ModuleView
                 $rssExportItem->store();
 
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )

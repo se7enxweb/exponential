@@ -127,7 +127,7 @@ class Editcurrency extends \Exponential\Runnable\ModuleView
                         {
                             $currency->sync();
                         }
-                        catch ( Throwable $e )
+                        catch ( \Throwable $e )
                         {
                             // nothing of a transaction that failed half way is committed by a later commit()
                             if ( $db->transactionCounter() > 0 )

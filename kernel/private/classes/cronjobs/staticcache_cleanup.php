@@ -108,7 +108,7 @@ class StaticcacheCleanup extends \Exponential\Runnable\CronjobPart
                 {
                     $db->query( "UPDATE ezpending_actions SET param=( " . $db->concatString( array( "param", "',invalid'" ) ) . " ) WHERE param IN ( '" . implode( "','", $markInvalidParams ) . "' )" );
                 }
-                catch ( Throwable $e )
+                catch ( \Throwable $e )
                 {
                     // nothing of a transaction that failed half way is committed by a later commit()
                     if ( $db->transactionCounter() > 0 )
@@ -125,7 +125,7 @@ class StaticcacheCleanup extends \Exponential\Runnable\CronjobPart
                 {
                     $db->query( "DELETE FROM ezpending_actions WHERE action='static_store' AND param IN ( '" . implode( "','", $deleteParams ) . "' )" );
                 }
-                catch ( Throwable $e )
+                catch ( \Throwable $e )
                 {
                     // nothing of a transaction that failed half way is committed by a later commit()
                     if ( $db->transactionCounter() > 0 )
