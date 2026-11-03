@@ -295,7 +295,9 @@ class expContentPreviewLink
     }
 
     /**
-     * The token of an active link again (to copy it once more), for a user who may share its version.
+     * The token of an active link again (to copy it once more), for a user who made the link or may share its
+     * version. Anybody else gets null: a token opens the draft without signing in, so listing the links of an
+     * object must not hand it to a user who could not have created it.
      *
      * @param array $link
      * @return string|null
@@ -303,7 +305,16 @@ class expContentPreviewLink
     public static function tokenFor( array $link )
     {
         $key = self::key();
-        return $key !== null && self::state( $link, time() ) === 'active' ? self::token( $key, $link ) : null;
+        if ( $key === null || self::state( $link, time() ) !== 'active' )
+            return null;
+        if ( (int)( $link['creator'] ?? 0 ) !== (int)eZUser::currentUserID() )
+        {
+            $object = eZContentObject::fetch( (int)( $link['object'] ?? 0 ) );
+            $version = $object instanceof eZContentObject ? $object->version( (int)( $link['version'] ?? 0 ) ) : null;
+            if ( !( $version instanceof eZContentObjectVersion && self::mayShare( $version ) ) )
+                return null;
+        }
+        return self::token( $key, $link );
     }
 
     /**
