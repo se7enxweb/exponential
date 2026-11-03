@@ -128,6 +128,7 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:expusershow](expusershow.md) | exp:user:show | Show one user account: groups, roles with their limitation, enabled or locked, last visit, registration state, two-step sign-in and active sessions (never a password hash) |
 | [exp:expuserunlock](expuserunlock.md) | exp:user:unlock | Unlock an account locked after too many wrong passwords: its failed sign-ins back to 0, as Users > Hygiene does (a dry run unless --apply) |
 | [exp:expuserwhoami](expuserwhoami.md) | exp:user:whoami | Which account the console acts as (the user of [UserSettings] UserCreatorID, or --as), with its roles and whether it has every right |
+| [exp:expviewcountupdate](expviewcountupdate.md) | exp:viewcount:update | Count the page views of the web server's access logs into the view counter (ezview_counter), for one siteaccess or several |
 | [exp:expwtmigratefromezwt](expwtmigratefromezwt.md) | exp:wt:migrate-from-ezwt | Replace ezwt (the website toolbar) by expwt (the website sidebar): settings, policies, activation, schedule (dry run unless --apply) |
 | [exp:ezapplytemplate](ezapplytemplate.md) |  | Apply the template blocks found in files and write the files back (exit code 0, 1 or 2) |
 | [exp:ezasynchronouspublisher](ezasynchronouspublisher.md) |  |  |

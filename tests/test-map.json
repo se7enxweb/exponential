@@ -1653,7 +1653,8 @@
       "tests/tests/kernel/common/eZWordToImageOperatorDesignThemeTest.php"
     ],
     "kernel/classes/ezsiteaccess.php": [
-      "tests/tests/kernel/classes/eZSiteAccessGetIniAndFindPathTest.php"
+      "tests/tests/kernel/classes/eZSiteAccessGetIniAndFindPathTest.php",
+      "tests/tests/kernel/classes/viewcount/expViewCountSiteAccessMatchTest.php"
     ],
     "kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php": [
       "tests/tests/kernel/datatypes/ezxmltext/eZXMLInputSupplementaryCharactersTest.php",
@@ -2985,6 +2986,29 @@
     "tests/tests/kernel/classes/user/expUserGroupsBulkEngineChecks.php": [
       "tests/tests/kernel/classes/user/expUserManagerSqliteTest.php",
       "tests/tests/kernel/classes/user/expUserManagerDatabaseTest.php"
+    ],
+    "kernel/classes/viewcount/*.php": [
+      "tests/tests/kernel/classes/viewcount/expViewCountLogParserTest.php",
+      "tests/tests/kernel/classes/viewcount/expViewCountRequestFilterTest.php",
+      "tests/tests/kernel/classes/viewcount/expViewCountPathResolverTest.php",
+      "tests/tests/kernel/classes/viewcount/expViewCountLogReaderTest.php",
+      "tests/tests/kernel/classes/viewcount/expViewCountUpdaterTest.php",
+      "tests/tests/kernel/classes/viewcount/expViewCountSqliteTest.php",
+      "tests/tests/kernel/classes/viewcount/expViewCountSiteAccessMatchTest.php",
+      "tests/tests/kernel/classes/viewcount/expViewCountConfigurationTest.php"
+    ],
+    "kernel/classes/ezviewcounter.php": [
+      "tests/tests/kernel/classes/viewcount/expViewCountSqliteTest.php",
+      "tests/tests/kernel/classes/eZContentObjectTreeNodeViewCountTest.php"
+    ],
+    "kernel/private/classes/cronjobs/updateviewcount.php": [
+      "tests/tests/kernel/classes/viewcount/expViewCountUpdaterTest.php"
+    ],
+    "kernel/private/classes/commands/expviewcountupdate.php": [
+      "tests/tests/kernel/classes/viewcount/expViewCountUpdaterTest.php"
+    ],
+    "settings/logfile.ini": [
+      "tests/tests/kernel/classes/viewcount/expViewCountRequestFilterTest.php"
     ]
   },
   "generated": {

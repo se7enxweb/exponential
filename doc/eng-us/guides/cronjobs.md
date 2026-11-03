@@ -366,7 +366,7 @@ whoever started it: see the [audit trail](../features/6.0/audit-trail.md).
 and where it is. Nothing ever runs them. In a new installation these are, among others, `session_gc.php` (expired
 sessions), `old_drafts_cleanup.php`, `trashpurge.php` (empties the trash, or with `content.ini [TrashSettings]
 KeepItemsForDays` only what is older), `staticcache_cleanup.php`, `subtreeexpirycleanup.php` and
-`updateviewcount.php`.
+`updateviewcount.php` (counts page views from the access logs: [View count statistics](view-count-statistics.md)).
 
 To run one once, use the shell (section 13) with `--script=<file>`. To run it regularly, add it to a part: to an
 existing one, or to a part of its own so it gets its own schedule:

@@ -58,7 +58,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [kernelservices.ini](kernelservices/README.md) | Kernel | 15 |
 | [layout.ini](layout/README.md) | Kernel | 3 |
 | [ldap.ini](ldap/README.md) | Kernel | 1 |
-| [logfile.ini](logfile/README.md) | Kernel | 1 |
+| [logfile.ini](logfile/README.md) | Kernel | 2 |
 | [logviewer.ini](logviewer/README.md) | Kernel | 10 |
 | [mailpreferences.ini](mailpreferences/README.md) | Kernel | 19 |
 | [membermanagement.ini](membermanagement/README.md) | Kernel | 4 |

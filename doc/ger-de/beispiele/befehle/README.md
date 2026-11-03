@@ -128,6 +128,7 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:expusershow](expusershow.md) | exp:user:show | Ein Benutzerkonto anzeigen: Gruppen, Rollen mit ihrer Einschränkung, aktiviert oder gesperrt, letzter Besuch, Zustand der Registrierung, Anmeldung in zwei Schritten und aktive Sitzungen (nie ein Passwort-Hash) |
 | [exp:expuserunlock](expuserunlock.md) | exp:user:unlock | Ein nach zu vielen falschen Passwörtern gesperrtes Konto entsperren: seine fehlgeschlagenen Anmeldungen zurück auf 0, wie es Benutzer > Hygiene tut (ein Probelauf ohne --apply) |
 | [exp:expuserwhoami](expuserwhoami.md) | exp:user:whoami | Als welches Konto die Konsole handelt (der Benutzer aus [UserSettings] UserCreatorID oder --as), mit seinen Rollen und ob es alle Rechte hat |
+| [exp:expviewcountupdate](expviewcountupdate.md) | exp:viewcount:update | Zählt die Seitenaufrufe aus den Zugriffsprotokollen des Webservers in den Aufrufzähler (ezview_counter), für einen Siteaccess oder mehrere |
 | [exp:expwtmigratefromezwt](expwtmigratefromezwt.md) | exp:wt:migrate-from-ezwt | Ersetzt ezwt (die Website-Werkzeugleiste) durch expwt (die Website-Seitenleiste): Einstellungen, Richtlinien, Aktivierung, Zeitplan (Probelauf ohne --apply) |
 | [exp:ezapplytemplate](ezapplytemplate.md) |  | Wendet die in Dateien gefundenen Template-Blöcke an und schreibt die Dateien zurück (Exit-Code 0, 1 oder 2) |
 | [exp:ezasynchronouspublisher](ezasynchronouspublisher.md) |  |  |

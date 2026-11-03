@@ -2,14 +2,14 @@
 title: updateviewcount.php cronjob
 audience: developer, admin
 category: examples
-summary: Flush the in-memory view count buffer to the database.
+summary: Count the page views of the web server's access logs into the view counter (ezview_counter).
 keywords: updateviewcount.php, updateviewcount, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # The updateviewcount.php cronjob
 
-Flush the in-memory view count buffer to the database.
+Count the page views of the web server's access logs into the view counter (ezview_counter).
 
 Entry point `cronjobs/updateviewcount.php`, code in `kernel/private/classes/cronjobs/updateviewcount.php`.
 

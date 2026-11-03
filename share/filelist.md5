@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-67b961bf65a9165c7383d7481d0590c1  autoload/ezp_kernel.php
+d5ffb2372aaf728f55d4130c4535d3b9  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -163,6 +163,7 @@ e68cd1593896e0bf4e078e6a0e83652c  bin/php/expusersessions.php
 7a6c1835332aa42a972e1651b11c7091  bin/php/expusershow.php
 72807f6fee6a81871da5e1e51f6e8cd2  bin/php/expuserunlock.php
 3eaad20bef39446fc41fe5bff791d25f  bin/php/expuserwhoami.php
+38748a7cce66e549a1417c3388866c08  bin/php/expviewcountupdate.php
 2cedfdea71611595a41fbc4dda22d3f0  bin/php/expwtmigratefromezwt.php
 cd7e709ddd373b92570a4b8108f0844b  bin/php/ezapplytemplate.php
 5cc15c0bdc487530099644d781bd0e52  bin/php/ezasynchronouspublisher.php
@@ -325,7 +326,7 @@ e3026e6fc2d0aef1e74798c1f3dfe794  cronjobs/old_drafts_cleanup.php
 379417188a517f5fc5abb666a7a0686b  cronjobs/trashpurge.php
 26119f417413f68bd42518cbf94264b5  cronjobs/unlock.php
 a847e96cc9dc55140ea1448b13dc4e06  cronjobs/unpublish.php
-47688e495b06a78e17ac3e2ec6979b02  cronjobs/updateviewcount.php
+87cdc17577285973b65209c3392a638f  cronjobs/updateviewcount.php
 d918b5b654fd194a9173855ea86a4db5  cronjobs/useraudit.php
 38b428db688e9b9ececc910e37fe2952  cronjobs/usersessions.php
 02e372d96bd57571ff19e859cf7509b3  cronjobs/workflow.php
@@ -3514,7 +3515,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-3ebd5ef7154bb98513a1186ebf4a76a2  doc/changelogs/6.0/6.0.15.md
+bd499ced6861a59b4f446fc704de6ac2  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3748,6 +3749,7 @@ d05afb933159cdb572cbe6d71508e874  doc/eng-us/bc/6.0/svg-images.md
 e37c2dcbaa794657ef0b6ade79057808  doc/eng-us/bc/6.0/velocity-engine-upgrade-notes.md
 25854029eacb00ad463e28e9ab5f3432  doc/eng-us/bc/6.0/velocity-engines.md
 308dc577e917e96bd27c826e958d21b4  doc/eng-us/bc/6.0/velocity-ondisk-layout.md
+4a126e058dbc83024b374941e06092ab  doc/eng-us/bc/6.0/view-count-multi-site.md
 9b429d7d4f93a93dfca9de098c81823a  doc/eng-us/bc/6.0/view_full_security.md
 47fd2bff5c237dc0a50c3deb40ab5f34  doc/eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md
 c99118cb6b0537f2ca6d975c9ef3918f  doc/eng-us/bc/6.0/webdav-entry-script-index-webdav.md
@@ -3756,7 +3758,7 @@ d3cd9752d1bc4351a0ab0729a558843f  doc/eng-us/branch-overview.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
 218a5bdcfb7e8b6199a72d575b78aac8  doc/eng-us/examples/README.md
-4f93520d1abdbd65da01072d9b475402  doc/eng-us/examples/commands/README.md
+e089299d9e01214202e5b4da51dcb3cc  doc/eng-us/examples/commands/README.md
 0416e2e6ffd13c1ea43a337855961707  doc/eng-us/examples/commands/accesscheck.md
 47d52e658c8d83c44d5cb6fae172824e  doc/eng-us/examples/commands/addanonymouspublicpolicies.md
 6d35731551f1ea3e02af6513220b0122  doc/eng-us/examples/commands/adddefaultstates.md
@@ -3871,6 +3873,7 @@ a9a930969e8ec6c876a6a47617195528  doc/eng-us/examples/commands/expusersessions.m
 d61b36e69994af210383153c124cd21d  doc/eng-us/examples/commands/expusershow.md
 df369cac5848478e466977a471562518  doc/eng-us/examples/commands/expuserunlock.md
 ff7c54eb8f2876e5b04d076459230c11  doc/eng-us/examples/commands/expuserwhoami.md
+bc6a6ad77ca44ca8f3f2a0c5e78df73b  doc/eng-us/examples/commands/expviewcountupdate.md
 0014495130fc8b094367714075137817  doc/eng-us/examples/commands/expwtmigratefromezwt.md
 821134f2b0d2e4548bec453d2d5d5a45  doc/eng-us/examples/commands/ezapplytemplate.md
 be39b7419587fc8f5ceddd613d0e258f  doc/eng-us/examples/commands/ezasynchronouspublisher.md
@@ -3970,7 +3973,7 @@ b6f46c97a3b259ea218db84e0ef82bb4  doc/eng-us/examples/cookbook/migrations-record
 882106989884d5a5814aea987db89825  doc/eng-us/examples/cookbook/translations.md
 f66b9e74007c1d4210a19f7589c77f2a  doc/eng-us/examples/cookbook/velocity-deploy.md
 887cdef07ed4d69158538a1f8912c363  doc/eng-us/examples/cookbook/workflow-event.md
-b27b0cd6f2879005b86ef6962136f3ef  doc/eng-us/examples/cronjobs/README.md
+6741693a61c21dc2d26f9120021e676b  doc/eng-us/examples/cronjobs/README.md
 210485740c82ce0e37a4207e656bd5af  doc/eng-us/examples/cronjobs/audit.md
 0a159913bc026f0b924084b49403d07c  doc/eng-us/examples/cronjobs/basket_cleanup.md
 b6ab06485c1c62781c9105ea9a4a8c4e  doc/eng-us/examples/cronjobs/cachecleanup.md
@@ -4001,7 +4004,7 @@ db60c5494d266780c439ac8050f31f6b  doc/eng-us/examples/cronjobs/staticpublish.md
 97f2d6520b8980fb161c6da54832d08e  doc/eng-us/examples/cronjobs/trashpurge.md
 3cbd8e66696a2a95f399e398c7a4815d  doc/eng-us/examples/cronjobs/unlock.md
 dfe7d1e133289cc08ba578b40c6a1ef9  doc/eng-us/examples/cronjobs/unpublish.md
-fc6bfb6a2c8f7c5c9d7a4eb57a888482  doc/eng-us/examples/cronjobs/updateviewcount.md
+f382cfb399aa3852971fe8a0356843a4  doc/eng-us/examples/cronjobs/updateviewcount.md
 b21cbc0b93efd9b5354f8737425ec9cc  doc/eng-us/examples/cronjobs/useraudit.md
 fdd74ece9414694184dc03d74b189ad8  doc/eng-us/examples/cronjobs/usersessions.md
 67c687c7846b7c1320733bab96905652  doc/eng-us/examples/cronjobs/workflow.md
@@ -4316,7 +4319,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/eng-us/examples/fetch-functions/user/membe
 e2a0d933b995c654fb8d0b0d61460b08  doc/eng-us/examples/fetch-functions/workflow/workflow_type_statuses.md
 afabb952a48810ef8ebb35f166d11f22  doc/eng-us/examples/hooks/template-check-pre-commit.sh
 5fd72660cc5c80f159ea936f0d72133b  doc/eng-us/examples/htaccess
-242546dbb6073cb9173c6c79b927640a  doc/eng-us/examples/ini-settings/README.md
+5ccc20e923fd52b06a6eca3b56d7729e  doc/eng-us/examples/ini-settings/README.md
 6522da4a85b1b6fbd3b3c71c41603590  doc/eng-us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_audit.md
 1982ccc2ae500e3049741b22912053c6  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_datatable.md
@@ -5038,8 +5041,9 @@ a6ca5652450f47c334d5e4c58b891b98  doc/eng-us/examples/ini-settings/layout/fullsc
 b8ab63e1bfbcbe0bb41c94a32d04721f  doc/eng-us/examples/ini-settings/layout/print.md
 7d2df32203f58a56085d085880511133  doc/eng-us/examples/ini-settings/ldap/LDAPSettings.md
 789c2a9f80b7ecdc273c5f8973c1c2c6  doc/eng-us/examples/ini-settings/ldap/README.md
-5f2b2034a369688ca91319137a111e39  doc/eng-us/examples/ini-settings/logfile/AccessLogFileSettings.md
-7527e6ee497b9786cf4a01d19c38d89e  doc/eng-us/examples/ini-settings/logfile/README.md
+f2f6c45b8277f2d506775dcd4429eb7c  doc/eng-us/examples/ini-settings/logfile/AccessLogFileSettings.md
+9e8cc11ccbd4172589fc679b44021a3e  doc/eng-us/examples/ini-settings/logfile/README.md
+bb54287331c2fd8a94be37a2bf844c32  doc/eng-us/examples/ini-settings/logfile/ViewCountSettings.md
 f03012263b6d9ae2a2aec5837698eccd  doc/eng-us/examples/ini-settings/logviewer/ActionSettings.md
 1b84b4270b549b53450ac4c06a06b31e  doc/eng-us/examples/ini-settings/logviewer/DigestSettings.md
 e66d0c048f9271bf98daf1aaa5189307  doc/eng-us/examples/ini-settings/logviewer/HealthSettings.md
@@ -7034,7 +7038,7 @@ e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-co
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
 a5621820f4516cedaa2b79e888328b30  doc/eng-us/glossary.md
 e3e117bf283a09a375595e52cb21f59d  doc/eng-us/goals.md
-a545eefcee0a6f9d17371b09162f059f  doc/eng-us/guides/README.md
+7105aeeb5c85298bfa3686a91126e161  doc/eng-us/guides/README.md
 c3cd4759e8cbd9569458f6ad5c01021a  doc/eng-us/guides/a-static-blog-with-exponential.md
 cb328df2d889368b2297e4864f4c9c19  doc/eng-us/guides/a-static-documentation-site.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
@@ -7049,7 +7053,7 @@ b73a9d2acee4cfc8c68b3afca0bab7a5  doc/eng-us/guides/classic-menu-settings.md
 42311d8c175d353c9ffebeb9431bc599  doc/eng-us/guides/content-history.md
 5b87810706411c30e0d26c272536de87  doc/eng-us/guides/content-languages.md
 5cf42ad6134131064ef1745e4b8d528b  doc/eng-us/guides/content-model-and-editing.md
-846157371af78bde8e5f3f03efb1b216  doc/eng-us/guides/cronjobs.md
+8b8158145a11acf6cbd1882eab699732  doc/eng-us/guides/cronjobs.md
 573e975acd458e4c7374e74421300628  doc/eng-us/guides/deploying.md
 23a9c8cdb46d76ce256d68b16b140ee7  doc/eng-us/guides/develop-in-public-publish-free.md
 ab00d66607f66a79d69efd28d9fba855  doc/eng-us/guides/drafts-and-pending.md
@@ -7196,6 +7200,7 @@ fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 c0ef983a2b3afe72eea1bf3e56b186a3  doc/eng-us/guides/user-management-from-the-console.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
+2cf00a67091ef31748882bd9df694c7e  doc/eng-us/guides/view-count-statistics.md
 952b7b28226e6eff085df210c88d6b08  doc/eng-us/guides/workflows.md
 ba6c6e3806e95b1fc79ffa6020f4bac3  doc/eng-us/guides/your-devices-and-sessions.md
 1ba5ebfde9579e699f5bb0b7c109f23f  doc/eng-us/help/README.md
@@ -13417,11 +13422,11 @@ d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 3c8a3d79f60b6093c9dfec548dd48c84  doc/ger-de/.dirnames.json
 25867792cc1baa4f05cba3bbd13a860f  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
-3bb3f9ae4492b561de268b3694fb52da  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
+0cb9f542b8d85be2b48c2dd2b0fff272  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 8d4edb28f11abb9d3e8b38917ba13fbf  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
 37ce091c6d6540fd6587386c87562cbe  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
 7efd2032e4d9ce390413dcd56a78dfba  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
-bd5b0554139589f14c2401226da23c27  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
+78547b6873de6b0bafc562ae200cc1e5  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 0044cf4bb2bff28955dc4a787bbfa02c  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
 00c407fcd647ee5a959e55f7a7658e10  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
 1e50604cdda95979f0c425593861ab4b  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
@@ -13466,15 +13471,16 @@ f3b5d80ee09ab898084c12c09f95ac08  doc/ger-de/.examples/descriptions/32-static-pu
 00b0ea11e32bd8d3d5bbc7c1f4c559ce  doc/ger-de/.examples/descriptions/34-migration-generate-from-diff-2026-11-02.json
 8d1419735c866a444da349c8cf9f480f  doc/ger-de/.examples/descriptions/34-migration-remote-deploy-part3-2026-11-02.json
 f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-management-console-2026-11-02.json
+07ce2335ebfc2da521593adaf9a32611  doc/ger-de/.examples/descriptions/36-view-count-multi-site-2026-11-03.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-cd45d90ca6166ffdb80ce1b53d127b6f  doc/ger-de/.paths.json
+80e7b6ad4573d66462b875f3aa952249  doc/ger-de/.paths.json
 e36dacff276cb98df323b00b6965b093  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
-fb0c1275afea89e727ee2cb01b2001d2  doc/ger-de/anleitungen/README.md
+c19044eb22eda353b7f8c97047ffbe9f  doc/ger-de/anleitungen/README.md
 3c28da16cfa703ea0ae165009d3fed45  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 277fc76f4ca9f5a9a7987b4c7c862311  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
@@ -13526,7 +13532,7 @@ d8812c18820e2cd52bb9fdd4bc3da57c  doc/ger-de/anleitungen/bilder/object-states/gr
 e61ac02a2c33d3cf125d4ffdde64ac2b  doc/ger-de/anleitungen/bilder/workflows/status-and-overview.png
 af70505a0f88374afebf5acd1a3521df  doc/ger-de/anleitungen/caches-vorwaermen.md
 ff26b11a2d28f8fee575a03afb1d9aaa  doc/ger-de/anleitungen/caches.md
-543db21e1a75a888d85d7e6347dd2687  doc/ger-de/anleitungen/cronjobs.md
+2b30c7ed08d5ad75b37466714fdf7559  doc/ger-de/anleitungen/cronjobs.md
 e9159f73e1f92f04a0571a6696814f4c  doc/ger-de/anleitungen/eigentuemer-aendern.md
 187275b90a6a296fc3e1d51138bf9d46  doc/ger-de/anleitungen/ein-statisches-blog-mit-exponential.md
 b406cbc3208dc72c2f80f6fd73e6c3ae  doc/ger-de/anleitungen/eine-statische-dokumentations-site.md
@@ -13573,6 +13579,7 @@ e6b2e42e0fbcb6f71c0d627295536c75  doc/ger-de/anleitungen/pdf-exporte.md
 296d6912eab7b7915cf59b235283ed90  doc/ger-de/anleitungen/rollen-und-richtlinien.md
 e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 2512e6146acb757c89781c1580f25ba0  doc/ger-de/anleitungen/seiten-cache-mit-litespeed.md
+1274b067a7e57a0428a6075196ec35fd  doc/ger-de/anleitungen/seitenaufrufe-zaehlen.md
 6c14b68ff14fb3ae5a59c84bb5609cc8  doc/ger-de/anleitungen/sektionen.md
 65397ae907e9925c848b87c52e153223  doc/ger-de/anleitungen/setup-dateien-von-der-konsole.md
 3d68e8329fa2aaef4030a2530bd4e3a1  doc/ger-de/anleitungen/sicherheit-und-audit.md
@@ -13623,6 +13630,7 @@ dcf1b0b94d93bc43a5091638826844ee  doc/ger-de/bc/5.90/passwortlaenge.md
 693eca963756cd0b335bee8289bc4022  doc/ger-de/bc/6.0/antwort-cache-und-navigation.md
 0e9a9f2936d696af431fdd512833676e  doc/ger-de/bc/6.0/api-schluessel.md
 d7111a34bd865f6c97f446c3bbbc94b7  doc/ger-de/bc/6.0/audit.md
+997164447978f77069ebf1c705dd7f5b  doc/ger-de/bc/6.0/aufrufzaehler-fuer-mehrere-sites.md
 0b96cc7ba2b41e430e4d0d1b5e5426f1  doc/ger-de/bc/6.0/backend-dienste-ueber-ezjscore.md
 43f9ce151bcebf6673bf6d7de63ad9ae  doc/ger-de/bc/6.0/benachrichtigungen-oberflaeche-und-befehle.md
 562c6fd94209969fdefa16a00e413b4c  doc/ger-de/bc/6.0/benutzerpasswort-aendern.md
@@ -13737,7 +13745,7 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 1f6ee4c60a711526c9cd31416441a991  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
 87bcef5fa01d68c26dfd2cb9e2021c07  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
 73895665ec5c4c5ba649a9ab6b9c1d7d  doc/ger-de/beispiele/README.md
-50f2eb11f0f05e53bb5aa84fb41bb40c  doc/ger-de/beispiele/befehle/README.md
+5d4e89aec66555895978ebd849e5a85e  doc/ger-de/beispiele/befehle/README.md
 fb78cc24f28e4e7e208a831fc04c7de3  doc/ger-de/beispiele/befehle/accesscheck.md
 e5b188fae769a1201a72f50d98683190  doc/ger-de/beispiele/befehle/addanonymouspublicpolicies.md
 1b32eaf6f85858eaa99ca055cddccb7a  doc/ger-de/beispiele/befehle/adddefaultstates.md
@@ -13852,6 +13860,7 @@ f70f910d8e50c15704acc50b174b0520  doc/ger-de/beispiele/befehle/expuserrequirepas
 09b90dccaae560d7bd0b4b76450d9326  doc/ger-de/beispiele/befehle/expusershow.md
 0d6ba3c8b73cf8829b07ff1e23d48c71  doc/ger-de/beispiele/befehle/expuserunlock.md
 0f47efb1648a83f0c1157c427d41d800  doc/ger-de/beispiele/befehle/expuserwhoami.md
+2cdb2bff8b0dc2b72b06f0c77fd21d62  doc/ger-de/beispiele/befehle/expviewcountupdate.md
 41f1532822842d42e224b1b8b865f6ac  doc/ger-de/beispiele/befehle/expwtmigratefromezwt.md
 d2f65443b28c964517cf475398a8a01c  doc/ger-de/beispiele/befehle/ezapplytemplate.md
 43e5d1892e5c7d4c215c3c8a82db8391  doc/ger-de/beispiele/befehle/ezasynchronouspublisher.md
@@ -13936,7 +13945,7 @@ f07aee5464208342885de12dc6512a4c  doc/ger-de/beispiele/befehle/velocity.md
 c6cf303261c67d6acabbdeef50381dae  doc/ger-de/beispiele/befehle/verify_aliases.md
 b14622add6b22e81ce9224e095dbacfb  doc/ger-de/beispiele/befehle/warm.md
 cf0e283c1c4260fcab5330e16469b085  doc/ger-de/beispiele/befehle/webserver.md
-30955a4ca3e9c8e8308650660b5c0bf8  doc/ger-de/beispiele/cronjobs/README.md
+44d3d56b7e01df0febe1038177d5063e  doc/ger-de/beispiele/cronjobs/README.md
 6d4dcc721e61f9974abff80e9379abcd  doc/ger-de/beispiele/cronjobs/audit.md
 028b510de4cc66d02d472216a46476fe  doc/ger-de/beispiele/cronjobs/basket_cleanup.md
 512296be00d3a134f3edb42906993f16  doc/ger-de/beispiele/cronjobs/cachecleanup.md
@@ -13967,7 +13976,7 @@ a9397e44a28ea0763fe00ee9d0895c3c  doc/ger-de/beispiele/cronjobs/subtreeexpirycle
 fffe3c9b3708da1645b40b74769a0ee9  doc/ger-de/beispiele/cronjobs/trashpurge.md
 b7a1475faaab26e769eb3713d45ed517  doc/ger-de/beispiele/cronjobs/unlock.md
 01002327672973082015080229844583  doc/ger-de/beispiele/cronjobs/unpublish.md
-3031423c421c75b5314ee5ecd3d4b6b5  doc/ger-de/beispiele/cronjobs/updateviewcount.md
+e653a26e47402bf1d1cbbc02415ccc0a  doc/ger-de/beispiele/cronjobs/updateviewcount.md
 3ebc5eb78169adc2318fea3a8a36e41f  doc/ger-de/beispiele/cronjobs/useraudit.md
 cf98e2a0e5b75c88f2aebac117592a9f  doc/ger-de/beispiele/cronjobs/usersessions.md
 1c54825f6f86071e4042c6b8433e92c7  doc/ger-de/beispiele/cronjobs/workflow.md
@@ -14270,7 +14279,7 @@ f6cef0867c4076eae774a91ce3f812cb  doc/ger-de/beispiele/fetch-funktionen/user/use
 8383861c182b6605aac7f6f6d7819b37  doc/ger-de/beispiele/fetch-funktionen/workflow/README.md
 c747569ce52d239c1f42255fd4fd9d7a  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_statuses.md
 410651a2685ea7f1a673cc9a58b14277  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_type_statuses.md
-21989c376f098f0e612f0f472ae5770c  doc/ger-de/beispiele/ini-einstellungen/README.md
+eea4ec36e7ada56ff6148c13fafda8e9  doc/ger-de/beispiele/ini-einstellungen/README.md
 88a9e6f3da744f06b838a30f640c9750  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalMenuSettings.md
 61b7500c6da46b1684d61841b2c0b331  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_audit.md
 da8522f9eb603cff06146203b11e3431  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_datatable.md
@@ -14992,8 +15001,9 @@ b3fb892472ea42e9e40f78e4281dc214  doc/ger-de/beispiele/ini-einstellungen/layout/
 054d25a2600ecd661d9bf5c5965ca8bf  doc/ger-de/beispiele/ini-einstellungen/layout/print.md
 031a024a7a9af8f9f53a0dbe37dbd61d  doc/ger-de/beispiele/ini-einstellungen/ldap/LDAPSettings.md
 2c4afa2674c6643e1e8033f883273a69  doc/ger-de/beispiele/ini-einstellungen/ldap/README.md
-0872e15b16331e5fb781be2bac1ce3b9  doc/ger-de/beispiele/ini-einstellungen/logfile/AccessLogFileSettings.md
-2d58b1692b94f9a7ed6af28834152f30  doc/ger-de/beispiele/ini-einstellungen/logfile/README.md
+ddfab922d29f6524ddce3befa83a6453  doc/ger-de/beispiele/ini-einstellungen/logfile/AccessLogFileSettings.md
+211f5b8ff3b35dcd6fbc12bc6ba746f6  doc/ger-de/beispiele/ini-einstellungen/logfile/README.md
+55817b054446142681cadf7118f5f31e  doc/ger-de/beispiele/ini-einstellungen/logfile/ViewCountSettings.md
 231ba199b04505e2d7e6ecdd918a545b  doc/ger-de/beispiele/ini-einstellungen/logviewer/ActionSettings.md
 f2899e396825e6c3b1f6ca98f9b7c159  doc/ger-de/beispiele/ini-einstellungen/logviewer/DigestSettings.md
 aaaf6d52478fd4106ba952508e6177cf  doc/ger-de/beispiele/ini-einstellungen/logviewer/HealthSettings.md
@@ -24531,7 +24541,7 @@ fa2091e452b93401ef08e24ac73d6712  kernel/classes/ezsearchlog.php
 19f477fe1f38a4559957c6ec6f2b81ac  kernel/classes/ezserializedobjectnamelist.php
 fa1efc92321777aaa6bf1976ab13f48f  kernel/classes/ezshippingmanager.php
 ce4d669e185092be2e6f870615a8b9e7  kernel/classes/ezshopaccounthandler.php
-4a25192fe1c38c8fc40c2caf6433e7c1  kernel/classes/ezsiteaccess.php
+cc36dc1db3569e799588b5f0f633fd64  kernel/classes/ezsiteaccess.php
 919046fec0ffb6aacd3fdd5b10d4045d  kernel/classes/ezsitedata.php
 b73cc8295eb188fa36cf668c16d7ac98  kernel/classes/ezsiteinstaller.php
 c28bc6243b66186944a4758389e33c14  kernel/classes/ezsslzone.php
@@ -24549,7 +24559,7 @@ e5198c312191591389da3b48d195e0fb  kernel/classes/ezuserdiscountrule.php
 b30eb94ca3ccc22e2dc132a86ee110ec  kernel/classes/ezvatmanager.php
 f19ee7a299c4e944b5e6251338a65b10  kernel/classes/ezvatrule.php
 70104037efaaa2cf2a13ca8bbed2baf0  kernel/classes/ezvattype.php
-57b1dfd8a4f6aeebdf9f6430e0f7d9ae  kernel/classes/ezviewcounter.php
+e88b7b08a4fdbcdec9ad2b2caed50bfe  kernel/classes/ezviewcounter.php
 25520da9982476d28d9ef96c6f3a21d5  kernel/classes/ezwishlist.php
 051bfdd833f68fb7f0fdb0d245f13e7a  kernel/classes/ezworkflow.php
 2b437356a21eb1aac9864b3c87d6be1c  kernel/classes/ezworkflowevent.php
@@ -25104,6 +25114,14 @@ daa99869e4d43dc153755b49f868a6af  kernel/classes/user/expusersessionreport.php
 097657e8510d38c8938a96c279e50cf6  kernel/classes/user/expusersessiontracker.php
 62368526329b7250c597d601ba335e53  kernel/classes/user/expusersettingrepair.php
 f30b09f0d9113200ff0cc925b2521b56  kernel/classes/vathandlers/ezdefaultvathandler.php
+d1d68bb58820f005cd8714461edd375a  kernel/classes/viewcount/expviewcountconfiguration.php
+044744a8a135b626715f0558caa279b1  kernel/classes/viewcount/expviewcountlogparser.php
+c9ffa7e7d7cb5b7e70fbedfad6b4536b  kernel/classes/viewcount/expviewcountlogreader.php
+f4399246f83be73441b7620232388fcf  kernel/classes/viewcount/expviewcountpathresolver.php
+f4e582315d76448bbe6eb7f6e6b8a63a  kernel/classes/viewcount/expviewcountrequestfilter.php
+e842b0b2acda01400ba815c9f45a3348  kernel/classes/viewcount/expviewcountsite.php
+3b7ec4b1823b057cf2c82dbf51204528  kernel/classes/viewcount/expviewcountstate.php
+42095f318800f08a6fef1dc9a02d4250  kernel/classes/viewcount/expviewcountupdater.php
 d9169bd3d02a6bc1dbb8bc827bccf68f  kernel/classes/webauthn/expwebauthn.php
 d5453411488372301d8cf8c592a50ef5  kernel/classes/webauthn/expwebauthncbor.php
 5e3d1c142aeb7bbb5c15483b78452c7a  kernel/classes/webauthn/expwebauthnchallenge.php
@@ -25478,6 +25496,7 @@ c27873711f9898cc103b5e6236961114  kernel/private/classes/commands/expusersession
 f392de3c29dbd37a6453c12ae0599539  kernel/private/classes/commands/expusershow.php
 6a4b9351dc2724df923a89a94518eb4e  kernel/private/classes/commands/expuserunlock.php
 e1951077e479839eca175f7f46f054a2  kernel/private/classes/commands/expuserwhoami.php
+0bebc77512528ffa994e8d74fc2b293a  kernel/private/classes/commands/expviewcountupdate.php
 b038023a4cdc6dd16a956f22e07ea15a  kernel/private/classes/commands/expwtmigratefromezwt.php
 0490ac4d5fa0fd55d517d73135c31db4  kernel/private/classes/commands/ezapplytemplate.php
 642175f631984db5adf5a4f5e3f2cb33  kernel/private/classes/commands/ezasynchronouspublisher.php
@@ -25596,7 +25615,7 @@ a420696511cdea5a7b2b41d32e90cda6  kernel/private/classes/cronjobs/staticcache_cl
 8791911d4d7b9b4b7170af61062d5827  kernel/private/classes/cronjobs/trashpurge.php
 0ec9afd1d5a74ae21b3da41ba650fa58  kernel/private/classes/cronjobs/unlock.php
 ac6555cc7919eaf948bf7717f6e750f3  kernel/private/classes/cronjobs/unpublish.php
-472324a019479c0d56bbde5673a3f20f  kernel/private/classes/cronjobs/updateviewcount.php
+c089dc95b5032778b4fe8ab2d00c7b72  kernel/private/classes/cronjobs/updateviewcount.php
 f9ed55eb4fb1cf31ef7e39567f7fe481  kernel/private/classes/cronjobs/useraudit.php
 f925a03476cddbd0c2ed6bfe14dbc147  kernel/private/classes/cronjobs/usersessions.php
 c9f8719017e4094d1154178a1db4b72e  kernel/private/classes/cronjobs/workflow.php
@@ -26797,7 +26816,7 @@ d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 84963915c9c37378e037c332dc8f57f3  settings/kernelservices.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
-4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
+5b407058c8718dd64ecfdd69dae6cb22  settings/logfile.ini
 473463c7f61e8acbcf8e30e022d70c59  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 c1f0320332dab25bd13faf6ea46c6a74  settings/membermanagement.ini
@@ -28161,7 +28180,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-c2adf93f028f79a5553d808b244384a3  tests/test-map.json
+745331275e1b59bf4e2a9c89ea091a15  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -29350,6 +29369,15 @@ cce3cf4bfba21806d640eefb6b965c31  tests/tests/kernel/classes/user/expWeakPasswor
 e5e92179fbb769a79b4d8575cdfb96c7  tests/tests/kernel/classes/user/expWeakPasswordTestINI.php
 cdae8aa2fbc873aa138024d2183a160d  tests/tests/kernel/classes/velocitylayout/expVelocityConfigLayoutTest.php
 3b86797dbdadaad7d2bea33bdbdb10f3  tests/tests/kernel/classes/velocitylayout/expVelocityConfigTest.php
+4727cbd7e0ab25da00592a7e109bf54d  tests/tests/kernel/classes/viewcount/expViewCountConfigurationTest.php
+0c4c436008ab81c4c06281e790b2f233  tests/tests/kernel/classes/viewcount/expViewCountLogParserTest.php
+1effd26b4048b28ec32ad47384bd352c  tests/tests/kernel/classes/viewcount/expViewCountLogReaderTest.php
+919720d361342354845eaa52986e0c46  tests/tests/kernel/classes/viewcount/expViewCountPathResolverTest.php
+63723071f74544193d8215842b9b5692  tests/tests/kernel/classes/viewcount/expViewCountRequestFilterTest.php
+845f1d73d53cafd33c76f99f73abeb52  tests/tests/kernel/classes/viewcount/expViewCountSiteAccessMatchTest.php
+a7b7d67c3b975dd5bafc1296d90887a4  tests/tests/kernel/classes/viewcount/expViewCountSqliteTest.php
+78a379a6e98985b89f1862fc25015ba9  tests/tests/kernel/classes/viewcount/expViewCountTestFiles.php
+7d1dc6c59a2cc583e797f8c545cb17e5  tests/tests/kernel/classes/viewcount/expViewCountUpdaterTest.php
 24ae89efba9e9895a52e7cb8086490e7  tests/tests/kernel/classes/webauthn/expWebAuthnTest.php
 d4508ad0c5e4f94391960c5a82244313  tests/tests/kernel/classes/webauthn/fixtures/virtual-authenticator.json
 806235064f313e44848be4a003da2224  tests/tests/kernel/classes/workflowevents/eZWorkflowEventTypesTest.php

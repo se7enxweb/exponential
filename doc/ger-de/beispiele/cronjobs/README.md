@@ -72,7 +72,7 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 | [trashpurge.php](trashpurge.md) | Löscht Objekte im Papierkorb endgültig (alle oder so alte, wie [TrashSettings] KeepItemsForDays sagt) |  |
 | [unlock.php](unlock.md) | Gibt Inhaltsobjekte frei, die in einem gesperrten Bearbeitungszustand hängen | unlock |
 | [unpublish.php](unpublish.md) | Führt geplante Aktionen zum Zurückziehen von Inhaltsobjekten aus | (Standard) |
-| [updateviewcount.php](updateviewcount.md) | Schreibt den Puffer der Aufrufzähler aus dem Speicher in die Datenbank |  |
+| [updateviewcount.php](updateviewcount.md) | Zählt die Seitenaufrufe aus den Zugriffsprotokollen des Webservers in den Aufrufzähler (ezview_counter) |  |
 | [useraudit.php](useraudit.md) | Benutzer-Audit-Log: entfernt die Zeilen von expuser_audit, die älter sind als audit.ini [UserAuditSettings] RetentionDays | infrequent, useraudit |
 | [usersessions.php](usersessions.md) | Angemeldete Sitzungen ("Ihre Geräte"): beendet die Sitzungen, die für [Session] SessionTimeout nicht benutzt wurden, und entfernt beendete nach [UserSessionSettings] RetentionDays | infrequent, usersessions |
 | [workflow.php](workflow.md) | Verarbeitet anstehende Workflow-Ereignisse und bringt hängende Workflows weiter | frequent |
