@@ -2346,7 +2346,7 @@ f4c72a3b44fe9648e42d849832a4b87d  design/standard/images/user_group.png
 76abdc2eb6d4212c54ddd4fb724f4e27  design/standard/javascript/content_queued.js
 8f7d2105bafcb02039068ce55f386f6b  design/standard/javascript/contentcheck_fixfiles.js
 5f05ff605e9df3f185922f41b6815b4a  design/standard/javascript/contentstructuremenu/contentstructuremenu.js
-e22910a715086e56c6865ecfd9caa7c3  design/standard/javascript/dashboard_community_activity.js
+3bdbee98fb080a3dbf3b9ee05e7badae  design/standard/javascript/dashboard_community_activity.js
 ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 2740d834e1c8ecb2a05b6ce65ea4ca3d  design/standard/javascript/exp_passkey.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
@@ -3668,6 +3668,7 @@ fb309841294a933d05c51d2138dce139  doc/eng-us/bc/6.0/editor-role-policies.md
 dde90f374f5c726818094a022c0d5a7b  doc/eng-us/bc/6.0/exponentialsdk-and-exponential-cron.md
 e03549b98a5316616e86c5e6aea94193  doc/eng-us/bc/6.0/extension-package-secret-check.md
 23ba6b747323a0cbf35ed60ddfa3d4e2  doc/eng-us/bc/6.0/extensions-behaviour-changes.md
+cce8a2ac8dbc73f4d0d0385d37ed55dd  doc/eng-us/bc/6.0/ezinfo-is-alive.md
 3e618c514bc8d65abe2b013edfbb1e12  doc/eng-us/bc/6.0/ezoe-tinymce8.md
 297255c096956b0a8d769996fc2b53bb  doc/eng-us/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 ad3df50907106db4691489ec8b987d74  doc/eng-us/bc/6.0/file-modes.md
@@ -13469,7 +13470,7 @@ f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-mana
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-cd45d90ca6166ffdb80ce1b53d127b6f  doc/ger-de/.paths.json
+2201d6b560f3536a805915f37e4bd1a0  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -13644,6 +13645,7 @@ c837b1b052fefd9478c4cb6452f2a62a  doc/ger-de/bc/6.0/einstellungen-fuer-seitengro
 1ba91c2cfa0c74c708aba7fed5e5f1e1  doc/ger-de/bc/6.0/expinfo-operator.md
 6a6f40568c958816272e4a346fa100e6  doc/ger-de/bc/6.0/exponentialsdk-und-exponential-cron.md
 8c8da784a3b9d18e23db2f048d2959f6  doc/ger-de/bc/6.0/ext-sort-orders.md
+31a81d3e67896aad42b85679059fdbbc  doc/ger-de/bc/6.0/ezinfo-ist-erreichbar.md
 5b3f3da67a0243c3c2b7627b414e1b28  doc/ger-de/bc/6.0/ezini-behaelt-kommentare.md
 cf30ae36391fd9291768f9c45cba9a85  doc/ger-de/bc/6.0/ezoe-tinymce8.md
 29d9cfd4276e341adac675161ffa5182  doc/ger-de/bc/6.0/ezpsessionhandlerdb-php8-korrektur-und-tests.md
@@ -25788,7 +25790,7 @@ c5f62806da32f03206669c8f159d5f72  kernel/private/classes/views/exphelp/search.ph
 01c5325d993f41a766bed3f4f3a49c60  kernel/private/classes/views/exphelp/viewer.php
 b7fa0f2029b9a1ccc6120bb75baa525a  kernel/private/classes/views/ezinfo/about.php
 8db91d78d01d08ffd3328bc13bd46f18  kernel/private/classes/views/ezinfo/copyright.php
-53e64db86f50bddf1f02d34de38a0261  kernel/private/classes/views/ezinfo/isalive.php
+5d5b6b638fe26b580f75e3b0c07a186d  kernel/private/classes/views/ezinfo/isalive.php
 13406b0015b8bc747b2991d63cfef53c  kernel/private/classes/views/graphql/playground.php
 f6cffcb834202a9843cfc9ef720f7ae3  kernel/private/classes/views/graphql/query.php
 52157d6fea1f136c3fbe46f68ca8c1df  kernel/private/classes/views/infocollector/collectionlist.php

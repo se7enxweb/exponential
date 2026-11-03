@@ -43,8 +43,8 @@
             if ( url.protocol !== 'http:' && url.protocol !== 'https:' )
                 return null;
             // the campaign names the links of the block's title carry (community_activity.tpl)
-            var campaign = 'eZ Publish Community Project Dashboard';
-            url.searchParams.set( 'utm_content', 'eZ Publish Community Project ' + versionString );
+            var campaign = 'Exponential Community Project Dashboard';
+            url.searchParams.set( 'utm_content', 'Exponential Community Project ' + versionString );
             url.searchParams.set( 'utm_source', campaign );
             url.searchParams.set( 'utm_medium', campaign );
             url.searchParams.set( 'utm_campaign', campaign );
