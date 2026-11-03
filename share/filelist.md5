@@ -29355,7 +29355,7 @@ b5a5b0b8af07949159b580216b6c1078  tests/tests/kernel/classes/uiswitch/expUISwitc
 10ce6e7354cbc69c6b1155e5c5e04f33  tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php
 4d4cbda49aeaf6ab4b8574c76d2c5bad  tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php
 ded10af0a07be9289ee8c915f595aa97  tests/tests/kernel/classes/updatesql/UpdateSqlStorageEngineTest.php
-122aaa2b4bcd60f5478e7175ef22e667  tests/tests/kernel/classes/upgrade/expUpgradeActiveExtensionTablesTest.php
+7ad82d9df678a36c49cbac626d63b9e9  tests/tests/kernel/classes/upgrade/expUpgradeActiveExtensionTablesTest.php
 9d0d5b7f17b51025eba972ea40e95988  tests/tests/kernel/classes/upgrade/expUpgradeApplyResultTest.php
 350bffed928079590a31ed99f89b3471  tests/tests/kernel/classes/upgrade/expUpgradeCaptionTest.php
 77d79f5ce967639e5f788bf7f720b32c  tests/tests/kernel/classes/upgrade/expUpgradeCommandContractTest.php

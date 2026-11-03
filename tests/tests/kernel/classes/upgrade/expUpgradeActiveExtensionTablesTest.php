@@ -192,7 +192,8 @@ class expUpgradeActiveExtensionTablesTest extends PHPUnit\Framework\TestCase
 
     public function testTheInstallerCreatesTheSameTables()
     {
-        $before = eZDB::instance();
+        // the instance there is, without connecting one (a DB-less run has none)
+        $before = isset( $GLOBALS['eZDBGlobalInstance'] ) ? $GLOBALS['eZDBGlobalInstance'] : null;
         eZDB::setInstance( $this->db );
         try
         {
